@@ -1,0 +1,36 @@
+<html>
+
+	<head>
+		<style>
+			svg {
+				border: 1px solid black;
+			}
+
+			text {
+				fill: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="400px" height="400px" viewBox="0 0 400 400">
+			<text x="230" y="80" style="fill:red">
+				<tspan id="value1" dy="13">1</tspan>
+				<tspan id="value2" dy="13">2</tspan>
+				<tspan id="value3" dy="13">3</tspan>
+				<tspan id="value4" dy="13">4</tspan>
+			</text>
+		</svg>
+
+		<script>
+			window.onload = function() {
+				document.getElementById("value1").textContent = "121";
+				document.getElementById("value2").textContent = "1222321sdsd";
+				document.getElementById("value4").textContent = "124";
+			};
+		</script>
+
+
+	</body>
+
+</html>

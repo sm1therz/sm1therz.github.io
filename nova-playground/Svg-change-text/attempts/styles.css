@@ -1,0 +1,25 @@
+html,
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+* {
+	box-sizing: border-box;
+}
+body{
+	padding-top: 10px;
+	padding: 10px;
+}
+display: flex
+svg {
+	border: 1px solid black !important;
+	display: block;
+}
+
+text {
+	fill: gray !important;
+}
+tspan{
+	text-align: center;
+}
