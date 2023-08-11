@@ -1,0 +1,16 @@
+/* ==UserStyle==
+@name           rnLocal-8 Editor
+@namespace      remnote.com
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document domain("remnote.com") {
+	/*Box-Shadow-Testing*/
+	#hierarchy-editor,
+	#hierarchy-editor * {
+		box-shadow: inset 0 0 0 .25px red;
+	}
+
+}

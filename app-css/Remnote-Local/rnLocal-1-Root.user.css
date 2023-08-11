@@ -1,0 +1,59 @@
+/* ==UserStyle==
+@name           rnLocal-1 ROOT
+@namespace      remnote.com
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document domain("remnote.com") {
+
+	/*root*/
+	.light {
+		/*Backgrounds*/
+		--editorBG-RED:red;
+		--editorBG-MAIN: #FBFBFB;
+		--editorBG-MAIN-Alpha-50: hsl(225, 0%, 100%, .5);
+		--editorBG-Gray-99: hsl(225, 30%, 99%);
+		--editorBG-Gray-98: hsl(225, 30%, 98%);
+		/*Gray*/
+		--Clr-Gray-93: hsl(225, 13%, 93%);
+		--Clr-Gray-90: hsl(225, 13%, 90%);
+		--Clr-Gray-85: hsl(225, 13%, 85%);
+		--Clr-Gray-80: hsl(225, 13%, 80%);
+		--Clr-Gray-70: hsl(225, 13%, 70%);
+		--Clr-Gray-20: hsl(225, 13%, 20%);
+		--Clr-Gray-50: hsl(225, 13%, 50%);
+		--Clr-Gray-50-Alpha-80: hsl(225, 13%, 50%, .8);
+		--Clr-Gray-50-Alpha-70: hsl(225, 13%, 50%, .7);
+		--Clr-Gray-50-Alpha-60: hsl(225, 13%, 50%, .6);
+		--Clr-Gray-50-Alpha-50: hsl(225, 13%, 50%, .5);
+		--Clr-Gray-50-Alpha-40: hsl(225, 13%, 50%, .4);
+		--Clr-Gray-50-Alpha-20: hsl(225, 13%, 50%, .2);
+		--Clr-Gray-50-Alpha-15: hsl(225, 13%, 50%, .15);
+		--Clr-Gray-50-Alpha-10: hsl(225, 13%, 50%, .1);
+		--Clr-Gray-50-Alpha-05: hsl(225, 13%, 50%, .05);
+		--Clr-Gray-50-Alpha-025: hsl(225, 13%, 50%, .025);
+		/*ICN*/
+		--ClrEditor-Icn: hsl(225, 13%, 50%, .5);
+		/*Blue*/
+		--Clr-Blue-50: hsl(208, 100%, 50%);
+		--Clr-Blue-50-Alpha-50: hsl(208, 100%, 50%, .5);
+		--Clr-Blue-50-Alpha-40: hsl(208, 100%, 50%, .4);
+		--Clr-Blue-50-Alpha-30: hsl(208, 100%, 50%, .3);
+		--Clr-Blue-50-Alpha-20: hsl(208, 100%, 50%, .2);
+		--Clr-Blue-50-Alpha-10: hsl(208, 100%, 60%, .05);
+
+		/*external link*/
+		--LinkExternal: hsl(211, 100%, 43%);
+		--LinkExternalBrdClr: hsl(211, 75%, 64%);
+		--LinkExternalBgClr: hsl(209, 80%, 83%, .171);
+		--LinkExternalBgClr-Hover: hsl(208, 100%, 50%, .171);
+		/*internal link - reference*/
+		--LinkInternalClr: hsl(207, 8%, 50%);
+		--LinkInternalBGClr-Hover: hsl(208, 10%, 50%, .131);
+		/*internal link - reference to highlight*/
+		--LinkInternalRefHighlightBrdClr: hsl(207, 8%, 50%, .5);
+	}
+
+}
