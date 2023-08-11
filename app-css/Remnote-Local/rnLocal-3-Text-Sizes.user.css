@@ -1,0 +1,54 @@
+/* ==UserStyle==
+@name           rnLocal-1 ROOT
+@namespace      remnote.com
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document domain("remnote.com") {
+	/*//////////////////////
+EDITOR - TEXT SIZES
+//////////////////////*/
+
+
+	/*Body*/
+
+	.text-base,
+	div#hierarchy-editor {
+		font-size: 1.25rem
+	}
+
+	/****
+	h1
+	*****/
+
+	/****
+	h2
+	*****/
+
+	/****
+	h3
+	*****/
+	#hierarchy-editor .rem-header--3 {
+		font-size: 1.325rem !important;
+	}
+
+	/*h3 - Line Height*/
+	#hierarchy-editor .rem-header--3 {
+		line-height: 1.3;
+		padding-top: 5px !important;
+	}
+
+	#hierarchy-editor .rem-header--3 * {
+		line-height: unset;
+		margin-top: unset;
+		padding-top: 0px !important;
+	}
+
+	#hierarchy-editor .rem-header--3 .EditorContainer {
+		margin-top: 0px;
+	}
+
+
+}

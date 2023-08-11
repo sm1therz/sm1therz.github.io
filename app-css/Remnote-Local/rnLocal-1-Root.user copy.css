@@ -8,14 +8,25 @@
 
 @-moz-document domain("remnote.com") {
 
-	/*root*/
+	/*ROOT*/
+	* {
+		box-sizing: border-box
+	}
+
+	/*Box-Shadow-Testing
+	#hierarchy-editor,
+	#hierarchy-editor * {
+			box-shadow: inset 0 0 0 .25px red;
+	}*/
+
 	.light {
 		/*Backgrounds*/
-		--editorBG-RED:red;
+		--editorBG-Contrast: #ffffff;
 		--editorBG-MAIN: #FBFBFB;
 		--editorBG-MAIN-Alpha-50: hsl(225, 0%, 100%, .5);
 		--editorBG-Gray-99: hsl(225, 30%, 99%);
 		--editorBG-Gray-98: hsl(225, 30%, 98%);
+		/*Text Color*/
 		/*Gray*/
 		--Clr-Gray-93: hsl(225, 13%, 93%);
 		--Clr-Gray-90: hsl(225, 13%, 90%);
@@ -29,6 +40,7 @@
 		--Clr-Gray-50-Alpha-60: hsl(225, 13%, 50%, .6);
 		--Clr-Gray-50-Alpha-50: hsl(225, 13%, 50%, .5);
 		--Clr-Gray-50-Alpha-40: hsl(225, 13%, 50%, .4);
+		--Clr-Gray-50-Alpha-30: hsl(225, 13%, 50%, .3);
 		--Clr-Gray-50-Alpha-20: hsl(225, 13%, 50%, .2);
 		--Clr-Gray-50-Alpha-15: hsl(225, 13%, 50%, .15);
 		--Clr-Gray-50-Alpha-10: hsl(225, 13%, 50%, .1);
@@ -44,6 +56,21 @@
 		--Clr-Blue-50-Alpha-20: hsl(208, 100%, 50%, .2);
 		--Clr-Blue-50-Alpha-10: hsl(208, 100%, 60%, .05);
 
+		/*codeblock*/
+		--codeblockBg: hsl(225, 33%, 98%);
+		/*portals*/
+		--portalBg: hsl(0, 0%, 97%);
+		--portalBg-Hover: hsl(0, 0%, 96%);
+		/*portal website Link*/
+		--portalWebLinkClr: hsl(211, 100%, 43%);
+		--portalWebLinkClr-Hover: hsl(211, 100%, 40%);
+
+		/*bullets*/
+		--bulletTopBg: hsla(240, 11%, 44%, 1.0);
+		--bulletUnderBg: hsl(240 12% 67% / .4);
+
+		/*expand border*/
+		--expandBgClr: hsl(240, 11%, 32%, .25);
 		/*external link*/
 		--LinkExternal: hsl(211, 100%, 43%);
 		--LinkExternalBrdClr: hsl(211, 75%, 64%);
@@ -54,6 +81,33 @@
 		--LinkInternalBGClr-Hover: hsl(208, 10%, 50%, .131);
 		/*internal link - reference to highlight*/
 		--LinkInternalRefHighlightBrdClr: hsl(207, 8%, 50%, .5);
+
+
+		/*SIDEBAR*/
+		--sbBg: hsl(220, 10%, 96%);
+		--sbBrdClr: hsl(220, 10%, 87%);
+		--sbClr-Main: hsl(240, 11%, 44%);
+		--sbClr-Faint: hsl(240, 11%, 44%, .4);
+		--sbClr-Fainter: hsl(240, 11%, 44%, .2);
+		--sbClr-Faintest: hsl(240, 11%, 44%, .075);
+		/*SIDEBAR - SEARCH*/
+		--sbSearchBg: hsl(220, 13%, 90%);
+		/*SIDEBAR - Create Button*/
+		--sbCreateBtnClr: ;
+		--sbCreateBtnBg: var(--sbBg);
+		--sbCreateBtnClr-Hover: ;
+		--sbCreateBtnBg-Hover: ;
+
+		/*SIDEBAR - Doc List Items*/
+		--sbListItmBG-Hover: hsl(240, 11%, 50%, .15);
+		--sbListItmBTNBg-Hover: hsl(0, 0%, 50%, .32);
+		--sbListItmBG-Selected: hsl(216, 100%, 51%, .15);
+		--sbListItmCLR-Selected: hsl(216, 100%, 51%);
+		--sbListItmClr: var(--sbClr-Main);
+		--sbListItmCLR-Hover: hsl(240, 11%, 0%);
 	}
+
+
+
 
 }

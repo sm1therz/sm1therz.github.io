@@ -1,0 +1,44 @@
+/* ==UserStyle==
+@name           rnLocal-1 ROOT
+@namespace      remnote.com
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document domain("remnote.com") {
+	/*//////////////////////
+	REFERENCES
+	//////////////////////*/
+
+	#main .EditorContainer .whitespace-nowrap {
+		white-space: normal !important;
+	}
+
+
+	/*INLINE REFERENCES*/
+	body.light .rem-reference-container[data-rem-tags*="pdf-highlight"] {
+		box-shadow: none !important;
+	}
+
+	/*UNDERLINE to SQUIGLY*/
+
+	/*BORDER ABOVE REFERENCES IN EDITOR*/
+	.tree-node--automatic-search-portal-header {
+		margin-top: 60px !important;
+	}
+
+	.tree-node--automatic-search-portal-header:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		background: var(--Clr-Gray-85);
+		height: 1px;
+		width: 220%;
+		margin: 0 auto;
+		left: -50vw;
+		right: -50vw;
+	}
+
+}
