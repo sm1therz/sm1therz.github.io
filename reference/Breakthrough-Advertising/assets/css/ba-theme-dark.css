@@ -1,0 +1,58 @@
+
+/*
+
+.darkMode body{
+    background: black;
+    color: hsl(0,0%,86%)
+}
+.darkMode h1,
+.darkMode h2,
+.darkMode h3,
+.darkMode h4,
+.darkMode h5,
+.darkMode h6,
+.darkMode .font-weight-600 {
+color: hsl(0, 0%, 100%) !important;
+border-color: hsl(0, 0%, 94%) !important;
+-webkit-text-stroke-width: 0px !important;
+
+}
+.darkMode .numbered-title-number-container {
+  color: white;
+  background: black;
+}
+
+.darkMode .centered.text-stroke-08, 
+.darkMode .centered.text-stroke-04, 
+.darkMode .text-stroke-08, 
+.darkMode .copy-swipe-example-caslon-centered.ultra-weight {
+-webkit-font-smoothing: antialiased !important;
+color: hsl(0, 0%, 95%) !important;
+-webkit-text-stroke-color: hsl(0, 0%, 95%) !important;
+}
+
+.darkMode .note-1, 
+.darkMode .important-quote {
+background-color: hsl(0,0%,10.5%) !important;
+box-shadow: inset 0 0 0 1px #222222 !important;
+}
+
+.darkMode .font-weight-600 {
+color: hsl(0, 0%, 100%) !important;
+border-color: hsl(0, 0%, 94%) !important;
+}
+ol li:before,
+ul li:before {
+  background: white !important;
+}
+
+
+.darkMode .numbered-title-number-container-outer-small {
+  background-image: url("VERSACE-WHITE.png");
+}
+
+.darkMode strong,
+.darkMode b {
+  color:white;
+}
+*/
