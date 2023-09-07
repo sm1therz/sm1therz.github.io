@@ -14,7 +14,7 @@ body,
     max-width: 100%;
 }
 
-.rs-main {
+.main-wrapper {
     width: 800px;
     max-width: 100%;
     margin: 0 auto;
@@ -23,7 +23,7 @@ body,
 }
 
 /*ANCHOR HEADINGS*/
-.rs-main .anchor-heading svg {
+.main-wrapper .anchor-heading svg {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -33,13 +33,13 @@ body,
 
 }
 
-.rs-main .anchor-heading:hover svg,
-.rs-main h1:hover>.anchor-heading svg,
-.rs-main h2:hover>.anchor-heading svg,
-.rs-main h3:hover>.anchor-heading svg,
-.rs-main h4:hover>.anchor-heading svg,
-.rs-main h5:hover>.anchor-heading svg,
-.rs-main h6:hover>.anchor-heading svg {
+.main-wrapper .anchor-heading:hover svg,
+.main-wrapper h1:hover>.anchor-heading svg,
+.main-wrapper h2:hover>.anchor-heading svg,
+.main-wrapper h3:hover>.anchor-heading svg,
+.main-wrapper h4:hover>.anchor-heading svg,
+.main-wrapper h5:hover>.anchor-heading svg,
+.main-wrapper h6:hover>.anchor-heading svg {
     visibility: visible;
     left: 0;
 }
@@ -1196,12 +1196,12 @@ sample-original-text
 
 
 
-.rs-main ul,
-.rs-main ol {
+.main-wrapper ul,
+.main-wrapper ol {
     padding-left: 50px !important;
 }
 
-.rs-main ul>li::before {
+.main-wrapper ul>li::before {
     position: absolute;
     margin-left: -1.4em;
     background-color: black;
