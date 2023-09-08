@@ -1,28 +1,69 @@
-/*#table-of-contents{
-	position: fixed;
+#toc {
+	position: sticky;
 	z-index: 22;
-	background: white;
-	overflow-y: scroll;
+	overflow: hidden;
 	bottom: 0;
 	top: 0;
 	left: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	border-right: 1px solid var(--tocBrdClr);
+	line-height: 1.1 !important;
+	letter-spacing: 0px !important;
+	background: var(--bgPrimary);
+	padding-bottom: 100px;
+}
+.toc-wrap{
+	height: 100vh;
 	padding: 5px 15px;
-	width: 250px;
+	overflow-y: scroll;
+	padding-bottom: 100px !important; 
+
 }
-#table-of-contents p {
-	margin-top: 5px;
-	margin-bottom: 5px;
+#toc span{
+	line-height: unset;
 }
-#table-of-contents a {
+#toc a {
+	font-size: .85rem;
+	line-height: 1.25 !important;
+	color: var(--tocLinkClr);
+	transition: .2s;
+}
+#toc a:hover,
+#toc a:focus{
+	color: var(--tocLinkClr-Hover);
+}
+#toc * {
+	text-align: left !important;
+}
+
+#toc p {
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
+}
+
+#toc a {
 	text-decoration: none;
 }
-#table-of-contents .text_1{
-	font-size: 14px;
-	font-family: sans-serif;
+/*title*/
+#toc h3{
+	margin-top: 20px !important;
+	margin-bottom: 10px !important;
+	font-size: 1.05rem !important;
+	line-height: 1.1 !important
 }
-@media (max-width: 800px){
-# {
-
+/*headers*/
+#toc .text_1 {
+	font-weight: 500;
+	-webkit-font-smoothing:subpixel-antialiased;
+	text-transform: capitalize;
 }
-}*/
+/*smaller text*/
+#toc .text_2{
+	padding-left: 12px !important;
+}
 
+@media (max-width: 800px) {
+	#toc {
+		
+	}
+}
