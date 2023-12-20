@@ -1,0 +1,72 @@
+html,
+body,
+.main-content-wrap,
+.page-wrap,
+.page,
+.pagecontent {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	max-width: 100%;;
+}
+
+.main-wrapper {
+	width: 100%;
+	max-width: 100%;
+}
+
+.app-wrap {
+	width: 1200px;
+	max-width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+
+/*BOOKWRAPPER*/
+.book-wrapper{
+	width: 65%;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	margin: 0 auto;
+	max-width: 100%
+}
+/*BOOK*/
+.book {
+    width:660px;
+    max-width: 100%;
+    margin:0 auto;
+    
+}
+
+#toc {
+	width: 25%;
+}
+
+/*ANCHOR HEADINGS*/
+.main-wrapper .anchor-heading svg {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	fill: #7253ed;
+	visibility: hidden;
+	position: absolute;
+
+}
+
+.main-wrapper .anchor-heading:hover svg,
+.main-wrapper h1:hover>.anchor-heading svg,
+.main-wrapper h2:hover>.anchor-heading svg,
+.main-wrapper h3:hover>.anchor-heading svg,
+.main-wrapper h4:hover>.anchor-heading svg,
+.main-wrapper h5:hover>.anchor-heading svg,
+.main-wrapper h6:hover>.anchor-heading svg {
+	visibility: visible;
+	left: 0;
+}
+@media (max-width:800px){
+    
+}
