@@ -11,9 +11,15 @@
   bottom: unset !important;
   left: unset !important;
   right: unset !important;
-  width: 660px;
   max-width: 100%;
   margin: 0 auto;
+}
+#toc, .book {
+  width: 620px;
+}
+.book h4, .book h5 {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
 }
 #toc:before {
   display: none;

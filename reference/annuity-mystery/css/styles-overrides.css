@@ -21,16 +21,16 @@ section {}
 /***************
 COVER
 ****************/
-.testi {
+.book .testi {
   font-style: italic;
   margin-top: .8rem;
-  margin-bottom: 0px;
+  margin-bottom: 0px !important;
   ;
 }
-.testi-author {
+.book p.testi-author {
   font-weight: 700;
-  margin-top: .25rem;
-  text-align: right;
+  margin-top: .25rem !important;
+  text-align: right !important;
 }
 /***************
 PAGE WRAPPER
@@ -139,12 +139,12 @@ LISTS AND PARAGRAPHS
 ****************/ 
 :root {
   --bodyTxt: 1.05rem;
-  --bodyTxtLineHeight: 1.375;
+  --bodyTxtLineHeight: 1.45;
   --h1Txt: 3.5trem;
   /*paragraph*/
-  --paraMargTopBtm: 18px;
+  --paraMargTopBtm: 16px;
   /*list*/
-  --listMargTopBtm: 5px;
+  --listMargTopBtm: 7px;
 }
 .book p, .book ol li, .book ul li, .book h5, .book h6, .book h4 {
   font-size: var(--bodyTxt);
