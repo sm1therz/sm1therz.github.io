@@ -1,72 +1,245 @@
-html,
-body,
-.main-content-wrap,
-.page-wrap,
-.page,
-.pagecontent {
-	padding: 0px;
-	margin: 0px;
-	width: 100%;
-	max-width: 100%;;
+* {
+  box-sizing: border-box !important;
 }
-
+html, body, .main-content-wrap, .page-wrap, .page, .pagecontent {
+  padding: 0px !important;
+  margin: 0px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  font-family: "Iowan", georgia, serif !important;
+}
+/*****************
+******************
+MAIN DOCUMENT STRUCTURE
+******************
+******************/
 .main-wrapper {
-	width: 100%;
-	max-width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
 }
-
 .app-wrap {
-	width: 1200px;
-	max-width: 100%;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: flex-start;
+  width: 1600px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-
-
 /*BOOKWRAPPER*/
-.book-wrapper{
-	width: 65%;
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
-	margin: 0 auto;
-	max-width: 100%
+.book-wrapper {
+  width: 65%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin: 0 auto;
+  max-width: 100% !important;
+  overflow-x: hidden;
+  margin-right: 10%;
 }
 /*BOOK*/
 .book {
-    width:660px;
-    max-width: 100%;
-    margin:0 auto;
-    
+  width: 660px;
+  max-width: 100%;
+  margin: 0 auto;
 }
-
-#toc {
-	width: 25%;
-}
-
 /*ANCHOR HEADINGS*/
 .main-wrapper .anchor-heading svg {
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	fill: #7253ed;
-	visibility: hidden;
-	position: absolute;
-
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  fill: #7253ed;
+  visibility: hidden;
+  position: absolute;
 }
-
-.main-wrapper .anchor-heading:hover svg,
-.main-wrapper h1:hover>.anchor-heading svg,
-.main-wrapper h2:hover>.anchor-heading svg,
-.main-wrapper h3:hover>.anchor-heading svg,
-.main-wrapper h4:hover>.anchor-heading svg,
-.main-wrapper h5:hover>.anchor-heading svg,
-.main-wrapper h6:hover>.anchor-heading svg {
-	visibility: visible;
-	left: 0;
+.main-wrapper .anchor-heading:hover svg, .main-wrapper h1:hover > .anchor-heading svg, .main-wrapper h2:hover > .anchor-heading svg, .main-wrapper h3:hover > .anchor-heading svg, .main-wrapper h4:hover > .anchor-heading svg, .main-wrapper h5:hover > .anchor-heading svg, .main-wrapper h6:hover > .anchor-heading svg {
+  visibility: visible;
+  left: 0;
 }
-@media (max-width:800px){
-    
+/*****************
+HEADINGS
+******************/
+.book h5 * {
+  font-weight: 700 !important;
+  -webkit-font-smoothing:subpixel-antialiased !important;
+}
+.book h6 {
+  
+}
+/*****************
+******************
+FOOTNOTES
+******************
+******************/ :root {
+  --footnoteNumbWidth: 20px;
+}
+.footnotes {
+  border-top: 1px solid rgba(0, 0, 0, .5) !important;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.footnotes > div {
+  padding-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: var(--footnoteNumbWidth) !important;
+}
+.footnotes a[id*="ftnt"] {
+  position: absolute;
+  left: 0;
+  color: black
+}
+.footnotes * {
+  font-size: .8rem;
+  line-height: 1.3
+}
+sup {
+  display: inline-block;
+  line-height: 0 !important;
+}
+/*****************
+******************
+TOC / TABLE OF CONTENTS
+******************
+******************/
+#toc {
+  position: sticky;
+  z-index: 22;
+  overflow: hidden;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.1 !important;
+  letter-spacing: 0px !important;
+  background: var(--bgPrimary);
+  padding-bottom: 100px;
+  width: 25%;
+  border:none !important;
+}
+.toc-wrap {
+  height: 100vh;
+  padding: 5px 15px;
+  overflow-y: scroll;
+  padding-bottom: 100px !important;
+}
+/*TOC BORDER*/
+#toc:before {
+    content: "";
+    display: block;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    background: var(--tocBrdClr);
+    z-index: 9292;
+    height: 93vh;
+    top: 3.5vh;
+}
+#toc span {
+  line-height: unset;
+}
+#toc a {
+  font-size: .83rem;
+  line-height: 1.25 !important;
+  color: var(--tocLinkClr);
+  transition: .2s;
+}
+#toc a:hover, #toc a:focus {
+  color: var(--tocLinkClr-Hover);
+}
+#toc * {
+  text-align: left !important;
+}
+#toc p {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+#toc a {
+  text-decoration: none;
+}
+/*title*/
+#toc h3 {
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  font-size: 1.05rem !important;
+  line-height: 1.1 !important;
+  display: none;
+}
+/*headers*/
+#toc .text_1 {
+  font-weight: 500;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-transform: capitalize;
+}
+/*smaller text*/
+#toc .text_2 {
+  padding-left: 12px !important;
+}
+/*CONTENTS HEADER*/
+#toc .toc-wrap:before {
+  content: "Contents";
+  display: block;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  font-size: 1.05rem !important;
+  line-height: 1.1 !important;
+  font-weight: 600;
+}
+/*****************
+TOC LISTS
+******************/
+
+#toc ul, #toc ol {
+  padding-left: 20px;
+  list-style-type: none;
+}
+#toc ul:first-child {
+  padding-left: 0px;
+}
+/*******
+TOC ACTIVE A
+********/
+#toc a.active {
+  color: var(--tocLinkClr-Active);
+  font-weight: 500 !important;
+}
+#toc a.active span {
+  font-weight: 600 !important;
+}
+/*****************
+******************
+MEDIA QUERIES
+******************
+******************/
+
+/*****************
+TOC MOBILE BUTTON
+******************/
+@media (max-width: 900px) {
+  #toc {
+    width: 23%;
+  }
+}
+@media (max-width:700px) {
+  .book-wrapper {
+    width: 100%;
+    margin-right: 0%;
+  }
+  /*Toc*/
+  #toc {
+    width: 100%;
+    position: relative !important;
+    top: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    right: unset !important;
+  }
+  .toc-wrap {
+    overflow: unset;
+    padding-bottom: 20px !important;
+    height: unset !important;
+  }
+  .app-wrap {
+    flex-direction: column;
+  }
 }
