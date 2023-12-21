@@ -17,8 +17,7 @@ body {
 /***************
 ROOT
 ****************/
-section {
-}
+section {}
 /***************
 COVER
 ****************/
@@ -74,10 +73,10 @@ nav {
   overflow-y: scroll;
   padding-bottom: 100px !important;
 }
-#toc ul:first-child > li{
+#toc ul:first-child > li {
   margin-top: .25rem
 }
-#toc ul > li{
+#toc ul > li {
   margin-top: .25rem;
 }
 /***************
@@ -94,7 +93,6 @@ BODY
   hyphens: auto !important;
   -webkit-hyphens: auto !important;
 }
-
 /***************
 SUPERSCRIPT
 ****************/
@@ -112,30 +110,28 @@ Headings
 }
 .book h2 {
   font-size: 2.75rem !important;
-  margin-bottom:0px;
-  margin-top:100px;
-  padding-top:20px;
+  margin-bottom: 0px;
+  margin-top: 100px;
+  padding-top: 20px;
 }
 .book h3 {
   font-size: 1.9rem !important;
   line-height: 1.25 !important;
-  margin-top: 0px ;
+  margin-top: 0px;
   margin-bottom: 50px !important;
-  padding-bottom:20px;
-
+  padding-bottom: 20px;
 }
 .book h3 * {
   font-weight: 300;
 }
-
-.book h4{
+.book h4 {
   font-size: calc(var(--bodyTxt) + 5px) !important;
 }
-.book h5{
-  -webkit-text-stroke:.3px;
+.book h5 {
+  -webkit-text-stroke: .3px;
   font-size: calc(var(--bodyTxt) + 1.5px) !important;
 }
-h6{
+h6 {
   font-weight: 400;
 }
 /***************
@@ -145,24 +141,31 @@ LISTS AND PARAGRAPHS
   --bodyTxt: 1.05rem;
   --bodyTxtLineHeight: 1.375;
   --h1Txt: 3.5trem;
+  /*paragraph*/
+  --paraMargTopBtm: 18px;
+  /*list*/
+  --listMargTopBtm: 5px;
 }
-.book p, .book ol li, .book  ul li,
-.book h5,.book h6,.book h4{
+.book p, .book ol li, .book ul li, .book h5, .book h6, .book h4 {
   font-size: var(--bodyTxt);
   line-height: var(--bodyTxtLineHeight);
-  margin-top:20px!important;
-  margin-bottom:20px!important;
-  padding-top:0px !important;
-  padding-bottom:0px !important;
+  margin-top: var(--paraMargTopBtm) !important;
+  margin-bottom: var(--paraMargTopBtm) !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 .book p {
   text-align: justify;
 }
-.book h4,.book h5 {
-  margin-top:30px!important;
-  margin-bottom:30px!important; 
+.book h4, .book h5 {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
 }
-
+.book ol li, .book ul li {
+  margin-top: var(--listMargTopBtm) !important;
+  margin-bottom: var(--listMargTopBtm) !important;
+}
+.book ol, .book ul {}
 /***************
 QUOTES
 ****************/
@@ -173,7 +176,7 @@ p.c5.c27, p.c5.c45 {
   width: 500px !important;
   max-width: 100% !important;
   padding-top: 5px !important;
-  padding-bottom:5px !important;
+  padding-bottom: 5px !important;
 }
 /***************
 IMAGES
@@ -217,7 +220,7 @@ table {
 }
 .book table p {
   margin-top: 0px !important;
-  margin-bottom:0px !important;
+  margin-bottom: 0px !important;
 }
 /***************
 FOOTNOTeS
@@ -282,4 +285,9 @@ IOWAN FONTS
 .subtitle {
   font-size: 2.4rem !important;
   line-height: 1.3 !important;
+}
+h5.c104 {
+  font-size: 1.4rem !important;
+  text-align: center;
+  margin-bottom: 0px !important;
 }
