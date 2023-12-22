@@ -206,6 +206,10 @@ TOC ACTIVE A
 #toc a.active span {
   font-weight: 600 !important;
 }
+
+/*TocHeader*/
+.toc-header{
+}
 /*****************
 ******************
 MEDIA QUERIES
