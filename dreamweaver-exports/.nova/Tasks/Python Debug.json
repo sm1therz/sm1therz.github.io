@@ -1,0 +1,11 @@
+{
+  "extension" : {
+    "identifier" : "panic.Python",
+    "name" : "Python"
+  },
+  "extensionTemplate" : "pythonDebug",
+  "extensionValues" : {
+    "python.debug.script" : "\/Users\/adman\/Documents\/GitHub\/sm1therz.github.io\/dreamweaver-exports\/WF-reddit-i-just-found-out-my-parents\/Singlefile\/extract_images.py"
+  },
+  "openLogOnRun" : "start"
+}
