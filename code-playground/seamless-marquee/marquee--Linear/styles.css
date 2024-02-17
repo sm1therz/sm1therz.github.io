@@ -1,0 +1,185 @@
+/*! CSS Used from: file:///Users/adman/Dropbox/Dropbox%20Local/MISC/NOVA%20DOCS/tsprp-about-marquee/about-marquee/Linear-marquee/styles.css */
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(240, 100%, 25%);
+}
+
+
+
+.eZvUvp {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  flex-shrink: 0;
+  border-radius: 25%;
+  overflow: hidden;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 1px 0px inset;
+  background: linear-gradient(155.91deg, rgb(24, 25, 28) 21.92%, rgb(33, 34, 37) 77.49%);
+}
+
+
+
+.marquee_container{
+
+}
+
+.marquee_tag-team {
+  display: flex;
+  position: relative;
+  animation: 700ms ease-out 0s 1 normal backwards running marquee-icons-on-load-fade;
+  will-change: opacity;
+}
+
+.marquee-row {
+  margin-bottom: 32px !important;
+}
+
+@media (max-width: 700px) {
+  .marquee-row {
+    margin-bottom: 24px !important;
+  }
+}
+
+.gBYMyP {
+  --icon-size: 74px;
+  --icon-image-size: 32px;
+  margin-right: 32px;
+}
+
+@media (max-width: 700px) {
+  .gBYMyP {
+    --icon-size: 48px;
+    --icon-image-size: 24px;
+    margin-right: 24px;
+  }
+}
+
+
+/*************
+**************
+ROW 1
+**************
+**************/
+
+/**********
+MARQUEE > MARQUEE ROW
+ **********/
+.marquee-row.row-1 {
+  --marquee-start: 0%;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+/**********
+MARQUEE > MARQUEE ROW > ITEMS WRAPPER
+**********/
+.marquee-item-wrap-1 {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  transform: translateX(var(--marquee-start, 0%));
+  will-change: transform;
+  animation: 26s linear 0s infinite normal backwards running row-1-animation;
+}
+
+/*************
+**************
+ROW 2
+**************
+**************/
+
+/**********
+MARQUEE > MARQUEE ROW
+**********/
+.marquee-row.row-2 {
+  --marquee-start: 80%;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+/**********
+MARQUEE > MARQUEE ROW > ITEMS WRAPPER
+**********/
+.marquee-item-wrap-2 {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  transform: translateX(var(--marquee-start, 0%));
+  will-change: transform;
+  animation: 19s linear 0s infinite normal backwards running row-1-animation;
+}
+
+/*************
+**************
+ROW 3
+**************
+**************/
+
+/**********
+MARQUEE > MARQUEE ROW
+**********/
+.marquee-row.row-3 {
+  --marquee-start: 50%;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+/**********
+MARQUEE > MARQUEE ROW > ITEMS WRAPPER
+**********/
+.marquee-item-wrap-3 {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  transform: translateX(var(--marquee-start, 0%));
+  will-change: transform;
+  animation: 29s linear 0s infinite normal backwards running row-1-animation;
+}
+
+
+
+@keyframes row-1-animation {
+  0% {
+    transform: translateX(var(--marquee-start, 0%));
+  }
+
+  100% {
+
+    transform: translateX(calc(-100% + var(--marquee-start, 0%)));
+  }
+}
+
+@keyframes marquee-icons-on-load-fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
