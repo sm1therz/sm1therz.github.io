@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/************
+ROOT
+*************/
+:root {
+  --brdClr: hsl(0, 0%, 50%, .25);
+  /*testing*/
+  --testBrdrWidth: 1px;
+}
+
+html {
+  font-family: Proxima Nova, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  background: hsla(0, 0%, 100%);
+}
+
+/************
+*************
+*************
+STRUCTURAL
+*************
+*************
+*************/
+
+
+/****
+OUTERMOST WRAPPER
+Must have height explicitly set - can't be 100%*/
+
+.note-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+/*NOTE > NAV*/
+.note-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+/*NOTE > BODY*/
+.note-body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
+  flex: 2;
+
+}
+.note-body-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+/*NOTE > INFO*/
+.note-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.note-info-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.note-info-body-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+/************
+*************
+*************
+COSMETIC
+(below doesn't affect flex-grow function)
+*************
+*************
+*************/
+
+/*testing - borders*/
+body {
+  border: var(--testBrdrWidth) solid turquoise;
+}
+
+/*inner wrapper width*/
+:root {
+  --innerWrapWidth: 500px;
+}
+
+.note-wrap,
+.note-nav,
+.note-body,
+.note-body-container,
+.note-info-body-container,
+.note-body-item,
+.note-info,
+.note-info-item {
+  border: var(--testBrdrWidth) solid blue;
+}
+
+.note-body-container,
+.note-info-body-container {
+  border-color: hsl(120, 100%, 32%);
+}
+.note-nav,
+.note-body,
+.note-info {
+  border-color: hsl(360, 100%, 50%);
+  width: 100%;
+}
+
+/*body and nav*/
+
+
+/*NAV*/
+.note-nav {
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.note-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--innerWrapWidth);
+  max-width: 100%;
+}
+
+.note-nav-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+/*BODY*/
+.note-body-container {
+  width: var(--innerWrapWidth);
+  max-width: 100%;
+  gap:.5rem;
+
+}
+
+/*INFO*/
+.note-info {
+  width: 100%;
+}
+
+/*INFO > NAV*/
+.note-info-nav {
+  width: 100%;
+  padding:20px;
+}
+
+.note-info-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  width: var(--innerWrapWidth);
+}
+
+.note-info-nav-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+/*INFO BODY*/
+.note-info-body-container{
+  justify-content: space-between;
+  max-width: 100%;
+  width: var(--innerWrapWidth);
+  gap:.5rem;
+  
+}
+
+/*ITEMS*/
+.note-body-item,
+.note-info-item {
+  border-color: blue;
+  width: 100%;
+  padding: 5px 10px;
+}

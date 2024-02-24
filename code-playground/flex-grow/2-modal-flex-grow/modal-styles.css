@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+  font-family: Proxima Nova, -apple-system, BlinkMacSystemFont, Helvetica Neue,
+    Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/************
+ ************
+ FUNCTIONAL CSS
+ ************
+ ************/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Parent Must have height explicitly set - can't be 100%*/
+.container-parent {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+}
+.container.flex-grow {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+/************
+ ************
+ DECORATIVE CSS
+ ************
+ ************/
+* {
+  border-color: rgb(150, 150, 150) !important;
+}
+html,
+body {
+  background: hsl(0, 0%, 50%);
+  margin: 0;
+  padding: 0;
+}
+
+.container-parent {
+  background: white;
+  border-radius: 7px;
+}
+.nav,
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+.item,
+.button {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px 7px;
+}
+.container.nav {
+  border-bottom: 1px solid;
+}
+.container.footer {
+  border-top: 1px solid;
+}
+.button {
+  background: rgb(150, 150, 150, 0.25);
+}
