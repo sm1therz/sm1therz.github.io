@@ -1,0 +1,41 @@
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  padding: 10px 20px;
+
+}
+:root{
+  --textPaddingTop:0px;
+  --textPaddingBtm:10px;
+  --textLineHeight:30px;
+  --textFontSize:18px;
+}
+
+body {
+  display: block;
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 30px;
+  font-family: Inter, sans-serif;
+  font-optical-sizing:auto;
+  cursor: text;
+}
+p {
+  line-height: var(--textLineHeight);
+  padding-top: var(--textPaddingTop);
+  padding-bottom: var(--textPaddingBtm);
+  white-space: pre-wrap;
+}
+mark {
+  background: #fce969;
+  padding: 10px;
+}

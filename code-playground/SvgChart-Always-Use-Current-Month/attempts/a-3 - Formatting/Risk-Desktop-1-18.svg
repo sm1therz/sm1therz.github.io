@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="440" viewBox="0 0 680 440">
+      <defs>
+            <linearGradient id="Gradient-0" x1="305.9" y1="0" x2="305.9" y2="287" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#268aff" stop-opacity=".4" />
+                  <stop offset="1" stop-color="#268aff" stop-opacity=".1" />
+            </linearGradient>
+            <linearGradient id="Gradient-1" x1="305.9" y1="0" x2="305.9" y2="229" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#1ed6ff" stop-opacity=".4" />
+                  <stop offset="1" stop-color="#1ed6ff" stop-opacity=".1" />
+            </linearGradient>
+            <linearGradient id="Gradient-2" x1="0" y1="-6" x2="0" y2="6" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#1ed6ff" stop-opacity=".4" />
+                  <stop offset="1" stop-color="#1ed6ff" stop-opacity=".1" />
+            </linearGradient>
+            <linearGradient id="Gradient-3" x1="0" y1="-3" x2="0" y2="3" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#1ed6ff" stop-opacity=".4" />
+                  <stop offset="1" stop-color="#1ed6ff" stop-opacity=".1" />
+            </linearGradient>
+            <linearGradient id="Gradient-4" x1="299.9" y1="0" x2="299.9" y2="185" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#36f097" stop-opacity=".4" />
+                  <stop offset="1" stop-color="#36f097" stop-opacity=".1" />
+            </linearGradient>
+            <clipPath id="clip-path">
+                  <rect id="MASK" x="40" y="50" class="cls-1" width="600" height="300" stroke="#707070" fill="#fff" />
+            </clipPath>
+      </defs>
+      <rect id="background" class="cls-3" width="680" height="440" fill="#24262d" />
+      <g id="Legend" transform="translate(40,403)">
+            <g id="Label-Strat" transform="translate(397,0)"><text id="strat" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(16,13)">
+                        <tspan x="0" y="0">Strategy 5</tspan>
+                  </text>
+                  <g id="swatch" class="cls-5" stroke="rgba(255,255,255,0.20)" fill="#f94144" transform="translate(0,4)">
+                        <rect class="cls-26" width="10" height="10" rx="2" />
+                        <rect x=".5" y=".5" class="cls-27" width="9" height="9" rx="1.5" fill="none" />
+                  </g>
+            </g>
+            <g id="Label-Strat-2" data-name="Label-Strat" transform="translate(307,0)"><text id="strat-2" data-name="strat" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(16,13)">
+                        <tspan x="0" y="0">Strategy 4</tspan>
+                  </text>
+                  <g id="swatch-2" data-name="swatch" class="cls-6" stroke="#f9c74f" fill="#f9c74f" transform="translate(0,4)">
+                        <rect class="cls-26" width="10" height="10" rx="2" />
+                        <rect x=".5" y=".5" class="cls-27" width="9" height="9" rx="1.5" fill="none" />
+                  </g>
+            </g>
+            <g id="Label-Strat-3" data-name="Label-Strat" transform="translate(217,0)"><text id="strat-3" data-name="strat" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(16,13)">
+                        <tspan x="0" y="0">Strategy 3</tspan>
+                  </text>
+                  <g id="swatch-3" data-name="swatch" class="cls-7" fill="#36f097" stroke="rgba(255,255,255,0.20)" transform="translate(0,4)">
+                        <rect class="cls-26" width="10" height="10" rx="2" />
+                        <rect x=".5" y=".5" class="cls-27" width="9" height="9" rx="1.5" fill="none" />
+                  </g>
+            </g>
+            <g id="Label-Strat-4" data-name="Label-Strat" transform="translate(127,0)"><text id="strat-4" data-name="strat" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(16,13)">
+                        <tspan x="0" y="0">Strategy 2</tspan>
+                  </text>
+                  <g id="swatch-4" data-name="swatch" class="cls-8" fill="#1ed6ff" stroke="rgba(255,255,255,0.20)" transform="translate(0,4)">
+                        <rect class="cls-26" width="10" height="10" rx="2" />
+                        <rect x=".5" y=".5" class="cls-27" width="9" height="9" rx="1.5" fill="none" />
+                  </g>
+            </g>
+            <g id="Label-Strat-5" data-name="Label-Strat"><text id="strat-5" data-name="strat" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(16,13)">
+                        <tspan x="0" y="0">Current Strategy</tspan>
+                  </text>
+                  <g id="swatch-5" data-name="swatch" class="cls-9" fill="#268aff" stroke="rgba(255,255,255,0.20)" transform="translate(0,4)">
+                        <rect class="cls-26" width="10" height="10" rx="2" />
+                        <rect x=".5" y=".5" class="cls-27" width="9" height="9" rx="1.5" fill="none" />
+                  </g>
+            </g>
+      </g>
+      <g id="Mask_Group_1" data-name="Mask Group 1" class="cls-10" clip-path="url(#clip-path)">
+            <g id="Chart" transform="translate(40.1,50)">
+                  <g id="a3">
+                        <path id="a3-line" class="cls-11" d="M.9 47l71.3-39l66.3-8l66.2 40l67.5 20l66.3-34.5l66.2 46.5l66.3-44l66.2 11l73.7-27v275h-610Z" fill-rule="evenodd" stroke-width="2px" fill="url(#Gradient-0)" stroke="#268aff" transform="translate(-6,18)" />
+                        <g id="dot-3" transform="translate(-6,55)">
+                              <ellipse id="a3-dot-fade" cx="6" cy="6" class="cls-12" rx="6" ry="6" opacity=".2" fill="#268aff" stroke="#707070" />
+                              <ellipse id="a3-dot-opaque" cx="6" cy="6" class="cls-13" rx="3" ry="3" fill="#268aff" stroke="#707070" />
+                        </g>
+                  </g>
+                  <g id="a2">
+                        <path id="a2-line" class="cls-14" d="M.9 79l71.3-79l66.3 8l66.2 64l67.6-28l66.2 34.5l66.3-30.5l66.2 28l66.3-53l73.6 11v195h-610Z" fill="url(#Gradient-1)" stroke="#1ed6ff" fill-rule="evenodd" stroke-width="2px" transform="translate(-6,76)" />
+                        <g id="a2-dot" transform="translate(294,131.2)">
+                              <ellipse id="a2-dot-fade" class="cls-15" rx="6" ry="6" fill="url(#Gradient-2)" opacity=".2" stroke="#707070" transform="translate(6,6)" />
+                              <ellipse id="a2-dot-opaque" class="cls-16" rx="3" ry="3" fill="url(#Gradient-3)" stroke="#707070" transform="translate(6,6)" />
+                        </g>
+                  </g>
+                  <g id="a1">
+                        <path id="a1-line" class="cls-17" d="M66.2 0l-71.3 85v100h610v-147.2l-73.6 49.2l-66.3-27l-66.2 84l-66.3-17.5l-66.2-74.5l-67.5 12l-66.3 24Z" fill="url(#Gradient-4)" stroke="#36f097" stroke-width="2px" transform="translate(0,120)" />
+                        <g id="a1-dot" transform="translate(294,204)">
+                              <ellipse id="a1-dot-fade" cx="6" cy="6" class="cls-18" rx="6" ry="6" fill="rgba(54,240,151,0.70)" opacity=".2" stroke="#707070" />
+                              <ellipse id="a1-dot-opaque" cx="6" cy="6" class="cls-19" rx="3" ry="3" fill="#00ff85" stroke="#707070" />
+                        </g>
+                  </g>
+            </g>
+      </g>
+      <g id="X-Grid_Text" data-name="X-Grid Text" transform="translate(-3.9,41.6)"><text id="_-30" data-name="-30" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(4.9,300)">
+                  <tspan x="2.771" y="13">-30%</tspan>
+            </text><text id="_-20" data-name="-20" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(4.9,250)">
+                  <tspan x="2.771" y="13">-20%</tspan>
+            </text><text id="_-10" data-name="-10" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(4.9,200)">
+                  <tspan x="2.771" y="13">-10%</tspan>
+            </text><text id="_0" data-name="0" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(4.9,150)">
+                  <tspan x="13.459" y="13">0%</tspan>
+            </text><text id="_10" data-name="10" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(4.8,100)">
+                  <tspan x="6.85" y="13">10%</tspan>
+            </text><text id="_20" data-name="20" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(4.8,50)">
+                  <tspan x="6.85" y="13">20%</tspan>
+            </text><text id="_30" data-name="30" class="cls-4" font-family="Noto Sans" font-size="12px" stroke="rgba(0,0,0,0.00)" fill="rgba(255,255,255,0.60)" transform="translate(4.8,.4)">
+                  <tspan x="6.85" y="13">30%</tspan>
+            </text></g>
+      <g id="X-Grid_Lines-Stub" data-name="X-Grid Lines-Stub" transform="translate(-5,-198.4)">
+            <g id="X-Line" transform="translate(41,548.4)">
+                  <path id="stub" class="cls-20" d="M4 0h-5" stroke-linecap="round" stroke="#969696" fill="#fff" />
+                  <path id="y_30" data-name="y+30" class="cls-21" d="M4 0h600" stroke-dasharray="2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line-2" data-name="X-Line" transform="translate(41,498.4)">
+                  <path id="stub-2" data-name="stub" class="cls-20" d="M4 0h-5" stroke-linecap="round" stroke="#969696" fill="#fff" />
+                  <path id="y_30-2" data-name="y+30" class="cls-21" d="M4 0h600" stroke-dasharray="2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line-3" data-name="X-Line" transform="translate(41,448.4)">
+                  <path id="stub-3" data-name="stub" class="cls-20" d="M4 0h-5" stroke-linecap="round" stroke="#969696" fill="#fff" />
+                  <path id="y_30-3" data-name="y+30" class="cls-21" d="M4 0h600" stroke-dasharray="2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line-4" data-name="X-Line" transform="translate(41,398.4)">
+                  <path id="stub-4" data-name="stub" class="cls-20" d="M4 0h-5" stroke-linecap="round" stroke="#969696" fill="#fff" />
+                  <path id="y_30-4" data-name="y+30" class="cls-21" d="M4 0h600" stroke-dasharray="2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line-5" data-name="X-Line" transform="translate(41,348.4)">
+                  <path id="stub-5" data-name="stub" class="cls-20" d="M4 0h-5" stroke-linecap="round" stroke="#969696" fill="#fff" />
+                  <path id="y_30-5" data-name="y+30" class="cls-21" d="M4 0h600" stroke-dasharray="2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line-6" data-name="X-Line" transform="translate(41,298.4)">
+                  <path id="stub-6" data-name="stub" class="cls-20" d="M4 0h-5" stroke-linecap="round" stroke="#969696" fill="#fff" />
+                  <path id="y_30-6" data-name="y+30" class="cls-21" d="M4 0h600" stroke-dasharray="2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line-7" data-name="X-Line" transform="translate(41,248.4)">
+                  <path id="stub-7" data-name="stub" class="cls-20" d="M4 0h-5" stroke-linecap="round" stroke="#969696" fill="#fff" />
+                  <path id="y_30-7" data-name="y+30" class="cls-21" d="M4 0h600" stroke-dasharray="2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+      </g>
+      <g transform="translate(30,366.8)">
+            <text id="Month-9" x="610" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Mar</text><text id="Month-8" x="535" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Feb</text><text id="Month-7" x="460" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Jan</text><text id="Month-6" x="385" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Dec</text><text id="Month-5" x="310" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Nov</text><text id="Month-4" x="235" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Oct</text><text id="Month-3" x="160" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Sep</text><text id="Month-2" x="85" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Aug</text><text id="Month-1" x="10" y="12.8" fill="rgba(255,255,255,0.60)" font-size="12" font-family="Noto Sans" letter-spacing="0" word-spacing="0" text-anchor="middle" style="line-height: 14.4px; white-space: pre;">Jul</text>
+      </g>
+      <g id="Y-Grid_Lines" data-name="Y-Grid Lines" transform="translate(-4.5,-0.5)">
+            <g id="X-Line_9" data-name="X-Line 9" transform="translate(644.5,50.5)">
+                  <path id="stub-8" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line_8" data-name="X-Line 8" transform="translate(569.5,50.5)">
+                  <path id="stub-9" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1-2" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line_7" data-name="X-Line 7" transform="translate(494.5,50.5)">
+                  <path id="stub-10" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1-3" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line_6" data-name="X-Line 6" transform="translate(419.5,50.5)">
+                  <path id="stub-11" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1-4" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line_5" data-name="X-Line 5" transform="translate(344.5,50.5)">
+                  <path id="stub-12" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1-5" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line_4" data-name="X-Line 4" transform="translate(269.5,50.5)">
+                  <path id="stub-13" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1-6" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line_3" data-name="X-Line 3" transform="translate(194.5,50.5)">
+                  <path id="stub-14" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1-7" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line_2" data-name="X-Line 2" transform="translate(119.5,50.5)">
+                  <path id="stub-15" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1-8" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+            <g id="X-Line_1" data-name="X-Line 1" transform="translate(44.5,50.5)">
+                  <path id="stub-16" data-name="stub" class="cls-22" d="M0 300v10" fill="none" stroke-linecap="round" stroke="#969696" />
+                  <path id="Line_1-9" data-name="Line 1" class="cls-23" d="M0 0v300" stroke-dasharray="2 2" fill="none" stroke="rgba(255,255,255,0.20)" />
+            </g>
+      </g>
+      <g id="Event" transform="translate(-51.4,0)">
+            <path id="Event-2" data-name="Event" class="cls-24" d="M361.5 0v350" stroke="red" stroke-dasharray="2 2" fill="none" />
+      </g>
+      <g id="Border" transform="translate(39,50)">
+            <path id="brdr-btm" class="cls-25" d="M1 300h600" stroke-linecap="square" fill="none" stroke="#969696" />
+            <path id="brdr-left" class="cls-25" d="M1 300v-300" stroke-linecap="square" fill="none" stroke="#969696" />
+            <path id="brdr-right" class="cls-25" d="M601 300v-300" stroke-linecap="square" fill="none" stroke="#969696" />
+      </g>
+</svg>

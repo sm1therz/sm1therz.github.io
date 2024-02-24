@@ -1,0 +1,95 @@
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8bc1872f58a0d8eaff_MessinaSans-BlackItalic.otf') format('opentype');
+		font-weight: 900;
+		font-style: italic;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8bfe0b4977e5dafaa3_MessinaSans-BoldItalic.otf') format('opentype');
+		font-weight: 700;
+		font-style: italic;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8b50307dabc87925b7_MessinaSans-BookItalic.otf') format('opentype');
+		font-weight: 300;
+		font-style: italic;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8b2cec4c421e395c19_MessinaSans-Black.otf') format('opentype');
+		font-weight: 900;
+		font-style: normal;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8b45df6636e87898ce_MessinaSans-Book.otf') format('opentype');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecfcafe0b49b3e1dafab5_MessinaSans-Light.otf') format('opentype');
+		font-weight: 100;
+		font-style: normal;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8b3a0806748c475698_MessinaSans-LightItalic.otf') format('opentype');
+		font-weight: 100;
+		font-style: italic;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8b523d26a2979239e9_MessinaSans-Regular.otf') format('opentype');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8b3c25b61c59d2cbc9_MessinaSans-RegularItalic.otf') format('opentype');
+		font-weight: 400;
+		font-style: italic;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8b080e5bb81d4cad88_MessinaSans-SemiBold.otf') format('opentype');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8bb5d65d025fac9cd0_MessinaSans-SemiBoldItalic.otf') format('opentype');
+		font-weight: 600;
+		font-style: italic;
+		font-display: swap;
+}
+
+@font-face {
+		font-family: 'Messinasans';
+		src: url('https://uploads-ssl.webflow.com/61772cda0513481841181b34/619ecf8b2cec4c540b395c1a_MessinaSans-Bold.otf') format('opentype');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+}

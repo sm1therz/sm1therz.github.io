@@ -1,0 +1,312 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 800 460">
+	<defs>
+		<style>
+			.a {
+				fill: #24262d;
+			}
+
+			.b,
+			.f,
+			.j {
+				opacity: 0.4;
+			}
+
+			.b,
+			.d,
+			.e {
+				fill: url(#a);
+			}
+
+			.c,
+			.g,
+			.k,
+			.n,
+			.p,
+			.q,
+			.r,
+			.s {
+				fill: none;
+			}
+
+			.c {
+				stroke: #36f097;
+			}
+
+			.c,
+			.g,
+			.k {
+				stroke-width: 2px;
+			}
+
+			.c,
+			.f,
+			.g,
+			.j,
+			.k,
+			.p {
+				fill-rule: evenodd;
+			}
+
+			.d,
+			.h,
+			.l {
+				opacity: 0.2;
+			}
+
+			.f,
+			.h,
+			.i {
+				fill: url(#d);
+			}
+
+			.g {
+				stroke: #1ed6ff;
+			}
+
+			.j {
+				fill: url(#g);
+			}
+
+			.k {
+				stroke: #268aff;
+			}
+
+			.l,
+			.m {
+				fill: #268aff;
+			}
+
+			.n,
+			.s {
+				stroke: #969696;
+			}
+
+			.n {
+				stroke-linecap: round;
+			}
+
+			.o {
+				fill: rgba(255, 255, 255, 0.6);
+				font-size: 12px;
+				font-family: NotoSans, Noto Sans;
+			}
+
+			.p,
+			.q {
+				stroke: rgba(255, 255, 255, 0.2);
+			}
+
+			.p {
+				stroke-dasharray: 2;
+			}
+
+			.q,
+			.r {
+				stroke-dasharray: 2 2;
+			}
+
+			.r {
+				stroke: red;
+			}
+
+			.s {
+				stroke-linecap: square;
+			}
+
+			.t {
+				fill: #f94144;
+			}
+
+			.u {
+				fill: #f9c74f;
+			}
+
+			.v {
+				fill: #36f097;
+			}
+
+			.w {
+				fill: #1ed6ff;
+			}
+		</style>
+		<linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+			<stop offset="0" stop-color="#36f097" />
+			<stop offset="1" stop-color="#36f097" stop-opacity="0.2" />
+		</linearGradient>
+		<linearGradient id="d" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+			<stop offset="0" stop-color="#1ed6ff" />
+			<stop offset="1" stop-color="#1ed6ff" stop-opacity="0.2" />
+		</linearGradient>
+		<linearGradient id="g" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+			<stop offset="0" stop-color="#268aff" />
+			<stop offset="1" stop-color="#268aff" stop-opacity="0.2" />
+		</linearGradient>
+	</defs>
+	<rect class="a" width="800" height="460" />
+	<g transform="translate(100 50)">
+		<path class="b" d="M66.25,0,0,76V180H600V36L531.25,87,465,60l-66.25,84L332.5,126.5,266.25,52l-67.5,12L132.5,88Z" transform="translate(0 120)" />
+		<path class="c" d="M0,76,66.25,0,132.5,88l66.25-24,67.5-12,66.25,74.5L398.75,144,465,60l66.25,27L600,36" transform="translate(0 120)" />
+		<g transform="translate(294 204)">
+			<circle class="d" cx="6" cy="6" r="6" />
+			<circle class="e" cx="3" cy="3" r="3" transform="translate(3 3)" />
+		</g>
+		<path class="f" d="M6,76,72.25,0,138.5,8l66.25,64,67.5-28L338.5,78.5,404.75,48,471,76l66.25-53L606,36V80l-68.75,51L471,104l-66.25,84L338.5,170.5,272.25,96l-67.5,12L138.5,132,72.25,44,6,120Z" transform="translate(-6 76)" />
+		<path class="g" d="M6,76,72.25,0,138.5,8l66.25,64,67.5-28L338.5,78.5,404.75,48,471,76l66.25-53L606,36" transform="translate(-6 76)" />
+		<g transform="translate(-6 146)">
+			<circle class="h" cx="6" cy="6" r="6" />
+			<circle class="i" cx="3" cy="3" r="3" transform="translate(3 3)" />
+		</g>
+		<path class="j" d="M5.98,44,72.23,8l66.25-8,66.25,40,67.5,20,66.25-34.5L404.73,72l66.25-44,66.25,11,68.75-27V94L537.23,81l-66.25,53-66.25-28-62.99,29H335.6l-63.37-33-67.5,28L138.48,66,72.23,58,5.98,134Z" transform="translate(-5.98 18)" />
+		<path class="k" d="M5.98,44,72.23,8l66.25-8,66.25,40,67.5,20,66.25-34.5L404.73,72l66.25-44,66.25,11,68.75-27" transform="translate(-5.98 18)" />
+		<g transform="translate(-5.98 55.02)">
+			<circle class="l" cx="6" cy="6" r="6" />
+			<circle class="m" cx="3" cy="3" r="3" transform="translate(3 3)" />
+		</g>
+	</g>
+	<g transform="translate(56 41.56)">
+		<g transform="translate(4.85 300)">
+			<path class="n" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="o">
+				<tspan x="2.771" y="13">-30%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 250)">
+			<path class="n" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="o">
+				<tspan x="2.771" y="13">-20%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 200)">
+			<path class="n" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="o">
+				<tspan x="2.771" y="13">-10%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 150)">
+			<path class="n" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="o">
+				<tspan x="13.459" y="13">0%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 100)">
+			<path class="n" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="o">
+				<tspan x="6.85" y="13">10%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 50)">
+			<path class="n" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="o">
+				<tspan x="6.85" y="13">20%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85)">
+			<path class="n" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="o">
+				<tspan x="6.85" y="13">30%</tspan>
+			</text>
+		</g>
+	</g>
+	<g transform="translate(55 -198.44)">
+		<path class="p" d="M45,258.44H645" transform="translate(0 290)" />
+		<path class="p" d="M45,258.44H645" transform="translate(0 240)" />
+		<path class="p" d="M45,258.44H645" transform="translate(0 190)" />
+		<path class="p" d="M45,258.44H645" transform="translate(0 140)" />
+		<path class="p" d="M45,258.44H645" transform="translate(0 90)" />
+		<path class="p" d="M45,258.44H645" transform="translate(0 40)" />
+		<path class="p" d="M45,258.44H645" transform="translate(0 -10)" />
+	</g>
+	<g transform="translate(83.15 344.06)">
+		<g transform="translate(591.85 15.94)"><text class="o">
+				<tspan x="-10.189" y="13">Feb</tspan>
+			</text></g>
+		<g transform="translate(516.85 15.94)"><text class="o">
+				<tspan x="-8.713" y="13">Jan</tspan>
+			</text></g>
+		<g transform="translate(441.85 15.94)"><text class="o">
+				<tspan x="-10.644" y="13">Dec</tspan>
+			</text></g>
+		<g transform="translate(366.85 15.94)"><text class="o">
+				<tspan x="-11.177" y="13">Nov</tspan>
+			</text></g>
+		<g transform="translate(291.85 15.94)"><text class="o">
+				<tspan x="-9.729" y="13">Oct</tspan>
+			</text></g>
+		<g transform="translate(216.85 15.94)"><text class="o">
+				<tspan x="-10.368" y="13">Sep</tspan>
+			</text></g>
+		<g transform="translate(141.85 15.94)"><text class="o">
+				<tspan x="-11.235" y="13">Aug</tspan>
+			</text></g>
+		<g transform="translate(66.85 15.94)"><text class="o">
+				<tspan x="-9.952" y="13">July</tspan>
+			</text></g>
+		<g transform="translate(-8.15 15.94)"><text class="o">
+				<tspan x="-12.439" y="13">June</tspan>
+			</text></g>
+	</g>
+	<g transform="translate(55.5 -0.5)">
+		<g transform="translate(644.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+		<g transform="translate(569.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+		<g transform="translate(494.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+		<g transform="translate(419.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+		<g transform="translate(344.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+		<g transform="translate(269.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+		<g transform="translate(194.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+		<g transform="translate(119.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+		<g transform="translate(44.5 50.5)">
+			<line class="n" y2="8" transform="translate(0 300)" />
+			<line class="q" y2="300" />
+		</g>
+	</g>
+	<g transform="translate(-0.5)">
+		<line class="r" y2="350" transform="translate(400.5)" />
+	</g>
+	<g transform="translate(99 50)">
+		<line class="s" x2="600" transform="translate(1 300)" />
+		<line class="s" y1="300" transform="translate(1)" />
+		<line class="s" y1="300" transform="translate(601)" />
+	</g>
+	<g transform="translate(100 403)">
+		<g transform="translate(389)"><text class="o" transform="translate(16 13)">
+				<tspan x="0" y="0">Strategy 5</tspan>
+			</text>
+			<rect class="t" width="10" height="10" rx="2" transform="translate(0 4)" />
+		</g>
+		<g transform="translate(301)"><text class="o" transform="translate(16 13)">
+				<tspan x="0" y="0">Strategy 4</tspan>
+			</text>
+			<rect class="u" width="10" height="10" rx="2" transform="translate(0 4)" />
+		</g>
+		<g transform="translate(213)"><text class="o" transform="translate(16 13)">
+				<tspan x="0" y="0">Strategy 3</tspan>
+			</text>
+			<rect class="v" width="10" height="10" rx="2" transform="translate(0 4)" />
+		</g>
+		<g transform="translate(125)"><text class="o" transform="translate(16 13)">
+				<tspan x="0" y="0">Strategy 2</tspan>
+			</text>
+			<rect class="w" width="10" height="10" rx="2" transform="translate(0 4)" />
+		</g><text class="o" transform="translate(16 13)">
+			<tspan x="0" y="0">Current Strategy</tspan>
+		</text>
+		<rect class="m" width="10" height="10" rx="2" transform="translate(0 4)" />
+	</g>
+</svg>

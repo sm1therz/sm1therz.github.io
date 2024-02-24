@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="39.65" height="317" viewBox="0 0 39.65 317">
+	<defs>
+		<style>
+			.a {
+				fill: none;
+				stroke: #969696;
+				stroke-linecap: round;
+			}
+
+			.b {
+				fill: rgba(0, 0, 0, 0.6);
+				font-size: 12px;
+				font-family: NotoSans, Noto Sans;
+			}
+		</style>
+	</defs>
+	<g transform="translate(-4.85)">
+		<g transform="translate(4.85 300)">
+			<path class="a" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="b">
+				<tspan x="2.771" y="13">-30%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 250)">
+			<path class="a" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="b">
+				<tspan x="2.771" y="13">-20%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 200)">
+			<path class="a" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="b">
+				<tspan x="2.771" y="13">-10%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 150)">
+			<path class="a" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="b">
+				<tspan x="13.459" y="13">0%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 100)">
+			<path class="a" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="b">
+				<tspan x="6.85" y="13">10%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85 50)">
+			<path class="a" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="b">
+				<tspan x="6.85" y="13">20%</tspan>
+			</text>
+		</g>
+		<g transform="translate(4.85)">
+			<path class="a" d="M4,0H0" transform="translate(35.15 8.44)" /><text class="b">
+				<tspan x="6.85" y="13">30%</tspan>
+			</text>
+		</g>
+	</g>
+</svg>

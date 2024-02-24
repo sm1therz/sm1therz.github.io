@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="353" viewBox="0 0 50 353">
+	<g id="X-Grid_Text" data-name="X-Grid Text" transform="translate(8.15 -15.94)">
+		<g id="_9" data-name="9" transform="translate(-8.15 351.94)">
+			<text id="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-10.189" y="13">Feb</tspan></text>
+		</g>
+		<g id="_8" data-name="8" transform="translate(-8.15 309.94)">
+			<text id="label-2" data-name="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-8.713" y="13">Jan</tspan></text>
+		</g>
+		<g id="_7" data-name="7" transform="translate(-8.15 267.94)">
+			<text id="label-3" data-name="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-10.644" y="13">Dec</tspan></text>
+		</g>
+		<g id="_6" data-name="6" transform="translate(-8.15 225.94)">
+			<text id="label-4" data-name="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-11.177" y="13">Nov</tspan></text>
+		</g>
+		<g id="_5" data-name="5" transform="translate(-8.15 183.94)">
+			<text id="label-5" data-name="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-9.729" y="13">Oct</tspan></text>
+		</g>
+		<g id="_4" data-name="4" transform="translate(-8.15 141.94)">
+			<text id="label-6" data-name="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-10.368" y="13">Sep</tspan></text>
+		</g>
+		<g id="_3" data-name="3" transform="translate(-8.15 99.94)">
+			<text id="label-7" data-name="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-11.235" y="13">Aug</tspan></text>
+		</g>
+		<g id="_2" data-name="2" transform="translate(-8.15 57.94)">
+			<text id="label-8" data-name="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-9.952" y="13">July</tspan></text>
+		</g>
+		<g id="_1" data-name="1" transform="translate(-8.15 15.94)">
+			<text id="label-9" data-name="label" fill="rgba(255,255,255,0.6)" font-size="12" font-family="NotoSans, Noto Sans"><tspan x="-12.439" y="13">June</tspan></text>
+		</g>
+	</g>
+</svg>

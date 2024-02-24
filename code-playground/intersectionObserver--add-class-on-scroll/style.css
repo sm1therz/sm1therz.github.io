@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.rst_nav {
+  height: 100vh;
+  background: url(https://images.unsplash.com/photo-1494587351196-bbf5f29cff42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80);
+  width: 100%;
+  background-size: cover;
+  position: relative;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+}
+
+.rst_nav-outer {
+  background: transparent;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: background 250ms ease-in;
+}
+
+.header-links {
+  list-style: none;
+  display: flex;
+  color: #fff;
+}
+
+.header-links li {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.header-links li:hover {
+  color: teal;
+}
+
+.column-container {
+  text-align: center;
+  padding: 30px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 30px;
+  grid-gap: 10px;
+}
+
+.columns p {
+  padding: 10px;
+  /* box-shadow: inset 0px 9px 19px -3px rgba(0, 0, 0, 0.75); */
+}
+
+.lengthy-content {
+  height: 1000px;
+}
+
+.nav-scrolled {
+  background: #999;
+  z-index: 2;
+}

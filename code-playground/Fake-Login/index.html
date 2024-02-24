@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" type="text/css" href="fonts.css" />
+	<link href="form.js" /> 
+</head>
+
+<body>
+	<p></p>
+	<section class="rs-f-form-wrapper">
+		<div class="rs-f-form">
+			<form class="rs-f-loginbox" autocomplete="off">
+				<div class="error">Invalid email, password, or combination.</div>
+
+				<input placeholder="Username" type="text" id="username"></input>
+				<input placeholder="Password" type="password" id="password" class="rs-f-m-top"></input>
+				<button class="rs-f-button" id="submit">Login</button>
+			</form>
+		</div>
+	</section>
+	<script>
+		// SessionStorage controll - if login
+		if (sessionStorage.getItem('Form') == 'oneTime') {
+			document.querySelector('.rs-f-form-wrapper').style.display = "none";
+		}
+
+		document.querySelector('#submit').addEventListener('click', function(e) {
+			e.preventDefault();
+			// do something
+			var validEmail = document.querySelector('#username').value === 'admin';
+			var validPass = document.querySelector('#password').value === 'pass';
+			if (validEmail === true && validPass === true) {
+				document.querySelector('.rs-f-form-wrapper').style.display = "none";
+				// set SessionStorage
+				sessionStorage.setItem('Form', 'oneTime');
+			} else {
+				document.querySelector('.error').style.color = "white";
+			}
+			return false;
+		});
+	</script>
+</body>
+
+</html>

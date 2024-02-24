@@ -1,0 +1,16 @@
+body,html{
+	padding:0px;
+	margin: 0px
+}
+*{
+	box-sizing: border-box;
+}
+svg{
+	border: 1px solid red;
+	margin: 0 auto;
+}
+	.cls-1 {
+		fill: black;
+		font-size: 12px;
+		font-family: NotoSans, Noto Sans;
+	}
