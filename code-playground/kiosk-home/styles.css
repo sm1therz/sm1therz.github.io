@@ -14,7 +14,7 @@ padding:10px;
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
-align-items: flex-start
+align-items: flex-start;
 max-width:100%;
 width:600px;
 margin:0 auto;
@@ -32,6 +32,7 @@ background:#2c2c2e;
 color:hsl(0,0%,100%,.8);
 padding:16px 30px;
 border-radius:6px;
+width:100%;
 }
 a:hover{
 background:blue;
