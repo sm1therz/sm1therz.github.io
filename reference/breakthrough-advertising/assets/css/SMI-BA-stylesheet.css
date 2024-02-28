@@ -160,7 +160,6 @@ ol>li:before {
 	counter-increment: step-counter;
 	font-size: .95em !important;
 	font-weight: 600 !important;
-	opacity: .6 !important;
 	text-align: right;
 	width: calc(var(--listItemBulletWidth) - var(--listItemBulletMargRight));
 	outline: var(--boxShadTestWidth) solid red;
@@ -172,8 +171,8 @@ ul>li:before {
 	position: absolute;
 	background-color: black;
 	content: "";
-	width: var(--listItemBulletMargRight)!important;
-	height: var(--listItemBulletMargRight)!important;
+	width: var(--listItemBulletMargRight) !important;
+	height: var(--listItemBulletMargRight) !important;
 	left: calc(var(--listItemBulletMargRight) * -2);
 	top: 10.5px;
 	display: block;
@@ -447,6 +446,11 @@ p.example-header-centered {
 	-webkit-font-smoothing: subpixel-antialiased;
 	font-smoothing: subpixel-antialiased;
 	position: relative;
+	width: 600px;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-top: 20px !important;
+	margin-bottom: 20px !important;
 }
 
 .copy-swipe-example-callout {
@@ -1464,8 +1468,7 @@ p.block_4.no-indent.font-weight-600.margin-top-20p {
 	-webkit-text-stroke-width: 0px !important;
 }
 
-.copy-swipe-example-block p.merriweather {
-}
+.copy-swipe-example-block p.merriweather {}
 
 p.copy-swipe-example-caslon {
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -1473,8 +1476,15 @@ p.copy-swipe-example-caslon {
 
 .copy-swipe-example-block.adobe-caslon p,
 .copy-swipe-example-block.adobe-caslon ol li,
-.copy-swipe-example-block.adobe-caslon ul li {
-	font-size: 1.04em !important;
+.copy-swipe-example-block.adobe-caslon ul li,
+.adobe-caslon.size-1-2,
+.adobe-caslon.size-1-15 {
+	font-size: 21px !important;
+}
+
+.adobe-caslon.size-1-24 {
+	font-size: 24px !important;
+	;
 }
 
 .line-height-1-65.margin-bottom-15p {
@@ -1483,7 +1493,12 @@ p.copy-swipe-example-caslon {
 }
 
 .merriweather.copy-swipe-example-block p,
-.merriweather.size-095.no-indent.copy-swipe-example-block.line-height-1-6 {
+.merriweather.size-095.no-indent.copy-swipe-example-block.line-height-1-6 {}
+
+.merriweather.size-0925,
+.merriweather.size-0925.copy-swipe-example-block p {
+	font-size: 18px !important;
+	line-height: 1.84 !important;
 }
 
 
