@@ -113,6 +113,9 @@ sup {
 TOC / TABLE OF CONTENTS
 ******************
 ******************/
+:root{
+  --tocItemMargTopBtm:6px;
+}
 #toc {
   position: sticky;
   z-index: 22;
@@ -167,8 +170,8 @@ TOC / TABLE OF CONTENTS
   text-align: left !important;
 }
 #toc p {
-  margin-top: 6px !important;
-  margin-bottom: 6px !important;
+  margin-top: var(--tocItemMargTopBtm) !important;
+  margin-bottom: var(--tocItemMargTopBtm) !important;
 }
 #toc a {
   text-decoration: none;
@@ -188,8 +191,13 @@ TOC / TABLE OF CONTENTS
   text-transform: capitalize;
 }
 /*smaller text*/
-#toc .text_2 {
+#toc .text_2,
+#toc .level-2 {
   padding-left: 12px !important;
+}
+#toc .text_3,
+#toc .level-3 {
+  padding-left: 24px !important;
 }
 /*CONTENTS HEADER*/
 #toc .toc-wrap:before {
