@@ -646,7 +646,14 @@ body ol > li {
 	position: relative;
 }
 
+.copy-example-heading{
+	font-size: calc(1em + 2px)!important;
+}
 
+/*INLINE EXAMPLE*/
+span.adobe-caslon.centered.no-indent.size-1-1.text-stroke-04.margin-top-20p.margin-bottom-20p.line-height-1{
+	font-weight: 600;
+}
 
 
 .pagecontent ol > li ol {
