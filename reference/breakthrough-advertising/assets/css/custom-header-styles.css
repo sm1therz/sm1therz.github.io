@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* CSS Document */
 /******************
 ******************
@@ -12,6 +13,7 @@
 	margin-bottom: 30px !important;
 	margin-top: 40px !important;
 }
+
 .numbered-title-number-container-outer {
 	background: rgba(0, 0, 0, 0);
 	background-image: url("VERSACE-BLACK.svg");
@@ -31,7 +33,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 5px 5px;
 	width: 40px;
 	height: 40px;
 	color: black;
@@ -40,12 +41,18 @@
 	position: relative;
 	overflow: hidden;
 }
+
 @media (max-width: 550px) {
 	.numbered-title-number-container {
 		width: 23px;
 		height: 23px;
 	}
 }
+
+:root{
+	--numberTitleBrdWidth:5px;
+}
+
 .numbered-title-number-container:after {
 	content: "";
 	position: absolute;
@@ -53,11 +60,12 @@
 	bottom: 0;
 	left: 0;
 	right: 0px !important;
-	border: 5px solid black;
+	border: var(--numberTitleBrdWidth) solid black;
 	border-left: 0px;
 	border-bottom: 0px;
 	border-top-left-radius: 0px;
 }
+
 .numbered-title-number-container:before {
 	content: "";
 	position: absolute;
@@ -65,15 +73,21 @@
 	bottom: 70%;
 	left: 0;
 	right: 0px !important;
-	border-left: 5px solid black;
+	border-left: var(--numberTitleBrdWidth) solid black;
 }
+
 @media (max-width: 550px) {
+	.numbered-title-number-container{
+		--numberTitleBrdWidth:3px;
+	}
 	.numbered-title-number-container:after {
-		border: 3.5px solid black;
 		border-left: 0px;
 		border-bottom: 0px;
 	}
+	.numbered-title-number-container:before{
+	}
 }
+
 /****
  BIG HEADER NUMBER
  ****/
@@ -82,14 +96,25 @@
 	font-weight: 900;
 	display: block;
 	padding-top: 0px;
-	padding-right: 3px;
+	padding-right: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: var(--numberTitleBrdWidth);
+	left: var(--numberTitleBrdWidth);
+	right: var(--numberTitleBrdWidth);
+	bottom: 0px;
+	text-align: center !important;
+	line-height: 1.2 !important;;
 }
+
 @media (max-width: 550px) {
 	.numbered-title-number {
 		font-size: .7em;
-		display: block;
 	}
 }
+
 /****
  BIG HEADER TEXT
  ****/
@@ -101,12 +126,14 @@
 	letter-spacing: -1px;
 	line-height: 1.1
 }
+
 @media (max-width: 550px) {
 	.numbered-title-text-main {
 		font-size: 0.95em;
 		display: block;
 	}
 }
+
 /******************
 ******************
 ******************
@@ -125,6 +152,7 @@
 	margin-top: 40px !important;
 	margin-bottom: 20px;
 }
+
 .numbered-title-number-container-outer-small {
 	background: rgba(0, 0, 0, 0);
 	background-image: url("VERSACE-BLACK.svg");
@@ -135,6 +163,7 @@
 	border: 0px solid black;
 	position: relative;
 }
+
 .numbered-title-number-container-small {
 	display: flex;
 	justify-content: center;
@@ -149,6 +178,7 @@
 	position: relative;
 	overflow: hidden;
 }
+
 @media (max-width: 550px) {
 	.numbered-title-number-container-small {
 		width: 20px;
@@ -156,6 +186,7 @@
 		padding: 2px 2px;
 	}
 }
+
 .numbered-title-number-container-small:after {
 	content: "";
 	position: absolute;
@@ -168,6 +199,7 @@
 	border-bottom: 0px;
 	border-top-left-radius: 0px;
 }
+
 @media (max-width: 550px) {
 	.numbered-title-number-container-small:after {
 		border: 2.5px solid black;
@@ -175,6 +207,7 @@
 		border-bottom: 0px;
 	}
 }
+
 .numbered-title-number-container-small:before {
 	content: "";
 	position: absolute;
@@ -184,11 +217,13 @@
 	right: 0px !important;
 	border-left: 4px solid black;
 }
+
 @media (max-width: 550px) {
 	.numbered-title-number-container-small:before {
 		border-left: 2.5px solid black;
 	}
 }
+
 .numbered-title-number-small {
 	font-size: 1.3em;
 	font-weight: 900;
@@ -196,17 +231,20 @@
 	position: relative;
 	display: block;
 }
+
 @media (max-width: 550px) {
 	.numbered-title-number-small {
 		font-size: .87em;
 		display: block;
 	}
 }
+
 .numbered-title-text-main-small-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
+
 /****
  SMALL HEADER TEXT - HEADER
  ****/
@@ -219,6 +257,7 @@
 	letter-spacing: -1px;
 	line-height: 1.3em;
 }
+
 @media (max-width: 550px) {
 	.numbered-title-text-main-small-header {
 		font-size: 1.15em !important;
@@ -226,6 +265,7 @@
 		display: block;
 	}
 }
+
 /****
  SMALL HEADER TEXT - PARAGRAPH
  ****/
@@ -239,12 +279,14 @@
 	line-height: 1.3em !important;
 	text-indent: 0px !important;
 }
+
 @media (max-width: 550px) {
 	.numbered-title-text-main-small-paragraph {
 		display: block;
 		font-size: 0.95em !important;
 	}
 }
+
 .numbered-title-right-container {
 	width: 10px;
 	border: 1px solid black;

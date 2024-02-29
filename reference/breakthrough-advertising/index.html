@@ -192,9 +192,9 @@
             </p>
           </div>
         </nav>
-        <!--SECTION-COVER-->
         <div class="book-wrapper">
           <div class="book">
+            <!--SECTION-COVER-->
             <section id="book-cover">
               <img class="ba-cover " src="assets/images/breakthrough-cover.jpeg" />
               <p class="block_"></p>
@@ -1751,7 +1751,7 @@
             <p class="block_29">11. <em> Nor do you have to be satisfied merely with the statement of raw fact. There are infinite opportunities for the use of imagination to present those facts in more dramatic form, outside of the rigidly realistic approach.</em>Some of the more famous examples are the Alexander Hamilton ad of the Twenties, “The Glory of the Upward Path.”Or the Big Ben alarm clock series, “First he whispers, then he shouts.”Or this passage from perhaps the most long-lived ad of them all, the Sherwin Cody English Course, in which a manual of instruction is personified and given actual life:</p>
             <div class="copy-swipe-example-block new-york-small font-weight-300">
               <p class="">The basic principle of Mr. Cody’s new method is habit-forming. Anyone can learn to write and speak correctly by constantly using the correct forms. But how is one to know in each case which is correct? Mr. Cody solves this problem in a simple, unique, sensible way.</p>
-              <p class="block_34">100% Self-Correcting Device.</p>
+              <p class="">100% Self-Correcting Device.</p>
               <p class=""> Suppose he himself were standing forever at your elbow. Every time you mispronounced or misspelled a word, every time you violated correct grammatical usage, every time you used the wrong word to express what you meant, suppose you could hear him whisper. “That is wrong, it should be thus and so.” In a short time you would habitually use the correct form and the right words in speaking and writing.</p>
               <p class="">If you continued to make the same mistakes over and over again, each time patiently he would tell you what was right. He would, as it were, be an everlasting mentor beside you—a mentor who would not laugh at you, but who would, on the contrary, support and help you. This 100% Self-Correcting Device does exactly this thing. It is Mr. Cody’s silent voice behind you, ready to speak out whenever you commit an error. It finds your mistakes and concentrates on them. You do not need to study anything you already know. There are no rules to memorize…</p>
             </div>
@@ -3436,10 +3436,8 @@
         </div>
       </div>
     </main>
+    
     <script src="../reusable-assets/js/toc-scroll-active.js"></script>
-    <!-----END MIDDLE SECTION----->
-    <!-----END MIDDLE SECTION----->
-    <!----BUTTON CONTAINER---->
     <!----BUTTON CONTAINER---->
     <div class="right-sidebar-button-container" id="js-menu">
       <button class="menu-toggle" id="js-menu-toggle">
@@ -3456,7 +3454,7 @@
         </button>
         <!-----THEME TOGGLE----->
         <button class="theme-toggle" href="#" onclick="theme_toggle(); return false;">
-          <div class="toggle_darkMode">
+          <div class="toggle_darkMode darkMode">
             <div class="darkModeContainer">
               <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="dark-turny">
                 <path d="M47.0804 2.77965C35.1688 3.10273 23.8528 8.0617 15.5533 16.5976C7.24959 25.1376 2.61624 36.5776 2.64417 48.4804C2.64417 60.5824 7.45647 72.1852 16.0211 80.7448C24.5858 89.3003 36.2012 94.1073 48.3163 94.1073C60.4314 94.1073 72.0466 89.3002 80.6115 80.7448C89.1801 72.1854 93.9884 60.5824 93.9884 48.4804C94.0157 36.1491 89.0436 24.3361 80.2065 15.7257C71.3693 7.11526 59.4179 2.44484 47.0813 2.77965H47.0804ZM48.3156 7.00684V89.9582V89.9544C33.571 89.8259 19.9986 81.8932 12.6657 69.1144C5.32833 56.3357 5.32833 40.6295 12.6657 27.8509C19.9992 15.0723 33.571 7.13947 48.3156 7.00694V7.00684Z" fill="black"></path>
@@ -3475,25 +3473,25 @@
           let darkMode = localStorage.getItem('darkMode')
           const toggle_darkMode = document.querySelector('.toggle_darkMode')
           const darkModeToggle = document.querySelector('.toggle_darkMode')
-
+    
           const enableDarkMode = () => {
             console.log("Add")
             document.body.classList.add('darkMode')
             toggle_darkMode.classList.add('darkMode')
             localStorage.setItem('darkMode', 'enable')
           }
-
+    
           const disableDarkMode = () => {
             console.log("Rm")
             document.body.classList.remove('darkMode')
             toggle_darkMode.classList.remove('darkMode')
             localStorage.setItem('darkMode', null)
           }
-
+    
           if (darkMode === "enable") {
             enableDarkMode()
           }
-
+    
           darkModeToggle.addEventListener("click", () => {
             darkMode = localStorage.getItem('darkMode')
             if (darkMode !== 'enable') {
@@ -3505,9 +3503,7 @@
         </script>
       </div>
     </div>
-    <!----END BUTTON CONTAINER---->
-    <!----END BUTTON CONTAINER---->
-    <!-- MENU TOGGLE - JAVASCRIPT -->
+    <!----BUTTON CONTAINER---->
     <script type="text/javascript">
       (function() {
         document.getElementById('js-menu-toggle').addEventListener('click', () => {
@@ -3516,7 +3512,7 @@
         });
       })();
     </script>
-    <!--MENU TOGGLE - THEME -->
+    <!--MENU TOGGLE-->
     <script>
       // File: theme.js
 
@@ -3541,24 +3537,10 @@
       // Apply selected theme, stored in localStorage item
       theme_set(localStorage.getItem('theme-toggled'));
     </script>
+    
+    <!-- THEME -->
     <!------SCROLL-POSITION-SAVE--------->
-    <!------SCROLL-POSITION-SAVE--------->
-    <!------SCROLL-POSITION-SAVE--------->
-    <script>
-      // Save the scroll position
-      window.addEventListener('beforeunload', function() {
-        localStorage.setItem('scrollPosition', window.scrollY);
-      });
-
-      // Retrieve and apply the scroll position
-      window.addEventListener('load', function() {
-        if (localStorage.getItem('scrollPosition')) {
-          window.scrollTo(0, parseInt(localStorage.getItem('scrollPosition')));
-        }
-      });
-    </script>
-    <!------SCROLL-POSITION-SAVE--------->
-    <!------SCROLL-POSITION-SAVE--------->
+    <script src="../reusable-assets/js/scroll-save.js"></script>
     <!------SCROLL-POSITION-SAVE--------->
   </body>
 

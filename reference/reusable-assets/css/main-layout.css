@@ -6,7 +6,7 @@ html, body, .main-content-wrap, .page-wrap, .page, .pagecontent {
   margin: 0px !important;
   width: 100% !important;
   max-width: 100% !important;
-  font-family: "Iowan", georgia, serif !important;
+  font-family: "Iowan Old Style", georgia, serif !important;
 }
 /*****************
 ******************
@@ -65,6 +65,11 @@ HEADINGS
 .book h6 {
   
 }
+
+/*****************
+LISTS
+******************/
+
 /*****************
 ******************
 FOOTNOTES
