@@ -135,13 +135,17 @@ TOC / TABLE OF CONTENTS
     height: 93vh;
     top: 3.5vh;
 }
-#toc span {
-  line-height: unset;
+#toc p a span {
+  line-height: unset !important;
+  display: block;
 }
-
+#toc p {
+  font-size: unset !important;
+  line-height: unset !important;
+}
 #toc a {
-  font-size: .83rem;
-  line-height: 1.25 !important;
+  font-size: .83rem !important;
+  line-height: 1.325 !important;
   color: var(--tocLinkClr);
   transition: .2s;
 }
@@ -152,8 +156,8 @@ TOC / TABLE OF CONTENTS
   text-align: left !important;
 }
 #toc p {
-  margin-top: 4px !important;
-  margin-bottom: 4px !important;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
 }
 #toc a {
   text-decoration: none;
