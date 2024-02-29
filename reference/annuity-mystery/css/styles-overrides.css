@@ -8,7 +8,7 @@ html, body {
   max-width: 100% !important;
 }
 body {
-  font-family: "Iowan", georgia, serif !important;
+  font-family: "Iowan Old Style", georgia, serif !important;
   background-color: white;
   padding: 30px 15px !important;
   width: 100% !important;
@@ -232,53 +232,7 @@ section.footnotes {
   position: relative;
   display: block;
 }
-/***************
-****************
-IOWAN FONTS
-****************
-****************/
-/*Regular*/
-@font-face {
-  font-family: "Iowan";
-  src: url('../../reusable-assets/fonts/Iowan-Old-Style--Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-/*Regular Italic*/
-@font-face {
-  font-family: "Iowan";
-  src: url('../../reusable-assets/fonts/Iowan-Old-Style--Regular-Italic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-}
-/*Bold*/
-@font-face {
-  font-family: "Iowan";
-  src: url('../../reusable-assets/fonts/Iowan-Old-Style--Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-/*Bold Italic*/
-@font-face {
-  font-family: "Iowan";
-  src: url('../../reusable-assets/fonts/Iowan-Old-Style--Bold-Italic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-}
-/*Black*/
-@font-face {
-  font-family: "Iowan";
-  src: url('../../reusable-assets/fonts/Iowan-Old-Style--Black.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-}
-/*Black Italic*/
-@font-face {
-  font-family: "Iowan";
-  src: url('../../reusable-assets/fonts/Iowan-Old-Style--Black-Italic.otf') format('opentype');
-  font-weight: 900;
-  font-style: italic;
-}
+
 .og-toc-hidden {
   display: none;
 }
