@@ -27,7 +27,7 @@ MAIN DOCUMENT STRUCTURE
   justify-content: flex-start;
 }
 /*BOOKWRAPPER*/
-.book-wrapper {
+.book-wrapper, .content-wrapper {
   width: 65%;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -37,7 +37,7 @@ MAIN DOCUMENT STRUCTURE
   margin-right: 10%;
 }
 /*BOOK*/
-.book {
+.book, .content {
   width: 660px;
   max-width: 100%;
   margin: 0 auto;
@@ -58,23 +58,29 @@ MAIN DOCUMENT STRUCTURE
 /*****************
 HEADINGS
 ******************/
-.book h5 * {
+body h5 * {
   font-weight: 700 !important;
-  -webkit-font-smoothing:subpixel-antialiased !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
 }
-.book h6 {
-  
+body h6 {}
+body .header-break{
+  height: 0px;
+  display: block;
 }
-
+@media (max-width: 700px){
+  body .header-break{
+  display: inline;
+  }
+}
 /*****************
 LISTS
 ******************/
-
 /*****************
 ******************
 FOOTNOTES
 ******************
-******************/ :root {
+******************/ 
+:root {
   --footnoteNumbWidth: 20px;
 }
 .footnotes {
@@ -120,7 +126,7 @@ TOC / TABLE OF CONTENTS
   background: var(--bgPrimary);
   padding-bottom: 100px;
   width: 25%;
-  border:none !important;
+  border: none !important;
 }
 .toc-wrap {
   height: 100vh;
@@ -130,15 +136,15 @@ TOC / TABLE OF CONTENTS
 }
 /*TOC BORDER*/
 #toc:before {
-    content: "";
-    display: block;
-    width: 1px;
-    position: absolute;
-    right: 0;
-    background: var(--tocBrdClr);
-    z-index: 9292;
-    height: 93vh;
-    top: 3.5vh;
+  content: "";
+  display: block;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  background: var(--tocBrdClr);
+  z-index: 9292;
+  height: 93vh;
+  top: 3.5vh;
 }
 #toc p a span {
   line-height: unset !important;
@@ -197,11 +203,9 @@ TOC / TABLE OF CONTENTS
 }
 /*****************
 TOC LISTS
-******************/
-:root{
-	--tocItmPadLeft:20px;
+******************/ :root {
+  --tocItmPadLeft: 20px;
 }
-
 #toc ul, #toc ol {
   padding-left: var(--tocItmPadLeft);
   list-style-type: none;
@@ -219,58 +223,53 @@ TOC ACTIVE A
 #toc a.active span {
   font-weight: 600 !important;
 }
-
 /*TocHeader*/
-.toc-header{
-}
+.toc-header {}
 /*****************
 TOC LIST ITEMS - EXPAND COLLAPSE
-******************/
-:root{
-	--tocItmIcnWidth:14px;
---tocItemIcnHeight:14px;
+******************/ :root {
+  --tocItmIcnWidth: 14px;
+  --tocItemIcnHeight: 14px;
 }
 #toc li {
-	position: relative;
-	max-height: auto;
+  position: relative;
+  max-height: auto;
 }
-
 /*Toc List - CHildren*/
-#toc li + ul{
-	display: block !important;
-	overflow: hidden;
-	transition: .2s !important;
+#toc li + ul {
+  display: block !important;
+  overflow: hidden;
+  transition: .2s !important;
 }
 #toc li + ul.toc-child-closed {
-	max-height: unset;
+  max-height: unset;
 }
 #toc li + ul.toc-child-open {
-	max-height: 900px;
+  max-height: 900px;
 }
 /*Toggle button*/
 .toc-toggle {
-	border: 1px solid var(--tocBrdClr) !important;
-	width: var(--tocItmIcnWidth);
-	height: var(--tocItemIcnHeight);
-	background: transparent;
-	border-radius: 3px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 10px;
-	line-height: 0;
-	position: absolute;
-	top: 2px;
-	left: calc(var(--tocItmIcnWidth) * -1 + -2px);
-	cursor: pointer;
-	opacity: .4
+  border: 1px solid var(--tocBrdClr) !important;
+  width: var(--tocItmIcnWidth);
+  height: var(--tocItemIcnHeight);
+  background: transparent;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 0;
+  position: absolute;
+  top: 2px;
+  left: calc(var(--tocItmIcnWidth) * -1 + -2px);
+  cursor: pointer;
+  opacity: .4
 }
 /*****************
 ******************
 MEDIA QUERIES
 ******************
 ******************/
-
 /*****************
 TOC MOBILE BUTTON
 ******************/
@@ -280,7 +279,7 @@ TOC MOBILE BUTTON
   }
 }
 @media (max-width:700px) {
-  .book-wrapper {
+  .book-wrapper, .content-wrapper {
     width: 100%;
     margin-right: 0%;
   }
