@@ -56,8 +56,8 @@ MAIN DOCUMENT STRUCTURE
 }
 .no-nav .book-wrapper, 
 .no-nav .content-wrapper{
-  width: 100%;
-  margin: 0 auto;
+  width: 100% !important;
+  margin: 0 auto !important;
 }
 /*BOOK*/
 .book, .content {
