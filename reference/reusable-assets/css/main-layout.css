@@ -1,3 +1,21 @@
+/***************
+ROOT - COLORS
+****************/ :root {
+  --bgPrimary: white;
+  /*toc*/
+  --tocBrdClr: hsl(0, 0%, 0%, .25);
+  --tocLinkClr: hsl(0, 0%, 0%, .45);
+  --tocLinkClr-Hover: hsl(0, 0%, 0%, .85);
+  --tocLinkClr-Active: var(--tocLinkClr-Hover);
+}
+.darkMode {
+  --bgPrimary: black;
+  /*toc*/
+  --tocBrdClr: hsl(0, 0%, 100%, .25);
+  --tocLinkClr: hsl(0, 0%, 100%, .45);
+  --tocLinkClr-Hover: hsl(0, 0%, 100%, .75);
+  --tocLinkClr-Active: var(--tocLinkClr-Hover);
+}
 * {
   box-sizing: border-box !important;
 }
@@ -6,7 +24,7 @@ html, body, .main-content-wrap, .page-wrap, .page, .pagecontent {
   margin: 0px !important;
   width: 100% !important;
   max-width: 100% !important;
-  font-family: "Iowan Old Style", georgia, serif !important;
+  font-family: "Iowan-Old-Style", georgia, serif !important;
 }
 /*****************
 ******************
@@ -63,13 +81,13 @@ body h5 * {
   -webkit-font-smoothing: subpixel-antialiased !important;
 }
 body h6 {}
-body .header-break{
+body .header-break {
   height: 0px;
   display: block;
 }
-@media (max-width: 700px){
-  body .header-break{
-  display: inline;
+@media (max-width: 800px) {
+  body .header-break {
+    display: inline;
   }
 }
 /*****************
@@ -79,8 +97,7 @@ LISTS
 ******************
 FOOTNOTES
 ******************
-******************/ 
-:root {
+******************/ :root {
   --footnoteNumbWidth: 20px;
 }
 .footnotes {
@@ -112,9 +129,8 @@ sup {
 ******************
 TOC / TABLE OF CONTENTS
 ******************
-******************/
-:root{
-  --tocItemMargTopBtm:6px;
+******************/ :root {
+  --tocItemMargTopBtm: 6px;
 }
 #toc {
   position: sticky;
@@ -133,7 +149,7 @@ TOC / TABLE OF CONTENTS
 }
 .toc-wrap {
   height: 100vh;
-  padding: 5px 25px;
+  padding: 5px 15px;
   overflow-y: scroll;
   padding-bottom: 100px !important;
 }
@@ -191,12 +207,10 @@ TOC / TABLE OF CONTENTS
   text-transform: capitalize;
 }
 /*smaller text*/
-#toc .text_2,
-#toc .level-2 {
+#toc .text_2, #toc .level-2 {
   padding-left: 12px !important;
 }
-#toc .text_3,
-#toc .level-3 {
+#toc .text_3, #toc .level-3 {
   padding-left: 24px !important;
 }
 /*CONTENTS HEADER*/
