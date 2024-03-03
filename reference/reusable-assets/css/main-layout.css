@@ -54,6 +54,11 @@ MAIN DOCUMENT STRUCTURE
   overflow-x: hidden;
   margin-right: 10%;
 }
+.no-nav .book-wrapper, 
+.no-nav .content-wrapper{
+  width: 100%;
+  margin: 0 auto;
+}
 /*BOOK*/
 .book, .content {
   width: 660px;
