@@ -1,0 +1,419 @@
+/***************
+ROOT - COLORS
+****************/
+:root {
+  --bgPrimary: white;
+  /*toc*/
+  --tocBrdClr: hsl(0, 0%, 0%, .25);
+  --tocLinkClr: hsl(0, 0%, 0%, .45);
+  --tocLinkClr-Hover: hsl(0, 0%, 0%, .85);
+  --tocLinkClr-Active: var(--tocLinkClr-Hover);
+}
+.darkMode {
+  --bgPrimary: black;
+  /*toc*/
+  --tocBrdClr: hsl(0, 0%, 100%, .25);
+  --tocLinkClr: hsl(0, 0%, 100%, .45);
+  --tocLinkClr-Hover: hsl(0, 0%, 100%, .75);
+  --tocLinkClr-Active: var(--tocLinkClr-Hover);
+}
+* {
+  box-sizing: border-box !important;
+}
+html,
+body,
+.main-content-wrap,
+.page-wrap,
+.page,
+.pagecontent {
+  padding: 0px !important;
+  margin: 0px !important;
+  font-family: "Iowan-Old-Style", georgia, serif !important;
+}
+/*****************
+******************
+MAIN DOCUMENT STRUCTURE
+******************
+******************/
+.main-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.app-wrap {
+  width: 1600px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+/*BOOKWRAPPER*/
+.book-wrapper,
+.content-wrapper {
+  width: 65%;
+  margin: 0 auto;
+  max-width: 100% !important;
+  overflow-x: hidden;
+  margin-right: 10%;
+}
+.no-nav .book-wrapper,
+.no-nav .content-wrapper {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+.no-nav #toc {
+  display: none !important;
+}
+.no-nav .app-wrap {
+  di
+}
+/*BOOK*/
+.book,
+.content {
+  width: 700px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+/*ANCHOR HEADINGS*/
+.main-wrapper .anchor-heading svg {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  fill: #7253ed;
+  visibility: hidden;
+  position: absolute;
+}
+.main-wrapper .anchor-heading:hover svg,
+.main-wrapper h1:hover > .anchor-heading svg,
+.main-wrapper h2:hover > .anchor-heading svg,
+.main-wrapper h3:hover > .anchor-heading svg,
+.main-wrapper h4:hover > .anchor-heading svg,
+.main-wrapper h5:hover > .anchor-heading svg,
+.main-wrapper h6:hover > .anchor-heading svg {
+  visibility: visible;
+  left: 0;
+}
+/*****************
+HEADINGS
+******************/
+body h5 * {
+  font-weight: 700 !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+}
+body .header-break {
+  height: 0px;
+  display: block;
+}
+@media (max-width: 800px) {
+  body .header-break {
+    display: inline;
+  }
+}
+/*****************
+LISTS
+******************/
+/*****************
+******************
+FOOTNOTES
+******************
+******************/
+:root {
+  --footnoteNumbWidth: 20px;
+}
+.footnotes {
+  border-top: 1px solid rgba(0, 0, 0, .5) !important;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.footnotes > div {
+  padding-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: var(--footnoteNumbWidth) !important;
+}
+.footnotes a[id*="ftnt"] {
+  position: absolute;
+  left: 0;
+  color: black
+}
+.footnotes * {
+  font-size: .8rem;
+  line-height: 1.3
+}
+sup {
+  display: inline-block;
+  line-height: 0 !important;
+}
+
+
+
+.old-lightbox {
+  border: 1px solid black;
+  padding: 17px 20px;
+  position: relative;
+  display: none;
+}
+
+.featherlight-content .old-lightbox {
+  margin-left: 0px !important;
+  border: none;
+  padding: 0px !important;
+  padding-top: 20px !important;
+}
+
+.featherlight-content .old-lightbox * {
+  font-size: 1.3rem;
+}
+
+.old-lightbox,
+.old-lightbox * {
+  font-size: .95rem;
+}
+
+.old-lightbox p {
+  margin-top: 10px !important;
+  margin-bottom: 0px !important;
+}
+
+.old-lightbox:before {
+  content: "Above callouts are reformatted. Original unformatted callouts below";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid black;
+  color: white;
+  background: black;
+  font-size: .8rem;
+  padding-left: 6px;
+  padding-right: 6px;
+  line-height: 1.3;
+}
+
+.bg-btn-base {
+  background: black !important;
+  box-shadow: none !important;
+  color: white !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  font-size: .85rem !important;
+  width: 270px !important;
+  max-width: 100% !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+/*****************
+******************
+TOC / TABLE OF CONTENTS
+******************
+******************/
+:root {
+  --tocItemMargTopBtm: 6px;
+}
+#toc {
+  position: sticky;
+  z-index: 22;
+  overflow: hidden;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.1 !important;
+  letter-spacing: 0px !important;
+  background: var(--bgPrimary);
+  padding-bottom: 100px;
+  width: 25%;
+  border: none !important;
+}
+.toc-wrap {
+  height: 100vh;
+  padding: 5px 15px;
+  overflow-y: scroll;
+  padding-bottom: 100px !important;
+}
+/*TOC BORDER*/
+#toc:before {
+  content: "";
+  display: block;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  background: var(--tocBrdClr);
+  z-index: 9292;
+  height: 93vh;
+  top: 3.5vh;
+}
+#toc p a span {
+  line-height: unset !important;
+  display: block;
+}
+#toc p {
+  font-size: unset !important;
+  line-height: unset !important;
+}
+#toc a {
+  font-size: .83rem !important;
+  line-height: 1.325 !important;
+  color: var(--tocLinkClr);
+  transition: .2s;
+}
+#toc a:hover,
+#toc a:focus {
+  color: var(--tocLinkClr-Hover);
+}
+#toc * {
+  text-align: left !important;
+}
+#toc p {
+  margin-top: var(--tocItemMargTopBtm) !important;
+  margin-bottom: var(--tocItemMargTopBtm) !important;
+}
+#toc a {
+  text-decoration: none;
+}
+/*title*/
+#toc h3 {
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  font-size: 1.05rem !important;
+  line-height: 1.1 !important;
+  display: none;
+}
+/*headers*/
+#toc .text_1 {
+  font-weight: 500;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-transform: capitalize;
+}
+/*smaller text*/
+#toc .text_2,
+#toc .level-2 {
+  padding-left: 12px !important;
+}
+#toc .text_3,
+#toc .level-3 {
+  padding-left: 24px !important;
+}
+/*CONTENTS HEADER*/
+#toc .toc-wrap:before {
+  content: "Contents";
+  display: block;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  font-size: 1.05rem !important;
+  line-height: 1.1 !important;
+  font-weight: 600;
+}
+/*****************
+TOC LISTS
+******************/
+:root {
+  --tocItmPadLeft: 20px;
+}
+#toc ul,
+#toc ol {
+  padding-left: var(--tocItmPadLeft);
+  list-style-type: none;
+}
+#toc ul:first-child {
+  padding-left: 0px;
+}
+/*******
+TOC ACTIVE A
+********/
+#toc a.active {
+  color: var(--tocLinkClr-Active);
+  font-weight: 500 !important;
+}
+#toc a.active span {
+  font-weight: 600 !important;
+}
+/*TocHeader*/
+.toc-header {}
+/*****************
+TOC LIST ITEMS - EXPAND COLLAPSE
+******************/
+:root {
+  --tocItmIcnWidth: 14px;
+  --tocItemIcnHeight: 14px;
+}
+#toc li {
+  position: relative;
+  max-height: auto;
+}
+/*Toc List - CHildren*/
+#toc li + ul {
+  display: block !important;
+  overflow: hidden;
+  transition: .2s !important;
+}
+#toc li + ul.toc-child-closed {
+  max-height: unset;
+}
+#toc li + ul.toc-child-open {
+  max-height: 900px;
+}
+/*Toggle button*/
+.toc-toggle {
+  border: 1px solid var(--tocBrdClr) !important;
+  width: var(--tocItmIcnWidth);
+  height: var(--tocItemIcnHeight);
+  background: transparent;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 0;
+  position: absolute;
+  top: 2px;
+  left: calc(var(--tocItmIcnWidth) * -1 + -2px);
+  cursor: pointer;
+  opacity: .4
+}
+
+/*****************
+ LISTS IN TOC
+ *****************/
+
+/*****************
+******************
+MEDIA QUERIES
+******************
+******************/
+/*****************
+TOC MOBILE BUTTON
+******************/
+@media (max-width: 900px) {
+  #toc {
+    width: 23%;
+  }
+}
+@media (max-width:700px) {
+  .book-wrapper,
+  .content-wrapper {
+    width: 100%;
+    margin-right: 0%;
+  }
+  /*Toc*/
+  #toc {
+    width: 100%;
+    position: relative !important;
+    top: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    right: unset !important;
+  }
+  .toc-wrap {
+    overflow: unset;
+    padding-bottom: 20px !important;
+    height: unset !important;
+  }
+  .app-wrap {
+    flex-direction: column;
+  }
+}

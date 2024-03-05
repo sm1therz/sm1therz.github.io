@@ -1,0 +1,44 @@
+/*IOWAN REGULAR*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Regular.otf') format('opentype');
+ font-weight: 400;
+ font-style: normal;
+}
+/*IOWAN REGULAR - ITALIC*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Regular-Italic.otf') format('opentype');
+ font-weight: 400;
+ font-style: italic;
+}
+
+/*IOWAN BOLD*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Bold.otf') format('opentype');
+ font-weight: 500;
+ font-style: normal;
+}
+/*IOWAN BOLD - ITALIC*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Bold-Italic.otf') format('opentype');
+ font-weight: 500;
+ font-style: italic;
+}
+/*IOWAN BLACK*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Black.otf') format('opentype');
+ font-weight: 900;
+ font-style: normal;
+}
+/*IOWAN BLACK - ITALIC*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Black-Italic.otf') format('opentype');
+ font-weight: 900;
+ font-style: italic;
+}
+

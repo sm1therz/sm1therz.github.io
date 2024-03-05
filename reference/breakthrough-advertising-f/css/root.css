@@ -1,0 +1,13 @@
+:root{
+  --bodyFontSize: 19px;
+  --bodyLineHeight: 1.625;
+  --indentWidth: 16px;
+  /*lists*/
+  --boxshadtestBrdWidth: 0px;
+  --listMargTopBtm: 10px;
+  --listItmPadL: 42px;
+  --listItmBulletWidth: calc(var(--listItmPadL) - var(--listItmBulletMargR));
+  --listItmBulletMargR: 8px;
+
+  
+}

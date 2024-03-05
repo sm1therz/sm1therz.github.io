@@ -1,0 +1,415 @@
+
+
+
+
+
+/*NEW YORK LARGE - REGULAR */
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge-1-Regular.otf') format('opentype');
+ font-weight: 300;
+ font-style: normal;
+}
+ 
+/*NEW YORK LARGE - REGULAR ITALIC */
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 1 - RegularItalic.otf') format('opentype');
+ font-weight: 300;
+ font-style: italic;
+}
+
+
+/*NEW YORK LARGE - MEDIUM*/
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 2 - Medium.otf') format('opentype');
+ font-weight: 400;
+ font-style: normal;
+}
+
+/*NEW YORK LARGE - MEDIUM ITALIC */
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 2 - MediumItalic.otf') format('opentype');
+ font-weight: 400;
+ font-style: italic;
+}
+
+
+/*NEW YORK LARGE - SEMI BOLD*/
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 3 - Semibold.otf') format('opentype');
+ font-weight: 500;
+ font-style: normal;
+}
+
+/*NEW YORK LARGE - SEMIBOLD ITALIC */
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 3 - SemiboldItalic.otf') format('opentype');
+ font-weight: 500;
+ font-style: italic;
+}
+
+/*NEW YORK LARGE - BOLD*/
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 4 - Bold.otf') format('opentype');
+ font-weight: 600;
+ font-style: normal;
+}
+
+/*NEW YORK LARGE - BOLD ITALIC */
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 4 - BoldItalic.otf') format('opentype');
+ font-weight: 600;
+ font-style: italic;
+}
+
+
+/*NEW YORK LARGE - HEAVY*/
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge-5-Heavy.otf') format('opentype');
+ font-weight: 700;
+ font-style: normal;
+}
+
+/*NEW YORK LARGE - HEAVY ITALIC */
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 5 - HeavyItalic.otf') format('opentype');
+ font-weight: 700;
+ font-style: italic;
+}
+
+
+
+/*NEW YORK LARGE - BLACK*/
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 6 - Black.otf') format('opentype');
+ font-weight: 800;
+ font-style: normal;
+}
+
+/*NEW YORK LARGE - BLACK ITALIC */
+@font-face {
+	font-family: "New York Large";
+	src: url('../new-york/NewYorkLarge - 6 - BlackItalic.otf') format('opentype');
+ font-weight: 800;
+ font-style: italic;
+}
+
+
+/*NEW YORK SMALL - REGULAR */
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 1 - Regular.otf') format('opentype');
+ font-weight: 300;
+ font-style: normal;
+}
+ 
+/*NEW YORK SMALL - REGULAR ITALIC */
+@font-face {
+	font-family: "New York Small";
+	src: url('../../../breakthrough-advertising/dl.dropboxusercontent.com/s/in7g53upypnj8zb/NewYorkSmall - 1 - RegularItalic.otf') format('opentype');
+ font-weight: 300;
+ font-style: italic;
+}
+
+
+
+
+/*NEW YORK SMALL - MEDIUM*/
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 2 - Medium.otf') format('opentype');
+ font-weight: 400;
+ font-style: normal;
+}
+
+/*NEW YORK SMALL - MEDIUM ITALIC */
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall-2-MediumItalic.otf') format('opentype');
+ font-weight: 400;
+ font-style: italic;
+}
+
+
+
+
+/*NEW YORK SMALL - SEMI BOLD*/
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 3 - Semibold.otf') format('opentype');
+ font-weight: 500;
+ font-style: normal;
+}
+
+/*NEW YORK SMALL - SEMIBOLD ITALIC */
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 3 - SemiboldItalic.otf') format('opentype');
+ font-weight: 500;
+ font-style: italic;
+}
+
+
+
+
+
+/*NEW YORK SMALL - BOLD*/
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 4 - Bold.otf') format('opentype');
+ font-weight: 600;
+ font-style: normal;
+}
+
+/*NEW YORK SMALL - BOLD ITALIC */
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 4 - BoldItalic.otf') format('opentype');
+ font-weight: 600;
+ font-style: italic;
+}
+
+
+
+
+
+/*NEW YORK SMALL - HEAVY*/
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 5 - Heavy.otf') format('opentype');
+ font-weight: 700;
+ font-style: normal;
+}
+
+/*NEW YORK SMALL - HEAVY ITALIC */
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 5 - Heavy.otf') format('opentype');
+ font-weight: 700;
+ font-style: italic;
+}
+
+
+
+/*NEW YORK SMALL - BLACK*/
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 6 - Black.otf') format('opentype');
+ font-weight: 800;
+ font-style: normal;
+}
+
+/*NEW YORK SMALL - BLACK ITALIC */
+@font-face {
+	font-family: "New York Small";
+	src: url('../new-york/NewYorkSmall - 6 - BlackItalic.otf') format('opentype');
+ font-weight: 800;
+ font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SENTINEL - SERIF*/
+
+/* LIGHT - 300 */
+
+@font-face {
+  font-family: 'Sentinel';
+src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/aef12a0096d2afb4785ce1675271bd67﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/aef12a0096d2afb4785ce1675271bd67.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/aef12a0096d2afb4785ce1675271bd67.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/aef12a0096d2afb4785ce1675271bd67.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/aef12a0096d2afb4785ce1675271bd67.svg#Sentinel Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* LIGHT - ITALIC 300 */
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/444bf0c79164f7f6c1187e80715ea8b4﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/444bf0c79164f7f6c1187e80715ea8b4.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/444bf0c79164f7f6c1187e80715ea8b4.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/444bf0c79164f7f6c1187e80715ea8b4.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/444bf0c79164f7f6c1187e80715ea8b4.svg#Sentinel Light") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+
+
+
+/* BOOK - 400 */
+
+@font-face {
+  font-family: 'Sentinel';
+src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/eeb2719d248b27841be5f4899986eedc﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/eeb2719d248b27841be5f4899986eedc.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/eeb2719d248b27841be5f4899986eedc.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/eeb2719d248b27841be5f4899986eedc.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/eeb2719d248b27841be5f4899986eedc.svg#Sentinel Book") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* BOOK - ITALIC 400 */
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/7fd057d3756afb9347941ab36a843fdb﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/7fd057d3756afb9347941ab36a843fdb.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/7fd057d3756afb9347941ab36a843fdb.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/7fd057d3756afb9347941ab36a843fdb.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/7fd057d3756afb9347941ab36a843fdb.svg#Sentinel Book") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* MEDIUM - 500 */
+
+@font-face {
+  font-family: 'Sentinel';
+src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9d6de58d886ba70d324b9af0ee96d232﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9d6de58d886ba70d324b9af0ee96d232.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9d6de58d886ba70d324b9af0ee96d232.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9d6de58d886ba70d324b9af0ee96d232.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9d6de58d886ba70d324b9af0ee96d232.svg#Sentinel Medium") format("svg"); 
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* MEDIUM - ITALIC 500 */
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/65b91445dc36d10df9dd20777e01f38d﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/65b91445dc36d10df9dd20777e01f38d.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/65b91445dc36d10df9dd20777e01f38d.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/65b91445dc36d10df9dd20777e01f38d.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/65b91445dc36d10df9dd20777e01f38d.svg#Sentinel Medium") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+/* SEMIBOLD - 600 */
+
+@font-face {
+  font-family: 'Sentinel';
+src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/27169bf8399d2c8e67d55e0c623bd8e4﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/27169bf8399d2c8e67d55e0c623bd8e4.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/27169bf8399d2c8e67d55e0c623bd8e4.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/27169bf8399d2c8e67d55e0c623bd8e4.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/27169bf8399d2c8e67d55e0c623bd8e4.svg#Sentinel Semibold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* SEMIBOLD - ITALIC 600 */
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/12da4fca37d6ea32bf44a5b2eedcf93c﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/12da4fca37d6ea32bf44a5b2eedcf93c.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/12da4fca37d6ea32bf44a5b2eedcf93c.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/12da4fca37d6ea32bf44a5b2eedcf93c.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/12da4fca37d6ea32bf44a5b2eedcf93c.svg#Sentinel Semibold") format("svg");
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+
+
+/* BOLD - 700 */
+
+@font-face {
+  font-family: 'Sentinel';
+src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/538ce341d9a1b3aaa2860e7014ac93c0﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/538ce341d9a1b3aaa2860e7014ac93c0.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/538ce341d9a1b3aaa2860e7014ac93c0.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/538ce341d9a1b3aaa2860e7014ac93c0.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/538ce341d9a1b3aaa2860e7014ac93c0.svg#Sentinel Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* BOLD - ITALIC 700 */
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/3211ebfcdd040079dea9ce0e76854ac0﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/3211ebfcdd040079dea9ce0e76854ac0.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/3211ebfcdd040079dea9ce0e76854ac0.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/3211ebfcdd040079dea9ce0e76854ac0.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/3211ebfcdd040079dea9ce0e76854ac0.svg#Sentinel Bold") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+/* BLACK - 800 */
+
+@font-face {
+  font-family: 'Sentinel';
+src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/2827e0a2157cfeb20c8b7284418e9fc4﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/2827e0a2157cfeb20c8b7284418e9fc4.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/2827e0a2157cfeb20c8b7284418e9fc4.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/2827e0a2157cfeb20c8b7284418e9fc4.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/2827e0a2157cfeb20c8b7284418e9fc4.svg#Sentinel Black") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* BLOACK - ITALIC 800 */
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9a5e0eaeea9158da99a6610630252ec5﹖.eot#iefix") format("embedded-opentype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9a5e0eaeea9158da99a6610630252ec5.woff2") format("woff2"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9a5e0eaeea9158da99a6610630252ec5.woff") format("woff"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9a5e0eaeea9158da99a6610630252ec5.ttf") format("truetype"), 
+url("../../../breakthrough-advertising/db.onlinewebfonts.com/t/9a5e0eaeea9158da99a6610630252ec5.svg#Sentinel Black") format("svg");
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+

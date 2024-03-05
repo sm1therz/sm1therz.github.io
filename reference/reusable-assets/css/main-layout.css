@@ -59,9 +59,12 @@ MAIN DOCUMENT STRUCTURE
   width: 100% !important;
   margin: 0 auto !important;
 }
+.no-nav #toc{
+  display: none !important;
+}
 /*BOOK*/
 .book, .content {
-  width: 660px;
+  width: 630px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -292,6 +295,11 @@ TOC LIST ITEMS - EXPAND COLLAPSE
   cursor: pointer;
   opacity: .4
 }
+
+/*****************
+ LISTS IN TOC
+ *****************/
+
 /*****************
 ******************
 MEDIA QUERIES
