@@ -1,0 +1,10 @@
+div {
+	
+}
+
+.message-content .hello * {
+	text-align: center;
+	font-size: 13px !important;
+	-webkit-text-fill-color: rgb(0,0,0,.6) !important;
+}
+

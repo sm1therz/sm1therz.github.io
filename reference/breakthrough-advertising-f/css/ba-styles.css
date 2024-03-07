@@ -8,10 +8,12 @@ body {
   margin: 0px;
   width: 100%;
   max-width: 100%;
+  background: var(--bgPrimary) !important;
 }
 
 body {
   font-family: "Iowan-Old-Style", georgia, serif !important;
+  color: var(--bodyClr);
 }
 
 
@@ -20,6 +22,36 @@ body {
   font-size: var(--bodyFontSize);
   line-height: var(--bodyLineHeight);
 }
+
+/*sigil horizontal rule/*/
+.sigil_split_marker{
+  opacity: 0;
+}
+/*****************
+EMDASH
+******************/
+.emdspace {
+  font-size: .5em !important;
+}
+
+/*******
+TEXT COLOR
+*******/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.numbered-title-text-main-small-container p,
+.copy-ex-block,
+.merriweather,
+.caslon {
+  color: var(--headerClr) !important;
+  -webkit-text-fill-color: var(--headerClr) !important;
+}
+
+
 
 /*****************
 ******************
@@ -36,8 +68,8 @@ p {
 p,
 ol li,
 ul li {
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  -webkit-hyphens: auto !important;;
+  hyphens: auto !important;;
 }
 p,
 ol li,
@@ -76,7 +108,7 @@ ul li {
   font-size: inherit;
   position: relative;
   text-indent: 0px;
-  
+
 }
 
 /*****************
@@ -133,6 +165,8 @@ ol li:before {
   content: counter(numbers) ".";
   text-align: right;
   font-weight: 600;
+  color: var(--bulletClr)!important;
+  -webkit-text-fill-color: var(--bulletClr);
 
 }
 
@@ -171,7 +205,8 @@ h1 {
   line-height: 1.25;
   font-weight: 900;
   -webkit-font-smoothing: antialiased;
-  margin-top: 4rem !important;
+  margin-top: 4.9rem !important;
+  margin-bottom: 4rem !important;
 }
 .h1-subhead {
   display: block;
@@ -195,13 +230,17 @@ h2,
 h2.part-heading {
   font-size: 1.4em !important;
 }
+h2 {
+  margin-top: 70px !important;
+  margin-bottom: 40px;
+}
 
 h3,
 .header-style-h3 {
   font-size: 1.4em !important;
   letter-spacing: -0.25px;
-  margin-top: 40px !important;
-  margin-bottom: 30px !important;
+  margin-top: 70px !important;
+  margin-bottom: 40px !important;
   text-indent: 0 !important;
   text-align: left !important;
   line-height: 1.3em !important;
@@ -252,12 +291,9 @@ LINKS
 ******************
 *****************/
 a {
-  color: black;
+  color: var(--linkClr) !important;
 }
 
-[class*="dark"] a {
-  color: #3089FF;
-}
 
 .marg-top20 {
   margin-top: 20px !important;
@@ -265,7 +301,8 @@ a {
 
 
 .header-aligned-right {
-  text-align: right !important;;
+  text-align: right !important;
+  ;
 }
 
 .f-weightnormal {
@@ -322,22 +359,21 @@ a {
   opacity: 1;
   margin-bottom: 5px;
   margin-top: 1px;
-  text-align: justify;
   line-height: 2em;
 }
 
 /***************
  ***************
  BLOCKQUOTE KiND OF THiNG*/
-.important-quote {
-  text-align: justify;
+.important-quote,
+.note-1 {
   position: relative;
   padding: 10px 19px 6px 19px;
   border-radius: 2px;
   margin-bottom: 0.7em;
   margin-top: 1em;
-  box-shadow: inset 0 0 0 1px hsl(210, 0%, 91%);
-  background: hsla(220, 0%, 96%, 0.5);
+  box-shadow: 0 0 0 1px var(--quoteBrdClr);
+  background-image: linear-gradient(var(--quoteBgClr),var(--quoteBgClr));
 }
 
 .important-quote p:first-of-type {
@@ -382,11 +418,12 @@ ol.important-quote .important-quote-callout {
  COPY EXAMPLE NUMBER 1
  *****************************
  *****************************/
-.copy-swipe-example-centered, .copy-swipe-example{
+.copy-swipe-example-centered,
+.copy-swipe-example {
   font-family: "Merriweatherr"
 }
 .copy-ex-block {
-  padding: 8px 35px 8px 35px;
+  padding: 10px 35px 10px 35px;
   -webkit-font-smoothing: subpixel-antialiased;
   font-smoothing: subpixel-antialiased;
   position: relative;
@@ -399,7 +436,7 @@ ol.important-quote .important-quote-callout {
 
 @media (max-width: 550px) {
   .copy-ex-block {
-    padding: 6px 24px !important;
+    padding: 10px 24px !important;
   }
 }
 
@@ -454,7 +491,7 @@ p.merriweather.centered.no-indent.size-1-3.f-weight600.marg-top20p.marg-btm20p {
 .drop-number {
   font-weight: 600;
   float: left;
-  font-size: 4.3rem;
+  font-size: 3.6em;
   margin-right: 10px;
   height: 60px;
   font-family: "New York Large";
@@ -478,9 +515,20 @@ body b,
 body em strong,
 body em b {
   -webkit-font-smoothing: antialiased;
+  color: var(--bldClr)!important;
+  -webkit-text-fill-color: var(--bldClr);
+  
+}
+body .style-bold {
+ font-weight: 500;
+ color: var(--bldClr)!important;
+  -webkit-text-fill-color: var(--bldClr);
 }
 
+
 body .iowan-red-color,
+body .iowan-red-color strong,
+body .iowan-red-color b
 body .iowan-red-color strong,
 body .iowan-red-color b {
   color: rgb(237, 84, 84) !important;
@@ -537,7 +585,6 @@ span.caslon.centered.no-indent.size-1-1.text-stroke-04.marg-top20p.marg-btm20p.l
 
 .ordered-list-spoof-right {
   margin-left: 4px;
-  text-align: justify;
   margin-bottom: 0.4em;
   position: relative;
 }
@@ -907,7 +954,7 @@ body .marg-top30p {
 .merriweather,
 .font-merriweather,
 .merriweather-body {
-  font-family: "Merriweatherr", Georgia,serif;
+  font-family: "Merriweatherr", Georgia, serif;
   font-size: calc(var(--bodyFontSize) * .925);
   line-height: calc(var(--bodyLineHeight) + .3)
 }
@@ -939,7 +986,7 @@ body .marg-top30p {
   font-size: 1.15rem !important;
 }
 
-.irvin-heading{
+.irvin-heading {
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-text-stroke-width: .3px !important;
   font-size: 1.5rem !important;
@@ -963,12 +1010,18 @@ body .marg-top30p {
 .ba-cover {
   border: 1px solid hsl(0, 0%, 50%.7);
   box-shadow: 0 0 0 5px hsl(0, 0%, 50%, .3);
-  border-radius: 6px;
+  border-radius: 8px;
   display: block;
   width: 500px;
   max-width: 100%;
   margin: 0 auto;
-  margin-top: 60px
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.ba-cover img {
+  display: block !important;
+  width:100% !important;
+  height: auto !important;
 }
 
 /*
@@ -985,12 +1038,10 @@ body .marg-top30p {
 
 
 body {
-  color: black;
+  color: var(--bodyClr);
 }
 
-[class*="dark"] body {
-  color: hsl(0, 0%, 80%) !important;
-}
+
 
 p.copy-swipe-example-caslon {
   -webkit-font-smoothing: subpixel-antialiased;
@@ -1045,7 +1096,6 @@ p.merriweather-header {
   -webkit-hyphens: none;
   hyphens: none;
 }
-
 .merriweather-header.txt-minus1,
 p.merriweather-header.txt-minus1 {
   font-size: 1.15rem !important
@@ -1067,14 +1117,15 @@ CASLON
   --caslonheaderFontSz: 1.425rem;
   --caslonheaderLineH: 1.485;
   /*body*/
-  --caslonbodyFontSz: 1.3rem;
+  --caslonbodyFontSz: 1.32rem;
   --caslonbodyLineH: 1.62;
 }
 
 
 /*caslon - individual heading*/
-.caslon{
-  -webkit-font-smoothing:subpixel-antialiased;
+.caslon {
+  -webkit-font-smoothing: subpixel-antialiased;
+  
 }
 .caslon-header,
 p.caslon-header {
@@ -1088,6 +1139,15 @@ p.caslon-header {
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-text-stroke-width: 0px;
   text-indent: 0px;
+  color: var(--headerClr)
+}
+[class*="caslon"],
+[class*="new-york"],
+[class*="merriweather"],
+[class*="irvin"],
+.copy-ex-block{
+  color: var(--headerClr);
+  -webkit-text-fill-color: var(--headerClr)
 }
 
 @media (max-width:650px) {
@@ -1123,7 +1183,7 @@ p.caslon-subhead {
 .caslon-body,
 p.caslon-body,
 .copy-ex-block.caslon {
-  font-family: "Adobe-Caslon", Georgia,serif !important;
+  font-family: "Adobe-Caslon", Georgia, serif !important;
   -webkit-font-smoothing: subpixel-antialiased;
   font-size: var(--caslonbodyFontSz);
   line-height: var(--caslonbodyLineH);
@@ -1139,141 +1199,4 @@ p.size-1-2.centered.caslon {
   line-height: 1.6 !important;
 }
 
-/*****************
-******************
-ICONS
-****************** 
-******************/
-:root {
-  /*square*/
-  --bulletSquare-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" fill="black" stroke="black" stroke-width="5.5"/></svg>');
-  --bulletSquare-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" fill="white" stroke="white" stroke-width="5.5"/></svg>');
-  /*circle*/
-  --bulletSquareOutline-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5"  stroke="black" stroke-width="5.5"/></svg>');
-  --bulletSquareOutline-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="24" height="24" rx="12" fill="white" stroke="white" stroke-width="2"/></svg>');
-  /*circle*/
-  --bulletCircleOutline-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" rx="10.25" stroke="black" stroke-width="5.5"/></svg>');
-  --bulletCircleOutline-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" rx="10.25" stroke="white" stroke-width="5.5"/></svg>');
 
-}
-
-:root {
-  --bulletClr: black;
-  --bulletSquare: var(--bulletSquare-Black);
-  --bulletSquareOutline: var(--bulletSquareOutline-Black);
-  --bulletCircleOutline: var(--bulletCircleOutline-Black);
-}
-
-[class*="dark"],
-[class*="Dark"],
-[class*="night"],
-[class*="night"] {
-  --bulletClr: white;
-  --bulletSquare: var(--bulletSquare-White);
-  --bulletSquareOutline: var(--bulletSquareOutline-White);
-  --bulletCircleOutline: var(--bulletCircleOutline-White);
-}
-
-/*****************
-******************
-******************
-******************
-******************
-******************
-******************
-******************
-DARK THEME
-******************
-******************
-******************
-******************
-******************
-******************
-******************/
-body {
-  background: var(--bgPrimary)
-}
-
-body[class*="dark"] {
-  background: var(--bgPrimary);
-  color: hsl(0, 0%, 80%)
-}
-
-[class*="dark"] h1,
-[class*="dark"] h2,
-[class*="dark"] h3,
-[class*="dark"] h4,
-[class*="dark"] h5,
-[class*="dark"] h6,
-[class*="dark"] .f-weight600 {
-  color: hsl(0, 0%, 100%) !important;
-  -webkit-text-stroke-width: 0px !important;
-}
-
-[class*="dark"] .numbered-title-number-container {
-  color: white;
-  background: black;
-}
-
-[class*="dark"] .note-1,
-[class*="dark"] .important-quote {
-  background-color: hsl(0, 0%, 10.5%) !important;
-  box-shadow: inset 0 0 0 1px #222222 !important;
-}
-
-[class*="dark"] .f-weight600 {
-  color: hsl(0, 0%, 100%) !important;
-  border-color: hsl(0, 0%, 94%) !important;
-}
-
-
-[class*="dark"] ol li:before {
-  background: transparent !important;
-  color: white;
-}
-
-[class*="dark"] .numbered-title-number-container-small:before,
-[class*="dark"] .numbered-title-number-container-small:after,
-[class*="dark"] .numbered-title-number-container:before,
-[class*="dark"] .numbered-title-number-container:after {
-  border-color: white !important;
-}
-
-[class*="dark"] .numbered-title-text-main-small-container p {
-  color: white !important;
-}
-
-[class*="dark"] strong,
-[class*="dark"] b {
-  color: white;
-}
-
-[class*="dark"] .copy-swipe-example-callout,
-[class*="dark"] .copy-swipe-example-callout span {
-  color: hsla(0, 0%, 100%, .15) !important
-}
-
-/*DARK MODE - EXAMPLES*/
-[class*="dark"] .copy-swipe-example.greater-weight,
-[class*="dark"] p.copy-swipe-example.greater-weight,
-[class*="dark"] .copy-ex-block *,
-[class*="dark"] .copy-swipe-example-caslon-centered,
-[class*="dark"] p.copy-swipe-example-caslon-centered,
-[class*="dark"] .merriweather,
-[class*="dark"] .font-merriweather,
-[class*="dark"] .drop-number,
-[class*="dark"] .new-york-large.centered.no-indent.size-1-4.f-weight700.marg-top15p,
-[class*="dark"] .copy-swipe-example-centered,
-[class*="dark"] p.copy-swipe-example-centered {
-  color: white;
-}
-
-[class*="dark"] .numbered-title-number-container-outer-small,
-[class*="dark"] .numbered-title-number-container-outer {
-  background-image: url("../assets/css/assets/css/VERSACE-WHITE.svg");
-}
-
-[class*="dark"] .numbered-title-number-container-small {
-  background: black;
-  color: white;
-}

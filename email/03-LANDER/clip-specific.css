@@ -1,0 +1,643 @@
+/*! CSS Used from: https://capitaloneshopping.com/STATIC_GENERATED/blog_pages/d39d186921d34652a2154e0da6d919ee/main.8cca95de.css */
+div,
+span,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+img,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+section {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Circular-Pro-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+h6 a {
+  color: #404340;
+  text-decoration: none;
+}
+
+h2 {
+  font-family: 'Circular-Pro-Black', 'Helvetica-Bold', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+  line-height: 30px;
+  color: #404340;
+}
+
+h3 {
+  font-family: 'Circular-Pro-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #404340;
+}
+
+h4 {
+  font-family: 'Circular-Pro-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #a1a1a1;
+}
+
+h5 {
+  font-family: 'Circular-Pro-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #404340;
+}
+
+h6 {
+  font-family: 'Circular-Pro-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 19px;
+  color: #a1a1a1;
+}
+
+.silver {
+  color: #a1a1a1;
+}
+
+.bold {
+  font-family: 'Circular-Pro-Black', 'Helvetica-Bold', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.semi-bold {
+  font-family: 'Circular-Pro-Book', 'Helvetica-Bold', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.light {
+  font-family: 'Circular-Pro-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.medium-link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.tertiary-link {
+  color: #404340;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tertiary-link:hover {
+  color: #8e939d;
+}
+
+.tertiary-link:active {
+  color: rgba(142, 147, 157, 0.2);
+  user-select: none;
+}
+
+.button-style {
+  font-family: 'Circular-Pro-Black', 'Helvetica-Bold', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: 0;
+  outline: 0;
+  padding: 0;
+  line-height: normal;
+  position: relative;
+  min-width: 180px;
+}
+
+.button-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  user-select: none;
+}
+
+.domain__capitaloneshopping .primary-btn-large {
+  background-color: #0276b1;
+}
+
+.domain__capitaloneshopping .primary-btn-large:hover:not([disabled]) {
+  color: #fff;
+  background-color: #026597;
+  border-color: #026597;
+}
+
+.domain__capitaloneshopping .primary-btn-large:active {
+  color: #fff;
+  background-color: #014e74;
+  border-color: #014e74;
+}
+
+.primary-btn-large {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  outline: none;
+  padding: 0 10px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  height: 40px;
+  background: #01c049;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.primary-btn-large:hover {
+  color: #fff;
+  background-color: #00e76d;
+  border: 1px solid #00e76d;
+  box-shadow: 0px 2px 8px rgba(210, 210, 210, 0.3);
+}
+
+.primary-btn-large:active {
+  color: #98f5c4;
+  background-color: #00e76d;
+  border: 1px solid #00e76d;
+  box-shadow: none;
+}
+
+.primary-btn-large:disabled {
+  border-color: #ececec;
+  background: #f5f5f5;
+  color: #b7b7b7;
+  box-shadow: none;
+  cursor: default;
+}
+
+.button-style:disabled,
+.button-style:hover:disabled,
+.button-style:active:disabled {
+  border-color: #ececec;
+  background: #f5f5f5;
+  color: #b7b7b7;
+  box-shadow: none;
+  cursor: default;
+}
+
+.logo {
+  flex-shrink: 0;
+  cursor: pointer;
+  width: 180px;
+  background-repeat: no-repeat;
+  height: 60px;
+}
+
+.logo {
+  width: 155px;
+  height: 43.3px;
+  background-image: url('https://cdn.ivaws.com/wikibuy-assets/images/upload_content/c1_shopping_blue.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.domain__capitaloneshopping .logo {
+  background-image: url('https://cdn.ivaws.com/wikibuy-assets/images/upload_content/c1_shopping_blue.svg');
+  margin-bottom: 10px;
+}
+
+/*! CSS Used from: https://capitaloneshopping.com/STATIC_GENERATED/blog_pages/d39d186921d34652a2154e0da6d919ee/__react_static_root__/src/containers/BlogIndex~__react_static_root__/src/containers/BlogPost.9b86a0c7.css */
+.install-wikibuy-block .button-wrapper {
+  max-width: 496px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.install-wikibuy-block .button-wrapper .install-button {
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.install-wikibuy-block .button-wrapper .install-button .subcopy {
+  font-family: 'Circular-Pro-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.domain__capitaloneshopping .install-wikibuy-block .button-wrapper .install-button {
+  max-width: 496px;
+  min-height: 48px;
+  line-height: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.domain__capitaloneshopping .install-wikibuy-block .button-wrapper {
+  width: fit-content;
+}
+
+.install-wikibuy-block .ratings {
+  margin-top: 23px;
+  height: 81px;
+}
+
+.install-wikibuy-block h5 {
+  text-align: left;
+  color: #a1a1a1;
+  font-size: 11px;
+}
+
+.install-wikibuy-block .star-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 190px;
+  margin: 10px auto 10px;
+}
+
+.install-wikibuy-block .star-wrapper .star {
+  max-width: 35px;
+  width: 35px;
+  height: 35px;
+  padding: 0 2px;
+}
+
+/*! CSS Used from: https://capitaloneshopping.com/STATIC_GENERATED/blog_pages/d39d186921d34652a2154e0da6d919ee/__react_static_root__/src/containers/BlogPost.11c06fad.css */
+.blog-header-with-cta-container {
+  margin-bottom: 120px;
+}
+
+@media (max-width: 768px) {
+  .blog-header-with-cta-container {
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-header-with-cta-container {
+    margin-bottom: 180px;
+  }
+}
+
+.blog-header-with-cta {
+  height: 80px;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  background: #fff;
+  width: 100vw;
+  left: 0;
+  padding: 0 100px;
+  box-shadow: 11px 15px 29px 0 rgba(48, 48, 48, 0.07);
+  justify-content: center;
+}
+
+.blog-header-with-cta .blog-header-with-cta-inner {
+  max-width: 800px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.blog-post-wrapper .flex {
+  display: flex;
+}
+
+.blog-post-wrapper .blog-post {
+  padding: 0 40px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.blog-post-wrapper .blog-post .blog-title {
+  margin-top: 50px;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+@media (max-width: 768px) {
+  .blog-post-wrapper .blog-post .blog-title {
+    font-size: 20px;
+    line-height: 24.8px;
+  }
+}
+
+.blog-post-wrapper .blog-post .blog-subtitle {
+  color: #273c46;
+  font-weight: normal;
+  line-height: 34px;
+  margin-top: 35px;
+}
+
+@media (max-width: 768px) {
+  .blog-post-wrapper .blog-post .blog-subtitle {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+.blog-post-wrapper .blog-post .blog-image {
+  margin: 43px auto 0;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .blog-post-wrapper .blog-post {
+    padding: 40px 20px;
+  }
+}
+
+.blog-post-wrapper .get-wikibuy-section {
+  padding: 40px 0;
+  border-top: 1px solid #d9dee1;
+  margin-top: 59px;
+}
+
+@media (max-width: 768px) {
+  .blog-post-wrapper .get-wikibuy-section {
+    margin-top: 40px;
+    padding: 40px 20px;
+  }
+}
+
+.blog-post-wrapper h3.blog-subtitle .bold {
+  font-family: Georgia, serif;
+}
+
+.blog-post-wrapper h3.blog-subtitle .bold {
+  font-weight: bold;
+}
+
+.blog-post-wrapper h3.blog-subtitle,
+.blog-post-wrapper .medium-link {
+  font-size: 21px;
+  font-family: Georgia, serif;
+  line-height: 35px;
+}
+
+@media (max-width: 768px) {
+
+  .blog-post-wrapper h3.blog-subtitle,
+  .blog-post-wrapper .medium-link {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .blog-post-wrapper .blog-post {
+    padding: 25px 15px;
+  }
+}
+
+.simple-blog {
+  height: auto;
+}
+
+.simple-blog img {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1), 0 6px 18px 0 rgba(0, 0, 0, 0.1);
+}
+
+.simple-blog .flex {
+  display: flex;
+}
+
+.simple-blog .flex h4 {
+  margin-left: 3px;
+  font-size: 25px;
+  padding-top: 2px;
+  color: #ccc;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+}
+
+.simple-blog .flex.space-between {
+  justify-content: space-between;
+  min-width: 100%;
+}
+
+.simple-blog .content-wrap h2:first-child {
+  margin-top: 0;
+}
+
+.simple-blog .app-links {
+  padding: 20px;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.simple-blog .app-links .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simple-blog .app-links .flex h6 {
+  margin: 10px;
+}
+
+.simple-blog .get-wikibuy-section {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0px;
+  border-color: transparent;
+  padding: 50px 0 50px;
+}
+
+.simple-blog .get-wikibuy-section .button-wrapper {
+  flex-direction: row;
+  max-width: 800px;
+  justify-content: center;
+}
+
+.simple-blog .get-wikibuy-section .button-wrapper .install-button {
+  height: 60px;
+  font-size: 20px;
+  line-height: 60px;
+  margin: 0;
+}
+
+.simple-blog .get-wikibuy-section .button-wrapper .install-button .subcopy {
+  font-size: 18px;
+}
+
+.simple-blog .get-wikibuy-section .button-wrapper .ratings {
+  margin-top: 0;
+  margin-left: 43px;
+  padding-left: 40px;
+  border-left: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.simple-blog .get-wikibuy-section .button-wrapper .ratings .star-wrapper {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.simple-blog .get-wikibuy-section .install-wikibuy-block h5 {
+  font-size: 15px;
+}
+
+@media (max-width: 800px) {
+  .simple-blog .get-wikibuy-section .button-wrapper {
+    flex-direction: column;
+  }
+
+  .simple-blog .get-wikibuy-section .button-wrapper .ratings {
+    margin-top: 20px;
+    padding-left: 0;
+    margin-left: 0;
+    border: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .simple-blog {
+    margin-top: -95px;
+  }
+}
+
+.news-outlet-logos-wrapper h5 {
+  color: #7f7d7d;
+  margin-left: -4px;
+}
+
+.news-outlet-logos {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.news-outlet-logos div {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-right: 15px;
+}
+
+.news-outlet-logos .forbes-logo {
+  background-image: url('https://cdn.ivaws.com/wikibuy-assets/images/news_outlet_logos/forbes.png');
+  width: 61px;
+  height: 16px;
+}
+
+.news-outlet-logos .forbes-logo.large {
+  width: 100px;
+  height: 26px;
+}
+
+.news-outlet-logos .fortune {
+  background-image: url('https://cdn.ivaws.com/wikibuy-assets/images/news_outlet_logos/fortune.png');
+  width: 74px;
+  height: 20px;
+}
+
+.news-outlet-logos .fortune.large {
+  width: 122px;
+  height: 33px;
+}
+
+.news-outlet-logos .usa-today {
+  background-image: url('https://cdn.ivaws.com/wikibuy-assets/images/news_outlet_logos/usatoday.png');
+  width: 56px;
+  height: 21px;
+}
+
+.news-outlet-logos .usa-today.large {
+  width: 86px;
+  height: 30px;
+}
+
+.news-outlet-logos .mashable {
+  background-image: url('https://cdn.ivaws.com/wikibuy-assets/images/news_outlet_logos/mashable.png');
+  width: 99px;
+  height: 17px;
+}
+
+.news-outlet-logos .mashable.large {
+  width: 117px;
+  height: 20px;
+}
+
+.news-outlet-logos-wrapper {
+  width: 100%;
+  background: #fafafa;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.news-outlet-logos-wrapper div.large {
+  margin-right: 25px;
+}
+
+.news-outlet-logos-wrapper div.large:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 670px) {
+  .news-outlet-logos-wrapper {
+    padding: 20px 0;
+    height: auto;
+  }
+
+  .news-outlet-logos-wrapper .news-outlet-logos {
+    flex-direction: column;
+  }
+
+  .news-outlet-logos-wrapper .news-outlet-logos .large {
+    margin: 10px 0 10px 0;
+  }
+}
+
+/*! CSS Used fontfaces */
+@font-face {
+  font-family: 'Circular-Pro-Book';
+  src: url('https://cdn.ivaws.com/wikibuy-assets/font/lineto-circular-pro-book.eot');
+  src: url('https://cdn.ivaws.com/wikibuy-assets/font/lineto-circular-pro-book.eot?#iefix') format('embedded-opentype'), url('https://cdn.ivaws.com/wikibuy-assets/font/lineto-circular-pro-book.woff2') format('woff2'), url('https://cdn.ivaws.com/wikibuy-assets/font/lineto-circular-pro-book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular-Pro-Black';
+  src: url('https://cdn.ivaws.com/wikibuy-assets/font/lineto-circular-pro-black.eot');
+  src: url('https://cdn.ivaws.com/wikibuy-assets/font/lineto-circular-pro-black.eot?#iefix') format('embedded-opentype'), url('https://cdn.ivaws.com/wikibuy-assets/font/lineto-circular-pro-black.woff2') format('woff2'), url('https://cdn.ivaws.com/wikibuy-assets/font/lineto-circular-pro-black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

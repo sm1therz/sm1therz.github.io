@@ -1,21 +1,19 @@
-@charset "UTF-8";
-/* CSS Document */
-/******************
+/*****************
 ******************
- BIG PAGE HEADERS
+BIG PAGE HEADERS
 ******************
- ******************/
+******************/
 .numbered-title-container {
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-bottom: 30px !important;
-  margin-top: 40px !important;
+  margin-top: 70px !important;
+  margin-bottom: 50px !important;
   color: var(--headerClr) !important;
 }
 .numbered-title-number-container-outer {
   background: rgba(0, 0, 0, 0);
-  background-image: url("../images/VERSACE-BLACK.svg");
+  background-image: var(--versaceBgImg);
   background-repeat: repeat;
   background-size: contain;
   margin-right: 10px;
@@ -34,11 +32,13 @@
   height: 40px;
   color: var(--headerClr);
   user-select: none;
-  background-color: hsla(0, 0%, 100%, 1);
+  background-color: var(--bgPrimary);
+  background-image: linear-gradient(var(--bgPrimary),var(--bgPrimary));
   border-bottom: 0px;
   position: relative;
   overflow: hidden;
 }
+
 @media (max-width: 550px) {
   .numbered-title-number-container {
     width: 23px;
@@ -117,11 +117,14 @@
   margin-top: -2px;
   letter-spacing: -1px;
   line-height: 1.1 !important;
+  margin-top: 6px;
 }
 @media (max-width: 550px) {
   .numbered-title-text-main {
     font-size: 0.95em;
     display: block;
+    margin-top: 0px;
+
   }
 }
 /******************
@@ -129,18 +132,18 @@
 ******************
 ******************
 ******************
- SMALL PAGE HEADERS
+SMALL PAGE HEADERS
 ******************
 ******************
 ******************
 ******************
- ******************/
+******************/
 .numbered-title-container-small {
   display: flex;
   flex-direction: row;
   position: relative;
   margin-top: 40px !important;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .numbered-title-number-container-outer-small {
   background: rgba(0, 0, 0, 0);
@@ -161,11 +164,13 @@
   height: 30px;
   color: var(--headerClr);
   border: 0px solid black;
-  background-color: hsla(0, 0%, 100%, 1);
+  background-color: var(--bgPrimary);
+  background-image: linear-gradient(var(--bgPrimary),var(--bgPrimary));
   border-bottom: 0px;
   position: relative;
   overflow: hidden;
 }
+
 @media (max-width: 550px) {
   .numbered-title-number-container-small {
     width: 20px;
@@ -222,7 +227,7 @@
   justify-content: center;
   position: absolute;
   bottom: 0;
-  top:4px;
+  top: 4px;
   left: 0;
   right: 0;
   height: 100%;
@@ -231,7 +236,7 @@
 @media (max-width: 550px) {
   .numbered-title-number-small {
     font-size: .87em;
-      top:2px;
+    top: 2px;
   }
 }
 .numbered-title-text-main-small-container {
@@ -277,42 +282,3 @@
     font-size: 0.95em !important;
   }
 }
-[class*="dark"],
-[class*="Dark"],
-[class*="night"],
-[class*="night"]{
-  
-}
-
-
-
-
-
-/*****************
-******************
-ICONS
-****************** 
-******************/
-:root {
-    --versaceBlack: url('data:image/svg+xml;utf8,<svg width="45" height="55" viewBox="0 0 45 55" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 44.9999V4.99992H15V24.9999H20V10H35V34.9999V39.9999H0V-8.01086e-05H5V34.9999H30V14.9999H25V29.9999H10V4.99992V-8.01086e-05H45V49.9999L5 50V55H9.91821e-05L0 45L40 44.9999Z" fill="black"/></svg>');
-    --versaceWhite: url('data:image/svg+xml;utf8,<svg width="45" height="55" viewBox="0 0 45 55" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 44.9999V4.99992H15V24.9999H20V10H35V34.9999V39.9999H0V-8.01086e-05H5V34.9999H30V14.9999H25V29.9999H10V4.99992V-8.01086e-05H45V49.9999L5 50V55H9.91821e-05L0 45L40 44.9999Z" fill="white"/></svg>');
-    
-}
-
-:root{
-    --versaceBgImg:var(--versaceBlack);
-    --versaceBrdClr:black;
-    --headerClr:black
-}
-[class*="dark"],
-[class*="Dark"],
-[class*="night"],
-[class*="night"] {
-    --versaceBgImg:var(--versaceWhite);
-    --versaceBrdClr:white;
-    --headerClr:white;
-}
-
-
-
-

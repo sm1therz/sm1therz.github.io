@@ -1,0 +1,15 @@
+h3 {
+	font-size: 27px !important;
+	line-height: 1.25 !important;
+}
+
+.message-content a{
+	text-underline-offset: 1px;
+	text-decoration-thickness: 1.5px;
+}
+
+@media (max-width: 700px) {
+	h3 {
+		font-size: 1.4rem !important;
+	}
+}

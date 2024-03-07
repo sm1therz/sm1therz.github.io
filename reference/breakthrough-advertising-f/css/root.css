@@ -1,4 +1,4 @@
-:root{
+:root {
   --bodyFontSize: 19px;
   --bodyLineHeight: 1.625;
   --indentWidth: 16px;
@@ -8,6 +8,110 @@
   --listItmPadL: 42px;
   --listItmBulletWidth: calc(var(--listItmPadL) - var(--listItmBulletMargR));
   --listItmBulletMargR: 8px;
+}
 
-  
+/*****************
+COLORS - LIGHT
+******************/
+:root,
+[color-scheme="white"] {
+  /*background*/
+  --bgPrimary: white;
+  /*text*/
+  --bodyClr: hsl(0, 0%, 0%);
+  --headerClr: black;
+  --bldClr: black;
+  /*link*/
+  --linkClr: #0070df;
+  /*bullet*/
+  --bulletClr: black;
+  /*quote*/
+  --quoteBgClr: hsl(0, 0%, 98%);
+  --quoteBrdClr: hsl(0, 0%, 91%);
+  /*versace*/
+  --versaceBrdClr: black;
+}
+/*****************
+COLORS - DARK
+******************/
+
+@media (prefers-color-scheme: dark) {
+/*****/
+}
+[class*="dark"] {
+  /*background*/
+  --bgPrimary: black;
+  /*text*/
+  --bodyClr: hsl(0, 0%, 95%);
+  --headerClr: hsl(110, 100%, 100%);
+  --bldClr: hsl(110, 100%, 99%) !important;
+  /*link*/
+  --linkClr: #3089ff;
+  /*bullet*/
+  --bulletClr: white !important;
+  /*quote*/
+  --quoteBgClr: hsl(0, 0%, 10.5%);
+  --quoteBrdClr: #222222;
+  --versaceBrdClr: white;
+
+}
+
+
+
+/*****************
+******************
+******************
+ICONS
+******************
+****************** 
+******************/
+:root {
+  /*bullet - square*/
+  --bulletSquare-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" fill="black" stroke="black" stroke-width="5.5"/></svg>');
+  --bulletSquare-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" fill="white" stroke="white" stroke-width="5.5"/></svg>');
+  /*bullet - circle*/
+  --bulletSquareOutline-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5"  stroke="black" stroke-width="5.5"/></svg>');
+  --bulletSquareOutline-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="24" height="24" rx="12" fill="white" stroke="white" stroke-width="2"/></svg>');
+  /*bullet - circle*/
+  --bulletCircleOutline-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" rx="10.25" stroke="black" stroke-width="5.5"/></svg>');
+  --bulletCircleOutline-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" rx="10.25" stroke="white" stroke-width="5.5"/></svg>');
+  /*border-dash - */
+  --brdDashHoriz-Black: url('data:image/svg+xml;utf8,<svg width="12" height="1" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="4.76837e-07" width="3" height="0.75" rx="0.375" fill="black" fill-opacity="0.45"/><rect x="3" y="3.57628e-07" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.01"/><rect x="6" y="2.38419e-07" width="3" height="0.75" rx="0.375" fill="black" fill-opacity="0.45"/><rect x="9" y="1.19209e-07" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.01"/></svg>');
+  --brdDashHoriz-White: url('data:image/svg+xml;utf8,<svg width="12" height="1" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="4.76837e-07" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.45"/><rect x="3" y="3.57628e-07" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.01"/><rect x="6" y="2.38419e-07" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.45"/><rect x="9" y="1.19209e-07" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.01"/></svg>');
+  /*versace*/
+  --versaceBlack: url('data:image/svg+xml;utf8,<svg width="45" height="55" viewBox="0 0 45 55" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 44.9999V4.99992H15V24.9999H20V10H35V34.9999V39.9999H0V-8.01086e-05H5V34.9999H30V14.9999H25V29.9999H10V4.99992V-8.01086e-05H45V49.9999L5 50V55H9.91821e-05L0 45L40 44.9999Z" fill="black"/></svg>');
+  --versaceWhite: url('data:image/svg+xml;utf8,<svg width="45" height="55" viewBox="0 0 45 55" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 44.9999V4.99992H15V24.9999H20V10H35V34.9999V39.9999H0V-8.01086e-05H5V34.9999H30V14.9999H25V29.9999H10V4.99992V-8.01086e-05H45V49.9999L5 50V55H9.91821e-05L0 45L40 44.9999Z" fill="white"/></svg>');
+}
+
+/*****************
+ICONS LIGHT
+******************/
+:root,
+[color-scheme="white"] {
+  /*bullets*/
+  --bulletSquare: var(--bulletSquare-Black);
+  --bulletSquareOutline: var(--bulletSquareOutline-Black);
+  --bulletCircleOutline: var(--bulletCircleOutline-Black);
+  /*border-dash - Horizontal*/
+  --brdDashHoriz: var(--brdDashHoriz-Black);
+  /*versace*/
+  --versaceBgImg: var(--versaceBlack);
+}
+
+/*****************
+ICONS DARK
+******************/
+@media (prefers-color-scheme: dark) {
+  /***/
+}
+[class*="dark"] {
+  /*bullets*/
+  --bulletSquare: var(--bulletSquare-White);
+  --bulletSquareOutline: var(--bulletSquareOutline-White);
+  --bulletCircleOutline: var(--bulletCircleOutline-White);
+  /*border-dash - Horizontal*/
+  --brdDashHoriz: var(--brdDashHoriz-White);
+  /*versace*/
+  --versaceBgImg: var(--versaceWhite);
+
 }

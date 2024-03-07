@@ -1,0 +1,38 @@
+
+.block .desc {
+  -webkit-text-fill-color:#454545
+}
+.btn {
+  background-image:linear-gradient(#2bba6d,#2bba6d);
+  font-weight:300;
+}
+body {
+
+  -webkit-text-fill-color:#45536B !important;
+  
+}
+.green {
+  -webkit-text-fill-color:#30cf79;
+}
+.font-img{
+  display:block;
+  width:100px;
+  height:auto;
+  
+}
+
+.clip-outer {
+  background-image:linear-gradient(#ffffff,#ffffff) !important;
+  border-radius:5px;
+  position:relative;
+  overflow-x:hidden !important;
+}
+
+.xxx, img {
+  margin:0 auto;
+}
+a.btn, button {
+  -webkit-text-fill-color:white;
+}
+
+

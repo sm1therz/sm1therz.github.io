@@ -2,7 +2,6 @@
 ROOT - COLORS
 ****************/
 :root {
-  --bgPrimary: white;
   /*toc*/
   --tocBrdClr: hsl(0, 0%, 0%, .25);
   --tocLinkClr: hsl(0, 0%, 0%, .45);
@@ -10,7 +9,6 @@ ROOT - COLORS
   --tocLinkClr-Active: var(--tocLinkClr-Hover);
 }
 .darkMode {
-  --bgPrimary: black;
   /*toc*/
   --tocBrdClr: hsl(0, 0%, 100%, .25);
   --tocLinkClr: hsl(0, 0%, 100%, .45);
@@ -71,39 +69,18 @@ MAIN DOCUMENT STRUCTURE
 /*BOOK*/
 .book,
 .content {
-  width: 700px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: 660px;
   max-width: 100%;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-/*ANCHOR HEADINGS*/
-.main-wrapper .anchor-heading svg {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  fill: #7253ed;
-  visibility: hidden;
-  position: absolute;
-}
-.main-wrapper .anchor-heading:hover svg,
-.main-wrapper h1:hover > .anchor-heading svg,
-.main-wrapper h2:hover > .anchor-heading svg,
-.main-wrapper h3:hover > .anchor-heading svg,
-.main-wrapper h4:hover > .anchor-heading svg,
-.main-wrapper h5:hover > .anchor-heading svg,
-.main-wrapper h6:hover > .anchor-heading svg {
-  visibility: visible;
-  left: 0;
-}
+
 /*****************
 HEADINGS
 ******************/
-body h5 * {
-  font-weight: 700 !important;
-  -webkit-font-smoothing: subpixel-antialiased !important;
-}
-body .header-break {
+
+.header-break {
   height: 0px;
   display: block;
 }
@@ -268,7 +245,8 @@ TOC / TABLE OF CONTENTS
 #toc * {
   text-align: left !important;
 }
-#toc p {
+#toc p,
+#toc > div {
   margin-top: var(--tocItemMargTopBtm) !important;
   margin-bottom: var(--tocItemMargTopBtm) !important;
 }
@@ -284,19 +262,24 @@ TOC / TABLE OF CONTENTS
   display: none;
 }
 /*headers*/
-#toc .text_1 {
+#toc .text_1,
+#toc > .sgc-toc-level-1 {
   font-weight: 500;
   -webkit-font-smoothing: subpixel-antialiased;
   text-transform: capitalize;
 }
 /*smaller text*/
 #toc .text_2,
-#toc .level-2 {
+#toc .sgc-toc-level-2 {
   padding-left: 12px !important;
 }
 #toc .text_3,
-#toc .level-3 {
+#toc .sgc-toc-level-3 {
   padding-left: 24px !important;
+}
+#toc .text_4,
+#toc .sgc-toc-level-4 {
+  padding-left: 36px !important;
 }
 /*CONTENTS HEADER*/
 #toc .toc-wrap:before {
