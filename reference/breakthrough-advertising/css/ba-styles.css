@@ -24,7 +24,7 @@ body {
 }
 
 /*sigil horizontal rule/*/
-.sigil_split_marker{
+.sigil_split_marker {
   opacity: 0;
 }
 /*****************
@@ -68,8 +68,10 @@ p {
 p,
 ol li,
 ul li {
-  -webkit-hyphens: auto !important;;
-  hyphens: auto !important;;
+  -webkit-hyphens: auto !important;
+  ;
+  hyphens: auto !important;
+  ;
 }
 p,
 ol li,
@@ -165,7 +167,7 @@ ol li:before {
   content: counter(numbers) ".";
   text-align: right;
   font-weight: 600;
-  color: var(--bulletClr)!important;
+  color: var(--bulletClr) !important;
   -webkit-text-fill-color: var(--bulletClr);
 
 }
@@ -373,7 +375,7 @@ a {
   margin-bottom: 0.7em;
   margin-top: 1em;
   box-shadow: 0 0 0 1px var(--quoteBrdClr);
-  background-image: linear-gradient(var(--quoteBgClr),var(--quoteBgClr));
+  background-image: linear-gradient(var(--quoteBgClr), var(--quoteBgClr));
 }
 
 .important-quote p:first-of-type {
@@ -423,7 +425,7 @@ ol.important-quote .important-quote-callout {
   font-family: "Merriweatherr"
 }
 .copy-ex-block {
-  padding: 10px 35px 10px 35px;
+  padding: 16px 35px 16px 35px;
   -webkit-font-smoothing: subpixel-antialiased;
   font-smoothing: subpixel-antialiased;
   position: relative;
@@ -434,12 +436,30 @@ ol.important-quote .important-quote-callout {
   margin-bottom: 25px !important;
 }
 
+
 @media (max-width: 550px) {
   .copy-ex-block {
-    padding: 10px 24px !important;
+    padding: 16px 16px !important;
   }
 }
+/*
+.copy-ex-block:before,
+.copy-ex-block:after {
+  content: "";
+  display: block;
+  background-image: var(--brdDashHoriz);
+  background-size: 12px 2px;
+  background-position: center;
+  background-repeat: repeat-x;
+  height: 2px;
+  width: 100%;
+  opacity: .6;
+}
+.copy-ex-block:after{
+  top: unset;
+}
 
+*/
 
 
 .copy-ex-block p.caslon,
@@ -515,21 +535,20 @@ body b,
 body em strong,
 body em b {
   -webkit-font-smoothing: antialiased;
-  color: var(--bldClr)!important;
+  color: var(--bldClr) !important;
   -webkit-text-fill-color: var(--bldClr);
-  
+
 }
 body .style-bold {
- font-weight: 500;
- color: var(--bldClr)!important;
+  font-weight: 500;
+  color: var(--bldClr) !important;
   -webkit-text-fill-color: var(--bldClr);
 }
 
 
 body .iowan-red-color,
 body .iowan-red-color strong,
-body .iowan-red-color b
-body .iowan-red-color strong,
+body .iowan-red-color b body .iowan-red-color strong,
 body .iowan-red-color b {
   color: rgb(237, 84, 84) !important;
   -webkit-text-fill-color: rgb(237, 84, 84);
@@ -1020,7 +1039,7 @@ body .marg-top30p {
 }
 .ba-cover img {
   display: block !important;
-  width:100% !important;
+  width: 100% !important;
   height: auto !important;
 }
 
@@ -1117,15 +1136,15 @@ CASLON
   --caslonheaderFontSz: 1.425rem;
   --caslonheaderLineH: 1.485;
   /*body*/
-  --caslonbodyFontSz: 1.32rem;
-  --caslonbodyLineH: 1.62;
+  --caslonbodyFontSz: 1.3rem;
+  --caslonbodyLineH: 1.6;
 }
 
 
 /*caslon - individual heading*/
 .caslon {
   -webkit-font-smoothing: subpixel-antialiased;
-  
+
 }
 .caslon-header,
 p.caslon-header {
@@ -1145,7 +1164,7 @@ p.caslon-header {
 [class*="new-york"],
 [class*="merriweather"],
 [class*="irvin"],
-.copy-ex-block{
+.copy-ex-block {
   color: var(--headerClr);
   -webkit-text-fill-color: var(--headerClr)
 }
@@ -1198,5 +1217,3 @@ p.size-1-2.centered.caslon {
   font-size: 1.4rem !important;
   line-height: 1.6 !important;
 }
-
-
