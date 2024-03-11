@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box !important;
 }
-html, body {
+html,
+body {
   padding: 0px !important;
   margin: 0px !important;
   width: 100% !important;
@@ -15,9 +16,9 @@ body {
   max-width: 100% !important;
   margin: 0 auto !important;
 }
-.book{
-  width:660px;
-  max-width:100%;
+.book {
+  width: 660px;
+  max-width: 100%;
   margin: 0 auto;
 }
 /***************
@@ -99,7 +100,8 @@ BODY
   hyphens: auto !important;
   -webkit-hyphens: auto !important;
 }
-em, i {
+em,
+i {
   font-size: 1.05em;
   line-height: calc(1em);
   display: inline;
@@ -107,8 +109,7 @@ em, i {
 /***************
 SUPERSCRIPT
 ****************/
-.c11 {
-}
+.c11 {}
 /***************
 Headings
 ****************/
@@ -137,16 +138,17 @@ h3 {
   font-weight: 300;
 }
 h4,
-.heading-style-h4{
+.heading-style-h4 {
   font-size: calc(var(--bodyTxt) + 5px) !important;
   font-weight: 500;
 }
 h5,
-.heading-style-h5{
+.heading-style-h5 {
   font-size: calc(var(--bodyTxt) + 1.5px) !important;
   font-weight: 500;
 }
-h4, h5 {
+h4,
+h5 {
   margin-top: 34px !important;
   margin-bottom: 34px !important;
   -webkit-text-stroke: .3px;
@@ -155,12 +157,12 @@ h4, h5 {
 h6 {
   font-weight: 400;
 }
-.centered{
+.centered {
   text-align: center !important;
 }
 /***************
 LISTS AND PARAGRAPHS
-****************/ 
+****************/
 :root {
   --bodyTxt: 1.05rem;
   --bodyTxtLineHeight: 1.45;
@@ -170,7 +172,12 @@ LISTS AND PARAGRAPHS
   /*list*/
   --listMargTopBtm: 7px;
 }
-p, ol li, ul li, h5, h6, h4 {
+p,
+ol li,
+ul li,
+h5,
+h6,
+h4 {
   font-size: var(--bodyTxt);
   line-height: var(--bodyTxtLineHeight);
   margin-top: var(--paraMargTopBtm) !important;
@@ -183,15 +190,18 @@ p {
   text-align: justify;
 }
 
-ol li, ul li {
+ol li,
+ul li {
   margin-top: var(--listMargTopBtm) !important;
   margin-bottom: var(--listMargTopBtm) !important;
 }
-ol, ul {}
+ol,
+ul {}
 /***************
 QUOTES
 ****************/
-p.c5.c27, p.c5.c45 {
+p.c5.c27,
+p.c5.c45 {
   margin: 0 auto !important;
   padding-left: .5rem;
   padding-right: .5rem;
@@ -291,7 +301,8 @@ caption {
   font-family: "Roboto Condensedd", sans-serif;
   font-weight: 300;
 }
-strong, b {
+strong,
+b {
   font-weight: 900;
 }
 .copy-example {
@@ -301,7 +312,7 @@ strong, b {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-top: 30px;
-  margin-bottom:30px;
+  margin-bottom: 30px;
 }
 
 .title {
