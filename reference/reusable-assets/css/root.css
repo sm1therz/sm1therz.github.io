@@ -36,7 +36,22 @@ COLORS - DARK
 ******************/
 
 @media (prefers-color-scheme: dark) {
-/*****/
+  :root {
+    /*background*/
+    --bgPrimary: black;
+    /*text*/
+    --bodyClr: hsl(0, 0%, 95%);
+    --headerClr: hsl(110, 100%, 100%);
+    --bldClr: hsl(110, 100%, 99%) !important;
+    /*link*/
+    --linkClr: #3089ff;
+    /*bullet*/
+    --bulletClr: white !important;
+    /*quote*/
+    --quoteBgClr: hsl(0, 0%, 10.5%);
+    --quoteBrdClr: #222222;
+    --versaceBrdClr: white;
+  }
 }
 [class*="dark"] {
   /*background*/
@@ -102,7 +117,16 @@ ICONS LIGHT
 ICONS DARK
 ******************/
 @media (prefers-color-scheme: dark) {
-  /***/
+  :root {
+    /*bullets*/
+    --bulletSquare: var(--bulletSquare-White);
+    --bulletSquareOutline: var(--bulletSquareOutline-White);
+    --bulletCircleOutline: var(--bulletCircleOutline-White);
+    /*border-dash - Horizontal*/
+    --brdDashHoriz: var(--brdDashHoriz-White);
+    /*versace*/
+    --versaceBgImg: var(--versaceWhite);
+  }
 }
 [class*="dark"] {
   /*bullets*/
@@ -113,5 +137,89 @@ ICONS DARK
   --brdDashHoriz: var(--brdDashHoriz-White);
   /*versace*/
   --versaceBgImg: var(--versaceWhite);
+
+}
+
+
+
+/*****************
+******************
+******************
+******************
+FOR DESKTOP
+******************
+******************
+******************
+******************/
+
+/*****************
+ICONS LIGHT - DESKTOP
+******************/
+:root,
+[color-scheme="white"] {
+  /*bullets*/
+  --bulletSquare: var(--bulletSquare-Black) !important;
+  --bulletSquareOutline: var(--bulletSquareOutline-Black) !important;
+  --bulletCircleOutline: var(--bulletCircleOutline-Black) !important;
+  /*border-dash - Horizontal*/
+  --brdDashHoriz: var(--brdDashHoriz-Black) !important;
+  /*versace*/
+  --versaceBgImg: var(--versaceBlack) !important;
+}
+/*****************
+ICONS DARK - DESKTOP
+******************/
+[class*="dark"] {
+  /*bullets*/
+  --bulletSquare: var(--bulletSquare-White) !important;
+  --bulletSquareOutline: var(--bulletSquareOutline-White) !important;
+  --bulletCircleOutline: var(--bulletCircleOutline-White) !important;
+  /*border-dash - Horizontal*/
+  --brdDashHoriz: var(--brdDashHoriz-White) !important;
+  /*versace*/
+  --versaceBgImg: var(--versaceWhite) !important;
+
+}
+
+
+/*****************
+COLORS - LIGHT - DESKTOP
+******************/
+ :root,
+[color-scheme="white"] {
+  /*background*/
+  --bgPrimary: white !important;
+  /*text*/
+  --bodyClr: hsl(0, 0%, 0%) !important;
+  --headerClr: black !important;
+  --bldClr: black !important;
+  /*link*/
+  --linkClr: #0070df !important;
+  /*bullet*/
+  --bulletClr: black !important;
+  /*quote*/
+  --quoteBgClr: hsl(0, 0%, 98%) !important;
+  --quoteBrdClr: hsl(0, 0%, 91%) !important;
+  /*versace*/
+  --versaceBrdClr: black !important;
+}
+/*****************
+COLORS - DARK - DESKTOP
+******************/
+[class*="dark"] {
+  /*background*/
+  --bgPrimary: black !important;
+  /*text*/
+  --bodyClr: hsl(0, 0%, 95%) !important;
+  --headerClr: hsl(110, 100%, 100%) !important;
+  --bldClr: hsl(110, 100%, 99%) !important !important;
+  /*link*/
+  --linkClr: #3089ff !important;
+  /*bullet*/
+  --bulletClr: white !important !important;
+  /*quote*/
+  --quoteBgClr: hsl(0, 0%, 10.5%) !important;
+  --quoteBrdClr: #222222 !important;
+  --versaceBrdClr: white !important;
 
 }
