@@ -181,7 +181,7 @@ TOC / TABLE OF CONTENTS
 }
 #toc a {
   font-size: .83rem !important;
-  line-height: 1.325 !important;
+  line-height: 1.125 !important;
   color: var(--tocLinkClr);
   transition: .2s;
 }
@@ -263,6 +263,10 @@ TOC LIST ITEMS - EXPAND COLLAPSE
   position: relative;
   max-height: auto;
 }
+#toc li:before{
+  content:"" !important;
+  
+}
 /*Toc List - CHildren*/
 #toc li + ul {
   display: block !important;
@@ -274,6 +278,17 @@ TOC LIST ITEMS - EXPAND COLLAPSE
 }
 #toc li + ul.toc-child-open {
   max-height: 900px;
+}
+#toc ol li,
+#toc ul li{
+  margin-left: 0px !important;
+  margin-top: 7px !important;
+  margin-bottom: 0px !important;
+  line-height: unset !important;
+}
+#toc ol,
+#toc ul {
+  margin-left: var(--listItmPadL) !important;
 }
 /*Toggle button*/
 .toc-toggle {

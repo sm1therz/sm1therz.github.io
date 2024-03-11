@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box !important;
 }
-html, body {
+html,
+body {
   padding: 0px !important;
   margin: 0px !important;
   width: 100% !important;
@@ -99,7 +100,8 @@ BODY
   hyphens: auto !important;
   -webkit-hyphens: auto !important;
 }
-em, i {
+em,
+i {
   font-size: 1.05em;
   line-height: calc(1em);
   display: inline;
@@ -139,15 +141,18 @@ h3 {
   font-weight: 300;
   text-align: right;
 }
-h4, .heading-style-h4 {
+h4,
+.heading-style-h4 {
   font-size: calc(var(--bodyFontSize) + 5px) !important;
   font-weight: 500;
 }
-h5, .heading-style-h5 {
+h5,
+.heading-style-h5 {
   font-size: calc(var(--bodyFontSize) + 1.5px) !important;
   font-weight: 500;
 }
-h4, h5 {
+h4,
+h5 {
   margin-top: 30px !important;
   margin-bottom: 30px !important;
   -webkit-text-stroke: .3px;
@@ -162,7 +167,8 @@ h6 {
 }
 /***************
 LISTS AND PARAGRAPHS
-****************/ :root {
+****************/
+:root {
   --bodyFontSize: 17.5px;
   --bodyLineHeight: 1.625;
   --bodyTxt: 1.05rem;
@@ -174,7 +180,12 @@ LISTS AND PARAGRAPHS
   --listMargTopBtm: 7px;
   --listItmPadL: 20px;
 }
-p, ol li, ul li, h5, h6, h4 {
+p,
+ol li,
+ul li,
+h5,
+h6,
+h4 {
   font-size: var(--bodyFontSize);
   line-height: var(--bodyLineHeight);
   margin-top: var(--paraMargTopBtm);
@@ -182,13 +193,16 @@ p, ol li, ul li, h5, h6, h4 {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
-p, ol li, ul li {
+p,
+ol li,
+ul li {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 /***************
 LISTS
 ****************/
-ol li, ul li {
+ol li,
+ul li {
   margin-top: var(--listMargTopBtm) !important;
   margin-bottom: var(--listMargTopBtm) !important;
 }
@@ -196,7 +210,8 @@ ol li, ul li {
 /*****************
 LISTS > ALL
 *****************/
-ol, ul {
+ol,
+ul {
   margin-top: var(--listMargTopBtm);
   margin-bottom: var(--listMargTopBtm);
   margin-left: 0px;
@@ -207,7 +222,8 @@ ol, ul {
 /*****************
 LIST ITEMS > ALL
 *****************/
-ol li, ul li {
+ol li,
+ul li {
   margin-top: var(--listMargTopBtm);
   margin-bottom: var(--listMargTopBtm);
   position: relative;
@@ -217,7 +233,8 @@ ol li, ul li {
 /*****************
 LIST ITEM BULLETS > ALL
 *****************/
-ol li:before, ul li:before {
+ol li:before,
+ul li:before {
   content: ".";
   display: inline-block;
   width: var(--listItmBulletWidth);
@@ -252,8 +269,8 @@ UNORDERED LISTS INSIDE ORDERED LISTS
 ******************/
 ol ul > li:before {
   content: ".";
-    background-image: var(--bulletSquare);
-  color: transparent!important;
+  background-image: var(--bulletSquare);
+  color: transparent !important;
   -webkit-text-fill-color: transparent;
 }
 /*****************
@@ -287,7 +304,10 @@ ol ol ol li {
 ol ol ol li:before {
   content: counter(roman, lower-roman) ".";
 }
-ol li i, ol li em, ul li i, ul li em {
+ol li i,
+ol li em,
+ul li i,
+ul li em {
   line-height: 1em;
 }
 /***************
@@ -366,7 +386,8 @@ caption {
   font-family: "Roboto Condensedd", sans-serif;
   font-weight: 300;
 }
-strong, b {
+strong,
+b {
   font-weight: 900;
 }
 .copy-example {
@@ -393,18 +414,18 @@ strong, b {
   font-size: 1.3rem;
 }
 
-.h2-wrap{
+.h2-wrap {
   margin-top: 100px;
   margin-bottom: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
-  gap:10px;
-  box-shadow: 
+  gap: 10px;
+  box-shadow:
     0 -1.5px 0 0 var(--bulletClr),
     0 1.5px 0 0 var(--bulletClr);
 }
-.no-brdr{
+.no-brdr {
   box-shadow: none !important;
 }
