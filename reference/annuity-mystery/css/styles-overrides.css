@@ -111,7 +111,7 @@ SUPERSCRIPT
 ****************/
 .c11 {}
 /***************
-Headings
+HEADINGS
 ****************/
 h1 {
   font-size: 4.5rem !important;
@@ -180,16 +180,21 @@ h6,
 h4 {
   font-size: var(--bodyTxt);
   line-height: var(--bodyTxtLineHeight);
-  margin-top: var(--paraMargTopBtm) !important;
-  margin-bottom: var(--paraMargTopBtm) !important;
+  margin-top: var(--paraMargTopBtm);
+  margin-bottom: var(--paraMargTopBtm);
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
 
-p {
-  text-align: justify;
+p,
+ol li,
+ul li {
+  -webkit-font-smoothing:subpixel-antialiased;
 }
 
+/***************
+LISTS
+****************/
 ol li,
 ul li {
   margin-top: var(--listMargTopBtm) !important;
@@ -197,6 +202,121 @@ ul li {
 }
 ol,
 ul {}
+
+/*****************
+******************
+LISTS
+******************
+*****************/
+
+/*****************
+LISTS > ALL
+*****************/
+ol,
+ul {
+  margin-top: var(--listMargTopBtm);
+  margin-bottom: var(--listMargTopBtm);
+  margin-left: 0px;
+  padding-left: var(--listItmPadL);
+  list-style-type: none;
+}
+
+/*****************
+LIST ITEMS > ALL
+*****************/
+ol li,
+ul li {
+  margin-top: var(--listMargTopBtm);
+  margin-bottom: var(--listMargTopBtm);
+  font-size: inherit;
+  position: relative;
+  text-indent: 0px;
+
+}
+
+/*****************
+LIST ITEM BULLETS > ALL
+*****************/
+ol li:before,
+ul li:before {
+  content: ".";
+  display: inline-block;
+  width: var(--listItmBulletWidth);
+  left: calc(var(--listItmBulletWidth) * -1 - var(--listItmBulletMargR));
+  position: absolute;
+  color: var(--bulletClr);
+}
+
+/*NOTE*/
+/* setting '.' as the `content` for all bullets allows the unordered bullet's height to match the ordered bullet's height. The height of both bullets is set by the font `line-height`. The font `line-height` for both ordered and unordered bullets is inherited from whatever the list item text is set to. This means the bullets will always be the same height as the list-item text.]*/
+
+/*****************
+UNORDERED LISTS
+******************/
+
+/*LEVEL 1*/
+ul li:before {
+  content: ".";
+  color: transparent;
+  background-image: var(--bulletSquare);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: 80% 47%;
+}
+/*LEVEL 2*/
+ul ul li:before {
+  background-image: var(--bulletSquareOutline);
+}
+/*LEVEL 3*/
+ul ul ul li:before {
+  background-image: var(--bulletCircleOutline);
+}
+
+/*****************
+ORDERED LISTS
+******************/
+ol {
+  counter-reset: numbers;
+}
+
+/*LEVEL 1*/
+ol li {
+  counter-increment: numbers;
+}
+
+ol li:before {
+  content: counter(numbers) ".";
+  text-align: right;
+  font-weight: 600;
+  color: var(--bulletClr) !important;
+  -webkit-text-fill-color: var(--bulletClr);
+
+}
+
+/*LEVEL 2*/
+ol ol li {
+  counter-increment: abc;
+}
+
+ol ol li:before {
+  content: counter(abc, lower-alpha) ".";
+}
+
+/*LEVEL 3*/
+ol ol ol li {
+  counter-increment: roman;
+}
+
+ol ol ol li:before {
+  content: counter(roman, lower-roman) ".";
+}
+ol li i,
+ol li em,
+ul li i,
+ul li em {
+  line-height: 1em;
+}
+
 /***************
 QUOTES
 ****************/
