@@ -1,0 +1,554 @@
+/***************
+TABLES
+****************/
+/*! CSS Used from: https://sm1therz.github.io/reference/annuity-mystery/css/styles.css */
+table td {
+	padding: 0;
+}
+table tr > td:first-child {
+	background: #494745;
+}
+.c83 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #e8e8ea;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 156pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c50 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #c4c4c3;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 156pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c74 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #494745;
+	vertical-align: top;
+	border-right-color: #494745;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 156pt;
+	border-top-color: #494745;
+	border-bottom-style: solid;
+}
+.c69 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 156pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c10 {
+	font-weight: 300;
+	text-decoration: none;
+	vertical-align: baseline;
+	font-family: "Roboto Condensed";
+	font-style: normal;
+}
+.c41 {
+	color: #ffffff;
+	font-weight: 300;
+	font-family: "Roboto Condensed";
+}
+.c62 {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin-right: auto;
+}
+.c57 {
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+	text-align: center;
+}
+.c70 {
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+	text-align: left;
+}
+.c90 {
+	font-family: "Roboto Condensed";
+	color: #ffffff;
+	font-weight: 300;
+}
+.c19 {
+	text-decoration: none;
+	vertical-align: baseline;
+	font-style: normal;
+}
+.c65 {
+	vertical-align: baseline;
+}
+.c43 {
+	height: 0pt;
+}
+.c76 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #494745;
+	vertical-align: top;
+	border-right-color: #494745;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 68.2pt;
+	border-top-color: #494745;
+	border-bottom-style: solid;
+}
+.c38 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #e8e8ea;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 68.2pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c54 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #c4c4c3;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 88.5pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c48 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #494745;
+	vertical-align: top;
+	border-right-color: #494745;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 57pt;
+	border-top-color: #494745;
+	border-bottom-style: solid;
+}
+.c9 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #e8e8ea;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 88.5pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c34 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #c4c4c3;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 68.2pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c49 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 57pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c106 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #494745;
+	vertical-align: top;
+	border-right-color: #494745;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 88.5pt;
+	border-top-color: #494745;
+	border-bottom-style: solid;
+}
+.c16 {
+	font-weight: 300;
+	text-decoration: none;
+	vertical-align: baseline;
+	font-family: "Roboto Condensed";
+	font-style: normal;
+}
+.c22 {
+	padding-top: 3pt;
+	padding-bottom: 1pt;
+	text-align: center;
+}
+.c62 {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin-right: auto;
+}
+.c14 {
+	font-family: "Roboto Condensed";
+	color: #ffffff;
+	font-weight: 300;
+}
+.c19 {
+	text-decoration: none;
+	vertical-align: baseline;
+	font-style: normal;
+}
+.c91 {
+	height: 15pt;
+}
+.c65 {
+	vertical-align: baseline;
+}
+.c43 {
+	height: 0pt;
+}
+.c76 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #494745;
+	vertical-align: top;
+	border-right-color: #494745;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 68.2pt;
+	border-top-color: #494745;
+	border-bottom-style: solid;
+}
+.c38 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #e8e8ea;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 68.2pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c55 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #c4c4c3;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 71.2pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c48 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #494745;
+	vertical-align: top;
+	border-right-color: #494745;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 57pt;
+	border-top-color: #494745;
+	border-bottom-style: solid;
+}
+.c89 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #e8e8ea;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 93.8pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c97 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #494745;
+	vertical-align: top;
+	border-right-color: #494745;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 71.2pt;
+	border-top-color: #494745;
+	border-bottom-style: solid;
+}
+.c34 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #c4c4c3;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 68.2pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c36 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #c4c4c3;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 93.8pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c49 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 57pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c30 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #ffffff;
+	vertical-align: top;
+	border-right-color: #ffffff;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #e8e8ea;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 71.2pt;
+	border-top-color: #ffffff;
+	border-bottom-style: solid;
+}
+.c58 {
+	border-right-style: solid;
+	padding: 4pt 4pt 4pt 4pt;
+	border-bottom-color: #ffffff;
+	border-top-width: 1pt;
+	border-right-width: 1pt;
+	border-left-color: #494745;
+	vertical-align: top;
+	border-right-color: #494745;
+	border-left-width: 1pt;
+	border-top-style: solid;
+	background-color: #494745;
+	border-left-style: solid;
+	border-bottom-width: 1pt;
+	width: 93.8pt;
+	border-top-color: #494745;
+	border-bottom-style: solid;
+}
+.c16 {
+	font-weight: 300;
+	text-decoration: none;
+	vertical-align: baseline;
+	font-family: "Roboto Condensed";
+	font-style: normal;
+}
+.c62 {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin-right: auto;
+}
+.c14 {
+	font-family: "Roboto Condensed";
+	color: #ffffff;
+	font-weight: 300;
+}
+.c68 {
+	padding-top: 3pt;
+	padding-bottom: 2pt;
+	text-align: center;
+}
+.c19 {
+	text-decoration: none;
+	vertical-align: baseline;
+	font-style: normal;
+}
+.c43 {
+	height: 0pt;
+}
+
+/*! CSS Used from: https://sm1therz.github.io/reference/annuity-mystery/css/styles-overrides.css */
+
+table {
+	margin: 0 auto;
+	max-width: 100% !important;
+	min-width: 100% !important;
+}
+
+table tr,
+table td,
+table td p,
+table div,
+table span {
+	font-family: "Roboto Condensedd", sans-serif;
+	
+}
+table p {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}

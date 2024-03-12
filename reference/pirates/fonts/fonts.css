@@ -1,0 +1,87 @@
+/*IOWAN REGULAR*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Regular.otf') format('opentype');
+ font-weight: 400;
+ font-style: normal;
+}
+/*IOWAN REGULAR - ITALIC*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Regular-Italic.otf') format('opentype');
+ font-weight: 400;
+ font-style: italic;
+}
+
+/*IOWAN BOLD*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Bold.otf') format('opentype');
+ font-weight: 500;
+ font-style: normal;
+}
+/*IOWAN BOLD - ITALIC*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Bold-Italic.otf') format('opentype');
+ font-weight: 500;
+ font-style: italic;
+}
+/*IOWAN BLACK*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Black.otf') format('opentype');
+ font-weight: 900;
+ font-style: normal;
+}
+/*IOWAN BLACK - ITALIC*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('Iowan-Old-Style--Black-Italic.otf') format('opentype');
+ font-weight: 900;
+ font-style: italic;
+}
+
+/*ROBOTO CONDENSED - LIGHT*/
+@font-face {
+  font-family: "Roboto Condensedd";
+  src:url('RobotoCondensed-Light.ttf') format('opentype');
+ font-weight: 300;
+ font-style: normal;
+}
+/*ROBOTO CONDENSED - LIGHT ITALIC*/
+@font-face {
+  font-family: "Roboto Condensedd";
+  src:url('RobotoCondensed-Light-Italic.ttf') format('opentype');
+ font-weight: 300;
+ font-style: italic;
+}
+/*ROBOTO CONDENSED - REGULAR*/
+@font-face {
+  font-family: "Roboto Condensedd";
+  src:url('RobotoCondensed-Regular.ttf') format('opentype');
+ font-weight: 400;
+ font-style: normal;
+}
+/*ROBOTO CONDENSED - REGULAR ITALIC*/
+@font-face {
+  font-family: "Roboto Condensedd";
+  src:url('RobotoCondensed-Regular-Italic.ttf') format('opentype');
+ font-weight: 400;
+ font-style: italic;
+}
+
+/*ROBOTO CONDENSED - BOLD*/
+@font-face {
+  font-family: "Roboto Condensedd";
+  src:url('RobotoCondensed-Bold.ttf') format('opentype');
+ font-weight: 600;
+ font-style: normal;
+}
+/*Roboto CondensedE - BOLD ITALIC*/
+@font-face {
+  font-family: "Iowan-Old-Style";
+  src:url('RobotoCondensed-Bold-Italic.ttf') format('opentype');
+ font-weight: 600;
+ font-style: italic;
+}

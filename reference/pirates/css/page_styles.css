@@ -1,0 +1,63 @@
+@page {
+    margin-bottom: 5pt;
+    margin-top: 5pt
+    }
+@font-face {
+    font-family: "Calibri";
+    src: url("fonts/Calibri - Regular.ttf")
+    }
+@font-face {
+    font-family: "Calibri Light";
+    src: url("fonts/Calibri Light - Regular.ttf")
+    }
+@font-face {
+    font-family: "Times New Roman";
+    src: url("fonts/Times New Roman - Bold.ttf");
+    font-weight: bold
+    }
+@font-face {
+    font-family: "Times New Roman";
+    src: url("fonts/Times New Roman - Italic.ttf");
+    font-style: italic
+    }
+@font-face {
+    font-family: "Times New Roman";
+    src: url("fonts/Times New Roman - Regular.ttf")
+    }
+@font-face {
+    font-family: "Times New Roman";
+    src: url("fonts/Times New Roman - BoldItalic.ttf");
+    font-style: italic;
+    font-weight: bold
+    }
+@font-face {
+    panose-1: 2 2 6 3 5 4 5 2 3 4;
+    font-family: "Times New Roman";
+    src: url(fonts/Times-New-Roman.ttf)
+    }
+@font-face {
+    panose-1: 2 2 8 3 7 5 5 2 3 4;
+    font-family: "Times New Roman";
+    src: url(fonts/Times-New-Roman-Bold.ttf);
+    font-weight: bold
+    }
+@font-face {
+    panose-1: 2 2 5 3 5 4 5 9 3 4;
+    font-family: "Times New Roman";
+    src: url(fonts/Times-New-Roman-Italic.ttf);
+    font-style: italic
+    }
+@font-face {
+    panose-1: 2 2 7 3 6 5 5 9 3 4;
+    font-family: "Times New Roman";
+    src: url(fonts/Times-New-Roman-Bold-Italic.ttf);
+    font-style: italic;
+    font-weight: bold
+    }
+@font-face {
+    font-family: "Calibri Light";
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    src: url(fonts/Calibri-Light-Italic.ttf)
+    }
