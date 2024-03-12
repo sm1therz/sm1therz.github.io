@@ -241,7 +241,7 @@ TOC / TABLE OF CONTENTS
 }
 #toc a {
   font-size: .83rem !important;
-  line-height: 1.325 !important;
+  line-height: 1.125 !important;
   color: var(--tocLinkClr);
   transition: .2s;
 }
@@ -316,11 +316,11 @@ TOC LISTS
 TOC ACTIVE A
 ********/
 #toc a.active {
-  color: var(--tocLinkClr-Active);
-  font-weight: 500 !important;
+  color: var(--tocLinkClr-Active) !important;
+  font-weight: 700 !important;
 }
 #toc a.active span {
-  font-weight: 600 !important;
+  font-weight: 700 !important;
 }
 /*TocHeader*/
 .toc-header {}
@@ -374,6 +374,9 @@ SIGIL TOC
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
   cursor: pointer;
 }
+#toc a {
+  color:hsla(0,0%,50%) !important;
+}
 .sgc-toc-level-1 a:hover {
   text-decoration: underline;
 }
@@ -382,11 +385,11 @@ SIGIL TOC
 .sgc-toc-level-3,
 .sgc-toc-level-4 {
   display: block;
-  line-height: 1.25 !important;
+  line-height: 1.0 !important;
   margin-top: 4px !important;
 }
 .sgc-toc-level-1 > a {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.2rem;
 
 }
@@ -397,7 +400,7 @@ SIGIL TOC
   margin-top: 6px !important;
 }
 .sgc-toc-level-2 > a {
-  font-weight: 600;
+  font-weight: 500;
 }
 .sgc-toc-level-1,
 .sgc-toc-level-2,
