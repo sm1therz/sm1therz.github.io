@@ -578,7 +578,8 @@
     }
 .calibre8 {
     display: table-row;
-    vertical-align: inherit
+    vertical-align: inherit;
+    border: 1px solid red;
     }
 .calibre9 {
     font-weight: bold
