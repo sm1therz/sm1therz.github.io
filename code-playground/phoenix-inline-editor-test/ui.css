@@ -1,0 +1,22 @@
+.main-view {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+}
+/**/
+.main-view #plugin-icons-bar {
+  width: var(--toolbarWidth) !important;
+  order: 10;
+  right: 0 !important;
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  z-index: 9494949494;
+}

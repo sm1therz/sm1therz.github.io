@@ -1,231 +1,25 @@
 html,
 body {
-  margin: 0px;
-  padding: 0px;
-  position: relative;
+   margin: 0px;
+   padding: 0px;
+   position: relative;
 }
-
 * {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
-
 html {
-  padding: 10px 20px;
+   padding: 10px 20px;
 }
-
-body {z-index:   font-family: "Iowan-Old-Style", Georgia,serif;
-  font-size: var(--bodyFontSize);
-  line-height: var(--bodyLineHeight);
+body {
+   z-index: font-family: "Iowan-Old-Style", Georgia, serif;
+   font-size: var(--bodyFontSize);
+   line-height: var(--bodyLineHeight);
+   font-size: 100px;
 }
-
-
-
-
-/*********
-**********
-TESTING STYLES
-**********
-**********/
-ol,
-ol li,
-ol li:before,
-ul,
-ul li,
-ul li:before,
-p {
-  outline: var(--boxshadtestBrdWidth) solid rgba(255, 0, 0, 0.2);
+.input-container {}
+.input-rs {
+   max-width: 200px;
+   font-size: 19px;
+   flex: 1;
+   /* Adjust as needed */
 }
-
-:root {
-  --bodyFontSize: 1rem;
-  --bodyLineHeight: 1.0;
-}
-
-/*********
-TESTING BORDERS
-**********/
-.listPadBorder {
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1.5px;
-  background-image: url("border-dash.svg");
-  background-size: 1.5px;
-  background-repeat: repeat-y;
-  opacity: .5;
-  z-index: 2;
-}
-
-.listPadBorder.one {
-  left: calc(var(--listItmPadL) - .75px);
-}
-
-.listPadBorder.two {
-  left: calc(var(--listItmPadL) * 2 - .75px);
-}
-
-.listPadBorder.three {
-  left: calc(var(--listItmPadL) * 3 - .75px);
-}
-
-
-/*********
-LISTS > ROOT
-**********/
-:root {
-  --boxshadtestBrdWidth: .25px;
-  --listMargTopBtm: 10px;
-  --listItmPadL: 36px;
-  --listItmBulletWidth: calc(var(--listItmPadL) - var(--listItmBulletMargR));
-  --listItmBulletMargR: 8px;
-
-}
-
-/*********
-LISTS > ALL
-**********/
-ol,
-ul {
-  margin-top: var(--listMargTopBtm);
-  margin-bottom: var(--listMargTopBtm);
-  margin-left: 0px;
-  padding-left: var(--listItmPadL);
-  list-style-type: none;
-}
-
-/*********
-LIST ITEMS > ALL
-**********/
-ol li,
-ul li {
-  margin-top: var(--listMargTopBtm);
-  margin-bottom: var(--listMargTopBtm);
-  font-size: inherit;
-  position: relative;
-}
-
-/*********
-LIST ITEM BULLETS > ALL
-**********/
-ol li:before,
-ul li:before {
-  content: ".";
-  display: inline-block;
-  width: var(--listItmBulletWidth);
-  left: calc(var(--listItmBulletWidth) * -1 - var(--listItmBulletMargR));
-  position: absolute;
-  color: var(--bulletClr);
-  font-weight: 500;
-}
-
-/*NOTE*/
-/* setting '.' as the `content` for all bullets allows the unordered bullet's height to match the ordered bullet's height. The height of both bullets is set by the font `line-height`. The font `line-height` for both ordered and unordered bullets is inherited from whatever the list item text is set to. This means the bullets will always be the same height as the list-item text.]*/
-
-/*********
-UNORDERED LISTS
-*********/
-
-/*LEVEL 1*/
-ul li {}
-
-ul li:before {
-  content: ".";
-  color: transparent;
-  background-image: var(--bulletSquare);
-  background-size: calc(var(--bodyFontSize) - 6px);
-  background-repeat: no-repeat;
-  background-position: 65% 55%;
-  text-align: right;
-}
-
-/*LEVEL 2*/
-ul ul li:before {
-  background-image: var(--bulletCircle);
-}
-
-/*LEVEL 3*/
-ul ul ul li:before {
-  background-image: var(--bulletCircleOutline);
-
-}
-
-/*********
-ORDERED LISTS
-*********/
-ol {
-  counter-reset: numbers;
-}
-
-/*LEVEL 1*/
-ol li {
-  counter-increment: numbers;
-}
-
-ol li:before {
-  content: counter(numbers) ".";
-  text-align: right;
-}
-
-/*LEVEL 2*/
-ol ol li {
-  counter-increment: abc;
-}
-
-ol ol li:before {
-  content: counter(abc, lower-alpha) ".";
-}
-
-/*LEVEL 3*/
-ol ol ol li {
-  counter-increment: roman;
-}
-
-ol ol ol li:before {
-  content: counter(roman, lower-roman) ".";
-}
-
-
-
-/*********
-LISTS > Unordered Lists
-**********/
-
-
-/*********
-LISTS > Ordered Lists
-**********/
-
-/*****************
-******************
-ICONS
-****************** 
-******************/
-:root {
-  /*square*/
-  --bulletSquare-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" fill="black" stroke="black" stroke-width="5.5"/></svg>');
-  --bulletSquare-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" fill="white" stroke="white" stroke-width="5.5"/></svg>');
-  /*circle*/
-  --bulletCircle-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="24" height="24" rx="12" fill="black" stroke="black" stroke-width="2"/></svg>');
-  --bulletCircle-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="24" height="24" rx="12" fill="white" stroke="white" stroke-width="2"/></svg>');
-  /*circle*/
- --bulletCircleOutline-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" rx="10.25" stroke="black" stroke-width="5.5"/></svg>');
-  --bulletCircleOutline-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.75" y="5.75" width="20.5" height="20.5" rx="10.25" stroke="white" stroke-width="5.5"/></svg>');
-
-}
-  :root {
-    --bulletClr:black;
-    --bulletSquare: var(--bulletSquare-Black);
-    --bulletCircle: var(--bulletCircle-Black);
-    --bulletCircleOutline: var(--bulletCircleOutline-Black);
-  }
-
-  [class*="dark"],
-  [class*="Dark"],
-  [class*="night"],
-  [class*="night"] {
-    --bulletClr:white;
-    --bulletSquare: var(--bulletSquare-White);
-    --bulletCircle: var(--bulletCircle-White);
-    --bulletCircleOutline: var(--bulletCircleOutline-White);
-  }

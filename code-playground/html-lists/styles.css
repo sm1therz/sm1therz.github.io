@@ -16,6 +16,8 @@ html {
 body {z-index:   font-family: "Iowan-Old-Style", Georgia,serif;
   font-size: var(--bodyFontSize);
   line-height: var(--bodyLineHeight);
+  background: black;
+  color: white;
 }
 
 
