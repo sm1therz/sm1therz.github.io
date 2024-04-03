@@ -1,0 +1,883 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    hyphens: auto !important;
+    margin: 0 auto;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Iowan Old Style W01";
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17.3px;
+}
+
+p,
+.text-box p {
+    font-size: 0.95rem;
+    line-height: 1.35rem;
+}
+em,
+i {
+    font-size: 1.05em
+}
+.ad-border{
+    width: 1640px;
+    max-width: 100%;
+    margin:0 auto;
+}
+.ad {
+    padding: 10px;
+    margin: 10px;
+}
+
+p {
+    text-indent: 16.1px;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin-bottom: 10.8px;
+    font-family: "Iowan Old Style W01";
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+em strong,
+em b,
+b em,
+strong em {
+    font-style: italic;
+    font-weight: 600;
+}
+
+strong,
+b {
+    font-weight: 600;
+    word-spacing: -0.2px !important;
+}
+
+h1 {
+    font-family: "FrankGoth";
+    text-align: center;
+    margin: 0 auto;
+    font-size: 9vw;
+    font-size: clamp(2rem, 9.2vw, 9.7rem);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 25px;
+    margin-top: 4px;
+    /*box-shadow:0 0 0 1px hsl(0,0%,50%,.25);*/
+}
+
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    word-spacing: -2px;
+    letter-spacing: -2px;
+    font-size: 2.3em;
+    line-height: 1.2em;
+    padding-bottom: 2px;
+    padding-top: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    margin-top: 0px;
+    line-height: 1.2em;
+    font-family: "Lora";
+    font-weight: 900;
+    letter-spacing: -.4px;
+    text-align: center;
+}
+
+h4 {
+    font-family: "FrankGoth";
+    text-align: justify;
+    font-size: 2.1vw;
+    font-size: clamp(1rem, 2.1vw, 2.1rem);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-top: -10px;
+    word-spacing: -1px
+}
+
+h5 {
+    font-family: "FrankGothMed";
+    font-weight: 100;
+    text-align: justify;
+    font-size: 1.4vw;
+    font-size: clamp(0rem, 1.4vw, 1.4rem);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
+}
+
+.header_4 {
+    font-weight: 800;
+    font-family: "FrankGothMed";
+    text-indent: 0px;
+    font-size: 1.02rem;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+}
+
+.header_4 {
+}
+
+h3.schwartz-1.Franklin {
+    font-family: "FrankGothReg";
+    text-align: center;
+    font-size: 2.1vw;
+    font-size: clamp(1em, 3.2vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-top: 20px;
+    word-spacing: -1px
+}
+
+.border-color-opposite {
+    border-color: black;
+    ;
+}
+
+.border-dashed {
+    border-style: dashed;
+}
+
+.border-solid {
+    border-style: solid;
+}
+
+.top-spacer {
+    width: 100%;
+    height: 50px;
+}
+.horizontal-rule {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.ad.padding-10{
+    padding: 0px !important;
+}
+
+
+/******************************
+*******************************
+TEXT BOXES
+*******************************
+*******************************/
+.text-box {
+    padding: 28px;
+    margin-top: 20px;
+}
+
+
+.text-box-header {
+    font-family: FrankGothReg;
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.text-box .text-box-header {
+    margin-top: 0px;
+    margin-bottom: 10px
+}
+
+.author-box p {
+    font-family: FrankGothMed;
+}
+
+.author-box strong {}
+.grid-row-b .text-box-header{
+
+}
+
+/******************************
+*******************************
+ORDER FORM
+*******************************
+*******************************/
+.order-form {
+    border-width: 1px;
+    padding: 20px 25px 10px 25px;
+    margin-top: 30px;
+}
+
+.order-form-header {
+    text-indent: 0px;
+    font-family: FrankGoth;
+    letter-spacing: 0.2px;
+    text-align: center;
+    font-size: clamp(1em, 2vw, 1.08rem);
+    line-height: 1.2;
+
+}
+
+.no-indent {
+    text-indent: 0px;
+}
+
+.order-form-text2 {
+    font-family: FrankGoth;
+    letter-spacing: 0px;
+    text-align: left;
+    font-size: .82rem;
+    line-height: 1.4;
+}
+
+.order-input {
+    font-family: FrankGothReg;
+    text-indent: 0px;
+    font-size: 1em !important;
+}
+
+.order-form div.order-input {
+    font-size: 12.5px;
+    line-height: 1
+}
+
+.order-input-cont {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: horizontal;
+    margin-bottom: 13px;
+    margin-top: 17.1px;
+}
+
+.order-line {
+    flex-grow: 1;
+    padding-top: 0px;
+    height: 1px;
+    margin-bottom: 3px;
+    vertical-align: bottom;
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+    line-height: 0;
+    align-items: flex-end
+}
+
+
+/******************************
+*******************************
+*******************************
+*******************************
+*******************************
+*******************************
+*******************************
+*******************************
+DARK MODE
+*******************************
+*******************************
+*******************************
+*******************************
+*******************************
+*******************************
+*******************************
+*******************************/
+
+.darkMode.bg-base {
+    background: hsl(0, 0%, 4%)
+}
+
+.darkMode.body-font-color {
+    color: hsl(0, 0%, 84%);
+}
+
+.darkMode h1,
+.darkMode h2,
+.darkMode h3,
+.darkMode h4,
+.darkMode h5,
+.darkMode h6,
+.darkMode .order-form-text2,
+.darkMode .header_4,
+.darkMode .order-form-header  {
+    color: white !important;
+}
+
+.darkMode li::before {
+    background: hsl(0, 0%, 80%);
+}
+
+
+.darkMode strong,
+.darkMode b {
+    color: hsl(0, 0%, 95%);
+}
+
+.darkMode .dimmed-font p {
+    color: hsl(0, 0%, 81%);
+}
+
+.darkMode .dimmed-font p strong,
+.dimmed-font p b {}
+
+.darkMode .color-contrast {
+    color: white;
+}
+
+.darkMode .bg-base {
+    background-color: hsl(0, 0%, 4%);
+}
+
+.bg-fill-opposite {
+    background-color: BLACK;
+}
+
+.darkMode .bg-fill-opposite
+{
+background-color: white;
+}
+
+.darkMode .bg-fill-opposite,
+{
+background-color: white;
+}
+
+.darkMode .border-color-opposite {
+    border-color: white;
+}
+
+.darkMode .bg-fill-faint {
+    background: hsla(0, 0%, 20%, 0.3);
+}
+
+/******************************
+*******************************
+*******************************
+*******************************
+GRID
+*******************************
+*******************************
+*******************************
+*******************************/
+.column-grid-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.column {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.grid-column-1-3 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-column-1-2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 10px
+}
+
+/*****************
+COLUMNS
+*****************/
+.grid-column-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.grid-column-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.grid-column-3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    margin-top: 10px
+}
+
+.grid-column-4 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.grid-row-a img {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid white;
+}
+
+
+
+/******************************
+*******************************
+*******************************
+*******************************
+@ MEDIA
+*******************************
+*******************************
+*******************************
+*******************************/
+@media (max-width:1150px) {
+    .column {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .text-box {
+        padding: 20px;
+    }
+
+    .grid-column-1-3 h4 {
+        font-size: 2.1vw;
+        line-height: 1.25;
+    }
+
+    .grid-column-1-2 h5 {
+        font-size: 17px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:900px) {
+    body {
+        line-height: 19px;
+    }
+
+    h3.schwartz-1.Franklin {
+        font-size: clamp(1.2rem, 5vw, 1.9rem);
+        margin-bottom: 10px;
+        font-weight: 400;
+        margin-top: 20px;
+        word-spacing: -1px
+    }
+
+    .column {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .text-box {
+        padding: 20px;
+    }
+
+    .column-grid-container {
+        grid-template-columns: 50% 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .grid-column-1-3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .grid-column-1-3 h4 {
+        font-size: 3vw;
+        font-size: clamp(1rem, 3vw, 3rem);
+        line-height: 1.2;
+    }
+
+    .grid-column-1-2 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .grid-column-1-2 h5 {
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+
+    .grid-column-1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .grid-column-2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .grid-column-3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        margin-top: -10px
+    }
+
+    .grid-column-4 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:700px) {
+    body {
+        line-height: 23.1px !important;
+        font-size: 15.5px !important;
+    }
+    em,
+    i {
+        font-size: 1.1em
+    }
+    h3.schwartz-1.Franklin {
+        font-size: clamp(1.2rem, 5vw, 1.9rem);
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 9.5vw;
+        line-height: 1;
+        hyphens: none;
+    }
+
+    .column {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .text-box {
+        padding: 40px 60px;
+    }
+
+    .text-box p {
+        font-size: 1em;
+    }
+
+    .header_4 {
+        letter-spacing: 0px;
+        font-size: 1.4rem;
+        margin-top: 20px;
+        -webkit-font-smoothing:subpixel-antialiased;
+    }
+
+    .column-grid-container {
+        grid-template-columns: 100%;
+    }
+
+    .grid-column-1-3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .grid-column-1-3 h4 {
+        font-size: 3.3vw;
+        line-height: 1.8;
+    }
+
+    .grid-column-1-2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .grid-column-1-2 h5 {
+        font-size: 16.5px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+
+    .grid-column-1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .grid-column-2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        margin-top: 20px;
+
+    }
+
+    .grid-column-3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        margin-top: 20px;
+    }
+
+    .grid-column-4 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 6;
+        grid-row-end: 7;
+        margin-top: 10px;
+    }
+    
+    p,
+    .text-box p {
+        font-size: 1.1rem;
+        line-height: 1.4
+    }
+    
+    .header_4 {
+        font-size: 1.3rem
+    }
+    
+    h5 {
+        font-size: 1.2rem !important;
+        line-height: 1.2 !important;
+        ;
+    }
+    
+    h4 {
+        font-size: 1.7rem;
+        line-height: 1.1
+    }
+    
+    .text-box {
+        padding: 25px 30px
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .ad-border.learning-machine {
+        padding: 0px;
+        
+    }
+
+    body {
+        line-height: 23.1px !important;
+        font-size: 15.5px !important;
+
+    }
+
+    h3.schwartz-1.Franklin {
+        font-size: clamp(1.3rem, 5vw, 1.9rem);
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+    .column-grid-container{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    h1 {
+        font-size: clamp(1rem, 11vw, 4em);
+        letter-spacing: -.7px;
+        word-spacing: -4px;
+        line-height:.8;
+        hyphens: none;
+    }
+    h1 .headline-breaker{
+        display: block;
+        width: 100%;
+    }
+
+    .grid-column-1-3 h4 {
+        font-size: 5.9vw;
+        line-height: 1.2;
+    }
+
+    .grid-column-1-2 h5 {
+        font-size: 16.9px;
+        line-height: 1.2;
+    }
+
+    .column {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .text-box {
+        padding: 30px 30px;
+    }
+
+    .text-box p {
+        font-size: 1em;
+    }
+
+    .header_4 {
+        font-size: 1.08em;
+        letter-spacing: 0.3px;
+        font-family: "FrankGothMed";
+        margin-top: 20px;
+    }
+
+    .column-grid-container {
+        grid-template-columns: 100%;
+    }
+
+    .grid-column-1-3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .grid-column-1-3 h4 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .grid-column-1-2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .grid-column-1-2 h5 {
+        font-size: 16.5px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+
+    .grid-column-1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .grid-column-2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        margin-top: 20px;
+
+    }
+
+    .grid-column-3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        margin-top: 20px;
+    }
+
+    .grid-column-4 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 6;
+        grid-row-end: 7;
+        margin-top: 10px;
+    }
+
+}
+
+
+
+
+
+/****************
+*****************
+*****************
+IOWAN 
+*****************
+*****************
+*****************/
+
+/***IOWAN Regular***/
+@font-face {
+    font-family: "Iowan Old Style W01";
+    src: url('fonts/Iowan-Old-Style-W01-Roman.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/***IOWAN ITALIC***/
+@font-face {
+    font-family: "Iowan Old Style W01";
+    src: url('fonts/Iowan-Old-Style-W01-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/***IOWAN BOLD***/
+@font-face {
+    font-family: "Iowan Old Style W01";
+    src: url('fonts/Iowan-Old-Style-W01-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/***IOWAN BOLD ITALIC***/
+@font-face {
+    font-family: "Iowan Old Style W01";
+    src: url('fonts/Iowan-Old-Style-W01-Bold-Italic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+/***IOWAN BLACK***/
+@font-face {
+    font-family: "Iowan Old Style W01";
+    src: url('fonts/Iowan-Old-Style-W01-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/***IOWAN BLACK ITALIC***/
+@font-face {
+    font-family: "Iowan Old Style W01";
+    src: url('fonts/Iowan-Old-Style-W01-Black-Italic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/****************
+*****************
+*****************
+FRANKLIN GOTHIC 
+*****************
+*****************
+*****************/
+
+
+@font-face {
+    font-family: 'FrankGoth';
+    src: url('fonts/Franklin-Gothic-Condensed.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FrankGothreg';
+    src: url('fonts/Franklin-Gothic-Bold.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FrankGothMed';
+    src: url('fonts/Franklin-Gothic-Medium.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}

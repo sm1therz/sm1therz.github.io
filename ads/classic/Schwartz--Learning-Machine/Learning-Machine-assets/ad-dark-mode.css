@@ -1,0 +1,331 @@
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+
+  .ad-border {
+       display: block;
+       position: relative;
+       padding: 29px;
+   }
+
+   body.darkMode {
+       hyphens: auto !important;
+       margin: 0 auto;
+       hyphens: auto;
+       -webkit-hyphens: auto;
+       -webkit-font-smoothing: antialiased !important;
+       font-smoothing: antialiased !important;
+   }
+
+   @media (max-width:1000px) {
+       .darkMode .ad-border {
+           padding: 10px !important;
+       }
+   }
+
+   @media (max-width:575px) {
+
+       .darkMode .ad-border,
+       .darkMode .ad {
+           padding: 0px !important;
+       }
+   }
+
+
+   /************************************************
+    MARGINS 
+    ************************************************/
+   .darkMode .margin-top-30 {
+       margin-top: 30px;
+   }
+
+   /************************************************
+    PADDING 
+    ************************************************/
+   .darkMode .padding-10 {
+       padding: 10px;
+   }
+
+   /************************************************
+    FONT SIZING
+    ************************************************/
+   .darkMode .fsize80 {
+       font-size: 80px;
+       line-height: 80px;
+   }
+
+   .darkMode .center {
+       text-align: center;
+   }
+
+   /************************************************
+    FONT Families
+    ************************************************/
+   .darkMode .franklin {}
+
+   /************************************************
+    FONT COLORS
+    ************************************************/
+   .darkMode .body-font-color {
+       color: hsl(0, 0%, 84%);
+   }
+
+   .darkMode h1,
+   .darkMode h2,
+   .darkMode h3,
+   .darkMode h4,
+   .darkMode h5,
+   .darkMode h6 {
+       color: white !important;
+   }
+
+   .darkMode li::before {
+       background: hsl(0, 0%, 80%);
+   }
+
+   .darkMode h1 strong,
+   .darkMode h2 strong,
+   .darkMode h3 strong,
+   .darkMode h4 strong,
+   .darkMode h5 strong,
+   .darkMode h6 strong {
+       color: white !important;
+   }
+
+   .darkMode strong,
+   .darkMode b {
+       color: hsl(0, 0%, 93.73%);
+   }
+
+   .darkMode .dimmed-font p {
+       color:hsl(0, 0%, 81%);
+   }
+
+   .darkMode .dimmed-font p strong, .dimmed-font p b {
+   }
+
+   .darkMode .color-contrast {
+       color: white;
+   }
+
+   /************************************************
+    BACKGROUND COLORS
+    ************************************************/
+
+
+   .darkMode .bg-base {
+       background-color: hsl(0, 0%, 4%);
+   }
+
+   .darkMode .bg-fill-opposite {
+       background-color: white;
+   }
+
+   .darkMode .bg-fill-faint {
+       background: hsla(0, 0%, 20%, 0.3);
+   }
+
+   /************************************************
+    RADIUS
+    ************************************************/
+   .darkMode .rad-3px {
+       border-radius: 3px;
+   }
+
+   .darkMode .rad-4px {
+       border-radius: 4px;
+   }
+
+   /************************************************
+    BORDERS
+    ************************************************/
+
+   .darkMode .border-width1 {
+       border-width: 1px;
+   }
+
+   .darkMode .border-width2 {
+       border-width: 2px;
+   }
+
+   .darkMode .border-width3 {
+       border-width: 3px;
+   }
+
+   .darkMode .border-dashed {
+       border-style: dashed;
+   }
+
+   .darkMode .border-solid {
+       border-style: solid;
+   }
+
+   .darkMode .border-color-opposite {
+       border-color: white;
+   }
+
+   .darkMode .border-color-opposite.lighter {
+       border-color: hsl(0, 0%, 75%);
+   }
+
+   .darkMode .border-color-1 {
+       border-color: white;
+   }
+
+   .darkMode .border-2px {
+       border: 2px solid;
+   }
+
+
+   /************************************************
+    ************************************************
+    FONTS FAMILIES
+    ************************************************
+    ************************************************/
+
+   /****************
+    CAVEAT 
+    ****************/
+
+   @font-face {
+       font-family: "Caveat";
+       src: url('https://dl.dropboxusercontent.com/s/cukii34lmqlkrxx/Caveat%20Regular.woff2?raw=1') format('woff2'),
+           url('https://dl.dropboxusercontent.com/s/v1vczonimiecqji/Caveat%20Regular.woff?raw=1') format('woff'),
+           url('https://dl.dropboxusercontent.com/s/s9rdo1efyzz0oa8/Caveat%20Regular.ttf?raw=1') format('truetype'),
+           url('https://dl.dropboxusercontent.com/s/vf8s4z1hujxuv25/Caveat%20Regular.svg?raw=1') format('svg'),
+           url('https://dl.dropboxusercontent.com/s/fzk9k0qkwurfblg/Caveat%20Regular.otf?raw=1') format('opentype'),
+           url('https://dl.dropboxusercontent.com/s/3trw6qvel8vxkul/Caveat%20Regular.eot?raw=1') format('embedded-opentype');
+       font-weight: 400;
+       font-style: normal;
+   }
+
+
+   /****************
+    ELENA 
+    ****************/
+
+   @font-face {
+       font-family: 'Elena';
+       src: url('https://dl.dropboxusercontent.com/s/48784loylleluiw/elenawebregular.woff2?raw=1') format('woff2'),
+           url('https://dl.dropboxusercontent.com/s/7fqgaprze7bjnbx/elenawebregular.woff?raw=1') format('woff');
+       font-weight: normal;
+       font-style: normal;
+   }
+
+   @font-face {
+       font-family: 'Elena';
+       src: url('https://dl.dropboxusercontent.com/s/s1ovniwpa8tke46/elenawebbold.woff2?raw=1') format('woff2'),
+           url('https://dl.dropboxusercontent.com/s/br2h8uf9x28j6ee/elenawebbold.woff?raw=1') format('woff');
+       font-weight: 700;
+       font-style: normal;
+   }
+
+   @font-face {
+       font-family: 'Elena';
+       src: url('https://dl.dropboxusercontent.com/s/079du5wi81q4chk/elenawebregularitalic.woff2?raw=1') format('woff2'),
+           url('https://dl.dropboxusercontent.com/s/xagfsk260zt3u72/elenawebregularitalic.woff?raw=1') format('woff');
+       font-style: italic;
+   }
+
+   @font-face {
+       font-family: 'Elena';
+       src: url('https://dl.dropboxusercontent.com/s/91c4b78o9mrb365/elenawebbolditalic.woff2?raw=1') format('woff2'),
+           url('https://dl.dropboxusercontent.com/s/s7upl4k6iupfsgf/elenawebbolditalic.woff?raw=1') format('woff');
+       font-style: italic;
+       font-weight: 700;
+   }
+
+   /****************
+    ****************
+    IOWAN 
+    ****************
+    ****************/
+
+   /***IOWAN Regular***/
+   @font-face {
+       font-family: "Iowan Old Style W01";
+       src: url('https://dl.dropboxusercontent.com/s/8e732eoue2y29rn/Iowan%20Old%20Style%20W01%20Roman.ttf?raw=1') format('truetype'), url('https://dl.dropboxusercontent.com/s/qidrfvzki29bttv/Iowan%20Old%20Style%20W01%20Roman.woff2?raw=1') format('woff2'), url('https://dl.dropboxusercontent.com/s/539swlaas0l35o2/Iowan%20Old%20Style%20W01%20Roman.woff?raw=1') format('woff'), url('https://dl.dropboxusercontent.com/s/wiv7spkypzrvoe6/Iowan%20Old%20Style%20W01%20Roman.eot?raw=1') format('embedded-opentype'), url('https://dl.dropboxusercontent.com/s/y2wgd6yn3du3ri8/Iowan%20Old%20Style%20W01%20Roman.svg?raw=1') format('svg');
+       font-weight: 400;
+       font-style: normal;
+   }
+
+   /***IOWAN ITALIC***/
+   @font-face {
+       font-family: "Iowan Old Style W01";
+       src: url('https://dl.dropboxusercontent.com/s/fa9i7iv5czrfcnd/Iowan%20Old%20Style%20W01%20Italic.ttf?raw=1') format('truetype'), url('https://dl.dropboxusercontent.com/s/g5ess0bkbkiesjv/Iowan%20Old%20Style%20W01%20Italic.woff2?raw=1') format('woff2'), url('https://dl.dropboxusercontent.com/s/0w8icfdyf6s5lak/Iowan%20Old%20Style%20W01%20Italic.woff?raw=1') format('woff'), url('https://dl.dropboxusercontent.com/s/wuqdkssbw1eo7fw/Iowan%20Old%20Style%20W01%20Italic.eot?raw=1') format('embedded-opentype'), url('https://dl.dropboxusercontent.com/s/n4f9k21vwg08rtw/Iowan%20Old%20Style%20W01%20Italic.svg?raw=1') format('svg');
+       font-weight: 400;
+       font-style: italic;
+   }
+
+   /***IOWAN BOLD***/
+   @font-face {
+       font-family: "Iowan Old Style W01";
+       src: url('https://dl.dropboxusercontent.com/s/ujpen1r9q1n5ge6/Iowan%20Old%20Style%20W01%20Bold.ttf?raw=1') format('truetype'), url('https://dl.dropboxusercontent.com/s/as7fyanh2cjg0xi/Iowan%20Old%20Style%20W01%20Bold.woff2?raw=1') format('woff2'), url('https://dl.dropboxusercontent.com/s/ppvk6z9grb0alrr/Iowan%20Old%20Style%20W01%20Bold.woff?raw=1') format('woff'), url('https://dl.dropboxusercontent.com/s/auwlqp64ep7buy0/Iowan%20Old%20Style%20W01%20Bold.eot?raw=1') format('embedded-opentype'), url('https://dl.dropboxusercontent.com/s/infhvvt67i1zixu/Iowan%20Old%20Style%20W01%20Bold.svg?raw=1') format('svg');
+       font-weight: 600;
+       font-style: normal;
+   }
+
+   /***IOWAN BOLD ITALIC***/
+   @font-face {
+       font-family: "Iowan Old Style W01";
+       src: url('https://dl.dropboxusercontent.com/s/wmmx5h09fenklvr/Iowan%20Old%20Style%20W01%20Bold%20Italic.ttf?raw=1') format('truetype'), url('https://dl.dropboxusercontent.com/s/oatgvb7chznrvlo/Iowan%20Old%20Style%20W01%20Bold%20Italic.woff2?raw=1') format('woff2'), url('https://dl.dropboxusercontent.com/s/gy410d7evlcv9l3/Iowan%20Old%20Style%20W01%20Bold%20Italic.woff?raw=1') format('woff'), url('https://dl.dropboxusercontent.com/s/wqrk467lki7gx6o/Iowan%20Old%20Style%20W01%20Bold%20Italic.eot?raw=1') format('embedded-opentype'), url('https://dl.dropboxusercontent.com/s/qke40q4ng4xhmva/Iowan%20Old%20Style%20W01%20Bold%20Italic.svg?raw=1') format('svg');
+       font-weight: 600;
+       font-style: italic;
+   }
+
+   /***IOWAN BLACK***/
+   @font-face {
+       font-family: "Iowan Old Style W01";
+       src: url('https://dl.dropboxusercontent.com/s/pbv9y0h1cmr8ij0/Iowan%20Old%20Style%20W01%20Black.ttf?raw=1') format('truetype'), url('https://dl.dropboxusercontent.com/s/t39mo5pnl8tdtoo/Iowan%20Old%20Style%20W01%20Black.woff2?raw=1') format('woff2'), url('https://dl.dropboxusercontent.com/s/10t92wy2ra6rs8f/Iowan%20Old%20Style%20W01%20Black.woff?raw=1') format('woff'), url('https://dl.dropboxusercontent.com/s/f02lrh3luq88epg/Iowan%20Old%20Style%20W01%20Black.eot?raw=1') format('embedded-opentype'), url('https://dl.dropboxusercontent.com/s/5rtpuv9f61zymca/Iowan%20Old%20Style%20W01%20Black.svg?raw=1') format('svg');
+       font-weight: 900;
+       font-style: normal;
+   }
+
+   /***IOWAN BLACK ITALIC***/
+   @font-face {
+       font-family: "Iowan Old Style W01";
+       src: url('https://dl.dropboxusercontent.com/s/oz0ej02ql8kbnkg/Iowan%20Old%20Style%20W01%20Black%20It.ttf?raw=1') format('truetype'), url('https://dl.dropboxusercontent.com/s/2fe34wstfaetqhj/Iowan%20Old%20Style%20W01%20Black%20It.woff2?raw=1') format('woff2'), url('https://dl.dropboxusercontent.com/s/v64mnc89k71hkfo/Iowan%20Old%20Style%20W01%20Black%20It.woff?raw=1') format('woff'), url('https://dl.dropboxusercontent.com/s/wxusznu0kggr4ln/Iowan%20Old%20Style%20W01%20Black%20It.eot?raw=1') format('embedded-opentype'), url('https://dl.dropboxusercontent.com/s/38tjwo6avuhhfnm/Iowan%20Old%20Style%20W01%20Black%20It.otf?raw=1') format('opentype'), url('https://dl.dropboxusercontent.com/s/zac82pd803qu1bk/Iowan%20Old%20Style%20W01%20Black%20It.svg?raw=1') format('svg');
+       font-weight: 900;
+       font-style: italic;
+   }
+
+    /****************
+    ****************
+    FRANKLIN GOTHIC 
+    ****************
+    ****************/
+ 
+   
+ @font-face {
+       font-family: 'FrankGoth';
+       src: url('../../../assets/fonts/Franklin Gothic/Franklin-Gothic-4-Condensed/Franklin-Gothic-Condensed.otf') format('opentype');
+       font-weight: 400;
+       font-style: normal;
+}
+   @font-face {
+       font-family: 'FrankGothreg';
+       src: url('../../../assets/fonts/Franklin Gothic/Franklin-Gothic-3-BOLD/Franklin-Gothic-Bold.otf') format('opentype');
+       font-weight: 400;
+       font-style: normal;
+   }
+
+   @font-face {
+       font-family: 'FrankGothMed';
+       src: url('../../../assets/fonts/Franklin Gothic/Franklin-Gothic-2-Medium/Franklin-Gothic-Medium.otf') format('opentype');
+       font-weight: 400;
+       font-style: normal;
+   }
+   /****************
+    ****************
+    ALDINE 
+    ****************
+    ****************/
+
+      @font-face {
+         font-family: 'Aldine 721';
+         src: url('../../../assets/fonts/Aldine-721/Aldine_721_Bold_Condensed.otf') format('opentype');
+         font-weight: normal
+      }

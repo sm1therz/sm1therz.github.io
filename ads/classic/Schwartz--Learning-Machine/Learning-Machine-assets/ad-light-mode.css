@@ -1,0 +1,254 @@
+   * {
+   	margin: 0;
+   	padding: 0;
+   	box-sizing: border-box;
+   }
+
+   .ad {
+   	padding: 10px;
+   }
+
+   .ad-border {
+   	display: block;
+   	position: relative;
+   	padding: 29px;
+   }
+
+   .breadcrumb-nav-list-item {
+   	color: black !important;
+
+   }
+
+   body {
+   	hyphens: auto !important;
+   	margin: 0 auto;
+   	hyphens: auto;
+   	-webkit-hyphens: auto;
+   	-webkit-font-smoothing: subpixel-antialiased !important;
+   	font-smoothing: subpixel-antialiased !important;
+   }
+
+   @media (max-width:1000px) {
+   	.ad-border {
+   		padding: 10px !important;
+   	}
+   }
+
+   @media (max-width:575px) {
+
+   	.ad-border,
+   	.ad {
+   		padding: 0px !important;
+   	}
+
+   }
+
+
+
+   /************************************************
+    MARGINS 
+    ************************************************/
+   .margin-top-30 {
+   	margin-top: 30px;
+   }
+
+   /************************************************
+    PADDING 
+    ************************************************/
+   .padding-10 {
+   	padding: 10px;
+   }
+
+   /************************************************
+    FONT SIZING
+    ************************************************/
+   .fsize80 {
+   	font-size: 80px;
+   	line-height: 80px;
+   }
+
+   .center {
+   	text-align: center;
+   }
+
+   /************************************************
+    FONT COLORS
+    ************************************************/
+   .body-font-color {
+   	color: hsl(0, 0%, 0%);
+   }
+
+   li::before {
+   	background: hsl(0, 0%, 0%);
+   	transition: 2s;
+   }
+
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+   	color: hsl(0, 0, 0%);
+   }
+
+   strong {
+   	color: hsl(0, 0%, 0%);
+
+   }
+
+   .color-opposite {
+   	color: black;
+   }
+
+   /************************************************
+    BACKGROUND COLORS
+    ************************************************/
+
+
+   .bg-base {
+   	background-color: hsl(0, 0%, 100%);
+   }
+
+   .bg-fill-opposite {
+   	background-color: black;
+   }
+
+   .bg-fill-faint {
+   	background: hsla(0, 0%, 00%, 0.02);
+   }
+
+   /************************************************
+    RADIUS
+    ************************************************/
+   .rad-3px {
+   	border-radius: 3px;
+   }
+
+   .rad-4px {
+   	border-radius: 4px;
+   }
+
+   /************************************************
+    BORDERS
+    ************************************************/
+   .border-width1 {
+   	border-width: 1px;
+   }
+
+   .border-width2 {
+   	border-width: 2px;
+   }
+
+   .border-width3 {
+   	border-width: 3px;
+   }
+
+   .border-dashed {
+   	border-style: dashed;
+   }
+
+   .border-solid {
+   	border-style: solid;
+   }
+
+   .border-color-opposite {
+   	border-color: black;
+   }
+
+   .border-color-1 {
+   	border-color: black;
+   }
+
+   .border-2px {
+   	border: 2px solid;
+   }
+
+
+   /************************************************
+    ************************************************
+    FONTS
+    ************************************************
+    ************************************************/
+
+   /****************
+    ****************
+    IOWAN 
+    ****************
+    ****************/
+
+   /***IOWAN Regular***/
+   @font-face {
+   	font-family: "Iowan Old Style W01";
+   	src: url('fonts/Iowan-Old-Style-W01-Roman.ttf') format('truetype');
+   	font-weight: 400;
+   	font-style: normal;
+   }
+
+   /***IOWAN ITALIC***/
+   @font-face {
+   	font-family: "Iowan Old Style W01";
+   	src: url('fonts/Iowan-Old-Style-W01-Italic.ttf') format('truetype');
+   	font-weight: 400;
+   	font-style: italic;
+   }
+
+   /***IOWAN BOLD***/
+   @font-face {
+   	font-family: "Iowan Old Style W01";
+   	src: url('fonts/Iowan-Old-Style-W01-Bold.ttf') format('truetype');
+   	font-weight: 600;
+   	font-style: normal;
+   }
+
+   /***IOWAN BOLD ITALIC***/
+   @font-face {
+   	font-family: "Iowan Old Style W01";
+   	src: url('fonts/Iowan-Old-Style-W01-Bold-Italic.ttf') format('truetype');
+   	font-weight: 600;
+   	font-style: italic;
+   }
+
+   /***IOWAN BLACK***/
+   @font-face {
+   	font-family: "Iowan Old Style W01";
+   	src: url('fonts/Iowan-Old-Style-W01-Black.ttf') format('truetype');
+   	font-weight: 900;
+   	font-style: normal;
+   }
+
+   /***IOWAN BLACK ITALIC***/
+   @font-face {
+   	font-family: "Iowan Old Style W01";
+   	src: url('fonts/Iowan-Old-Style-W01-Black-Italic.ttf') format('truetype');
+   	font-weight: 900;
+   	font-style: italic;
+   }
+
+   /****************
+    ****************
+    FRANKLIN GOTHIC 
+    ****************
+    ****************/
+
+
+   @font-face {
+   	font-family: 'FrankGoth';
+   	src: url('fonts/Franklin Gothic/Franklin-Gothic-4-Condensed/Franklin-Gothic-Condensed.otf') format('opentype');
+   	font-weight: 400;
+   	font-style: normal;
+   }
+
+   @font-face {
+   	font-family: 'FrankGothreg';
+   	src: url('fonts/Franklin Gothic/Franklin-Gothic-3-BOLD/Franklin-Gothic-Bold.otf') format('opentype');
+   	font-weight: 400;
+   	font-style: normal;
+   }
+
+   @font-face {
+   	font-family: 'FrankGothMed';
+   	src: url('fonts/Franklin Gothic/Franklin-Gothic-2-Medium/Franklin-Gothic-Medium.otf') format('opentype');
+   	font-weight: 400;
+   	font-style: normal;
+   }
