@@ -1,0 +1,25 @@
+body {
+  font-size: .8rem;
+  line-height: 1.3;
+  font-family: 'UniversNextVariableRoman';
+  text-align: justify;
+  font-style:'Normal';
+  font-stretch: 200;
+  
+}
+.wrapper {
+  padding: 10px;
+}
+.float-img {
+  float: left;
+  width: 279px;
+  shape-outside: url(assets/update_large_icon.svg);
+  shape-margin: 9px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid hsl(0, 100%, 10%);
+}
+p {
+  margin: 0;
+}
+

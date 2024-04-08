@@ -1,0 +1,42 @@
+/* @import must be at top of file, otherwise CSS will not work */
+
+@import url("https://cdn.fonts.net/t/1.css?apiType=css&projectid=f4db4c92-4594-40a5-934d-15187dc2749b");
+@font-face {
+  font-family: "UniversNextVariableItalic";
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('UniversNextVariable/UniversNextVariableItalic_italic_normal.woff2') format('woff2'), url('UniversNextVariable/UniversNextVariableItalic_italic_normal.woff') format('woff');
+}
+
+/*********
+ROMAN - WOFF
+
+https://cdn.fonts.net/kit/f4db4c92-4594-40a5-934d-15187dc2749b/UniversNextVariable/UniversNextVariableRoman_normal_normal.woff2
+**/
+
+/*********
+ROMAN - WOFF2
+
+https://cdn.fonts.net/kit/f4db4c92-4594-40a5-934d-15187dc2749b/UniversNextVariable/UniversNextVariableRoman_normal_normal.woff2
+**/
+
+@font-face {
+  font-family: "UniversNextVariableRoman";
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('UniversNextVariable/UniversNextVariableRoman_normal_normal.woff2') format('woff2'), url('UniversNextVariable/UniversNextVariableRoman_normal_normal.woff') format('woff');
+}
+
+/*********
+ITALIC - WOFF
+
+https://cdn.fonts.net/kit/f4db4c92-4594-40a5-934d-15187dc2749b/UniversNextVariable/UniversNextVariableRoman_normal_normal.woff2
+**/
+
+/*********
+ITALIC - WOFF2
+
+https://cdn.fonts.net/kit/f4db4c92-4594-40a5-934d-15187dc2749b/UniversNextVariable/UniversNextVariableRoman_normal_normal.woff2
+**/
