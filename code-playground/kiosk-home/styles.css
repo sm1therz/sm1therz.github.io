@@ -9,6 +9,26 @@ body {
   background: #1c1c1e;
 }
 
+* {
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 20,
+    "wdth" 80,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712 !important;
+
+}
+
 .wrapper {
   padding: 0px;
   display: flex;
@@ -25,9 +45,9 @@ body {
 a {
   text-decoration: none;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: #2c2c2e;
+  align-items: flex-start;
+  justify-content: center;
+  background: hsl(240, 2%, 18%,.0);
   color: hsl(0, 0%, 100%, 0.8);
   padding: 16px 30px;
   width: 100%;
@@ -40,14 +60,14 @@ a {
 a:hover {
   background: #0088ff;
   color: white;
-  border-color: hsla(0,0%,100%,.4);
+  border-color: hsla(0,0%,100%,.25);
   z-index: 1;
 }
 .link-inner {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  width:700px;
+  width:600px;
   display: flex;
   max-width: 100%;
   
@@ -56,7 +76,9 @@ a:hover {
 .link-inner:after{
   content:url('https://sm1therz.github.io/code-playground/kiosk-home/assets/Github-arrow.svg');
     display:block;
-  width:20px;
+  width:30px;
+  height:30px;
+  background:hsla(0,0%,0%,.05);
   color:red;
   filter: invert(1);
   transition:.1s;
