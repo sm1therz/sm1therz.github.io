@@ -10,16 +10,16 @@ body {
 }
 
 .wrapper {
-  padding: 10px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   max-width: 100%;
-  width: 600px;
+  width: 100%;
   margin: 0 auto;
   margin-top: 47px;
-  gap: 16px;
+  gap: 0px;
 }
 
 a {
@@ -27,26 +27,37 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid #444447;
   background: #2c2c2e;
   color: hsl(0, 0%, 100%, 0.8);
   padding: 16px 30px;
-  border-radius: 6px;
   width: 100%;
   max-width: 100%;
   transition: .2s;
-  border-top: 1px solid hsla(0,0%,100%,.2)
+  border-top: 1px solid hsl(0, 0%, 25%);
+  border-bottom: 1px solid hsl(0, 0%, 25%);
+  margin-bottom:-1px;
 }
 a:hover {
   background: #0088ff;
   color: white;
-  border-color: blue;
-  
+  border-color: hsla(0,0%,100%,.4);
+  z-index: 1;
 }
 .link-inner {
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
-  width:100%;
+  width:700px;
+  display: flex;
+  max-width: 100%;
   
+}
+
+.link-inner:after{
+  content:url('https://sm1therz.github.io/code-playground/kiosk-home/assets/Github-arrow.svg');
+    display:block;
+  width:20px;
+  color:red;
+  filter: invert(1);
+  transition:.1s;
 }
