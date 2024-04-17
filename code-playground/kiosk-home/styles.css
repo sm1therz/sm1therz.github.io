@@ -88,6 +88,7 @@ body {
   border-color: hsl(208, 100%, 50%, 0.2);
   z-index: 1;
 }
+/*LINK TEXT*/
 .link-inner {
   flex-direction: row;
   justify-content: space-between;
@@ -98,20 +99,21 @@ body {
   margin-top: 2px;
   gap: 10px;
 }
-a:hover .link-inner:after {
-  background: hsl(208, 100%, 50%, .5);
-  opacity: 1;
-}
+
 
 .link-inner:after {
   content: url("https://sm1therz.github.io/code-playground/kiosk-home/assets/Github-arrow.svg");
   display: block;
-  min-width: 30px;
-  height: 30px;
-  background: hsla(0, 0%, 100%, 0.1);
+  min-width: calc(var(--linkPadL) * .75);
+  height: calc(var(--linkPadL) * .75);
+  background: hsla(0, 0%, 100%, 0.05);
   color: red;
   transition: 0.1s;
-  opacity: 0.75;
+  opacity: 0.5;
+}
+.link:hover .link-inner:after {
+  background: hsl(208, 100%, 50%, .5);
+  opacity: 1 !important;
 }
 
 .indent {
@@ -154,14 +156,13 @@ a:hover .link-inner:after {
   max-width: 100%;
 }
 .toggle-children {
-  overflow-y: hidden;
+  overflow: hidden;
   max-height: 0px;
   transition: .5s ease-in-out;
   width: 100%;
 }
 .child-open.toggle-children {
-  max-height: 1250px;
-  overflow-y: auto;
+  max-height: 1000px;
 }
 
 .title-open {
