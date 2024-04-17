@@ -4,21 +4,28 @@
 html,
 body {
   padding: 0px;
+  margin:0px;
   font-family: sans-serif;
   font-size: 20px;
   line-height: 1.4;
-  background: #1c1c1e !important;
+  background: var(--bg-primary) !important;
+  color:var(--textClr-primary);
+  font-weight: 200;
 }
 
 :root {
   --linkPadLR: 10px;
   --linkPadL: 34px;
+  --bg-primary:#1c1c1e;
+  --bg-second:hsl(240, 3%, 13.5%);
+  --textClr-primary:hsl(0, 0%, 100%, 0.8);
+  --linkTransition:.2s;
+  --innerTextWidth:600px
 }
 
 * {
   font-family: "Roboto Flex", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 100;
   font-style: normal;
   font-variation-settings:
     "slnt" 20,
@@ -43,7 +50,6 @@ body {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  margin-top: 47px;
   gap: 0px;
   padding-bottom: 500px;
   overflow-x: hidden;
@@ -55,11 +61,11 @@ body {
   align-items: flex-start;
   justify-content: center;
   
-  color: hsl(0, 0%, 100%, 0.8);
+  color: var(--textClr-primary);
   padding: 10px var(--linkPadLR);
   padding-left: calc(var(--linkPadL) * 1.25);
   max-width: 100%;
-  transition: 0.2s;
+  transition:var(--linkTransition);
   margin-bottom: -1px;
   flex: 1;
   position: relative;
@@ -79,13 +85,13 @@ body {
   right: -50vw;
   bottom: 0;
   background: hsl(240, 2%, 18%, 0);
-  border-top: 1px solid hsl(0, 0%, 17%);
-  border-bottom: 1px solid hsl(0, 0%, 17%);
-  transition: .2s;
+  border-top: 1px solid hsl(0, 0%, 14%);
+  border-bottom: 1px solid hsl(0, 0%, 14%);
+  transition:var(--linkTransition)
 }
 .link:hover:after{
   background: hsl(208, 100%, 50%, 0.2);
-  border-color: hsl(208, 100%, 50%, 0.2);
+  border-color: var(--bg-primary);
   z-index: 1;
 }
 /*LINK TEXT*/
@@ -93,11 +99,14 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  width: 600px;
+  width: var(--innerTextWidth);
   display: flex;
   max-width: 100%;
   margin-top: 2px;
   gap: 10px;
+  transition:calc(var(--linkTransition) * .25)
+}
+.link:hover .link-inner{
 }
 
 
@@ -108,7 +117,7 @@ body {
   height: calc(var(--linkPadL) * .75);
   background: hsla(0, 0%, 100%, 0.05);
   color: red;
-  transition: 0.1s;
+  transition:var(--linkTransition);
   opacity: 0.5;
 }
 .link:hover .link-inner:after {
@@ -127,13 +136,14 @@ body {
   background-image: url(assets/Github-chevron.svg) !important;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 60%;
+  background-size: 50%;
   z-index: 202;
   transition: 0.15s;
   position:absolute;
   left: calc(var(--linkPadLR) * 1);
   background-color: hsl(0, 0%, 50%, 0);
   border-radius: 4px;
+  margin-top:1px !important;
   transform: rotate(0deg);
   display: block;
 }
@@ -169,17 +179,42 @@ body {
 }
 .child-open {
 }
+/*HEADLINE*/
+.header-wrap {
+  padding: 0px var(--linkPadLR);
+  padding-left: calc(var(--linkPadL) * 1.25); 
+  width:100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--bg-second);
+  padding-top: 24px;
+  padding-bottom:10px;
+  z-index: 929292;
+}
+
+.header-wrap h1 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  transition: var(--linkTransition);
+  width:var(--innerTextWidth);
+  max-width:100%;
+}
 
 @media (max-width: 550px) {
   .link-inner {
     font-size: 16px;
-    width: 600px !important;
+    width: var(--innerTextWidth) !important;
     margin-top: 0px !important;
   }
   .link-inner:after {
     width: 20px !important;
     height: 20px !important;
     margin-top: 1px;
+  }
+  .header-wrap h1 {
+    font-size:1.5rem;
   }
   * {
     --linkPadL: 28px;
