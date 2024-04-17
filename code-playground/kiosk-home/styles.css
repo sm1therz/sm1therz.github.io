@@ -104,7 +104,7 @@ body {
 .link-inner:after {
   content: url("https://sm1therz.github.io/code-playground/kiosk-home/assets/Github-arrow.svg");
   display: block;
-  min-width: calc(var(--linkPadL) * .75);
+  width: calc(var(--linkPadL) * .75);
   height: calc(var(--linkPadL) * .75);
   background: hsla(0, 0%, 100%, 0.05);
   color: red;
@@ -112,7 +112,7 @@ body {
   opacity: 0.5;
 }
 .link:hover .link-inner:after {
-  background: hsl(208, 100%, 50%, .5);
+  background: hsl(208, 100%, 50%, .0);
   opacity: 1 !important;
 }
 
@@ -177,8 +177,9 @@ body {
     margin-top: 0px !important;
   }
   .link-inner:after {
-    width: 18px !important;
-    height: 18px !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: 1px;
   }
   * {
     --linkPadL: 28px;
