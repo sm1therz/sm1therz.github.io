@@ -16,8 +16,8 @@ body {
 :root {
   --linkPadLR: 10px;
   --linkPadL: 34px;
-  --bg-primary:#1c1c1e;
-  --bg-second:hsl(240, 3%, 13.5%);
+  --bg-primary:hsl(240, 3%, 10%);
+  --bg-second:hsl(240, 3%, 10%);
   --textClr-primary:hsl(0, 0%, 100%, 0.8);
   --linkTransition:.2s;
   --innerTextWidth:600px
