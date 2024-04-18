@@ -5,12 +5,13 @@ html,
 body {
   padding: 0px;
   margin:0px;
-  font-family: sans-serif;
-  font-size: 20px;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 19.5px;
   line-height: 1.4;
   background: var(--bg-primary) !important;
   color:var(--textClr-primary);
   font-weight: 200;
+  
 }
 
 :root {
@@ -23,23 +24,7 @@ body {
   --innerTextWidth:600px
 }
 
-* {
-  font-family: "Roboto Flex", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 20,
-    "wdth" 80,
-    "GRAD" 0,
-    "XOPQ" 96,
-    "XTRA" 468,
-    "YOPQ" 79,
-    "YTAS" 750,
-    "YTDE" -203,
-    "YTFI" 738,
-    "YTLC" 514,
-    "YTUC" 712 !important;
-}
+
 
 .wrapper {
   padding: 0px;
@@ -104,7 +89,7 @@ body {
   max-width: 100%;
   margin-top: 2px;
   gap: 10px;
-  transition:calc(var(--linkTransition) * .25)
+  transition:calc(var(--linkTransition) * .25);
 }
 .link:hover .link-inner{
 }
@@ -115,14 +100,18 @@ body {
   display: block;
   width: calc(var(--linkPadL) * .75);
   height: calc(var(--linkPadL) * .75);
-  background: hsla(0, 0%, 100%, 0.05);
+  background: hsla(0, 0%, 100%, 0.0);
   color: red;
-  transition:var(--linkTransition);
-  opacity: 0.5;
+  transition:.2s;
+  opacity: 0;
+  transform: translateX(-20px) scale(1);
+  
 }
 .link:hover .link-inner:after {
   background: hsl(208, 100%, 50%, .0);
   opacity: 1 !important;
+  transform: translateX(-10px) scale(1);
+  transition: .5s;
 }
 
 .indent {
@@ -131,26 +120,30 @@ body {
 
 /*TOGGLES*/
 .toggle-icon {
-  width: calc(var(--linkPadL) * 0.8);
-  height: calc(var(--linkPadL) * 0.8);
-  background-image: url(assets/Github-chevron.svg) !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 50%;
+  width: calc(var(--linkPadL) * 0.7);
+  height: calc(var(--linkPadL) * 0.7);
+
   z-index: 202;
-  transition: 0.15s;
   position:absolute;
   left: calc(var(--linkPadLR) * 1);
   background-color: hsl(0, 0%, 50%, 0);
   border-radius: 4px;
   margin-top:1px !important;
-  transform: rotate(0deg);
   display: block;
 }
 .toggle-icon:hover {
   background-color: hsl(0, 0%, 100%, .2);
 }
-.title-open .toggle-icon {
+.toggle-icon-svg{
+  width:100%;
+  height:100%;
+  background-image: url(assets/Github-chevron.svg) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 55%;
+  transition: 0.15s;
+}
+.title-open .toggle-icon-svg {
   transform: rotate(90deg);
 }
 .toggle-item {
@@ -204,14 +197,12 @@ body {
 
 @media (max-width: 550px) {
   .link-inner {
-    font-size: 16px;
     width: var(--innerTextWidth) !important;
     margin-top: 0px !important;
   }
   .link-inner:after {
-    width: 20px !important;
-    height: 20px !important;
-    margin-top: 1px;
+    transform: scale(.8);
+    margin-top: 4px;
   }
   .header-wrap h1 {
     font-size:1.5rem;
