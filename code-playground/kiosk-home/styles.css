@@ -4,34 +4,31 @@
 html,
 body {
   padding: 0px;
-  margin:0px;
+  margin: 0px;
   font-family: "Roboto Flex", sans-serif;
   font-size: 19.5px;
   line-height: 1.4;
   background: var(--bg-primary) !important;
-  color:var(--textClr-primary);
+  color: var(--textClr-primary);
   font-weight: 200;
-  
 }
 
 :root {
   --linkPadLR: 10px;
   --linkPadL: 34px;
-  --bg-primary:hsl(240, 3%, 10%);
-  --bg-second:hsl(240, 3%, 10%);
-  --textClr-primary:hsl(0, 0%, 100%, 0.8);
-  --linkTransition:.2s;
-  --innerTextWidth:600px
+  --bg-primary: hsl(240, 3%, 7%);
+  --bg-second: hsl(240, 3%, 0%);
+  --textClr-primary: hsl(0, 0%, 100%, 0.8);
+  --linkTransition: 0.2s;
+  --innerTextWidth: 600px;
+  --linkBg-Hover: hsl(240, 3%, 19%);
 }
 
-
-
 .wrapper {
-  padding: 0px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
@@ -39,18 +36,23 @@ body {
   padding-bottom: 500px;
   overflow-x: hidden;
 }
+.link-wrapper {
+  width: var(--innerTextWidth);
+  max-width: 100%;
+  position: relative;
+}
 
 .link {
   text-decoration: none;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  
+
   color: var(--textClr-primary);
   padding: 10px var(--linkPadLR);
   padding-left: calc(var(--linkPadL) * 1.25);
   max-width: 100%;
-  transition:var(--linkTransition);
+  transition: var(--linkTransition);
   margin-bottom: -1px;
   flex: 1;
   position: relative;
@@ -61,23 +63,27 @@ body {
   z-index: 2;
 }
 /*LINK BG*/
-.link:after{
+.link:after {
   content: "";
   display: block;
   position: absolute;
-  top: 0;
-  left: -50vw;
-  right: -50vw;
-  bottom: 0;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
   background: hsl(240, 2%, 18%, 0);
-  border-top: 1px solid hsl(0, 0%, 14%);
-  border-bottom: 1px solid hsl(0, 0%, 14%);
-  transition:var(--linkTransition)
+  border-top: .5px solid hsl(0, 0%, 12%);
+  border-bottom: .5px solid hsl(0, 0%, 12%);
+  transition: calc(var(--linkTransition) * 1.8) !important;
+  border-radius: 0px;
 }
-.link:hover:after{
-  background: hsl(208, 100%, 50%, 0.2);
-  border-color: var(--bg-primary);
-  z-index: 1;
+.toggle-item:first-of-type .link:after {
+  border-top-width: 0px;
+}
+.link:hover:after {
+  background: var(--linkBg-Hover);
+  border-color: hsl(240, 3%, 10%);
+  border-radius: 6px;
 }
 /*LINK TEXT*/
 .link-inner {
@@ -89,29 +95,28 @@ body {
   max-width: 100%;
   margin-top: 2px;
   gap: 10px;
-  transition:calc(var(--linkTransition) * .25);
+  transition: calc(var(--linkTransition) * 0.25);
+  z-index: 2;
 }
-.link:hover .link-inner{
+.link:hover .link-inner {
 }
-
 
 .link-inner:after {
   content: url("https://sm1therz.github.io/code-playground/kiosk-home/assets/Github-arrow.svg");
   display: block;
-  width: calc(var(--linkPadL) * .75);
-  height: calc(var(--linkPadL) * .75);
-  background: hsla(0, 0%, 100%, 0.0);
+  width: calc(var(--linkPadL) * 0.75);
+  height: calc(var(--linkPadL) * 0.75);
+  background: hsla(0, 0%, 100%, 0);
   color: red;
-  transition:.2s;
+  transition: 0.2s;
   opacity: 0;
   transform: translateX(-20px) scale(1);
-  
 }
 .link:hover .link-inner:after {
-  background: hsl(208, 100%, 50%, .0);
+  background: hsl(208, 100%, 50%, 0);
   opacity: 1 !important;
   transform: translateX(-10px) scale(1);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .indent {
@@ -122,21 +127,21 @@ body {
 .toggle-icon {
   width: calc(var(--linkPadL) * 0.7);
   height: calc(var(--linkPadL) * 0.7);
-
   z-index: 202;
-  position:absolute;
+  position: absolute;
   left: calc(var(--linkPadLR) * 1);
   background-color: hsl(0, 0%, 50%, 0);
   border-radius: 4px;
-  margin-top:1px !important;
+  margin-top: 1px !important;
   display: block;
+  transition: var(--linkTransition);
 }
 .toggle-icon:hover {
-  background-color: hsl(0, 0%, 100%, .2);
+  background-color: hsl(0, 0%, 100%, 0.2);
 }
-.toggle-icon-svg{
-  width:100%;
-  height:100%;
+.toggle-icon-svg {
+  width: 100%;
+  height: 100%;
   background-image: url(assets/Github-chevron.svg) !important;
   background-repeat: no-repeat;
   background-position: center;
@@ -161,7 +166,7 @@ body {
 .toggle-children {
   overflow: hidden;
   max-height: 0px;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
   width: 100%;
 }
 .child-open.toggle-children {
@@ -175,24 +180,25 @@ body {
 /*HEADLINE*/
 .header-wrap {
   padding: 0px var(--linkPadLR);
-  padding-left: calc(var(--linkPadL) * 1.25); 
-  width:100%;
+  padding-left: calc(var(--linkPadL) * 1.25);
+  width: 100%;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background: var(--bg-second);
   padding-top: 24px;
-  padding-bottom:10px;
+  padding-bottom: 10px;
   z-index: 929292;
+  border-bottom: 1px solid hsl(0, 0%, 14%);
 }
 
 .header-wrap h1 {
   font-weight: 400;
   font-size: 1.8rem;
   transition: var(--linkTransition);
-  width:var(--innerTextWidth);
-  max-width:100%;
+  width: var(--innerTextWidth);
+  max-width: 100%;
 }
 
 @media (max-width: 550px) {
@@ -201,11 +207,20 @@ body {
     margin-top: 0px !important;
   }
   .link-inner:after {
-    transform: scale(.8);
+    transform: translateX(-10px) scale(1);
     margin-top: 4px;
   }
+  .link:hover .link-inner:after {
+    background: hsl(208, 100%, 50%, 0);
+    opacity: 1 !important;
+    transform: translateX(-5px) scale(1.1);
+    transition: 0.5s;
+  }
+  .link:after {
+    border-radius: 0px !important;
+  }
   .header-wrap h1 {
-    font-size:1.5rem;
+    font-size: 1.5rem;
   }
   * {
     --linkPadL: 28px;
