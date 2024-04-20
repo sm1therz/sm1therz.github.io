@@ -6,7 +6,7 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: "Roboto Flex", sans-serif;
-  font-size: 17.5px;
+  font-size: 18px;
   line-height: 1.4;
   background: var(--bg-primary) !important;
   color: var(--textClr-primary);
