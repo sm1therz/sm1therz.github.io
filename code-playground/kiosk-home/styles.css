@@ -17,7 +17,7 @@ body {
   /*padding / margins*/
   --linkPad: 10px;
   --linkPadL: 40px;
-  --linkChildPadL:calc(var(--linkPadL) * .5);
+  --linkChildMargL:calc(var(--linkPadL) * .5);
   /*backgrounds*/
   --bg-primary: hsl(240, 3%, 12%);
   --bg-second: hsl(240, 3%, 10%);
@@ -73,8 +73,11 @@ body {
 }
 
 .link-group-children > .link {
-  margin-left: var(--linkChildPadL);
-  max-width: calc(100% - var(--linkChildPadL));
+  /*
+  margin-left: var(--linkChildMargL);
+  max-width: calc(100% - var(--linkChildMargL));
+  */
+  padding-left: calc(var(--linkPadL) * 1.25);
 }
 .link:hover {
   color: white;
