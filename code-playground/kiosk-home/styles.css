@@ -6,7 +6,7 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: "Roboto Flex", sans-serif;
-  font-size: 18px;
+  font-size: 17.5px;
   line-height: 1.4;
   background: var(--bg-primary) !important;
   color: var(--textClr-primary);
@@ -14,14 +14,19 @@ body {
 }
 
 :root {
+  /*padding / margins*/
   --linkPad: 10px;
   --linkPadL: 40px;
+  --linkChildPadL:calc(var(--linkPadL) * .5);
+  /*backgrounds*/
   --bg-primary: hsl(240, 3%, 12%);
   --bg-second: hsl(240, 3%, 10%);
+  --linkBg-Hover: hsl(240, 3%, 19%);
+  /*text*/
   --textClr-primary: hsl(0, 0%, 100%, 0.8);
+  /*misc*/
   --linkTransition: 0.2s;
   --innerTextWidth: 600px;
-  --linkBg-Hover: hsl(240, 3%, 19%);
 }
 
 /*LINKS**/
@@ -67,6 +72,10 @@ body {
   position: relative;
 }
 
+.link-group-children > .link {
+  margin-left: var(--linkChildPadL);
+  max-width: calc(100% - var(--linkChildPadL));
+}
 .link:hover {
   color: white;
   z-index: 2;
@@ -114,8 +123,8 @@ body {
 .link-inner:after {
   content: url("https://sm1therz.github.io/code-playground/kiosk-home/assets/Github-arrow.svg");
   display: block;
-  width: calc(var(--linkPadL) * 0.65);
-  height: calc(var(--linkPadL) * 0.65);
+  width: calc(var(--linkPadL) * 0.62);
+  height: calc(var(--linkPadL) * 0.62);
   background: hsla(0, 0%, 100%, 0);
   color: red;
   transition: 0.1s ease-in-out;
@@ -182,6 +191,7 @@ body {
   align-items: center;
   background: var(--bg-second);
   padding:var(--linkPad);
+  padding-left:calc(var(--linkPadL) * 1);
   padding-top: 24px;
   padding-bottom: 10px;
   border-bottom: 1px solid hsl(0, 0%, 14%);
@@ -192,8 +202,6 @@ h1 {
   font-size: 1.6rem;
   transition: var(--linkTransition);
   width: var(--innerTextWidth);
-padding:var(--linkPad);
-padding-left:calc(var(--linkPad) * 1);
   max-width: 100%;
 }
 @media (max-width: 550px) {
