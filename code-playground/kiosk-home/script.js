@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const toggleTitles = document.querySelectorAll(".toggle-title");
+  const toggleTitles = document.querySelectorAll(".link-group-parent");
 
   toggleTitles.forEach((toggleTitle, index) => {
     toggleTitle.addEventListener("click", function () {
