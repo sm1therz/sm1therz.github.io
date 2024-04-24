@@ -6,7 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" tyle="text/css" href="styles.css">
-  <script src="script.js"></script>
+  <!--<script src="script.js"></script>-->
+  <script src="assets/scripts/link-group.js"></script>
+  <script src="assets/scripts/toggle-button.js"></script>
+  <script src="assets/scripts/local-storage.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
@@ -16,10 +19,10 @@
 <body>
   <div class="header-container">
     <h1>Bookmarks</h1>
-    <!----RAINDROP---->
   </div>
   <div class="links-container">
-    <div class="link-group">
+    <!----RAINDROP---->
+    <div class="link-group" id="raindrop">
       <div class="link-group-parent">
         <a class="link" href="https://app.raindrop.io/my/0">
           <div class="link-inner">Raindrop</div>
@@ -27,7 +30,7 @@
       </div>
     </div>
     <!--POWERTHESAURUS-->
-    <div class="link-group">
+    <div class="link-group" id="powerthesaurus">
       <div class="link-group-parent">
         <a class="link" href="http://powerthesaurus.org">
           <div class="link-inner">Power Thesaurus</div>
@@ -35,27 +38,27 @@
       </div>
     </div>
     <!----WORKFLOWY---->
-    <div class="link-group">
+    <div class="link-group" id="workflowy">
       <div class="link-group-parent">
         <a class="link" href="https://workflowy.com">
           <div class="link-inner">Workflowy</div>
         </a>
       </div>
     </div>
-    <!-----PHOENIX----->
-    <div class="link-group">
+    <!----WEBFLOW---->
+    <div class="link-group" id="webflow">
       <div class="link-group-parent">
-        <a class="link" href="https://phcode.dev">
-          <div class="link-inner">Phoenix Editor</div>
+        <a class="link" href="https://webflow.com">
+          <div class="link-inner">Webflow</div>
         </a>
       </div>
     </div>
     <!------GDOCS / DRIVE------>
-    <div class="link-group">
+    <div class="link-group" id="google">
+      <a class="toggle-button">
+        <div class="toggle-icon"></div>
+      </a>
       <div class="link-group-parent">
-        <a class="toggle-icon">
-          <div class="toggle-icon-svg"></div>
-        </a>
         <a class="link" href="https://drive.google.com/drive/my-drive">
           <div class="link-inner">
             Google - Drive</div>
@@ -71,13 +74,13 @@
       </div>
     </div>
     <!----HEPTABASE---->
-    <div class="link-group">
+    <div class="link-group" id="heptabase">
+      <a class="toggle-button">
+        <div class="toggle-icon"></div>
+      </a>
       <div class="link-group-parent">
-        <a class="toggle-icon">
-          <div class="toggle-icon-svg"></div>
-        </a>
         <a class="link" href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/card-library">
-          <div class="link-inner">Heptabase - Cards</div>
+          <div class="link-inner">Heptabase - Cards </div>
         </a>
       </div>
       <div class="link-group-children">
@@ -97,11 +100,11 @@
     </div>
 
     <!------SWIPE------>
-    <div class="link-group">
+    <div class="link-group" id="swipe">
+      <a class="toggle-button">
+        <div class="toggle-icon"></div>
+      </a>
       <div class="link-group-parent">
-        <a class="toggle-icon">
-          <div class="toggle-icon-svg"></div>
-        </a>
         <div class="link">
           <div class="link-inner">Sales Letters</div>
         </div>
