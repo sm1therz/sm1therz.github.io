@@ -31,7 +31,7 @@
 	}, 3000);
 
 	setTimeout(function() {
-		injectCSS('https://dl.dropboxusercontent.com/scl/fi/uxh78jooxb5uh93ssi5s7/Hepta-Right-Sidebar-2.css?rlkey=o6o3mrg6vipnoyjig11onnxj7&raw=1');
+		injectCSS('https://sm1therz.github.io/code-playground/hepta-userscript/BTT-Hepta-Right-Sidebar-2.css');
 	}, 3500);
 
 })();
