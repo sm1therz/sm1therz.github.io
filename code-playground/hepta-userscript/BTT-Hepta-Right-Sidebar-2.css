@@ -1,0 +1,14 @@
+@media (max-width: 1000px) {
+
+
+		#root [class*="bg-background"][style*="width"]:not(._rightSidebar_1fabk_5 [class*="bg-background"][style*="width"]) {
+				position: fixed !important;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				left: 0;
+				z-index: 9002039494949494 !important;
+				width: 100% !important;
+				overflow: hidden;
+		}
+}
