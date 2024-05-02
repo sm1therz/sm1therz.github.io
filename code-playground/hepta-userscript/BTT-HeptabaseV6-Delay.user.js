@@ -27,7 +27,7 @@
 
 	// Call injectCSS() to trigger the CSS injection with a one-second delay for the last script
 	setTimeout(function() {
-		injectCSS('https://dl.dropboxusercontent.com/scl/fi/dtsbno0jmqg37sl7p3vm2/HeptabaseV6.css?rlkey=1zdw1lo4gcpvj9pvf0een5yyb&raw=1');
+		injectCSS('https://sm1therz.github.io/code-playground/hepta-userscript/BTT-HeptabaseV6.css');
 	}, 3000);
 
 	setTimeout(function() {
