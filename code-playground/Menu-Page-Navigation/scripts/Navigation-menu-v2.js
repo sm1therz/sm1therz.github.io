@@ -52,7 +52,7 @@
     iconWrapper.className = 'rsm-nav-icon-wrapper';
 
     const iconImg = document.createElement('img');
-    iconImg.src = 'https://dl.dropboxusercontent.com/scl/fi/th6anp40q35pwfvkniwvs/rsm-nav-icon.svg?rlkey=ffzusa21qoeh1vlwu21bl5xuq&raw=1';
+    iconImg.src = 'https://sm1therz.github.io/code-playground/Menu-Page-Navigation/assets/rsm-nav-open-close.svg';
     iconImg.className = 'rsm-nav-icon';
 
     iconWrapper.appendChild(iconImg);
@@ -65,7 +65,6 @@
     // Create the navigation button wrapper
     const navButtonWrapper = document.createElement('div');
     navButtonWrapper.className = 'rsm-nav-btn-wrapper';
-    navButtonWrapper.style.display = 'flex'; // Flexbox for 2-column structure
 
     // Create the "Back" button
     const backButton = document.createElement('button');
@@ -96,6 +95,9 @@
     // Add CSS styling for the menu, navigation buttons, and visibility controls
     const style = document.createElement('style');
     style.innerHTML = `
+        :root{
+            --rsNavMenuBtnBrdRad:4px;
+        }
         .rsm-nav-menu {
             position: fixed !important;
             z-index:9292929292;
@@ -110,13 +112,20 @@
             transition: bottom 0.3s; /* Smooth transition for visibility toggle */
         }
         .rsm-nav-btn {
-            background-color: #4CAF50; /* Green background */
-            color: white; /* White text */
-            border: none; /* No border */
-            border-radius: 5px; /* Rounded corners */
-            padding: 8px 12px; /* Padding for the buttons */
-            margin-right: 5px; /* Space between the buttons */
-            cursor: pointer; /* Change cursor to pointer on hover */
+            background-color: transparent;
+            background: hsla(0,0%,50%,.2);
+            color: hsla(0,0%,50%,1);
+            border: none;
+            padding: 8px 8px;
+            cursor: pointer;
+        }
+        .rsm-nav-btn:first-of-type {
+            border-top-left-radius:var(--rsNavMenuBtnBrdRad);
+            border-bottom-left-radius:var(--rsNavMenuBtnBrdRad);
+        }
+        .rsm-nav-btn:last-of-type {
+            border-top-right-radius:var(--rsNavMenuBtnBrdRad);
+            border-bottom-right-radius:var(--rsNavMenuBtnBrdRad);
         }
 
         .rsm-nav-btn:hover {
@@ -136,7 +145,9 @@
         .rsm-nav-icon-wrapper {
             display: inline-block; /* Wrap icon image */
         }
-
+        .rsm-nav-btn-wrapper{
+            display:flex !important;   
+        }
         .rsm-nav-icon {
             width: 20px; /* Size of the icon */
             height: 20px; /* Size of the icon */
