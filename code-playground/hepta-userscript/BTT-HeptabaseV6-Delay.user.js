@@ -2,7 +2,7 @@
 // @name         BTT-BetterTouchTool-HEPTABASE V6 - DELAY
 // @namespace    http://yournamespace.com
 // @version      1.0
-// @description  Injects V6 into heptabase.com for BTT/Better Touch Tool Floating Webviews. This
+// @description  Injects V6 into heptabase.com for BTT/Better Touch Tool Floating Webviews.
 // @author       RSM
 // @match        https://app.heptabase.com/*
 // @grant        GM_addElement
