@@ -122,10 +122,19 @@
         .rsm-nav-btn:first-of-type {
             border-top-left-radius:var(--rsNavMenuBtnBrdRad);
             border-bottom-left-radius:var(--rsNavMenuBtnBrdRad);
+            background-image:url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/assets/rsm-navigate-back.svg);
+            background-size:20px;
+            background-position:center;
+            background-repeat:no-repeat;
+            border-right:1px solid hsla(0,0%,50%,.25);
         }
         .rsm-nav-btn:last-of-type {
             border-top-right-radius:var(--rsNavMenuBtnBrdRad);
             border-bottom-right-radius:var(--rsNavMenuBtnBrdRad);
+            background-image:url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/assets/rsm-navigate-forward.svg);
+            background-size:20px;
+            background-position:center;
+            background-repeat:no-repeat;
         }
 
         .rsm-nav-btn:hover {
