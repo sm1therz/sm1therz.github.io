@@ -1,0 +1,121 @@
+/**********
+*********** 
+VIVALDI SETTINGS
+***********
+***********/
+
+:root {
+  /*settings header*/
+  --settingsH2PadTop: 24px;
+  --settingsH2MargLeftRightOffset: 30px
+  --settingsH2: 100px;
+}
+
+/**********
+***********
+***********
+SETTINGS SECTION > CONTAINER
+***********
+***********
+***********/
+
+
+/**********
+SETTINGS SECTION > CONTAINER
+***********/
+
+.vivaldi-settings .settings-content {
+  padding-top: 0px;
+}
+
+/**********
+SETTINGS SECTION > HEADER
+***********/
+
+.setting-section h2 {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 5px 0px;
+  padding-left: var(--settingsH2MargLeftRightOffset);
+  padding-right: var(--settingsH2MargLeftRightOffset);
+  padding-top: var(--settingsH2PadTop);
+  min-height: var(--settingsH2);
+  margin-left: calc(var(--settingsH2MargLeftRightOffset) * -1);
+  margin-right: calc(var(--settingsH2MargLeftRightOffset) * -1);
+  background: transparent;
+  backdrop-filter: blur(10px);
+  z-index: 8
+}
+.setting-section h2:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--colorBgLightIntense);
+  opacity: .6;
+  z-index: -1;
+}
+
+/**********
+***********
+***********
+WORKSPACE RULES
+***********
+***********
+***********/
+
+.WorkspaceLinkRouting {
+  max-height: unset;
+}
+
+/**********
+***********
+***********
+SITE PERMISSIONS
+***********
+***********
+***********/
+
+.setting-site-permissions,
+.ContentBlocker-Exceptions {
+  max-height: unset;
+}
+
+/**********
+SITE PERMISSIONS > LEFT SIDEBAR
+***********/
+
+.master-detail .master {
+  max-width: 330px;
+}
+
+/**********
+***********
+***********
+BUTTONS
+***********
+***********
+***********/
+
+#browser .setting-section button,
+#browser .setting-section input,
+#browser .setting-section select,
+#browser .setting-section textarea {
+  background: var(--colorBgDark);
+}
+
+/**********
+***********
+***********
+CHECKBOXES
+***********
+***********
+***********/
+
+#browser .setting-section input[type=checkbox]:checked {
+  background: var(--colorHighlightBg);
+}

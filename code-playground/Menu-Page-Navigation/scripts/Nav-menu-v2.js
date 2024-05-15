@@ -55,7 +55,7 @@
     iconWrapper.className = 'rsm-nav-icon-wrapper';
 
     const iconImg = document.createElement('img');
-    iconImg.src = 'https://sm1therz.github.io/code-playground/Menu-Page-Navigation/assets/rsm-nav-open-close.svg';
+    iconImg.src = 'https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-nav-open-close.svg';
     iconImg.className = 'rsm-nav-icon';
 
     iconWrapper.appendChild(iconImg);
@@ -126,7 +126,7 @@
             height:30px;
         }
         .rsm-nav-back {
-            background-image:url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/assets/rsm-navigate-back.svg);
+            background-image:url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-navigate-back.svg);
             background-size:20px;
             background-position:center;
             background-repeat:no-repeat;
@@ -134,7 +134,7 @@
             transition:.2s;
         }
         .rsm-nav-forward {
-            background-image:url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/assets/rsm-navigate-forward.svg);
+            background-image:url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-navigate-forward.svg);
             background-size:20px;
             background-position:center;
             background-repeat:no-repeat;

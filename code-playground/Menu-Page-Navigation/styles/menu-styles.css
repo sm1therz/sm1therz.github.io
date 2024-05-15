@@ -1,0 +1,129 @@
+:root {
+  --rsNavMenuPosition: 10px;
+  /*buttons - row 2*/
+  --rsNavMenuBtnBrdRad: 6px;
+  --rsNavMenuBtnBrdClr: hsla(0, 0%, 50%, .15);
+  --rsNavMenuBtnHeight: 30px;
+  --rsNavMenuBtnWidth: 36px;
+  /*button - open/close*/
+  --rsNavMenuVisBtnHeight:20px;
+  --rsNavMenuVisBtnIcnWidth: 30px;
+}
+#rsm-nav-menu {
+  position: fixed !important;
+  display: flex;
+  flex-direction: column;
+  z-index: 9292929292;
+  bottom: var(--rsNavMenuPosition);
+  left: var(--rsNavMenuPosition);
+  padding: 10px;
+  padding-top: 5px !important;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px) saturate(2);
+  -webkit-backdrop-filter: blur(10px) saturate(2) ;
+  box-shadow:0 0 0 .5px  hsla(0, 0%, 50%, .12);
+  border-radius: calc(var(--rsNavMenuBtnBrdRad) + 2px);
+  transition: bottom 0.3s;
+  gap: calc(var(--rsNavMenuPosition) * .5)
+    /* Smooth transition for visibility toggle */
+}
+
+/********
+OPEN / CLOSE BUTTON
+********/
+.rsm-nav-vis-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  height: var(--rsNavMenuVisBtnHeight);
+  padding: 0px;
+  overflow:hidden !important;
+}
+.rsm-nav-vis-icon {
+  display: flex;
+  height: var(--rsNavMenuVisBtnIcnWidth);
+  width: var(--rsNavMenuVisBtnIcnWidth);
+  background-image: url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-nav-open-close.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: .25s;
+  position: absolute;
+}
+.rsm-nav-menu-closed .rsm-nav-vis-icon{
+  transform: scaleY(-1);
+  
+}
+
+/********
+MENU OPEN / MENU CLOSE
+********/
+.rsm-nav-menu-closed{
+  bottom: -70px !important;
+}
+/********
+BOTTOM BUTTONS
+********/
+.rsm-nav-btn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: var(--rsNavMenuBtnBrdRad);
+  box-shadow: 0 0 0 1px var(--rsNavMenuBtnBrdClr);
+  overflow: hidden;
+}
+.rsm-nav-btn-group {
+  display: flex !important;
+}
+
+.rsm-nav-btn {
+  background: hsla(0, 0%, 50%, .12);
+  border: none;
+  padding: 8px 8px;
+  cursor: pointer;
+  width: 36px;
+  height: 30px;
+  transition: .2s;
+  text-align: center;
+  font-size: .8rem;
+  line-height: 1;
+  font-family: SF Mono, monospace;
+}
+.rsm-nav-btn-group:first-of-type > button{
+  border-top: none;
+}
+.rsm-nav-btn-group > button{
+  border-top: 1px solid var(--rsNavMenuBtnBrdClr);
+}
+.rsm-nav-btn-group > button:first-child{
+  border-right: 1px solid var(--rsNavMenuBtnBrdClr);
+}
+.rsm-nav-back {
+  background-image: url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-navigate-back.svg);
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.rsm-nav-forward {
+  background-image: url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-navigate-forward.svg);
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rsm-nav-btn:hover {
+  background-color: hsla(0, 0%, 50%, .35);
+  /* Darker green on hover */
+}
+
+.rsm-nav-icon {
+  width: 20px;
+  /* Size of the icon */
+  height: 20px;
+  /* Size of the icon */
+}
