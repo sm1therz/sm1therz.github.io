@@ -44,8 +44,11 @@
     box-shadow:0 0 0 .5px  hsla(0, 0%, 50%, .12);
     border-radius: calc(var(--rsNavMenuBtnBrdRad) + 2px);
     transition: bottom 0.3s;
-    gap: calc(var(--rsNavMenuPadding) * .5)
-      /* Smooth transition for visibility toggle */
+    gap: calc(var(--rsNavMenuPadding) * .5);
+    /* Smooth transition for visibility toggle */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 100%, 0.1)), to(hsla(0, 0%, 100%, 0.1)));
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0.1));
+    box-shadow: 0 6px 36px 0 rgba(0, 0, 0, 0.2);
   }
   
   /********
@@ -83,7 +86,7 @@
   MENU OPEN / MENU CLOSE
   ********/
   .rsm-nav-menu-closed{
-    bottom: -70px !important;
+    bottom: -92px !important;
   }
   
   /********
@@ -151,11 +154,11 @@
   /********
   BUTTONS > COPY / PASTE
   ********/
-  /*Copy / Paste Buttons*/
   .rs-copy,
   .rs-paste {
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue, Arial, sans-serif !important;
-    font-size:
+    font-size:;
+    letter-spacing:2px;
   }
 
 `;
@@ -185,10 +188,10 @@
   navBtnGroup2.className = "rsm-nav-btn-group";
   const copyButton = document.createElement("button");
   copyButton.className = "rsm-nav-btn rs-copy";
-  copyButton.textContent = "⌘ C";
+  copyButton.textContent = "⌘C";
   const pasteButton = document.createElement("button");
   pasteButton.className = "rsm-nav-btn rs-paste";
-  pasteButton.textContent = "⌘ V";
+  pasteButton.textContent = "⌘V";
   navBtnGroup2.appendChild(copyButton);
   navBtnGroup2.appendChild(pasteButton);
 
