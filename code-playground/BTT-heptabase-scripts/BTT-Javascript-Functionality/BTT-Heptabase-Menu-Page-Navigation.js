@@ -88,7 +88,7 @@
   ********/
   .rsm-nav-menu-closed{
     bottom: -92px !important;
-    --rsNavShadow:rgba(0, 0, 0, 0);
+    box-shadow:0 0 0 0 hsla(0,100%,50%,1);
   }
   
   /********
@@ -132,6 +132,7 @@
     font-size: .8rem;
     line-height: 1;
     font-family: SF Mono, monospace;
+    color:hsla(0,0%,0%);
   }
   .rsm-nav-btn:hover {
     background-color: hsla(0, 0%, 50%, .35);
