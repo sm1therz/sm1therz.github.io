@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Page Navigation Menu V4 (External CSS)
+// @name         Navigation Menu V4 (External CSS)
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Creates a custom navigation menu that loads on every page with following functionality: Buttons: Go Back, Go Forward, Copy, Paste
