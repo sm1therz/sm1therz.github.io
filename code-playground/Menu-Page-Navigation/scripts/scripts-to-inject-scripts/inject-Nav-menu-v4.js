@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Navigation Menu V4 - Via Src
+// @name         Inject: Navigation Menu V4 - Via Src
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  A script to inject the Nav Menu V4 script - Via src (except in iframes)

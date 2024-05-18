@@ -10,161 +10,13 @@
 (function() {
   'use strict';
 
-  // Create the <style> element
-  const styleElement = document.createElement("style");
-  styleElement.textContent = `
-    
-  :root {
-    /*menu*/
-    --rsNavMenuPosition: var(--rsNavMenuPadding);
-    --rsNavMenuPadding:10px;
-    --rsNavShadow:rgba(0, 0, 0, 0.2);
-    /*button - open close menu*/
-    --rsNavMenuVisBtnHeight:20px;
-    --rsNavMenuVisBtnIcnWidth: 30px;
-    /*buttons - row 2 - all*/
-    --rsButtonWidth:40px;
-    /*buttons > row 2*/
-    --rsNavMenuBtnBrdRad: 6px;
-    --rsNavMenuBtnBrdClr: hsla(0, 0%, 50%, .15);
-    --rsNavMenuBtnHeight: 30px;
-    --rsNavMenuBtnWidth: 36px;
-  }
-  #rsm-nav-menu {
-    position: fixed !important;
-    display: flex;
-    flex-direction: column;
-    z-index: 9292929292;
-    bottom: var(--rsNavMenuPosition);
-    left: var(--rsNavMenuPosition);
-    padding: 10px;
-    padding-top: 5px !important;
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px) saturate(2);
-    -webkit-backdrop-filter: blur(10px) saturate(2) ;
-    box-shadow:0 0 0 .5px  hsla(0, 0%, 50%, .12);
-    border-radius: calc(var(--rsNavMenuBtnBrdRad) + 2px);
-    transition: bottom 0.3s;
-    gap: calc(var(--rsNavMenuPadding) * .5);
-    /* Smooth transition for visibility toggle */
-    background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 100%, 0.1)), to(hsla(0, 0%, 100%, 0.1)));
-    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0.1));
-    box-shadow: 0 6px 36px 0 var(--rsNavShadow);
-  }
-  
-  /********
-  OPEN / CLOSE BUTTON
-  ********/
-  .rsm-nav-vis-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    width: 100%;
-    height: var(--rsNavMenuVisBtnHeight);
-    padding: 0px;
-    overflow:hidden !important;
-  }
-  .rsm-nav-vis-icon {
-    display: flex;
-    height: var(--rsNavMenuVisBtnIcnWidth);
-    width: var(--rsNavMenuVisBtnIcnWidth);
-    background-image: url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-nav-open-close.svg);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: .25s;
-    position: absolute;
-  }
-  .rsm-nav-menu-closed .rsm-nav-vis-icon{
-    transform: scaleY(-1);
-  
-  }
-  
-  /********
-  MENU OPEN / MENU CLOSE
-  ********/
-  .rsm-nav-menu-closed{
-    bottom: -92px !important;
-    box-shadow:0 0 0 0 hsla(0,100%,50%,1);
-  }
-  
-  /********
-  BOTTOM BUTTONS
-  ********/
-  .rsm-nav-btn-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    border-radius: var(--rsNavMenuBtnBrdRad);
-    box-shadow: 0 0 0 1px var(--rsNavMenuBtnBrdClr);
-    overflow: hidden;
-  }
-  .rsm-nav-btn-group {
-    display: flex !important;
-  }
-  
-  .rsm-nav-btn-group:first-of-type > button{
-    border-top: none;
-  }
-  .rsm-nav-btn-group > button{
-    border-top: 1px solid var(--rsNavMenuBtnBrdClr);
-  }
-  .rsm-nav-btn-group > button:first-child{
-    border-right: 1px solid var(--rsNavMenuBtnBrdClr);
-  }
-  
-  /********
-  BUTTONS > ALL
-  ********/
-  .rsm-nav-btn {
-    background: hsla(0, 0%, 50%, .12);
-    border: none;
-    padding: 2px;
-    cursor: pointer;
-    width: var(--rsButtonWidth);
-    height: var(--rsButtonWidth);
-    transition: .2s;
-    text-align: center;
-    font-size: .8rem;
-    line-height: 1;
-    font-family: SF Mono, monospace;
-    color:hsla(0,0%,0%);
-  }
-  .rsm-nav-btn:hover {
-    background-color: hsla(0, 0%, 50%, .35);
-    /* Darker green on hover */
-  }
-  /********
-  BUTTONS > PAGE FORWARD AND PAGE BACK
-  ********/
-  .rsm-nav-back {
-    background-image: url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-navigate-back.svg);
-    background-size: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .rsm-nav-forward {
-    background-image: url(https://sm1therz.github.io/code-playground/Menu-Page-Navigation/icons/rsm-navigate-forward.svg);
-    background-size: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  /********
-  BUTTONS > COPY / PASTE
-  ********/
-  .rs-copy,
-  .rs-paste {
-    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue, Arial, sans-serif !important;
-    font-size:;
-    letter-spacing:2px;
-  }
+  // Create the <link> element to load external stylesheet
+  const linkElement = document.createElement("link");
+  linkElement.rel = "stylesheet";
+  linkElement.href = "https://sm1therz.github.io/code-playground/Menu-Page-Navigation/styles/Nav-menu-v4-styles.css";
 
-`;
+  // Add the link element to the document
+  document.head.appendChild(linkElement);
 
   // Create the menu structure
   const menu = document.createElement("div");
@@ -205,7 +57,6 @@
   menu.appendChild(btnWrapper);
 
   // Add elements to the document
-  document.head.appendChild(styleElement);
   document.body.appendChild(menu);
 
   // Load the initial state from local storage
