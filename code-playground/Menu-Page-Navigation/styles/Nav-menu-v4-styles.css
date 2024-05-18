@@ -70,9 +70,9 @@ OPEN / CLOSE BUTTON
 /********
 MENU OPEN / MENU CLOSE
 ********/
-.rsm-nav-menu-closed {
+#rsm-nav-menu.rsm-nav-menu-closed {
 	bottom: -92px !important;
-	box-shadow: 0 0 0 0 hsla(0, 100%, 50%, 1);
+	--rsNavShadow:transparent;
 }
 
 /********
