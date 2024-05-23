@@ -1027,7 +1027,7 @@ SIDEBAR
 ******************
 ******************
 ******************
-LINKS
+EDITOR - LINKS, UNDERLINE V1
 ******************
 ******************
 ******************
@@ -1082,6 +1082,8 @@ LINKS
 		border-bottom: 1px solid var(--internalLinkBrdClr) !important;
 		outline: 0px solid var(--internalLinkBgClr);
 		border-color:var(--internalLinkBrdClr) !important;
+		box-shadow: 0 .25px 0 0 var(--underlineExtraBrdClr) !important;
+		--underlineExtraBrdClr:var(--internalLinkBrdClr);
 }
 
 
@@ -1100,8 +1102,9 @@ MENTIONS
 		border-bottom: none !important;
 		background-image: var(--iconBrdDashHoriz);
 		background-repeat: repeat-x;
-		background-position: 0 101%;
-		background-size: 13px !important;
+		background-position: 0 100%;
+		background-size: 17px !important;
+		box-shadow: 0 0px 0 0 var(--underlineExtraBrdClr) !important;
 }
 
 /*****************
@@ -1114,11 +1117,11 @@ UNDERLINE
 		--underlineBrdClr:var(--text-color);
 }
 
-#root [data-underline="true"],
+[data-underline="true"],
 a [data-underline="true"]{
 		border-bottom: var(--linkBrdThickness) solid var(--underlineBrdClr) !important;
 		position: relative;
-		box-shadow: 0 .5px 0 0 var(--underlineExtraBrdClr);
+		box-shadow: 0 .25px 0 0 var(--underlineExtraBrdClr);
 }
 a [data-underline="true"]{
 				--underlineExtraBrdClr:var(--LinkClr)!important;
@@ -1128,6 +1131,13 @@ a[href*="app.heptabase.com"] [data-underline="true"]{
 				--underlineExtraBrdClr:var(--text-color) !important;
 				--underlineBrdClr:var(--text-color) !important;
 
+}
+
+/*NOT IN HIGHLIGHT*/
+[class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror [data-underline="true"], 
+._highlightElementNoteEditor_1rg43_7 .ProseMirror, [data-node-type="embed"] > [class*="group"] > div > [class*="ProseMirror-hepta-style"] [data-underline="true"]{
+		--underlineExtraBrdClr:transparent !important;
+		box-shadow: none !important;
 }
 /*****************
 ******************
