@@ -1,0 +1,32 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 10px 20px;
+  display: block;
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
+.masked-element {
+  width: 200px;
+  height: 200px;
+  background-color: coral;
+  mask-image: var(--popup-pointer-mask);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+
+
+:root {
+  --mask-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" /></svg>');
+  --popup-pointer-mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='445' height='20' fill='none' viewBox='0 0 445 20'%3e%3cpath fill='%230000E9' fill-rule='evenodd' d='M244.117 19.5H445V0H0v19.5h200.883c5.025 0 7.538 0 9.742-1.0234 2.203-1.0233 3.824-2.9431 7.067-6.7826l.586-.694.844-1 1.85-2.19046c.799-.94618 2.257-.94618 3.056 0L225.878 10l.844 1 .586.694c3.243 3.8395 4.864 5.7593 7.067 6.7826 2.204 1.0234 4.717 1.0234 9.742 1.0234Z' clip-rule='evenodd'/%3e%3c/svg%3e");
+}

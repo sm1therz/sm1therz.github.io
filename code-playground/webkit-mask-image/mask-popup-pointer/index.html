@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>document name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" tyle="text/css" href="assets/styles.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <svg viewBox="0 0 400 300">
+        <defs>
+          <mask id="mask">
+            <rect fill="#000000" x="0" y="0" width="400" height="300"></rect>
+            <circle fill="#FFFFFF" cx="150" cy="150" r="100" />
+            <circle fill="#FFFFFF" cx="50" cy="50" r="150" />
+          </mask>
+        </defs>
+        <image mask="url(#mask)" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://cdn.glitch.com/04eadd2b-7dd4-43fc-af3d-cff948811986%2Fballoons.jpg?v=1597755892826" width="400" height="300"></image>
+      </svg>
+    </div>
+    <div class="masked-element"></div>
+  </body>
+
+</html>

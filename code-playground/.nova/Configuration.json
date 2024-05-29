@@ -1,4 +1,5 @@
 {
+  "cssvalidator.enabled" : true,
   "workspace.color" : 2,
   "workspace.name" : "Github - Code Playground"
 }
