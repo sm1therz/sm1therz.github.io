@@ -15,7 +15,7 @@ ROOT
 		--invertClr: white;
 		--text-color: hsl(0, 0%, 20%) !important;
 		--reftext-color: hsl(0, 0%, 0%) !important;
-		--text-color-brighter: #000;
+		--text-color-contrast: #000;
 		--text-color-Strikethrough: hsl(0, 0%, 63%);
 		--heading-color: hsl(0, 0%, 0%);
 		--background-primary: hsl(0, 0%, 95%);
@@ -23,14 +23,18 @@ ROOT
 		--background-primary-for-blur: hsl(0, 0%, 100%, .4);
 
 		/*links*/
-		--internalLinkClr: var(--text-color);
-		--internalLinkBgClr: hsl(215, 10%, 56%, .14);
-		--internalLinkBrdClr:hsl(215, 10%, 16%, .2);
+		/*roam--internalLinkClr: hsl(203, 82%, 35%);*/
+		--internalLinkClr: hsl(203, 58%, 35%);
+		--internalLinkClr-Mention:;
+		--internalLinkBgClr: hsl(215, 10%, 56%, 0.14);
+		--internalLinkBrdClr:hsla(207, 8%, 41%, .25);
+	--internalLinkBrdClrUnderline:hsl(203, 68%, 35%,.99);
+		--internalLinkBrdClr-Hover:hsl(218, 7%, 0%,.35);
 
 		/*Internal links*/
 		--LinkBrd: none;
 		--LinkBrdBtm: 1.0px solid var(--LinkBrdClr);
-		--LinkBrdClr: hsl(215, 100%, 46%, .3);
+		--LinkBrdClr: hsl(215, 100%, 46%, 1);
 		--LinkClr: hsl(215, 100%, 46%, 1);
 
 		--LinkBgClr: hsl(215, 100%, 75%, .25);
@@ -218,7 +222,7 @@ ROOT
 		--invertClr: hsl(0, 0%, 100%);
 		--text-color: hsl(246, 12%, 86%) !important;
 		--reftext-color: var(--text-color);
-		--text-color-brighter: hsl(0, 0%, 96%) !important;
+		--text-color-contrast: hsl(0, 0%, 96%) !important;
 		--text-color-Strikethrough: hsl(246, 2%, 52%);
 		--heading-color: hsl(0, 0%, 94%);
 		--background-primary: hsl(229, 5%, 10%) !important;
@@ -228,15 +232,19 @@ ROOT
 		--background-secondary: hsl(229, 5%, 10%) !important;
 		--menu-texture-bg-hard: var(--background-primary) !important;
 		/*links*/
-		--internalLinkClr: var(--text-color);
-		--internalLinkBgClr: hsl(211, 23%, 73%, .1);
-		--internalLinkBrdClr: hsl(211, 0%, 100%, 0.15);
+		--internalLinkClr: hsl(216, 21%, 72%);
+		--internalLinkClr-Mention:var(--text-color);
+		--internalLinkBgClr: hsl(211, 100%, 73%, .11);
+		--internalLinkBrdClr: hsl(206, 21%, 76%,.4);
+	--internalLinkBrdClrUnderline:var(--internalLinkBrdClr);
+		--internalLinkBrdClr-Hover:var(--internalLinkBrdClr);
+
 		--LinkFilter-Hover: brightness(1.2)saturate(1);
 
 		/*Internal links*/
 		--LinkBrd: 1px solid var(--LinkBrdClr);
 		--LinkBrdBtm: var(--LinkBrd);
-		--LinkBrdClr: hsl(211, 100%, 74%, .4);
+		--LinkBrdClr: hsl(211, 100%, 74%, 1);
 		--LinkClr: hsl(211, 100%, 73%);
 		--LinkBgClr: hsl(209, 100%, 50%, .151);
 		--LinkBgClr-Hover: transparent;
@@ -415,14 +423,17 @@ ROOT
 /*TESTING
 .ProseMirror * {
 		outline: .1px solid #ff000045;
-}*/
+}
+*/
 /*TESTING
 body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) {
 		outline: 2px solid blue;
 }*/
 
+::selection {
+ /* Background color of the selection */
 
-
+}
 
 /********
 *********
@@ -495,11 +506,16 @@ BODY - FOnt SIZE
 :root {
 		--bodyFontSize: 17.5px;
 		--bodyLineHeight: 1.45;
+	--blockitemPadLeft:2px;
 }
 .ProseMirror {
 		font-size: var(--bodyFontSize);
 		line-height: var(--bodyLineHeight);
 		-webkit-font-smoothing: antialiased;
+}
+
+.ProseMirror p {
+	padding-left:var(--blockitemPadLeft);
 }
 
 /*****************
@@ -1023,122 +1039,7 @@ SIDEBAR
 
 
 
-/*****************
-******************
-******************
-******************
-EDITOR - LINKS, UNDERLINE V1
-******************
-******************
-******************
-******************/
 
-:root{
-		--linkBrdThickness:1px;
-}
-.ProseMirror a *,
-.text-active * {
-		border-bottom: 0px !important;
-}
-
-.ProseMirror a,
-.text-active:not(.text-label.text-active) {
-		border: none;
-
-		box-shadow: none !important;
-		border-bottom: var(--linkBrdThickness) solid var(--LinkBrdClr) !important;
-		color: var(--LinkClr) !important;
-		border-radius: 0px;
-		background: transparent;
-		transition: .1s;
-}
-
-.ProseMirror a:hover {
-		background: var(--LinkBgClr);
-		filter: var(--LinkFilter-Hover);
-}
-
-/*link - hover*/
-/*internal - hover*/
-.ProseMirror a[href*="app.heptabase.com"]:hover,
-.text-active:hover:not(.text-label:hover) {
-		background: var(--internalLinkBgClr);
-		filter: var(--LinkFilter-Hover);
-
-}
-
-
-/*internal Links*/
-.ProseMirror a[href*="app.heptabase.com"],
-/*Link in card library preview*/
-.ProseMirror .grid.select-none > div .border-b-solid.rounded.border-b.border-light-grey,
-.text-active:not(.text-label.text-active) {
-		border: none !important;
-		border-bottom: none;
-		box-shadow: none !important;
-		color: var(--internalLinkClr) !important;
-		background: transparent;
-		transition: .1s;
-		border-bottom: 1px solid var(--internalLinkBrdClr) !important;
-		outline: 0px solid var(--internalLinkBgClr);
-		border-color:var(--internalLinkBrdClr) !important;
-		box-shadow: 0 .25px 0 0 var(--underlineExtraBrdClr) !important;
-		--underlineExtraBrdClr:var(--internalLinkBrdClr);
-}
-
-
-
-/*overrrides*/
-.hover\:shadow-\[0_0_0_3px_var\(--light-grey\)\]:hover {
-		--tw-shadow: unset;
-		border-radius: 3px;
-}
-
-/*****************
-MENTIONS
-******************/
-
-.ProseMirror [data-node-type] span span.rounded-sm.text-active {
-		border-bottom: none !important;
-		background-image: var(--iconBrdDashHoriz);
-		background-repeat: repeat-x;
-		background-position: 0 100%;
-		background-size: 17px !important;
-		box-shadow: 0 0px 0 0 var(--underlineExtraBrdClr) !important;
-}
-
-/*****************
-******************
-UNDERLINE
-******************
-******************/
-:root{
-		--underlineExtraBrdClr:var(--text-color);
-		--underlineBrdClr:var(--text-color);
-}
-
-[data-underline="true"],
-a [data-underline="true"]{
-		border-bottom: var(--linkBrdThickness) solid var(--underlineBrdClr) !important;
-		position: relative;
-		box-shadow: 0 .25px 0 0 var(--underlineExtraBrdClr);
-}
-a [data-underline="true"]{
-				--underlineExtraBrdClr:var(--LinkClr)!important;
-				--underlineBrdClr:var(--LinkClr)!important
-}
-a[href*="app.heptabase.com"] [data-underline="true"]{
-				--underlineExtraBrdClr:var(--text-color) !important;
-				--underlineBrdClr:var(--text-color) !important;
-
-}
-
-/*NOT IN HIGHLIGHT*/
-[class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror [data-underline="true"], 
-._highlightElementNoteEditor_1rg43_7 .ProseMirror, [data-node-type="embed"] > [class*="group"] > div > [class*="ProseMirror-hepta-style"] [data-underline="true"]{
-		--underlineExtraBrdClr:transparent !important;
-		box-shadow: none !important;
-}
 /*****************
 ******************
 HIGHLIGHTS
@@ -1342,14 +1243,15 @@ BLOCKQUOTE
 :root{
 		--blockquotePadTopBtm:8px;
 		--blockquotePadLeftRight:20px;
-		
+		--blockquoteListBulletWidth:20px;
 }
 .ProseMirror blockquote {
 		border-radius: 00px !important;
 		position: relative;
 		border-left: 0px;
 		background:var(--blockquoteBgClr);
-		padding-left:var(--listBulletWidth) !important;
+		padding-left:var(--blockquoteListBulletWidth) !important;
+		padding-right:var(--blockquoteListBulletWidth) !important;
 		border-radius: 6px;
 		margin-top: var(--listMargTopBtm) !important;
 		margin-bottom: var(--listMargTopBtm) !important;
@@ -1362,11 +1264,11 @@ BLOCKQUOTE
 
 .ProseMirror blockquote {
 				position: relative !important;
+}
+.ProseMirror blockquote * {
 		--listMargTopBtm:6px;
 }
-.ProseMirror blockquote [data-node-type*="list_item"]{
 
-}
 .ProseMirror blockquote [data-node-type],
 .ProseMirror blockquote [data-node-type*="list_item"] [data-node-type]{
 		margin-top: calc(var(--listMargTopBtm) * 0) !important
@@ -1376,24 +1278,73 @@ BLOCKQUOTE
 		
 }
 
+
+
 /*BLOCKQUOTE TOGGLES*/
 .ProseMirror blockquote > [data-node-type="toggle_list_item"],
 .ProseMirror [data-node-type="embed"] blockquote > [data-node-type="toggle_list_item"]{
-		padding-left: calc(var(--listBulletWidth) * 1) !important;
-		margin-left: calc(var(--listBulletWidth) * -1) !important;
-		width: calc(100% + var(--listBulletWidth) * 1) !important;
+		padding-left: calc(var(--blockquoteListBulletWidth) * 1) !important;
+		margin-left: calc(var(--blockquoteListBulletWidth) * -1) !important;
+		width: calc(100% + var(--blockquoteListBulletWidth) * 1) !important;
 }
 .ProseMirror blockquote > [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"],
 .ProseMirror  [data-node-type="embed"] blockquote > [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"]{
 		position: absolute;
-		left: 2px;
+		left: 0px;
 }
-.ProseMirror blockblock > [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
-		z-index: 3
-}
+
+
 /*BLOCKQUOTE First Line*/
 .ProseMirror blockquote > [data-node-type]:first-child{
 		margin-top: var(--listMargTopBtm)!important;
+}
+
+/*BLOCKQUOTE TOGGLE > CHEVRON > LEFT POSITION*/
+.ProseMirror blockquote [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
+		z-index: 3;
+		left: 0px;
+}
+
+/*BLOCKQUOTE TOGGLE > CHEVRON > LEFT POSITION > FIRST LINE */
+.ProseMirror blockquote> [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
+		z-index: 3;
+		left: 1px;
+}
+
+/*BLOCKQUOTE TOGGLE CHEVRON SIZE
+.ProseMirror blockquote [data-node-type*="toggle_list_item"] > [class*="_bulletWrapper"] svg {
+		background: var(--iconChevron);
+		transform: scale(0.95) rotate(90deg) !important;
+}
+.ProseMirror blockquote [data-node-type*="list_item"][class*="folded"] > [class*="_bulletWrapper"] svg {
+		transform: scale(0.95) rotate(0deg) !important;
+}
+ */
+
+/*BLOCKQUOTE > LIST BULLET WIDTH*/
+.ProseMirror blockquote [data-node-type*="list_item"] > [class*="_bulletWrapper"],
+.ProseMirror blockquote [data-node-type*="list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
+		width: var(--blockquoteListBulletWidth) !important
+}
+.ProseMirror blockquote [data-node-type*="list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
+}
+/*BLOCKQUOTE > LIST EXPANDER*/
+.ProseMirror blockquote [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"]:before{
+		left: calc(var(--blockquoteListBulletWidth)* .5);
+		opacity: 0
+}
+/*BLOCKQUOTE > BULLET LIST UNDER*/
+/*BLOCKQUOTE > BULLET LIST UNDER*/
+.ProseMirror blockquote [data-node-type*="list_item"] > [class*="_bulletWrapper"] > [class*="_hasNestedBlocks"][class*="_bulletIcon_"]:after{
+		transform: scale(.0);
+		transition:.15s;
+}
+.ProseMirror blockquote [data-node-type*="list_item"] > [class*="_bulletWrapper"] > [class*="_hasNestedBlocks"][class*="_bulletIcon_"]:hover:after{
+		transform: scale(.8);
+}
+/*BLOCKQUOTE > BULLET LIST UNDER*/
+.ProseMirror blockquote [data-node-type*="list_item"][class*="folded"] > [class*="_bulletWrapper"] > [class*="_hasNestedBlocks"][class*="_bulletIcon_"]:after{
+		transform: scale(.8);
 }
 
 /*****************
@@ -1423,7 +1374,7 @@ code,
 STRIKETHROUGH
 ******************/
 .ProseMirror [data-node-type] s{
-		color:var(--text-color-Strikethrough);
+
 }
 
 /*****************
@@ -1434,8 +1385,13 @@ CODE BLOCK
 ******************
 ******************/
 
+
+
 :root{
 		--codeblockBrdRad:7px;
+	--codeblockPadTopBtm:14px;
+	--codeblockTextSize:calc(var(--bodyFontSize) - 2.5px);
+	--codeblockLineHeight:1.54;
 }
 .ProseMirror .cm-editor,
 .ProseMirror .cm-editor .cm-scroller{
@@ -1444,23 +1400,33 @@ CODE BLOCK
 }
 
 .ProseMirror [data-node-type="code_block"]{
-		background: transparent !important;
+	background: transparent !important;
+		box-shadow: none !important;
+		border-radius: unset !important;
+	padding:0px !important;
+		
+	
+	
 }
 .ProseMirror [data-node-type="code_block"],
 .ProseMirror [data-node-type="embed"] {
 		margin-top: var(--listMargTopBtm) !important;
 		margin-bottom: var(--listMargTopBtm) !important;
-		border-radius: var(--codeblockBrdRad);
 }
-#root .ProseMirror [data-node-type="code_block"] > [class*="group/"],
-#root ~ .hepta-scrim .ProseMirror [data-node-type="code_block"] > [class*="group/"] {
-		background: var(--codeBlockBgClr);
-		box-shadow: 0 0 0 1px var(--codeBlockBrdClr);
-		border-radius: var(--codeblockBrdRad);
+.ProseMirror [data-node-type="code_block"] > [class*="group/"]{
+background: var(--blockquoteBgClr) !important;
+	box-shadow:inset 0 0 0 1px  var(--blockquoteBrdClr) !important;
+	border-radius: var(--codeblockBrdRad) !important;
+	border: none !important;
+	padding-top: var(--codeblockPadTopBtm) !important;
+	padding-bottom: var(--codeblockPadTopBtm)!important;
+	padding-left:var(--blockquoteListBulletWidth) !important;
+	padding-right: var(--blockquoteListBulletWidth) !important;
+		width: 100% !important
 }
 
 .ProseMirror [data-node-type="code_block"] .cm-editor {
-				padding:18px 18px !important;
+				padding:0px !important;
 }
 
 #root .ProseMirror [data-node-type="code_block"] *,
@@ -1468,11 +1434,12 @@ CODE BLOCK
 				font-family: "Roboto Mono", Menlo, monospace;
 		font-weight: 400;
 		-webkit-font-smoothing:subpixel-antialiased;
-		font-size: calc(var(--bodyFontSize) - 2.5px) !important;
-		line-height: 1.5
+		font-size: var(--codeblockTextSize) !important;
+		line-height: var(--codeblockLineHeight);
 }
 .ProseMirror [data-node-type="code_block"] .cm-line {
-				color:var(--codeBlockTxtClr)
+				color:var(--codeBlockTxtClr);
+	padding: 0px !important;
 }
 
 /*****************
@@ -1480,16 +1447,17 @@ CODE BLOCK - BUTTONS
 ******************/
 .ProseMirror [data-node-type="code_block"] .cm-editor + div > .absolute{
 		position: absolute;
-		top: 0;
+
 		width: auto;
 		left: unset !important;
 		display: flex;
 		align-items: flex-end;
 		justify-content: flex-end;
-		top: 2px;
-		right: 2px !important;
+		top: calc(var(--codeblockPadTopBtm) * 0);
+		right: calc(var(--blockquoteListBulletWidth) * 0);
 		gap: unset;
 		column-gap: 5px;
+	z-index: 96969696
 		
 }
 /*button container*/
@@ -1575,16 +1543,15 @@ EMBED BLOCK - Padding correction
 :root{
 		--codeBlockMargLeftCorrection:7px
 }
-
-
-/*code block correction*/
-#root .ProseMirror > [data-node-type="code_block"]:not([data-node-type="embed"] .ProseMirror > [data-node-type="code_block"]),
-#root ~ .hepta-scrim .ProseMirror > [data-node-type="code_block"]:not([data-node-type="embed"] .ProseMirror > [data-node-type="code_block"]) {
-		border-radius: unset ;
-		padding-left: var(--codeBlockMargLeftCorrection);
-		margin-left: calc(var(--codeBlockMargLeftCorrection) * -1) ;
-		width:calc(100% + var(--codeBlockMargLeftCorrection))
+/*CODE block correction*/
+.ProseMirror > [data-node-type="code_block"]:not([data-node-type="embed"] .ProseMirror > [data-node-type="code_block"]){
+		padding-left: var(--codeBlockMargLeftCorrection) !important;
+		margin-left: calc(var(--codeBlockMargLeftCorrection) * -1) !important;
+		width:calc(100% + var(--codeBlockMargLeftCorrection)) !important;
+	display: flex;
 }
+
+
 /*math block correction*/
 #root .ProseMirror > [data-node-type="math_display"]:not([data-node-type="embed"] .ProseMirror > [data-node-type="math_display"]),
 #root ~ .hepta-scrim .ProseMirror > [data-node-type="math_display"]:not([data-node-type="embed"] .ProseMirror > [data-node-type="math_display"]) {
@@ -2315,6 +2282,114 @@ TOGGLE EXPAND BORDER
 
 /*****************
 ******************
+******************
+******************
+EDITOR - LINKS, UNDERLINE V1
+******************
+******************
+******************
+******************/
+:root {
+		--underlineThickness: 1.5px;
+		--underlineOffset:2px;
+		--underlineColor:var(--LinkBrdClr);
+		
+}
+
+
+.ProseMirror a,
+.text-active:not(.text-label.text-active) {
+		border: none;
+		box-shadow: none;
+		border-bottom: none !important;
+		color: var(--LinkClr);
+	--text-color-contrast:var(--LinkClr);
+		border-radius: 0px;
+		border-top-right-radius: 3px;
+		border-top-left-radius: 3px;
+		background: transparent;
+		transition: .1s;
+		/*underline*/
+		text-decoration: underline;
+		text-decoration-thickness: var(--underlineThickness) !important;
+		text-decoration-color: var(--underlineColor) !important;
+		text-underline-offset: var(--underlineOffset);   
+	--underlineColor:var(--LinkClr);
+}
+.ProseMirror a:hover {
+		background: var(--LinkBgClr);
+}
+
+
+
+/*****************
+INTERNAL LINKS
+******************/
+.ProseMirror a[href*="app.heptabase.com"],
+/*Link in card library preview*/
+.ProseMirror .grid.select-none > div .border-b-solid.rounded.border-b.border-light-grey,
+.text-active:not(.text-label.text-active) {
+		border: none !important;
+		color: var(--internalLinkClr);
+		text-decoration: underline;
+		--underlineColor:var(--internalLinkBrdClr);
+	--text-color-contrast:var(--internalLinkClr);
+}
+/*link - hover*/
+/*internal - hover*/
+.ProseMirror a[href*="app.heptabase.com"]:hover,
+.text-active:hover:not(.text-label:hover) {
+		background: var(--internalLinkBgClr);
+
+}
+
+
+/*****************
+INTERNAL INLINE MENTIONS
+******************/
+.ProseMirror [data-node-type] span span.rounded-sm.text-active  {
+		border-bottom: none !important;
+		background-image: var(--iconBrdDashHoriz);
+		background-repeat: repeat-x;
+		background-position: 0 101%;
+		background-size: 19px !important;
+		position: relative;
+		--underlineThickness:0px;
+		text-decoration: none;
+		color: var(--internalLinkClr-Mention)
+}
+.ProseMirror [data-node-type] span span.rounded-sm.text-active .border-light-grey{
+		border: none;
+}
+
+
+/*****************
+******************
+UNDERLINE
+******************
+******************/
+
+.ProseMirror [data-underline="true"]{
+	color: var(--text-color-contrast)
+}
+.ProseMirror [data-underline="true"] {
+		border: none !important;
+		position: relative;
+		text-decoration: underline;
+		text-decoration-thickness: var(--underlineThickness);
+		text-decoration-color: var(--text-color);
+		text-underline-offset: var(--underlineOffset);
+}
+
+.ProseMirror a [data-underline="true"] {
+	 text-decoration-color: var(--LinkClr);
+}
+.ProseMirror a[href*="app.heptabase.com"] [data-underline="true"]{
+	text-decoration-color:var(--internalLinkBrdClrUnderline)
+}
+
+/*****************
+******************
 EDITOR - BULLET - TOGGLE V2
 ******************
 ******************/
@@ -2526,8 +2601,6 @@ LIST ITEM > NESTED BLOCKS > LAST CHILD
 }
 
 
-
-
 /*****************
 ******************
 ******************
@@ -2537,48 +2610,43 @@ EDITOR - MENTIONS
 ******************/
 
 :root {
-		--mentionIcnMargTop:8px;
-		--mentionTextPadTopBtm:5px;
+		--mentionIcnMargTop:9px;
+	--mentionIcnWidth:23px;
+		--mentionTextPadTopBtm:6px;
 }
-#root .ProseMirror  [data-node-type="mention"],
-#root ~ .hepta-scrim .ProseMirror  [data-node-type="mention"]{
+.ProseMirror  [data-node-type="mention"]{
+	border-radius: 0px;
+}
+.ProseMirror  [data-node-type="mention"] + [data-node-type="mention"] {
+	margin-top: calc(var(--listMargTopBtm) * -1) !important;
+}
+.ProseMirror  [data-node-type="mention"],
+.ProseMirror [data-node-type="embed"] [data-node-type="embed"]{
 		position: relative;
 		margin-top: calc(var(--listMargTopBtm) * 1) !important;
 		margin-bottom: calc(var(--listMargTopBtm) * 1) !important;
-		padding-top: 2px;
-		padding-bottom: 2px;
-}
-#root .ProseMirror  [data-node-type="mention"] + [data-node-type="mention"],
-#root .ProseMirror  [data-node-type="mention"] + .ProseMirror-gapcursor + [data-node-type="mention"],
-#root ~ .hepta-scrim .ProseMirror  [data-node-type="mention"] + [data-node-type="mention"],
-#root ~ .hepta-scrim .ProseMirror  [data-node-type="mention"] + .ProseMirror-gapcursor + [data-node-type="mention"]{
-		margin-top: calc(var(--listMargTopBtm) * -1 + -1px) !important;
+	padding: 0px !important;
+	background: transparent !important;
+			z-index: 9 !important
 }
 
-#root .ProseMirror  [data-node-type="mention"] > [class*="group"],
-#root ~ .hepta-scrim .ProseMirror  [data-node-type="mention"] > [class*="group"]{
-		transition: .15s;
-		border-radius: 0px;
-		background: transparent;
-		padding-left: 2px;
-}
+
+
 
 
 /*HIDE BORDER UNDER TEXT*/
-[data-node-type="mention"] > [class*="group"] .truncate .absolute.bg-light-grey{
+[data-node-type="mention"] > [class*="group"] > .truncate .absolute.bg-light-grey{
 		display: none !important;
 }
-[data-node-type="mention"] > [class*="group"],
-[data-node-type="mention"] > [class*="group"] *{
-		z-index: 9 !important
-}
-[data-node-type="mention"] + .ProseMirror-gapcursor{
-		display: none ;
+#root .ProseMirror-gapcursor{
+	display: block !important;
+	height: 10px !important;
+	max-height: 0px !important;
+	position: absolute;
 }
 
 /*MENTIONS - BACKGROUND AND BORDER*/
-#root .ProseMirror  [data-node-type="mention"] > [class*="group"]:after,
-#root ~ .hepta-scrim .ProseMirror  [data-node-type="mention"] > [class*="group"]:after{
+.ProseMirror  [data-node-type="mention"] > [class*="group"]:after{
 		content: "" !important;
 		display: block;
 		position: absolute;
@@ -2593,47 +2661,59 @@ EDITOR - MENTIONS
 }
 
 /*MENTIONS - BACKGROUND AND BORDER- HOVER*/
-#root .ProseMirror  [data-node-type="mention"]:hover > [class*="group"]:after,
-#root ~ .hepta-scrim .ProseMirror  [data-node-type="mention"]:hover > [class*="group"]:after{
+.ProseMirror  [data-node-type="mention"]:hover > [class*="group"]:after,
+[data-node-type="embed"] [data-node-type="embed"]:hover > [class*="group"]{
 		opacity: 1;
-		background: var(--mentionBgClr-Hover);
+		background: var(--mentionBgClr-Hover) !important;
 }
+
 /*MENTIONS - WRAPPER*/
-.ProseMirror [data-node-type="mention"]{
-		position: relative !important;
-}
-/*MENTIONS - WRAPPER*/
-.ProseMirror [data-node-type="mention"] > [class*="group"].flex{
+.ProseMirror [data-node-type="mention"] > [class*="group"],
+[data-node-type="embed"] [data-node-type="embed"] > [class*="group"]{
 		align-items: flex-start;
+	padding: 0px;
+	background: transparent;
 }
 /*MENTIONS - WRAPPER > TEXT - PADDING TOP*/
 [data-node-type="mention"] > [class*="group"] > .truncate{
-		padding-top: var(--mentionTextPadTopBtm);
-		padding-bottom: calc(var(--mentionTextPadTopBtm) - 1px);
+
 
 }
 /*MENTIONS - WRAPPER > TEXT - REMOVE TRUNCATION*/
-[data-node-type="mention"] > [class*="group"] .truncate{
+[data-node-type="mention"] > [class*="group"] > .truncate,
+[data-node-type="embed"] [data-node-type="embed"] > [class*="group"] > .truncate{
+	padding-left: var(--mentionIcnWidth);
+		padding-top: var(--mentionTextPadTopBtm);
+		padding-bottom: calc(var(--mentionTextPadTopBtm) - 1px);
+}
+[data-node-type="mention"] > [class*="group"] .truncate,
+[data-node-type="embed"] [data-node-type="embed"] > [class*="group"] .truncate{
 		overflow: unset !important;
 		white-space: normal;
 		height: unset;
+	width: 100%;
 }
 
 /*MENTIONS - WRAPPER > DOCUMENT ICON*/
-[data-node-type="mention"] > [class*="group"] > svg {
-		margin-top: calc(var(--mentionTextPadTopBtm) + 3px) !important;
-		position: relative;
-		transform: scale(0.85);
-		margin-right: 4px;
-		opacity: .5;
-		transition:.2s;
+[data-node-type="mention"] > [class*="group"] > svg,
+[data-node-type="embed"] [data-node-type="embed"] > [class*="group"] >svg{
+		margin-top: unset !important;
+	margin: 0px !important;
+		transform: scale(0.825);
+		opacity: .5 !important;
+	transition:.2s;
+	position: absolute;
+	margin-top: var(--mentionIcnMargTop) !important;
+	margin-left: 2px !important;
 } 
-[data-node-type="mention"] > [class*="group"]:hover > svg{
-		opacity: .8;
+[data-node-type="mention"]:hover > [class*="group"] > svg,
+[data-node-type="embed"] [data-node-type="embed"]:hover > [class*="group"] >svg{
+		opacity: 1 !important;
 }
 #root [class*="_content"] [data-node-type="mention"] > [class*="group"] > svg,
 [class*="_content"] [data-node-type="mention"] > [class*="group"] > svg,
-#root .px-3 [class*="_content"] [data-node-type="mention"] > [class*="group"] > svg{
+#root .px-3 [class*="_content"] [data-node-type="mention"] > [class*="group"] > svg,
+.grow [class*="_info"] [class*="_content"] [data-node-type="embed"] [data-node-type="embed"] > [class*="group"] >svg{
 		margin-top: 5px !important;
 		transform: scale(.8)
 }
@@ -2641,6 +2721,9 @@ EDITOR - MENTIONS
 [data-node-type="mention"] > [class*="group"] > [class*="group-hover"]{
 		margin-top: calc(var(--mentionTextPadTopBtm) + 0px) !important;
 		right: 0;
+	z-index: 5;
+	margin-right: 3px;
+	height:
 }
 
 /*****************
@@ -3029,8 +3112,6 @@ TABLES > INSIDE WHITEBOARD > WIDTH OVERFLOW
 	max-width: calc(100% - 30px) !Important;
 }
 
-
-
 /*****************
 ******************
 ******************
@@ -3063,6 +3144,8 @@ HIGHLIGHT TEXT - FONT-FAMILY & FONT SIZE
 .grid > div > .pt-6 .ProseMirror,
 /*highlight note text - in - right sidebar > opened reference note*/
 .bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex + div .ProseMirror,
+/*highlight note text - in - right sidebar (whiteboard)> opened reference note*/
+[class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex + div .ProseMirror,
 /*highlight note text - in - highlight opened as note*/
 ._highlightElementNoteEditor_1rg43_7 .ProseMirror,
 /*highlight text & highlight note text - in - highlight view*/
@@ -3078,6 +3161,7 @@ HIGHLIGHT TEXT - FONT-FAMILY & FONT SIZE
 		--toggleBulletMargTop: 7.5px;
 		--listBulletCircWidth:5px;
 		--listMargTopBtm:3px;
+		--underlineThickness:1.0px;
 }
 
 
@@ -3089,25 +3173,24 @@ HIGHLIGHT TEXT - FONT-FAMILY & FONT SIZE
 
 
 /*HIGHLIGHT POPUP - HIGHLIGHT FONT SIZE*/
-#root > div.h-screen > .p-12.hepta-scrim [class*="_info"] + div[class*="&_.ProseMirror"] .ProseMirror,
+div.h-screen > .p-12.hepta-scrim [class*="_info"] + div[class*="&_.ProseMirror"] .ProseMirror,
 /*HIGHLIGHT POPUP - NOTE FONT SIZE*/
-#root > div.h-screen > .p-12.hepta-scrim [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror,
+div.h-screen > .p-12.hepta-scrim [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror,
 /*HIGHLIGHT FULLSCREEN - HIGHLIGHT FONT SIZE*/
-#root > div.h-screen > .w-full [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror,
+div.h-screen > .w-full [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror,
 /*HIGHLIGHT FULLSCREEN - NOTE FONT SIZE*/
-#root > div.h-screen > .w-full [class*="_info"] + ._highlightElementNoteEditor_1rg43_7 .ProseMirror {
+div.h-screen > .w-full [class*="_info"] + ._highlightElementNoteEditor_1rg43_7 .ProseMirror {
 		--highlightFontSize: calc(var(--listBulletFontSize) - 1px);
 }
 
 /*HIGHLIGHT POPUP & FULLSCREEN - FONT SIZE*/
-#root > div.h-screen > .p-12.hepta-scrim [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror,
-#root > div.h-screen > .w-full [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror {
+div.h-screen > .p-12.hepta-scrim [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror{
 		--highlightFontSize: calc(var(--listBulletFontSize) - .5px);
 		--listMargTopBtm: 4px !important;
 }
 /*HIGHLIGHT POPUP & FULLSCREEN - MARGIN SIZE*/
-#root > div.h-screen > .p-12.hepta-scrim [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror [data-node-type],
-#root > div.h-screen > .w-full [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror [data-node-type] {
+div.h-screen > .p-12.hepta-scrim [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror [data-node-type],
+div.h-screen > .w-full [class*="_info"] > [style*="--annotation"] + div[class*="&_.ProseMirror"] .ProseMirror [data-node-type] {
 		--listMargTopBtm: 4.5px !important;
 		--highlightLineHeight: 1.52;
 		--listBulletMargTop: 3px;
@@ -3136,6 +3219,7 @@ EMBED - HIGHLIGHT
 
 
 
+
 /*****************
 ******************
 EDITOR - EMBEDS
@@ -3154,19 +3238,19 @@ EDITOR - EMBEDS
 		--embedH1lineHeight: 1.25;
 		--embedHeaderLineHeight: 1.3;
 		/*embed heading Font Sizes*/
-		--embedH1size: 23px;
-		--embedH2size: 22px;
-		--embedH3size: 21px;
-		--embedH4size: 20px;
-		--embedH5size: 19px;
+		--embedH1size: 22.5px;
+		--embedH2size: 21.5px;
+		--embedH3size: 20.5px;
+		--embedH4size: 19.5px;
+		--embedH5size: 18.5px;
 		--embedH6size: var(--bodyFontSize);
 		/*embed toggle heading chevron margins*/
-		--embedtoggleBulletMargTop-H1:10px;
-		--embedtoggleBulletMargTop-H2:10px;
-		--embedtoggleBulletMargTop-H3:10px;
-		--embedtoggleBulletMargTop-H4:9px;
-		--embedtoggleBulletMargTop-H5:8px;
-		--embedtoggleBulletMargTop-H6:7px;
+		--embedtoggleBulletMargTop-H1:9.5px;
+		--embedtoggleBulletMargTop-H2:9.5px;
+		--embedtoggleBulletMargTop-H3:9.5px;
+		--embedtoggleBulletMargTop-H4:8.5px;
+		--embedtoggleBulletMargTop-H5:7.5px;
+		--embedtoggleBulletMargTop-H6:6.5px;
 		--embedtoggleBulletMargTop:8px;
 }
 
@@ -3223,16 +3307,21 @@ EMBED > CHILD OF ANOTHER BLOCK
 
 
 /*****************
+EMBED > INSIDE EMBED
+******************/
+.ProseMirror [data-node-type="embed"] [data-node-type="embed"],
+.ProseMirror [data-node-type="embed"] [data-node-type="embed"] > [class*="group"]{
+	padding-left: 0px 
+}
+/*****************
 EMBED > NESTED INSIDE EMBED OR INSIDE A CHILD BLOCK
 ******************/
 .ProseMirror [data-node-type="embed"] [data-node-type="embed"],
 .ProseMirror > [data-node-type] [data-node-type="embed"] {
 		width: 100% !important;
 		margin-left: 0px !important;
-		box-shadow: inset 0 0 0 1px var(--embedBrdClr) !important;
 		padding-top: var(--embedPadTopBtm)!important;
 		padding-bottom: var(--embedPadTopBtm)!important;
-		border-radius: 5px !important;
 }
 /*****************
 EMBED > NESTED INSIDE EMBED OR INSIDE A CHILD BLOCK
@@ -3243,11 +3332,6 @@ EMBED > NESTED INSIDE EMBED OR INSIDE A CHILD BLOCK
 		padding-right: 0px !important
 }
 
-[data-node-type="embed"] [data-node-type="embed"]  .truncate {
-		height: unset;
-		padding-top: calc(var(--embedPadTopBtm) * .5);
-		padding-bottom: calc(var(--embedPadTopBtm) * .5);
-}
 [data-node-type="embed"] [data-node-type="embed"]  .truncate .bg-light-grey {
 		display: none;
 }
@@ -3343,9 +3427,7 @@ EMBED > TOGGLE HEADINGS > CHEVRONS
 /*****************
 EMBED > CODEBLOCKS
 ******************/
-[data-node-type="embed"] [data-node-type="code_block"] .cm-editor {
-		padding: var(--embedCodeBlockPadLeftRight) !important;
-}
+
 [data-node-type="embed"] [data-node-type="code_block"] > [class*="group/"] {
 		color: var(--text-color);
 		background: var(--codeBlockBgFaint);
@@ -3353,12 +3435,6 @@ EMBED > CODEBLOCKS
 }
 [data-node-type="embed"] [data-node-type="code_block"] .cm-line {
 		color: var(--text-color);
-}
-/*****************
-EMBED >blockblockS
-******************/
-[data-node-type="embed"] .ProseMirrorblockblock {
-		padding-left: var(--embedCodeBlockPadLeftRight) !important;
 }
 
 
@@ -3394,13 +3470,23 @@ INLINE MATH - INSIDE EMBED
 /*****************
 EMBED POPUP
 ******************/
-[data-node-type="embed"]:hover > [class*="group"] > .absolute[class*="group"] {
+[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"]{
+	z-index: 929292929292;
+	max-width: calc(100% + var(--embedPadLR));
+	right:calc(var(--embedPadLR) * -1)
+
+}
+[data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] {
 		opacity: 1;
 }
 
-[data-node-type="embed"]:hover > [class*="group"] > .absolute[class*="group"] > div {
-		box-shadow: 0px 7px 22px 0px rgba(0, 0, 0, .15), 0px 0px 1.5px 0px rgba(0, 0, 0, .3), 0px 0px 1px 0px rgba(0, 0, 0, .4)
+[data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] > div {
+		box-shadow: 0px 7px 22px 0px rgba(0, 0, 0, .15), 0px 0px 1.5px 0px rgba(0, 0, 0, .3), 0px 0px 1px 0px rgba(0, 0, 0, .4) !important;
 }
+[data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] > div > [class*="max-w"] {
+	max-width: unset;
+}
+
 
 /*****************
 ******************
@@ -3414,18 +3500,18 @@ EDITOR - HEADINGS
 		/*all headings - top margin*/
 		--headingMargTop-All:calc(var(--listMargTopBtm) * 4);
 		/*H6 only - top margin*/
-		--headingMargTop-H6only: calc(var(--listMargTopBtm) * 1);
+		--headingMargTop-H6only: calc(var(--listMargTopBtm) * 2);
 		--headingPadLeftRight: 2px;
 		/*Heading Line Height*/
 		--H1lineHeight:1.25;
 		--HeaderLineHeight:1.3;
 		/*Heading Font Sizes*/
-		--H1size:2.2rem;
-		--H2size:1.95rem;
-		--H3size:1.8rem;
-		--H4size:1.675rem;
-		--H5size:1.45rem;
-		--H6size:1.26rem;
+		--H1size:34px;
+		--H2size:31px;
+		--H3size:28px;
+		--H4size:26px;
+		--H5size:23px;
+		--H6size:20px;
 }
 
 div h1 {
@@ -3515,7 +3601,7 @@ EDITOR - FIRST LINES
 		--titleIsToggle-Line1-MargTop: var(--titleLine1-MargTop);
 		--titleIsToggle-Line1-MargBtm: var(--titleLine1-MargBtm);
 		/*line-2*/
-		--title-Line2-MargTop: 20px;
+		--title-Line2-MargTop: 26px;
 }
 
 
@@ -3532,6 +3618,10 @@ body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) > [data-node-type
 		padding-top: 0px !important;
 		padding-bottom: 0px !important;
 		margin-bottom: var(--listMargTopBtm) !important;
+}
+/*except embeds*/
+body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) > [data-node-type="embed"]:first-child{
+	padding-top: var(--embedPadTopBtm)!important
 }
 
 
@@ -3849,7 +3939,7 @@ EDITOR - REFERENCES / INFO CONTAINER
 ******************/
 
 :root {
-		--refPadTopBtm: 2px;
+		--refPadTopBtm: 4px;
 		--refPadLeftRight: 7px;
 		--refNoteTitlePadTopBtm:6px;
 		--refBrdRad:8px;
@@ -3887,7 +3977,8 @@ EDITOR - REFERENCES / INFO CONTAINER
 #root [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8{
 		background-color:transparent !important;
 }
-#root [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 > .h-12{
+#root [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 > .h-12,
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .h-12{
 		display: none;
 }
 
@@ -4004,13 +4095,18 @@ EDITOR - REFERENCES / INFO CONTAINER
 [class*="_editor"] + [class*="_info"] > .flex.h-4.items-center,
 ._highlightElementNoteEditor_1rg43_7 + [class*="_info"] > .flex.h-4.items-center,
 [class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div.flex.h-4.items-center,
-[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div > div.flex.h-4.items-center{
+[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div > div.flex.h-4.items-center,
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .h-4,
+[class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .h-4,
+[class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .h-12{
 		display: none;
 }
 /*hide normal borders*/
 [class*="_editor"] + [class*="_info"] > div:nth-child(4) > div.flex.h-4.items-center,
 ._highlightElementNoteEditor_1rg43_7 + [class*="_info"] > div:nth-child(4) > div.flex.h-4.items-center,
-[class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div:nth-child(4) > div.flex.h-4.items-center{
+[class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div:nth-child(4) > div.flex.h-4.items-center,
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex ~ .px-8 > div > .h-4,
+[class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex ~ .px-8 > div > .h-4{
 		display: none;
 }
 
@@ -4053,7 +4149,9 @@ EDITOR - REFERENCES / INFO CONTAINER
 [class*="_highlightElementNoteEditor"] + [class*="_info"]:before,
 #root ._highlightElementNoteEditor_1rg43_7 + [class*="_info"]:before,
 [class*="_rightSidebar"] [class*="_editor"] + .px-8:before,
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8:before{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8:before,
+.bg-background-primary[style*="width:"] .cursor-grab + div > .px-8:before,
+[class*="_rightSidebar"] .cursor-grab + div > .px-8:before{
 		content: "";
 		display: block;
 		background: var(--infoBrdClr);
@@ -4063,6 +4161,7 @@ EDITOR - REFERENCES / INFO CONTAINER
 		right: -100px;
 		top: 0px
 }
+
 
 
 /*INFO CONTAINER - REFERENCES*/
@@ -4096,6 +4195,9 @@ REFERENCES > Font size and line height
 		height: unset !important;
 		min-height: unset !important;
 		min-width: unset;
+}
+#root .px-8 [class*="_content"]{
+		background: var(--infoBgClr) !important;
 }
 
 .grow [class*="_info"] [class*="_content"] .ProseMirror,
@@ -4167,7 +4269,12 @@ REFERENCES > Font size and line height
 [class*="_info"] [class*="_content"] [data-is-editor-container]{
 		width: 100%;
 }
-
+/*REFERENCE - EMBEDED EMBED Fix*/
+.grow [class*="_info"] [class*="_content"] [data-node-type="embed"] [data-node-type="embed"],
+.grow [class*="_info"] [class*="_content"] [data-node-type="embed"] [data-node-type="embed"] > [class*="group"],
+.grow [class*="_info"] [class*="_content"] [data-node-type="mention"] > [class*="group"]{
+	padding-left: 0px;
+}
 /*REFERENCE - Wrapper - Content & Button*/
 .grow [class*="_info"] [class*="_content"] [class*="_block"] > div,
 #root .px-8 [class*="_content"] [class*="_block"] > div{
@@ -4341,14 +4448,18 @@ INDIVIDUAL REFERENCE > Container
 [class*="_info_"] [class*="group/"].clickable-overlay + div ._content_1uz7b_1 > div[style*="height"] .box-border,
 [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1  > div[style*="height"] .box-border{
 	margin-top:0px !important;
-	background:var(--sideBarBgClr);
+	background:transparent;
 	z-index: 9;
 	border-radius: 6px;
 }
 /*INDIVIDUAL REFERENCE > Container > Inner Container > SVG OPACITY*/
 [class*="_info_"] [class*="group/"].clickable-overlay + div ._content_1uz7b_1 > div[style*="height"] .box-border svg,
 [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1  > div[style*="height"] .box-border svg{
-	opacity:1 !important
+	opacity:1 !important;
+}
+[class*="content"] [data-node-type="mention"] > [class*="group"] > svg,
+[data-node-type="embed"] [data-node-type="embed"] > [class*="group"] >svg{
+	opacity: .5 !important;
 }
 
 /*INDIVIDUAL REFERENCE > Container > Inner Container > Go to arrow*/
@@ -4375,21 +4486,29 @@ INDIVIDUAL REFERENCE > Container
 	padding-bottom:0px !important;
 }
 
-[class*="_content"] .ProseMirror,
-[class*="_content"] .ProseMirror a[href*="app.heptabase.com"],[class*="_content"]  .ProseMirror .grid.select-none > div .border-b-solid.rounded.border-b.border-light-grey, .text-active:not(.text-label.text-active){
-		color: var(--reftext-color) !important
+[class*="_content"] .ProseMirror:not(._whiteboardCanvas_1ozeb_1 [class*="_content"] .ProseMirror),
+[class*="_content"]  .ProseMirror .grid.select-none > div .border-b-solid.rounded.border-b.border-light-grey, 
+[class*="_content"] .text-active:not(.text-label.text-active){
+		color: var(--reftext-color) !important;
+	--underlineThickness: 1px;
+	--underlineOffset:1px;
+
 }
-[class*="_content"] .ProseMirror {
-		--bodyFontSize:14px !important;
+[class*="_content"][class*="group/"] .ProseMirror {
+		--bodyFontSize:13.5px !important;
 		/*background: redred;*/
 		/*heading margins*/
-		--headingMargTop-All: calc(var(--listMargTopBtm) * 1);
-		--headingMargTop: var(--headingMargTop-All);
+		--headingMargTop-All: calc(var(--listMargTopBtm) * 1)!important;
+		--headingMargTop: var(--headingMargTop-All) !important;
 	 /*Heading Line Height*/
-		--H1lineHeight:1.25 !important;
-		--HeaderLineHeight:1.25 !important;
+		--H1lineHeight:var(--refHeaderLineHeight) !important;
+		--HeaderLineHeight:var(--refHeaderLineHeight) !important;
 		/*Heading Font Sizes*/
 		--refHeaderSize:.925rem;
+	--refHeaderLineHeight:1.3;
+	--refToggleHeaderBulletMargTop:;
+	--refToggleBulletMargTop:;
+		/*Heading Font Sizes*/
 		--H1size:var(--refHeaderSize) !important;
 		--H2size:var(--refHeaderSize) !important;
 		--H3size:var(--refHeaderSize) !important;
@@ -4402,15 +4521,19 @@ INDIVIDUAL REFERENCE > Container
 		--listBulletCircWidth:4px !important;
 		/*toggle heading chevron margin*/
 		--toggleBulletMargTop-EmbedTitle:11px;
-		--toggleBulletMargTop-H1: 13px;
+		--toggleBulletMargTop-H1: 13px !important;
 		--toggleBulletMargTop-H2: 13px;
 		--toggleBulletMargTop-H3: 11px;
 		--toggleBulletMargTop-H4: 9px;
 		--toggleBulletMargTop-H5: 7px;
 		--toggleBulletMargTop-H6: 6px;
+		/*embed*/
+		--embedPadLR:4px;
+		--embedPadTopBtm: 4px;
+	--embed2ndLineMargTop:5px;
 		/*embed headings*/
-		--embedH1lineHeight:var(--refembedHeaderlineHeight);
-		--embedHeaderLineHeight: var(--refembedHeaderlineHeight);
+		--embedH1lineHeight:var(--refHeaderLineHeight)!important;
+		--embedHeaderLineHeight: var(--refHeaderLineHeight) !important;
 		/*embed heading Font Sizes*/
 		--embedH1size: var(--refHeaderSize) !important;
 		--embedH2size: var(--refHeaderSize) !important;
@@ -4426,20 +4549,26 @@ INDIVIDUAL REFERENCE > Container
 		--embedtoggleBulletMargTop-H5:var(--refembedToggleHeaderBulletMargTop);
 		--embedtoggleBulletMargTop-H6:var(--refembedToggleHeaderBulletMargTop);
 		/*ref embed - toggle header marg top*/
-		--refembedHeaderlineHeight: 1.3;
+		--refembedHeaderlineHeight: 1.32;
 		--refembedToggleHeaderBulletMargTop:5px;
 		/*tables*/
 		--tableBodyFontSize:15px;
 		--tableBodyLineHeight:1.2;
-		
+	--embedtoggleBulletMargTop:1px;
+	--blockquoteListBulletWidth:16px;
 
 		--mentionTextPadTopBtm:4px;
+		/*highlights*/
+		--highlightFontSize:calc(var(--bodyFontSize) + .5px);
+			--embedtoggleBulletMargTop:6px;
+	--codeblockTextSize:calc(var(--bodyFontSize) - 1.5px);
+	--codeblockPadTopBtm:7px;
 }
 [class*="_content"] .ProseMirror [data-node-type="numbered_list_item"] {
 		--listBulletMargTop:0px;
 }
 
-[data-node-type="embed"] blockquote [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
+[class*="_content"] [data-node-type="embed"] blockquote [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
 		--embedtoggleBulletMargTop:5.5px;
 }
 
@@ -4448,23 +4577,21 @@ INDIVIDUAL REFERENCE > Container
 		width: 100%;
 }
 /*REFERENCES > TOGGLES*/
-[class*="_content"] .ProseMirror > [data-node-type="toggle_list_item"]{
+[class*="_content"][class*="group"] .ProseMirror > [data-node-type="toggle_list_item"]{
 		padding-left: 0px !important; 
 		width: 100% !important;
 		margin-left: 0px !important
 }
 
 
-[class*="_content"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"]{
+[class*="_content"][class*="group"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"]{
 		position: relative;
 }
-[class*="_content"] .ProseMirror  [data-node-type*="list_item"] > [class*="_bulletWrapper"] {
+[class*="_content"][class*="group"] .ProseMirror  [data-node-type*="list_item"] > [class*="_bulletWrapper"] {
 		margin-right: 0px;
 }
 
-[class*="_content"] .ProseMirror  [data-node-type]:not([class*="_content"] .ProseMirror [data-node-type="em"] [data-node-type]) {
-		padding-left: 0px;
-}
+
 
 [class*="_content"] .ProseMirror [data-node-type*="toggle_list_item"] > [class*="_bulletWrapper"] svg{
 		transform: scale(1) !important
@@ -4522,9 +4649,7 @@ REFERENCE - PROPERTIES
 }
 
 /*REFERENCE - PROPERTIES - VALUE -  PARAGRAPH*/
-#root ~ .hepta-scrim [class*="_editor"] + [class*="_info"] .my-1 .text-label ._inlinePreviewer_gql42_1 .ProseMirror > p,
-#root [class*="_editor"] + [class*="_info"] .my-1 .text-label ._inlinePreviewer_gql42_1 .ProseMirror > p,
-.fixed .ProseMirror > p {
+.hepta-scrim [class*="_editor"] + [class*="_info"] .my-1 .text-label ._inlinePreviewer_gql42_1 .ProseMirror > p {
 
 		margin: 0px !important;
 }
@@ -4553,11 +4678,6 @@ INFO CONTAINER - TAGS
 		background: var(--taginfoBgClr);
 }
 
-
-#root .grow [class*="_info"] [class*="_content"] [data-node-type="code_block"] *,
- #root ~ .hepta-scrim .grow [class*="_info"] [class*="_content"] [data-node-type="code_block"] *{
-		font-size: 12px !important;
-}
 
 #root [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 > div,
 #root [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 > div:nth-of-type(1),
@@ -4952,6 +5072,10 @@ WHITEBOARD > HIGHLIGHT CARD (NOT EMBED)
 WHITEBOARD - MINDMAP
 *************
 *************/
+
+:root {
+		--mindmapHeaderSize:25px;
+}
 ._whiteboardObject_1fabk_10 {
 		box-sizing: content-box !important;
 }
@@ -4962,25 +5086,64 @@ WHITEBOARD - MINDMAP
 		max-width: 500px;
 }
 
+/************
+*************
+MINDMAP - BIG TEXT SIZES
+*************
+*************/
+
 /*MINDMAP > TEXT NODE > ROOT NODE*/
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] ._rootNode_19grw_1 .ProseMirror-inline p {
-		font-size: 25px;
+		font-size: var(--mindmapHeaderSize);
 		line-height: 1.4;
 		margin-top: var(--listMargTopBtm) !important;
 		margin-bottom: var(--listMargTopBtm) !important;
 		font-family: "Roboto", "Roboto Condensed", sans-serif;
 }
 
+/************
+*************
+MINDMAP - TURN PURPLE MINDMAP ITEM INTO BIG TEXT
+*************
+*************/
 
 :root {
 		--mMapBrdW: 1px;
 		--mMapOutlineW: 0px;
 }
 
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"]{
+	background: transparent !important;
+		--mMapBrdClr: var(--whiteBoardTextElementBrdClr) !important;
+
+}
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"]:hover {
+	--mMapOutlineW: 5.0px !important;
+}
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"].border-tooltip-bg{
+	--mMapBrdW: 1px !important;
+	--mMapOutlineW:0px !important;
+}
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"].border-active{
+	--mMapOutlineW:0px !important;
+}
+
+
+/*text*/
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"] .ProseMirror{
+		font-size: calc(var(--mindmapHeaderSize) - 3px);
+		text-decoration: none;
+		line-height: 1.35;
+}
+
+
+
+
 /*MINDMAP > TEXT NODE*/
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] {
 		margin: 0px !important;
 		border: none !important;
+		min-width: 250px;
 }
 
 
@@ -5140,6 +5303,14 @@ WHITEBOARD > TEXT ELEMENT
 WHITEBOARD -  MINDMAP CONNECTOR COLORS
 *************
 *************/
+
+svg[data-object-type="mindMapEdge"] path{
+		stroke-width: 3;
+}
+svg[data-object-type="mindMapEdge"] path[stroke*="--border-black-sect"] {
+		stroke-width: 4;
+}
+
 svg[data-object-type="mindMapEdge"] path[stroke*="--border-white-sect"]{
 		opacity: .5;
 		stroke-width: 2
@@ -5199,6 +5370,9 @@ WHITEBOARD CARD -  MIND MAP
 		box-shadow: inset 0 0 0 1.5px var(--whiteBoardCardBrdClr) !important;
 		border-radius: 13px !important;
 }
+
+
+
 /************
 *************
 WHITEBOARD CARD -  COLLAPSED
@@ -5214,11 +5388,16 @@ WHITEBOARD CARD -  COLLAPSED
 WHITEBOARD CARD -  COLLAPSED - HEIGHT
 *************
 *************/
+:root {
+	--whiteboardCardCollapsedPadTopBtm:7px;
+}
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none {
 		height: unset !important;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		align-items: flex-start
+		padding-top: var(--whiteboardCardCollapsedPadTopBtm) !important;
+		padding-bottom: var(--whiteboardCardCollapsedPadTopBtm) !important;
+		align-items: flex-start;
+	padding-left: 0px !important; 
+	padding-right: 8px !important;
 }
 ._mindMapNode_1pwxr_1 > ._whiteboardObject_1fabk_10.cursor-grab {
 		height: unset !important;
@@ -5229,10 +5408,16 @@ WHITEBOARD CARD -  COLLAPSED - HEIGHT
 WHITEBOARD CARD -  COLLAPSED - ARROW+BUTTON
 *************
 *************/
+._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .w-6:first-child {
+	margin-left: calc(var(--whiteboardCardCollapsedPadTopBtm) * .5);
+}
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none .w-6 {
 		visibility: visible;
 		opacity: 1;
-		margin-top: 1px;
+}
+._whiteboardObject_1fabk_10[data-is-folded="true"] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none .w-6{
+		margin-top: -1px
+
 }
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none .w-6:last-child {
 		opacity: 1;
@@ -5246,23 +5431,33 @@ WHITEBOARD CARD -  COLLAPSED - ARROW+BUTTON
 WHITEBOARD CARD -  COLLAPSED - TEXT
 *************
 *************/
+._whiteboardObject_1fabk_10[data-object-type="mindMapCardNode"][data-is-folded="true"]{
+	height: unset !important;
+}
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .truncate.text-body.font-semibold.text-primary.px-2 {
-		font-size: 20px;
-		line-height: 1.25;
+		font-size: 18px;
+		line-height: 1.3;
 		white-space: normal;
 		/*text-align: left !important;*/;
 		width: 100%;
 		padding-top: 2px;
 		padding-bottom: 2px;
 		font-weight: 500;
+	padding-left: 3px !important;
+	padding-right: 0px !important;
 }
 /*mind-map - collapsed card text*/
 
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .truncate.text-body.font-semibold.text-primary.px-2 {
 		width: 100% !important;
 		text-align: left;
+		padding-top: 0px;
+	padding-bottom: 0px;
 }
 
+#root ._whiteboardObject_1fabk_10[data-is-folded="true"] > [style*="background-color"] > .text-body + .w-6 {
+	display: none;
+}
 
 /************
 *************
@@ -5311,32 +5506,41 @@ WHITEBOARD CARD -  COLLAPSED - TEXT
 WHITEBOARD CARD >  ALL HEADINGS
 *************
 *************/
+
+#root [class*="_whiteboardObject"] [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
+					--toggleBulletMargTop-H1: 15px !important;
+				--toggleBulletMargTop-H2: 15px !important;
+				--toggleBulletMargTop-H3: 12px;
+				--toggleBulletMargTop-H4: 11px;
+				--toggleBulletMargTop-H5: 9px;
+				--toggleBulletMargTop-H6: 8px;
+}
+
 [class*="_whiteboardObject"] .ProseMirror h1,
 [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] > h1:first-child {
-		font-size: 29px !important;
+		font-size: 28px !important;
 }
 #root [class*="_whiteboardObject"] .ProseMirror h2,
 #root [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] > h2:first-child {
-		font-size: 27px !important;
+		font-size: 26px !important;
 }
 #root [class*="_whiteboardObject"] .ProseMirror h3,
 #root [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] > h3:first-child {
-		font-size: 25px !important;
+		font-size: 24px !important;
 }
 #root [class*="_whiteboardObject"] .ProseMirror h4,
 #root [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] > h4:first-child {
-		font-size: 23px !important;
+		font-size: 22px !important;
 }
 #root [class*="_whiteboardObject"] .ProseMirror h5,
 #root [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] > h5:first-child {
-		font-size: 21px !important;
+		font-size: 20px !important;
 }
 
 #root [class*="_whiteboardObject"] .ProseMirror h6,
 #root [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] > h6:first-child {
-		font-size: 19px !important;
+		font-size: 18px !important;
 }
-
 /************
 *************
 WHITEBOARD CARD >  FIRST LINE > HEADINGS & TOGGLES
@@ -5350,10 +5554,10 @@ WHITEBOARD CARD >  FIRST LINE > HEADINGS & TOGGLES
 #root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > h6:first-child,
 #root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > [data-node-type="toggle_list_item"]:first-child > [class*="_nestedBlocks"] > [data-node-type="heading"]:first-child,
 #root [class*="_whiteboardObject"][data-object-type="journalInstance"] ._contentScrollableContainer_1cnaq_5 .text-h1.font-semibold.text-primary {
-		line-height: 1.325 !important;
-		font-size: 29px !important;
+		/*line-height: 1.325 !important;*/
+		/*font-size: 29px !important;*/
 		margin-top: 0px !important;
-		margin-bottom: var(--listMargTopBtm)!important;
+		/*margin-bottom: var(--listMargTopBtm)!important;*/
 		padding-top: 2px !important;
 		padding-bottom: 2px !important;
 }
@@ -5410,9 +5614,6 @@ WHITEBOARD CARD -  NAV - MAKE BUTTONS SCALE ON HOVER
 
 
 
-#root [class*="_whiteboardObject"] [class*="_content"] [data-node-type="mention"] > [class*="group"] > svg {
-		margin-top: 9px !important
-}
 
 #root ._whiteboardObject_1fabk_10[data-object-type="textElement"] [data-node-type="embed"] {
 		margin: 0px !important;
@@ -5433,24 +5634,31 @@ WHITEBOARD CARD -  MIND MAP BLACK
 *************
 *************
 *************/
+
 #root [data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"] {
 		overflow: visible;
 		box-shadow: inset 0 0 0 0px var(--whiteBoardCardBrdClr) !important;
 		--whiteBoardCardBrdClr-Editing: hsl(0, 0%, 0%, .06);
-		border-width: 1px;
+		border-width: 2px;
 		border-color: var(--whiteBoardCardBrdClr);
 		border-style: dashed;
-		background: transparent !important;
+		background: var(--whiteBoardCardBgClr) !important;
 		transition: .1s !important;
+	border-radius: 9px !important;
 }
-#root [data-object-type="cardInstance"]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"] {
-		background-color: var(--whiteBoardCardBg-Black) !important;
-}
+
 #root [data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"].border-active {
 		border-color: var(--active-item);
 		box-shadow: 0 0 0 1.5px var(--active-item) !important;
 		border-style: solid;
 }
+
+
+#root [data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"] > .text-body {
+	padding-left: 0px;
+
+}
+
 
 /************
 HOVER NAV
@@ -6450,7 +6658,7 @@ RIGHT SIDEBAR - OTHER NOTES
 		right:-100vw;
 		bottom: 0px;
 		top: 0;
-		z-index: -1
+		z-index: -1;
 }
 
 /*RIGHT SIDEBAR - NOTE - DOCUMENT ICON*/
@@ -6523,20 +6731,25 @@ RIGHT SIDEBAR - NOTE CONTAINER
 [class*="_rightSidebar"] [class*="_editor"], 
 .bg-background-primary[style*="width:"] [class*="_editor"],
 .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex,
-.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex + div{
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex + div,
+#root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex + div,
+#root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex{
 		padding-left: var(--rightSideBarContainerPadLR) !important;
 		padding-right:calc(var(--rightSideBarContainerPadLR) * 1.75) !important;
 		width:var(--rightSidebarContentW) !important;
 		max-width: 100% !important;
 		margin: 0 auto;
+}
+#root .cursor-grab + div > .pt-3.flex + div{
+		background: red !important;
+}
+#root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex + div  > .pb-12{
+		padding-bottom: 0px
+}
 
-}
-/*RIGHT SIDEBAR - NOTE CONTAINER >  IN HIGHLIGHT*/
-#root .bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex{
-		position: relative;
-		padding-bottom:10px;
-}
-#root .bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex:before{
+
+#root .bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex:before,
+#root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex:before{
 		content:"";
 		display: block;
 		position: absolute;
@@ -6548,12 +6761,14 @@ RIGHT SIDEBAR - NOTE CONTAINER
 		border-bottom:1px solid var(--sideBarStickyBrdClrDarker);
 
 }
+
 /*****************
 RIGHT SIDEBAR - NOTE WIDTH
 ******************/
 [class*="_rightSidebar"] [class*="_editor"]  > .ProseMirror, 
 .bg-background-primary[style*="width:"] [class*="_editor"]  > .ProseMirror,
-#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"]{
+#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"],
+#root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"]{
 		width:100% !important;
 		max-width: 100% !important;
 		padding-left:calc(var(--rightSideBarNavBtnW) + var(--rightSideBarNavTitlePadL)) !important;
@@ -6561,19 +6776,40 @@ RIGHT SIDEBAR - NOTE WIDTH
 		background: transparent;
 }
 /*RIGHT SIDEBAR - NOTE WIDTH >  IN HIGHLIGHT override*/
-#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] .ProseMirror{
+#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] .ProseMirror,
+#root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] .ProseMirror{
 		padding: 0px
 }
 
-#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex [style*="--annotation-"]{
+#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex [style*="--annotation-"],#root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex > [style*="--annotation"]{
 z-index: 1 !important;
 		position: absolute;
 		border-radius: 10px;
 		top:8px;
 		bottom:8px;
 		left: var(--rightSideBarNavBtnW);
+		width: 3px;
+				box-shadow: 0 0 0 1px var(--hlightAccentBg);
+
 }
 
+
+/*HIGHLIGHT BODY >  CONTAINER*/
+.bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex,
+[class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex{
+		position: relative;
+		padding-bottom:10px;
+		padding-top: 10px;
+}
+
+/*HIGHLIGHT NOTES > PROSEMIRROR*/
+
+.bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex + div .ProseMirror,
+[class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex + div .ProseMirror{
+		padding-bottom:10px;
+		padding-top: 10px;
+		
+}
 
 /*****************
 RIGHT SIDEBAR - NOTE > FIRST HEADING - TOP MARGIN
@@ -6616,12 +6852,13 @@ RIGHT SIDEBAR - NOTE > FIRST TOGGLE - ICON
 ******************/
 #root [class*="_rightSidebar"] .cursor-grab + div > ._editor_dk19r_1 > .ProseMirror > [data-node-type="toggle_list_item"][class*="Heading"]:first-child > [class*="_bulletWrapper"] [class*="_bullet_"],
 #root .bg-background-primary[style*="width:"] .cursor-grab + div > ._editor_dk19r_1 > .ProseMirror > [data-node-type="toggle_list_item"][class*="Heading"]:first-child > [class*="_bulletWrapper"]  [class*="_bullet_"]{
-		--toggleBulletMargTop: 10px;
+		--toggleBulletMargTop: 11px;
 }
 /*****************
 RIGHT SIDEBAR - NOTE > FIRST LINE - BORDER
 ******************/
-#root .bg-background-primary[style*="width:"] .cursor-grab + div{
+#root .bg-background-primary[style*="width:"] .cursor-grab + div,
+#root [class*="_rightSidebar"] .cursor-grab + div{
 		position: relative;
 		background: var(--sideBarNoteInnerBgClr);
 }
@@ -6629,7 +6866,8 @@ RIGHT SIDEBAR - NOTE > FIRST LINE - BORDER
 /*****************
 RIGHT SIDEBAR - NOTE > INNER - BACKGROUND
 ******************/
-#root .bg-background-primary[style*="width:"] .cursor-grab + div:before{
+#root .bg-background-primary[style*="width:"] .cursor-grab + div:before,
+#root [class*="_rightSidebar"] .cursor-grab + div:before{
 		content:"";
 		display: block;
 		position: absolute;
@@ -6647,10 +6885,18 @@ RIGHT SIDEBAR - NOTE > INFO
 [class*="_rightSidebar"] [class*="_editor"] + .px-8, 
 [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8,
 /*highlight*/
-.bg-background-primary[style*="width:"] .cursor-grab + div > .px-8{
+.bg-background-primary[style*="width:"] .cursor-grab + div > .px-8,
+[class*="_rightSidebar"] .cursor-grab + div > .px-8{
+		position: relative;
 		background: transparent !important;
 		padding-left:calc(var(--rightSideBarContainerPadLR)*2);
 		padding-right:var(--rightSideBarContainerPadLR);
+}
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex + div > .pb-12{
+		padding: 0px;
+}
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex + div > .px-8{
+		
 }
 [class*="_rightSidebar"] [class*="_editor"] + .px-8 > div, 
 #root [class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 > div,
@@ -6659,16 +6905,18 @@ RIGHT SIDEBAR - NOTE > INFO
 		width: var(--rightSidebarContentW) !important;
 		max-width: 100%;
 		margin: 0 auto !important;
-		padding-left:calc(var(--rightSideBarNavBtnW) + var(--rightSideBarNavTitlePadL)) !important;
 }
 [class*="_rightSidebar"] [class*="_editor"] + .px-8:before, 
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8:before{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8:before,
+.bg-background-primary[style*="width:"] .cursor-grab + div > .px-8:before,
+[class*="_rightSidebar"] .cursor-grab + div > .px-8:before{
 		opacity: .35 !important;
 }
 
 /*RIGHT SIDEBAR - NOTE > INFO - EXPAND COLLAPSE INFO BUTTON PADDING*/
 [class*="_rightSidebar"] [class*="_editor"] + .px-8 > div.my-1\.5.flex.cursor-pointer.items-center.px-px, 
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8>div.my-1\.5.flex.cursor-pointer.items-center.px-px{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8>div.my-1\.5.flex.cursor-pointer.items-center.px-px,
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .px-px{
 		margin: 0px !important;
 		height: unset !important;
 		padding-top: 8px !important;
@@ -6677,14 +6925,18 @@ RIGHT SIDEBAR - NOTE > INFO
 /*RIGHT SIDEBAR - NOTE > INFO - MAKE FAINTER*/
 
 [class*="_rightSidebar"] [class*="_editor"] + .px-8 > div.my-1\.5.flex.cursor-pointer.items-center.px-px > div, 
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8>div.my-1\.5.flex.cursor-pointer.items-center.px-px > div{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8>div.my-1\.5.flex.cursor-pointer.items-center.px-px > div,
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .px-px > .text-body,
+[class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .px-px > .text-body{
 		filter: contrast(.5);
 		transform: scale(.85);
 }
 /*RIGHT SIDEBAR - NOTE > INFO - SHOW/HIDE BUTTON*/
 
 [class*="_rightSidebar"] [class*="_editor"] + .px-8 > div.my-1\.5.flex.cursor-pointer.items-center.px-px > div.clickable-overlay, 
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8>div.my-1\.5.flex.cursor-pointer.items-center.px-px > div.clickable-overlay{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8>div.my-1\.5.flex.cursor-pointer.items-center.px-px > div.clickable-overlay,
+.bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .px-px > .clickable-overlay,
+[class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex ~ .px-8 > .px-px > .clickable-overlay{
 		filter: contrast(.0);
 		opacity: .85;
 		transform: scale(.85);
@@ -6759,7 +7011,8 @@ RIGHT SIDEBAR - SMALL FONT SIZE
 ******************/
 [class*="_rightSidebar"] [class*="_editor"] > .ProseMirror,
 .bg-background-primary[style*="width:"] [class*="_editor"] > .ProseMirror,
-#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] {
+#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"],
+#root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"]{
 		--bodyFontSize: 15.5px;
 		--listBulletMargTop: 2px;
 		--listBulletCircWidth: 5px;
@@ -6793,20 +7046,23 @@ RIGHT SIDEBAR - SMALL FONT SIZE
 		--embedH1lineHeight: 1.25;
 		--embedHeaderLineHeight: var(--HeaderLineHeight);
 		/*embed heading font size*/
-		--embedH1size: var(--H1size);
-		--embedH2size: var(--H2size);
-		--embedH3size: var(--H3size);
-		--embedH4size: var(--H4size);
-		--embedH5size: var(--H5size);
-		--embedH6size: var(--H6size);
+		--embedH1size: calc(var(--bodyFontSize) + 2.75px);
+		--embedH2size: calc(var(--bodyFontSize) + 2.0px);
+		--embedH3size: calc(var(--bodyFontSize) + 1.5px);
+		--embedH4size: calc(var(--bodyFontSize) + 1.0px);
+		--embedH5size: calc(var(--bodyFontSize) + .5px);
+		--embedH6size:var(--bodyFontSize);
 		/*embed toggle heading chevron margins*/
-		--embedtoggleBulletMargTop-H1:11.5px;
-		--embedtoggleBulletMargTop-H2:10.5px;
-		--embedtoggleBulletMargTop-H3:9px;
+		--embedtoggleBulletMargTop-H1:8px;
+		--embedtoggleBulletMargTop-H2:7px;
+		--embedtoggleBulletMargTop-H3:7px;
 		--embedtoggleBulletMargTop-H4:7.5px;
 		--embedtoggleBulletMargTop-H5:6px;
-		--embedtoggleBulletMargTop-H6:5px;
+		--embedtoggleBulletMargTop-H6:6px;
 		--embedtoggleBulletMargTop:6px;
+	--codeblockTextSize:calc(var(--bodyFontSize) - 2px);
+	--codeblockPadTopBtm:10px;
+	--mentionIcnMargTop:8px;
 }
 
 /*****************
@@ -6815,16 +7071,11 @@ NUMBERED LISTS
 [class*="_rightSidebar"] [class*="_editor"] > .ProseMirror [data-node-type="numbered_list_item"],
 .bg-background-primary[style*="width:"] [class*="_editor"] > .ProseMirror [data-node-type="numbered_list_item"],
 #root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] [data-node-type="numbered_list_item"]{
-				--listBulletMargTop: 1px;
+				--listBulletMargTop: 1.5px;
 }
 /*****************
 MENTIONS
 ******************/
-[class*="_rightSidebar"] [class*="_editor"] > .ProseMirror [data-node-type="mention"] > [class*="group"] > svg,
-.bg-background-primary[style*="width:"] [class*="_editor"] > .ProseMirror [data-node-type="mention"] > [class*="group"] > svg,
-#root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] [data-node-type="mention"] > [class*="group"] > svg {
-		margin-top: 6px !important;
-}
 
 /*****************
 HEADINGS
@@ -6867,7 +7118,7 @@ RIGHT SIDEBAR - TABLE OF CONTENTS
 .h-\[calc\(100vh-64px\)\] > div > .relative.w-full p {
 		color: var(--tocItemClr);
 		-webkit-font-smoothing: antialiased;
-		white-space: normal;
+		white-space: normal; 
 }
 .h-\[calc\(100vh-64px\)\] > div > .relative.w-full p.text-active {
 		color: var(--active-item)
@@ -7007,19 +7258,37 @@ ICONS
 ******************/
 :root {
 		--iconBrdDashVertical: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 1 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" width="3" height="0.75" rx="0.3" transform="rotate(90 1 0)" fill="%23808080" fill-opacity="0.35"/><rect x="1" y="5" width="3" height="0.75" rx="0.3" transform="rotate(90 1 5)" fill="%23808080" fill-opacity="0.35"/></svg>');
+		--iconBrdDashHoriz-Light: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.225"/><rect x="5" width="3" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.225"/></svg>');
 		--iconBrdDashHoriz-Dark: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/><rect x="5" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/></svg>');
-		--iconBrdDashHoriz-Light: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.45"/><rect x="5" width="3" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.45"/></svg>');
 		--iconChevronLight: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.1459 4.84137C11.4444 4.16184 10.3071 4.16184 9.60565 4.84137C8.9042 5.52091 8.9042 6.62265 9.60565 7.30219L18.584 16L9.60565 24.6978C8.9042 25.3773 8.9042 26.4791 9.60565 27.1586C10.3071 27.8382 11.4444 27.8382 12.1459 27.1586L22.3886 17.236C22.3905 17.2341 22.3924 17.2323 22.3943 17.2304C22.6574 16.9756 22.8218 16.6614 22.8876 16.3324C22.9441 16.0495 22.9277 15.7557 22.8385 15.4793C22.7547 15.2196 22.6067 14.9753 22.3943 14.7696C22.3924 14.7677 22.3905 14.7659 22.3886 14.764L12.1459 4.84137Z" fill="black"/></svg>');
 		--iconChevronDark: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.1458 4.84137C11.4444 4.16184 10.3071 4.16184 9.60565 4.84137C8.9042 5.52091 8.9042 6.62265 9.60565 7.30219L18.584 16L9.60565 24.6978C8.9042 25.3773 8.9042 26.4791 9.60565 27.1586C10.3071 27.8382 11.4444 27.8382 12.1458 27.1586L22.3886 17.236C22.3905 17.2341 22.3924 17.2323 22.3943 17.2304C22.6574 16.9756 22.8218 16.6614 22.8876 16.3324C22.9441 16.0495 22.9277 15.7557 22.8385 15.4793C22.7547 15.2196 22.6067 14.9753 22.3943 14.7696C22.3924 14.7677 22.3905 14.7659 22.3886 14.764L12.1458 4.84137Z" fill="%23BCBCBC"/></svg>');
+		/*squigly*/
+		--iconSquigly-Light:url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="white"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.19" stroke-width="7"/></svg>');
+		--iconSquigly-Dark: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%2318191b"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.15" stroke-width="8"/></svg>');
+		/*squigly underline*/
+		--iconSquiglyUnderline-Light:url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="white"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="1" stroke-width="7"/></svg>');
+		--iconSquiglyUnderline-Dark:url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%2318191b"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.85" stroke-width="8"/></svg>');
+		/*squigly Link*/
+		--iconSquiglyLink-Light:url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="white"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%230062ea" stroke-opacity="0.25" stroke-width="7"/></svg>');
+		--iconSquiglyLink-Dark: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%2318191b"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%2375b8ff" stroke-opacity="0.15" stroke-width="8"/></svg>');
+
 }
 
 :root{
 		--iconChevron:var(--iconChevronLight);
 		--iconBrdDashHoriz:var(--iconBrdDashHoriz-Light);
+		/*squigly*/
+		--iconSquigly:var(--iconSquigly-Light);
+		--iconSquiglyLink:var(--iconSquiglyLink-Light);
+		--iconSquiglyUnderline:var(--iconSquiglyUnderline-Light);
 }
 [data-theme="dark"] {
 		--iconChevron:var(--iconChevronDark);
 		--iconBrdDashHoriz:var(--iconBrdDashHoriz-Dark);
+		/*squigly*/
+		--iconSquigly:var(--iconSquigly-Dark);
+		--iconSquiglyLink:var(--iconSquiglyLink-Dark);
+		--iconSquiglyUnderline:var(--iconSquiglyUnderline-Dark)
 }
 
 
