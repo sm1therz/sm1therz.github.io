@@ -49,10 +49,13 @@ ROOT
 		--refBrdClr: hsl(180, 0%, 83%);
 		/*card-lib*/
 		--cardlibBgClr: hsl(180, 0%, 98%);
-		--cardlibBrdClr: hsl(180, 0%, 86%);
+		--cardlibBrdClr: hsl(180, 0%, 0%,.2);
 		--cardlibBrdClr-Focus:hsl(264, 6%, 100%);
 		--cardlibBoxShad-Focus:
 				0px 8px 31px rgba(43, 41, 0, 0.1);
+	--cardlibHoverFiter:brightness(.73) contrast(2);
+	--cardlibCardBgClr:;
+	--cardlibCardBgClr-Hover:;
 		/*sidebar*/
 		--sideBarBgClr: hsl(180, 0%, 97.5%, 1);
 		--sideBarNoteBgClr: var(--sideBarBgClr);
@@ -262,6 +265,7 @@ ROOT
 		--cardlibBrdClr-Focus:hsl(227, 5%, 24%);
 		--cardlibBoxShad-Focus:
 				0px 8px 31px hsla(217.7, 0%, 0%, 0.55);
+	--cardlibHoverFiter:brightness(1.4) contrast(1.2);
 		/*sidebar*/
 		--sideBarBgClr: hsl(219, 7%, 12%);
 		--sideBarNoteBgClr: var(--sideBarBgClr);
@@ -435,6 +439,8 @@ body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) {
 
 }
 
+
+
 /********
 *********
 *********
@@ -518,30 +524,7 @@ BODY - FOnt SIZE
 	padding-left:var(--blockitemPadLeft);
 }
 
-/*****************
-CARD LIBRARY - HIGHLIGHT
-******************/
-/*CARD LIBRARY - HIGHLIGHT - Container*/
-.grid.select-none > div > div.pt-6,
-._rightSidebar_1fabk_5 .grid > div > div.pt-6 {
-		background: var(--hlightWrapperBgClr);
-		border-radius: 5px;
-		box-sizing: border-box;
-}
 
-/*****
-CARD LIBRARY - HIGHLIGHT > Highlight Border*/
-.grid.select-none > div > div.pt-6 > .flex,
-._rightSidebar_1fabk_5 .grid > div > div.pt-6 > .flex {
-		position: relative;
-}
-/*CARD LIBRARY - HIGHLIGHT > ACTUAL Highlight*/
-.grid.select-none > div > div.pt-6 > .flex > div[class*="&_.ProseMirror"],
-._rightSidebar_1fabk_5 .grid > div > div.pt-6 > .flex > div[class*="&_.ProseMirror"] {
-		margin: 0px;
-		box-shadow: inset 0 0 0 1px var(--hlightedTxtBrdClr);
-		border-radius: 6px;
-}
 
 /*****************
 ******************
@@ -661,7 +644,7 @@ POPUP & FULLSCREEN > EDITOR CONTENT*/
 }
 #root ~ .hepta-scrim  ._highlightElementNoteEditor_1rg43_7,
 [class*="_info_"].-mx-7.pt-12.flex + ._highlightElementNoteEditor_1rg43_7{
-		padding-bottom: 50px !important;
+		padding-bottom: 30px !important;
 
 }
 /*****
@@ -810,6 +793,12 @@ HIGHLIGHT MENU
 		height: 2.5rem !important;
 		position: relative;
 }
+[data-highlight-element-id] > div.mx-4.flex > div[class*="group-hover"]{
+	background: transparent !important;
+}
+[data-highlight-element-id] > div.mx-4.flex > div:before{
+	background: transparent !important;
+}
 
 
 
@@ -838,7 +827,7 @@ ACTUAL HIGHLIGHT
 [class*="_info"] div[style*="--annotation"],
 .grid.select-none > div > div.pt-6 > div.flex > div[style*="--annotation"],
 ._rightSidebar_1fabk_5 .grid > div > div.pt-6 > div.flex > div[style*="--annotation"] {
-		width: 3px;
+		width: 2px;
 		border-radius: 1.5px !important;
 		box-shadow: 0 0 0 1px var(--hlightAccentBg);
 		margin-left: -3px;
@@ -921,9 +910,9 @@ HIGHLIGHT NOTE
 /*Highlight - NOTE - CARD*/
 .grid.select-none > div > div.pt-6 > div[class*="&_.ProseMirror"] .ProseMirror {
 		padding: 0px !important;
-		padding-top: 6px!important;
 		padding-right: calc(var(--annotatePadLR) * .5) !important;
 		padding-left: calc(var(--annotatePadLR) + 0px) !important;
+	
 }
 
 
@@ -931,11 +920,9 @@ HIGHLIGHT NOTE
 .grid.select-none > div > div.pt-6 > div[class*="&_.ProseMirror"] .ProseMirror [data-node-type="todo_list_item"] > [class*="_nestedBlocks"] {
 		padding-top: 5px;
 }
-/*HIGHLIGHT - NOTE - FirST ELEMENT*/
-[data-highlight-element-id] > div[class*="ProseMirror-hepta-style"] .ProseMirror > [data-node-type]:first-child,
-.grid.select-none > div > div.pt-6 > div[class*="&_.ProseMirror"] .ProseMirror > [data-node-type]:first-child {
-		margin-top: 0px !important;
-		padding-top: 3px !important;
+[data-highlight-element-id] > [class*=".ProseMirror"]{
+	padding-top: 10px;
+	padding-bottom:5px;
 }
 
 
@@ -2387,7 +2374,6 @@ UNDERLINE
 .ProseMirror a[href*="app.heptabase.com"] [data-underline="true"]{
 	text-decoration-color:var(--internalLinkBrdClrUnderline)
 }
-
 /*****************
 ******************
 EDITOR - BULLET - TOGGLE V2
@@ -2599,6 +2585,8 @@ LIST ITEM > NESTED BLOCKS > LAST CHILD
 .ProseMirror [data-node-type*="list_item"] > [class*="_nestedBlocks"] > [data-node-type]:last-child{
 		margin-bottom: 0px !important;
 }
+
+
 
 
 /*****************
@@ -3214,9 +3202,9 @@ EMBED - HIGHLIGHT
 
 
 
-
-
-
+/*****************
+CARD LIBRARY - HIGHLIGHT
+******************/
 
 
 
@@ -3486,8 +3474,6 @@ EMBED POPUP
 [data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] > div > [class*="max-w"] {
 	max-width: unset;
 }
-
-
 /*****************
 ******************
 EDITOR - HEADINGS
@@ -3621,7 +3607,8 @@ body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) > [data-node-type
 }
 /*except embeds*/
 body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) > [data-node-type="embed"]:first-child{
-	padding-top: var(--embedPadTopBtm)!important
+	padding-top: var(--embedPadTopBtm)!important;
+	padding-bottom: var(--embedPadTopBtm)!important
 }
 
 
@@ -3869,6 +3856,7 @@ INLINE MATH
 		font-style: normal;
 		letter-spacing: 0.2px;
 }
+
 
 /*****************
 ******************
@@ -6031,133 +6019,136 @@ VIEW - CARD LIBRARY
 ******************/
 
 :root {
-		--cardlibNodeFirstMargTop: 5px;
-		--cardLibTagPad:3px;
+	/**/
+		--cardlibtoolbarTagPad:3px;
+	--cardlibtoolbarPadLeftRight:var(--cardlibGridPadLeftRight);
+	--cardlibtoolbarWidth:1200px;
+	/**/
+	--cardlibGridGap:0px;
+	--cardlibGridPadLeftRight:24px;
+	/**/
+	--cardlibCardWidth:700px;
+	--cardlibCardPadLeftRight:20px;
+	--cardlibCardPadTopBtm:11px;
+	/**/
+	--cardlibCardBrdWidth:0px;
+	--cardlibCardBrdBottomWidth:1px;
+	--cardlibCardBrdRad:0px;
+	/**/
+	--cardlibHighlightPadTopBtm:10px;
+	--cardlibHighlightTopPad:5px;
+	/**/
+	--cardlibJournalGap:8px;
+
+	
+}
+
+/*****************
+CARD LIBRARY - VARIABLES 
+******************/
+#root .grid.select-none,
+#root ._rightSidebar_1fabk_5 .grid {
+
+		--bodyFontSize: 18.5px;
+		--bodyLineHeight: 1.45;
+	/*heading line heights*/
+	--H1lineHeight:1.4;
+		--HeaderLineHeight:1.4;
+		/*Heading Font Sizes*/
+		--H1size:var(--cardlibHeadingTextSize);
+		--H2size:var(--cardlibHeadingTextSize);
+		--H3size:var(--cardlibHeadingTextSize);
+		--H4size:var(--cardlibHeadingTextSize);
+		--H5size:var(--cardlibHeadingTextSize);
+		--H6size:var(--cardlibHeadingTextSize);
+	--title-Line2-MargTop:var(--listMargTopBtm);
+	/*heading margins*/
+	--headingMargTop-All:var(--cardlibHeadingMargTop);
+	--headingMargTop:var(--cardlibHeadingMargTop);
+	/*toggles - headings*/
+	--toggleBulletMargTop-H1: var(--cardlibHeadingToggleBulletMargTop);
+		--toggleBulletMargTop-H2: var(--cardlibHeadingToggleBulletMargTop);
+		--toggleBulletMargTop-H3: var(--cardlibHeadingToggleBulletMargTop);
+		--toggleBulletMargTop-H4: var(--cardlibHeadingToggleBulletMargTop);
+		--toggleBulletMargTop-H5: var(--cardlibHeadingToggleBulletMargTop);
+		--toggleBulletMargTop-H6: var(--cardlibHeadingToggleBulletMargTop);
+	--toggleBulletMargTop:var(--cardlibToggleBulletMargTop);
+	/*toggles - headings*/
+	
+	/**************************/
+	/**************************/
+	/**CARD LIBRARY OVERRIDES**/
+	/**************************/
+	/**************************/
+	--cardlibHeadingTextSize:calc(var(--bodyFontSize) + 0px);
+	--cardlibHeadingMargTop:var(--listMargTopBtm);
+	--cardlibToggleBulletMargTop:8px;
+	--cardlibHeadingToggleBulletMargTop:8px;
+	--internalLinkClr:var(--text-color);
+	--listBulletMargTop:4px;
+}
+
+.grid.select-none [data-node-type="numbered_list_item"],
+._rightSidebar_1fabk_5 .grid [data-node-type="numbered_list_item"]{
+	--listBulletMargTop:4px;
 }
 
 
-/*CARD LIBRARY - TOOLBARS*/
-.z-10 > ._windowDraggable_80mcn_1.flex.items-center.gap-x-2.bg-background-primary.p-2,
-.z-10 > ._windowDraggable_80mcn_1.flex.items-center.gap-x-2.bg-background-primary.p-2 + div {
-		width: 100% !important;
+/*****************
+CARD LIBRARY - TOOLBAR WRAPPER
+******************/
+#root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100% !important;
+	max-width: 100vw !important;
+	position: relative;
+
+}
+/*****************
+CARD LIBRARY - TOOLBAR
+******************/
+
+#root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 > div{
+		width: var(--cardlibtoolbarWidth) !important;
 		max-width: 100% !important;
-		margin: 0 auto;
-		padding-left: 10px;
-		padding-right: 10px;
-		padding-top: calc(var(--cardLibTagPad) * 2);
-		padding-bottom: calc(var(--cardLibTagPad) * 2);
-		gap: var(--cardLibTagPad) !important;
-		margin: 0 auto;
+	padding: 0px;
+		padding-top: calc(var(--cardlibtoolbarTagPad) * 2);
+		padding-bottom: calc(var(--cardlibtoolbarTagPad) * 2);
+		gap: var(--cardlibtoolbarTagPad) !important;
+		margin: 0px !important;
 		box-sizing: border-box;
+		padding-left: var(--cardlibtoolbarPadLeftRight);
+		padding-right: var(--cardlibtoolbarPadLeftRight);
+	position: relative;
+	border: none !important;
+	
 }
-/*CARD LIBRARY - TOOLBAR - SEARCH*/
-.z-10 > ._windowDraggable_80mcn_1.flex.items-center.gap-x-2.bg-background-primary.p-2{
-		box-shadow: inset 0px -1px 0 0 hsla(0,0%,50%,.1);
+/*CARD LIBRARY - TOOLBAR - BORDER BOTTOM*/
+#root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 > div:before{
+		content: "";
+	display: block;
+	position: absolute;
+	background: var(--cardlibBrdClr);
+	bottom:0;
+	left: -50vw;
+	right: -50vw;
+	z-index: 3;
+	height: 1px;
+	opacity: .5
 }
 /*CARD LIBRARY - TOOLBAR - TAG WRAPPER*/
-
 .z-10 > ._windowDraggable_80mcn_1.flex.items-center.gap-x-2.bg-background-primary.p-2 + div{
 		gap: 0px !important;
-		column-gap: var(--cardLibTagPad) !important;
-		row-gap: var(--cardLibTagPad) !important
+		column-gap: var(--cardlibtoolbarTagPad) !important;
+		row-gap: var(--cardlibtoolbarTagPad) !important
 }
 
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border {
 		border-bottom: 1px solid var(--sideBarBrdClr) !important;
 		opacity: 1;
-}
-
-.grid.select-none {
-		padding: 0px;
-		box-sizing: border-box;
-		padding: 0px 1.5rem;
-		grid-template-rows: unset;
-		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-		margin-top: 20px;
-}
-
-/*CARD LIBRARY - CARD*/
-.grid.select-none > div,
-/*right sidebar - card*/
-._rightSidebar_1fabk_5 .grid > div {
-		padding-bottom: 10px !important;
-		padding-top: 10px !important;
-		min-height: unset !important;
-		height: unset !important;
-		margin-bottom: 17px;
-		background: var(--cardlibBgClr);
-		border-color: var(--cardlibBrdClr);
-		border: 1.5px solid var(--cardlibBrdClr);
-		width: 100%;
-		max-width: 700px;
-		margin: 0 auto;
-		padding: 0px !important;
-		border-radius: 8px;
-		box-shadow: none;
-		max-height: 600px;
-}
-.grid.select-none > div [data-node-type*="_list_item"],
-._rightSidebar_1fabk_5 .grid > div [data-node-type*="_list_item"]{
-		pointer-events:all;
-}
-/*CARD LIBRARY - CARD - HOVER*/
-.grid.select-none > div:hover,
-/*right sidebar - card*/
-._rightSidebar_1fabk_5 .grid > div:hover {
-		box-shadow: var(--cardlibBoxShad-Focus);
-
-}
-
-/*CARD LIBRARY > CARD WRAPPER*/
-.grid.select-none > div > div,
-._rightSidebar_1fabk_5 .grid > div > div {
-		transform: unset !important;
-		width: 100% !important;
-		padding-top: 0px !important;
-}
-._rightSidebar_1fabk_5 .grid > div {
-		max-height: 500px;
-}
-
-
-/*NORMAL CARD*/
-.grid.select-none > div > div > [data-is-editor-container] {
-		background: var(--cardlibBgClr)!important;
-		padding-left: 28px;
-		padding-right: 28px;
-		padding-bottom: 15px;
-		padding-top: 15px;
-}
-/*CARD LIBRARY - CARD - HEADINGS*/
-.grid.select-none .ProseMirror h1,
-.grid.select-none .ProseMirror h2,
-.grid.select-none .ProseMirror h3,
-.grid.select-none .ProseMirror h4,
-.grid.select-none .ProseMirror h5,
-.grid.select-none .ProseMirror h6{
-		font-size: 20px !important;
-}
-.grid.select-none .ProseMirror [data-node-type="toggle_list_item"][class*="toggleHeading"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
-		--toggleBulletMargTop: 10px !important;
-}
-
-/*CARD LIBRARY > TOGGLE CHEVRON MARGINS*/
-
-
-/*CARD LIBRARY - CARD - HEADING (CARD TITLE) - FIRST OF TYPE*/
-.grid.select-none > div > div > div > .ProseMirror > [data-node-type="heading"]:first-child,
-.grid.select-none > div > div > div > .ProseMirror > [data-node-type="toggle_list_item"][class*="toggleHeading"]:first-child>[class*="_nestedBlocks"] >[data-node-type="heading"]:first-child{
-		font-size: 26px !important;
-		margin-bottom:13px;
-}
-
-/*CARD LIBRARY - CARD - TOGGLE ITEM - CARD TITLE - MARGIN TOP*/
-.grid.select-none > div > div > div > .ProseMirror > [data-node-type="toggle_list_item"][class*="toggleHeading"]:first-child > [class*="_bulletWrapper"] [class*="_bullet_"]{
-		--toggleBulletMargTop:16px;
-}
-/*CARD LIBRARY - CARD - TOGGLE ITEM - CHILDREN - MARGIN TOP*/
-.grid.select-none > div > div > div > .ProseMirror  [data-node-type="toggle_list_item"][class*="toggleHeading"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
-		--toggleBulletMargTop:14px;
 }
 
 /*CARD LIBRARY > FILTER BUTTON - FILTER*/
@@ -6193,6 +6184,221 @@ VIEW - CARD LIBRARY
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div._windowNonDraggable_80mcn_5 {
 		order: 0199;
 }
+
+/*****************
+CARD LIBRARY - GRID
+******************/
+#root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 + .scrollbar-gutter-stable {
+	width: 100vw !important;
+	padding: 0px !important;
+
+}
+.grid.select-none,
+._rightSidebar_1fabk_5 .grid{
+		padding: 0px;
+		box-sizing: border-box;
+		padding: 0px !important;
+	padding-left: var(--cardlibGridPadLeftRight) !important;
+	padding-right: var(--cardlibGridPadLeftRight) !important;
+		grid-template-rows: unset;
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		margin-top: 20px;
+	row-gap: var(--cardlibGridGap) !important;
+	display:  flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 100%;
+}
+
+/*****************
+CARD LIBRARY - CARD WRAPPER
+******************/
+/*CARD LIBRARY - card wrapper*/
+.grid.select-none > div,
+/*right sidebar grid - card wrapper*/
+._rightSidebar_1fabk_5 .grid > div {
+	transition: .15s;
+		min-height: unset !important;
+		height: unset !important;
+		background: transparent !important;
+	border: var(--cardlibCardBrdWidth) solid var(--cardlibBrdClr) !important;
+		border-bottom: 1px solid var(--cardlibBrdClr) !important;
+	width: var(--cardlibCardWidth)!important;
+	max-width: 100% !important;
+		margin: 0 auto;
+		padding: 0px !important;
+		border-radius: var(--cardlibCardBrdRad);
+		box-shadow: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: var(--cardlibCardPadLeftRight) !important;
+		padding-right: var(--cardlibCardPadLeftRight) !important;
+		padding-bottom: var(--cardlibCardPadTopBtm) !important;
+		padding-top: var(--cardlibCardPadTopBtm) !important;
+}
+.grid.select-none > div:hover{
+	background: hsla(0,0%,50%,.05) !important;
+}
+/*****************
+CARD LIBRARY - CARD
+******************/
+/*CARD LIBRARY > CARD WRAPPER*/
+.grid.select-none > div > div,
+._rightSidebar_1fabk_5 .grid > div > div {
+		transform: unset !important;
+		padding-top: 0px !important;
+	width: 100% !important;
+	max-width: 100%;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+		padding-bottom: 0px !important;
+		padding-top: 0px !important;
+}
+.grid.select-none > div [data-node-type*="_list_item"],
+._rightSidebar_1fabk_5 .grid > div [data-node-type*="_list_item"]{
+		pointer-events:all !important;
+}
+
+/*****************
+CARD LIBRARY - CARD - WRAPPER
+******************/
+/*NORMAL CARD*/
+.grid.select-none > div > div > [data-is-editor-container],
+._rightSidebar_1fabk_5 .grid > div > div > [data-is-editor-container] {
+		background: transparent !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+		padding-bottom: 0px !important;
+		padding-top: 0px !important;
+}
+
+/*****************
+CARD LIBRARY - CARD - WRAPPER > PROSEMIRROR
+******************/
+/*NORMAL CARD*/
+.grid.select-none > div > div > [data-is-editor-container] > .ProseMirror,
+._rightSidebar_1fabk_5 .grid > div > div > [data-is-editor-container] > .ProseMirror{
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+		padding-bottom: 0px !important;
+		padding-top: 0px !important;
+}
+
+/*****************
+CARD LIBRARY - CARD > FIRST BLOCK
+******************/
+.grid.select-none > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type],
+._rightSidebar_1fabk_5 .grid > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type],
+/*card library - journal*/
+.grid.select-none > div > div.pt-3 + div > [data-is-editor-container] > .ProseMirror > [data-node-type]:first-child,
+/*right sidebar - journal*/
+._rightSidebar_1fabk_5 .grid > div > div.pt-3 + div > [data-is-editor-container] > .ProseMirror > [data-node-type]:first-child{
+	display: none;
+}
+#root .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type]:first-child,
+#root ._rightSidebar_1fabk_5 .grid > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type]:first-child,
+/*card library - journal*/
+#root .grid.select-none > div > div.pt-3 + div > [data-is-editor-container] > .ProseMirror > [data-node-type]:first-child,
+/*right sidebar - journal*/
+#root ._rightSidebar_1fabk_5 .grid > div > div.pt-3 + div > [data-is-editor-container] > .ProseMirror > [data-node-type]:first-child{
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	display: block !important;
+}
+
+
+
+
+
+/*****************
+CARD LIBRARY - HIGHLIGHT
+******************/
+
+/*CARD LIBRARY - HIGHLIGHT - WRAPPER*/
+.grid.select-none > div > div.pt-6,
+._rightSidebar_1fabk_5 .grid > div > div.pt-6 {
+		background: var(--hlightWrapperBgClr);
+		border-radius: 5px;
+		box-sizing: border-box;
+	background: transparent;
+}
+
+/*CARD LIBRARY - HIGHLIGHT > BORDER*/
+#root .grid.select-none > div > div.pt-6 > .flex > [style*="--annotation"],
+#root ._rightSidebar_1fabk_5 .grid > div > div.pt-6 > .flex > [style*="--annotation"]{
+	left: calc(var(--annotatePadLR) * 0) !important;
+}
+/*CARD LIBRARY - HIGHLIGHT > ACTUAL HIGHLIGHT*/
+.grid.select-none > div > div.pt-6 > .flex,
+._rightSidebar_1fabk_5 .grid > div > div.pt-6 > .flex {
+		position: relative;
+	display: flex !important;
+	flex-direction: row !important;
+	margin-top: var(--cardlibHighlightTopPad)
+}
+/*CARD LIBRARY - HIGHLIGHT > ACTUAL HIGHLIGHT > INNER*/
+.grid.select-none > div > div.pt-6 > .flex > div[class*="&_.ProseMirror"],
+._rightSidebar_1fabk_5 .grid > div > div.pt-6 > .flex > div[class*="&_.ProseMirror"] {
+		margin: 0px;
+		box-shadow: inset 0 0 0 1px var(--hlightedTxtBrdClr);
+		border-radius: 6px;
+	background: transparent !important;
+	box-shadow: none;
+}
+/*CARD LIBRARY - HIGHLIGHT > ACTUAL HIGHLIGHT NOTE - Wrapper*/
+.grid.select-none > div > div.pt-6 > div[class*="&_.ProseMirror"],
+._rightSidebar_1fabk_5 .grid > div > div.pt-6 > div[class*="&_.ProseMirror"]{
+
+	padding-top: 0px!important;
+	padding-bottom: 0px!important;
+}
+/*CARD LIBRARY - HIGHLIGHT > ACTUAL HIGHLIGHT NOTE*/
+.grid.select-none > div > div.pt-6 > div[class*="&_.ProseMirror"] > div > .ProseMirror,
+._rightSidebar_1fabk_5 .grid > div > div.pt-6 > div[class*="&_.ProseMirror"] > div > .ProseMirror{
+
+	padding-top: var(--cardlibHighlightPadTopBtm)!important;
+	padding-bottom: var(--cardlibHighlightPadTopBtm)!important;
+}
+
+/*****************
+CARD LIBRARY - JOURNAL 
+******************/
+.grid.select-none > div > div.pt-3, 
+._rightSidebar_1fabk_5 .grid > div > div.pt-3{
+	margin: 0px !important;
+
+	margin-bottom: calc(var(--cardlibJournalGap) * 2) !important;
+
+	
+}
+.grid.select-none > div > div.pt-3 > div, 
+._rightSidebar_1fabk_5 .grid > div > div.pt-3 > div{
+	gap: calc(var(--cardlibJournalGap) * .5);
+	display: flex;
+	flex-direction: column;
+}
+
+
+/*JOURNAL > Day text*/
+.grid.select-none > div > div.pt-3 .text-label, 
+._rightSidebar_1fabk_5 .grid > div > div.pt-3  .text-label{
+
+	margin-bottom: 0px;
+}
+/*JOURNAL > DATE*/
+.grid.select-none > div > div.pt-3 .text-primary, 
+._rightSidebar_1fabk_5 .grid > div > div.pt-3 > .text-primary{
+	font-size: 1em !important;
+}
+/*JOURNAL > NOTE*/
+.grid.select-none > div > div.pt-3 + div, 
+._rightSidebar_1fabk_5 .grid > div > div.pt-3 + div{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
 
 /*****************
 ******************
@@ -6267,7 +6473,7 @@ QUICK SWITCHER
 		--searchItmLabelHeight: 36px;
 		--modalMaxHeight:88vh;
 		--modalWidth:1080px;
-		--modalPad:3rem;
+		--modalPad:2rem;
 		--searchWidth:790px;
 		--versonHistPad:30px;
 }
@@ -6546,6 +6752,17 @@ RIGHT SIDEBAR
 [class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"],
 [class*="bg-background"][style*="width"] .bg-background-primary {
 		background: var(--sideBarBgClr) !important;
+	--cardlibGridPadLeftRight:10px;
+	--cardlibGridGap:10px;
+	/**/
+	--cardlibCardWidth:700px;
+	--cardlibCardPadTopBtm:5px;
+	/**/
+	--cardlibCardBrdWidth:1px;
+	--cardlibCardBrdBottomWidth:1px;
+	--cardlibCardBrdRad:8px;
+	/**/
+	--cardlibHighlightTopPad:0px;
 }
 /*whiteboard fix*/
 ._whiteboardToolbarLeft_1fabk_4 ~ ._rightSidebar_1fabk_5 > [class*="bg-background"][style*="width"] > .relative.flex.shrink-0.flex-col.overflow-hidden.bg-background-primary{
@@ -6741,7 +6958,7 @@ RIGHT SIDEBAR - NOTE CONTAINER
 		margin: 0 auto;
 }
 #root .cursor-grab + div > .pt-3.flex + div{
-		background: red !important;
+
 }
 #root [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex + div  > .pb-12{
 		padding-bottom: 0px
@@ -7092,8 +7309,6 @@ ALL HEADINGS > MARGIN TOP
 #root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] [data-node-type="toggle_list_item"][class*="_toggleHeadingLevel"]{
 		--headingMargTop: 6px !important;
 }
-
-
 /*****************
 ******************
 RIGHT SIDEBAR - TABLE OF CONTENTS
@@ -7290,8 +7505,6 @@ ICONS
 		--iconSquiglyLink:var(--iconSquiglyLink-Dark);
 		--iconSquiglyUnderline:var(--iconSquiglyUnderline-Dark)
 }
-
-
 
 
 /*****************
