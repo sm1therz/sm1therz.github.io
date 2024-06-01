@@ -2589,6 +2589,7 @@ LIST ITEM > NESTED BLOCKS > LAST CHILD
 
 
 
+
 /*****************
 ******************
 ******************
@@ -2647,7 +2648,19 @@ EDITOR - MENTIONS
 		border-bottom: 1px solid var(--mentionBrdClr);
 		transition: .15s;
 }
-
+.ProseMirror  [data-node-type="mention"] + [data-node-type="mention"] > [class*="group"]:after{
+		content: "" !important;
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0;
+		right: 0;
+		bottom: 0px;
+		z-index: 0;
+		border-top:none !important;
+		border-bottom: 1px solid var(--mentionBrdClr);
+		transition: .15s;
+}
 /*MENTIONS - BACKGROUND AND BORDER- HOVER*/
 .ProseMirror  [data-node-type="mention"]:hover > [class*="group"]:after,
 [data-node-type="embed"] [data-node-type="embed"]:hover > [class*="group"]{
@@ -2711,7 +2724,7 @@ EDITOR - MENTIONS
 		right: 0;
 	z-index: 5;
 	margin-right: 3px;
-	height:
+	height:;
 }
 
 /*****************
@@ -6029,7 +6042,7 @@ VIEW - CARD LIBRARY
 	/**/
 	--cardlibCardWidth:700px;
 	--cardlibCardPadLeftRight:20px;
-	--cardlibCardPadTopBtm:11px;
+	--cardlibCardPadTopBtm:14px;
 	/**/
 	--cardlibCardBrdWidth:0px;
 	--cardlibCardBrdBottomWidth:1px;
@@ -6080,10 +6093,10 @@ CARD LIBRARY - VARIABLES
 	/**CARD LIBRARY OVERRIDES**/
 	/**************************/
 	/**************************/
-	--cardlibHeadingTextSize:calc(var(--bodyFontSize) + 0px);
+	--cardlibHeadingTextSize:calc(var(--bodyFontSize) + 2px);
 	--cardlibHeadingMargTop:var(--listMargTopBtm);
 	--cardlibToggleBulletMargTop:8px;
-	--cardlibHeadingToggleBulletMargTop:8px;
+	--cardlibHeadingToggleBulletMargTop:10px;
 	--internalLinkClr:var(--text-color);
 	--listBulletMargTop:4px;
 }
