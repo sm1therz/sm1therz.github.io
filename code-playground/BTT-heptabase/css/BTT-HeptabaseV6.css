@@ -5391,7 +5391,7 @@ WHITEBOARD CARD -  COLLAPSED - HEIGHT
 *************
 *************/
 :root {
-	--whiteboardCardCollapsedPadTopBtm:7px;
+	--whiteboardCardCollapsedPadTopBtm:8px;
 }
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none {
 		height: unset !important;
@@ -5418,7 +5418,7 @@ WHITEBOARD CARD -  COLLAPSED - ARROW+BUTTON
 		opacity: 1;
 }
 ._whiteboardObject_1fabk_10[data-is-folded="true"] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none .w-6{
-		margin-top: -1px
+		margin-top: 0px
 
 }
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none .w-6:last-child {
