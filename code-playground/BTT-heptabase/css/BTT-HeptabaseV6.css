@@ -5132,7 +5132,8 @@ MINDMAP - TURN PURPLE MINDMAP ITEM INTO BIG TEXT
 
 
 /*text*/
-#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"] .ProseMirror{
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"] .ProseMirror,
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-black-sect"] .ProseMirror{
 		font-size: calc(var(--mindmapHeaderSize) - 3px);
 		text-decoration: none;
 		line-height: 1.35;
