@@ -224,7 +224,7 @@ ROOT
 		--bldClr: hsl(0, 0%, 100%);
 		--invertClr: hsl(0, 0%, 100%);
 		--text-color: hsl(246, 12%, 86%) !important;
-		--reftext-color: var(--text-color);
+		--reftext-color: var(--text-color) !important;
 		--text-color-contrast: hsl(0, 0%, 96%) !important;
 		--text-color-Strikethrough: hsl(246, 2%, 52%);
 		--heading-color: hsl(0, 0%, 94%);
@@ -7488,7 +7488,7 @@ ICONS
 :root {
 		--iconBrdDashVertical: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 1 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" width="3" height="0.75" rx="0.3" transform="rotate(90 1 0)" fill="%23808080" fill-opacity="0.35"/><rect x="1" y="5" width="3" height="0.75" rx="0.3" transform="rotate(90 1 5)" fill="%23808080" fill-opacity="0.35"/></svg>');
 		--iconBrdDashHoriz-Light: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.225"/><rect x="5" width="3" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.225"/></svg>');
-		--iconBrdDashHoriz-Dark: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/><rect x="5" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/></svg>');
+		--iconBrdDashHoriz-Dark: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/><rect x="5" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.2"/></svg>');
 		--iconChevronLight: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.1459 4.84137C11.4444 4.16184 10.3071 4.16184 9.60565 4.84137C8.9042 5.52091 8.9042 6.62265 9.60565 7.30219L18.584 16L9.60565 24.6978C8.9042 25.3773 8.9042 26.4791 9.60565 27.1586C10.3071 27.8382 11.4444 27.8382 12.1459 27.1586L22.3886 17.236C22.3905 17.2341 22.3924 17.2323 22.3943 17.2304C22.6574 16.9756 22.8218 16.6614 22.8876 16.3324C22.9441 16.0495 22.9277 15.7557 22.8385 15.4793C22.7547 15.2196 22.6067 14.9753 22.3943 14.7696C22.3924 14.7677 22.3905 14.7659 22.3886 14.764L12.1459 4.84137Z" fill="black"/></svg>');
 		--iconChevronDark: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.1458 4.84137C11.4444 4.16184 10.3071 4.16184 9.60565 4.84137C8.9042 5.52091 8.9042 6.62265 9.60565 7.30219L18.584 16L9.60565 24.6978C8.9042 25.3773 8.9042 26.4791 9.60565 27.1586C10.3071 27.8382 11.4444 27.8382 12.1458 27.1586L22.3886 17.236C22.3905 17.2341 22.3924 17.2323 22.3943 17.2304C22.6574 16.9756 22.8218 16.6614 22.8876 16.3324C22.9441 16.0495 22.9277 15.7557 22.8385 15.4793C22.7547 15.2196 22.6067 14.9753 22.3943 14.7696C22.3924 14.7677 22.3905 14.7659 22.3886 14.764L12.1458 4.84137Z" fill="%23BCBCBC"/></svg>');
 		/*squigly*/
