@@ -5225,10 +5225,7 @@ WHITEBOARD > TEXT ELEMENT
 		--mMapOutlineClr: transparent;*/
 		border-color: var(--active-item) !important;
 }
-/*WHITEBOARD > TEXT ELEMENT .ProseMirror*/
-[class*="_whiteboardObject"][data-object-type="textElement"] .ProseMirror > [data-node-type] {
-		margin: 0px !important
-}
+
 /*WHITEBOARD > TEXT ELEMENT > EMBED*/
 #root [class*="_whiteboardObject"][data-object-type="textElement"] > [class*="_container"] > [data-is-editor-container] > .ProseMirror > [data-node-type="embed"] {
 		margin-top: var(--whiteboardTextPadLR) !important;
