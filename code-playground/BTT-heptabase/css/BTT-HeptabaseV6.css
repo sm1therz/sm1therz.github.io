@@ -94,7 +94,7 @@ ROOT
 		--whiteBoardCardBrd-Green: hsla(135, 40%, 64%);
 		--whiteBoardCardBrd-Blue: hsla(210, 70%, 68%);
 		--whiteBoardCardBrd-Purple: hsla(250, 81%, 74%, 0.7);
-		--whiteBoardCardBrd-Black: hsla(0, 0%, 0%, .2);
+		--whiteBoardCardBrd-Black: hsla(0, 0%, 100%,.15);
 		/*whiteboard - Sections*/
 		--whiteBoardSectionBgClr: #e9e8e8;
 		--whiteBoardSectionBrdClr: hsl(0, 0%, 86.5%);
