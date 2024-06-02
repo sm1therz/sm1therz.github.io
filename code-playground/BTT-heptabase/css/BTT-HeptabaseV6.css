@@ -303,7 +303,7 @@ ROOT
 		--whiteBoardCardBrd-Green: hsla(155, 57%, 30%);
 		--whiteBoardCardBrd-Blue: hsl(210, 55%, 36%);
 		--whiteBoardCardBrd-Purple: hsl(269, 41%, 36%);
-		--whiteBoardCardBrd-Black: hsla(0, 0%, 2%);
+		--whiteBoardCardBrd-Black: hsla(0, 0%, 100%,.15);
 		--bg-black-sect: hsla(0, 0%, 30%);
 		/*whiteboard - Sections*/
 		--whiteBoardSectionBgClr: hsl(0, 0%, 10.75%);
@@ -5714,8 +5714,8 @@ HOVER NAV
 PADDING
 *************/
 [data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"] > ._contentScrollableContainer_14p9u_1 > div > .ProseMirror {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
+		padding-left: 1.2rem;
+		padding-right: 1.1rem;
 		padding-bottom: 0.25rem;
 		padding-top: 0.5rem;
 }
