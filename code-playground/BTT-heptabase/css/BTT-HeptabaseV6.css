@@ -7585,7 +7585,7 @@ EXTRA FONTS
 		url('https://dl.dropboxusercontent.com/scl/fi/hpxcemuqz1sqzecr1w3b8/Univers-Condensed-300.woff?rlkey=mc442wsbntr7eje3mjl89rqd9&raw=1') format('woff');
 	font-weight: 300;
 	font-style: normal;
-	font-stretch: normal;
+	font-stretch: normal; 
 }
 /*400 */
 @font-face {
