@@ -4711,6 +4711,7 @@ INFO CONTAINER - TAGS
 
 }
 
+
 /*****************
 ******************
 ******************
@@ -4731,7 +4732,59 @@ VIEW - WHITEBOARD
 	--whiteboardCardPadLeftRight:30px;
 	--whiteboardCardPadTop:0px;
 	--whiteboardCardPadBtm:var(--whiteboardCardNavHeight);
+	/*section-title*/
+	--secTitleBrdW: 1px;
+	--secTitleBrdRad: 8px;
+	/*section*/
+	--secBrdW: 1px;
+	--secBrdRad: 8px;
+	--secTitleTxtSize: 14px;
+	--secTitlePadTopBtm: 1px;
+	--secSvgW: 18px;
+	--secSvgMarg: 10px;
+	--secTitleInputW: 100%;
+	--sectionTitleTransform: scale(1);
+	--sectionTitleMaxW: 100%;
 	
+}
+
+._whiteboardCanvas_1ozeb_1{
+	--bodyLineHeight:1.4;
+	--toggleBulletMargTop:7px;
+	/*HEADINGS*/
+	--H1size: calc(var(--bodyFontSize) + 8px);
+		--H2size: calc(var(--bodyFontSize) + 6px);
+		--H3size: calc(var(--bodyFontSize) + 4.5px);
+		--H4size: calc(var(--bodyFontSize) + 3px);
+		--H5size: calc(var(--bodyFontSize) + 1px);
+		--H6size: var(--bodyFontSize);
+	--H1lineHeight:var(--bodyLineHeight);
+	--HeaderLineHeight:var(--bodyLineHeight);
+	/*HEADING Toggles*/
+	--toggleBulletMargTop-H1: 13px;
+		--toggleBulletMargTop-H2: 11px;
+		--toggleBulletMargTop-H3: 9px;
+		--toggleBulletMargTop-H4: 9px;
+		--toggleBulletMargTop-H5: 8px;
+		--toggleBulletMargTop-H6: var(--toggleBulletMargTop);
+	/*EMBED HEADINGS*/
+		--embedH1size: var(--H3size);
+		--embedH2size: var(--H3size);
+		--embedH3size: var(--H3size);
+		--embedH4size: var(--H4size);
+		--embedH5size: var(--H5size);
+		--embedH6size: var(--bodyFontSize);
+	/*EMBED HEADING TOGGLES*/
+	--embedtoggleBulletMargTop-H1: var(--toggleBulletMargTop-H3);
+		--embedtoggleBulletMargTop-H2: var(--toggleBulletMargTop-H3);
+		--embedtoggleBulletMargTop-H3: var(--toggleBulletMargTop-H3);
+		--embedtoggleBulletMargTop-H4: var(--toggleBulletMargTop-H4);
+		--embedtoggleBulletMargTop-H5: var(--toggleBulletMargTop-H5);
+		--embedtoggleBulletMargTop-H6: var(--toggleBulletMargTop);
+	/*Card 2nd line*/
+	--title-Line2-MargTop:10px;
+	--headingMargTop-All:10px !important;
+	--headingMargTop:4px;
 }
 .bg-whiteboard-background {
 		background-color: var(--whiteBoardBoardBg);
@@ -4885,21 +4938,7 @@ WHITEBOARD > SECTIONS
 }
 
 
-:root {
-		/*section-title*/
-		--secTitleBrdW: 1px;
-		--secTitleBrdRad: 8px;
-		/*section*/
-		--secBrdW: 1px;
-		--secBrdRad: 8px;
-		--secTitleTxtSize: 14px;
-		--secTitlePadTopBtm: 1px;
-		--secSvgW: 18px;
-		--secSvgMarg: 10px;
-		--secTitleInputW: 100%;
-		--sectionTitleTransform: scale(1);
-		--sectionTitleMaxW: 100%;
-}
+
 /*Whiteboard > Section Title > Three Dot Menu*/
 #root [data-object-type="section"] [data-is-section-title] svg {
 		z-index: 9494949 !important;
@@ -5446,7 +5485,7 @@ WHITEBOARD CARD -  COLLAPSED - HEIGHT
 		padding-bottom: var(--whiteboardCardCollapsedPadTopBtm) !important;
 		align-items: flex-start;
 	padding-left: 0px !important; 
-	padding-right: 8px !important;
+	padding-right: calc(var(--whiteboardCardPadLeftRight) * 0.4) !important;
 }
 ._mindMapNode_1pwxr_1 > ._whiteboardObject_1fabk_10.cursor-grab {
 		height: unset !important;
@@ -5465,7 +5504,8 @@ WHITEBOARD CARD -  COLLAPSED - ARROW+BUTTON
 		opacity: 1;
 }
 ._whiteboardObject_1fabk_10[data-is-folded="true"] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none .w-6{
-		margin-top: 0px
+		margin-top: 0px;
+	width: var(--whiteboardCardPadLeftRight);
 
 }
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none .w-6:last-child {
@@ -5737,6 +5777,7 @@ WHITEBOARD TOOLBAR -  LEFT
 :root{
 	--whiteboardToolbarLeftBtnW:40px;
 	--whiteboardToolbarLeftBtnSvgOpacity:.5;
+	--whiteboardToolbarBrdW:0px;
 }
 ._whiteboardToolbarLeft_1fabk_4 {
 		position: absolute;
@@ -5749,7 +5790,7 @@ WHITEBOARD TOOLBAR -  LEFT
 		border-radius: 6px !important;
 		overflow: hidden;
 		background:var(--whiteboardToolbarBgClr);
-	box-shadow:inset 0 0 0 1px var(--whiteboardToolbarBtnBrdClr);
+	box-shadow:inset 0 0 0 var(--whiteboardToolbarBrdW) var(--whiteboardToolbarBtnBrdClr);
 		backdrop-filter: blur(4px) saturate(1.2);
 		gap: 0px;
 }
@@ -5778,10 +5819,11 @@ WHITEBOARD TOOLBAR -  LEFT
 @media (max-width: 1350px){
 	:root {
 		--whiteboardToolbarLeftBtnSvgOpacity:1;
-		--whiteboardToolbarLeftBtnW:50px
+		--whiteboardToolbarLeftBtnW:50px;
+		--whiteboardToolbarBrdW:1px
 	}
-	._whiteboardToolbarLeft_1fabk_4 {
-		bottom: 52vh !important;
+	._whiteboardToolbarLeft_1fabk_4{
+		bottom:54vh !important;
 	}
 }
 
@@ -5800,6 +5842,7 @@ WHITEBOARD MENTIONS
 ._whiteboardCanvas_1ozeb_1 [data-object-type] [style*="background-color: var(--background-secondary);"] .ProseMirror [data-node-type="mention"] > [class*="group"]:after {
 		border-color:var(--mentionBrdClr) !important;
 }
+
 
 /*****************
 ******************
