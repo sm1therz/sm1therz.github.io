@@ -94,7 +94,7 @@ ROOT
 		--whiteBoardCardBrd-Green: hsla(135, 40%, 64%);
 		--whiteBoardCardBrd-Blue: hsla(210, 70%, 68%);
 		--whiteBoardCardBrd-Purple: hsla(250, 81%, 74%, 0.7);
-		--whiteBoardCardBrd-Black: hsla(0, 0%, 100%,.15);
+		--whiteBoardCardBrd-Black: hsla(0, 0%, 0%, .2);
 		/*whiteboard - Sections*/
 		--whiteBoardSectionBgClr: #e9e8e8;
 		--whiteBoardSectionBrdClr: hsl(0, 0%, 86.5%);
@@ -225,7 +225,7 @@ ROOT
 		--invertClr: hsl(0, 0%, 100%);
 		--text-color: hsl(246, 12%, 86%) !important;
 		--reftext-color: var(--text-color) !important;
-		--text-color-contrast: hsl(0, 0%, 96%) !important;
+		--text-color-contrast: hsl(0, 0%, 92%) !important;
 		--text-color-Strikethrough: hsl(246, 2%, 52%);
 		--heading-color: hsl(0, 0%, 94%);
 		--background-primary: hsl(229, 5%, 10%) !important;
@@ -235,7 +235,7 @@ ROOT
 		--background-secondary: hsl(229, 5%, 10%) !important;
 		--menu-texture-bg-hard: var(--background-primary) !important;
 		/*links*/
-		--internalLinkClr: hsl(216, 21%, 72%);
+		--internalLinkClr: hsl(216, 11%, 72%);
 		--internalLinkClr-Mention:var(--text-color);
 		--internalLinkBgClr: hsl(211, 100%, 73%, .11);
 		--internalLinkBrdClr: hsl(206, 21%, 76%,.4);
@@ -491,17 +491,6 @@ FIRST LINE OF TEXT (THAT'S ALSO A HEADING)
 ******************
 ******************
 ******************/
-:root{
-		--cardTitleMargBtm:18px;
-		--cardTitlePadTopBtm:5px;
-}
-.grid.select-none > div > .scale-70 > div > .ProseMirror > [data-node-type="heading"]:first-child, 
-._rightSidebar_1fabk_5 .grid > div .ProseMirror > [data-node-type="heading"]:first-child,
-.p-12.hepta-scrim .scrollbar-gutter-stable > [class*="_editor"] > .ProseMirror > [data-node-type="heading"]:first-child,
-.scrollbar-gutter-stable > [class*="_editor"] > .ProseMirror > [data-node-type="heading"]:first-child{
-		color: var(--bldClr) !important;  
-}
-
 
 
 
@@ -512,12 +501,15 @@ BODY - FOnt SIZE
 :root {
 		--bodyFontSize: 17.5px;
 		--bodyLineHeight: 1.45;
+	--bodyFontWeight:400;
 	--blockitemPadLeft:2px;
+	--fontsmoothing:antialiased;
 }
 .ProseMirror {
 		font-size: var(--bodyFontSize);
 		line-height: var(--bodyLineHeight);
-		-webkit-font-smoothing: antialiased;
+		-webkit-font-smoothing: var(--fontsmoothing);
+	font-weight: var(--bodyFontWeight);
 }
 
 .ProseMirror p {
@@ -2268,6 +2260,7 @@ TOGGLE EXPAND BORDER
 
 
 
+
 /*****************
 ******************
 ******************
@@ -2278,6 +2271,11 @@ EDITOR - LINKS, UNDERLINE V1
 ******************
 ******************/
 :root {
+	/*link*/
+	--linkOpacity:1;
+	/*link text decoration*/
+	--linkTextDecoration:underline;
+	/*underline*/
 		--underlineThickness: 1.5px;
 		--underlineOffset:2px;
 		--underlineColor:var(--LinkBrdClr);
@@ -2298,11 +2296,12 @@ EDITOR - LINKS, UNDERLINE V1
 		background: transparent;
 		transition: .1s;
 		/*underline*/
-		text-decoration: underline;
+		text-decoration: var(--linkTextDecoration);
 		text-decoration-thickness: var(--underlineThickness) !important;
 		text-decoration-color: var(--underlineColor) !important;
 		text-underline-offset: var(--underlineOffset);   
 	--underlineColor:var(--LinkClr);
+	opacity: var(--linkOpacity);
 }
 .ProseMirror a:hover {
 		background: var(--LinkBgClr);
@@ -2319,7 +2318,6 @@ INTERNAL LINKS
 .text-active:not(.text-label.text-active) {
 		border: none !important;
 		color: var(--internalLinkClr);
-		text-decoration: underline;
 		--underlineColor:var(--internalLinkBrdClr);
 	--text-color-contrast:var(--internalLinkClr);
 }
@@ -2375,6 +2373,8 @@ UNDERLINE
 .ProseMirror a[href*="app.heptabase.com"] [data-underline="true"]{
 	text-decoration-color:var(--internalLinkBrdClrUnderline)
 }
+
+
 /*****************
 ******************
 EDITOR - BULLET - TOGGLE V2
@@ -2486,7 +2486,7 @@ TOGGLE > CHEVRON MARGIN TOPS
 ******************
 ******************/
 :root{
-		--toggleBulletMargTop-H1:19px;
+		--toggleBulletMargTop-H1:18px;
 		--toggleBulletMargTop-H2:17px;
 		--toggleBulletMargTop-H3:15px;
 		--toggleBulletMargTop-H4:14px;
@@ -2586,7 +2586,6 @@ LIST ITEM > NESTED BLOCKS > LAST CHILD
 .ProseMirror [data-node-type*="list_item"] > [class*="_nestedBlocks"] > [data-node-type]:last-child{
 		margin-bottom: 0px !important;
 }
-
 
 
 
@@ -3114,6 +3113,8 @@ TABLES > INSIDE WHITEBOARD > WIDTH OVERFLOW
 	max-width: calc(100% - 30px) !Important;
 }
 
+
+
 /*****************
 ******************
 ******************
@@ -3219,6 +3220,8 @@ EMBED - HIGHLIGHT
 /*****************
 CARD LIBRARY - HIGHLIGHT
 ******************/
+
+
 
 
 
@@ -3485,9 +3488,11 @@ EMBED POPUP
 [data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] > div {
 		box-shadow: 0px 7px 22px 0px rgba(0, 0, 0, .15), 0px 0px 1.5px 0px rgba(0, 0, 0, .3), 0px 0px 1px 0px rgba(0, 0, 0, .4) !important;
 }
-[data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] > div > [class*="max-w"] {
+[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"] > div > [class*="max-w"] {
 	max-width: unset;
 }
+
+
 /*****************
 ******************
 EDITOR - HEADINGS
@@ -3512,36 +3517,44 @@ EDITOR - HEADINGS
 		--H4size:26px;
 		--H5size:23px;
 		--H6size:20px;
+	--headingFontWeight:600;
+	
 }
 
 div h1 {
 		font-size: var(--H1size) !important;
 		line-height: var(--H1lineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
+	font-weight: var(--headingFontWeight)!important;
+	
 }
 
 div h2 {
 		font-size: var(--H2size) !important;
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
+	font-weight: var(--headingFontWeight)!important;
 }
 
 div h3 {
 		font-size: var(--H3size) !important;
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
+	font-weight: var(--headingFontWeight)!important;
 }
 
 div h4 {
 		font-size: var(--H4size) !important;
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
+	font-weight: var(--headingFontWeight)!important;
 }
 
 div h5 {
 		font-size: var(--H5size) !important;
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
+	font-weight: var(--headingFontWeight)!important;
 }
 
 /*****************
@@ -3551,6 +3564,7 @@ div h6 {
 		font-size: var(--H6size) !important;
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
+	font-weight: var(--headingFontWeight)!important;
 }
 /*****************
 H6 - MARGIN TOP (DIFFERENT THAN ALL OTHER HEADINGS OR TOGGLE HEADINGS)
@@ -3870,7 +3884,6 @@ INLINE MATH
 		font-style: normal;
 		letter-spacing: 0.2px;
 }
-
 
 /*****************
 ******************
@@ -4488,9 +4501,9 @@ INDIVIDUAL REFERENCE > Container
 	padding-bottom:0px !important;
 }
 
-[class*="_content"] .ProseMirror:not(._whiteboardCanvas_1ozeb_1 [class*="_content"] .ProseMirror),
-[class*="_content"]  .ProseMirror .grid.select-none > div .border-b-solid.rounded.border-b.border-light-grey, 
-[class*="_content"] .text-active:not(.text-label.text-active){
+[class*="_content"][class*="group/"] .ProseMirror:not(._whiteboardCanvas_1ozeb_1 [class*="_content"] .ProseMirror),
+[class*="_content"][class*="group/"]  .ProseMirror .grid.select-none > div .border-b-solid.rounded.border-b.border-light-grey, 
+[class*="_content"][class*="group/"] .text-active:not(.text-label.text-active){
 		color: var(--reftext-color) !important;
 	--underlineThickness: 1px;
 	--underlineOffset:1px;
@@ -6051,6 +6064,8 @@ VIEW - CARD LIBRARY
 	--cardlibHighlightTopPad:5px;
 	/**/
 	--cardlibJournalGap:8px;
+			--cardTitleMargBtm:18px;
+		--cardTitlePadTopBtm:5px;
 
 	
 }
@@ -6063,6 +6078,9 @@ CARD LIBRARY - VARIABLES
 
 		--bodyFontSize: 18.5px;
 		--bodyLineHeight: 1.45;
+	--fontsmoothing:antialiased;
+	--bodyFontWeight:400;
+		--headingFontWeight:var(--bodyFontWeight);
 	/*heading line heights*/
 	--H1lineHeight:1.4;
 		--HeaderLineHeight:1.4;
@@ -6085,19 +6103,23 @@ CARD LIBRARY - VARIABLES
 		--toggleBulletMargTop-H5: var(--cardlibHeadingToggleBulletMargTop);
 		--toggleBulletMargTop-H6: var(--cardlibHeadingToggleBulletMargTop);
 	--toggleBulletMargTop:var(--cardlibToggleBulletMargTop);
-	/*toggles - headings*/
+	/*Links*/
+	--linkTextDecoration:none;
+	--linkOpacity:1;
+	--LinkClr:var(--text-color);
+	--internalLinkClr:var(--text-color);
+	--listBulletMargTop:4px;
+	
 	
 	/**************************/
 	/**************************/
 	/**CARD LIBRARY OVERRIDES**/
 	/**************************/
 	/**************************/
-	--cardlibHeadingTextSize:calc(var(--bodyFontSize) + 2px);
+	--cardlibHeadingTextSize:calc(var(--bodyFontSize) + 0px);
 	--cardlibHeadingMargTop:var(--listMargTopBtm);
 	--cardlibToggleBulletMargTop:8px;
-	--cardlibHeadingToggleBulletMargTop:10px;
-	--internalLinkClr:var(--text-color);
-	--listBulletMargTop:4px;
+	--cardlibHeadingToggleBulletMargTop:var(--cardlibToggleBulletMargTop);
 }
 
 .grid.select-none [data-node-type="numbered_list_item"],
@@ -6196,6 +6218,9 @@ CARD LIBRARY - TOOLBAR
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div._windowNonDraggable_80mcn_5 {
 		order: 0199;
 }
+
+
+
 
 /*****************
 CARD LIBRARY - GRID
@@ -6320,7 +6345,14 @@ CARD LIBRARY - CARD > FIRST BLOCK
 	display: block !important;
 }
 
-
+#root .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type*="list_item"]:first-child,
+#root ._rightSidebar_1fabk_5 .grid > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type*="list_item"]:first-child,
+/*card library - journal*/
+#root .grid.select-none > div > div.pt-3 + div > [data-is-editor-container] > .ProseMirror > [data-node-type*="list_item"]:first-child,
+/*right sidebar - journal*/
+#root ._rightSidebar_1fabk_5 .grid > div > div.pt-3 + div > [data-is-editor-container] > .ProseMirror > [data-node-type*="list_item"]:first-child{
+	display: flex !important;
+}
 
 
 
@@ -7072,8 +7104,8 @@ RIGHT SIDEBAR - NOTE > FIRST HEADING - PADDING
 #root [class*="_rightSidebar"] .cursor-grab + div > ._editor_dk19r_1 > .ProseMirror > [data-node-type="toggle_list_item"]:first-child > [class*="_nestedBlocks"] > [data-node-type="heading"]:first-child,
 #root .bg-background-primary[style*="width:"] .cursor-grab + div > ._editor_dk19r_1 > .ProseMirror > [data-node-type="toggle_list_item"]:first-child > [class*="_nestedBlocks"] > [data-node-type="heading"]:first-child,
 #root .bg-background-primary[style*="width:"] .cursor-grab + div > ._editor_dk19r_1 > .ProseMirror > [data-node-type="toggle_list_item"]:first-child > [class*="_nestedBlocks"] > [data-node-type="heading"]:first-child{
-		font-size: 24px !important;
-		line-height: 1.2 !important;
+		font-size: 22px !important;
+		line-height: 1.3 !important;
 		position: relative;
 }
 /*****************
@@ -7081,7 +7113,7 @@ RIGHT SIDEBAR - NOTE > FIRST TOGGLE - ICON
 ******************/
 #root [class*="_rightSidebar"] .cursor-grab + div > ._editor_dk19r_1 > .ProseMirror > [data-node-type="toggle_list_item"][class*="Heading"]:first-child > [class*="_bulletWrapper"] [class*="_bullet_"],
 #root .bg-background-primary[style*="width:"] .cursor-grab + div > ._editor_dk19r_1 > .ProseMirror > [data-node-type="toggle_list_item"][class*="Heading"]:first-child > [class*="_bulletWrapper"]  [class*="_bullet_"]{
-		--toggleBulletMargTop: 11px;
+		--toggleBulletMargTop: 9px;
 }
 /*****************
 RIGHT SIDEBAR - NOTE > FIRST LINE - BORDER
@@ -7255,18 +7287,18 @@ RIGHT SIDEBAR - SMALL FONT SIZE
 		--H1lineHeight:1.25;
 		--HeaderLineHeight:1.3;
 		/*Heading Font Sizes*/
-		--H1size:25px;
-		--H2size:23.5px;
-		--H3size:21px;
+		--H1size:22px;
+		--H2size:21px;
+		--H3size:20px;
 		--H4size:19px;
-		--H5size:17.5px;
+		--H5size:18px;
 		--H6size:var(--bodyFontSize);
 		/*toggle heading chevron margin*/
 		--toggleBulletMargTop-EmbedTitle:7px;
-		--toggleBulletMargTop-H1: 13px;
-		--toggleBulletMargTop-H2: 13px;
-		--toggleBulletMargTop-H3: 11px;
-		--toggleBulletMargTop-H4: 9px;
+		--toggleBulletMargTop-H1: 10px;
+		--toggleBulletMargTop-H2: 9.5px;
+		--toggleBulletMargTop-H3: 9px;
+		--toggleBulletMargTop-H4: 8px;
 		--toggleBulletMargTop-H5: 7px;
 		--toggleBulletMargTop-H6: 6px;
 		/*tables*/
@@ -7282,16 +7314,17 @@ RIGHT SIDEBAR - SMALL FONT SIZE
 		--embedH5size: calc(var(--bodyFontSize) + .5px);
 		--embedH6size:var(--bodyFontSize);
 		/*embed toggle heading chevron margins*/
-		--embedtoggleBulletMargTop-H1:8px;
-		--embedtoggleBulletMargTop-H2:7px;
-		--embedtoggleBulletMargTop-H3:7px;
-		--embedtoggleBulletMargTop-H4:7.5px;
+		--embedtoggleBulletMargTop-H1:7px;
+		--embedtoggleBulletMargTop-H2:6px;
+		--embedtoggleBulletMargTop-H3:6px;
+		--embedtoggleBulletMargTop-H4:6px;
 		--embedtoggleBulletMargTop-H5:6px;
-		--embedtoggleBulletMargTop-H6:6px;
+		--embedtoggleBulletMargTop-H6:5px;
 		--embedtoggleBulletMargTop:6px;
 	--codeblockTextSize:calc(var(--bodyFontSize) - 2px);
 	--codeblockPadTopBtm:10px;
 	--mentionIcnMargTop:8px;
+	--title-Line2-MargTop:16px;
 }
 
 /*****************
@@ -7486,7 +7519,7 @@ ICONS
 :root {
 		--iconBrdDashVertical: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 1 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" width="3" height="0.75" rx="0.3" transform="rotate(90 1 0)" fill="%23808080" fill-opacity="0.35"/><rect x="1" y="5" width="3" height="0.75" rx="0.3" transform="rotate(90 1 5)" fill="%23808080" fill-opacity="0.35"/></svg>');
 		--iconBrdDashHoriz-Light: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.225"/><rect x="5" width="3" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.225"/></svg>');
-		--iconBrdDashHoriz-Dark: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/><rect x="5" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.2"/></svg>');
+		--iconBrdDashHoriz-Dark: url('data:image/svg+xml;utf8,<svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/><rect x="5" width="3" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/></svg>');
 		--iconChevronLight: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.1459 4.84137C11.4444 4.16184 10.3071 4.16184 9.60565 4.84137C8.9042 5.52091 8.9042 6.62265 9.60565 7.30219L18.584 16L9.60565 24.6978C8.9042 25.3773 8.9042 26.4791 9.60565 27.1586C10.3071 27.8382 11.4444 27.8382 12.1459 27.1586L22.3886 17.236C22.3905 17.2341 22.3924 17.2323 22.3943 17.2304C22.6574 16.9756 22.8218 16.6614 22.8876 16.3324C22.9441 16.0495 22.9277 15.7557 22.8385 15.4793C22.7547 15.2196 22.6067 14.9753 22.3943 14.7696C22.3924 14.7677 22.3905 14.7659 22.3886 14.764L12.1459 4.84137Z" fill="black"/></svg>');
 		--iconChevronDark: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.1458 4.84137C11.4444 4.16184 10.3071 4.16184 9.60565 4.84137C8.9042 5.52091 8.9042 6.62265 9.60565 7.30219L18.584 16L9.60565 24.6978C8.9042 25.3773 8.9042 26.4791 9.60565 27.1586C10.3071 27.8382 11.4444 27.8382 12.1458 27.1586L22.3886 17.236C22.3905 17.2341 22.3924 17.2323 22.3943 17.2304C22.6574 16.9756 22.8218 16.6614 22.8876 16.3324C22.9441 16.0495 22.9277 15.7557 22.8385 15.4793C22.7547 15.2196 22.6067 14.9753 22.3943 14.7696C22.3924 14.7677 22.3905 14.7659 22.3886 14.764L12.1458 4.84137Z" fill="%23BCBCBC"/></svg>');
 		/*squigly*/
@@ -7517,6 +7550,8 @@ ICONS
 		--iconSquiglyLink:var(--iconSquiglyLink-Dark);
 		--iconSquiglyUnderline:var(--iconSquiglyUnderline-Dark)
 }
+
+
 
 
 /*****************
