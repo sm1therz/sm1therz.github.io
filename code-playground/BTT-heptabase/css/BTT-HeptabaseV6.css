@@ -102,6 +102,9 @@ ROOT
 		--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
 		--whiteBoardTextElementBrdClr: hsla(0, 0%, 0%, .115);
 		--whiteBoardTextElementBrdClr-Editing: hsla(0, 0%, 0%, .05);
+	/*whiteboard - Toolbars*/
+	--whiteboardToolbarBgClr:hsla(0,0%,100%,0);
+	--whiteboardToolbarBtnBrdClr:hsla(0,0%,00%,.1);
 		/*button*/
 		--buttonBg: hsl(0, 0%, 100%);
 		--buttonBrdClr: hsl(0, 0%, 0%, .1);
@@ -235,7 +238,7 @@ ROOT
 		--background-secondary: hsl(229, 5%, 10%) !important;
 		--menu-texture-bg-hard: var(--background-primary) !important;
 		/*links*/
-		--internalLinkClr: hsl(216, 11%, 72%);
+		--internalLinkClr: hsl(216, 2%, 72%);
 		--internalLinkClr-Mention:var(--text-color);
 		--internalLinkBgClr: hsl(211, 100%, 73%, .11);
 		--internalLinkBrdClr: hsl(206, 21%, 76%,.4);
@@ -312,6 +315,9 @@ ROOT
 		--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
 		--whiteBoardTextElementBrdClr: #262626;
 		--whiteBoardTextElementBrdClr-Editing: hsl(0, 0%, 22%, .4);
+	/*whiteboard - Toolbars*/
+	--whiteboardToolbarBgClr:hsla(0,0%,100%,.0085);
+	--whiteboardToolbarBtnBrdClr:hsla(0,0%,100%,.05);
 		/*button*/
 		--buttonBg: hsl(202, 0%, 30%);
 		--buttonBrdClr: hsl(0, 0%, 50%, .5);
@@ -438,6 +444,7 @@ body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) {
  /* Background color of the selection */
 
 }
+
 
 
 
@@ -4719,6 +4726,13 @@ VIEW - WHITEBOARD
 ******************
 ******************
 ******************/
+:root {
+	--whiteboardCardNavHeight:40px;
+	--whiteboardCardPadLeftRight:30px;
+	--whiteboardCardPadTop:0px;
+	--whiteboardCardPadBtm:var(--whiteboardCardNavHeight);
+	
+}
 .bg-whiteboard-background {
 		background-color: var(--whiteBoardBoardBg);
 }
@@ -4740,7 +4754,6 @@ VIEW - WHITEBOARD
 }
 
 
-[class*="whiteboardToolbarLeft"] + .absolute ._whiteboardToolbarTop_1fabk_2 {}
 :root {
 		--whiteboardTextPadLR: 6px;
 		--whiteboardTextBrdRad: 10px;
@@ -4787,6 +4800,18 @@ VIEW - WHITEBOARD
 /*****************
 WHITEBOARD - CARD - NAV
 ******************/
+._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative  {
+}
+._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative  > [style*="height: 48px"] {
+		height: var(--whiteboardCardNavHeight) !important;
+		padding: 0px !important;
+		padding-left: calc(var(--whiteboardCardPadLeftRight) - 2px) !important;
+		padding-right: calc(var(--whiteboardCardPadLeftRight) - 2px) !important;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+}
+
 /*WHITEBOARD - CARD - NAV - BUTTON ON HOVER*/
 ._whiteboardObject_1fabk_10:hover .hepta-whiteboard-object-tool ._windowNonDraggable_80mcn_5 {
 		transition: .15s;
@@ -4795,9 +4820,23 @@ WHITEBOARD - CARD - NAV
 		transform: scale(1.65)
 }
 
+/*****************
+WHITEBOARD - CARD - BODY
+******************/
+._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 .ProseMirror._instanceEditor_14p9u_11 {
+	padding-left: var(--whiteboardCardPadLeftRight);
+	padding-right: var(--whiteboardCardPadLeftRight);
+	padding-top:var(--whiteboardCardPadTop);
+	padding-bottom:var(--whiteboardCardPadBtm);
+
+	
+}
 
 
-/*WHITEBOARD TOOLBAR - BOTTOM*/
+/*****************
+WHITEBOARD TOOLBAR - BOTTOM
+******************/
+
 ._whiteboardToolbarBottom_1fabk_3 {
 		background: var(--whiteBoardToolBarBg);
 		backdrop-filter: blur(20px);
@@ -5089,7 +5128,8 @@ WHITEBOARD - MINDMAP
 *************/
 
 :root {
-		--mindmapHeaderSize:25px;
+		--mindmapLargeText:23px;
+	--mindmapLargeTextLineHeight:1.35;
 }
 ._whiteboardObject_1fabk_10 {
 		box-sizing: content-box !important;
@@ -5142,9 +5182,9 @@ MINDMAP - TURN PURPLE MINDMAP ITEM INTO BIG TEXT
 /*text*/
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"] .ProseMirror,
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-black-sect"] .ProseMirror{
-		font-size: calc(var(--mindmapHeaderSize) - 3px);
+		font-size: var(--mindmapLargeText);
 		text-decoration: none;
-		line-height: 1.35 !important;
+		line-height: var(--mindmapLargeTextLineHeight) !important;
 	padding-top: 1px !important
 }
 
@@ -5155,7 +5195,7 @@ MINDMAP - TURN PURPLE MINDMAP ITEM INTO BIG TEXT
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] {
 		margin: 0px !important;
 		border: none !important;
-		min-width: 250px;
+		min-width: 150px;
 }
 
 
@@ -5444,8 +5484,8 @@ WHITEBOARD CARD -  COLLAPSED - TEXT
 	height: unset !important;
 }
 ._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .truncate.text-body.font-semibold.text-primary.px-2 {
-		font-size: 18px;
-		line-height: 1.3;
+		font-size: var(--bodyFontSize);
+		line-height: var(--bodyLineHeight);
 		white-space: normal;
 		/*text-align: left !important;*/;
 		width: 100%;
@@ -5513,17 +5553,8 @@ WHITEBOARD CARD -  COLLAPSED - TEXT
 /************
 *************
 WHITEBOARD CARD >  ALL HEADINGS
-*************
-*************/
 
-#root [class*="_whiteboardObject"] [data-node-type="toggle_list_item"] > [class*="_bulletWrapper"] [class*="_bullet_"]{
-					--toggleBulletMargTop-H1: 15px !important;
-				--toggleBulletMargTop-H2: 15px !important;
-				--toggleBulletMargTop-H3: 12px;
-				--toggleBulletMargTop-H4: 11px;
-				--toggleBulletMargTop-H5: 9px;
-				--toggleBulletMargTop-H6: 8px;
-}
+
 
 [class*="_whiteboardObject"] .ProseMirror h1,
 [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] > h1:first-child {
@@ -5550,44 +5581,13 @@ WHITEBOARD CARD >  ALL HEADINGS
 #root [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] > h6:first-child {
 		font-size: 18px !important;
 }
-/************
-*************
-WHITEBOARD CARD >  FIRST LINE > HEADINGS & TOGGLES
-*************
-*************/
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > h1:first-child,
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > h2:first-child,
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > h3:first-child,
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > h4:first-child,
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > h5:first-child,
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > h6:first-child,
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > [data-node-type="toggle_list_item"]:first-child > [class*="_nestedBlocks"] > [data-node-type="heading"]:first-child,
-#root [class*="_whiteboardObject"][data-object-type="journalInstance"] ._contentScrollableContainer_1cnaq_5 .text-h1.font-semibold.text-primary {
-		/*line-height: 1.325 !important;*/
-		/*font-size: 29px !important;*/
-		margin-top: 0px !important;
-		/*margin-bottom: var(--listMargTopBtm)!important;*/
-		padding-top: 2px !important;
-		padding-bottom: 2px !important;
-}
+
+
 #root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > [data-node-type]:first-child {
 		margin-top: 0px !important;
 }
 
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > [data-node-type="toggle_list_item"]:first-child > [class*="_nestedBlocks"] > [data-node-type="heading"]:first-child + [data-node-type],
-#root [class*="_whiteboardObject"] ._contentScrollableContainer_14p9u_1 > div > .ProseMirror > [data-node-type="heading"]:first-child + [data-node-type] {
-		margin-top: var(--headingMargTop) !important;
-}
-/************
-WHITEBOARD CARD >  HEADINGS AFTER FIRST LINE
 
-
-#root [class*="_whiteboardObject"] .ProseMirror > [data-node-type="heading"]:first-child ~ [data-node-type="heading"],
-#root [class*="_whiteboardObject"] .ProseMirror > [data-node-type="toggle_list_item"]:first-child ~ [data-node-type="heading"]{
-		margin-top: 14px !important;
-		margin-bottom: 5px !important;
-}
-*************/
 /************
 *************
 *************
@@ -5654,6 +5654,10 @@ WHITEBOARD CARD -  MIND MAP BLACK
 		background: var(--whiteBoardCardBgClr) !important;
 		transition: .1s !important;
 	border-radius: 9px !important;
+	--whiteboardCardNavHeight:36px;
+	--whiteboardCardPadLeftRight:22px;
+	--whiteboardCardPadTop:calc(var(--listMargTopBtm) * 2);
+	--whiteboardCardPadBtm:calc(var(--listMargTopBtm) * 1)
 }
 
 #root [data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"].border-active {
@@ -5674,18 +5678,12 @@ HOVER NAV
 *************/
 [data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"] > .relative {
 		position: absolute;
-		top: -30px;
+		top: calc(var(--whiteboardCardNavHeight) * -1);
 		left: 0;
 		right: 0;
 		z-index: 101;
 }
-[data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"] > .relative [style*="height"] {
-		padding: 0px !important;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		height: 30px !important
-}
+
 [data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"] > .relative .hepta-whiteboard-object-tool {
 		visibility: visible;
 		opacity: 0;
@@ -5722,12 +5720,7 @@ HOVER NAV
 /************
 PADDING
 *************/
-[data-object-type]._whiteboardObject_1fabk_10 > [style*="background-color: var(--bg-black)"] > ._contentScrollableContainer_14p9u_1 > div > .ProseMirror {
-		padding-left: 1.2rem;
-		padding-right: 1.1rem;
-		padding-bottom: 0.25rem;
-		padding-top: 0.5rem;
-}
+
 
 ._whiteboardObject_1fabk_10[data-object-type] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none[style*="background-color: var(--bg-black)"] {
 		padding: 0.4rem 0.4rem
@@ -5742,7 +5735,8 @@ WHITEBOARD TOOLBAR -  LEFT
 *************
 *************/
 :root{
-		--whiteboardLeftToolbarW:30px;
+	--whiteboardToolbarLeftBtnW:40px;
+	--whiteboardToolbarLeftBtnSvgOpacity:.5;
 }
 ._whiteboardToolbarLeft_1fabk_4 {
 		position: absolute;
@@ -5750,27 +5744,44 @@ WHITEBOARD TOOLBAR -  LEFT
 		transform: unset;
 		bottom: 4px !important;
 		left: 4px !important;
-		width:unset;
+		width:var(--whiteboardToolbarLeftBtnW);
 		padding:0px;
 		border-radius: 6px !important;
 		overflow: hidden;
-		background:transparent;
+		background:var(--whiteboardToolbarBgClr);
+	box-shadow:inset 0 0 0 1px var(--whiteboardToolbarBtnBrdClr);
 		backdrop-filter: blur(4px) saturate(1.2);
 		gap: 0px;
 }
 ._whiteboardToolbarLeft_1fabk_4 > div{
 		padding: 0px !important;
-		min-width: var(--whiteboardLeftToolbarW);
-		min-height: var(--whiteboardLeftToolbarW);
+		min-width: 100% !important;
+		min-height: var(--whiteboardToolbarLeftBtnW);
 		width:unset !important;
 		height: unset !important;
 		margin: unset;
 		border-radius: 0px !important;
-		opacity: .5;
+	
 }
 ._whiteboardToolbarLeft_1fabk_4 > div:hover{
 		opacity: 1;
 }
+._whiteboardToolbarLeft_1fabk_4 > div svg {
+	opacity: var(--whiteboardToolbarLeftBtnSvgOpacity);
+	width: calc(var(--whiteboardToolbarLeftBtnW)*.4);
+	height: calc(var(--whiteboardToolbarLeftBtnW)*.4);
+}
+._whiteboardToolbarLeft_1fabk_4 > div:hover svg{
+	opacity: 1;
+}
+
+@media (max-width: 1050px){
+	:root {
+		--whiteboardToolbarLeftBtnSvgOpacity:1;
+		--whiteboardToolbarLeftBtnW:50px
+	}
+}
+
 
 
 /************
