@@ -5775,7 +5775,7 @@ WHITEBOARD TOOLBAR -  LEFT
 	opacity: 1;
 }
 
-@media (max-width: 1050px){
+@media (max-width: 1350px){
 	:root {
 		--whiteboardToolbarLeftBtnSvgOpacity:1;
 		--whiteboardToolbarLeftBtnW:50px
