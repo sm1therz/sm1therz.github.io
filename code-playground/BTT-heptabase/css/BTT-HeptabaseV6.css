@@ -5108,14 +5108,12 @@ MINDMAP - BIG TEXT SIZES
 *************/
 
 /*MINDMAP > TEXT NODE > ROOT NODE*/
-#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] ._rootNode_19grw_1 .ProseMirror-inline p {
-		font-size: var(--mindmapHeaderSize);
-		line-height: 1.4;
-		margin-top: var(--listMargTopBtm) !important;
-		margin-bottom: var(--listMargTopBtm) !important;
-		font-family: "Roboto", "Roboto Condensed", sans-serif;
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [class*="text-h1"] .ProseMirror-inline p{
 }
-
+#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [class*="text-h1"] .ProseMirror-inline p{
+		font-size: inherit;
+		line-height: inherit;
+}
 /************
 *************
 MINDMAP - TURN PURPLE MINDMAP ITEM INTO BIG TEXT
@@ -5132,9 +5130,6 @@ MINDMAP - TURN PURPLE MINDMAP ITEM INTO BIG TEXT
 		--mMapBrdClr: var(--whiteBoardTextElementBrdClr) !important;
 
 }
-#root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"]:hover {
-	--mMapOutlineW: 5.0px !important;
-}
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-purple-sect"].border-tooltip-bg{
 	--mMapBrdW: 1px !important;
 	--mMapOutlineW:0px !important;
@@ -5149,7 +5144,8 @@ MINDMAP - TURN PURPLE MINDMAP ITEM INTO BIG TEXT
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [style*="--bg-black-sect"] .ProseMirror{
 		font-size: calc(var(--mindmapHeaderSize) - 3px);
 		text-decoration: none;
-		line-height: 1.35;
+		line-height: 1.35 !important;
+	padding-top: 1px !important
 }
 
 
