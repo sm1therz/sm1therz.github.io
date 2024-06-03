@@ -4858,14 +4858,8 @@ WHITEBOARD - CARD - NAV
 ._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative{
 	transition: .1s;
 	border-radius: 8px;
-	opacity: 0;
 }
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1:hover > div.relative{
-	opacity: .7;
-}
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative:hover{
-	opacity: 1;
-}
+
 ._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative  > [style*="height: 48px"] {
 		height: var(--whiteboardCardNavHeight) !important;
 		padding: 0px !important;
@@ -4883,17 +4877,18 @@ WHITEBOARD - CARD - NAV
 WHITEBOARD - CARD - NAV - BUTTONS
 ******************/
 ._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"] {
-	height: 30px;
-	width:30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	opacity: .3;
+	transition: .1s;
 }
-._whiteboardObject_1fabk_10:hover .hepta-whiteboard-object-tool ._windowNonDraggable_80mcn_5 {
-		transition: .15s;
+._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"]:hover{
+	opacity: 1;
 }
-._whiteboardObject_1fabk_10:hover .hepta-whiteboard-object-tool ._windowNonDraggable_80mcn_5:hover {
-		transform: scale(1.65)
+._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"] svg{
+	width: 14px;
+	height:14px;
 }
 
 /*****************
