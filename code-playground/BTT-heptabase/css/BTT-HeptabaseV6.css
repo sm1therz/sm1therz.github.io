@@ -5780,6 +5780,9 @@ WHITEBOARD TOOLBAR -  LEFT
 		--whiteboardToolbarLeftBtnSvgOpacity:1;
 		--whiteboardToolbarLeftBtnW:50px
 	}
+	._whiteboardToolbarLeft_1fabk_4 {
+		bottom: 26px !important;
+	}
 }
 
 
