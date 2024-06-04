@@ -313,7 +313,7 @@ ROOT
 		--whiteBoardSectionBrdClr: hsl(0, 0%, 12.5%);
 		/*whiteboard - Text Element*/
 		--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
-		--whiteBoardTextElementBrdClr: #262626;
+		--whiteBoardTextElementBrdClr: hsl(0, 0%, 19%);
 		--whiteBoardTextElementBrdClr-Editing: hsl(0, 0%, 22%, .4);
 	/*whiteboard - Toolbars*/
 	--whiteboardToolbarBgClr:hsla(0,0%,100%,.0085);
@@ -444,6 +444,7 @@ body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) {
  /* Background color of the selection */
 
 }
+
 
 
 
@@ -1095,7 +1096,6 @@ TEXT ELEMENT > BLUE BACKGROUND > TO > TEXT ELEMENT BORDER
 #root [class*="_whiteboardObject"][data-object-type="textElement"] > [class*="_container"][style*="--bg-blue-sect"]{
 		background: var(--whiteBoardTextElementBgClr) !important;
 		border-color: var(--whiteBoardTextElementBrdClr) !important;
-		border-style: dashed !important;
 		/*hides child left border on bullet lists*/
 		--listBulletExpandBrdW:0px !important;
 }
@@ -1147,9 +1147,10 @@ TEXT ELEMENT > BLUE BACKGROUND > TO > TEXT ELEMENT BORDER
 	display: block  !important;
 	position: absolute  !important;
 	bottom:calc(var(--listMargTopBtm) * -1)  !important;
-	background-color: hsla(0,0%,50%,.25) !important;
+	background-color: var(--whiteBoardCardBrdClr) !important;
 	left:calc(var(--listBulletWidth) * 0)  !important;
 	right:0 !important;
+	opacity: .7
 }
 /*BOTTOM BORDER > LISTS > BULLET LIST PARENTS (MAKE BORDER EXTEND FULL WIDTH*/
 #root [class*="_whiteboardObject"][data-object-type="textElement"] > [class*="_container"] > div > .ProseMirror > [data-node-type="bullet_list_item"] > [class*="nestedBlocks"] > [data-node-type]:first-child:before {
@@ -1914,6 +1915,7 @@ body > .z-1000.full-screen.box-border.cursor-zoom-out.bg-scrim.p-6 > img.object-
 		overflow: hidden;
 		box-shadow: 0 0 0 20px hsla(0, 0%, 50%, .1);
 }
+
 
 
 /*****************
@@ -5811,7 +5813,6 @@ WHITEBOARD MENTIONS
 ._whiteboardCanvas_1ozeb_1 [data-object-type] [style*="background-color: var(--background-secondary);"] .ProseMirror [data-node-type="mention"] > [class*="group"]:after {
 		border-color:var(--mentionBrdClr) !important;
 }
-
 /*****************
 ******************
 ******************
