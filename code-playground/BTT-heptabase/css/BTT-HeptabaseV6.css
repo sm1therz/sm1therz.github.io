@@ -4714,6 +4714,7 @@ INFO CONTAINER - TAGS
 }
 
 
+
 /*****************
 ******************
 ******************
@@ -5232,6 +5233,7 @@ MINDMAP - BIG TEXT SIZES
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [class*="text-h1"] .ProseMirror-inline p{
 		font-size: inherit;
 		line-height: inherit;
+	text-align: center;
 }
 /************
 *************
@@ -5787,7 +5789,7 @@ WHITEBOARD TOOLBAR -  LEFT
 	opacity: 1;
 }
 
-@media (max-width: 1350px){
+@media (max-width: 1400px){
 	:root {
 		--whiteboardToolbarLeftBtnSvgOpacity:1;
 		--whiteboardToolbarLeftBtnW:50px;
@@ -5813,6 +5815,8 @@ WHITEBOARD MENTIONS
 ._whiteboardCanvas_1ozeb_1 [data-object-type] [style*="background-color: var(--background-secondary);"] .ProseMirror [data-node-type="mention"] > [class*="group"]:after {
 		border-color:var(--mentionBrdClr) !important;
 }
+
+
 /*****************
 ******************
 ******************
