@@ -13,7 +13,7 @@
   // Create the <link> element to load external stylesheet
   const linkElement = document.createElement("link");
   linkElement.rel = "stylesheet";
-  linkElement.href = "https://sm1therz.github.io/code-playground/Menu-Page-Navigation/styles/Nav-menu-v4-styles.css";
+  linkElement.href = "https://sm1therz.github.io/code-playground/Menu-Page-Navigation/styles/Nav-menu-v5-styles.css";
 
   // Add the link element to the document
   document.head.appendChild(linkElement);
