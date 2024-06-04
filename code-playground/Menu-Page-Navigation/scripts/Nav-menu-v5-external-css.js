@@ -56,7 +56,7 @@
   menu.appendChild(visButton);
   menu.appendChild(btnWrapper);
 
-  // Add elements to the document
+  // Add elements to the document 
   document.body.appendChild(menu);
 
   // Load the initial state from local storage
