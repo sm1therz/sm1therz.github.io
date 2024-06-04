@@ -23,7 +23,7 @@
     --rsNavMenuVisBtnHeight:20px;
     --rsNavMenuVisBtnIcnWidth: 30px;
     /*buttons - row 2 - all*/
-    --rsButtonWidth:40px;
+    --rsBtnWidth:40px;
     /*buttons > row 2*/
     --rsNavMenuBtnBrdRad: 6px;
     --rsNavMenuBtnBrdClr: hsla(0, 0%, 50%, .15);
@@ -125,8 +125,8 @@
     border: none;
     padding: 2px;
     cursor: pointer;
-    width: var(--rsButtonWidth);
-    height: var(--rsButtonWidth);
+    width: var(--rsBtnWidth);
+    height: var(--rsBtnWidth);
     transition: .2s;
     text-align: center;
     font-size: .8rem;

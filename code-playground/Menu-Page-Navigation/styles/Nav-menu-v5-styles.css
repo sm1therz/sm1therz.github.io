@@ -3,14 +3,15 @@
 	--rsNavMenuPosition: var(--rsNavMenuPadding);
 	--rsNavMenuPadding: 10px;
 	--rsNavShadow: rgba(0, 0, 0, 0.2);
+	--rsNavGap:calc(var(--rsNavMenuPadding) * .5);
 	/*button - open close menu*/
 	--rsNavMenuVisBtnHeight: 20px;
 	--rsNavMenuVisBtnIcnWidth: 30px;
 	/*buttons - row 2 - all*/
-	--rsButtonWidth: 40px;
+	--rsBtnWidth: 40px;
 	/*buttons > row 2*/
 	--rsNavMenuBtnBrdRad: 6px;
-	--rsNavMenuBtnBrdClr: hsla(0, 0%, 50%, .15);
+	--rsNavMenuBtnBrdClr: hsla(0, 0%, 0%, .15);
 	--rsNavMenuBtnHeight: 30px;
 	--rsNavMenuBtnWidth: 36px;
 }
@@ -29,11 +30,12 @@
 	box-shadow: 0 0 0 .5px hsla(0, 0%, 50%, .12);
 	border-radius: calc(var(--rsNavMenuBtnBrdRad) + 2px);
 	transition: bottom 0.3s;
-	gap: calc(var(--rsNavMenuPadding) * .5);
+	gap: var(--rsNavGap);
 	/* Smooth transition for visibility toggle */
 	background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 100%, 0.1)), to(hsla(0, 0%, 100%, 0.1)));
 	background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0.1));
 	box-shadow: 0 6px 36px 0 var(--rsNavShadow);
+	box-shadow: inset 0 0 0 1px hsla(0,0%,50%,.15);
 }
 
 /********
@@ -71,7 +73,7 @@ OPEN / CLOSE BUTTON
 MENU OPEN / MENU CLOSE
 ********/
 #rsm-nav-menu.rsm-nav-menu-closed {
-	bottom: -132px !important;
+	bottom: calc(var(--rsBtnWidth) * -3 - var(--rsNavMenuPadding) - var(--rsNavGap)) !important;
 	--rsNavShadow:transparent;
 }
 
@@ -109,8 +111,8 @@ BUTTONS > ALL
 	border: none;
 	padding: 2px;
 	cursor: pointer;
-	width: var(--rsButtonWidth);
-	height: var(--rsButtonWidth);
+	width: var(--rsBtnWidth);
+	height: var(--rsBtnWidth);
 	transition: .2s;
 	text-align: center;
 	font-size: .8rem;
