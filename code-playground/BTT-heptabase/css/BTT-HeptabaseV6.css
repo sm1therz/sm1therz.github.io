@@ -3,7 +3,7 @@ This file is a direct copy of:
 /Users/adman/Dropbox/Dropbox Local/HYPERWEB - INJECT/CSS - HEPTABASE/HeptabaseV6.css
 *******/
 
-/***************** 
+/*****************
 ROOT
 ******************/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
@@ -54,8 +54,9 @@ ROOT
 		--cardlibBoxShad-Focus:
 				0px 8px 31px rgba(43, 41, 0, 0.1);
 	--cardlibHoverFiter:brightness(.73) contrast(2);
-	--cardlibCardBgClr:;
-	--cardlibCardBgClr-Hover:;
+		/*card-lib card*/
+	--cardlibCardBgClr:hsl(180, 0%, 100%,1);
+	--cardlibCardBgClr-Hover:hsl(180, 0%, 0%,.05);
 		/*sidebar*/
 		--sideBarBgClr: hsl(180, 0%, 97.5%, 1);
 		--sideBarNoteBgClr: var(--sideBarBgClr);
@@ -242,7 +243,7 @@ ROOT
 		--internalLinkClr-Mention:var(--text-color);
 		--internalLinkBgClr: hsl(211, 100%, 73%, .11);
 		--internalLinkBrdClr: hsl(206, 21%, 76%,.4);
-	--internalLinkBrdClrUnderline:var(--internalLinkBrdClr);
+	--internalLinkBrdClrUnderline:hsl(206, 21%, 80%,1);
 		--internalLinkBrdClr-Hover:var(--internalLinkBrdClr);
 
 		--LinkFilter-Hover: brightness(1.2)saturate(1);
@@ -269,6 +270,9 @@ ROOT
 		--cardlibBoxShad-Focus:
 				0px 8px 31px hsla(217.7, 0%, 0%, 0.55);
 	--cardlibHoverFiter:brightness(1.4) contrast(1.2);
+		/*card-lib card*/
+	--cardlibCardBgClr:hsl(180, 0%, 100%,.025);
+	--cardlibCardBgClr-Hover:hsl(180, 0%, 100%,.05);
 		/*sidebar*/
 		--sideBarBgClr: hsl(219, 7%, 12%);
 		--sideBarNoteBgClr: var(--sideBarBgClr);
@@ -444,6 +448,8 @@ body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) {
  /* Background color of the selection */
 
 }
+
+
 
 
 
@@ -5233,7 +5239,6 @@ MINDMAP - BIG TEXT SIZES
 #root [class*="whiteboardObject"] [data-object-type*="mindMapTextNode"] > [class*="text-h1"] .ProseMirror-inline p{
 		font-size: inherit;
 		line-height: inherit;
-	text-align: center;
 }
 /************
 *************
@@ -6284,7 +6289,7 @@ CARD LIBRARY - CARD WRAPPER
 	transition: .15s;
 		min-height: unset !important;
 		height: unset !important;
-		background: transparent !important;
+		background: var(--cardlibCardBgClr) !important;
 	border: var(--cardlibCardBrdWidth) solid var(--cardlibBrdClr) !important;
 		border-bottom: 1px solid var(--cardlibBrdClr) !important;
 	width: var(--cardlibCardWidth)!important;
@@ -6302,8 +6307,21 @@ CARD LIBRARY - CARD WRAPPER
 		padding-bottom: var(--cardlibCardPadTopBtm) !important;
 		padding-top: var(--cardlibCardPadTopBtm) !important;
 }
+
+/*CARD LIBRARY - CARD WRAPPER > HOVER*/
+.grid.select-none > div:hover,
+/*RIGHT SIDEBAR - CARD WRAPPER > HOVER*/
+._rightSidebar_1fabk_5 .grid > div:hover{
+	background: var(--cardlibCardBgClr-Hover) !important;
+}
+
+/*CARD LIBRARY ONLY - CARD WRAPPER*/
+.grid.select-none > div{
+	--cardlibCardBgClr:transparent;
+}
+/*CARD LIBRARY ONLY - CARD WRAPPER > HOVER*/
 .grid.select-none > div:hover{
-	background: hsla(0,0%,50%,.05) !important;
+		
 }
 /*****************
 CARD LIBRARY - CARD
@@ -6469,6 +6487,7 @@ CARD LIBRARY - JOURNAL
 	padding: 0px !important;
 	margin: 0px !important;
 }
+
 
 
 /*****************
