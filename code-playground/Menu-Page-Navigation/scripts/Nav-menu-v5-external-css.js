@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Navigation Menu V4 (External CSS)
+// @name         Navigation Menu V5 (External CSS)
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  Creates a custom navigation menu that loads on every page with following functionality: Buttons: Go Back, Go Forward, Copy, Paste
+// @description  Creates a custom navigation menu that loads on every page with following functionality: Buttons: Go Back, Go Forward, Copy, Paste, Undo, Redo
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
@@ -19,11 +19,11 @@
   document.head.appendChild(linkElement);
 
   // Create the menu structure
-  const menu = document.createElement("div"); 
+  const menu = document.createElement("div");
   menu.id = "rsm-nav-menu";
   const visButton = document.createElement("button");
   visButton.className = "rsm-nav-vis-btn";
-  const visIcon = document.createElement("div"); 
+  const visIcon = document.createElement("div");
   visIcon.className = "rsm-nav-vis-icon";
   visButton.appendChild(visIcon);
 
@@ -50,13 +50,25 @@
   navBtnGroup2.appendChild(copyButton);
   navBtnGroup2.appendChild(pasteButton);
 
+  const navBtnGroup3 = document.createElement("div");
+  navBtnGroup3.className = "rsm-nav-btn-group";
+  const undoButton = document.createElement("button");
+  undoButton.className = "rsm-nav-btn rs-undo";
+  undoButton.textContent = "Undo";
+  const redoButton = document.createElement("button");
+  redoButton.className = "rsm-nav-btn rs-redo";
+  redoButton.textContent = "Redo";
+  navBtnGroup3.appendChild(undoButton);
+  navBtnGroup3.appendChild(redoButton);
+
   btnWrapper.appendChild(navBtnGroup1);
   btnWrapper.appendChild(navBtnGroup2);
+  btnWrapper.appendChild(navBtnGroup3);
 
   menu.appendChild(visButton);
   menu.appendChild(btnWrapper);
 
-  // Add elements to the document 
+  // Add elements to the document
   document.body.appendChild(menu);
 
   // Load the initial state from local storage
@@ -96,5 +108,14 @@
 
   pasteButton.addEventListener("click", () => {
     document.execCommand("paste");
+  });
+
+  // Handle undo/redo actions
+  undoButton.addEventListener("click", () => {
+    document.execCommand("undo");
+  });
+
+  redoButton.addEventListener("click", () => {
+    document.execCommand("redo");
   });
 })();
