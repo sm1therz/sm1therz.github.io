@@ -71,7 +71,7 @@ OPEN / CLOSE BUTTON
 MENU OPEN / MENU CLOSE
 ********/
 #rsm-nav-menu.rsm-nav-menu-closed {
-	bottom: -92px !important;
+	bottom: -132px !important;
 	--rsNavShadow:transparent;
 }
 
