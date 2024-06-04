@@ -19,7 +19,7 @@
   document.head.appendChild(linkElement);
 
   // Create the menu structure
-  const menu = document.createElement("div");
+  const menu = document.createElement("div"); 
   menu.id = "rsm-nav-menu";
   const visButton = document.createElement("button");
   visButton.className = "rsm-nav-vis-btn";
