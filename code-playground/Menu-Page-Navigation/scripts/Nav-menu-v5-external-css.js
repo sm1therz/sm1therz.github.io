@@ -23,7 +23,7 @@
   menu.id = "rsm-nav-menu";
   const visButton = document.createElement("button");
   visButton.className = "rsm-nav-vis-btn";
-  const visIcon = document.createElement("div");
+  const visIcon = document.createElement("div"); 
   visIcon.className = "rsm-nav-vis-icon";
   visButton.appendChild(visIcon);
 
