@@ -6077,7 +6077,7 @@ VIEW - CARD LIBRARY
 
 :root {
 	/**/
-		--cardlibtoolbarTagPad:3px;
+	--cardlibtoolbarTagPad:3px;
 	--cardlibtoolbarPadLeftRight:var(--cardlibGridPadLeftRight);
 	--cardlibtoolbarWidth:1200px;
 	/**/
@@ -6096,8 +6096,8 @@ VIEW - CARD LIBRARY
 	--cardlibHighlightTopPad:5px;
 	/**/
 	--cardlibJournalGap:8px;
-			--cardTitleMargBtm:18px;
-		--cardTitlePadTopBtm:5px;
+		--cardTitleMargBtm:18px;
+	--cardTitlePadTopBtm:5px;
 
 	
 }
@@ -6108,32 +6108,32 @@ CARD LIBRARY - VARIABLES
 #root .grid.select-none,
 #root ._rightSidebar_1fabk_5 .grid {
 
-		--bodyFontSize: 18.5px;
-		--bodyLineHeight: 1.45;
+	--bodyFontSize: 18.5px;
+	--bodyLineHeight: 1.45;
 	--fontsmoothing:antialiased;
 	--bodyFontWeight:400;
 		--headingFontWeight:var(--bodyFontWeight);
 	/*heading line heights*/
 	--H1lineHeight:1.4;
-		--HeaderLineHeight:1.4;
-		/*Heading Font Sizes*/
-		--H1size:var(--cardlibHeadingTextSize);
-		--H2size:var(--cardlibHeadingTextSize);
-		--H3size:var(--cardlibHeadingTextSize);
-		--H4size:var(--cardlibHeadingTextSize);
-		--H5size:var(--cardlibHeadingTextSize);
-		--H6size:var(--cardlibHeadingTextSize);
+	--HeaderLineHeight:1.4;
+	/*Heading Font Sizes*/
+	--H1size:var(--cardlibHeadingTextSize);
+	--H2size:var(--cardlibHeadingTextSize);
+	--H3size:var(--cardlibHeadingTextSize);
+	--H4size:var(--cardlibHeadingTextSize);
+	--H5size:var(--cardlibHeadingTextSize);
+	--H6size:var(--cardlibHeadingTextSize);
 	--title-Line2-MargTop:var(--listMargTopBtm);
 	/*heading margins*/
 	--headingMargTop-All:var(--cardlibHeadingMargTop);
 	--headingMargTop:var(--cardlibHeadingMargTop);
 	/*toggles - headings*/
 	--toggleBulletMargTop-H1: var(--cardlibHeadingToggleBulletMargTop);
-		--toggleBulletMargTop-H2: var(--cardlibHeadingToggleBulletMargTop);
-		--toggleBulletMargTop-H3: var(--cardlibHeadingToggleBulletMargTop);
-		--toggleBulletMargTop-H4: var(--cardlibHeadingToggleBulletMargTop);
-		--toggleBulletMargTop-H5: var(--cardlibHeadingToggleBulletMargTop);
-		--toggleBulletMargTop-H6: var(--cardlibHeadingToggleBulletMargTop);
+	--toggleBulletMargTop-H2: var(--cardlibHeadingToggleBulletMargTop);
+	--toggleBulletMargTop-H3: var(--cardlibHeadingToggleBulletMargTop);
+	--toggleBulletMargTop-H4: var(--cardlibHeadingToggleBulletMargTop);
+	--toggleBulletMargTop-H5: var(--cardlibHeadingToggleBulletMargTop);
+	--toggleBulletMargTop-H6: var(--cardlibHeadingToggleBulletMargTop);
 	--toggleBulletMargTop:var(--cardlibToggleBulletMargTop);
 	/*Links*/
 	--linkTextDecoration:none;
@@ -6178,23 +6178,23 @@ CARD LIBRARY - TOOLBAR
 ******************/
 
 #root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 > div{
-		width: var(--cardlibtoolbarWidth) !important;
-		max-width: 100% !important;
+	width: var(--cardlibtoolbarWidth) !important;
+	max-width: 100% !important;
 	padding: 0px;
-		padding-top: calc(var(--cardlibtoolbarTagPad) * 2);
-		padding-bottom: calc(var(--cardlibtoolbarTagPad) * 2);
-		gap: var(--cardlibtoolbarTagPad) !important;
-		margin: 0px !important;
-		box-sizing: border-box;
-		padding-left: var(--cardlibtoolbarPadLeftRight);
-		padding-right: var(--cardlibtoolbarPadLeftRight);
+	padding-top: calc(var(--cardlibtoolbarTagPad) * 2);
+	padding-bottom: calc(var(--cardlibtoolbarTagPad) * 2);
+	gap: var(--cardlibtoolbarTagPad) !important;
+	margin: 0px !important;
+	box-sizing: border-box;
+	padding-left: var(--cardlibtoolbarPadLeftRight);
+	padding-right: var(--cardlibtoolbarPadLeftRight);
 	position: relative;
 	border: none !important;
 	
 }
 /*CARD LIBRARY - TOOLBAR - BORDER BOTTOM*/
 #root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 > div:before{
-		content: "";
+	content: "";
 	display: block;
 	position: absolute;
 	background: var(--cardlibBrdClr);
@@ -6207,78 +6207,106 @@ CARD LIBRARY - TOOLBAR
 }
 /*CARD LIBRARY - TOOLBAR - TAG WRAPPER*/
 .z-10 > ._windowDraggable_80mcn_1.flex.items-center.gap-x-2.bg-background-primary.p-2 + div{
-		gap: 0px !important;
-		column-gap: var(--cardlibtoolbarTagPad) !important;
-		row-gap: var(--cardlibtoolbarTagPad) !important
+	gap: 0px !important;
+	column-gap: var(--cardlibtoolbarTagPad) !important;
+	row-gap: var(--cardlibtoolbarTagPad) !important
 }
 
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border {
-		border-bottom: 1px solid var(--sideBarBrdClr) !important;
-		opacity: 1;
+	border-bottom: 1px solid var(--sideBarBrdClr) !important;
+	opacity: 1;
 }
 
 /*CARD LIBRARY > FILTER BUTTON - FILTER*/
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.flex.cursor-pointer,
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.overflow-hidden > .flex.cursor-pointer,
 .z-10 > ._windowDraggable_80mcn_1.flex.items-center.gap-x-2.bg-background-primary.p-2 + div > button{
-		border-radius: 5px;
-		height: unset;
-		padding: 3px 5px 3px !important;
-		color: var(--textColorSubtle);
-		margin: 0px !important;
-		margin-right: 3px;
+	border-radius: 5px;
+	height: unset;
+	padding: 3px 5px 3px !important;
+	color: var(--textColorSubtle);
+	margin: 0px !important;
+	margin-right: 3px;
 }
 /*CARD LIBRARY > FILTER BUTTON - ACTIVE*/
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.flex.cursor-pointer.text-active,
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.overflow-hidden > .flex.cursor-pointer.text-active {
-		background: var(--activeBgClr) !important;
-		color: white;
-		-webkit-text-fill-color: var(--activeClr);
-		order: 9;
+	background: var(--activeBgClr) !important;
+	color: white;
+	-webkit-text-fill-color: var(--activeClr);
+	order: 9;
 }
 /*CARD LIBRARY > FILTER BUTTOM - ACTIVE*/
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.flex.cursor-pointer.text-active *,
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.overflow-hidden > .flex.cursor-pointer.text-active * {
-		fill: var(--activeClr);
-		background: transparent;
-		border: none;
-		font-weight: 500;
-		border-bottom: none !important;
+	fill: var(--activeClr);
+	background: transparent;
+	border: none;
+	font-weight: 500;
+	border-bottom: none !important;
 }
 
 /*CARD LIBRARY > FILTER BUTTOM - REMOVE FITER BUTTON*/
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div._windowNonDraggable_80mcn_5 {
-		order: 0199;
+	order: 0199;
 }
-
-
 
 
 /*****************
-CARD LIBRARY - GRID
+CARD LIBRARY ONLY - OUTER WRAPPER
+******************/
+#root > .z-10.h-screen > .relative.flex.grow.overflow-hidden {
+	display: flex;
+}
+#root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow {
+	width: 100% !important;
+}
+
+/*****************
+CARD LIBRARY ONLY - GRID
 ******************/
 #root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 + .scrollbar-gutter-stable {
-	width: 100vw !important;
+	width: 100% !important;
 	padding: 0px !important;
+	max-width: 100% !important;
 
 }
+
+/*****************
+CARD LIBRARY - GRID WRAPPER
+******************/
 .grid.select-none,
 ._rightSidebar_1fabk_5 .grid{
-		padding: 0px;
-		box-sizing: border-box;
-		padding: 0px !important;
-	padding-left: var(--cardlibGridPadLeftRight) !important;
-	padding-right: var(--cardlibGridPadLeftRight) !important;
-		grid-template-rows: unset;
-		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-		margin-top: 20px;
+	padding: 0px;
+	box-sizing: border-box;
+	padding: 0px;
+	grid-template-rows: unset;
+	grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	margin-top: 20px;
 	row-gap: var(--cardlibGridGap) !important;
 	display:  flex;
 	flex-direction: column;
 	width: 100%;
 	max-width: 100%;
 }
+/*****************
+CARD LIBRARY - GRID WRAPPER - IN CARD LIBRARY
+******************/
+.grid.select-none{
+	padding: 0px;
+	box-sizing: border-box;
+	padding: 0px !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
 
+/*****************
+CARD LIBRARY - GRID WRAPPER - IN RIGHT SIDEBAR
+******************/
+._rightSidebar_1fabk_5 .grid{
+	padding-left: var(--cardlibGridPadLeftRight) !important;
+	padding-right: var(--cardlibGridPadLeftRight) !important;
+}
 /*****************
 CARD LIBRARY - CARD WRAPPER
 ******************/
@@ -6287,25 +6315,25 @@ CARD LIBRARY - CARD WRAPPER
 /*right sidebar grid - card wrapper*/
 ._rightSidebar_1fabk_5 .grid > div {
 	transition: .15s;
-		min-height: unset !important;
-		height: unset !important;
-		background: var(--cardlibCardBgClr) !important;
+	min-height: unset !important;
+	height: unset !important;
+	background: var(--cardlibCardBgClr) !important;
 	border: var(--cardlibCardBrdWidth) solid var(--cardlibBrdClr) !important;
-		border-bottom: 1px solid var(--cardlibBrdClr) !important;
+	border-bottom: 1px solid var(--cardlibBrdClr) !important;
 	width: var(--cardlibCardWidth)!important;
 	max-width: 100% !important;
-		margin: 0 auto;
-		padding: 0px !important;
-		border-radius: var(--cardlibCardBrdRad);
-		box-shadow: none;
+	margin: 0 auto;
+	padding: 0px !important;
+	border-radius: var(--cardlibCardBrdRad);
+	box-shadow: none;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	padding-left: var(--cardlibCardPadLeftRight) !important;
-		padding-right: var(--cardlibCardPadLeftRight) !important;
-		padding-bottom: var(--cardlibCardPadTopBtm) !important;
-		padding-top: var(--cardlibCardPadTopBtm) !important;
+	padding-right: var(--cardlibCardPadLeftRight) !important;
+	padding-bottom: var(--cardlibCardPadTopBtm) !important;
+	padding-top: var(--cardlibCardPadTopBtm) !important;
 }
 
 /*CARD LIBRARY - CARD WRAPPER > HOVER*/
@@ -6329,18 +6357,18 @@ CARD LIBRARY - CARD
 /*CARD LIBRARY > CARD WRAPPER*/
 .grid.select-none > div > div,
 ._rightSidebar_1fabk_5 .grid > div > div {
-		transform: unset !important;
-		padding-top: 0px !important;
+	transform: unset !important;
+	padding-top: 0px !important;
 	width: 100% !important;
 	max-width: 100%;
-		padding-left: 0px !important;
-		padding-right: 0px !important;
-		padding-bottom: 0px !important;
-		padding-top: 0px !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	padding-bottom: 0px !important;
+	padding-top: 0px !important;
 }
 .grid.select-none > div [data-node-type*="_list_item"],
 ._rightSidebar_1fabk_5 .grid > div [data-node-type*="_list_item"]{
-		pointer-events:all !important;
+	pointer-events:all !important;
 }
 
 /*****************
@@ -6349,11 +6377,11 @@ CARD LIBRARY - CARD - WRAPPER
 /*NORMAL CARD*/
 .grid.select-none > div > div > [data-is-editor-container],
 ._rightSidebar_1fabk_5 .grid > div > div > [data-is-editor-container] {
-		background: transparent !important;
-		padding-left: 0px !important;
-		padding-right: 0px !important;
-		padding-bottom: 0px !important;
-		padding-top: 0px !important;
+	background: transparent !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	padding-bottom: 0px !important;
+	padding-top: 0px !important;
 }
 
 /*****************
@@ -6362,10 +6390,10 @@ CARD LIBRARY - CARD - WRAPPER > PROSEMIRROR
 /*NORMAL CARD*/
 .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror,
 ._rightSidebar_1fabk_5 .grid > div > div > [data-is-editor-container] > .ProseMirror{
-		padding-left: 0px !important;
-		padding-right: 0px !important;
-		padding-bottom: 0px !important;
-		padding-top: 0px !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	padding-bottom: 0px !important;
+	padding-top: 0px !important;
 }
 
 /*****************
@@ -6408,9 +6436,9 @@ CARD LIBRARY - HIGHLIGHT
 /*CARD LIBRARY - HIGHLIGHT - WRAPPER*/
 .grid.select-none > div > div.pt-6,
 ._rightSidebar_1fabk_5 .grid > div > div.pt-6 {
-		background: var(--hlightWrapperBgClr);
-		border-radius: 5px;
-		box-sizing: border-box;
+	background: var(--hlightWrapperBgClr);
+	border-radius: 5px;
+	box-sizing: border-box;
 	background: transparent;
 }
 
@@ -6422,7 +6450,7 @@ CARD LIBRARY - HIGHLIGHT
 /*CARD LIBRARY - HIGHLIGHT > ACTUAL HIGHLIGHT*/
 .grid.select-none > div > div.pt-6 > .flex,
 ._rightSidebar_1fabk_5 .grid > div > div.pt-6 > .flex {
-		position: relative;
+	position: relative;
 	display: flex !important;
 	flex-direction: row !important;
 	margin-top: var(--cardlibHighlightTopPad)
@@ -6430,9 +6458,9 @@ CARD LIBRARY - HIGHLIGHT
 /*CARD LIBRARY - HIGHLIGHT > ACTUAL HIGHLIGHT > INNER*/
 .grid.select-none > div > div.pt-6 > .flex > div[class*="&_.ProseMirror"],
 ._rightSidebar_1fabk_5 .grid > div > div.pt-6 > .flex > div[class*="&_.ProseMirror"] {
-		margin: 0px;
-		box-shadow: inset 0 0 0 1px var(--hlightedTxtBrdClr);
-		border-radius: 6px;
+	margin: 0px;
+	box-shadow: inset 0 0 0 1px var(--hlightedTxtBrdClr);
+	border-radius: 6px;
 	background: transparent !important;
 	box-shadow: none;
 }
@@ -6487,7 +6515,6 @@ CARD LIBRARY - JOURNAL
 	padding: 0px !important;
 	margin: 0px !important;
 }
-
 
 
 /*****************
