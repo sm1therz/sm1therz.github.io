@@ -8,7 +8,7 @@
 // ==/UserScript==
 
 document.addEventListener("keydown", (e) => {
-  if (e.metaKey && e.key === "]") {
+  if (e.metaKey && e.key === "]") { 
     window.history.forward();
   }
   if (e.metaKey && e.key === "[") {
