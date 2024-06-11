@@ -6515,6 +6515,21 @@ CARD LIBRARY - JOURNAL
 	padding: 0px !important;
 	margin: 0px !important;
 }
+/*****************
+CARD LIBRARY - COUNTER 
+******************/
+#root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 + div + div {
+	display: flex;
+	align-items: sp;
+	justify-content: center;
+	gap: 20px;
+	background: transparent;
+}
+#root > .z-10.h-screen > .relative.flex.grow.overflow-hidden > .relative.flex.grow.flex-col > .z-10 + div + div > span {
+	text-align: left;
+	display: flex;
+
+}
 
 
 /*****************
