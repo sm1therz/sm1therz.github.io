@@ -1,4 +1,5 @@
 {
+  "htmlvalidator.enabled" : false,
   "workspace.color" : 2,
   "workspace.name" : "Github - Root"
 }

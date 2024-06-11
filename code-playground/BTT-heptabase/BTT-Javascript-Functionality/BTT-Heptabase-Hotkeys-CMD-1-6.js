@@ -6,7 +6,7 @@
 // @author       RSM
 // @match        *
 // ==/UserScript==
-
+ 
 function simulateKeystroke(keyCode, modifiers) {
     const eventInitDict = {
         key: keyCode,
