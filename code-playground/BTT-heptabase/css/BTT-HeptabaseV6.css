@@ -16,8 +16,10 @@ ROOT
 	--text-color: hsl(0, 0%, 20%) !important;
 	--reftext-color: hsl(0, 0%, 0%) !important;
 	--text-color-contrast: #000;
+	--underlineLineColor: var(--text-color-contrast);
+	--underlineTextColor: var(--text-color-contrast);
 	--text-color-Strikethrough: hsl(0, 0%, 63%);
-	--heading-color: hsl(0, 0%, 0%); 
+	--heading-color: hsl(0, 0%, 0%);
 	--background-primary: hsl(0, 0%, 95%);
 	--background-editor-primary: hsl(0, 0%, 100%);
 	--background-primary-for-blur: hsl(0, 0%, 100%, .4);
@@ -25,11 +27,11 @@ ROOT
 	/*links*/
 	/*roam--internalLinkClr: hsl(203, 82%, 35%);*/
 	--internalLinkClr: hsl(203, 58%, 35%);
-	--internalLinkClr-Mention:;
+	--internalLinkClr-Mention: ;
 	--internalLinkBgClr: hsl(215, 10%, 56%, 0.14);
-	--internalLinkBrdClr:hsla(207, 8%, 41%, .25);
-	--internalLinkBrdClrUnderline:hsl(203, 68%, 35%,.99);
-	--internalLinkBrdClr-Hover:hsl(218, 7%, 0%,.35);
+	--internalLinkBrdClr: hsla(207, 8%, 41%, .3);
+	--internalLinkBrdClrUnderline: var(--internalLinkBrdClr);
+	--internalLinkBrdClr-Hover: hsl(218, 7%, 0%, .35);
 
 	/*Internal links*/
 	--LinkBrd: none;
@@ -49,14 +51,16 @@ ROOT
 	--refBrdClr: hsl(180, 0%, 83%);
 	/*card-lib*/
 	--cardlibBgClr: hsl(180, 0%, 98%);
-	--cardlibBrdClr: hsl(180, 0%, 0%,.2);
-	--cardlibBrdClr-Focus:hsl(264, 6%, 100%);
-	--cardlibBoxShad-Focus:
-		0px 8px 31px rgba(43, 41, 0, 0.1);
-	--cardlibHoverFiter:brightness(.73) contrast(2);
+	--cardlibBrdClr: hsl(180, 0%, 0%, .2);
+	--cardlibBrdClr-Focus: hsl(264, 6%, 100%);
+	--cardlibBoxShad-Focus: 0px 8px 31px rgba(43, 41, 0, 0.1);
+	--cardlibHoverFiter: brightness(.7) contrast(2);
 	/*card-lib card*/
-	--cardlibCardBgClr:hsl(180, 0%, 100%,1);
-	--cardlibCardBgClr-Hover:hsl(180, 0%, 0%,.05);
+	--cardlibCardBgClr: hsl(180, 0%, 100%, 1);
+	--cardlibCardBgClr-Hover: hsl(180, 0%, 0%, .05);
+	/*card-lib button*/
+	--cardlibFilterBtnBgClr-FirstBtn: hsl(180, 0%, 50%, .1);
+
 	/*sidebar*/
 	--sideBarBgClr: hsl(180, 0%, 97.5%, 1);
 	--sideBarNoteBgClr: var(--sideBarBgClr);
@@ -104,8 +108,8 @@ ROOT
 	--whiteBoardTextElementBrdClr: hsla(0, 0%, 0%, .115);
 	--whiteBoardTextElementBrdClr-Editing: hsla(0, 0%, 0%, .05);
 	/*whiteboard - Toolbars*/
-	--whiteboardToolbarBgClr:hsla(0,0%,100%,0);
-	--whiteboardToolbarBtnBrdClr:hsla(0,0%,00%,.1);
+	--whiteboardToolbarBgClr: hsla(0, 0%, 100%, 0);
+	--whiteboardToolbarBtnBrdClr: hsla(0, 0%, 00%, .1);
 	/*button*/
 	--buttonBg: hsl(0, 0%, 100%);
 	--buttonBrdClr: hsl(0, 0%, 0%, .1);
@@ -117,9 +121,9 @@ ROOT
 	--hlightWrapperBrdClr: hsla(0, 0%, 0%, .2);
 	--hlightAccentBg: rgba(0, 0, 0, .2);
 	/*inline highlight*/
-	--bg-red-editor: rgb(119, 59, 59) !important;
-	--bg-yellow-editor: hsl(52, 96%, 70%) !important;
-	--bg-green-editor: rgb(64, 128, 107) !important;
+	--bg-red-editor: hsl(0, 80%, 50%, 0.2) !important;
+	--bg-yellow-editor: hsl(52, 96%, 56%, .5) !important;
+	--bg-green-editor: hsl(145, 60%, 50%, .45) !important;
 	--bg-gray-editor: var(--blockquoteBgClr) !important;
 	/*inline text color*/
 	--text-gray-editor: hsl(252, 5%, 72%) !important;
@@ -144,7 +148,7 @@ ROOT
 	--taginfoBgClr: rgba(0, 0, 0, .075);
 	/*Property - select backgrounds*/
 	--propertySelect-WhiteBg: var(--taginfoBgClr);
-	--propertySelect-BlackBg: hsla(0, 0%, 0%, .23);
+	--propertySelect-BlackBg: hsla(0, 0%, 0%, 1);
 	--propertySelect-BlackClr: var(--invertClr);
 	/*pdf viewer-colors*/
 	--pdfViewerYellow: hsl(50, 100%, 73%);
@@ -176,10 +180,14 @@ ROOT
 	/*property*/
 	--propertyEditBgClr: hsl(0, 0%, 100%);
 	--propertyEditBrdClr: hsl(0, 0%, 85%);
-	/*property*/
+	/*bullets*/
 	--bulletBgClr: black;
 	--bulletUnderBgClr: hsla(0, 0%, 0%, .1);
 	--bulletUnderBgClr-Hover: hsla(0, 0%, 0%, .15);
+	/*checkboxes*/
+	--checkboxBoxBrdClr:hsla(0,0%,0%,.4);
+	--checkboxBoxBrdClr-Checked:var(--checkboxBoxBg-Checked);
+	--checkboxBoxBg-Checked:hsla(214, 100%, 50%, 1);
 	/*toc*/
 	--tocItemClr: hsl(0, 0%, 0%, .6);
 	--tocBgClr-Hover: rgba(0, 0, 0, .08);
@@ -220,16 +228,17 @@ ROOT
 	--versionHistBgClr: var(--infoBgClr);
 	--versionHistDocBgClr: var(--background-editor-primary);
 	/*tables*/
-	--tableBrdClr:hsl(120, 0%, 0%, .124);
+	--tableBrdClr: hsl(120, 0%, 0%, .124);
 }
 
 [data-theme="dark"] {
 	/*main*/
 	--bldClr: hsl(0, 0%, 100%);
 	--invertClr: hsl(0, 0%, 100%);
-	--text-color: hsl(246, 12%, 86%) !important;
+	--text-color: hsla(246, 0%, 88%) !important;
 	--reftext-color: var(--text-color) !important;
-	--text-color-contrast: hsl(0, 0%, 92%) !important;
+	--text-color-contrast: var(--text-color) !important;
+
 	--text-color-Strikethrough: hsl(246, 2%, 52%);
 	--heading-color: hsl(0, 0%, 94%);
 	--background-primary: hsl(229, 5%, 10%) !important;
@@ -239,12 +248,15 @@ ROOT
 	--background-secondary: hsl(229, 5%, 10%) !important;
 	--menu-texture-bg-hard: var(--background-primary) !important;
 	/*links*/
-	--internalLinkClr: hsl(216, 2%, 72%);
-	--internalLinkClr-Mention:var(--text-color);
+	--internalLinkClr: hsl(203, 19%, 68%);
+	--internalLinkClr-Mention: var(--text-color);
 	--internalLinkBgClr: hsl(211, 100%, 73%, .11);
-	--internalLinkBrdClr: hsl(206, 21%, 76%,.4);
-	--internalLinkBrdClrUnderline:hsl(206, 21%, 80%,1);
-	--internalLinkBrdClr-Hover:var(--internalLinkBrdClr);
+	--internalLinkBrdClr: hsl(206, 26%, 76%, .2);
+	--internalLinkBrdClr-Hover: var(--internalLinkBrdClr);
+	/*underline*/
+	--internalLinkBrdClrUnderline: var(--internalLinkBrdClr);
+	--underlineLineColor: hsla(246, 0%, 88%, .85);
+	--underlineTextColor: var(--text-color);
 
 	--LinkFilter-Hover: brightness(1.2)saturate(1);
 
@@ -261,18 +273,17 @@ ROOT
 	--active-item-faint: hsla(215, 100%, 56%, 0.4);
 	--activeClr: black;
 	/*refs*/
-	--refBgClr: hsla(0, 0%, 100%, 0.043);
+	--refBgClr: hsl(220, 5%, 23%, 0.40);
 	--refBrdClr: hsla(0, 0%, 100%, 0.05196078431372549);
 	/*card-lib*/
 	--cardlibBgClr: var(--popupBgClr);
 	--cardlibBrdClr: var(--popupBrdClr);
-	--cardlibBrdClr-Focus:hsl(227, 5%, 24%);
-	--cardlibBoxShad-Focus:
-		0px 8px 31px hsla(217.7, 0%, 0%, 0.55);
-	--cardlibHoverFiter:brightness(1.4) contrast(1.2);
+	--cardlibBrdClr-Focus: hsl(227, 5%, 24%);
+	--cardlibBoxShad-Focus: 0px 8px 31px hsla(217.7, 0%, 0%, 0.55);
+	--cardlibHoverFiter: brightness(1.4) contrast(1.2);
 	/*card-lib card*/
-	--cardlibCardBgClr:hsl(180, 0%, 100%,.025);
-	--cardlibCardBgClr-Hover:hsl(180, 0%, 100%,.05);
+	--cardlibCardBgClr: hsl(180, 0%, 100%, .025);
+	--cardlibCardBgClr-Hover: hsl(180, 0%, 100%, .05);
 	/*sidebar*/
 	--sideBarBgClr: hsl(219, 7%, 12%);
 	--sideBarNoteBgClr: var(--sideBarBgClr);
@@ -310,7 +321,7 @@ ROOT
 	--whiteBoardCardBrd-Green: hsla(155, 57%, 30%);
 	--whiteBoardCardBrd-Blue: hsl(210, 55%, 36%);
 	--whiteBoardCardBrd-Purple: hsl(269, 41%, 36%);
-	--whiteBoardCardBrd-Black: hsla(0, 0%, 100%,.15);
+	--whiteBoardCardBrd-Black: hsla(0, 0%, 100%, .15);
 	--bg-black-sect: hsla(0, 0%, 30%);
 	/*whiteboard - Sections*/
 	--whiteBoardSectionBgClr: hsl(0, 0%, 10.75%);
@@ -320,8 +331,8 @@ ROOT
 	--whiteBoardTextElementBrdClr: hsl(0, 0%, 19%);
 	--whiteBoardTextElementBrdClr-Editing: hsl(0, 0%, 22%, .4);
 	/*whiteboard - Toolbars*/
-	--whiteboardToolbarBgClr:hsla(0,0%,100%,.0085);
-	--whiteboardToolbarBtnBrdClr:hsla(0,0%,100%,.05);
+	--whiteboardToolbarBgClr: hsla(0, 0%, 100%, .0085);
+	--whiteboardToolbarBtnBrdClr: hsla(0, 0%, 100%, .05);
 	/*button*/
 	--buttonBg: hsl(202, 0%, 30%);
 	--buttonBrdClr: hsl(0, 0%, 50%, .5);
@@ -334,9 +345,9 @@ ROOT
 	--hlightAccentBg: rgba(0, 0, 0, .35);
 	--hlightWrapperBrdClr2: hsl(202, 13%, 90%, .08);
 	/*inline highlight*/
-	--bg-red-editor: rgb(119, 59, 59) !important;
-	--bg-yellow-editor: hsla(56, 24%, 41%, .7) !important;
-	--bg-green-editor: rgb(64, 128, 107) !important;
+	--bg-red-editor: hsla(0, 84%, 60%, .4) !important;
+	--bg-yellow-editor: hsla(50, 50%, 50%, 0.4) !important;
+	--bg-green-editor: hsla(142, 71%, 45%, .4) !important;
 	--bg-gray-editor: var(--blockquoteBgClr) !important;
 	/*inline text color*/
 	--text-gray-editor: hsl(252, 5%, 35%) !important;
@@ -361,7 +372,7 @@ ROOT
 	--taginfoBgClr: rgba(0, 0, 0, .13);
 	/*Property - select backgrounds*/
 	--propertySelect-WhiteBg: hsla(0, 0%, 100%, .075);
-	--propertySelect-BlackBg: hsla(0, 0%, 100%, .23);
+	--propertySelect-BlackBg: hsla(0, 0%, 100%, .4);
 	--propertySelect-BlackClr: var(--invertClr);
 	/*pdf viewer*/
 	--pdfViewerBgClr: hsl(202, 13%, 15.5%);
@@ -385,10 +396,14 @@ ROOT
 	/*property*/
 	--propertyEditBgClr: hsl(359, 1%, 19%);
 	--propertyEditBrdClr: hsla(0, 0%, 100%, 0.10196078431372549);
-	/*property*/
+	/*bullets*/
 	--bulletBgClr: white;
 	--bulletUnderBgClr: hsla(0, 0%, 100%, .1);
 	--bulletUnderBgClr-Hover: hsla(0, 0%, 100%, .2);
+	/*checkboxes*/
+	--checkboxBoxBrdClr:hsla(0,0%,100%,.5);
+	--checkboxBoxBrdClr-Checked:var(--checkboxBoxBg-Checked);
+	--checkboxBoxBg-Checked:hsla(218, 82%, 65%);
 	/*toc*/
 	--tocItemClr: hsl(0, 0%, 100%, .7);
 	--tocBgClr-Hover: rgba(255, 255, 255, .08);
@@ -430,11 +445,12 @@ ROOT
 	--versionHistBgClr: var(--infoBgClr);
 	--versionHistDocBgClr: hsl(220, 5%, 11%);
 	/*tables*/
-	--tableBrdClr:var(--blockquoteBrdClr);
+	--tableBrdClr: var(--blockquoteBrdClr);
 }
 
 
 /*TESTING
+.ProseMirror,
 .ProseMirror * {
 
 	box-shadow: inset 0 0 0 .25px green;
@@ -445,8 +461,6 @@ ROOT
 body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) {
 	outline: 2px solid blue;
 }*/
-
-
 
 
 /********
@@ -678,6 +692,9 @@ POPUP - MODAL - INNER WRAPPER (HIGHLIGHT CARD)*/
 [data-node-type="embed"] > [class*="group"] > div > [class*="ProseMirror-hepta-style"] {
 	padding-left: 20px !important;
 }
+._highlightElementNoteEditor_1rg43_7 .ProseMirror {
+	padding-left: calc(var(--rightSideBarNavBtnW) + var(--rightSideBarNavTitlePadL) + 8px) !important;
+}
 /*VIEW - POPUP - Padding Top*/
 ._editor_1rg43_1 > .ProseMirror {
 	padding-top: 20px;
@@ -790,7 +807,7 @@ HIGHLIGHT MENU
 	margin: 0px;
 	padding: 0px !important;
 	font-size: 1px !important;
-	height: 2.5rem !important;
+	height: 2rem !important;
 	position: relative;
 }
 [data-highlight-element-id] > div.mx-4.flex > div[class*="group-hover"]{
@@ -803,7 +820,9 @@ HIGHLIGHT MENU
 
 
 /*HIGHLIGHT > MENU > COLORS*/
-[data-highlight-element-id] > div.mx-4.flex * {}
+[data-highlight-element-id] > div.mx-4.flex > .cursor-grab {
+	z-index: 949494
+}
 [data-highlight-element-id] > div.mx-4.flex svg,
 [data-highlight-element-id] > div.mx-4.flex .truncate,
 ._whiteboardObject_1fabk_10[data-object-type="highlightElementInstance"] ._contentContainer_1jwtr_1 > .relative > div:first-child .truncate,
@@ -1007,6 +1026,59 @@ PDF VIEWER - HIGHLIGHT COLORS
 
 
 /*****************
+******************
+PDF VIEWER SEARCH
+******************
+******************/
+:root {
+	--pdfToolbarHeight:32px;
+	--pdfToolbarBtmPostition:16px;
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl{
+	top: unset;
+	bottom: calc(var(--pdfToolbarBtmPostition) + var(--pdfToolbarHeight) + 4px);
+	left: 50px;
+	right:unset;
+	height: var(--pdfToolbarHeight);
+	gap: 5px;
+	padding-right: 0px;
+	padding-left: 2px;
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl > div{
+	padding-left:3px !important;
+	padding-right:3px;
+	background: transparent;
+	color: var(--bldClr);
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl > div *{
+	color: var(--bldClr);
+
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl > div[style*="color: var(--text-color);"] {
+	padding:0px !important;
+	order: 300;
+	padding-right: 4px !important;
+
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl > [class*="windowNonDraggable"]{
+	order: 2;
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl > .clickable-overlay svg {
+	display: none;
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl .text-label-mini{
+	flex: 1;
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl .text-label-mini ~ svg {
+	margin-right:0px;
+}
+.fixed.right-2.top-2.z-dropdown-menu.flex.items-center.gap-x-2.rounded.bg-menu-texture-bg-medium.p-1\.5.shadow-main.backdrop-blur-2xl input {
+	margin-left: 0px;
+	margin-right: 0px;
+	flex: 1;
+}
+
+/*****************
 SIDEBAR
 ******************/
 [class*="_sidebar"] {
@@ -1169,6 +1241,17 @@ TEXT ELEMENT > BLUE BACKGROUND > TO > TEXT ELEMENT BORDER
 }
 #root [class*="_whiteboardObject"][data-object-type="textElement"] [data-node-type="embed"]{
 	--whiteboardTextElementChildrenBrdW:0px 
+}
+
+
+/*****************
+******************
+BOLD / STRONG
+******************
+******************/
+#root [class*="_whiteboardObject"][data-object-type="textElement"] > [class*="_container"] > div > .ProseMirror [data-node-type="table"]:before,
+#root [class*="_whiteboardObject"][data-object-type="textElement"] > [class*="_container"] > div > .ProseMirror [data-node-type="table"] [data-node-type]:before{
+	opacity: 0;
 }
 
 /*****************
@@ -1603,27 +1686,6 @@ DIVIDER
 	opacity: .8
 }
 
-/*****************
-******************
-****************** 
-TODOS / TASKS (IN EDITOR)
-******************
-****************** 
-******************/
-
-[data-node-type="todo_list_item"] {
-	border-radius: 5px !important
-}
-
-[data-node-type="todo_list_item"] > div[class*="nestedBlocks"] > p {
-	margin-top: 1px !important;
-	margin-bottom: 0px !important;
-}
-
-
-/*TODO / TASKS - CHECKBOX*/
-._todoCheckbox_1tbiz_5 .box-border {}
-
 
 
 
@@ -1761,6 +1823,7 @@ TASKS - VIEW
 	flex: unset !important;
 	min-width: unset !important;
 }
+
 
 
 
@@ -1918,7 +1981,6 @@ body > .z-1000.full-screen.box-border.cursor-zoom-out.bg-scrim.p-6 > img.object-
 		box-shadow: 0 0 0 20px hsla(0, 0%, 50%, .1);
 }
 
-
 /*****************
 ******************
 ******************
@@ -1935,31 +1997,30 @@ BULLET REDO
 	--listBulletMargTop: 3.5px;
 	--listBulletFontSize: var(--bodyFontSize);
 	--listBulletLineHeight: var(--bodyLineHeight);
-	--listCheckboxHeight: 14px;
-	--listBulletWrapperMargRight:2px;
+	--listBulletWrapperMargRight: 2px;
 	--listBulletWidth: 20px;
 	--listBulletHeight: 20px;
 	--listBulletExpandBrdW: 1.5px;
-	--listBulletCircWidth:6px;
+	--listBulletCircWidth: 6px;
 	/*bullet Font Family*/
-	--listBulletFontFamily:Arial, sans-serif;
+	--listBulletFontFamily: Arial, sans-serif;
 	/*unordered bullet*/
-	--listBulletUnorderedTopMarg:1px;
+	--listBulletUnorderedTopMarg: 1px;
 	/*unordered bullet - upper scale*/
-	--listBulletUpperScale:1.4;
+	--listBulletUpperScale: 1.4;
 	/*unordered bullet - under scale*/
-	--listBulletUnderScale:0.8;
-	--listBulletUnderScale-Folded:0.85;
-	--listBulletUnderScale-Hover:.95;
+	--listBulletUnderScale: 0.8;
+	--listBulletUnderScale-Folded: 0.85;
+	--listBulletUnderScale-Hover: .95;
 	/*numbered list item*/
-	--numberListItemBulletScale:1;
+	--numberListItemBulletScale: 1;
 
 	/*testing*/
-	--listBrdTestW:0px;
+	--listBrdTestW: 0px;
 }
 
 /*LIST ITEM - CONTAINER*/
-.ProseMirror [data-node-type*="list_item"]{
+.ProseMirror [data-node-type*="list_item"] {
 	position: relative;
 	margin-top: var(--listMargTopBtm) !important;
 	margin-bottom: var(--listMargTopBtm) !important;
@@ -1975,7 +2036,6 @@ BULLET REDO
 	margin-right: var(--listBulletWrapperMargRight);
 	display: flex;
 	align-items: flex-start;
-	
 }
 /*LIST ITEM - CONTAINER - BULLET*/
 .ProseMirror [data-node-type*="list_item"] > [class*="_bulletWrapper"] > [class*="Icon"] {
@@ -1985,11 +2045,10 @@ BULLET REDO
 	display: flex;
 	align-items: center !important;
 	justify-content: center !important;
-	overflow: hidden !important; 
+	overflow: hidden !important;
 	/*margin-top: var(--listBulletMargTop) !important;*/
-		font-size: var(--bodyFontSize) !important;
+	font-size: var(--bodyFontSize) !important;
 	line-height: var(--bodyLineHeight) !important;
-
 }
 /*LIST ITEM - CONTAINER - BULLET - UNORDERED LIST ICON - BULLET OVER*/
 .ProseMirror [data-node-type*="bullet_list_item"] > [class*="_bulletWrapper"] > [class*="Icon"]:before {
@@ -2002,7 +2061,6 @@ BULLET REDO
 	top: var(--listBulletUnorderedTopMarg);
 	font-family: var(--listBulletFontFamily);
 	/**/
-	
 }
 
 /*LIST ITEM - CONTAINER - BULLET - UNORDERED LIST ICON - BULLET UNDER*/
@@ -2011,7 +2069,7 @@ BULLET REDO
 	background: transparent;
 	width: 20px !important;
 	height: 20px !important;
-	
+
 	border-radius: 10px;
 	position: absolute;
 	top: var(--listBulletUnorderedTopMarg);
@@ -2023,27 +2081,20 @@ BULLET REDO
 	aspect-ratio: 1/1;
 	align-self: center;
 	transform: scale(var(--listBulletUnderScale));
-	
 }
 /*LIST ITEM - CONTAINER - BULLET - UNORDERED LIST ICON - BULLET UNDER - HOVER*/
 .ProseMirror [data-node-type*="bullet_list_item"] > [class*="_bulletWrapper"] > [class*="_hasNestedBlocks"][class*="_bulletIcon_"]:hover:after {
 	background: var(--bulletUnderBgClr-Hover) !important;
 	opacity: 1;
 	transform: scale(var(--listBulletUnderScale-Hover)) !important;
-
 }
 /*LIST ITEM - CONTAINER - BULLET - UNORDERED LIST ICON - BULLET UNDER - COLLAPSED*/
 .ProseMirror [data-node-type*="bullet_list_item"][class*="folded"] > [class*="_bulletWrapper"] > [class*="_hasNestedBlocks"][class*="_bulletIcon_"]:after {
 	background: var(--bulletUnderBgClr);
 	transform: scale(var(--listBulletUnderScale-Folded));
 	opacity: 1;
-	
 }
-/*LIST ITEM - CONTAINER - BULLET - TODO*/
-.ProseMirror [data-node-type*="list_item"] > [class*="_bulletWrapper"] [class*="checkboxIcon"] > span {
-	width: var(--listCheckboxHeight) !important;
-	height: var(--listCheckboxHeight)!important;
-}
+
 /*LIST ITEM - CONTAINER - BULLET - EXPAND BORDER - oveRRIDE*/
 .ProseMirror [data-node-type*="list_item"] > [class*="_bulletWrapper"] [class*="_hint"] {
 	display: none;
@@ -2060,7 +2111,7 @@ BULLET REDO
 	left: calc(var(--listBulletWidth) * .5 - .75px);
 }
 
-.ProseMirror [data-node-type*="bullet_list_item"] > [class*="_bulletWrapper"] [class*="hasNestedBlocks"] + [class*="_hint"]{
+.ProseMirror [data-node-type*="bullet_list_item"] > [class*="_bulletWrapper"] [class*="hasNestedBlocks"] + [class*="_hint"] {
 	opacity: 0;
 }
 /*LIST ITEM - CONTAINER - BULLET - EXPAND BORDER - FOLDED*/
@@ -2094,7 +2145,7 @@ BULLET REDO
 
 
 
-.ProseMirror p[data-node-type*="paragraph"]{
+.ProseMirror p[data-node-type*="paragraph"] {
 	padding-top: 0px !important;
 	padding-bottom: 0px !important;
 	margin-top: var(--listMargTopBtm) !important;
@@ -2104,17 +2155,16 @@ BULLET REDO
 
 .ProseMirror [data-node-type="numbered_list_item"] > [class*="_bulletWrapper"] > [class*="_numberIcon_"] {
 	font-weight: var(--bodyFontWeight);
-	-webkit-font-smoothing:subpixel-antialiased !important;
+	-webkit-font-smoothing: subpixel-antialiased !important;
 	position: relative;
-	
 }
-.ProseMirror [data-node-type="numbered_list_item"] > [class*="_bulletWrapper"] > [class*="Icon"]:before{
+.ProseMirror [data-node-type="numbered_list_item"] > [class*="_bulletWrapper"] > [class*="Icon"]:before {
 	top: 0 !important;
 	bottom: 0 !important;
 	height: 100% !important;
 	transform: scale(var(--numberListItemBulletScale));
 	transform-origin: top;
-		font-family: var(--listBulletFontFamily);
+	font-family: var(--listBulletFontFamily);
 }
 
 
@@ -2216,7 +2266,7 @@ TOGGLE
 /*TOGGLE - BUTTON - CONTAINER - BULLET HOVER & FOLDED*/
 [data-node-type="toggle_list_item"]:hover [class*="_bullet_"],
 [data-node-type="toggle_list_item"][class*="folded"] [class*="_bullet_"],
-[data-node-type="toggle_list_item"] > [class*="_bulletWrapper"]:hover [class*="_bullet_"] svg{
+[data-node-type="toggle_list_item"] > [class*="_bulletWrapper"]:hover [class*="_bullet_"] svg {
 	opacity: 1 !important;
 }
 /*TOGGLE - BUTTON - CONTAINER - BULLET - HOVER*/
@@ -2252,15 +2302,14 @@ TOGGLE
 }
 
 /*TOGGLE MARGINS - All HEADINGS*/
-[data-node-type="toggle_list_item"][class*="_toggleHeadingLevel"]{
+[data-node-type="toggle_list_item"][class*="_toggleHeadingLevel"] {
 	margin-top: var(--headingMargTop) !important;
 }
 
- 
+
 /************
 /*TOGGLE MARGINS - NESTED NODES
 *************/
-
 /*TOGGLE MARGINS - Nested Nodes - Nested Toggle */
 [data-node-type="toggle_list_item"] > [class*="_nestedBlocks"] [data-node-type="toggle_list_item"] {
 	width: calc(100% - .125rem)
@@ -2298,12 +2347,181 @@ TOGGLE EXPAND BORDER
 	opacity: .5;
 	transition: .15s;
 	border-radius: 2px;
-	background-color:var(--light-grey);
+	background-color: var(--light-grey);
 }
 /*folded*/
 [data-node-type="toggle_list_item"][class*="folded"] > [class*="_bulletWrapper"]:before {
 	padding-top: calc(var(--toggleBulletMargTop) * 3);
 	opacity: 0;
+}
+
+
+
+/*****************
+******************
+******************
+******************
+******************
+******************
+******************
+******************
+******************
+TODOS / TASKS (IN EDITOR)
+******************
+******************
+******************
+******************
+******************
+******************
+******************
+******************
+******************/
+
+:root {
+	/*checkbox*/
+	--listCheckboxHeight: 14px;
+	/*checkbox rad*/
+	--checkboxBoxBrdRad:3.5px;
+	/*checkbox scale*/
+	--checkboxBoxScale:1;
+	/*checkbox body padding (for floating button*/
+	--checkboxBodyPadRight:60px;
+	/*floating button*/
+	--todofloatingbuttonPadTopLeftRight:5px;
+	--todofloatingbuttonPadTopBtm:3px;
+	/*floating button top position*/
+	--todofloatingbuttonPositionTop:1px;
+}
+
+/*overrides*/
+.ProseMirror [data-node-type="todo_list_item"] [class*="_todoListItemContentPadding"] p{
+	padding-right: var(--checkboxBodyPadRight) !important;
+}
+
+/*floating button*/
+.ProseMirror [data-node-type="todo_list_item"] [class*="todoFloatingButton"]{
+	position: absolute;
+	top: var(--todofloatingbuttonPositionTop);
+}
+.ProseMirror [data-node-type="todo_list_item"] [class*="todoFloatingButton"],
+.ProseMirror [data-node-type="todo_list_item"] [class*="todoFloatingButton"] > div{
+	margin: unset;
+}
+.ProseMirror [data-node-type="todo_list_item"] [class*="todoFloatingButton"] button {
+	padding-top: var(--todofloatingbuttonPadTopBtm);
+	padding-bottom: var(--todofloatingbuttonPadTopBtm);
+	padding-left: var(--todofloatingbuttonPadTopLeftRight);
+	padding-right: var(--todofloatingbuttonPadTopLeftRight);
+}
+
+/*TODO > CHECKBOX*/
+.ProseMirror [data-node-type="todo_list_item"] > [class*="_bulletWrapper"] [class*="checkboxIcon"]{
+	left: var(--checkboxBoxPositionLeft);
+	--checkboxBoxPositionLeft:0px;
+	transform: scale(var(--checkboxBoxScale));
+}
+
+/*TODO > CHECKBOX - SET CONTAINER WIDTH/HEIGHT AS SAME AS UL>LI AND OL>LI - USES TEXT*/
+.ProseMirror [data-node-type="todo_list_item"] > [class*="_bulletWrapper"] [class*="checkboxIcon"]:after {
+	opacity: 1;
+	display: block;
+	content: ".";
+	font-size: var(--bodyFontSize);
+	line-height: var(--bodyLineHeight);
+	color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--listBulletWidth) !important;
+}
+
+/*unchecked - box*/
+.ProseMirror [data-node-type="todo_list_item"] > [class*="_bulletWrapper"] [class*="checkboxIcon"] span{
+	position: absolute;
+	border: none;
+	width: var(--listCheckboxHeight) !important;
+	height: var(--listCheckboxHeight)!important;
+	box-shadow: 0 0 0 1.5px var(--checkboxBoxBrdClr);
+	transition: .15s !important;
+	background: transparent;
+	border-radius: var(--checkboxBoxBrdRad) !important;
+}
+
+/*checked - box*/
+.ProseMirror [data-node-type="todo_list_item"] > [class*="_bulletWrapper"] [class*="checkboxIcon"] span.bg-active{
+	background: var(--checkboxBoxBg-Checked);
+	--checkboxBoxBrdClr:var(--checkboxBoxBrdClr-Checked);
+	transition-duration: 1s;
+}
+/*unchecked - check*/
+.ProseMirror [data-node-type="todo_list_item"] > [class*="_bulletWrapper"] [class*="checkboxIcon"] span svg{
+	width: calc(var(--listCheckboxHeight) + 3px) !important;
+	height: calc(var(--listCheckboxHeight) + 3px) !important;
+	transition: .1s;
+	opacity: 0
+}
+/*checked - check*/
+.ProseMirror [data-node-type="todo_list_item"] > [class*="_bulletWrapper"] [class*="checkboxIcon"] span svg {
+	opacity: 1;
+}
+
+
+
+/*****************
+******************
+******************
+******************
+BULLET - UNORDERED REDO
+******************
+******************
+******************
+******************/
+/*LIST ITEM - CONTAINER - BULLET*/
+.ProseMirror [data-node-type*="list_item"] > [class*="_bulletWrapper"] > [class*="Icon"] {
+	position: relative;
+	width: var(--listBulletWidth) !important;
+	height: unset;
+	display: flex;
+	align-items: center !important;
+	justify-content: center !important;
+	overflow: hidden !important; 
+	/*margin-top: var(--listBulletMargTop) !important;*/
+		font-size: var(--bodyFontSize) !important;
+	line-height: var(--bodyLineHeight) !important;
+
+}
+/*LIST ITEM - CONTAINER - BULLET - UNORDERED LIST ICON - BULLET OVER*/
+.ProseMirror [data-node-type*="bullet_list_item"] > [class*="_bulletWrapper"] > [class*="Icon"]:before {
+	width: var(--listBulletWidth) !important;
+
+	position: relative !important;
+	font-size: var(--bodyFontSize) !important;
+	line-height: var(--bodyLineHeight) !important;
+	transform: unset;
+	top: var(--listBulletUnorderedTopMarg);
+	font-family: var(--listBulletFontFamily);
+	/**/
+	
+}
+/*DISC*/
+[data-node-type="bullet_list_item"][style*="•"] {
+	--bulletItem--content:var(--iconBulletDISC)!important;
+
+}
+/*CIRCLE*/
+[data-node-type="bullet_list_item"][style*="◦"] {
+	--bulletItem--content:var(--iconBulletCIRCLE)!important;
+
+}
+
+/*SQUARE*/
+[data-node-type="bullet_list_item"][style*="▪"] {
+	--bulletItem--content:var(--iconBulletSQUARE)!important;
+
+}
+
+.ProseMirror [data-node-type*="list_item"] > [class*="_bulletWrapper"] > [class*="Icon"]{
+	margin-top: 5px;
 }
 
 
@@ -2328,7 +2546,6 @@ EDITOR - LINKS, UNDERLINE V1
 	/*underline*/
 	--underlineThickness: 1.5px;
 	--underlineOffset:2px;
-	--underlineColor:var(--LinkBrdClr);
 	
 }
 
@@ -2348,9 +2565,9 @@ EDITOR - LINKS, UNDERLINE V1
 	/*underline*/
 	text-decoration: var(--linkTextDecoration);
 	text-decoration-thickness: var(--underlineThickness) !important;
-	text-decoration-color: var(--underlineColor) !important;
+	text-decoration-color: var(--underlineLineColor) !important;
 	text-underline-offset: var(--underlineOffset);   
-	--underlineColor:var(--LinkClr);
+	--underlineLineColor:var(--LinkClr);
 	opacity: var(--linkOpacity);
 }
 .ProseMirror a:hover {
@@ -2368,7 +2585,7 @@ INTERNAL LINKS
 .text-active:not(.text-label.text-active) {
 	border: none !important;
 	color: var(--internalLinkClr);
-	--underlineColor:var(--internalLinkBrdClr);
+	--underlineLineColor:var(--internalLinkBrdClr);
 	--text-color-contrast:var(--internalLinkClr);
 }
 /*link - hover*/
@@ -2405,25 +2622,197 @@ UNDERLINE
 ******************
 ******************/
 
-.ProseMirror [data-underline="true"]{
-	color: var(--text-color-contrast)
-}
+
 .ProseMirror [data-underline="true"] {
 	border: none !important;
 	position: relative;
 	text-decoration: underline;
 	text-decoration-thickness: var(--underlineThickness);
-	text-decoration-color: var(--text-color);
 	text-underline-offset: var(--underlineOffset);
+	color: var(--underlineTextColor);
+	text-decoration-color: var(--underlineLineColor);
 }
 
 .ProseMirror a [data-underline="true"] {
-   text-decoration-color: var(--LinkClr);
+	--underlineTextColor:var(--LinkClr);
+	--underlineLineColor:var(--LinkClr);
 }
 .ProseMirror a[href*="app.heptabase.com"] [data-underline="true"]{
-	text-decoration-color:var(--internalLinkBrdClrUnderline)
+		--underlineTextColor:var(--internalLinkClr);
+	--underlineLineColor:var(--internalLinkBrdClrUnderline);
+
 }
 
+
+/*****************
+******************
+BOLD > UNDERLINE
+******************
+******************/
+.ProseMirror strong [data-underline="true"]{
+			--underlineTextColor:var(--bldClr);
+	--underlineLineColor:var(--text-color-contrast);
+}
+/*****************
+******************
+LINK > BOLD > UNDERLINE
+******************
+******************/
+.ProseMirror a strong [data-underline="true"],
+.ProseMirror strong a [data-underline="true"]{
+			--underlineTextColor:var(--linkClr);
+	--underlineLineColor:var(--linkClr);
+}
+
+
+/*****************
+******************
+HIGHLIGHTS
+******************
+******************/
+
+
+.ProseMirror span[data-color][data-type="background"] {
+	color: var(--text-color-contrast)
+}
+.ProseMirror strong span[data-color][data-type="background"] {
+	color: var(--bldClr);
+}
+
+
+/*****************
+******************
+******************
+******************
+EDITOR - LINKS, UNDERLINE V2
+******************
+******************
+******************
+******************/
+
+:root{
+	--underlineThickness:1px;
+}
+.ProseMirror a *,
+.text-active * {
+	border-bottom: 0px !important;
+	-webkit-font-smoothing:subpixel-antialiased !important;
+}
+
+.ProseMirror a,
+.text-active:not(.text-label.text-active) {
+	border: none;
+
+	box-shadow: none !important;
+	border-bottom: var(--underlineThickness) solid var(--LinkBrdClr) !important;
+	color: var(--LinkClr) !important;
+	border-radius: 0px;
+	background: transparent;
+	transition: .1s;
+}
+
+.ProseMirror a:hover {
+	background: var(--LinkBgClr);
+	filter: var(--LinkFilter-Hover);
+}
+
+/*LINKS > hover*/
+.ProseMirror a[href*="app.heptabase.com"]:hover,
+.text-active:hover:not(.text-label:hover) {
+	background: var(--internalLinkBgClr);
+	filter: var(--LinkFilter-Hover);
+
+}
+/*****************
+MENTIONS
+******************/
+
+/*internal Links*/
+.ProseMirror a[href*="app.heptabase.com"]{
+	border: none !important;
+	border-bottom: none;
+	box-shadow: none !important;
+	color: var(--internalLinkClr) !important;
+	background: transparent;
+	transition: .1s;
+	border-bottom: 1px solid var(--internalLinkBrdClr) !important;
+	outline: 0px solid var(--internalLinkBgClr);
+	border-color:var(--internalLinkBrdClr) !important;
+}
+
+
+
+/*overrrides*/
+.hover\:shadow-\[0_0_0_3px_var\(--light-grey\)\]:hover {
+	--tw-shadow: unset;
+	border-radius: 3px;
+}
+.ProseMirror a[href*="app.heptabase.com"],
+.ProseMirror a[href*="app.heptabase.com"]:hover,
+a[href*="app.heptabase.com"] [data-underline="true"]{
+	border-bottom: none !important;
+	background-image: var(--iconSquigly) !important;
+	background-repeat: repeat-x;
+	background-position: -0px 100%;
+	background-size: 11px !important;
+	padding-bottom: 3px !important;
+	box-shadow: none !important;
+}
+
+/*****************
+INLINE MENTIONS
+******************/
+
+.ProseMirror [data-node-type] span span.rounded-sm.text-active {
+	border-bottom: none !important;
+	background: transparent;
+		color: var(--internalLinkClr) !important;
+}
+
+.ProseMirror [data-node-type] span span.rounded-sm.text-active .border-b-solid{
+	background-image: var(--iconSquigly);
+	background-repeat: repeat-x;
+	background-position: -0px 100%;
+	background-size: 11px !important;
+	padding-bottom: 3px !important;
+}
+.ProseMirror [data-node-type] span span.rounded-sm.text-active:hover .border-b-solid{
+	background:var(--internalLinkBgClr);
+	background-image: var(--iconSquigly);
+	background-repeat: repeat-x;
+	background-position: -0px 100%;
+	background-size: 11px !important;
+
+}
+
+/*****************
+******************
+UNDERLINE
+******************
+******************/
+:root{
+	--underlineExtraBrdClr:var(--text-color);
+	--underlineBrdClr:var(--text-color);
+}
+
+[data-underline="true"],
+a [data-underline="true"]{
+	border-bottom: var(--underlineThickness) solid var(--underlineBrdClr) !important;
+	position: relative;
+	box-shadow: 0 var(--underlineThickness) 0 0 var(--underlineExtraBrdClr);
+	text-decoration: underline !important;
+
+}
+a [data-underline="true"]{
+		--underlineExtraBrdClr:var(--LinkClr)!important;
+		--underlineBrdClr:var(--LinkClr)!important;
+}
+a[href*="app.heptabase.com"] [data-underline="true"]{
+		--underlineExtraBrdClr:var(--text-color) !important;
+		--underlineBrdClr:transparent !important;
+	background-image: var(--iconSquiglyUnderline) !important;
+
+}
 
 /*****************
 ******************
@@ -2640,6 +3029,9 @@ LIST ITEM > NESTED BLOCKS > LAST CHILD
 .ProseMirror [data-node-type*="list_item"] > [class*="_nestedBlocks"] > [data-node-type]:last-child{
 	margin-bottom: 0px !important;
 }
+
+
+
 
 
 
@@ -2926,22 +3318,22 @@ TABLES > BORDERS
 /*cell - top-left*/
 .ProseMirror table tbody > tr:first-of-type > td:first-of-type,
 .ProseMirror table tbody > tr:first-of-type > th:first-of-type{
-	border-top-left-radius: calc(var(--tableBrdRad) - 1px) !important
+	border-top-left-radius: calc(var(--codeblockBrdRad) - 0px) !important
 }
 /*cell - top-right*/
 .ProseMirror table tbody > tr:first-of-type > td:last-of-type,
 .ProseMirror table tbody > tr:first-of-type > th:last-of-type{
-	border-top-right-radius: calc(var(--tableBrdRad) - 1px) !important
+	border-top-right-radius: calc(var(--codeblockBrdRad) - 0px) !important
 }
 /*cell - bottom-right*/
 .ProseMirror table tbody > tr:last-of-type > td:first-of-type,
 .ProseMirror table tbody > tr:last-of-type > th:first-of-type{
-	border-bottom-left-radius: calc(var(--tableBrdRad) - 1px) !important
+	border-bottom-left-radius: calc(var(--codeblockBrdRad) - 0px) !important
 }
 /*cell - bottom-right*/
 .ProseMirror table tbody > tr:last-of-type > td:last-of-type,
 .ProseMirror table tbody > tr:last-of-type > th:last-of-type{
-	border-bottom-right-radius: calc(var(--tableBrdRad) - 1px) !important
+	border-bottom-right-radius: calc(var(--codeblockBrdRad) - 0px) !important
 }
 
 /*****************
@@ -3031,38 +3423,11 @@ TABLES CELLS > GRAY BACKGROUND
 	--tableGreyPadLeftRight: 30px;
 }
 
-
-/*****************
-******************
-TABLES > INSIDE WHITEBOARD
-******************
-******************/
-:root{
-	--whiteboardTextTablePadL:10px;
+#root [data-object-type="textElement"] [data-node-type="table"] > .relative > table[style*="minwidth:"] tr,
+#root [data-object-type="textElement"] [data-node-type="table"] > .relative > table[style*="min-width:"] td{
+	flex: 1;
+	width: 100%;
 }
-#root [data-object-type="textElement"] [data-node-type="table"]{
-	padding-left:calc(var(--whiteboardTextTablePadL) * .5) !important;
-	padding-top:calc(var(--whiteboardTextTablePadL) * .7)!important;
-	padding-bottom:calc(var(--whiteboardTextTablePadL) * .5)!important;
-}
-[data-object-type="textElement"] [data-node-type="table"] table{
-	border-radius: calc(var);
-	--tableBrdRad:calc(var(--whiteboardTextBrdRad) * 1.1)!important;
-}
-/*****************
-TABLES > INSIDE WHITEBOARD > 100% WIDTH
-******************/
-#root [data-object-type="textElement"] [data-node-type="table"] > .relative > table[style*="width:"]{
-
-}
-/*****************
-TABLES > INSIDE WHITEBOARD > WIDTH OVERFLOW
-******************/
-#root [data-object-type="textElement"] [data-node-type="table"] > .relative > table[style*="min-width:"]{
-	width: 100% !important;
-	max-width: calc(100% - 30px) !Important;
-}
-
 
 
 /*****************
@@ -3108,7 +3473,6 @@ HIGHLIGHT TEXT - FONT-FAMILY & FONT SIZE
 /*highlight text & highlight note text - in - whiteboard > highlight card*/
 [data-object-type="highlightElementInstance"] .ProseMirror{
 	font-size: var(--highlightFontSize);
-	line-height: 1.4;
 	-webkit-font-smoothing: antialiased;
 	color: var(--text-color);
 	font-family: Roboto, sans-serif;
@@ -3163,6 +3527,9 @@ EMBED - HIGHLIGHT
 [data-node-type="embed"] > [class*="group"] > .rounded.border.border-solid.border-light-grey.py-4 > div + [class*="ProseMirror-hepta-style"] {
 	margin-top: 7px !important;
 }
+[data-node-type="embed"] > [class*="group"] > .rounded.border.border-solid.border-light-grey.py-4 > div + [class*="ProseMirror-hepta-style"]:empty{
+	margin-top: 0px !important;
+}
 [data-node-type="embed"] > [class*="group"] > .rounded.border.border-solid.border-light-grey.py-4 > div {
 	position: relative;
 }
@@ -3170,12 +3537,11 @@ EMBED - HIGHLIGHT
 
 
 /*****************
-CARD LIBRARY - HIGHLIGHT
+HIGHLIGHT BULLETS
 ******************/
-
-
-
-
+[style*="--annotation-"] + [class*="ProseMirror"] .ProseMirror, [data-node-type="embed"] .rounded.border.border-solid.border-light-grey.py-4 .ProseMirror, [class*="_rightSidebar"] [data-highlight-element-id] [class*="ProseMirror"] [data-node-type*="list_item"] > [class*="bulletWrapper"] > [class*="Icon"], .bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex .ProseMirror, .grid > div > .pt-6 .ProseMirror  [data-node-type*="list_item"] > [class*="bulletWrapper"] > [class*="Icon"], .bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex + div .ProseMirror, [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex + div .ProseMirror  [data-node-type*="list_item"] > [class*="bulletWrapper"] > [class*="Icon"], ._highlightElementNoteEditor_1rg43_7 .ProseMirror, [data-highlight-element-id] .ProseMirror, [data-object-type="highlightElementInstance"] .ProseMirror  [data-node-type*="list_item"] > [class*="bulletWrapper"] > [class*="Icon"] {
+	--bodyFontSize:17px;
+}
 
 /*****************
 ******************
@@ -3427,23 +3793,63 @@ INLINE MATH - INSIDE EMBED
 /*****************
 EMBED POPUP
 ******************/
+:root{
+	--embedPopupHeight:40px;
+}
 [data-node-type="embed"] > [class*="group"] > .absolute[class*="group"]{
 	z-index: 929292929292;
-	max-width: calc(100% + var(--embedPadLR));
-	right:calc(var(--embedPadLR) * -1)
+	right:calc(var(--embedPadLR) * -1);
+	top: calc(var(--embedPopupHeight) * -1 + 0px);
+	height:var(--embedPopupHeight);
+	padding-left: 120px;
+	padding-right:calc(var(--editorPadLeftRight) * .5);
+	margin-right: calc(var(--editorPadLeftRight) * -.45);
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+
+	
+	
 
 }
 [data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] {
 	opacity: 1;
 }
 
-[data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] > div {
-	box-shadow: 0px 7px 22px 0px rgba(0, 0, 0, .15), 0px 0px 1.5px 0px rgba(0, 0, 0, .3), 0px 0px 1px 0px rgba(0, 0, 0, .4) !important;
+[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"] > div {
+	height: calc(var(--embedPopupHeight) * 1 - 5px);
+	display: flex;
+	align-content: center;
+	justify-content: center;
 }
-[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"] > div > [class*="max-w"] {
-	max-width: unset;
+[data-node-type="embed"] > [class*="group"]:hover > .absolute[class*="group"] > div {
+	box-shadow: 0px 7px 22px 0px rgba(0, 0, 0, .2), 0px 0px 1.5px 0px rgba(0, 0, 0, .3), 0px 0px 1px 0px rgba(0, 0, 0, .4) !important;
+}
+[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"] > div > div{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"] > div > div.cursor-pointer{
+min-width: 40px;
 }
 
+[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"] > div > [class*="max-w"] {
+	max-width: unset;
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 6px;
+	padding-left: 14px;
+	padding-right: 14px;
+}
+[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"] > div > [class*="max-w"]:before {
+	content: "Open";
+	display: block;
+}
+[data-node-type="embed"] > [class*="group"] > .absolute[class*="group"] > div > [class*="max-w"] > .truncate {
+	display: none;
+}
 
 /*****************
 ******************
@@ -3836,7 +4242,6 @@ INLINE MATH
 	font-style: normal;
 	letter-spacing: 0.2px;
 }
-
 /*****************
 ******************
 ******************
@@ -3929,7 +4334,8 @@ EDITOR - REFERENCES / INFO CONTAINER
 		margin-top: 0px !important;
 		position: relative; 
 		/*overflow: hidden;*/
-		background:var(--infoBgClr) !important;
+		/*
+		background:var(--infoBgClr) !important;*/
 
 }
 
@@ -3968,7 +4374,8 @@ EDITOR - REFERENCES / INFO CONTAINER
 [class*="_editor"] + [class*="_info"] > div:nth-child(4),
 ._highlightElementNoteEditor_1rg43_7 + [class*="_info"] > div:nth-child(4),
 [class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div:nth-child(4),
-[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div{ 
+[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div,
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div > div{ 
 		display: flex;
 		flex-direction: column;
 }
@@ -3976,7 +4383,8 @@ EDITOR - REFERENCES / INFO CONTAINER
 [class*="_editor"] + [class*="_info"] > div:nth-child(4) > div,
 ._highlightElementNoteEditor_1rg43_7 + [class*="_info"] > div:nth-child(4) > div,
 [class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div:nth-child(4) > div,
-[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div > div {
+[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div > div,
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div > div > div{
 		border-top: 1px solid var(--infoBrdClr) !important;
 		order: 2;
 		padding-top: 6px;
@@ -3986,6 +4394,13 @@ EDITOR - REFERENCES / INFO CONTAINER
 		margin-bottom: 0px;
 }
 [class*="_editor"] + [class*="_info"] > div:nth-child(4) > .py-1 + .h-4 + .ml-0\.5{
+}
+/*PROPERTIES WIDTH*/
+[class*="_info"] .w-40,
+.hepta-scrim > [class*="680px"] .w-40{
+	width: unset;
+	min-width: 12.15rem;
+	max-width: 100%;
 }
 /*REORDER - PROPERTIES*/
 [class*="_editor"] + [class*="_info"] > div:nth-child(4) > div.my-1.flex.flex-col.gap-y-1,
@@ -3997,7 +4412,8 @@ EDITOR - REFERENCES / INFO CONTAINER
 /*REORDER - PROPERTIES (WITH REFERENCES)*/
 [class*="_editor"] + [class*="_info"] > div:nth-child(4) > .ml-0\.5 ~ .ml-0\.5 ~ .gap-y-1,
 ._highlightElementNoteEditor_1rg43_7 + [class*="_info"] > div:nth-child(4) > .ml-0\.5 ~ .ml-0\.5 ~ .gap-y-1,
-[class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div:nth-child(4) > .ml-0\.5 ~ .ml-0\.5 ~ .gap-y-1{
+[class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div:nth-child(4) > .ml-0\.5 ~ .ml-0\.5 ~ .gap-y-1,
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div > div > div.gap-y-1{
 		order:0 !important;
 		margin-top: 0px;
 }
@@ -4045,14 +4461,16 @@ EDITOR - REFERENCES / INFO CONTAINER
 [class*="_editor"] + [class*="_info"] > div:nth-child(4) > div.py-1,
 ._highlightElementNoteEditor_1rg43_7 + [class*="_info"] > div:nth-child(4) > div.py-1,
 [class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div:nth-child(4) > div.py-1,
-[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div > div.py-1{
+[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div > div.py-1,
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div > div > div.py-1{
 		order: 13;
 }
 /*REORDER - TAGS (ONLY TAGS)*/
 [class*="_editor"] + [class*="_info"] > div > .flex.mt-1.flex-row.items-start.mb-1,
 ._highlightElementNoteEditor_1rg43_7 + [class*="_info"] > div:nth-child(4) > .flex.mt-1.flex-row.items-start.mb-1,
 [class*="bg-background"][style*="width"] [class*="_editor"] + .px-8 > div:nth-child(4) > .flex.mt-1.flex-row.items-start.mb-1,
-[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div > .flex.mt-1.flex-row.items-start.mb-1{
+[class*="bg-background"][style*="width"] [class*="gutter-stable"][class*="bg-background"] > div > div > .flex.mt-1.flex-row.items-start.mb-1,
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div > div > div.flex.mt-1.flex-row.items-start{
 		order: 1;
 }
 
@@ -4133,7 +4551,8 @@ EDITOR - REFERENCES / INFO CONTAINER
 
 /*INFO CONTAINER - REFERENCES*/
 .grow [class*="_info"] [class*="_content"],
-[class*="bg-background"][style*="width"] .px-8 [class*="_content"]{
+[class*="bg-background"][style*="width"] .px-8 [class*="_content"],
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div div [class*="group/"].clickable-overlay + div [class*="_content"]{
 		background: var(--refBgClr) !important;
 		border-color: var(--refBrdClr) !important;
 		padding-left: var(--refPadLeftRight);
@@ -4210,7 +4629,8 @@ REFERENCES > Font size and line height
 
 /*REFERENCE - Content & Button Wrapper*/
 .grow [class*="_info"] [class*="_content"] > [style*="height"] > [style*="width"],
-#root .px-8 [class*="_content"] > [style*="height"] > [style*="width"]{
+#root .px-8 [class*="_content"] > [style*="height"] > [style*="width"],
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div div [class*="group/"].clickable-overlay + div [class*="_content"] [style*="height"] > [style*="width"]{
 		width: 100% !important;
 		transform: unset !important;
 		align-items: flex-start;
@@ -4381,13 +4801,15 @@ INDIVIDUAL REFERENCE > Container
 *********/
 
 [class*="_info_"] [class*="group/"].clickable-overlay + div ._content_1uz7b_1,
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1,
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div div [class*="group/"].clickable-overlay + div [class*="_content"]{
 		margin-bottom:8px;;
 		-webkit-font-smoothing:antialiased;    
 		border-radius: var(--refBrdRad);
 }
 [class*="_info_"] [class*="group/"].clickable-overlay + div ._content_1uz7b_1:last-child,
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1:last-child{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1:last-child,
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div div [class*="group/"].clickable-overlay + div [class*="_content"]:last-child{
 		margin-bottom:5px;
 }
 /*override - just for whiteboards*/
@@ -4406,14 +4828,16 @@ INDIVIDUAL REFERENCE > Container
 
 /*INDIVIDUAL REFERENCE > Container > Inner Container*/
 [class*="_info_"] [class*="group/"].clickable-overlay + div ._content_1uz7b_1 > div[style*="height"],
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1  > div[style*="height"]{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1  > div[style*="height"],
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div div [class*="group/"].clickable-overlay + div [class*="_content"] [style*="height"]{
 	height:unset !important;
 	gap: 0px !important;
 
 }
 /*INDIVIDUAL REFERENCE > Container > Inner Container > LEFT ICONS > SECTION, MINDMAP, ARROWS, */
 [class*="_info_"] [class*="group/"].clickable-overlay + div ._content_1uz7b_1 > div[style*="height"] .box-border,
-[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1  > div[style*="height"] .box-border{
+[class*="bg-background"][style*="width:"] [class*="_editor"] + .px-8 [class*="group/"].clickable-overlay + div ._content_1uz7b_1  > div[style*="height"] .box-border,
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div div [class*="group/"].clickable-overlay + div [class*="_content"] > div[style*="height"] .box-border{
 	margin-top:0px !important;
 	background:transparent;
 	z-index: 9;
@@ -4459,6 +4883,7 @@ INDIVIDUAL REFERENCE > Container
 	color: var(--reftext-color) !important;
 	--underlineThickness: 1px;
 	--underlineOffset:1px;
+	word-break: break-word;
 
 }
 [class*="_content"][class*="group/"] .ProseMirror {
@@ -4545,6 +4970,17 @@ INDIVIDUAL REFERENCE > Container
 	--listBulletUnderScale-Hover:.85;
 	/*numbered list item*/
 	--numberListItemBulletScale:1;
+	/*checkbox*/
+	--listCheckboxHeight: 10px;
+	/*checkbox rad*/
+	--checkboxBoxBrdRad:3px;
+	/*checkbox body padding (for floating button*/
+	--checkboxBodyPadRight:60px;
+	/*floating button*/
+	--todofloatingbuttonPadTopLeftRight:2px;
+	--todofloatingbuttonPadTopBtm:0px;
+	/*floating button top position*/
+	--todofloatingbuttonPositionTop:calc(var(--todofloatingbuttonPadTopBtm) * -1);
 }
 [class*="_content"] .ProseMirror [data-node-type="numbered_list_item"] > [class*="bulletWrapper"]{
 	--listBulletMargTop:0px !important;
@@ -4689,7 +5125,7 @@ VIEW - WHITEBOARD
 ******************
 ******************/
 :root {
-	--whiteboardCardNavHeight:26px;
+	--whiteboardCardNavHeight:30px;
 	--whiteboardCardPadLeftRight:22px;
 	--whiteboardCardPadTop:0px;
 	--whiteboardCardPadBtm:var(--whiteboardCardNavHeight);
@@ -4716,7 +5152,7 @@ VIEW - WHITEBOARD
 	--bodyLineHeight:1.4;
 	--toggleBulletMargTop:7px;
 	/*HEADINGS*/
-	--H1size: calc(var(--bodyFontSize) + 8px);
+	--H1size: calc(var(--bodyFontSize) + 15px);
 	--H2size: calc(var(--bodyFontSize) + 6px);
 	--H3size: calc(var(--bodyFontSize) + 4.5px);
 	--H4size: calc(var(--bodyFontSize) + 3px);
@@ -4748,28 +5184,44 @@ VIEW - WHITEBOARD
 	/*Card 2nd line*/
 	--title-Line2-MargTop:10px;
 	--headingMargTop-All:10px !important;
-	--headingMargTop:4px;
+	--headingMargTop:10px;
 }
 .bg-whiteboard-background {
 		background-color: var(--whiteBoardBoardBg);
 }
-[class*="whiteboardToolbarLeft"] + .absolute > ._windowDraggable_80mcn_1 {
+
+/*****************
+******************
+******************
+WHITEBOARD TOOLBAR / WHITEBOARD NAV
+******************
+******************
+******************/
+[class*="whiteboardToolbarLeft"] ~ .absolute > ._windowDraggable_80mcn_1 {
 		backdrop-filter: blur(30px);
 		background: transparent !important;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 
 /*WHITEBOARD TOOLBAR - TOP - WHITEBOARD NAME*/
-[class*="whiteboardToolbarLeft"] + .absolute > ._windowDraggable_80mcn_1 > ._windowDraggable_80mcn_1 > .text-label,
-[class*="whiteboardToolbarLeft"] + .absolute > ._windowDraggable_80mcn_1 > ._windowDraggable_80mcn_1 > .text-label * {
+[class*="whiteboardToolbarLeft"] ~ .absolute > ._windowDraggable_80mcn_1 > ._windowDraggable_80mcn_1 > .text-label,
+[class*="whiteboardToolbarLeft"] ~ .absolute > ._windowDraggable_80mcn_1 > ._windowDraggable_80mcn_1 > .text-label * {
 
 		box-sizing: content-box !important;
 }
-[class*="whiteboardToolbarLeft"] + .absolute > ._windowDraggable_80mcn_1 > ._windowDraggable_80mcn_1 input {
+[class*="whiteboardToolbarLeft"] ~ .absolute > ._windowDraggable_80mcn_1 > ._windowDraggable_80mcn_1 input {
 	text-overflow: unset ;
 	max-width:unset !important;
 }
 
+
+/*****************
+******************
+WHITEBOARD (THE LINK TO WHITEBOARDS)
+******************
+******************/
 
 [whiteboard-instance-id],
 [data-object-type="whiteboardInstance"] {
@@ -4782,9 +5234,54 @@ VIEW - WHITEBOARD
 		border-color: var(--active-item);
 		outline-color: var(--active-item);
 }
+/*TITLE*/
+[data-object-type="whiteboardInstance"] > div > div:first-child{
+	display: block;
+	align-items: flex-start
+}
 
+[data-object-type="whiteboardInstance"] > div > div:first-child > .truncate{
+	overflow: unset;
+	white-space: normal;
+	text-overflow: unset;
+	overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+	display: inline;
+	
+}
+[data-object-type="whiteboardInstance"] > div > div:first-child > svg{
+	margin-bottom:-3px;
+	margin-right:8px;
+}
+[data-object-type="whiteboardInstance"] > div > div:nth-child(2){
+}
+/*HOVER MENU */
+[data-object-type="whiteboardInstance"] > div  div[class*="group-hover"]{
+	display: flex;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	opacity: 0;
+}
+[data-object-type="whiteboardInstance"] > div  div[class*="group-hover"] > div {
+	background: hsl(var(--bg-white-wb-hsl));
+	backdrop-filter: blur(10px);
 
-
+}
+[data-object-type="whiteboardInstance"] > div  div[class*="group-hover"] > div:first-child{
+	display: none;
+}
+[data-object-type="whiteboardInstance"] > div  div[class*="group-hover"] > div:hover {
+	background: hsla(50,0%,50%,.35);
+}
+[data-object-type="whiteboardInstance"]:hover > div  div[class*="group-hover"]{
+	opacity: 1;
+}
+/*****************
+WHITEBOARD - CARDS INSIDE WHITEBOARD
+******************/
 /*WHITEBOARD - CARD > CONTENT CONTAINER*/
 [whiteboard-instance-id] .mt-6.flex.flex-wrap.gap-x-4.gap-y-3.overflow-hidden,
 [data-object-type="whiteboardInstance"] .mt-6.flex.flex-wrap.gap-x-4.gap-y-3.overflow-hidden {}
@@ -4848,8 +5345,8 @@ WHITEBOARD - CARD - NAV - BUTTONS
 	opacity: 1;
 }
 ._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"] svg{
-	width: 14px;
-	height:14px;
+	width: 16px;
+	height:16px;
 }
 
 /*****************
@@ -5144,11 +5641,10 @@ WHITEBOARD > HIGHLIGHT CARD (NOT EMBED)
 /*override normal*/
 [class*="_whiteboardObject"][data-object-type="highlightElementInstance"] > div.relative {
 		margin-top: 0px;
-		border: 2px solid var(--whiteBoardCardBrdClr);
 		border-radius: .75rem;
 		transition: .2s;
 		padding-bottom: 4px;
-		padding-right: 0px;
+		padding-right: 10px;
 		padding-left: 10px;
 }
 /*ACTIVE*/
@@ -5822,6 +6318,11 @@ VIEW - TABLE - DATABASE
 [id*="database-table-cell"] + div {
 	background: var(--background-primary);
 }
+
+[data-hepta-dnd-is-selected="true"] [id*="database-table-cell"]{
+		background: var(--middle-transparent-blue);
+}
+
 /*OPEN IN POPUP BUTTON*/
 [id*="database-table-cell"] div div.clickable-overlay {
 	display: flex;
@@ -5860,6 +6361,7 @@ VIEW - TABLE - DATABASE
 /*ROW TITLE/NAME - SVG*/
 [id*="database-table-cell"] > div > div.z-30 svg {
 	opacity: .7;
+	margin-top: 2px
 }
 
 /*REMOVE LEFT BORDER - From sticky table view header*/
@@ -5870,6 +6372,9 @@ VIEW - TABLE - DATABASE
 /*REMOVE LEFT BORDER - From first cell in each row*/
 [data-hepta-dnd-context-id="tableRow"] {
 	border-left: none !important;
+}
+[data-hepta-dnd-context-id="tableRow"] > [data-property-type="title"]{
+	white-space: normal;
 }
 
 /*****************
@@ -5995,9 +6500,7 @@ PROPERTIES > MULTI-SELECT / SINGLE SELECT
 ******************
 ******************/
 [data-property-type="multiSelect"] [style*="background-color: var(--option-"],
-[data-property-type="select"] [style*="background-color: var(--option-"] {
-	
-}
+[data-property-type="select"] [style*="background-color: var(--option-"] {}
 [style*="background-color: var(--option-"] {
 	font-size: 13px;
 }
@@ -6006,10 +6509,159 @@ PROPERTIES > MULTI-SELECT / SINGLE SELECT
 	background: var(--propertySelect-WhiteBg) !important;
 }
 
-[style*="background-color: var(--option-black"]{
+[style*="background-color: var(--option-black"] {
 	background: var(--propertySelect-BlackBg) !important;
-	box-shadow:inset 0 0 0 1px var(--propertySelect-BlackBg);
+	box-shadow: inset 0 0 0 1px var(--propertySelect-BlackBg);
+	color: var(--propertySelect-BlackClr);
 }
+
+/*****************
+******************
+******************
+******************
+******************
+PROPERTIES > RELATIONS
+******************
+******************
+******************
+******************/
+
+/*relation container*/
+[id*="database-table-cell"]  > div.overflow-hidden > .flex.items-center{
+	align-items: flex-start;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+/*relation item > svg*/
+[id*="database-table-cell"]  > div.overflow-hidden > .flex.items-center svg,
+.w-40.text-label + .text-label svg, [data-is-editor-container] + .px-8 div > .text-label svg, 
+[data-is-editor-container] + .px-8 div > svg + .text-label svg{
+	width: 18px;
+	height: 18px;
+		padding: 0px;
+	padding-top: 2px;
+opacity: .8
+}
+
+/*****************
+******************
+******************
+******************
+******************
+PROPERTIES > RELATION > DROPDOWN MENU
+******************
+******************
+******************
+******************/
+:root {
+	--relationItemPadTopBtm:2px;
+}
+.z-dropdown-menu[class*="436"] .hepta-menu-item {
+	height: unset;
+	padding-top: var(--relationItemPadTopBtm);
+	padding-bottom: var(--relationItemPadTopBtm);
+	display: flex;
+	align-items: flex-start
+}
+.z-dropdown-menu[class*="436"] .hepta-menu-item > svg {
+	margin-top: var(--relationItemPadTopBtm);
+}
+.z-dropdown-menu[class*="436"] .hepta-menu-item > .truncate {
+	overflow: visible;
+	white-space: normal;
+overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+
+/*****************
+******************
+******************
+******************
+******************
+PROPERTIES > NEW PROPERTIE DROPDOWN
+******************
+******************
+******************
+******************/
+div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl:not(div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.w-62,div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.max-h-70vh){
+	width: 390px !important;
+	background: var(--refBgClr);
+	backdrop-filter: blur(100px);
+}
+
+
+div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div{
+	overflow-x: hidden;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh{
+	max-height: 82vh;
+
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary.bg-light-grey{
+	background: hsla(0,0%,50%,.1);
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex:first-child{
+	font-weight: 500;
+	color: var(--bldClr);
+	
+}
+
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex:first-child + div[class*="gap"]{
+	gap: 2px;
+	margin-top: 2px;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex > .relative{
+	background: hsla(0,0%,50%,.075);
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	padding-right: 3px;
+	line-height: 1.4;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex > .relative:hover{
+	background: hsla(0,0%,50%,.2)
+}
+
+
+/*****************
+******************
+TAGS DROPDOWN > MULTI SELECT
+******************
+******************/
+
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh{
+	max-height: 78vh;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1{
+
+}
+
+
+/*option container*/
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1 > div:first-child{
+	width: 100%;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1 > div.h-8{
+	padding-top: 3px;
+	padding-bottom: 3px;
+	height: unset;
+	margin: 0px;
+}
+
+
+/*****************
+******************
+PROPERTY > TEXT EDIT POPUP
+******************
+******************/
+
 
 /*****************
 ******************
@@ -6183,12 +6835,20 @@ CARD LIBRARY - TOOLBAR
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.overflow-hidden > .flex.cursor-pointer,
 .z-10 > ._windowDraggable_80mcn_1.flex.items-center.gap-x-2.bg-background-primary.p-2 + div > button{
 	border-radius: 5px;
-	height: unset;
+	height: 30px;
 	padding: 3px 5px 3px !important;
 	color: var(--textColorSubtle);
 	margin: 0px !important;
 	margin-right: 3px;
+	border: 1px solid hsl(180, 0%, 50%,.4);
 }
+.z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.flex.cursor-pointer:first-of-type,.z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.flex.cursor-pointer:nth-of-type(3),.z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.flex.cursor-pointer:nth-of-type(4){
+	box-shadow:inset 0 0 0 100px var(--cardlibFilterBtnBgClr-FirstBtn);
+}
+.z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.flex.cursor-pointer:nth-of-type(4){
+	margin-right: 10px !important;
+}
+
 /*CARD LIBRARY > FILTER BUTTON - ACTIVE*/
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.flex.cursor-pointer.text-active,
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.overflow-hidden > .flex.cursor-pointer.text-active {
@@ -6210,6 +6870,20 @@ CARD LIBRARY - TOOLBAR
 /*CARD LIBRARY > FILTER BUTTOM - REMOVE FITER BUTTON*/
 .z-10 > ._windowDraggable_80mcn_1 + div.box-border > div._windowNonDraggable_80mcn_5 {
 	order: 0199;
+}
+.z-10 > ._windowDraggable_80mcn_1 + div.box-border > div.ml-auto{
+	margin-left: unset;
+	order: 9494949494;
+	margin-left: auto;
+}
+
+
+/*****************
+CARD LIBRARY TOOLBAR DROPDOWN
+******************/
+
+div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label > .flex.max-h-\[min\(50vh\,400px\)\].flex-col{
+	max-height: 80vh
 }
 
 
@@ -6392,6 +7066,21 @@ CARD LIBRARY - CARD > FIRST BLOCK
 	display: flex !important;
 }
 
+/*****************
+CARD LIBRARY - TODO / CHECKBOX
+******************/
+#root .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type="todo_list_item"]:first-child > [class*="_bulletWrapper"] [class*="checkboxIcon"]{
+	--checkboxBoxPositionLeft:-6px;
+	--checkboxBoxScale:1.2;
+}
+/*CARD LIBRARY - HIDE ALL CHILDREN EXCEPT FIRST*/
+#root .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type="todo_list_item"]:first-child > [class*="nestedBlocks"] > [data-node-type]{
+	display: none;
+}
+#root .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type="todo_list_item"]:first-child > [class*="nestedBlocks"] > [data-node-type="paragraph"]{
+	display: block;
+}
+
 
 
 /*****************
@@ -6494,6 +7183,7 @@ CARD LIBRARY - PDFS IMAGES AND VIDEO
 	max-height: var(--cardlibImageHeight);
 	position: relative;
 	overflow: hidden;
+	box-shadow: 0 0 0 1px var(--cardlibBrdClr) !important;
 }
 .grid.select-none > div > [style*="aspect-ratio"]{
 		aspect-ratio: unset !important;
@@ -6516,6 +7206,16 @@ CARD LIBRARY - PDFS IMAGES AND VIDEO
 	z-index: -1
 }
 
+/*****************
+CARD LIBRARY - PDFS IMAGES AND VIDEO - FILE NAME
+******************/
+.grid.select-none > div > img + div > div,
+.grid.select-none > div > .pointer-events-none  + div > div{
+	margin-left: calc(var(--cardlibCardPadLeftRight) + 5px) !important;
+	margin-bottom: 5px;
+	background: hsla(0,0%,10%,0.4);
+	backdrop-filter:blur(10px);
+}
 
 /*****************
 CARD LIBRARY - COUNTER 
@@ -6532,7 +7232,6 @@ CARD LIBRARY - COUNTER
 	display: flex;
 
 }
-
 
 /*****************
 ******************
@@ -6589,7 +7288,8 @@ DARK > POPUP
 
 /*DARK > POPUP > INFO*/
 [data-theme="dark"] #root ~ .p-12.hepta-scrim.cursor-pointer.items-center > .flex.overflow-x-hidden.bg-background-secondary > .grow > .grow.overflow-y-auto.overflow-x-hidden.scrollbar-gutter-stable > [class*="_info_"] {
-	background: var(--infoBgClrPopup) !important;
+	/*background: var(--infoBgClrPopup) !important;*/
+	overflow: hidden;
 }
 /*DARK > POPUP > INFO*/
 [data-theme="dark"] #root ~ .p-12.hepta-scrim.cursor-pointer.items-center > .flex.overflow-x-hidden.bg-background-secondary > .grow > .grow.overflow-y-auto.overflow-x-hidden.scrollbar-gutter-stable > [class*="_info_"].-mx-7.pt-12.flex {
@@ -6851,6 +7551,55 @@ body > .hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3 > .te
 }
 
 
+/*Modal / Info popup > File Name */
+
+
+/*****************
+******************
+FLOATING INFO
+******************
+******************/
+.hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > [class*="680px"][class*="w-120"]{
+	max-height: 90vh;
+	width: 600px;
+	max-width: 100%;
+}
+
+/*****************
+FLOATING INFO > TITLE
+******************/
+.hepta-pseudo-overlay .absolute.top-0.text-body.text-primary.rounded-t{
+	position: relative;
+}
+.hepta-pseudo-overlay .absolute.top-0.text-body.text-primary.rounded-t,
+.hepta-pseudo-overlay .absolute.top-0.text-body.text-primary.rounded-t > div.flex,
+.hepta-pseudo-overlay .absolute.top-0.text-body.text-primary.rounded-t p.truncate{
+	min-width: 100% !important;
+	width: 100% !important;
+}
+#root ~ .p-12.hepta-scrim > .w-full > .flex.w-full > .flex, 
+#root ~ .p-12.hepta-scrim > .w-full > .flex.w-full > .flex > .flex:first-child, 
+#root ~ .p-12.hepta-scrim > .w-full > .flex.w-full > .flex > .flex > .text-label{
+	min-width: 88% !important;
+	width: 100% !important
+}
+/*****************
+FLOATING INFO > PROPERTIES
+******************/
+.hepta-pseudo-overlay .absolute.top-0.text-body.text-primary.rounded-t + div{
+	margin-top: 0px;
+}
+
+/*PROPERTIES CONTAINER*/
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div > div{
+	
+}
+
+/*PROPERTIES*/
+.hepta-scrim > [class*="680px"]>[class*="pseudo"] > .absolute + div > div > div > div.my-1.flex.flex-col.gap-y-1{
+	order: 1;
+}
+
 /*****************
 ******************
 ******************
@@ -6898,6 +7647,30 @@ RIGHT SIDEBAR
 	/**/
 	--cardlibHighlightTopPad:0px;
 }
+
+/*RIGHT SIDEBAR > INFO > DOCUMENT FULL SCREEN ONLY*/
+[class*="bg-background"][style*="width"] [class*="gutter-stable"].scrollbar-gutter-stable.h-full.overflow-y-auto.overflow-x-hidden.bg-background-secondary.py-2.pl-3{
+	max-height: calc(100vh - 47px);
+	overflow: auto;
+	overflow-x: hidden;
+}
+[class*="bg-background"][style*="width"] [class*="gutter-stable"].scrollbar-gutter-stable.h-full.overflow-y-auto.overflow-x-hidden.bg-background-secondary.py-2.pl-3 > div{
+	overflow-x:hidden;
+	
+}
+[class*="bg-background"][style*="width"] [class*="gutter-stable"].scrollbar-gutter-stable.h-full.overflow-y-auto.overflow-x-hidden.bg-background-secondary.py-2.pl-3 .mt-1 > .my-1{
+	padding-right: 10px;
+}
+[class*="bg-background"][style*="width"] [class*="gutter-stable"].scrollbar-gutter-stable.h-full.overflow-y-auto.overflow-x-hidden.bg-background-secondary.py-2.pl-3 .mt-1 > .my-1 [class*="_content"],
+[class*="bg-background"][style*="width"] [class*="gutter-stable"].scrollbar-gutter-stable.h-full.overflow-y-auto.overflow-x-hidden.bg-background-secondary.py-2.pl-3 .mt-1 > .my-1 [class*="_content"] * {
+	transform: unset !important;
+}
+[class*="bg-background"][style*="width"] [class*="gutter-stable"].scrollbar-gutter-stable.h-full.overflow-y-auto.overflow-x-hidden.bg-background-secondary.py-2.pl-3 .mt-1 > .my-1 [class*="_content"] [style*="height"],
+[class*="bg-background"][style*="width"] [class*="gutter-stable"].scrollbar-gutter-stable.h-full.overflow-y-auto.overflow-x-hidden.bg-background-secondary.py-2.pl-3 .mt-1 > .my-1 [class*="_content"] [style*="width"]{
+	height: unset !important;
+	width: unset !important;
+}
+
 /*whiteboard fix*/
 ._whiteboardToolbarLeft_1fabk_4 ~ ._rightSidebar_1fabk_5 > [class*="bg-background"][style*="width"] > .relative.flex.shrink-0.flex-col.overflow-hidden.bg-background-primary{
 	height: 100%;
@@ -7159,7 +7932,7 @@ z-index: 1 !important;
 [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex + div .ProseMirror{
 	padding-bottom:10px;
 	padding-top: 10px;
-	
+	padding-left: calc(var(--rightSideBarNavBtnW) + var(--rightSideBarNavTitlePadL)) !important
 }
 
 /*****************
@@ -7347,10 +8120,6 @@ RIGHT SIDEBAR - WIDTH CORRECTION - WHITEBOARD
 	flex-grow: 0 !important;
 }
 
-
-
-
-
 /*****************
 ******************
 ******************
@@ -7459,7 +8228,6 @@ ALL HEADINGS > MARGIN TOP
 #root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] [data-node-type="toggle_list_item"][class*="_toggleHeadingLevel"]{
 	--headingMargTop: 6px !important;
 }
-
 
 /*****************
 ******************
@@ -7617,7 +8385,6 @@ TOC ITEM - HEADING INDICATOR
 	content: "6";
 }
 
-
 /*****************
 ******************
 ICONS
@@ -7674,9 +8441,6 @@ ICONS
 	--iconBulletCIRCLE:var(--iconBulletCIRCLE-Dark);
 	--iconBulletSQUARE:var(--iconBulletSQUARE-Dark);
 }
-
-
-
 
 /*****************
 ******************
