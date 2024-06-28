@@ -1,0 +1,459 @@
+/******
+This file is a direct copy of: 
+/Users/adman/Dropbox/Dropbox Local/HYPERWEB - INJECT/CSS - HEPTABASE/HeptabaseV6.css
+*******/
+
+
+/*ROOT*/
+:root {
+	/*main*/
+	--bldClr: black;
+	--invertClr: white;
+	--text-color: hsl(0, 0%, 20%) !important;
+	--reftext-color: hsl(0, 0%, 0%) !important;
+	--text-color-contrast: #000;
+	--text-color-highlight:var(--text-color-contrast)
+	--underlineLineColor: var(--text-color-contrast);
+	--underlineTextColor: var(--text-color-contrast);
+	--text-color-Strikethrough: hsl(0, 0%, 63%);
+	--heading-color: hsl(0, 0%, 0%);
+	--background-primary: hsl(0, 0%, 95%);
+	--background-editor-primary: hsl(0, 0%, 100%);
+	--background-primary-for-blur: hsl(0, 0%, 100%, .4);
+
+	/*links*/
+	/*roam--internalLinkClr: hsl(203, 82%, 35%);*/
+	--internalLinkClr: hsl(203, 58%, 35%);
+	--internalLinkClr-Mention: ;
+	--internalLinkBgClr: hsl(215, 10%, 56%, 0.14);
+	--internalLinkBrdClr: hsla(207, 8%, 41%, .3);
+	/*underline*/
+	--internalLinkBrdClrUnderline: hsla(207, 8%, 41%, 0.8);
+
+	/*Internal links*/
+	--LinkBrd: none;
+	--LinkBrdBtm: 1.0px solid var(--LinkBrdClr);
+	--LinkBrdClr: hsl(215, 100%, 46%, 1);
+	--LinkClr: hsl(215, 100%, 46%, 1);
+
+	--LinkBgClr: hsl(215, 100%, 75%, .25);
+	--LinkBgClr-Hover: ;
+	/*active*/
+	--activeBgClr: #207dff;
+	--active-item: #207dff;
+	--active-item-faint: hsla(215, 100%, 56%, .25);
+	--activeClr: white;
+	/*refs*/
+	--refBgClr: hsl(180, 0%, 100%);
+	--refBrdClr: hsl(180, 0%, 83%);
+	/*card-lib*/
+	--cardlibBgClr: hsl(180, 0%, 98%);
+	--cardlibBrdClr: hsl(180, 0%, 0%, .2);
+	--cardlibBrdClr-Focus: hsl(264, 6%, 100%);
+	--cardlibBoxShad-Focus: 0px 8px 31px rgba(43, 41, 0, 0.1);
+	--cardlibHoverFiter: brightness(.7) contrast(2);
+	/*card-lib card*/
+	--cardlibCardBgClr: hsl(180, 0%, 100%, 1);
+	--cardlibCardBgClr-Hover: hsl(180, 0%, 0%, .05);
+	/*card-lib button*/
+	--cardlibFilterBtnBgClr-FirstBtn: hsl(180, 0%, 50%, .1);
+
+	/*sidebar*/
+	--sideBarBgClr: hsl(180, 0%, 97.5%, 1);
+	--sideBarNoteBgClr: var(--sideBarBgClr);
+	--sideBarBrdClr: hsl(180, 0%, 61%, 0.4);
+	--textColorSubtle: #3b3b3b;
+	--sideBarStickyBrdClr: #d4d4d4;
+	--sideBarStickyBrdClrDarker: hsl(0, 0%, 87%);
+	--sideBarNoteInnerBgClr: hsl(180, 0%, 100%, 1);
+	--sideBarNoteHeaderBgClr: hsl(180, 0%, 94%, 1);
+	/*search*/
+	--searchBgClr: hsl(0, 0%, 95%, .5);
+	--searchMatchBg: hsl(215, 100%, 46%, 1);
+	/*whiteboard*/
+	--whiteBoardBoardBg: #eeeded;
+	--whiteBoardCardBgClr: white;
+	--whiteBoardCardBrdClr: hsl(180, 0%, 0%, 0.2);
+	--whiteBoardCardBrdClr-Editing: hsl(180, 0%, 0%, .12);
+	--whiteBoardToolBarBg: hsl(180, 0%, 70%, 0.11);
+	--whiteBoardMapCardBgClr: hsla(0, 0%, 50%, 0.15);
+	/*whiteboard - mind map*/
+	--mMapBrdClr: hsla(0, 0%, 0%, .1);
+	--mMapOutlineClr: hsla(0, 0%, 0%, .07);
+	/*whiteboard - bg colors*/
+	--whiteBoardCardBg-Red: hsl(0, 90%, 89%);
+	--whiteBoardCardBg-Orange: hsl(25, 90%, 84%);
+	--whiteBoardCardBg-Yellow: hsl(48, 83%, 76%);
+	--whiteBoardCardBg-Green: hsl(135, 40%, 82%);
+	--whiteBoardCardBg-Blue: hsl(210, 100%, 89%);
+	--whiteBoardCardBg-Purple: hsl(260, 50%, 88%);
+	--whiteBoardCardBg-Black: hsl(0, 0%, 90%);
+	--bg-black-sect: hsla(0, 0%, 90%);
+	/*whiteboard - border colors*/
+	--whiteBoardCardBrd-Red: hsla(0, 50%, 75%);
+	--whiteBoardCardBrd-Orange: hsla(33, 70%, 65%);
+	--whiteBoardCardBrd-Yellow: hsla(45, 71%, 60%);
+	--whiteBoardCardBrd-Green: hsla(135, 40%, 64%);
+	--whiteBoardCardBrd-Blue: hsla(210, 70%, 68%);
+	--whiteBoardCardBrd-Purple: hsla(250, 81%, 74%, 0.7);
+	--whiteBoardCardBrd-Black: hsla(0, 0%, 0%, .2);
+	/*whiteboard - Sections*/
+	--whiteBoardSectionBgClr: #e9e8e8;
+	--whiteBoardSectionBrdClr: hsl(0, 0%, 86.5%);
+	/*whiteboard - Text Element*/
+	--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
+	--whiteBoardTextElementBrdClr: hsla(0, 0%, 0%, .115);
+	--textelementBrdClr-Editing: hsla(0, 0%, 0%, .05);
+	--whiteboardtextelementLevelBrdClr:hsla(0,0%,0%,.1);
+	/*whiteboard - Toolbars*/
+	--whiteboardToolbarBgClr: hsla(0, 0%, 100%, 0);
+	--whiteboardToolbarBtnBrdClr: hsla(0, 0%, 00%, .1);
+	/*button*/
+	--buttonBg: hsl(0, 0%, 100%);
+	--buttonBrdClr: hsl(0, 0%, 0%, .1);
+	--buttonBg-Hover: hsl(0, 0%, 0%, .1);
+	/*highlight*/
+	--hLightedTxtBgClr: hsl(0, 0%, 10%, 0.03);
+	--hlightedTxtBrdClr: hsl(0, 0%, 10%, 0.035);
+	--hlightWrapperBgClr: hsl(0, 0%, 100%, 1);
+	--hlightWrapperBrdClr: hsla(0, 0%, 0%, .2);
+	--hlightAccentBg: rgba(0, 0, 0, .2);
+	/*inline highlight*/
+	--bg-red-editor: hsl(0, 80%, 50%, 0.2) !important;
+	--bg-yellow-editor: hsl(52, 96%, 56%, .5) !important;
+	--bg-green-editor: hsl(145, 60%, 50%, .45) !important;
+	--bg-gray-editor: var(--blockquoteBgClr) !important;
+	/*inline text color*/
+	--text-gray-editor: hsl(252, 5%, 72%) !important;
+	/*embed*/
+	--embedBgClr: hsl(0, 0%, 10%, 0.03);
+	--embedBrdClr: hsl(0, 0%, 10%, 0.1);
+	/*popup*/
+	--popupBgClr: white;
+	--popupBrdClr: hsl(0, 0%, 10%, 0.1);
+	/*popup*/
+	--searchBgClr: hsl(0, 0%, 97%);
+	--searchBrdClr: hsl(0, 0%, 87%);
+	/*tag groups*/
+	--tagGroupClr: black;
+	/*tags*/
+	--tagClr: var(--text-color);
+	--tagBgClr: #ffffff;
+	--tagBrdClr: rgba(0, 0, 0, .13);
+	--tagBgClr-Hover: hsla(0, 0%, 90%, .4);
+	--tagBrdClr-Hover: rgba(0, 0, 0, .15);
+	/*tags - in info container*/
+	--taginfoBgClr: rgba(0, 0, 0, .075);
+	/*Property - select backgrounds*/
+	--propertySelect-WhiteBg: var(--taginfoBgClr);
+	--propertySelect-BlackBg: hsla(0, 0%, 0%, 1);
+	--propertySelect-BlackClr: var(--invertClr);
+	/*pdf viewer-colors*/
+	--pdfViewerYellow: hsl(50, 100%, 73%);
+	--pdfViewerRed: hsl(1, 100%, 84%);
+	--pdfViewerOrange: hsl(32, 88%, 78%);
+	--pdfViewerGreen: hsl(100, 48%, 73%);
+	--pdfViewerBlue: hsl(200, 80%, 76%);
+	--pdfViewerPurple: hsl(257, 64%, 85%);
+	--pdfViewerPink: hsl(310, 64%, 79%);
+	/*pdf viewer*/
+	--pdfViewerBgClr: hsl(0, 0%, 98%);
+	--pdfViewerActiveBrdClr: hsl(206, 100%, 59%);
+	--pdfViewerPageBrdClr: hsl(0, 0%, 10%, 0.2);
+	/*right sidebar*/
+	--rightSidebarBgClr: hsl(0, 0%, 96%);
+	/*images*/
+	--imgBrdClr: hsl(0, 0%, 72%, .6);
+	/*drag handle*/
+	--dragHandleBgHover: hsla(0, 0%, 0%, .08);
+	/*toggle*/
+	--toggleBgClr: hsla(0, 0%, 0%, .02);
+	--toggleBgClr-Folded: hsla(0, 0%, 0%, .04);
+	--toggleBrdClr: hsla(0, 0%, 0%, .05);
+	--toggleBtnBrdClr: hsla(0, 0%, 0%, .06);
+	--toggleBtnBgClr: hsla(0, 0%, 0%, .03);
+	--toggleBtnBgClr-Hover: hsla(0, 0%, 0%, .05);
+	--toggleWhiteboardFilter: brightness(.9);
+	--toggleChildrenBrdBtmBG: hsla(0, 0%, 50%, .25);
+	/*property*/
+	--propertyEditBgClr: hsl(0, 0%, 100%);
+	--propertyEditBrdClr: hsl(0, 0%, 85%);
+	/*bullets*/
+	--bulletBgClr: black;
+	--bulletUnderBgClr: hsla(0, 0%, 0%, .1);
+	--bulletUnderBgClr-Hover: hsla(0, 0%, 0%, .15);
+	/*checkboxes*/
+	--checkboxBoxBrdClr:hsla(0,0%,0%,.4);
+	--checkboxBoxBrdClr-Checked:var(--checkboxBoxBg-Checked);
+	--checkboxBoxBg-Checked:hsla(214, 100%, 50%, 1);
+	/*toc*/
+	--tocItemClr: hsl(0, 0%, 0%, .6);
+	--tocBgClr-Hover: rgba(0, 0, 0, .08);
+	--tocBgClr-Active: hsl(211, 100%, 53%, .15);
+	/*blockquote*/
+	--blockquoteLeftBrdClr: hsl(0, 0%, 0%, 1);
+	--blockquoteBrdClr: hsl(120, 0%, 0%, .075);
+	--blockquoteBgClr: hsl(0, 0%, 0%, .03);
+	/*inline code*/
+	--inlineCodeTxtClr: hsl(342, 69%, 7%);
+	--inlineCodeBgClr: hsla(214, 0%, 80%, .32);
+	--inlineCodeBrdClr: hsl(214, 6%, 22%, .1);
+	/*code block*/
+	--codeBlockBgClr: hsl(215, 0%, 50%, .1);
+	--codeBlockBgFaint: hsl(215, 0%, 50%, .075);
+	--codeBlockBrdClr: hsl(233, 0%, 50%, .2);
+	--codeBlockTxtClr: hsl(207, 0%, 8%);
+	/*code block buttons*/
+	/*code block colors*/
+	--codeBlockProperty: #79c0ff;
+	/*mentions*/
+	--mentionBrdClr: hsl(120, 0%, 83%);
+	--mentionBgClr-Hover: hsl(180, 0%, 61%, 0.2);
+	--mentionDotBtnBgClr-Hover: ;
+	/*math block*/
+	--mathblockBgClr: hsl(120, 0%, 83%, .2);
+	--mathblockBrdClr: hsl(120, 0%, 91%);
+	--mathblockSelected: hsla(210, 100%, 51%, .05);
+	--mathblockBtnBgClr: hsl(215, 100%, 56%);
+	/*inline math*/
+	--inlinemathClr: rgba(0, 0, 0, 2);
+	--inlinemathBrdClr: hsl(0, 0%, 50%, 0.4);
+	/*info container*/
+	--infoBgClr: hsl(0, 0%, 97.5%);
+	--infoBgClrPopup: var(--infoBgClr);
+	--infoBrdClr: hsl(0, 0%, 0%, 0.0825);
+	/*version history*/
+	--versionHistBgClr: var(--infoBgClr);
+	--versionHistDocBgClr: var(--background-editor-primary);
+	/*tables*/
+	--tableBrdClr: hsl(120, 0%, 0%, .215);
+}
+
+[data-theme="dark"] {
+	/*main*/
+	--bldClr: hsl(0, 0%, 100%);
+	--invertClr: hsl(0, 0%, 100%);
+	--text-color: hsla(246, 0%, 88%) !important;
+	--reftext-color: var(--text-color) !important;
+	--text-color-contrast: var(--text-color) !important;
+	--text-color-highlight:var(--text-color);
+	--text-color-Strikethrough: hsl(246, 2%, 52%);
+	--heading-color: hsl(0, 0%, 94%);
+	--background-primary: hsl(229, 5%, 10%) !important;
+	--background-editor-primary: var(--background-secondary);
+	--background-primary-for-blur: hsl(229, 4%, 10%, .4);
+	/*--background-secondary: hsl(40, 4%, 10%) !important;*/
+	--background-secondary: hsl(229, 5%, 10%) !important;
+	--menu-texture-bg-hard: var(--background-primary) !important;
+	/*links*/
+	--internalLinkClr: hsl(221, 8%, 76%);
+	--internalLinkClr-Mention: var(--text-color);
+	--internalLinkBgClr: hsl(211, 100%, 73%, .11);
+	--internalLinkBrdClr: hsl(221, 8%, 70%,.5);
+	/*underline*/
+	--internalLinkBrdClrUnderline: hsl(221, 8%, 80%,1);
+	--underlineLineColor: hsla(246, 0%, 88%, .85);
+	--underlineTextColor: var(--text-color);
+
+	--LinkFilter-Hover: brightness(1.2)saturate(1);
+
+	/*Internal links*/
+	--LinkBrd: 1px solid var(--LinkBrdClr);
+	--LinkBrdBtm: var(--LinkBrd);
+	--LinkBrdClr: hsl(211, 100%, 74%, 1);
+	--LinkClr: hsl(211, 100%, 73%);
+	--LinkBgClr: hsl(209, 100%, 50%, .151);
+	--LinkBgClr-Hover: transparent;
+	/*active*/
+	--activeBgClr: #207dff;
+	--active-item: hsl(202, 100%, 66%) !important;
+	--active-item-faint: hsla(215, 100%, 56%, 0.4);
+	--activeClr: black;
+	/*refs*/
+	--refBgClr: hsl(220, 5%, 23%, 0.40);
+	--refBrdClr: hsla(0, 0%, 100%, 0.05196078431372549);
+	/*card-lib*/
+	--cardlibBgClr: var(--popupBgClr);
+	--cardlibBrdClr: var(--popupBrdClr);
+	--cardlibBrdClr-Focus: hsl(227, 5%, 24%);
+	--cardlibBoxShad-Focus: 0px 8px 31px hsla(217.7, 0%, 0%, 0.55);
+	--cardlibHoverFiter: brightness(1.4) contrast(1.2);
+	/*card-lib card*/
+	--cardlibCardBgClr: hsl(180, 0%, 100%, .025);
+	--cardlibCardBgClr-Hover: hsl(180, 0%, 100%, .05);
+	/*sidebar*/
+	--sideBarBgClr: hsl(219, 7%, 12%);
+	--sideBarNoteBgClr: var(--sideBarBgClr);
+	--sideBarBrdClr: hsla(0, 0%, 100%, 0.1411764705882353);
+	--textColorSubtle: #bbb5ae;
+	--sideBarStickyBrdClr: #393b3c;
+	--sideBarStickyBrdClrDarker: hsl(200, 3%, 18%);
+	--sideBarNoteInnerBgClr: hsl(222, 7%, 10.5%);
+	--sideBarNoteHeaderBgClr: hsl(229, 5%, 12%);
+
+	/*search*/
+	--searchMatchBg: hsl(211, 100%, 53%);
+	/*whiteboard*/
+	--whiteBoardBoardBg: #191919;
+	--whiteBoardCardBgClr: hsl(0, 0%, 12%);
+	--whiteBoardCardBrdClr: hsl(180, 0%, 61%, 0.2);
+	--whiteBoardCardBrdClr-Editing: hsl(180, 0%, 61%, 0.2);
+	--whiteBoardToolBarBg: hsl(180, 0%, 10%, 0.5);
+	--whiteBoardMapCardBgClr: hsla(0, 0%, 50%, .3);
+	/*whiteboard - mind map*/
+	--mMapBrdClr: hsla(0, 0%, 100%, .1);
+	--mMapOutlineClr: hsla(0, 0%, 100%, .15);
+	/*whiteboard - bg colors*/
+	--whiteBoardCardBg-Red: hsl(0, 48%, 24%);
+	--whiteBoardCardBg-Orange: hsl(32, 51%, 26%);
+	--whiteBoardCardBg-Yellow: hsl(50, 60%, 23%);
+	--whiteBoardCardBg-Green: hsl(155, 57%, 20%);
+	--whiteBoardCardBg-Blue: hsl(210, 55%, 25%);
+	--whiteBoardCardBg-Purple: hsl(269, 41%, 26%);
+	--whiteBoardCardBg-Black: #191919;
+	/*whiteboard - border colors*/
+	--whiteBoardCardBrd-Red: hsl(2, 48%, 32%);
+	--whiteBoardCardBrd-Orange: hsl(32, 51%, 35%);
+	--whiteBoardCardBrd-Yellow: hsl(50, 60%, 30%);
+	--whiteBoardCardBrd-Green: hsla(155, 57%, 30%);
+	--whiteBoardCardBrd-Blue: hsl(210, 55%, 36%);
+	--whiteBoardCardBrd-Purple: hsl(269, 41%, 36%);
+	--whiteBoardCardBrd-Black: hsla(0, 0%, 100%, .15);
+	--bg-black-sect: hsla(0, 0%, 30%);
+	/*whiteboard - Sections*/
+	--whiteBoardSectionBgClr: hsl(0, 0%, 10.75%);
+	--whiteBoardSectionBrdClr: hsl(0, 0%, 12.5%);
+	/*whiteboard - Text Element*/
+	--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
+	--whiteBoardTextElementBrdClr: hsl(0, 0%, 19%);
+	--textelementBrdClr-Editing: hsl(0, 0%, 22%, .4);
+	--whiteboardtextelementLevelBrdClr:hsla(0,0%,100%,.1);
+	/*whiteboard - Toolbars*/
+	--whiteboardToolbarBgClr: hsla(0, 0%, 100%, .0085);
+	--whiteboardToolbarBtnBrdClr: hsla(0, 0%, 100%, .05);
+	/*button*/
+	--buttonBg: hsl(202, 0%, 30%);
+	--buttonBrdClr: hsl(0, 0%, 50%, .5);
+	--buttonBg-Hover: hsl(0, 0%, 40%);
+	/*highlight*/
+	--hLightedTxtBgClr: hsl(0, 0%, 100%, 0.03);
+	--hlightedTxtBrdClr: hsl(0, 0%, 100%, 0.035);
+	--hlightWrapperBgClr: hsl(0, 0%, 100%, 0.051);
+	--hlightWrapperBrdClr: black;
+	--hlightAccentBg: rgba(0, 0, 0, .35);
+	--hlightWrapperBrdClr2: hsl(202, 13%, 90%, .08);
+	/*inline highlight*/
+	--bg-red-editor: hsla(0, 84%, 60%, .4) !important;
+	--bg-yellow-editor: hsla(50, 50%, 50%, 0.4) !important;
+	--bg-green-editor: hsla(142, 71%, 45%, .4) !important;
+	--bg-gray-editor: hsla(0,0%,100%,.06) !important;
+	/*inline text color*/
+	--text-gray-editor: hsl(252, 5%, 35%) !important;
+	/*embed*/
+	--embedBgClr: hsla(0, 0%, 100%, .05);
+	--embedBrdClr: hsla(0, 0%, 100%, .1);
+	/*popup*/
+	--popupBgClr: hsl(229, 5%, 12%);
+	--popupBrdClr: hsla(229, 0%, 100%, .08);
+	/*popup*/
+	--searchBgClr: hsl(218, 7%, 10%);
+	--searchBrdClr: hsl(218, 3%, 21%);
+	/*tag groups*/
+	--tagGroupClr: white;
+	/*tags*/
+	--tagClr: var(--text-color);
+	--tagBgClr: hsl(202, 0%, 30.5%, .355);
+	--tagBrdClr: hsl(202, 13%, 90%, .08);
+	--tagBgClr-Hover: hsla(0, 0%, 100%, 0.10196078431372549);
+	--tagBrdClr-Hover: hsl(202, 7%, 68.5%, .075);
+	/*tags - in info container*/
+	--taginfoBgClr: rgba(0, 0, 0, .13);
+	/*Property - select backgrounds*/
+	--propertySelect-WhiteBg: hsla(0, 0%, 100%, .075);
+	--propertySelect-BlackBg: hsla(0, 0%, 100%, .3);
+	--propertySelect-BlackClr: var(--invertClr);
+	/*pdf viewer*/
+	--pdfViewerBgClr: hsl(202, 13%, 15.5%);
+	--pdfViewerActiveBrdClr: hsl(206, 100%, 59%);
+	--pdfViewerPageBrdClr: hsl(0, 0%, 10%, 1.2);
+	/*right sidebar*/
+	--rightSidebarBgClr: hsl(218, 7%, 9%);
+	/*images*/
+	--imgBrdClr: hsl(233, 7%, 19%);
+	/*drag handle*/
+	--dragHandleBgHover: hsl(204, 8%, 25%);
+	/*toggle*/
+	--toggleBgClr: hsla(0, 0%, 100%, .02);
+	--toggleBgClr-Folded: hsla(0, 0%, 100%, .04);
+	--toggleBrdClr: hsla(0, 0%, 100%, .05);
+	--toggleBtnBrdClr: hsla(0, 0%, 100%, .06);
+	--toggleBtnBgClr: hsla(0, 0%, 100%, .03);
+	--toggleBtnBgClr-Hover: hsla(0, 0%, 100%, .1);
+	--toggleWhiteboardFilter: brightness(1.3);
+	--toggleChildrenBrdBtmBG: hsla(0, 0%, 50%, .185);
+	/*property*/
+	--propertyEditBgClr: hsl(359, 1%, 19%);
+	--propertyEditBrdClr: hsla(0, 0%, 100%, 0.10196078431372549);
+	/*bullets*/
+	--bulletBgClr: white;
+	--bulletUnderBgClr: hsla(0, 0%, 100%, .1);
+	--bulletUnderBgClr-Hover: hsla(0, 0%, 100%, .2);
+	/*checkboxes*/
+	--checkboxBoxBrdClr:hsla(0,0%,100%,.5);
+	--checkboxBoxBrdClr-Checked:var(--checkboxBoxBg-Checked);
+	--checkboxBoxBg-Checked:hsla(218, 82%, 65%);
+	/*toc*/
+	--tocItemClr: hsl(0, 0%, 100%, .7);
+	--tocBgClr-Hover: rgba(255, 255, 255, .08);
+	--tocBgClr-Active: hsl(211, 100%, 53%, .15);
+
+	/*blockquote*/
+	--blockquoteLeftBrdClr: hsl(0, 0%, 100%, 1);
+	--blockquoteBrdClr: hsl(218, 4%, 100%, .065);
+	--blockquoteBgClr: hsl(0, 0%, 100%, .025);
+	/*inline code*/
+	--inlineCodeTxtClr: hsl(243, 12%, 86%);
+	--inlineCodeBgClr: hsl(214, 6%, 18%);
+	--inlineCodeBrdClr: hsl(214, 6%, 22%);
+	/*code block*/
+	--codeBlockBgClr: hsl(215, 26%, 7%);
+	--codeBlockBgFaint: hsl(215, 26%, 7%, .2);
+	--codeBlockBrdClr: hsl(233, 11%, 19%);
+	--codeBlockTxtClr: hsl(207, 18%, 82%);
+	/*code block buttons*/
+	/*code block colors*/
+	--codeBlockProperty: #79c0ff;
+	/*mentions*/
+	--mentionBrdClr: hsl(208, 2%, 23%);
+	--mentionBgClr-Hover: hsl(202, 13%, 90%, .08);
+	--mentionDotBtnBgClr-Hover: ;
+	/*math block*/
+	--mathblockBgClr: hsla(0, 0%, 100%, .02);
+	--mathblockBrdClr: hsl(233, 0%, 100%, .05);
+	--mathblockSelected: rgba(35, 131, 226, .1);
+	--mathblockBtnBgClr: hsl(200, 94%, 68%);
+	/*inline math*/
+	--inlinemathClr: hsl(243, 12%, 100%, .68);
+	--inlinemathBrdClr: hsl(243, 12%, 70%, 0.2);
+	/*info container*/
+	--infoBgClr: #161719;
+	--infoBgClrPopup: hsl(220, 7%, 10.5%);
+	--infoBrdClr: hsl(0, 0%, 70%, .075);
+	/*version history*/
+	--versionHistBgClr: var(--infoBgClr);
+	--versionHistDocBgClr: hsl(220, 5%, 11%);
+	/*tables*/
+	--tableBrdClr: hsl(218, 4%, 100%, .25);
+}
+
+/*TESTING
+#root .ProseMirror,
+#root .ProseMirror * {
+	box-shadow: inset 0 0 0 .2px white;
+}*/
+/*TESTING
+#root ._whiteboardObject_1fabk_10,
+#root ._whiteboardObject_1fabk_10 * {
+	outline: .2px solid white;
+}*/
+
