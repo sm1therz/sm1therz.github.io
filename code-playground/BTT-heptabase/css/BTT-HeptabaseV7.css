@@ -300,6 +300,7 @@ This file is a direct copy of:
 	--whiteBoardCardBrdClr-Editing: hsl(180, 0%, 61%, 0.2);
 	--whiteBoardToolBarBg: hsl(180, 0%, 10%, 0.5);
 	--whiteBoardMapCardBgClr: hsla(0, 0%, 50%, .3);
+	--whiteBoardMapCardBgClr: #242629;
 	/*whiteboard - mind map*/
 	--mMapBrdClr: hsla(0, 0%, 100%, .1);
 	--mMapOutlineClr: hsla(0, 0%, 100%, .15);
