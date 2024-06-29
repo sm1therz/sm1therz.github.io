@@ -2930,7 +2930,7 @@ TABLES > STRUCTURE
 }
 
 .ProseMirror [data-node-type="table"]{
-	font-family: Roboto Condensed, georgia;
+	font-family: Roboto Flex, sans-serif;
 	/*bullet Font Family*/
 	--listBulletFontFamily:Roboto Condensed, georgia;
 	/*unordered bullet*/
@@ -2948,7 +2948,7 @@ TABLES > STRUCTURE
 	--bodyFontSize:var(--tableBodyFontSize);
 	--bodyFontLineHeight:var(--tableBodyLineHeight);
 	font-size: var(--tableBodyFontSize);
-	line-height: var(--tableBodyLineHeight);
+	line-height: 1.3;
 }
 
 .ProseMirror [data-node-type="table"]  [data-node-type*="list_item"] > [class*="_bulletWrapper"] > [class*="Icon"]:before {
