@@ -295,7 +295,7 @@ This file is a direct copy of:
 	--searchMatchBg: hsl(211, 100%, 53%);
 	/*whiteboard*/
 	--whiteBoardBoardBg: #191919;
-	--whiteBoardCardBgClr: hsl(0, 0%, 12%);
+	--whiteBoardCardBgClr: #242629;
 	--whiteBoardCardBrdClr: hsl(180, 0%, 61%, 0.2);
 	--whiteBoardCardBrdClr-Editing: hsl(180, 0%, 61%, 0.2);
 	--whiteBoardToolBarBg: hsl(180, 0%, 10%, 0.5);
