@@ -1,30 +1,31 @@
-// This does not work. no keyboard shortcuts work with us. But it DOES silence the "shortcut not recognized" beep.
-// https://www.perplexity.ai/search/how-do-i-add-keyboard-shortcut-VjflhWW7STy.CgMaJaSNsA#:~:text=We-,prevent%20default%20browser%20shortcuts,-to%20avoid%20conflicts
-
+// HISTORY > BACKWARD
 document.addEventListener('keydown', function(event) {
-  // Prevent default browser shortcuts
-  if (event.ctrlKey || event.metaKey) {
-	event.preventDefault();
-  }
+		if (event.metaKey && event.code === 'BracketLeft') {
+				event.preventDefault();
+				event.stopPropagation();
+				window.history.back();
+		}
+}, true);
 
-  // Define shortcuts
-  switch (true) {
-	case (event.key === 'S' && (event.ctrlKey || event.metaKey)):
-	  console.log('Ctrl/Cmd + S pressed');
-	  // Add your save action here
-	  break;
 
-	case (event.key === 'F' && (event.ctrlKey || event.metaKey)):
-	  console.log('Ctrl/Cmd + F pressed');
-	  // Add your find action here
-	  break;
+// HISTORY > FORWARD
+(async () => {
+		// Add event listener to handle CMD + ]
+		document.addEventListener('keydown', function(event) {
+				// Check for CMD + ] (MetaKey is the Command key on macOS)
+				if (event.metaKey && event.code === 'BracketRight') {
+						// Prevent the default action and stop propagation to avoid the beep
+						event.preventDefault();
+						event.stopPropagation();
 
-	case (event.key === 'P' && (event.ctrlKey || event.metaKey)):
-	  console.log('Ctrl/Cmd + P pressed');
-	  // Add your print action here
-	  break;
+						// Execute window.history.forward()
+						window.history.forward();
+						
+						// Log to the console for debugging
+						console.log('CMD + ] detected, executed window.history.forward()');
+				}
+		}, true); // Use capture phase to ensure it catches all keydown events
 
-	// Add more shortcuts as needed
-  }
-});
-
+		// Optional: Log to the console for debugging
+		console.log('Script to intercept CMD + ] and navigate forward injected successfully');
+})();

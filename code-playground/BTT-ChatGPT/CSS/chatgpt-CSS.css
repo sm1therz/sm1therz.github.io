@@ -206,35 +206,39 @@ button[aria-label="Attach files"] {
 }
 /***********
 ************
-! LEFT SIDEBAR
+LEFT SIDEBAR
 ************
 ************/
 :root {
-	--leftSideBarWidth: 320px;
-	--leftSideBarLinkPad:.5rem;
+		--leftSideBarWidth: 320px;
+		--leftSideBarLinkPad:.5rem;
 }
 #__next > div [style*="260"],
 #__next > div > [style*="260"] > .w-\[260px\] {
-	width: var(--leftSideBarWidth) !important;
+		width: var(--leftSideBarWidth) !important;
 }
 
 
 #__next > div [style*="260"] li a div {
-	white-space: normal;
-	overflow: hidden;
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
+		white-space: normal;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
 }
 #__next > div [style*="260"] li a + div.absolute {
-	display: flex;
-	align-items: flex-start;
-	top: var(--leftSideBarLinkPad)
+		display: flex;
+		align-items: flex-start;
+		top: var(--leftSideBarLinkPad);
+		opacity:0
+}
+#__next > div [style*="260"] li:hover a + div.absolute{
+		opacity: 1;
 }
 #__next > div [style*="260"] li a + div.absolute span {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 }
 /***********
 ************
