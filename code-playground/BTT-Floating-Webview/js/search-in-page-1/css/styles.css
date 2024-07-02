@@ -2,83 +2,105 @@
 :root{
 	--finderBtnPositionTop:5px;
 	--finderBtnPositionRight:40px;
+	--finderBtnOpenWidth:32px;
+	--finderItemGap:6px;
+	--finderItemBrdRad:6px;
+	--finderItemBg:hsla(0,0%,100%,.4);
+	--finderItemBrdClr:hsla(0,0%,50%,.15);
 }
+
+/*BUTTON - OPEN SEARCH*/
+.finder-activator {
+	position: fixed;
+	top: calc(var(--finderBtnPositionTop) + var(--finderItemGap));
+	right: var(--finderBtnPositionRight);
+	z-index: 1000;
+	width: var(--finderBtnOpenWidth);
+	height: var(--finderBtnOpenWidth);
+	background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221em%22%20height%3D%221em%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M21%2021l-4.486-4.494M19%2010.5a8.5%208.5%200%201%201-17%200a8.5%208.5%200%200%201%2017%200z%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')  var(--finderItemBg) no-repeat center;
+	background-size: 60%;
+	border-radius: var(--finderItemBrdRad);
+	box-shadow: inset 0 0 0 1px var(--finderItemBrdClr);
+	-webkit-backdrop-filter:blur(10px);
+	cursor: pointer;
+	border: none;
+}
+
+
+/*SEARCH DROPDOWN*/
 .finder {
 	position: fixed;
-	top: -50px;
-	right: 0;
-	left: 0;
+	right: calc(var(--finderBtnPositionRight) + var(--finderItemGap) * -1);
+	top: -100px;
+	left: calc(var(--finderBtnOpenWidth) * 2);
+	max-width: 100%;
+	
 	z-index: 999;
 	display: flex;
 	align-items: center;
-	height: 50px;
-	background: #fff;
 	font-family: sans-serif;
 	font-size: 14px;
-	border-bottom: 1px solid #e5e5e5;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	padding: 5px;
+		padding: var(--finderItemGap);
+	padding-right: calc(var(--finderBtnOpenWidth) + var(--finderItemGap) * 2);
 	transition: top 0.15s ease-out;
+	gap: var(--finderItemGap);
+	-webkit-backdrop-filter:blur(20px);
+	border-radius: var(--finderItemBrdRad);
+	box-sizing: border-box;
+	background: var(--finderItemBg);
+	box-shadow: inset 0 0 0 1px var(--finderItemBrdClr);
+	width: auto;
 }
 
+
 .finder.active {
-	top: 0;
+	top: var(--finderBtnPositionTop);
 }
 
 .finder-input {
-	flex-grow: 1;
-	width: 0;
-	height: 33px;
-	border: none;
-	padding: 8px;
-	outline: none !important;
-	font-size: 15px;
-	background: #f7f8f9;
-	border-radius: 6px;
+flex-grow: 1;
+width: 0;
+border: none;
+padding: 0px 8px;
+outline: none !important;
+font-size: 15px;
+background: hsla(0,0%,50%,.2);
+border-radius: 6px;
+height: var(--finderBtnOpenWidth);
+box-shadow: inset  0 0 0 1px var(--finderItemBrdClr);
+width: 300px;
+max-width: 100%;
+
 }
 
 .finder-input.not-found {
 	color: #e7353f;
 }
 
+/*ALL BUTTONS*/
 .btn-finder {
-	width: 30px;
-	height: 30px;
+	width: var(--finderBtnOpenWidth);
+	height: var(--finderBtnOpenWidth);
 	text-align: center;
 	padding: 0;
 	font-size: 18px;
+	border: none;
+	box-shadow: inset 0 0 0 1px var(--finderItemBrdClr);
+	cursor: pointer;
+	border-radius: 5px;
+	background-size: 60%;
 }
-/* .btn-finder-icon {
-	content: "\e902";
-} */
-
-.finder-input,
-.btn-finder:not(:last-child) {
-	margin-right: 5px;
+.finder button:hover{
+	filter: contrast(.8) brightness(.8);
 }
 .btn-finder-prev {
-	width: 45px;
-	height: 45px;
-	border-radius: 6px;
-	border: 1px solid #ddd;
 	background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221em%22%20height%3D%221em%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M4%2015l8-8l8%208%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center;
-	background-size: 60%;
 }
 .btn-finder-next {
-	width: 45px;
-	height: 45px;
-	border-radius: 6px;
-	border: 1px solid #ddd;
 	background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221em%22%20height%3D%221em%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M4%209l8%208l8-8%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center;
-	background-size: 60%;
 }
 .btn-finder-close {
-	width: 45px;
-	height: 45px;
-	border-radius: 6px;
-	border: 1px solid #ddd;
 	background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221em%22%20height%3D%221em%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M13.41%2012l4.3-4.29a1%201%200%201%200-1.42-1.42L12%2010.59l-4.29-4.3a1%201%200%200%200-1.42%201.42l4.3%204.29l-4.3%204.29a1%201%200%200%200%200%201.42a1%201%200%200%200%201.42%200l4.29-4.3l4.29%204.3a1%201%200%200%200%201.42%200a1%201%200%200%200%200-1.42z%22%2F%3E%3C%2Fsvg%3E') no-repeat center;
-	background-size: 60%;
 }
 
 .finder-count {
@@ -101,6 +123,7 @@
 	flex-grow: 0;
 }
 
+/*highlighted text*/
 .highlight {
 	background: #ff8;
 }
@@ -109,28 +132,3 @@
 	background: #ffd71b;
 }
 
-.finder-activator {
-	position: fixed;
-	top: var(--finderBtnPositionTop);
-	right: var(--finderBtnPositionRight);
-	z-index: 1;
-	width: 30px;
-	height: 30px;
-	background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221em%22%20height%3D%221em%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M21%2021l-4.486-4.494M19%2010.5a8.5%208.5%200%201%201-17%200a8.5%208.5%200%200%201%2017%200z%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') hsla(0, 0%, 50%, .1) no-repeat center;
-	background-size: 60%;
-	border-radius: 6px;
-	border: 1px solid hsla(0,0%,50%,.35);
-	-webkit-backdrop-filter:blur(10px);
-	cursor: pointer;
-}
-
-
-.finder {
-	top: -150px;
-	right: calc(50% - 182px);
-	left: calc(50% - 182px);
-}
-
-.finder.active {
-	top: var(--finderBtnPositionTop);
-}
