@@ -10,7 +10,7 @@
  * Copyright (c) 2009 Bartek Szopka
  *
  * Licensed under MIT license.
- *
+ * 
  */
 
 jQuery.extend({
