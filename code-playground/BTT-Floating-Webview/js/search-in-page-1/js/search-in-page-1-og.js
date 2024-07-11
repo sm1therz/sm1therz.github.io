@@ -5,7 +5,7 @@
  * Based on highlight v3 by Johann Burkard
  * http://johannburkard.de/blog/programming/javascript/highlight-javascript-text-higlighting-jquery-plugin.html
  *
- * And I got it from:
+ * And I got it from: 
  * https://codepen.io/blankmann/pen/VwOoyEY?editors=0010
  * Copyright (c) 2009 Bartek Szopka
  *
