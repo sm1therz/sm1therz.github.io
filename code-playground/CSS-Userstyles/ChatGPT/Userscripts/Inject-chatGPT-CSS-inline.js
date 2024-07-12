@@ -13,14 +13,14 @@
 (function() {
 	let style = `<style>
 	
-	/*****************
+/*****************
 	ROOT
-	******************/ 
+	******************/
 	.dark {
 		/*backgrounds*/
 		--bgClrMobile: hsl(0, 0%, 8%);
 		--bgClr: hsl(0, 0%, 12%);
-	 
+	
 		/*text*/
 		--txtClrMobile: white;
 		--text-primary: white;
@@ -33,13 +33,13 @@
 		--inputBrdClr: hsla(0, 0%, 20%);
 		--inputBrdClr-Active: hsla(0, 0%, 50%);
 		/*inline-code*/
-		--inlineCodeBgClr:hsla(0,0%,100%,.1);
-		--inlineCodeBrdClr:hsla(0,0%,100%,.15);
+		--inlineCodeBgClr: hsla(0, 0%, 100%, .1);
+		--inlineCodeBrdClr: hsla(0, 0%, 100%, .15);
 		/*blockquote*/
-		--blockquoteBrdClr:hsla(0, 0%, 50%, .3);
+		--blockquoteBrdClr: hsla(0, 0%, 50%, .3);
 		/*blockquote button*/
-		--blockquoteBtnClr-Hover:hsla(0, 0%, 50%, .6);
-		--blockquoteBtnBgClr:hsla(0, 0%, 50%, .2);
+		--blockquoteBtnClr-Hover: hsla(0, 0%, 50%, .6);
+		--blockquoteBtnBgClr: hsla(0, 0%, 50%, .2);
 	}
 	
 	.light {
@@ -47,7 +47,7 @@
 		--txtClrMobile: black;
 		--bgClrMobile: white;
 		/*blockquote*/
-		--blockquoteBrdClr:hsla(0, 0%, 50%, .3);
+		--blockquoteBrdClr: hsla(0, 0%, 50%, .3);
 		/*blockquote button*/
 		--blockquoteBtnBgClr: ;
 		--blockquoteBtnBgClr-Hover: ;
@@ -70,12 +70,12 @@
 	EDITOR
 	************
 	************/
-		[role="presentation"],
-		div[class*="bg-token-surface-primary pl-1 dark:bg-token-surface-secondary"],
-		div[class*="flex w-full items-center justify-center bg-token-surface-primary py-1"],
-		.bg-token-main-surface-primary{
-			background: var(--bgClr) !important;
-		}
+	[role="presentation"],
+	div[class*="bg-token-surface-primary pl-1 dark:bg-token-surface-secondary"],
+	div[class*="flex w-full items-center justify-center bg-token-surface-primary py-1"],
+	.bg-token-main-surface-primary {
+		background: var(--bgClr) !important;
+	}
 	
 	.dark .dark\:bg-gray-800 {
 		background: var(--bgClrMobile)
@@ -89,7 +89,7 @@
 	************/
 	.markdown.prose ol li code,
 	.markdown.prose ul li code,
-	.markdown.prose p code{
+	.markdown.prose p code {
 	
 		box-shadow: 0 0 0 1px var(--inlineCodeBgClr);
 		border-radius: 2px;
@@ -116,22 +116,22 @@
 	************
 	************/
 	
-	.markdown.prose blockquote > button.copy-blockquote{
+	.markdown.prose blockquote > button.copy-blockquote {
 		opacity: .6;
 		background: transparent;
 		border: 1px solid transparent !important;
 		transition: .1s;
-		-webkit-font-smoothing:subpixel-antialiased;
+		-webkit-font-smoothing: subpixel-antialiased;
 		font-weight: 400;
-		padding: 1px 4px 3px 4px!important;
+		padding: 1px 4px 3px 4px !important;
 		color: var(--blockquoteBrdClr)
 	}
-	.markdown.prose blockquote:hover > button.copy-blockquote{
+	.markdown.prose blockquote:hover > button.copy-blockquote {
 		opacity: 1;
 	}
 	.markdown.prose blockquote:hover > button.copy-blockquote:hover {
-		background:var(--blockquoteBtnBgClr);
-		color:var(--blockquoteBtnClr-Hover)
+		background: var(--blockquoteBtnBgClr);
+		color: var(--blockquoteBtnClr-Hover)
 	}
 	
 	
@@ -197,7 +197,7 @@
 	
 	/*add border to top of text area wrapper*/
 	[role="presentation"] > div.w-full {
-		border-top: 1px solid hsla(0,0%,50%,.2);
+		border-top: 1px solid hsla(0, 0%, 50%, .2);
 		padding-top: 10px;
 	}
 	/*text area overrides*/
@@ -208,7 +208,7 @@
 		border-radius: 0px !important;
 	}
 	/*Text area wrapper*/
-	[role="presentation"] .flex.w-full.items-center > .flex.w-full.flex-col{
+	[role="presentation"] .flex.w-full.items-center > .flex.w-full.flex-col {
 		padding-top: 0px;
 		padding-bottom: 0px;
 	}
@@ -218,7 +218,7 @@
 		padding-top: 5px;
 		padding-bottom: 5px;
 		min-height: 50px
-		/*box-shadow: inset 0 0 0 1px var(--inputBrdClr) !important;*/
+			/*box-shadow: inset 0 0 0 1px var(--inputBrdClr) !important;*/
 	}
 	
 	/*Text area BUTTOMS*/
@@ -229,10 +229,10 @@
 	#prompt-textarea::-webkit-scrollbar {
 		width: 0px;
 	}
-	#prompt-textarea::-webkit-scrollbar-thumb{
-		background: hsla(0,0%,50%,.15)
+	#prompt-textarea::-webkit-scrollbar-thumb {
+		background: hsla(0, 0%, 50%, .15)
 	}
-	#prompt-textarea{
+	#prompt-textarea {
 		overflow: auto;
 	}
 	
@@ -254,10 +254,10 @@
 	************/
 	:root {
 		--leftSideBarWidth: 320px;
-		--leftSideBarLinkPad:.5rem;
+		--leftSideBarLinkPad: .5rem;
 	}
 	#__next > div [style*="260"],
-	#__next > div > [style*="260"] > .w-\[260px\] {
+	#__next > div > [style*="260"] > [class*="260"] {
 		width: var(--leftSideBarWidth) !important;
 	}
 	
@@ -273,9 +273,9 @@
 		display: flex;
 		align-items: flex-start;
 		top: var(--leftSideBarLinkPad);
-		opacity:0
+		opacity: 0
 	}
-	#__next > div [style*="260"] li:hover a + div.absolute{
+	#__next > div [style*="260"] li:hover a + div.absolute {
 		opacity: 1;
 	}
 	#__next > div [style*="260"] li a + div.absolute span {
@@ -301,11 +301,11 @@
 		[role="presentation"],
 		div[class*="bg-token-surface-primary pl-1 dark:bg-token-surface-secondary"],
 		div[class*="flex w-full items-center justify-center bg-token-surface-primary py-1"],
-		.bg-token-main-surface-primary{
+		.bg-token-main-surface-primary {
 			background: var(--bgClrMobile) !important;
 		}
 		.prose,
-		.text-base{
+		.text-base {
 			font-size: var(--font-size);
 			line-height: var(--line-height);
 		}
@@ -334,22 +334,21 @@
 		.group.w-full > div > div.gap-4 > div.gap-1 {
 			flex: 1;
 		}
-		.text-base {
-		}
+		.text-base {}
 	
 		/*container - padding*/
 		.group.w-full > div.p-4 {
 			padding: .5rem
 		}
 		.prose :where(li):not(:where([class~=not-prose] *)),
-		.prose :where(p):not(:where([class~=not-prose] *)){
+		.prose :where(p):not(:where([class~=not-prose] *)) {
 			margin-bottom: .75em;
 			margin-top: .75em;
 		}
-		.prose :where(.prose>:first-child):not(:where([class~=not-prose] *)){
+		.prose :where(.prose>:first-child):not(:where([class~=not-prose] *)) {
 			margin-top: .25rem;
 		}
-		
+	
 		.group.w-full > div > div > div[class*="flex-shrink-0"] > div > div {
 			height: 20px !important;
 			width: 20px !important;
