@@ -1,13 +1,23 @@
 // ==UserScript==
-// @name         BTT-BetterTouchTool-HEPTABASE V6 - DELAY
+// @name         CHATGPT INJECT EXTERNAL
 // @namespace    http://yournamespace.com
 // @version      1.0
-// @description  Injects V6 into heptabase.com for BTT/Better Touch Tool Floating Webviews.
+// @description  Injects Chatgpt css hosted on github into chatgpt webpages
 // @author       RSM
 // @match        https://chatgpt.com/*
 // @match        https://chatgpt.com*
 // @match        https://chat.openai.com/*
 // @match        https://chat.openai.com*
+// @grant        GM_addElement
+// ==/UserScript==
+
+// ==UserScript==
+// @name         CHATGPT INJECT EXTERNAL
+// @namespace    http://yournamespace.com
+// @version      1.0
+// @description  Injects Chatgpt css hosted on github into chatgpt webpages
+// @author       RSM
+// @match        https://app.heptabase.com/*
 // @grant        GM_addElement
 // ==/UserScript==
 (function() {
