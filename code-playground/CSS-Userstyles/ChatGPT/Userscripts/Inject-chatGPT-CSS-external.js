@@ -25,7 +25,7 @@
 	}
 
 	setTimeout(function() {
-		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/ChatGPT/css/chatgpt-CSS.css');
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/ChatGPT/css/chatGptV1-CSS.css');
 	}, 3500);
 
 })();
