@@ -14,7 +14,7 @@
 	let style = `<style>
 	
 	/*****************
-	! ROOT
+	ROOT
 	******************/ 
 	.dark {
 		/*backgrounds*/
@@ -56,9 +56,18 @@
 	nav {
 		border-right: 1px solid hsl(0, 0%, 50%, .3);
 	}
+	
+	/*
+	
+	li a,
+	li a * {
+		box-shadow: inset 0 0 0 .1px red;
+	}
+	*/
+	
 	/***********
 	************
-	! EDITOR
+	EDITOR
 	************
 	************/
 		[role="presentation"],
@@ -75,7 +84,7 @@
 	
 	/***********
 	************
-	! INLINE CODE
+	INLINE CODE
 	************
 	************/
 	.markdown.prose ol li code,
@@ -87,7 +96,7 @@
 	}
 	/***********
 	************
-	! BLOCKQUOTE
+	BLOCKQUOTE
 	************
 	************/
 	.markdown.prose blockquote {
@@ -139,6 +148,22 @@
 		display: none;
 	}
 	
+	
+	
+	
+	/***********
+	************
+	OTHER SHOTS
+	************
+	************/
+	[data-testid*="conversation-turn"] [class*="row-reverse"] .font-semibold.tabular-nums,
+	[data-testid*="conversation-turn"] [class*="row-reverse"] .icon-md-heavy {
+		color: #00bf1e;
+		font-weight: 900 !important;
+	}
+	
+	
+	
 	/***********
 	************
 	EDITOR > CODE BLOCKS
@@ -160,7 +185,7 @@
 	
 	/***********
 	************
-	! TEXT AREA > Make Taller
+	TEXT AREA > Make Taller
 	************
 	************/
 	
@@ -219,9 +244,12 @@
 	button[aria-label="Attach files"] {
 		top: -2px !important;
 	}
+	
+	
+	
 	/***********
 	************
-	! LEFT SIDEBAR
+	LEFT SIDEBAR
 	************
 	************/
 	:root {
@@ -244,16 +272,21 @@
 	#__next > div [style*="260"] li a + div.absolute {
 		display: flex;
 		align-items: flex-start;
-		top: var(--leftSideBarLinkPad)
+		top: var(--leftSideBarLinkPad);
+		opacity:0
+	}
+	#__next > div [style*="260"] li:hover a + div.absolute{
+		opacity: 1;
 	}
 	#__next > div [style*="260"] li a + div.absolute span {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
+	
 	/***********
 	************
-	! MOBILE
+	MOBILE
 	************
 	************/
 	:root {
@@ -323,7 +356,7 @@
 			margin-top: 3px;
 		}
 	}
-
+	
 </style>`;
 
 	document.head.insertAdjacentHTML("beforeend", style);
