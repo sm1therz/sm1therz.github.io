@@ -1,0 +1,503 @@
+/********
+*********
+*********
+THEME - LIGHT
+*********
+*********
+*********/
+html,
+:root body,
+:root .page,
+:root .header,
+:root .leftBar,
+:root .flyout,
+:root .picker-background {
+
+
+	/*************
+	NODES
+	**************/
+	--NODE--TXT-CLR--main: hsl(201, 13%, 10%);
+	--NODE--TXT-CLR--FAINT: hsl(200, 10%, 50%);
+	--NODE--TXT-CLR--completed: hsl(200, 10%, 80%);
+	--NODE--TXT-CLR--bold: hsl(264, 10%, 7%);
+	--NODE--TXT-CLR--heading: hsl(264, 10%, 7%);
+	--NODE--TXT-CLR--CONTRAST: black;
+	--NODE--TXT-UNDERLINE--CLR: hsl(195, 8%, 0%, .3);
+	--NODE--TXT-UNDERLINE--CLR-2: hsl(195, 8%, 0%, .25);
+	--NODE-NOTES--TXT-CLR-ALL: rgb(134, 140, 144);
+	--NODE-NOTESROOT--TXT-CLR-ALL:hsl(204, 4%, 58%);;
+	--NODE-NOTESROOT--TXT-CLR-ALL-BOLD:hsl(204, 4%, 48%);
+	--NODE-NOTES--TXT-CLR-Bold: hsl(204, 4%, 49%) !important;
+
+
+
+	/*************
+	BACKGROUNDS
+	**************/
+	--BG-primary: hsl(0, 0%, 98%);
+	--HIGHLIGHTED--BG: hsl(0, 0%, 94%);
+	--HIGHLIGHTED--Box-Shad-CLR: hsl(0, 0%, 90%);
+	--BG-BUTTON--HOVER: hsl(210, 0%, 37.45%, .125);
+	--btnBgHover-BrdClr: hsl(210, 5%, 37.45%, .05);
+
+
+	/*************
+	MISC
+	**************/
+	--ADDED-TO-SELECTION--BG: hsl(196, 70%, 86%);
+	--ADDED-TO-SELECTION--BG2: hsl(196, 70%, 80%);
+	--NODE-HIGHLIGHTED--BG: hsla(200, 10%, 90%);
+	--IMAGE-BOX--BORDER: 1px solid hsl(200, 6%, 80%);
+	--IMAGE--SELECTED--BOX-SHADOW-CLR: hsl(210, 100%, 50%);
+	--ICON--ARROW: var(--ICON--ARROW-LIGHT);
+	--ICON--MENU-DOTS: var(--ICON--MENU-DOTS-LIGHT);
+	--inverted-chevron-icn: invert(1);
+
+	/*************
+	SEARCH - NAV BAR
+	**************/
+	--HEADER--BORDER: 1px solid var(--HEADER--BORDER-CLR);
+	--HEADER--BORDER-CLR: rgb(100, 100, 100, .3);
+	--HEADER--BUTTON-HOVER: hsl(192, 4%, 37.45%, .2);
+	--search-nav-input-active: hsl(202, 0%, 82%);
+	--search-nav-container: #262425;
+	--search-nav-bg-primary: hsl(201, 13%, 98%);
+	--search-nav-bg-primary-2: hsl(202, 13%, 98.5%);
+	--search-nav-border: 1px solid hsl(205, 9%, 80%);
+	--search-nav-border-active: 1px solid hsl(205, 0%, 60%);
+	--search-nav-icon-color-BG: hsl(208, 2%, 50%, 1);
+	--search-nav-icon-color-BG-active: hsl(36, 90%, 72%);
+	--search-nav-input: hsl(202, 13%, 18.5%, .0);
+	--SEARCH-NAV--PLACEHOLDER-TXT-CLR: hsla(0, 0%, 0%, .5);
+	--SEARCH-NAV--ICON-TXT-CLR: var(--NODE--TXT-CLR--main);
+	--SEARCH-NAV-MENU-ITEM--TXT-CLR: var(--NODE--TXT-CLR--main);
+	--SEARCH-NAV-MENU-ITEM--BG-ACTIVE: hsl(201, 75%, 85%);
+	--SEARCH-NAV--ICON-MAG-GLASS--INVERT: invert(1);
+	--HEADER-BREADCRUMB-LINK: hsl(201, 0%, 50%);
+	--HEADER-BREADCRUMB-LINK--CURRENT: hsl(201, 0%, 0%);
+
+
+	/*************
+	SIDEBAR
+	**************/
+	--SIDEBAR--BG: hsl(202, 6%, 93%);
+	--SIDEBAR--BORDER-RIGHT: 1px solid hsl(205, 9%, 80%);
+	--SIDEBAR--BREAKER: hsl(202, 13%, 0%, .1);
+	--SIDEBAR-BUTTON--BG: ;
+	--SIDEBAR-HEADER-BUTTON--BG: hsl(205, 9%, 80%, .6);
+	--SIDEBAR-HEADER-BUTTON--TXT-CLR: black;
+	--SIDEBAR-BUTTON--BG--HOVER: hsl(192, 4%, 37.45%, .15);
+	--SIDEBAR-BUTTON--BG--ACTIVE: hsl(210, 100%, 60%, .25);
+	--SIDEBAR-BUTTON--TXT-CLR: hsl(192, 4%, 10.45%);
+	--SIDEBAR-BUTTON--TXT-CLR--DONE: hsl(192, 4%, 10.45%);
+	--SIDEBAR-BUTTON--TXT-CLR--ACTIVE: hsl(210, 100%, 40%, 1);
+	--SIDEBAR-BUTTON--ICON-CLR: hsl(192, 4%, 66%, .9);
+
+
+	/*************
+	BULLETS
+	**************/
+	--BG-Bullet-open: hsl(204, 10%, 34%);
+	--BG-Bullet-closed: hsl(204, 10%, 34%);
+	--BG-Bullet-under: hsl(200, 12%, 87%);
+	--BG-Bullet-Reference-upper: hsl(200, 40%, 60%);
+	--BG-Bullet-Reference-under: hsl(200, 50%, 60%, .24);
+	--BG-Bullet-upper--Added-To-Selection: hsl(203, 100%, 70%);
+	--BG-Bullet-under--Added-To-Selection: hsl(203, 100%, 70%);
+	
+	--ADDED-TO-SELECTION--BrdClr: hsl(203, 100%, 70%);
+	#app .project.addedToSelection,
+	#app .project.addedToSelection * {
+		--BG-Bullet-open: hsl(203, 90%, 50%);
+		--BG-Bullet-under: hsl(203, 100%, 70%, .5);
+		border-color: hsl(203, 100%, 50%, .9) !important;
+		--DashCrd-ChldrnBgClr: var(--ADDED-TO-SELECTION--BG2);
+		--COMMENT-CONTAINER--BG: hsl(196, 70%, 90%);
+		--COMMENT--BG--even: hsl(196, 70%, 70%);
+	}
+	#app .project.addedToSelection.comment:before {
+		display: none;
+	}
+
+	#app .project.done {}
+	/*************
+	CHECKBOXES
+	**************/
+	--CHECKBOX--BG: hsl(202, 5%, 100%);
+	--CHECKBOX--BG--DONE: hsla(218, 100%, 70%);
+	--CHECKBOX--BOX-CLR: hsl(192, 2%, 65%);
+	--CheckBxBrdClr:hsl(192, 12%, 45%,.5);
+	--CheckBxMirror-BrdClr: hsl(192, 2%, 05%);
+
+	/*************
+	REFERENCES
+	**************/
+	--REF--BREAD--TXT-CLR: hsl(200, 20%, 64%);
+	--REF--Breadcrumb-TXT-clr-last: hsl(200, 20%, 53%);
+
+	--REF--BG: hsl(195, 60%, 94.5%);
+	--REF--BOX-SHADOW: inset 0 0 0 1px var(--REF--BOX-SHADOW-CLR);
+	--REF--BOX-SHADOW-CLR: hsl(195, 30%, 60%, .25);
+	--REF--BACKLINK--TXT-CLR: hsl(200, 30%, 40%, .7);
+	--REF--NODE--TXT-CLR: hsl(200, 30%, 40%);
+	--REF--NOTES--TXT-CLR: hsl(200, 39%, 30%, 0.6);
+	--REF--THREE-DOT--BORDER-CLR: hsla(195, 2%, 63%, 0);
+	--REF--Separator-CLR: var(--REF--BOX-SHADOW-CLR);
+	--REF-COMMENT--BORDER-CLR:hsl(200, 38%, 79%);
+	--REF-COMMENT--BG-CLR-TOP:hsl(200, 41%, 90%);
+	--REF-COMMENT--BG-CLR-IN:hsl(200, 41%, 95%);
+	--REF--BULET-MIRROR--BG-TOP:hsl(200, 45%, 40%, .8);
+	--REF--BULET-MIRROR--BG-BTM:hsl(190, 52%, 40%, .20);
+
+	/*************
+	COMMENTS
+	*************/
+	--COMMENT-CONTAINER--BG: hsl(200, 10%, 94%);
+	--COMMENT-CONTAINER--BG--ROOT: hsl(200, 8%, 93%);
+	--COMMENT-CONTAINER--BORDER: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR);
+	--COMMENT-CONTAINER--BORDER-CLR: hsl(200, 6%, 80%);
+	--COMMENT--BORDER-CLR--ROOT: hsl(200, 6%, 81%);
+	--COMMENT-ATTRIBUTION--TXT-CLR: hsl(200, 6%, 50%);
+	--COMMENT--BG--even: hsl(195, 6%, 100%);
+	--COMMENT--BG--even--Root: var(--BG-primary);
+	--COMMENT-CONTAINER--REPLY-BTN-CLR: hsl(200, 8%, 0%, .05);
+	--COMMENT-CONTAINER--REPLY-BTN-CLR-HOVER: hsl(200, 8%, 0%, .1);
+
+	.board {
+		--COMMENT-CONTAINER--BG: hsl(200, 10%, 93%);
+	}
+}
+:root {
+	/*************
+	DASHBOARD
+	*************/
+	--DASHBOARD-PAGE--BG: hsl(0, 0%, 98%);
+	--DASHBOARD-CARD--BG: white;
+	--DASHBOARD-CARD--BG-OPEN: hsl(0, 0%, 96%, .5);
+	--DASHBOARD-CARD--BORDER: 1px solid hsl(270, 6%, 87%);
+	--DASHBOARD-CARD--BORDER-INNER: 1px solid #EDECEE;
+	--DASHBOARD-CARD--BORDER-CLR: hsl(197, 10%, 29%);
+
+	--DashCrd--BrdClr: hsl(270, 4%, 85%);
+	--DashCrd--BrdClr-Open: hsl(270, 4%, 81%);
+	--DashCrd-ChldrnBgClr: hsl(0, 0%, 98%);
+
+	/*TEST*/
+	--DASHBOARD-CARD--BG: var(--DASHBOARD-PAGE--BG);
+	--DashCrd-ChldrnBgClr: var(--DASHBOARD-PAGE--BG);
+	.dashboard-card:not(.dashboard-card.comment) {
+		border-left-color: transparent !important;
+		border-right-color: transparent !important;
+	}
+
+	/*************
+	BOARDS
+	*************/
+	--BOARDS--BOARD-COLUMN--BORDER: 1px solid var(--brd-ClmBrdClr);
+	--brd-ClmBrdClr:hsl(200, 6%, 85%);
+	--BOARDS--BOARD-COLUMN--TXT-CLR: hsl(200, 6%, 0%);
+
+	--brd-brdrClr:;
+	--brd-brdrClrCmnt:var(--COMMENT-CONTAINER--BORDER-CLR);
+	--brd-brdrClrRef:;
+	/*************
+	BOARDS - ROOT
+	*************/
+	--BOARD-ROOT--CARD--BG: hsl(200, 8%, 96%);
+	--BOARD-ROOT--CARD--BORDER: 1px solid var( --BOARD-ROOT--CARD--BORDER-INNER-CLR);
+	--BOARD-ROOT--CARD--BORDER-INNER-CLR: hsl(200, 8%, 86%);
+
+
+	/*************
+	LINK COLORS
+	**************/
+	/*ULYSSES - OG - OPAQUE
+	--NODE-LINK--BG: hsl(209, 77%, 96%);
+	*/
+	/*ULYSSES - OG - ALPHA
+	--NODE-LINK--BG: hsl(208, 100%, 51%,.071);
+	*/
+	/*LIKE ULYSSES - LIGHTER
+	--NODE-LINK--BG: hsl(208, 100%, 51%,.069);
+	*/
+	/*V9 LINK - EXTERNAL*/
+	--LnkTxtClr:hsl(211, 100%, 43%);
+	--LnkBrdClr:hsl(211, 75%, 64%);
+	--LnkBgClr:hsl(209, 80%, 83%, .171);
+	--LnkBgClrHov:hsl(208, 100%, 50%, .171);
+	/*V9 LINK - INTERNAL*/
+	--LnkWFTxtClr:rgb(134, 140, 144);
+	--LnkWFBrdClr:hsl(211, 75%, 34%, .2);
+	--LnkWFBgClr:hsl(210, 25%, 95%);
+	--LnkWFBgClrHov:hsl(208, 10%, 50%, .171);
+	/**/
+	--NODE-LINK--BG: hsl(209, 77%, 96%);
+	--NODE-LINK--BG-HIGHLIGHT: hsl(118, 100%, 100%, .6);
+	/**/
+	/*Workdlowy Stock Link Color*/
+	--Link-TxtClr:hsl(200, 70%, 58%);
+	--Link-TxtClrFaint:hsl(200, 70%, 58%, .25);
+	--LinkInternal-TxtClr:hsl(206, 7%, 55%);
+	--LinkInternal-TxtClrFaint:hsl(206, 7%, 55%, .25);
+	--NODE-LINK--TXT-CLR-2: hsl(211, 100%, 43%);
+	--NODE-LINK--TXT-CLR-2-HIGHLIGHT: hsl(211, 100%, 43%);
+	/**/
+	--NODE-LINK--BORDER-CLR: hsl(211, 75%, 64%);
+	--NODE-LINK--BORDER-CLR-HIGHLIGHT: hsl(211, 100%, 50%, .7);
+	--NODE-LINK--TXT-CLR--HOVER: hsla(200, 100%, 30%, 1.0);
+
+	--NODE-LINK--BG--HOVER: hsl(0, 0%, 16%, .15);
+
+	--NODE-LINK--BOX-SHADOW--HOVER: inset 0 0 0 1px hsl(0, 0%, 16%, .1);
+	--NODE-LINK--TXT-CLR: #6A686F;
+	--NODE-LINK--TXT-CLR--HOVER: hsl(257, 3%, 30%);
+	--FILE-DOWNLOAD-BUTTON--BG-CLR: black;
+	--FILE-DOWNLOAD-BUTTON--TXT-CLR: white;
+	--FILE-DOWNLOAD-BUTTON--BG-CLR--HOVER:;
+
+
+	.colored a.contentLink,
+	a.contentLink .colored {
+		color: hsl(200, 100%, 38%) !important
+	}
+	.colored a.contentLink[href*="workflowy"],
+	a.contentLink[href*="workflowy"] .colored {
+		color: var(--LinkInternal-TxtClr) !important
+	}
+
+	/*************
+	LINK COLORS - V2
+	**************/
+	--NODE-LINK--BG-HOVER: hsl(208, 100%, 50%, .171);
+	--NODE-LINK--BG-INTERAL: hsl(210, 25%, 95%);
+	--NODE-LINK--BG-INTERAL-HOVER: hsl(210, 25%, 80%, .5);
+	--NODE-LINK--BG-INTERAL-HIGHLIGHT: hsl(120, 100%, 100%, .70);
+	/**/
+	--NODE-LINK--TXT-CLR-INTERNAL: hsla(209, 15%, 59%, 1.0);
+	--NODE-LINK--TXT-CLR-INTERNAL-HIGHLIGHT: hsla(220, 50%, 55%, 1);
+	/**/
+	--NODE-LINK--BOX-SHAD-CLR-INTERNAL: hsla(205, 6%, 72%, 1.0);
+	--NODE-LINK--BOX-SHAD-CLR-INTERNAL-HIGHLIGHT: hsla(220, 100%, 50%, .8);
+
+	--FileAttchmnt-BG:hsl(203, 5%, 95%);
+	--FileAttchmnt-BrdClr:hsl(204, 5%, 80%);
+	--FileAttchmnt-TxtClr:hsla(209, 15%, 59%, 1.0);
+
+
+
+	/*************
+	TAG-COLORS
+	**************/
+	--NODE-TAG--BG: hsl(0, 0%, 16%, .05);
+	--NODE-TAG--BG--Hover: hsl(212, 16%, 50%, .1);
+	--NODE-TAG--TXT-CLR: hsl(202, 6%, 65%);
+	--NODE-TAG--TXT-NAME-CLR: hsl(202, 6%, 65%);
+	--NODE-TAG--BOX-SHADOW: var(--NODE-LINK--BOX-SHADOW);
+
+	/*TAGS-PEOPLE*/
+	--NODE-TAG--PEOPLE--BG: hsl(195, 80%, 83%);
+	--NODE-TAG--PEOPLE--BG--HOVER: hsl(195, 90%, 74%);
+	--NODE-TAG--PEOPLE--BOX-SHAD: hsl(212, 16%, 50%, .0);
+	--NODE-TAG--PEOPLE--BOX-SHAD-CLR: hsl(212, 16%, 50%, .3);
+
+	/*TAGS--MATCHED*/
+	--NODE-TAG--MATCHED--BG: hsl(60, 100%, 60%);
+	--NODE-TAG--MATCHED--SYMBOL-CLR: hsla(0, 0%, 0%, .48);
+	--NODE-TAG--MATCHED--TXT-CLR: black;
+	--NODE-TAG--MATCHED--BORDER-CLR:;
+
+
+	/*************
+	HIGHLIGHTS
+	**************/
+	--HIGHLIGHT--RED: hsl(0, 100%, 76%);
+	--HIGHLIGHT--ORANGE: hsl(25, 100%, 79%);
+	--HIGHLIGHT--YELLOW: hsl(50, 100%, 75%);
+	--HIGHLIGHT--GREEN: hsl(119, 79%, 80%);
+	--HIGHLIGHT--SKY: hsl(180, 70%, 50%, .3);
+	--HIGHLIGHT--BLUE: hsl(205, 100%, 50%, .22);
+	--HIGHLIGHT--PURP: hsl(278, 100%, 80%, .4);
+
+
+	--HIGHLIGHT--pink-CODE--BG: hsl(202, 7%, 92.5%);
+	--HIGHLIGHT--pink-CODE--BOX-SHADOW-CLR: hsl(202, 7%, 87.5%);
+	--HIGHLIGHT--pink-CODE--TXT-CLR: hsl(351, 65%, 50%);
+	/*--HIGHLIGHT--pink-CODE--TXT-CLR: hsl(351, 65%, 50%);*/
+	/*inline code - in notes*/
+	--HIGHLIGHT-NOTES--pink-CODE--BG: hsl(0, 0%, 16%, .075);
+	--HIGHLIGHT-NOTES--pink-CODE--TXT-CLR: hsl(195, 2%, 67%);
+	/*end inline code*/
+	--HIGHLIGHT--Grey--GREYED-OUT: var(--BG-primary);
+	--HIGHLIGHT-TXT--Grey--GREYED-OUT: hsl(201, 13%, 19%,.1);
+
+
+	/*************
+	TEXT COLORS
+	**************/
+	--TXT-CLR--RED: hsl(0, 100%, 47%);
+	--TXT-CLR--ORANGE: hsl(34, 100%, 50%);
+	--TXT-CLR--YELLOW: hsl(50, 100%, 47%);
+	--TXT-CLR--GREEN: hsl(140, 100%, 33%);
+	--TXT-CLR--Grey: hsl(175, 100%, 41%);
+	--TXT-CLR--SKY: hsl(197, 100%, 50%);
+	--TXT-CLR--BLUE: hsl(219, 100%, 50%);
+	--TXT-CLR--PURPLE: hsl(262, 100%, 56%);
+	--TXT-CLR--PINK: hsl(306, 100%, 44%);
+
+
+
+	/*************
+	MENU COLORS
+	**************/
+	--FLYOUT--BORDER-color: var(--LINK-EDIT-HOVER--BORDER-CLR);
+	--FLYOUT--BG: hsl(202, 3%, 100%);
+	--FLYOUT-BUTTON-BG--HOVER: hsl(202, 3%, 90%);
+	--FLYOUT--TXT-color: hsl(180, 2%, 20%);
+	--FLYOUT--ICN-contrast: filter:contrast(1);
+	--FLYOUT-BUTTON--TXT-CLR: black;
+	--FLYOUT-BUTTON--TXT-CLR--HOVER: black;
+	--FLYOUT-BUTTON--BG--HOVER: hsl(0, 0%, 0%, .2);
+
+	--FLYOUT--TXT-color-2:hsl(180, 10%, 55%);
+	--FLYOUT-BG-CLR-2:hsl(202, 7%, 94.5%);
+
+
+	/*************
+	LINK POPUP HOVER
+	**************/
+	--LINK-EDIT--BG: hsl(210, 10%, 100%, 1);
+	--LINK-EDIT--INPUT-BG: hsl(210, 6%, 89%, 1);
+	--LINK-EDIT--INPUT-BORDER-CLR: hsl(210, 7%, 82%, 1);
+	--LINK-EDIT-HOVER--BG: hsl(210, 0%, 85%, 1);
+	--LINK-EDIT-HOVER--BG--HOVER: hsl(210, 0%, 60%, 1);
+	--LINK-EDIT-HOVER--BORDER-CLR: hsl(210, 12%, 30%, .4);
+	--LINK-EDIT-HOVER--TXT-CLR: hsl(0, 0%, 00%);
+	--LINK-EDIT--TXT-LBL-CLR: hsl(210, 7%, 30%, 1);
+	--ICON--LINK-EDIT--FILTER: brightness(.5);
+
+	/*************
+	FORMAT MENU
+	**************/
+	--FORMAT-MENU--BTN-SVG-FILL: hsl(206, 4%, 55%);
+
+	/*************
+	SHARED
+	**************/
+	--shared-BY-me--bullet-1: hsl(195, 100%, 50%);
+	--shared-BY-me--bullet-2: hsl(195, 100%, 50%);
+	--shared-BY-me--bullet-color-3: hsl(195, 100%, 50%, .25);
+	--BG-expand-border-shared-BY-me: hsl(195, 70%, 59%, .5);
+	--shared-WITH-me--me--bullet-1: hsl(24, 90%, 49%);
+	--shared-WITH-me--me--bullet-2: hsl(24, 90%, 59%);
+	--shared-WITH-me--me--bullet-3: hsl(24, 100%, 50%, .2);
+	--BG-expand-border-shared-WITH-me: hsl(24, 100%, 45%, .3);
+
+	/*************
+	QUICK SWITCHER  
+	**************/
+	--switcher--modal--border-clr: hsl(200, 3%, 70%);
+	--switcher--search-bottom-border-clr: hsl(200, 3%, 75%);
+	--switcher--search--border: hsl(200, 9%, 87%);
+	--switcher--search--bg: hsl(200, 4%, 93%, 1);
+	--switcher--item-separator: 0px 1px 0 0px hsl(200, 9%, 87%);
+	--switcher--item--txt--color: hsl(180, 2%, 0%, .51);
+	--switcher--item--txt--color-query: hsl(180, 0%, 0%);
+	--switcher--item--txt--breadcrumb: hsl(180, 2%, 0%, .9);
+	--switcher--item--svg-stroke-breadcrumb: hsl(180, 0%, 0%, .25);
+	--switcher--item-gradient: linear-gradient(to left,
+	hsla(201, 13%, 100%),
+	hsla(201, 13%, 100%, .4),
+	transparent);
+	--switcher--item-selected-3: linear-gradient(to left,
+	hsla(205, 90%, 90%),
+	transparent);
+	--switcher--item--selected: hsla(205, 100%, 80%);
+	--switcher--item--selected-border-clr: hsla(205, 100%, 66%);
+	--switcher--item--selected-color: hsl(205, 100%, 20%);
+	--switcher--item--selected-color-query: hsl(205, 100%, 100%);
+	--switcher--item--selected-color-breadcrumb: hsl(205, 100%, 20%);
+	--switcher--item--selected-svg-stroke-breadcrumb: hsl(180, 0%, 70%, 1);
+	--switcher--favorite--icon--color: hsl(200, 3%, 70%);
+	--Filter-Contrast-3: contrast(3);
+	--Search--Txt-match: white;
+	
+	/*************
+	FULL SEARCH
+	**************/
+	--searchMatchClr:black;
+	--searchMatchBgClr:hsl(50, 100%, 47%);
+
+	/*************
+	MIRROR MODAL
+	**************/
+	--MIRROR-MODAL--SOURCE-BG-CLR:hsla(205, 100%, 66%);
+	--MIRROR-MODAL--MENU-BG:hsl(200, 10%, 94%);
+	--MIRROR-MODAL--MENU-BG-HOVER:hsl(200, 10%, 85%);
+	--MIRROR-MODAL--MENU-BORDER-CLR:hsl(200, 10%, 89%);
+
+
+
+	/*************
+	EXPAND BORDER
+	**************/
+	--EXPAND-BORDER--BG: hsl(192, 5%, 32%, .25);
+	--EXPAND-BORDER--BG--REF: hsl(195, 40%, 82.5%, 1);
+	/*************
+	UNDERLINE
+	**************/
+	--ICON--UNDERLINE-WAVY: var(--ICON--UNDERLINE-WAVY--LIGHT);
+	--ICON--UNDERLINE-WAVY--UNDERLINE: var(--ICON--UNDERLINE-WAVY--UNDERLINE--LIGHT);
+	--ICON--UNDERLINE-WAVY--LINK:var(--ICON--UNDERLINE-WAVY--LINK--LIGHT);
+	--ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--LIGHT);
+	--ICON--UNDERLINE-WAVY-REFERENCE: var(--ICON--UNDERLINE-WAVY-REFERENCE--LIGHT);
+	--ICON--UNDERLINE-WAVY-REFERENCE--UNDERLINE: var(--ICON--UNDERLINE-WAVY-REFERENCE--UNDERLINE--LIGHT);
+}
+
+
+/*
+.highlighted,
+.addedToSelection {
+	--BORDER-color-2: 1px solid var(--BG-primary) !important;
+}*/
+/*
+.page:before,
+.page._16kihln:before,
+.page._1g9sjxh:before,
+.page._ahxzog:before,
+.page._6d3ul6:before,
+.page._6d3ul6.dashboard-page:before,
+.page._16kihln.dashboard-page:before {
+	content: "";
+	display: block;
+	background: var(--BG-primary);
+	z-index: 0;
+	position: fixed;
+	width: 100vw;
+}*/
+.fullMatch ._uanex1 .contentMatch {
+	color: var(--Search--Txt-match);
+}
+
+/*ZOOM ICON*/
+:root {
+	--ICON--MAGNIFYING-GLASS-ZOOM: var(--ICON--MAGNIFYING-GLASS-ZOOM--LIGHT);
+}
+#app .searchBox [data-icon="magnifying-glass"]{
+	filter: brightness(.6);
+}
+
+#app div > .dialog-box > ._3hmsj > div:last-of-type > div > span {
+	box-shadow: 
+		inset 0 0 0 300px hsl(0, 0%, 98%,.75),
+		0 1px 0 0px var(--switcher--search-bottom-border-clr);
+	filter: saturate(1.4)
+}
+.colored.bc-Grey{
+	-webkit-text-stroke:0px !important; 
+	-webkit-font-smoothing:antialiased;
+}
+
+:root{
+	--selectionBg2:rgba(193, 225, 242, 0.7);
+}
