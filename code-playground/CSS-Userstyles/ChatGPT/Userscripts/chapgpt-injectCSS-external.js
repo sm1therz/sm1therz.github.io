@@ -32,13 +32,9 @@
 		// Append the link element to the <head>
 		document.head.appendChild(link);
 	}
-	// Call injectCSS() to trigger the CSS injection with a one-second delay for the last script
-	setTimeout(function() {
-		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/HeptabaseV7.css');
-	}, 3000);
 
 	setTimeout(function() {
-		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/HeptabaseV7-Right-Sidebar-2.css');
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/ChatGPT/css/chatgpt-CSS.css');
 	}, 3500);
 
 })();
