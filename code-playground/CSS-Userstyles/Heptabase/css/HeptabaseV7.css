@@ -37,7 +37,8 @@ This file is a direct copy of:
 	--internalLinkBrdClr: hsla(207, 8%, 41%, .3);
 	/*underline*/
 	--internalLinkBrdClrUnderline: hsla(207, 8%, 41%, 0.8);
-
+	/*underline-yellow-override*/
+	--text-yellow-editor:#e8bc3a;
 	/*Internal links*/
 	--LinkBrd: none;
 	--LinkBrdBtm: 1.0px solid var(--LinkBrdClr);
@@ -122,6 +123,7 @@ This file is a direct copy of:
 	--buttonBg-Hover: hsl(0, 0%, 0%, .1);
 	/*highlight*/
 	--hLightedTxtBgClr: hsl(0, 0%, 10%, 0.03);
+	--hLightedTxtBgClr-Embed:var(--hLightedTxtBgClr);
 	--hlightedTxtBrdClr: hsl(0, 0%, 10%, 0.035);
 	--hlightWrapperBgClr: hsl(0, 0%, 100%, 1);
 	--hlightWrapperBrdClr: hsla(0, 0%, 0%, .2);
@@ -268,8 +270,8 @@ This file is a direct copy of:
 	/*links*/
 	--internalLinkClr: var(--text-color);
 	--internalLinkClr-Mention: var(--text-color);
-	--internalLinkBgClr: hsl(211, 100%, 73%, .11);
-	--internalLinkBrdClr: hsl(221, 8%, 70%,.5);
+	--internalLinkBgClr: hsl(206, 100%, 76%, 0.11);
+	--internalLinkBrdClr: hsl(221, 8%, 70%,.3);
 	/*underline*/
 	--internalLinkBrdClrUnderline: hsl(221, 8%, 80%,1);
 	--underlineLineColor: hsla(246, 0%, 88%, .85);
@@ -357,6 +359,7 @@ This file is a direct copy of:
 	--buttonBg-Hover: hsl(0, 0%, 40%);
 	/*highlight*/
 	--hLightedTxtBgClr: hsl(214, 8%, 17%);
+	--hLightedTxtBgClr-Embed: hsl(214, 0%, 100%,.05);
 	--hlightedTxtBrdClr: hsl(0, 0%, 100%, 0.035);
 	--hlightWrapperBgClr: hsl(0, 0%, 100%, 0.051);
 	--hlightWrapperBrdClr: black;
@@ -364,7 +367,7 @@ This file is a direct copy of:
 	--hlightWrapperBrdClr2: hsl(202, 13%, 90%, .08);
 	/*inline highlight*/
 	--bg-red-editor: hsla(0, 84%, 60%, .4) !important;
-	--bg-yellow-editor: hsla(50, 50%, 50%, 0.4) !important;
+	--bg-yellow-editor: hsla(50, 50%, 50%, 0.3) !important;
 	--bg-green-editor: hsla(142, 71%, 45%, .4) !important;
 	--bg-gray-editor: hsla(0,0%,100%,.06) !important;
 	/*inline text color*/
@@ -492,8 +495,8 @@ This file is a direct copy of:
 }
 */
 /*TESTING
-#root ._whiteboardObject_1fabk_10,
-#root ._whiteboardObject_1fabk_10 * {
+#root .[class*="_whiteboardObject"],
+#root .[class*="_whiteboardObject"] * {
 	outline: .2px solid white;
 }*/
 
@@ -845,8 +848,8 @@ HIGHLIGHT MENU
 }
 [data-highlight-element-id] > div.mx-4.flex svg,
 [data-highlight-element-id] > div.mx-4.flex .truncate,
-._whiteboardObject_1fabk_10[data-object-type="highlightElementInstance"] ._contentContainer_1jwtr_1 > .relative > div:first-child .truncate,
-._whiteboardObject_1fabk_10[data-object-type="highlightElementInstance"] ._contentContainer_1jwtr_1 > .relative > div:first-child svg {
+.[class*="_whiteboardObject"][data-object-type="highlightElementInstance"] ._contentContainer_1jwtr_1 > .relative > div:first-child .truncate,
+.[class*="_whiteboardObject"][data-object-type="highlightElementInstance"] ._contentContainer_1jwtr_1 > .relative > div:first-child svg {
 	opacity: .3;
 	font-size: .65rem !important;
 }
@@ -854,7 +857,7 @@ HIGHLIGHT MENU
 	opacity: 1;
 }
 
-._whiteboardObject_1fabk_10[data-object-type="highlightElementInstance"] ._contentContainer_1jwtr_1 > .relative {}
+.[class*="_whiteboardObject"][data-object-type="highlightElementInstance"] ._contentContainer_1jwtr_1 > .relative {}
 
 /*****************
 ACTUAL HIGHLIGHT
@@ -2389,8 +2392,17 @@ EDITOR - LINKS, UNDERLINE V1
 	--linkTextDecoration:underline;
 	/*underline*/
 	--underlineThickness: 1.5px;
-	--underlineOffset:2.5px;
+	--underlineOffset:3.5px;
+	--underlinePadBtm:1px;
+	/*mention underline*/
+
 	
+}
+.ProseMirror{
+		--mentionUnderlinePosition: 0 100%;
+	--mentionUnderlineSize: 15px;
+	--mentionunderlinePadBtm:1px;
+
 }
 
 
@@ -2455,12 +2467,13 @@ INTERNAL INLINE MENTIONS
 	border-bottom: none !important;
 	background-image: var(--iconBrdDashHoriz);
 	background-repeat: repeat-x;
-	background-position: 0 102%;
-	background-size: 17px !important;
+	background-position: var(--mentionUnderlinePosition);
+	background-size: var(--mentionUnderlineSize) !important;
 	position: relative;
 	--underlineThickness:0px;
 	text-decoration: none;
-	color: var(--internalLinkClr-Mention)
+	color: var(--internalLinkClr-Mention);
+	padding-bottom: var(--mentionunderlinePadBtm);
 }
 
 .ProseMirror [data-node-type] span span.rounded-sm.text-active > svg:first-of-type {
@@ -2530,6 +2543,7 @@ HIGHLIGHTS
 
 .ProseMirror span[data-color][data-type="background"] {
 	color: var(--text-color-highlight);
+	padding-bottom: var(--underlinePadBtm);
 }
 .ProseMirror strong span[data-color][data-type="background"] {
 	color: var(--bldClr);
@@ -2562,7 +2576,7 @@ LINK > UNDERLINE > TEXT COLORS
 	--underlineLineColor:var(--LinkClr) !important;
 }
 .ProseMirror a[href*="app.heptabase.com"] [data-underline="true"] [data-color]{
-	--underlineLineColor:var(--internalLinkBrdClrUnderline) !important;
+	--underlineLineColor:var(--underlineLineColor-Colored) !important;
 }
 
 /*****************
@@ -2591,6 +2605,9 @@ TEXT COLORS
 }
 .ProseMirror [data-color="pink"]{
 	--underlineLineColor-Colored:var(--text-pink-editor);
+}
+.ProseMirror [data-color="red"]{
+	--underlineLineColor-Colored:var(--text-red-editor);
 }
 
 /*****************
@@ -3258,7 +3275,13 @@ HIGHLIGHT TEXT - FONT-FAMILY & FONT SIZE
 	--toggleBulletMargTop: 7.5px;
 	--listBulletCircWidth:5px;
 	--listMargTopBtm:3px;
-	--underlineThickness:1.0px;
+	--underlineThickness:1px;
+	--underlineOffset:2.5px;
+	--underlinePadBtm:0px;
+	--cmPlainTextBtm:0px;
+	--mentionUnderlinePosition: 0 100%;
+	--mentionUnderlineSize: 15px;
+	--mentionunderlinePadBtm:1px;
 }
 
 
@@ -3309,6 +3332,8 @@ HIGHLIGHT BULLETS
 	--bodyFontSize:17px;
 }
 
+
+
 /*****************
 ******************
 EDITOR - EMBEDS
@@ -3347,6 +3372,7 @@ EDITOR - EMBEDS
 [data-node-type="embed"] {
 	--headingMargTop-All: calc(var(--listMargTopBtm) * 1) !important;
 	--headingMargTop: calc(var(--listMargTopBtm) * 2) !important;
+	--hLightedTxtBgClr:var(--hLightedTxtBgClr-Embed);
 }
 
 /*****************
@@ -3723,6 +3749,8 @@ H6 - MARGIN TOP (DIFFERENT THAN ALL OTHER HEADINGS OR TOGGLE HEADINGS)
 	padding-top: 0px;
 }
 
+
+
 /*****************
 ******************
 EDITOR - CODE BLOCKS
@@ -3749,6 +3777,7 @@ EDITOR - CODE BLOCKS
 .cm-editor span.cmt-labelName{
 	color: var(--cmClassName);
 }
+
 
 /*****************
 ******************
@@ -3888,153 +3917,6 @@ NOTE >> LINE 1 [IS] TOGGLE > LINE 2 [IS] ANYTHING
 body .ProseMirror:first-of-type:not(.ProseMirror .ProseMirror) > [data-node-type="toggle_list_item"][class*="toggleHeading"][class*="folded"]:first-child + [data-node-type] {
 }
 
-/*****************
-******************
-******************
-EDITOR - MATH BLOCK
-******************
-******************
-******************/
-/*MATH BLOCK - Container - hover*/
-.ProseMirror [data-node-type="math_display"] {
-	user-select: none;
-}
-.ProseMirror [data-node-type="math_display"]:hover > .overflow-auto {
-	background: hsla(0, 0%, 50%, .1);
-	transition: .1s;
-}
-/*MATH BLOCK - Container - selected*/
-.ProseMirror [data-node-type="math_display"][class*="selecting"],
-.ProseMirror [data-node-type="math_display"][style*="background-color: var(--middle-transparent-blue)"] {
-	background: transparent !important;
-}
-.ProseMirror [data-node-type="math_display"][class*="selecting"] > .overflow-auto,
-.ProseMirror [data-node-type="math_display"][style*="background-color: var(--middle-transparent-blue)"] > .overflow-auto {
-	background: var(--mathblockSelected) !important;
-}
-[data-node-type="math_display"]:after {
-	display: none;
-}
-
-
-#root .ProseMirror [data-node-type="math_display"],
-#root ~ .hepta-scrim .ProseMirror [data-node-type="math_display"] {
-	margin-top: var(t--listMargTopBtm) !important;
-	margin-bottom: var(--listMargTopBtm) !important;
-}
-.ProseMirror [data-node-type="math_display"] > .overflow-auto {
-	padding-top: var(--blockquotePadTopBtm);
-	padding-bottom: var(--blockquotePadTopBtm);
-	padding-left: 8px;
-	padding-right: 8px;
-	border: 1px solid var(--mathblockBrdClr);
-	border-radius: var(--codeblockBrdRad);
-	overflow: hidden;
-	min-height: 26px;
-}
-
-/**/
-/*
-.katex-display > .katex > .katex-html * {
-	white-space: normal !important;
-	word-break: break-word;
-	max-width: 100% !important;
-	height: unset;
-}*/
-.ProseMirror [data-node-type="math_display"] .katex .base {
-	white-space: normal;
-	word-break: break-word;
-	display: inline;
-}
-.ProseMirror [data-node-type="math_display"] .katex .base .strut {
-	display: none;
-}
-.ProseMirror .katex {
-	font-size: 1.1em;
-	line-height: 1.3;
-	letter-spacing: .2px;
-	word-break: break-word
-}
-
-
-.ProseMirror .katex-display {
-	margin: 0px !important;
-}
-
-
-
-/*
-[data-node-type="math_display"] .katex-display > .katex {
-	white-space: normal;
-	line-height: 1.18;
-	font-size: 0.965em;
-}*/
-/*Math block - empty*/
-.ProseMirror [data-node-type="math_display"] > .overflow-auto + div * {
-	font-size: .9em !important;
-	line-height: var(--listBulletLineHeight) !important;
-	padding: 0px !important;
-}
-.ProseMirror [data-node-type="math_display"] > .overflow-auto + div {
-	position: absolute;
-	top: 0;
-	left: 20px;
-	bottom: 0;
-	display: flex;
-	align-items: center;
-}
-
-
-
-
-
-
-/*****************
-******************
-******************
-INLINE MATH
-******************
-******************
-******************/
-.ProseMirror [data-node-type] [data-node-type="math_inline"]{
-	background: transparent !important;
-}
-.ProseMirror [data-node-type] [data-node-type="math_inline"] span.mord.text > .mord {
-	padding-left: 4px;
-	padding-right: 4px;
-	padding-bottom: 1.75px;
-	border-radius: calc(var(--codeblockBrdRad) - 2px);
-	margin-top: 0px !important;
-	margin-bottom: 0px;
-}
-.ProseMirror [data-node-type] [data-node-type="math_inline"][style*="background-color: var(--middle-transparent-blue);"] span.mord.text > .mord{
-	background-color: var(--middle-transparent-blue);
-}
-
-.ProseMirror [data-node-type] [data-node-type="math_inline"]:hover {
-	background: hsla(0, 0%, 50%, .075);
-}
-.ProseMirror [data-node-type] [data-node-type="math_inline"] > .overflow-auto {
-	overflow: hidden !important
-}
-
-.ProseMirror [data-node-type] [data-node-type="math_inline"] .katex {
-	font-size: 1.05em;
-
-	/*\
-	font-family: "Roboto Mono", Menlo, monospace,Roboto Slab, serif !important;*/
-}
-
-.ProseMirror [data-node-type] [data-node-type="math_inline"] .katex .base {
-	white-space: normal;
-	word-break: break-all;
-	display: inline;
-}
-.ProseMirror [data-node-type="math_inline"] .katex .mathnormal,
-.ProseMirror [data-node-type="math_inline"] .katex .mord.text {
-	font-style: normal;
-	letter-spacing: 0.2px;
-}
 
 /*****************
 ******************
@@ -4095,7 +3977,6 @@ EDITOR - MATH - POPUP EDITOR
 #root ~ div > .absolute.bg-menu-texture-bg-medium button > svg{
 	margin: 0px;
 }
-
 
 /*****************
 ******************
@@ -4673,9 +4554,10 @@ INDIVIDUAL REFERENCE > Container
 [class*="_content"][class*="group/"]  .ProseMirror .grid.select-none > div .border-b-solid.rounded.border-b.border-light-grey, 
 [class*="_content"][class*="group/"] .text-active:not(.text-label.text-active){
 	color: var(--reftext-color) !important;
-	--underlineThickness: 1px;
-	--underlineOffset:1px;
+	--underlineThickness: .5px;
+	--underlineOffset:2.5px;
 	word-break: break-word;
+		--underlinePadBtm:0px
 
 }
 
@@ -4789,6 +4671,8 @@ INDIVIDUAL REFERENCE > Container
 	--tableHeaderFontSize:14px !important;
 	--tableBodyFontSize:13px;
 	--tableBodyLineHeight:1.375;
+		--mentionUnderlinePosition: 0 100%;
+	--mentionUnderlineSize: 13px !important;
 }
 [class*="_content"] .ProseMirror [data-node-type*="list_item"] > [class*="_bulletWrapper"] > [class*="Icon"]{
 }
@@ -4866,14 +4750,15 @@ REFERENCE - PROPERTIES
 [class*="_editor"] + [class*="_info"] > div > div.my-1 > div {
 		margin-top: var(--propertyItemWrapMargtop) !important;
 }
-/*REFERENCE - PROPERTIES - VALUE - Container - POPUP */
-.fixed + .fixed.z-dropdown-menu.box-border.max-h-70vh.min-w-\[320px\].overflow-y-auto.rounded.bg-background-primary.px-\[11px\].py-\[7px\].shadow-property-value-menu {
-		padding-left: 11px;
-		padding-right: 10px;
+/*REFERENCE - PROPERTIES - VALUE - Container - POPUP
+.fixed + .fixed.z-dropdown-menu.box-border.max-h-70vh.shadow-property-value-menu {
+
 		background: var(--propertyEditBgClr);
 		outline: 1px solid var(--propertyEditBrdClr) !important;
 		font-size: 10px !important;
-}
+				margin-top: calc() !important;
+
+} */
 /*REFERENCE - PROPERTIES - VALUE -  CONTAINER - EMPTY*/
 #root [class*="_editor"] + [class*="_info"] .my-1 .text-label:hover {
 		outline: 1px solid var(--propertyEditBrdClr)
@@ -4903,15 +4788,26 @@ REFERENCE - PROPERTIES
 		--underlineThickness: 1px;
 	--underlineOffset: 1.5px;
 }
-.fixed.z-dropdown-menu.box-border.max-h-70vh.min-w-80.overflow-y-auto.rounded.bg-background-primary.px-2\.75.py-1\.75.shadow-property-value-menu{
+
+/*****************
+PROPERTIES - TEXT EDITOR - NORMAL
+******************/
+#root ._inlinePreviewer_gql42_1 .ProseMirror-hepta-style [data-node-type]:first-child{
+	margin-top: 0px !important;
+
 }
-._inlinePreviewer_gql42_1 .ProseMirror-hepta-style [data-node-type]:first-child,
-#root ~ div ._inlineEditor_1jmis_1 .ProseMirror > [data-node-type]:first-child{
+#root ._inlinePreviewer_gql42_1 .ProseMirror-hepta-style [data-node-type]:last-child{
+	margin-bottom: 0px !important;
+}
+/*****************
+PROPERTIES - TEXT EDITOR - POPUP
+******************/
+#root ~ div .fixed.z-dropdown-menu.shadow-property-value-menu  .ProseMirror-hepta-style [data-node-type]:first-child{
 	margin-top: 0px !important;
 }
-._inlinePreviewer_gql42_1 .ProseMirror-hepta-style [data-node-type]:last-child,
-#root ~ div ._inlineEditor_1jmis_1 .ProseMirror > [data-node-type]:last-child {
+#root ~ div .fixed.z-dropdown-menu.shadow-property-value-menu ._inlinePreviewer_gql42_1 .ProseMirror-hepta-style [data-node-type]:last-child {
 	margin-bottom: 0px !important;
+
 }
 /*****************
 INFO CONTAINER - TAGS
@@ -4934,6 +4830,7 @@ INFO CONTAINER - TAGS
 	padding-left:0px !important;
 
 }
+
 
 
 /*****************
@@ -5069,18 +4966,18 @@ WHITEBOARD (THE LINK TO WHITEBOARDS)
 
 
 
-._whiteboardObject_1fabk_10 > .clickable-overlay {
+[class*="_whiteboardObject"] > .clickable-overlay {
 	z-index: 9494
 }
 /*****************
 WHITEBOARD - CARD - NAV
 ******************/
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1 > div.relative {
 	transition: .1s;
 	border-radius: 8px;
 }
 
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative > [style*="height: 48px"] {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1 > div.relative > [style*="height: 48px"] {
 	height: var(--whiteboardCardNavHeight) !important;
 	padding: 0px !important;
 	padding-left: calc(var(--whiteboardCardPadLeftRight) - 2px) !important;
@@ -5089,24 +4986,24 @@ WHITEBOARD - CARD - NAV
 	align-items: center;
 	justify-content: space-between;
 }
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative > .absolute {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1 > div.relative > .absolute {
 	opacity: 0;
 }
 
 /*****************
 WHITEBOARD - CARD - NAV - BUTTONS
 ******************/
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"] {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"] {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	opacity: .3;
 	transition: .1s
 }
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"]:hover {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"]:hover {
 	opacity: 1;
 }
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"] svg {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1 > div.relative [class*="windowNonDrag"] svg {
 	width: 16px;
 	height: 16px;
 }
@@ -5115,13 +5012,13 @@ WHITEBOARD - CARD - NAV - BUTTONS
 /*****************
 WHITEBOARD - CARD - BODY
 ******************/
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 .ProseMirror._instanceEditor_14p9u_11 {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1 .ProseMirror._instanceEditor_14p9u_11 {
 	padding-left: var(--whiteboardCardPadLeftRight);
 	padding-right: var(--whiteboardCardPadLeftRight);
 	padding-top: var(--whiteboardCardPadTop);
 	padding-bottom: var(--whiteboardCardPadBtm);
 }
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1 .ProseMirror._instanceEditor_14p9u_11 > [data-node-type]:last-child {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1 .ProseMirror._instanceEditor_14p9u_11 > [data-node-type]:last-child {
 	margin-bottom: 0px !important;
 }
 
@@ -5166,7 +5063,7 @@ MINDMAP
 	--mindmapLargeText: 23px;
 	--mindmapLargeTextLineHeight: 1.35;
 }
-._whiteboardObject_1fabk_10 {
+[class*="_whiteboardObject"] {
 	box-sizing: content-box !important;
 }
 
@@ -5271,7 +5168,7 @@ MINDMAP > CARD
 WHITEBOARD CARD -  COLLAPSED
 *************
 *************/
-._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none {
+[class*="_whiteboardObject"] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none {
 	box-shadow: inset 0 0 0 1px var(--whiteBoardCardBrdClr);
 }
 
@@ -5284,7 +5181,7 @@ WHITEBOARD CARD -  COLLAPSED - HEIGHT
 :root {
 	--whiteboardCardCollapsedPadTopBtm: 8px;
 }
-._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none {
+[class*="_whiteboardObject"] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none {
 	height: unset !important;
 	padding-top: var(--whiteboardCardCollapsedPadTopBtm) !important;
 	padding-bottom: var(--whiteboardCardCollapsedPadTopBtm) !important;
@@ -5292,7 +5189,7 @@ WHITEBOARD CARD -  COLLAPSED - HEIGHT
 	padding-left: 0px !important;
 	padding-right: calc(var(--whiteboardCardPadLeftRight) * 0.4) !important;
 }
-._mindMapNode_1pwxr_1 > ._whiteboardObject_1fabk_10.cursor-grab {
+._mindMapNode_1pwxr_1 > [class*="_whiteboardObject"].cursor-grab {
 	height: unset !important;
 }
 
@@ -5302,11 +5199,11 @@ WHITEBOARD CARD -  COLLAPSED - HEIGHT
 WHITEBOARD CARD -  COLLAPSED - TEXT
 *************
 *************/
-._whiteboardObject_1fabk_10[data-is-folded="true"] {
+[class*="_whiteboardObject"][data-is-folded="true"] {
 	height: unset !important;
 		--background-secondary:var(--whiteBoardCardBgClr);
 }
-._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .truncate.text-body.font-semibold.text-primary.px-2 {
+[class*="_whiteboardObject"] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .truncate.text-body.font-semibold.text-primary.px-2 {
 	font-size: calc(var(--bodyFontSize) + 4px);
 	line-height: var(--bodyLineHeight);
 	white-space: normal;
@@ -5317,12 +5214,12 @@ WHITEBOARD CARD -  COLLAPSED - TEXT
 
 }
 /*mind-map - collapsed card text*/
-._whiteboardObject_1fabk_10 > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .truncate.text-body.font-semibold.text-primary.px-2 {
+[class*="_whiteboardObject"] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .truncate.text-body.font-semibold.text-primary.px-2 {
 	width: 100% !important;
 	text-align: left;
 }
 
-#root ._whiteboardObject_1fabk_10[data-is-folded="true"] > [style*="background-color"] > .text-body + .w-6 {
+#root [class*="_whiteboardObject"][data-is-folded="true"] > [style*="background-color"] > .text-body + .w-6 {
 	display: none;
 }
 
@@ -5334,7 +5231,7 @@ VIEW - CARD, WHITEBOARD TEXT ELEMENT
 /*************
 WHITEBOARD CARD 
 **************/
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1{
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1{
 	background: var(--whiteBoardCardBgClr);
 	box-shadow: inset 0 0 0 1px var(--mMapBrdClr);
 	overflow: visible;
@@ -5349,7 +5246,7 @@ WHITEBOARD CARD
 	--bg-purple:var(--whiteBoardCardBg-Purple);
 	--bg-black:var(--whiteBoardCardBg-Black);
 }
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1{
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1{
 	
 }
 
@@ -5357,7 +5254,7 @@ WHITEBOARD CARD
 
 
 /*WHITEBOARD - CARD - EDITING*/
-._whiteboardObject_1fabk_10 ._contentContainer_dodjm_1.border-primary {
+[class*="_whiteboardObject"] ._contentContainer_dodjm_1.border-primary {
 	border-color: var(--whiteBoardCardBrdClr-Editing);
 }
 
@@ -5537,6 +5434,7 @@ MINDMAP > BORDER COLORS
 [data-object-type*="mindMapTextNode"] > div[style*="black"]{
 	--mMapBrdClr: var(--whiteBoardCardBrd-Black);
 }
+
 
 
 /*****************
@@ -6700,6 +6598,8 @@ CARD LIBRARY - COUNTER
 
 }
 
+
+
 /*****************
 ******************
 POPUP & FULLSCREEN > INFO BACKGROUND
@@ -6754,13 +6654,12 @@ DARK > POPUP
 
 /*DARK > POPUP > INFO*/
 #root ~ .p-12.hepta-scrim.cursor-pointer.items-center > .flex.overflow-x-hidden.bg-background-secondary > .grow > .grow.overflow-y-auto.overflow-x-hidden.scrollbar-gutter-stable > [class*="_info_"] {
-	background: ;
 	overflow: hidden;
 }
-/*DARK > POPUP > INFO*/
+/*DARK > POPUP > INFO
 [data-theme="dark"] #root ~ .p-12.hepta-scrim.cursor-pointer.items-center > .flex.overflow-x-hidden.bg-background-secondary > .grow > .grow.overflow-y-auto.overflow-x-hidden.scrollbar-gutter-stable > [class*="_info_"].-mx-7.pt-12.flex {
 	background: var(--hLightedTxtBgClr) !important;
-}
+}*/
 
 /*****************
 ******************
@@ -7655,7 +7554,6 @@ RIGHT SIDEBAR - DROPDOWN MENU - FOLD / UNFOLD CARDS
 	display: none;
 }
 
-
 /*****************
 ******************
 ******************
@@ -7768,7 +7666,6 @@ ALL HEADINGS > MARGIN TOP
 #root .bg-background-primary[style*="width:"] .cursor-grab + div > .pt-3.flex > [class*="ProseMirror"] [data-node-type="toggle_list_item"][class*="_toggleHeadingLevel"]{
 	--headingMargTop: 6px !important;
 }
-
 
 /*****************
 ******************
@@ -7935,7 +7832,7 @@ ICONS
 :root {
 	--iconBrdDashVertical: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 1 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" width="3" height="0.75" rx="0.3" transform="rotate(90 1 0)" fill="%23808080" fill-opacity="0.35"/><rect x="1" y="5" width="3" height="0.75" rx="0.3" transform="rotate(90 1 5)" fill="%23808080" fill-opacity="0.35"/></svg>');
 	--iconBrdDashHoriz-Light: url('data:image/svg+xml;utf8,<svg width="8" height="1" viewBox="0 0 8 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2.25" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.225"/><rect x="4" width="2.25" height="0.75" rx="0.375" fill="%23253041" fill-opacity="0.225"/></svg>');
-	--iconBrdDashHoriz-Dark: url('data:image/svg+xml;utf8,<svg width="8" height="1" viewBox="0 0 8 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2.25" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/><rect x="4" width="2.25" height="0.75" rx="0.375" fill="white" fill-opacity="0.3"/></svg>');
+	--iconBrdDashHoriz-Dark: url('data:image/svg+xml;utf8,<svg width="8" height="1" viewBox="0 0 8 1" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2.25" height="0.75" rx="0.375" fill="white" fill-opacity="0.225"/><rect x="4" width="2.25" height="0.75" rx="0.375" fill="white" fill-opacity="0.225"/></svg>');
 	--iconChevronLight: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.1459 4.84137C11.4444 4.16184 10.3071 4.16184 9.60565 4.84137C8.9042 5.52091 8.9042 6.62265 9.60565 7.30219L18.584 16L9.60565 24.6978C8.9042 25.3773 8.9042 26.4791 9.60565 27.1586C10.3071 27.8382 11.4444 27.8382 12.1459 27.1586L22.3886 17.236C22.3905 17.2341 22.3924 17.2323 22.3943 17.2304C22.6574 16.9756 22.8218 16.6614 22.8876 16.3324C22.9441 16.0495 22.9277 15.7557 22.8385 15.4793C22.7547 15.2196 22.6067 14.9753 22.3943 14.7696C22.3924 14.7677 22.3905 14.7659 22.3886 14.764L12.1459 4.84137Z" fill="black"/></svg>');
 	--iconChevronDark: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.1458 4.84137C11.4444 4.16184 10.3071 4.16184 9.60565 4.84137C8.9042 5.52091 8.9042 6.62265 9.60565 7.30219L18.584 16L9.60565 24.6978C8.9042 25.3773 8.9042 26.4791 9.60565 27.1586C10.3071 27.8382 11.4444 27.8382 12.1458 27.1586L22.3886 17.236C22.3905 17.2341 22.3924 17.2323 22.3943 17.2304C22.6574 16.9756 22.8218 16.6614 22.8876 16.3324C22.9441 16.0495 22.9277 15.7557 22.8385 15.4793C22.7547 15.2196 22.6067 14.9753 22.3943 14.7696C22.3924 14.7677 22.3905 14.7659 22.3886 14.764L12.1458 4.84137Z" fill="%23BCBCBC"/></svg>');
 	/*squigly*/
@@ -7983,6 +7880,3 @@ ICONS
 	--iconBulletCIRCLE:var(--iconBulletCIRCLE-Dark);
 	--iconBulletSQUARE:var(--iconBulletSQUARE-Dark);
 }
-
-
-
