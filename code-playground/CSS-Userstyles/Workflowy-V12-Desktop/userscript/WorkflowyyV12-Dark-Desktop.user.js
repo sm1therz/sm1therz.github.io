@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  Injects V12 into workflowy.
 // @author       RSM
-// @match        https://workflowy.com/*
+// @match        https://workflowy.com*
 // @grant        GM_addElement
 // ==/UserScript==
 
@@ -23,7 +23,7 @@
 	// Call injectCSS() to trigger the CSS injection with a one-second delay for the last script
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/2--Workflowyy12--Dark-theme.css');
-	}, 2500);
+	}, 5500);
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/1--Workflowyy12--Base.css');
 	}, 5000);
