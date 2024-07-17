@@ -65,8 +65,9 @@ h1 {
   width: 100%;
   margin-bottom: calc(var(--separatorHeight) * 3)
 }
-.links-container > .link-group:first-child{
-  margin-top: var(--separatorHeight);
+.links-container > .link-group:first-child .link:first-child:after {
+  border-top:0px;
+
 }
 .link-group {
   width: var(--innerTextWidth);
@@ -131,7 +132,7 @@ h1 {
   right: 0px;
   background: hsl(240, 2%, 18%, 0);
   border-top: 1px solid hsl(0, 0%, 15%);
-  border-bottom: 1px solid hsl(0, 0%, 15%);
+  border-bottom: 0px solid hsl(0, 0%, 15%);
   transition: calc(var(--linkTransition) * 1.8) !important;
   border-radius: 0px;
 }
