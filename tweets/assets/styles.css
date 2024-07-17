@@ -1,21 +1,30 @@
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+
 body {
 	background: hsl(0, 0%, 93%);
-	height: 100vh;
-}
-.rs-twitter-wrapper{
-	padding-top: 10px;
-	padding-bottom: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	max-height: 100%;
-	overflow-y: auto;
-}
-.twitter-tweet {
-	margin: 0 auto !important;
+	height: 100vh;
 }
 
-article:hover{
+.rs-twitter-wrapper {
+	border-radius: 10px;
+	overflow: auto;
+	max-height: 100vh;
+	display: block !important;
+}
+
+
+article:hover {
 	background-color: hsl(180, 14%, 96.5%);
 }
 article > div:hover:last-of-type a {
