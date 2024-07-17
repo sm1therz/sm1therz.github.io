@@ -25,8 +25,10 @@ body {
   /*text*/
   --textClr-primary: hsl(0, 0%, 100%, 0.8);
   /*misc*/
-  --linkTransition: 0.2s;
+  --linkTransition: 0.12s;
   --innerTextWidth: 600px;
+  /*divider*/
+  --separatorHeight:40px;
 }
 /*HEADLINE*/
 .header-container {
@@ -42,7 +44,11 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid hsl(0, 0%, 14%);
 }
-
+.separator{
+  margin-bottom: var(--separatorHeight);
+  height: 1px;
+  width: 100%;
+}
 h1 {
   font-weight: 400;
   font-size: 1.6rem;
@@ -57,8 +63,11 @@ h1 {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  margin-bottom: calc(var(--separatorHeight) * 3)
 }
-
+.links-container > .link-group:first-child{
+  margin-top: var(--separatorHeight);
+}
 .link-group {
   width: var(--innerTextWidth);
   max-width: 100%;
@@ -121,8 +130,8 @@ h1 {
   left: 0px;
   right: 0px;
   background: hsl(240, 2%, 18%, 0);
-  border-top: .5px solid hsl(0, 0%, 14%);
-  border-bottom: .5px solid hsl(0, 0%, 12%);
+  border-top: 1px solid hsl(0, 0%, 15%);
+  border-bottom: 1px solid hsl(0, 0%, 15%);
   transition: calc(var(--linkTransition) * 1.8) !important;
   border-radius: 0px;
 }
