@@ -1,151 +1,160 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Bookmarks , Kiosker Home</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" tyle="text/css" href="styles.css">
-  <!--<script src="script.js"></script>-->
-  <script src="assets/scripts/link-group.js"></script>
-  <script src="assets/scripts/toggle-button.js"></script>
-  <script src="assets/scripts/local-storage.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
-    rel="stylesheet">
-</head>
+  <head>
+    <title>Bookmarks , Kiosker Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--<script src="script.js"></script>-->
+    <script src="assets/scripts/link-group.js"></script>
+    <script src="assets/scripts/toggle-button.js"></script>
+    <script src="assets/scripts/local-storage.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+  </head>
 
-<body>
-  <div class="header-container">
-    <h1>Bookmarks</h1>
-  </div>
-  <div class="links-container">
-    <!----RAINDROP---->
-    <div class="link-group" id="raindrop">
-      <div class="link-group-parent">
-        <a class="link" href="https://app.raindrop.io/my/0">
-          <div class="link-inner">Raindrop</div>
-        </a>
-      </div>
+  <body>
+    <div class="header-container">
+      <h1>Bookmarks</h1>
     </div>
-    <!----CHATGPT---->
-    <div class="link-group" id="raindrop">
-      <div class="link-group-parent">
-        <a class="link" href="https://chatgpt.com">
-          <div class="link-inner">ChatGPT</div>
-        </a>
-      </div>
-    </div>
-    <!--POWERTHESAURUS-->
-    <div class="link-group" id="powerthesaurus">
-      <div class="link-group-parent">
-        <a class="link" href="http://powerthesaurus.org">
-          <div class="link-inner">Power Thesaurus</div>
-        </a>
-      </div>
-    </div>
-    <!----WORKFLOWY---->
-    <div class="link-group" id="workflowy">
-      <div class="link-group-parent">
-        <a class="link" href="https://workflowy.com">
-          <div class="link-inner">Workflowy</div>
-        </a>
-      </div>
-    </div>
-    <!----WEBFLOW---->
-    <div class="link-group" id="webflow">
-      <div class="link-group-parent">
-        <a class="link" href="https://webflow.com">
-          <div class="link-inner">Webflow</div>
-        </a>
-      </div>
-    </div>
-    <!------GDOCS / DRIVE------>
-    <div class="link-group" id="google">
-      <a class="toggle-button">
-        <div class="toggle-icon"></div>
-      </a>
-      <div class="link-group-parent">
-        <a class="link" href="https://drive.google.com/drive/my-drive">
-          <div class="link-inner">
-            Google - Drive</div>
-        </a>
-      </div>
-      <div class="link-group-children">
-        <a class="link" href="https://docs.google.com/document/u/0/">
-          <div class="link-inner indent">Docs - Recents</div>
-        </a>
-        <a class="link" href="https://docs.google.com/document/d/16BiA_mXygitSV5oCFIuEZB7rRnj77EhaRx8ub1BYdLI/edit">
-          <div class="link-inner indent">Docs - TSP Home</div>
-        </a>
-      </div>
-    </div>
-    <!----HEPTABASE---->
-    <div class="link-group" id="heptabase">
-      <a class="toggle-button">
-        <div class="toggle-icon"></div>
-      </a>
-      <div class="link-group-parent">
-        <a class="link" href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/card-library">
-          <div class="link-inner">Heptabase - Cards </div>
-        </a>
-      </div>
-      <div class="link-group-children">
-      <a class="link"
-          href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/map">
-          <div class="link-inner indent">Heptabase - Map</div>
-        </a>
-        <a class="link"
-          href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/card/ed37f8c4-3793-4356-b4f7-688130d106b9/tab/86ef5f78-3cac-4622-9b56-4e03e1dff73f">
-          <div class="link-inner indent">Heptabase - TSP - Index Note - FAQ</div>
-        </a>
-        <a class="link"
-          href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/card/8f80f74f-19c7-4f77-b33a-5ee16083d81b/tab/7877926a-94c9-4a8c-a20a-2584cc02af73">
-          <div class="link-inner indent">Heptabase - TSP - Index Note - TSP Notes</div>
-        </a>
-        <a class="link"
-          href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/whiteboard/3445fe8d-ff91-419a-86a1-5c69eb532adb/tab/dee7fdad-f150-4619-91f9-2a2ff8490901">
-          <div class="link-inner indent">Heptabase - Whiteboard - Forecaster</div>
-        </a>
-      </div>
-    </div>
-
-    <!------SWIPE------>
-    <div class="link-group" id="swipe">
-      <a class="toggle-button">
-        <div class="toggle-icon"></div>
-      </a>
-      <div class="link-group-parent">
-        <div class="link">
-          <div class="link-inner">Sales Letters</div>
+    <div class="links-container">
+      <!----CHATGPT---->
+      <div class="link-group" id="chatgpt">
+        <div class="link-group-parent">
+          <a class="link" href="https://chatgpt.com">
+            <div class="link-inner">ChatGPT</div>
+          </a>
         </div>
       </div>
-      <div class="link-group-children">
-        <a class="link"
-          href="https://sm1therz.github.io/ads/classic/oreck--If-you-dont-move-the-air-you-cant-clean-the-air/oreck.html">
-          <div class="link-inner indent">Oreck - If you don't move the air...</div>
-        </a>
-        <a class="link" href="https://sm1therz.github.io/ads/classic/conway--wsj/">
-          <div class="link-inner indent">WSJ - A tale of two young men</div>
-        </a>
-        <a class="link" href="https://sm1therz.github.io/ads/classic/schwartz--tv-owners/index.html">
-          <div class="link-inner indent">Schwartz - TV Owners</div>
-        </a>
-        <a class="link" href="https://sm1therz.github.io/ads/classic/Schwartz--Learning-Machine/index.html">
-          <div class="link-inner indent">Schwartz - Learning Machine</div>
-        </a>
-        <a class="link"
-          href="https://filedn.com/lhtsAQMGYkYQWvc181vWnv0/SWIPE/Swipe-Articles/Sales-Letters/Classic-Letters/Bencivenga--Ad-Agency-Ad/Bencivenga--Ad-Agency-Ad.html">
-          <div class="link-inner indent">Bencivenga - Agency Ad</div>
-        </a>
-        <a class="link"
-          href="https://filedn.com/lhtsAQMGYkYQWvc181vWnv0/SWIPE/Swipe-Articles/Sales-Letters/Classic-Letters/HTML-AD--Men-Who-Know-It-All/ad--men-who-know-it-all.glitch.me/index.html">
-          <div class="link-inner indent">Men Who Know It All</div>
-        </a>
+      <!----CHATKIT---->
+      <div class="link-group" id="chatkit">
+        <div class="link-group-parent">
+          <a class="link" href="https://chatkit.app">
+            <div class="link-inner">ChatKit</div>
+          </a>
+        </div>
       </div>
+      <!----HEPTABASE---->
+      <div class="link-group" id="heptabase">
+        <a class="toggle-button">
+          <div class="toggle-icon"></div>
+        </a>
+        <div class="link-group-parent">
+          <a class="link" href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/card-library">
+            <div class="link-inner">Heptabase - Cards </div>
+          </a>
+        </div>
+        <div class="link-group-children">
+          <a class="link" href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/map">
+            <div class="link-inner indent">Heptabase - Map</div>
+          </a>
+          <!--HEPTABASE - TSP
+          <a class="link" href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/card/ed37f8c4-3793-4356-b4f7-688130d106b9/tab/86ef5f78-3cac-4622-9b56-4e03e1dff73f">
+            <div class="link-inner indent">Heptabase - TSP - Index Note - FAQ</div>
+          </a>
+          <a class="link" href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/card/8f80f74f-19c7-4f77-b33a-5ee16083d81b/tab/7877926a-94c9-4a8c-a20a-2584cc02af73">
+            <div class="link-inner indent">Heptabase - TSP - Index Note - TSP Notes</div>
+          </a>
+          <a class="link" href="https://app.heptabase.com/8167b54f-d61a-4931-875a-3df1e49cfc74/whiteboard/3445fe8d-ff91-419a-86a1-5c69eb532adb/tab/dee7fdad-f150-4619-91f9-2a2ff8490901">
+            <div class="link-inner indent">Heptabase - Whiteboard - Forecaster</div>
+          </a>
+        -->
+        </div>
+      </div>
+      <!------GOOGLE DRIVE------>
+      <div class="link-group" id="workflowy">
+        <div class="link-group-parent">
+          <a class="link" href="https://drive.google.com/drive/my-drive">
+            <div class="link-inner">Drive</div>
+          </a>
+        </div>
+      </div>
+      <!------GOOGLE DOCS------>
+      <div class="link-group" id="google">
+        <a class="toggle-button">
+          <div class="toggle-icon"></div>
+        </a>
+        <div class="link-group-parent">
+          <a class="link" href="https://drive.google.com/drive/my-drive">
+            <div class="link-inner">Docs</div>
+          </a>
+        </div>
+        <div class="link-group-children">
+          <a class="link" href="https://docs.google.com/document/u/0/">
+            <div class="link-inner indent"> Docs - Recents</div>
+          </a>
+          <a class="link" href="https://docs.google.com/document/d/16BiA_mXygitSV5oCFIuEZB7rRnj77EhaRx8ub1BYdLI/edit">
+            <div class="link-inner indent">Docs - TSP Home</div>
+          </a>
+        </div>
+      </div>
+      <!--POWERTHESAURUS-->
+      <div class="link-group" id="powerthesaurus">
+        <div class="link-group-parent">
+          <a class="link" href="http://powerthesaurus.org">
+            <div class="link-inner">Power Thesaurus</div>
+          </a>
+        </div>
+      </div>
+      <!----WORKFLOWY---->
+      <div class="link-group" id="workflowy">
+        <div class="link-group-parent">
+          <a class="link" href="https://workflowy.com">
+            <div class="link-inner">Workflowy</div>
+          </a>
+        </div>
+      </div>
+      <!------SWIPE------>
+      <div class="link-group" id="swipe">
+        <a class="toggle-button">
+          <div class="toggle-icon"></div>
+        </a>
+        <div class="link-group-parent">
+          <div class="link">
+            <div class="link-inner">Sales Letters</div>
+          </div>
+        </div>
+        <div class="link-group-children">
+          <a class="link" href="https://sm1therz.github.io/ads/classic/oreck--If-you-dont-move-the-air-you-cant-clean-the-air/oreck.html">
+            <div class="link-inner indent">Oreck - If you don't move the air...</div>
+          </a>
+          <a class="link" href="https://sm1therz.github.io/ads/classic/conway--wsj/">
+            <div class="link-inner indent">WSJ - A tale of two young men</div>
+          </a>
+          <a class="link" href="https://sm1therz.github.io/ads/classic/schwartz--tv-owners/index.html">
+            <div class="link-inner indent">Schwartz - TV Owners</div>
+          </a>
+          <a class="link" href="https://sm1therz.github.io/ads/classic/Schwartz--Learning-Machine/index.html">
+            <div class="link-inner indent">Schwartz - Learning Machine</div>
+          </a>
+          <a class="link" href="https://filedn.com/lhtsAQMGYkYQWvc181vWnv0/SWIPE/Swipe-Articles/Sales-Letters/Classic-Letters/Bencivenga--Ad-Agency-Ad/Bencivenga--Ad-Agency-Ad.html">
+            <div class="link-inner indent">Bencivenga - Agency Ad</div>
+          </a>
+          <a class="link" href="https://filedn.com/lhtsAQMGYkYQWvc181vWnv0/SWIPE/Swipe-Articles/Sales-Letters/Classic-Letters/HTML-AD--Men-Who-Know-It-All/ad--men-who-know-it-all.glitch.me/index.html">
+            <div class="link-inner indent">Men Who Know It All</div>
+          </a>
+        </div>
+      </div>
+      <!----RAINDROP---->
+      <div class="link-group" id="raindrop">
+        <div class="link-group-parent">
+          <a class="link" href="https://app.raindrop.io/my/0">
+            <div class="link-inner">Raindrop</div>
+          </a>
+        </div>
+      </div>
+      <!----WEBFLOW
+      <div class="link-group" id="webflow">
+        <div class="link-group-parent">
+          <a class="link" href="https://webflow.com">
+            <div class="link-inner">Webflow</div>
+          </a>
+        </div>
+      </div>
+      ---->
     </div>
-  </div>
-</body>
+  </body>
 
 </html>
