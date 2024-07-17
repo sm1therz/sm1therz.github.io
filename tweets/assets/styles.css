@@ -1,0 +1,28 @@
+body {
+	background: hsl(0, 0%, 93%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+#app {
+	border-radius: 10px;
+	overflow: auto;
+	max-height: 100vh;
+	display: block !important;
+	width:100% !important;
+}
+#app > div{
+	margin: 0 auto;
+	flex-grow: unset !important;
+	width:550px;
+	max-width: 100% !important;
+}
+
+article:hover{
+	background-color: hsl(180, 14%, 96.5%);
+}
+article > div:hover:last-of-type a {
+	background-color: rgba(0, 111, 214, 0.1);
+}
