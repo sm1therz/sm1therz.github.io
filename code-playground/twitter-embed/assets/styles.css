@@ -1,0 +1,10 @@
+.rs-twitter-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.twitter-wrapper blockquote,
+.twitter-wrapper .twitter-tweet {
+	margin: 0 auto;
+}
