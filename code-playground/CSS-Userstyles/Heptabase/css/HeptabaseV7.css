@@ -4986,7 +4986,7 @@ WHITEBOARD - CARD - NAV
 	align-items: center;
 	justify-content: space-between;
 }
-[class*="_whiteboardObject"] ._contentContainer_dodjm_1 > div.relative > .absolute {
+[class*="_whiteboardObject"] > ._contentContainer_dodjm_1 > div.relative > .absolute {
 	opacity: 0;
 }
 
