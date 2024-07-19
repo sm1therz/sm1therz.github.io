@@ -5071,13 +5071,6 @@ WHITEBOARD TOOLBAR / WHITEBOARD NAV
 		max-width: unset !important;
 }
 
-@media (max-width:1000px) {
-[class*="whiteboardToolbarLeft"] {
-
-transform-orgin:left bottom;
-transform:scale(1.5);
-}
-}
 
 
 /*****************
