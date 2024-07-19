@@ -6238,7 +6238,7 @@ TAGS DROPDOWN > MULTI SELECT
 		margin: 0px;
 }
 
-.z-dropdown-menu.fixed[class*="80vh"][style*="width: 248px"] {
+#root ~ div .fixed.z-dropdown-menu[class*="80"][style*="248px"] {
 width:248px !important;
 }
 
