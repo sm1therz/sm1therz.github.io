@@ -5072,6 +5072,7 @@ WHITEBOARD TOOLBAR / WHITEBOARD NAV
 }
 
 
+
 /*****************
 ******************
 WHITEBOARD (THE LINK TO WHITEBOARDS)
@@ -6235,6 +6236,10 @@ TAGS DROPDOWN > MULTI SELECT
 		padding-bottom: 3px;
 		height: unset;
 		margin: 0px;
+}
+
+#root ~ div .fixed.z-dropdown-menu[class*="80"][style*="248px"] {
+width:248px !important;
 }
 
 
