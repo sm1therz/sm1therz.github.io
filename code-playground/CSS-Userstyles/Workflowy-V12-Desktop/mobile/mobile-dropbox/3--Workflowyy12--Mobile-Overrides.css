@@ -973,7 +973,8 @@ CODE BLOCKS
 
 #app .project.code-block > .name > .content,
 #app .project.code-block.noted > .name > .content{
-padding-bottom:4px !important;
+padding-bottom:5px !important;
+padding-top:5px !important;
 }
 
 #app .project.code-block > .name > .content,
