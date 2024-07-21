@@ -2,12 +2,14 @@
 // @name         WORKFLOWYY-V12-Dark-Desktop
 // @namespace    http://yournamespace.com
 // @version      1.0
-// @description  Injects V12 into workflowy.
+// @description  USES OLD DROPBOX FILES
 // @author       RSM
 // @match        https://workflowy.com*
 // @grant        GM_addElement
 // ==/UserScript==
 
+
+// NOTE! - BELOW USES OLD DROPBOX FILES
 (function() {
 	'use strict';
 	// Function to inject the CSS stylesheet into the <head> of the page
