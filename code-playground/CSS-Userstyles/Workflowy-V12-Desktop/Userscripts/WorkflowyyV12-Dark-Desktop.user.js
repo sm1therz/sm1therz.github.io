@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         WORKFLOWYY-V12-Dark-Mobile
+// @name         WORKFLOWYY-V12-Dark--DESKTOP
 // @namespace    http://yournamespace.com
 // @version      1.0
 // @description  Injects V12 into workflowy.
