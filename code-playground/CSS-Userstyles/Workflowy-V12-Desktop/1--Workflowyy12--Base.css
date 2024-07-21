@@ -1685,12 +1685,18 @@ padding-bottom:5px !important;
 padding-top:5px !important;
 }
 
+#app .project.code-block > .name > .content,
+#app .project.code-block > .name > .content *,
+#app .project.code-block > .name > .content > .innerContentContainer,
+#app .project.code-block > .name > .content > .innerContentContainer * {
+font-family: var(--wf-font-family-mono),mono,monospace !important;
+}
 
 #app .project.code-block > .name > .content,
 #app .project.code-block > .name > .content > .innerContentContainer {
-font-family: var(--wf-font-family-mono) !important;
-font-size: 16px !important;
-line-height:26px !important
+
+font-size: 15px !important;
+line-height:24px !important
 }
 /***************
 TAGS
