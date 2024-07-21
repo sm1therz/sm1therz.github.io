@@ -1,0 +1,12 @@
+
+/*sidebar*/
+[class*="100dvh"] > [class*="ring-borderMain"],
+.w-sideBarWidth{
+		width: 300px !important
+}
+
+/*sidebar - items*/
+
+[class*="group"] a[href] [class*="group"] span.line-clamp-1{
+		-webkit-line-clamp:3
+}
