@@ -1675,7 +1675,12 @@ UNDERLINE
 }
 
 
-
+/***************
+CODE BLOCKS
+****************/
+#app .project.code-block > .name > .content > .innerContentContainer {
+font-family: var(--wf-font-family-mono) !important;
+}
 /***************
 TAGS
 ****************/
