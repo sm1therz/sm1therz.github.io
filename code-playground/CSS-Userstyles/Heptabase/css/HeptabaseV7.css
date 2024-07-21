@@ -279,7 +279,7 @@ HEPTABBASE V7
 	--LinkBrd: 1px solid var(--LinkBrdClr);
 	--LinkBrdBtm: var(--LinkBrd);
 	--LinkBrdClr: hsl(211, 100%, 74%, 1);
-	--LinkClr: hsl(211, 100%, 73%);
+	--LinkClr: hsl(206, 100%, 73%);
 	--LinkBgClr: hsl(209, 100%, 50%, .151);
 	--LinkBgClr-Hover: transparent;
 	/*active*/
