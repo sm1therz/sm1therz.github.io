@@ -967,6 +967,20 @@ NOTES
 
 /*******************************
 ********************************
+CODE BLOCKS
+********************************
+********************************/
+#app .project.noted > .notes {
+}
+#app .project.noted > .notes > .content {
+	display:block !important;
+}
+#app .project.noted > .notes > .content > .innerContentContainer{
+	display:block !important;
+}
+
+/*******************************
+********************************
 MOBILE - MEDIA QUERIES
 ********************************
 ********************************/
