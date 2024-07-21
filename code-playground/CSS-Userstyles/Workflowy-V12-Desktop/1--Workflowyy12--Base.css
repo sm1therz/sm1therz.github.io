@@ -1685,7 +1685,6 @@ padding-bottom:4px !important;
 }
 
 #app .project.code-block > .name > .content,
-#app .project.code-block > .name > .content *,
 #app .project.code-block > .name > .content > .innerContentContainer,
 #app .project.code-block > .name > .content > .innerContentContainer *{
 font-family: var(--wf-font-family-mono) !important;
