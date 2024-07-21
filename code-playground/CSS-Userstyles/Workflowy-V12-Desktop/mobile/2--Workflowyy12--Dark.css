@@ -1,0 +1,438 @@
+/********
+*********
+*********
+THEME - DARK
+*********
+*********
+*********/
+html,
+:root body,
+:root .page,
+:root .header,
+:root .leftBar,
+:root .flyout,
+:root .picker-background {
+
+
+	/*************
+	NODES
+	**************/
+	--NODE--TXT-CLR--main: hsl(180, 2%, 88%);
+	--NODE--TXT-CLR--FAINT: hsl(180, 2%, 50%);
+	--NODE--TXT-CLR--completed: var(--NODE--TXT-CLR--FAINT);
+	--NODE--TXT-CLR--bold: hsl(0, 0%, 96%);
+	--NODE-NOTES--TXT-CLR-ALL: hsl(195, 4%, 45%);
+	--NODE-NOTESROOT--TXT-CLR-ALL: hsl(195, 4%, 65%);
+	--NODE-NOTESROOT--TXT-CLR-ALL-BOLD: hsl(195, 4%, 78%);
+	--NODE-NOTES--TXT-CLR-Bold: hsl(195, 4%, 57%);
+	--NODE--TXT-CLR--CONTRAST: white;
+	--NODE--TXT-UNDERLINE--CLR: hsl(195, 8%, 100%, .3);
+
+	--NODE--TXT-UNDERLINE--CLR-2: hsl(200, 5%, 39%);
+	/*--NODE--TXT-UNDERLINE--CLR-2: hsl(195, 8%, 100%, .25);*/
+	/*************
+	BACKGROUNDS
+	**************/
+	--BG-primary: hsl(202, 13%, 18.5%);
+	--HIGHLIGHTED--BG: hsl(202, 13%, 22.5%);
+	--HIGHLIGHTED--Box-Shad-CLR: hsl(202, 13%, 22.5%);
+	--BG-BUTTON--HOVER: hsl(192, 4%, 37.45%, .4);
+
+
+
+	/************* 
+	MISC
+	**************/
+	--ADDED-TO-SELECTION--BG: #346171;
+	--ADDED-TO-SELECTION--BrdClr: hsl(196, 37%, 45%);
+	--NODE-HIGHLIGHTED--BG: hsla(218, 45%, 40%);
+	--IMAGE-BOX--BORDER: 1px solid hsl(200, 6%, 30%);
+	--IMAGE--SELECTED--BOX-SHADOW-CLR: hsl(210, 100%, 50%);
+
+	--ICON--ARROW: var(--ICON--ARROW-DARK);
+	--ICON--MENU-DOTS: var(--ICON--MENU-DOTS-DARK);
+
+	/*************
+	SEARCH - NAV BAR
+	**************/
+	--HEADER--BORDER: 1px solid var(--HEADER--BORDER-CLR-2);
+	--HEADER--BORDER-CLR-2: rgb(100, 100, 100, .3);
+	--HEADER--BUTTON-HOVER: hsl(192, 4%, 37.45%, .2);
+	--search-nav-input-active: hsl(202, 0%, 32%);
+	--search-nav-container: #262425;
+	--search-nav-bg-primary: hsl(201, 13%, 15%);
+	--search-nav-bg-primary-2: hsl(202, 13%, 18.5%);
+	--search-nav-border: 1px solid hsl(205, 9%, 29%);
+	--search-nav-border-active: 1px solid hsl(205, 12%, 32%);
+	--search-nav-icon-color-BG: hsl(208, 2%, 50%, 1);
+	--search-nav-icon-color-BG-active: hsl(36, 90%, 72%);
+	--search-nav-input: hsl(202, 13%, 18.5%, .0);
+	--SEARCH-NAV--PLACEHOLDER-TXT-CLR: #A9A7A8;
+	--SEARCH-NAV--ICON-TXT-CLR: var(--NODE--TXT-CLR--main);
+	--SEARCH-NAV-MENU-ITEM--TXT-CLR: var(--NODE--TXT-CLR--main);
+	--SEARCH-NAV-MENU-ITEM--BG-ACTIVE: hsl(195, 40%, 33%);
+	--SEARCH-NAV--ICON-MAG-GLASS--INVERT: invert(0);
+	--HEADER-BREADCRUMB-LINK: hsl(201, 0%, 80%);
+	--HEADER-BREADCRUMB-LINK--CURRENT: hsl(201, 0%, 100%);
+
+
+	/*************
+	SIDEBAR
+	**************/
+	--SIDEBAR--BG: hsl(202, 14%, 15.5%);
+	--SIDEBAR--BORDER-RIGHT: 1px solid hsl(205, 9%, 22%);
+	--SIDEBAR--BREAKER: hsl(202, 13%, 24.5%, .4);
+	--SIDEBAR-BUTTON--BG: ;
+	--SIDEBAR-HEADER-BUTTON--BG: hsl(202, 14%, 16%, .5);
+	--SIDEBAR-HEADER-BUTTON--TXT-CLR: white;
+	--SIDEBAR-BUTTON--BG--HOVER: hsl(192, 4%, 37.45%, .4);
+	--SIDEBAR-BUTTON--BG--ACTIVE: hsl(210, 100%, 50%, .5);
+	--SIDEBAR-BUTTON--TXT-CLR: hsl(192, 4%, 90.45%);
+	--SIDEBAR-BUTTON--TXT-CLR--ACTIVE: white;
+	--SIDEBAR-BUTTON--ICON-CLR: hsl(192, 4%, 45.45%, .9);
+
+
+	/*************
+	BULLETS
+	**************/
+	--BG-Bullet-open: hsl(192, 5%, 72%);
+	--BG-Bullet-closed: hsl(192, 5%, 72%);
+	--BG-Bullet-under: hsl(192, 4%, 56.45%, .35) !important;
+
+	/*************
+	CHECKBOXES
+	**************/
+	--CHECKBOX--BG: hsl(202, 13%, 16.5%);
+	--CHECKBOX--BG--DONE: hsla(218, 82%, 65%);
+	--CHECKBOX--BOX-CLR: hsl(192, 2%, 52%);
+	--CHECKBOX--BOX-MIRROR-CLR: hsl(203, 2%, 55%);
+
+
+	/*************
+	REFERENCES
+	**************/
+	--REF--BREAD--TXT-CLR: var(--NODE--TXT-CLR--FAINT);
+	--REF--Breadcrumb-TXT-clr-last: hsl(198, 2%, 80%);
+
+	--REF--BG: hsl(195, 16%, 16.5%);
+	--REF--BOX-SHADOW: inset 0 0 0 1px var(--REF--BOX-SHADOW-CLR);
+	--REF--BOX-SHADOW-CLR: hsl(195, 18%, 7%, .35);
+	--REF--BACKLINK--TXT-CLR: var(--NODE--TXT-CLR--FAINT);
+	--REF--THREE-DOT--BORDER-CLR: hsla(195, 2%, 63%, .2);
+}
+
+:root {
+
+	/*************
+	COMMENTS
+	*************/
+	.board {
+		--COMMENT-CONTAINER--BG: hsl(197, 18%, 15%) !important;
+		--brd-brdrClrCmnt: red !important;
+	}
+
+	.project.board.root .comment {
+		border-color: hsl(197, 13%, 0%) !important;
+	}
+
+	--COMMENT-CONTAINER--BG: hsl(200, 12%, 22%);
+	--COMMENT-CONTAINER--BG--ROOT: hsl(200, 8%, 28%);
+	--COMMENT-CONTAINER--BORDER: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR);
+	--COMMENT-CONTAINER--BORDER-CLR: hsl(200, 6%, 30%);
+	--COMMENT--BORDER-CLR--ROOT: hsl(200, 6%, 37%);
+	--COMMENT-ATTRIBUTION--TXT-CLR: var(--NODE--TXT-CLR--FAINT);
+	--COMMENT--BG--even: var(--BG-primary);
+	--COMMENT--BG--even--Root: var(--BG-primary);
+}
+
+:root {
+	/*************
+	DASHBOARD
+	*************/
+	--DashCrd--BrdClr: hsl(198, 9%, 15%);
+	--COMMENT-CONTAINER--BG: hsl(200, 12%, 22%);
+	--DashCrd-ChldrnBgClr: hsl(198, 12%, 21%);
+	--DASHBOARD-CARD--BG: hsl(198, 9%, 23%, 0);
+	--DASHBOARD-CARD--BORDER: 1px solid hsl(197, 6%, 34%);
+	--DASHBOARD-CARD--BORDER-INNER: 1px solid hsl(197, 6%, 30%);
+	--DASHBOARD-CARD--BORDER-CLR: hsl(197, 10%, 29%);
+	--DASHBOARD-CARD--BG-OPEN: hsl(202, 13%, 17.5%);
+	--DashCrd--BrdClr-Open: hsl(198, 9%, 19%);
+}
+
+#app .board .project.hasMirrors>.name>.prefix .item-checkbox {
+	--BG-Bullet-open: hsl(192, 3%, 60%);
+}
+
+.comment .comment .project:not(.comment .comment .project.comment) {
+	--DashCrd--BrdClr: hsl(198, 9%, 12%)
+}
+
+.dashboard {
+	--COMMENT-CONTAINER--BG: hsl(199, 15%, 19%);
+	--COMMENT-CONTAINER--BORDER-CLR: hsl(199, 15%, 9%);
+	--COMMENT--BG--even: hsl(198, 13%, 21.5%);
+}
+
+.dashboard-card:not(.dashboard-card.comment) {
+	border-left-color: transparent !important;
+	border-right-color: transparent !important;
+}
+
+:root {
+	/*TEST*/
+	--DASHBOARD-CARD--BG: var(--DASHBOARD-PAGE--BG);
+	--DashCrd-ChldrnBgClr: var(--DASHBOARD-PAGE--BG);
+	--DashCrd--BrdClr: hsl(190, 8%, 25.5%);
+
+	/*************
+	BOARDS
+	*************/
+	--brd-ClmBrdClr: hsl(200, 6%, 30%);
+	--BOARDS--BOARD-COLUMN--BORDER: 1px solid hsl(200, 6%, 25%);
+	--BOARDS--BOARD-COLUMN--TXT-CLR: 1px solid hsl(200, 6%, 100%);
+	/*************
+	BOARDS - ROOT
+	*************/
+	--BOARD-ROOT--CARD--BG: hsl(200, 10%, 22%);
+	--BOARD-ROOT--CARD--BORDER: 1px solid hsla(201, 13%, 9%, 1);
+	--BOARD-ROOT--CARD--BORDER-INNER-CLR: hsl(201, 13%, 9%);
+
+
+	/*************
+	LINK COLORS
+	**************/
+	--Link-TxtClr: hsl(200, 70%, 58%);
+	--LinkInternal-TxtClr: hsl(206, 7%, 67%);
+	--NODE-LINK--TXT-CLR-2: hsl(211, 100%, 43%);
+	--NODE-LINK--TXT-CLR-2-HIGHLIGHT: hsl(211, 100%, 43%);
+
+	--NODE-LINK--BG: hsla(221, 5%, 50%, 0.27);
+	--NODE-LINK--BG--HOVER: hsla(221, 5%, 50%, 0.67);
+	--NODE-LINK--BORDER-CLR: hsl(211, 5%, 50%, 0.4);
+	--NODE-LINK--BORDER--HOVER: inset 0 0 0 1px hsl(211, 5%, 50%, 0.1);
+	--NODE-LINK--TXT-CLR: hsl(70, 4%, 80%);
+	--NODE-LINK--TXT-CLR--HOVER: hsl(70, 10%, 90%);
+	--NODE-LINK--ICON--FILTER-HOVER: contrast(10);
+	--FILE-DOWNLOAD-BUTTON--BG-CLR: white;
+	--FILE-DOWNLOAD-BUTTON--TXT-CLR: black;
+	--FILE-DOWNLOAD-BUTTON--BG-CLR--HOVER: ;
+
+	/*V9 LINK - EXTERNAL*/
+	--LnkTxtClr: hsl(211, 100%, 73%);
+	--LnkBrdClr: hsl(211, 100%, 74%, .4);
+	--LnkBgClr: hsl(209, 100%, 50%, .151);
+	--LnkBgClrHov: hsl(208, 100%, 50%, .171);
+	/*V9 LINK - INTERNAL*/
+	--LnkWFTxtClr: hsl(221, 6%, 54%);
+	--LnkWFBrdClr: hsl(211, 5%, 50%, 0.4);
+	--LnkWFBgClr: hsla(221, 5%, 50%, 0.27);
+	--LnkWFBgClrHov: hsl(208, 10%, 50%, .171);
+	/**/
+	/*************
+	TAG-COLORS
+	**************/
+	--NODE-TAG--BG: hsl(221, 4%, 50%, .27);
+	--NODE-TAG--BG--Hover: hsla(201, 12%, 70%, .5);
+	--NODE-TAG--TXT-CLR: hsl(202, 6%, 60%);
+	--NODE-TAG--TXT-NAME-CLR: var(--NODE-LINK--TXT-CLR);
+	--NODE-TAG--BOX-SHADOW: var(--NODE-LINK--BOX-SHADOW);
+	/*TAGS-PEOPLE*/
+	--NODE-TAG--PEOPLE--BG: hsl(195, 40%, 33%);
+	--NODE-TAG--PEOPLE--BG--HOVER: hsl(195, 40%, 43%);
+	--NODE-TAG--PEOPLE--BOX-SHAD: none;
+
+	/*TAGS--MATCHED*/
+	--NODE-TAG--MATCHED--BG: hsl(60, 100%, 60%);
+	--NODE-TAG--MATCHED--SYMBOL-CLR: hsl(202, 6%, 30%, .7);
+	--NODE-TAG--MATCHED--TXT-CLR: black;
+	--NODE-TAG--MATCHED--BORDER-CLR: ;
+
+
+
+	/*************
+	TAGS AND LINKS IN NOTES
+	**************/
+	--NODE-LINK-NOTES--BG: hsla(221, 5%, 50%, 0.0);
+	--NODE-LINK-NOTES--BG--HOVER: hsla(221, 5%, 50%, 0.67);
+	--NODE-LINK-NOTES--BORDER: hsla(221, 5%, 50%, 0.25);
+
+	--NODE-LINK-NOTES--TXT-CLR: hsl(202, 4%, 60%);
+	--NODE-LINK-NOTES--TXT-CLR-HOVER: hsl(70, 4%, 80%);
+
+	--NODE-TAG-NOTES--TXT-CLR: hsl(202, 6%, 40%);
+	--NODE-TAG-NOTES--TXT-NAME-CLR: hsl(202, 4%, 65%);
+	--NODE-TAG-NOTES--TXT-CLR-HOVER: var(--NODE-LINK-NOTES--TXT-CLR-HOVER);
+
+
+
+	/*************
+	HIGHLIGHTS
+	**************/
+	--HIGHLIGHT--RED: hsl(0, 55%, 37%);
+	--HIGHLIGHT--ORANGE: hsl(20, 55%, 39%);
+	--HIGHLIGHT--YELLOW: hsl(37, 60%, 41%);
+	--HIGHLIGHT--GREEN: hsl(150, 70%, 28%);
+	/*inline code*/
+	--HIGHLIGHT--pink-CODE--BG: hsl(198, 4%, 84%);
+	--HIGHLIGHT--pink-CODE--BOX-SHADOW-CLR: hsl(211, 5%, 40%, 0.4);
+	--HIGHLIGHT--pink-CODE--TXT-CLR: hsl(351, 60%, 50%);
+	/*inline code - in notes*/
+	--HIGHLIGHT-NOTES--pink-CODE--BG: hsla(221, 5%, 50%, 0.27);
+	--HIGHLIGHT-NOTES--pink-CODE--TXT-CLR: hsl(195, 2%, 63%);
+	/*end inline code*/
+	--HIGHLIGHT--Grey--GREYED-OUT: hsl(202, 13%, 18.5%);
+	--HIGHLIGHT-TXT--Grey--GREYED-OUT: hsl(180, 2%, 80%, .1);
+	--HIGHLIGHT-TXT-SHADOW: 0 1px black,
+		1px -1px black,
+		-1px -1px black,
+		-1px 0px black,
+		-1px 1px black,
+		-1px 1px black,
+		1.5px 1.5px black,
+		1.5px 1.5px black;
+
+	/*************
+	TEXT COLORS - V1 - STOCK COLORS
+	**************/
+	--TXT-CLR--RED: hsl(0, 100%, 70%);
+	--TXT-CLR--ORANGE: hsl(21, 100%, 65%);
+	--TXT-CLR--YELLOW: hsl(42, 93%, 46%);
+	--TXT-CLR--GREEN: hsl(158, 60%, 48%);
+	--TXT-CLR--Grey: hsl(172, 66%, 50%);
+	--TXT-CLR--SKY: hsl(198, 93%, 60%);
+	--TXT-CLR--BLUE: hsl(217, 100%, 66%);
+	--TXT-CLR--PURPLE: hsl(254, 100%, 77%);
+	--TXT-CLR--PINK: hsl(309, 86%, 70%);
+
+
+	/*************
+		MENU COLORS 
+		**************/
+	--FLYOUT--BORDER-color: rgb(92, 96, 98);
+	--FLYOUT--BG: hsl(202, 3%, 100%);
+	--FLYOUT-BUTTON-BG--HOVER: hsl(202, 3%, 100%);
+	--FLYOUT--TXT-color: hsl(180, 2%, 20%);
+	--FLYOUT--ICN-contrast: filter:contrast(1);
+	--FLYOUT-BUTTON--TXT-CLR: white;
+	--FLYOUT-BUTTON--TXT-CLR--HOVER: white;
+	--FLYOUT-BUTTON--BG--HOVER: hsl(0, 0%, 100%, .2);
+
+	--FLYOUT--TXT-color-2: hsl(210, 10%, 55%);
+	--FLYOUT-BG-CLR-2: hsl(210, 7%, 40%, .3);
+
+
+	/*************
+	LINK POPUP HOVER
+	**************/
+	--LINK-EDIT--BG: var(--BG-primary);
+	--LINK-EDIT--BTN-CLR: hsl(206, 4%, 55%);
+	--LINK-EDIT--INPUT-BG: hsl(200, 3%, 37%);
+	--LINK-EDIT--INPUT-BORDER-CLR: rgb(92, 96, 98);
+	--LINK-EDIT-HOVER--BG: hsl(210, 7%, 20%, 1);
+	--LINK-EDIT-HOVER--BG--HOVER: hsl(210, 7%, 40%, 1);
+	--LINK-EDIT-HOVER--BORDER-CLR: hsl(210, 7%, 40%, .7);
+	--LINK-EDIT-HOVER--TXT-CLR: hsl(0, 0%, 100%);
+	--LINK-EDIT--TXT-LBL-CLR: hsl(210, 7%, 30%, 1);
+	--ICON--LINK-EDIT--FILTER: brightness(.5);
+
+	/*************
+	SHARED
+	**************/
+	--shared-BY-me--bullet-1: hsl(195, 70%, 49%);
+	--shared-BY-me--bullet-2: hsl(195, 70%, 59%);
+	--shared-BY-me--bullet-color-3: hsl(195, 43%, 30%);
+	--BG-expand-border-shared-BY-me: hsl(195, 43%, 20%);
+	--shared-WITH-me--me--bullet-1: hsl(54, 90%, 49%);
+	--shared-WITH-me--me--bullet-2: hsl(54, 90%, 59%);
+	--shared-WITH-me--me--bullet-3: hsl(54, 43%, 30%);
+	--BG-expand-border-shared-WITH-me: hsl(54, 43%, 20%);
+
+	/*************
+	QUICK SWITCHER
+	**************/
+	--switcher--modal--border-clr: hsl(200, 5%, 26%);
+	--switcher--search-bottom-border-clr: hsl(200, 5%, 26%);
+	--switcher--search--border: hsl(200, 9%, 27%);
+	--switcher--search--bg: hsl(202, 13%, 12.5%);
+	--switcher--item-separator: 0px 1px 0 0px hsl(200, 9%, 27%);
+	--switcher--item--txt--color: hsl(180, 2%, 100%, .6);
+	--switcher--item--txt--color-query: hsl(180, 2%, 100%);
+	--switcher--item--txt--breadcrumb: hsl(180, 2%, 100%);
+	--switcher--item--svg-stroke-breadcrumb: hsl(180, 0%, 100%, 1.6);
+	--switcher--item-gradient: linear-gradient(to left,
+			hsla(201, 13%, 19%),
+			hsla(201, 13%, 19%, .4),
+			transparent);
+	--switcher--item-selected-3: linear-gradient(to left,
+			hsla(205, 90%, 90%),
+			transparent);
+	--switcher--item--selected: hsla(205, 100%, 50%);
+	--switcher--item--selected-border-clr: hsla(205, 100%, 55%);
+	--switcher--item--selected-color: hsl(205, 80%, 87%);
+	--switcher--item--selected-color-query: hsl(205, 100%, 100%);
+	--switcher--item--selected-color-breadcrumb: hsl(205, 80%, 87%);
+	--switcher--item--selected-svg-stroke-breadcrumb: red;
+	--switcher--favorite--icon--color: white;
+	--Filter-Contrast-3: contrast(3);
+	--Search--Txt-match: white;
+
+
+	/*************
+	FULL SEARCH
+	**************/
+	--searchMatchClr: white;
+	--searchMatchBgClr: hsl(54, 90%, 49%);
+
+	/*************
+	EXPAND BORDER
+	**************/
+	--EXPAND-BORDER--BG: hsl(192, 5%, 32%, 1);
+	--EXPAND-BORDER--BG--REF: hsl(195, 22%, 12.5%);
+
+
+	/*************
+	UNDERLINE
+	**************/
+	--ICON--UNDERLINE-WAVY: var(--ICON--UNDERLINE-WAVY--DARK);
+	--ICON--UNDERLINE-WAVY--UNDERLINE: var(--ICON--UNDERLINE-WAVY--UNDERLINE--DARK);
+	--ICON--UNDERLINE-WAVY--LINK: var(--ICON--UNDERLINE-WAVY--LINK--DARK);
+	--ICON--UNDERLINE-WAVY--LINK-INTERNAL: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK);
+	--ICON--UNDERLINE-WAVY-REFERENCE: var(--ICON--UNDERLINE-WAVY-REFERENCE--DARK);
+	--ICON--UNDERLINE-WAVY-REFERENCE--UNDERLINE: var(--ICON--UNDERLINE-WAVY-REFERENCE--UNDERLINE--DARK);
+}
+
+#app div>.dialog-box>._3hmsj>div:last-of-type>div>span {
+	box-shadow: inset 0 0 0 300px hsl(202, 13%, 18.5%, .5),
+		0 1px 0 0px var(--switcher--search-bottom-border-clr);
+}
+
+
+.fullMatch ._uanex1 .contentMatch {
+	color: var(--Search--Txt-match);
+}
+
+/*ZOOM ICON*/
+:root {
+	--ICON--MAGNIFYING-GLASS-ZOOM: var(--ICON--MAGNIFYING-GLASS-ZOOM--DARK);
+}
+
+.colored.bc-Grey {
+	-webkit-text-stroke: 0px !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+.colored.bc-Grey::selection {
+	color: var(--NODE--TXT-CLR--main) !important;
+}
+
+.page.active.searching .project.noted.matches>.notes.matches.fullMatch>.content {
+	--NODE-NOTES--TXT-CLR-ALL: hsl(195, 4%, 65%);
+	--NODE-NOTES--TXT-CLR-Bold: hsl(195, 4%, 57%);
+}
+
+
+
+:root {
+	--selectionBg2: rgba(54, 102, 119, 0.9);
+}
