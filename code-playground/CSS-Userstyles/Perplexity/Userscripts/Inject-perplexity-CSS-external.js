@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         PERPLEXITY INJECT - INLINE
+// @name         PERPLEXITY INJECT - EXTERNAL
 // @namespace    http://yournamespace.com
 // @version      1.0
 // @description  Injects Perplexity css
@@ -23,5 +23,5 @@
 
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Perplexity/css/Perplexity-CSS.css');
-	}, 3500);
+	}, 500);
 })();
