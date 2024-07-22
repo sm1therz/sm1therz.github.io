@@ -35,7 +35,7 @@ setTimeout(function() {
   let style = `<style>
   :root {
 		/*sizes*/
-	  --bodyFontSize:15px;
+	  --bodyFontSize:16.5px;
 		/*colors*/
 		--blockquoteBrdClr:hsla(0,0%,50%);
 		--blockquoteOpacity:.75
@@ -68,7 +68,7 @@ setTimeout(function() {
 	}
 	
 	blockquote {
-	font-size: calc(var(--bodyFontSize) - 1px);
+	font-size: calc(var(--bodyFontSize) - 1px)!important;
 	margin-left: 0px !important;
 	margin-right: 0px !important;
 	-webkit-text-stroke-width:.3px;
