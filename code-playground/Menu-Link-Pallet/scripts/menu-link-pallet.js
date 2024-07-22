@@ -33,7 +33,7 @@
   const navBtnGroup = document.createElement("div");
   navBtnGroup.className = "rsm-nav-btn-group";
   const exampleLink = document.createElement("a");
-  exampleLink.href = "https://example.com";
+  exampleLink.href = "javascript:(function(){javascript: (() => { const text = getSelection() + %27%27; if (text !== %27%27) prompt(%27Text Fragment%27, `${location.href}#:~:text=${encodeURIComponent(text.trim())}%60);%20else%20alert(%27No%20text%20selected%27);%20})();%20void%200;})();";
   exampleLink.textContent = "⌘";
   navBtnGroup.appendChild(exampleLink);
 
