@@ -4886,11 +4886,12 @@ REFERENCE - PROPERTIES
 		--propertyParagraphMargBtm: 0px;
 		--propertyItemWrapMargtop: 5px;
 }
-@media (max-width:600px){
+/*
+@media (max-width:400px){
 		[class*="_editor"] + [class*="_info"] > div > div.my-1 > div{
 				flex-direction:column;
 		}
-}
+}*/
 /*REFERENCE - PROPERTIES - CONTAINER */
 [class*="_editor"] + [class*="_info"] > div > div.my-1 > div {
 		margin-top: var(--propertyItemWrapMargtop) !important;
