@@ -1,4 +1,4 @@
-(function() {
+setTimeout(function() {
     'use strict';
 
     var blockquotes = document.querySelectorAll('blockquote:not([class])');
@@ -11,7 +11,7 @@
         blockquote.parentNode.replaceChild(div, blockquote);
     });
 
-})();
+}, 3000);
 
 setTimeout(function() {
     'use strict';
@@ -26,7 +26,7 @@ setTimeout(function() {
         quote.parentNode.replaceChild(blockquote, quote);
     });
 
-}, 1000);
+}, 3000);
 
 
 
@@ -38,7 +38,7 @@ setTimeout(function() {
 	  --bodyFontSize:15px;
 		/*colors*/
 		--blockquoteBrdClr:hsla(0,0%,50%);
-		--blockquoteClr:hsla(0,0%,0%,.65)
+		--blockquoteOpacity:.75
 
 	}
 	html,
@@ -73,7 +73,7 @@ setTimeout(function() {
 	margin-right: 0px !important;
 	-webkit-text-stroke-width:.3px;
 	border-left:5px solid var(--blockquoteBrdClr);
-	color:var(--blockquoteClr);
+	opacity:var(--blockquoteOpacity);
 	}
 	
 	blockquote,
