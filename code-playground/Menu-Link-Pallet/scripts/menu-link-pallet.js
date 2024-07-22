@@ -34,7 +34,7 @@
   navBtnGroup.className = "rsm-nav-btn-group";
   const exampleLink = document.createElement("a");
   exampleLink.href = "https://example.com";
-  exampleLink.textContent = "Example";
+  exampleLink.textContent = "⌘";
   navBtnGroup.appendChild(exampleLink);
 
   btnWrapper.appendChild(navBtnGroup);

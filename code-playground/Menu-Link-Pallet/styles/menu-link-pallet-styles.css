@@ -73,7 +73,7 @@ OPEN / CLOSE BUTTON
 MENU OPEN / MENU CLOSE
 ********/
 #rsm-nav-menu.rsm-nav-menu-closed {
-	bottom: calc(var(--rsBtnWidth) * -3 - var(--rsNavMenuPadding) - var(--rsNavGap)) !important;
+	bottom: calc(var(--rsBtnWidth) * -0 - var(--rsNavMenuPadding) - var(--rsNavGap)) !important;
 	--rsNavShadow:transparent;
 }
 
@@ -94,7 +94,12 @@ BOTTOM BUTTONS
 }
 
 .rsm-nav-btn-group a {
-	
+	width: var(--rsBtnWidth);
+	height: var(--rsBtnWidth);
+	background: blue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .rsm-nav-btn-group:first-of-type > button {
@@ -110,7 +115,7 @@ BOTTOM BUTTONS
 /********
 BUTTONS > ALL
 ********/
-.rsm-nav-btn {
+.rsm-nav-btn,  {
 	background: hsla(0, 0%, 50%, .12);
 	border: none;
 	padding: 2px;
