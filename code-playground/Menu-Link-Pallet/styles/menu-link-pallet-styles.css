@@ -93,6 +93,10 @@ BOTTOM BUTTONS
 	display: flex !important;
 }
 
+.rsm-nav-btn-group a {
+	
+}
+
 .rsm-nav-btn-group:first-of-type > button {
 	border-top: none;
 }
