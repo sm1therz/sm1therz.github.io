@@ -454,7 +454,7 @@ HEPTABBASE V7
 	--versionHistBgClr: var(--infoBgClr);
 	--versionHistDocBgClr: hsl(220, 5%, 11%);
 	/*tables*/
-	--tableBrdClr: hsl(218, 4%, 100%, .15);
+	--tableBrdClr: hsl(218, 4%, 100%, .1c5);
 		/*table background colors*/
 		--tblBg-brown:hsl( 17, 85%, 27% , 0.2);
 		--tblBg-red:hsl( 7, 45%, 17% , .5);
@@ -5801,54 +5801,7 @@ WHITEBOARD > SECTION TITLES > BACKGROUNDS
 
 
 
-/*****************
-VIEW - WHITEBOARD - ARGUMENT MAPPING
-******************/
 
-
-
-/*BLUE text elements and purple cards - to - GREEN - REASONS*/
-[data-object-type="textElement"] > [style*="--bg-blue-sect"],
-[data-object-type="cardInstance"] > [style*="background-color: var(--bg-blue)"]{
-	--bg-blue-sect:var(--whiteBoardBoardBg) !important;
-	--bg-blue:var(--whiteBoardBoardBg) !important;
-	/*borders*/
-	--border-blue-sect:var(--border-green-sect);
-	--mMapBrdClr:var(--border-green-sect);
-	box-shadow:inset 0 0 0 2px var(--mMapBrdClr);
-	
-	
-	
-}
-/*PURPLE text elements and purple cards - to - RED - OBJECTIONS*/
-[data-object-type="textElement"] > [style*="--bg-purple-sect"],
-[data-object-type="cardInstance"] > [style*="background-color: var(--bg-purple)"]{
-	--bg-purple-sect:var(--whiteBoardBoardBg) !important;
-	--bg-purple:var(--whiteBoardBoardBg) !important;
-	/*borders*/
-	--border-purple-sect:var(--border-red-sect);
-	--mMapBrdClr:var(--border-red-sect);
-	box-shadow:inset 0 0 0 2px var(--mMapBrdClr);
-	
-} 
-
-/*PURPLE text elements and purple cards - to - RED - OBJECTIONS*/
-[data-object-type="textElement"] > [style*="--bg-blue-sect"]:before,
-[data-object-type="cardInstance"] > [style*="background-color: var(--bg-blue)"]:before,
-[data-object-type="textElement"] > [style*="--bg-purple-sect"]:before,
-[data-object-type="cardInstance"] > [style*="background-color: var(--bg-purple)"]:before{
-	content:"because";
-	display:block;
-	position:absolute;
-	color:var(--mMapBrdClr);
-	top:-22px;
-	z-index:23;
-
-}
-[data-object-type="textElement"] > [style*="--bg-purple-sect"]:before,
-[data-object-type="cardInstance"] > [style*="background-color: var(--bg-purple)"]:before{
-	content:"but";
-}
 
 /*****************
 ******************
