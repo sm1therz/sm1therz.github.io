@@ -454,7 +454,7 @@ HEPTABBASE V7
 	--versionHistBgClr: var(--infoBgClr);
 	--versionHistDocBgClr: hsl(220, 5%, 11%);
 	/*tables*/
-	--tableBrdClr: hsl(218, 4%, 100%, .1c5);
+	--tableBrdClr: hsl(218, 4%, 100%, .15);
 		/*table background colors*/
 		--tblBg-brown:hsl( 17, 85%, 27% , 0.2);
 		--tblBg-red:hsl( 7, 45%, 17% , .5);
