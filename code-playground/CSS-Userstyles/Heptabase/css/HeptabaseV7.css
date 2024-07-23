@@ -15,7 +15,7 @@ HEPTABBASE V7
 	--text-color--faint: hsl(0, 0%, 20%,.5);
 	--reftext-color: hsl(0, 0%, 0%) !important;
 	--text-color-contrast: #000;
-	--text-color-highlight:var(--text-color-contrast)
+	--text-color-highlight:var(--text-color-contrast);
 	--underlineLineColor: var(--text-color-contrast);
 	--underlineTextColor: var(--text-color-contrast);
 	--text-color-Strikethrough: hsl(0, 0%, 63%);
@@ -5800,7 +5800,62 @@ WHITEBOARD > SECTION TITLES > BACKGROUNDS
 }
 
 
+
 /*****************
+VIEW - WHITEBOARD - ARGUMENT MAPPING
+******************/
+
+
+
+/*BLUE text elements and purple cards - to - GREEN - REASONS*/
+[data-object-type="textElement"] > [style*="--bg-blue-sect"],
+[data-object-type="cardInstance"] > [style*="background-color: var(--bg-blue)"]{
+	--bg-blue-sect:var(--whiteBoardBoardBg) !important;
+	--bg-blue:var(--whiteBoardBoardBg) !important;
+	/*borders*/
+	--border-blue-sect:var(--border-green-sect);
+	--mMapBrdClr:var(--border-green-sect);
+	box-shadow:inset 0 0 0 2px var(--mMapBrdClr);
+	
+	
+	
+}
+/*PURPLE text elements and purple cards - to - RED - OBJECTIONS*/
+[data-object-type="textElement"] > [style*="--bg-purple-sect"],
+[data-object-type="cardInstance"] > [style*="background-color: var(--bg-purple)"]{
+	--bg-purple-sect:var(--whiteBoardBoardBg) !important;
+	--bg-purple:var(--whiteBoardBoardBg) !important;
+	/*borders*/
+	--border-purple-sect:var(--border-red-sect);
+	--mMapBrdClr:var(--border-red-sect);
+	box-shadow:inset 0 0 0 2px var(--mMapBrdClr);
+	
+} 
+
+/*PURPLE text elements and purple cards - to - RED - OBJECTIONS*/
+[data-object-type="textElement"] > [style*="--bg-blue-sect"]:before,
+[data-object-type="cardInstance"] > [style*="background-color: var(--bg-blue)"]:before,
+[data-object-type="textElement"] > [style*="--bg-purple-sect"]:before,
+[data-object-type="cardInstance"] > [style*="background-color: var(--bg-purple)"]:before{
+	content:"because";
+	display:block;
+	position:absolute;
+	color:var(--mMapBrdClr);
+	top:-22px;
+	z-index:23;
+
+}
+[data-object-type="textElement"] > [style*="--bg-purple-sect"]:before,
+[data-object-type="cardInstance"] > [style*="background-color: var(--bg-purple)"]:before{
+	content:"but";
+}
+
+/*****************
+******************
+******************
+******************
+******************
+******************
 VIEW - TAGS
 ******************
 ******************
