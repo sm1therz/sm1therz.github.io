@@ -4595,10 +4595,10 @@ SEARCH - NAV - RESULTS
 ********************************/
 
 :root {
-		--mobileDocPadLeft:30px;
+		--mobileDocPadLeft:24px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 650px) {
 		/**********
 		BOARDS ADJUST
 		***********/
@@ -4677,7 +4677,7 @@ SEARCH - NAV - RESULTS
 		*/
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
 		:root {
 				--root-padtop:20px;
 				--root-font-size: 1.7rem;
@@ -5060,7 +5060,7 @@ body * {
 		margin-top: 5px !important
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
 
 		:root {
 				--name-fontSize: 1rem;
