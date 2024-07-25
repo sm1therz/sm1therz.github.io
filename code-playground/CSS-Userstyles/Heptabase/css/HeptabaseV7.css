@@ -15,7 +15,7 @@ HEPTABBASE V7
 	--text-color--faint: hsl(0, 0%, 20%,.5);
 	--reftext-color: hsl(0, 0%, 0%) !important;
 	--text-color-contrast: #000;
-	--text-color-highlight:var(--text-color-contrast);
+	--text-color-highlight:var(--text-color-contrast)
 	--underlineLineColor: var(--text-color-contrast);
 	--underlineTextColor: var(--text-color-contrast);
 	--text-color-Strikethrough: hsl(0, 0%, 63%);
@@ -82,7 +82,7 @@ HEPTABBASE V7
 	--whiteBoardToolBarBg: hsl(180, 0%, 70%, 0.11);
 	--whiteBoardMapCardBgClr: hsla(0, 0%, 50%, 0.15);
 	/*whiteboard - mind map*/
-	--mMapBrdClr: hsla(0, 0%, 0%, .1);
+	--mMapBrdClr: hsla(0, 0%, 0%, .16);
 	--mMapOutlineClr: hsla(0, 0%, 0%, .07);
 	/*whiteboard - bg colors*/
 	--whiteBoardCardBg-Red: hsl(0, 90%, 89%);
@@ -106,6 +106,7 @@ HEPTABBASE V7
 	--whiteBoardSectionBrdClr: hsl(0, 0%, 86.5%);
 	/*whiteboard - Text Element*/
 	--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
+		--whiteBoardTextElementBgClr-Black:var(--background-editor-primary);
 	--whiteBoardTextElementBrdClr: hsla(0, 0%, 0%, .115);
 	--textelementBrdClr-Editing: hsla(0, 0%, 0%, .05);
 		--whiteboardtextelementLevelBrdClr:hsla(0,0%,0%,.1);
@@ -248,7 +249,7 @@ HEPTABBASE V7
 
 [data-theme="dark"] {
 	/*main*/
-	--bldClr: hsl(0, 0%, 92%);
+	--bldClr: hsl(0, 0%, 91%);
 	--invertClr: hsl(0, 0%, 100%);
 	--text-color: hsla(246, 0%, 88%) !important;
 	--text-color--faint: hsla(246, 0%, 108%,.25);
@@ -256,7 +257,7 @@ HEPTABBASE V7
 	--text-color-contrast: var(--text-color) !important;
 	--text-color-highlight:var(--text-color);
 	--text-color-Strikethrough: hsl(246, 2%, 52%);
-	--heading-color: hsl(0, 0%, 94%);
+	--heading-color: hsl(0, 0%, 96%);
 	--background-primary: hsl(229, 5%, 10%) !important;
 	--background-editor-primary: hsl(214, 8%, 15%);
 	--background-primary-for-blur: hsl(229, 4%, 10%, .4);
@@ -279,7 +280,7 @@ HEPTABBASE V7
 	--LinkBrd: 1px solid var(--LinkBrdClr);
 	--LinkBrdBtm: var(--LinkBrd);
 	--LinkBrdClr: hsl(211, 100%, 74%, 1);
-	--LinkClr: hsl(206, 100%, 73%);
+	--LinkClr: hsl(211, 100%, 73%);
 	--LinkBgClr: hsl(209, 100%, 50%, .151);
 	--LinkBgClr-Hover: transparent;
 	/*active*/
@@ -300,13 +301,13 @@ HEPTABBASE V7
 	--cardlibCardBgClr: hsl(180, 0%, 100%, .025);
 	--cardlibCardBgClr-Hover: hsl(180, 0%, 100%, .05);
 	/*sidebar*/
-	--sideBarBgClr: hsl(219, 7%, 12%);
+	--sideBarBgClr: hsl(214, 10%, 12.75%);
 	--sideBarNoteBgClr: var(--sideBarBgClr);
 	--sideBarBrdClr: hsla(0, 0%, 100%, 0.1411764705882353);
 	--textColorSubtle: #bbb5ae;
 	--sideBarStickyBrdClr: #393b3c;
 	--sideBarStickyBrdClrDarker: hsl(200, 3%, 18%);
-	--sideBarNoteInnerBgClr: hsl(222, 7%, 10.5%);
+	--sideBarNoteInnerBgClr: hsl(214, 8%, 14%);
 	--sideBarNoteHeaderBgClr: hsl(229, 5%, 12%);
 
 	/*search*/
@@ -343,6 +344,7 @@ HEPTABBASE V7
 	--whiteBoardSectionBrdClr: hsl(0, 0%, 12.5%);
 	/*whiteboard - Text Element*/
 	--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
+		--whiteBoardTextElementBgClr-Black:var(--background-editor-primary);
 	--whiteBoardTextElementBrdClr: hsl(0, 0%, 19%);
 	--textelementBrdClr-Editing: hsl(0, 0%, 22%, .4);
 		--whiteboardtextelementLevelBrdClr:hsla(0,0%,100%,.1);
@@ -362,9 +364,9 @@ HEPTABBASE V7
 	--hlightAccentBg: rgba(0, 0, 0, .35);
 	--hlightWrapperBrdClr2: hsl(202, 13%, 90%, .08);
 	/*inline highlight*/
-	--bg-red-editor: hsla(0, 84%, 60%, .4) !important;
-	--bg-yellow-editor: hsla(50, 50%, 50%, 0.3) !important;
-	--bg-green-editor: hsla(142, 71%, 45%, .4) !important;
+	--bg-red-editor: hsla(0, 100%, 50%, .15) !important;
+	--bg-yellow-editor: hsla(54, 100%, 50%, 0.15) !important;
+	--bg-green-editor: hsla(142, 91%, 45%, .15) !important;
 	--bg-gray-editor: hsla(0,0%,100%,.06) !important;
 	/*inline text color*/
 	--text-gray-editor: hsl(252, 5%, 35%) !important;
@@ -495,6 +497,8 @@ HEPTABBASE V7
 #root .[class*="_whiteboardObject"] * {
 		outline: .2px solid white;
 }*/
+
+
 
 /********
 *********
@@ -1206,6 +1210,10 @@ IMAGES
 border-radius: var(--codeblockBrdRad);
 		overflow: hidden;
 }
+.ProseMirror img[data-hepta-media-name*=".svg"]{
+		border-color:hsla(0, 0%, 50%, .001) !important;
+		border-radius: 2px;
+}
 
 #root .ProseMirror [data-node-type="image"],
 #root ~ .hepta-scrim .ProseMirror [data-node-type="image"]{
@@ -1219,6 +1227,13 @@ border-radius: var(--codeblockBrdRad);
 		border-color: hsla(0, 0%, 50%, .15) !important
 }
 
+/*****************
+******************
+******************
+EMBEDDED - IMAGES - POPUP TITLE
+******************
+******************
+******************/
 
 
 /*IMAGES > VIEW - HIGHLIGHTS > INSIDE EMBEDS*/
@@ -1342,6 +1357,19 @@ BLOCKQUOTE
 		transform: scale(.8);
 }
 
+/*BLOCKQUOTE > LEFT BORDER*/
+.ProseMirror blockquote:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 1px;
+		left: 1px;
+		bottom:1px;
+		width:4px;
+		background: var(--blockquoteBrdClr);
+		border-top-left-radius: calc(var(--codeblockBrdRad) - 1px);
+		border-bottom-left-radius: calc(var(--codeblockBrdRad) - 1px);
+}
 /*****************
 ******************
 ******************
@@ -2470,6 +2498,13 @@ INTERNAL INLINE MENTIONS
 		text-decoration: none;
 		color: var(--internalLinkClr-Mention);
 		padding-bottom: var(--mentionunderlinePadBtm);
+		box-shadow: none !important;
+		text-decoration: none !important;
+}
+.ProseMirror [data-node-type] span span.rounded-sm.text-active,
+.ProseMirror [data-node-type] span span.rounded-sm.text-active * {
+		text-decoration: none !important;
+
 }
 
 .ProseMirror [data-node-type] span span.rounded-sm.text-active > svg:first-of-type {
@@ -2540,6 +2575,7 @@ HIGHLIGHTS
 .ProseMirror span[data-color][data-type="background"] {
 	color: var(--text-color-highlight);
 		padding-bottom: var(--underlinePadBtm);
+		box-shadow: inset 0px calc(var(--underlineThickness) * -1) 0 0 var(--highlightBoxShadBtm-Color)
 }
 .ProseMirror strong span[data-color][data-type="background"] {
 	color: var(--bldClr);
@@ -2604,6 +2640,21 @@ TEXT COLORS
 }
 .ProseMirror [data-color="red"]{
 		--underlineLineColor-Colored:var(--text-red-editor);
+}
+
+
+
+/*****************
+HIGHLIGHT UNDERLINE COLORS
+******************/
+.ProseMirror span[data-color][data-type="background"][style*="green"]{
+		--highlightBoxShadBtm-Color:var(--bg-green-editor);
+}
+.ProseMirror span[data-color][data-type="background"][style*="red"]{
+		--highlightBoxShadBtm-Color:var(--bg-red-editor);
+}
+.ProseMirror span[data-color][data-type="background"][style*="yellow"]{
+		--highlightBoxShadBtm-Color:var(--bg-yellow-editor);
 }
 
 /*****************
@@ -2794,7 +2845,7 @@ LIST ITEM > NESTED BLOCKS > 2ND CHILD
 ******************/
 
 /*NESTED > 2ND CHILD > (ALL TYPES)*/
-.ProseMirror [data-node-type*="list_item"] > [class*="_nestedBlocks"] > [data-node-type]:nth-child(2){
+.ProseMirror [data-node-type*="list_item"] > [class*="_nestedBlocks"] > [data-node-type]:nth-child(2) {
 		margin-top: calc(var(--listMargTopBtm) * 2) !important;
 		margin-bottom: var(--listMargTopBtm);
 }
@@ -3045,16 +3096,32 @@ TABLES > STRUCTURE
 TABLE > COLORS
 ******************
 ******************/
-table {
+
+table [data-node-type="table_cell"][data-background-color="brown"]{
 		--bg-brown-editor:var(--tblBg-brown);
+}
+table [data-node-type="table_cell"][data-background-color="red"]{
 		--bg-red-editor:var(--tblBg-red);
+}
+table [data-node-type="table_cell"][data-background-color="orange"]{
 		--bg-orange-editor:var(--tblBg-orange);
+}
+table [data-node-type="table_cell"][data-background-color="yellow"]{
 		--bg-yellow-editor:var(--tblBg-yellow);
+}
+table [data-node-type="table_cell"][data-background-color="green"]{
 		--bg-green-editor:var(--tblBg-green);
+}
+table [data-node-type="table_cell"][data-background-color="blue"]{
 		--bg-blue-editor:var(--tblBg-blue);
+}
+table [data-node-type="table_cell"][data-background-color="purple"]{
 		--bg-purple-editor:var(--tblBg-purple);
+}
+table [data-node-type="table_cell"][data-background-color="pink"]{
 		--bg-pink-editor:var(--tblBg-pink);
 }
+
 
 /*****************
 ******************
@@ -3379,6 +3446,8 @@ EDITOR - EMBEDS
 /*****************
 EMBED > CONTAINER
 ******************/
+
+/*all embeds*/
 [data-node-type="embed"] {
 		background: var(--embedBgClr);
 		border: 0px solid var(--embedBrdClr);
@@ -3389,8 +3458,21 @@ EMBED > CONTAINER
 		padding-top: var(--embedPadTopBtm);
 		padding-bottom: var(--embedPadTopBtm);
 }
-[data-node-type="embed"] .ProseMirror {
+/*exclude embedded images and svgs*/
+.ProseMirror [data-node-type="embed"][class*="self-start"],
+.ProseMirror [data-node-type="embed"][class*="self-center"],
+.ProseMirror [data-node-type="embed"][class*="self-end"]{
+		background: transparent;
+		box-shadow: 0 0 0 0px transparent;
+		padding: 0px;
+		transition: 0.15s;
 }
+.ProseMirror [data-node-type="embed"][class*="self-start"][class*="selecting"],
+.ProseMirror [data-node-type="embed"][class*="self-center"][class*="selecting"],
+.ProseMirror [data-node-type="embed"][class*="self-end"][class*="selecting"]{
+		box-shadow: 0 0 0 2px var(--active-item);
+}
+
 /*Embed > text selection*/
 [data-node-type="embed"] .ProseMirror > [data-node-type] {
 		cursor: text !important;
@@ -3646,6 +3728,45 @@ min-width: 40px;
 
 /*****************
 ******************
+******************
+EMBEDDED - IMAGES - POPUP TITLE
+******************
+******************
+******************/
+
+
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider{
+		transition: .1s;
+}
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-of-type(1){
+		max-width: 100% !important;
+}
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-child(4) {
+		display: none;
+		max-width: 5px;
+}
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:hover{
+		max-width: 100%;
+}
+
+/*aligned left*/
+.ProseMirror [data-node-type="embed"][class*="self-start"] > [class*="group"] > [class*="group"] > .absolute.right-2{
+		left: 10px;
+		right: unset;
+}
+/*aligned center*/
+.ProseMirror [data-node-type="embed"][class*="self-center"] > [class*="group"] > [class*="group"] > .absolute.right-2{
+		left: unset;
+		right: unset;
+}
+/*aligned right*/
+.ProseMirror [data-node-type="embed"][class*="self-end"] > [class*="group"] > [class*="group"] > .absolute.right-2{
+ left: unset;
+		right: 0;
+}
+
+/*****************
+******************
 EDITOR - HEADINGS
 ******************
 ******************/
@@ -3667,7 +3788,7 @@ EDITOR - HEADINGS
 		--H3size:28px;
 		--H4size:26px;
 		--H5size:23px;
-		--H6size:20px;
+		--H6size:19px;
 	--headingFontWeight:600;
 	
 }
@@ -3677,6 +3798,9 @@ div h1 {
 		line-height: var(--H1lineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
 	font-weight: var(--headingFontWeight)!important;
+		color: var(--heading-color);
+		--underlineTextColor:var(--heading-color);
+		--text-color-highlight:var(--heading-color);
 	
 }
 
@@ -3685,6 +3809,9 @@ div h2 {
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
 	font-weight: var(--headingFontWeight)!important;
+		color: var(--heading-color);
+		--underlineTextColor:var(--heading-color);
+		--text-color-highlight:var(--heading-color);
 }
 
 div h3 {
@@ -3692,6 +3819,9 @@ div h3 {
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
 	font-weight: var(--headingFontWeight)!important;
+		color: var(--heading-color);
+		--underlineTextColor:var(--heading-color);
+		--text-color-highlight:var(--heading-color);
 }
 
 div h4 {
@@ -3699,6 +3829,10 @@ div h4 {
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
 	font-weight: var(--headingFontWeight)!important;
+		color: var(--heading-color);
+		--underlineTextColor:var(--heading-color);
+		
+		--text-color-highlight:var(--heading-color);
 }
 
 div h5 {
@@ -3706,6 +3840,10 @@ div h5 {
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
 	font-weight: var(--headingFontWeight)!important;
+		color: var(--heading-color);
+		--underlineTextColor:var(--heading-color);
+		
+		--text-color-highlight:var(--heading-color);
 }
 
 /*****************
@@ -3716,6 +3854,9 @@ div h6 {
 		line-height: var(--HeaderLineHeight) !important;
 		margin-top: var(--headingMargTop) !important;
 	font-weight: var(--headingFontWeight)!important;
+		color: var(--heading-color);
+		--underlineTextColor:var(--heading-color);
+		--text-color-highlight:var(--heading-color);
 }
 /*****************
 H6 - MARGIN TOP (DIFFERENT THAN ALL OTHER HEADINGS OR TOGGLE HEADINGS)
@@ -4718,7 +4859,7 @@ INDIVIDUAL REFERENCE > Container
 }
 [class*="_content"][class*="group/"] .ProseMirror {
 		--bodyFontSize:13.5px !important;
-		--bodyLineHeight:1.35;
+		--bodyLineHeight:1.55;
 		/*background: redred;*/
 		/*heading margins*/
 		--headingMargTop-All: calc(var(--listMargTopBtm) * 1)!important;
@@ -4728,7 +4869,7 @@ INDIVIDUAL REFERENCE > Container
 		--HeaderLineHeight:var(--refHeaderLineHeight) !important;
 		/*Heading Font Sizes*/
 		--refHeaderSize:.925rem;
-	--refHeaderLineHeight:1.3;
+	--refHeaderLineHeight:var(--bodyLineHeight);
 	--refToggleHeaderBulletMargTop:;
 	--refToggleBulletMargTop:;
 		/*Heading Font Sizes*/
@@ -4737,8 +4878,8 @@ INDIVIDUAL REFERENCE > Container
 		--H3size:var(--refHeaderSize) !important;
 		--H4size:var(--refHeaderSize) !important;
 		--H5size:var(--refHeaderSize) !important;
-		--H6size:var(--refHeaderSize) !important;
-		--toggleBulletMargTop:5px !important;
+		--H6size:calc() !important;
+		--toggleBulletMargTop:6px !important;
 		--listBulletMargTop:0px !important;
 		--listMargTopBtm:2.5px !important;
 		--listBulletCircWidth:4px !important;
@@ -4886,12 +5027,11 @@ REFERENCE - PROPERTIES
 		--propertyParagraphMargBtm: 0px;
 		--propertyItemWrapMargtop: 5px;
 }
-/*
-@media (max-width:400px){
+@media (max-width:600px){
 		[class*="_editor"] + [class*="_info"] > div > div.my-1 > div{
 				flex-direction:column;
 		}
-}*/
+}
 /*REFERENCE - PROPERTIES - CONTAINER */
 [class*="_editor"] + [class*="_info"] > div > div.my-1 > div {
 		margin-top: var(--propertyItemWrapMargtop) !important;
@@ -5071,7 +5211,6 @@ WHITEBOARD TOOLBAR / WHITEBOARD NAV
 		text-overflow: unset;
 		max-width: unset !important;
 }
-
 
 
 /*****************
@@ -5499,13 +5638,17 @@ WHITEBOARD > LEVELS
 
 /*COLORS*/
 [data-object-type="textElement"] > [class*="_container"]{
+		/*borders*/
 		--border-red-sect:var(--whiteBoardCardBrd-Red);
 		--border-orange-sect:var(--whiteBoardCardBrd-Orange);
 		--border-yellow-sect:var(--whiteBoardCardBrd-Yellow);
 		--border-green-sect:var(--whiteBoardCardBrd-Green);
 		--border-blue-sect:var(--whiteBoardCardBrd-Blue);
 		--border-purple-sect:var(--whiteBoardCardBrd-Purple);
-		--border-black-sect:var(--whiteBoardCardBrd-Black);
+		/*black text element*/
+		--border-black-sect:var(--mMapBrdClr);
+		--bg-black-sect:var(--whiteBoardTextElementBgClr-Black);
+		
 }
 
 
@@ -5616,6 +5759,7 @@ VIEW - WHITEBOARD SECTIONS
 /*Whiteboard > Section > Background > Normal Color*/
 #root [data-object-type="section"] > div > div.box-border[style*="background-color: var(--bg-white-sect)"] {
 		background: var(--whiteBoardSectionBgClr) !important;
+		background: transparent !important;
 		--whiteBoardCardBrdClr: var(--whiteBoardSectionBrdClr);
 }
 
@@ -5799,16 +5943,7 @@ WHITEBOARD > SECTION TITLES > BACKGROUNDS
 		--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Black);
 }
 
-
-
-
-
 /*****************
-******************
-******************
-******************
-******************
-******************
 VIEW - TAGS
 ******************
 ******************
@@ -6079,6 +6214,55 @@ div > .text-label *,
 }
 /*****************
 ******************
+PROPERTIES / 100PX
+******************
+******************/
+:root{
+		--propertyCell100pxWidth:60px;
+}
+[aria-describedby*="DndDescribedBy-"][style*="width: 100px"],
+[data-property-type][style*="width: 100px"]{
+		width: var(--propertyCell100pxWidth) !important;
+}
+.fixed.z-dropdown-menu.shadow-property-value-menu[style*="width: 101px"]{
+		width: calc(var(--propertyCell100pxWidth) + 1px) !important;
+		min-width: unset;
+}
+/*****************
+******************
+PROPERTY - URL
+******************
+******************/
+
+[data-property-type="url"]{
+				padding-top: .375rem !important;
+		padding-bottom: .375rem !important;
+		
+}
+[data-property-type="url"] a,
+.clickable-overlay.text-label + .text-label > [class*="group"] a {
+		overflow: hidden !important;
+	display: -webkit-box !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical !important;
+		overflow: hidden !important;
+		text-overflow: ellipsis !important;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+		max-height: 40px;
+}
+
+.clickable-overlay.text-label + .text-label > [class*="group"]{
+		padding-top: .375rem !important;
+		padding-bottom: .375rem !important;
+}
+.clickable-overlay.text-label + .text-label > [class*="group"] a {
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+		-webkit-line-clamp: 1;
+}
+/*****************
+******************
 ******************
 ******************
 ******************
@@ -6091,7 +6275,7 @@ PROPERTIES > RELATIONS
 /*relation container*/
 [id*="database-table-cell"]  > div.overflow-hidden > .flex.items-center,
 .w-40.text-label + .text-label > [class*="gap"],
-[data-is-editor-container] + .px-8 div > .text-label{
+.clickable-overlay + .px-8 div > .text-label{
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -6183,6 +6367,23 @@ div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-
 	backdrop-filter: blur(100px);
 }
 
+/*****************
+******************
+******************
+******************
+******************
+PROPERTIES > MULTI SELECT - DROPDOWN
+******************
+******************
+******************
+******************/
+
+div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.min-w-80:not(div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.w-62,div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.max-h-70vh){
+	width: 330px !important;
+		min-width: 30px !important;
+}
+
+
 
 div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div{
 	overflow-x: hidden;
@@ -6220,6 +6421,58 @@ div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-
 	background: hsla(0,0%,50%,.2)
 }
 
+/*****************
+******************
+WHITEBOARD - CONTEXT MENU
+******************
+******************/
+#root ~ div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
+		width: 248px !important;
+}
+
+/*****************
+******************
+WHITEBOARD - CONTEXT MENU - TIDY
+******************
+******************/
+:root {
+		--whiteboardTidyAdjustWidth:100px;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div{
+		position: relative;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:after,
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:before{
+		content: "";
+		display: block;
+		position: absolute;
+		background: transparent;
+		top: -150px;
+		height: 150px;
+		left: -10px;
+		right: -10px;;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:after{
+		top: unset;
+		bottom: -150px;
+}
+
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:after,
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before{
+		content: "";
+		display: block;
+		position: absolute;
+		background: transparent;
+		top: -150px;
+		bottom: -150px;
+		left: -120px;
+		width: 120px;
+		z-index: 0;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before{
+		left: unset;
+		right: -120px;
+}
 
 /*****************
 ******************
@@ -6247,16 +6500,46 @@ TAGS DROPDOWN > MULTI SELECT
 		margin: 0px;
 }
 
-#root ~ div .fixed.z-dropdown-menu[class*="80"][style*="248px"] {
-width:248px !important;
-}
-
 
 /*****************
 ******************
 PROPERTY > TEXT EDIT POPUP
 ******************
 ******************/
+
+
+/*****************
+******************
+TAGS > VIEW TABS
+******************
+******************/
+
+/*tab group*/
+[class*="window"] + .px-6 > div > div.flex.grow > div:first-child{
+		flex: 1;
+}
+[class*="window"] + .px-6 > div > div.flex.grow > div:first-child [aria-roledescription="sortable"] > [style*="max-width"]{
+		max-width: unset !important;
+}
+/*hide svg
+[class*="window"] + .px-6 > div > div.flex.grow > div:first-child [aria-roledescription="sortable"] svg[viewBox="0 0 14 14"]{
+		display: none;
+}*/
+
+/*more button*/
+[class*="window"] + .px-6 > div > div.flex.grow > [aria-roledescription="sortable"]{
+		
+}
+
+/*****************
+******************
+SORT DROP DOWN
+******************
+******************/
+
+.queryBuilder > div.flex[class*="gap"] > div:first-child {
+		width: 250px;
+}
 
 /*****************
 VIEW - CARD LIBRARY
@@ -7127,7 +7410,7 @@ body > .hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3 > .te
 body > .hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3 > .text-label > .text-label-mini ~ div > .text-label ~ .flex {
 		font-size: .85rem;
 		-webkit-font-smoothing: antialiased;
-}
+} 
 
 
 
@@ -8042,8 +8325,6 @@ TOC ITEM - HEADING INDICATOR
 .h-\[calc\(100vh-64px\)\] .h-8[style*="padding-left: 128px"] p:before{
 		content: "6";
 }
-
-
 
 /*****************
 ******************
