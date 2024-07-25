@@ -4734,7 +4734,7 @@ SEARCH - NAV - RESULTS
 		#app .page > .project.root > name > .content {
 				font-size: 30px !important;
 				line-height: 1.25 !important;
-		}
+		} 
 		#app .page > .project.root > .children {
 				padding-left: 13px;
 		}
