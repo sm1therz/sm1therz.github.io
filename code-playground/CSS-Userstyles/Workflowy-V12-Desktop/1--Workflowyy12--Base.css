@@ -4729,7 +4729,7 @@ SEARCH - NAV - RESULTS
 				border-radius: 1px !important;
 		}
 		#app .project > .name > .bullet.diamond ~ .expand:after {
-				--btnIcn-ChkBx-BrdRad: 2px;
+				--btnIcn-ChkBx-BrdRad: 4px;
 		}
 		#app .page > .project.root > name > .content {
 				font-size: 30px !important;
