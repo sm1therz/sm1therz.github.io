@@ -4738,13 +4738,14 @@ SEARCH - NAV - RESULTS
 		#app .page > .project.root > .children {
 				padding-left: 13px;
 		}
-
+		/*
 		.project.header1 > .name {
 				--btn-MargTop: -1px !important;
 		}
 		.project.header2 > .name {
 				--btn-MargTop: -4px !important;
 		}
+		*/
 
 		.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board .bullet),
 		.root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
