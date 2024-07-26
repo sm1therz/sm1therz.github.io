@@ -3771,7 +3771,7 @@ EMBEDDED - IMAGES - POPUP TITLE
 .ProseMirror [data-node-type="embed"][class*="self-end"] > [class*="group"] > [class*="group"] > .absolute.right-2{
  left: unset;
 		right: 0;
-}
+} 
 
 /*****************
 ******************
