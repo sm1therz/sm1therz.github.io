@@ -841,7 +841,10 @@ HIGHLIGHT MENU
 [data-highlight-element-id] > div.mx-4.flex > div:before{
 	background: transparent !important;
 }
-
+[data-highlight-element-id] > div > div.flex,
+[data-node-type="embed"] > [class*="group"] > .rounded.border.border-solid.border-light-grey.py-4 div > div.flex{
+		position: relative;
+}
 
 
 /*HIGHLIGHT > MENU > COLORS*/
