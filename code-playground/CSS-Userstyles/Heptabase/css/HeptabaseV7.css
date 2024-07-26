@@ -3516,10 +3516,14 @@ EMBED > NESTED INSIDE EMBED OR INSIDE A CHILD BLOCK
 ******************/
 .ProseMirror [data-node-type="embed"] [data-node-type="embed"],
 .ProseMirror > [data-node-type] [data-node-type="embed"] {
-		width: 100% !important;
 		margin-left: 0px !important;
 		padding-top: var(--embedPadTopBtm)!important;
 		padding-bottom: var(--embedPadTopBtm)!important;
+}
+.ProseMirror [data-node-type="embed"] [data-node-type="embed"],
+.ProseMirror > [data-node-type] [data-node-type="embed"]:not([data-node-type="embed"][style*="width"]){
+		width: 100% !important;
+		
 }
 /*****************
 EMBED > NESTED INSIDE EMBED OR INSIDE A CHILD BLOCK
@@ -3735,6 +3739,10 @@ EMBEDDED - IMAGES - POPUP TITLE
 ******************/
 
 
+.ProseMirror [data-node-type="embed"][class*="self-"]{
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+}
 .ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider{
 		transition: .1s;
 }
