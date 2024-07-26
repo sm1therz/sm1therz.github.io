@@ -4678,6 +4678,7 @@ SEARCH - NAV - RESULTS
 }
 
 @media (max-width: 650px) {
+		
 		:root {
 				--root-padtop:20px;
 				--root-font-size: 1.7rem;
@@ -4722,7 +4723,15 @@ SEARCH - NAV - RESULTS
 		}
 		#app .searchBox {
 				width: 39px;
+				min-width: 39px;
+				position: relative;
+				margin-right: 0px;
 		}
+		#app .searchBox._zpqjyh {
+				width: 70vw;
+				min-width: 70vw;
+				margin-left: -106px;
+}
 		#app .project > .name > .bullet.diamond ~ .expand:before,
 		#app .dashboard .project > .name > .bullet.diamond:before,
 		#app .board .project > .name > .bullet.diamond:before {
@@ -4734,7 +4743,7 @@ SEARCH - NAV - RESULTS
 		#app .page > .project.root > name > .content {
 				font-size: 30px !important;
 				line-height: 1.25 !important;
-		} 
+		}
 		#app .page > .project.root > .children {
 				padding-left: 13px;
 		}
@@ -4744,8 +4753,7 @@ SEARCH - NAV - RESULTS
 		}
 		.project.header2 > .name {
 				--btn-MargTop: -4px !important;
-		}
-		*/
+		}*/
 
 		.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board .bullet),
 		.root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
@@ -4797,6 +4805,20 @@ SEARCH - NAV - RESULTS
 		}
 
 
+}
+
+@media (max-width: 410px) {
+				#app .searchBox {
+				width: 39px;
+				min-width: 39px;
+				position: relative;
+				margin-right: 0px;
+		}
+		#app .searchBox._zpqjyh {
+				width: 90vw;
+				min-width: 90vw;
+				margin-left: -106px;
+}
 }
 /*******************************
 ********************************
