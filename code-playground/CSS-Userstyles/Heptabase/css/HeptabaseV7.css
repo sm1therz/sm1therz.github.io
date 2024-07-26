@@ -820,6 +820,8 @@ HIGHLIGHT CONTAINER
 		position: relative;
 }
 
+
+
 /*****************
 HIGHLIGHT MENU
 ******************/
@@ -868,7 +870,9 @@ ACTUAL HIGHLIGHT
 [data-node-type="embed"] div[style*="--annotation"],
 [class*="_info"] div[style*="--annotation"],
 .grid.select-none > div > div.pt-6 > div.flex > div[style*="--annotation"],
-._rightSidebar_1fabk_5 .grid > div > div.pt-6 > div.flex > div[style*="--annotation"] {
+._rightSidebar_1fabk_5 .grid > div > div.pt-6 > div.flex > div[style*="--annotation"],
+[data-highlight-element-id] > div > div.flex [style*="--annotation"],
+.grid.select-none > div > div [style*="--annotation"]{
 		width: 2px;
 		border-radius: 1.5px !important;
 		box-shadow: 0 0 0 1px var(--hlightAccentBg);
@@ -878,6 +882,7 @@ ACTUAL HIGHLIGHT
 		bottom: 5px;
 		left: calc(var(--annotatePadLR) * .5) !important;
 }
+		
 /*HIGHLIGHT > ACTUAL HIGHLIGHT > WRAPPER*/
 [data-highlight-element-id] div[style*="--annotation"] + div,
 [data-object-type="highlightElementInstance"] div[style*="--annotation"] + div,
@@ -6566,13 +6571,19 @@ SORT DROP DOWN
 }
 
 /*****************
-VIEW - CARD LIBRARY
+******************
+******************
+******************
+******************
+******************
+! VIEW - CARD LIBRARY
 ******************
 ******************
 ******************
 ******************
 ******************
 ******************/
+
 
 :root {
 	/**/
@@ -6598,7 +6609,7 @@ VIEW - CARD LIBRARY
 			--cardTitleMargBtm:18px;
 		--cardTitlePadTopBtm:5px;
 	/*images and pdfs*/
-	--cardlibImageHeight:360px;
+	--cardlibImageHeight:320px;
 	
 }
 
@@ -6990,10 +7001,15 @@ CARD LIBRARY - HIGHLIGHT
 		border-radius: 5px;
 		box-sizing: border-box;
 	background: transparent;
+		position: relative;
+}
+.grid.select-none > div [style*="--annotation"] + div,
+._rightSidebar_1fabk_5 .grid  [style*="--annotation"] + div{
+		background: transparent;
 }
 
 /*CARD LIBRARY - HIGHLIGHT > BORDER*/
-#root .grid.select-none > div > div.pt-6 > .flex > [style*="--annotation"],
+#root .grid.select-none > div  [style*="--annotation"],
 #root ._rightSidebar_1fabk_5 .grid > div > div.pt-6 > .flex > [style*="--annotation"]{
 	left: calc(var(--annotatePadLR) * 0) !important;
 }
@@ -7075,11 +7091,15 @@ CARD LIBRARY - EMBEDS
 CARD LIBRARY - PDFS IMAGES AND VIDEO
 ******************/
 .grid.select-none > div > img,
+.grid.select-none > div img[data-hepta-media-name*=".svg"],
+.grid.select-none > div img,
 .grid.select-none > div > .pointer-events-none > video{
 	max-height: var(--cardlibImageHeight);
 	position: relative;
 	overflow: hidden;
 	box-shadow: 0 0 0 1px var(--cardlibBrdClr) !important;
+		object-fit: cover;
+		object-position: top;
 }
 .grid.select-none > div > [style*="aspect-ratio"]{
 		aspect-ratio: unset !important;
@@ -7097,8 +7117,8 @@ CARD LIBRARY - PDFS IMAGES AND VIDEO
 	bottom: calc(var(--cardlibCardPadTopBtm) * -1);
 	left: 0;
 	right: 0;
-	height: calc(var(--cardlibImageHeight) * .75);
-	background: linear-gradient(to bottom, transparent 0%, var(--background-primary) 80%, var(--background-primary));
+	height: calc(var(--cardlibImageHeight) * 0.25);
+	background: linear-gradient(to bottom, transparent 0%, var(--background-primary) 80%, var(--background-primary) 100%);
 	z-index: -1
 }
 
@@ -7192,7 +7212,7 @@ DARK > POPUP
 
 /*****************
 ******************
-QUICK SWITCHER
+! QUICK SWITCHER
 ******************
 ******************/
 :root {
@@ -7452,9 +7472,17 @@ body > .hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3 > .te
 }
 
 
-/*Modal / Info popup > File Name */
+/*IMAGE Modal / Info popup > File Name */
 
-
+.hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 .w-full.h-full .grow.overflow-y-auto.overflow-x-hidden .w-full.h-full > img[data-hepta-media-name*=".png"],
+.hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 .w-full.h-full .grow.overflow-y-auto.overflow-x-hidden .w-full.h-full > img[data-hepta-media-name*=".jpeg"],
+.hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 .w-full.h-full .grow.overflow-y-auto.overflow-x-hidden .w-full.h-full > img[data-hepta-media-name*=".jpg"]{
+ object-fit: unset;
+		height: unset;
+		width: unset;
+		max-width: 100%;
+		margin: 0 auto;
+}
 /*****************
 ******************
 FLOATING INFO
@@ -7513,7 +7541,7 @@ DROPDOWN BACKSLASH
 }
 
 /*****************
-RIGHT SIDEBAR
+! RIGHT SIDEBAR
 ******************/
 :root {
 		/*container*/
