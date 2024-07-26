@@ -887,9 +887,9 @@ NAME-WITH-IMAGE
 	transition: .2s;
 	border: var(--IMAGE-BOX--BORDER);
 }
-.name--with-image.name--focused > .file-preview .image--graybox {
+.name--with-image.name--focused > .file-preview .image-viewer {
 	box-shadow: 0 0 0 0px var(--BG-primary),
-	0 0 0 2px var(--IMAGE--SELECTED--BOX-SHADOW-CLR);
+	0 0 0 3px var(--IMAGE--SELECTED--BOX-SHADOW-CLR);
 }
 /****
 NOTED > CONTENT only*/
