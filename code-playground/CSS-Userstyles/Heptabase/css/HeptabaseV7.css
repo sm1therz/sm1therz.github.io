@@ -5723,6 +5723,7 @@ MINDMAP
 MINDMAP > BORDER COLORS
 *************/
 
+
 [data-object-type*="mindMapTextNode"] > div[style*="red"]{
 		--mMapBrdClr: var(--whiteBoardCardBrd-Red);
 }
@@ -5745,7 +5746,22 @@ MINDMAP > BORDER COLORS
 		--mMapBrdClr: var(--whiteBoardCardBrd-Black);
 }
 
+/*************
+MINDMAP > LINE BREAK DIVIDERS
 
+[data-object-type*="mindMapTextNode"] .ProseMirror br + strong:before, 
+[data-object-type*="mindMapTextNode"] .ProseMirror br + span:before, 
+[data-object-type*="mindMapTextNode"] .ProseMirror span + br:before,
+[data-object-type*="mindMapTextNode"] .ProseMirror br + em:before,
+[data-object-type*="mindMapTextNode"] .ProseMirror em + br:before,
+[data-object-type*="mindMapTextNode"] .ProseMirror br + s:before,
+[data-object-type*="mindMapTextNode"] .ProseMirror s + br:before,
+[data-object-type*="mindMapTextNode"] .ProseMirror br + a:before,
+[data-object-type*="mindMapTextNode"] .ProseMirror a + br:before,
+[data-object-type*="mindMapTextNode"] .ProseMirror br + br:before{
+	
+}
+*************/
 /*****************
 VIEW - WHITEBOARD SECTIONS
 ******************/
