@@ -546,6 +546,9 @@ NAME & NOTES*/
 	padding: 0px;
 	/*flex-grow: 1;*/
 }
+#app .project.noted > .notes, #app .project.noted > .notes > .content{
+	display: block;
+}
 .project > .commentAttribution {
 	padding-top: var(--prjct-CmntPadTopBtm);
 }
