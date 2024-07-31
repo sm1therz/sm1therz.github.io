@@ -1,0 +1,4 @@
+[class*="_whiteboardObject"] > .box-border.flex.h-full.items-center.justify-between.rounded-xl.border-3.border-solid.px-4.text-center.touch-none > .truncate.text-body.font-semibold.text-primary.px-2 {
+
+		font-size: calc(var(--bodyFontSize) + 12px) !important;
+}

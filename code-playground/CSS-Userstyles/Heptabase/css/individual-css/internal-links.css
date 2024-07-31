@@ -1,0 +1,71 @@
+/*root*/
+[data-theme="dark"] {
+--internalLinkClr: hsl(206, 70%, 73%) !important;
+--internalLinkClr-Mention: hsl(206, 70%, 73%) !important;  
+}
+/*links highlighted*/
+[data-theme="dark"] a[href*="app.heptabase"] {
+		--text-color-highlight:var(--internalLinkClr);
+}
+
+.ProseMirror [data-node-type] span span.rounded-sm.text-active  {
+		color: var(--internalLinkClr-Mention) !important;
+}
+
+/*ON HOVER*/
+
+
+[data-theme="dark"] a[href*="app.heptabase"]:hover,
+[data-theme="dark"] .ProseMirror [data-node-type] span span.rounded-sm.text-active:hover{
+color:hsl(206, 100%, 79%) !important;
+}
+
+
+/*******
+PROPERTY LINKS
+********/
+
+
+
+/*editing*/
+[data-theme="dark"] .fixed.z-dropdown-menu > ._inlineEditor_1jmis_1 > .ProseMirror-inline,
+/*not editing*/
+[data-theme="dark"] ._inlinePreviewer_gql42_1 .ProseMirror-hepta-style{
+
+/*colors*/
+--LinkClr:hsl(206, 50%, 73%) !important;
+--internalLinkClr:hsl(206, 50%, 73%) !important;
+--internalLinkClr-Mention:hsl(206, 50%, 73%) !important;
+
+/*underline offsets*/
+--underlineThickness: 1px !important;
+--underlineOffset:2.5px;
+--underlinePadBtm:0px;
+
+}
+
+/*******
+PROPERTY LINKS - EXTERNAL - NO underline
+********/
+.fixed.z-dropdown-menu > ._inlineEditor_1jmis_1 > .ProseMirror-inline a,
+/*not editing*/
+._inlinePreviewer_gql42_1 .ProseMirror-hepta-style a {
+
+
+text-decoration:none !important;
+
+}
+
+
+/*******
+PROPERTY LINKS - INTERNAL - HAS underline
+********/
+
+.fixed.z-dropdown-menu > ._inlineEditor_1jmis_1 > .ProseMirror-inline a[href*="app.heptabase.com"],
+/*not editing*/
+._inlinePreviewer_gql42_1 .ProseMirror-hepta-style a[href*="app.heptabase.com"] {
+
+
+text-decoration:underline !important;
+
+}
