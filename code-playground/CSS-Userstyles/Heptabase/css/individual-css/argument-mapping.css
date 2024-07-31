@@ -361,25 +361,30 @@ TEXT ELEMENT - HIGHLIGHTS - INSIDE STRIKETHROUGH
 		--argStrikethroughBgClr:var(--background-editor-primary);
 }
 #root .ProseMirror s,
-#root .ProseMirror s *{
+#root ~ .p-12.hepta-scrim .ProseMirror s,
+#root .ProseMirror s *,
+#root ~ .p-12.hepta-scrim .ProseMirror s *{
 		z-index: 9494 !important;
 		background: var(--argStrikethroughBgClr) !important;
 		border-right-color:var(--argStrikethroughBgClr) !important; 
 		position: relative;
 }
-#root .ProseMirror [data-type="background"] + s > [data-type="background"]{
+#root .ProseMirror [data-type="background"] + s > [data-type="background"],
+#root ~ .p-12.hepta-scrim .ProseMirror [data-type="background"] + s > [data-type="background"]{
 
 		border-radius: calc(var(--argHlBrdRad) * .5);
 		border-left-color: transparent !important;
 }
-#root s > [data-type="background"]{
+#root s > [data-type="background"],
+#root ~ .p-12.hepta-scrim s > [data-type="background"]{
 		border-radius: 0px !important;
 		border-left-width: 0px !important;
 		padding-left: 3px !important;
 		border-right-width: 0px !important;
 		padding-right: 3px !important;
 }
-#root .ProseMirror s{
+#root .ProseMirror s,
+#root ~ .p-12.hepta-scrim .ProseMirror s{
 		background: var(--argStrikethroughBgClr);
 }
 /*
@@ -390,7 +395,8 @@ TEXT ELEMENT - HIGHLIGHTS - INSIDE STRIKETHROUGH
 		border-left-color: transparent !important;
 }*/
 
-#root .ProseMirror [data-node-type="blockquote"] {
+#root .ProseMirror [data-node-type="blockquote"],
+#root ~ .p-12.hepta-scrim .ProseMirror [data-node-type="blockquote"] {
 		--argStrikethroughBgClr:var(--argStrikethroughBlockquoteBgClr);
 }
 

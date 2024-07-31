@@ -6699,6 +6699,9 @@ CARD LIBRARY - VARIABLES
 	--LinkClr:var(--text-color);
 	--internalLinkClr:var(--text-color);
 	--listBulletMargTop:4px;
+		/*mention*/
+		--iconBrdDashHoriz:none;
+		--internalLinkClr-Mention:var(--text-color);
 	
 	
 	/**************************/
@@ -7041,6 +7044,10 @@ CARD LIBRARY - HIGHLIGHT
 	background: transparent;
 		position: relative;
 }
+.grid.select-none > div > div.pt-6 > div > div,
+._rightSidebar_1fabk_5 .grid > div > div.pt-6 > div > div{
+		position: relative;
+}
 .grid.select-none > div [style*="--annotation"] + div,
 ._rightSidebar_1fabk_5 .grid  [style*="--annotation"] + div{
 		background: transparent;
@@ -7190,7 +7197,7 @@ CARD LIBRARY - COUNTER
 
 /*****************
 ******************
-POPUP & FULLSCREEN > INFO BACKGROUND
+! POPUP & FULLSCREEN > INFO BACKGROUND
 ******************
 ******************/
 /*outer container*/
