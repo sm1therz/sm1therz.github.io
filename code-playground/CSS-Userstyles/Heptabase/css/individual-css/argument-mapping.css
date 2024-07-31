@@ -1,9 +1,11 @@
 /*root*/
 :root {
+		/*arguments wrapper*/
+		--argwrapperGreenBgClr: hsl(120, 50%, 50%,.75);
+		--argwrapperRedBgClr: hsl(0, 70%, 50%);
+		/*arguments*/
 		--argBrdClr: hsla(0, 0%, 0%, 1.0);
 		--argBgClr: hsla(0, 0%, 100%, 1.0);
-		--reasonBgClr: hsl(120, 50%, 50%,.75);
-		--objectionBgClr: hsl(0, 70%, 50%);
 		--argToggleBrdClr:hsla(0,0%,0%,.15);
 		/*highlights*/
 		--argHlClr-Orange:hsl(34, 100%, 50%) ;
@@ -16,10 +18,12 @@
 				--argStrikethroughBlockquoteBgClr:hsl(0, 0%, 97%);
 }
 [data-theme="dark"] {
+		/*arguments wrapper*/
+		--argwrapperGreenBgClr: hsl(120, 50%, 50%, 0.25);
+		--argwrapperRedBgClr: hsl(11, 100%, 51%, .4);
+		/*arguments*/
 		--argBrdClr: hsla(0, 0%, 100%, 0.5);
 		--argBgClr: var(--whiteBoardTextElementBgClr-Black);
-		--reasonBgClr: hsl(120, 50%, 50%, 0.25);
-		--objectionBgClr: hsl(11, 100%, 51%, .4);
 		--argToggleBrdClr:hsla(0,0%,100%,.15);
 		/*highlights*/
 		--argHlClr-Orange:hsl(25, 100%, 50%) ;
@@ -55,7 +59,7 @@ VIEW - WHITEBOARD - ARGUMENT MAPPING
 		--border-blue-sect: var(--border-green-sect) !important;
 		--mMapBrdClr: var(--border-green-sect) !important;
 		box-shadow: inset 0 0 0 0px var(--mMapBrdClr) !important;
-		background-image: linear-gradient(to top, transparent 10%, var(--reasonBgClr) 100%)!important;
+		background-image: linear-gradient(to top, transparent 10%, var(--argwrapperGreenBgClr) 100%)!important;
 		overflow: hidden !important;
 }
 
@@ -69,7 +73,7 @@ VIEW - WHITEBOARD - ARGUMENT MAPPING
 		--mMapBrdClr: var(--border-red-sect) !important;
 		box-shadow: inset 0 0 1 0px var(--mMapBrdClr) !important;
 		border: none !important;
-		background: linear-gradient(to top, transparent 30%, var(--objectionBgClr) 100%)!important;
+		background: linear-gradient(to top, transparent 30%, var(--argwrapperRedBgClr) 100%)!important;
 }
 
 
@@ -214,7 +218,7 @@ MENU - TEXT ELEMENT COLORS
 		content: "because";
 		display: block;
 		position: absolute;
-		color: var(--reasonBgClr);
+		color: var(--argwrapperGreenBgClr);
 		top: -22px;
 		z-index: 23;
 		opacity: 1;
@@ -224,7 +228,7 @@ MENU - TEXT ELEMENT COLORS
 [data-object-type="textElement"] > [style*="--bg-purple-sect"]:before,
 [data-object-type="cardInstance"] > [style*="background-color: var(--bg-purple)"]:before {
 		content: "but";
-		color: var(--objectionBgClr);
+		color: var(--argwrapperRedBgClr);
 }
 
 /*ARGUMENT TYPE - CALLOUT |||| CLAIM*/
