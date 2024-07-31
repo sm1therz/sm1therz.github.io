@@ -130,7 +130,7 @@ HEPTABBASE V7
 	--bg-green-editor: hsl(145, 60%, 50%, .45) !important;
 	--bg-gray-editor: var(--blockquoteBgClr) !important;
 	/*inline text color*/
-	--text-gray-editor: hsl(252, 5%, 72%) !important;
+	--text-gray-editor: hsl(252, 5%, 75%) !important;
 	/*embed*/
 	--embedBgClr: hsl(0, 0%, 10%, 0.03);
 	--embedBrdClr: hsl(0, 0%, 10%, 0.1);
@@ -249,9 +249,9 @@ HEPTABBASE V7
 
 [data-theme="dark"] {
 	/*main*/
-	--bldClr: hsl(0, 0%, 91%);
+	--bldClr: hsl(0, 0%, 94%);
 	--invertClr: hsl(0, 0%, 100%);
-	--text-color: hsla(246, 0%, 88%) !important;
+	--text-color: hsla(246, 0%, 87%) !important;
 	--text-color--faint: hsla(246, 0%, 108%,.25);
 	--reftext-color: var(--text-color) !important;
 	--text-color-contrast: var(--text-color) !important;
@@ -369,7 +369,7 @@ HEPTABBASE V7
 	--bg-green-editor: hsla(142, 91%, 45%, .15) !important;
 	--bg-gray-editor: hsla(0,0%,100%,.06) !important;
 	/*inline text color*/
-	--text-gray-editor: hsl(252, 5%, 35%) !important;
+	--text-gray-editor: hsl(252, 5%, 32%) !important;
 	/*embed*/
 	--embedBgClr: hsla(0, 0%, 100%, .05);
 	--embedBrdClr: hsla(0, 0%, 100%, .1);
@@ -497,8 +497,6 @@ HEPTABBASE V7
 #root .[class*="_whiteboardObject"] * {
 		outline: .2px solid white;
 }*/
-
-
 
 /********
 *********
@@ -842,7 +840,8 @@ HIGHLIGHT MENU
 	background: transparent !important;
 }
 [data-highlight-element-id] > div > div.flex,
-[data-node-type="embed"] > [class*="group"] > .rounded.border.border-solid.border-light-grey.py-4 div > div.flex{
+[data-node-type="embed"] > [class*="group"] > .rounded.border.border-solid.border-light-grey.py-4 div > div.flex,
+[class*="whiteboardObject"][data-object-type="highlightElementInstance"] [class*="contentScrollableContainer"] .absolute + div > .flex{
 		position: relative;
 }
 
@@ -1160,27 +1159,6 @@ a [data-type="background"][style*="--bg-gray-editor"]{
 		display: block;
 }
 
-/*****************
-******************
-TEXT HIGHLIGHT > BLUE HIGHLIGHT > TO > UNDERLINE,
-******************
-******************/
-[data-type="background"][style*="--bg-blue-editor"],
-a [data-type="background"][style*="--bg-blue-editor"]{
-		background: transparent !important;
-		display: block;
-		position: relative;
-}
-[data-type="background"][style*="--bg-blue-editor"]:after {
-	content:"";
-	display: block;
-	position: absolute;
-	bottom:calc(var(--listMargTopBtm) * -1);
-	height: 1px;
-	background-color: hsla(0,0%,50%,.25);
-	left:0;
-	right:0;
-}
 
 
 
@@ -1405,7 +1383,11 @@ code,
 STRIKETHROUGH
 ******************/
 .ProseMirror [data-node-type] s{
-
+		color:var(--text-gray-editor) !important;
+		text-decoration-thickness: 1.5px;
+}
+.ProseMirror [data-node-type] s * {
+		color:var(--text-gray-editor) !important;
 }
 
 /*****************
@@ -3402,7 +3384,10 @@ EMBED - HIGHLIGHT
 }
 
 
-
+[data-highlight-element-id] [style*="--annotation-"] + [class*="ProseMirror"] > div > .ProseMirror,
+[data-node-type="embed"] > [class*="group"] > .rounded.border.border-solid.border-light-grey.py-4 div > div.flex + div{
+		padding-left: 24px;
+}
 /*****************
 HIGHLIGHT BULLETS
 ******************/
@@ -3449,6 +3434,11 @@ EDITOR - EMBEDS
 		--headingMargTop-All: calc(var(--listMargTopBtm) * 1) !important;
 		--headingMargTop: calc(var(--listMargTopBtm) * 2) !important;
 		--hLightedTxtBgClr:var(--hLightedTxtBgClr-Embed);
+		
+		--headingUnderlineOffset:3px;
+		--headingUnderlinePadBtm: 0px;
+
+		
 }
 
 /*****************
@@ -3779,7 +3769,7 @@ EMBEDDED - IMAGES - POPUP TITLE
 .ProseMirror [data-node-type="embed"][class*="self-end"] > [class*="group"] > [class*="group"] > .absolute.right-2{
  left: unset;
 		right: 0;
-} 
+}
 
 /*****************
 ******************
@@ -3806,6 +3796,12 @@ EDITOR - HEADINGS
 		--H5size:23px;
 		--H6size:19px;
 	--headingFontWeight:600;
+		/*heading-underline-offset*/
+		--headingUnderlineOffset:6px;
+		/*heading-underline-padding*/
+		--headingUnderlinePadBtm: 0px;
+		/*heading-mention-underline*/
+		--headingMentionUnderlineSize:25px;
 	
 }
 
@@ -3817,6 +3813,13 @@ div h1 {
 		color: var(--heading-color);
 		--underlineTextColor:var(--heading-color);
 		--text-color-highlight:var(--heading-color);
+		/*mentions*/
+		--mentionUnderlinePosition: 0 100%;
+		--mentionUnderlineSize: var(--headingMentionUnderlineSize);
+		--mentionunderlinePadBtm: 1px;
+		/*underlines*/
+		--underlinePadBtm: var(--headingUnderlinePadBtm);
+		--underlineOffset:var(--headingUnderlineOffset);
 	
 }
 
@@ -3828,6 +3831,14 @@ div h2 {
 		color: var(--heading-color);
 		--underlineTextColor:var(--heading-color);
 		--text-color-highlight:var(--heading-color);
+		/*mentions*/
+		--mentionUnderlinePosition: 0 100%;
+		--mentionUnderlineSize: var(--headingMentionUnderlineSize);
+		--mentionunderlinePadBtm: 1px;
+		/*underlines*/
+		--underlinePadBtm:  var(--headingUnderlinePadBtm);
+		--underlineOffset:var(--headingUnderlineOffset);
+
 }
 
 div h3 {
@@ -3838,6 +3849,14 @@ div h3 {
 		color: var(--heading-color);
 		--underlineTextColor:var(--heading-color);
 		--text-color-highlight:var(--heading-color);
+		/*mentions*/
+		--mentionUnderlinePosition: 0 100%;
+		--mentionUnderlineSize:  var(--headingMentionUnderlineSize);
+		--mentionunderlinePadBtm: 1px;
+		/*underlines*/
+		--underlinePadBtm:  var(--headingUnderlinePadBtm);
+		--underlineOffset:var(--headingUnderlineOffset);
+
 }
 
 div h4 {
@@ -3847,8 +3866,16 @@ div h4 {
 	font-weight: var(--headingFontWeight)!important;
 		color: var(--heading-color);
 		--underlineTextColor:var(--heading-color);
-		
 		--text-color-highlight:var(--heading-color);
+		/*mentions*/
+		--mentionUnderlinePosition: 0 100%;
+		--mentionUnderlineSize:  var(--headingMentionUnderlineSize);
+		--mentionunderlinePadBtm: 1px;
+		/*underlines*/
+		--underlinePadBtm:  var(--headingUnderlinePadBtm);
+		--underlineOffset:var(--headingUnderlineOffset);
+
+		
 }
 
 div h5 {
@@ -3858,8 +3885,15 @@ div h5 {
 	font-weight: var(--headingFontWeight)!important;
 		color: var(--heading-color);
 		--underlineTextColor:var(--heading-color);
-		
 		--text-color-highlight:var(--heading-color);
+		/*mentions*/
+		--mentionUnderlinePosition: 0 100%;
+		--mentionUnderlineSize: var(--headingMentionUnderlineSize);
+		--mentionunderlinePadBtm: 1px;
+		/*underlines*/
+		--underlineOffset:var(--headingUnderlineOffset);
+
+
 }
 
 /*****************
@@ -3873,6 +3907,11 @@ div h6 {
 		color: var(--heading-color);
 		--underlineTextColor:var(--heading-color);
 		--text-color-highlight:var(--heading-color);
+	 /*mentions*/
+		--mentionUnderlinePosition: 0 100%;
+		--mentionUnderlineSize: 20px;
+		--mentionunderlinePadBtm: 1px;
+		/*underlines*/
 }
 /*****************
 H6 - MARGIN TOP (DIFFERENT THAN ALL OTHER HEADINGS OR TOGGLE HEADINGS)
@@ -4975,6 +5014,12 @@ INDIVIDUAL REFERENCE > Container
 		--tableBodyLineHeight:1.375;
 				--mentionUnderlinePosition: 0 100%;
 		--mentionUnderlineSize: 13px !important;
+		/*heading-underline-offset*/
+		--headingUnderlineOffset:3px;
+		/*heading-underline-padding*/
+		--headingUnderlinePadBtm: 0px;
+		/*heading-mention-underline*/
+		--headingMentionUnderlineSize:15px;
 }
 [class*="_content"] .ProseMirror [data-node-type*="list_item"] > [class*="_bulletWrapper"] > [class*="Icon"]{
 }
@@ -5292,6 +5337,9 @@ WHITEBOARD - CARD - NAV
 [class*="_whiteboardObject"] > ._contentContainer_dodjm_1 > div.relative > .absolute {
 		opacity: 0;
 }
+[class*="_whiteboardObject"] > [class*="contentContainer"] > [class*="contentScrollableContainer"]> [data-is-editor-container="true"] + div > .ProseMirror{
+		padding-bottom: var(--whiteboardCardNavHeight);
+}
 
 /*****************
 WHITEBOARD - CARD - NAV - BUTTONS
@@ -5534,8 +5582,9 @@ WHITEBOARD CARD -  COLLAPSED - TEXT
 #root [class*="_whiteboardObject"][data-is-folded="true"] > [style*="background-color"] > .text-body + .w-6 {
 		display: none;
 }
-
-
+[class*="whiteboardObject"][data-object-type="highlightElementInstance"] [class*="contentScrollableContainer"] > .absolute{
+ display: none;   
+}
 
 /*****************
 VIEW - CARD, WHITEBOARD TEXT ELEMENT
@@ -5679,6 +5728,8 @@ LEVELS - NOT IN EMBEDS OR TABLES
 		opacity: 0;
 }
 
+
+
 [data-object-type="mindMapEdge"] path
 {
 		stroke-width: 2;
@@ -5731,7 +5782,6 @@ MINDMAP
 MINDMAP > BORDER COLORS
 *************/
 
-
 [data-object-type*="mindMapTextNode"] > div[style*="red"]{
 		--mMapBrdClr: var(--whiteBoardCardBrd-Red);
 }
@@ -5754,22 +5804,7 @@ MINDMAP > BORDER COLORS
 		--mMapBrdClr: var(--whiteBoardCardBrd-Black);
 }
 
-/*************
-MINDMAP > LINE BREAK DIVIDERS
 
-[data-object-type*="mindMapTextNode"] .ProseMirror br + strong:before, 
-[data-object-type*="mindMapTextNode"] .ProseMirror br + span:before, 
-[data-object-type*="mindMapTextNode"] .ProseMirror span + br:before,
-[data-object-type*="mindMapTextNode"] .ProseMirror br + em:before,
-[data-object-type*="mindMapTextNode"] .ProseMirror em + br:before,
-[data-object-type*="mindMapTextNode"] .ProseMirror br + s:before,
-[data-object-type*="mindMapTextNode"] .ProseMirror s + br:before,
-[data-object-type*="mindMapTextNode"] .ProseMirror br + a:before,
-[data-object-type*="mindMapTextNode"] .ProseMirror a + br:before,
-[data-object-type*="mindMapTextNode"] .ProseMirror br + br:before{
-	
-}
-*************/
 /*****************
 VIEW - WHITEBOARD SECTIONS
 ******************/
@@ -7009,6 +7044,7 @@ CARD LIBRARY - HIGHLIGHT
 .grid.select-none > div [style*="--annotation"] + div,
 ._rightSidebar_1fabk_5 .grid  [style*="--annotation"] + div{
 		background: transparent;
+		overflow-x: unset;
 }
 
 /*CARD LIBRARY - HIGHLIGHT > BORDER*/
@@ -7475,9 +7511,9 @@ body > .hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3 > .te
 }
 
 
-/*IMAGE Modal / Info popup > File Name */
+/*IMAGE Modal / Info popup > File Name
 
-.hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 .w-full.h-full .grow.overflow-y-auto.overflow-x-hidden .w-full.h-full > img[data-hepta-media-name*=".png"],
+.hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 .w-full.h-full .grow.overflow-y-auto.overflow-x-hidden .absolute.cursor-ew-resize + .w-full.h-full > img[data-hepta-media-name*=".png"],
 .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 .w-full.h-full .grow.overflow-y-auto.overflow-x-hidden .w-full.h-full > img[data-hepta-media-name*=".jpeg"],
 .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 .w-full.h-full .grow.overflow-y-auto.overflow-x-hidden .w-full.h-full > img[data-hepta-media-name*=".jpg"]{
  object-fit: unset;
@@ -7485,7 +7521,7 @@ body > .hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3 > .te
 		width: unset;
 		max-width: 100%;
 		margin: 0 auto;
-}
+} */
 /*****************
 ******************
 FLOATING INFO
@@ -7578,9 +7614,22 @@ DROPDOWN BACKSLASH
 	/**/
 	--cardlibHighlightTopPad:0px;
 		--underlineThickness: .8px;
-		--underlineOffset:2.5px;
-}
+		--underlineOffset:3.5px;
+		/*heading-underline-offset*/
+		--headingUnderlineOffset:4px;
+		/*heading-underline-padding*/
+		--headingUnderlinePadBtm: 0px;
+		/*heading-mention-underline*/
+		--headingMentionUnderlineSize:22px;
 
+}
+[class*="bg-background"][style*="width"] .ProseMirror [data-node-type="table"][style*="22.4889px"],
+[class*="bg-background"][style*="width"] .ProseMirror [data-node-type="table"] > div[style*="21.5px"],
+[class*="bg-background"][style*="width"] .ProseMirror [data-node-type="table"] > div[style*="21.5px"] > table{
+		width: 100% !important;
+		padding-left: 0px!important; 
+		padding-right: 0px!important; 
+}
 /*RIGHT SIDEBAR > INFO > DOCUMENT FULL SCREEN ONLY*/
 [class*="bg-background"][style*="width"] [class*="gutter-stable"].scrollbar-gutter-stable.h-full.overflow-y-auto.overflow-x-hidden.bg-background-secondary.py-2.pl-3{
 	max-height: calc(100vh - 47px);
@@ -8111,6 +8160,8 @@ RIGHT SIDEBAR - DROPDOWN MENU - FOLD / UNFOLD CARDS
 #root ~ div > div.top-0.z-dropdown-menu + div.w-50.z-dropdown-menu.bg-menu-texture-bg-medium > div:nth-child(2) {
 		display: none;
 }
+
+
 
 /*****************
 ******************
