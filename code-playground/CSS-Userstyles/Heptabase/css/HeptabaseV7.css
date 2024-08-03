@@ -501,7 +501,7 @@ HEPTABBASE V7
 /********
 *********
 *********
-HEPTABASE - V7  
+! HEPTABASE - V7  
 ********* 
 *********
 *********/
@@ -545,7 +545,7 @@ BODY - FOnt SIZE
 ******************/
 :root {
 		--bodyFontSize: 17px;
-		--bodyLineHeight: 1.45;
+		--bodyLineHeight: 1.5;
 	--bodyFontWeight:400;
 	--blockitemPadLeft:2px;
 	--fontsmoothing:antialiased;
@@ -1198,7 +1198,7 @@ border-radius: var(--codeblockBrdRad);
 }
 .ProseMirror img[data-hepta-media-name*=".svg"]{
 		border-color:hsla(0, 0%, 50%, .001) !important;
-		border-radius: 2px;
+		border-radius: var(--codeblockBrdRad);
 }
 
 #root .ProseMirror [data-node-type="image"],
@@ -1841,16 +1841,7 @@ JOURNAL
 		margin-bottom: 24px;
 		border-bottom: 1px solid var(--light-middle-grey);
 } 
-/*****************
-******************
-SCROLLBAR
-******************
-******************/
-/* Reset the scrollbar width to remove it */
-::-webkit-scrollbar {
-		width: 0px;
-		height: 20px;
-}
+
 
 
 
@@ -1934,7 +1925,7 @@ SELECTION
 ******************
 ******************
 ******************
-BULLET REDO
+! BULLET REDO
 ******************
 ******************
 ******************
