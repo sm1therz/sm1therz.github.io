@@ -2995,7 +2995,7 @@ EDITOR - MENTIONS
 /*****************
 ******************
 ******************
-EDITOR - TABLES
+! EDITOR - TABLES
 ******************
 ******************
 ******************/
@@ -3277,6 +3277,28 @@ TABLES CELLS FIX / TABLE FIX
 		width: 100% !important;
 }
 
+
+
+/*****************
+******************
+TABLES WIDTH FIX (MAKES 100% width TABLES ALWAYS 100% width)
+******************
+******************/
+
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="padding-left: 18."],
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="padding-left: 18."] > .relative,
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="padding-left: 18."] > .relative > table,
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="404.551px"],
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="404.551px"] > .relative,
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="404.551px"] > .relative > table,
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="839px"],
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="839px"] > .relative,
+[data-card-tab-id] .ProseMirror [data-node-type="table"][style*="839px"] > .relative > table{
+		width: 100% !important;
+		padding-left: 0px!important;
+		padding-right: 0px!important;
+}
+
 /*****************
 ******************
 ******************
@@ -3397,7 +3419,7 @@ HIGHLIGHT BULLETS
 
 /*****************
 ******************
-EDITOR - EMBEDS
+! EDITOR - EMBEDS
 ******************
 ******************/
 :root {
@@ -3496,9 +3518,10 @@ EMBED > CONTAINER
 /*****************
 EMBED > CHILD OF ANOTHER BLOCK
 ******************/
-.ProseMirror > [data-node-type] [data-node-type="embed"] {
+.ProseMirror > [data-node-type] [data-node-type="embed"]:not([class*="self-"]) {
 		box-shadow: 0 0 0 1px var(--embedBrdClr) !important;
 }
+
 
 
 
@@ -3731,7 +3754,7 @@ min-width: 40px;
 /*****************
 ******************
 ******************
-EMBEDDED - IMAGES - POPUP TITLE
+EMBEDDED - IMAGES - POPUP TITLE / MEDIA TOOLBAR
 ******************
 ******************
 ******************/
@@ -3741,35 +3764,92 @@ EMBEDDED - IMAGES - POPUP TITLE
 		padding-top: 0px !important;
 		padding-bottom: 0px !important;
 }
+
+
+/*MEDIA TOOLBAR - POSITION*/
+.ProseMirror [data-node-type="embed"][class*="self-"] > [class*="group"] > [class*="group"] > .absolute.right-2{
+		right: 10px;   
+		max-width: calc(100% - 20px);
+}
+
+
+/*MEDIA TOOLBAR - CONTAINER*/
+.ProseMirror .bg-media-toolbar-bg {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	
+}
+
+/*MEDIA TOOLBAR - ELEMENTS - ALL*/
 .ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider{
 		transition: .1s;
 }
+
+
+/*MEDIA TOOLBAR - ELEMENTS - TITLE*/
 .ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-of-type(1){
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
 		max-width: 100% !important;
+		overflow: hidden;
 }
-.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-child(4) {
-		display: none;
-		max-width: 5px;
+/*MEDIA TOOLBAR - ELEMENTS - TITLE - TEXT*/
+
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-of-type(1) .truncate {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow-x: scroll;
 }
-.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:hover{
-		max-width: 100%;
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-of-type(1) .truncate:hover{
+		text-overflow: unset;
+}
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-of-type(1) .truncate::-webkit-scrollbar{
+		height: 0px;
 }
 
-/*aligned left*/
+/*****************
+MEDIA TOOLBAR - ELEMENTS - HIDE PREVIEW IMAGE
+******************/
+
+/*for normal images*/
+/*for embedded images*/
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-child(4) {
+		max-width: 6px;
+		min-width: 6px;
+		overflow: hidden;
+		transition: .2s;
+		transition-delay: 0s;
+}
+.ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-child(4):hover {
+		max-width: 32px;
+		min-width: 32px;
+		transition-delay: .6s;
+}
+
+
+/*MEDIA TOOLBAR - ELEMENTS - TITLE - ICON*/
+
+/*MEDIA TOOLBAR - POSITION - BASED ON TEXT-ALIGNMENT*/
+/*aligned left
 .ProseMirror [data-node-type="embed"][class*="self-start"] > [class*="group"] > [class*="group"] > .absolute.right-2{
 		left: 10px;
 		right: unset;
 }
-/*aligned center*/
+*/
+/*aligned center
 .ProseMirror [data-node-type="embed"][class*="self-center"] > [class*="group"] > [class*="group"] > .absolute.right-2{
 		left: unset;
 		right: unset;
 }
-/*aligned right*/
+*/
+/*aligned right
 .ProseMirror [data-node-type="embed"][class*="self-end"] > [class*="group"] > [class*="group"] > .absolute.right-2{
  left: unset;
 		right: 0;
 }
+*/
 
 /*****************
 ******************
