@@ -3302,6 +3302,16 @@ EDITOR - HIGHLIGHT REDO
 :root {
 		--highlightFontSize: calc(var(--bodyFontSize) - 1px);
 		--highlightLineHeight: calc(var(--listBulletLineHeight)*1.075);
+		/*highlight headings - font size*/
+		--hilightH1size: calc(var(--highlightFontSize) + 6px);
+		--hilightH2size: calc(var(--highlightFontSize) + 5px);
+		--hilightH3size: calc(var(--highlightFontSize) + 4px);
+		--hilightH4size: calc(var(--highlightFontSize) + 3px);
+		--hilightH5size: calc(var(--highlightFontSize) + 2px);
+		--hilightH6size: calc(var(--highlightFontSize) + 1px);
+		/*highlight headings - line height*/
+		--hilightH1lineHeight: calc(var(--highlightLineHeight) * .8);
+		--hilightHeaderLineHeight: calc(var(--highlightLineHeight) * .9);
 }
 
 
@@ -3349,6 +3359,16 @@ HIGHLIGHT TEXT - FONT-FAMILY & FONT SIZE
 		--mentionUnderlineSize: 15px;
 		--mentionunderlinePadBtm:1px;
 		--title-Line2-MargTop:var(--listBulletMargTop);
+		/*headings - font-sizes*/
+		--H1size: var(--hilightH1size);
+		--H2size: var(--hilightH2size);
+		--H3size: var(--hilightH3size);
+		--H4size: var(--hilightH4size);
+		--H5size: var(--hilightH5size);
+		--H6size: var(--hilightH6size);
+		/*headings - line height*/
+		--H1lineHeight: var(--hilightH1lineHeight);
+		--HeaderLineHeight: var(--hilightHeaderLineHeight);
 }
 
 
@@ -3407,6 +3427,8 @@ HIGHLIGHT BULLETS
 [style*="--annotation-"] + [class*="ProseMirror"] .ProseMirror, [data-node-type="embed"] .rounded.border.border-solid.border-light-grey.py-4 .ProseMirror, [class*="_rightSidebar"] [data-highlight-element-id] [class*="ProseMirror"] [data-node-type*="list_item"] > [class*="bulletWrapper"] > [class*="Icon"], .bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex .ProseMirror, .grid > div > .pt-6 .ProseMirror  [data-node-type*="list_item"] > [class*="bulletWrapper"] > [class*="Icon"], .bg-background-primary[style*="width"] .cursor-grab + div > .pt-3.flex + div .ProseMirror, [class*="_rightSidebar"] .cursor-grab + div > .pt-3.flex + div .ProseMirror  [data-node-type*="list_item"] > [class*="bulletWrapper"] > [class*="Icon"], ._highlightElementNoteEditor_1rg43_7 .ProseMirror, [data-highlight-element-id] .ProseMirror, [data-object-type="highlightElementInstance"] .ProseMirror  [data-node-type*="list_item"] > [class*="bulletWrapper"] > [class*="Icon"] {
 	--bodyFontSize:17px;
 }
+
+
 
 /*****************
 ******************
