@@ -6082,7 +6082,12 @@ WHITEBOARD > SECTION TITLES > BACKGROUNDS
 }
 
 /*****************
-VIEW - TAGS
+******************
+******************
+******************
+******************
+******************
+! VIEW - TAGS
 ******************
 ******************
 ******************
@@ -6203,6 +6208,8 @@ VIEW - TABLE - KANBAN
 :root {
 	--kanbanColWidth: 325px;
 	--kanbanNavHeight: 90px;
+		--kanbanSVGWidth:16px;
+		--kanbanHeaderBgClr:transparent;
 }
 /*KANBAN CONTAINER*/
 .flex.w-full.flex-col.overflow-hidden,
@@ -6232,19 +6239,44 @@ VIEW - TABLE - KANBAN
 	margin-right: 0px;
 	width: var(--kanbanColWidth) !important;
 	min-width: var(--kanbanColWidth) !important;
-	background: var(--background-primary-for-blur) !important;
+	background: transparent !important;
 	border-radius: 0px !important;
 	border-right: 1px solid var(--popupBrdClr);
 	backdrop-filter: blur(20px)
 }
-/*KANBAN - TOP ROW - CONTAINER - OVERRIDES*/
-.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div .text-label {
-	width: auto !important
+
+/*KANBAN - TOP ROW - CONTAINER - STICKY - BACKGROUND COLORS*/
+
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div:before{
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background:var(--kanbanHeaderBgClr);
+		opacity: .5;
+		z-index: -1
 }
 
-/*KANBAN - TOP ROW - BUTTONS - ON HOVER*/
-.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div > .ml-auto.flex.items-center > svg:last-child {
-	display: none;
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-red-wb"]{
+		--kanbanHeaderBgClr:var(--bg-red-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-orange-wb"]{
+		--kanbanHeaderBgClr:var(--bg-orange-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-yellow-wb"]{
+		--kanbanHeaderBgClr:var(--bg-yellow-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-green-wb"]{
+		--kanbanHeaderBgClr:var(--bg-green-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-blue-wb"]{
+		--kanbanHeaderBgClr:var(--bg-blue-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-purple-wb"]{
+		--kanbanHeaderBgClr:var(--bg-purple-wb);
 }
 
 
@@ -6273,9 +6305,13 @@ VIEW - TABLE - KANBAN
 #root [data-hepta-dnd-context-id="kanbanCard"] {
 	min-height: unset !important;
 	margin: 0px !important;
-	transition: 1.1s !important;
+	transition: .1s !important;
 	background: var(--embedBgClr)!important;
 	-webkit-font-smoothing: antialiased;
+		padding-left: 7px !important;
+		padding-top: 6px;
+		padding-bottom: 8px;
+		gap: 7px;
 }
 [data-hepta-dnd-context-id="kanbanCard"]:hover {
 	background: transparent !important;
@@ -6291,12 +6327,22 @@ VIEW - TABLE - KANBAN
 	border-color: var(--popupBrdClr)
 }
 
+#root .flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .flex.items-start.gap-3 > div > [data-hepta-dnd-context-id="kanbanCard"]:first-child{
+		margin-top: 20px !important;
+}
+
 /*KANBAN CARD - LAST IN COLUMN - MARGIN BELOW*/
 .flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .flex.items-start.gap-3 > div > .clickable-overlay.relative.flex.cursor-pointer.select-none.items-center.rounded.px-2\.5.py-1\.5 {
 	margin-bottom: 150px;
 }
 
-
+#root [data-hepta-dnd-context-id="kanbanCard"] > svg{
+		padding-top: 0px;
+		margin-top: 4px;
+		opacity: 0.5;
+		width: var(--kanbanSVGWidth);
+		height: var(--kanbanSVGWidth);
+}
 /*SELECTED OPTION*/
 [data-property-type="select"] {}
 [data-property-type="select"]:hover {}
