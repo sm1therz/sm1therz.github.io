@@ -7493,25 +7493,28 @@ body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-
 		/*body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1{
 				padding:1.5rem;
 		}*/
-		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > [class*="374"] {
+		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > [class*="374"],
+		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > .box-border {
 				flex-direction: column;
 				padding-right: 0px;
 				align-items: flex-start;
 				justify-content: flex-start;
 				min-height: 600px;
 		}
-		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > [class*="374"] > .grow {
+		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > [class*="374"] > .grow,
+		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > .box-border > .grow {
 				padding-right: 0px !important;
 				width: 100%;
 				overflow-y: auto;
 				flex: 1;
 				min-height: 300px !important;
 		}
-		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > [class*="374"] > .bg-background-secondary {
-				width: calc(100% - 20px);
+		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > [class*="374"] > .bg-background-secondary,
+		body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > .box-border > .bg-background-secondary {
+				width: calc(100% - 20px) !important;
 				margin: 0 auto;
-				min-height: 190px !important;
-				max-height: 191px !important;
+				min-height: 420px !important;
+				max-height: 421px !important;
 				margin-bottom: 10px !important;
 		}
 				body > .hepta-scrim.cursor-pointer.items-center._scrim_1gpqn_1 > div.h-full.max-h-120.w-full.max-w-170 > .hepta-pseudo-overlay > .overflow-hidden > [class*="374"]{
