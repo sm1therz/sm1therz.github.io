@@ -251,7 +251,7 @@ HEPTABBASE V7
 	/*main*/
 	--bldClr: hsl(0, 0%, 94%);
 	--invertClr: hsl(0, 0%, 100%);
-	--text-color: hsla(246, 0%, 87%) !important;
+	--text-color: hsla(246, 0%, 85%) !important;
 	--text-color--faint: hsla(246, 0%, 108%,.25);
 	--reftext-color: var(--text-color) !important;
 	--text-color-contrast: var(--text-color) !important;
