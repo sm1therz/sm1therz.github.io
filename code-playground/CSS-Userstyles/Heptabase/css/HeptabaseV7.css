@@ -545,7 +545,7 @@ BODY - FOnt SIZE
 ******************/
 :root {
 		--bodyFontSize: 17px;
-		--bodyLineHeight: 1.5;
+		--bodyLineHeight: 1.4;
 	--bodyFontWeight:400;
 	--blockitemPadLeft:2px;
 	--fontsmoothing:antialiased;
