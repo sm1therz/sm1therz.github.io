@@ -85,6 +85,8 @@ HEPTABBASE V7
 	--mMapBrdClr: hsla(0, 0%, 0%, .16);
 	--mMapOutlineClr: hsla(0, 0%, 0%, .07);
 	/*whiteboard - bg colors*/
+		--whiteboardMapSVGFill:linear-gradient(0deg, #348f50 0%, #56b4d3 140%);
+
 	--whiteBoardCardBg-Red: hsl(0, 90%, 89%);
 	--whiteBoardCardBg-Orange: hsl(25, 90%, 84%);
 	--whiteBoardCardBg-Yellow: hsl(48, 83%, 76%);
@@ -251,7 +253,7 @@ HEPTABBASE V7
 	/*main*/
 	--bldClr: hsl(0, 0%, 94%);
 	--invertClr: hsl(0, 0%, 100%);
-	--text-color: hsla(246, 0%, 85%) !important;
+	--text-color: hsla(246, 0%, 87%) !important;
 	--text-color--faint: hsla(246, 0%, 108%,.25);
 	--reftext-color: var(--text-color) !important;
 	--text-color-contrast: var(--text-color) !important;
@@ -323,6 +325,8 @@ HEPTABBASE V7
 	--mMapBrdClr: hsla(0, 0%, 100%, .1);
 	--mMapOutlineClr: hsla(0, 0%, 100%, .15);
 	/*whiteboard - bg colors*/
+		--whiteboardMapSVGFill:linear-gradient(0deg, #348f50 0%, #56b4d3 140%);
+		--map-color-svg:var(--whiteboardMapSVGFill);
 	--whiteBoardCardBg-Red: hsl(0, 48%, 24%);
 	--whiteBoardCardBg-Orange: hsl(32, 51%, 26%);
 	--whiteBoardCardBg-Yellow: hsl(50, 60%, 23%);
@@ -482,6 +486,24 @@ HEPTABBASE V7
 		--cmOperator:hsl(261, 46%, 76%,.5);
 		--cmAtom:white;
 
+}
+
+/*****************
+******************
+SCROLLBAR
+******************
+******************/
+:root{
+		--scrollbarWidth:0px;
+		--scrollbar-width:0px;
+}
+/* Reset the scrollbar width to remove it */
+::-webkit-scrollbar {
+		height: 20px;
+}
+
+.bg-background-primary {
+		--scrollbar-width:1px;
 }
 
 /*TESTING
@@ -5275,7 +5297,7 @@ INFO CONTAINER - TAGS
 }
 
 /*****************
-VIEW - WHITEBOARD
+! VIEW - WHITEBOARD
 ******************/
 :root {
 		--whiteboardCardNavHeight: 30px;
@@ -5301,7 +5323,7 @@ VIEW - WHITEBOARD
 }
 
 ._whiteboardCanvas_1ozeb_1 {
-		--bodyLineHeight: 1.4;
+		/*--bodyLineHeight: 1.4;*/
 		--toggleBulletMargTop: 7px;
 		/*HEADINGS*/
 		--H1size: calc(var(--bodyFontSize) + 15px);
@@ -5310,7 +5332,7 @@ VIEW - WHITEBOARD
 		--H4size: calc(var(--bodyFontSize) + 3px);
 		--H5size: calc(var(--bodyFontSize) + 1px);
 		--H6size: var(--bodyFontSize);
-		--H1lineHeight: var(--bodyLineHeight);
+		--H1lineHeight: 1.4;
 		--HeaderLineHeight: var(--bodyLineHeight);
 		/*HEADING Toggles*/
 		--toggleBulletMargTop-H1: 13px;
@@ -5361,6 +5383,9 @@ WHITEBOARD TOOLBAR / WHITEBOARD NAV
 
 		box-sizing: content-box !important;
 }
+[class*="whiteboardToolbarLeft"] ~ .absolute > ._windowDraggable_80mcn_1 > ._windowDraggable_80mcn_1  svg{
+		display: block !important;
+}
 [class*="whiteboardToolbarLeft"] ~ .absolute > ._windowDraggable_80mcn_1 > ._windowDraggable_80mcn_1 input {
 		text-overflow: unset;
 		max-width: unset !important;
@@ -5370,8 +5395,7 @@ WHITEBOARD TOOLBAR / WHITEBOARD NAV
 /*****************
 ******************
 WHITEBOARD (THE LINK TO WHITEBOARDS)
-******************
-******************/
+
 
 [data-object-type="whiteboardInstance"] > div > div:first-child > .truncate {
 		overflow: unset;
@@ -5383,8 +5407,10 @@ WHITEBOARD (THE LINK TO WHITEBOARDS)
 		-webkit-box-orient: vertical;
 		display: inline;
 }
-[data-object-type="whiteboardInstance"] > div > div:first-child > svg {
-		display: none;
+******************
+******************/
+[data-object-id][data-object-type="whiteboardInstance"] > div > div:first-child > svg {
+		fill: var(--map-color-svg) !important
 }
 /*HOVER MENU */
 [data-object-type="whiteboardInstance"] > div div[class*="group-hover"] {
@@ -5677,6 +5703,20 @@ WHITEBOARD CARD -  COLLAPSED - TEXT
 }
 [class*="whiteboardObject"][data-object-type="highlightElementInstance"] [class*="contentScrollableContainer"] > .absolute{
  display: none;   
+}
+
+
+
+
+
+/*****************
+******************
+WHITEBOARD > LEFT SIDEBAR > MAP DROPDOWN WIDTH
+******************
+******************/
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.shadow-main.backdrop-blur-2xl > div > [class*="40vh"].w-62{
+		width: 420px !important;
+		max-height: 60vh;
 }
 
 /*****************
