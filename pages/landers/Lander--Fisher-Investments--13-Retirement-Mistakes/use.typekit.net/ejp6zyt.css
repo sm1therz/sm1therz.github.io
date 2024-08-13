@@ -1,0 +1,22 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * adobe-naskh:
+ *   - http://typekit.com/eulas/00000000000000007735a2f6
+ *
+ * © 2009-2024 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2023-07-11 17:37:07 UTC"}*/
+
+@import url("../p.typekit.net/p%EF%B9%96s=1&k=ejp6zyt&ht=tk&f=21547&a=28940956&app=typekit&e=css.css");
+
+@font-face {
+font-family:"adobe-naskh";
+src:url("af/92c430/00000000000000007735a2f6/30/l%EF%B9%96primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("af/92c430/00000000000000007735a2f6/30/d%EF%B9%96primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("af/92c430/00000000000000007735a2f6/30/a%EF%B9%96primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:500;font-stretch:normal;
+}
+
+.tk-adobe-naskh { font-family: "adobe-naskh",sans-serif; }

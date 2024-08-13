@@ -1,0 +1,42 @@
+@import url('../../../../../../fonts.googleapis.com/css%EF%B9%96family=Roboto%EF%B9%95300,400,700.css');@import url('../../../../../../fonts.googleapis.com/css%EF%B9%96family=Roboto+Condensed%EF%B9%95400,700.css');
+/*!
+FISHER LANDING PAGE DESIGN SYSTEM (LPDS) BASE LAYER 
+This CSS file is the base layer that sits above Bootstrap but below the Design/Theme layer. Separate styles (colors, borders, backgrounds) from layout (margins, heights, padding)
+Sitecore template config: Enable Bootstrap 4 + Check 'Disable CSS Site Settings Override File' + Select Blank theme in Theme Details tab) then add modifiers to Pres Details item
+Bootstrap: https://getbootstrap.com/docs/4.6/
+Use local CSS for specific project styles that aren't a global fit for the Foundation or the Theme layers.
+Scaffolding: Use BEM naming conventions --> [global namespace:lpds]-[component type prefix]-[BEM syntax:component__part--modifier] ie .lpds-e-Header__logo--white
+Spacing: Keep all vertical spacing (margin, padding, heights) to multiples of 4
+Use only colors in the color palette of the Design System https://www.figma.com/file/gJE6GbKIpNOJ9ps4DaxicC/
+*/
+/*! T Y P O G R A P H Y */
+/*! Default/Mobile */
+:root{--font-pri:'Roboto',sans-serif;--font-sec:'Roboto Condensed',sans-serif;--text-base-size:1rem;--text-body-xs:12px;--text-body-sm:14px;--text-body-md:16px;--text-body-lg:18px;--text-body:var(--text-body-lg);--text-subheading:20px;--text-subheader:var(--text-subheading);--text-heading-xs:14px;--text-heading-sm:16px;--text-heading-md:18px;--text-heading-lg:24px;--text-heading-xl:32px;--text-heading-xxl:36px;--text-label-sm:12px;--text-label-md:14px;--text-label-lg:16px}
+/*! Tablet/Desktop */
+@media(min-width:576px){:root{--text-body-xs:14px;--text-body-sm:16px;--text-body-md:18px;--text-body-lg:20px;--text-body:var(--text-body-md);--text-subheading:24px;--text-subheader:var(--text-subheading);--text-heading-xs:18px;--text-heading-sm:24px;--text-heading-md:32px;--text-heading-lg:40px;--text-heading-xl:48px;--text-heading-xxl:60px;--text-label-sm:14px;--text-label-md:16px;--text-label-lg:18px}}html{font-size:100%}body{font-family:var(--font-pri);font-size:var(--text-body);color:var(--color-text-base)}.heading--xs,h5,.heading--sm,h4,.heading--md,h3,.heading--lg,h2{font-weight:700;font-style:normal}.heading--xs,h5{font-size:var(--text-heading-xs)}.heading--sm,h4{font-size:var(--text-heading-sm)}.heading--md,h3{font-size:var(--text-heading-md)}.heading--lg,h2{font-size:var(--text-heading-lg)}.heading--xl,h1{font-size:var(--text-heading-xl);font-weight:300}.heading--xxl{font-size:var(--text-heading-xxl);font-weight:300}.subheading{font-size:var(--text-subheading);font-weight:300}.heading--light{font-weight:300}.text--xs{font-size:var(--text-body-xs)}.text--sm{font-size:var(--text-body-sm)}.text--md{font-size:var(--text-body-md)}.text--lg{font-size:var(--text-body-lg)}.eyebrow,.label{text-transform:uppercase;letter-spacing:.1em;font-weight:bold}.eyebrow--sm,.label--sm{font-size:var(--text-label-sm)}.eyebrow--md,.label--md{font-size:var(--text-label-md)}.eyebrow--lg,.label--lg{font-size:var(--text-label-lg)}.disclaimer{font-size:var(--text-body-sm);font-style:italic}b,strong{font-weight:600}
+/*! C O L O R S */
+:root{--color-black:#000000;--color-white:#FFFFFF;/*! Primary */--color-green:#034638;--color-green-80:#356B60;--color-green-60:#689088;--color-green-40:#9AB5AF;--color-green-20:#CDDAD7;--color-green-10:#E6EDEB;--color-blue:#0C2340;--color-blue-80:#3D4F66;--color-blue-60:#6D7B8C;--color-blue-40:#9EA7B3;--color-blue-20:#CED3D9;--color-blue-10:#E7E9EC;--color-canopy:#007952;--color-canopy-80:#339475;--color-canopy-60:#66AF97;--color-canopy-40:#99C9BA;--color-canopy-20:#CCE4DC;--color-canopy-10:#E6F2EE;--color-evergreen:#61BD9A;--color-evergreen-80:#81CAAE;--color-evergreen-60:#A0D7C2;--color-evergreen-40:#C0E5D7;--color-evergreen-20:#DFF2EB;--color-evergreen-10:#EFF8F5;--color-peppermint:#B3F0DD;--color-peppermint-80:#C2F3E4;--color-peppermint-60:#D1F6EB;--color-peppermint-40:#E1F9F1;--color-peppermint-20:#F0FCF8;--color-peppermint-10:#F7FEFC;--color-ridge:#165C7D;--color-ridge-80:#457D97;--color-ridge-60:#739DB1;--color-ridge-40:#A2BECB;--color-ridge-20:#D0DEE5;--color-ridge-10:#E8EFF2;--color-pond:#45A5D1;--color-pond-80:#6AB7DA;--color-pond-60:#8FC9E3;--color-pond-40:#B5DBED;--color-pond-20:#DAEDF6;--color-pond-10:#ECF6FA;--color-coastline:#C7E4F1;--color-coastline-80:#D2E9F4;--color-coastline-60:#DDEFF7;--color-coastline-40:#E9F4F9;--color-coastline-20:#F4FAFC;--color-coastline-10:#F9FCFE;--color-gfi:#006935;--color-gfi-80:#018543;--color-gfi-60:#01A453;--color-gfi-40:#2CBE76;--color-gfi-20:#BBFFDD;--color-gfi-10:#E7FFF3;/*! Secondary */--color-plum:#8F467B;--color-plum-dark:#73185B;--color-plum-light:#D5B9CD;--color-plum-lightest:#F1E7EE;--color-blue-sec:#4B6887;--color-blue-sec-dark:#1E4269;--color-blue-sec-light:#A5B3C3;--color-blue-sec-lightest:#D2D9E1;--color-teal:#24A89D;--color-teal-dark:#00786f;--color-teal-light:#63DACE;--color-teal-lightest:#D0F4F0;--color-yellow:#FFB129;--color-yellow-dark:#C78200;--color-yellow-light:#FFE35E;--color-yellow-lightest:#FFF7CF;--color-red:#FE6150;--color-red-dark:#C52C26;--color-red-light:#FF947D;--color-red-lightest:#FFDFD8;/*! Natural */--color-neutral-1:#F2F2F2;--color-neutral-2:#E5E5E5;--color-neutral-3:#999999;--color-neutral-4:#666666;--color-neutral-5:#333333;--color-neutral-warm-1:#F9F7F5;--color-neutral-warm-2:#EEEAE4;--color-neutral-warm-3:#D5CBBC;--color-neutral-warm-4:#A79887;--color-neutral-warm-5:#695E53;/*! Base Theme */--color-brand:var(--color-green);--color-ui-primary:var(--color-canopy);--color-ui-secondary:var(--color-yellow)}
+/*! S P A C I N G - Multiples of 4 only */
+:root{--base-scale:1.25;--base-size:4px;--s1:var(--base-size);--s2:calc(var(--s1)* 2);--s3:calc(var(--s1)* 4);--s4:calc(var(--s1)* 6);--s5:calc(var(--s1)* 9);--s6:calc(var(--s1)* 12);--s7:calc(var(--s1)* 16);--s8:calc(var(--s1)* 24);--s9:calc(var(--s1)* 40);--s10:calc(var(--s1)* 60)}
+/*! IMAGES */
+/*!  L A Y O U T - Structure only, no styles (colors, borders, backgrounds) */
+/*! COMPONENTS */
+.button{border-radius:6px;padding:22px;cursor:pointer;width:fit-content;min-width:248px;max-width:460px;display:block}.button--small,.button--sm{padding:11px 12px}.button--icon-only{min-width:auto}
+/*! PANELS/BOXES */
+.panel{margin:24px}.panel-body{padding:36px 24px}.panel .icon{text-align:center}.panel-1{border-top:#034638 solid 12px;box-shadow:0 0 16px}.panel-2{border-top:#507f70 solid 12px;box-shadow:0 0 16px}.panel-3{border-top:#789f90 solid 12px;box-shadow:0 0 16px}.panel-4{border-top:#9ab9ad solid 12px;box-shadow:0 0 16px}
+/*! SECTIONS */
+section{margin:0}
+/*! Header */
+header{padding:20px 12px}header .container{display:flex;align-items:center}header .logo{fill:var(--color-brand);max-width:250px;max-height:24px;min-height:20px;display:block}header .link--icon{font-size:28px}header nav a{margin-right:.4em}.header--primary .container{justify-content:space-between}.header--secondary .container{justify-content:center}
+/*! Footer*/
+.footer{font-size:1rem}.footer__logo{margin-bottom:var(--s6,2rem)}.footer__logo svg{max-width:246px}
+/*!  B A S E  T H E M E - Use only styles, no layout attributes (height/width, margin, padding)  */
+a.link--primary,a.link--primary:visited{color:var(--color-ui-primary)}a.link--primary:hover{color:var(--color-green)}
+/*! COMPONENTS */
+/*! Buttons */
+.button{background-color:var(--color-white);border:1px solid var(--color-neutral-5);color:var(--color-black);font-size:var(--text-base-size);font-weight:bold;letter-spacing:.02em;text-align:center;text-decoration:none}.button:hover{text-decoration:none;color:var(--color-white);background-color:var(--color-black)}.button:disabled{background-color:var(--color-neutral-3);color:var(--color-neutral-4)}.button--sm{padding:8px 12px}.button--link{border:0;background:none}
+/*! Forms */
+.form-control{padding:1rem 1.5rem}label{font-weight:bold;font-size:var(--text-body-xs);line-height:1}.form-group{margin-bottom:2rem}
+/*! U T I L I T I E S */
+/*! Use bootstrap utilities https://getbootstrap.com/docs/4.6/utilities/ */
+.text-enlarge{font-size:1.125em}.text-shrink{font-size:.875em}.text-lighter{font-weight:lighter}@media(min-width:1200px){}@media(min-width:992px){}@media(min-width:768px){}@media(min-width:576px){}@media(min-width:376px){header{padding:24px 0}header .logo{height:24px}}@media(max-width:1199px){}@media(max-width:991px){}@media(max-width:767px){}@media(max-width:575px){}@media(max-width:375px){}

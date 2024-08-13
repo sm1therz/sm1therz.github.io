@@ -1,0 +1,35 @@
+# Robots.txt for Fisher Investments updated 6/10/22
+
+# Global rules
+
+user-agent: *
+
+# Active URLS
+
+Disallow: /~/media/fisher-investments/files/seminar-slides/ 
+Disallow: /dynamic-sites/
+Disallow: */data/*
+
+# Blocking Wayback Machine
+
+user-agent: archive.org_bot
+Disallow: /
+
+# Blocking Alexa
+
+User-agent: ia_archiver
+Disallow: /
+
+# Sitemaps
+
+Sitemap: https://www.fisherinvestments.com/en-us/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/en-ca/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/en-gb/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/es-es/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/fr-fr/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/da-dk/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/it-it/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/no-no/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/nl-nl/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/nl-be/sitemap.xml
+Sitemap: https://www.fisherinvestments.com/sv-se/sitemap.xml
