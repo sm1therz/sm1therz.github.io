@@ -1,10 +1,10 @@
 /*root*/
 :root {
 	/*arguments wrapper*/
-	--argwrapperGreenBgClr: hsl(120, 50%, 50%, .75);
-	--argwrapperGreenBrdClr: hsl(120, 50%, 46%);
-	--argwrapperRedBgClr: hsl(0, 70%, 50%);
-	--argwrapperRedBrdClr: hsl(0, 70%, 40%);
+	--argwrapperGreenBgClr: hsl(120, 60%, 58%,0.9);
+	--argwrapperGreenBrdClr: hsl(120, 100%, 36%);
+	--argwrapperRedBgClr: hsl(0, 80%, 60%);
+	--argwrapperRedBrdClr: hsl(0, 100%, 20%);
 	/*arguments*/
 	--argBrdClr: hsla(0, 0%, 0%, 1.0);
 	--argBgClr: hsla(0, 0%, 100%, 1.0);
@@ -22,9 +22,9 @@
 [data-theme="dark"] {
 	/*arguments wrapper*/
 	--argwrapperGreenBgClr: hsl(120, 50%, 50%, 0.25);
-	--argwrapperGreenBrdClr: hsl(120, 50%, 50%, 0.45);
-	--argwrapperRedBgClr: hsl(11, 100%, 51%, .4);
-	--argwrapperRedBrdClr: hsl(11, 100%, 51%, .54);
+	--argwrapperGreenBrdClr: hsl(120, 50%, 50%, 0.95);
+	--argwrapperRedBgClr: hsl(0, 100%, 51%, .4);
+	--argwrapperRedBrdClr: hsl(0, 100%, 61%, 1);
 	/*arguments*/
 	--argBrdClr: hsla(0, 0%, 100%, 0.5);
 	--argBgClr: var(--whiteBoardTextElementBgClr-Black);
@@ -37,7 +37,6 @@
 	--argHlClr-Brown: brown;
 	--argHlClr-Green: hsl(120, 100%, 30%);
 	--argStrikethroughBlockquoteBgClr: hsl(214, 7%, 17%);
-
 }
 
 /*****************
@@ -59,9 +58,10 @@ VIEW - WHITEBOARD - ARGUMENT MAPPING - WRAPPERS
 	--border-blue-sect: var(--border-green-sect) !important;
 	--mMapBrdClr: var(--border-green-sect) !important;
 	box-shadow: inset 0 0 0 0px var(--mMapBrdClr) !important;
-	background-image: linear-gradient(to top, transparent 10%, var(--argwrapperGreenBgClr) 100%) !important;
+	background-image: linear-gradient(to top, transparent 10%, var(--argwrapperGreenBgClr) 100%)!important;
 	border-radius: var(--argWrapperBrdRad) !important;
-	--argwrapperBrdClr: var(--argwrapperGreenBrdClr);
+	--argwrapperBrdClr:var(--argwrapperGreenBrdClr);
+	position: relative;
 
 
 }
@@ -74,10 +74,11 @@ VIEW - WHITEBOARD - ARGUMENT MAPPING - WRAPPERS
 	/*borders*/
 	--border-purple-sect: var(--border-red-sect) !important;
 	--mMapBrdClr: var(--border-red-sect) !important;
-	box-shadow: inset 0 0 0 0px var(--mMapBrdClr) !important;
-	background-image: linear-gradient(to top, transparent 10%, var(--argwrapperRedBgClr) 100%) !important;
+	 box-shadow: inset 0 0 0 0px var(--mMapBrdClr) !important;
+	background-image: linear-gradient(to top, transparent 10%, var(--argwrapperRedBgClr) 100%)!important;
 	border-radius: var(--argWrapperBrdRad) !important;
-	--argwrapperBrdClr: var(--argwrapperRedBrdClr);
+	--argwrapperBrdClr:var(--argwrapperRedBrdClr);
+	position: relative;
 }
 
 
@@ -86,14 +87,14 @@ VIEW - WHITEBOARD - ARGUMENT MAPPING - WRAPPERS - FAKE BORDERS
 ******************/
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"]:before,
 #root [data-object-type="textElement"] > [style*="--bg-red-sect"]:before {
-	content: "";
+	content:"";
 	position: absolute;
-	top: 2px;
-	left: 2px;
-	right: 2px;
-	bottom: 1px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom:0px;
 	border-radius: calc(var(--argWrapperBrdRad) - 2px);
-	border: 1px solid var(--argwrapperBrdClr);
+	border:var(--argWrapperBrdW) solid var(--argwrapperBrdClr);
 	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 	transition: .1s;
 
@@ -102,48 +103,44 @@ VIEW - WHITEBOARD - ARGUMENT MAPPING - WRAPPERS - FAKE BORDERS
 VIEW - WHITEBOARD - ARGUMENT MAPPING - WRAPPERS - ACTIVE
 ******************/
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"].border-active,
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"].border-active {
-	box-shadow: inset 0 0 0 2px var(--active-item) !important;
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"].border-active{
+		box-shadow: inset 0 0 0 2px var(--active-item) !important;
 }
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"].border-active:before,
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"].border-active:before {
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"].border-active:before{
 	opacity: 0;
 }
 /*****************
 VIEW - WHITEBOARD - TABLES
 ******************/
-:root {
-	--argTableSpacing: 5px;
-	--argTableCellPadTopBtm: 1px;
-	--argWrapperBrdRad: 10px;
-}
-/*ALL ELEMENT PADDING
-[data-object-type="textElement"] > [style*="--bg-green-sect"] > div > .ProseMirror > [data-node-type]:not([data-node-type="table"]),
-[data-object-type="textElement"] > [style*="--bg-red-sect"] > div > .ProseMirror > [data-node-type]:not([data-node-type="table"]){
-	padding-left: calc(var(--argTableSpacing) * 2);
-}*/
+
 
 
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] [data-node-type="table"],
 #root [data-object-type="textElement"] > [style*="--bg-red-sect"] [data-node-type="table"] {
-	margin-top: -4px !important;
-	margin-bottom: -4px !important;
+	margin-top: -9px !important;
+	margin-bottom: -8px !important;
 
 }
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] table,
 #root [data-object-type="textElement"] > [style*="--bg-red-sect"] table {
 	border-spacing: var(--argTableSpacing) !important;
-	border-collapse: collapse;
+	border-collapse:collapse;
 	border: none !important;
-	margin-top: 6px;
-	margin-left: calc(var(--argTableSpacing) * -1.25) !important;
-	width: calc(100% + var(--argTableSpacing) * -2.9) !important;
+	margin-top: 8px;
+	margin-left: calc(var(--argTableSpacing) * -1.4)!important;
+	width: calc(100% + var(--argTableSpacing) * -0.8)!important;
 
 }
-#root [data-object-type="textElement"] > [style*="--bg-green-sect"] table tr > td:first-child,
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table tr > td:first-child {
-	margin-left: -20px !important;
+:root {
+	--argTableSpacing: 8px;
+	--argTableCellPadTopBtm:1px;
+	--argWrapperBrdRad:12px;
+	--argWrapperBrdW:1.5px
 }
+
+
+
 
 
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] table td,
@@ -161,21 +158,21 @@ VIEW - WHITEBOARD - TABLES
 	padding-left: 5px !important;
 	padding-right: 5px !important;
 	*/
-
+	
 }
+
 
 /**/
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] table [data-node-type],
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table [data-node-type] {
-	--tableBodyFontSize: var(--bodyFontSize) !important;
-	/**/
-	--tableBodyLineHeight: var(--bodyLineHeight) !important;
-	--bodyLineHeight: 1.45;
-	/* --listMargTopBtm:6px*/
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table [data-node-type]{
+		--tableBodyFontSize: var(--bodyFontSize) !important;
+	/**/--tableBodyLineHeight: var(--bodyLineHeight) !important;
+	--bodyLineHeight:1.45;
+   /* --listMargTopBtm:6px*/
 }
 
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] table td,
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table td {
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table td{
 	background-color: var(--argBgClr) !important;
 }
 
@@ -183,7 +180,7 @@ VIEW - WHITEBOARD - TABLES
 TABLE CELL BACKGROUND - HEADER ROW
 ******************/
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] table td[data-background-color="gray"],
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table td[data-background-color="gray"] {
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table td[data-background-color="gray"]{
 	background-color: var(--light-grey) !important;
 }
 /*****************
@@ -191,21 +188,21 @@ TABLE CELL BACKGROUND - HEADER ROW
 ******************/
 
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child td,
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child td {
-	background-color: var(--light-grey) !important;
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child td{
+		background-color: var(--light-grey) !important;
 
 }
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child [data-node-type] *,
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child [data-node-type] * {
-	font-size: 13px !important;
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child [data-node-type] *{
+	font-size: 13px  !important;
 	font-weight: 400;
 }
 
 /*NESTED TABLES*/
 #root [data-object-type="textElement"] > [style*="--bg-green-sect"] [class*="nested"] table,
-#root [data-object-type="textElement"] > [style*="--bg-red-sect"] [class*="nested"] table {
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] [class*="nested"] table{
 	margin-left: calc(var(--argTableSpacing) * -2 + 1px) !important;
-	width: calc(100% + var(--argTableSpacing) * 2 + -1px) !important;
+	width:calc(100% + var(--argTableSpacing) * 2 + -1px) !important;
 }
 
 .fixed.z-dropdown-menu div:not(.hepta-menu-item) [style*="--palette-orange"][class*="active"],
@@ -228,11 +225,11 @@ HIGHLIGHTS
 ******************
 ******************
 ******************/
-:root {
-	--argHlBrdW: 2px;
-	--argHlPadLeftRight: calc(var(--argHlBrdW) * .5);
-	--argHlBrdRad: 5px;
-
+:root{
+	--argHlBrdW:2px;
+	--argHlPadLeftRight:calc(var(--argHlBrdW) * .5);
+	--argHlBrdRad:5px;
+	
 }
 /*highlight*/
 .ProseMirror span[data-color][data-type="background"][style*="var(--bg-orange-editor)"],
@@ -257,7 +254,7 @@ HIGHLIGHTS
 /*highlight*/
 .ProseMirror span[data-color][data-type="background"][style*="var(--bg-green-editor)"],
 /*menu*/
-.text-label-mini + div > svg > rect[fill*="--bg-green"] {
+.text-label-mini + div > svg > rect[fill*="--bg-green"]{
 	border-radius: var(--argHlBrdRad);
 	border: var(--argHlBrdW) solid var(--argHlClr) !important;
 	padding: 0px !important;
@@ -271,7 +268,7 @@ HIGHLIGHTS
 	fill: transparent;
 	display: inline;
 
-
+	
 }
 /*menu only*/
 .text-label-mini + div > svg > rect[fill*="orange"],
@@ -279,12 +276,12 @@ HIGHLIGHTS
 .text-label-mini + div > svg > rect[fill*="purple"],
 .text-label-mini + div > svg > rect[fill*="pink"],
 .text-label-mini + div > svg > rect[fill*="brown"],
-.text-label-mini + div > svg > rect[fill*="green"] {
+.text-label-mini + div > svg > rect[fill*="green"]{
 	outline-offset: 0px !important;
 	background: transparent !important;
 	stroke: var(--argHlClr);
 	stroke-width: 2px;
-
+	
 	outline: none !important;
 }
 
@@ -297,28 +294,28 @@ MENU - HIGHLIGHTS
 .ProseMirror span[data-color][data-type="background"][style*="var(--bg-orange-editor)"],
 /*menu*/
 .text-label-mini + div > svg > rect[fill*="--bg-orange"] {
-	--argHlClr: var(--argHlClr-Orange)
+	--argHlClr:var(--argHlClr-Orange)
 }
 /*BLUE*/
 /*highlight*/
 .ProseMirror span[data-color][data-type="background"][style*="var(--bg-blue-editor)"],
 /*menu*/
 .text-label-mini + div > svg > rect[fill*="--bg-blue"] {
-	--argHlClr: var(--argHlClr-Blue)
+	--argHlClr:var(--argHlClr-Blue)
 }
 /*PURPLE*/
 /*highlight*/
 .ProseMirror span[data-color][data-type="background"][style*="var(--bg-purple-editor)"],
 /*menu*/
 .text-label-mini + div > svg > rect[fill*="--bg-purple"] {
-	--argHlClr: var(--argHlClr-Purple)
+	--argHlClr:var(--argHlClr-Purple)
 }
 /*PINK*/
 /*highlight*/
 .ProseMirror span[data-color][data-type="background"][style*="var(--bg-pink-editor)"],
 /*menu*/
 .text-label-mini + div > svg > rect[fill*="--bg-pink"] {
-	--argHlClr: var(--argHlClr-Pink)
+	--argHlClr:var(--argHlClr-Pink)
 }
 
 /*BROWN*/
@@ -326,7 +323,7 @@ MENU - HIGHLIGHTS
 .ProseMirror span[data-color][data-type="background"][style*="var(--bg-brown-editor)"],
 /*menu*/
 .text-label-mini + div > svg > rect[fill*="--bg-brown"] {
-	--argHlClr: var(--argHlClr-Brown)
+	--argHlClr:var(--argHlClr-Brown)
 }
 
 /*GREEN*/
@@ -334,33 +331,33 @@ MENU - HIGHLIGHTS
 .ProseMirror span[data-color][data-type="background"][style*="var(--bg-green-editor)"],
 /*menu*/
 .text-label-mini + div > svg > rect[fill*="--bg-green"] {
-	--argHlClr: var(--argHlClr-Green)
+	--argHlClr:var(--argHlClr-Green)
 }
 
 
 /*****************
 TEXT ELEMENT - HIGHLIGHTS - INSIDE STRIKETHROUGH
 ******************/
-:root {
-	--argStrikethroughBgClr: var(--background-editor-primary);
+:root{
+	--argStrikethroughBgClr:var(--background-editor-primary);
 }
 #root .ProseMirror s,
 #root ~ .p-12.hepta-scrim .ProseMirror s,
 #root .ProseMirror s *,
-#root ~ .p-12.hepta-scrim .ProseMirror s * {
+#root ~ .p-12.hepta-scrim .ProseMirror s *{
 	z-index: 9494 !important;
 	background: var(--argStrikethroughBgClr) !important;
-	border-right-color: var(--argStrikethroughBgClr) !important;
+	border-right-color:var(--argStrikethroughBgClr) !important; 
 	position: relative;
 }
 #root .ProseMirror [data-type="background"] + s > [data-type="background"],
-#root ~ .p-12.hepta-scrim .ProseMirror [data-type="background"] + s > [data-type="background"] {
+#root ~ .p-12.hepta-scrim .ProseMirror [data-type="background"] + s > [data-type="background"]{
 
 	border-radius: calc(var(--argHlBrdRad) * .5);
 	border-left-color: transparent !important;
 }
 #root s > [data-type="background"],
-#root ~ .p-12.hepta-scrim s > [data-type="background"] {
+#root ~ .p-12.hepta-scrim s > [data-type="background"]{
 	border-radius: 0px !important;
 	border-left-width: 0px !important;
 	padding-left: 3px !important;
@@ -368,7 +365,7 @@ TEXT ELEMENT - HIGHLIGHTS - INSIDE STRIKETHROUGH
 	padding-right: 3px !important;
 }
 #root .ProseMirror s,
-#root ~ .p-12.hepta-scrim .ProseMirror s {
+#root ~ .p-12.hepta-scrim .ProseMirror s{
 	background: var(--argStrikethroughBgClr);
 }
 /*
@@ -381,7 +378,7 @@ TEXT ELEMENT - HIGHLIGHTS - INSIDE STRIKETHROUGH
 
 #root .ProseMirror [data-node-type="blockquote"],
 #root ~ .p-12.hepta-scrim .ProseMirror [data-node-type="blockquote"] {
-	--argStrikethroughBgClr: var(--argStrikethroughBlockquoteBgClr);
+	--argStrikethroughBgClr:var(--argStrikethroughBlockquoteBgClr);
 }
 
 
@@ -397,4 +394,22 @@ TEXT ELEMENT - NODE SEPARATORS
 [data-object-type="textElement"] > [style*="--bg-purple-sect"] > div > .ProseMirror [data-node-type="table"] td [data-node-type]:last-of-type:before,
 [data-object-type="textElement"] > [style*="--bg-blue-sect"] > div > .ProseMirror [data-node-type="table"] td [data-node-type]:last-of-type:before {
 	opacity: 0;
+}
+
+
+
+/*****************
+******************
+******************
+******************
+VIEW - WHITEBOARD - ARGUMENT MAPPING - SECTIONS
+******************
+******************
+******************
+******************/
+
+
+/*ICONS*/
+:root {
+	--argConnectorGreen-Dark: url('data:image/svg+xml;utf8,<svg width="67" height="87" viewBox="0 0 67 87" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M31.0357 33.3694C30.2602 51.0862 27.0357 76.9415 16.0357 76.9415H1V85.9402H66V76.9415H51.0357C40.0357 76.9415 36.8111 51.0862 36.0357 33.3694C35.5922 23.2372 35.5357 13.0862 35.5357 2.94531H44.0357V1.44531H23.0357V2.94531H31.5357C31.5357 13.0862 31.4791 23.2372 31.0357 33.3694Z" fill="%232A4C2A" stroke="%2342BA40"/></svg>');
 }
