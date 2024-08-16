@@ -1,0 +1,45 @@
+
+
+.scrollbar-gutter-stable {
+	--scrollbar-width:30px;
+}
+
+.scrollbar-gutter-stable::-webkit-scrollbar-track{
+	
+}
+.scrollbar-gutter-stable::-webkit-scrollbar-thumb{
+	
+}
+.scrollbar-gutter-stable::-webkit-scrollbar{
+	
+}
+::-webkit-scrollbar {
+  height: unset !important;
+  width: var(--scrollbar-width);
+	background:var(--scrollbar-background-color)!important;
+	display: block !important;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-background-color) !important;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--scrollbar-thumb-border-color) !important;
+  background-color: var(--scrollbar-thumb-background-color) !important;
+  background-clip: unset !important;
+}
+
+:root {
+	
+	--scrollbar-width:40px !important;
+	--scrollbar-background-color:purple !important;
+	/**/
+	--scrollbar-track-background-color:blue;
+	/**/
+	--scrollbar-thumb-border-color:green;
+	--scrollbar-thumb-background-color:red;
+	
+}
