@@ -5054,10 +5054,12 @@ body * {
 }
 :root {
 		/*fonts*/
-		--name-fontSize: 1.1rem;
-		--name-lineHeight: 24px;
-		--notes-fontSize: .85rem;
-		--notes-lineHeight: 18px;
+		/*
+		--name-fontSize: 1rem;
+		--name-lineHeight: 22px;
+		--notes-fontSize: 0.95rem;
+		--notes-lineHeight: 17px;
+		*/
 		--header1-fontSize: 2.0rem;
 		--header1-lineHeight: 1.3;
 		--header2-fontSize: 1.5rem;
