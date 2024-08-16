@@ -4142,7 +4142,7 @@ SEARCH - NAV - BAR
 
 :root {
 
-	--search-nav-transition: .55s;
+	--search-nav-transition: 0.45s;
 }
 .header {
 	background: transparent;
@@ -4190,7 +4190,7 @@ SEARCH - NAV - BAR
 	margin-right: 0px;
 }
 
-/*OUTER WRAPPER*/
+/*OLD / DONT KNOW
 #app .header ._5kaapu {
 	position: relative !important;
 	display: flex;
@@ -4199,6 +4199,15 @@ SEARCH - NAV - BAR
 	padding: 0px;
 	height: 100%;
 	flex: 0;
+}*/
+
+/*searchbox wrapper*/
+
+#app .header .breadcrumbs + div[style*="display: flex"] {
+	outline: 0px solid red !important;
+	position: relative;
+	height: 100%;
+	align-items: flex-start !important;
 }
 
 #app .searchBox {
@@ -4217,7 +4226,7 @@ SEARCH - NAV - BAR
 /*OUTER WRAPPER - ACTIVE*/
 #app .searchBox._zpqjyh {
 	border-radius: 10px;
-	border-radius: 17px;
+	border-radius: 7px;
 	width: 330px;
 	box-shadow: 0 10px 16px -10px rgba(0, 0, 0, .25);
 }
@@ -4531,6 +4540,7 @@ DROPDOWN WRAPPER
 	margin-top: unset;
 }
 
+
 /*******************************
 ********************************
 SEARCH - NAV - RESULTS
@@ -4598,231 +4608,232 @@ SEARCH - NAV - RESULTS
 ********************************/
 
 :root {
-		--mobileDocPadLeft:24px;
+	--mobileDocPadLeft:24px;
 }
 
 @media (max-width: 650px) {
-		/**********
-		BOARDS ADJUST
-		***********/
-		:root {
-				--pagePadLeft: 1vw;
-				--pagePadRight: .5vw;
-				--pageMaxWidth: calc(100% - var(--pagePadLeft) - var(--pagePadRight));
-		}
+	/**********
+	BOARDS ADJUST
+	***********/
+	:root {
+		--pagePadLeft: 1vw;
+		--pagePadRight: .5vw;
+		--pageMaxWidth: calc(100% - var(--pagePadLeft) - var(--pagePadRight));
+	}
 
 
-		#app .project.board > .children:not(#app .project.board.root > .children) {
-				min-width: 1210px !important;
-				left: calc(var(--pagePadLeft) * -55) !important;
-				padding-left: calc(var(--pagePadLeft) * 56.5) !important;
-		}
-		/**********
-		ZOOM & MENU ADJUST
+	#app .project.board > .children:not(#app .project.board.root > .children) {
+		min-width: 1210px !important;
+		left: calc(var(--pagePadLeft) * -55) !important;
+		padding-left: calc(var(--pagePadLeft) * 56.5) !important;
+	}
+	/**********
+	ZOOM & MENU ADJUST
 
-		#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet),
-		#app .project.root > .children > .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
-		left: calc(var(--children-Indent) * -0.74) !important;
-		height: 24px !important;
-		width: 24px !important;
+	#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet),
+	#app .project.root > .children > .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
+	left: calc(var(--children-Indent) * -0.74) !important;
+	height: 24px !important;
+	width: 24px !important;
 }    ***********/
 
-		/*ZOOM
-		#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet) {
-		transform: scale(.8) !important
+	/*ZOOM
+	#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet) {
+	transform: scale(.8) !important
 }
-		#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet) {
-		top: -10px !important;
+	#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet) {
+	top: -10px !important;
 }
-		#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet):before {
-		transform: scale(.9) !important
+	#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet):before {
+	transform: scale(.9) !important
 }
-		*/
+	*/
 
-		/*MENU*/
-		#app .project > .name > .menu:before{
-				transform: rotate(90deg);
-		}
-		/*
-		#app .project.root > .children > .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
-		top: 7px;
-		z-index: 9393939
-}
-		#app .project.root > .children .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
-		transform: scale(0.8);
-}
-		#app .project > .name > .menu:before {
+	/*MENU*/
+	#app .project > .name > .menu:before{
 		transform: rotate(90deg);
+	}
+	/*
+	#app .project.root > .children > .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
+	top: 7px;
+	z-index: 9393939
 }
-		*/
+	#app .project.root > .children .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
+	transform: scale(0.8);
+}
+	#app .project > .name > .menu:before {
+	transform: rotate(90deg);
+}
+	*/
 
-		/*just paragraph
-		#app .project.root > .name > .bullet:not(.dashboard .bullet, .board .bullet),
-		#app .project.root > .name > .prefix:not(.dashboard .prefix, .board .prefix) {
-		top: -10px;
+	/*just paragraph
+	#app .project.root > .name > .bullet:not(.dashboard .bullet, .board .bullet),
+	#app .project.root > .name > .prefix:not(.dashboard .prefix, .board .prefix) {
+	top: -10px;
 }
-		#app .project.root.checkmark > .name > .prefix{
-		top: 3px !important;
-		left:0 !important
+	#app .project.root.checkmark > .name > .prefix{
+	top: 3px !important;
+	left:0 !important
 }
-		#app .project.root.checkmark > .name > .content,
-		#app .project.root.checkmark > .notes > .content{
-		padding-left:30px !important
+	#app .project.root.checkmark > .name > .content,
+	#app .project.root.checkmark > .notes > .content{
+	padding-left:30px !important
 }
-		#app .project.root > .children > .project.paragraph > .name > .bullet:not(.dashboard .bullet, .board .bullet) {
-		top: -14px;
+	#app .project.root > .children > .project.paragraph > .name > .bullet:not(.dashboard .bullet, .board .bullet) {
+	top: -14px;
 }
 
-		#app .project.root > .children > .project.paragraph > .name > .menu:not(.dashboard .menu, .board .menu) {
-		top: 10px;
-		z-index: 2020;
+	#app .project.root > .children > .project.paragraph > .name > .menu:not(.dashboard .menu, .board .menu) {
+	top: 10px;
+	z-index: 2020;
 }
-		*/
+	*/
 }
 
 @media (max-width: 650px) {
-		
-		:root {
-				--root-padtop:20px;
-				--root-font-size: 1.7rem;
-				--root-line-height: 1.15;
+	
+	:root {
+		--root-padtop:20px;
+		--root-font-size: 1.7rem;
+		--root-line-height: 1.15;
 
-				--name-fontSize: 1.61rem;
-				--name-lineHeight: 423px;
-				--notes-fontSize: .185rem;
-				--notes-lineHeight: 16px;
-				--header1-fontSize: 1.5rem;
-				--header1-lineHeight: 1.225;
-				--header2-fontSize: 1.3rem;
-				--header2-lineHeight: 1.225;
+		--name-fontSize: 1.61rem;
+		--name-lineHeight: 423px;
+		--notes-fontSize: .185rem;
+		--notes-lineHeight: 16px;
+		--header1-fontSize: 1.5rem;
+		--header1-lineHeight: 1.225;
+		--header2-fontSize: 1.3rem;
+		--header2-lineHeight: 1.225;
 
-				--btn-Width: var(--children-Indent);
-				--children-Indent: 20px;
-				--btnIcn-ExpandB4Up-W: 6.5px;
-				--btnIcn-ExpandB4Up-H: 6.5px;
-				--btnIcn-ExpandB4Low-H: 13px;
-				--btnIcn-ExpandB4Low-W: 13px;
-				/*bullet marg*/
-				--btn-MargTop: -1px;
-				/*checkbox*/
-				--btnIcn-ChkBx-W: 10px;
-				--btnIcn-ChkBx-H: 10PX;
-				--children-MargBtm: 0px;
-				--btnIcn-ChkBx-BrdRad:2.5px;
-		}
-		.project.checkmark.collapsed > .name > .prefix:after{
-				width:16px;
-				height:16px;
-		}
-		html #app .project.root > .notes > .content {
-				padding-top: 10px;
-				--notes-fontSize: 1.0rem;
-				--notes-lineHeight: 19px;
-		}
-		/*ROOT MENU*/
-		.project.root > .name > .menu {
-				left: calc(var(--children-Indent) * .5) !important;
-				top: -29px !important;
-		}
-		#app .searchBox {
-				width: 39px;
-				min-width: 39px;
-				position: relative;
-				margin-right: 0px;
-		}
-		#app .searchBox._zpqjyh {
-				width: 70vw;
-				min-width: 70vw;
-				margin-left: -106px;
+		--btn-Width: var(--children-Indent);
+		--children-Indent: 20px;
+		--btnIcn-ExpandB4Up-W: 6.5px;
+		--btnIcn-ExpandB4Up-H: 6.5px;
+		--btnIcn-ExpandB4Low-H: 13px;
+		--btnIcn-ExpandB4Low-W: 13px;
+		/*bullet marg*/
+		--btn-MargTop: -1px;
+		/*checkbox*/
+		--btnIcn-ChkBx-W: 10px;
+		--btnIcn-ChkBx-H: 10PX;
+		--children-MargBtm: 0px;
+		--btnIcn-ChkBx-BrdRad:2.5px;
+	}
+	.project.checkmark.collapsed > .name > .prefix:after{
+		width:16px;
+		height:16px;
+	}
+	html #app .project.root > .notes > .content {
+		padding-top: 10px;
+		--notes-fontSize: 1.0rem;
+		--notes-lineHeight: 19px;
+	}
+	/*ROOT MENU*/
+	.project.root > .name > .menu {
+		left: calc(var(--children-Indent) * .5) !important;
+		top: -29px !important;
+	}
+	#app .searchBox {
+		width: 39px;
+		min-width: 39px;
+		position: relative;
+		margin-right: 0px;
+	}
+	#app .searchBox > div {
+		border: 1px solid hsla(0,0%,0%,0);
+	}
+	#app .searchBox._zpqjyh {
+		width: 66vw;
+		min-width: 66vw;
+		margin-left: -106px;
 }
-		#app .project > .name > .bullet.diamond ~ .expand:before,
-		#app .dashboard .project > .name > .bullet.diamond:before,
-		#app .board .project > .name > .bullet.diamond:before {
-				border-radius: 1px !important;
-		}
-		#app .project > .name > .bullet.diamond ~ .expand:after {
-				--btnIcn-ChkBx-BrdRad: 4px;
-		}
-		#app .page > .project.root > name > .content {
-				font-size: 30px !important;
-				line-height: 1.25 !important;
-		}
-		#app .page > .project.root > .children {
-				padding-left: 13px;
-		}
-		/*
-		.project.header1 > .name {
-				--btn-MargTop: -1px !important;
-		}
-		.project.header2 > .name {
-				--btn-MargTop: -4px !important;
-		}*/
+	#app .searchBox._zpqjyh > div {
+		border:var(--search-nav-border);
+	}
+	#app .project > .name > .bullet.diamond ~ .expand:before,
+	#app .dashboard .project > .name > .bullet.diamond:before,
+	#app .board .project > .name > .bullet.diamond:before {
+		border-radius: 1px !important;
+	}
+	#app .project > .name > .bullet.diamond ~ .expand:after {
+		--btnIcn-ChkBx-BrdRad: 4px;
+	}
+	#app .page > .project.root > name > .content {
+		font-size: 30px !important;
+		line-height: 1.25 !important;
+	}
+	#app .page > .project.root > .children {
+		padding-left: 13px;
+	}
+	/*
+	.project.header1 > .name {
+		--btn-MargTop: -1px !important;
+	}
+	.project.header2 > .name {
+		--btn-MargTop: -4px !important;
+	}*/
 
-		.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board .bullet),
-		.root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
-		.root > .children > .project > .name > .expand:not(.dashboard .expand, .board .expand),
-		.root > .children > .project > .name > .menu:not(.dashboard .menu, .board .menu) {
-				border-radius: 2px;
-				width: 20px !important;
-		}
-
-
-		#app .page {
-				padding-right: var(--pagePadRight);
-				padding-left: var(--pagePadLeft);
-		}
-
-		#app .page > .project.root > name > .content {
-				font-size: 30px !important;
-				line-height: 1.25 !important;
-		}
-
-		#app .page > .project.root > .children {
-				padding-left: var(--mobileDocPadLeft);
-		}
+	.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board .bullet),
+	.root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
+	.root > .children > .project > .name > .expand:not(.dashboard .expand, .board .expand),
+	.root > .children > .project > .name > .menu:not(.dashboard .menu, .board .menu) {
+		border-radius: 2px;
+		width: 20px !important;
+	}
 
 
-		/**********
-		BOARD - CURSOR NOT FLOWING - CORRECTION
-		***********/
-		.project.board .boardColumn > .name > .content,
-		.project.board .boardColumn > .notes > .content,
-		.project.board .boardColumn .project .name > .content,
-		.project.board .boardColumn .project .notes > .content {
-				padding-top: 0px;
-		}
-		/*root checkmark*/
-		.project.checkmark.root > .name,
-		.project.checkmark.root > .notes{
-				padding-left: var(--mobileDocPadLeft) !important;
-		}
-		/*root checkmark - MENU*/
-		.project.checkmark.root > .name > .prefix{
-				left: calc(var(--children-Indent) * 0.3) !important;
-				--btn-MargTop: 3px !important;
+	#app .page {
+		padding-right: var(--pagePadRight);
+		padding-left: var(--pagePadLeft);
+	}
 
-		}
-		.project.checkmark.root > .name > .menu {
-				--btn-MargTop: 41px !important;
-				left: calc(var(--children-Indent) * 0) !important;
-		}
+	#app .page > .project.root > name > .content {
+		font-size: 30px !important;
+		line-height: 1.25 !important;
+	}
+
+	#app .page > .project.root > .children {
+		padding-left: var(--mobileDocPadLeft);
+	}
+
+
+	/**********
+	BOARD - CURSOR NOT FLOWING - CORRECTION
+	***********/
+	.project.board .boardColumn > .name > .content,
+	.project.board .boardColumn > .notes > .content,
+	.project.board .boardColumn .project .name > .content,
+	.project.board .boardColumn .project .notes > .content {
+		padding-top: 0px;
+	}
+	/*root checkmark*/
+	.project.checkmark.root > .name,
+	.project.checkmark.root > .notes{
+		padding-left: var(--mobileDocPadLeft) !important;
+	}
+	/*root checkmark - MENU*/
+	.project.checkmark.root > .name > .prefix{
+		left: calc(var(--children-Indent) * 0.3) !important;
+		--btn-MargTop: 3px !important;
+
+	}
+	.project.checkmark.root > .name > .menu {
+		--btn-MargTop: 41px !important;
+		left: calc(var(--children-Indent) * 0) !important;
+	}
 
 
 }
 
-@media (max-width: 410px) {
-				#app .searchBox {
-				width: 39px;
-				min-width: 39px;
-				position: relative;
-				margin-right: 0px;
-		}
-		#app .searchBox._zpqjyh {
-				width: 90vw;
-				min-width: 90vw;
-				margin-left: -106px;
+@media (max-width: 400px) {
+	#app .searchBox._zpqjyh {
+		width: 88vw;
+		min-width: 88vw;
+		margin-left: -100px;
+	}
 }
-}
+
 /*******************************
 ********************************
 ! ICONS
