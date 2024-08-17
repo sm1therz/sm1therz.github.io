@@ -1,0 +1,344 @@
+/*****************
+! ROOT - WHITEBOARD
+******************/
+[class*="whiteboardCanvas"] { 
+	/*whiteboard*/
+	--whiteBoardBoardBg: #eeeded;
+	--whiteBoardCardBgClr: white;
+	--whiteBoardCardBrdClr: hsl(180, 0%, 0%, 0.2);
+	--whiteBoardCardBrdClr-Editing: hsl(180, 0%, 0%, .12);
+	--whiteBoardToolBarBg: hsl(180, 0%, 70%, 0.11);
+	--whiteBoardMapCardBgClr: hsla(0, 0%, 50%, 0.15);
+	/*whiteboard - mind map*/
+	--mMapBrdClr: hsla(0, 0%, 0%, .16);
+	--mMapOutlineClr: hsla(0, 0%, 0%, .07);
+	/*whiteboard - bg colors*/
+	--whiteboardMapSVGFill:linear-gradient(0deg, #348f50 0%, #56b4d3 140%);
+
+	--whiteBoardCardBg-Red: hsl(0, 90%, 89%);
+	--whiteBoardCardBg-Orange: hsl(25, 90%, 84%);
+	--whiteBoardCardBg-Yellow: hsl(48, 83%, 76%);
+	--whiteBoardCardBg-Green: hsl(135, 40%, 82%);
+	--whiteBoardCardBg-Blue: hsl(210, 100%, 89%);
+	--whiteBoardCardBg-Purple: hsl(260, 50%, 88%);
+	--whiteBoardCardBg-Black: hsl(0, 0%, 90%);
+	--bg-black-sect: hsla(0, 0%, 90%);
+	/*whiteboard - border colors*/
+	--whiteBoardCardBrd-Red: hsla(0, 50%, 75%);
+	--whiteBoardCardBrd-Orange: hsla(33, 70%, 65%);
+	--whiteBoardCardBrd-Yellow: hsla(45, 71%, 60%);
+	--whiteBoardCardBrd-Green: hsla(135, 40%, 64%);
+	--whiteBoardCardBrd-Blue: hsla(210, 70%, 68%);
+	--whiteBoardCardBrd-Purple: hsla(250, 81%, 74%, 0.7);
+	--whiteBoardCardBrd-Black: hsla(0, 0%, 0%, .2);
+	/*whiteboard - Sections*/
+	--whiteBoardSectionBgClr: #e9e8e8;
+	--whiteBoardSectionBrdClr: hsl(0, 0%, 86.5%);
+	/*whiteboard - Text Element*/
+	--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
+	--whiteBoardTextElementBgClr-Black:var(--background-editor-primary);
+	--whiteBoardTextElementBrdClr: hsla(0, 0%, 0%, .115);
+	--textelementBrdClr-Editing: hsla(0, 0%, 0%, .05);
+	--whiteboardtextelementLevelBrdClr:hsla(0,0%,0%,.1);
+	/*whiteboard - Toolbars*/
+	--whiteboardToolbarBgClr: hsla(0, 0%, 100%, 0);
+	--whiteboardToolbarBtnBrdClr: hsla(0, 0%, 00%, .1);
+}
+
+[data-theme="dark"] [class*="whiteboardCanvas"]{
+	/*whiteboard*/
+	--whiteBoardBoardBg: #191919;
+	--whiteBoardCardBgClr: hsl(214, 8%, 15%);
+	--whiteBoardCardBrdClr: hsl(180, 0%, 61%, 0.2);
+	--whiteBoardCardBrdClr-Editing: hsl(180, 0%, 61%, 0.2);
+	--whiteBoardToolBarBg: hsl(180, 0%, 10%, 0.5);
+	--whiteBoardMapCardBgClr: hsla(0, 0%, 50%, .3);
+	/*whiteboard - mind map*/
+	--mMapBrdClr: hsla(0, 0%, 100%, .1);
+	--mMapOutlineClr: hsla(0, 0%, 100%, .15);
+	/*whiteboard - bg colors*/
+	--whiteboardMapSVGFill:linear-gradient(0deg, #348f50 0%, #56b4d3 140%);
+	--map-color-svg:var(--whiteboardMapSVGFill);
+	--whiteBoardCardBg-Red: hsl(0, 48%, 24%);
+	--whiteBoardCardBg-Orange: hsl(32, 51%, 26%);
+	--whiteBoardCardBg-Yellow: hsl(50, 60%, 23%);
+	--whiteBoardCardBg-Green: hsl(155, 57%, 20%);
+	--whiteBoardCardBg-Blue: hsl(210, 55%, 25%);
+	--whiteBoardCardBg-Purple: hsl(269, 41%, 26%);
+	--whiteBoardCardBg-Black: #191919;
+	/*whiteboard - border colors*/
+	--whiteBoardCardBrd-Red: hsl(2, 48%, 32%);
+	--whiteBoardCardBrd-Orange: hsl(32, 51%, 35%);
+	--whiteBoardCardBrd-Yellow: hsl(50, 60%, 30%);
+	--whiteBoardCardBrd-Green: hsla(155, 57%, 30%);
+	--whiteBoardCardBrd-Blue: hsl(210, 55%, 36%);
+	--whiteBoardCardBrd-Purple: hsl(269, 41%, 36%);
+	--whiteBoardCardBrd-Black: hsla(0, 0%, 100%, .15);
+	--bg-black-sect: hsla(0, 0%, 30%);
+	/*whiteboard - Sections*/
+	--whiteBoardSectionBgClr: hsl(0, 0%, 10.75%);
+	--whiteBoardSectionBrdClr: hsl(0, 0%, 12.5%);
+	/*whiteboard - Text Element*/
+	--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
+	--whiteBoardTextElementBgClr-Black:var(--background-editor-primary);
+	--whiteBoardTextElementBrdClr: hsl(0, 0%, 19%);
+	--textelementBrdClr-Editing: hsl(0, 0%, 22%, .4);
+	--whiteboardtextelementLevelBrdClr:hsla(0,0%,100%,.1);
+	/*whiteboard - Toolbars*/
+	--whiteboardToolbarBgClr: hsla(0, 0%, 100%, .0085);
+	--whiteboardToolbarBtnBrdClr: hsla(0, 0%, 100%, .05);
+}
+
+/*****************
+! VIEW - WHITEBOARD
+******************/
+:root {
+	--whiteboardCardNavHeight: 30px;
+	--whiteboardCardPadLeftRight: 22px;
+	--whiteboardCardPadTop: 0px;
+	--whiteboardCardPadBtm: var(--whiteboardCardNavHeight);
+	/*text element*/
+	--whiteboardTextPadLR: 6px;
+	--whiteboardTextBrdRad: 10px;
+	/*section-title*/
+	--secTitleBrdW: 1px;
+	--secTitleBrdRad: 8px;
+	/*section*/
+	--secBrdW: 1px;
+	--secBrdRad: 8px;
+	--secTitleTxtSize: 14px;
+	--secTitlePadTopBtm: 1px;
+	--secSvgW: 18px;
+	--secSvgMarg: 10px;
+	--secTitleInputW: 100%;
+	--sectionTitleTransform: scale(1);
+	--sectionTitleMaxW: 100%;
+}
+/*****************
+! VIEW - WHITEBOARD - CARDS
+******************/
+
+/*CARD BACKGROUND*/
+
+[class*="_whiteboardObject"] [class*="contentContainer"][style*="--background-secondary"]{
+	background: var(--whiteBoardCardBgClr);
+
+}
+
+/*****************
+! VIEW - WHITEBOARD - EDITING BORDERS
+******************/
+/*NORMAL*/
+[data-object-type="textElement"] >  [class*="container"],
+[data-object-type="cardInstance"] >  [class*="contentContainer"] {
+	transition:.2s;
+}
+/*EDITING*/
+[data-object-type="textElement"][data-is-editing="true"] >  [class*="container"],
+[data-object-type="cardInstance"][data-is-editing="true"] >  [class*="contentContainer"]{
+	border-color:var(--whiteBoardCardBrdClr-Editing);
+}
+/*****************
+! VIEW - WHITEBOARD SECTIONS
+******************/
+
+/*Whiteboard > Section*/
+#root [data-object-type="section"] > div > div.box-border {
+	transition: .2s !important;
+	box-shadow: none !important;
+	border-radius: var(--secBrdRad);
+	border: var(--secBrdW) solid var(--whiteBoardCardBrdClr);
+}
+
+/*Whiteboard > Section > Active*/
+#root [data-object-type="section"] > div > div.box-border.border-active {
+	box-shadow: none !important;
+	--whiteBoardCardBrdClr: var(--active-item) !important;
+}
+
+/*Whiteboard > Section > Background > Normal Color*/
+#root [data-object-type="section"] > div > div.box-border[style*="background-color: var(--bg-white-sect)"] {
+	background: var(--whiteBoardSectionBgClr) !important;
+	background: transparent !important;
+	--whiteBoardCardBrdClr: var(--whiteBoardSectionBrdClr);
+}
+
+
+
+/*Whiteboard > Section Title > Three Dot Menu*/
+#root [data-object-type="section"] [data-is-section-title] svg {
+	z-index: 9494949 !important;
+	height: auto !important;
+	width: var(--secSvgW) !important;
+}
+/*Section Title*/
+#root [data-object-type="section"] > div > div[data-is-section-title] {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--whiteBoardBoardBg) !important;
+	margin-top: -45px !important;
+	border-radius: var(--secTitleBrdRad) !important;
+	border-width: var(--secTitleBrdW) !important;
+	padding-left: px !important;
+	padding-right: 5px !important;
+	padding-top: var(--secTitlePadTopBtm)!important;
+	padding-bottom: var(--secTitlePadTopBtm)!important;
+	margin-left: 0px !important;
+	margin-right: 0px;
+	transform: var(--sectionTitleTransform)!important;
+	transform-origin: bottom left;
+	max-width: var(--sectionTitleMaxW) !important;
+}
+
+
+#root [class*="_whiteboardObject"] [data-is-section-title] input {
+	overflow: unset;
+	text-overflow: unset;
+	white-space: unset;
+	font-weight: 600 !important;
+}
+
+/*************
+WHITEBOARD > SECTION SCALED
+**************/
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0."],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.1"] {
+	--secTitleBrdW: .75px;
+	--secTitleBrdRad: 4px;
+	--secBrdW: 3px;
+	--secBrdRad: 20px;
+	--secTitlePadTopBtm: 2px;
+	--secSvgW: 10px;
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0."] {
+	--sectionTitleTransform: scale(5);
+	--sectionTitleMaxW: calc(47% - 24px);
+}
+
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.1"] {
+	--sectionTitleTransform: scale(3.6);
+	--sectionTitleMaxW: calc(50% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.2"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.3"] {
+	--secTitleBrdW: .75px;
+	--secTitleBrdRad: 6px;
+	--secBrdW: 2px;
+	--secBrdRad: 20px;
+	--secTitlePadTopBtm: 3px;
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.2"] {
+	--sectionTitleTransform: scale(2.5);
+	--sectionTitleMaxW: calc(60% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.3"] {
+	--sectionTitleTransform: scale(2.42);
+	--sectionTitleMaxW: calc(63% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.4"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.5"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.6"] {
+	--secTitleBrdW: 1px;
+	--secTitleBrdRad: 7px;
+	--secBrdW: 1.5px;
+	--secBrdRad: 15px;
+	--secTitlePadTopBtm: 3px;
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.4"] {
+	--sectionTitleTransform: scale(2.10);
+	--sectionTitleMaxW: calc(59% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.5"] {
+	--sectionTitleTransform: scale(1.85);
+	--sectionTitleMaxW: calc(60% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.6"] {
+	--sectionTitleTransform: scale(1.6);
+	--sectionTitleMaxW: calc(72% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.7"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.8"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.9"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1"] {
+	--secTitleBrdW: 1.25px;
+	--secTitleBrdRad: 7px;
+	--secBrdW: 1px;
+	--secBrdRad: 15px;
+	--secTitlePadTopBtm: 6px;
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.7"] {
+	--sectionTitleTransform: scale(1.35);
+	--sectionTitleMaxW: calc(74% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.8"] {
+	--sectionTitleTransform: scale(1.25);
+	--sectionTitleMaxW: calc(80% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.9"] {
+	--sectionTitleTransform: scale(1.25);
+	--sectionTitleMaxW: calc(80% - 1px);
+}
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1"] {
+	--sectionTitleTransform: scale(1.15);
+	--sectionTitleMaxW: calc(87% - 1px);
+}
+
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.3"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.4"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.5"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.6"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.7"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.8"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.9"],
+#root ._whiteboardCanvas_1ozeb_1 > [style*="scale(2"] {
+	--secTitleBrdW: 1.25px;
+	--secTitleBrdRad: 10px;
+	--secBrdW: 1px;
+	--secBrdRad: 17px;
+	--secTitleInputMaxW: calc(100% + 500px);
+	--secTitlePadTopBtm: 7px;
+}
+
+/*SECTION TITLE > HOVER EXPAND*/
+/*************
+WHITEBOARD > SECTION TITLES > BACKGROUNDS
+**************/
+#root [data-object-type="section"] > div > div[style*="--bg-white"] + [data-is-section-title] {
+	background: var(--whiteBoardSectionBgClr) !important;
+	border-color: var(--whiteBoardSectionBrdClr);
+}
+#root [data-object-type="section"] > div > div[style*="--bg-red"] + [data-is-section-title],
+#root [data-object-type="section"] > div > div[style*="--bg-red"] {
+	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Red);
+	background: var(--bg-red-sect) !important;
+}€‹
+#root [data-object-type="section"] > div > div[style*="--bg-orange"] + [data-is-section-title],
+#root [data-object-type="section"] > div > div[style*="--bg-orange"] {
+	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Orange);
+	background: var(--bg-orange-sect) !important;
+}
+#root [data-object-type="section"] > div > div[style*="--bg-yellow"] + [data-is-section-title],
+#root [data-object-type="section"] > div > div[style*="--bg-yellow"] {
+	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Yellow);
+	background: var(--bg-yellow-sect) !important;
+}
+#root [data-object-type="section"] > div > div[style*="--bg-green"] + [data-is-section-title],
+#root [data-object-type="section"] > div > div[style*="--bg-green"] {
+	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Green);
+	background: var(--bg-green-sect) !important;
+}
+#root [data-object-type="section"] > div > div[style*="--bg-blue"] + [data-is-section-title],
+#root [data-object-type="section"] > div > div[style*="--bg-blue"] {
+	background: var(--bg-blue-sect) !important;
+	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Blue);
+}
+#root [data-object-type="section"] > div > div[style*="--bg-purple"] + [data-is-section-title],
+#root [data-object-type="section"] > div > div[style*="--bg-purple"] {
+	background: var(--bg-purple-sect) !important;
+	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Purple);
+}
+#root [data-object-type="section"] > div > div[style*="--bg-black"] + [data-is-section-title],
+#root [data-object-type="section"] > div > div[style*="--bg-black"] {
+	background: var(--bg-black-sect) !important;
+	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Black);
+}
