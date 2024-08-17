@@ -22,7 +22,7 @@
 	--whiteBoardCardBg-Blue: hsl(210, 100%, 89%);
 	--whiteBoardCardBg-Purple: hsl(260, 50%, 88%);
 	--whiteBoardCardBg-Black: hsl(0, 0%, 90%);
-	--bg-black-sect: hsla(0, 0%, 90%);
+	/*--bg-black-sect: hsla(0, 0%, 90%);*/
 	/*whiteboard - border colors*/
 	--whiteBoardCardBrd-Red: hsla(0, 50%, 75%);
 	--whiteBoardCardBrd-Orange: hsla(33, 70%, 65%);
@@ -74,7 +74,7 @@
 	--whiteBoardCardBrd-Blue: hsl(210, 55%, 36%);
 	--whiteBoardCardBrd-Purple: hsl(269, 41%, 36%);
 	--whiteBoardCardBrd-Black: hsla(0, 0%, 100%, .15);
-	--bg-black-sect: hsla(0, 0%, 30%);
+	/*--bg-black-sect: hsla(0, 0%, 30%);*/
 	/*whiteboard - Sections*/
 	--whiteBoardSectionBgClr: hsl(0, 0%, 10.75%);
 	--whiteBoardSectionBrdClr: hsl(0, 0%, 12.5%);
@@ -341,4 +341,57 @@ WHITEBOARD > SECTION TITLES > BACKGROUNDS
 #root [data-object-type="section"] > div > div[style*="--bg-black"] {
 	background: var(--bg-black-sect) !important;
 	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Black);
+}
+
+/*****************
+******************
+WHITEBOARD - CONTEXT MENU
+******************
+******************/
+#root ~ div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
+	width: 248px !important;
+}
+
+/*****************
+******************
+WHITEBOARD - CONTEXT MENU - TIDY
+******************
+******************/
+:root {
+	--whiteboardTidyAdjustWidth:100px;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div{
+	position: relative;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:after,
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:before{
+	content: "";
+	display: block;
+	position: absolute;
+	background: transparent;
+	top: -150px;
+	height: 150px;
+	left: -10px;
+	right: -10px;;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:after{
+	top: unset;
+	bottom: -150px;
+}
+
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:after,
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before{
+	content: "";
+	display: block;
+	position: absolute;
+	background: transparent;
+	top: -150px;
+	bottom: -150px;
+	left: -120px;
+	width: 120px;
+	z-index: 0;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before{
+	left: unset;
+	right: -120px;
 }
