@@ -323,7 +323,7 @@
   }
 }
 :root[data-theme="dark"] {
-  --background-primary: #212121;
+  --background-primary: #212121;  
   --background-secondary: #242629;
   --whiteboard-background: #191919;
   --middle-hard-grey: rgba(255, 255, 255, 0.65);

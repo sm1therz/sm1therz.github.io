@@ -1,0 +1,31 @@
+/***********
+************
+EDITOR TEXT COLORS - ROOT
+************
+************/
+
+:root {
+--bldClr:black;
+}
+
+
+[data-theme="dark"] {
+--bldClr:hsl(0, 0%, 93%);
+}
+
+/***********
+BOLD
+************/
+.ProseMirror strong {
+	color: var(--bldClr);
+}
+.ProseMirror strong a {
+	color:var(--active-item);
+}
+/***********
+INLINE MENTION
+************/
+.ProseMirror .text-active .border-b{
+	border-bottom-style: dashed;
+
+}
