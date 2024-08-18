@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         WORKFLOWYY-V12-Dark-MOBILE
+// @name         WorkflowyyV12-Dark-Mobile
 // @namespace    http://yournamespace.com
 // @version      1.0
 // @description  USES OLD DROPBOX FILES
