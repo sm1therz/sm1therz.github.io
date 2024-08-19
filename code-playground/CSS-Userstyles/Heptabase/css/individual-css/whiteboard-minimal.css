@@ -33,7 +33,7 @@
 	--whiteBoardCardBrd-Black: hsla(0, 0%, 0%, .2);
 	/*whiteboard - Sections*/
 	--whiteBoardSectionBgClr: #e9e8e8;
-	--whiteBoardSectionBrdClr: hsl(0, 0%, 86.5%);
+	--whiteBoardSectionBrdClr: hsl(0, 0%, 75.5%);
 	/*whiteboard - Text Element*/
 	--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
 	--whiteBoardTextElementBgClr-Black:var(--background-editor-primary);
@@ -77,7 +77,7 @@
 	/*--bg-black-sect: hsla(0, 0%, 30%);*/
 	/*whiteboard - Sections*/
 	--whiteBoardSectionBgClr: hsl(0, 0%, 10.75%);
-	--whiteBoardSectionBrdClr: hsl(0, 0%, 12.5%);
+	--whiteBoardSectionBrdClr: hsl(0, 0%, 25.5%);
 	/*whiteboard - Text Element*/
 	--whiteBoardTextElementBgClr: var(--whiteBoardBoardBg);
 	--whiteBoardTextElementBgClr-Black:var(--background-editor-primary);
@@ -104,8 +104,8 @@
 	--secTitleBrdW: 1px;
 	--secTitleBrdRad: 8px;
 	/*section*/
-	--secBrdW: 1px;
-	--secBrdRad: 8px;
+	--secBrdW: 2px;
+	--secBrdRad: 20px;
 	--secTitleTxtSize: 14px;
 	--secTitlePadTopBtm: 1px;
 	--secSvgW: 18px;
@@ -145,14 +145,11 @@
 /*Whiteboard > Section*/
 #root [data-object-type="section"] > div > div.box-border {
 	transition: .2s !important;
-	box-shadow: none !important;
 	border-radius: var(--secBrdRad);
-	border: var(--secBrdW) solid var(--whiteBoardCardBrdClr);
 }
 
 /*Whiteboard > Section > Active*/
 #root [data-object-type="section"] > div > div.box-border.border-active {
-	box-shadow: none !important;
 	--whiteBoardCardBrdClr: var(--active-item) !important;
 }
 
@@ -160,7 +157,9 @@
 #root [data-object-type="section"] > div > div.box-border[style*="background-color: var(--bg-white-sect)"] {
 	background: var(--whiteBoardSectionBgClr) !important;
 	background: transparent !important;
-	--whiteBoardCardBrdClr: var(--whiteBoardSectionBrdClr);
+	outline:2px dashed var(--whiteBoardSectionBrdClr);
+	outline-offset:-5px;
+	box-shadow: none !important;;
 }
 
 
@@ -188,6 +187,7 @@
 	transform: var(--sectionTitleTransform)!important;
 	transform-origin: bottom left;
 	max-width: var(--sectionTitleMaxW) !important;
+	outline:2px solid var(--whiteBoardSectionBrdClr);
 }
 
 
@@ -203,10 +203,6 @@ WHITEBOARD > SECTION SCALED
 **************/
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0."],
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.1"] {
-	--secTitleBrdW: .75px;
-	--secTitleBrdRad: 4px;
-	--secBrdW: 3px;
-	--secBrdRad: 20px;
 	--secTitlePadTopBtm: 2px;
 	--secSvgW: 10px;
 }
@@ -221,10 +217,6 @@ WHITEBOARD > SECTION SCALED
 }
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.2"],
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.3"] {
-	--secTitleBrdW: .75px;
-	--secTitleBrdRad: 6px;
-	--secBrdW: 2px;
-	--secBrdRad: 20px;
 	--secTitlePadTopBtm: 3px;
 }
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.2"] {
@@ -238,10 +230,6 @@ WHITEBOARD > SECTION SCALED
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.4"],
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.5"],
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.6"] {
-	--secTitleBrdW: 1px;
-	--secTitleBrdRad: 7px;
-	--secBrdW: 1.5px;
-	--secBrdRad: 15px;
 	--secTitlePadTopBtm: 3px;
 }
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.4"] {
@@ -260,10 +248,6 @@ WHITEBOARD > SECTION SCALED
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.8"],
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.9"],
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1"] {
-	--secTitleBrdW: 1.25px;
-	--secTitleBrdRad: 7px;
-	--secBrdW: 1px;
-	--secBrdRad: 15px;
 	--secTitlePadTopBtm: 6px;
 }
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(0.7"] {
@@ -291,10 +275,6 @@ WHITEBOARD > SECTION SCALED
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.8"],
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(1.9"],
 #root ._whiteboardCanvas_1ozeb_1 > [style*="scale(2"] {
-	--secTitleBrdW: 1.25px;
-	--secTitleBrdRad: 10px;
-	--secBrdW: 1px;
-	--secBrdRad: 17px;
 	--secTitleInputMaxW: calc(100% + 500px);
 	--secTitlePadTopBtm: 7px;
 }
@@ -303,44 +283,50 @@ WHITEBOARD > SECTION SCALED
 /*************
 WHITEBOARD > SECTION TITLES > BACKGROUNDS
 **************/
+#root [data-object-type="section"] > div > div + [data-is-section-title]{
+	outline:1px solid var(--whiteBoardSectionBrdClr);
+	outline-offset:-1px;
+}
 #root [data-object-type="section"] > div > div[style*="--bg-white"] + [data-is-section-title] {
 	background: var(--whiteBoardSectionBgClr) !important;
 	border-color: var(--whiteBoardSectionBrdClr);
+	
 }
-#root [data-object-type="section"] > div > div[style*="--bg-red"] + [data-is-section-title],
-#root [data-object-type="section"] > div > div[style*="--bg-red"] {
+#root [data-object-type="section"] > div > div[style*="--bg-red"] + [data-is-section-title] {
 	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Red);
 	background: var(--bg-red-sect) !important;
-}€‹
-#root [data-object-type="section"] > div > div[style*="--bg-orange"] + [data-is-section-title],
-#root [data-object-type="section"] > div > div[style*="--bg-orange"] {
+	--whiteBoardSectionBrdClr:var(--border-red-sect);
+}
+#root [data-object-type="section"] > div > div[style*="--bg-orange"] + [data-is-section-title]{
 	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Orange);
 	background: var(--bg-orange-sect) !important;
+	--whiteBoardSectionBrdClr:var(--border-orange-sect);
 }
-#root [data-object-type="section"] > div > div[style*="--bg-yellow"] + [data-is-section-title],
-#root [data-object-type="section"] > div > div[style*="--bg-yellow"] {
+#root [data-object-type="section"] > div > div[style*="--bg-yellow"] + [data-is-section-title]{
 	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Yellow);
 	background: var(--bg-yellow-sect) !important;
+	--whiteBoardSectionBrdClr:var(--border-yellow-sect);
 }
-#root [data-object-type="section"] > div > div[style*="--bg-green"] + [data-is-section-title],
-#root [data-object-type="section"] > div > div[style*="--bg-green"] {
+#root [data-object-type="section"] > div > div[style*="--bg-green"] + [data-is-section-title]{
 	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Green);
 	background: var(--bg-green-sect) !important;
+	outline:2px solid var(--whiteBoardSectionBrdClr);
+	--whiteBoardSectionBrdClr:var(--border-green-sect);
 }
-#root [data-object-type="section"] > div > div[style*="--bg-blue"] + [data-is-section-title],
-#root [data-object-type="section"] > div > div[style*="--bg-blue"] {
+#root [data-object-type="section"] > div > div[style*="--bg-blue"] + [data-is-section-title]{
 	background: var(--bg-blue-sect) !important;
 	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Blue);
+	--whiteBoardSectionBrdClr:var(--border-blue-sect);
 }
-#root [data-object-type="section"] > div > div[style*="--bg-purple"] + [data-is-section-title],
-#root [data-object-type="section"] > div > div[style*="--bg-purple"] {
+#root [data-object-type="section"] > div > div[style*="--bg-purple"] + [data-is-section-title]{
 	background: var(--bg-purple-sect) !important;
 	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Purple);
+	--whiteBoardSectionBrdClr:var(--border-purple-sect);
 }
-#root [data-object-type="section"] > div > div[style*="--bg-black"] + [data-is-section-title],
-#root [data-object-type="section"] > div > div[style*="--bg-black"] {
+#root [data-object-type="section"] > div > div[style*="--bg-black"] + [data-is-section-title]{
 	background: var(--bg-black-sect) !important;
 	--whiteBoardCardBrdClr: var(--whiteBoardCardBrd-Black);
+	--whiteBoardSectionBrdClr:var(--border-black-sect);
 }
 
 /*****************
