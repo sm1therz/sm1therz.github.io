@@ -48,8 +48,25 @@ width:5px;
 border-top-left-radius:var(--blockquoteBrdRad);
 border-bottom-left-radius:var(--blockquoteBrdRad);
 }
+/***********
+************
+TABLES
+************
+************/
 
-
+/*cells - normal*/
+[data-node-type="table"] table td{
+	transition:.1s;
+}
+/*cells - editing*/
+[data-node-type="table"] table + div > .border-2{
+opacity:0;
+}
+/*cells - selecting*/
+[data-node-type="table"] table td[class*="selectedCell"]{
+	outline:2px solid var(--active-item);
+	outline-offset:-1px;
+}
 /***********
 ************
 IMAGES
