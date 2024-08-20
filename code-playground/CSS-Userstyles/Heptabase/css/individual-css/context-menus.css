@@ -1,6 +1,16 @@
-/*****************
+/***********
+************
+************
+************
+************
+************
 ! CONTEXT MENUS - ROOT
-******************/
+************
+************
+************
+************
+************
+************/
 :root { 
 	--mentionmenuBgClr:hsla(0,0%,97%,1);
 }
@@ -156,4 +166,63 @@ WHITEBOARD - LINK TO WHITEBOARD
 	border-radius: .25rem;
 	padding-top: .25rem;
 	padding-bottom: .25rem;
+}
+
+
+/*****************
+******************
+WHITEBOARD - CONTEXT MENU - THE MAIN ONE
+******************
+******************/
+#root~div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
+	width: 248px !important;
+}
+
+/*****************
+******************
+WHITEBOARD - CONTEXT MENU - TIDY
+******************
+******************/
+:root {
+	--whiteboardTidyAdjustWidth: 100px;
+}
+
+#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div {
+	position: relative;
+}
+
+#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div:after,
+#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div:before {
+	content: "";
+	display: block;
+	position: absolute;
+	background: transparent;
+	top: -150px;
+	height: 150px;
+	left: -10px;
+	right: -10px;
+	;
+}
+
+#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div:after {
+	top: unset;
+	bottom: -150px;
+}
+
+#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div>div.box-border:after,
+#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div>div.box-border:before {
+	content: "";
+	display: block;
+	position: absolute;
+	background: transparent;
+	top: -150px;
+	bottom: -150px;
+	left: -120px;
+	width: 120px;
+	z-index: 0;
+}
+
+#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div>div.box-border:before {
+	left: unset;
+	right: -120px;
 }

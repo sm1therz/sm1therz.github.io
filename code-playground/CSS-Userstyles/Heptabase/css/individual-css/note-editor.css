@@ -1,20 +1,28 @@
 /***********
 ************
+************
+************
+************
+************
 EDITOR - ROOT
+************
+************
+************
+************
 ************
 ************/
 
 :root {
---blockquoteBrdClr:hsla(0,0%,90%,1);
---blockquoteBrdLeftClr:hsla(0,0%,86%,1);
---blockquoteBgClr:hsla(0,0%,90%,.2);
+--blockquoteBrdClr:hsla(0,0%,0%,.1);
+--blockquoteBrdLeftClr:hsla(0,0%,0%,.25);
+--blockquoteBgClr:hsla(0,0%,0%,.015);
 }
 
 
 [data-theme="dark"] {
---blockquoteBrdClr:hsl(216, 6%, 20.5%);
---blockquoteBrdLeftClr:hsl(216, 6%, 24%);
---blockquoteBgClr:hsl(216, 6%, 17%);
+--blockquoteBrdClr:hsl(216, 6%, 100.5%,.1);
+--blockquoteBrdLeftClr:hsl(216, 6%, 100%,.1);
+--blockquoteBgClr:hsl(216, 6%, 100%,.0125);
 }
 
 /***********
@@ -22,16 +30,19 @@ EDITOR - ROOT
 BLOCKQUOTES 
 ************
 ************/
+
 :root{
 --blockquoteBrdRad:3px;
 }
 .ProseMirror blockquote {
 position:relative;
 border-left-color:transparent !important;
-box-shadow:
-inset 0 0 0 1px var(--blockquoteBrdClr);
-border-radius:var(--blockquoteBrdRad) !important;
+outline:1px solid var(--blockquoteBrdClr);
+outline-offset:-1px;
+border-radius:var(--blockquoteBrdRad);
 background:var(--blockquoteBgClr);
+border-top-left-radius:calc(var(--blockquoteBrdRad) * 1.75) !important;
+border-bottom-left-radius:calc(var(--blockquoteBrdRad) * 1.75)!important;
 }
 
 /*blockquote left border pseudo*/
@@ -44,9 +55,9 @@ background:var(--blockquoteBrdLeftClr);
 left:-3px;
 top:0;
 bottom:0;
-width:5px;
-border-top-left-radius:var(--blockquoteBrdRad);
-border-bottom-left-radius:var(--blockquoteBrdRad);
+width:6px;
+border-top-left-radius:calc(var(--blockquoteBrdRad) * 1.75);
+border-bottom-left-radius:calc(var(--blockquoteBrdRad) * 1.75);
 }
 /***********
 ************
