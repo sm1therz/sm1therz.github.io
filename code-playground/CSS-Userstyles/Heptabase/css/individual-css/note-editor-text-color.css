@@ -14,12 +14,14 @@ EDITOR TEXT COLORS - ROOT
 
 :root {
 --bldClr:black;
+--headingClr:black;
 --strikethrough-Clr:hsl(0, 0%, 70%);
 }
 
 
 [data-theme="dark"] {
 --bldClr:hsl(0, 0%, 93%);
+--headingClr:hsl(0, 0%, 96%);
 --strikethrough-Clr:hsl(0, 0%, 40%);
 }
 
