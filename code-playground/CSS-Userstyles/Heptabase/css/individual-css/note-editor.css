@@ -69,15 +69,37 @@ TABLES
 [data-node-type="table"] table td{
 	transition:.1s;
 }
-/*cells - editing*/
-[data-node-type="table"] table + div > .border-2{
-opacity:0;
-}
+
 /*cells - selecting*/
 [data-node-type="table"] table td[class*="selectedCell"]{
 	outline:2px solid var(--active-item);
 	outline-offset:-1px;
 }
+
+/***********
+************
+TABLES - Hover thingys
+************
+************/
+/*cells - editing*/
+[data-node-type="table"] table + div > .border-2{
+opacity:0;
+}
+/*grabbers*/
+[data-node-type="table"] table + div > .touch-none{
+opacity:.35 !important;
+transition:0s;
+}
+/*grabbers - table hover*/
+[data-node-type="table"] table + div > .touch-none:hover{
+opacity:1 !important;
+}
+
+/*bottom row adder*/
+[data-node-type="table"] table + div > div.absolute.left-0.top-0{
+opacity:0;
+}
+
 /***********
 ************
 IMAGES
