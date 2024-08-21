@@ -87,17 +87,36 @@ EDITOR
 
 /*main editor container*/
 
+
+/*DARTH THEME*/
+
+.dark header[class*="sidebar-width"],
+.dark header[class*="sidebar-width"] + div,
+footer {
+background:hsl(240, 4%, 8%) !important;
+} 
 header + div > div.py-10.pt-10 > .mx-auto > div {
   width:780px;
   max-width:100%;
+  margin:0 auto;
+}
+/*chat response container*/
+.message:not(.user-message) {
+}
+.message:not(.user-message) .bg-zinc-100[class*="dark"][class*="text-white"]{
+  background:hsla(240, 4%, 16%,.25);
+  box-shadow: inset 0 0 0 1px hsla(240, 4%, 16%,.2);
 }
 
-.message:not(.user-message) {
-  background:red;
+/**/
+div.message-contents + div{
+  max-width:10px;
 }
+
+
 
 /*lists*/
-.message ol li, .message ol li{
-  margin-top: 2px;
-  margin-bottom: 2px;
+.message .prose ol li, .message .prose ol li{
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
