@@ -59,6 +59,28 @@ width:6px;
 border-top-left-radius:calc(var(--blockquoteBrdRad) * 1.75);
 border-bottom-left-radius:calc(var(--blockquoteBrdRad) * 1.75);
 }
+
+/***********
+************
+MENTIONS 
+************
+************/
+.ProseMirror [data-node-type="mention"] > [class*="group"]{
+	align-items: flex-start;
+}
+
+.ProseMirror [data-node-type="mention"] > [class*="group"] > svg {
+	margin-top:7px;
+opacity:.7;
+}
+.ProseMirror [data-node-type="mention"] > [class*="group"] .truncate {
+	white-space: normal;
+	overflow: unset;
+	height:unset;
+}
+.ProseMirror [data-node-type="mention"] > [class*="group"] .truncate .h-px {
+	opacity: 0;
+}
 /***********
 ************
 TABLES
