@@ -3,6 +3,12 @@
 --linkPadLeftRight:.5rem;
 }
 
+
+/*************
+**************
+SIDEBAR
+**************
+**************/
 .bg-sidebar a,
 .bg-sidebar a:hover {
 height:unset  !important;
@@ -70,3 +76,28 @@ text-overflow: unset;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 */
+
+
+
+/*************
+**************
+EDITOR
+**************
+**************/
+
+/*main editor container*/
+
+header + div > div.py-10.pt-10 > .mx-auto > div {
+  width:780px;
+  max-width:100%;
+}
+
+.message:not(.user-message) {
+  background:red;
+}
+
+/*lists*/
+.message ol li, .message ol li{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

@@ -1,4 +1,3 @@
-
 // ==UserScript==
 // @name         CHATKIT INJECT EXTERNAL
 // @namespace    http://yournamespace.com
