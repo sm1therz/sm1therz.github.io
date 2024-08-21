@@ -1,0 +1,72 @@
+:root {
+--linkPadTopBtm:5px;
+--linkPadLeftRight:.5rem;
+}
+
+.bg-sidebar a,
+.bg-sidebar a:hover {
+height:unset  !important;
+padding-top: var(--linkPadTopBtm);
+padding-bottom: var(--linkPadTopBtm);
+padding-left: var(--linkPadLeftRight);
+padding-right: var(--linkPadLeftRight);
+position:relative;
+}
+
+
+/*Wrapper*/
+.bg-sidebar a > .overflow-hidden{
+display:flex;
+align-items:flex-start;
+justify-content:flex-start;
+}
+
+/*text*/
+.bg-sidebar a > .overflow-hidden,
+.bg-sidebar a > .overflow-hidden .truncate  {
+overflow: unset; 
+white-space: normal; 
+text-overflow: unset;
+}
+.bg-sidebar a > .overflow-hidden .truncate{
+line-height:1.2rem;
+padding-top:2px;
+}
+
+/*buttons*/
+.bg-sidebar a > .hidden{
+display:flex;
+width:0px;
+overflow:hidden;
+right:5px;
+top:calc(var(--linkPadTopBtm) - 1px);
+position:absolute;
+background:var(--bg-sidebar);
+border-radius:6px;
+z-index:10;
+}
+
+.bg-sidebar a:hover > .hidden {
+width:auto;
+}
+
+/*EDITING*/
+.bg-sidebar .px-2 form{
+height:unset;
+padding-top: calc(var(--linkPadTopBtm) - 3px);
+padding-bottom: calc(var(--linkPadTopBtm) - 3px);
+}
+/*
+overflow: unset; 
+white-space: normal; 
+text-overflow: unset; 
+*/
+
+
+
+/*
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+*/
