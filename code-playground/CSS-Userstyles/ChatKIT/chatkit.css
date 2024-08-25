@@ -1,7 +1,3 @@
-:root {
---linkPadTopBtm:5px;
---linkPadLeftRight:.5rem;
-}
 
 
 /*************
@@ -9,6 +5,14 @@
 SIDEBAR
 **************
 **************/
+
+:root {
+--linkPadTopBtm:5px;
+--linkPadLeftRight:.5rem;
+
+}
+
+
 .bg-sidebar a,
 .bg-sidebar a:hover {
 height:unset  !important;
@@ -62,6 +66,7 @@ height:unset;
 padding-top: calc(var(--linkPadTopBtm) - 3px);
 padding-bottom: calc(var(--linkPadTopBtm) - 3px);
 }
+
 /*
 overflow: unset; 
 white-space: normal; 
@@ -84,6 +89,10 @@ text-overflow: unset;
 EDITOR
 **************
 **************/
+.prose,
+.prose * {
+    box-sizing: border-box !important;
+}
 
 /*main editor container*/
 
@@ -104,19 +113,82 @@ header + div > div.py-10.pt-10 > .mx-auto > div {
 .message:not(.user-message) {
 }
 .message:not(.user-message) .bg-zinc-100[class*="dark"][class*="text-white"]{
-  background:hsla(240, 4%, 16%,.25);
+  background:hsla(240, 4%, 16%,0);
   box-shadow: inset 0 0 0 1px hsla(240, 4%, 16%,.2);
 }
 
-/**/
-div.message-contents + div{
-  max-width:10px;
+
+/*************
+EDITOR - FONT SIZES
+**************/
+.prose {
+    font-size: 1rem;
+        line-height: 1.75;
 }
 
+/*************
+EDITOR - MESSAGE CONTAINER
+**************/
+:root {
+    --usermessagePadLeftRight:1rem;
+        --listMargTopBtm:5px;
+}
 
+/*overrides*/
 
-/*lists*/
+.message-contents > .max-w-full[class*="90%"]{
+    max-width: 100%;
+}
+.message > .flex > div[aria-hidden="true"]{
+    max-width: 0px;
+    margin: 0px;
+}
+/*************
+EDITOR - USER MESSAGE
+**************/
+:is(.dark .dark\:bg-blue-600){
+    background: hsla(240,2%,18%,0.2);
+    box-shadow: 0 0 0 1px  hsla(240,2%,18%);
+}
+.message.user-message .message-contents > .max-w-full{
+ max-width: 80%;   
+}
+/*user message normal text padding*/
+.message.user-message .message-contents .w-fit{
+    padding-left: var(--usermessagePadLeftRight);
+    padding-right: var(--usermessagePadLeftRight);
+}
+.message.user-message .message-contents .code-wrapper {
+    border-radius: 0px !important;
+    border-left-style: none !important;
+    border-right-style: none !important;
+    margin-left: calc(var(--usermessagePadLeftRight) * -1) !important;
+    margin-right: calc(var(--usermessagePadLeftRight) * -1) !important;
+}
+
+/*************
+EDITOR - LISTS
+**************/
 .message .prose ol li, .message .prose ol li{
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: var(--listMargTopBtm) !important;
+  margin-bottom: var(--listMargTopBtm) !important;
+}
+
+/*************
+EDITOR - CODEBLOCKS
+**************/
+.code-wrapper {
+    background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+    border-radius: 10px !important;
+    border-style: solid !important;
+    overflow: hidden;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+pre {
+    margin-top:var(--listMargTopBtm);
+    margin-bottom:calc(var(--listMargTopBtm) * 1.9) !important
+}
+.code-block {
+    white-space: pre-wrap
 }
