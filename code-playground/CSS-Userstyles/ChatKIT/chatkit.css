@@ -204,3 +204,7 @@ pre {
 .code-block {
     white-space: pre-wrap
 }
+
+.code-wrapper > .code-block {
+    max-height: unset !important;
+}
