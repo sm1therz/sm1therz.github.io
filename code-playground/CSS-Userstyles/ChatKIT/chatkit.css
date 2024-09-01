@@ -206,6 +206,13 @@ pre {
 .code-wrapper > .code-block {
     max-height: unset !important;
 }
+/*************
+EDITOR - CODE PREVIEW
+**************/
+
+.code-wrapper > div[style*="width"] iframe{
+    height: 1200px;
+}
 
 /*************
 **************
