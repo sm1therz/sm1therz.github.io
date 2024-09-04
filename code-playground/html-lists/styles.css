@@ -167,6 +167,7 @@ ol li {
 ol li:before {
   content: counter(numbers) ".";
   text-align: right;
+  color: red;
 }
 
 /*LEVEL 2*/
