@@ -299,6 +299,7 @@ ol li:before {
   font-weight: 500;
   color: var(--bulletClr) !important;
   -webkit-text-fill-color: var(--bulletClr);
+  opacity: 0;
 }
 /*LEVEL 2*/
 ol ol li {

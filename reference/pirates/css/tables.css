@@ -5,9 +5,7 @@ TABLES
 table td {
 	padding: 0;
 }
-table tr > td:first-child {
-	background: #494745;
-}
+
 .c83 {
 	border-right-style: solid;
 	padding: 4pt 4pt 4pt 4pt;
@@ -531,6 +529,9 @@ table tr > td:first-child {
 .c43 {
 	height: 0pt;
 }
+.td_109 {
+	width: 50% !important;
+}
 
 /*! CSS Used from: https://sm1therz.github.io/reference/annuity-mystery/css/styles-overrides.css */
 
@@ -538,17 +539,62 @@ table {
 	margin: 0 auto;
 	max-width: 100% !important;
 	min-width: 100% !important;
+	width: 100%;
 }
 
 table tr,
 table td,
 table td p,
-table div,
-table span {
-	font-family: "Roboto Condensedd", sans-serif;
-	
+table div {
+	font-family: "Roboto Condensed", sans-serif !important;
+	text-indent: unset !important;
+	font-weight: 300 !important;
+	font-size: calc(var(--bodyFontSize) + 1px);
+	line-height: 25px !important;
 }
 table p {
 	margin-top: 0px !important;
 	margin-bottom: 0px !important;
+}
+table td {
+	padding:4pt 4pt 4pt 4pt !important;
+	text-align: left !important;
+}
+table td .block_42,
+table td .block_49{
+	text-align: left !important;
+}
+table td {
+	border: 1px solid white !important;
+	min-width:60px !important
+}
+table tr:nth-of-type(even) td {
+	background: transparent;
+	background-image: linear-gradient(var(--tableBgClrRowEven), var(--tableBgClrRowEven)) !important;
+}
+table tr:nth-of-type(odd) td {
+	background: transparent;
+	background-image: linear-gradient(var(--tableBgClrRowOdd), var(--tableBgClrRowOdd)) !important;
+}
+table tr > td:first-child,
+table tr:first-child > td {
+	background: var(--tableBgClrThead)!important;
+	color: white;
+}
+/*THICK BOTTOM BORDER*/
+table tr:first-child > td,
+table td.td_113{
+	border-bottom-width: 4px !important;
+}
+/*SPECIFIC WIDTH*/
+.td_19292{
+	width:20% !important;
+}
+table tr:first-child > td{
+	border-right-color: transparent !important;
+}
+
+/*SPECIFIC TABLE WIDTHS*/
+.td_129{
+	width:30% !important;
 }

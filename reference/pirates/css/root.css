@@ -202,6 +202,7 @@ ICONS DARK - DESKTOP
 /*****************
 COLORS - LIGHT - DESKTOP
 ******************/
+:root,
 [color-scheme="white"] {
 	/*background*/
 	--bgPrimary: white !important;
