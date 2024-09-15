@@ -1,46 +1,17 @@
-/*EDITS*/
+/*root*/
 :root {
-		--sectionMaxWidth:720px;
-		--sectionPadLeftRight:20px;
-		--widgetHeaderHeight:38px;
-		--notesPadTopBtm:26px;
-}
-/***********
-************
-BACKGROUND
-
-
-.app__background {
-		filter: blur(5px) !important;
-		left: -40px;
-		top: -40px;
-		bottom: -40px;
-		right: -40px;
-}
-
-
-************
-************/
-/***********
-************
-NAV & MAIN PAGE
-************
-************/
-header a[href*="upgrade"],
-header a[href="/"]{
-		display: none;
-}
-header ul.pages-bar__list-container .pages-bar__item_active{
-		background: hsla(0,0%,100%,.2);
-		-webkit-text-fill-color: white !important
-}
-header {
-		position: relative !important;
-}
-.widget-page__main{
-		position: relative;
-		overflow-y: auto;
-		overflow: hidden;
+		--sectionMaxWidth: 740px;
+		--sectionPadLeftRight: 20px;
+		--widgetHeaderHeight: 38px;
+		--notesPadTopBtm: 26px;
+		/*bookmarks*/
+		--bookmarkWrapperGap: 20px;
+		--bookmarkLinkBrdRad: 17px;
+		--bookmarkThumbnailWidth: 90px;
+		--bookmarkThumbnailMargTopBtm: 4px;
+		/*font-sizes*/
+		--bodyFontSize: 14px;
+		--bodyLineHeight: 18px;
 }
 
 /***********
@@ -105,6 +76,94 @@ GOOGLE SEARCH
 li.search-results__search-result{
 		padding-left: 50px;
 }
+
+.search-results__search-result_selected{
+		background: hsla(0,0%,100%,.15)
+}
+
+
+/***********
+************
+COLUMNS
+************
+************/
+.columns-2 > section:first-child{
+		position: a
+}
+@media (max-width:700px) {
+		.columns-2{
+				display: flex !important;
+				flex-direction: column-reverse;
+		}
+}
+
+
+/***********
+************
+BACKGROUND
+
+
+.app__background {
+		filter: blur(5px) !important;
+		left: -40px;
+		top: -40px;
+		bottom: -40px;
+		right: -40px;
+}
+
+
+************
+************/
+
+
+
+/***********
+************
+NAV & MAIN PAGE
+************
+************/
+
+header a[href*="upgrade"],
+header a[href="/"]{
+		display: none;
+}
+header ul.pages-bar__list-container .pages-bar__item_active{
+		background: hsla(0,0%,100%,.2);
+		-webkit-text-fill-color: white !important
+}
+header[role="navigation"] {
+		position: relative !important;
+		top: unset !important;
+		left: unset !important;
+		right: unset !important;
+		bottom: unset !important;
+		overflow: hidden;
+
+}
+.widget-page__main{
+		position: relative;
+		overflow-y: auto;
+		overflow: hidden;
+}
+
+
+/***********
+************
+OVERRIDES
+************
+************/
+header.header,
+.app__main-layout,
+.app__body,
+.widget-page,
+.widget-page__main,
+.widget-page__container{
+		width: 100% !important;
+		max-width: unset !important;
+		min-width: unset !important;
+		
+}
+
 /***********
 ************
 SECTIONS
@@ -119,17 +178,10 @@ html .page-section{
 		width: 100% !important;
 		max-width: var(--sectionMaxWidth) !important;
 		margin: 0 auto;
+		padding-right: 0px !important;
+		padding-left: 10px;
 }
 
-/***********
-************
-FONT SIZES
-************
-************/
-:root{
-		--bodyFontSize:14px;
-		--bodyLineHeight:18px;
-}
 .notes-widget,
 .bookmark-widget,
 .bookmark-widget__list,
@@ -141,13 +193,24 @@ FONT SIZES
 .widget-header__title{
 		font-size: var(--bodyFontSize);
 		line-height: var(--bodyLineHeight) !important;
-		opacity: 0.5;
-		color: white;
+
 		--bodyFontSize:15.5px;
 		--bodyLineHeight:20px;
-		font-weight: 400;
+		font-weight: 500;
+		-webkit-font-smoothing:subpixel-antialiased !important;
 		gap: 4px
 }
+.widget-header__title input {
+		border: none !important;
+}
+
+.bookmark-widget .widget-header__title{
+		-webkit-font-smoothing:antialiased;
+		opacity: 0.5;
+		color: white;
+		font-weight: 400;
+}
+
 .bookmark-item__title{
 		color: #ffffffe6 !important;
 		text-shadow: rgba(0, 0, 0, .2) 0 0 3px !important;
@@ -158,14 +221,15 @@ FONT SIZES
 		color: hsl(0, 0%, 60%) !important;
 		opacity: 0.6 !important
 }
-
+.widget__description_empty{
+		display: none !important;
+}
 
 /***********
 ************
 BOOKMARKS
 ************
 ************/
-
 
 
 
@@ -192,8 +256,11 @@ BOOKMARKS
 		display: block;
 		opacity: .5 !important;
 		transform: scale(1.5)rotate(0deg);
-		stroke: white !important;
 		transition: .1s;
+}
+.bookmark-widget .widget-header__chevron{
+		opacity: .5 !important;
+		stroke: white !important;
 }
 /*collapsed*/
 .widget_collapsed .widget-header__chevron{
@@ -203,6 +270,8 @@ BOOKMARKS
 .widget-header__controls > .widget-header__control{
 		margin-top: 0px !important;
 		margin-bottom: 0px !important;
+}
+.widget-header__text{
 }
 /*WIDGET BODY*/
 /*OPEN*/
@@ -222,85 +291,6 @@ html .widget_collapsed .widget__box{
 		min-height: unset !important;
 }
 
-/*NOTES*/
-
-/*NOTES - BOTTOM BUTTONS*/
-.notes-widget__controls{
-		height: unset;
-		min-height: unset;
-		position: absolute;
-		bottom: 3px;
-}
-.notes-widget__controls a {
-		min-height: unset;
-		height:  calc(var(--widgetHeaderHeight) * .5) !important;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: transparent;
-		color: hsla(0,0%,50%,0.9);
-		cursor: pointer !important;
-}
-/*NOTES - TOP BUTTONS*/
-.wysiwyg-editor__toolbar{
-		position: absolute;
-		top: calc(var(--notesPadTopBtm) * -.85);
-		left: 8px
-}
-.wysiwyg-action, .wysiwyg-action_left, .wysiwyg-action_middle, .wysiwyg-action_right{
-		width: 20px;
-		height: 20px;
-		border: none;
-		background: transparent;
-		border-radius: 5px !important;
-}
-
-/*NOTES - TABS - WRAPPER*/
-.notes-widget-wrapper__tabs-list{
-		gap: 8px;
-}
-.notes-widget-wrapper__tabs{
-		margin-bottom: 0px ;
-}
-.notes-widget-wrapper__tabs,
-.widget__description{
-		border-bottom: 1px solid hsla(0,0%,50%,.2)!important;
-}
-.notes-widget-wrapper__tab {
-		margin:0px;
-		padding-top: 2px;
-}
-.custom-tab {
-		line-height: 17px;
-		font-size: 12px;
-}
-.custom-tab__name{
-		padding-bottom: 0px;
-		border:none !important;
-}
-
-/*NOTES - CONTAINER*/
-.notes-widget__result,
-.wysiwyg-editor,
-[id] .notes-widget__textarea{
-		padding-bottom: 0px !important;
-		padding-top: 0px;
-		min-height: unset;   
-}
-.notes-widget-wrapper__body{
-		padding-bottom: var(--notesPadTopBtm);
-		padding-top: var(--notesPadTopBtm);
-		position: relative;
-}
-/*NOTES - TEXT COLORS*/
-.notes-widget__result a,
-.wysiwyg-editor  a{
-		color: #00b2ff !important
-}
-/*NOTES - EDITING - PREVENT BACKGROUND FROM DARKENING*/
-.app__main-layout_shadowed{
-		background: transparent;
-}
 
 .bookmark-widget .widget__body{
 margin: 6px 16px 16px !important;
@@ -329,12 +319,7 @@ margin: 6px 16px 16px !important;
 		backdrop-filter: blur(20px)brightness(2);
 		
 }
-:root{
-		--bookmarkWrapperGap:20px;
-		--bookmarkLinkBrdRad:17px;
-		--bookmarkThumbnailWidth:90px;
-		--bookmarkThumbnailMargTopBtm:4px;
-}
+
 /*BOOKMARK - LINK CONTAINER*/
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_icon .bookmark-item__link{
 		margin: 0px !important;
@@ -553,4 +538,10 @@ BOOKMARK SECTION TYPE - LIST
 		max-width: unset !important;
 		max-height: unset !important;
 		width: 100%
+}
+
+/*FOOTER*/
+
+.page-footer {
+		display: none !important;
 }
