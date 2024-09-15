@@ -1,0 +1,51 @@
+/*ARGUMENT LABELS*/
+
+[data-object-type="textElement"] > div {
+
+	position: relative;
+	overflow: visible;
+}
+
+[data-object-type="textElement"] > div:before {
+	content: "because";
+	position: absolute;
+	top: -17px;
+	right: 7px;
+	color: var(--text-color);
+	z-index: 9292;
+	font-family: roboto, sans-serif;
+	font-size: .68rem;
+	-webkit-font-smoothing: antialiased;
+	opacity: 0;
+}
+
+/*OBJECTION*/
+[data-object-type="textElement"] > div[style*="red"]:before {
+	content: "but";
+	color: var(--border-red-sect);
+	opacity: 1;
+}
+
+/*REASON*/
+[data-object-type="textElement"] > div[style*="green"]:before {
+	content: "because";
+	color: var(--border-green-sect);
+	opacity: 1;
+}
+
+/*hide on arrow up chevrons*/
+
+[data-object-type="textElement"][style*="width: 40."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 41."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 42."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 43."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 44."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 45."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 46."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 47."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 48."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 49."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 50."] > [class*="container"]:before,
+[data-object-type="textElement"][style*="width: 51."] > [class*="container"]:before {
+	display: none;
+}

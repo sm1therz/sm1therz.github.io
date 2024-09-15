@@ -1,0 +1,511 @@
+/*****************
+******************
+******************
+******************
+******************
+******************
+! VIEW - TAGS
+******************
+******************
+******************
+******************
+******************
+******************/
+/*TAG GROUPS - COLOR
+[data-hepta-dnd-context-id="tagGroup"] > div:first-child > p:first-child{
+		color:var(--tagGroupClr);
+}
+
+
+
+*/
+
+/*REMOVE LEFT BORDER - From sticky table view header*/
+.grow > .float-left > .sticky {
+	border-left: none !important
+}
+
+
+/*REMOVE LEFT BORDER - From first cell in each row*/
+[data-hepta-dnd-context-id="tableRow"] {
+	border-left: none !important;
+}
+
+
+/*****************
+******************
+******************
+******************
+******************
+VIEW - TABLE - DATABASE
+******************
+******************
+******************
+******************/
+/*TABLE - Background*/
+[id*="database-table-cell"],
+[id*="database-table-cell"] + div {
+	background: var(--background-primary);
+}
+
+
+/*ROW TITLE/NAME*/
+[id*="database-table-cell"] > div > div.z-30 {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start
+}
+
+.flex-col.overflow-hidden .grow.overflow-auto.px-6 {
+	padding-right: 0px;
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .flex {
+	position: relative;
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .flex > .relative {
+	overflow: hidden;
+	overflow-x: auto;
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+}
+/*****************
+******************
+******************
+******************
+******************
+VIEW - TABLE - KANBAN
+******************
+******************
+******************
+******************/
+:root {
+	--kanbanColWidth: 325px;
+	--kanbanNavHeight: 90px;
+	--kanbanSVGWidth: 16px;
+	--kanbanHeaderBgClr: transparent;
+}
+/*KANBAN CONTAINER*/
+
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6,
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .flex {
+	height: 100% !important;
+	width: 100%;
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 {
+	padding-right: 0px;
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .flex {
+	position: relative;
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .flex > .relative {
+	overflow: hidden;
+	overflow-x: auto;
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+
+}
+/*KANBAN - TOP ROW - CONTAINER - STICKY*/
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div {
+	margin-right: 0px;
+	width: var(--kanbanColWidth) !important;
+	min-width: var(--kanbanColWidth) !important;
+	background: transparent !important;
+	border-radius: 0px !important;
+	border-right: 1px solid var(--popupBrdClr);
+	backdrop-filter: blur(20px)
+}
+
+/*KANBAN - TOP ROW - CONTAINER - STICKY - BACKGROUND COLORS*/
+
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: var(--kanbanHeaderBgClr);
+	opacity: .5;
+	z-index: -1
+}
+
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-red-wb"] {
+	--kanbanHeaderBgClr: var(--bg-red-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-orange-wb"] {
+	--kanbanHeaderBgClr: var(--bg-orange-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-yellow-wb"] {
+	--kanbanHeaderBgClr: var(--bg-yellow-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-green-wb"] {
+	--kanbanHeaderBgClr: var(--bg-green-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-blue-wb"] {
+	--kanbanHeaderBgClr: var(--bg-blue-wb);
+}
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .sticky.top-\[13px\].z-30.flex > div[style*="--bg-purple-wb"] {
+	--kanbanHeaderBgClr: var(--bg-purple-wb);
+}
+
+
+/*KANBAN - COLUMN CONTAINER */
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .flex.items-start.gap-3 {
+	gap: 0px !important;
+	height: 100% !important;
+	display: flex !important;
+	flex: unset;
+}
+/*KANBAN - COLUMN */
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .flex.items-start.gap-3 > div {
+	width: var(--kanbanColWidth) !important;
+	min-width: var(--kanbanColWidth) !important;
+	background: transparent !important;
+	border-right: 1px solid var(--popupBrdClr);
+	border-radius: 0px;
+	display: flex !important;
+	flex-direction: column;
+	overflow: hidden auto;
+	height: 100% !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+/*KANBAN CARD*/
+#root [data-hepta-dnd-context-id="kanbanCard"] {
+	min-height: unset !important;
+	margin: 0px !important;
+	transition: .1s !important;
+	background: hsla(0, 0%, 100%, .05) !important;
+	-webkit-font-smoothing: antialiased;
+	padding-left: 7px !important;
+	padding-top: 6px;
+	padding-bottom: 8px;
+	gap: 7px;
+}
+[data-hepta-dnd-context-id="kanbanCard"]:hover {
+	background: transparent !important;
+}
+#root [data-hepta-dnd-context-id="kanbanCard"] .clickable-overlay {
+	background: transparent;
+	box-shadow: none;
+	border-color: transparent;
+	transition: .1s;
+	backdrop-filter: blur(10px)
+}
+#root [data-hepta-dnd-context-id="kanbanCard"] .clickable-overlay:hover {
+	border-color: var(--popupBrdClr)
+}
+
+#root .flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .flex.items-start.gap-3 > div > [data-hepta-dnd-context-id="kanbanCard"]:first-child {
+	margin-top: 20px !important;
+}
+
+/*KANBAN CARD - LAST IN COLUMN - MARGIN BELOW*/
+.flex.w-full.flex-col.overflow-hidden .grow.overflow-auto.px-6 > .items-start > .relative > .flex.items-start.gap-3 > div > .clickable-overlay.relative.flex.cursor-pointer.select-none.items-center.rounded.px-2\.5.py-1\.5 {
+	margin-bottom: 150px;
+}
+
+#root [data-hepta-dnd-context-id="kanbanCard"] > svg {
+	padding-top: 0px;
+	margin-top: 4px;
+	opacity: 0.5;
+	width: var(--kanbanSVGWidth);
+	height: var(--kanbanSVGWidth);
+}
+
+/*****************
+******************
+PROPERTIES / 100PX
+******************
+******************/
+:root {
+	--propertyCell100pxWidth: 60px;
+}
+[aria-describedby*="DndDescribedBy-"][style*="width: 100px"] {
+	width: var(--propertyCell100pxWidth) !important;
+}
+
+/**/
+.fixed.z-dropdown-menu.shadow-property-value-menu[style*="width: 101px"] {
+	width: calc(var(--propertyCell100pxWidth) + 1px) !important;
+	min-width: unset;
+}
+[id*="database-table-cell"][style*="width: 100px"] {
+	width: calc(var(--propertyCell100pxWidth) + 0px) !important;
+	min-width: unset;
+}
+
+/*****************
+******************
+******************
+******************
+******************
+PROPERTIES > RELATIONS
+******************
+******************
+******************
+******************/
+
+/*relation container*/
+[id*="database-table-cell"] > div.overflow-hidden > .flex.items-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	gap: 5px;
+}
+
+/*relation item > WRAPPER*/
+[id*="database-table-cell"] > div.overflow-hidden > .flex.items-center > .flex:hover {
+	border-radius: 4px;
+	background: hsla(0, 0%, 50%, 0.15);
+}
+/*relation item > svg*/
+[id*="database-table-cell"] > div.overflow-hidden > .flex.items-center svg {
+	width: 18px;
+	height: 18px;
+	padding: 0px;
+	padding-top: 0px;
+	opacity: 0.7;
+	transform: scale(0.85);
+}
+/*relation item > text*/
+[id*="database-table-cell"] > div.overflow-hidden > .flex.items-center svg + .text-label {
+	line-height: 1.375;
+	box-shadow: none !important;
+	outline: none !important;
+	border: none !important;
+	text-decoration: none;
+}
+
+
+
+
+/*****************
+******************
+******************
+******************
+******************
+PROPERTIES > RELATION > DROPDOWN MENU
+******************
+******************
+******************
+******************/
+:root {
+	--relationItemPadTopBtm: 2px;
+}
+.z-dropdown-menu[class*="436"] .hepta-menu-item {
+	height: unset;
+	padding-top: var(--relationItemPadTopBtm);
+	padding-bottom: var(--relationItemPadTopBtm);
+	display: flex;
+	align-items: flex-start
+}
+.z-dropdown-menu[class*="436"] .hepta-menu-item > svg {
+	margin-top: var(--relationItemPadTopBtm);
+}
+.z-dropdown-menu[class*="436"] .hepta-menu-item > .truncate {
+	overflow: visible;
+	white-space: normal;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+
+/*****************
+******************
+******************
+******************
+******************
+PROPERTIES > NEW PROPERTIE DROPDOWN
+******************
+******************
+******************
+******************/
+div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl:not(div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.w-62, div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.max-h-70vh, div.flex.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl) {
+	width: 440px !important;
+	background: var(--refBgClr);
+	backdrop-filter: blur(100px);
+}
+
+/*****************
+******************
+******************
+******************
+******************
+PROPERTIES > MULTI SELECT - DROPDOWN
+******************
+******************
+******************
+******************/
+
+div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.min-w-80:not(div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.w-62, div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.max-h-70vh) {
+	width: 330px !important;
+	min-width: 30px !important;
+}
+
+
+
+div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div {
+	overflow-x: hidden;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh {
+	max-height: 93vh;
+
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary.bg-light-grey {
+	background: hsla(0, 0%, 50%, .1);
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex:first-child {
+	font-weight: 500;
+	color: var(--bldClr);
+
+}
+
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex:first-child + div[class*="gap"] {
+	gap: 2px;
+	margin-top: 2px;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex > .relative {
+	background: hsla(0, 0%, 50%, .075);
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	padding-right: 3px;
+	line-height: 1.4;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex > .relative:hover {
+	background: hsla(0, 0%, 50%, .2)
+}
+
+/*****************
+******************
+WHITEBOARD - CONTEXT MENU
+******************
+******************/
+#root ~ div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
+	width: 248px !important;
+}
+
+/*****************
+******************
+WHITEBOARD - CONTEXT MENU - TIDY
+******************
+******************/
+:root {
+	--whiteboardTidyAdjustWidth: 100px;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div {
+	position: relative;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:after,
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:before {
+	content: "";
+	display: block;
+	position: absolute;
+	background: transparent;
+	top: -150px;
+	height: 150px;
+	left: -10px;
+	right: -10px;
+	;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:after {
+	top: unset;
+	bottom: -150px;
+}
+
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:after,
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before {
+	content: "";
+	display: block;
+	position: absolute;
+	background: transparent;
+	top: -150px;
+	bottom: -150px;
+	left: -120px;
+	width: 120px;
+	z-index: 0;
+}
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before {
+	left: unset;
+	right: -120px;
+}
+
+/*****************
+******************
+TAGS DROPDOWN > MULTI SELECT
+******************
+******************/
+
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh {
+	max-height: 78vh;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1 {}
+
+
+/*option container*/
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1 > div:first-child {
+	width: 100%;
+	display: none;
+}
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1 > div.h-8 {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	height: unset;
+	margin: 0px;
+}
+
+
+/*****************
+******************
+PROPERTY > TEXT EDIT POPUP
+******************
+******************/
+
+
+/*****************
+******************
+TAGS > VIEW TABS
+******************
+******************/
+
+/*tab group*/
+[class*="window"] + .px-6 > div > div.flex.grow > div:first-child {
+	flex: 1;
+}
+[class*="window"] + .px-6 > div > div.flex.grow > div:first-child [aria-roledescription="sortable"] > [style*="max-width"] {
+	max-width: unset !important;
+}
+/*hide svg
+[class*="window"] + .px-6 > div > div.flex.grow > div:first-child [aria-roledescription="sortable"] svg[viewBox="0 0 14 14"]{
+		display: none;
+}*/
+
+/*more button*/
+[class*="window"] + .px-6 > div > div.flex.grow > [aria-roledescription="sortable"] {}
+
+/*****************
+******************
+SORT DROP DOWN
+******************
+******************/
+
+.queryBuilder > div.flex[class*="gap"] > div:first-child {
+	width: 250px;
+}

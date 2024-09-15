@@ -1,0 +1,439 @@
+/*****************
+******************
+******************
+******************
+! ROOT
+******************
+******************
+******************
+******************/
+:root {
+	/*arguments wrapper*/
+	--argwrapperGreenBgClr: hsl(120, 60%, 58%, 0.9);
+	--argwrapperGreenBrdClr: hsl(120, 100%, 36%);
+	--argwrapperRedBgClr: hsl(0, 80%, 60%);
+	--argwrapperRedBrdClr: hsl(0, 100%, 40%);
+	/*arguments*/
+	--argBrdClr: hsla(0, 0%, 0%, 1.0);
+	--argBgClr: hsla(0, 0%, 100%, 1.0);
+	--argToggleBrdClr: hsla(0, 0%, 0%, .15);
+	/*highlights*/
+	--argHlClr-Orange: hsl(34, 100%, 50%);
+	--argHlClr-Blue: hsl(211, 100%, 50%);
+	--argHlClr-Purple: hsl(275, 100%, 58%);
+	--argHlClr-Pink: hsl(300, 100%, 68%);
+	--argHlClr-Brown: hsl(0, 80%, 50%);
+	--argHlClr-Green: hsl(140, 100%, 30%);
+	/**/
+	--argStrikethroughBlockquoteBgClr: hsl(0, 0%, 97%);
+}
+[data-theme="dark"] {
+	/*arguments wrapper*/
+	--argwrapperGreenBgClr: hsl(120, 50%, 50%, 0.25);
+	--argwrapperGreenBrdClr: hsl(120, 50%, 50%, 0.95);
+	--argwrapperRedBgClr: hsl(0, 100%, 51%, .4);
+	--argwrapperRedBrdClr: hsl(0, 100%, 61%, 1);
+	/*arguments*/
+	--argBrdClr: hsla(0, 0%, 100%, 0.5);
+	--argBgClr: var(--whiteBoardTextElementBgClr-Black);
+	--argToggleBrdClr: hsla(0, 0%, 100%, .15);
+	/*highlights*/
+	--argHlClr-Orange: hsl(25, 100%, 50%);
+	--argHlClr-Blue: hsl(211, 100%, 50%);
+	--argHlClr-Purple: hsl(275, 100%, 58%);
+	--argHlClr-Pink: hsl(300, 100%, 68%);
+	--argHlClr-Brown: brown;
+	--argHlClr-Green: hsl(120, 100%, 30%);
+	--argStrikethroughBlockquoteBgClr: hsl(214, 7%, 17%);
+}
+
+/*****************
+******************
+******************
+******************
+! VIEW - WHITEBOARD - ARGUMENT MAPPING - WRAPPERS
+******************
+******************
+******************
+******************/
+
+
+/*BLUE text elements and BLUE cards - to - GREEN |||| REASONS - BECAUSE*/
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] {
+	--bg-blue-sect: var(--whiteBoardBoardBg) !important;
+	--bg-blue: var(--whiteBoardBoardBg) !important;
+	/*borders*/
+	--border-blue-sect: var(--border-green-sect) !important;
+	--mMapBrdClr: var(--border-green-sect) !important;
+	box-shadow: inset 0 0 0 0px var(--mMapBrdClr) !important;
+	background-image: linear-gradient(to top, transparent 10%, var(--argwrapperGreenBgClr) 100%) !important;
+	border-radius: var(--argWrapperBrdRad) !important;
+	--argwrapperBrdClr: var(--argwrapperGreenBrdClr);
+	position: relative;
+
+
+}
+
+
+/*PURPLE text elements and PURPLE cards - to - RED |||| OBJECTIONS - BUT*/
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] {
+	--bg-purple-sect: var(--whiteBoardBoardBg) !important;
+	--bg-purple: var(--whiteBoardBoardBg) !important;
+	/*borders*/
+	--border-purple-sect: var(--border-red-sect) !important;
+	--mMapBrdClr: var(--border-red-sect) !important;
+	box-shadow: inset 0 0 0 0px var(--mMapBrdClr) !important;
+	background-image: linear-gradient(to top, transparent 10%, var(--argwrapperRedBgClr) 100%) !important;
+	border-radius: var(--argWrapperBrdRad) !important;
+	--argwrapperBrdClr: var(--argwrapperRedBrdClr);
+	position: relative;
+}
+
+
+/*****************
+VIEW - WHITEBOARD - ARGUMENT MAPPING - WRAPPERS - FAKE BORDERS
+******************/
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"]:before,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"]:before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	border-radius: calc(var(--argWrapperBrdRad) - 2px);
+	border: var(--argWrapperBrdW) solid var(--argwrapperBrdClr);
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+	transition: .1s;
+
+}
+/*****************
+VIEW - WHITEBOARD - ARGUMENT MAPPING - WRAPPERS - ACTIVE
+******************/
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"].border-active,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"].border-active {
+	box-shadow: inset 0 0 0 2px var(--active-item) !important;
+}
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"].border-active:before,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"].border-active:before {
+	opacity: 0;
+}
+/*****************
+VIEW - WHITEBOARD - TABLES
+******************/
+
+
+
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] [data-node-type="table"],
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] [data-node-type="table"] {
+	margin-top: -9px !important;
+	margin-bottom: -8px !important;
+
+}
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] table,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table {
+	border-spacing: var(--argTableSpacing) !important;
+	border-collapse: collapse;
+	border: none !important;
+	margin-top: 8px;
+	margin-left: calc(var(--argTableSpacing) * -1.4) !important;
+	width: calc(100% + var(--argTableSpacing) * -0.8) !important;
+
+}
+:root {
+	--argTableSpacing: 8px;
+	--argTableCellPadTopBtm: 1px;
+	--argWrapperBrdRad: 12px;
+	--argWrapperBrdW: 1.5px
+}
+
+
+
+
+
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] table td,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table td {
+	box-shadow: none !important;
+	border-top: 0px !important;
+	border-bottom: 0px !important;
+	border-left: 0px !important;
+	border-right: 0px !important;
+	border: 1px solid var(--argBrdClr) !important;
+	border-radius: 8px !important;
+	/*
+		padding-top: var(--argTableCellPadTopBtm) !important;
+		padding-bottom: var(--argTableCellPadTopBtm) !important;
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+		*/
+
+}
+
+
+/**/
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] table [data-node-type],
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table [data-node-type] {
+	--tableBodyFontSize: var(--bodyFontSize) !important;
+	/**/
+	--tableBodyLineHeight: var(--bodyLineHeight) !important;
+	--bodyLineHeight: 1.45;
+	/* --listMargTopBtm:6px*/
+}
+
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] table td,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table td {
+	background-color: var(--argBgClr) !important;
+}
+
+/*****************
+TABLE CELL BACKGROUND - HEADER ROW
+******************/
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] table td[data-background-color="gray"],
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] table td[data-background-color="gray"] {
+	background-color: var(--light-grey) !important;
+}
+/*****************
+TABLE CELL BACKGROUND - HEADER ROW
+******************/
+
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child td,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child td {
+	background-color: var(--light-grey) !important;
+
+}
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child [data-node-type] *,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] .ProseMirror ._hasRowHeader_7b1uz_8 > div > table > tbody > tr:first-child [data-node-type] * {
+	font-size: 13px !important;
+	font-weight: 400;
+}
+
+/*NESTED TABLES*/
+#root [data-object-type="textElement"] > [style*="--bg-green-sect"] [class*="nested"] table,
+#root [data-object-type="textElement"] > [style*="--bg-red-sect"] [class*="nested"] table {
+	margin-left: calc(var(--argTableSpacing) * -2 + 1px) !important;
+	width: calc(100% + var(--argTableSpacing) * 2 + -1px) !important;
+}
+
+.fixed.z-dropdown-menu div:not(.hepta-menu-item) [style*="--palette-orange"][class*="active"],
+.fixed.z-dropdown-menu div:not(.hepta-menu-item) [style*="background-color: var(--palette-blue)"][class*="active"],
+.fixed.z-dropdown-menu div:not(.hepta-menu-item) [style*="background-color: var(--palette-purple)"][class*="active"] {
+	outline: 2px solid var(--active-item);
+}
+
+
+
+
+
+
+/*****************
+******************
+******************
+******************
+HIGHLIGHTS
+******************
+******************
+******************
+******************/
+:root {
+	--argHlBrdW: 2px;
+	--argHlPadLeftRight: calc(var(--argHlBrdW) * .5);
+	--argHlBrdRad: 5px;
+
+}
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-orange-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-orange"],
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-blue-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-blue"],
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-purple-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-purple"],
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-pink-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-pink"],
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-brown-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-brown"],
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-green-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-green"] {
+	border-radius: var(--argHlBrdRad);
+	border: var(--argHlBrdW) solid var(--argHlClr) !important;
+	padding: 0px !important;
+	box-shadow: none !important;
+	margin-left: calc(var(--argHlBrdW) * -1 + var(--argHlPadLeftRight) * -1);
+	margin-right: calc(var(--argHlBrdW) * -1 + var(--argHlPadLeftRight) * -1);
+	padding-left: var(--argHlPadLeftRight) !important;
+	padding-right: var(--argHlPadLeftRight) !important;
+	outline-offset: 0px;
+	background: transparent !important;
+	fill: transparent;
+	display: inline;
+
+
+}
+/*menu only*/
+.text-label-mini + div > svg > rect[fill*="orange"],
+.text-label-mini + div > svg > rect[fill*="blue"],
+.text-label-mini + div > svg > rect[fill*="purple"],
+.text-label-mini + div > svg > rect[fill*="pink"],
+.text-label-mini + div > svg > rect[fill*="brown"],
+.text-label-mini + div > svg > rect[fill*="green"] {
+	outline-offset: 0px !important;
+	background: transparent !important;
+	stroke: var(--argHlClr);
+	stroke-width: 2px;
+
+	outline: none !important;
+}
+
+/*****************
+MENU - HIGHLIGHTS
+******************/
+
+/*ORANGE*/
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-orange-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-orange"] {
+	--argHlClr: var(--argHlClr-Orange)
+}
+/*BLUE*/
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-blue-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-blue"] {
+	--argHlClr: var(--argHlClr-Blue)
+}
+/*PURPLE*/
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-purple-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-purple"] {
+	--argHlClr: var(--argHlClr-Purple)
+}
+/*PINK*/
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-pink-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-pink"] {
+	--argHlClr: var(--argHlClr-Pink)
+}
+
+/*BROWN*/
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-brown-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-brown"] {
+	--argHlClr: var(--argHlClr-Brown)
+}
+
+/*GREEN*/
+/*highlight*/
+.ProseMirror span[data-color][data-type="background"][style*="var(--bg-green-editor)"],
+/*menu*/
+.text-label-mini + div > svg > rect[fill*="--bg-green"] {
+	--argHlClr: var(--argHlClr-Green)
+}
+
+
+/*****************
+TEXT ELEMENT - HIGHLIGHTS - INSIDE STRIKETHROUGH
+******************/
+:root {
+	--argStrikethroughBgClr: var(--background-editor-primary);
+}
+#root .ProseMirror s,
+#root ~ .p-12.hepta-scrim .ProseMirror s,
+#root .ProseMirror s *,
+#root ~ .p-12.hepta-scrim .ProseMirror s * {
+	z-index: 9494 !important;
+	background: var(--argStrikethroughBgClr) !important;
+	border-right-color: var(--argStrikethroughBgClr) !important;
+	position: relative;
+}
+#root .ProseMirror [data-type="background"] + s > [data-type="background"],
+#root ~ .p-12.hepta-scrim .ProseMirror [data-type="background"] + s > [data-type="background"] {
+
+	border-radius: calc(var(--argHlBrdRad) * .5);
+	border-left-color: transparent !important;
+}
+#root s > [data-type="background"],
+#root ~ .p-12.hepta-scrim s > [data-type="background"] {
+	border-radius: 0px !important;
+	border-left-width: 0px !important;
+	padding-left: 3px !important;
+	border-right-width: 0px !important;
+	padding-right: 3px !important;
+}
+#root .ProseMirror s,
+#root ~ .p-12.hepta-scrim .ProseMirror s {
+	background: var(--argStrikethroughBgClr);
+}
+/*
+#root .ProseMirror s + [data-type="background"] {
+		background: var(--argStrikethroughBgClr) !important;
+		border-top-left-radius: 2px !important;
+		border-bottom-left-radius: 2px !important;
+		border-left-color: transparent !important;
+}*/
+
+#root .ProseMirror [data-node-type="blockquote"],
+#root ~ .p-12.hepta-scrim .ProseMirror [data-node-type="blockquote"] {
+	--argStrikethroughBgClr: var(--argStrikethroughBlockquoteBgClr);
+}
+
+
+
+/*****************
+TEXT ELEMENT - NODE SEPARATORS
+******************/
+
+[data-object-type="textElement"] > [style*="--bg-purple-sect"] > div > .ProseMirror [data-node-type="table"] [data-node-type]:before,
+[data-object-type="textElement"] > [style*="--bg-blue-sect"] > div > .ProseMirror [data-node-type="table"] td [data-node-type]:before {
+	opacity: 1;
+}
+[data-object-type="textElement"] > [style*="--bg-purple-sect"] > div > .ProseMirror [data-node-type="table"] td [data-node-type]:last-of-type:before,
+[data-object-type="textElement"] > [style*="--bg-blue-sect"] > div > .ProseMirror [data-node-type="table"] td [data-node-type]:last-of-type:before {
+	opacity: 0;
+}
+
+
+
+/*****************
+******************
+******************
+******************
+! VIEW - WHITEBOARD - ARGUMENT MAPPING - CONNECTIONS
+******************
+******************
+******************
+******************/
+[data-object-type="connection"] path[stroke*="green"] {
+	--border-green-sect: var(--argwrapperGreenBrdClr);
+	stroke-width: 2;
+}
+[data-object-type="connection"] path[stroke*="red"] {
+	--border-red-sect: var(--argwrapperRedBrdClr);
+	stroke-width: 2;
+}
+
+/*****************
+******************
+******************
+******************
+! VIEW - WHITEBOARD - ARGUMENT MAPPING - ICONS
+******************
+******************
+******************
+******************/
+:root {
+	--argConnectorGreen-Dark: url('data:image/svg+xml;utf8,<svg width="67" height="87" viewBox="0 0 67 87" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M31.0357 33.3694C30.2602 51.0862 27.0357 76.9415 16.0357 76.9415H1V85.9402H66V76.9415H51.0357C40.0357 76.9415 36.8111 51.0862 36.0357 33.3694C35.5922 23.2372 35.5357 13.0862 35.5357 2.94531H44.0357V1.44531H23.0357V2.94531H31.5357C31.5357 13.0862 31.4791 23.2372 31.0357 33.3694Z" fill="%232A4C2A" stroke="%2342BA40"/></svg>');
+}

@@ -1,0 +1,56 @@
+/*****************
+******************
+******************
+WHITEBOARD SECTIONS (MINIMAL)
+******************
+******************
+******************/
+[data-is-section-title="true"]{
+max-width:unset !important;
+}
+[data-is-section-title="true"] > input {
+
+		text-overflow: unset;
+}
+
+
+[data-object-type="section"] > div > .relative[style*="--border-white-sect"]{
+		background: transparent !important;
+		box-shadow: 0 0 0 2px hsla(0,0%,50%,0.25)!important;
+}
+/*************
+WHITEBOARD > SECTION TITLES > BACKGROUNDS
+**************/
+
+
+#root [data-object-type="section"]>div>div[style*="--bg-white"]+[data-is-section-title] {
+background: var(--whiteBoardBoardBg) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-red"]+[data-is-section-title] {
+	background: var(--bg-red-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-orange"]+[data-is-section-title] {
+	background: var(--bg-orange-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-yellow"]+[data-is-section-title] {
+	background: var(--bg-yellow-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-green"]+[data-is-section-title] {
+	background: var(--bg-green-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-blue"]+[data-is-section-title] {
+	background: var(--bg-blue-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-purple"]+[data-is-section-title] {
+	background: var(--bg-purple-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-black"]+[data-is-section-title] {
+	background: var(--bg-black-sect) !important;
+}
