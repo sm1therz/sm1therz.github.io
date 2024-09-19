@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Start.me - Textarea Height Fix for start.me
+// @name         Start.me - Textarea Height Fix
 // @namespace    http://tampermonkey.net/
 // @version      0.5
 // @description  Fix textarea heights on start.me
@@ -16,7 +16,7 @@
 				textarea.style.height = `${textarea.scrollHeight + 1}px`; // Set to content height with 1px buffer
 		};
 
-		const textareas = document.querySelectorAll('.todo-item__container textarea');
+		const textareas = document.querySelectorAll('.widget__description textarea');
 		textareas.forEach(textarea => {
 				adjustHeight(textarea); // Initial adjustment
 				textarea.addEventListener('input', () => adjustHeight(textarea)); // Adjust on input
@@ -24,7 +24,7 @@
 
 		// Mutation observer to catch dynamically added textareas
 		const observer = new MutationObserver(() => {
-				const newTextareas = document.querySelectorAll('.todo-item__container textarea');
+				const newTextareas = document.querySelectorAll('.widget__description textarea');
 				newTextareas.forEach(textarea => adjustHeight(textarea));
 		});
 
@@ -32,7 +32,7 @@
 
 		// Wait for the DOM to load
 		document.addEventListener('DOMContentLoaded', () => {
-				const textareasOnLoad = document.querySelectorAll('.todo-item__container textarea');
+				const textareasOnLoad = document.querySelectorAll('.widget__description textarea');
 				textareasOnLoad.forEach(textarea => adjustHeight(textarea));
 		});
 })();
