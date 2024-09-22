@@ -21,11 +21,7 @@
 	}
 	// Call injectCSS() to trigger the CSS injection with a one-second delay for the last script
 	setTimeout(function() {
-		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/HeptabaseV7.css');
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/HeptabaseV8.css');
 	}, 3000);
-
-	setTimeout(function() {
-		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/HeptabaseV7-Right-Sidebar-2.css');
-	}, 3500);
 
 })();
