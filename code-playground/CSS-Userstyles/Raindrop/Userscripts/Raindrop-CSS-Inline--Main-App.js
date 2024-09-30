@@ -11,6 +11,8 @@
   let style = `<style>
   
 
+
+
   
   /********
   *********
@@ -575,13 +577,7 @@
   :root {
       --highlightPadTopBtm:1px;
   }
-  .masonry-Z6Qr .text-jxj0:before {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    border-radius: 0px;
-    border-right: 1px solid var(--color--blk--05-percent);
-  }
+  
   
   .highlights-gNLm .text-jxj0:before {
     width: 2px;
@@ -1671,6 +1667,7 @@
   :root {
       --iconCloseButton: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.9999 14.5859L3.27188 1.85791L1.85767 3.27212L14.5857 16.0002L1.85782 28.728L3.27203 30.1422L15.9999 17.4144L28.7277 30.1422L30.1419 28.728L17.4141 16.0002L30.1421 3.27218L28.7279 1.85797L15.9999 14.5859Z" fill="%23cacbce"/></svg>');
   }
+
   
 </style>`;
 

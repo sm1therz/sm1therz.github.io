@@ -563,13 +563,7 @@ HIDE SHOW OPTIONS
 :root {
 		--highlightPadTopBtm:1px;
 }
-.masonry-Z6Qr .text-jxj0:before {
-	top: 0;
-	left: 0;
-	bottom: 0;
-	border-radius: 0px;
-	border-right: 1px solid var(--color--blk--05-percent);
-}
+
 
 .highlights-gNLm .text-jxj0:before {
 	width: 2px;
