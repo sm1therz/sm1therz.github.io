@@ -17,6 +17,8 @@
   img {
       max-width: 100%;
       margin: 0 auto;
+  }
+  body > img {
       box-shadow: 0 0 0 400px hsla(0,0%,10%);
   }
   
