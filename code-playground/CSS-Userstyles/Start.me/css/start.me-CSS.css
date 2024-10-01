@@ -392,6 +392,7 @@ BOOKMARK GROUPS
 :root {
 		--groupGap:6px;
 		--groupHeaderHeight:34px;
+		--bookmarkWidgetContentMargTop:4px;
 }
 .bookmark-widget__folders{
 		margin: 0px !important;
@@ -404,6 +405,10 @@ BOOKMARK GROUPS
 
 }
 
+
+.bookmark-widget__folders{
+		margin-top: calc(var(--bookmarkWidgetContentMargTop) * -1) !important
+}
 .bookmark-widget__folders,
 .bookmark-folder{
 		display: flex;
@@ -440,6 +445,16 @@ BOOKMARK GROUPS
 .bookmark-folder__head{
 		border-bottom: 1px solid hsla(0,0%,50%,.075) !important;
 		height: 26px;
+}
+.bookmark-widget__folders .bookmark-widget__folder:first-child {
+		box-shadow:inset 0 1px 0 0 hsla(0,0%,50%,.00) !important;
+
+}
+.bookmark-widget__folders .bookmark-widget__folder:last-child .bookmark-folder__head{
+		border-bottom-width: 1px !important;
+}
+.bookmark-widget .widget__container[style*=", 0)"] .bookmark-widget__folders .bookmark-widget__folder:last-child .bookmark-folder__head{
+		border-bottom-width: 1px !important;
 }
 .bookmark-folder__title{
 		display: flex;
@@ -606,7 +621,7 @@ html .widget_collapsed .widget__box{
 
 .bookmark-widget .widget__body{
 margin: 6px 16px 16px !important;
-		margin-top: 4px !important
+		margin-top: var(--bookmarkWidgetContentMargTop) !important
 }
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_icon ul{
 		display: flex !important;
