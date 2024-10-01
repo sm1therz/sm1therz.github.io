@@ -1490,7 +1490,7 @@ li.todo-item.todo-item_wrapped .todo-item__container .todo-item__delete {
 		padding: var(--testpadLR) !important;
 		*/
 }
-li.todo-item:hover .todo-item__container .todo-item__delete,
+li.todo-item:hover .todo-item__container .todo-item__delete, 
 li.todo-item.todo-item_wrapped:hover .todo-item__container .todo-item__delete {
 		opacity: 1 !important;
 }
