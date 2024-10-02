@@ -1133,11 +1133,16 @@ html .widget__description *{
 /*.notes-widget,
 #appID .notes-widget-wrapper,
 #appID .notes-widget-wrapper .widget__body,
-#appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body,
-#appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget,*/
+#appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body,*/
+#appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget,
 #appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget textarea.notes-widget__textarea {
     line-height: var(--bodyLineHeight) !important;
 }
+
+#appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget textarea.notes-widget__textarea{
+margin-top:5px !important;
+}
+
 /*HR*/
 #appID .notes-widget hr{
     height:.5px !important;
