@@ -1,4 +1,4 @@
-
+    
 
 
 
@@ -959,7 +959,7 @@ NOTES
 ************/
 
 /*
-.notes-widget{
+.notes-widget {
         --bodyFontSize: 14.25px !important;
     --bodyLineHeight: 18px !important;
 }*/
@@ -1080,7 +1080,7 @@ html .notes-widget-wrapper__tabs-list{
 
 
 
-.widget__description{
+#appID .widget__description{
     transition: opacity 1s !important;
     border: none !important;
     opacity: 0.65 !important;
@@ -1126,6 +1126,17 @@ html .widget__description *{
 }
 .widget__description textarea::empty{
     display: none !important;
+}
+
+
+/*NOTES - MARKDOWN MODE*/
+/*.notes-widget,
+#appID .notes-widget-wrapper,
+#appID .notes-widget-wrapper .widget__body,
+#appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body,
+#appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget,*/
+#appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget textarea.notes-widget__textarea {
+    line-height: var(--bodyLineHeight) !important;
 }
 /*HR*/
 #appID .notes-widget hr{
@@ -1377,8 +1388,8 @@ NOTES - TABS - VERTICAL
     box-shadow: 
         0px -1px 0 0 hsla(0, 0%, 50%, 0.125),
          inset 0px -1px 0 0 hsla(0, 0%, 50%, 0.125)!important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
 }
 
 .notes-widget-wrapper .widget__container .notes-widget-wrapper__tabs-list li .custom-tab,
