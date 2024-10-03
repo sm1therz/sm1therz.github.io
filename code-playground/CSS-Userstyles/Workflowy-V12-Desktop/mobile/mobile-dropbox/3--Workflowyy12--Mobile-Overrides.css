@@ -911,6 +911,10 @@ min-width:100px !important;
 padding-bottom:0px !important;
 }
 
+/*keyboard close button*/
+.mobileControls > div[style*="env(safe-area-inset-bottom"] {
+padding:0px !important;
+}
 
 /*******************************
 ********************************
