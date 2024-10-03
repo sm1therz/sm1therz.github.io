@@ -502,6 +502,7 @@ main [class*="simple-"]{
 }
 .about-X3Q4 .description-G1ZJ [class*="note"]{
 		order: 2;
+		-webkit-line-clamp:30 !important;
 }
 
 #react [class*="about"] > div.info-drai{
