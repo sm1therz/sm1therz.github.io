@@ -937,13 +937,13 @@ justify-content:space-between !important;
 
 /*BUTTONS*/
 #app .project > .name > .expand + div + div > div {
-min-width:25vw !important;
-max-width:25vw !important;
-width:25vw !important;
+min-width:20vw !important;
+max-width:20vw !important;
+width:20vw !important;
 display:flex !important;
 align-items:center;
 justify-content:center;
-
+height:100% !important;
 position:relative !important;
 top:unset !important;
 left:unset !important;
