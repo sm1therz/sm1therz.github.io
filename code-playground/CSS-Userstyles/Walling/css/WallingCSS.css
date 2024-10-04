@@ -1,0 +1,48 @@
+<style>
+/*nre file bytton*/
+
+div.newbrick.preventSelectDrag.preventHideViewOptions{
+right: 10px !important;;;
+right: 10px !important;;;
+}
+
+/*BRICK*/
+:root {
+--brickPadTopBtm:10px !important
+}
+.grid-component[class*="cols"] .brick-container > .brick {
+padding-top:var(--brickPadTopBtm) !important;
+padding-padding-bottom:var(--brickPadTopBtm) !important;
+}
+/*BRICK -  HOVER - DOT MENU*/
+#gridsContainer .objects li img.item-options,
+#gridsContainer .objects li img.object-options,
+#gridsContainer .objects li img.object-handle {
+opacity:0 !important; 
+
+}
+/*BRICK > HOVER > DOT MENU*/
+#gridsContainer .objects li.object:hover img.item-options,
+#gridsContainer .objects li.object:hover img.object-options,
+#gridsContainer .objects li.object:hover img.object-handle {
+opacity:.1 !important; 
+
+}
+
+/*BRICK > HOVER > DOT MENU > HOVER*/
+#gridsContainer .objects li.object:hover img.object-options:hover,
+#gridsContainer .objects li.object:hover img.object-handle:hover {
+opacity:.9 !important; 
+
+}
+
+
+/*SECTIONS - COLUMNS - MAX WIDTH*/
+
+.grid-component[class*="cols"] .grid-content, 
+.grid-component[class*="cols"] .grid-container, 
+.grid-component[class*="cols"] .visual-grid{
+
+}
+
+</style>
