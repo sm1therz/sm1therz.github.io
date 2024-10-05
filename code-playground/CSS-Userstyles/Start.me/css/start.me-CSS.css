@@ -1,8 +1,6 @@
-    
-
-
-
-/*root*/
+/***********
+! ROOT
+************/
 :root {
     --sectionMaxWidth: 740px;
     --sectionPadLeftRight: 20px;
@@ -50,9 +48,10 @@ span.notes-widget__result * {
 }
 
 
+
 /***********
 ************
-GOOGLE SEARCH
+! GOOGLE SEARCH
 ************
 ************/
 .search {
@@ -145,7 +144,7 @@ MOBILE
 
 /***********
 ************
-NAV
+! NAV
 ************
 ************/
 
@@ -217,7 +216,7 @@ NAV
 
 /***********
 ************
-COLUMNS
+! COLUMNS
 ************
 ************/
 /***********
@@ -317,7 +316,7 @@ html .page-section {
 
 /***********
 ************
-MAIN APP
+! MAIN APP
 ************
 ************/
 
@@ -951,10 +950,10 @@ BOOKMARK SECTION TYPE - LIST
 .page-footer {
     display: none !important;
 }
-
+ 
 /***********
 ************
-NOTES
+! NOTES
 ************
 ************/
 
@@ -1104,7 +1103,7 @@ html .widget__description *{
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
     margin-top: 0px !important;
-    font-size: calc(var(--bodyFontSize) - 0px) !important;
+    font-size: calc(var(--bodyFontSize) + .5px) !important;
     line-height: calc(var(--bodyLineHeight) - 1px) !important;
     white-space: initial !important;
     overflow-wrap: unset !important;
@@ -1113,6 +1112,20 @@ html .widget__description *{
     text-align: left !important;
     font-family: sans-serif !important
 }
+
+#appID .widget__description h1,
+#appID .widget__description h2,
+#appID .widget__description h3,
+#appID .widget__description h4,
+#appID .widget__description h5,
+#appID .widget__description h6 {
+font-weight:500!important;
+    line-height: calc(var(--bodyLineHeight) - 1px) !important;
+-webkit-font-smoothing:subpixel-antialiased !important;
+}
+
+
+
 .widget__description textarea {
     margin-bottom: -4.5px !important;
 }
@@ -1334,7 +1347,7 @@ NOTES - FORMATTING
 **********
 **********
 **********
-NOTES - TABS - VERTICAL
+! NOTES - TABS - VERTICAL
 **********
 **********
 **********
