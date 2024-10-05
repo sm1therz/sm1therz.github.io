@@ -1,11 +1,14 @@
-/***********
+/*****
 ! ROOT
-************/
+*/
 :root {
     --sectionMaxWidth: 740px;
     --sectionPadLeftRight: 20px;
     --widgetHeaderHeight: 38px;
     --notesPadTopBtm: 23px;
+    --notesMargLeft:12px;
+    --notesPadLeft:2px;
+    --notesEditorMargLeft:calc(var(--notesMargLeft) - var(--notesPadLeft));
     /*bookmarks*/
     --bookmarksIconsGap: 20px;
     --bookmarkLinkBrdRad: 17px;
@@ -25,6 +28,14 @@
     /*mobile size*/
 }
 
+:root{
+    --bldClr:black;
+}
+.widget_theme_dark {
+    --bldClr:hsl(0, 0%, 97%);
+    color: hsla(0, 0%, 100%, 0.90);
+}
+
 /*testing
 html .page-section *{
     outline: 1px solid red;
@@ -39,14 +50,6 @@ span.notes-widget__result * {
     outline: .1px solid hsla(0, 100%, 50%, 1);
 }
 */
-:root{
-    --bldClr:black;
-}
-.widget_theme_dark {
-    --bldClr:hsl(0, 0%, 97%);
-    color: hsla(0, 0%, 100%, 0.90);
-}
-
 
 
 /***********
@@ -995,6 +998,7 @@ BOOKMARK SECTION TYPE - LIST
     height: var(--notesPadTopBtm) !important;
     padding: 0px !important;
     padding-left: 9px !important;
+    margin:0px;
 }
 .notes-widget__controls a {
     min-height: unset;
@@ -1205,6 +1209,7 @@ margin-top:5px !important;
 .custom-tab__name{
     padding-bottom: 0px !important;
     border:none !important;
+    margin: 0px !important
 }
 /*EDIT TAB TITLE - CONTAINER*/
 .notes-widget-wrapper__tabs-changer,
@@ -1234,6 +1239,19 @@ margin-top:5px !important;
     -webkit-font-smoothing:subpixel-antialiased !important;
     font-weight: 400;
 
+}
+#appID .notes-widget > .notes-widget__result,
+#appID .notes-widget > .wysiwyg-editor,
+#appID .notes-widget > textarea.notes-widget__textarea{
+    padding-left:var(--notesPadLeft) !important;
+    margin-left: var(--notesEditorMargLeft) !important;
+    min-height: unset !important;
+}
+.notes-widget .wysiwyg-editor__input-wrapper,
+.notes-widget .wysiwyg-editor__input{
+    margin: 0px !important;
+    padding: 0px;
+    min-height: unset !important;
 }
 
 /*******
@@ -1339,7 +1357,6 @@ NOTES - FORMATTING
 .app__main-layout_shadowed{
     background: transparent;
 }
-
 
 
 
@@ -1652,7 +1669,59 @@ li.todo-item.todo-item_wrapped .todo-item__container .todo-item__delete {
     transition: .15s !important;
     box-shadow:inset 0 0 0 1px hsla(0,0%,50%,0);
 
-    /*************************
+    /*
+  /*****
+  ! ROOT
+  */
+  :root {
+      --sectionMaxWidth: 740px;
+      --sectionPadLeftRight: 20px;
+      --widgetHeaderHeight: 38px;
+      --notesPadTopBtm: 23px;
+      --notesMargLeft:12px;
+      --notesPadLeft:2px;
+      --notesEditorMargLeft:calc(var(--notesMargLeft) - var(--notesPadLeft));
+      /*bookmarks*/
+      --bookmarksIconsGap: 20px;
+      --bookmarkLinkBrdRad: 17px;
+      --bookmarkThumbnailWidth: 90px;
+      --bookmarkThumbnailMargTopBtm: 4px;
+      /*font-sizes*/
+      --bodyFontSize: 14px;
+      --bodyLineHeight: 20px;
+      /*notes*/
+      --noteParagraphMargTopBtm: 0.35rem;
+      --noteListItemPadLeft:21px;
+      /*tasks*/
+      --todoitemMinHeight: 22px;
+      --todoitemMargTopBtm: 6px;
+      --checkboxWidth: 13px;
+      --todoitempadRight: 20px;
+      /*mobile size*/
+  }
+  
+  :root{
+      --bldClr:black;
+  }
+  .widget_theme_dark {
+      --bldClr:hsl(0, 0%, 97%);
+      color: hsla(0, 0%, 100%, 0.90);
+  }
+  
+  /*testing
+  html .page-section *{
+      outline: 1px solid red;
+      outline-offset: -1px;
+  }
+  
+  .widget__container,
+  .widget__container * {
+      outline: .1px solid hsla(0, 100%, 50%, 1);
+  }
+  span.notes-widget__result * {
+      outline: .1px solid hsla(0, 100%, 50%, 1);
+  }
+  */************************
     border: var(--testBrdWidth) solid turquoise;
     padding: var(--testpadLR) !important;
     */
