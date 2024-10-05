@@ -1,48 +1,792 @@
-<style>
-/*nre file bytton*/
+/************
+ROOT
+*************/
 
-div.newbrick.preventSelectDrag.preventHideViewOptions{
-right: 10px !important;
-bottom: 10px !important;
-}
-
-/*BRICK*/
 :root {
---brickPadTopBtm:10px !important
+	/*font sizes*/
+	--bodyFontSize: ;
+	--bodyLineHeight: 20px;
+	/*margins and padding*/
+	--itemMargTopBtm: 7px;
+	--brickPadTopBtm: 10px;
+	--brickNavHeight: 40px;
+	/*buttons*/
+	--brickBtnW: 24px;
+	--brickCollapseBtnW: 27px;
+	--brickCollapseBtnSize: 60%;
+	--brickBtnBrdRad: 4px;
+	/*item pad*/
+	--brickItemPadLeft: 16px;
+	--brickItemPadRight: 24px;
+	/*tags*/
+	--bricktagFontSize: 13px;
+	--bricktagGap: 5px;
+	--bricktagHeight: 20px;
+	/*lists*/
+	--listbulletWidth: 18px;
+	--listbulletMargRight: 4px;
+	--listbulletBgClr: hsla(0, 0%, 50%, .3);
 }
-.grid-component[class*="cols"] .brick-container > .brick {
-padding-top:var(--brickPadTopBtm) !important;
-padding-padding-bottom:var(--brickPadTopBtm) !important;
-}
-/*BRICK -  HOVER - DOT MENU*/
-#gridsContainer .objects li img.item-options,
-#gridsContainer .objects li img.object-options,
-#gridsContainer .objects li img.object-handle {
-opacity:0 !important; 
+
+/************
+COLORS
+*************/
+
+:root {
+	--bodyClr: hsla(0, 0, 0%);
+	--bldClr: black;
+	--todoCheckBoxBgClr: hsla(0, 0%, 0%, 0.1);
+	--todoCheckBoxBgClr-Checked: hsla(0, 0%, 0%, 0.1);
+	--todoCheckBoxBrdClr: hsla(0, 0%, 10%, 0.6);
+	/*tag*/
+	--tagBrdClr: hsla(0, 0%, 0%, 0.2);
+	--tagBgClr: hsla(0, 0%, 0%, 0.1);
 
 }
-/*BRICK > HOVER > DOT MENU*/
-#gridsContainer .objects li.object:hover img.item-options,
-#gridsContainer .objects li.object:hover img.object-options,
-#gridsContainer .objects li.object:hover img.object-handle {
-opacity:.1 !important; 
+.darkBrick {
+	--bodyClr: hsla(0, 0, 95%);
+	--bldClr: hsla(0, 0%, 100%);
+	--todoCheckBoxBgClr: hsl(122, 0%, 0%, .15);
+	--todoCheckBoxBgClr-Checked: hsl(122, 0%, 11%);
+	--todoCheckBoxBrdClr: hsl(122, 0%, 31%);
+	/*tag*/
+	--tagBrdClr: hsl(122, 0%, 29%);
+	--tagBgClr: hsl(122, 0%, 0%, 0.15);
+	;
+
 
 }
 
-/*BRICK > HOVER > DOT MENU > HOVER*/
-#gridsContainer .objects li.object:hover img.object-options:hover,
-#gridsContainer .objects li.object:hover img.object-handle:hover {
-opacity:.9 !important; 
-
+/************
+TESTING
+*************/
+.grid-component,
+.grid-title,
+.grid-content,
+.grid-container,
+.brick,
+.brick > .brick-top-handle,
+.brick > .brick-top-buttons,
+.brick > .brick-tags,
+.brick > div,
+.objects,
+.objects > li,
+.objects > li > div,
+.objects li img,
+li.listitem,
+.brick-list .text,
+.brick .brick-list li .listitem-container:before {
+	outline: .5px solid hsla(0, 100%, 50%, 0) !important;
 }
+
+
+
+/************
+SECTIONS
+*************/
+
 
 
 /*SECTIONS - COLUMNS - MAX WIDTH*/
 
-.grid-component[class*="cols"] .grid-content, 
-.grid-component[class*="cols"] .grid-container, 
-.grid-component[class*="cols"] .visual-grid{
+
+.grid-component[class*="cols"] .grid-container,
+.grid-component[class*="cols"] .visual-grid {
+	max-width: 100%;
+}
+
+
+
+/*OVERRIDES*/
+.brick-settings.brick-handle.brickDraggableArea {}
+
+
+/*new file button*/
+#app div.newbrick.preventSelectDrag.preventHideViewOptions {
+	right: 0px !important;
+
+}
+#app div.newbrick.preventSelectDrag.preventHideViewOptions:hover button {
+	transform: scale(1)
+}
+#app div.newbrick.preventSelectDrag.preventHideViewOptions button {
+	right: 10px !important;
+	transition: 190ms cubic-bezier(.2, 1.5, 0, .95);
+	transform: scale(.7);
+}
+
+/************
+BRICKS
+*************/
+
+
+/*BRICK*/
+
+.brick {
+	padding-top: var(--brickPadTopBtm) !important;
+	padding-bottom: var(--brickPadTopBtm) !important;
+	display: flex;
+	flex-direction: column;
+}
+
+.brick .brick-content .uncollapse {
+	display: none;
+}
+.brick.collapsed {
+	overflow: hidden;
+}
+
+/************
+BRICK - HEADERS
+*************/
+
+.brick > .brick-top-buttons,
+.brick > .brick-tags {}
+
+
+/*EXPAND COLLAPSE CONTAINER*/
+.brick > .brick-top-buttons {
+	top: 4px;
+	right: 4px;
+	height: var(--brickCollapseBtnW) !important;
+	width: unset !important;
+	z-index: 94949494 !important
+}
+
+
+.brick > .brick-top-buttons .collapseBrickBtn {
+	padding: 0px !important;
+	width: var(--brickCollapseBtnW) !important;
+	height: var(--brickCollapseBtnW) !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0px;
+	z-index: 9494949494 !important;
+	opacity: 0;
+}
+#app .brick > .brick-top-buttons .collapseBrickBtn {}
+/*EXPAND / COLLAPSE - DUMMY CHEVRON*/
+
+/*dummy icon*/
+.brick > .brick-top-buttons:before,
+.brick > .brick-top-buttons:after {
+	content: "";
+	position: absolute;
+	width: var(--brickCollapseBtnW);
+	height: var(--brickCollapseBtnW);
+	background-image: var(--iconChevron);
+	background-color: transparent !important;
+	background-size: 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transition: .2s;
+	transform: rotate(180deg);
+	border-radius: 5px !important;
+	z-index: 2;
+}
+.brick.collapsed > .brick-top-buttons:before {
+	transform: rotate(0deg);
+
+}
+/*dummy background*/
+.brick > .brick-top-buttons:after {
+	background-image: none !important;
+	background-color: hsla(0, 0%, 50%, 0.0) !important;
+	backdrop-filter: blur(10px);
+	z-index: 1
+}
+
+.brick.collapsed > .brick-top-buttons:after {
+	background-color: hsla(0, 0%, 50%, 0.15) !important;
+}
+.brick > .brick-top-buttons:hover:after {
+	background-color: hsla(0, 0%, 50%, 0.3) !important;
+}
+
+/*BRICK CONTENT*/
+.brick > .brick-content {
+	order: 0;
+}
+/*TAG CONTAINER*/
+#app .brick > .brick-tags {
+	order: 3;
+	min-height: 27px !important;
+	margin: unset !important;
+	padding: unset !important;
+	padding-left: var(--brickItemPadLeft) !important;
+	padding-right: var(--brickItemPadLeft) !important;
+	padding-bottom: 2px !important;
+	width: 100% !important;
+	display: flex !important;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	float: unset;
+	max-width: 100% !important;
+	z-index: 12;
+	gap: var(--bricktagGap) !important;
+	margin-top: 18px !important;
+	padding-top: 3px !important;
+}
+#app .brick > .brick-tags.noTags {
+	margin-top: 8px !important;
+
+}
+.brick.collapsed .brick-tags {
+	display: none !important;
+}
+.brick > .brick-tags li.brick-tag,
+.brick > .brick-tags .addtag-btn img,
+.brick .setting-button {
+	margin: 0px !important;
+	height: unset !important;
+	order: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3px 9px;
+	border-radius: 100px !important;
+	height: unset !important;
+	border: unset !important;
+	float: unset !important;
+	font-size: var(--bricktagFontSize);
+	line-height: 1.2 !important
+}
+.brick > .brick-tags li.brick-tag.colorless {
+	box-shadow: inset 0 0 0 1px var(--tagBrdClr);
+	background: var(--tagBgClr)
+}
+.brick > .brick-tags li.brick-tag span {
+	float: unset;
+	font-size: unset;
+	line-height: unset !important;
+	margin-top: 0px;
+}
+.brick > .brick-tags li.brick-tag input {
+	padding: 0px !important;
+	font-size: 0.7rem !important;
+}
+.brick > .brick-tags li.brick-tag .remove-tag {
+	opacity: 0;
+	background: hsla(0, 0%, 0%, 0.3) !important;
+	z-index: 949494 !important;
+	top: 1px;
+	right: 1px;
+	bottom: 1px !important;
+	height: calc(100% - 2px) !important;
+	width: 20px;
+	padding: 3px 4px;
+	backdrop-filter: blur(10px) !important;
+	transform: unset !important;
+	border-radius: 100%;
+	--brickBtnBrdRad: 100px;
+}
+.brick > .brick-tags li.brick-tag:hover .remove-tag {
+	opacity: 9;
+	transform: scale(1)
+}
+.brick > .brick-tags li.brick-tag:hover .remove-tag:hover {
+	background: hsla(0, 0%, 0%, 0.6) !important;
+
+}
+.brick > .brick-tags .addtag-btn {
+	order: 4 !important;
+}
+.brick > .brick-tags .addtag-btn img {
+	background: transparent !important;
+	padding-left: 0px
+}
+/*BOTTOM BUTTON CONTAINER*/
+.brick > .brick-settings {
+	order: 7;
+	padding: 0px var(--brickItemPadLeft) !important;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: var(--brickNavHeight);
+	height: unset;
+}
+.brick > .brick-settings * {
+	float: unset;
+}
+.brick > .brick-settings > .left,
+.brick > .brick-settings > .right {
+	display: flex;
+	gap: 4px;
+}
+.brick .setting-button {
+	box-shadow: unset;
+	border-radius: var(--brickBtnBrdRad);
+	width: var(--brickBtnW) !important;
+	height: var(--brickBtnW) !important;
+}
+
+/************
+BRICK ITEM CONTENT
+*************/
+#app #gridsContainer .objects > li {
+	padding-left: var(--brickItemPadLeft) !important;
+	padding-right: var(--brickItemPadRight) !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	position: relative;
+}
+
+/************
+*************
+*************
+*************
+BRICK ITEM - INLINE ELEMENTS
+*************
+*************
+*************
+*************/
+
+
+/************
+BRICK ITEM - ITEM MARGINS
+*************/
+#app #gridsContainer .objects > li {}
+/************
+BRICK ITEM FONTS
+*************/
+/*NORMAL TEXT*/
+.brick-list .text,
+.brick .brick-list .note,
+.brickParagraph .brick-placeholder,
+.paragraphTextDiv,
+.paragraphTextDiv p,
+.ProseMirror p {
+	line-height: var(--bodyLineHeight) !important;
+}
+
+/*SMALL TEXT*/
+.brickParagraph.small .brick-placeholder,
+.brickParagraph.small .paragraphTextDiv,
+.paragraph.small .ProseMirror p {}
+/*HEADINGS*/
+.brick .brickHeading .brick-placeholder,
+.brickHeading .text {
+	line-height: 1.2 !important;
 
 }
 
-</style>
+#app .brick .object .brickHeading {
+	margin: 0px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+
+/**
+UNIVERSAL OVERRIDES
+**/
+#app .brick .text,
+#app .brick .brick-content .objects {
+	min-height: unset !important;
+}
+
+
+/************
+PARAGRAPHS
+*************/
+.brick-placeholder {
+	display: none !important;
+}
+
+
+/************
+PARAGRAPHS
+*************/
+
+/************
+BOLD
+*************/
+#app .object b,
+.brickHeading .text {
+	color: var(--bldClr) !important;
+	font-weight: 000 !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+/************
+LIST ITEMS
+*************/
+/*FLOATS*/
+.brick .brick-list {
+	float: unset !important;
+}
+/*LIST ITEMS*/
+ul.brick-list,
+li.listitem {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important
+}
+
+ul.brick-list.child-list {
+	margin-left: calc(var(--listbulletWidth) + var(--listbulletMargRight));
+}
+
+/*LIST ITEM BULLETS*/
+#app .brick .brick-list li .listitem-container:before,
+#app .brick .brick-list li .listitem-container > .todo-checkbox {
+	min-width: 10px !important;
+	font-size: 0.95em !important;
+	line-height: unset !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	width: var(--listbulletWidth) !important;
+	margin-right: var(--listbulletMargRight) !important;
+	text-align: right;
+	filter: unset !important;
+	color: var(--bodyClr);
+	z-index: 2;
+	vertical-align: top;
+	display: inline-block;
+}
+/*ORDERED LIST*/
+#app .brick .brick-list li.ordered-list .listitem-container:before {
+	padding-top: 1px;
+	font-weight: 900 !important;
+}
+/*UNORDERED*/
+.brick .brick-list li.unordered-list .listitem-container:before {
+	content: "" !important;
+	height: calc(var(--listbulletWidth) * 1) !important;
+	border-radius: unset;
+	background: transparent !important;
+	background-image: var(--iconbulletCircle) !important;
+	background-repeat: no-repeat !important;
+	background-size: 7px !important;
+	background-position: 52% 58% !important;
+	opacity: 1.0
+}
+/*TODOS LIST*/
+#app .brick .brick-list li .listitem-container > .todo-checkbox {
+	width: calc(var(--listbulletWidth) * 1) !important;
+	height: calc(var(--listbulletWidth) * 1) !important;
+	min-width: unset !important;
+	z-index: 5 !important;
+	padding: 0px !important;
+	border: 1px solid var(--todoCheckBoxBrdClr);
+	background: var(--todoCheckBoxBgClr);
+	background-image: unset !important;
+	position: relative;
+	transition: .12s !important;
+	transform: scale(0.9) !important;
+	transform-origin: 60% 100%;
+	border-radius: 6px !important;
+}
+.todo-checkbox:hover {
+	background: var(--todoCheckBoxBgClr) !important;
+}
+.todo-checkbox:after {
+	content: "";
+	position: absolute;
+	padding: 0px !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: var(--iconCheckMark);
+	background-repeat: no-repeat;
+	background-size: 14px;
+	background-position: center;
+	transition: 350ms cubic-bezier(.25, 2.9, .11, .4);
+	transform: scale(0);
+	opacity: 0.5
+}
+
+/*TODOS LIST - CHECKED - ITEM*/
+.brick .brick-list li.checked {
+	opacity: 1 !important;
+}
+/*TODOS LIST - CHECKED - CHECKBOX*/
+.checked > div .todo-checkbox {
+	background: var(--todoCheckBoxBgClr-Checked) !important;
+	opacity: 1 !important
+}
+/*TODOS LIST - CHECKED - CHECKMARK*/
+.checked > div .todo-checkbox:after {
+	transform: scale(.85);
+}
+/*CHECKED ITEMS*/
+#app .brick-list .checkeditems {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-top: calc(var(--itemMargTopBtm) * 1) !important;
+	padding-top: 0px !important;
+	border-top: 1px solid hsla(0, 0%, 50%, 0.3) !important
+}
+/*TODOS LIST - CHECKED - TEXT*/
+.brick .brick-list li.checked .listitem-container > .note,
+.brick .brick-list li.checked .listitem-container > .text {
+	opacity: .5
+}
+
+.checkeditems .progress {
+	margin: 0px !important;
+	padding-top: calc(var(--itemMargTopBtm) * 1) !important;
+	padding-bottom: calc(var(--itemMargTopBtm) * 1.0) !important;
+}
+.checkeditems .progress .arrow {
+	margin-top: 0px !important;
+	width: calc(var(--listbulletWidth) * 1) !important;
+	height: calc(var(--listbulletWidth) * 1) !important;
+	padding: 4px;
+	border-radius: var(--brickBtnBrdRad);
+	transform-origin: 50% 50%;
+	transform: scale(0.9) !important;
+	border: none;
+	filter: unset !important;
+	transition: .1s;
+}
+.checkeditems .progress .arrow:hover {
+	background: hsla(0, 0%, 50%, 0.45) !important
+}
+.checkeditems .progress .arrow.closed {
+	transform: scale(0.9)rotate(-90deg) !important;
+
+}
+.checkeditems .progress span {
+	padding-left: var(--listbulletMargRight) !important
+}
+.items.expanded > div > li:first-child {
+	margin-top: 0px !important;
+}
+
+/************
+LIST ITEM - EXPAND COLLAPSE
+*************/
+
+/*HIDDEN BUTTON -  MAKE NORMAL EXPAND/COLLAPSE BUTTON TRANSPARENT - PUT IN SAME PLACE AS BULLET*/
+.brick-list .listitem.unordered-list .listitem-container > .arrow {
+	border-radius: 100px;
+}
+.brick-list .listitem .listitem-container > .arrow,
+.arrow + .text.itemTextDiv:before {
+	position: absolute;
+	left: 0;
+	width: calc(var(--listbulletWidth) * 1) !important;
+	height: calc(var(--listbulletWidth) * 1) !important;
+	padding: calc(var(--listbulletWidth) * 0.5);
+	margin: 0px !important;
+	opacity: 1;
+	background: transparent !important;
+	filter: unset !important;
+	z-index: 3 !important;
+	transform: unset !important;
+	transition: .1s;
+	content: "";
+	border-radius: 5px;
+
+}
+/*VISIBLE BULLET*/
+.listitem .arrow + .text.itemTextDiv:before {
+	opacity: 1;
+	padding: 0px;
+	background: hsla(0, 0%, 50%, 0.3) !important;
+	z-index: 0 !important;
+	transition: .1s;
+	transform: scale(.2) !important;
+}
+.listitem .arrow.closed + .text.itemTextDiv:before {
+	transform: scale(0.95) !important;
+	opacity: 1;
+}
+
+/*VISIBLE - UNORDERED*/
+.listitem.unordered-list .arrow + .text.itemTextDiv:before {
+	border-radius: 100px;
+	top: 1px
+}
+/*VISIBLE - ORDERED*/
+.listitem.ordered-list .arrow.closed + .text.itemTextDiv:before {
+	transform: scale(1) !important;
+
+}
+.listitem.ordered-list .arrow + .text.itemTextDiv:before {
+	border-radius: 5px !important;
+	width: calc(var(--listbulletWidth) * 1) !important;
+	height: calc(var(--listbulletWidth) * 1) !important;
+	background: transparent !important;
+	box-shadow: 0 0 0 2px var(--listbulletBgClr);
+}
+
+
+/************
+MARGINS - ALL ELEMENTS
+*************/
+.brick .checklist,
+.brick .list,
+.brick .brick-list li,
+.brick .object > .paragraph,
+.brick .object .brick-button {
+	margin-top: var(--itemMargTopBtm) !important;
+	position: relative !important;
+}
+/************
+MARGINS - HEADINGS
+*************/
+#app .brick .object.type-heading > div {
+	margin-top: var(--itemMargTopBtm) !important;
+}
+#app .brick .objects > .object.type-heading:first-child > div {
+	margin-top: 5px !important;
+}
+
+.object.type-heading > .headingOne {}
+
+/************
+MARGINS - SMALL TEXT
+*************/
+.brick .object > .paragraph.small {
+	--itemMargTopBtm: 1px;
+}
+
+/************
+MARGINS - BUTTON
+*************/
+.brick .object .brick-button {
+	--itemMargTopBtm: 14px;
+}
+/************
+MARGINS - BLOCKQUOTE
+*************/
+.brick .object .brick-button {
+	--itemMargTopBtm: 14px;
+}
+/**/
+
+
+.brick .checklist > ul > div > li:first-child,
+.brick .list > ul > div > li:first-child {
+	margin-top: 0px !important;
+}
+
+/************
+ITEM HOVER MENUS
+*************/
+/*BRICK -  HOVER - DOT MENU*/
+#gridsContainer .object img.object-handle,
+#gridsContainer .object img.list-handle,
+#gridsContainer .object img.item-options,
+#gridsContainer .object img.object-options {
+	height: calc(var(--brickItemPadRight));
+	max-height: 100% !important;
+	margin: unset !important;
+	padding: 5px !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9 !important;
+	border-radius: calc(var(--brickBtnBrdRad) - 1px) !important;
+}
+.object:hover .object-handle,
+.brick-list .hiddenItem:hover .item-options,
+.brick-list .hiddenItem:hover .list-handle,
+.brick-list .text:hover ~ .item-options,
+.brick-list .text:hover ~ .list-handle,
+.brick .brick-list .item-options:hover,
+.brick .brick-list .list-handle:hover,
+.brick .brick-list .note:hover ~ .item-options,
+.brick .brick-list .note:hover ~ .list-handle {
+	opacity: .2 !important;
+}
+
+/*BRICK > HOVER > DOT MENU > HOVER*/
+#gridsContainer .object:hover img.object-handle:hover,
+#gridsContainer .object:hover img.list-handle:hover,
+#gridsContainer .object:hover img.item-options:hover,
+#gridsContainer .object:hover img.object-options:hover {
+	opacity: .9 !important;
+	background: hsla(0, 0%, 50%, 0.2) !important
+}
+
+
+
+/*MENU: LEFT > OBJECT DRAGGER*/
+#gridsContainer .object img.object-handle {
+	width: var(--brickItemPadLeft) !important;
+	height: calc(var(--listbulletWidth) * 1) !important;
+	left: calc(var(--brickItemPadLeft) * -1) !important;
+	padding: 0px 3px !important;
+	top: 0 !important;
+}
+/*MENU: RIGHT > UL/LI LIST DRAGGER*/
+#app #gridsContainer .object img.list-handle {
+	width: calc(var(--brickItemPadRight) * 0.65) !important;
+	height: calc(var(--listbulletWidth)* 1) !important;
+	padding: 2px 3px !important;
+	margin: 0px !important;
+	top: 0;
+}
+
+/*MENU: LEFT > 3 DOT ITEM OPTIONS*/
+#app #gridsContainer .object img.item-options,
+#app #gridsContainer .object img.object-options {
+	width: var(--brickItemPadRight) !important;
+	height: calc(var(--listbulletWidth)* 1) !important;
+	right: calc(var(--brickItemPadRight)* -1) !important;
+	padding: 2px 3px !important;
+	top: 0 !important;
+}
+/*RIGHT MENU BTN CONTAINER*/
+
+
+/************
+RELATIVE OVERRIDES
+
+#app .brick .brick-list li,
+#app .brick .brick-list li .listitem-container,
+#app .brick .checklist {
+		position: unset !important;
+}
+*************/
+
+/************
+COLORS
+*************/
+
+.brick.darkBrick.backgrounded .brick-comments .comment-content,
+.brick.darkBrick.backgrounded .brick-comments .name-meta .date,
+.brick.darkBrick.backgrounded .brick-comments .name-meta .name,
+.brick.darkBrick.backgrounded .object-comments .comments-count .count,
+.brick.darkBrick .brick-list .note,
+.brick.darkBrick .brick-list .text,
+.brick.darkBrick .brick-list .text *,
+.brick.darkBrick .brickHeading .text,
+.brick.darkBrick .brickHeading .text *,
+.brick.darkBrick .type-paragraph .paragraphTextDiv,
+.brick.darkBrick .type-paragraph .paragraphTextDiv *,
+.listBrick.darkBrick .textDiv {
+	color: var(--bodyClr);
+}
+
+
+/************
+ICONS
+*************/
+
+
+:root {
+	--iconbulletCircle: var(--iconbulletCircle-Black);
+	--iconCheckMark: var(--iconCheckMark-Black);
+}
+.darkBrick {
+	--iconbulletCircle: var(--iconbulletCircle-White);
+	--iconCheckMark: var(--iconCheckMark-White);
+
+}
+
+:root {
+	--iconChevron: url('data:image/svg+xml;utf8,<svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30.3323 11.1026C31.2226 10.1836 31.2226 8.69376 30.3323 7.77483C29.4421 6.85591 27.9988 6.8559 27.1086 7.77483L16.0086 19.2329L4.90405 7.77021C4.01136 6.84873 2.56404 6.84873 1.67135 7.77021C0.778668 8.69169 0.778668 10.1857 1.67135 11.1072L14.3791 24.2248C14.3819 24.2278 14.3848 24.2308 14.3877 24.2338C15.2761 25.1508 16.7152 25.1527 17.6059 24.2396C17.6092 24.2361 17.6126 24.2327 17.616 24.2292C17.6188 24.2263 17.6216 24.2233 17.6245 24.2204L30.3323 11.1026Z" fill="%23808080"/></svg>');
+	--iconbulletCircle-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="24" height="24" rx="12" fill="black" stroke="black" stroke-width="2"/></svg>');
+	--iconbulletCircle-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="24" height="24" rx="12" fill="white" stroke="white" stroke-width="2"/></svg>');
+	/*check*/
+	--iconCheckMark-Black: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.5788 7.81965C26.7178 6.95869 25.3219 6.95869 24.461 7.81965L12.7773 19.5034L7.54045 14.2666C6.67921 13.4053 5.28284 13.4053 4.4216 14.2666C3.56035 15.1278 3.56035 16.5242 4.4216 17.3854L11.2161 24.1799C11.5315 24.4953 11.9191 24.6954 12.3259 24.7797C13.0287 24.926 13.7898 24.7264 14.3358 24.1804L27.5788 10.9375C28.4397 10.0765 28.4397 8.68062 27.5788 7.81965Z" fill="black" stroke="black" stroke-width="0.3"/></svg>');
+	--iconCheckMark-White: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.5788 7.81965C26.7178 6.95869 25.3219 6.95869 24.461 7.81965L12.7773 19.5034L7.54045 14.2666C6.67921 13.4053 5.28284 13.4053 4.4216 14.2666C3.56035 15.1278 3.56035 16.5242 4.4216 17.3854L11.2161 24.1799C11.5315 24.4953 11.9191 24.6954 12.3259 24.7797C13.0287 24.926 13.7898 24.7264 14.3358 24.1804L27.5788 10.9375C28.4397 10.0765 28.4397 8.68062 27.5788 7.81965Z" fill="white" stroke="black" stroke-width="0.3"/></svg>');
+}
