@@ -1,0 +1,1954 @@
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Pacifico:wght@400;500;600&display=swap);
+@import url(https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap);
+@import url(https://api.fontshare.com/v2/css?f[]=chillax@400,500,600&display=swap);
+@import url(https://api.fontshare.com/v2/css?f[]=telma@400,500,600&display=swap);
+@import url(https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap);
+@import url(https://api.fontshare.com/v2/css?f[]=zodiak@400,800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap);
+.visual-grid {
+	float: left;
+	width: 100%;
+	padding-bottom: 220px;
+	z-index: 4
+}
+
+.visual-grid.visual-grid-archived {
+	z-index: 3
+}
+
+.section-kanban-view .visual-grid {
+	margin-top: 14px;
+	padding-bottom: 100px;
+	margin-bottom: 30px
+}
+
+.section-kanban-view .visual-grid.visual-grid-archived,
+.viewOnly .section-kanban-view .visual-grid {
+	margin-bottom: 0
+}
+
+.visual-grid .item {
+	background: none !important;
+	margin: 0;
+	opacity: 1 !important
+}
+
+.visual-grid .item .brick {
+	height: auto
+}
+
+.visual-grid-offset {
+	float: left;
+	width: 100%;
+	background-color: transparent;
+	height: 25px
+}
+
+.visual-overlay-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none
+}
+
+.section-kanban-view .visual-overlay-container {
+	width: calc(100% + 20px);
+	left: -10px;
+	height: calc(100% + 70px)
+}
+
+.visual-col-overlay {
+	float: left;
+	min-width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, .06);
+	border-radius: 4px;
+	-webkit-transition: opacity .15s linear;
+	transition: opacity .15s linear
+}
+
+.darkmode .visual-col-overlay,
+.darkSection .visual-col-overlay {
+	background-color: hsla(0, 0%, 100%, .065)
+}
+
+.section-kanban-view .visual-col-overlay {
+	width: 100% !important
+}
+
+:root .visual-grid-item > .ui-resizable-handle {
+	-webkit-filter: none;
+	filter: none
+}
+
+.visual-grid {
+	position: relative
+}
+
+.visual-grid.visual-grid-rtl {
+	direction: ltr
+}
+
+.visual-grid.visual-grid-rtl > .visual-grid-item {
+	direction: rtl
+}
+
+.visual-grid .visual-grid-placeholder > .placeholder-content {
+	background-color: rgba(0, 0, 0, .035);
+	border-radius: 4px;
+	margin: 0;
+	position: absolute;
+	width: auto;
+	z-index: 0 !important;
+	text-align: center
+}
+
+.darkmode .grid-component:not(.lightSection) .visual-grid .visual-grid-placeholder > .placeholder-content,
+.darkSection .visual-grid .visual-grid-placeholder > .placeholder-content {
+	background-color: hsla(0, 0%, 100%, .04)
+}
+
+.visual-grid > .visual-grid-item {
+	min-width: 8.3333333333%;
+	position: absolute;
+	padding: 0
+}
+
+.visual-grid > .visual-grid-item > .visual-grid-item-content {
+	margin: 0;
+	position: absolute;
+	width: auto
+}
+
+.brick-popup-expanded .ui-resizable-handle {
+	display: none !important
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-handle {
+	position: absolute;
+	font-size: .1px;
+	display: block;
+	-ms-touch-action: none;
+	touch-action: none
+}
+
+.visual-grid-item > .ui-resizable-handle .ui-resizable-handle-child {
+	width: 3px;
+	height: 100%;
+	background: -webkit-gradient(linear, left bottom, left top, from(hsla(0, 0%, 100%, 0)), color-stop(50%, hsla(0, 0%, 58.8%, .4)), to(hsla(0, 0%, 100%, 0)));
+	background: linear-gradient(0deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 58.8%, .4) 50%, hsla(0, 0%, 100%, 0));
+	position: relative;
+	left: -1px;
+	top: 0;
+	opacity: 0
+}
+
+.darkmode .visual-grid-item > .ui-resizable-handle .ui-resizable-handle-child,
+.darkSection .visual-grid-item > .ui-resizable-handle .ui-resizable-handle-child,
+.visual-grid-item .darkBrick + .ui-resizable-handle .ui-resizable-handle-child {
+	background: -webkit-gradient(linear, left bottom, left top, from(hsla(0, 0%, 100%, 0)), color-stop(50%, hsla(0, 0%, 51%, .4)), to(hsla(0, 0%, 100%, 0)));
+	background: linear-gradient(0deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 51%, .4) 50%, hsla(0, 0%, 100%, 0))
+}
+
+.visual-grid-item > .ui-resizable-handle:hover .ui-resizable-handle-child {
+	opacity: 1
+}
+
+.visual-grid-item > .ui-resizable-e {
+	direction: rtl
+}
+
+.visual-grid-item > .ui-resizable-e .ui-resizable-handle-child {
+	left: 1px
+}
+
+.visual-grid > .visual-grid-item.ui-resizable-autohide > .ui-resizable-handle,
+.visual-grid > .visual-grid-item.ui-resizable-disabled > .ui-resizable-handle {
+	display: none
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-se,
+.visual-grid > .visual-grid-item > .ui-resizable-sw {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDUxMS42MjYgNTExLjYyNyI+PHBhdGggZD0iTTMyOC45MDYgNDAxLjk5NGgtMzYuNTUzVjEwOS42MzZoMzYuNTUzYzQuOTQ4IDAgOS4yMzYtMS44MDkgMTIuODQ3LTUuNDI2IDMuNjEzLTMuNjE1IDUuNDIxLTcuODk4IDUuNDIxLTEyLjg0NSAwLTQuOTQ5LTEuODAxLTkuMjMxLTUuNDI4LTEyLjg1MWwtNzMuMDg3LTczLjA5QzI2NS4wNDQgMS44MDkgMjYwLjc2IDAgMjU1LjgxMyAwYy00Ljk0OCAwLTkuMjI5IDEuODA5LTEyLjg0NyA1LjQyNGwtNzMuMDg4IDczLjA5Yy0zLjYxOCAzLjYxOS01LjQyNCA3LjkwMi01LjQyNCAxMi44NTEgMCA0Ljk0NiAxLjgwNyA5LjIyOSA1LjQyNCAxMi44NDUgMy42MTkgMy42MTcgNy45MDEgNS40MjYgMTIuODUgNS40MjZoMzYuNTQ1djI5Mi4zNThoLTM2LjU0MmMtNC45NTIgMC05LjIzNSAxLjgwOC0xMi44NSA1LjQyMS0zLjYxNyAzLjYyMS01LjQyNCA3LjkwNS01LjQyNCAxMi44NTQgMCA0Ljk0NSAxLjgwNyA5LjIyNyA1LjQyNCAxMi44NDdsNzMuMDg5IDczLjA4OGMzLjYxNyAzLjYxNyA3Ljg5OCA1LjQyNCAxMi44NDcgNS40MjQgNC45NSAwIDkuMjM0LTEuODA3IDEyLjg0OS01LjQyNGw3My4wODctNzMuMDg4YzMuNjEzLTMuNjIgNS40MjEtNy45MDEgNS40MjEtMTIuODQ3IDAtNC45NDgtMS44MDgtOS4yMzItNS40MjEtMTIuODU0LTMuNjExLTMuNjEzLTcuODk2LTUuNDIxLTEyLjg0Ny01LjQyMXoiIGZpbGw9IiM2NjYiLz48L3N2Zz4=);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg)
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-se {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-nw {
+	cursor: nw-resize;
+	width: 20px;
+	height: 20px;
+	top: 0
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-n {
+	cursor: n-resize;
+	height: 10px;
+	top: 0;
+	left: 25px;
+	right: 25px
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-ne {
+	cursor: ne-resize;
+	width: 20px;
+	height: 20px;
+	top: 0
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-e {
+	cursor: col-resize;
+	width: 10px;
+	top: 15px;
+	bottom: 15px
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-se {
+	cursor: se-resize;
+	width: 20px;
+	height: 20px
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-s {
+	cursor: s-resize;
+	height: 10px;
+	left: 25px;
+	bottom: 0;
+	right: 25px
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-sw {
+	cursor: sw-resize;
+	width: 20px;
+	height: 20px
+}
+
+.visual-grid > .visual-grid-item > .ui-resizable-w {
+	cursor: col-resize;
+	width: 10px;
+	top: 15px;
+	bottom: 15px
+}
+
+.visual-grid > .visual-grid-item.ui-draggable-dragging > .ui-resizable-handle {
+	display: none !important
+}
+
+.visual-grid > .visual-grid-item[gs-w="0"] {
+	width: 0
+}
+
+.visual-grid > .visual-grid-item[gs-x="0"] {
+	left: 0
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="0"] {
+	min-width: 0
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="0"] {
+	max-width: 0
+}
+
+.visual-grid > .visual-grid-item[gs-w="1"] {
+	width: 8.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-x="1"] {
+	left: 8.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="1"] {
+	min-width: 8.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="1"] {
+	max-width: 8.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-w="2"] {
+	width: 16.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-x="2"] {
+	left: 16.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="2"] {
+	min-width: 16.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="2"] {
+	max-width: 16.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-w="3"] {
+	width: 25%
+}
+
+.visual-grid > .visual-grid-item[gs-x="3"] {
+	left: 25%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="3"] {
+	min-width: 25%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="3"] {
+	max-width: 25%
+}
+
+.visual-grid > .visual-grid-item[gs-w="4"] {
+	width: 33.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-x="4"] {
+	left: 33.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="4"] {
+	min-width: 33.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="4"] {
+	max-width: 33.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-w="5"] {
+	width: 41.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-x="5"] {
+	left: 41.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="5"] {
+	min-width: 41.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="5"] {
+	max-width: 41.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-w="6"] {
+	width: 50%
+}
+
+.visual-grid > .visual-grid-item[gs-x="6"] {
+	left: 50%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="6"] {
+	min-width: 50%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="6"] {
+	max-width: 50%
+}
+
+.visual-grid > .visual-grid-item[gs-w="7"] {
+	width: 58.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-x="7"] {
+	left: 58.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="7"] {
+	min-width: 58.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="7"] {
+	max-width: 58.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-w="8"] {
+	width: 66.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-x="8"] {
+	left: 66.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="8"] {
+	min-width: 66.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="8"] {
+	max-width: 66.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-w="9"] {
+	width: 75%
+}
+
+.visual-grid > .visual-grid-item[gs-x="9"] {
+	left: 75%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="9"] {
+	min-width: 75%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="9"] {
+	max-width: 75%
+}
+
+.visual-grid > .visual-grid-item[gs-w="10"] {
+	width: 83.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-x="10"] {
+	left: 83.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="10"] {
+	min-width: 83.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="10"] {
+	max-width: 83.3333333333%
+}
+
+.visual-grid > .visual-grid-item[gs-w="11"] {
+	width: 91.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-x="11"] {
+	left: 91.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="11"] {
+	min-width: 91.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="11"] {
+	max-width: 91.6666666667%
+}
+
+.visual-grid > .visual-grid-item[gs-w="12"] {
+	width: 100%
+}
+
+.visual-grid > .visual-grid-item[gs-x="12"] {
+	left: 100%
+}
+
+.visual-grid > .visual-grid-item[gs-min-w="12"] {
+	min-width: 100%
+}
+
+.visual-grid > .visual-grid-item[gs-max-w="12"] {
+	max-width: 100%
+}
+
+.visual-grid.visual-grid-1 > .visual-grid-item {
+	min-width: 100%
+}
+
+.visual-grid.visual-grid-1 > .visual-grid-item[gs-w="1"] {
+	width: 100%
+}
+
+.visual-grid.visual-grid-1 > .visual-grid-item[gs-x="1"] {
+	left: 100%
+}
+
+.visual-grid.visual-grid-1 > .visual-grid-item[gs-min-w="1"] {
+	min-width: 100%
+}
+
+.visual-grid.visual-grid-1 > .visual-grid-item[gs-max-w="1"] {
+	max-width: 100%
+}
+
+.visual-grid.animated,
+.visual-grid.animated .visual-grid-item {
+	-webkit-transition: left .25s, top .25s, height .1s, min-height .15s, width .1s;
+	transition: left .25s, top .25s, height .1s, min-height .15s, width .1s
+}
+
+.visual-grid.animated .visual-grid-item.ui-draggable-dragging,
+.visual-grid.animated .visual-grid-item.ui-resizable-resizing,
+.visual-grid.animated .visual-grid-item.visual-grid-placeholder {
+	-webkit-transition: left 0s, top 0s, height 0s, width 0s;
+	transition: left 0s, top 0s, height 0s, width 0s
+}
+
+.ui-draggable-dragging,
+.ui-resizable-resizing {
+	z-index: 100 !important
+}
+
+.ui-draggable-dragging {
+	will-change: left, top;
+	cursor: move
+}
+
+.ui-resizable-resizing {
+	will-change: width, height
+}
+
+.cols2 .visual-col-overlay,
+.visual-grid.visual-grid-2 > .visual-grid-item {
+	min-width: 50%
+}
+
+.visual-grid.visual-grid-2 > .visual-grid-item[gs-w="1"] {
+	width: 50%
+}
+
+.visual-grid.visual-grid-2 > .visual-grid-item[gs-x="1"] {
+	left: 50%
+}
+
+.visual-grid.visual-grid-2 > .visual-grid-item[gs-min-w="1"] {
+	min-width: 50%
+}
+
+.visual-grid.visual-grid-2 > .visual-grid-item[gs-max-w="1"] {
+	max-width: 50%
+}
+
+.visual-grid.visual-grid-2 > .visual-grid-item[gs-w="2"] {
+	width: 100%
+}
+
+.visual-grid.visual-grid-2 > .visual-grid-item[gs-x="2"] {
+	left: 100%
+}
+
+.visual-grid.visual-grid-2 > .visual-grid-item[gs-min-w="2"] {
+	min-width: 100%
+}
+
+.visual-grid.visual-grid-2 > .visual-grid-item[gs-max-w="2"] {
+	max-width: 100%
+}
+
+.cols3 .visual-col-overlay,
+.visual-grid.visual-grid-3 > .visual-grid-item {
+	min-width: 33.3333333333%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-w="1"] {
+	width: 33.3333333333%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-x="1"] {
+	left: 33.3333333333%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-min-w="1"] {
+	min-width: 33.3333333333%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-max-w="1"] {
+	max-width: 33.3333333333%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-w="2"] {
+	width: 66.6666666667%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-x="2"] {
+	left: 66.6666666667%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-min-w="2"] {
+	min-width: 66.6666666667%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-max-w="2"] {
+	max-width: 66.6666666667%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-w="3"] {
+	width: 100%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-x="3"] {
+	left: 100%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-min-w="3"] {
+	min-width: 100%
+}
+
+.visual-grid.visual-grid-3 > .visual-grid-item[gs-max-w="3"] {
+	max-width: 100%
+}
+
+.cols4 .visual-col-overlay,
+.visual-grid.visual-grid-4 > .visual-grid-item {
+	min-width: 25%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-w="1"] {
+	width: 25%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-x="1"] {
+	left: 25%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-min-w="1"] {
+	min-width: 25%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-max-w="1"] {
+	max-width: 25%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-w="2"] {
+	width: 50%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-x="2"] {
+	left: 50%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-min-w="2"] {
+	min-width: 50%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-max-w="2"] {
+	max-width: 50%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-w="3"] {
+	width: 75%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-x="3"] {
+	left: 75%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-min-w="3"] {
+	min-width: 75%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-max-w="3"] {
+	max-width: 75%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-w="4"] {
+	width: 100%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-x="4"] {
+	left: 100%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-min-w="4"] {
+	min-width: 100%
+}
+
+.visual-grid.visual-grid-4 > .visual-grid-item[gs-max-w="4"] {
+	max-width: 100%
+}
+
+.cols5 .visual-col-overlay,
+.visual-grid.visual-grid-5 > .visual-grid-item {
+	min-width: 20%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-w="1"] {
+	width: 20%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-x="1"] {
+	left: 20%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-min-w="1"] {
+	min-width: 20%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-max-w="1"] {
+	max-width: 20%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-w="2"] {
+	width: 40%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-x="2"] {
+	left: 40%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-min-w="2"] {
+	min-width: 40%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-max-w="2"] {
+	max-width: 40%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-w="3"] {
+	width: 60%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-x="3"] {
+	left: 60%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-min-w="3"] {
+	min-width: 60%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-max-w="3"] {
+	max-width: 60%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-w="4"] {
+	width: 80%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-x="4"] {
+	left: 80%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-min-w="4"] {
+	min-width: 80%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-max-w="4"] {
+	max-width: 80%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-w="5"] {
+	width: 100%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-x="5"] {
+	left: 100%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-min-w="5"] {
+	min-width: 100%
+}
+
+.visual-grid.visual-grid-5 > .visual-grid-item[gs-max-w="5"] {
+	max-width: 100%
+}
+
+.cols6 .visual-col-overlay,
+.visual-grid.visual-grid-6 > .visual-grid-item {
+	min-width: 16.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-w="1"] {
+	width: 16.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-x="1"] {
+	left: 16.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-min-w="1"] {
+	min-width: 16.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-max-w="1"] {
+	max-width: 16.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-w="2"] {
+	width: 33.3333333333%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-x="2"] {
+	left: 33.3333333333%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-min-w="2"] {
+	min-width: 33.3333333333%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-max-w="2"] {
+	max-width: 33.3333333333%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-w="3"] {
+	width: 50%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-x="3"] {
+	left: 50%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-min-w="3"] {
+	min-width: 50%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-max-w="3"] {
+	max-width: 50%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-w="4"] {
+	width: 66.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-x="4"] {
+	left: 66.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-min-w="4"] {
+	min-width: 66.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-max-w="4"] {
+	max-width: 66.6666666667%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-w="5"] {
+	width: 83.3333333333%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-x="5"] {
+	left: 83.3333333333%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-min-w="5"] {
+	min-width: 83.3333333333%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-max-w="5"] {
+	max-width: 83.3333333333%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-w="6"] {
+	width: 100%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-x="6"] {
+	left: 100%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-min-w="6"] {
+	min-width: 100%
+}
+
+.visual-grid.visual-grid-6 > .visual-grid-item[gs-max-w="6"] {
+	max-width: 100%
+}
+
+.layouts-container {
+	width: 640px !important;
+	background-color: #fafafa !important
+}
+
+.darkmode .layouts-container {
+	background-color: #252525 !important
+}
+
+.layouts {
+	float: left;
+	width: 100%;
+	padding: 0 10px 6px 10px;
+	max-height: 400px;
+	overflow-y: auto
+}
+
+.layouts * {
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none
+}
+
+.layouts .layout {
+	float: left;
+	width: calc(50% - 6px) !important;
+	margin-right: 12px;
+	margin-bottom: 6px;
+	margin-top: 6px;
+	cursor: pointer;
+	padding: 4px;
+	border: 1px solid #f4f4f4;
+	background-color: #fff;
+	border-radius: 4px;
+	height: 140px;
+	margin-bottom: 28px;
+	position: relative
+}
+
+.darkmode .layouts .layout {
+	background-color: #353535;
+	border-color: #666
+}
+
+.layouts .layout:hover {
+	border-color: #999
+}
+
+.darkmode .layouts .layout:hover {
+	border-color: #aaa
+}
+
+.layouts .layout:nth-child(2n) {
+	margin-right: 0
+}
+
+.layout-name {
+	position: absolute;
+	width: 100%;
+	bottom: -20px;
+	left: 2px;
+	font-size: .82em;
+	opacity: .6
+}
+
+.layout .spinner:before {
+	top: calc(50% - 10px) !important
+}
+
+.layout-list-view {
+	float: left;
+	width: 100%;
+	padding: 5px
+}
+
+.layout-list-view-header {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 8px !important;
+	opacity: .7
+}
+
+.layout-list-view-row {
+	float: left;
+	width: 100%;
+	margin: 5px 0
+}
+
+.layout-list-view-row-item {
+	float: left;
+	font-size: .75em;
+	opacity: .7;
+	width: 80px
+}
+
+.layout-list-view .todo-checkbox {
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin: 0;
+	border-radius: 3px;
+	opacity: .7;
+	margin-top: -1px
+}
+
+.darkmode .layout-list-view .todo-checkbox {
+	border-color: #999
+}
+
+.layout-table-view-row {
+	border-bottom: 1px solid #ddd;
+	opacity: .9;
+	margin: 0
+}
+
+.layout-table-view-row-item {
+	border-right: 1px solid #ddd;
+	padding: 6px 4px;
+	margin-right: 5px;
+	width: 51px
+}
+
+.layout-table-view-row-item:last-child {
+	border: 0
+}
+
+.layout-kanban-column {
+	float: left;
+	width: 33%;
+	padding: 10px 7px
+}
+
+.layout-kanban-column-title {
+	float: left;
+	width: 100%;
+	font-size: .75em;
+	opacity: .7;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 7px
+}
+
+.darkmode .layout-kanban-column-title,
+.darkmode .layout-list-view-header,
+.darkmode .layout-table-view-row {
+	border-color: #666
+}
+
+.layout-kanban-column .layout-brick-container {
+	padding: 0
+}
+
+.row {
+	float: left;
+	width: 100%
+}
+
+.row-full-height {
+	height: 100%
+}
+
+.row-half-height {
+	height: 50%
+}
+
+.layout-brick-container {
+	float: left;
+	height: 100%;
+	padding: 5px
+}
+
+.row.one-cols .layout-brick-container {
+	width: 100%
+}
+
+.row.two-cols .layout-brick-container {
+	width: 50%
+}
+
+.row.three-cols .layout-brick-container {
+	width: 33.33333%
+}
+
+.row.three-cols .layout-brick-container-twothirds {
+	width: 66.66667%
+}
+
+.row.four-cols .layout-brick-container {
+	width: 25%
+}
+
+.row.four-cols .layout-brick-container-twothirds {
+	width: 50%
+}
+
+.row.four-cols .layout-brick-container-threethirds {
+	width: 75%
+}
+
+.layout-brick {
+	height: 100%;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	padding: 10px 8px;
+	overflow: hidden;
+	position: relative
+}
+
+.darkmode .layout-brick {
+	border-color: #666;
+	background-color: #333
+}
+
+.layout-brick-borderless {
+	border-color: transparent !important
+}
+
+.layout-image-brick,
+.layout-item.layout-image {
+	background-color: #eee;
+	text-align: center
+}
+
+.darkmode .layout-image-brick,
+.darkmode .layout-item.layout-image {
+	background-color: #595959
+}
+
+.layout-image-brick > img,
+.layout-item.layout-image > img {
+	opacity: .45;
+	height: 16px;
+	position: absolute;
+	top: calc(50% - 8px);
+	left: calc(50% - 8px)
+}
+
+.darkmode .layout-image-brick > img,
+.darkmode .layout-item.layout-image > img,
+.darkmode .layout-item.layout-votes .thumbs-icon {
+	-webkit-filter: brightness(500%);
+	filter: brightness(500%)
+}
+
+.layout-brick .layout-item {
+	float: left;
+	width: 100%
+}
+
+.layout-brick .layout-item-center {
+	text-align: center
+}
+
+.layout-item.layout-heading {
+	font-size: .85em;
+	font-weight: 600;
+	margin-bottom: 5px;
+	opacity: .85
+}
+
+.kanban-column .layout-item.layout-heading,
+.row.four-cols .layout-item.layout-heading {
+	font-size: .8em
+}
+
+.layout-item.layout-image {
+	position: relative;
+	height: 44px;
+	margin-bottom: 8px;
+	border-radius: 2px
+}
+
+.layout-item.layout-title {
+	font-size: 1.25em;
+	font-weight: 600;
+	margin-bottom: 5px;
+	opacity: .85
+}
+
+.row.four-cols .layout-item.layout-title {
+	font-size: 1.15em
+}
+
+.layout-item.layout-votes {
+	margin-top: 14px
+}
+
+.layout-item.layout-votes .thumbs-icon {
+	float: left;
+	margin-right: 8px;
+	opacity: .4;
+	width: 12px
+}
+
+.layout-item.layout-text {
+	font-size: .75em;
+	opacity: .6
+}
+
+.layout-item.layout-text.layout-largetext {
+	font-size: .95em
+}
+
+.kanban-column .layout-item.layout-text,
+.row.four-cols .layout-item.layout-text {
+	font-size: .7em
+}
+
+.row.four-cols .layout-item.layout-largetext {
+	font-size: .9em
+}
+
+@-webkit-keyframes skeleton-loading-data-v-426079ea {
+	0% {
+		opacity: 1
+	}
+
+	to {
+		opacity: .5
+	}
+}
+
+@keyframes skeleton-loading-data-v-426079ea {
+	0% {
+		opacity: 1
+	}
+
+	to {
+		opacity: .5
+	}
+}
+
+.skeleton-element[data-v-426079ea] {
+	background-color: rgba(0, 0, 0, .05);
+	-webkit-animation: skeleton-loading-data-v-426079ea .8s linear infinite alternate;
+	animation: skeleton-loading-data-v-426079ea .8s linear infinite alternate
+}
+
+.darkmode .skeleton-element[data-v-426079ea],
+.wallBackgroundDark .skeleton-element[data-v-426079ea] {
+	background-color: hsla(0, 0%, 100%, .1)
+}
+
+.skeleton-wall-icon[data-v-426079ea] {
+	float: left;
+	border-radius: 50%;
+	width: 42px;
+	height: 42px
+}
+
+.skeleton-wall-title[data-v-426079ea] {
+	float: left;
+	border-radius: 5px
+}
+
+@-webkit-keyframes skeleton-loading-data-v-2e5f48e6 {
+	0% {
+		opacity: 1
+	}
+
+	to {
+		opacity: .5
+	}
+}
+
+@keyframes skeleton-loading-data-v-2e5f48e6 {
+	0% {
+		opacity: 1
+	}
+
+	to {
+		opacity: .5
+	}
+}
+
+.skeleton-element[data-v-2e5f48e6] {
+	background-color: rgba(0, 0, 0, .05);
+	-webkit-animation: skeleton-loading-data-v-2e5f48e6 .8s linear infinite alternate;
+	animation: skeleton-loading-data-v-2e5f48e6 .8s linear infinite alternate
+}
+
+.darkmode .skeleton-element[data-v-2e5f48e6],
+.wallBackgroundDark .skeleton-element[data-v-2e5f48e6] {
+	background-color: hsla(0, 0%, 100%, .1)
+}
+
+.skeleton-wall-icon[data-v-2e5f48e6] {
+	float: left;
+	border-radius: 50%;
+	width: 42px;
+	height: 42px
+}
+
+.skeleton-wall-title[data-v-2e5f48e6] {
+	float: left;
+	border-radius: 5px
+}
+
+.viewOnly .wall-container .grid-title .section-settings-btn.section-view-btn {
+	display: none
+}
+
+.viewOnly .wall-container .grid-title .section-manage-options {
+	border: 0;
+	margin-right: 0;
+	padding-right: 0
+}
+
+.backgroundedWall .main,
+.backgroundedWall .topHeader,
+.backgroundedWall .wall-header {
+	background-color: inherit
+}
+
+.backgroundedWall .wallUserAvatar {
+	border-color: transparent
+}
+
+.backgroundedWall .darkmode-moon-btn {
+	display: none
+}
+
+.brickCornersSharp .brick,
+.brickCornersSharp .brick-sidebar,
+.brickCornersSharp .brick .brick-background,
+.brickCornersSharp .brick .brick-embeddedlink,
+.brickCornersSharp .brick .wall-object-cover,
+.brickCornersSharp .embedBrick .brick-embeddedlink .dim,
+.brickCornersSharp .embedBrick .brick-embeddedlink .ogimage,
+.brickCornersSharp .grid-stack-placeholder > .placeholder-content,
+.brickCornersSharp .item,
+.brickCornersSharp .object .dim,
+.brickCornersSharp .object .file video,
+.brickCornersSharp .object .image .objectImg,
+.brickCornersSharp .section-list-view .listBrick .listBrickColor,
+.brickCornersSharp .wall-container .cover-image.wall-contained-div,
+.brickCornersSharp .wall-container .cover-image.wall-contained-div .cover-progressive-background-container {
+	border-radius: 0 !important
+}
+
+.brickCornersExtraRounded .brick,
+.brickCornersExtraRounded .brick-sidebar,
+.brickCornersExtraRounded .brick .brick-background,
+.brickCornersExtraRounded .brick .brick-embeddedlink,
+.brickCornersExtraRounded .brick .wall-object-cover,
+.brickCornersExtraRounded .embedBrick .brick-embeddedlink .dim,
+.brickCornersExtraRounded .embedBrick .brick-embeddedlink .ogimage,
+.brickCornersExtraRounded .grid-stack-placeholder > .placeholder-content,
+.brickCornersExtraRounded .item:not(.brick-popup-expanded),
+.brickCornersExtraRounded .object .dim,
+.brickCornersExtraRounded .object .file video,
+.brickCornersExtraRounded .object .image .objectImg {
+	border-radius: 20px !important
+}
+
+.hideWallIcon .wall-header .wall-icon-container {
+	display: none
+}
+
+.hideWallIcon .wall-header .title .wallNameDiv {
+	margin-left: 0;
+	max-width: none
+}
+
+.hideJumpTo header .jumpto-title,
+.hideWallSearch .wall-header .quick-find-button,
+.wall-container .hideTitle .grid-title {
+	display: none
+}
+
+.hideSectionTitleBorder .wall-container .grid-title {
+	border: 0 !important;
+	padding-bottom: 0
+}
+
+.viewOnly header.wall-header {
+	min-height: 0
+}
+
+.viewOnly.hideWallIcon .untitledWall header.wall-header {
+	margin-bottom: 0;
+	margin-top: 0
+}
+
+.viewOnly .untitledWall header.wall-header .title .wallNameDiv {
+	display: none
+}
+
+.viewOnly .wall-container .grid-title .descriptionDiv {
+	margin-top: 5px
+}
+
+.viewOnly .heading .text.textViewonly,
+.viewOnly .wall-container .grid-title .descriptionDiv,
+.viewOnly .wall-container .grid-title .titleDiv {
+	pointer-events: auto;
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text
+}
+
+.viewOnly .section-filter-btn {
+	display: none
+}
+
+.viewOnly .enablePublicFilter .section-filter-btn {
+	display: initial
+}
+
+.viewOnly.hideWallMembers .wall-header .title .wallNameDiv-container {
+	max-width: calc(100% - 120px) !important
+}
+
+.darkSection .grid-title .arrow,
+.wallBackgroundDark .search-view .close-icon,
+.wallBackgroundDark header .search-icon:not(.dropdown-invite-users),
+.wallBackgroundDark header.wall-header .title .wall-icon-container .wall-icon,
+.wallBackgroundDark header .wall-icons .icons-list li > img,
+.wallBackgroundDark header .wall-icons .shuffle {
+	-webkit-filter: invert(100%);
+	filter: invert(100%)
+}
+
+.primaryTextColorSet .wall-container .grid-title .titleDiv,
+.primaryTextColorSet .wall-container .grid-title .titleDiv *,
+.primaryTextColorSet .wall-header .title .wallNameDiv,
+.primaryTextColorSet .wall-header .title .wallNameDiv * {
+	color: var(--primaryTextColor)
+}
+
+.secondaryTextColorSet .wall-container .grid-title .descriptionDiv,
+.secondaryTextColorSet .wall-container .grid-title .descriptionDiv *,
+.secondaryTextColorSet header.wall-header .title .wallDescription,
+.secondaryTextColorSet header.wall-header .title .wallDescription * {
+	color: var(--secondaryTextColor)
+}
+
+.defaultBrickBackgroundSe .grid-component:not(.columnsLayout) .item.brick-container,
+.defaultBrickBackgroundSet .brick.noBackground {
+	background-color: var(--defaultBrickBackground) !important
+}
+
+.defaultBrickBackgroundSet.defaultBrickBackgroundDark .item .brick:not(.backgrounded):not(.expandedBrick) * {
+	color: #fff
+}
+
+.defaultBrickBackgroundSet.defaultBrickBackgroundDark .item .wallObject .wall-object span {
+	color: #111 !important;
+	-webkit-text-fill-color: initial !important
+}
+
+.defaultBrickBackgroundSet.defaultBrickBackgroundDark .item .brick:not(.backgrounded):not(.expandedBrick) .object:hover .brick-placeholder {
+	opacity: .5 !important
+}
+
+.defaultBrickBackgroundSet.defaultBrickBackgroundDark .item .brick:not(.backgrounded) .brick-content .uncollapse span {
+	color: #333;
+	-webkit-text-fill-color: #333
+}
+
+.defaultBrickBackgroundSet:not(.defaultBrickBackgroundDark) .item .brick .image .dummy-placeholder .dummy-placeholder-btn span {
+	color: #000
+}
+
+.selectThemeBtn {
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	padding-right: 14px
+}
+
+.darkmode .selectThemeBtn {
+	background-color: #353535;
+	border-color: #555
+}
+
+.wall-logo-container {
+	position: relative;
+	z-index: 2
+}
+
+.wall-logo {
+	float: left;
+	width: 100%;
+	padding-left: 10px;
+	margin: 10px 0 20px 0
+}
+
+.wall-logo .wall-logo-img-container {
+	display: block
+}
+
+.hasFullAccess .wall-logo .wall-logo-img-container {
+	cursor: pointer
+}
+
+.wall-logo-container.logoAlign-center .wall-logo-img-container {
+	margin: auto
+}
+
+.wall-logo-container.logoAlign-left .wall-logo-img-container {
+	float: left
+}
+
+.wall-logo-container.logoAlign-right .wall-logo-img-container {
+	float: right
+}
+
+.wall-logo-container.logoSize-xsmall .wall-logo-img-container {
+	width: 70px
+}
+
+.wall-logo-container.logoSize-small .wall-logo-img-container {
+	width: 140px
+}
+
+.wall-logo-container.logoSize-medium .wall-logo-img-container {
+	width: 200px
+}
+
+.wall-logo-container.logoSize-large .wall-logo-img-container {
+	width: 300px;
+	margin-top: 20px;
+	margin-bottom: 15px
+}
+
+.logoOnTopOfCover .hasCover .wall-logo {
+	margin-top: -100px
+}
+
+.logoOnTopOfCover .hasCover.coverStylenormal .logoAlign-left .wall-logo {
+	margin-left: 20px
+}
+
+.logoOnTopOfCover .hasCover.coverStylenormal .logoAlign-right .wall-logo {
+	margin-left: -20px
+}
+
+.public-wall-footer-container {
+	float: left;
+	width: 100%;
+	padding: 0 5px
+}
+
+.public-wall-footer {
+	float: left;
+	width: 100%;
+	margin-top: 12px;
+	padding-top: 18px;
+	padding-bottom: 100px;
+	border-top: 1px solid rgba(0, 0, 0, .075)
+}
+
+.darkmode .public-wall-footer {
+	border-color: hsla(0, 0%, 100%, .12)
+}
+
+.public-wall-footer .try-walling-btn-container {
+	float: left
+}
+
+.public-wall-footer .try-walling-btn {
+	opacity: .9
+}
+
+.public-wall-footer .try-walling-btn img {
+	float: left;
+	height: 24px
+}
+
+.public-wall-footer .try-walling-btn h4 {
+	float: left;
+	margin-left: 9px;
+	font-size: .92em;
+	margin-top: 5px;
+	font-family: Inter
+}
+
+.public-wall-footer .remove-btn {
+	float: left;
+	margin: 6px 0 0 8px;
+	-webkit-transition: opacity .1s linear;
+	transition: opacity .1s linear
+}
+
+.headingFontInter .brickHeading .text,
+.headingFontInter .brickHeading .text *,
+.headingFontInter .section-list-view .listBrick .textDiv,
+.headingFontInter .textAppliedFont,
+.InterFont,
+.sectionTitleFontInter .grid-title .titleDiv,
+.sectionTitleFontInter .grid-title .titleDiv *,
+.sectionTitleFontInter .section-kanban-view .column-header .columnTitle,
+.textFontInter .brick-button .button span,
+.textFontInter .brick-list .text,
+.textFontInter .brick-list .text *,
+.textFontInter .embed-text *,
+.textFontInter .grid-title .descriptionDiv,
+.textFontInter .grid-title .descriptionDiv *,
+.textFontInter .type-paragraph .paragraphTextDiv,
+.textFontInter .type-paragraph .paragraphTextDiv *,
+.textFontInter .wall-header .title .wallDescription,
+.textFontInter .wall-header .title .wallDescription *,
+.wallTitleFontInter .wall-header .title .wallNameDiv {
+	font-family: Inter
+}
+
+.headingFontIBMPlex .brickHeading .text,
+.headingFontIBMPlex .brickHeading .text *,
+.headingFontIBMPlex .section-list-view .listBrick .textDiv,
+.headingFontIBMPlex .textAppliedFont,
+.IBMPlexFont,
+.sectionTitleFontIBMPlex .grid-title .titleDiv,
+.sectionTitleFontIBMPlex .grid-title .titleDiv *,
+.sectionTitleFontIBMPlex .section-kanban-view .column-header .columnTitle,
+.textFontIBMPlex .brick-button .button span,
+.textFontIBMPlex .brick-list .text,
+.textFontIBMPlex .brick-list .text *,
+.textFontIBMPlex .embed-text *,
+.textFontIBMPlex .grid-title .descriptionDiv,
+.textFontIBMPlex .grid-title .descriptionDiv *,
+.textFontIBMPlex .type-paragraph .paragraphTextDiv,
+.textFontIBMPlex .type-paragraph .paragraphTextDiv *,
+.textFontIBMPlex .wall-header .title .wallDescription,
+.textFontIBMPlex .wall-header .title .wallDescription *,
+.wallTitleFontIBMPlex .wall-header .title .wallNameDiv {
+	font-family: IBM Plex Sans
+}
+
+.headingFontOpenSans .brickHeading .text,
+.headingFontOpenSans .brickHeading .text *,
+.headingFontOpenSans .section-list-view .listBrick .textDiv,
+.headingFontOpenSans .textAppliedFont,
+.OpenSansFont,
+.sectionTitleFontOpenSans .grid-title .titleDiv,
+.sectionTitleFontOpenSans .grid-title .titleDiv *,
+.sectionTitleFontOpenSans .section-kanban-view .column-header .columnTitle,
+.textFontOpenSans .brick-button .button span,
+.textFontOpenSans .brick-list .text,
+.textFontOpenSans .brick-list .text *,
+.textFontOpenSans .embed-text *,
+.textFontOpenSans .grid-title .descriptionDiv,
+.textFontOpenSans .grid-title .descriptionDiv *,
+.textFontOpenSans .type-paragraph .paragraphTextDiv,
+.textFontOpenSans .type-paragraph .paragraphTextDiv *,
+.textFontOpenSans .wall-header .title .wallDescription,
+.textFontOpenSans .wall-header .title .wallDescription *,
+.wallTitleFontOpenSans .wall-header .title .wallNameDiv {
+	font-family: Open Sans
+}
+
+.headingFontRobotoMono .brickHeading .text,
+.headingFontRobotoMono .brickHeading .text *,
+.headingFontRobotoMono .section-list-view .listBrick .textDiv,
+.headingFontRobotoMono .textAppliedFont,
+.RobotoMonoFont,
+.sectionTitleFontRobotoMono .grid-title .titleDiv,
+.sectionTitleFontRobotoMono .grid-title .titleDiv *,
+.sectionTitleFontRobotoMono .section-kanban-view .column-header .columnTitle,
+.textFontRobotoMono .brick-button .button span,
+.textFontRobotoMono .brick-list .text,
+.textFontRobotoMono .brick-list .text *,
+.textFontRobotoMono .embed-text *,
+.textFontRobotoMono .grid-title .descriptionDiv,
+.textFontRobotoMono .grid-title .descriptionDiv *,
+.textFontRobotoMono .type-paragraph .paragraphTextDiv,
+.textFontRobotoMono .type-paragraph .paragraphTextDiv *,
+.textFontRobotoMono .wall-header .title .wallDescription,
+.textFontRobotoMono .wall-header .title .wallDescription *,
+.wallTitleFontRobotoMono .wall-header .title .wallNameDiv {
+	font-family: Roboto Mono
+}
+
+.headingFontSpaceMono .brickHeading .text,
+.headingFontSpaceMono .brickHeading .text *,
+.headingFontSpaceMono .section-list-view .listBrick .textDiv,
+.headingFontSpaceMono .textAppliedFont,
+.sectionTitleFontSpaceMono .grid-title .titleDiv,
+.sectionTitleFontSpaceMono .grid-title .titleDiv *,
+.sectionTitleFontSpaceMono .section-kanban-view .column-header .columnTitle,
+.SpaceMonoFont,
+.textFontSpaceMono .brick-button .button span,
+.textFontSpaceMono .brick-list .text,
+.textFontSpaceMono .brick-list .text *,
+.textFontSpaceMono .embed-text *,
+.textFontSpaceMono .grid-title .descriptionDiv,
+.textFontSpaceMono .grid-title .descriptionDiv *,
+.textFontSpaceMono .type-paragraph .paragraphTextDiv,
+.textFontSpaceMono .type-paragraph .paragraphTextDiv *,
+.textFontSpaceMono .wall-header .title .wallDescription,
+.textFontSpaceMono .wall-header .title .wallDescription *,
+.wallTitleFontSpaceMono .wall-header .title .wallNameDiv {
+	font-family: Space Mono
+}
+
+.headingFontMerriweather .brickHeading .text,
+.headingFontMerriweather .brickHeading .text *,
+.headingFontMerriweather .section-list-view .listBrick .textDiv,
+.headingFontMerriweather .textAppliedFont,
+.MerriweatherFont,
+.sectionTitleFontMerriweather .grid-title .titleDiv,
+.sectionTitleFontMerriweather .grid-title .titleDiv *,
+.sectionTitleFontMerriweather .section-kanban-view .column-header .columnTitle,
+.textFontMerriweather .brick-button .button span,
+.textFontMerriweather .brick-list .text,
+.textFontMerriweather .brick-list .text *,
+.textFontMerriweather .embed-text *,
+.textFontMerriweather .grid-title .descriptionDiv,
+.textFontMerriweather .grid-title .descriptionDiv *,
+.textFontMerriweather .type-paragraph .paragraphTextDiv,
+.textFontMerriweather .type-paragraph .paragraphTextDiv *,
+.textFontMerriweather .wall-header .title .wallDescription,
+.textFontMerriweather .wall-header .title .wallDescription *,
+.wallTitleFontMerriweather .wall-header .title .wallNameDiv {
+	font-family: Merriweather
+}
+
+.headingFontMontserrat .brickHeading .text,
+.headingFontMontserrat .brickHeading .text *,
+.headingFontMontserrat .section-list-view .listBrick .textDiv,
+.headingFontMontserrat .textAppliedFont,
+.MontserratFont,
+.sectionTitleFontMontserrat .grid-title .titleDiv,
+.sectionTitleFontMontserrat .grid-title .titleDiv *,
+.sectionTitleFontMontserrat .section-kanban-view .column-header .columnTitle,
+.textFontMontserrat .brick-button .button span,
+.textFontMontserrat .brick-list .text,
+.textFontMontserrat .brick-list .text *,
+.textFontMontserrat .embed-text *,
+.textFontMontserrat .grid-title .descriptionDiv,
+.textFontMontserrat .grid-title .descriptionDiv *,
+.textFontMontserrat .type-paragraph .paragraphTextDiv,
+.textFontMontserrat .type-paragraph .paragraphTextDiv *,
+.textFontMontserrat .wall-header .title .wallDescription,
+.textFontMontserrat .wall-header .title .wallDescription *,
+.wallTitleFontMontserrat .wall-header .title .wallNameDiv {
+	font-family: Montserrat
+}
+
+.headingFontRubik .brickHeading .text,
+.headingFontRubik .brickHeading .text *,
+.headingFontRubik .section-list-view .listBrick .textDiv,
+.headingFontRubik .textAppliedFont,
+.RubikFont,
+.sectionTitleFontRubik .grid-title .titleDiv,
+.sectionTitleFontRubik .grid-title .titleDiv *,
+.sectionTitleFontRubik .section-kanban-view .column-header .columnTitle,
+.textFontRubik .brick-button .button span,
+.textFontRubik .brick-list .text,
+.textFontRubik .brick-list .text *,
+.textFontRubik .embed-text *,
+.textFontRubik .grid-title .descriptionDiv,
+.textFontRubik .grid-title .descriptionDiv *,
+.textFontRubik .type-paragraph .paragraphTextDiv,
+.textFontRubik .type-paragraph .paragraphTextDiv *,
+.textFontRubik .wall-header .title .wallDescription,
+.textFontRubik .wall-header .title .wallDescription *,
+.wallTitleFontRubik .wall-header .title .wallNameDiv {
+	font-family: Rubik
+}
+
+.headingFontPoppins .brickHeading .text,
+.headingFontPoppins .brickHeading .text *,
+.headingFontPoppins .section-list-view .listBrick .textDiv,
+.headingFontPoppins .textAppliedFont,
+.PoppinsFont,
+.sectionTitleFontPoppins .grid-title .titleDiv,
+.sectionTitleFontPoppins .grid-title .titleDiv *,
+.sectionTitleFontPoppins .section-kanban-view .column-header .columnTitle,
+.wallTitleFontPoppins .wall-header .title .wallNameDiv {
+	font-family: Poppins;
+	font-weight: 500
+}
+
+.textFontPoppins .brick-button .button span,
+.textFontPoppins .brick-list .text,
+.textFontPoppins .brick-list .text *,
+.textFontPoppins .embed-text *,
+.textFontPoppins .grid-title .descriptionDiv,
+.textFontPoppins .grid-title .descriptionDiv *,
+.textFontPoppins .type-paragraph .paragraphTextDiv,
+.textFontPoppins .type-paragraph .paragraphTextDiv *,
+.textFontPoppins .wall-header .title .wallDescription,
+.textFontPoppins .wall-header .title .wallDescription * {
+	font-family: Poppins
+}
+
+.headingFontPlayfair .brickHeading .text,
+.headingFontPlayfair .brickHeading .text *,
+.headingFontPlayfair .section-list-view .listBrick .textDiv,
+.headingFontPlayfair .textAppliedFont,
+.PlayfairFont,
+.sectionTitleFontPlayfair .grid-title .titleDiv,
+.sectionTitleFontPlayfair .grid-title .titleDiv *,
+.sectionTitleFontPlayfair .section-kanban-view .column-header .columnTitle,
+.textFontPlayfair .brick-button .button span,
+.textFontPlayfair .brick-list .text,
+.textFontPlayfair .brick-list .text *,
+.textFontPlayfair .embed-text *,
+.textFontPlayfair .grid-title .descriptionDiv,
+.textFontPlayfair .grid-title .descriptionDiv *,
+.textFontPlayfair .type-paragraph .paragraphTextDiv,
+.textFontPlayfair .type-paragraph .paragraphTextDiv *,
+.textFontPlayfair .wall-header .title .wallDescription,
+.textFontPlayfair .wall-header .title .wallDescription *,
+.wallTitleFontPlayfair .wall-header .title .wallNameDiv {
+	font-family: Playfair Display
+}
+
+.headingFontPacifico .brickHeading .text,
+.headingFontPacifico .brickHeading .text *,
+.headingFontPacifico .section-list-view .listBrick .textDiv,
+.headingFontPacifico .textAppliedFont,
+.PacificoFont,
+.sectionTitleFontPacifico .grid-title .titleDiv,
+.sectionTitleFontPacifico .grid-title .titleDiv *,
+.sectionTitleFontPacifico .section-kanban-view .column-header .columnTitle,
+.textFontPacifico .brick-button .button span,
+.textFontPacifico .brick-list .text,
+.textFontPacifico .brick-list .text *,
+.textFontPacifico .embed-text *,
+.textFontPacifico .grid-title .descriptionDiv,
+.textFontPacifico .grid-title .descriptionDiv *,
+.textFontPacifico .type-paragraph .paragraphTextDiv,
+.textFontPacifico .type-paragraph .paragraphTextDiv *,
+.textFontPacifico .wall-header .title .wallDescription,
+.textFontPacifico .wall-header .title .wallDescription *,
+.wallTitleFontPacifico .wall-header .title .wallNameDiv {
+	font-family: Pacifico;
+	font-weight: 500
+}
+
+.headingFontSwitzer .brickHeading .text,
+.headingFontSwitzer .brickHeading .text *,
+.headingFontSwitzer .section-list-view .listBrick .textDiv,
+.headingFontSwitzer .textAppliedFont,
+.sectionTitleFontSwitzer .grid-title .titleDiv,
+.sectionTitleFontSwitzer .grid-title .titleDiv *,
+.sectionTitleFontSwitzer .section-kanban-view .column-header .columnTitle,
+.SwitzerFont,
+.textFontSwitzer .brick-button .button span,
+.textFontSwitzer .brick-list .text,
+.textFontSwitzer .brick-list .text *,
+.textFontSwitzer .embed-text *,
+.textFontSwitzer .grid-title .descriptionDiv,
+.textFontSwitzer .grid-title .descriptionDiv *,
+.textFontSwitzer .type-paragraph .paragraphTextDiv,
+.textFontSwitzer .type-paragraph .paragraphTextDiv *,
+.textFontSwitzer .wall-header .title .wallDescription,
+.textFontSwitzer .wall-header .title .wallDescription *,
+.wallTitleFontSwitzer .wall-header .title .wallNameDiv {
+	font-family: switzer
+}
+
+.ChillaxFont,
+.headingFontChillax .brickHeading .text,
+.headingFontChillax .brickHeading .text *,
+.headingFontChillax .section-list-view .listBrick .textDiv,
+.headingFontChillax .textAppliedFont,
+.sectionTitleFontChillax .grid-title .titleDiv,
+.sectionTitleFontChillax .grid-title .titleDiv *,
+.sectionTitleFontChillax .section-kanban-view .column-header .columnTitle,
+.textFontChillax .brick-button .button span,
+.textFontChillax .brick-list .text,
+.textFontChillax .brick-list .text *,
+.textFontChillax .embed-text *,
+.textFontChillax .grid-title .descriptionDiv,
+.textFontChillax .grid-title .descriptionDiv *,
+.textFontChillax .type-paragraph .paragraphTextDiv,
+.textFontChillax .type-paragraph .paragraphTextDiv *,
+.textFontChillax .wall-header .title .wallDescription,
+.textFontChillax .wall-header .title .wallDescription *,
+.wallTitleFontChillax .wall-header .title .wallNameDiv {
+	font-family: chillax
+}
+
+.headingFontTelma .brickHeading .text,
+.headingFontTelma .brickHeading .text *,
+.headingFontTelma .section-list-view .listBrick .textDiv,
+.headingFontTelma .textAppliedFont,
+.sectionTitleFontTelma .grid-title .titleDiv,
+.sectionTitleFontTelma .grid-title .titleDiv *,
+.sectionTitleFontTelma .section-kanban-view .column-header .columnTitle,
+.TelmaFont,
+.textFontTelma .brick-button .button span,
+.textFontTelma .brick-list .text,
+.textFontTelma .brick-list .text *,
+.textFontTelma .embed-text *,
+.textFontTelma .grid-title .descriptionDiv,
+.textFontTelma .grid-title .descriptionDiv *,
+.textFontTelma .type-paragraph .paragraphTextDiv,
+.textFontTelma .type-paragraph .paragraphTextDiv *,
+.textFontTelma .wall-header .title .wallDescription,
+.textFontTelma .wall-header .title .wallDescription *,
+.wallTitleFontTelma .wall-header .title .wallNameDiv {
+	font-family: telma
+}
+
+.ClashDisplayFont,
+.headingFontClashDisplay .brickHeading .text,
+.headingFontClashDisplay .brickHeading .text *,
+.headingFontClashDisplay .section-list-view .listBrick .textDiv,
+.headingFontClashDisplay .textAppliedFont,
+.sectionTitleFontClashDisplay .grid-title .titleDiv,
+.sectionTitleFontClashDisplay .grid-title .titleDiv *,
+.sectionTitleFontClashDisplay .section-kanban-view .column-header .columnTitle,
+.textFontClashDisplay .brick-button .button span,
+.textFontClashDisplay .brick-list .text,
+.textFontClashDisplay .brick-list .text *,
+.textFontClashDisplay .embed-text *,
+.textFontClashDisplay .grid-title .descriptionDiv,
+.textFontClashDisplay .grid-title .descriptionDiv *,
+.textFontClashDisplay .type-paragraph .paragraphTextDiv,
+.textFontClashDisplay .type-paragraph .paragraphTextDiv *,
+.textFontClashDisplay .wall-header .title .wallDescription,
+.textFontClashDisplay .wall-header .title .wallDescription *,
+.wallTitleFontClashDisplay .wall-header .title .wallNameDiv {
+	font-family: clash display
+}
+
+.headingFontZodiak .brickHeading .text,
+.headingFontZodiak .section-list-view .listBrick .textDiv,
+.headingFontZodiak .textAppliedFont,
+.sectionTitleFontZodiak .grid-title .titleDiv,
+.sectionTitleFontZodiak .grid-title .titleDiv *,
+.sectionTitleFontZodiak .section-kanban-view .column-header .columnTitle,
+.wallTitleFontZodiak .wall-header .title .wallNameDiv,
+.ZodiakFont {
+	font-family: zodiak;
+	font-weight: 800
+}
+
+.textFontZodiak .brick-button .button span,
+.textFontZodiak .brick-list .text,
+.textFontZodiak .brick-list .text *,
+.textFontZodiak .embed-text *,
+.textFontZodiak .grid-title .descriptionDiv,
+.textFontZodiak .grid-title .descriptionDiv *,
+.textFontZodiak .type-paragraph .paragraphTextDiv,
+.textFontZodiak .type-paragraph .paragraphTextDiv *,
+.textFontZodiak .wall-header .title .wallDescription,
+.textFontZodiak .wall-header .title .wallDescription * {
+	font-family: zodiak
+}
+
+label[data-v-5348f2b4] {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.settings .field input[type=checkbox][data-v-5348f2b4] {
+	-moz-appearance: checkbox;
+	appearance: checkbox;
+	-webkit-appearance: checkbox;
+	clear: none;
+	min-width: 20px;
+	padding: 0
+}
+
+.wall-templates-list > li[data-v-5348f2b4] {
+	float: left;
+	width: 100%;
+	padding: 8px 6px;
+	border-bottom: 1px solid #eee
+}
+
+.wall-templates-list > li[data-v-5348f2b4]:hover {
+	background-color: #f4f4f4
+}
+
+.wall-templates-list > li > span[data-v-5348f2b4] {
+	float: left;
+	margin-top: 2px
+}
+
+.wall-templates-list li .trash-btn[data-v-5348f2b4] {
+	float: right;
+	padding: 3px;
+	margin-right: 10px
+}
+
+.wall-templates-list li .trash-btn > img[data-v-5348f2b4] {
+	opacity: .7
+}
+
+.wall-templates-list li .trash-btn:hover > img[data-v-5348f2b4] {
+	opacity: 1
+}
+
+* {
+	font-family: Inter
+}

@@ -25,7 +25,7 @@ body {z-index:   font-family: "Iowan-Old-Style", Georgia,serif;
 
 /*********
 **********
-TESTING STYLES
+! TESTING STYLES
 **********
 **********/
 ol,
@@ -44,7 +44,7 @@ p {
 }
 
 /*********
-TESTING BORDERS
+! TESTING BORDERS
 **********/
 .listPadBorder {
   display: block;
@@ -73,7 +73,7 @@ TESTING BORDERS
 
 
 /*********
-LISTS > ROOT
+! LISTS > ROOT
 **********/
 :root {
   --boxshadtestBrdWidth: .25px;
@@ -85,7 +85,7 @@ LISTS > ROOT
 }
 
 /*********
-LISTS > ALL
+! LISTS > ALL
 **********/
 ol,
 ul {
@@ -97,7 +97,7 @@ ul {
 }
 
 /*********
-LIST ITEMS > ALL
+! LIST ITEMS > ALL
 **********/
 ol li,
 ul li {
@@ -125,7 +125,7 @@ ul li:before {
 /* setting '.' as the `content` for all bullets allows the unordered bullet's height to match the ordered bullet's height. The height of both bullets is set by the font `line-height`. The font `line-height` for both ordered and unordered bullets is inherited from whatever the list item text is set to. This means the bullets will always be the same height as the list-item text.]*/
 
 /*********
-UNORDERED LISTS
+! UNORDERED LISTS
 *********/
 
 /*LEVEL 1*/
@@ -134,7 +134,7 @@ ul li {}
 ul li:before {
   content: ".";
   color: transparent;
-  background-image: var(--bulletSquare);
+  background-image: var(--bulletCircle);
   background-size: calc(var(--bodyFontSize) - 6px);
   background-repeat: no-repeat;
   background-position: 65% 55%;
@@ -201,7 +201,7 @@ LISTS > Ordered Lists
 
 /*****************
 ******************
-ICONS
+! ICONS
 ****************** 
 ******************/
 :root {
