@@ -1355,7 +1355,6 @@ POPUP
 		width: 28px !important; 
 		height: 28px !important; 
 		display: flex !important;
-		outline: 1px solid black;
 		margin: 0px !important;
 }
 #app .brick-popup-expanded .brick-sidebar-topbar  .setting-button {
