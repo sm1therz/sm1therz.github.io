@@ -411,6 +411,12 @@ opacity: 1 !important
 		left: 0;
 		padding-left: var(--brickItemPadLeft) !important
 }
+/*on tag page*/
+.tagPage .brick > .brick-settings{
+position:relative !important;
+height:34px !important;
+}
+
 #gridsContainer .brick > .brick-settings * {
 		float: unset;
 }
@@ -1435,3 +1441,24 @@ ICONS
 		--iconCheckMark-Black:url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.5788 7.81965C26.7178 6.95869 25.3219 6.95869 24.461 7.81965L12.7773 19.5034L7.54045 14.2666C6.67921 13.4053 5.28284 13.4053 4.4216 14.2666C3.56035 15.1278 3.56035 16.5242 4.4216 17.3854L11.2161 24.1799C11.5315 24.4953 11.9191 24.6954 12.3259 24.7797C13.0287 24.926 13.7898 24.7264 14.3358 24.1804L27.5788 10.9375C28.4397 10.0765 28.4397 8.68062 27.5788 7.81965Z" fill="black" stroke="black" stroke-width="0.3"/></svg>');
 		--iconCheckMark-White:url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.5788 7.81965C26.7178 6.95869 25.3219 6.95869 24.461 7.81965L12.7773 19.5034L7.54045 14.2666C6.67921 13.4053 5.28284 13.4053 4.4216 14.2666C3.56035 15.1278 3.56035 16.5242 4.4216 17.3854L11.2161 24.1799C11.5315 24.4953 11.9191 24.6954 12.3259 24.7797C13.0287 24.926 13.7898 24.7264 14.3358 24.1804L27.5788 10.9375C28.4397 10.0765 28.4397 8.68062 27.5788 7.81965Z" fill="white" stroke="black" stroke-width="0.3"/></svg>');
 }
+
+
+
+
+/***********
+! COLLAPSED CARDS - show first line
+************/
+.brick.collapsed .objects > li.type-paragraph:nth-child(2){
+display:block !important;
+}
+
+.brick.collapsed .objects > li.type-paragraph:nth-child(2) > div {
+display:none !important;
+}
+.brick.collapsed .objects > li.type-paragraph:nth-child(2) > div.large {
+display:block !important;
+}
+
+
+
+
