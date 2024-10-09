@@ -618,8 +618,15 @@ ALL HEADINGS
 
 /*line break in heading*/
 #app .brick .object.type-heading > .brickHeading .text div {
-font-weight:400 !important;
 margin-top:1px;
+}
+#app .brick .object.type-heading > .brickHeading .text div,
+#app .brick .object.type-heading > .brickHeading .text div span {
+font-weight:400 !important;
+}
+#app .brick .object.type-heading > .brickHeading .text div b,
+#app .brick .object.type-heading > .brickHeading .text div span b {
+font-weight:500 !important;
 }
 
 /************
@@ -645,7 +652,7 @@ HEADING - 2
 		line-height: var(--h2LineHeight)!important;
 }
 /*Small text > If Line-break + Grey Text*/
-#app .brick .object > .headingOne > .text div span[data-text-color="#9e9e9e"]{
+#app .brick .object > .headingOne > .text div span[data-text-color]{
 		font-size: calc(var(--h2FontSize) - .5px) !important;
 		line-height: calc(var(--h2LineHeight) - .5px) !important;
 }
@@ -661,7 +668,7 @@ HEADING - 3
 		line-height: var(--h3LineHeight)!important;
 }
 /*Small text > If Line-break + Grey Text*/
-#app .brick .object > .headingTwo > .text div span[data-text-color="#9e9e9e"]{
+#app .brick .object > .headingTwo > .text div span[data-text-color]{
 		font-size: calc(var(--h3FontSize) - .5px) !important;
 		line-height: calc(var(--h3LineHeight) - .5px) !important;
 }
