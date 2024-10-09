@@ -609,15 +609,18 @@ TEXT - LARGE
 /************
 ALL HEADINGS
 *************/
-#app .brick .object.type-heading > .brickHeading .text,
-#app .brick .object.type-heading > .brickHeading .text div,
-#app .brick .object.type-heading > .brickHeading .text span {
+
+#app .brick .object.type-heading > .brickHeading .text, 
+#app .brick .object.type-heading > .brickHeading .text div, 
+#app .brick .object.type-heading > .brickHeading .text  * {
 		font-weight: 500 !important;
 		-webkit-font-smoothing: subpixel-antialiased !important;
 }
-#app .brick .object.type-heading > .brickHeading .text strong,
+
+/*HEADINGS > BOLD*/
 #app .brick .object.type-heading > .brickHeading .text b {
 		font-weight: 600 !important;
+		-webkit-font-smoothing: subpixel-antialiased !important;
 }
 #app .brick .object.type-heading > .brickHeading .text {
 		color: var(--bldClr) !important;
@@ -638,18 +641,7 @@ FIRST LINE BREAK IN HEADING / LIST CELL > MARGIN-TOP
 margin-top:1px;
 }
 
-#app .brick .object.type-heading > .brickHeading .text div,
-#app .brick .object.type-heading > .brickHeading .text div span {
-font-weight:400 !important;
-}
-#app .brick .object.type-heading > .brickHeading .text div b,
-#app .brick .object.type-heading > .brickHeading .text div span b {
-font-weight:500 !important;
-}
 
-/************
-SPANSLINE BREAKS IN HEADING
-*************/
 
 /************
 COLORED TEXT AFTER LINE BREAK
@@ -667,9 +659,6 @@ COLORED TEXT AFTER LINE BREAK
 }
 
 
-#app .listBrick .table-item-columns > .main-cell .mainTextDiv div span[data-text-color]{
-font-size:.9em !important;
-}
 
 /************
 HEADING - 1
@@ -1244,7 +1233,7 @@ MENU - POPUP FORMATTING
 		min-width: var(--formatMenuW);
 		z-index: 94949494;
 		opacity: 1;
-		margin-top: -25px !important;
+		margin-top: -50px !important;
 }
 .editor-menu-bubble .dropdown-bubble {
 		overflow: auto;
@@ -1293,12 +1282,14 @@ COLORS
 *************/
 
 
-.brick-list .text,
-.brick-list .text i,
-.brick-list .text em,
-#app .object .text,
-#app .object .text u{
-		color: var(--bodyClr) !important;
+#app .brick .text, 
+#app .brick .text i, 
+#app .brick .text b, 
+#app .brick .text u, 
+#app .brick .text strike,
+#app .brick .text span, 
+#app .brick .text div{
+		color: var(--bodyClr);
 }
 
 
@@ -1455,9 +1446,14 @@ POPUP
 		flex-direction: column;
 		align-items: flex-end
 }
-#app .brick-popup-expanded .brick-content .objects > li{
+
+#app #wallContainer #gridsContainer .brick-popup-expanded .objects > li{
 		max-width: 700px;
-		padding-right: calc(var(--brickItemPadLeft) * 2) !important;
+		padding-right: calc(var(--brickItemPadLeft) * 1) !important;
+		position:relative !important;
+}
+#app #wallContainer #gridsContainer .brick-popup-expanded .objects > li > div {
+		position:unset !important;
 }
 
 
@@ -1472,12 +1468,21 @@ HANDLES*/
 	min-height: 23px !important;
 	max-height: unset !important;
 	padding: 3px !important;
+	top:var(--listMargTop) !important;
+}
+#app #gridsContainer .brick-popup-expanded .object img.object-handle {
+left:0 !important
 }
 
 
+
+#app #gridsContainer .brick-popup-expanded .object img.object-options{
+		right: 0 !important;
+}
 #app #gridsContainer .brick-popup-expanded .object img.inline-add-comment {
-		right: calc(var(--brickItemPadLeft) * 1) !important;
+	right: calc(var(--brickItemPadLeft) * 1) !important;
 }
+
 
 #app #gridsContainer .objects > li:hover {
 	background:transparent !important;
