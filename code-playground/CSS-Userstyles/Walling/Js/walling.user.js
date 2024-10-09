@@ -1,3 +1,8 @@
+
+
+(function() {
+	let style = `<style>
+
 /************
 ROOT
 *************/
@@ -411,12 +416,6 @@ opacity: 1 !important
 		left: 0;
 		padding-left: var(--brickItemPadLeft) !important
 }
-/*on tag page*/
-.tagPage .brick > .brick-settings{
-position:relative !important;
-height:34px !important;
-}
-
 #gridsContainer .brick > .brick-settings * {
 		float: unset;
 }
@@ -1446,9 +1445,9 @@ ICONS
 
 
 /***********
-! COLLAPSED CARDS - show first line
+collapsed - show first line
 ************/
-.brick.collapsed .objects > li.type-paragraph:nth-child(1){
+.brick.collapsed .objects > li:first-child{
 max-height:unset !important;
 }
 /*
@@ -1462,7 +1461,16 @@ display:none !important;
 .brick.collapsed .objects > li.type-paragraph:nth-child(2) > div.large {
 display:block !important;
 }
-
-
 */
 
+
+.tagPage .brick > .brick-settings{
+position:relative !important;
+height:34px !important;
+}
+
+	
+</style>`;
+
+	document.head.insertAdjacentHTML("beforeend", style);
+})();
