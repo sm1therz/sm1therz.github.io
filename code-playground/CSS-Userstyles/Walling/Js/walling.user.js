@@ -293,7 +293,7 @@ BRICK - HEADERS
 		flex-wrap: wrap;
 		float: unset;
 		max-width: 100% !important;
-		z-index: 12;
+		z-index: 949494949494949494 !important;
 		gap: var(--bricktagGap) !important;
 		margin-top: 18px !important;
 		padding-top: 3px !important;
