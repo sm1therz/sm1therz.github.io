@@ -919,6 +919,11 @@ BOOKMARK SECTION TYPE - DETAILS
   max-width: 100%;
 }
 
+/*CUSTOM CLASS - DESCRIPTION "HIDE"*/
+.bookmark-item_mode_detail .bookmark-description .hide-description {
+display:none;
+}
+
 /*medium*/
 .bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__icon-wrapper {
   --bookmarkThumbnailWidth: 42px;
