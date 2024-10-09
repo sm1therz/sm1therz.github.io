@@ -4,7 +4,6 @@
 	let style = `<style>
 
 
-
 /************
 ROOT
 *************/
@@ -225,7 +224,7 @@ BRICK - HEADERS
 		right: 4px;
 		height: var(--brickCollapseBtnW) !important;
 		width: unset !important;
-		z-index: 94949494 !important
+		z-index: 9949494949494949494949494944949494 !important
 }
 
 
@@ -1502,9 +1501,6 @@ display:block !important;
 
 
 */
-
-
-
 
 
 	
