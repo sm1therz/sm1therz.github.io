@@ -642,16 +642,22 @@ font-weight:500 !important;
 }
 
 /************
+SPANSLINE BREAKS IN HEADING
+*************/
+
+/************
 COLORED TEXT AFTER LINE BREAK
 *************/
 
 #app .brick .object > .headingOne > .text div span[data-text-color]{
 		font-size: calc(var(--h2FontSize) - .5px) !important;
 		line-height: calc(var(--h2LineHeight) - .5px) !important;
+		display:block;
 }
 #app .brick .object > .headingTwo > .text div span[data-text-color]{
 		font-size: calc(var(--h3FontSize) - .5px) !important;
 		line-height: calc(var(--h3LineHeight) - .5px) !important;
+		display:block;
 }
 
 
@@ -1517,3 +1523,7 @@ display:block !important;
 
 
 */
+
+
+
+
