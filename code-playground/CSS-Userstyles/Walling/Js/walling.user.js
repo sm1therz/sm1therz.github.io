@@ -74,7 +74,7 @@ ROOT
 COLORS
 *************/
 
-:root{
+.visual-grid {
 		/*text*/
 		--bodyClr:#222;
 		--bldClr:black;
@@ -95,7 +95,7 @@ COLORS
 		--listbulletcollapsedClr:hsla(0,0%,0%,0.1);
 
 }
-.darkBrick{
+.visual-grid .darkBrick{
 		/*text*/
 		--bodyClr:hsla(0, 100%, 100%,0.86);
 		--bldClr:hsla(0, 0%, 97%);
@@ -117,9 +117,11 @@ COLORS
 
 
 }
+/*
 :root{
 		--darkmode-black:hsl(240, 6%, 7%);
 }
+*/
 /************
 TESTING
 *************/
@@ -622,10 +624,20 @@ ALL HEADINGS
 		padding-top: 0px !important
 }
 
-/*line break in heading*/
-#app .brick .object.type-heading > .brickHeading .text div:first-child {
+/************
+TABLE / LISTS > FIRST CELL
+*************/
+#app .listBrick .table-item-columns > .main-cell .mainTextDiv{
+white-space:pre-wrap;
+}
+/************
+FIRST LINE BREAK IN HEADING / LIST CELL > MARGIN-TOP
+*************/
+#app .brick .object.type-heading > .brickHeading .text div:first-child,
+#app .listBrick .table-item-columns > .main-cell .mainTextDiv > div:first-child {
 margin-top:1px;
 }
+
 #app .brick .object.type-heading > .brickHeading .text div,
 #app .brick .object.type-heading > .brickHeading .text div span {
 font-weight:400 !important;
@@ -633,6 +645,24 @@ font-weight:400 !important;
 #app .brick .object.type-heading > .brickHeading .text div b,
 #app .brick .object.type-heading > .brickHeading .text div span b {
 font-weight:500 !important;
+}
+
+/************
+COLORED TEXT AFTER LINE BREAK
+*************/
+
+#app .brick .object > .headingOne > .text div span[data-text-color]{
+		font-size: calc(var(--h2FontSize) - .5px) !important;
+		line-height: calc(var(--h2LineHeight) - .5px) !important;
+}
+#app .brick .object > .headingTwo > .text div span[data-text-color]{
+		font-size: calc(var(--h3FontSize) - .5px) !important;
+		line-height: calc(var(--h3LineHeight) - .5px) !important;
+}
+
+
+#app .listBrick .table-item-columns > .main-cell .mainTextDiv div span[data-text-color]{
+font-size:.9em !important;
 }
 
 /************
@@ -657,11 +687,7 @@ HEADING - 2
 		font-size: var(--h2FontSize) !important;
 		line-height: var(--h2LineHeight)!important;
 }
-/*Small text > If Line-break + Grey Text*/
-#app .brick .object > .headingOne > .text div span[data-text-color]{
-		font-size: calc(var(--h2FontSize) - .5px) !important;
-		line-height: calc(var(--h2LineHeight) - .5px) !important;
-}
+
 /************
 HEADING - 3
 *************/
@@ -673,11 +699,7 @@ HEADING - 3
 		font-size: var(--h3FontSize) !important;
 		line-height: var(--h3LineHeight)!important;
 }
-/*Small text > If Line-break + Grey Text*/
-#app .brick .object > .headingTwo > .text div span[data-text-color]{
-		font-size: calc(var(--h3FontSize) - .5px) !important;
-		line-height: calc(var(--h3LineHeight) - .5px) !important;
-}
+
 
 /************
 BOLD
@@ -1295,7 +1317,7 @@ BACKGROUND COLORS
 /************
 TEXT COLORS
 *************/
-.walling-text-color[data-text-color="#9e9e9e"] {
+.visual-grid .walling-text-color[data-text-color="#9e9e9e"] {
 		color: var(--greyedOutClr) !important;
 }
 
