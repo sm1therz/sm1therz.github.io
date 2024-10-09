@@ -623,7 +623,7 @@ ALL HEADINGS
 }
 
 /*line break in heading*/
-#app .brick .object.type-heading > .brickHeading .text div {
+#app .brick .object.type-heading > .brickHeading .text div:first-child {
 margin-top:1px;
 }
 #app .brick .object.type-heading > .brickHeading .text div,
@@ -1501,6 +1501,8 @@ display:block !important;
 
 
 */
+
+
 
 
 	
