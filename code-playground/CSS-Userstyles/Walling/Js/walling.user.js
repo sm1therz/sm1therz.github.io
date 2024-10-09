@@ -1291,6 +1291,9 @@ COLORS
 #app .brick .text div{
 		color: var(--bodyClr);
 }
+#app .brick .text b {
+color: var(--bldClr) !important;
+}
 
 
 
