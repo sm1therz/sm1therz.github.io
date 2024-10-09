@@ -3,6 +3,7 @@
 (function() {
 	let style = `<style>
 
+
 /************
 ROOT
 *************/
@@ -416,6 +417,12 @@ opacity: 1 !important
 		left: 0;
 		padding-left: var(--brickItemPadLeft) !important
 }
+/*on tag page*/
+.tagPage .brick > .brick-settings{
+position:relative !important;
+height:34px !important;
+}
+
 #gridsContainer .brick > .brick-settings * {
 		float: unset;
 }
@@ -601,14 +608,26 @@ TEXT - LARGE
 ALL HEADINGS
 *************/
 #app .brick .object.type-heading > .brickHeading .text,
-#app .brick .object.type-heading > .brickHeading .text * {
+#app .brick .object.type-heading > .brickHeading .text div,
+#app .brick .object.type-heading > .brickHeading .text span {
 		font-weight: 500 !important;
 		-webkit-font-smoothing: subpixel-antialiased !important;
+}
+#app .brick .object.type-heading > .brickHeading .text strong,
+#app .brick .object.type-heading > .brickHeading .text b {
+		font-weight: 600 !important;
 }
 #app .brick .object.type-heading > .brickHeading .text {
 		color: var(--bldClr) !important;
 		padding-top: 0px !important
 }
+
+/*line break in heading*/
+#app .brick .object.type-heading > .brickHeading .text div {
+font-weight:400 !important;
+margin-top:1px;
+}
+
 /************
 HEADING - 1
 *************/
@@ -631,6 +650,11 @@ HEADING - 2
 		font-size: var(--h2FontSize) !important;
 		line-height: var(--h2LineHeight)!important;
 }
+/*Small text > If Line-break + Grey Text*/
+#app .brick .object > .headingOne > .text div span[data-text-color="#9e9e9e"]{
+		font-size: calc(var(--h2FontSize) - 1px) !important;
+		line-height: calc(var(--h2LineHeight) - 1px) !important;
+}
 /************
 HEADING - 3
 *************/
@@ -642,6 +666,12 @@ HEADING - 3
 		font-size: var(--h3FontSize) !important;
 		line-height: var(--h3LineHeight)!important;
 }
+/*Small text > If Line-break + Grey Text*/
+#app .brick .object > .headingTwo > .text div span[data-text-color="#9e9e9e"]{
+		font-size: calc(var(--h3FontSize) - 1px) !important;
+		line-height: calc(var(--h3LineHeight) - 1px) !important;
+}
+
 /************
 BOLD
 *************/
@@ -1445,9 +1475,9 @@ ICONS
 
 
 /***********
-collapsed - show first line
+! COLLAPSED CARDS - show first line
 ************/
-.brick.collapsed .objects > li:first-child{
+.brick.collapsed .objects > li:nth-child(1){
 max-height:unset !important;
 }
 /*
@@ -1461,13 +1491,11 @@ display:none !important;
 .brick.collapsed .objects > li.type-paragraph:nth-child(2) > div.large {
 display:block !important;
 }
+
+
 */
 
 
-.tagPage .brick > .brick-settings{
-position:relative !important;
-height:34px !important;
-}
 
 	
 </style>`;
