@@ -463,11 +463,11 @@ BRICK ITEM CONTENT
 
 .brick .brick-top-handle {
 		z-index: 9494;
-		height: var(--brickTopHandleHeight) !important;
-		top: calc(var(--brickTopHandleHeight) * -0.6) !important;
-		transition: .15s;
-		background: hsla(0, 0%, 50%, .0);
-		z-index: 9494;
+		/*height: var(--brickTopHandleHeight) !important;*/
+		/*top: calc(var(--brickTopHandleHeight) * -0.6) !important;*/
+		/*transition: .15s;*/
+		/*background: hsla(0, 0%, 50%, .0);*/
+		z-index: 9494 !important;
 }
 
 /************

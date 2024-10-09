@@ -4,6 +4,7 @@
 	let style = `<style>
 
 
+
 /************
 ROOT
 *************/
@@ -469,11 +470,11 @@ BRICK ITEM CONTENT
 
 .brick .brick-top-handle {
 		z-index: 9494;
-		height: var(--brickTopHandleHeight) !important;
-		top: calc(var(--brickTopHandleHeight) * -0.6) !important;
-		transition: .15s;
-		background: hsla(0, 0%, 50%, .0);
-		z-index: 9494;
+		/*height: var(--brickTopHandleHeight) !important;*/
+		/*top: calc(var(--brickTopHandleHeight) * -0.6) !important;*/
+		/*transition: .15s;*/
+		/*background: hsla(0, 0%, 50%, .0);*/
+		z-index: 9494 !important;
 }
 
 /************
@@ -624,8 +625,15 @@ ALL HEADINGS
 
 /*line break in heading*/
 #app .brick .object.type-heading > .brickHeading .text div {
-font-weight:400 !important;
 margin-top:1px;
+}
+#app .brick .object.type-heading > .brickHeading .text div,
+#app .brick .object.type-heading > .brickHeading .text div span {
+font-weight:400 !important;
+}
+#app .brick .object.type-heading > .brickHeading .text div b,
+#app .brick .object.type-heading > .brickHeading .text div span b {
+font-weight:500 !important;
 }
 
 /************
@@ -651,9 +659,9 @@ HEADING - 2
 		line-height: var(--h2LineHeight)!important;
 }
 /*Small text > If Line-break + Grey Text*/
-#app .brick .object > .headingOne > .text div span[data-text-color="#9e9e9e"]{
-		font-size: calc(var(--h2FontSize) - 1px) !important;
-		line-height: calc(var(--h2LineHeight) - 1px) !important;
+#app .brick .object > .headingOne > .text div span[data-text-color]{
+		font-size: calc(var(--h2FontSize) - .5px) !important;
+		line-height: calc(var(--h2LineHeight) - .5px) !important;
 }
 /************
 HEADING - 3
@@ -667,9 +675,9 @@ HEADING - 3
 		line-height: var(--h3LineHeight)!important;
 }
 /*Small text > If Line-break + Grey Text*/
-#app .brick .object > .headingTwo > .text div span[data-text-color="#9e9e9e"]{
-		font-size: calc(var(--h3FontSize) - 1px) !important;
-		line-height: calc(var(--h3LineHeight) - 1px) !important;
+#app .brick .object > .headingTwo > .text div span[data-text-color]{
+		font-size: calc(var(--h3FontSize) - .5px) !important;
+		line-height: calc(var(--h3LineHeight) - .5px) !important;
 }
 
 /************
@@ -1494,6 +1502,8 @@ display:block !important;
 
 
 */
+
+
 
 
 
