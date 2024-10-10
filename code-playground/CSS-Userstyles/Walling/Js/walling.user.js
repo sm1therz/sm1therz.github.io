@@ -327,14 +327,31 @@ KANBAN
 padding-left:4px;
 padding-right:4px;
 }
+#app .kanbanColumn .column-header img.options-icon{
+	opacity:0 !important;
+	transition:.1s;
+}
+#app .kanbanColumn .column-header:hover img.options-icon{
+	opacity:1 !important;
+}
+.section-kanban-view button.addColumnBtn{
+	opacity:.25 !important;
+	transition:.1s;
+}
+.section-kanban-view button.addColumnBtn:hover{
+opacity:1 !important;
+}
+
 .kanbanColumn .column-header .columnTitle {
 	font-size: 16px !important;
 	line-height: 20px !important;
 	font-weight: 400 !important;
+	color:hsla(0,0%,50%,.5)!important;
 }
 #app .kanbanColumn .column-header .descriptionDiv{
 	font-size: 14px !important;
 	line-height: 18px !important;
+	color:hsla(0,0%,50%,.35)!important;
 }
 .kanbanColumn .column-header .border{
 	position:relative;
@@ -360,7 +377,8 @@ display:none;
 	padding-bottom:20px !important;
 }
 
-.kanbanColumn > div.visual-grid button.column-addBrickBtn {
+.kanbanColumn > div.visual-grid button.column-addBrickBtn,
+.kanbanColumn .column-header .columnBricksCount {
 	opacity:.25 !important;
 	display:none;
 	
