@@ -74,7 +74,7 @@ ROOT
 COLORS
 *************/
 
-.visual-grid {
+.brick {
 		/*text*/
 		--bodyClr:#222;
 		--bldClr:black;
@@ -95,7 +95,8 @@ COLORS
 		--listbulletcollapsedClr:hsla(0,0%,0%,0.1);
 
 }
-.visual-grid .darkBrick{
+.brick.darkBrick,
+.brick.noBackground{
 		/*text*/
 		--bodyClr:hsla(0, 100%, 100%,0.86);
 		--bldClr:hsla(0, 0%, 97%);
@@ -117,11 +118,17 @@ COLORS
 
 
 }
-/*
-:root{
+
+.darkmode .topHeader,
+.darkmode .main{
+		background:hsl(240, 6%, 7%) !important;
+}
+
+:root {
 		--darkmode-black:hsl(240, 6%, 7%);
 }
-*/
+
+
 /************
 TESTING
 *************/
@@ -1098,6 +1105,7 @@ MARGINS - HEADINGS
 *************/
 #app .brick .object.type-heading > div {
 		margin-top: var(--itemMargTopBtm) !important;
+		
 }
 #app .brick .objects > .object:first-child > div {
 		margin-top: 10px !important;
@@ -1107,7 +1115,12 @@ MARGINS - HEADINGS
 		padding: 0px !important;
 }
 
-.object.type-heading > .headingOne {}
+#app .brick .objects > .object.type-heading:first-child > div {
+		margin-bottom: calc(var(--itemMargTopBtm) * .5) !important;
+}
+#app .brick.collapsed .objects > .object.type-heading:first-child > div {
+		margin-bottom: calc(var(--itemMargTopBtm) * 0) !important;
+}
 
 
 
@@ -1213,6 +1226,11 @@ RELATIVE OVERRIDES
 }
 *************/
 
+
+#app .ui-resizable-handle,
+#app .visual-grid > .visual-grid-item.ui-resizable-autohide > .ui-resizable-handle, .visual-grid > .visual-grid-item.ui-resizable-disabled > .ui-resizable-handle{
+display:block !important;
+}
 /************
 MENU - POPUP FORMATTING
 *************/
@@ -1291,8 +1309,19 @@ COLORS
 #app .brick .text div{
 		color: var(--bodyClr);
 }
-#app .brick .text b {
+
+/*
+#app .brick .text b,
+#app .brick .brickHeading .text,
+#app .brick .brickHeading .text div,
+#app .brick .brickHeading .text span  {
 color: var(--bldClr) !important;
+}
+*/
+
+#app .brick .text b,
+#app .brick .brickHeading .text  {
+--bodyClr: var(--bldClr);
 }
 
 
@@ -1451,7 +1480,7 @@ POPUP
 }
 
 #app #wallContainer #gridsContainer .brick-popup-expanded .objects > li{
-		max-width: 700px;
+		max-width: 800px;
 		padding-right: calc(var(--brickItemPadLeft) * 1) !important;
 		position:relative !important;
 }
@@ -1499,7 +1528,8 @@ ICONS
 		--iconbulletCircle:var(--iconbulletCircle-Black);
 		--iconCheckMark:var(--iconCheckMark-Black);
 }
-.darkBrick {
+.darkmode .darkBrick,
+.brick.noBackground {
 		--iconbulletCircle:var(--iconbulletCircle-White);
 		--iconCheckMark:var(--iconCheckMark-White);
 
