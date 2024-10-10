@@ -1,5 +1,3 @@
-
-
 /************
 ROOT
 *************/
@@ -147,6 +145,13 @@ li.listitem,
 
 		box-shadow: 0 0 0 .2px hsl(100, 80%, 30%,0) !important;
 }
+/*
+#app .grid-component,
+#app .grid-component .grid-title,
+.grid-component > .new-section{
+border:1px solid red !important;
+}
+*/
 
 /************
 SECTIONS
@@ -184,8 +189,60 @@ SECTIONS
 		transform: scale(.7);
 }
 
+:root {
+--sectionGap:10px;
+}
 
 
+#app .grid-component {
+		margin-bottom:0px !important;	
+		padding-top:var(--sectionGap) !important;
+}
+
+#app .grid-component .grid-title {
+		padding-bottom:var(--sectionGap) !important;
+		margin-bottom:0px !important;
+}
+
+/*SECTION >  Description*/
+.grid-component.hiddenSection .descriptionDiv{
+display:block !important;
+}
+.grid-component.hiddenSection .descriptionDiv, 
+.grid-component.hiddenSection .descriptionDiv * {
+font-size:16.5px !important;
+line-height:23.5px !important;
+}
+/*SECTION > New Section Button*/
+.grid-component > .new-section {
+		margin:unset !important;
+		padding:0px !Important;
+		display:flex !important;
+		align-items:center;
+
+}
+.grid-component > .new-section > div,
+.grid-component > .new-section > button{
+		margin:unset !important;
+}
+/*SECTION > New Section Button > Re-Order*/
+
+.grid-component > .new-section > button.new-section-btn{
+	order:1;
+}
+.grid-component > .new-section > .moreNewSectionOptions{
+	order:2;
+}
+.grid-component > .new-section > .line{
+	order:9;
+}
+/*SECTION >  CONTENT > OVERRIDES*/
+.grid-container > .section-list-view, 
+.grid-container > .section-list-view > .table-container{
+	padding-bottom:0px !important;
+	padding-bottom:0px !important;
+		
+}
 
 /************
 BRICKS
@@ -1563,5 +1620,7 @@ display:block !important;
 
 
 */
+
+
 
 
