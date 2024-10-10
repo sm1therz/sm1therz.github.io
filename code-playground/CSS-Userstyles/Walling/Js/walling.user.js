@@ -6,6 +6,7 @@
 
 
 
+
 /************
 ROOT
 *************/
@@ -311,6 +312,61 @@ margin-left:40px !important;
 		
 }
 
+
+/************
+KANBAN
+*************/
+.section-kanban-view,
+.kanbanColumn {
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-bottom: 0px !important;
+}
+
+.kanbanColumn .column-header {
+padding-left:4px;
+padding-right:4px;
+}
+.kanbanColumn .column-header .columnTitle {
+	font-size: 16.25px !important;
+	font-weight: 400 !important;
+}
+#app .kanbanColumn .column-header .descriptionDiv{
+	font-size: 14px !important;
+}
+.kanbanColumn .column-header .border{
+	position:relative;
+}
+.kanbanColumn .column-header .border{
+	position:absolute;
+	bottom:-2px;
+	left:-2px;
+	right:-2px;
+	height:2px !important;
+	opacity:.5;	
+	margin:unset;
+	z-index:-1;
+	border-radius:7px;
+}
+
+.kanbanColumn .column-header .border.colorless{
+display:none;
+}
+.kanbanColumn > div.visual-grid {
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-bottom:20px !important;
+}
+
+.kanbanColumn > div.visual-grid button.column-addBrickBtn {
+	opacity:.25 !important;
+	display:none;
+	
+}
+
+.kanbanColumn > div.visual-grid button.column-addBrickBtn:hover {
+	opacity:.25 !important;
+}
 /************
 BRICKS
 *************/
@@ -1687,6 +1743,8 @@ display:block !important;
 
 
 */
+
+
 
 
 
