@@ -328,11 +328,13 @@ padding-left:4px;
 padding-right:4px;
 }
 .kanbanColumn .column-header .columnTitle {
-	font-size: 16.25px !important;
+	font-size: 16px !important;
+	line-height: 20px !important;
 	font-weight: 400 !important;
 }
 #app .kanbanColumn .column-header .descriptionDiv{
 	font-size: 14px !important;
+	line-height: 18px !important;
 }
 .kanbanColumn .column-header .border{
 	position:relative;
