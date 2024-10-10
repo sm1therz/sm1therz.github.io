@@ -191,6 +191,7 @@ SECTIONS
 
 :root {
 --sectionGap:10px;
+--sectionTitleMinH:30px;
 }
 
 
@@ -199,39 +200,89 @@ SECTIONS
 		padding-top:var(--sectionGap) !important;
 }
 
+/*SECTION > GRID TITLE */
 #app .grid-component .grid-title {
 		padding-bottom:var(--sectionGap) !important;
 		margin-bottom:0px !important;
 }
 
-/*SECTION >  Description*/
-.grid-component.hiddenSection .descriptionDiv{
-display:block !important;
-}
-.grid-component.hiddenSection .descriptionDiv, 
-.grid-component.hiddenSection .descriptionDiv * {
-font-size:16.5px !important;
-line-height:23.5px !important;
-}
-/*SECTION > New Section Button*/
-.grid-component > .new-section {
-		margin:unset !important;
-		padding:0px !Important;
-		display:flex !important;
-		align-items:center;
 
+/*SECTION > GRID TITLE > TITLE*/
+#app .grid-component .grid-title > h2 {
+	min-height:var(--sectionTitleMinH);
+}
+/*SECTION > GRID TITLE > BUTTONS*/
+#app .grid-component .grid-title > button, 
+#app .grid-component .grid-title > div.section-settings,
+#app .grid-component .grid-title > div.section-settings button,
+#app .grid-component .grid-title > div.grid-title-separator,
+#app .grid-component .grid-title > button.section-new-brick {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:calc(var(--sectionTitleMinH) - 1px) !important;
+	margin-top:0px !important;
+	
+}
+#app .grid-component .grid-title > button.section-new-brick:first-of-type{
+background-image:unset !important;
+}
+#app .grid-component .grid-title > button, 
+#app .grid-component .grid-title > div.section-settings,
+#app .grid-component .grid-title > div.grid-title-separator {
+	opacity:0 !important;
+	transition:.12s !important;
+}
+#app .grid-component .grid-title:hover > button, 
+#app .grid-component .grid-title:hover > div.section-settings,
+#app .grid-component .grid-title:hover > div.grid-title-separator {
+	opacity:1 !important;
+}
+
+
+/*SECTION > GRID TITLE > DESCRIPTION*/
+#app .grid-component.hiddenSection .descriptionDiv {
+	display:block !important;
+	
+}
+#app .grid-component .descriptionDiv,
+#app .grid-component .descriptionDiv * {
+	font-size:16.5px !important;
+	line-height:23.5px !important;
+}
+/*SECTION > NEW SECTION BUTTON*/
+.grid-component > .new-section {
+	margin:unset !important;
+	padding:0px !Important;
+	display:flex !important;
+	align-items:center;
+	opacity:0 !important;
+	transition:.12s !important;
+	height: 26px;
+	font-size:12px !important;
+	display: flex;
+	align-items:center;
+	background-image:unset !important;
+}
+.grid-component > .new-section:hover {
+	opacity:1 !important;
 }
 .grid-component > .new-section > div,
 .grid-component > .new-section > button{
-		margin:unset !important;
+	margin:unset !important;
 }
 /*SECTION > New Section Button > Re-Order*/
 
 .grid-component > .new-section > button.new-section-btn{
 	order:1;
+	padding-top:5px  !important;
+	padding-bottom:5px  !important;
+	background-image:transparent !important;
+	
 }
 .grid-component > .new-section > .moreNewSectionOptions{
 	order:2;
+	display:none !Important;
 }
 .grid-component > .new-section > .line{
 	order:9;
@@ -1620,7 +1671,4 @@ display:block !important;
 
 
 */
-
-
-
 
