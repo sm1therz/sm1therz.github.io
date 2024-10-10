@@ -211,7 +211,13 @@ SECTIONS
 		padding-bottom:var(--sectionGap) !important;
 		margin-bottom:0px !important;
 }
-
+div.visual-grid-offset{
+	display:none;
+}
+div.grid-component,div.grid-content,div.grid-container, div.grid-container > div, div.grid-container > div > div{
+padding-bottom:0px !important;
+margin-bottom:0px !important;
+}
 
 /*SECTION > GRID TITLE > TITLE*/
 #app .grid-component .grid-title > h2 {
@@ -230,7 +236,7 @@ SECTIONS
 	margin-top:0px !important;
 	
 }
-#app .grid-component .grid-title > button.section-new-brick.no-text-select{
+#app .grid-component .grid-title > div.grid-title-separator + button{
 background-image:unset !important;
 }
 #app .grid-component .grid-title > button, 
@@ -279,12 +285,11 @@ background-image:unset !important;
 }
 /*SECTION > New Section Button > Re-Order*/
 
-.grid-component > .new-section > button.new-section-btn{
+#app .grid-component > .new-section > button.new-section-btn{
 	order:1;
 	padding-top:5px  !important;
 	padding-bottom:5px  !important;
-	background-image:transparent !important;
-	
+	background-image:unset !important;
 }
 .grid-component > .new-section > .moreNewSectionOptions{
 	order:2;
