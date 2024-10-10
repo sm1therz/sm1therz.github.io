@@ -4,6 +4,8 @@
 	let style = `<style>
 
 
+
+
 /************
 ROOT
 *************/
@@ -261,6 +263,9 @@ background-image:unset !important;
 #app .grid-component .descriptionDiv * {
 	font-size:16.5px !important;
 	line-height:23.5px !important;
+}
+.showSectionNumbers .grid-title .descriptionDiv{
+margin-left:40px !important;
 }
 /*SECTION > NEW SECTION BUTTON*/
 .grid-component > .new-section {
@@ -1682,6 +1687,8 @@ display:block !important;
 
 
 */
+
+
 
 
 	

@@ -258,6 +258,9 @@ background-image:unset !important;
 	font-size:16.5px !important;
 	line-height:23.5px !important;
 }
+.showSectionNumbers .grid-title .descriptionDiv{
+margin-left:40px !important;
+}
 /*SECTION > NEW SECTION BUTTON*/
 .grid-component > .new-section {
 	margin:unset !important;
