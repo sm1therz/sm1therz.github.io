@@ -1,0 +1,3 @@
+foreignObject > div > div {
+    transform:scale(.75) !important; 
+}
