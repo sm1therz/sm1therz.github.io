@@ -13,15 +13,30 @@ EDITOR TEXT COLORS - ROOT
 ************/
 :root {
 		--bldClr: black;
+		--highlightClr:hsl(0, 0%, 0%);
 		--strikethrough-Clr: hsl(0, 0%, 70%);
 		--strikethroughStrike-Clr:hsl(0, 0%, 70%);
+		/*text highlights*/
+		--highlightUnderlineClr-Yellow:hsl(50, 100%,50%,1);
+		--highlightBgClr-Yellow:hsl(50, 100%,50%,.15);
 }
 
 
 [data-theme="dark"] {
 		--bldClr: hsl(0, 0%, 96%);
+		--highlightClr:hsl(0, 0%, 96%);
 		--strikethrough-Clr: hsl(0, 0%, 61%);
 		--strikethroughStrike-Clr:hsl(0, 0%, 61%,0.65);
+		--highlightUnderlineClr-Yellow:hsl(50, 100%,50%,.8);
+		--highlightBgClr-Yellow:hsl(50, 100%,50%,.15);
+}
+
+/***********
+BODY COLOR
+************/
+
+[class*="text-middle-hard-grey"] .ProseMirror {
+		color: var(--text-color)
 }
 
 /***********
@@ -39,12 +54,7 @@ HEADINGS
 .ProseMirror [data-node-type="heading"]{
 		color: var(--bldClr)
 }
-/***********
-HIGHLIGHTS
-************/
-[class*="text-middle-hard-grey"] .ProseMirror {
-		color: var(--text-color)
-}
+
 /***********
 STRIKETHROUGH
 ************/
@@ -62,9 +72,74 @@ INLINE MENTION
 		border-bottom-style: dashed;
 }
 
+
+
 /***********
 COLORED TEXT
 ************/
 .ProseMirror [data-underline="true"] [data-color="gray"] {
 		border-bottom: 1px solid var(--text-gray-editor);
+}
+
+
+
+/***********
+LINKS
+************/
+.ProseMirror a {
+	background-image: linear-gradient(0deg, 
+		var(--active-item) 0%,
+		var(--active-item) var(--underlineH),      
+		var(--active-item) var(--underlineH),
+		transparent 0%) !important;
+		border: unset !important;
+}
+
+.ProseMirror a[data-hepta-link] {
+	background-image: linear-gradient(0deg, 
+		var(--light-grey) 0%,
+		var(--light-grey) var(--underlineH),      
+		var(--light-grey) var(--underlineH),
+		transparent 0%) !important;
+		border: unset !important;
+}
+
+
+/***********
+UNDERLINE
+************/
+[data-underline="true"]{
+	background-image: linear-gradient(0deg, 
+		var(--text-color) 0%,
+		var(--text-color) var(--underlineH),      
+		var(--text-color) var(--underlineH),
+		transparent 0%) !important;
+		border: unset !important;
+}
+
+/***********
+TEXT HIGHLIGHTS
+************/
+
+:root {
+	--highlightBgPosition-X:0px;
+	--highlightBgPosition-Y:100%;
+	/*underline*/
+	--underlineH:1.5px;
+}
+
+/*TEXT HIGHIGHT - YELLOW*/
+[data-color="yellow"][data-type="background"] {
+		background-image: linear-gradient(0deg, 
+		var(--highlightUnderlineClr-Yellow) 0%,
+		var(--highlightUnderlineClr-Yellow) var(--underlineH),      
+		var(--highlightBgClr-Yellow) var(--underlineH),
+		var(--highlightBgClr-Yellow) 100%) !important;
+		background-repeat: no-repeat !important;
+		background-size: 100% 100% !important;
+		background-position-x: 0px !important;
+		background-position-y: 75% !important;
+		/*color: var(--highlightClr) !important;*/
+		/**/
+		background-color: transparent !important;
 }

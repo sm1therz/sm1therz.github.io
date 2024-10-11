@@ -214,6 +214,7 @@ EMBEDDED - IMAGES - POPUP TITLE / MEDIA TOOLBAR
 	justify-content: flex-start;
 	max-width: 100% !important;
 	overflow: hidden;
+	overflow: hidden;
 }
 /*MEDIA TOOLBAR - ELEMENTS - TITLE - TEXT*/
 
