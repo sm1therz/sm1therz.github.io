@@ -18,7 +18,11 @@ EDITOR TEXT COLORS - ROOT
 		--strikethroughStrike-Clr:hsl(0, 0%, 70%);
 		/*text highlights*/
 		--highlightUnderlineClr-Yellow:hsl(50, 100%,50%,1);
-		--highlightBgClr-Yellow:hsl(50, 100%,50%,.15);
+		--highlightBgClr-Yellow:hsl(50, 100%,50%,.2);
+		/*text highlights*/
+		--underlineClr:black;
+		/*Internal Link*/
+		--internalLinkUnderlineClr:hsl(0, 0%, 0%,.15);
 }
 
 
@@ -27,8 +31,13 @@ EDITOR TEXT COLORS - ROOT
 		--highlightClr:hsl(0, 0%, 96%);
 		--strikethrough-Clr: hsl(0, 0%, 61%);
 		--strikethroughStrike-Clr:hsl(0, 0%, 61%,0.65);
-		--highlightUnderlineClr-Yellow:hsl(50, 100%,50%,.8);
+		/*text highlights*/
+		--highlightUnderlineClr-Yellow:hsl(50, 100%,50%,.65);
 		--highlightBgClr-Yellow:hsl(50, 100%,50%,.15);
+		/*Underline*/
+		--underlineClr:hsl(0, 0%, 100%,.7);
+		/*Internal Link*/
+		--internalLinkUnderlineClr:hsl(0, 0%, 100%,.2);
 }
 
 /***********
@@ -97,9 +106,9 @@ LINKS
 
 .ProseMirror a[data-hepta-link] {
 	background-image: linear-gradient(0deg, 
-		var(--light-grey) 0%,
-		var(--light-grey) var(--underlineH),      
-		var(--light-grey) var(--underlineH),
+		var(--internalLinkUnderlineClr) 0%,
+		var(--internalLinkUnderlineClr) var(--underlineH),      
+		var(--internalLinkUnderlineClr) var(--underlineH),
 		transparent 0%) !important;
 		border: unset !important;
 }
@@ -110,9 +119,9 @@ UNDERLINE
 ************/
 [data-underline="true"]{
 	background-image: linear-gradient(0deg, 
-		var(--text-color) 0%,
-		var(--text-color) var(--underlineH),      
-		var(--text-color) var(--underlineH),
+		var(--underlineClr) 0%,
+		var(--underlineClr) var(--underlineH),      
+		var(--underlineClr) var(--underlineH),
 		transparent 0%) !important;
 		border: unset !important;
 }
