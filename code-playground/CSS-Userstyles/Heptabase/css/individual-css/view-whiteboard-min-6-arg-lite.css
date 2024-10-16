@@ -1,0 +1,30 @@
+
+
+
+/*******
+TABLE CELL BACKGROUND - GRAY
+********/
+[data-object-type="textElement"] td[data-background-color="gray"] {
+background-color:transparent !important;
+
+}
+
+/*all text - faint*/
+[data-object-type="textElement"] td[data-background-color="gray"] [data-node-type]{
+color:hsla(0,0%,100%,.4) !important;
+}
+/*gray text - fainter*/
+[data-object-type="textElement"] td[data-background-color="gray"] [data-node-type] span[data-color="gray"] {
+color:hsla(0,0%,100%,.2) !important;
+}
+
+
+
+/*******
+TABLE CELL BACKGROUND - ALL
+
+[data-object-type="textElement"] td[data-background-color="gray"] {
+background-color:var(--whiteboard-background) !important;
+
+}
+********/
