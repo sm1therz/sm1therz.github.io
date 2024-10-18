@@ -4,9 +4,9 @@
 // @version      1.0
 // @description  Injects Raindrop CSS
 // @author       RSM
-// @match        https://preview.systems
-// @match        https://api.raindrop.io
-// @match        https://s3.eu-central-1.wasabisys.com
+// @match        https://preview.systems*
+// @match        https://api.raindrop.io*
+// @match        https://s3.eu-central-1.wasabisys.com*
 // @grant        GM_addElement
 // ==/UserScript==
 (function() {
