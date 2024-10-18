@@ -2617,3 +2617,259 @@ WHITEBOARD - SPACE BAR POPUP
 
 
 
+/*****************
+******************
+******************
+WHITEBOARD SECTIONS (MINIMAL)
+******************
+******************
+******************/
+[data-is-section-title="true"]{
+max-width:unset !important;
+}
+[data-is-section-title="true"] > input {
+
+	text-overflow: unset;
+}
+
+
+[data-object-type="section"] > div > .relative[style*="--border-white-sect"]{
+	background: transparent !important;
+	box-shadow: 0 0 0 2px hsla(0,0%,50%,0.25)!important;
+}
+/*************
+WHITEBOARD > SECTION TITLES > BACKGROUNDS
+**************/
+
+
+#root [data-object-type="section"]>div>div[style*="--bg-white"]+[data-is-section-title] {
+background: var(--whiteBoardBoardBg) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-red"]+[data-is-section-title] {
+	background: var(--bg-red-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-orange"]+[data-is-section-title] {
+	background: var(--bg-orange-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-yellow"]+[data-is-section-title] {
+	background: var(--bg-yellow-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-green"]+[data-is-section-title] {
+	background: var(--bg-green-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-blue"]+[data-is-section-title] {
+	background: var(--bg-blue-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-purple"]+[data-is-section-title] {
+	background: var(--bg-purple-sect) !important;
+}
+
+#root [data-object-type="section"]>div>div[style*="--bg-black"]+[data-is-section-title] {
+	background: var(--bg-black-sect) !important;
+}
+
+/*****************
+******************
+******************
+TEXT ELEMENTS > TABLES
+******************
+******************
+******************/
+
+[data-object-type="textElement"] .ProseMirror [data-node-type=table]{
+	margin-top: 1px;
+	margin-bottom: 1px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}/*bottom row adder*/
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > div.absolute.left-0.top-0{
+opacity:0;
+	visibility: hidden !important;
+	display: none;
+}
+/*ROW/COLUMN ADDER - MAKE BIGGER*/
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > .touch-none{
+	transition: .12s !important;
+	background:transparent !important;
+	box-shadow: none !important;
+	
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > .touch-none:hover {
+	background: hsla(0,0%,50%,0.3) !important;
+}
+/*COLUMN ADDER*/
+:root{
+	--columnAdderWidth:70px;
+	--tableBrdRad:3px;
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > .touch-none.h-4{
+	width: var(--columnAdderWidth);
+	margin-left: calc(var(--columnAdderWidth) * -.5)
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > .touch-none.ease-in-out {
+	background: transparent !important;
+	transition: .3s !important;
+	opacity: 0 !important; 
+	display: none;
+}
+/*
+
+
+/*****************
+******************
+******************
+TEXT ELEMENTS > TABLES > BORDER RADIUS
+******************
+******************
+******************/
+
+[data-object-type="textElement"] .ProseMirror table {
+	border-radius: var(--tableBrdRad) !important;
+	border-color: hsla(0,0%,40%,.1)!important;
+	outline: 1px solid var(--light-middle-grey);
+	outline-offset: -1px
+
+	
+}
+[data-object-type="textElement"] .ProseMirror table tbody tr > td:first-child {
+	border-left-color: transparent;
+}
+[data-object-type="textElement"] .ProseMirror table tbody > tr > td:last-child{
+	border-right-color: transparent
+}
+[data-object-type="textElement"] .ProseMirror table tbody tr:first-child > td {
+	border-top-color: transparent;
+}
+[data-object-type="textElement"] .ProseMirror table tbody tr:last-child > td {
+	border-bottom-color: transparent
+}
+
+/*****************
+******************
+******************
+WHITEBOARD TOGGLES
+******************
+******************
+******************/
+
+
+:root {
+--tblToggleBulletW:1.25rem;
+}
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] {
+	overflow:unset !important;;
+}
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] {
+
+}
+
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"] {
+	width:var(--tblToggleBulletW) !important;
+	position:absolute !important;
+	left:calc(var(--tblToggleBulletW) * -1 + 0px);
+	z-index:949494949494;
+	border-radius:4px;
+	height:30px !important;
+	overflow:hidden;
+	top:-1px;
+	transition:.15s;
+}
+
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"] {
+height:100% !important;
+transform:scale(.7);
+}
+
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="nested"] {
+	background:transparent;
+}
+
+
+/*****************
+******************
+******************
+TEXT ELEMENTS > BULLETS
+******************
+******************
+******************/
+
+/*TOGGLES*/
+[data-object-type="textElement"] .ProseMirror  [data-node-type*="toggle"] > [class*="bulletWrapper"],
+[data-object-type="textElement"] [data-node-type="table_cell"] [data-node-type*="toggle"] > [class*="bulletWrapper"]{
+	width: 14px;
+	margin-right: 2px;
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type*="toggle"] > [class*="bulletWrapper"] svg,
+[data-object-type="textElement"] [data-node-type="table_cell"] [data-node-type*="toggle"] > [class*="bulletWrapper"] svg{
+	width: 14px !important;
+	height: 14px !important; 
+}
+/*BULLETS*/
+[data-object-type="textElement"] .ProseMirror  [data-node-type*="list_item"] > [class*="bulletWrapper"],
+[data-object-type="textElement"] [data-node-type="table_cell"] [data-node-type*="list_item"] > [class*="bulletWrapper"]{
+	width: 14px;
+	margin-right: 2px;
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type*="list_item"] > [class*="bulletWrapper"] svg,
+[data-object-type="textElement"] [data-node-type="table_cell"] [data-node-type*="list_item"] > [class*="bulletWrapper"] svg{
+	width: 14px !important;
+	height: 14px !important; 
+}
+
+
+/*HIDE THREE DOT MENU*/
+
+[data-object-type="textElement"] > div > .absolute {
+	display: none !important;
+}
+
+
+/*****************
+******************
+******************
+WHITEBOARD CONNECTORS
+******************
+******************
+******************/
+
+foreignObject > div > div {
+	transform:scale(.75) !important; 
+}
+
+foreignObject > div > div .ProseMirror {
+opacity:.7
+}
+
+/*******
+TABLE CELL BACKGROUND - GRAY
+********/
+[data-object-type="textElement"] td[data-background-color="gray"] {
+background-color:transparent !important;
+
+}
+
+/*all text - faint*/
+[data-object-type="textElement"] td[data-background-color="gray"] [data-node-type]{
+color:hsla(0,0%,100%,.4) !important;
+}
+/*gray text - fainter*/
+[data-object-type="textElement"] td[data-background-color="gray"] [data-node-type] span[data-color="gray"] {
+color:hsla(0,0%,100%,.2) !important;
+}
+
+
+
+/*******
+TABLE CELL BACKGROUND - ALL
+
+[data-object-type="textElement"] td[data-background-color="gray"] {
+background-color:var(--whiteboard-background) !important;
+
+}
+********/
