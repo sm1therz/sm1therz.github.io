@@ -2,7 +2,7 @@
 
 
 /************
-ROOT
+! ROOT
 *************/
 
 :root {
@@ -157,7 +157,7 @@ border:1px solid red !important;
 */
 
 /************
-SECTIONS
+! SECTIONS
 *************/
 
 
@@ -364,7 +364,7 @@ display:none;
 	opacity:.25 !important;
 }
 /************
-BRICKS
+! BRICKS
 *************/
 :root {
 		--brickBrdRad: 8px;
@@ -1315,7 +1315,7 @@ MARGINS - BLOCKQUOTE
 }
 
 /************
-MENU - HOVER MENUS
+! MENU - HOVER MENUS
 *************/
 /*BRICK -  HOVER - DOT MENU*/
 #gridsContainer .object img.object-handle,
@@ -1404,7 +1404,7 @@ RELATIVE OVERRIDES
 display:block !important;
 }
 /************
-MENU - POPUP FORMATTING
+! MENU - POPUP FORMATTING
 *************/
 :root {
 		--formattingBtnW: 27px;
@@ -1468,7 +1468,7 @@ box-shadow: 0 0 0 1px hsla(0, 0%, 50%, .1),
 
 
 /************
-COLORS
+! COLORS
 *************/
 
 
@@ -1533,7 +1533,7 @@ OVERRIDE FILTERS
 
 
 /************
-FONTS
+! FONTS
 *************/
 .headingFontInter .brickHeading .text,
 .headingFontInter .brickHeading .text *,
@@ -1566,13 +1566,13 @@ li.object * {
 }
 
 /************
-GRID ADJUST
+! GRID ADJUST
 *************/
 
 
 
 /************
-POPUP
+! POPUP
 *************/
 
 #app #gridsContainer .brick-popup-expanded{
@@ -1692,7 +1692,7 @@ left:0 !important
 	background:transparent !important;
 }
 /************
-ICONS
+! ICONS
 *************/
 
 
