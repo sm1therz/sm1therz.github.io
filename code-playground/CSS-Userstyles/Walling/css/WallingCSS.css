@@ -1,6 +1,3 @@
-
-
-
 /************
 ! ROOT
 *************/
@@ -156,8 +153,13 @@ border:1px solid red !important;
 }
 */
 
+
+
+
+
+
 /************
-! SECTIONS
+! ALL
 *************/
 
 
@@ -1683,9 +1685,7 @@ left:0 !important
 #app #gridsContainer .brick-popup-expanded .object img.object-options{
 		right: 0 !important;
 }
-#app #gridsContainer .brick-popup-expanded .object img.inline-add-comment {
-	right: calc(var(--brickItemPadLeft) * 1) !important;
-}
+
 
 
 #app #gridsContainer .objects > li:hover {
@@ -1740,5 +1740,101 @@ display:block !important;
 
 */
 
+/***********
+! COMMENTS
+************/
+.object-comments {
+		margin-top: 0px !important;
+		padding-top:0px  !important;
+		padding-bottom: 0px !important;
+		border-bottom-left-radius: 10px;
+}
+.type-list .object-comments {
+		padding-left:22px !important;
+}
+.brick-comments{
+		margin-left: 0px !important; 
+		padding-bottom:calc(var(--itemMargTopBtm) * .25);
+		margin-top: 0px !important;
+}
 
+.object-comments .comments-count,
+.brick-comments .name-meta
+{
+		display:flex;
+		align-items: center;
+		margin-top:0px !important;
+		margin-bottom: 0px !important;
+}
+.brick-comments .comment-item{
+		margin-top: calc(var(--itemMargTopBtm) * 1) !important;
+}
+.object-comments .comments-count > ul,
+.object-comments .comments-count > .count,
+.brick-comments .name-meta > span,
+#app .brick-comments p.comment-content{
+		float: unset !important;
+		margin-top:0px !important;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+		padding:0px !important;
+}
+#app #gridsContainer .object .brick-comments img{
+height:16px !important;
 
+}
+.object-comments .comments-count > ul{
+		display: none;
+}
+.object-comments .users-avatars-list li{
+		
+}
+/*comment author*/
+.commentAvatar{
+		display: none;
+}
+.brick-comments .name-meta{
+		height:unset;
+}
+#app .object-comments *
+{
+		font-size: unset !important;
+}
+#app .backgrounded .object-comments .comments-count .count, 
+#app .object-comments .comments-count .count,
+#app .brick-comments p.comment-content,
+#app .brick-comments .commentEdit,
+#app .brick-comments .comment-content *,
+#app .brick-comments .comment-content u{
+		font-size: var(--bodyFontSize) !important;
+		line-height: var(--bodyLineHeight) !important;
+		padding:unset !important;
+		font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "SF Pro Display", "SF Pro Icons", "Noto Sans", Helvetica, "Nimbus Sans L", Arial, sans-serif !important;
+}
+#app .brick-comments .commentEdit,
+#app .brick-comments .comment-content{
+		padding-bottom: calc(var(--itemMargTopBtm) * 0.75) !important;
+		height: unset !important;
+		min-height: unset !important;
+}
+#app .brick-comments .name-meta > span,
+#app .brick-comments .comment-content .mention{
+		font-size: calc(var(--bodyFontSize) * .785) !important;
+}
+.brick-comments .name-meta > span{
+		font-weight: 400 !important;
+}
+.brick-comments .name-meta > span.name,
+.brick-comments .name-meta .date{
+		opacity: 0.3 !important;
+}
+
+#app #gridsContainer .brick-popup-expanded .object img.inline-add-comment {
+	right: calc(var(--brickItemPadLeft) * 1) !important;
+}
+
+#app .object-comments .comments-count{
+		margin-top: var(--itemMargTopBtm) !important;
+		padding-top:calc(var(--itemMargTopBtm) * .25);
+		padding-bottom:calc(var(--itemMargTopBtm) * .25);
+}
