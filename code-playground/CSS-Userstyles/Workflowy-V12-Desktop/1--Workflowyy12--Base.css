@@ -3898,164 +3898,233 @@ POPUP - QUICK SEARCH
 ********************************
 ********************************/
 :root {
-	--quick-switcher--padding: 36px;
+		--quick-switcher--padding: 36px;
+		--switcherItemBg:var(--BG-primary);
+		--switcherItemBg-Selected:hsla(201, 49%, 46%,0.2);
+		--switcherItemBrdClr:hsl(202, 13%, 22.5%,0);
+		--switcherItemBrdClr-Selected:hsla(200, 19%, 46%,0.15);
 }
 /*MODAL POPUP CONTAINER - FOR SETTINGS AND QUICK SWITCHER*/
 #app div > .dialog-box {
-	z-index: 98000 !important;
-	padding: var(--quick-switcher--padding) !important;
-	border: 1px solid var(--switcher--search-bottom-border-clr) !important;
-	border-radius: 9px !important;
+		z-index: 98000 !important;
+		padding: var(--quick-switcher--padding) !important;
+		border: 1px solid var(--switcher--search-bottom-border-clr) !important;
+		border-radius: 9px !important;
+}
+#app div > .dialog-box.p-0,
+#app div > .dialog-box.p-0 > div{
+		padding: 0px !important;
+		gap: 0px;
+}
+/*SEARCH RESULT ITEM*/
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option{
+		border-radius: 0px;
+		transition: .2s ease-in-out !important;
+		background: linear-gradient(
+				to right, 
+				var(--switcherItemBg) 0%, 
+				var(--switcherItemBg) 20%, 
+				var(--BG-primary) 100%);
+		position: relative;
+		padding-top: 0.65rem;
+		padding-bottom: 0.75rem;
+}
+
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option{
+		margin-top: -1px !important;
+}
+
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option:first-child{
+		margin-top: 0px !important;
+		border-top: 0px !important;
+}
+
+/*SEARCH RESULT ITEM - ACTIVE*/
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option[class*="--wf-background-accent"]{
+		background: linear-gradient(
+				to right, 
+				var(--switcherItemBg) 0%, 
+				var(--switcherItemBg) 60%, 
+				transparent 100%);
+		--switcherItemBg:var(--switcherItemBg-Selected);
+		--switcherItemBrdClr:var(--switcherItemBrdClr-Selected);
+		z-index: 2949494 !important;
+}
+
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option > .text-base {
+		margin-bottom: 2px;
+}
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option > .opacity-60 {
+		opacity: 0.47
+}
+/*SEARCH RESULT ITEM - BORDERS*/
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option:before,
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option:after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		background: var(--switcherItemBrdClr);
+		height: 1px;
+		right: 0;
+		top: 0;
+}
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option:after{
+		top: unset;
+		bottom: 0;
+}
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option:first-child:before {
+		display: none;
 }
 
 #app div > .dialog-box > ._3hmsj {
-	margin-left: calc(var(--quick-switcher--padding) * -1);
-	margin-top: calc(var(--quick-switcher--padding) * -1);
-	margin-right: calc(var(--quick-switcher--padding) * -1);
-	margin-bottom: calc(var(--quick-switcher--padding) * -1);
+		margin-left: calc(var(--quick-switcher--padding) * -1);
+		margin-top: calc(var(--quick-switcher--padding) * -1);
+		margin-right: calc(var(--quick-switcher--padding) * -1);
+		margin-bottom: calc(var(--quick-switcher--padding) * -1);
 }
 
 #app div > .dialog-box > ._3hmsj > div:last-of-type > div {
-	padding: 0px;
-	margin: 0px;
+		padding: 0px;
+		margin: 0px;
 }
 
 /*SEARCH - INPUT CONTAINER*/
 .dialog-box > div > div:last-of-type {
-	display: block;
-	width: 100% !important;
-	max-width: 100%;
+		display: block;
+		width: 100% !important;
+		max-width: 100%;
 }
 
 /*SEARCH - INPUT
 .dialog-box > div > div:first-of-type {
-	position: sticky !important;
-	top: -36px !important;
-	-webkit-backdrop-filter: blur(5px) !important;
-	backdrop-filter: blur(5px) !important;
-	z-index: 11;
+		position: sticky !important;
+		top: -36px !important;
+		-webkit-backdrop-filter: blur(5px) !important;
+		backdrop-filter: blur(5px) !important;
+		z-index: 11;
 }*/
 
 .dialog-box > div > div:first-of-type > input {
-	margin: 0px !Important;
-	max-width: 100% !important;
-	border: 0px !important;
-	font-size: 17px !important;
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-	background: var(--switcher--search--bg);
-	padding-left: 39px;
-	padding-top: 20px;
-	padding-bottom: 17px;
-	font-weight: 500;
-	-webkit-font-smoothing: antialiased;
-	border-bottom: 1px solid var(--switcher--search-bottom-border-clr) !important;
-	color: var(--NODE--TXT-CLR--bold) !important;
+		margin: 0px !Important;
+		max-width: 100% !important;
+		border: 0px !important;
+		font-size: 17px !important;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+		background: var(--switcher--search--bg);
+		padding-left: 39px;
+		padding-top: 20px;
+		padding-bottom: 17px;
+		font-weight: 500;
+		-webkit-font-smoothing: antialiased;
+		border-bottom: 1px solid var(--switcher--search-bottom-border-clr) !important;
+		color: var(--NODE--TXT-CLR--bold) !important;
 }
 
 /*SEARCH RESULTS*/
 .dialog-box > div > div:last-of-type {
-	padding: 0px;
-	padding-top: 0px !Important;
-	margin-top: 0px !Important;
-	padding-top: 50px;
+		padding: 0px;
+		padding-top: 0px !Important;
+		margin-top: 0px !Important;
+		padding-top: 50px;
 }
 
 .dialog-box > div > div:last-of-type,
 .dialog-box > div > div > div > span {
-	display: block;
-	width: 100% !important;
-	padding: 0px !important;
+		display: block;
+		width: 100% !important;
+		padding: 0px !important;
 }
 
 .dialog-box > div._3hmsj > div:last-of-type > div > span {
-	padding: 12px 40px 12px 40px !important;
-	margin: 0 !important;
-	border-radius: 0px !Important;
-	position: relative;
+		padding: 12px 40px 12px 40px !important;
+		margin: 0 !important;
+		border-radius: 0px !Important;
+		position: relative;
 }
 
 
 /*RIGHT SIDE FADE*/
 ._1ifwwrz > div {
-	position: relative;
+		position: relative;
 }
 
 .dialog-box > div._3hmsj > div:last-of-type:after,
 .dialog-box > div._3hmsj > div:last-of-type > div > span:after {
-	content: "";
-	display: block;
-	width: 20%;
-	top: 0px;
-	right: 0;
-	bottom: 0;
-	background: var(--switcher--item-gradient);
-	position: absolute;
+		content: "";
+		display: block;
+		width: 20%;
+		top: 0px;
+		right: 0;
+		bottom: 0;
+		background: var(--switcher--item-gradient);
+		position: absolute;
 }
 
 /*SELECTED*/
 .dialog-box ._1rjs7z9:after {
-	background: var(--switcher--item-selected-3);
+		background: var(--switcher--item-selected-3);
 }
 
 /*RESULTS - RETURNED TEXT*/
 .dialog-box > div > div:last-of-type > div > span > div > span,
 .dialog-box > div > div:last-of-type > div > span > div > span * {
-	color: var(--switcher--item--txt--color) !important;
-	text-decoration-color: unset !important;
-	font-weight: 500;
+		color: var(--switcher--item--txt--color) !important;
+		text-decoration-color: unset !important;
+		font-weight: 500;
 }
 .dialog-box > div > div:last-of-type > div > span > div > span,
 .dialog-box > div > div:last-of-type > div > span > div > span * {
-	font-size: 15px !important;
-	white-space: normal;
-	line-height: 1.2;
+		font-size: 15px !important;
+		white-space: normal;
+		line-height: 1.2;
 }
 /*RESULTS - MATCHING text*/
 .dialog-box > div > div:last-of-type > div > span > div > span b,
 .dialog-box > div > div:last-of-type > div > span > div > span b * {
-	color: var(--switcher--item--txt--color-query) !important;
-	text-decoration: none;
-	font-weight: 900 !important;
+		color: var(--switcher--item--txt--color-query) !important;
+		text-decoration: none;
+		font-weight: 900 !important;
 }
 
 /*RESULTS - SOURCE - TEXT*/
 #app .dialog-box > div > div:last-of-type > div > span > div > div {
-	color: var(--switcher--item--txt--breadcrumb);
-	overflow: hidden !important;
-	max-width: 100%;
+		color: var(--switcher--item--txt--breadcrumb);
+		overflow: hidden !important;
+		max-width: 100%;
 }
 
 /*RESULTS - SOURCE - SVG CHEVRON*/
 #app .dialog-box div._3hmsj svg {
-	min-width: 7px !important;
-	height: 7px;
-	visibility: visible;
-	opacity: 1;
-	left: -22px;
+		min-width: 7px !important;
+		height: 7px;
+		visibility: visible;
+		opacity: 1;
+		left: -22px;
 }
 /*RESULTS - SOURCE - SVG CHEVRON - COLOR*/
 html #app .dialog-box div._3hmsj svg path {
-	opacity: 1;
-	color: transparent;
-	fill: none;
-	stroke: var(--switcher--item--svg-stroke-breadcrumb);
-	stroke-width: 1.5;
+		opacity: 1;
+		color: transparent;
+		fill: none;
+		stroke: var(--switcher--item--svg-stroke-breadcrumb);
+		stroke-width: 1.5;
 }
 #app .dialog-box div._3hmsj svg + svg {
-	color: var(--switcher--item--svg-stroke-breadcrumb);
-	width: 12px !important;
-	height: 13px !important;
-	position: absolute;
-	left: -37px;
-	top: 3px !important;
+		color: var(--switcher--item--svg-stroke-breadcrumb);
+		width: 12px !important;
+		height: 13px !important;
+		position: absolute;
+		left: -37px;
+		top: 3px !important;
 }
 
 
 /*SEARCH RESULTS - BORDER BOTTOM*/
 #app div > .dialog-box > ._3hmsj > div:last-of-type > div > span {
-	box-shadow: 0 1px 0 0px var(--switcher--search-bottom-border-clr);
-	border: none !important;
+		box-shadow: 0 1px 0 0px var(--switcher--search-bottom-border-clr);
+		border: none !important;
 }
 
 /*RESULTS - HIGHLIGHTED - RETURNED CONTENT*/
@@ -4067,15 +4136,15 @@ html #app .dialog-box div._3hmsj svg path {
 #app .dialog-box ._1sggvqq,
 /*LIGHT - SELECTED - CHECKED/DONE*/
 #app .dialog-box ._157gzxf {
-	background: var(--switcher--item--selected) !important;
-	box-shadow: inset 0 1px 0 0px var(--switcher--item--selected-border-clr), inset 0 -1px 0 0px var(--switcher--item--selected-border-clr) !important;
-	text-decoration: none;
+		background: var(--switcher--item--selected) !important;
+		box-shadow: inset 0 1px 0 0px var(--switcher--item--selected-border-clr), inset 0 -1px 0 0px var(--switcher--item--selected-border-clr) !important;
+		text-decoration: none;
 }
 
 /*CHECKED ITEMS - UNSELECTED*/
 ._14ki49e,
 ._7zqki6 {
-	text-decoration-color: var(--switcher--item--txt--color) !important
+		text-decoration-color: var(--switcher--item--txt--color) !important
 }
 
 /*****
@@ -4089,7 +4158,7 @@ SELECTED - COLOR
 #app .dialog-box ._1sggvqq > div > span,
 /*DARK - SELECTED - CHECKED/DONE*/
 #app .dialog-box ._157gzxf > div > span {
-	color: var(--switcher--item--selected-color) !important;
+		color: var(--switcher--item--selected-color) !important;
 }
 
 /*****
@@ -4098,7 +4167,7 @@ SELECTED - COLOR - QUERY
 /*DARK - SELECTED - NON-CHECKBOX*/
 #app .dialog-box ._1rjs7z9 > div b,
 #app .dialog-box ._1rjs7z9 > div b * {
-	color: var(--switcher--item--selected-color-query) !important
+		color: var(--switcher--item--selected-color-query) !important
 }
 
 /*DARK - SELECTED - COLOR - BREADCRUMB*/
@@ -4109,29 +4178,29 @@ html #app .dialog-box ._1i1fewk > div > div,
 html #app .dialog-box ._1sggvqq > div > div,
 /*LIGHT - SELECTED - -COLOR - NON-CHECKBOX*/
 html #app .dialog-box ._157gzxf > div > div {
-	color: var(--switcher--item--selected-color-breadcrumb) !important;
-	overflow: hidden !important;
-	opacity: 1;
-	font-weight: 500;
-	text-decoration-color: var(--switcher--item--selected-color-breadcrumb) !important;
+		color: var(--switcher--item--selected-color-breadcrumb) !important;
+		overflow: hidden !important;
+		opacity: 1;
+		font-weight: 500;
+		text-decoration-color: var(--switcher--item--selected-color-breadcrumb) !important;
 }
 
 /*STARRED - ICONS*/
 .dialog-box > div > div:last-of-type > div > span > div > svg {
-	width: 17px !important;
-	height: 17px !important;
-	top: 1px !important;
+		width: 17px !important;
+		height: 17px !important;
+		top: 1px !important;
 }
 
 #app .dialog-box > div > div:last-of-type > div > span > div > svg > path {
-	opacity: 1 !important
+		opacity: 1 !important
 }
 
 /*MODAL BACKGROUND OVERLAY*/
 ._13gp8a {
-	opacity: 1;
-	background: rgba(0, 0, 0, .55);
-	backdrop-filter: blur(1px) !important;
+		opacity: 1;
+		background: rgba(0, 0, 0, .55);
+		backdrop-filter: blur(1px) !important;
 }
 
 /*******************************

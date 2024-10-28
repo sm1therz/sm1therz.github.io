@@ -371,6 +371,11 @@ html,
 	--switcher--favorite--icon--color: white;
 	--Filter-Contrast-3: contrast(3);
 	--Search--Txt-match: white;
+		/**/
+	--switcherItemBg: var(--BG-primary);
+	--switcherItemBg-Selected: hsla(201, 49%, 46%, 0.2);
+	--switcherItemBrdClr: hsl(202, 13%, 22.5%, 0);
+	--switcherItemBrdClr-Selected: hsla(200, 19%, 46%, 0.15);
 
 
 	/*************
