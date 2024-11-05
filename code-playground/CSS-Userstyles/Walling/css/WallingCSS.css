@@ -60,7 +60,8 @@
 		--popupW: 800px;
 		--popupH: 790px;
 		--popupPadLR: 20px;
-		--popupMargTopBtm: 10vh
+		--popupMargTopBtm: 10vh;
+		--sectionBrdClr: hsla(0, 0%, 50%, 0.1)
 }
 
 /************
@@ -79,16 +80,17 @@ COLORS
 		--todoCheckBoxBgClr-Checked: hsla(0, 0%, 0%, 0.1);
 		--todoCheckBoxBrdClr: hsla(0, 0%, 10%, 0.6);
 		/*tag*/
-		--tagClr-Colorless:hsla(0, 0%, 47%);
+		--tagClr-Colorless: hsla(0, 0%, 47%);
 		--tagBrdClr-Colorless: hsla(0, 0%, 0%, 0.2);
 		--tagBrdClr: hsla(0, 0%, 0%, 0.2);
 		--tagBgClr: hsla(0, 0%, 0%, 0.05);
 		/*bullets*/
 		--listorderedbulletBrdClr: hsla(0, 0%, 50%, 0.1);
 		--listbulletcollapsedClr: hsla(0, 0%, 0%, 0.1);
+
 }
 .brick.darkBrick,
-.darkmode .brick.noBackground{
+.darkmode .brick.noBackground {
 		/*text*/
 		--bodyClr: hsla(0, 100%, 100%, 0.86);
 		--bldClr: hsla(0, 0%, 97%);
@@ -101,7 +103,7 @@ COLORS
 		--todoCheckBoxBgClr-Checked: hsl(122, 0%, 11%);
 		--todoCheckBoxBrdClr: hsl(122, 0%, 31%);
 		/*tag*/
-		--tagClr-Colorless:hsla(0, 0%, 77%);
+		--tagClr-Colorless: hsla(0, 0%, 77%);
 		--tagBrdClr-Colorless: hsl(122, 0%, 0%, 0.5);
 		--tagBrdClr: hsl(122, 0%, 0%, .4);
 		--tagBgClr: hsl(122, 0%, 0%, 0.25);
@@ -109,6 +111,7 @@ COLORS
 		/*bullets*/
 		--listorderedbulletBrdClr: hsla(0, 0%, 50%, .3);
 		--listbulletcollapsedClr: hsla(0, 0%, 50%, .3);
+		/*sidebar*/
 }
 
 /*
@@ -117,12 +120,20 @@ COLORS
 .brick.noBackground.borderless.darkBrick .brick-background{
 		background: hsl(230, 0%, 7%) !important;
 }*/
-
+/*
 :root {
 		--darkmode-black: hsl(240, 6%, 7%);
+}*/
+
+:root {
+				/*list text area*/
+		--listTextAreaEditingBgClr:hsla(0,0%,0%,.1);
 }
-
-
+.darkmode {
+		--sectionBrdClr: hsla(0, 0%, 50%, 0.075);
+		/*list text area*/
+		--listTextAreaEditingBgClr:hsla(0,0%,50%,0.11);
+}
 /************
 TESTING
 *************/
@@ -223,14 +234,30 @@ border:1px solid red !important;
 		margin-top:var(--sectionMargTopBtm) !important;
 		margin-bottom:var(--sectionMargTopBtm) !important;
 }
+
 /*section background*/
 #app .grid-component.backgroundedSection .section-background{
 		top:0;
 		bottom:0;
 		height:100%;
-		box-shadow: 
+		/*box-shadow: 
 				inset 0 1px 0 0 hsla(0,0%,50%,0.1),
-				inset 0 -1px 0 0 hsla(0,0%,50%,0.1);
+				inset 0 -1px 0 0 hsla(0,0%,50%,0.1);*/
+}
+#app .grid-component:before,
+#app .grid-component:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top:0;
+		left: -40vw;
+		right: -40vw;
+		height: 1px;
+		background: var(--sectionBrdClr);
+}
+#app .grid-component:after {
+		top: unset;
+		bottom: 0;
 }
 
 /*SECTION > GRID TITLE */
@@ -459,10 +486,11 @@ padding-right:unset !important;
 
 /*EMPTY*/
 .grid-content .emptywall-note{
-		top: 28px;
+		top: 0px;
+		opacity: .4!important;
 }
 .grid-content .emptywall-note + .emptywall-note {
-		top: 75px;
+		top: 45px;
 }
 /************
 KANBAN
@@ -1850,7 +1878,7 @@ li.object * {
 		--smallLineHeight:calc(var(--bodyLineHeight) + -4px);;
 		/*font sizes*/
 		--bodyFontSize:16px;
-		--bodyLineHeight:23px;
+		--bodyLineHeight:24px;
 		/*Large font*/
 		--largeFontSize:calc(var(--bodyFontSize) + 2px);
 		--largeLineHeight:calc(var(--bodyLineHeight) + 2px);
@@ -1871,7 +1899,10 @@ li.object * {
 		--unorderedlistMargTop:2px;
 		--checkboxMargTop:1px;
 }
-
+#app #gridsContainer .brick-popup-expanded,
+#app #gridsContainer .brick-popup-expanded * {
+		letter-spacing: 0px !important;
+}
 #app .brick.expandedBrick .objects > li.object.type-heading:first-child,
 #app .brick.expandedBrick .objects > li.object.type-paragraph:first-child > [class*="large"]{
 		margin-bottom: 10px !important;
@@ -1934,7 +1965,23 @@ li.object * {
 		position:unset !important;
 }
 
+#app #gridsContainer .brick-popup-expanded .brick-sidebar ul.brick-tags.brickTags  {
+		display: block !important;
+}
 
+#app #gridsContainer .brick-popup-expanded .brick-sidebar ul.brick-tags.brickTags .brick-tag.colorless {
+		background:var(--tagBgClr);
+		border-color: var(--tagBrdClr-Colorless);
+}
+.darkBrick .brick-sidebar{
+		background: hsla(0,0%,30%,.2);
+}
+.darkSection .brick.backgrounded .brick-sidebar .brick-sidebar-section{
+		border-color: hsla(0,0%,50%,0.2) !important
+}
+.darkSection .brick.backgrounded .brick-sidebar .brick-subtasks .text, .darkSection .brick.backgrounded .brick-sidebar .brick-wall span, .darkSection .brick.backgrounded .brick-sidebar h4, .darkSection .brick.backgrounded .brick-sidebar h5{
+		color:var(--bodyClr)
+}
 /****
 HANDLES*/
 
@@ -2109,4 +2156,110 @@ height:16px !important;
 		margin-top: var(--itemMargTopBtm) !important;
 		padding-top:calc(var(--itemMargTopBtm) * .25);
 		padding-bottom:calc(var(--itemMargTopBtm) * .25);
+}
+
+#app .searchMode .brick .brick-wall{
+padding-left: var(--brickItemPadLeft) !important;
+	padding-right: var(--brickItemPadRight) !important;
+		opacity: 0.5;
+		margin-top: 10px;
+		margin-bottom: 0px 
+}
+
+
+/************
+! TASKS OVERRIDE
+*************/
+
+:root {
+		--taskPadTopBtm:17px;
+}
+
+
+#app .tasksTabSelected .page-title {
+		margin-bottom: 10px !important;
+}
+
+/*TASKS OVERRIDE*/
+#app .tasksTabSelected .grid-component {
+		padding-top: 0px !important;
+		padding-top: var(--taskPadTopBtm) !important;
+		
+}
+#app .tasksTabSelected .grid-component:before,
+#app .tasksTabSelected .grid-component:after{
+		display: none;
+}
+#app .tasksTabSelected .grid-component .grid-title{
+		padding-bottom: 7px !important;
+		margin-bottom:10px !important;
+		margin-left: 10px !important
+}
+
+/**/
+#app .tasksTabSelected .grid-component .arrow{
+		transform: scale(0.85);
+		top: 2px !important;
+		left: -6px !important;
+}
+
+
+
+#app .tasksTabSelected .grid-component h2{
+		padding-left:20px!important;
+}
+/**/
+#app .tasksTabSelected .grid-component .grid-container {
+		padding-left: 6px !important;
+}
+#app .tasksTabSelected .grid-component .grid-container > div{
+		margin-bottom: var(--taskPadTopBtm) !important;
+}
+
+#app .listBrick .table-item-columns > .main-cell .mainTextDiv{
+		padding-left: 2px !important;
+		padding-right: 2px !important;
+		margin-left: -2px !important;
+		margin-right: 2px !important;
+		background: transparent !important;
+		box-shadow: none !important;
+}
+#app .listBrick .table-item-columns > .main-cell .mainTextDiv:focus {
+		background: var(--listTextAreaEditingBgClr) !important;
+}
+#app .section-list-view .listBrick:hover .listBrickColor{
+		background: hsla(0,0%,50%,0.07) !important
+}
+
+#app .section-list-view.hasResolvedItems .grid-title.archive-title{
+		margin-top: calc(var(--taskPadTopBtm) * 0.3) !important;
+		margin-bottom: 0px !important;
+		margin-left: 5px !important;
+		
+}
+
+#app .section-list-view.hasResolvedItems .grid-title.archive-title h5{
+		padding-left: 28px !important
+}
+
+#app .item.brick-popup-expanded .brick.expandedBrickDev{
+		min-height: 600px;
+		max-height: 82vh !important;
+}
+
+
+#app .brickFullScreenMode .item .brick.expandedBrickDev .brick-content
+#app .brickFullScreenMode .item .brick.expandedBrickDev .brick-content .objects > li,
+#app .brickFullScreenMode .item .brick.expandedBrickDev .assignees,
+#app .brickFullScreenMode .item .brick.expandedBrickDev .brick-settings {
+		max-width: 800px !important;
+}
+#app .brickFullScreenMode .item .brick.expandedBrickDev .brick-settings {
+		max-width: 100%!important;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+}
+#app #wallContainer #gridsContainer .brick-popup-expanded .objects > li{
+		
 }
