@@ -1,125 +1,123 @@
 /************
 ! ROOT
 *************/
-
 :root {
 		/*small font*/
-		--smallFontSize:13px;
-		--smallLineHeight:17px;
+		--smallFontSize: 13px;
+		--smallLineHeight: 17px;
 		/*font sizes*/
-		--bodyFontSize:14px;
-		--bodyLineHeight:19px;
+		--bodyFontSize: 14px;
+		--bodyLineHeight: 19px;
 		/*Large font*/
-		--largeFontSize:14.5px;
-		--largeLineHeight:19.5px;
+		--largeFontSize: 14.5px;
+		--largeLineHeight: 19.5px;
 		/*Header 3*/
-		--h3FontSize:15px;
-		--h3LineHeight:20px;
+		--h3FontSize: 15px;
+		--h3LineHeight: 20px;
 		/*Header 2*/
-		--h2FontSize:16.5px;
-		--h2LineHeight:21px;
+		--h2FontSize: 16.5px;
+		--h2LineHeight: 21px;
 		/*Header 1*/
-		--h1FontSize:17.5px;
-		--h1LineHeight:22px;
+		--h1FontSize: 17.5px;
+		--h1LineHeight: 22px;
 		/*font-weights*/
-		--bldWeight:600;
+		--bldWeight: 600;
 		/*margins and padding*/
-		--itemMargTopBtm:6px;
+		--itemMargTopBtm: 6px;
 		--brickPadTopBtm: 0px;
-		--brickNavHeight:40px;
-		--brickTopHandleHeight:24px;
+		--brickNavHeight: 40px;
+		--brickTopHandleHeight: 24px;
 		/*buttons*/
-		--brickBtnW:24px;
-		--brickCollapseBtnW:27px;
-		--brickCollapseBtnSize:60%;
-		--brickBtnBrdRad:4px;
+		--brickBtnW: 24px;
+		--brickCollapseBtnW: 27px;
+		--brickCollapseBtnSize: 60%;
+		--brickBtnBrdRad: 4px;
 		/*item pad*/
-		--brickItemPadLeft:16px;
-		--brickItemPadRight:24px;
+		--brickItemPadLeft: 16px;
+		--brickItemPadRight: 24px;
 		/*tags*/
-		--bricktagFontSize:13px;
-		--bricktagGap:2px;
-		--bricktagHeight:20px;
-		--bricktagPadTop:2px;
-		--bricktagPadBtm:1px;
-		--bricktagPadLeftRight:9px;
-		--bricktagBrdW:0.8px;
+		--bricktagFontSize: 13px;
+		--bricktagGap: 2px;
+		--bricktagHeight: 20px;
+		--bricktagPadTop: 2px;
+		--bricktagPadBtm: 1px;
+		--bricktagPadLeftRight: 9px;
+		--bricktagBrdW: 0.8px;
 		/*lists*/
-		--listbulletWidth:19px;
-		--listbulletMargRight:4px;
-		--listbulletBgClr:hsla(0,0%,50%,.3);
+		--listbulletWidth: 19px;
+		--listbulletMargRight: 4px;
+		--listbulletBgClr: hsla(0, 0%, 50%, .3);
 		/*checkbox*/
-		--checkboxMargTop:-1px;
-		--checkboxTransformScale:.9;
-		--checkboxTransformOrigin:60% 90%;
-		--checkboxBrdRad:6px;
+		--checkboxMargTop: -1px;
+		--checkboxTransformScale: .9;
+		--checkboxTransformOrigin: 60% 90%;
+		--checkboxBrdRad: 6px;
 		/*unordered list*/
-		--unorderedlistMargTop:0px;
+		--unorderedlistMargTop: 0px;
 		/*blockquote*/
-		--blockquoteBrdW:4px;
+		--blockquoteBrdW: 4px;
 		/*popup*/
-		--popupW:800px;
-		--popupH:790px;
-		--popupPadLR:20px;
-		--popupMargTopBtm:10vh
+		--popupW: 800px;
+		--popupH: 790px;
+		--popupPadLR: 20px;
+		--popupMargTopBtm: 10vh
 }
 
 /************
 COLORS
 *************/
-
 .brick {
 		/*text*/
-		--bodyClr:#222;
-		--bldClr:black;
-		--greyedOutClr:hsla(0, 0%, 0%,0.60);
-		--greyedOutBldClr:hsla(0, 0%, 0%,0.7);
+		--bodyClr: #222;
+		--bldClr: black;
+		--greyedOutClr: hsla(0, 0%, 0%, 0.60);
+		--greyedOutBldClr: hsla(0, 0%, 0%, 0.7);
 		/*link*/
-		--linkClr:hsl(198, 100%, 50%);
+		--linkClr: hsl(198, 100%, 50%);
 		/*todo*/
-		--todoCheckBoxBgClr:hsla(0,0%,0%,0.1);
-		--todoCheckBoxBgClr-Checked:hsla(0,0%,0%,0.1);
-		--todoCheckBoxBrdClr:hsla(0,0%,10%,0.6);
+		--todoCheckBoxBgClr: hsla(0, 0%, 0%, 0.1);
+		--todoCheckBoxBgClr-Checked: hsla(0, 0%, 0%, 0.1);
+		--todoCheckBoxBrdClr: hsla(0, 0%, 10%, 0.6);
 		/*tag*/
-		--tagBrdClr-Colorless:hsla(0,0%,0%,0.2);
-		--tagBrdClr:hsla(0,0%,0%,0.2);
-		--tagBgClr:hsla(0,0%,0%,0.05);
+		--tagClr-Colorless:hsla(0, 0%, 47%);
+		--tagBrdClr-Colorless: hsla(0, 0%, 0%, 0.2);
+		--tagBrdClr: hsla(0, 0%, 0%, 0.2);
+		--tagBgClr: hsla(0, 0%, 0%, 0.05);
 		/*bullets*/
-		--listorderedbulletBrdClr:hsla(0,0%,50%,0.1);
-		--listbulletcollapsedClr:hsla(0,0%,0%,0.1);
-
+		--listorderedbulletBrdClr: hsla(0, 0%, 50%, 0.1);
+		--listbulletcollapsedClr: hsla(0, 0%, 0%, 0.1);
 }
-.brick.darkBrick,
-.brick.noBackground{
+.brick.darkBrick {
 		/*text*/
-		--bodyClr:hsla(0, 100%, 100%,0.86);
-		--bldClr:hsla(0, 0%, 97%);
-		--greyedOutClr:hsla(0, 0%, 100%,0.6);
-		--greyedOutBldClr:hsla(0, 0%, 100%,0.70);
+		--bodyClr: hsla(0, 100%, 100%, 0.86);
+		--bldClr: hsla(0, 0%, 97%);
+		--greyedOutClr: hsla(0, 0%, 100%, 0.6);
+		--greyedOutBldClr: hsla(0, 0%, 100%, 0.70);
 		/*link*/
-		--linkClr:hsl(198, 100%, 50%);
+		--linkClr: hsl(198, 100%, 50%);
 		/*todo*/
-		--todoCheckBoxBgClr:hsl(122, 0%, 0%,.15);
-		--todoCheckBoxBgClr-Checked:hsl(122, 0%, 11%);
-		--todoCheckBoxBrdClr:hsl(122, 0%, 31%);
+		--todoCheckBoxBgClr: hsl(122, 0%, 0%, .15);
+		--todoCheckBoxBgClr-Checked: hsl(122, 0%, 11%);
+		--todoCheckBoxBrdClr: hsl(122, 0%, 31%);
 		/*tag*/
-		--tagBrdClr-Colorless:hsl(122, 0%, 0%,0.4);
-		--tagBrdClr:hsl(122, 0%, 0%,.4);
-		--tagBgClr:hsl(122, 0%, 0%,0.15);;
+		--tagClr-Colorless:hsla(0, 0%, 77%);
+		--tagBrdClr-Colorless: hsl(122, 0%, 0%, 0.5);
+		--tagBrdClr: hsl(122, 0%, 0%, .4);
+		--tagBgClr: hsl(122, 0%, 0%, 0.25);
+		;
 		/*bullets*/
-		--listorderedbulletBrdClr:hsla(0,0%,50%,.3);
-		--listbulletcollapsedClr:hsla(0,0%,50%,.3);
-
-
+		--listorderedbulletBrdClr: hsla(0, 0%, 50%, .3);
+		--listbulletcollapsedClr: hsla(0, 0%, 50%, .3);
 }
 
 .darkmode .topHeader,
-.darkmode .main{
-		background:hsl(240, 6%, 7%) !important;
+.darkmode .main,
+.brick.noBackground.borderless.darkBrick .brick-background{
+		background: hsl(230, 2%, 7%) !important;
 }
 
 :root {
-		--darkmode-black:hsl(240, 6%, 7%);
+		--darkmode-black: hsl(240, 6%, 7%);
 }
 
 
@@ -141,17 +139,25 @@ li.listitem,
 .editor-menu-bubble button,
 .brick > .brick-settings,
 #app .brick > .brick-tags,
-.brick-tag{
+.brick-tag {
 
-		box-shadow: 0 0 0 .2px hsl(100, 80%, 30%,0) !important;
+		box-shadow: 0 0 0 .2px hsl(100, 80%, 30%, 0) !important;
 }
 /*
 #app .grid-component,
 #app .grid-component .grid-title,
 .grid-component > .new-section{
 border:1px solid red !important;
-}
-*/
+}*/
+/*
+.brick.visual-grid-item-content,
+.brick.visual-grid-item-content > div,
+.brick.visual-grid-item-content > div > div,
+.brick.visual-grid-item-content > div > div > div,
+.brick.visual-grid-item-content > div > div > div > div{
+		border:1px solid red !important;
+		
+}*/
 
 
 
@@ -382,6 +388,9 @@ display:none;
 		padding-bottom: var(--brickPadTopBtm) !important;
 
 }
+#app .brick:hover {
+		box-shadow: none !important
+}
 .brick .brick-content {
 
 		border-radius: var(--brickBrdRad);
@@ -393,13 +402,38 @@ display:none;
 .brick.collapsed {
 		overflow: hidden;
 }
+/************
+IMAGE BRICK
+*************/
+#app #gridsContainer .brick.imageBrick{
+}
+#app #gridsContainer .brick.imageBrick .objects > li{
+		padding: 0px !important
+}
+#app #gridsContainer .brick.imageBrick .objects > li .image {
+		margin-top: 0px !important;
+}
 
+#app #gridsContainer .brick.imageBrick .brick-settings > div{
+		background:transparent !important;
+		opacity: 1 !important
+}
+#app #gridsContainer .brick.imageBrick .brick-settings .setting{
+		background: black !important;
+		border-radius: 5px;
+		box-shadow:0 0 0 2px black;
+}
+#app #gridsContainer .brick.imageBrick .brick-settings .setting button{
+		opacity: 1 !important;
+}
 /************
 BRICK - HEADERS
 *************/
 .brick > .brick-top-buttons,
 .brick > .brick-tags {}
-
+#app .brick-tag.colorless span {
+		color:var(--tagClr-Colorless) !important;
+}
 
 /*EXPAND COLLAPSE CONTAINER*/
 .brick > .brick-top-buttons {
@@ -552,8 +586,11 @@ BRICK - HEADERS
 /*NEW TAG BTN*/
 
 #app .brick > .brick-tags.noTags > button img{
-		opacity: 0.3 !important;
+		opacity: 0.0 !important;
 		filter: unset;
+}
+#app .brick > .brick-tags.noTags:hover > button img{
+		opacity: 0.3 !important;
 }
 #app .brick.darkBrick > .brick-tags.noTags > button img{
 		filter: brightness(500%)
@@ -840,6 +877,15 @@ COLORED TEXT AFTER LINE BREAK
 }
 
 
+/************
+LINKS
+*************/
+#app .text a {
+		color: hsl(200, 14%, 62%);
+}
+#app .brick.darkBrick .text a{
+		color: hsl(200, 0%, 55%);
+}
 
 /************
 HEADING - 1
@@ -1248,6 +1294,33 @@ button.copyCodeBtn.has-info-bubble {
 		white-space: unset;
 }
 /************
+ASSIGNEES
+*************/
+
+#app .brick.hasAssignees .objects{
+		display: block !important;
+}
+#app .brick.hasAssignees .objects > li:last-child > div{
+		font-size: 1px !important;
+		line-height: 1px !important;
+		margin-bottom:-40px !important;
+}
+#app .brick.hasAssignees.collapsed .objects > li:first-child{
+		margin-bottom:-40px !important;
+}
+
+#app .brick .assignees {
+		padding-bottom:10px !important;
+		position: absolute;
+		bottom: 22px;
+				
+}
+/**/
+.brick .assigneeAvatar {
+		height: 22px !important;
+		width:22px !important;
+}
+/************
 MARGINS - ALL ELEMENTS
 *************/
 .brick .checklist,
@@ -1481,7 +1554,7 @@ box-shadow: 0 0 0 1px hsla(0, 0%, 50%, .1),
 #app .brick .text strike,
 #app .brick .text span, 
 #app .brick .text div{
-		color: var(--bodyClr);
+		color: var(--bodyClr) ;
 }
 
 /*
