@@ -111,11 +111,12 @@ COLORS
 		--listbulletcollapsedClr: hsla(0, 0%, 50%, .3);
 }
 
+/*
 .darkmode .topHeader,
 .darkmode .main,
 .brick.noBackground.borderless.darkBrick .brick-background{
 		background: hsl(230, 0%, 7%) !important;
-}
+}*/
 
 :root {
 		--darkmode-black: hsl(240, 6%, 7%);
@@ -202,20 +203,43 @@ border:1px solid red !important;
 }
 
 :root {
---sectionGap:10px;
---sectionTitleMinH:30px;
+		--sectionGap:16px;
+		--sectionPadTopBtm:34px;
+		--sectionMargTopBtm:0px;
+		--sectionTitleMinH:30px;
+		--sectionMargLeft:30px;
+		--sectionMargLeft-Numbers:50px;
+		/**/
+		--gridTitleLeftBtnW:24px;
+		--gridTitleLeftBtnMargTop:4px;
+		
 }
 
 
 #app .grid-component {
 		margin-bottom:0px !important;	
-		padding-top:var(--sectionGap) !important;
+		padding-top:var(--sectionPadTopBtm) !important;
+		padding-bottom:calc(var(--sectionPadTopBtm) * 0.0) !important;
+		margin-top:var(--sectionMargTopBtm) !important;
+		margin-bottom:var(--sectionMargTopBtm) !important;
+}
+/*section background*/
+#app .grid-component.backgroundedSection .section-background{
+		top:0;
+		bottom:0;
+		height:100%;
+		box-shadow: 
+				inset 0 1px 0 0 hsla(0,0%,50%,0.1),
+				inset 0 -1px 0 0 hsla(0,0%,50%,0.1);
 }
 
 /*SECTION > GRID TITLE */
 #app .grid-component .grid-title {
 		padding-bottom:var(--sectionGap) !important;
 		margin-bottom:0px !important;
+		margin-left: 0px !important;
+		width: 100% !important;
+		position: relative;
 }
 div.visual-grid-offset{
 	display:none;
@@ -250,13 +274,13 @@ background-image:unset !important;
 #app .grid-component .grid-title > div.grid-title-separator,
 #app .grid-component .grid-title > .section-manage-options{
 	opacity:0 !important;
-	transition:.12s !important;
+	transition:.16s ease-in-out !important;
 }
 #app .grid-component .grid-title:hover > button, 
 #app .grid-component .grid-title:hover > div.section-settings,
 #app .grid-component .grid-title:hover > div.grid-title-separator,
 #app .grid-component .grid-title:hover > .section-manage-options{
-	opacity:0.15 !important;
+	opacity:0.1 !important;
 }
 #app .grid-component .grid-title:hover > button:hover, 
 #app .grid-component .grid-title:hover > div.section-settings:hover,
@@ -276,8 +300,99 @@ background-image:unset !important;
 	font-size:16.5px !important;
 	line-height:23.5px !important;
 }
-.showSectionNumbers .grid-title .descriptionDiv{
-margin-left:40px !important;
+#app .grid-title .descriptionDiv,
+#app .grid-title h2{
+padding-left:var(--sectionMargLeft) !important;
+margin-left: 0px !important;
+}
+#app .grid-component.visualView .grid-content{
+padding-left:calc(var(--sectionMargLeft) - 8px) !important;
+}
+/*RIGHT ALIGNED TEXT*/
+#app .RTLSection .grid-title .descriptionDiv,
+#app .RTLSection .grid-title h2{
+padding-right:var(--sectionMargLeft) !important;
+		padding-left: 0px !important;
+}
+#app .grid-component.visualView.RTLSection .grid-content{
+		padding-left:0px !important;
+padding-right:calc(var(--sectionMargLeft) - 8px) !important;
+
+}
+/*CENTER ALIGNED TEXT*/
+#app .centeredSectionTitle .grid-title .descriptionDiv,
+#app .centeredSectionTitle .grid-title h2{
+padding-right:8px !important;
+		padding-left: 8px !important;
+}
+#app .grid-component.visualView.centeredSectionTitle .grid-content{
+		padding-left:0px !important;
+padding-right:unset !important;
+
+}
+
+.showSectionNumbers {
+		--sectionMargLeft:var(--sectionMargLeft-Numbers);
+}
+.wall-container .grid-title .grid-handle,
+.wall-container .grid-title .section-number,
+.wall-container .collapsible .grid-title .arrow{
+		position: absolute;
+		top: var(--gridTitleLeftBtnMargTop) !important;
+		height: var(--gridTitleLeftBtnW);
+		width: var(--gridTitleLeftBtnW);
+}
+/*SECTION HANDLE */
+
+.wall-container .grid-title .grid-handle{
+		left: calc(var(--gridTitleLeftBtnW) * -0.1) !important;
+		opacity: 0.2 !important
+}
+.wall-container .grid-title .grid-handle:hover{
+		opacity: 0.6 !important;
+}
+.wall-container.showSectionNumbers .RTLSection .grid-title .grid-handle {
+		left: unset !important;
+		right: 16px !important;
+}
+.wall-container.showSectionNumbers .grid-title .grid-handle{
+		left: calc(var(--gridTitleLeftBtnW) * -0.25) !important;
+		top:calc(var(--gridTitleLeftBtnMargTop) - 0px) !important;
+		
+
+
+}
+/*SECTION NUMBER */
+
+.wall-container .grid-title .section-number{
+		left:2px !important;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		transform: scale(1.1);
+		opacity: 0.3 !important
+}
+/*EXPAND / COLLAPSE ARROW */
+.wall-container .collapsible .grid-title .arrow  {
+		left: 0px;
+		margin: 0px;
+}
+.wall-container .RTLSection.collapsible .grid-title .arrow,
+.wall-container .RTLSection.collapsible .grid-title .arrow.closed{
+		left: unset !important;
+		right: 6px !important;
+}
+.wall-container .RTLSection.collapsible .grid-title .arrow.closed {
+		 transform: rotate(-90deg)!important;
+	 
+}
+.wall-container.showSectionNumbers .collapsible .grid-title .arrow{
+		left: 4px;
+}
+.wall-container .collapsible .grid-title .arrow.closed {
+		transform: rotate(-90deg)!important;
+}
+.wall-container .RTLSection{
 }
 /*SECTION > NEW SECTION BUTTON*/
 .grid-component > .new-section {
@@ -287,14 +402,26 @@ margin-left:40px !important;
 	align-items:center;
 	opacity:0 !important;
 	transition:.12s !important;
-	height: 26px;
+	height: 20px;
 	font-size:12px !important;
 	display: flex;
 	align-items:center;
 	background-image:unset !important;
+		cursor: pointer;
+		position: relative;
+		z-index: 1
 }
-.grid-component > .new-section:hover {
+#app .grid-component .new-section .new-section-btn{
+		opacity: 0;
+		padding-left: 30px !important;
+
+}
+
+.grid-component > .new-section:hover  {
 	opacity:1 !important;
+}
+#app .grid-component > .new-section:hover .new-section-btn{
+		opacity: 0.2;
 }
 .grid-component > .new-section > div,
 .grid-component > .new-section > button{
@@ -306,7 +433,9 @@ margin-left:40px !important;
 	order:1;
 	padding-top:5px  !important;
 	padding-bottom:5px  !important;
+		padding-left: 0px !important;
 	background-image:unset !important;
+		white-space: nowrap
 }
 .grid-component > .new-section > .moreNewSectionOptions{
 	order:2;
@@ -314,6 +443,11 @@ margin-left:40px !important;
 }
 .grid-component > .new-section > .line{
 	order:9;
+		width: 100% !important;
+		opacity: 0;
+}
+#app .grid-component > .new-section:hover .line{
+		opacity: 0.6
 }
 /*SECTION >  CONTENT > OVERRIDES*/
 .grid-container > .section-list-view, 
@@ -323,7 +457,13 @@ margin-left:40px !important;
 		
 }
 
-
+/*EMPTY*/
+.grid-content .emptywall-note{
+		top: 28px;
+}
+.grid-content .emptywall-note + .emptywall-note {
+		top: 75px;
+}
 /************
 KANBAN
 *************/
@@ -414,7 +554,15 @@ display:none;
 /************
 IMAGE BRICK
 *************/
+#app #gridsContainer .brick.imageBrick  {
+}
 #app #gridsContainer .brick.imageBrick{
+		transition: .15s !important;
+		outline: 1px solid hsla(0,0%,50%,0) !important;
+		outline-offset: 0px;
+}
+#app #gridsContainer .brick.imageBrick:hover{
+		outline: 1px solid hsla(0,0%,50%,.075) !important;
 }
 #app #gridsContainer .brick.imageBrick .objects > li{
 		padding: 0px !important
@@ -422,18 +570,49 @@ IMAGE BRICK
 #app #gridsContainer .brick.imageBrick .objects > li .image {
 		margin-top: 0px !important;
 }
-
+#app #gridsContainer .brick.imageBrick .brick-settings{
+padding-left: 10px !important;
+	padding-right: 10px !important;
+	padding-bottom: 5px !important;
+		transition: unset !important;
+		opacity: unset !important;
+}
 #app #gridsContainer .brick.imageBrick .brick-settings > div{
 		background:transparent !important;
-		opacity: 1 !important
 }
-#app #gridsContainer .brick.imageBrick .brick-settings .setting{
-		background: black !important;
+#app #gridsContainer .brick.imageBrick .brick-settings .setting {
 		border-radius: 5px;
-		box-shadow:0 0 0 2px black;
+		opacity: 1 !important;
+		transition: unset !important;
+}
+
+#app #gridsContainer .brick.imageBrick .brick-settings .setting button,
+#app #gridsContainer .brick.imageBrick .replace-button.preventHideSelectImage{
+		opacity: 0 !important;
+		transition: 0.35s ease-in-out !important;
+
+}
+#app #gridsContainer .brick.imageBrick:hover .brick-settings .setting button,
+#app #gridsContainer .brick.imageBrick:hover .replace-button.preventHideSelectImage{
+		opacity: .5 !important;
+
+}
+#app #gridsContainer .brick.imageBrick:hover .brick-settings .setting button:hover,
+#app #gridsContainer .brick.imageBrick:hover .replace-button.preventHideSelectImage:hover{
+		opacity: 1 !important;
+
 }
 #app #gridsContainer .brick.imageBrick .brick-settings .setting button{
-		opacity: 1 !important;
+}
+
+#app #gridsContainer .brick.imageBrick.noBackground.borderless .objectImg{
+		background: transparent !important;
+}
+#app #gridsContainer .brick.imageBrick .brick-settings .setting-text {
+		display: block !important;
+}
+#app #gridsContainer .brick.imageBrick:hover .replace-button.preventHideSelectImage {
+		display: none;
 }
 /************
 BRICK - HEADERS
