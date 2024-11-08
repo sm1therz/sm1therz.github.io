@@ -64,60 +64,78 @@
 }
 
 /************
-COLORS
+LIGHT BRICK - TEXT COLORS
 *************/
-.brick {
+/*light > no background or border*/
+.brick.borderless,
+/*light > stock background */
+.brick.noBackground,
+/*light > colored background */
+.brick.backgrounded {
 		/*text*/
 		--bodyClr: #222;
 		--bldClr: black;
-		--greyedOutClr: hsla(0, 0%, 0%, 0.60);
+		/*notes*/
+		--noteClr: hsla(0, 0%, 0%, 0.40);
+		--noteBldClr: hsla(0, 0%, 0%, 0.60);
+		--greyedOutClr: hsla(0, 0%, 0%, 0.40);
 		--greyedOutBldClr: hsla(0, 0%, 0%, 0.7);
 		/*link*/
 		--linkClr: hsl(198, 100%, 50%);
+		--linkClr: hsl(200, 14%, 62%);
 		/*todo*/
-		--todoCheckBoxBgClr: hsla(0, 0%, 0%, 0.1);
+		--todoCheckBoxBgClr: hsla(0, 0%, 0%, 0.075);
 		--todoCheckBoxBgClr-Checked: hsla(0, 0%, 0%, 0.1);
-		--todoCheckBoxBrdClr: hsla(0, 0%, 10%, 0.6);
+		--todoCheckBoxBrdClr: hsla(0, 0%, 10%, 0.525);
 		/*tag*/
-		--tagClr-Colorless: hsla(0, 0%, 47%);
-		--tagBrdClr-Colorless: hsla(0, 0%, 0%, 0.2);
+		--tagBgClr-Colorless:hsla(0, 0%, 0%,0.075);
+		--tagClr-Colorless: hsla(0, 0%, 0%);
+		--tagBrdClr-Colorless: hsla(0, 0%, 0%, 0.15);
 		--tagBrdClr: hsla(0, 0%, 0%, 0.2);
 		--tagBgClr: hsla(0, 0%, 0%, 0.1) !important;
 		/*bullets*/
 		--listorderedbulletBrdClr: hsla(0, 0%, 50%, 0.1);
 		--listbulletcollapsedClr: hsla(0, 0%, 0%, 0.1);
-
 }
-.brick.darkBrick,
-.darkmode .brick.noBackground {
+
+
+/************
+DARK BRICK - TEXT COLORS
+*************/
+/*dark > no background or border*/
+.brick.borderless.darkBrick,
+/*dark > stock background */
+.brick.noBackground.darkBrick,
+/*dark > colored background*/
+.brick.backgrounded.darkBrick {
 		/*text*/
 		--bodyClr: hsla(0, 100%, 100%, 0.86);
-		--bldClr: hsla(0, 0%, 97%);
-		--greyedOutClr: hsla(0, 0%, 100%, 0.6);
+		--bldClr: hsla(0, 0%, 98%);
+		/*notes*/
+		--noteClr:hsla(0, 0%, 100%, 0.4);
+		--noteBldClr:hsla(0, 0%, 100%, 0.6);
+		--greyedOutClr: hsla(0, 0%, 100%, 0.45);
 		--greyedOutBldClr: hsla(0, 0%, 100%, 0.70);
 		/*link*/
 		--linkClr: hsl(198, 100%, 50%);
+		--linkClr: hsl(200, 0%, 55%);
 		/*todo*/
-		--todoCheckBoxBgClr: hsl(122, 0%, 0%, .15);
+		--todoCheckBoxBgClr: hsl(122, 0%, 0%, 0.25);
 		--todoCheckBoxBgClr-Checked: hsl(122, 0%, 11%);
-		--todoCheckBoxBrdClr: hsl(122, 0%, 31%);
+		--todoCheckBoxBrdClr: hsl(122, 0%, 100%,.25);
 		/*tag*/
+		--tagBgClr-Colorless:hsla(0, 0%, 0%,.2);
 		--tagClr-Colorless: hsla(0, 0%, 77%);
 		--tagBrdClr-Colorless: hsl(122, 0%, 0%, 0.5);
 		--tagBrdClr: hsl(122, 0%, 0%, .4);
 		--tagBgClr: hsl(122, 0%, 0%, 0.25);
-		;
 		/*bullets*/
 		--listorderedbulletBrdClr: hsla(0, 0%, 50%, .3);
 		--listbulletcollapsedClr: hsla(0, 0%, 50%, .3);
 		/*sidebar*/
 }
 
-#app .lightSection .brick {
-		--bodyClr: #222;
-		--bldClr: black;
-		--tagClr-Colorless:black
-}
+
 
 /*
 .darkmode .topHeader,
@@ -129,10 +147,9 @@ COLORS
 :root {
 		--darkmode-black: hsl(240, 6%, 7%);
 }*/
-
 :root {
-				/*list text area*/
-		--listTextAreaEditingBgClr:hsla(0,0%,0%,.1);
+		/*list text area*/
+		--listTextAreaEditingBgClr: hsla(0, 0%, 0%, .1);
 }
 .lightSection {
 		--sectionBrdClr: hsla(0, 0%, 50%, 0.1);
@@ -142,31 +159,37 @@ COLORS
 		--sectionBrdClr: hsla(0, 0%, 100%, 0.055);
 		--sectionTitleBrdClr: hsla(0, 0%, 100%, 0.075);
 		/*list text area*/
-		--listTextAreaEditingBgClr:hsla(0,0%,50%,0.11);
+		--listTextAreaEditingBgClr: hsla(0, 0%, 50%, 0.11);
 }
+
+
 .brick {
-		--cardBrdClr:hsla(0, 0%, 0%, 0.065);
+		--cardBrdClr: hsla(0, 0%, 0%, 0.065);
 }
 .brick.noBackground {
-		--cardBrdClr:hsla(0, 0%, 0%, 0.02);
+		--cardBrdClr: hsla(0, 0%, 0%, 0.02);
 }
 .darkBrick.noBackground {
-				--cardBrdClr:hsla(0, 0%, 100%, 0.1);
+		--cardBrdClr: hsla(0, 0%, 100%, 0.1);
 }
 .darkBrick {
-				--cardBrdClr:hsla(0, 0%, 100%, 0.025);
+		--cardBrdClr: hsla(0, 0%, 100%, 0.025);
 }
+
+
 
 /************
 SCROLLBAR
 *************/
 .darkmode ::-webkit-scrollbar-thumb {
-background-color: transparent !important;
-background-color: hsla(0,0%,100%,0) !important;
+		background-color: transparent !important;
+		background-color: hsla(0, 0%, 100%, 0) !important;
 }
+
 /************
 TESTING
-*************//*
+*************/
+/*
 .objects,
 .objects > li,
 .objects > li > div,
@@ -910,7 +933,7 @@ BRICK - HEADERS
 }
 .brick > .brick-tags li.brick-tag.colorless {
 		--tagBrdClr:var(--tagBrdClr-Colorless);
-		background: var(--tagBgClr);
+		background: var(--tagBgClr-Colorless);
 }
 .brick > .brick-tags li.brick-tag span {
 		float: unset;
@@ -1165,7 +1188,8 @@ TEXT - NORMAL > PARAGRAPHS AND LISTS
 }
 .brick .object.type-paragraph > .paragraph.normal > .text,
 .brick .object .listitem > .listitem-container > .text,
-.brick .object .listitem > .listitem-container > .note {
+.brick .object .listitem > .listitem-container > .note,
+.brick .object .listitem > .listitem-container > .note *{
 		--smallFontBldWeight: 600;
 		font-size: var(--bodyFontSize) !important;
 		line-height: var(--bodyLineHeight) !important;
@@ -1283,11 +1307,9 @@ COLORED TEXT AFTER LINE BREAK
 LINKS
 *************/
 #app .text a {
-		color: hsl(200, 14%, 62%);
+		color: var(--linkClr) !important;
 }
-#app .brick.darkBrick .text a{
-		color: hsl(200, 0%, 55%);
-}
+
 
 /************
 HEADING - 1
@@ -1521,9 +1543,20 @@ ul.brick-list.child-list {
 .items.expanded > div > li:first-child {
 		margin-top: 0px !important;
 }
-.brick .brick-list .note {
+.brick .brick-list .note,
+.brick .brick-list .note i,
+.brick .brick-list .note u,
+.brick .brick-list .note strike{
 		opacity: 1;
-		color: var(--greyedOutClr) !important
+		color: var(--noteClr) !important;
+		text-decoration-color: var(--noteClr) !important;
+}
+.brick .brick-list .note b{
+		color: var(--noteBldClr) !important;
+
+}
+.brick .brick-list .note{
+		
 }
 button.newListItem ~ .dropdown-bubble + div {
 		display: none;
@@ -1964,6 +1997,11 @@ box-shadow: 0 0 0 1px hsla(0, 0%, 50%, .1),
 		color: var(--bodyClr) ;
 }
 
+#app .brick .text strike{
+		color: var(--noteClr);
+		text-decoration-color: var(--noteCLr) !important;
+}
+
 /*
 #app .brick .text b,
 #app .brick .brickHeading .text,
@@ -2064,8 +2102,8 @@ li.object * {
 		--smallFontSize:calc(var(--bodyFontSize) + -2px);;
 		--smallLineHeight:calc(var(--bodyLineHeight) + -4px);;
 		/*font sizes*/
-		--bodyFontSize:17px;
-		--bodyLineHeight:25px;
+		--bodyFontSize:17.5px;
+		--bodyLineHeight:26px;
 		/*Large font*/
 		--largeFontSize:calc(var(--bodyFontSize) + 2px);
 		--largeLineHeight:calc(var(--bodyLineHeight) + 2px);
@@ -2081,10 +2119,10 @@ li.object * {
 		/*font-weights*/
 		--bldWeight:600;
 		/*margins and padding*/
-		--itemMargTopBtm:8px;
+		--itemMargTopBtm:9px;
 		/***/
-		--unorderedlistMargTop:2px;
-		--checkboxMargTop:1px;
+		--unorderedlistMargTop:4px;
+		--checkboxMargTop:2px;
 		/****
 		*****/
 		left: 0 !important;
@@ -2173,6 +2211,9 @@ li.object * {
 .darkBrick .brick-sidebar{
 		background: hsla(0,0%,30%,.2);
 }
+.darkBrick .brick-sidebar h4,.darkBrick .brick-sidebar h5{
+	color: var(--bldClr) !important;
+}
 .darkSection .brick.backgrounded .brick-sidebar .brick-sidebar-section{
 		border-color: hsla(0,0%,50%,0.2) !important
 }
@@ -2216,8 +2257,7 @@ left:0 !important
 		--iconbulletCircle:var(--iconbulletCircle-Black);
 		--iconCheckMark:var(--iconCheckMark-Black);
 }
-.darkmode .darkBrick,
-.brick.noBackground {
+.darkBrick {
 		--iconbulletCircle:var(--iconbulletCircle-White);
 		--iconCheckMark:var(--iconCheckMark-White);
 
