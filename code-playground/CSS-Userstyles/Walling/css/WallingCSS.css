@@ -649,7 +649,7 @@ div.grid-container > div > div {
 		display: block !important;
 }
 .section-list-view.canEdit .listItems:not(.listItemsCompleted){
-		padding-bottom: 0px;
+		padding-bottom: 0px !important;
 }
 /*SECTION > NEW SECTION BUTTON*/
 .grid-component > .new-section {
@@ -2930,50 +2930,6 @@ width: 100% !important;
 		}
 		
 
-}
-
-/************
-! GRID - HEIGHT ADJUST
-
-:root {
-		--gridWidthRight:20%;
-}
-
-#app .grid-component.visualView .brick-container:not(.brick-popup-expanded) .brick-content,
-#app .grid-component.kanbanView .brick-container:not(.brick-popup-expanded) .brick-content{
-		background: green !important;
-		width: calc(100% - var(--gridWidthRight));
-		transform-origin: top left;
-		transform: scale(1.2);
-
-}*************/
-
-/***/
-:root {
-		--bodyLineHeightTTT:var(--bodyLineHeight);
-}
-#app .visualView .brick,
-#app .grid-component.kanbanView{
-	 /*body font*/
-		--bodyFontSize: 46px;
-		--bodyLineHeight: 1.2575;
-
-	 /*small font*/
-		--smallFontSize: calc(var(--bodyFontSize) - 1px);
-		--smallLineHeight: calc(var(--bodyLineHeightTTT) - 2px);
-
-		/*Large font*/
-		--largeFontSize: calc(var(--bodyFontSize) + .5px);
-		--largeLineHeight: calc(var(--bodyLineHeight) + .5px);
-		/*Header 3*/
-		--h3FontSize: calc(var(--bodyFontSize) + 2px);
-		--h3LineHeight: calc(var(--bodyLineHeightTTT) + 1px);
-		/*Header 2*/
-		--h2FontSize: calc(var(--bodyFontSize) + 4.5px);
-		--h2LineHeight: calc(var(--bodyLineHeightTTT) + 2.5px);
-		/*Header 1*/
-		--h1FontSize: calc(var(--bodyFontSize) + 7.5px);
-		--h1LineHeight: calc(var(--bodyLineHeightTTT) + 7.5px);
 }
 
 
