@@ -879,7 +879,7 @@ IMAGE BRICK
 		gap: unset !important;
 }
 #app #gridsContainer .brick.imageBrick .dim {
-		display: none !important;
+		background:transparent !important;
 }
 
 #app #wallContainer #gridsContainer .brick.imageBrick .brick-settings {
@@ -2998,7 +2998,7 @@ width: 100% !important;
 		--gridGap:6px;
 }
 [class*="visual-grid-comp"] > .visual-grid-item > .visual-grid-item-content{
-		inset:var(--gridGap);
+		inset:var(--gridGap) !important;
 }
 
 .brickCornersSharp [class*="visual-grid-comp"] > .visual-grid-item > .visual-grid-item-content{
