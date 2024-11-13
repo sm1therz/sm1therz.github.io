@@ -11,7 +11,7 @@
 		--bodyLineHeight: 1.3575;
 		/*Large font*/
 		--largeFontSize: 14.5px;
-		--largeLineHeight: 19.5px; 
+		--largeLineHeight: 19.5px;
 		/*Header 3*/
 		--h3FontSize: 15px;
 		--h3LineHeight: 20px;
@@ -34,7 +34,7 @@
 		--brickCollapseBtnTop: 4px;
 		--brickCollapseBtnSize: 60%;
 		--brickBtnBrdRad: 4px;
-		/*item pad*/ 
+		/*item pad*/
 		--brickItemPadLeft: 16px;
 		--brickItemPadRight: 24px;
 		/*tags*/
@@ -79,11 +79,11 @@ LIGHT BRICK - TEXT COLORS
 /*popup - list - stock background*/
 .brickExpandedMode .listBrick .brick.noBackground,
 /*popup - list - light section - stock background*/
-.brickExpandedMode div.lightSection .listBrick .brick.noBackground{
+.brickExpandedMode div.lightSection .listBrick .brick.noBackground {
 		/*text*/
 		--bodyClr: #222;
 		--bldClr: black;
-		--headingClr:var(--bldClr); 
+		--headingClr: var(--bldClr);
 		/*notes*/
 		--noteClr: hsla(0, 0%, 0%, 0.40);
 		--noteBldClr: hsla(0, 0%, 0%, 0.60);
@@ -97,16 +97,19 @@ LIGHT BRICK - TEXT COLORS
 		--todoCheckBoxBgClr-Checked: hsla(0, 0%, 0%, 0.1);
 		--todoCheckBoxBrdClr: hsla(0, 0%, 10%, 0.525);
 		/*tag*/
-		--tagBgClr-Colorless:hsla(0, 0%, 0%,0.075);
+		--tagBgClr-Colorless: hsla(0, 0%, 0%, 0.075);
 		--tagClr-Colorless: hsla(0, 0%, 0%);
 		--tagBrdClr-Colorless: hsla(0, 0%, 0%, 0.15);
 		--tagBrdClr: hsla(0, 0%, 0%, 0.2);
 		--tagBgClr: hsla(0, 0%, 0%, 0.1) !important;
 		/*list tag*/
-		--listtagBrdClr-Colorless:var(--tagBrdClr-Colorless);
+		--listtagBrdClr-Colorless: var(--tagBrdClr-Colorless);
 		/*bullets*/
 		--listorderedbulletBrdClr: hsla(0, 0%, 50%, 0.1);
 		--listbulletcollapsedClr: hsla(0, 0%, 0%, 0.1);
+		/*blockquote*/
+		--codeblockBgClr:hsl(0, 0%, 50%,.2);
+		--codeblockBrdClr:hsl(0, 0%, 50%,.2);
 }
 
 
@@ -122,14 +125,14 @@ DARK BRICK - TEXT COLORS
 /*list brick tags*/
 .darkSection .listbrick-tags,
 /*popup - list - dark section - stock background*/
-.brickExpandedMode div.darkSection .listBrick .brick.noBackground{
+.brickExpandedMode div.darkSection .listBrick .brick.noBackground {
 		/*text*/
 		--bodyClr: hsla(0, 100%, 100%, 0.86);
 		--bldClr: hsla(0, 0%, 98%);
 		--headingClr: hsla(0, 0%, 100%);
 		/*notes*/
-		--noteClr:hsla(0, 0%, 100%, 0.4);
-		--noteBldClr:hsla(0, 0%, 100%, 0.6);
+		--noteClr: hsla(0, 0%, 100%, 0.4);
+		--noteBldClr: hsla(0, 0%, 100%, 0.6);
 		--greyedOutClr: hsla(0, 0%, 100%, 0.45);
 		--greyedOutBldClr: hsla(0, 0%, 100%, 0.70);
 		/*link*/
@@ -138,19 +141,21 @@ DARK BRICK - TEXT COLORS
 		/*todo*/
 		--todoCheckBoxBgClr: hsl(122, 0%, 0%, 0.25);
 		--todoCheckBoxBgClr-Checked: hsl(122, 0%, 11%);
-		--todoCheckBoxBrdClr: hsl(122, 0%, 100%,.25);
+		--todoCheckBoxBrdClr: hsl(122, 0%, 100%, .25);
 		/*tag*/
 		--tagClr-Colorless: hsla(0, 0%, 77%);
 		--tagBrdClr-Colorless: hsl(122, 0%, 0%, 0.5);
 		--tagBrdClr: hsl(122, 0%, 0%, .4);
-		--tagBgClr-Colorless:hsla(0, 0%, 0%,.2);
+		--tagBgClr-Colorless: hsla(0, 0%, 0%, .2);
 		--tagBgClr: hsl(122, 0%, 0%, 0.25);
 		/*list tag*/
-		--listtagBrdClr-Colorless:hsla(0,0%,50%,.2);
+		--listtagBrdClr-Colorless: hsla(0, 0%, 50%, .2);
 		/*bullets*/
 		--listorderedbulletBrdClr: hsla(0, 0%, 50%, .3);
 		--listbulletcollapsedClr: hsla(0, 0%, 50%, .3);
-		/*sidebar*/
+		/*blockquote*/
+		--codeblockBgClr:hsl(0, 0%, 5%);
+		--codeblockBrdClr:hsl(0, 0%, 24%);
 }
 
 
@@ -212,7 +217,6 @@ SCROLLBAR
 TESTING
 *************/
 /**/
-
 /*
 #app .brick-popup-expanded .brick-content{
 		border:var(--testBrdW) solid green !important;
@@ -236,7 +240,6 @@ TESTING
 		
 }
 */
-
 /* TESTING - GRID RESIZING*/
 .brick .brick-content {
 		outline: var(--testBrdW) solid red !important;
@@ -246,16 +249,16 @@ TESTING
 		box-shadow: inset 0 0 0 var(--testBrdW) green;
 		min-height: 26px;
 }
-.visual-grid-item{
+.visual-grid-item {
 		outline: var(--testBrdW) solid turquoise !important;
 		outline-offset: 0px;
 }
 #app .brick .object,
-#app .brick .object > div{
+#app .brick .object > div {
 		box-shadow: inset 0 0 0 var(--testBrdW) orange
 }
 :root {
-		--testBrdW:0px;
+		--testBrdW: 0px;
 }
 
 /************
@@ -346,22 +349,22 @@ header.wall-header.electronNodrag {
 		margin-left: 0px !important;
 		width: 100% !important;
 		position: relative;
-		border:unset !important
+		border: unset !important
 }
 
 #app .grid-component.hiddenSection .grid-title {
-		border-bottom-color: hsla(0,0%,50%,.0001) !important
+		border-bottom-color: hsla(0, 0%, 50%, .0001) !important
 }
 #app .grid-component > .grid-title:after {
 		content: "";
 		display: block;
 		position: absolute;
 		left: calc(var(--sectionMargLeft) - 0px);
-		right:0;
-		bottom:0;
-		height:1px;
+		right: 0;
+		bottom: 0;
+		height: 1px;
 		background: var(--sectionTitleBrdClr);
-		transition:.1s;
+		transition: .1s;
 }
 #app .grid-component.hiddenSection .grid-title:after {
 		opacity: 0;
@@ -573,12 +576,12 @@ div.grid-container > div > div {
 .wall-container .grid-title .grid-handle:hover {
 		opacity: 0.6 !important;
 }
-.section-list-view .listBrick{
+.section-list-view .listBrick {
 		margin-top: 0px !important;
 		margin-bottom: 0px !important;
 }
-.section-list-view .listBrick:hover .listBrickHover{
-		background-color: hsla(0,0%,50%,.095)!important;
+.section-list-view .listBrick:hover .listBrickHover {
+		background-color: hsla(0, 0%, 50%, .095)!important;
 }
 .wall-container.showSectionNumbers .RTLSection .grid-title .grid-handle {
 		left: unset !important;
@@ -621,9 +624,9 @@ div.grid-container > div > div {
 }
 .wall-container .RTLSection {}
 .section-list-view * {
-		box-shadow:0 0 0 0px
+		box-shadow: 0 0 0 0px
 }
-.section-list-view .listBrick.newListBrick{
+.section-list-view .listBrick.newListBrick {
 		color: transparent !important;
 		top: unset !important;
 		position: relative !important;
@@ -639,17 +642,17 @@ div.grid-container > div > div {
 		align-items: center;
 }
 .section-list-view .listBrick.newListBrick * {
-		color:transparent !important;
+		color: transparent !important;
 }
-.columnCalculations.listBrick{
+.columnCalculations.listBrick {
 		position: relative !important;
 		bottom: unset !important;
 		display: none !important;
 }
-.hasCalculations .columnCalculations.listBrick{
+.hasCalculations .columnCalculations.listBrick {
 		display: block !important;
 }
-.section-list-view.canEdit .listItems:not(.listItemsCompleted){
+.section-list-view.canEdit .listItems:not(.listItemsCompleted) {
 		padding-bottom: 0px !important;
 }
 /*SECTION > NEW SECTION BUTTON*/
@@ -713,23 +716,23 @@ div.grid-container > div > div {
 		padding-bottom: 0px !important;
 		padding-bottom: 0px !important;
 }
-.grid-component.collapsible .table-container{
+.grid-component.collapsible .table-container {
 		padding-left: 16px
 }
-.grid-component.collapsible .list-container{
+.grid-component.collapsible .list-container {
 		padding-left: 16px
 }
 .showSectionNumbers .grid-component.collapsible .table-container {
-				padding-left: 34px
+		padding-left: 34px
 }
 .showSectionNumbers .grid-component.collapsible .list-container {
-				padding-left: 34px
+		padding-left: 34px
 }
 .showSectionNumbers .grid-component .table-container {
-				padding-left: 6px;
+		padding-left: 6px;
 }
 .showSectionNumbers .grid-component .list-container {
-				padding-left: 0px;
+		padding-left: 0px;
 }
 /*EMPTY*/
 .grid-content .emptywall-note {
@@ -830,10 +833,9 @@ KANBAN
 /************
 IMAGE BRICK
 *************/
-
 :root {
-		--imgBtnTransition:2.5s;
-		--imgBtnTransitionDelay:.5s;
+		--imgBtnTransition: 2.5s;
+		--imgBtnTransitionDelay: .5s;
 }
 #app #gridsContainer .brick.imageBrick {}
 #app #gridsContainer .brick.imageBrick {
@@ -858,7 +860,7 @@ IMAGE BRICK
 		padding-right: 10px !important;
 		padding-bottom: 5px !important;
 		transition: unset !important;
-		margin-bottom:0px !important;
+		margin-bottom: 0px !important;
 }
 
 
@@ -889,20 +891,18 @@ IMAGE BRICK
 		opacity: 1 !important;
 		transition: 0s !important;
 		min-height: 45px !important;
-
 }
 
-#app #wallContainer #gridsContainer .brick.imageBrick .brick-settings > div{
-		transition:1s !important;
+#app #wallContainer #gridsContainer .brick.imageBrick .brick-settings > div {
+		transition: 1s !important;
 		opacity: 0 !important;
 		background-color: transparent !important;
 		position: relative;
 }
-#app #wallContainer #gridsContainer .brick.imageBrick:hover .brick-settings > div{
+#app #wallContainer #gridsContainer .brick.imageBrick:hover .brick-settings > div {
 		opacity: 1 !important;
 		transition: .52s !important;
 		background-color: rgba(0, 0, 0, 0.5) !important;
-
 }
 
 
@@ -911,13 +911,13 @@ IMAGE BRICK
 #app #wallContainer #gridsContainer .brick.imageBrick .brick-settings button img {
 		opacity: unset !important;
 		display: flex !important;
-		transition:.1s !important;
+		transition: .1s !important;
 		transition-delay: 0s !important;
 }
-#app #wallContainer #gridsContainer .brick.imageBrick .brick-settings button{
+#app #wallContainer #gridsContainer .brick.imageBrick .brick-settings button {
 		opacity: .8 !important;
 }
-#app #wallContainer #gridsContainer .brick.imageBrick .brick-settings button:hover{
+#app #wallContainer #gridsContainer .brick.imageBrick .brick-settings button:hover {
 		opacity: 1 !important;
 }
 
@@ -929,18 +929,18 @@ IMAGE BRICK
 }
 
 
-#app #wallContainer #gridsContainer .brick.imageBrick .replace-button.preventHideSelectImage{
-				transition:.5s !important;
-		transition-delay:.2s !important;
+#app #wallContainer #gridsContainer .brick.imageBrick .replace-button.preventHideSelectImage {
+		transition: .5s !important;
+		transition-delay: .2s !important;
 		opacity: 0 !important;
 }
-#app #wallContainer #gridsContainer .brick.imageBrick:hover .replace-button.preventHideSelectImage{
+#app #wallContainer #gridsContainer .brick.imageBrick:hover .replace-button.preventHideSelectImage {
 		opacity: 0.5 !important;
 }
 #app #wallContainer #gridsContainer .brick.imageBrick .brick-settings .fadehalfsec-enter-active,
 #app #wallContainer #gridsContainer .brick.imageBrick .brick-settings .fadehalfsec-enter-to,
 #app #wallContainer #gridsContainer .brick.imageBrick:hover .brick-settings .fadehalfsec-enter-active,
-#app #wallContainer #gridsContainer .brick.imageBrick:hover .brick-settings .fadehalfsec-enter-to{
+#app #wallContainer #gridsContainer .brick.imageBrick:hover .brick-settings .fadehalfsec-enter-to {
 		transition-delay: 0s !important;
 		transition: .2s !important;
 		opacity: 0 !important;
@@ -953,9 +953,7 @@ BRICK - HEADERS
 #app .brick-tag.colorless span {
 		color: var(--tagClr-Colorless) !important;
 }
-#app .listbrick-tags li.brick-tag.colorless{
-		
-}
+#app .listbrick-tags li.brick-tag.colorless {}
 /*EXPAND COLLAPSE CONTAINER*/
 .brick > .brick-top-buttons {
 		top: 4px;
@@ -1018,7 +1016,7 @@ BRICK - HEADERS
 }
 
 /*BRICK CONTENT*/
-div#gridid-0-tag .item{
+div#gridid-0-tag .item {
 		background: transparent !important;
 }
 /*TAG CONTAINER*/
@@ -1038,8 +1036,7 @@ div#gridid-0-tag .item{
 		min-height: 22px !important;
 		position: relative !important;
 }
-#app #gridsContainer .brick > .brick-content{
-}
+#app #gridsContainer .brick > .brick-content {}
 .brick.collapsed .brick-tags {
 		display: none !important;
 }
@@ -1068,14 +1065,13 @@ div#gridid-0-tag .item{
 }
 
 #app .listbrick-tags li.brick-tag {
-		border:1px solid var(--tagBrdClr) !important;
+		border: 1px solid var(--tagBrdClr) !important;
 		padding-top: 3px !important;
 		padding-bottom: 2px !important;
-
 }
 #app .listbrick-tags li.brick-tag.colorless {
 		background: var(--tagBgClr-Colorless) !important;
-		--tagBrdClr:var(--listtagBrdClr-Colorless);
+		--tagBrdClr: var(--listtagBrdClr-Colorless);
 }
 .brick > .brick-tags li.brick-tag.colorless {
 		--tagBrdClr: var(--tagBrdClr-Colorless);
@@ -1172,9 +1168,8 @@ div#gridid-0-tag .item{
 		opacity: 1 !important;
 		left: 0;
 		padding-left: var(--brickItemPadLeft) !important;
-
 }
-.visual-grid .brick > .brick-settings{
+.visual-grid .brick > .brick-settings {
 		z-index: 10 !important;
 }
 
@@ -1355,8 +1350,9 @@ TEXT - LARGE
 }
 
 #app .brick .object > .paragraph.large > .text [data-text-color="#9e9e9e"] b,
-#app .brick .object > .paragraph.large > .text  b [data-text-color="#9e9e9e"]{
-		color: var(--greyedOutBldClr) !important;}
+#app .brick .object > .paragraph.large > .text b [data-text-color="#9e9e9e"] {
+		color: var(--greyedOutBldClr) !important;
+}
 /************
 ALL HEADINGS
 *************/
@@ -1387,20 +1383,20 @@ ALL HEADINGS
 }
 /*GREY + BOLD*/
 #app .brick .object.type-heading .text [data-text-color="#9e9e9e"] b,
-#app .brick .object.type-heading .text  b [data-text-color="#9e9e9e"],
+#app .brick .object.type-heading .text b [data-text-color="#9e9e9e"],
 #app .brick .object .text [data-text-color="#9e9e9e"] b,
-#app .brick .object .text  b [data-text-color="#9e9e9e"]{
+#app .brick .object .text b [data-text-color="#9e9e9e"] {
 		color: var(--greyedOutBldClr) !important;
 }
 #app .brick .object .text i [data-text-color="#9e9e9e"],
 #app .brick .object .text [data-text-color="#9e9e9e"] i,
 #app .brick .object .text u [data-text-color="#9e9e9e"],
-#app .brick .object .text [data-text-color="#9e9e9e"] u{
+#app .brick .object .text [data-text-color="#9e9e9e"] u {
 		color: var(--greyedOutClr) !important
 }
 
 #app .brick .object.type-heading .text u [data-text-color="#9e9e9e"],
-#app .brick .object.type-heading .text [data-text-color="#9e9e9e"] u{
+#app .brick .object.type-heading .text [data-text-color="#9e9e9e"] u {
 		text-decoration-color: var(--greyedOutClr) !important
 }
 #app .brick .object.type-heading .text {
@@ -1412,7 +1408,6 @@ ALL HEADINGS
 #app .brick .object .text u [data-text-color="#9e9e9e"],
 #app .brick .object .text [data-text-color="#9e9e9e"] u {
 		text-decoration-color: var(--greyedOutClr) !important
-
 }
 
 /************
@@ -1421,10 +1416,10 @@ TABLE / LISTS > FIRST CELL
 #app .listBrick .table-item-columns > .main-cell .mainTextDiv {
 		white-space: pre-wrap;
 }
-.section-list-view:not(.section-table-view) .listbrick-subtasks{
+.section-list-view:not(.section-table-view) .listbrick-subtasks {
 		width: 90px
 }
-.section-list-view .list-container{
+.section-list-view .list-container {
 		padding-right: 30px;
 }
 /************
@@ -1440,24 +1435,21 @@ FIRST LINE BREAK IN HEADING / LIST CELL > MARGIN-TOP
 #app .brick.borderless {
 		box-shadow: 0 0 0 0px !important;
 		outline: unset !important;
-		--cardBrdClr:hsla(0,0%,50%,.0001)
+		--cardBrdClr: hsla(0, 0%, 50%, .0001)
 }
-#app .brick > .brick-background{
+#app .brick > .brick-background {
 		border: 1px solid var(--cardBrdClr) !important;
 		bottom: calc(var(--gridGap) * 3) !important;
 		border-radius: 10px;
 		overflow: unset !important;
-
 }
-#app .brick.backgrounded > .brick-background{
-		
-}
+#app .brick.backgrounded > .brick-background {}
 
 #app .brick {
 		border: 1px solid var(--cardBrdClr) !important;
-		border-color:hsla(0,0%,50%,.001) !important;
+		border-color: hsla(0, 0%, 50%, .001) !important;
 
-	width: calc(100% - var(--gridGap)* 2);
+		width: calc(100% - var(--gridGap)* 2);
 }
 #app .brick .brick-background {
 		outline-offset: 0px;
@@ -1468,31 +1460,29 @@ FIRST LINE BREAK IN HEADING / LIST CELL > MARGIN-TOP
 #app .brick.borderless.collapsed .brick-top-buttons:after {
 		opacity: 0;
 }
-.section-list-view .listBrick .column.table-cell .textDiv{
+.section-list-view .listBrick .column.table-cell .textDiv {
 		transition: .1s;
 		padding-left: 6px !important;
-				padding-right: 6px !important;
+		padding-right: 6px !important;
 		box-shadow: unset !important;
 		width: calc(100% + 12px) !important;
 		margin-left: -6px !important;
-				margin-right: -6px !important;
-
-		
+		margin-right: -6px !important;
 }
-.section-list-view .listBrick .column.table-cell .textDiv:focus-within{
+.section-list-view .listBrick .column.table-cell .textDiv:focus-within {
 		background: hsla(0, 0%, 50%, .1)
-		
 }
 #app .brick.backgrounded .brick {
 		border-width: 1px !important;
 }
 
-#app .darkSection .section-table-view *, 
+#app .darkSection .section-table-view *,
 #app .section-table-view .table-item-columns .column {
-		border-color: hsla(0,0%,50%,.25)!important;;
+		border-color: hsla(0, 0%, 50%, .25)!important;
+		;
 }
-#app .section-list-view .listBrick .listBrickBottomBorder{
-		background-color: hsla(0,0%,50%,.25)!important;
+#app .section-list-view .listBrick .listBrickBottomBorder {
+		background-color: hsla(0, 0%, 50%, .25)!important;
 		z-index: 9999;
 }
 /************
@@ -1638,7 +1628,7 @@ ul.brick-list.child-list {
 		position: relative;
 }
 /*TODOS LIST*/
-#app .brick  .todo-checkbox {
+#app .brick .todo-checkbox {
 		width: calc(var(--listbulletWidth) * 1) !important;
 		height: calc(var(--listbulletWidth) * 1) !important;
 		min-width: unset !important;
@@ -1654,7 +1644,7 @@ ul.brick-list.child-list {
 		border-radius: var(--checkboxBrdRad) !important;
 		top: var(--checkboxMargTop);
 }
-#app .listBrick  .todo-checkbox {
+#app .listBrick .todo-checkbox {
 		border-color: var(--todoCheckBoxBrdClr) !important;
 		background: var(--todoCheckBoxBgClr);
 }
@@ -1682,7 +1672,7 @@ ul.brick-list.child-list {
 		opacity: 0.5
 }
 #app .listItemsCompleted .todo-checkbox,
-#app .listItemsCompleted .todo-checkbox:hover{
+#app .listItemsCompleted .todo-checkbox:hover {
 		background-image: url(../img/check-grey.ae0e355a.svg) !important;
 		background-repeat: no-repeat !important;
 		background-size: 100% !important
@@ -1887,7 +1877,6 @@ BLOCKQUOTES
 #app .object > .quote {
 		padding-left: calc(var(--listbulletWidth));
 		border-left: var(--blockquoteBrdW) solid hsla(0, 0%, 50%, 0.5) !important;
-		
 }
 #app .brick .brick-content .quote .editor-content,
 #app .brick .brick-content .quote .paragraphTextDiv {
@@ -1903,13 +1892,23 @@ BLOCKQUOTES
 CODEBLOCKS
 *************/
 #app pre {
+		min-height: unset !important;
 		background: rgba(128, 128, 128, 0.15);
 		border-radius: 5px;
-		padding: 4px 10px;
+		padding: 8px 12px !important;
 		white-space: pre-wrap;
 		display: block;
 		line-height: calc(var(--bodyLineHeight) + -1px) !important;
-		margin-top: calc(var(--itemMargTopBtm) * 0.5) !important
+		margin-top: calc(var(--itemMargTopBtm) * 0.5) !important;
+		background:var(--codeblockBgClr) !important;
+		border:1px solid var(--codeblockBrdClr) !;
+}
+#app #wallContainer #gridsContainer .brick-popup-expanded .objects > li > div.code pre {
+		padding: 7px 12px !important;
+}
+#app #wallContainer #gridsContainer .brick-popup-expanded .objects > li > div.code pre code{
+		font-size: calc(var(--bodyFontSize) - 5px);
+	line-height: calc(var(--bodyLineHeight) + -1px) !important;
 }
 button.copyCodeBtn.has-info-bubble {
 		top: 3px;
@@ -1973,12 +1972,13 @@ MARGINS - ALL ELEMENTS
 .brick .brick-list li,
 .brick .object > .paragraph,
 .brick .object .brick-button,
-.object > .image-object {
+.object > .image-object,
+.object > .divider{
 		margin-top: var(--itemMargTopBtm) !important;
 		position: relative !important;
 }
 .brick:not(.imageBrick) .object > .image-object {
-		border:1px  solid hsla(0,0%,50%,.23);
+		border: 1px solid hsla(0, 0%, 50%, .23);
 		border-radius: 4px !important;
 		overflow: hidden;
 }
@@ -2020,19 +2020,17 @@ MARGINS - HEADINGS
 		margin-bottom: calc(var(--itemMargTopBtm) * 1) !important;
 }
 
-#app .brick .objects > .object:first-child > div[class*="headingOne"]{
+#app .brick .objects > .object:first-child > div[class*="headingOne"] {
 		margin-top: 18px !important;
 		margin-bottom: calc(var(--itemMargTopBtm) * 1.8) !important;
-
 }
-#app .brick .objects > .object:first-child > div[class*="headingZero"]{
+#app .brick .objects > .object:first-child > div[class*="headingZero"] {
 		margin-top: 20px !important;
 		margin-bottom: calc(var(--itemMargTopBtm) * 1.5) !important;
 }
-#app .brick .objects > .object:first-child > div[class*="headingTwo"]{
+#app .brick .objects > .object:first-child > div[class*="headingTwo"] {
 		margin-top: 15px !important;
 		margin-bottom: calc(var(--itemMargTopBtm) * 1) !important;
-
 }
 
 
@@ -2318,7 +2316,7 @@ li.object * {
 		;
 		/*font sizes*/
 		--bodyFontSize: 17.5px;
-		--bodyLineHeight: 25px;
+		--bodyLineHeight: 27px;
 		/*Large font*/
 		--largeFontSize: calc(var(--bodyFontSize) + 2px);
 		--largeLineHeight: calc(var(--bodyLineHeight) + 2px);
@@ -2617,7 +2615,6 @@ display:block !important;
 		margin-bottom: 0px;
 }
 
-
 /************
 ! TASKS PAGE - OVERRIDES
 *************/
@@ -2799,7 +2796,8 @@ margin: 0 auto;
 }
 
 #app #wallContainer #gridsContainer .brick-popup-expanded .objects > li .brick-list li.listitem .text,
-#app #wallContainer #gridsContainer .brick-popup-expanded .objects > li > div .text{
+#app #wallContainer #gridsContainer .brick-popup-expanded .objects > li > div .text,
+#app #wallContainer #gridsContainer .brick-popup-expanded .objects > li > div > .divider-asterisk{
 padding-right: calc(var(--brickItemPadLeft) * 2.05) !important;
 
 }
@@ -3051,4 +3049,1407 @@ width: 100% !important;
 }
 
 #app .brick > .brick-background{
+}
+
+/************
+! GRID - ITEM HEIGHTS
+*************/
+.visual-grid-item[gs-h="1"] {
+		height: calc(var(--gridIncrementH) * 1 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="1"] {
+		top: calc(var(--gridIncrementH) * 1 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="2"] {
+		height: calc(var(--gridIncrementH) * 2 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="2"] {
+		top: calc(var(--gridIncrementH) * 2 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="3"] {
+		height: calc(var(--gridIncrementH) * 3 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="3"] {
+		top: calc(var(--gridIncrementH) * 3 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="4"] {
+		height: calc(var(--gridIncrementH) * 4 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="4"] {
+		top: calc(var(--gridIncrementH) * 4 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="5"] {
+		height: calc(var(--gridIncrementH) * 5 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="5"] {
+		top: calc(var(--gridIncrementH) * 5 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="6"] {
+		height: calc(var(--gridIncrementH) * 6 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="6"] {
+		top: calc(var(--gridIncrementH) * 6 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="7"] {
+		height: calc(var(--gridIncrementH) * 7 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="7"] {
+		top: calc(var(--gridIncrementH) * 7 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="8"] {
+		height: calc(var(--gridIncrementH) * 8 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="8"] {
+		top: calc(var(--gridIncrementH) * 8 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="9"] {
+		height: calc(var(--gridIncrementH) * 9 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="9"] {
+		top: calc(var(--gridIncrementH) * 9 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="10"] {
+		height: calc(var(--gridIncrementH) * 10 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="10"] {
+		top: calc(var(--gridIncrementH) * 10 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="11"] {
+		height: calc(var(--gridIncrementH) * 11 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="11"] {
+		top: calc(var(--gridIncrementH) * 11 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="12"] {
+		height: calc(var(--gridIncrementH) * 12 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="12"] {
+		top: calc(var(--gridIncrementH) * 12 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="13"] {
+		height: calc(var(--gridIncrementH) * 13 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="13"] {
+		top: calc(var(--gridIncrementH) * 13 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="14"] {
+		height: calc(var(--gridIncrementH) * 14 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="14"] {
+		top: calc(var(--gridIncrementH) * 14 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="15"] {
+		height: calc(var(--gridIncrementH) * 15 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="15"] {
+		top: calc(var(--gridIncrementH) * 15 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="16"] {
+		height: calc(var(--gridIncrementH) * 16 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="16"] {
+		top: calc(var(--gridIncrementH) * 16 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="17"] {
+		height: calc(var(--gridIncrementH) * 17 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="17"] {
+		top: calc(var(--gridIncrementH) * 17 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="18"] {
+		height: calc(var(--gridIncrementH) * 18 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="18"] {
+		top: calc(var(--gridIncrementH) * 18 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="19"] {
+		height: calc(var(--gridIncrementH) * 19 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="19"] {
+		top: calc(var(--gridIncrementH) * 19 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="20"] {
+		height: calc(var(--gridIncrementH) * 20 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="20"] {
+		top: calc(var(--gridIncrementH) * 20 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="21"] {
+		height: calc(var(--gridIncrementH) * 21 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="21"] {
+		top: calc(var(--gridIncrementH) * 21 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="22"] {
+		height: calc(var(--gridIncrementH) * 22 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="22"] {
+		top: calc(var(--gridIncrementH) * 22 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="23"] {
+		height: calc(var(--gridIncrementH) * 23 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="23"] {
+		top: calc(var(--gridIncrementH) * 23 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="24"] {
+		height: calc(var(--gridIncrementH) * 24 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="24"] {
+		top: calc(var(--gridIncrementH) * 24 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="25"] {
+		height: calc(var(--gridIncrementH) * 25 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="25"] {
+		top: calc(var(--gridIncrementH) * 25 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="26"] {
+		height: calc(var(--gridIncrementH) * 26 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="26"] {
+		top: calc(var(--gridIncrementH) * 26 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="27"] {
+		height: calc(var(--gridIncrementH) * 27 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="27"] {
+		top: calc(var(--gridIncrementH) * 27 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="28"] {
+		height: calc(var(--gridIncrementH) * 28 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="28"] {
+		top: calc(var(--gridIncrementH) * 28 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="29"] {
+		height: calc(var(--gridIncrementH) * 29 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="29"] {
+		top: calc(var(--gridIncrementH) * 29 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="30"] {
+		height: calc(var(--gridIncrementH) * 30 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="30"] {
+		top: calc(var(--gridIncrementH) * 30 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="31"] {
+		height: calc(var(--gridIncrementH) * 31 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="31"] {
+		top: calc(var(--gridIncrementH) * 31 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="32"] {
+		height: calc(var(--gridIncrementH) * 32 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="32"] {
+		top: calc(var(--gridIncrementH) * 32 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="33"] {
+		height: calc(var(--gridIncrementH) * 33 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="33"] {
+		top: calc(var(--gridIncrementH) * 33 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="34"] {
+		height: calc(var(--gridIncrementH) * 34 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="34"] {
+		top: calc(var(--gridIncrementH) * 34 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="35"] {
+		height: calc(var(--gridIncrementH) * 35 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="35"] {
+		top: calc(var(--gridIncrementH) * 35 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="36"] {
+		height: calc(var(--gridIncrementH) * 36 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="36"] {
+		top: calc(var(--gridIncrementH) * 36 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="37"] {
+		height: calc(var(--gridIncrementH) * 37 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="37"] {
+		top: calc(var(--gridIncrementH) * 37 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="38"] {
+		height: calc(var(--gridIncrementH) * 38 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="38"] {
+		top: calc(var(--gridIncrementH) * 38 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="39"] {
+		height: calc(var(--gridIncrementH) * 39 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="39"] {
+		top: calc(var(--gridIncrementH) * 39 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="40"] {
+		height: calc(var(--gridIncrementH) * 40 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="40"] {
+		top: calc(var(--gridIncrementH) * 40 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="41"] {
+		height: calc(var(--gridIncrementH) * 41 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="41"] {
+		top: calc(var(--gridIncrementH) * 41 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="42"] {
+		height: calc(var(--gridIncrementH) * 42 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="42"] {
+		top: calc(var(--gridIncrementH) * 42 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="43"] {
+		height: calc(var(--gridIncrementH) * 43 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="43"] {
+		top: calc(var(--gridIncrementH) * 43 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="44"] {
+		height: calc(var(--gridIncrementH) * 44 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="44"] {
+		top: calc(var(--gridIncrementH) * 44 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="45"] {
+		height: calc(var(--gridIncrementH) * 45 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="45"] {
+		top: calc(var(--gridIncrementH) * 45 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="46"] {
+		height: calc(var(--gridIncrementH) * 46 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="46"] {
+		top: calc(var(--gridIncrementH) * 46 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="47"] {
+		height: calc(var(--gridIncrementH) * 47 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="47"] {
+		top: calc(var(--gridIncrementH) * 47 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="48"] {
+		height: calc(var(--gridIncrementH) * 48 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="48"] {
+		top: calc(var(--gridIncrementH) * 48 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="49"] {
+		height: calc(var(--gridIncrementH) * 49 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="49"] {
+		top: calc(var(--gridIncrementH) * 49 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="50"] {
+		height: calc(var(--gridIncrementH) * 50 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="50"] {
+		top: calc(var(--gridIncrementH) * 50 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="51"] {
+		height: calc(var(--gridIncrementH) * 51 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="51"] {
+		top: calc(var(--gridIncrementH) * 51 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="52"] {
+		height: calc(var(--gridIncrementH) * 52 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="52"] {
+		top: calc(var(--gridIncrementH) * 52 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="53"] {
+		height: calc(var(--gridIncrementH) * 53 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="53"] {
+		top: calc(var(--gridIncrementH) * 53 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="54"] {
+		height: calc(var(--gridIncrementH) * 54 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="54"] {
+		top: calc(var(--gridIncrementH) * 54 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="55"] {
+		height: calc(var(--gridIncrementH) * 55 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="55"] {
+		top: calc(var(--gridIncrementH) * 55 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="56"] {
+		height: calc(var(--gridIncrementH) * 56 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="56"] {
+		top: calc(var(--gridIncrementH) * 56 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="57"] {
+		height: calc(var(--gridIncrementH) * 57 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="57"] {
+		top: calc(var(--gridIncrementH) * 57 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="58"] {
+		height: calc(var(--gridIncrementH) * 58 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="58"] {
+		top: calc(var(--gridIncrementH) * 58 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="59"] {
+		height: calc(var(--gridIncrementH) * 59 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="59"] {
+		top: calc(var(--gridIncrementH) * 59 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="60"] {
+		height: calc(var(--gridIncrementH) * 60 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="60"] {
+		top: calc(var(--gridIncrementH) * 60 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="61"] {
+		height: calc(var(--gridIncrementH) * 61 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="61"] {
+		top: calc(var(--gridIncrementH) * 61 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="62"] {
+		height: calc(var(--gridIncrementH) * 62 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="62"] {
+		top: calc(var(--gridIncrementH) * 62 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="63"] {
+		height: calc(var(--gridIncrementH) * 63 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="63"] {
+		top: calc(var(--gridIncrementH) * 63 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="64"] {
+		height: calc(var(--gridIncrementH) * 64 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="64"] {
+		top: calc(var(--gridIncrementH) * 64 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="65"] {
+		height: calc(var(--gridIncrementH) * 65 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="65"] {
+		top: calc(var(--gridIncrementH) * 65 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="66"] {
+		height: calc(var(--gridIncrementH) * 66 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="66"] {
+		top: calc(var(--gridIncrementH) * 66 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="67"] {
+		height: calc(var(--gridIncrementH) * 67 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="67"] {
+		top: calc(var(--gridIncrementH) * 67 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="68"] {
+		height: calc(var(--gridIncrementH) * 68 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="68"] {
+		top: calc(var(--gridIncrementH) * 68 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="69"] {
+		height: calc(var(--gridIncrementH) * 69 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="69"] {
+		top: calc(var(--gridIncrementH) * 69 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="70"] {
+		height: calc(var(--gridIncrementH) * 70 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="70"] {
+		top: calc(var(--gridIncrementH) * 70 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="71"] {
+		height: calc(var(--gridIncrementH) * 71 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="71"] {
+		top: calc(var(--gridIncrementH) * 71 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="72"] {
+		height: calc(var(--gridIncrementH) * 72 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="72"] {
+		top: calc(var(--gridIncrementH) * 72 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="73"] {
+		height: calc(var(--gridIncrementH) * 73 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="73"] {
+		top: calc(var(--gridIncrementH) * 73 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="74"] {
+		height: calc(var(--gridIncrementH) * 74 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="74"] {
+		top: calc(var(--gridIncrementH) * 74 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="75"] {
+		height: calc(var(--gridIncrementH) * 75 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="75"] {
+		top: calc(var(--gridIncrementH) * 75 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="76"] {
+		height: calc(var(--gridIncrementH) * 76 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="76"] {
+		top: calc(var(--gridIncrementH) * 76 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="77"] {
+		height: calc(var(--gridIncrementH) * 77 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="77"] {
+		top: calc(var(--gridIncrementH) * 77 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="78"] {
+		height: calc(var(--gridIncrementH) * 78 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="78"] {
+		top: calc(var(--gridIncrementH) * 78 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="79"] {
+		height: calc(var(--gridIncrementH) * 79 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="79"] {
+		top: calc(var(--gridIncrementH) * 79 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="80"] {
+		height: calc(var(--gridIncrementH) * 80 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="80"] {
+		top: calc(var(--gridIncrementH) * 80 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="81"] {
+		height: calc(var(--gridIncrementH) * 81 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="81"] {
+		top: calc(var(--gridIncrementH) * 81 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="82"] {
+		height: calc(var(--gridIncrementH) * 82 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="82"] {
+		top: calc(var(--gridIncrementH) * 82 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="83"] {
+		height: calc(var(--gridIncrementH) * 83 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="83"] {
+		top: calc(var(--gridIncrementH) * 83 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="84"] {
+		height: calc(var(--gridIncrementH) * 84 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="84"] {
+		top: calc(var(--gridIncrementH) * 84 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="85"] {
+		height: calc(var(--gridIncrementH) * 85 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="85"] {
+		top: calc(var(--gridIncrementH) * 85 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="86"] {
+		height: calc(var(--gridIncrementH) * 86 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="86"] {
+		top: calc(var(--gridIncrementH) * 86 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="87"] {
+		height: calc(var(--gridIncrementH) * 87 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="87"] {
+		top: calc(var(--gridIncrementH) * 87 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="88"] {
+		height: calc(var(--gridIncrementH) * 88 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="88"] {
+		top: calc(var(--gridIncrementH) * 88 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="89"] {
+		height: calc(var(--gridIncrementH) * 89 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="89"] {
+		top: calc(var(--gridIncrementH) * 89 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="90"] {
+		height: calc(var(--gridIncrementH) * 90 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="90"] {
+		top: calc(var(--gridIncrementH) * 90 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="91"] {
+		height: calc(var(--gridIncrementH) * 91 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="91"] {
+		top: calc(var(--gridIncrementH) * 91 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="92"] {
+		height: calc(var(--gridIncrementH) * 92 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="92"] {
+		top: calc(var(--gridIncrementH) * 92 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="93"] {
+		height: calc(var(--gridIncrementH) * 93 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="93"] {
+		top: calc(var(--gridIncrementH) * 93 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="94"] {
+		height: calc(var(--gridIncrementH) * 94 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="94"] {
+		top: calc(var(--gridIncrementH) * 94 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="95"] {
+		height: calc(var(--gridIncrementH) * 95 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="95"] {
+		top: calc(var(--gridIncrementH) * 95 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="96"] {
+		height: calc(var(--gridIncrementH) * 96 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="96"] {
+		top: calc(var(--gridIncrementH) * 96 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="97"] {
+		height: calc(var(--gridIncrementH) * 97 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="97"] {
+		top: calc(var(--gridIncrementH) * 97 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="98"] {
+		height: calc(var(--gridIncrementH) * 98 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="98"] {
+		top: calc(var(--gridIncrementH) * 98 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="99"] {
+		height: calc(var(--gridIncrementH) * 99 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="99"] {
+		top: calc(var(--gridIncrementH) * 99 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="100"] {
+		height: calc(var(--gridIncrementH) * 100 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="100"] {
+		top: calc(var(--gridIncrementH) * 100 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="101"] {
+		height: calc(var(--gridIncrementH) * 101 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="101"] {
+		top: calc(var(--gridIncrementH) * 101 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="102"] {
+		height: calc(var(--gridIncrementH) * 102 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="102"] {
+		top: calc(var(--gridIncrementH) * 102 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="103"] {
+		height: calc(var(--gridIncrementH) * 103 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="103"] {
+		top: calc(var(--gridIncrementH) * 103 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="104"] {
+		height: calc(var(--gridIncrementH) * 104 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="104"] {
+		top: calc(var(--gridIncrementH) * 104 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="105"] {
+		height: calc(var(--gridIncrementH) * 105 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="105"] {
+		top: calc(var(--gridIncrementH) * 105 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="106"] {
+		height: calc(var(--gridIncrementH) * 106 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="106"] {
+		top: calc(var(--gridIncrementH) * 106 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="107"] {
+		height: calc(var(--gridIncrementH) * 107 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="107"] {
+		top: calc(var(--gridIncrementH) * 107 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="108"] {
+		height: calc(var(--gridIncrementH) * 108 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="108"] {
+		top: calc(var(--gridIncrementH) * 108 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="109"] {
+		height: calc(var(--gridIncrementH) * 109 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="109"] {
+		top: calc(var(--gridIncrementH) * 109 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="110"] {
+		height: calc(var(--gridIncrementH) * 110 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="110"] {
+		top: calc(var(--gridIncrementH) * 110 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="111"] {
+		height: calc(var(--gridIncrementH) * 111 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="111"] {
+		top: calc(var(--gridIncrementH) * 111 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="112"] {
+		height: calc(var(--gridIncrementH) * 112 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="112"] {
+		top: calc(var(--gridIncrementH) * 112 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="113"] {
+		height: calc(var(--gridIncrementH) * 113 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="113"] {
+		top: calc(var(--gridIncrementH) * 113 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="114"] {
+		height: calc(var(--gridIncrementH) * 114 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="114"] {
+		top: calc(var(--gridIncrementH) * 114 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="115"] {
+		height: calc(var(--gridIncrementH) * 115 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="115"] {
+		top: calc(var(--gridIncrementH) * 115 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="116"] {
+		height: calc(var(--gridIncrementH) * 116 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="116"] {
+		top: calc(var(--gridIncrementH) * 116 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="117"] {
+		height: calc(var(--gridIncrementH) * 117 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="117"] {
+		top: calc(var(--gridIncrementH) * 117 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="118"] {
+		height: calc(var(--gridIncrementH) * 118 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="118"] {
+		top: calc(var(--gridIncrementH) * 118 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="119"] {
+		height: calc(var(--gridIncrementH) * 119 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="119"] {
+		top: calc(var(--gridIncrementH) * 119 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="120"] {
+		height: calc(var(--gridIncrementH) * 120 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="120"] {
+		top: calc(var(--gridIncrementH) * 120 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="121"] {
+		height: calc(var(--gridIncrementH) * 121 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="121"] {
+		top: calc(var(--gridIncrementH) * 121 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="122"] {
+		height: calc(var(--gridIncrementH) * 122 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="122"] {
+		top: calc(var(--gridIncrementH) * 122 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="123"] {
+		height: calc(var(--gridIncrementH) * 123 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="123"] {
+		top: calc(var(--gridIncrementH) * 123 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="124"] {
+		height: calc(var(--gridIncrementH) * 124 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="124"] {
+		top: calc(var(--gridIncrementH) * 124 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="125"] {
+		height: calc(var(--gridIncrementH) * 125 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="125"] {
+		top: calc(var(--gridIncrementH) * 125 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="126"] {
+		height: calc(var(--gridIncrementH) * 126 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="126"] {
+		top: calc(var(--gridIncrementH) * 126 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="127"] {
+		height: calc(var(--gridIncrementH) * 127 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="127"] {
+		top: calc(var(--gridIncrementH) * 127 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="128"] {
+		height: calc(var(--gridIncrementH) * 128 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="128"] {
+		top: calc(var(--gridIncrementH) * 128 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="129"] {
+		height: calc(var(--gridIncrementH) * 129 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="129"] {
+		top: calc(var(--gridIncrementH) * 129 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="130"] {
+		height: calc(var(--gridIncrementH) * 130 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="130"] {
+		top: calc(var(--gridIncrementH) * 130 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="131"] {
+		height: calc(var(--gridIncrementH) * 131 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="131"] {
+		top: calc(var(--gridIncrementH) * 131 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="132"] {
+		height: calc(var(--gridIncrementH) * 132 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="132"] {
+		top: calc(var(--gridIncrementH) * 132 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="133"] {
+		height: calc(var(--gridIncrementH) * 133 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="133"] {
+		top: calc(var(--gridIncrementH) * 133 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="134"] {
+		height: calc(var(--gridIncrementH) * 134 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="134"] {
+		top: calc(var(--gridIncrementH) * 134 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="135"] {
+		height: calc(var(--gridIncrementH) * 135 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="135"] {
+		top: calc(var(--gridIncrementH) * 135 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="136"] {
+		height: calc(var(--gridIncrementH) * 136 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="136"] {
+		top: calc(var(--gridIncrementH) * 136 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="137"] {
+		height: calc(var(--gridIncrementH) * 137 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="137"] {
+		top: calc(var(--gridIncrementH) * 137 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="138"] {
+		height: calc(var(--gridIncrementH) * 138 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="138"] {
+		top: calc(var(--gridIncrementH) * 138 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="139"] {
+		height: calc(var(--gridIncrementH) * 139 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="139"] {
+		top: calc(var(--gridIncrementH) * 139 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="140"] {
+		height: calc(var(--gridIncrementH) * 140 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="140"] {
+		top: calc(var(--gridIncrementH) * 140 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="141"] {
+		height: calc(var(--gridIncrementH) * 141 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="141"] {
+		top: calc(var(--gridIncrementH) * 141 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="142"] {
+		height: calc(var(--gridIncrementH) * 142 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="142"] {
+		top: calc(var(--gridIncrementH) * 142 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="143"] {
+		height: calc(var(--gridIncrementH) * 143 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="143"] {
+		top: calc(var(--gridIncrementH) * 143 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="144"] {
+		height: calc(var(--gridIncrementH) * 144 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="144"] {
+		top: calc(var(--gridIncrementH) * 144 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="145"] {
+		height: calc(var(--gridIncrementH) * 145 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="145"] {
+		top: calc(var(--gridIncrementH) * 145 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="146"] {
+		height: calc(var(--gridIncrementH) * 146 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="146"] {
+		top: calc(var(--gridIncrementH) * 146 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="147"] {
+		height: calc(var(--gridIncrementH) * 147 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="147"] {
+		top: calc(var(--gridIncrementH) * 147 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="148"] {
+		height: calc(var(--gridIncrementH) * 148 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="148"] {
+		top: calc(var(--gridIncrementH) * 148 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="149"] {
+		height: calc(var(--gridIncrementH) * 149 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="149"] {
+		top: calc(var(--gridIncrementH) * 149 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="150"] {
+		height: calc(var(--gridIncrementH) * 150 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="150"] {
+		top: calc(var(--gridIncrementH) * 150 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="151"] {
+		height: calc(var(--gridIncrementH) * 151 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="151"] {
+		top: calc(var(--gridIncrementH) * 151 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="152"] {
+		height: calc(var(--gridIncrementH) * 152 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="152"] {
+		top: calc(var(--gridIncrementH) * 152 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="153"] {
+		height: calc(var(--gridIncrementH) * 153 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="153"] {
+		top: calc(var(--gridIncrementH) * 153 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="154"] {
+		height: calc(var(--gridIncrementH) * 154 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="154"] {
+		top: calc(var(--gridIncrementH) * 154 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="155"] {
+		height: calc(var(--gridIncrementH) * 155 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="155"] {
+		top: calc(var(--gridIncrementH) * 155 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="156"] {
+		height: calc(var(--gridIncrementH) * 156 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="156"] {
+		top: calc(var(--gridIncrementH) * 156 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="157"] {
+		height: calc(var(--gridIncrementH) * 157 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="157"] {
+		top: calc(var(--gridIncrementH) * 157 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="158"] {
+		height: calc(var(--gridIncrementH) * 158 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="158"] {
+		top: calc(var(--gridIncrementH) * 158 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="159"] {
+		height: calc(var(--gridIncrementH) * 159 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="159"] {
+		top: calc(var(--gridIncrementH) * 159 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="160"] {
+		height: calc(var(--gridIncrementH) * 160 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="160"] {
+		top: calc(var(--gridIncrementH) * 160 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="161"] {
+		height: calc(var(--gridIncrementH) * 161 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="161"] {
+		top: calc(var(--gridIncrementH) * 161 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="162"] {
+		height: calc(var(--gridIncrementH) * 162 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="162"] {
+		top: calc(var(--gridIncrementH) * 162 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="163"] {
+		height: calc(var(--gridIncrementH) * 163 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="163"] {
+		top: calc(var(--gridIncrementH) * 163 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="164"] {
+		height: calc(var(--gridIncrementH) * 164 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="164"] {
+		top: calc(var(--gridIncrementH) * 164 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="165"] {
+		height: calc(var(--gridIncrementH) * 165 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="165"] {
+		top: calc(var(--gridIncrementH) * 165 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="166"] {
+		height: calc(var(--gridIncrementH) * 166 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="166"] {
+		top: calc(var(--gridIncrementH) * 166 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="167"] {
+		height: calc(var(--gridIncrementH) * 167 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="167"] {
+		top: calc(var(--gridIncrementH) * 167 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="168"] {
+		height: calc(var(--gridIncrementH) * 168 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="168"] {
+		top: calc(var(--gridIncrementH) * 168 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="169"] {
+		height: calc(var(--gridIncrementH) * 169 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="169"] {
+		top: calc(var(--gridIncrementH) * 169 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="170"] {
+		height: calc(var(--gridIncrementH) * 170 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="170"] {
+		top: calc(var(--gridIncrementH) * 170 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="171"] {
+		height: calc(var(--gridIncrementH) * 171 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="171"] {
+		top: calc(var(--gridIncrementH) * 171 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="172"] {
+		height: calc(var(--gridIncrementH) * 172 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="172"] {
+		top: calc(var(--gridIncrementH) * 172 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="173"] {
+		height: calc(var(--gridIncrementH) * 173 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="173"] {
+		top: calc(var(--gridIncrementH) * 173 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="174"] {
+		height: calc(var(--gridIncrementH) * 174 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="174"] {
+		top: calc(var(--gridIncrementH) * 174 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="175"] {
+		height: calc(var(--gridIncrementH) * 175 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="175"] {
+		top: calc(var(--gridIncrementH) * 175 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="176"] {
+		height: calc(var(--gridIncrementH) * 176 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="176"] {
+		top: calc(var(--gridIncrementH) * 176 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="177"] {
+		height: calc(var(--gridIncrementH) * 177 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="177"] {
+		top: calc(var(--gridIncrementH) * 177 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="178"] {
+		height: calc(var(--gridIncrementH) * 178 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="178"] {
+		top: calc(var(--gridIncrementH) * 178 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="179"] {
+		height: calc(var(--gridIncrementH) * 179 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="179"] {
+		top: calc(var(--gridIncrementH) * 179 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="180"] {
+		height: calc(var(--gridIncrementH) * 180 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="180"] {
+		top: calc(var(--gridIncrementH) * 180 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="181"] {
+		height: calc(var(--gridIncrementH) * 181 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="181"] {
+		top: calc(var(--gridIncrementH) * 181 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="182"] {
+		height: calc(var(--gridIncrementH) * 182 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="182"] {
+		top: calc(var(--gridIncrementH) * 182 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="183"] {
+		height: calc(var(--gridIncrementH) * 183 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="183"] {
+		top: calc(var(--gridIncrementH) * 183 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="184"] {
+		height: calc(var(--gridIncrementH) * 184 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="184"] {
+		top: calc(var(--gridIncrementH) * 184 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="185"] {
+		height: calc(var(--gridIncrementH) * 185 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="185"] {
+		top: calc(var(--gridIncrementH) * 185 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="186"] {
+		height: calc(var(--gridIncrementH) * 186 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="186"] {
+		top: calc(var(--gridIncrementH) * 186 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="187"] {
+		height: calc(var(--gridIncrementH) * 187 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="187"] {
+		top: calc(var(--gridIncrementH) * 187 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="188"] {
+		height: calc(var(--gridIncrementH) * 188 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="188"] {
+		top: calc(var(--gridIncrementH) * 188 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="189"] {
+		height: calc(var(--gridIncrementH) * 189 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="189"] {
+		top: calc(var(--gridIncrementH) * 189 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="190"] {
+		height: calc(var(--gridIncrementH) * 190 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="190"] {
+		top: calc(var(--gridIncrementH) * 190 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="191"] {
+		height: calc(var(--gridIncrementH) * 191 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="191"] {
+		top: calc(var(--gridIncrementH) * 191 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="192"] {
+		height: calc(var(--gridIncrementH) * 192 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="192"] {
+		top: calc(var(--gridIncrementH) * 192 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="193"] {
+		height: calc(var(--gridIncrementH) * 193 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="193"] {
+		top: calc(var(--gridIncrementH) * 193 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="194"] {
+		height: calc(var(--gridIncrementH) * 194 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="194"] {
+		top: calc(var(--gridIncrementH) * 194 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="195"] {
+		height: calc(var(--gridIncrementH) * 195 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="195"] {
+		top: calc(var(--gridIncrementH) * 195 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="196"] {
+		height: calc(var(--gridIncrementH) * 196 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="196"] {
+		top: calc(var(--gridIncrementH) * 196 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="197"] {
+		height: calc(var(--gridIncrementH) * 197 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="197"] {
+		top: calc(var(--gridIncrementH) * 197 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="198"] {
+		height: calc(var(--gridIncrementH) * 198 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="198"] {
+		top: calc(var(--gridIncrementH) * 198 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="199"] {
+		height: calc(var(--gridIncrementH) * 199 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="199"] {
+		top: calc(var(--gridIncrementH) * 199 - var(--gridHeightAdjust)) !important;
+}
+
+.visual-grid-item[gs-h="200"] {
+		height: calc(var(--gridIncrementH) * 200 - var(--gridHeightAdjust)) !important;
+}
+.visual-grid-item[gs-y="200"] {
+		top: calc(var(--gridIncrementH) * 200 - var(--gridHeightAdjust)) !important;
 }
