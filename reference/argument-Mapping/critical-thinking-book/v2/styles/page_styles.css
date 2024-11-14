@@ -6,6 +6,9 @@
 	font-family: Iowan-Old-Style, serif;
 
 }
+:root {
+	--bodyLineHeight:1.4;
+}
 .calibre,
 .class1 {
 	font-size: 1rem !important;
@@ -18,7 +21,11 @@
 	padding-right: 10px !Important;
 	box-sizing: border-box !important;
 }
-
+body{
+	width: 750px;
+	max-width: 100%;
+	margin: 0 auto;
+}
 .calibre p,
 body p {
 	word-break: break-word;
@@ -152,7 +159,9 @@ ol li {
 	position: relative;
 	display: block;
 }
-
+body {
+	line-height: var(--bodyLineHeight);
+}
 ol li:before,
 ul li:before {
 	content: counter(numbers) ".";
