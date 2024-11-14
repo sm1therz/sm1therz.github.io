@@ -4,7 +4,8 @@
 }
 * {
 	font-family: Iowan-Old-Style, serif;
-
+	box-sizing: border-box
+	
 }
 :root {
 	--bodyLineHeight:1.4;
@@ -25,6 +26,11 @@ body{
 	width: 750px;
 	max-width: 100%;
 	margin: 0 auto;
+	padding: 15px;
+}
+img {
+	display: block;
+	max-width: 100% !important;
 }
 .calibre p,
 body p {
@@ -39,7 +45,8 @@ table {
 	margin-bottom: 10px;
 
 }
-
+img {
+}
 
 
 html table,
