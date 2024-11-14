@@ -16,18 +16,18 @@
 	max-height: 98% !important;
 	bottom: 0px !important;
 	top: 0px !important;
-	border:0px !important;
-	border-radius:5px !important;
+	border: 0px !important;
+	border-radius: 5px !important;
 	vertical-align: top !important;
-	margin-top:10px !important;
-	margin-bottom:20px !important;
+	margin-top: 10px !important;
+	margin-bottom: 20px !important;
 }
 .long-image .featherlight-content img.featherlight-image {
 	border: 1px solid green !important;
 	padding: 0px !important;
 	width: 100% !important;
 	height: auto !important;
-	border:0px !important
+	border: 0px !important
 }
 img[data-featherlight]:hover {
 	cursor: pointer
@@ -82,17 +82,30 @@ html.with-featherlight {
 	overflow: auto;
 	padding: 25px 25px 0;
 	border-bottom: 25px solid transparent;
+	background: #fff;
+	cursor: auto;
+	white-space: normal;
 	margin-left: 5%;
 	margin-right: 5%;
 	max-height: 95%;
-	background: #fff;
-	cursor: auto;
-	white-space: normal
+	width: 1800px;
+	max-width: 90%
+}
+@media (max-width:800px) {
+	.featherlight .featherlight-content {
+		margin-left: 2%;
+		margin-right: 2%;
+		max-height: 96%;
+		width: 1800px;
+		max-width: 96%
+	}
 }
 .featherlight .featherlight-inner {
 	display: block
 }
-.featherlight link.featherlight-inner, .featherlight script.featherlight-inner, .featherlight style.featherlight-inner {
+.featherlight link.featherlight-inner,
+.featherlight script.featherlight-inner,
+.featherlight style.featherlight-inner {
 	display: none
 }
 .featherlight .featherlight-close-icon {

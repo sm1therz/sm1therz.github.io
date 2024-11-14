@@ -30,8 +30,14 @@ body > *:last-child {
 }
 
 a {
-	color: #0366d6;
-	text-decoration: none;
+	color: hsla(212, 97%, 43%, 1);
+	text-decoration-color: hsla(212, 97%, 43%, .35);
+	text-decoration-thickness: 1.5px;
+	transition: .1s;
+	text-underline-offset: 1.5px;
+}
+a:hover {
+text-decoration-color: hsla(212, 97%, 43%, 1);
 }
 
 a.absent {
@@ -261,6 +267,7 @@ table tr td {
 	text-align: left;
 	margin: 0;
 	padding: 5px 10px;
+	vertical-align: top;
 }
 
 table tr th :first-child, table tr td :first-child {
