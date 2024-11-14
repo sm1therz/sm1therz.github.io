@@ -89,6 +89,7 @@ html.with-featherlight {
 	margin-right: 5%;
 	max-height: 95%;
 	max-width: 90%;
+	min-width: 650px;
 	border-radius: 6px;
 }
 @media (max-width:800px) {
@@ -120,19 +121,19 @@ html.with-featherlight {
 	text-align: center;
 	font-family: Arial, sans-serif;
 	background: black;
-	background: rgba(0, 0, 0, .6) !important;
+	background: rgba(0, 0, 0, .0) !important;
 	color: #000;
 	border: 0;
 	padding: 0;
 	font-size: 22px !important;
 	opacity: .5;
-	transition: .18s;
-	color: white;
+	transition: .18s ease-in-out;
+	color: black;
 	border-radius: 4px;
 }
 .featherlight .featherlight-close-icon:hover {
-	opacity: 1;
-	background: black;
+	opacity: 1 !important;
+	transform: scale(1.3);
 }
 .featherlight .featherlight-close-icon::-moz-focus-inner {
 	border: 0;
