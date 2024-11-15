@@ -302,8 +302,8 @@ NORMAL STATE
 		--btnIcn-Width: 26px;
 		--btnIcn-Height: 26px;
 		--btnIcn-ChkBx-BrdRad: 3.5px;
-		--btnIcn-ChkBx-W: 12px;
-		--btnIcn-ChkBx-H: 12px;
+		--btnIcn-ChkBx-W: 13px;
+		--btnIcn-ChkBx-H: 13px;
 		--btnIcn-ChkBx-Transition: 350ms cubic-bezier(.4, 3.9, .31, .4);
 		--btnIcn-ChkBx-BoxShad: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR);
 		--btnIcn-ChkMrk-W: 14px;
@@ -5071,8 +5071,8 @@ body * {
 }
 :root {
 		/*fonts*/
-		--name-fontSize: 1.1rem;
-		--name-lineHeight: 24px;
+		--name-fontSize: 1.15rem;
+		--name-lineHeight: 25px;
 		--notes-fontSize: .85rem;
 		--notes-lineHeight: 18px;
 		--header1-fontSize: 2.0rem;
@@ -5088,7 +5088,10 @@ body * {
 		--wavy--padding-bottom: 0px;
 		--underlineOffset: 3px;
 
-		--btn-MargTop: 0px;
+		--btn-MargTop: 1px;
+}
+#app .project > .name > .prefix{
+		--btn-MargTop:0px
 }
 
 .project.root > .children .project > .name > .content,
