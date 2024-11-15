@@ -1610,7 +1610,7 @@ UNDERLINE
 ****************/
 :root {
 		--underlineOffset: 2.5px;
-		--underlineThickness: 2px;
+		--underlineThickness: 1.5px;
 }
 
 
@@ -1750,6 +1750,8 @@ a.contentLink .colored {
 
 
 
+/*
+
 html #app .project > .name > .content a.contentLink {
 		border-radius: var(--link-BrdRad);
 		transition: .1s;
@@ -1761,6 +1763,18 @@ html #app .project > .name > .content a.contentLink {
 		text-decoration: none;
 		box-shadow: inset 0 0 0 1px var(--LnkBrdClr)!important;
 		background: var(--LnkBgClr);
+		--link-BrdRad: 4px;
+}*/
+
+
+html #app .project > .name > .content a.contentLink {
+		border-radius: var(--link-BrdRad);
+		transition: .1s;
+		padding-left: 0px;
+		padding-right: 0px;
+		text-underline-offset: var(--underlineOffset);
+		text-decoration-thickness: var(--underlineThickness);
+		text-decloration-color: var(--LnkTxtClr) !important;
 		--link-BrdRad: 4px;
 }
 html #app .project > .name > .content a.contentLink:hover {
@@ -5071,8 +5085,8 @@ body * {
 }
 :root {
 		/*fonts*/
-		--name-fontSize: 1.15rem;
-		--name-lineHeight: 25px;
+		--name-fontSize: 1.2rem;
+		--name-lineHeight: 26px;
 		--notes-fontSize: .85rem;
 		--notes-lineHeight: 18px;
 		--header1-fontSize: 2.0rem;
