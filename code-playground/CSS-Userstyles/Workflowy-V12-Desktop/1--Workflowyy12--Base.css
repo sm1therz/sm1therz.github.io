@@ -10,7 +10,8 @@ ROOT
 html,
 body,
 #app,
-#app .page {
+#app .page,
+.pageContainer{
 		background: var(--BG-primary) !important;
 }
 
@@ -378,7 +379,6 @@ LEVEL 0 > ROOT
 .project.root > .innerContentContainer .colored {
 		--InnerContentPadTop: 0px;
 		--InnerContentPadBtm: 0px;
-		font-weight: 900;
 }
 
 
@@ -386,7 +386,7 @@ LEVEL 0 > ROOT
 
 /*ZOOMING IN AND OUT OF NODES*/
 :root {
-		--root-padtop: 43px;
+		--root-padtop: 30px;
 		--pagePadLeft: 20px;
 		--pagePadRight: 20px;
 		--pageMaxWidth: 700px;
@@ -787,14 +787,35 @@ NAME > CONTENT only*/
 		line-height: var(--name-lineHeight);
 		color: var(--NODE--TXT-CLR--main);
 }
-
+:root {
+		--doneNameOpacity:.45;
+		--doneNotesOpacity:.45;
+		--doneClr:
+}
 #app .project.root > .children .project.done > .name > .content,
-.project.done > .name > .content {
-		text-decoration: line-through;
+.project.done > .name > .content,
+#app .project.root.done > .children .project > .name > .content,
+.project.done > .name > .content{
 		text-decoration-thickness: 1.5px;
-		opacity: .4
+		opacity: var(--doneNameOpacity);
+}
+#app .project.done > .name > .expand:before,
+#app .project.done > .children .name > .expand:before{
+		opacity: var(--doneNameOpacity) !important;
+}
+#app .project.done > .notes,
+#app .project.done > .children .notes {
+		opacity: calc(var(--doneNameOpacity) + -0.1);
+		--NODE-NOTES--TXT-CLR-ALL:var(--NODE--TXT-CLR--main);
+}
+#app .project.root > .name,
+#app .project.root > .name *{
+		text-decoration-thickness: 4px;
 }
 
+#app .project.root > .notes {
+		
+}
 .project > .name > .content > .commentContainer {
 		font-size: var(--cmntContain-fontSize);
 		line-height: var(--cmntContain-lineHeight);
@@ -1012,7 +1033,7 @@ Prefix ONLY*/
 		background: var(--CHECKBOX--BG--DONE);
 		transition: var(--btnIcn-ChkBx-Transition);
 		--btnIcn-ChkBx-BoxShad: 0 0 0 2px var(--CHECKBOX--BG--DONE);
-		--btnIcn-ChkBx-BrdRad: 2px;
+		--btnIcn-ChkBx-BrdRad: 3px;
 }
 /*checkmark*/
 .project > .name > .prefix > .inline-flex > .item-checkbox:before {
@@ -1026,7 +1047,7 @@ Prefix ONLY*/
 }
 /*checkmark - done*/
 .project.done > .name > .prefix > .inline-flex > .item-checkbox:before {
-		--btnIcn-Scale: .8;
+		--btnIcn-Scale: 1.0;
 		transition: var(--btnIcn-ExpandB4Low-HovTransition);
 }
 
@@ -1159,18 +1180,22 @@ Menu ONLY*/
 		left: calc(var(--children-Indent) * -1) !important;
 }
 .project.root.checkmark > .name > .menu {
-		left: calc(var(--children-Indent) * -1) !important;
+		left: calc(var(--children-Indent) * -1.2) !important;
 		--btn-MargTop: calc(var(--btn-Width) + 16px);
 }
 /*root - checkbox*/
 .project.root.checkmark > .name > .prefix {
-		left: calc(var(--children-Indent) * -1) !important;
+		left: calc(var(--children-Indent) * -1.2) !important;
+		top: 1px !important;
+		transform: scale(1.3);
+		--btnIcn-ChkBx-BrdRad:5px
 }
 .project.root.checkmark > .name > .prefix > .inline-flex > .item-checkbox,
 #app .project.root.checkmark.done > .name > .prefix > .inline-flex > .item-checkbox:before {
 		--btnIcn-ChkBx-W: 18px;
 		--btnIcn-ChkBx-H: 18px;
 		--btnIcn-Scale: 1.3;
+		--btnIcn-ChkBx-BrdRad:4px;
 }
 #app .project.root.checkmark > .name > .prefix > .inline-flex > .item-checkbox:before {
 		top: -10px !important;
@@ -1319,6 +1344,13 @@ MIRRORS*/
 }
 #app .project.done > .name > .prefix .item-checkbox {
 		box-shadow: 0 0 0 1.5px var(--CHECKBOX--BG--DONE) !important;
+		border-radius: var(--btnIcn-ChkBx-BrdRad) !important;
+		overflow: hidden;
+}
+
+#app .project.done .children .project.checkmark > .name .prefix .item-checkbox:not(#app .project.done .children .project.checkmark.done > .name .prefix .item-checkbox){
+		--CHECKBOX--BOX-CLR:var(--CHECKBOX--BOX-CLR--ChildDone) !important;
+		box-shadow:0 0 0 1.5px var(--CHECKBOX--BOX-CLR--ChildDone) !important;
 }
 /****
 SHARED*/
@@ -1842,9 +1874,7 @@ html #app .project > .notes > .content code{
 		color:hsla(0,0%,50%);
 		font-size: calc(1em - 1px);
 }
-html #app .project.root > .notes > .content {
-		color:var(--NODE-NOTESROOT--TXT-CLR-ALL);
-}
+
 html #app .project.root > .notes > .content > .innerContentContainer b {
 		color:var(--NODE-NOTESROOT--TXT-CLR-ALL-BOLD);
 }
@@ -2134,6 +2164,13 @@ LEVEL 3 > Button Adjustments
 
 .project.comment.thread{
 box-shadow: none !important}
+
+#app .root.checkmark .checkmark{
+		order: 1;
+}
+#app .root.checkmark .checkmark.done {
+		order: 99 !important;
+}
 
 /*******************************
 ********************************
@@ -2560,6 +2597,9 @@ PREFIX*/
 		opacity: 1;
 		animation: none;
 }
+.project > .name > .prefix:after{
+		opacity: .7
+}
 
 /*CHILDREN BULLET*/
 #app .boardCard .project > .name > .bullet:before,
@@ -2950,9 +2990,10 @@ html #app .dashboard-card > .children {
 		overflow-y: unset;
 		position: relative;
 }
+/*
 html #app .dashboard-card > .children:not(html #app .dashboard-card.comment > .children) {
 		background: var(--DashCrd-ChldrnBgClr) !important;
-}
+}*/
 
 html #app .dashboard-card:not(html #app .dashboard-card:first-of-type) {
 		margin-top: var(--dashCrd-MargTop);
@@ -3569,16 +3610,26 @@ html #app .dashboard .contentEditablePlaceholderWrapper {
 
 /********************
 *********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
 NEW DASH
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
 *********************
 *********************/
 :root {
 		--dashGap:18px;
 		--dashTitlePadTopBtm:10px;
 }
-#app .root .dashboard-card.done {
-		order: 99;
-}
+
 
 #app .dashboard-card  .name > .prefix{
 		--btn-MargTop:4px !important;
@@ -3609,13 +3660,24 @@ NEW DASH
 		padding-bottom: calc(var(--dashTitlePadTopBtm) * 2)!important;
 }
 
-#app .dashboard-card > .name > .content{
+#app .dashboard-card > .name > .content,
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
 		--name-fontSize: 1.3rem;
-	--name-lineHeight: 27px;
-		font-weight: bold !important;
+	--name-lineHeight: 25px;
+		font-weight: 700 !important;
 		padding-top: calc(var(--dashTitlePadTopBtm) * 1.5);
 		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.5);
 		
+}
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
+		position: absolute;
+		top: 0 !important;
+		bottom: 0 !important;
+		font-weight: 400 !important;
+		opacity: 0.2
+}
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper *{
+		padding: unset !important;
 }
 #app .dashboard-card.open > .name > .content{
 		padding-top: calc(var(--dashTitlePadTopBtm) * 1.5);
@@ -3652,7 +3714,13 @@ padding-bottom: 0px;
 .dashboard-card > .children > .project:first-child  > .name > .prefix {
 		top: 8px !important;
 }
-
+#app .dashboard .project .prefix > .inline-flex > .item-checkbox:before{
+		content: var(--ICON--CHECKMARK-DASHBOARD) !important;
+		background-image: var(--ICON--CHECKMARK-DASHBOARD) !important;
+} 
+.dashboard-card > .children .project > .name .item-checkbox:not(.dashboard .project.done > .name .item-checkbox){
+		--CHECKBOX--BOX-CLR--ChildDone:hsla(0,0%,50%,0.5);
+}
 .dashboard-card .children > .project > .name > .content, 
 .dashboard-card .children > .project > .notes > .content{
 		--content-PadTopBtm:3px;
@@ -3676,9 +3744,9 @@ html #app .root .dashboard-card:after{
 }
 
 html #app .root .dashboard-card {
-		background: hsl(201, 13%, 15%) !important;
+		background: hsl(300, 0%, 13%) !important;
 		border: 1px solid hsl(201, 3%, 51%,.2) !important;
-		border-radius: 15px !important;
+		border-radius: 8px !important;
 		overflow: hidden !important;
 }
 #app .dashboard .dashboard-card > .name > .expand{
@@ -3700,8 +3768,13 @@ html #app .root .dashboard-card {
 }
 
 #app .dashboard-card .item-checkbox:not(.done .item-checkbox){
-		background: hsl(200, 12%, 13%);
+		background: var(--DASHBOARD-CARD--BG);
+;
 		box-shadow: 0 0 0 1px var(--CHECKBOX--BOX-CLR);
+		
+}
+#app .dashboard-card.done > .name .item-checkbox:not(.done .item-checkbox),
+#app .dashboard-card.done .checkmark .item-checkbox{
 		
 }
 #app .dashboard-card .name > .prefix:after{
@@ -3710,7 +3783,7 @@ html #app .root .dashboard-card {
 #app .dashboard-card > .name > .prefix > .inline-flex > .item-checkbox:before{
 }
 html #app .root .dashboard-card.done {
-		transition-delay: 2s !important;
+		transition-delay: var(--dashDoneDelay) !important;
 		background: transparent !important;
 		border-color: transparent !important;
 }
@@ -3719,6 +3792,64 @@ html #app .root .dashboard-card.done {
 		right: unset;
 		left: calc(var(--children-Indent) * 1) !important;
 		top: 15px;
+}
+
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
+		
+}
+.dashboard-button-top {
+		background: transparent;
+		cursor: pointer
+}
+.dashboard-button-top:hover{
+		background: hsl(200, 0%, 13%) !important;
+}
+#app .root .dashboard-card.done {
+		order: 99 !important;
+		transition-delay: var(--dashDoneDelay) !important;
+}
+:root {
+		--dashDoneDelay:1s;
+}
+#app .dashboard .dashboard-card > .children .project.checkmark > .name .expand {
+		width:24px;
+}
+#app .dashboard .project.done .project.checkmark > .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
+		box-shadow: 0 0 0 1.25px var(--CHECKBOX--BOX-CLR--ChildDone) !important;
+		background: var(--DASHBOARD-PAGE--BG) !important;
+}
+#app .dashboard .dashboard-card .project.checkmark.done .children .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
+background: var(--DASHBOARD-CARD--BG) !important;
+}
+#app .dashboard .dashboard-card.done .project.checkmark.done .children .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
+background: var(--DASHBOARD-PAGE--BG) !important;
+}
+html #app .root .dashboard-card {
+		background:var(--DASHBOARD-CARD--BG) !important;
+}
+
+/********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+NEW DASH - COLORS
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************/
+/*THEME EDIT*/
+html body #app .page.dashboard-page{
+		--DASHBOARD-PAGE--BG:hsl(0, 0%, 7%) !important;
+		--NODE-NOTES--TXT-CLR-ALL:hsl(195, 0%, 45%);
+		--CHECKBOX--BG--DONE:hsl(195, 0%, 40%);
 }
 
 /*******************************
@@ -5070,13 +5201,18 @@ DROPDOWN WRAPPER
 		}
 		/*root checkmark - MENU*/
 		.project.checkmark.root > .name > .prefix{
-				left: calc(var(--children-Indent) * 0.3) !important;
-				--btn-MargTop: 3px !important;
+				left: calc(var(--children-Indent) * -0.1) !important;
+				--btn-MargTop: 2px !important;
+				top: -8px !important;
+				--btnIcn-ChkBx-BrdRad:5px !important;
 
 		}
 		.project.checkmark.root > .name > .menu {
 				--btn-MargTop: 41px !important;
 				left: calc(var(--children-Indent) * 0) !important;
+		}
+		.project.root.checkmark > .name > .prefix{
+				transform: scale(1.1);
 		}
 
 
@@ -5110,7 +5246,8 @@ DROPDOWN WRAPPER
 		--ICON--ZOOM-SQUARE-2: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5097 4.96228H8.9624C6.75326 4.96228 4.9624 6.75314 4.9624 8.96228V12.5102H7.03185V9.03185C7.03185 7.92729 7.92728 7.03185 9.03185 7.03185H12.5097V4.96228ZM19.4894 7.03185V4.96228H23.0378C25.247 4.96228 27.0378 6.75314 27.0378 8.96228V12.5102H24.9681V9.03185C24.9681 7.92728 24.0727 7.03185 22.9681 7.03185H19.4894ZM19.4894 24.9681H22.9681C24.0727 24.9681 24.9681 24.0727 24.9681 22.9681V19.4898H27.0378V23.0377C27.0378 25.2469 25.247 27.0377 23.0378 27.0377H19.4894V24.9681ZM7.03185 19.4898V22.9681C7.03185 24.0727 7.92729 24.9681 9.03185 24.9681H12.5097V27.0377H8.9624C6.75326 27.0377 4.9624 25.2469 4.9624 23.0377V19.4898H7.03185Z" fill="%23828687" fill-opacity="0.5"/><rect x="14.8999" y="10.5" width="2.2" height="11" rx="0.5" fill="%23828687"/><path d="M11 17.1C10.7239 17.1 10.5 16.8762 10.5 16.6L10.5 15.4C10.5 15.1239 10.7239 14.9 11 14.9L21 14.9C21.2761 14.9 21.5 15.1239 21.5 15.4V16.6C21.5 16.8762 21.2761 17.1 21 17.1L11 17.1Z" fill="%23828687"/></svg>');
 		--ICON--ZOOM--MOBILE: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99986 0.5C7.33712 0.5 6.79986 1.03726 6.79986 1.7V6.80005L1.7 6.80005C1.03726 6.80005 0.5 7.33731 0.5 8.00005C0.5 8.66279 1.03726 9.20005 1.7 9.20005H6.79986V14.3C6.79986 14.9628 7.33712 15.5 7.99986 15.5C8.6626 15.5 9.19986 14.9628 9.19986 14.3V9.20005H14.3C14.9628 9.20005 15.5 8.66279 15.5 8.00005C15.5 7.33731 14.9628 6.80005 14.3 6.80005L9.19986 6.80005V1.7C9.19986 1.03726 8.6626 0.5 7.99986 0.5Z" fill="%23828687"/></svg>');
 		--ICON--SEARCH-ICON: url('data:image/svg+xml;utf8,<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.71612 10.8438C8.79475 11.5461 7.64424 11.9631 6.39633 11.9631C3.36896 11.9631 0.914795 9.50891 0.914795 6.48154C0.914795 3.45417 3.36896 1 6.39633 1C9.4237 1 11.8779 3.45417 11.8779 6.48154C11.8779 7.72375 11.4647 8.86946 10.7682 9.7887L12.8669 11.8874C13.1578 12.1783 13.1578 12.65 12.8669 12.9409C12.5759 13.2319 12.1042 13.2319 11.8133 12.9409L9.71612 10.8438ZM10.3889 6.48154C10.3889 8.68648 8.6014 10.4739 6.39645 10.4739C4.19151 10.4739 2.40405 8.68648 2.40405 6.48154C2.40405 4.27659 4.19151 2.48914 6.39645 2.48914C8.6014 2.48914 10.3889 4.27659 10.3889 6.48154Z" fill="%23D3D3D3"/></svg>');
-		--ICON--CHECKMARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M91.785 20.1924C88.862 17.2692 84.123 17.2692 81.1996 20.1924L39.8165 61.5754C38.9501 62.4419 37.5453 62.4419 36.6788 61.5754L18.7828 43.6794C15.8586 40.7552 11.1174 40.7552 8.19315 43.6794C5.26895 46.6037 5.26895 51.3448 8.19315 54.2691L32.9465 79.0224C34.016 80.0923 35.3283 80.7703 36.706 81.0573C39.0962 81.5573 41.6838 80.8803 43.5394 79.0243L91.785 30.7783C94.709 27.8551 94.709 23.1156 91.785 20.1924Z" fill="%232A3135"/></svg>');
+		--ICON--CHECKMARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M91.785 20.1924C88.862 17.2692 84.123 17.2692 81.1996 20.1924L39.8165 61.5754C38.9501 62.4419 37.5453 62.4419 36.6788 61.5754L18.7828 43.6794C15.8586 40.7552 11.1174 40.7552 8.19315 43.6794C5.26895 46.6037 5.26895 51.3448 8.19315 54.2691L32.9465 79.0224C34.016 80.0923 35.3283 80.7703 36.706 81.0573C39.0962 81.5573 41.6838 80.8803 43.5394 79.0243L91.785 30.7783C94.709 27.8551 94.709 23.1156 91.785 20.1924Z" fill="%232a3135"/></svg>');
+		--ICON--CHECKMARK-DASHBOARD: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M91.785 20.1924C88.862 17.2692 84.123 17.2692 81.1996 20.1924L39.8165 61.5754C38.9501 62.4419 37.5453 62.4419 36.6788 61.5754L18.7828 43.6794C15.8586 40.7552 11.1174 40.7552 8.19315 43.6794C5.26895 46.6037 5.26895 51.3448 8.19315 54.2691L32.9465 79.0224C34.016 80.0923 35.3283 80.7703 36.706 81.0573C39.0962 81.5573 41.6838 80.8803 43.5394 79.0243L91.785 30.7783C94.709 27.8551 94.709 23.1156 91.785 20.1924Z" fill="%23121212"/></svg>');
 		--ICON--MENU-DOTS-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.75" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23707577"/><rect x="6" y="14.5" width="3" height="3" rx="1.5" fill="%232A3135"/><rect x="13.25" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23707577"/><rect x="14.5" y="14.5" width="3" height="3" rx="1.5" fill="%232A3135"/><rect x="21.75" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23707577"/><rect x="23" y="14.5" width="3" height="3" rx="1.5" fill="%232A3135"/></svg>');
 		--ICON--MENU-DOTS-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.75" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23A0A7AB"/><rect x="6" y="14.5" width="3" height="3" rx="1.5" fill="%23ffffff"/><rect x="13.25" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23A0A7AB"/><rect x="14.5" y="14.5" width="3" height="3" rx="1.5" fill="%23ffffff"/><rect x="21.75" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23A0A7AB"/><rect x="23" y="14.5" width="3" height="3" rx="1.5" fill="%23ffffff"/></svg>');
 		--ICON--MENU-DOTS-2: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.25 15C6.25 13.4812 5.01878 12.25 3.5 12.25C1.98122 12.25 0.75 13.4812 0.75 15C0.75 16.5188 1.98122 17.75 3.5 17.75C5.01878 17.75 6.25 16.5188 6.25 15Z" fill="%239ea1a2"/><path d="M17.75 15C17.75 13.4812 16.5188 12.25 15 12.25C13.4812 12.25 12.25 13.4812 12.25 15C12.25 16.5188 13.4812 17.75 15 17.75C16.5188 17.75 17.75 16.5188 17.75 15Z" fill="%239ea1a2"/><path d="M29.25 15C29.25 13.4812 28.0188 12.25 26.5 12.25C24.9812 12.25 23.75 13.4812 23.75 15C23.75 16.5188 24.9812 17.75 26.5 17.75C28.0188 17.75 29.25 16.5188 29.25 15Z" fill="%239ea1a2"/></svg>');
@@ -5247,8 +5384,8 @@ body * {
 }
 :root {
 		/*fonts*/
-		--name-fontSize: 1.2rem;
-		--name-lineHeight: 26px;
+		--name-fontSize: 1.15rem;
+		--name-lineHeight: 25px;
 		--notes-fontSize: .85rem;
 		--notes-lineHeight: 18px;
 		--header1-fontSize: 2.0rem;
