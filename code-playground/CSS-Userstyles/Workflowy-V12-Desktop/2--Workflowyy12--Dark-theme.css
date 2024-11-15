@@ -150,7 +150,7 @@ html,
 		/*************
 	DASHBOARD
 	*************/
-		--DASHBOARD-PAGE--BG:hsl(0, 0%, 7%);
+		--DASHBOARD-PAGE--BG:var(--BG-primary);
 		--DashCrd--BrdClr: hsl(198, 9%, 15%);
 		--COMMENT-CONTAINER--BG: hsl(200, 12%, 22%);
 		--DashCrd-ChldrnBgClr: hsl(198, 12%, 21%);
