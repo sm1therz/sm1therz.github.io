@@ -1,46 +1,40 @@
-/********
-*********
-*********
-WORKFLOWY V12 BASE
-*********
-*********
-*********/
+
 /****
 ROOT
 ****/
 
 * {
-	box-sizing: border-box;
+		box-sizing: border-box;
 }
 
 html,
 body,
 #app,
 #app .page {
-	background: var(--BG-primary) !important;
+		background: var(--BG-primary) !important;
 }
 
 .matching-node {
-	background: var(--SIDEBAR-BUTTON--BG--HOVER);
-	color: var(--NODE--TXT-CLR--main);
-	-webkit-backdrop-filter: blur(24px);
-	backdrop-filter: blur(24px);
-	z-index: 222221;
+		background: var(--SIDEBAR-BUTTON--BG--HOVER);
+		color: var(--NODE--TXT-CLR--main);
+		-webkit-backdrop-filter: blur(24px);
+		backdrop-filter: blur(24px);
+		z-index: 222221;
 }
 
 .root > .children > .project.references:before,
 .root > .children > .project.references:after{
-	content: "";
-	display: block;
-	width: 100%;
-	height: 1px;
-	border-radius: .5px;
-	background: var(--SIDEBAR--BORDER-RIGHT)
+		content: "";
+		display: block;
+		width: 100%;
+		height: 1px;
+		border-radius: .5px;
+		background: var(--SIDEBAR--BORDER-RIGHT)
 }
 
 
 [data-popper-reference-hidden][data-popper-escaped] {
-	z-index: 2;
+		z-index: 2;
 }
 
 
@@ -48,33 +42,32 @@ body,
 BOX SHADOW TESTING - BOARDS
 
 .board > .children .project {
-	box-shadow: inset 0 0 0 1px red !important;
+		box-shadow: inset 0 0 0 1px red !important;
 }
 #app .board .boardCard {
-	border-left: 0px !important;
-	border-right: 0px !important;
+		border-left: 0px !important;
+		border-right: 0px !important;
 }
 .board > .children .project > .name,
 .board > .children .project > .notes {
-	box-shadow: inset 0 0 0 1px green !important;
+		box-shadow: inset 0 0 0 1px green !important;
 }
 .board > .children .project > .name .content,
 .board > .children .project > .notes .content {
-	box-shadow: inset 0 0 0 1px blue !important;
+		box-shadow: inset 0 0 0 1px blue !important;
 }
 .board > .children .project > .name .content .innerContentContainer,
 .board > .children .project > .notes .content .innerContentContainer {
-	box-shadow: inset 0 0 0 1px purple !important;
+		box-shadow: inset 0 0 0 1px purple !important;
 
 }
 ****/
 
-/*
-* {
+/*{
 	box-shadow: inset 0 0 0 .2px red;
 }
-
 */
+
 
 
 /****
@@ -84,35 +77,35 @@ OVERRIDES
 .project > .name,
 .project > .notes,
 .project > .children:not(.board>.children) {
-	margin: 0px;
-	padding: 0;
-	min-height: unset;
-	border-left: 0px;
-	width: 100%;
-	max-width: 100%;
+		margin: 0px;
+		padding: 0;
+		min-height: unset;
+		border-left: 0px;
+		width: 100%;
+		max-width: 100%;
 }
 
 /*root overrides*/
 .project.root > .children .header1 > .name,
 .project.root > .children .header2 > .name {
-	margin-bottom: unset;
+		margin-bottom: unset;
 }
 
 /*Comment Overrides*/
 .comment {
-	box-shadow: none;
+		box-shadow: none;
 }
 .comment.selected {
-	padding-left: unset;
+		padding-left: unset;
 }
 .boardColumn .project.comment-container {
-	width: unset !important;
+		width: unset !important;
 }
 .comment .commentAttribution {
-	padding: unset;
+		padding: unset;
 }
 .commentContainer svg {
-	display: none;
+		display: none;
 }
 
 /*Button overrides*/
@@ -133,22 +126,22 @@ OVERRIDES
 .project.root > .children [class*="header"] > .name > .expand,
 .project.root > .children [class*="header"] > .name > .menu,
 .root > .name .itemMenu {
-	min-height: unset;
-	top: unset;
-	left: unset;
-	right: unset;
-	bottom: unset;
-	margin: unset;
-	border: unset;
-	vertical-align: unset;
-	padding: unset;
-	outline: unset;
-	font-size: unset;
-	display: flex;
-	opacity: unset;
-	transform: unset;
-	transition: unset;
-	background: unset;
+		min-height: unset;
+		top: unset;
+		left: unset;
+		right: unset;
+		bottom: unset;
+		margin: unset;
+		border: unset;
+		vertical-align: unset;
+		padding: unset;
+		outline: unset;
+		font-size: unset;
+		display: flex;
+		opacity: unset;
+		transform: unset;
+		transition: unset;
+		background: unset;
 }
 /*reference override*/
 .references .project > div,
@@ -156,68 +149,68 @@ OVERRIDES
 .references .breadcrumbs .menu,
 .references .breadcrumbs .menu div,
 .references .breadcrumbs a {
-	height: unset !important;
-	top: unset !important;
-	margin: unset !important;
-	flex-grow: unset !important;
-	overflow: unset;
-	flex-shrink: unset;
-	-webkit-box-align: unset;
-	max-width: unset !important;
-	white-space: unset;
-	line-height: unset;
+		height: unset !important;
+		top: unset !important;
+		margin: unset !important;
+		flex-grow: unset !important;
+		overflow: unset;
+		flex-shrink: unset;
+		-webkit-box-align: unset;
+		max-width: unset !important;
+		white-space: unset;
+		line-height: unset;
 }
 
 .references .breadcrumbs .menu {
-	margin-right: 5px !important;
-	margin-top: 3px !important;
+		margin-right: 5px !important;
+		margin-top: 3px !important;
 }
 .references .breadcrumbs .menu > div {
-	background: var(--COMMENT-CONTAINER--BG);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: inset 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR);
-	border-radius: 4px;
-	width: unset;
-	min-width: 20px;
-	min-height: 12px;
-	padding: 1px 4px;
+		background: var(--COMMENT-CONTAINER--BG);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: inset 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR);
+		border-radius: 4px;
+		width: unset;
+		min-width: 20px;
+		min-height: 12px;
+		padding: 1px 4px;
 }
 .references .breadcrumbs .menu > div:before {
-	content: "...";
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	margin: 0 auto;
-	font-size: 19px;
-	line-height: 0;
-	letter-spacing: -0.5px;
-	color: var(--NODE--TXT-CLR--main);
-	opacity: .45
+		content: "...";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: 0 auto;
+		font-size: 19px;
+		line-height: 0;
+		letter-spacing: -0.5px;
+		color: var(--NODE--TXT-CLR--main);
+		opacity: .45
 }
 .references .breadcrumbs .menu > div > div {
-	opacity: 0;
-	display: none;
+		opacity: 0;
+		display: none;
 }
 
 /*Buttons - Removes old Icons*/
 .name > .bullet svg,
-.name > .prefix > .item-checkbox .checkbox-bg,
-.name > .prefix > .item-checkbox svg,
+.name > .prefix > .inline-flex > .item-checkbox .checkbox-bg,
+.name > .prefix > .inline-flex > .item-checkbox svg,
 .name > .expand svg,
 .name > .menu svg {
-	display: none;
+		display: none;
 }
 
 
 /*Name with image overrides*/
 .file-preview > div {
-	margin-top: unset;
+		margin-top: unset;
 }
 .checkmark > .name--with-image > .prefix {
-	float: unset;
-	margin-top: unset;
+		float: unset;
+		margin-top: unset;
 }
 
 .project.root > .children .paragraph > .name:hover > .bullet {}
@@ -228,33 +221,39 @@ OVERRIDES
 /*Board overrides*/
 .boardCard > .name > .content,
 .boardCard.checkmark > .name > .content {
-	max-width: 100%;
+		max-width: 100%;
 }
 .checkmark > .name > .file-preview {
-	max-width: 100%;
-	margin: unset;
+		max-width: 100%;
+		margin: unset;
 }
 
 #app .boardCard > .name > .expand {
-	opacity: 1;
+		opacity: 1;
 }
 
 
 /*name & notes overrides*/
 .name > .content,
 .notes > .content {
-	min-height: unset;
+		min-height: unset;
 }
 /*innerContent overrides*/
 .content > .innerContentContainer,
 .content > .innerContentContainer {
-	padding: 0px;
-	min-height: unset;
-	opacity: 1;
-	height: unset;
+		padding: 0px;
+		min-height: unset;
+		opacity: 1;
+		height: unset;
 }
 #app .leftBar > div{
 	background: var(--SIDEBAR--BG) !important;
+}
+._5n0sjv.collapsed > .name > .bullet{
+		background: transparent !important;
+}
+#app .project > .name {
+ display: flex !important;
 }
 
 /*******************************
@@ -264,76 +263,76 @@ NORMAL STATE
 ********************************/
 :root {
 
-	/*root*/
-	--name-fontSize: 1.25rem;
-	--name-lineHeight: 26px;
-	--notes-fontSize: .95rem;
-	--notes-lineHeight: 18px;
-	--header1-fontSize: 2.1rem;
-	--header1-lineHeight: 1.3;
-	--header2-fontSize: 1.5rem;
-	--header2-lineHeight: 1.3;
-	--cmntContain-fontSize: 1rem;
-	--cmntContain-lineHeight: 20px;
+		/*root*/
+		--name-fontSize: 1.25rem;
+		--name-lineHeight: 26px;
+		--notes-fontSize: .95rem;
+		--notes-lineHeight: 18px;
+		--header1-fontSize: 2.1rem;
+		--header1-lineHeight: 1.3;
+		--header2-fontSize: 1.5rem;
+		--header2-lineHeight: 1.3;
+		--cmntContain-fontSize: 1rem;
+		--cmntContain-lineHeight: 20px;
 
-	/*Level 1*/
-	/*project*/
-	--prjct-MargTopBtm: 1px;
-	--prjct-ParaMargTopBtm: 5px;
-	--prjct-BrdRad: 6px;
-	--prjct-CmntContainPadTopBtm: 5px;
-	--prjct-CmntPadTopBtm: 5px;
+		/*Level 1*/
+		/*project*/
+		--prjct-MargTopBtm: 1px;
+		--prjct-ParaMargTopBtm: 5px;
+		--prjct-BrdRad: 6px;
+		--prjct-CmntContainPadTopBtm: 5px;
+		--prjct-CmntPadTopBtm: 5px;
 
-	/*Level 2*/
-	/*name*/
-	/*notes*/
-	/*children*/
-	--children-Indent: 30px;
-	--children-MargBtm: 0px;
-	--children-MargTop: 0px;
-	/*Level 3*/
-	/*content*/
-	--content-PadTopBtm: 2px;
-	--content-PadLeftRight: 2px;
-	/*Buttons*/
-	--btn-Width: 30px;
-	--btn-Height: 30px;
-	--btn-BrdRad: var(--prjct-BrdRad);
-	--btnIcn-Scale: 1;
-	--btnIcn-Width: 26px;
-	--btnIcn-Height: 26px;
-	--btnIcn-ChkBx-BrdRad: 3.5px;
-	--btnIcn-ChkBx-W: 12px;
-	--btnIcn-ChkBx-H: 12px;
-	--btnIcn-ChkBx-Transition: 350ms cubic-bezier(.4, 3.9, .31, .4);
-	--btnIcn-ChkBx-BoxShad: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR);
-	--btnIcn-ChkMrk-W: 14px;
-	--btnIcn-ChkMrk-H: 14px;
-	--btnIcn-ExpandB4Up-BrdRad: 10px;
-	--btnIcn-ExpandB4Up-W: 7px;
-	--btnIcn-ExpandB4Up-H: 7px;
-	--btnIcn-ExpandB4Low-BrdRad: 10px;
-	--btnIcn-ExpandB4Low-W: 14px;
-	--btnIcn-ExpandB4Low-H: 14px;
-	--btnIcn-ExpandB4Low-HovTransition: 250ms cubic-bezier(.47, 2.2, .29, .6);
-	--btn-MargTop: 1px;
-	--btn-MargTopBullet: 1px;
-	--btn-MargTopCmnt: 18px;
-	--btn-MargTopCmntContain: 5px;
-	--btn-MargTopH1: 10px;
-	--btn-MargTopH2: 1px;
-	--btn-transition: .15s;
-	--btn-MirrorTransition: 450ms cubic-bezier(.27, 2.9, .51, .6);
-	--cmnt-btnPadRight: 10px;
+		/*Level 2*/
+		/*name*/
+		/*notes*/
+		/*children*/
+		--children-Indent: 30px;
+		--children-MargBtm: 0px;
+		--children-MargTop: 0px;
+		/*Level 3*/
+		/*content*/
+		--content-PadTopBtm: 2px;
+		--content-PadLeftRight: 2px;
+		/*Buttons*/
+		--btn-Width: 30px;
+		--btn-Height: 30px;
+		--btn-BrdRad: var(--prjct-BrdRad);
+		--btnIcn-Scale: 1;
+		--btnIcn-Width: 26px;
+		--btnIcn-Height: 26px;
+		--btnIcn-ChkBx-BrdRad: 3.5px;
+		--btnIcn-ChkBx-W: 12px;
+		--btnIcn-ChkBx-H: 12px;
+		--btnIcn-ChkBx-Transition: 350ms cubic-bezier(.4, 3.9, .31, .4);
+		--btnIcn-ChkBx-BoxShad: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR);
+		--btnIcn-ChkMrk-W: 14px;
+		--btnIcn-ChkMrk-H: 14px;
+		--btnIcn-ExpandB4Up-BrdRad: 10px;
+		--btnIcn-ExpandB4Up-W: 7px;
+		--btnIcn-ExpandB4Up-H: 7px;
+		--btnIcn-ExpandB4Low-BrdRad: 10px;
+		--btnIcn-ExpandB4Low-W: 14px;
+		--btnIcn-ExpandB4Low-H: 14px;
+		--btnIcn-ExpandB4Low-HovTransition: 250ms cubic-bezier(.47, 2.2, .29, .6);
+		--btn-MargTop: 1px;
+		--btn-MargTopBullet: 1px;
+		--btn-MargTopCmnt: 18px;
+		--btn-MargTopCmntContain: 5px;
+		--btn-MargTopH1: 10px;
+		--btn-MargTopH2: 1px;
+		--btn-transition: .15s;
+		--btn-MirrorTransition: 450ms cubic-bezier(.27, 2.9, .51, .6);
+		--cmnt-btnPadRight: 10px;
 
-	/*Level 4*/
-	/*inner content*/
-	/*innerContent Padtop = line-spacing*/
-	--InnerContentPadTop: 1px;
-	--InnerContentPadBtm: .5px;
+		/*Level 4*/
+		/*inner content*/
+		/*innerContent Padtop = line-spacing*/
+		--InnerContentPadTop: 1px;
+		--InnerContentPadBtm: .5px;
 
-	/*MISC*/
-	--Height--Header: 48px;
+		/*MISC*/
+		--Height--Header: 48px;
 }
 
 
@@ -343,11 +342,11 @@ LEVEL 0 > ROOT
 ****************
 ****************/
 :root {
-	--root-font-size: 2.5rem;
-	--root-line-height: 1.15;
+		--root-font-size: 2.5rem;
+		--root-line-height: 1.15;
 }
 .project.root.mainTreeRoot > .name > .content {
-	user-select: none;
+		user-select: none;
 }
 .project.root.mainTreeRoot > .name > .content,
 .project.root > .name > .content,
@@ -357,29 +356,29 @@ LEVEL 0 > ROOT
 .project.root.comment > .name > .content,
 .project.root.comment-container > .name > .content,
 .project.root.references > .name > .content {
-	font-size: var(--root-font-size);
-	line-height: var(--root-line-height);
-	margin-left: 0px;
-	margin-top: 0px;
-	visibility: visible;
-	opacity: 1;
-	min-height: unset;
-	height: unset;
-	transition: 1s;
-	color: var()
+		font-size: var(--root-font-size);
+		line-height: var(--root-line-height);
+		margin-left: 0px;
+		margin-top: 0px;
+		visibility: visible;
+		opacity: 1;
+		min-height: unset;
+		height: unset;
+		transition: 1s;
+		color: var()
 }
 .project.root {
-	margin-top: 0px;
+		margin-top: 0px;
 }
 .project.root > .notes > .content {
-	margin-left: 0px;
+		margin-left: 0px;
 }
 
 .project.root > .name .innerContentContainer,
 .project.root > .innerContentContainer .colored {
-	--InnerContentPadTop: 0px;
-	--InnerContentPadBtm: 0px;
-	font-weight: 900;
+		--InnerContentPadTop: 0px;
+		--InnerContentPadBtm: 0px;
+		font-weight: 900;
 }
 
 
@@ -387,37 +386,37 @@ LEVEL 0 > ROOT
 
 /*ZOOMING IN AND OUT OF NODES*/
 :root {
-	--root-padtop: 43px;
-	--pagePadLeft: 20px;
-	--pagePadRight: 20px;
-	--pageMaxWidth: 700px;
+		--root-padtop: 43px;
+		--pagePadLeft: 20px;
+		--pagePadRight: 20px;
+		--pageMaxWidth: 700px;
 }
 #app .page > .project.root > .children {
-	transition: 0s !important;
-	padding-top: var(--root-padtop) !important;
+		transition: 0s !important;
+		padding-top: var(--root-padtop) !important;
 }
 #app .page {
-	max-width: var(--pageMaxWidth);
-	padding-left: var(--pagePadLeft);
-	padding-right: var(--pagePadRight);
+		max-width: var(--pageMaxWidth);
+		padding-left: var(--pagePadLeft);
+		padding-right: var(--pagePadRight);
 }
 
 /*
 #app ~ div[style]{
-	border:2px solid red !important;
-	position: absolute !important;
-	transition:1s ease-in-out !important;
-	top:unset !important;
-	left: unset !important;
+		border:2px solid red !important;
+		position: absolute !important;
+		transition:1s ease-in-out !important;
+		top:unset !important;
+		left: unset !important;
 }*/
 /*new title during animation
 .children._oqw2mn .project > .name > .content[style="visibility: hidden;"]{
-	visibility: visible !important;
-	font-size: var(--name-fontSize)!important;
-	line-height: var(--name-lineHeight)!important;
-	--name-fontSize: 2.5rem !important;
-	--name-lineHeight: 1.2 !important;
-	opacity:0 !important;
+		visibility: visible !important;
+		font-size: var(--name-fontSize)!important;
+		line-height: var(--name-lineHeight)!important;
+		--name-fontSize: 2.5rem !important;
+		--name-lineHeight: 1.2 !important;
+		opacity:0 !important;
 
 */
 /***************
@@ -426,30 +425,30 @@ LEVEL 1 > PROJECT
 ****************
 ****************/
 .project {
-	margin-top: var(--prjct-MargTopBtm);
-	margin-bottom: var(--prjct-MargTopBtm);
-	position: relative;
-	border-radius: var(--prjct-BrdRad);
+		margin-top: var(--prjct-MargTopBtm);
+		margin-bottom: var(--prjct-MargTopBtm);
+		position: relative;
+		border-radius: var(--prjct-BrdRad);
 }
 .project.root > .children .header1,
 .project.root > .children .header2 {
-	margin-top: var(--prjct-MargTopBtm)
+		margin-top: var(--prjct-MargTopBtm)
 }
 
 /****
 Added to selection*/
 .project.addedToSelection:before {
-	background: var(--ADDED-TO-SELECTION--BG);
-	inset: 0;
-	border-radius: var(--prjct-BrdRad)
+		background: var(--ADDED-TO-SELECTION--BG);
+		inset: 0;
+		border-radius: var(--prjct-BrdRad)
 }
 .project.addedToSelection .project {
-	border-radius: var(--prjct-BrdRad);
+		border-radius: var(--prjct-BrdRad);
 }
 .project.addedToSelection .project:not(.dashboard-card, 
 .dashboard-card .comment,
 .board .comment) {
-	border-radius: 0px !important;
+		border-radius: 0px !important;
 }
 .project.addedToSelection {}
 
@@ -458,75 +457,75 @@ ADDED TO SELECTION - BOARDS*/
 .boardColumn.addedToSelection > .children,
 .boardCard.addedToSelection,
 .boardCard .project.addedToSelection{
-	--brd-brdrClr:var(--ADDED-TO-SELECTION--BrdClr) !important;
+		--brd-brdrClr:var(--ADDED-TO-SELECTION--BrdClr) !important;
 }
 
 /*comments*/
 .project.comment {
-	border: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR);
-	border-radius: var(--prjct-BrdRad);
-	padding-bottom: calc(var(--prjct-CmntPadTopBtm) * 1.25);
-	padding-top: 0px;
-	background: var(--COMMENT-CONTAINER--BG);
-	--prjct-BrdRad: 4px;
-	--btnIcn-ExpandB4Up-W: 5px;
-	--btnIcn-ExpandB4Up-H: 5px;
-	--btnIcn-ExpandB4Low-W: 14px;
-	--btnIcn-ExpandB4Low-H: 14px;
-	--prjct-MargTopBtm: 5px;
-	;
+		border: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR);
+		border-radius: var(--prjct-BrdRad);
+		padding-bottom: calc(var(--prjct-CmntPadTopBtm) * 1.25);
+		padding-top: 0px;
+		background: var(--COMMENT-CONTAINER--BG);
+		--prjct-BrdRad: 4px;
+		--btnIcn-ExpandB4Up-W: 5px;
+		--btnIcn-ExpandB4Up-H: 5px;
+		--btnIcn-ExpandB4Low-W: 14px;
+		--btnIcn-ExpandB4Low-H: 14px;
+		--prjct-MargTopBtm: 5px;
+		;
 }
 .project.comment.highlighted {
-	filter: brightness(.96);
-	background: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+		filter: brightness(.96);
+		background: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR) !important;
 }
 .project.comment-container {
-	padding-bottom: 0px;
+		padding-bottom: 0px;
 }
 .project.comment-container.open {
-	padding-bottom: var(--prjct-CmntPadTopBtm);
+		padding-bottom: var(--prjct-CmntPadTopBtm);
 }
 
 .project.comment-container > .children > .project:first-of-type:not(.project.boardColumn.comment > .children > .project:first-of-type) {
-	margin-top: 0px;
+		margin-top: 0px;
 }
 
 
 .project.comment .project.comment {
-	background: var(--COMMENT--BG--even);
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
-	border-right: 0px;
+		background: var(--COMMENT--BG--even);
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-right: 0px;
 }
 .project.comment .project.comment .project.comment,
 .project.comment .project.comment .project.comment .project.comment .project.comment {
-	background: var(--COMMENT-CONTAINER--BG);
+		background: var(--COMMENT-CONTAINER--BG);
 }
 .project.comment .project.comment .project.comment .project.comment {
-	background: var(--COMMENT--BG--even);
+		background: var(--COMMENT--BG--even);
 }
 .comment .project {
-	--prjct-MargTopBtm: 5px;
-	margin-top: var(--prjct-MargTopBtm);
-	margin-bottom: var(--prjct-MargTopBtm)
+		--prjct-MargTopBtm: 5px;
+		margin-top: var(--prjct-MargTopBtm);
+		margin-bottom: var(--prjct-MargTopBtm)
 }
 .project.comment.draft > div:last-child {
-	margin-top: 0px !important;
-	margin-left: 0px !important;
-	padding-left: calc(var(--content-PadLeftRight) + var(--children-Indent));
+		margin-top: 0px !important;
+		margin-left: 0px !important;
+		padding-left: calc(var(--content-PadLeftRight) + var(--children-Indent));
 }
 .project.comment.draft button {
-	margin: 0px;
-	position:relative;
-	bottom:unset;
-	right:unset;
+		margin: 0px;
+		position:relative;
+		bottom:unset;
+		right:unset;
 }
 .project.comment button {
-	margin: 0px;
-	position:absolute;
-	bottom: 0px;
-	padding: 0 5px;
-	right: 0px;
+		margin: 0px;
+		position:absolute;
+		bottom: 0px;
+		padding: 0 5px;
+		right: 0px;
 }
 }
 
@@ -542,150 +541,150 @@ NAME & NOTES*/
 .project > .name.name--with-image,
 .project.noted > .notes,
 .project > .commentAttribution {
-	display: flex !important;
-	padding: 0px;
-	/*flex-grow: 1;*/
+		display: flex !important;
+		padding: 0px;
+		/*flex-grow: 1;*/
 }
 #app .project.noted > .notes, #app .project.noted > .notes > .content{
-	display: block;
+		display: block
 }
 .project > .commentAttribution {
-	padding-top: var(--prjct-CmntPadTopBtm);
+		padding-top: var(--prjct-CmntPadTopBtm);
 }
 .project > .name.name--with-image {
-	flex-direction: column;
-	align-items: flex-end;
-	margin-top:5px;
-	margin-bottom:5px;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top:5px;
+		margin-bottom:5px;
 }
 .project.noted > .name.name--with-image{
-	margin-bottom:0px;
+		margin-bottom:0px;
 }
 .project.noted > .notes{
-	margin-bottom:5px;
+		margin-bottom:5px;
 }
 /****
 NAME ONLY*/
 .project > .name {
-	position: unset;
+		position: unset;
 }
 .project.references .project .name {
-	position: relative;
+		position: relative;
 }
 
 /*compensates for commentattribution*/
 .project.comment-container .project.comment > .name,
 .project.comment > .name *:not(.references .project.comment > .name *) {
-	--btn-MargTop: 18px;
+		--btn-MargTop: 18px;
 }
 /*IN REFERENCES*/
 .project.references > .children .project.comment-container > .children > .comment > .name {
-	--btn-MargTop: -2px;
+		--btn-MargTop: -2px;
 }
 
 /**non-comment nodes inside comment*/
 .project.comment > .children .project > .name {
-	--btn-MargTop: -4px;
+		--btn-MargTop: -4px;
 }
 /*non-comment Header1 nodes inside comment*/
 .project.comment > .children .project.header1 > .name {
-	--btn-MargTop: -2px;
+		--btn-MargTop: -2px;
 }
 /*non-comment Header2 nodes inside comment*/
 .project.comment > .children .project.header2 > .name {
-	--btn-MargTop: -1px;
+		--btn-MargTop: -1px;
 }
 /*comment-container*/
 .project.comment-container > .name * {
-	--btn-MargTop: 5px !important;
+		--btn-MargTop: 5px !important;
 }
 
 .project.comment-container > .name {
-	--btn-MargTop: 5px !important;
-	padding-top: var(--prjct-CmntContainPadTopBtm);
-	padding-bottom: var(--prjct-CmntContainPadTopBtm);
+		--btn-MargTop: 5px !important;
+		padding-top: var(--prjct-CmntContainPadTopBtm);
+		padding-bottom: var(--prjct-CmntContainPadTopBtm);
 }
 
 /*referenced comment bullet*/
 .references .project.comment > .name {
-	--btn-MargTop: -1px;
+		--btn-MargTop: -1px;
 }
 /****
 NOTES ONLY*/
 .project.noted > .notes {
-	max-height: unset;
+		max-height: unset;
 }
 
 /****
 CHILDREN*/
 #app .project > .children {
-	transform: unset !important;
-	transform-origin: unset !important;
-	transition: .2s ease-in-out !important;
-	margin-bottom: var(--children-MargBtm);
-	padding-top: var(--children-MargTop);
+		transform: unset !important;
+		transform-origin: unset !important;
+		transition: .2s ease-in-out !important;
+		margin-bottom: var(--children-MargBtm);
+		padding-top: var(--children-MargTop);
 }
 
 .project > .children:not(.board>.children) {
-	padding-left: var(--children-Indent)
+		padding-left: var(--children-Indent)
 }
 /****
 REFERENCES*/
 .references .project .breadcrumbs {
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	margin-top: 6px !important;
-	padding-bottom: 2px;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		margin-top: 6px !important;
+		padding-bottom: 2px;
 }
 
 .references .project.comment .breadcrumbs {
-	padding-left: calc(var(--children-Indent) * .5) !important;
+		padding-left: calc(var(--children-Indent) * .5) !important;
 }
 .references .project .breadcrumbs a {
-	padding-left: 10px;
-	padding-right: 0px;
-	margin-right: 10px !important;
-	display: inline;
-	float: left;
-	font-size: .74rem;
-	opacity: .9;
-	line-height: .95 !important;
-	margin-top: 4px !important;
-	transition: .2s;
-	font-weight: 500;
-	-webkit-font-smoothing: antialiased;
-	max-width: 150px !important;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	padding-bottom: 1px;
+		padding-left: 10px;
+		padding-right: 0px;
+		margin-right: 10px !important;
+		display: inline;
+		float: left;
+		font-size: .74rem;
+		opacity: .9;
+		line-height: .95 !important;
+		margin-top: 4px !important;
+		transition: .2s;
+		font-weight: 500;
+		-webkit-font-smoothing: antialiased;
+		max-width: 150px !important;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-bottom: 1px;
 }
 .references .project .breadcrumbs a:last-of-type {
-	margin-left: 10px !important;
-	font-size: .83rem;
-	max-width: 100% !important;
-	white-space: normal;
-	line-height: 1.04 !important;
-	width: 100%;
+		margin-left: 10px !important;
+		font-size: .83rem;
+		max-width: 100% !important;
+		white-space: normal;
+		line-height: 1.04 !important;
+		width: 100%;
 }
 .references .project .breadcrumbs a:hover {
-	transform: scale(1.1);
-	color: var(--NODE--TXT-CLR--CONTRAST)
+		transform: scale(1.1);
+		color: var(--NODE--TXT-CLR--CONTRAST)
 }
 .references .breadcrumbs > a:before {
-	content: var(--ICON--BREADCRUMB--CHEVRON);
-	display: block;
-	filter: var(--inverted-chevron-icn);
-	min-width: 5px;
-	height: auto;
-	opacity: .26;
-	position: absolute;
-	left: 0;
-	top: 0px
+		content: var(--ICON--BREADCRUMB--CHEVRON);
+		display: block;
+		filter: var(--inverted-chevron-icn);
+		min-width: 5px;
+		height: auto;
+		opacity: .26;
+		position: absolute;
+		left: 0;
+		top: 0px
 }
 #app .references .project svg {
-	display: none;
+		display: none;
 }
 
 
@@ -693,42 +692,42 @@ REFERENCES*/
 /*REFERENCES - Border-top - ALL*/
 .root > .children > .project.references:before,
 .root > .children > .project.references:after{
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0px;
-	left: -100vw;
-	right: -100vw;
-	width: unset;
-	height: 1px;
-	border-radius: .5px;
-	background: hsl(205, 9%, 50%, .25);
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: -100vw;
+		right: -100vw;
+		width: unset;
+		height: 1px;
+		border-radius: .5px;
+		background: hsl(205, 9%, 50%, .25);
 }
 .pageContainer {
-	overflow-x: hidden;
+		overflow-x: hidden;
 }
 /*REFERENCES - Border-top - Direct CHildren of ZOomed Parent*/
 .root > .children > .project.references:before,
 .root > .children > .project.references:after{
-	top: -12px;
+		top: -12px;
 }
 
 
 .root.dashboard > .children .project.references:before {
-	display: none;
+		display: none;
 }
 
 .project.root > .children > .project.references {
-	margin-top: 22px;
+		margin-top: 22px;
 }
 .project.root > .children .project.references > .name > .content,
 .project.references > .name > .content {
-	font-size: 1rem !important;
-	text-transform: uppercase;
-	color: var(--LnkWFTxtClr);
+		font-size: 1rem !important;
+		text-transform: uppercase;
+		color: var(--LnkWFTxtClr);
 }
 .project.references > .name > .expand {
-	opacity: .5;
+		opacity: .5;
 }
 .root > .children > .project.references > .name,
 .root > .children > .project.references > .notes,
@@ -737,12 +736,12 @@ REFERENCES*/
 .root > .children > .project.references > .name > .expand,
 .root > .children > .project.references > .name > .prefix,
 .root > .children > .project.references > .children{
-	z-index: 1
+		z-index: 1
 }
 .root > .children > .project.references:after{
-	bottom:-30px;
-	z-index: 0;
-	opacity: .11;
+		bottom:-30px;
+		z-index: 0;
+		opacity: .11;
 }
 
 /***************
@@ -758,165 +757,165 @@ NOTES > CONTENT*/
 .notes > .content,
 .commentAttribution > span,
 .name > [class*="PlaceholderWrapper"] {
-	display: inline;
-	margin-left: var(--children-Indent);
-	padding-top: var(--content-PadTopBtm);
-	padding-bottom: var(--content-PadTopBtm);
-	padding-left: var(--content-PadLeftRight);
-	padding-right: var(--content-PadLeftRight);
-	flex: 1;
+		display: inline;
+		margin-left: var(--children-Indent);
+		padding-top: var(--content-PadTopBtm);
+		padding-bottom: var(--content-PadTopBtm);
+		padding-left: var(--content-PadLeftRight);
+		padding-right: var(--content-PadLeftRight);
+		flex: 1;
 }
 
 .notes > .content {
-	padding-bottom: 0px;
-	margin-bottom: var(--content-PadTopBtm)
+		padding-bottom: 0px;
+		margin-bottom: var(--content-PadTopBtm)
 }
 .commentAttribution > span {
-	flex: unset !important;
-	font-weight: 400 !important;
-	font-size: 11px;
-	color: var(--COMMENT-ATTRIBUTION--TXT-CLR)!important;
+		flex: unset !important;
+		font-weight: 400 !important;
+		font-size: 11px;
+		color: var(--COMMENT-ATTRIBUTION--TXT-CLR)!important;
 }
 .commentAttribution > span:last-of-type {
-	margin-left: 0px;
+		margin-left: 0px;
 }
 /****
 NAME > CONTENT only*/
 .project.root > .children .project > .name > .content,
 .project > .name > .content {
-	font-size: var(--name-fontSize);
-	line-height: var(--name-lineHeight);
-	color: var(--NODE--TXT-CLR--main);
+		font-size: var(--name-fontSize);
+		line-height: var(--name-lineHeight);
+		color: var(--NODE--TXT-CLR--main);
 }
 
 #app .project.root > .children .project.done > .name > .content,
 .project.done > .name > .content {
-	text-decoration: line-through;
-	text-decoration-thickness: 1.5px;
-	opacity: .4
+		text-decoration: line-through;
+		text-decoration-thickness: 1.5px;
+		opacity: .4
 }
 
 .project > .name > .content > .commentContainer {
-	font-size: var(--cmntContain-fontSize);
-	line-height: var(--cmntContain-lineHeight);
-	color: var(--NODE--TXT-CLR--main);
-	text-decoration-color: var(--NODE--TXT-CLR--main);
+		font-size: var(--cmntContain-fontSize);
+		line-height: var(--cmntContain-lineHeight);
+		color: var(--NODE--TXT-CLR--main);
+		text-decoration-color: var(--NODE--TXT-CLR--main);
 }
 
 /*reply btn padding*/
 .project > .name > .content > .commentContainer > div {
-	padding-right: var(--cmnt-btnPadRight);
+		padding-right: var(--cmnt-btnPadRight);
 }
 
 /*comment font size*/
 .project.comment > .name > .content,
 /*Font size - non-comment children inside comment*/
 .project.comment > .children .project > .name > .content {
-	--name-fontSize: .95rem;
-	--name-lineHeight: 19.5px;
+		--name-fontSize: .95rem;
+		--name-lineHeight: 19.5px;
 }
 .project.comment > .children .project.header1 > .name > .content {
-	--header1-fontSize: 1.22rem;
-	--header1-lineHeight: 19px;
+		--header1-fontSize: 1.22rem;
+		--header1-lineHeight: 19px;
 }
 .project.comment > .children .project.header2 > .name > .content {
-	--header2-fontSize: 1.05rem;
-	--header2-lineHeight: 20px;
+		--header2-fontSize: 1.05rem;
+		--header2-lineHeight: 20px;
 }
 /*comment notes font size*/
 .project.comment > .notes > .content,
 /*Font size - non-comment notes children inside comment*/
 .project.comment > .children .project > .notes > .content {
-	--notes-fontSize: .72rem;
-	--notes-lineHeight: 14px;
+		--notes-fontSize: .72rem;
+		--notes-lineHeight: 14px;
 }
 /*comment draft*/
 .project.comment.draft {}
 /*comment draft button*/
 .comment.draft button {
-	margin-right: var(--cmnt-btnPadRight);
-	border-radius: 3px;
-	padding: 1px 5px 1px 5px;
-	font-weight: 500 !important;
-	cursor: pointer;
+		margin-right: var(--cmnt-btnPadRight);
+		border-radius: 3px;
+		padding: 1px 5px 1px 5px;
+		font-weight: 500 !important;
+		cursor: pointer;
 }
 
 .project.root > .children .header1 > .name > .content,
 .project.header1 > .name > .content {
-	font-size: var(--header1-fontSize);
-	line-height: var(--header1-lineHeight)
+		font-size: var(--header1-fontSize);
+		line-height: var(--header1-lineHeight)
 }
 .project.root > .children .header2 > .name > .content,
 .project.header2 > .name > .content {
-	font-size: var(--header2-fontSize);
-	line-height: var(--header2-lineHeight)
+		font-size: var(--header2-fontSize);
+		line-height: var(--header2-lineHeight)
 }
 /****
 NAME-WITH-IMAGE
 */
 
 .name--with-image > .content:empty {
-	max-height: 30px !important;
-	position: absolute;
-	z-index: 9494;
-	left: 3px;
+		max-height: 30px !important;
+		position: absolute;
+		z-index: 9494;
+		left: 3px;
 }
 .name--with-image > .content{
-	max-height: 900px !important;
-	height: unset !important;
-	display: block !important;
-	min-height: unset !important;
-	transition:0.3s;
-	opacity: 1 !important;
+		max-height: 900px !important;
+		height: unset !important;
+		display: block !important;
+		min-height: unset !important;
+		transition:0.3s;
+		opacity: 1 !important;
 }
 .name--with-image > .content:focus,
 .name--with-image > .content:active {
-	max-height: 300px !important
+		max-height: 300px !important
 
 }
 .name--with-image > .content,
 .name--with-image > .file-preview {
-	width: calc(100% - var(--children-Indent))
+		width: calc(100% - var(--children-Indent))
 }
 .name--with-image > .file-preview {
-	padding-left: var(--content-PadLeftRight);
+		padding-left: var(--content-PadLeftRight);
 }
 .name--with-image > .file-preview .image-viewer {
-	overflow: unset;
+		overflow: unset;
 }
 .name--with-image > .file-preview .image-viewer {
-	border-radius: var(--btn-BrdRad);
-	overflow: hidden;
-	transition: .2s;
-	border: var(--IMAGE-BOX--BORDER);
+		border-radius: var(--btn-BrdRad);
+		overflow: hidden;
+		transition: .2s;
+		border: var(--IMAGE-BOX--BORDER);
 }
 .name--with-image.name--focused > .file-preview .image-viewer {
-	box-shadow: 0 0 0 0px var(--BG-primary),
-	0 0 0 3px var(--IMAGE--SELECTED--BOX-SHADOW-CLR);
+		box-shadow: 0 0 0 0px var(--BG-primary),
+		0 0 0 3px var(--IMAGE--SELECTED--BOX-SHADOW-CLR);
 }
 /****
 NOTED > CONTENT only*/
 .project.noted > .name > .content {
-	padding-bottom: 0px;
+		padding-bottom: 0px;
 }
 
 /****
 NOTES > CONTENT only*/
 .project > .notes > .content {
-	max-height: unset;
-	padding-top: 0px;
-	font-size: var(--notes-fontSize);
-	line-height: var(--notes-lineHeight);
+		max-height: unset;
+		padding-top: 0px;
+		font-size: var(--notes-fontSize);
+		line-height: var(--notes-lineHeight);
 }
 #app .project .notes,
 #app .project .notes .content,
 #app .project .notes u,
 #app .project .notes .contentTag,
 #app .project .notes .contentLink {
-	--underlineOffset: 2px !important;
-	--underlineThickness: 1px !important;
-	text-underline-offset: var(--underlineOffset) !important;
-	text-decoration-thickness: var(--underlineThickness) !important;
+		--underlineOffset: 2px !important;
+		--underlineThickness: 1px !important;
+		text-underline-offset: var(--underlineOffset) !important;
+		text-decoration-thickness: var(--underlineThickness) !important;
 }
 
 
@@ -935,15 +934,15 @@ Bullet, Expand, Prefix, & Menu
 .name > .expand,
 .name > .expand ._3hmsj,
 .name > .menu {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	width: var(--btn-Width);
-	height: var(--btn-Height);
-	transition: var(--btn-transition);
-	cursor: pointer;
-	border-radius: var(--btn-BrdRad)
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: var(--btn-Width);
+		height: var(--btn-Height);
+		transition: var(--btn-transition);
+		cursor: pointer;
+		border-radius: var(--btn-BrdRad)
 }
 
 
@@ -958,20 +957,20 @@ Bullet, Expand, Prefix, & Menu
 .name > .expand:after,
 .name > .menu:before,
 .name > .menu:after {
-	content: "";
-	display: block;
-	width: var(--btnIcn-Width);
-	height: var(--btnIcn-Width);
-	position: absolute;
-	top: auto !important;
-	left: auto !important;
-	right: auto;
-	bottom: auto;
-	transition: var(--btn-transition);
-	margin-left: unset !important;
-	margin-right: unset !important;
-	margin-top: unset !important;
-	inset: unset !important;
+		content: "";
+		display: block;
+		width: var(--btnIcn-Width);
+		height: var(--btnIcn-Width);
+		position: absolute;
+		top: auto !important;
+		left: auto !important;
+		right: auto;
+		bottom: auto;
+		transition: var(--btn-transition);
+		margin-left: unset !important;
+		margin-right: unset !important;
+		margin-top: unset !important;
+		inset: unset !important;
 }
 
 
@@ -983,58 +982,58 @@ AND
 Expand*/
 #app .project > .name > .prefix,
 #app .project > .name > .expand {
-	top: var(--btn-MargTop);
+		top: var(--btn-MargTop);
 }
 
 
 /****
 Prefix ONLY*/
 .project > .name > .prefix {
-	left: (calc var(--children-Indent) * 0);
-	/*hide checkbox, on all bullets*/
-	opacity: 0;
+		left: (calc var(--children-Indent) * 0);
+		/*hide checkbox, on all bullets*/
+		opacity: 0;
 }
 .project.checkmark > .name > .prefix {
-	opacity: 1;
+		opacity: 1;
 }
 /*checkbox*/
-.project > .name > .prefix > .item-checkbox {
-	width: var(--btnIcn-ChkBx-W);
-	height: var(--btnIcn-ChkBx-H);
-	background: var(--CHECKBOX--BG);
-	box-shadow: var(--btnIcn-ChkBx-BoxShad);
-	border-radius: var(--btnIcn-ChkBx-BrdRad);
-	transition: var(--btnIcn-ChkBx-Transition);
-	z-index: 3;
-	background: var(--BG-primary);
+.project > .name > .prefix > .inline-flex > .item-checkbox {
+		width: var(--btnIcn-ChkBx-W);
+		height: var(--btnIcn-ChkBx-H);
+		background: var(--CHECKBOX--BG);
+		box-shadow: var(--btnIcn-ChkBx-BoxShad);
+		border-radius: var(--btnIcn-ChkBx-BrdRad);
+		transition: var(--btnIcn-ChkBx-Transition);
+		z-index: 3;
+		background: var(--BG-primary);
 }
 /*checkbox - done*/
-.project.done > .name > .prefix > .item-checkbox {
-	background: var(--CHECKBOX--BG--DONE);
-	transition: var(--btnIcn-ChkBx-Transition);
-	--btnIcn-ChkBx-BoxShad: 0 0 0 2px var(--CHECKBOX--BG--DONE);
-	--btnIcn-ChkBx-BrdRad: 2px;
+.project.done > .name > .prefix > .inline-flex > .item-checkbox {
+		background: var(--CHECKBOX--BG--DONE);
+		transition: var(--btnIcn-ChkBx-Transition);
+		--btnIcn-ChkBx-BoxShad: 0 0 0 2px var(--CHECKBOX--BG--DONE);
+		--btnIcn-ChkBx-BrdRad: 2px;
 }
 /*checkmark*/
-.project > .name > .prefix > .item-checkbox:before {
-	content: var(--ICON--CHECKMARK) !important;
-	width: var(--btnIcn-ChkMrk-W);
-	height: var(--btnIcn-ChkMrk-H);
-	transform: scale(var(--btnIcn-Scale));
-	--btnIcn-Scale: 0;
-	transition: .1s;
-	z-index: 5;
+.project > .name > .prefix > .inline-flex > .item-checkbox:before {
+		content: var(--ICON--CHECKMARK) !important;
+		width: var(--btnIcn-ChkMrk-W);
+		height: var(--btnIcn-ChkMrk-H);
+		transform: scale(var(--btnIcn-Scale));
+		--btnIcn-Scale: 0;
+		transition: .1s;
+		z-index: 5;
 }
 /*checkmark - done*/
-.project.done > .name > .prefix > .item-checkbox:before {
-	--btnIcn-Scale: .8;
-	transition: var(--btnIcn-ExpandB4Low-HovTransition);
+.project.done > .name > .prefix > .inline-flex > .item-checkbox:before {
+		--btnIcn-Scale: .8;
+		transition: var(--btnIcn-ExpandB4Low-HovTransition);
 }
 
 .project.checkmark.collapsed > .name > .prefix:after {
-	--btnIcn-ExpandB4Low-W: 21px;
-	--btnIcn-ExpandB4Low-H: 21px;
-	--btnIcn-ExpandB4Low-BrdRad: 6px;
+		--btnIcn-ExpandB4Low-W: 21px;
+		--btnIcn-ExpandB4Low-H: 21px;
+		--btnIcn-ExpandB4Low-BrdRad: 6px;
 }
 
 
@@ -1047,24 +1046,24 @@ Bullet:AFTER*/
 .project > .name > .bullet:after,
 .project > .name > .prefix:after,
 .project > .name > .expand:after {
-	width: var(--btnIcn-ExpandB4Low-W);
-	height: var(--btnIcn-ExpandB4Low-H);
-	border-radius: var(--btnIcn-ExpandB4Low-BrdRad);
-	background: var(--BG-Bullet-under);
-	transform: rotate(-45deg)scale(0);
-	border: none;
-	transition: .15s
+		width: var(--btnIcn-ExpandB4Low-W);
+		height: var(--btnIcn-ExpandB4Low-H);
+		border-radius: var(--btnIcn-ExpandB4Low-BrdRad);
+		background: var(--BG-Bullet-under);
+		transform: rotate(-45deg)scale(0);
+		border: none;
+		transition: .15s
 }
 .project.collapsed > .name > .bullet:after,
 .project.collapsed > .name > .prefix:after,
 .project.collapsed > .name > .bullet ~ .expand:after {
-	transform: rotate(45deg)scale(1.1);
+		transform: rotate(45deg)scale(1.1);
 }
 .project.paragraph.collapsed > .name > .bullet ~ .expand:after {
-	transform: rotate(0deg)scale(1.1);
+		transform: rotate(0deg)scale(1.1);
 }
 .project.collapsed > .name > .prefix:after {
-	transform: rotate(0deg)scale(1.1);
+		transform: rotate(0deg)scale(1.1);
 }
 
 
@@ -1072,25 +1071,25 @@ Bullet:AFTER*/
 /****
 Expand ONLY*/
 .project > .name > .expand {
-	left: calc(var(--children-Indent) * 0)
+		left: calc(var(--children-Indent) * 0)
 }
 .project > .name > .expand:before {
-	background: var(--BG-Bullet-open);
-	width: var(--btnIcn-ExpandB4Up-W);
-	height: var(--btnIcn-ExpandB4Up-H);
-	border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
-	z-index: 1;
+		background: var(--BG-Bullet-open);
+		width: var(--btnIcn-ExpandB4Up-W);
+		height: var(--btnIcn-ExpandB4Up-H);
+		border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
+		z-index: 1;
 }
 
 .project.collapsed {
-	--BG-Bullet-open: var(--BG-Bullet-closed);
+		--BG-Bullet-open: var(--BG-Bullet-closed);
 }
 
 
 /*checkboxes, hide bullet*/
 .project.checkmark > .name > .expand:before,
 .project.checkmark > .name > .expand:after {
-	opacity: 0;
+		opacity: 0;
 }
 
 
@@ -1101,33 +1100,33 @@ AND
 Menu*/
 #app .project > .name > .bullet,
 #app .project > .name > .menu {
-	z-index: 2;
-	opacity: 0;
-	animation: menu-animation-in .25s ease-in-out;
-	top: var(--btn-MargTop);
+		z-index: 2;
+		opacity: 0;
+		animation: menu-animation-in .25s ease-in-out;
+		top: var(--btn-MargTop);
 }
 #app .project > .name:hover > .bullet,
 #app .project > .name:hover > .menu {
-	opacity: .5;
-	animation: menu-animation-out .25s ease-in-out;
+		opacity: .5;
+		animation: menu-animation-out .25s ease-in-out;
 }
 #app .project > .name:hover > .bullet:hover,
 #app .project > .name:hover > .menu:hover {
-	opacity: 1;
-	background: var(--BG-BUTTON--HOVER);
-	box-shadow: inset 0 0 0 .5px var(--btnBgHover-BrdClr);
+		opacity: 1;
+		background: var(--BG-BUTTON--HOVER);
+		box-shadow: inset 0 0 0 .5px var(--btnBgHover-BrdClr);
 }
 
 /****
 Bullets ONLY*/
 #app .project > .name > .bullet {
-	left: calc(var(--children-Indent) * -1);
+		left: calc(var(--children-Indent) * -1);
 }
 #app .project > .name > .bullet:before {
-	content: var(--ICON--MAGNIFYING-GLASS-ZOOM);
+		content: var(--ICON--MAGNIFYING-GLASS-ZOOM);
 }
 #app .project > .name > .bullet:after {
-	opacity: 0;
+		opacity: 0;
 }
 /*hide bullet before & after until boards*/
 .project.collapsed > .name > .bullet:after {}
@@ -1135,45 +1134,46 @@ Bullets ONLY*/
 /****
 Menu ONLY*/
 #app .project > .name > .menu {
-	left: calc(var(--children-Indent) * -2);
+		left: calc(var(--children-Indent) * -2);
 }
 #app .project > .name > .menu:before {
-	content: var(--ICON--MENU-DOTS);
+		content: var(--ICON--MENU-DOTS);
 }
 
 /*root*/
 .project.root > .name {
-	--btn-MargTop: 16px;
+		--btn-MargTop: 16px;
 }
 /*root checkmark*/
 .project.checkmark.root > .name > .prefix {
-	--btn-MargTop: 11px !important;
+		--btn-MargTop: 11px !important;
+		margin-top: 10px;
 }
 /*root checkmark - MENU*/
 .project.checkmark.root > .name > .menu {
-	--btn-MargTop: 41px !important;
+		--btn-MargTop: 41px !important;
 	left: calc(var(--children-Indent) * -2) !important;
 }
 /*root - Menu*/
 .project.root > .name > .menu {
-	left: calc(var(--children-Indent) * -1) !important;
+		left: calc(var(--children-Indent) * -1) !important;
 }
 .project.root.checkmark > .name > .menu {
-	left: calc(var(--children-Indent) * -1) !important;
-	--btn-MargTop: calc(var(--btn-Width) + 16px);
+		left: calc(var(--children-Indent) * -1) !important;
+		--btn-MargTop: calc(var(--btn-Width) + 16px);
 }
 /*root - checkbox*/
 .project.root.checkmark > .name > .prefix {
-	left: calc(var(--children-Indent) * -1) !important;
+		left: calc(var(--children-Indent) * -1) !important;
 }
-.project.root.checkmark > .name > .prefix > .item-checkbox,
-#app .project.root.checkmark.done > .name > .prefix > .item-checkbox:before {
-	--btnIcn-ChkBx-W: 18px;
-	--btnIcn-ChkBx-H: 18px;
-	--btnIcn-Scale: 1.3;
+.project.root.checkmark > .name > .prefix > .inline-flex > .item-checkbox,
+#app .project.root.checkmark.done > .name > .prefix > .inline-flex > .item-checkbox:before {
+		--btnIcn-ChkBx-W: 18px;
+		--btnIcn-ChkBx-H: 18px;
+		--btnIcn-Scale: 1.3;
 }
-#app .project.root.checkmark > .name > .prefix > .item-checkbox:before {
-	top: -10px !important;
+#app .project.root.checkmark > .name > .prefix > .inline-flex > .item-checkbox:before {
+		top: -10px !important;
 }
 
 
@@ -1185,35 +1185,35 @@ AND
 Menu Icon*/
 .project > .name > .bullet:hover,
 .project > .name > .menu:hover {
-	opacity: 1;
+		opacity: 1;
 }
 
 @keyframes menu-animation-out {
-	0% {
-		opacity: 0;
-	}
+		0% {
+				opacity: 0;
+		}
 
-	20% {
-		opacity: 0;
-	}
+		20% {
+				opacity: 0;
+		}
 
-	100% {
-		opacity: .5;
-	}
+		100% {
+				opacity: .5;
+		}
 }
 
 @keyframes menu-animation-in {
-	0% {
-		opacity: .5;
-	}
+		0% {
+				opacity: .5;
+		}
 
-	0% {
-		opacity: 0;
-	}
+		0% {
+				opacity: 0;
+		}
 
-	100% {
-		opacity: 0;
-	}
+		100% {
+				opacity: 0;
+		}
 }
 
 
@@ -1225,35 +1225,35 @@ MIRRORS*/
 #app .dashboard .project > .name > .bullet.diamond:before,
 /*BULLET - IN board*/
 #app .board .project > .name > .bullet.diamond:before {
-	border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - 2px) !important;
-	transform: rotate(-45deg)scale(var(--btnIcn-Scale));
-	transition: var(--btn-MirrorTransition);
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - 2px) !important;
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+		transition: var(--btn-MirrorTransition);
 }
 /*CHECKMARK - in all places*/
 #app .project > .name > .bullet.diamond ~ .prefix .item-checkbox,
 #app .project > .name > .bullet.diamond ~ .prefix:after,
 #app .dashboard .project > .name > .bullet.diamond:after {
-	--btnIcn-Scale: .9;
-	transform: rotate(-45deg)scale(var(--btnIcn-Scale));
-	transition: var(--btn-MirrorTransition);
-	border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 2.5px);
+		--btnIcn-Scale: .9;
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+		transition: var(--btn-MirrorTransition);
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 2.5px);
 }
 
 #app .project > .name > .bullet.diamond ~ .prefix:after,
 #app .dashboard .project > .name > .bullet.diamond:after {
-	transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
 }
 #app .project.collapsed > .name > .bullet.diamond ~ .prefix:after {
-	transform: rotate(45deg)scale(var(--btnIcn-Scale));
+		transform: rotate(45deg)scale(var(--btnIcn-Scale));
 }
 
 #app .project > .name > .bullet.diamond ~ .expand:after {
-	border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 0px);
-	transition: 350ms cubic-bezier(.27, 1.7, .51, .9);
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 0px);
+		transition: 350ms cubic-bezier(.27, 1.7, .51, .9);
 }
 
 #app .project > .name > .bullet.diamond ~ .prefix .item-checkbox:before {
-	transform: rotate(45deg)scale(var(--btnIcn-Scale));
+		transform: rotate(45deg)scale(var(--btnIcn-Scale));
 }
 
 /*COLLAPSED*/
@@ -1264,36 +1264,36 @@ MIRRORS*/
 /*checkmark*/
 #app .project.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox,
 #app .dashboard .project.collapsed > .name > .bullet.diamond:before {
-	transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important;
+		transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important;
 }
 /*checkmark*/
 #app .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
-	--btnIcn-Scale: .855;
-	border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - .5px);
+		--btnIcn-Scale: .855;
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - .5px);
 }
 #app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox{
-	--btnIcn-Scale: .789;
+		--btnIcn-Scale: .789;
 }
 #app .board .project > .name > .bullet.diamond ~ .prefix:after{
-		--btnIcn-Scale: .815;
+				--btnIcn-Scale: .815;
 }
 #app .project.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox:before {
-	transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
 }
 #app .project.hasMirrors.collapsed > .name > .prefix:after {
-	opacity: 1;
+		opacity: 1;
 }
 #app .dashboard .project.paragraph > .name > .bullet.diamond:before,
 #app .project.paragraph > .name > .bullet.diamond ~ .expand:before,
 #app .dashboard .project.paragraph > .name > .bullet.diamond:after,
 #app .project.paragraph > .name > .bullet.diamond ~ .expand:after {
-	transform: rotate(0deg)scale(var(--btnIcn-Scale)) !important;
+		transform: rotate(0deg)scale(var(--btnIcn-Scale)) !important;
 }
 #app .dashboard .project.paragraph.collapsed > .name > .bullet.diamond:before,
 #app .project.paragraph.collapsed > .name > .bullet.diamond ~ .expand:before,
 #app .dashboard .project.paragraph.collapsed > .name > .bullet.diamond:after,
 #app .project.paragraph.collapsed > .name > .bullet.diamond ~ .expand:after {
-	transform: rotate(-180deg)scale(var(--btnIcn-Scale)) !important
+		transform: rotate(-180deg)scale(var(--btnIcn-Scale)) !important
 }
 
 
@@ -1302,64 +1302,64 @@ MIRRORS*/
 #app .board .project.hasMirrors > .name > .bullet:before,
 #app .dashboard .project.hasMirrors > .name > .bullet.diamond:before,
 #app .project.hasMirrors > .name > .expand:before {
-	background: var(--BG-primary);
-	box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
-	inset 0 0 0 8px var(--CHECKBOX--BG);
-	outline: 1.4px solid var(--BG-Bullet-open);
+		background: var(--BG-primary);
+		box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
+		inset 0 0 0 8px var(--CHECKBOX--BG);
+		outline: 1.4px solid var(--BG-Bullet-open);
 }
 
 #app .project.hasMirrors > .name > .prefix .item-checkbox {
-	box-shadow: 0 0 0 2px var(--BG-Bullet-open),
-	var(--btnIcn-ChkBx-BoxShad) !important;
+		box-shadow: 0 0 0 2px var(--BG-Bullet-open),
+		var(--btnIcn-ChkBx-BoxShad) !important;
 }
 #app .project.hasMirrors > .name > .prefix .item-checkbox,
 #app .project.done.hasMirrors > .name > .prefix .item-checkbox {
-	border-radius: 2px;
-	box-shadow: 0 0 0 2px var(--btnIcn-ChkBx-BoxShad);
+		border-radius: 2px;
+		box-shadow: 0 0 0 2px var(--btnIcn-ChkBx-BoxShad);
 }
 #app .project.done > .name > .prefix .item-checkbox {
-	box-shadow: 0 0 0 1.5px var(--CHECKBOX--BG--DONE) !important;
+		box-shadow: 0 0 0 1.5px var(--CHECKBOX--BG--DONE) !important;
 }
 /****
 SHARED*/
 /*SHARED BY ME*/
 #app .project.shared > .name > .bullet ~ .expand:before {
-	background: var(--shared-BY-me--bullet-1);
+		background: var(--shared-BY-me--bullet-1);
 }
 
 #app .project.shared.collapsed > .name > .bullet ~ .expand:before {
-	background: var(--shared-BY-me--bullet-2)
+		background: var(--shared-BY-me--bullet-2)
 }
 
 #app .project.shared > .name > .bullet ~ .expand:after,
 #app .project.shared.collapsed > .name > .bullet ~ .expand:after {
-	background: var(--shared-BY-me--bullet-color-3)
+		background: var(--shared-BY-me--bullet-color-3)
 }
 
 /*SHARED WITH ME*/
 #app .project.addedShared > .name > .bullet ~ .expand:before {
-	background: var(--shared-WITH-me--me--bullet-1)
+		background: var(--shared-WITH-me--me--bullet-1)
 }
 
 #app .project.addedShared.collapsed > .name > .bullet ~ .expand:before {
-	background: var(--shared-WITH-me--me--bullet-2)
+		background: var(--shared-WITH-me--me--bullet-2)
 }
 
 #app .project.addedShared > .name > .bullet ~ .expand:after,
 #app .project.addedShared.collapsed > .name > .bullet ~ .expand:after {
-	background: var(--shared-WITH-me--me--bullet-3)
+		background: var(--shared-WITH-me--me--bullet-3)
 }
 
 
 /*SHARED - BY ME - COLORS*/
 #app .project.shared > .name {
-	--BG-Bullet-open: var(--shared-BY-me--bullet-1);
-	--BG-Bullet-under: var(--shared-BY-me--bullet-color-3);
+		--BG-Bullet-open: var(--shared-BY-me--bullet-1);
+		--BG-Bullet-under: var(--shared-BY-me--bullet-color-3);
 }
 /*SHARED - WITH ME - COLORS*/
 #app .project.addedShared > .name {
-	--BG-Bullet-open: var(--shared-WITH-me--me--bullet-1);
-	--BG-Bullet-under: var(--BG-expand-border-shared-WITH-me);
+		--BG-Bullet-open: var(--shared-WITH-me--me--bullet-1);
+		--BG-Bullet-under: var(--BG-expand-border-shared-WITH-me);
 }
 /***************
 ****************
@@ -1372,14 +1372,14 @@ NAME > innerCONTENT
 NOTES > innerCONTENT*/
 .name .innerContentContainer,
 .notes .innerContentContainer {
-	padding-top: var(--InnerContentPadTop);
-	padding-bottom: var(--InnerContentPadBtm)
+		padding-top: var(--InnerContentPadTop);
+		padding-bottom: var(--InnerContentPadBtm)
 }
 
 .name .innerContentContainer .colored,
 .notes .innerContentContainer .colored {
-	padding-top: var(--InnerContentPadTop);
-	padding-bottom: var(--InnerContentPadBtm)
+		padding-top: var(--InnerContentPadTop);
+		padding-bottom: var(--InnerContentPadBtm)
 }
 
 
@@ -1389,7 +1389,7 @@ BOLD Text
 ****************/
 b,
 i b {
-	color: var(--NODE--TXT-CLR--bold);
+		color: var(--NODE--TXT-CLR--bold);
 }
 
 
@@ -1397,40 +1397,40 @@ i b {
 highlights
 ****************/
 :root {
-	--HiLtAlt: var(--BG-primary)
+		--HiLtAlt: var(--BG-primary)
 }
 /**
  HIGHLIGHT REBUILD
 
 #app .colored[class*="bc-"] {
 
-	background:linear-gradient(
-		var(--HiLtAlt) 0%,
-		var(--HiLtAlt) 20%,
-		var(--HiBgClr) 20%,
-		var(--HiBgClr))
+		background:linear-gradient(
+				var(--HiLtAlt) 0%,
+				var(--HiLtAlt) 20%,
+				var(--HiBgClr) 20%,
+				var(--HiBgClr))
 }
 */
 .bc-red.bc-red {
-	--HiBgClr: var(--HIGHLIGHT--RED)
+		--HiBgClr: var(--HIGHLIGHT--RED)
 }
 .bc-orange.bc-orange {
-	--HiBgClr: var(--HIGHLIGHT--ORANGE)
+		--HiBgClr: var(--HIGHLIGHT--ORANGE)
 }
 .bc-yellow.bc-yellow {
-	--HiBgClr: var(--HIGHLIGHT--YELLOW)
+		--HiBgClr: var(--HIGHLIGHT--YELLOW)
 }
 .bc-green.bc-green {
-	--HiBgClr: var(--HIGHLIGHT--GREEN)
+		--HiBgClr: var(--HIGHLIGHT--GREEN)
 }
 .bc-sky.bc-sky {
-	--HiBgClr: var(--HIGHLIGHT--SKY)
+		--HiBgClr: var(--HIGHLIGHT--SKY)
 }
 .bc-blue.bc-blue {
-	--HiBgClr: var(--HIGHLIGHT--BLUE)
+		--HiBgClr: var(--HIGHLIGHT--BLUE)
 }
 .bc-purple.bc-purple {
-	--HiBgClr: var(--HIGHLIGHT--PURP)
+		--HiBgClr: var(--HIGHLIGHT--PURP)
 }
 
 
@@ -1439,31 +1439,31 @@ HIGHLIGHT - GREYED OUT
 ****************/
 
 .bc-gray.bc-gray {
-	background-color: var(--HIGHLIGHT--Grey--GREYED-OUT);
-	color: var(--HIGHLIGHT-TXT--Grey--GREYED-OUT) !important;
-	-webkit-font-smoothing:antialiased !important;
-	-webkit-text-stroke:0px !important;
+		background-color: var(--HIGHLIGHT--Grey--GREYED-OUT);
+		color: var(--HIGHLIGHT-TXT--Grey--GREYED-OUT) !important;
+		-webkit-font-smoothing:antialiased !important;
+		-webkit-text-stroke:0px !important;
 }
 .board.root .bc-gray.bc-gray{
-	--HIGHLIGHT--Grey--GREYED-OUT:var(--BOARD-ROOT--CARD--BG);
+		--HIGHLIGHT--Grey--GREYED-OUT:var(--BOARD-ROOT--CARD--BG);
 }
 .bc-gray.bc-gray::selection{
-	background: var(--selectionBg2) !important;
-	color:var(--NODE--TXT-CLR--CONTRAST)!important
+		background: var(--selectionBg2) !important;
+		color:var(--NODE--TXT-CLR--CONTRAST)!important
 }
 
 /*GREYED OUT - POPUP*/
 .picker-background [title="Gray"]:before {
-	content: "GREYED OUT";
-	width: 50px;
-	display: block;
-	position: absolute;
-	font-size: 8px;
-	text-align: center;
-	top: -12px;
-	left: -14px;
-	right: auto;
-	color:var(--NODE--TXT-CLR--main)
+		content: "GREYED OUT";
+		width: 50px;
+		display: block;
+		position: absolute;
+		font-size: 8px;
+		text-align: center;
+		top: -12px;
+		left: -14px;
+		right: auto;
+		color:var(--NODE--TXT-CLR--main)
 }
 
 
@@ -1472,16 +1472,16 @@ HIGHLIGHT - CODE
 ****************/
 /*CODE*/
 .bc-pink.bc-pink {
-	background: var(--HIGHLIGHT--pink-CODE--BG) !important;
-	padding: 1.5px 3px .5px 3px !important;
-	border-radius: 3px;
-	color: var(--HIGHLIGHT--pink-CODE--TXT-CLR) !important;
-	font-family: 'SF Mono', monospace !important;
-	font-size: 0.85em;
-	display: inline;
-	/*vertical-align: text-top;*/
-	vertical-align: unset;
-	line-height: 1 !important;
+		background: var(--HIGHLIGHT--pink-CODE--BG) !important;
+		padding: 1.5px 3px .5px 3px !important;
+		border-radius: 3px;
+		color: var(--HIGHLIGHT--pink-CODE--TXT-CLR) !important;
+		font-family: 'SF Mono', monospace !important;
+		font-size: 0.85em;
+		display: inline;
+		/*vertical-align: text-top;*/
+		vertical-align: unset;
+		line-height: 1 !important;
 }
 
 /***************
@@ -1495,12 +1495,12 @@ HIGHLIGHT - LINE BREAK
 TEXT COLORS
 ****************/
 html #app b .colored[class*="c-"] {
-	-webkit-font-smoothing: antialiased !important;
+		-webkit-font-smoothing: antialiased !important;
 }
 
 .colored[class*="c-"] {
-	-webkit-font-smoothing: subpixel-antialiased !important;
-	-webkit-text-stroke: 0.25px;
+		-webkit-font-smoothing: subpixel-antialiased !important;
+		-webkit-text-stroke: 0.25px;
 }
 /*RED*/
 .c-red,
@@ -1508,8 +1508,8 @@ u .c-red,
 .c-red u,
 b .c-red,
 .c-red b {
-	color: var(--TXT-CLR--RED) !important;
-	text-decoration-color: var(--TXT-CLR--RED);
+		color: var(--TXT-CLR--RED) !important;
+		text-decoration-color: var(--TXT-CLR--RED);
 }
 
 /*ORANGE*/
@@ -1518,8 +1518,8 @@ u .c-orange,
 .c-orange u,
 b .c-orange,
 .c-orange b {
-	color: var(--TXT-CLR--ORANGE) !important;
-	text-decoration-color: var(--TXT-CLR--ORANGE);
+		color: var(--TXT-CLR--ORANGE) !important;
+		text-decoration-color: var(--TXT-CLR--ORANGE);
 }
 
 /*YELLOW*/
@@ -1528,9 +1528,9 @@ u .c-yellow,
 .c-yellow u,
 b .c-yellow,
 .c-yellow b {
-	color: var(--TXT-CLR--YELLOW) !important;
-	-webkit-text-stroke-color: hsl(50, 100%, 37%);
-	text-decoration-color: var(--TXT-CLR--YELLOW);
+		color: var(--TXT-CLR--YELLOW) !important;
+		-webkit-text-stroke-color: hsl(50, 100%, 37%);
+		text-decoration-color: var(--TXT-CLR--YELLOW);
 }
 
 /*GREEN*/
@@ -1539,8 +1539,8 @@ u .c-green,
 .c-green u,
 b .c-green,
 .c-green b {
-	color: var(--TXT-CLR--GREEN) !important;
-	text-decoration-color: var(--TXT-CLR--GREEN);
+		color: var(--TXT-CLR--GREEN) !important;
+		text-decoration-color: var(--TXT-CLR--GREEN);
 }
 
 /*TEAL*/
@@ -1549,8 +1549,8 @@ u .c-teal,
 .c-teal u,
 b .c-teal,
 .c-teal b {
-	color: var(--TXT-CLR--TEAL) !important;
-	text-decoration-color: var(--TXT-CLR--TEAL);
+		color: var(--TXT-CLR--TEAL) !important;
+		text-decoration-color: var(--TXT-CLR--TEAL);
 }
 
 /*SKY*/
@@ -1559,8 +1559,8 @@ u .c-sky,
 .c-sky u,
 b .c-sky,
 .c-sky b {
-	color: var(--TXT-CLR--SKY) !important;
-	text-decoration-color: var(--TXT-CLR--SKY);
+		color: var(--TXT-CLR--SKY) !important;
+		text-decoration-color: var(--TXT-CLR--SKY);
 }
 
 /*BLUE*/
@@ -1569,8 +1569,8 @@ u .c-blue,
 .c-blue u,
 b .c-blue,
 .c-blue b {
-	color: var(--TXT-CLR--BLUE) !important;
-	text-decoration-color: var(--TXT-CLR--BLUE);
+		color: var(--TXT-CLR--BLUE) !important;
+		text-decoration-color: var(--TXT-CLR--BLUE);
 }
 
 /*PURPLE*/
@@ -1579,8 +1579,8 @@ u .c-purple,
 .c-purple u,
 .c-purple b,
 b .c-purple {
-	color: var(--TXT-CLR--PURPLE) !important;
-	text-decoration-color: var(--TXT-CLR--PURPLE);
+		color: var(--TXT-CLR--PURPLE) !important;
+		text-decoration-color: var(--TXT-CLR--PURPLE);
 }
 
 /*PINK*/
@@ -1589,8 +1589,8 @@ u .c-pink,
 .c-pink u,
 b .c-pink,
 .c-pink b {
-	color: var(--TXT-CLR--PINK) !important;
-	text-decoration-color: var(--TXT-CLR--PINK);
+		color: var(--TXT-CLR--PINK) !important;
+		text-decoration-color: var(--TXT-CLR--PINK);
 }
 
 /*GRAY*/
@@ -1599,8 +1599,8 @@ u .c-gray,
 .c-gray u,
 b .c-gray,
 .c-gray b {
-	color: var(--TXT-CLR--GRAY) !important;
-	text-decoration-color: var(--TXT-CLR--GRAY);
+		color: var(--TXT-CLR--GRAY) !important;
+		text-decoration-color: var(--TXT-CLR--GRAY);
 	-webkit-font-smoothing:antialiased !important;
 }
 
@@ -1609,31 +1609,31 @@ b .c-gray,
 UNDERLINE
 ****************/
 :root {
-	--underlineOffset: 2.5px;
-	--underlineThickness: 2px;
+		--underlineOffset: 2.5px;
+		--underlineThickness: 2px;
 }
 
 
 /*root*/
 .project.root > .name,
 .project.root > .name * {
-	--underlineOffset: 5px;
-	--underlineThickness: 3px;
+		--underlineOffset: 5px;
+		--underlineThickness: 3px;
 }
 
 
 .project > .name > .content .innerContentContainer u,
 .project > .name > .content .innerContentContainer u .colored[class*="bc"] {
-	text-underline-offset: var(--underlineOffset);
-	text-decoration-thickness: var(--underlineThickness);
+		text-underline-offset: var(--underlineOffset);
+		text-decoration-thickness: var(--underlineThickness);
 }
 .comment {
-	--underlineOffset: 2px;
-	--underlineThickness: 1.5px;
+		--underlineOffset: 2px;
+		--underlineThickness: 1.5px;
 }
 .board {
-	--underlineOffset: 2px;
-	--underlineThickness: 1.5px;
+		--underlineOffset: 2px;
+		--underlineThickness: 1.5px;
 }
 
 
@@ -1641,51 +1641,53 @@ UNDERLINE
 /*header1*/
 .project.header1 > .name,
 .project.header1 > .name * {
-	--underlineOffset: 4.5px;
-	--underlineThickness: 2.5px;
+		--underlineOffset: 4.5px;
+		--underlineThickness: 2.5px;
 }
 /*header2*/
 .project.header2 > .name,
 .project.header2 > .name * {
-	--underlineOffset: 3px;
-	--underlineThickness: 2.5px;
+		--underlineOffset: 3px;
+		--underlineThickness: 2.5px;
 }
 
 /*boards - header1*/
 .board .project.header1 > .name,
 .board .project.header1 > .name * {
-	--underlineOffset: 3px;
-	--underlineThickness: 1.5px;
+		--underlineOffset: 3px;
+		--underlineThickness: 1.5px;
 }
 /*boards - header2*/
 .board .project.header2 > .name,
 .board .project.header2 > .name * {
-	--underlineOffset: 2.5px;
-	--underlineThickness: 1.5px;
+		--underlineOffset: 2.5px;
+		--underlineThickness: 1.5px;
 }
 
 /*comments - header1*/
 .comment .project.header1 > .name,
 .comment .project.header1 > .name * {
-	--underlineOffset: 3px;
-	--underlineThickness: 1.5px;
+		--underlineOffset: 3px;
+		--underlineThickness: 1.5px;
 }
 /*comments - header2*/
 .comment .project.header2 > .name,
 .comment .project.header2 > .name * {
-	--underlineOffset: 2.5px;
-	--underlineThickness: 1.5px;
+		--underlineOffset: 2.5px;
+		--underlineThickness: 1.5px;
 }
-
 
 /***************
 CODE BLOCKS
 ****************/
-
+#app .code-block>.name .content{
+		display: block !important;
+}
 #app .project.code-block > .name > .content,
 #app .project.code-block.noted > .name > .content{
 padding-bottom:5px !important;
 padding-top:5px !important;
+		border-radius: 5px;
 }
 
 #app .project.code-block > .name > .content,
@@ -1693,161 +1695,163 @@ padding-top:5px !important;
 #app .project.code-block > .name > .content > .innerContentContainer,
 #app .project.code-block > .name > .content > .innerContentContainer * {
 font-family: var(--wf-font-family-mono),mono,monospace !important;
+		-webkit-font-smoothing:subpixel-antialiased;
 }
 
 #app .project.code-block > .name > .content,
 #app .project.code-block > .name > .content > .innerContentContainer {
 
 font-size: 15px !important;
-line-height:24px !important
+line-height:22px !important
 }
+
 /***************
 TAGS
 ****************/
 .innerContentContainer .contentTag,
 .innerContentContainer .contentTag * {
-	text-decoration: none !important
+		text-decoration: none !important
 }
 .innerContentContainer .contentTag {
-	
+		
 }
 .innerContentContainer .contentTag:hover{
-		background: var(--LnkWFBgClrHov);
+				background: var(--LnkWFBgClrHov);
 
 }
 /***************
 LINKS
 ****************/
 :root {
-	--link-BrdRad: 3px;
-	--linkArrow-Size: 5px;
-	--linkArrow-BrdClr: var(--Link-TxtClr);
-	--linkIcnAfter-Width: 10px;
-	--linkIcnAfter-Height: 10px;
+		--link-BrdRad: 3px;
+		--linkArrow-Size: 5px;
+		--linkArrow-BrdClr: var(--Link-TxtClr);
+		--linkIcnAfter-Width: 10px;
+		--linkIcnAfter-Height: 10px;
 }
 .contentLink,
 u .contentLink,
 .contentLink u,
 .colored a.contentLink,
 a.contentLink .colored {
-	color: var(--LnkTxtClr) !important;
-	position: relative;
+		color: var(--LnkTxtClr) !important;
+		position: relative;
 }
 #app a.contentLink,
 #app u a.contentLink,
 #app a.contentLink u {
-	text-decoration: underline;
+		text-decoration: underline;
 }
 #app .colored a.contentLink,
 #app a.contentLink .colored {
-	color: var(--LnkTxtClr)
+		color: var(--LnkTxtClr)
 }
 
 
 
 
 html #app .project > .name > .content a.contentLink {
-	border-radius: var(--link-BrdRad);
-	transition: .1s;
-	padding-left: 3px;
-	padding-right: 3px;
-	text-underline-offset: var(--underlineOffset);
-	text-decoration-thickness: var(--underlineThickness);
-	text-decloration-color: var(--LnkTxtClr) !important;
-	text-decoration: none;
-	box-shadow: inset 0 0 0 1px var(--LnkBrdClr)!important;
-	background: var(--LnkBgClr);
-	--link-BrdRad: 4px;
+		border-radius: var(--link-BrdRad);
+		transition: .1s;
+		padding-left: 3px;
+		padding-right: 3px;
+		text-underline-offset: var(--underlineOffset);
+		text-decoration-thickness: var(--underlineThickness);
+		text-decloration-color: var(--LnkTxtClr) !important;
+		text-decoration: none;
+		box-shadow: inset 0 0 0 1px var(--LnkBrdClr)!important;
+		background: var(--LnkBgClr);
+		--link-BrdRad: 4px;
 }
 html #app .project > .name > .content a.contentLink:hover {
-	background: var(--LnkBgClrHov);
-	background-image: var(--LinkIcn);
-	background-repeat: no-repeat;
+		background: var(--LnkBgClrHov);
+		background-image: var(--LinkIcn);
+		background-repeat: no-repeat;
 }
 
 html #app .project.root > .name {
-	--link-BrdRad: 7px
+		--link-BrdRad: 7px
 }
 :root {
-	--lnkicnW: 15px;
-	--lnkicnH: 15px;
+		--lnkicnW: 15px;
+		--lnkicnH: 15px;
 }
 /*
 #app a.contentLink:after{
-	content:"....";
-	color:transparent;
-	display: inline;
-	background-image: var(--ICON--LINK--EXTERNAL);
-	background-repeat: no-repeat;
-	background-size:var(--lnkicnW) var(--lnkicnH);
-	background-position:1px 72%;
-	opacity:.8;
-	transition: .2s;
+		content:"....";
+		color:transparent;
+		display: inline;
+		background-image: var(--ICON--LINK--EXTERNAL);
+		background-repeat: no-repeat;
+		background-size:var(--lnkicnW) var(--lnkicnH);
+		background-position:1px 72%;
+		opacity:.8;
+		transition: .2s;
 }
 #app .contentLink:hover:after{
-	opacity: 1;
+		opacity: 1;
 }
 */
 html #app .project .content a.contentLink[href*="workflowy"],
 html #app .project .content a.contentLink[href*="workflowy"]:after {
-	--LnkTxtClr: var(--LnkWFTxtClr);
-	--LnkBrdClr: transparent;
-	--LnkBgClr: transparent;
-	--LnkBgClrHov: var(--LnkWFBgClrHov);
-	--ICON--LINK--EXTERNAL: var(--ICON--LINK--INTERNAL2) !important;
-	--lnkicnW: 14px;
-	--lnkicnH: 14px;
-	text-decoration: underline;
-	opacity: 1;
-	padding-left: 0px;
-	padding-right: 0px;
+		--LnkTxtClr: var(--LnkWFTxtClr);
+		--LnkBrdClr: transparent;
+		--LnkBgClr: transparent;
+		--LnkBgClrHov: var(--LnkWFBgClrHov);
+		--ICON--LINK--EXTERNAL: var(--ICON--LINK--INTERNAL2) !important;
+		--lnkicnW: 14px;
+		--lnkicnH: 14px;
+		text-decoration: underline;
+		opacity: 1;
+		padding-left: 0px;
+		padding-right: 0px;
 }
 
 html #app .project > .notes > .content a.contentLink[href*="workflowy"] {
 }
 html #app .project > .notes > .content .contentLink{
-	color: var(--NODE-NOTES--TXT-CLR-ALL) !important;
+		color: var(--NODE-NOTES--TXT-CLR-ALL) !important;
 }
 html #app .project > .notes > .content {
-	color: var(--NODE-NOTES--TXT-CLR-ALL);
-	max-height: unset;
-	overflow: hidden;
-	transition: .0s !important;
-	white-space: pre-wrap !important;
-	text-overflow: ellipsis;
-	-webkit-line-clamp: 100;
-	display: -webkit-box;
+		color: var(--NODE-NOTES--TXT-CLR-ALL);
+		max-height: unset;
+		overflow: hidden;
+		transition: .0s !important;
+		white-space: pre-wrap !important;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 100;
+		display: -webkit-box;
 }
 html #app .project.root > .notes > .content {
-	color:var(--NODE-NOTESROOT--TXT-CLR-ALL);
+		color:var(--NODE-NOTESROOT--TXT-CLR-ALL);
 }
 html #app .project.root > .notes > .content > .innerContentContainer b {
-	color:var(--NODE-NOTESROOT--TXT-CLR-ALL-BOLD);
+		color:var(--NODE-NOTESROOT--TXT-CLR-ALL-BOLD);
 }
 /*html #app .project > .notes > .content > .innerContentContainer{
-		white-space: pre-wrap !important;
+				white-space: pre-wrap !important;
 }*/
 html #app .project > .notes > .content > .innerContentContainer b {
-	color: var(--NODE-NOTES--TXT-CLR-Bold);
+		color: var(--NODE-NOTES--TXT-CLR-Bold);
 }
 
 html #app .project > .notes > .content.active {
-	max-height: 900px;
-	-webkit-line-clamp: 900;
-	overflow: visible;
+		max-height: 900px;
+		-webkit-line-clamp: 900;
+		overflow: visible;
 }
 
 
 
 
 html #app .project.root > .notes > .content {
-	-webkit-line-clamp: unset;
-	max-height: 100% !important;
-	max-height: unset !important;
-	--notes-fontSize: 1.05rem;
-	--notes-lineHeight: 22px;
-	padding-top: 10px;
-	transition: .15s !important;
+		-webkit-line-clamp: unset;
+		max-height: 100% !important;
+		max-height: unset !important;
+		--notes-fontSize: 1.05rem;
+		--notes-lineHeight: 22px;
+		padding-top: 10px;
+		transition: .15s !important;
 }
 
 /***************
@@ -1857,15 +1861,15 @@ PROJECT > NAME > FILE ATTACHMENT
 .project > .name._1fqag8m > .file-preview,
 /*DARK*/
 .project > .name._1qns2ax > .file-preview {
-	position: absolute;
-	left: var(--children-Indent);
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	overflow: hidden;
-	z-index: 20;
+		position: absolute;
+		left: var(--children-Indent);
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		z-index: 20;
 }
 
 
@@ -1873,43 +1877,43 @@ PROJECT > NAME > FILE ATTACHMENT
 .project > .name._1fqag8m > .file-preview *,
 /*DARK*/
 .project > .name._1qns2ax > .file-preview * {
-	cursor: pointer;
+		cursor: pointer;
 }
 
 /*LIGHT*/
 .project > .name._1fqag8m > .file-preview > button,
 /*DARK*/
 .project > .name._1qns2ax > .file-preview > button {
-	margin-top: -30px;
-	opacity: 0;
-	font-size: 0.8em;
-	transition: .2s;
-	padding: 3px 7px;
-	margin-left: 3px;
-	border-radius: 4px;
-	background: var(--FILE-DOWNLOAD-BUTTON--BG-CLR);
-	color: var(--FILE-DOWNLOAD-BUTTON--TXT-CLR) !important;
+		margin-top: -30px;
+		opacity: 0;
+		font-size: 0.8em;
+		transition: .2s;
+		padding: 3px 7px;
+		margin-left: 3px;
+		border-radius: 4px;
+		background: var(--FILE-DOWNLOAD-BUTTON--BG-CLR);
+		color: var(--FILE-DOWNLOAD-BUTTON--TXT-CLR) !important;
 }
 
 /*LIGHT*/
 html #app .project > .name._1fqag8m:hover > .file-preview > button,
 /*DARK*/
 html #app .project > .name._1qns2ax:hover > .file-preview > button {
-	margin-top: 0px;
-	opacity: 1;
+		margin-top: 0px;
+		opacity: 1;
 }
 
 /*LIGHT*/
 html #app .project > .name._1fqag8m > .content,
 /*DARK*/
 html #app .project > .name._1qns2ax > .content {
-	border-radius: 5px;
-	background: var(--FileAttchmnt-BG);
-	color: var(--FileAttchmnt-TxtClr);
-	border: 1px solid var(--FileAttchmnt-BrdClr);
-	padding: 0.5px 4px 0px 4px;
-	display: inline;
-	flex: unset;
+		border-radius: 5px;
+		background: var(--FileAttchmnt-BG);
+		color: var(--FileAttchmnt-TxtClr);
+		border: 1px solid var(--FileAttchmnt-BrdClr);
+		padding: 0.5px 4px 0px 4px;
+		display: inline;
+		flex: unset;
 }
 
 
@@ -1917,17 +1921,17 @@ html #app .project > .name._1qns2ax > .content {
 html #app .project > .name._1fqag8m > .content:before,
 /*DARK*/
 html #app .project > .name._1qns2ax > .content:before {
-	display: inline-block;
-	vertical-align: sub;
-	z-index: 1;
-	width: 1.2em;
-	height: 1.2em;
-	transform: scale(.8);
-	margin-right: 1px;
-	transition: .14s;
-	content: var(--ICON--FILE);
-	position: relative;
-	filter: saturate(.2)brightness(.8)
+		display: inline-block;
+		vertical-align: sub;
+		z-index: 1;
+		width: 1.2em;
+		height: 1.2em;
+		transform: scale(.8);
+		margin-right: 1px;
+		transition: .14s;
+		content: var(--ICON--FILE);
+		position: relative;
+		filter: saturate(.2)brightness(.8)
 }
 
 .project > .name > .content + .file-preview:not(.project > .name.name--with-image > .content + .file-preview) {
@@ -1942,9 +1946,9 @@ WAVY TEXT UNDERLINE - FOR MIRRORS & SOURCES
 *************
 *************/
 :root {
-	--wavy--BG-size: 9px;
-	--wavy--BG-position: -0px 100%;
-	--wavy--padding-bottom: 1.5px;
+		--wavy--BG-size: 9px;
+		--wavy--BG-position: -0px 100%;
+		--wavy--padding-bottom: 1.5px;
 }
 
 
@@ -1970,12 +1974,12 @@ html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .
 /*CHILDREN - Highlighted AND Underlined*/
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
-	text-decoration: none !important;
-	background-image: var(--ICON--UNDERLINE-WAVY);
-	background-repeat: repeat-x;
-	background-position: var(--wavy--BG-position);
-	background-size: var(--wavy--BG-size);
-	padding-bottom: var(--wavy--padding-bottom);
+		text-decoration: none !important;
+		background-image: var(--ICON--UNDERLINE-WAVY);
+		background-repeat: repeat-x;
+		background-position: var(--wavy--BG-position);
+		background-size: var(--wavy--BG-size);
+		padding-bottom: var(--wavy--padding-bottom);
 }
 
 /************
@@ -1991,7 +1995,7 @@ html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .
 /*CHILDREN - Highlighted AND Underlined*/
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
-	background-image: var(--ICON--UNDERLINE-WAVY--UNDERLINE);
+		background-image: var(--ICON--UNDERLINE-WAVY--UNDERLINE);
 }
 
 /************
@@ -2007,9 +2011,9 @@ html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .
 /*CHILDREN - Highlighted AND Underlined*/
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a .colored[class*="bc"],
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a {
-	background-image: var(--ICON--UNDERLINE-WAVY--LINK);
-	--LnkBgClr: transparent;
-	--LnkBrdClr: transparent;
+		background-image: var(--ICON--UNDERLINE-WAVY--LINK);
+		--LnkBgClr: transparent;
+		--LnkBrdClr: transparent;
 }
 
 /************
@@ -2025,7 +2029,7 @@ html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .
 /*CHILDREN - Highlighted AND Underlined*/
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"] {
-	background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL);
+		background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL);
 }
 
 
@@ -2033,16 +2037,16 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 WAVY TEXT - BOARDS
 *************/
 html #app .comment * {
-	--wavy--BG-size: 6.5px !important;
-	--wavy--BG-position: 0px 101%;
-	--wavy--padding-bottom: .5px !important;
-	--InnerContentPadTop: 0px;
+		--wavy--BG-size: 6.5px !important;
+		--wavy--BG-position: 0px 101%;
+		--wavy--padding-bottom: .5px !important;
+		--InnerContentPadTop: 0px;
 }
 html #app .board * {
-	--wavy--BG-size: 5.5px !important;
-	--wavy--BG-position: 0px 100%;
-	--wavy--padding-bottom: -0.5px !important;
-	--InnerContentPadTop: 0px;
+		--wavy--BG-size: 5.5px !important;
+		--wavy--BG-position: 0px 100%;
+		--wavy--padding-bottom: -0.5px !important;
+		--InnerContentPadTop: 0px;
 }
 
 
@@ -2058,8 +2062,8 @@ NODE ADJUSTMENTS
 LEVEL 1 > Adjustments
 ****************/
 .project.root > .children .project.paragraph:not(.project.root.board > .children .project.paragraph) {
-	margin-top: var(--prjct-ParaMargTopBtm);
-	margin-bottom: var(--prjct-ParaMargTopBtm);
+		margin-top: var(--prjct-ParaMargTopBtm);
+		margin-bottom: var(--prjct-ParaMargTopBtm);
 }
 /***************
 LEVEL 3 > Button Adjustments
@@ -2067,45 +2071,45 @@ LEVEL 3 > Button Adjustments
 /*Button - Checkbox*/
 /*Button - Top margins*/
 .project.header1 > .name {
-	--btn-MargTop: 8.5px;
+		--btn-MargTop: 8.5px;
 }
 .project.header2 > .name {
-	--btn-MargTop: 4px;
+		--btn-MargTop: 4px;
 }
 
 /*Buttons - Paragraph*/
 .project.paragraph > .name > .expand {
-	opacity: 0;
-	transition: 0s;
+		opacity: 0;
+		transition: 0s;
 }
 .project.paragraph > .name > .expand {
-	--btnIcn-ExpandB4Up-W: 2px;
-	--btnIcn-ExpandB4Low-W: 8px;
+		--btnIcn-ExpandB4Up-W: 2px;
+		--btnIcn-ExpandB4Low-W: 8px;
 }
 #app .project.paragraph > .name > .bullet {
-	left: calc(var(--children-Indent) * 0);
-	z-index: 3;
+		left: calc(var(--children-Indent) * 0);
+		z-index: 3;
 }
 #app .project.paragraph > .name > .menu {
-	left: calc(var(--children-Indent) * -1);
+		left: calc(var(--children-Indent) * -1);
 }
 /*Button - Paragraph Parent - Make visible*/
 .project.paragraph.open > .name > .expand,
 .project.paragraph.collapsed > .name > .expand {
-	opacity: 1;
-	transition: var(--btn-transition)
+		opacity: 1;
+		transition: var(--btn-transition)
 }
 #app .project.paragraph.open > .name > .bullet,
 #app .project.paragraph.collapsed > .name > .bullet {
-	left: calc(var(--children-Indent) * -1);
+		left: calc(var(--children-Indent) * -1);
 }
 #app .project.paragraph.open > .name > .menu,
 #app .project.paragraph.collapsed > .name > .menu {
-	left: calc(var(--children-Indent) * -2);
+		left: calc(var(--children-Indent) * -2);
 }
 .project.comment-container.open,
 .project.comment-container {
-	width: 100%
+		width: 100%
 }
 
 .project.comment.thread{
@@ -2117,33 +2121,33 @@ BOARDS
 ********************************
 ********************************/
 .board > .children {
-	--prjct-ParaMargTopBtm: 0px;
-	--name-fontSize: .925rem;
-	--name-lineHeight: 19px;
-	--notes-fontSize: .815rem;
-	--notes-lineHeight: 15px;
+		--prjct-ParaMargTopBtm: 0px;
+		--name-fontSize: .925rem;
+		--name-lineHeight: 19px;
+		--notes-fontSize: .815rem;
+		--notes-lineHeight: 15px;
 }
 
 .board > .children .header1 {
-	--header1-fontSize: 1rem;
-	--header1-lineHeight: 20px;
+		--header1-fontSize: 1rem;
+		--header1-lineHeight: 20px;
 }
 
 .board > .children .header2 {
-	--header2-fontSize: 1rem;
-	--header2-lineHeight: 20px;
+		--header2-fontSize: 1rem;
+		--header2-lineHeight: 20px;
 }
 .boardColumn > .children {
-	--cmntContain-fontSize: .9rem;
+		--cmntContain-fontSize: .9rem;
 }
 .board > .children .header1 > .name,
 .board > .children .header2 > .name{
-	font-weight: 600 !important;
+		font-weight: 600 !important;
 }
 .board .project.comment > .name > .content, 
 .board .project.comment > .children .project > .name > .content{
-	--name-fontSize: .925rem;
-	--name-lineHeight: 19px;
+		--name-fontSize: .925rem;
+		--name-lineHeight: 19px;
 }
 
 /***************
@@ -2152,42 +2156,42 @@ LEVEL 1 > Project
 ****************
 ****************/
 .project.board > .children {
-	--brd-brdrClr: var(--COMMENT-CONTAINER--BORDER-CLR);
-	--brd-brdrClrCmnt: var(--COMMENT-CONTAINER--BORDER-CLR);
-	--brd-brdrClrRef: blueviolet;
+		--brd-brdrClr: var(--COMMENT-CONTAINER--BORDER-CLR);
+		--brd-brdrClrCmnt: var(--COMMENT-CONTAINER--BORDER-CLR);
+		--brd-brdrClrRef: blueviolet;
 
-	--btn-Width: var(--children-Indent);
-	--children-Indent: 16px;
-	--children-MargBtm: 0px;
-	--btn-BrdRad: 4px;
+		--btn-Width: var(--children-Indent);
+		--children-Indent: 16px;
+		--children-MargBtm: 0px;
+		--btn-BrdRad: 4px;
 }
 .boardColumn {
-	max-width: 320px;
-	border: 0px !important;
-	border-left: 1px solid var(--brd-ClmBrdClr) !important;
-	background: var(--BG-primary);
-	margin-top: 0px !important;
+		max-width: 320px;
+		border: 0px !important;
+		border-left: 1px solid var(--brd-ClmBrdClr) !important;
+		background: var(--BG-primary);
+		margin-top: 0px !important;
 }
 
 
 /*All border-colors*/
 #app .boardColumn,
 #app .boardCard * {
-	border-color: var(--brd-brdrClr);
+		border-color: var(--brd-brdrClr);
 }
 
 .boardColumn,
 .boardCard,
 .boardColumn > .children > div:last-of-type {
-	margin-left: 0px !important;
-	margin: 0px;
-	border: none;
+		margin-left: 0px !important;
+		margin: 0px;
+		border: none;
 }
 
 /*BACKGROUND*/
 .boardColumn,
 .boardCard {
-	background: var(--BG-primary)
+		background: var(--BG-primary)
 }
 
 /********
@@ -2199,49 +2203,49 @@ BOARD - BORDERS
 .boardCard:not(.children>.boardCard:first-child),
 .boardCard > .children,
 .boardCard > .children .project:not(.boardCard > .children > .project:first-of-type) {
-	border-top: 1px solid var(--brd-brdrClr);
+		border-top: 1px solid var(--brd-brdrClr);
 }
 
 
 
 .boardCard.comment-container > .children {
-	border-top: none !important;
+		border-top: none !important;
 }
 
 /*BORDER COLOR*/
 #app .board .comment {
-	border-color: var(--brd-brdrClrCmnt)
+		border-color: var(--brd-brdrClrCmnt)
 }
 .boardColumn .comment {
-	min-width: 100%;
+		min-width: 100%;
 }
 
 
 /*BORDER-RADIUS */
 .board .project:not(.boardCard .comment) {
-	border-radius: 0px;
+		border-radius: 0px;
 }
 /*BORDER-RIGHT */
 .board .project {
-	border-right: 0px;
+		border-right: 0px;
 }
 /*BORDER-LEFT */
 .board .project:not(.boardCard .comment) {
-	border-left: 0px;
-	border-bottom: 0px;
+		border-left: 0px;
+		border-bottom: 0px;
 }
 
 /*MARGIN TOP */
 .boardColumn .project:not(.boardCard .comment) {
 
-	margin-top: 0px;
-	margin-bottom: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
 }
 
 .board .project.comment {
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
-	--prjct-MargTopBtm: 5px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		--prjct-MargTopBtm: 5px;
 }
 /***************
 ****************
@@ -2250,58 +2254,58 @@ LEVEL 2 > Name, Notes, Children
 ****************/
 .boardCard > .name,
 .boardCard .project > .name {
-	position: relative;
+		position: relative;
 }
 .project.board .project > .name {
-	padding-top: 0px;
-	padding-bottom: 0px;
-	padding-left: var(--board-NamePadLeftRight) !important;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: var(--board-NamePadLeftRight) !important;
 }
 
 :root {
-	--boardMargBtm: 5px;
+		--boardMargBtm: 5px;
 }
 
 .project.board.open > .name > .content:not(.project.board.root > .name > .content) {
-	margin-bottom: var(--boardMargBtm);
+		margin-bottom: var(--boardMargBtm);
 }
 .project.board.noted.open > .name > .content:not(.project.board.root.noted > .name > .content) {
-	--boardMargBtm: 0px;
+		--boardMargBtm: 0px;
 }
 .project.board.noted.open > .notes > .content:not(.project.board.root.noted > .notes > .content) {
-	margin-bottom: var(--boardMargBtm);
+		margin-bottom: var(--boardMargBtm);
 }
 
 #app .project.board > .children {
-	transition: 0s !important;
-	z-index: 1;
+		transition: 0s !important;
+		z-index: 1;
 }
 #app .project.board > .children:not(#app .project.board.root > .children) {
-	max-height: 65vh;
-	background: var(--BG-primary)!important;
+		max-height: 65vh;
+		background: var(--BG-primary)!important;
 }
 
 /*BOARD (not-zoomed) - BOTTOM BORDER*/
 .project.board.open > .name:not(.project.board.root > .name):before {
-	content: "" !important;
-	display: block;
-	left: -100vw;
-	right: -100vw;
-	background: var(--COMMENT-CONTAINER--BORDER-CLR);
-	height: 1px;
-	bottom: -1px;
-	position: absolute;
-	z-index: 9;
+		content: "" !important;
+		display: block;
+		left: -100vw;
+		right: -100vw;
+		background: var(--COMMENT-CONTAINER--BORDER-CLR);
+		height: 1px;
+		bottom: -1px;
+		position: absolute;
+		z-index: 9;
 }
 
 
 .project.board .name--with-image > .content,
 .project.board .name--with-image > .file-preview {
-	padding-right: 5px
+		padding-right: 5px
 }
 
 .project.board .boardColumn > .children {
-	padding-left: 0px;
+		padding-left: 0px;
 }
 
 
@@ -2317,55 +2321,55 @@ BOARD COLUMN Level
 
 .project.board .boardColumn > .name,
 .project.board .boardColumn > .notes {
-	padding-left: 8px !important;
-	--content-PadTopBtm: 6px;
-	--name-fontSize: 1.2rem;
-	--name-lineHeight: 22px;
-	--header1-fontSize: 1.2rem;
-	--header1-lineHeight: 22px;
-	--header2-fontSize: 1.2rem;
-	--header2-lineHeight: 22px;
+		padding-left: 8px !important;
+		--content-PadTopBtm: 6px;
+		--name-fontSize: 1.2rem;
+		--name-lineHeight: 22px;
+		--header1-fontSize: 1.2rem;
+		--header1-lineHeight: 22px;
+		--header2-fontSize: 1.2rem;
+		--header2-lineHeight: 22px;
 }
 #app .boardColumn > .name > .bullet,
 #app .boardColumn > .name > .prefix,
 #app .boardColumn > .name > .expand,
 #app .boardColumn > .name > .menu {
-	top: var(--btn-MargTop) !important;
-	--btn-MargTop: 3px !important;
+		top: var(--btn-MargTop) !important;
+		--btn-MargTop: 3px !important;
 }
 
 /*padding*/
 .project.board .boardColumn > .name > .content,
 .project.board .boardColumn > .notes > .content {
-	padding-right: 20px;
+		padding-right: 20px;
 }
 .project.board .boardColumn > .commentAttribution {
-	padding-left: 8px;
+		padding-left: 8px;
 }
 
 /*bullets & prefix*/
 .project.boardColumn > .name > .bullet,
 .project.boardColumn > .name > .prefix {
-	left: unset !important;
-	right: calc(var(--children-Indent) * 1) !important;
+		left: unset !important;
+		right: calc(var(--children-Indent) * 1) !important;
 }
 /*expand*/
 .project.boardColumn > .name > .expand {
-	left: calc(var(--children-Indent) * .5);
+		left: calc(var(--children-Indent) * .5);
 }
 /*Expand - Scale*/
 .project.boardColumn > .name > .expand ._3hmsj:before {
-	transform: scale(.575)rotate(90deg);
+		transform: scale(.575)rotate(90deg);
 }
 .project.boardColumn.collapsed > .name > .expand ._3hmsj:before {
-	transform: scale(.575)rotate(0deg);
+		transform: scale(.575)rotate(0deg);
 }
 
 .project.board .boardColumn > .notes > .content,
 .project.board .boardCard > .notes > .content,
 .board .boardCard .project > .notes > .content {
-	margin-bottom: var(--content-PadTopBtm);
-	padding-bottom: 0px !important;
+		margin-bottom: var(--content-PadTopBtm);
+		padding-bottom: 0px !important;
 }
 /***************
 ****************
@@ -2376,59 +2380,59 @@ BOARDCARD - Level
 /*Padding*/
 .project.board .boardCard > .name,
 .project.board .boardCard > .notes {
-	padding-left: 8px !important;
-	--content-PadTopBtm: 6px;
+		padding-left: 8px !important;
+		--content-PadTopBtm: 6px;
 }
 .project.board .boardCard > .name > .content,
 .project.board .boardCard > .notes > .content,
 
 .project.board .comment-container > .name > .content{
-	max-width: 100%;
+		max-width: 100%;
 }
 .project.board .boardCard > .commentAttribution {
-	padding-left: 8px;
+		padding-left: 8px;
 }
 .board.root .boardColumn.comment > .commentAttribution {
-	background: var(--COMMENT-CONTAINER--BG);
-	border: 1px solid var(--brd-ClmBrdClr);
-	border-bottom: none;
-	left: -1px;
-	right: -1px !important;
-	top: -15px;
-	width: unset !important;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	position: absolute;
-	z-index: 90909
+		background: var(--COMMENT-CONTAINER--BG);
+		border: 1px solid var(--brd-ClmBrdClr);
+		border-bottom: none;
+		left: -1px;
+		right: -1px !important;
+		top: -15px;
+		width: unset !important;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		position: absolute;
+		z-index: 90909
 }
 .board .project.comment {
-	padding-bottom: 0px;
+		padding-bottom: 0px;
 }
 .board .boardCard .project.comment{
-	padding-bottom: 2px;
+		padding-bottom: 2px;
 }
 /*Bullets & prefix*/
 .project.boardCard.comment-container > .name > .bullet,
 .project.boardCard.comment-container > .name > .prefix {
-	display: none;
+		display: none;
 }
 .project.boardCard > .name > .bullet,
 .project.boardCard > .name > .prefix {
-	--btnIcn-Scale: .9;
-	left: unset !important;
-	right: calc(var(--children-Indent) * 1) !important;
+		--btnIcn-Scale: .9;
+		left: unset !important;
+		right: calc(var(--children-Indent) * 1) !important;
 }
 /*Expand*/
 .project.boardCard > .name > .expand {
-	left: calc(var(--children-Indent) * .5);
+		left: calc(var(--children-Indent) * .5);
 }
 
 /*Expand - Scale*/
 .project.boardCard > .name > .expand ._3hmsj:before {
-	transform: scale(.47)rotate(90deg);
+		transform: scale(.47)rotate(90deg);
 }
 .project.boardCard.collapsed > .name > .expand ._3hmsj:before {
-	transform: scale(.47)rotate(0deg);
+		transform: scale(.47)rotate(0deg);
 }
 
 /*TOP MARGIN*/
@@ -2436,44 +2440,44 @@ BOARDCARD - Level
 #app .boardCard > .name > .prefix,
 #app .boardCard > .name > .expand,
 #app .boardCard > .name > .menu {
-	top: var(--btn-MargTop) !important;
-	--btn-MargTop: 0px !important;
-	--btnIcn-ExpandB4Up-W:6px;
-	--btnIcn-ExpandB4Up-H:6px;
+		top: var(--btn-MargTop) !important;
+		--btn-MargTop: 0px !important;
+		--btnIcn-ExpandB4Up-W:6px;
+		--btnIcn-ExpandB4Up-H:6px;
 }
 
 #app .boardCard > .name > .content,
 #app .boardCard > .notes > .content,
 #app .boardCard .project > .name > .content,
 #app .boardCard .project > .notes > .content{
-	padding-right: 15px;
+		padding-right: 15px;
 }
 /****
 BOARDCARD Children - Level*/
 /*Padding*/
 .project.board .boardCard > .children {
-	padding-left: calc(var(--children-Indent) * 1.5);
+		padding-left: calc(var(--children-Indent) * 1.5);
 }
 
 
 /*padding-top & bottom - comment (just for comment attribution)*/
 .boardCard.comment > .commentAttribution,
 .boardCard .project.comment > .commentAttribution {
-	margin-bottom: -2px
+		margin-bottom: -2px
 }
 /*content*/
 .board .boardCard .project > .name > .content,
 .board .boardCard .project > .notes > .content {
-	margin-left: calc(var(--children-Indent) * 1);
+		margin-left: calc(var(--children-Indent) * 1);
 }
 
 /*bullets & prefix*/
 #app .boardCard .project > .name > .bullet,
 #app .boardCard .project.paragraph > .name > .bullet,
 #app .boardCard .project > .name > .prefix {
-	left: calc(var(--children-Indent) * 0);
-	right: unset;
-	--btnIcn-Scale: .75;
+		left: calc(var(--children-Indent) * 0);
+		right: unset;
+		--btnIcn-Scale: .75;
 }
 /*bullets & prefix - comment-container*/
 #app .project.boardCard .project.comment-container > .name > .bullet,
@@ -2481,14 +2485,14 @@ BOARDCARD Children - Level*/
 .boardCard .project > .name > .expand,
 #app .boardCard .project.header1 > .name > .expand,
 #app .boardCard .project.header2 > .name > .expand {
-	left: calc(var(--children-Indent) * -1);
+		left: calc(var(--children-Indent) * -1);
 }
 
 .boardCard .project > .name > .expand ._3hmsj:before {
-	transform: scale(.38)rotate(90deg);
+		transform: scale(.38)rotate(90deg);
 }
 .boardCard .project.collapsed > .name > .expand ._3hmsj:before {
-	transform: scale(.38)rotate(0deg);
+		transform: scale(.38)rotate(0deg);
 }
 
 /***************
@@ -2501,31 +2505,31 @@ Bullet, Prefix, Content, Expand, Menu
 #app .boardCard .project > .name > .prefix,
 #app .boardCard .project > .name > .expand,
 #app .boardCard .project > .name > .menu {
-	top: var(--btn-MargTop) !important;
-	--btn-MargTop: 0px !important;
-	transition: .1s;
+		top: var(--btn-MargTop) !important;
+		--btn-MargTop: 0px !important;
+		transition: .1s;
 }
 
 
 #app .boardCard .project.paragraph > .name > .bullet,
 #app .boardCard .project.paragraph > .name > .bullet {
-	--btnIcn-ExpandB4Up-W: 2px;
-	--btnIcn-ExpandB4Low-W: 4px;
-	--btnIcn-ExpandB4Low-H: 16px;
+		--btnIcn-ExpandB4Up-W: 2px;
+		--btnIcn-ExpandB4Low-W: 4px;
+		--btnIcn-ExpandB4Low-H: 16px;
 }
 .boardColumn .project.hasMirrors > .name > .bullet:after,
 .boardColumn .project > .name > .bullet.diamond:after{
-	border-radius: 2px !important;
+		border-radius: 2px !important;
 }
 .boardColumn .project.hasMirrors > .name > .bullet:after,
 .boardColumn .project > .name > .bullet.diamond:after{
-	border-radius: 3px!important;
-	border: none !important;
-	box-shadow: inset 0 0 0 .5px var(--brd-brdrClr)!important
+		border-radius: 3px!important;
+		border: none !important;
+		box-shadow: inset 0 0 0 .5px var(--brd-brdrClr)!important
 }
 #app .boardColumn .project.hasMirrors.collapsed > .name > .bullet:after,
 #app .boardColumn .project.collapsed > .name > .bullet.diamond:after{
-	transform: rotate(45deg)scale(.95) !important
+		transform: rotate(45deg)scale(.95) !important
 }
 /****
 BULLET
@@ -2533,27 +2537,27 @@ BULLET
 PREFIX*/
 #app .board .project > .name > .bullet,
 #app .board .project.checkmark > .name > .prefix {
-	opacity: 1;
-	animation: none;
+		opacity: 1;
+		animation: none;
 }
 
 /*CHILDREN BULLET*/
 #app .boardCard .project > .name > .bullet:before,
-#app .boardCard .project > .name > .prefix > .item-checkbox,
+#app .boardCard .project > .name > .prefix > .inline-flex > .item-checkbox,
 #app .boardCard .project.collapsed > .name > .bullet:after,
 #app .boardCard .project.collapsed > .name > .prefix:after {
-	transform: scale(.8)rotate(0deg);
-	border: none;
+		transform: scale(.8)rotate(0deg);
+		border: none;
 }
 
 /****
  BULLET only*/
 #app .board .project > .name > .bullet:before {
-	background: var(--BG-Bullet-open);
-	width: var(--btnIcn-ExpandB4Up-W);
-	height: var(--btnIcn-ExpandB4Up-H);
-	border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
-	z-index: 2
+		background: var(--BG-Bullet-open);
+		width: var(--btnIcn-ExpandB4Up-W);
+		height: var(--btnIcn-ExpandB4Up-H);
+		border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
+		z-index: 2
 }
 
 
@@ -2561,8 +2565,8 @@ PREFIX*/
 #app .board .project > .name > .bullet:before,
 #app .board .project > .name > .expand,
 #app .board .project > .name > .bullet:after {
-	opacity: 1;
-	content: "";
+		opacity: 1;
+		content: "";
 }
 /*hide prefix on paragraph*/
 .board .project.paragraph > .name > .prefix,
@@ -2571,22 +2575,22 @@ PREFIX*/
 /* hide bullets on expand*/
 .board .project > .name > .expand:before,
 .board .project > .name > .expand:after {
-	display: none;
+		display: none;
 }
 
 /****
  EXPAND only*/
 /*Expand > BOARDCOLUMN only*/
 .board .project > .name > .expand ._3hmsj:hover {
-	background: var(--BG-BUTTON--HOVER);
+		background: var(--BG-BUTTON--HOVER);
 }
 .board .project > .name > .expand ._3hmsj:before {
-	content: var(--ICON--ARROW);
-	display: block;
-	width: 24px;
-	height: 24px;
-	transition: .2s;
-	position: absolute;
+		content: var(--ICON--ARROW);
+		display: block;
+		width: 24px;
+		height: 24px;
+		transition: .2s;
+		position: absolute;
 }
 
 
@@ -2594,17 +2598,17 @@ PREFIX*/
  MENU ONLY*/
 #app .board .project > .name > .menu,
 #app .board .project.paragraph > .name > .menu {
-	left: unset;
-	right: calc(var(--children-Indent) * 0) !important;
-	overflow: hidden;
+		left: unset;
+		right: calc(var(--children-Indent) * 0) !important;
+		overflow: hidden;
 }
 #app .board .project > .name > .menu:before {
-	transform: rotate(90deg);
+		transform: rotate(90deg);
 }
 
 /*EXTRAS*/
 .project.board .name:after {
-	display: none;
+		display: none;
 }
 
 
@@ -2616,85 +2620,85 @@ BOARDS ROOT
 ********************************
 ********************************/
 :root {
-	--ROOT-padBot: 30px;
-	--ROOT-padLeftRight: 40px;
+		--ROOT-padBot: 30px;
+		--ROOT-padLeftRight: 40px;
 }
 .board > .children {
-	--content-PadLeftRight: 3px;
+		--content-PadLeftRight: 3px;
 }
 /*Page & Title*/
 #app .page[style="overflow-y: auto;"] {
-	width: 100%;
-	max-width: 100%;
-	padding: 0px;
-	margin: 0px;
-	height: 99vh;
+		width: 100%;
+		max-width: 100%;
+		padding: 0px;
+		margin: 0px;
+		height: 99vh;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root {
-	position: relative;
-	top: var(--Height--Header);
-	overflow: hidden;
-	padding: 20px 30px;
-	padding-left: 0px;
-	padding-right: 0px;
-	height: calc(100% - var(--Height--Header));
-	margin: 0px;
+		position: relative;
+		top: var(--Height--Header);
+		overflow: hidden;
+		padding: 20px 30px;
+		padding-left: 0px;
+		padding-right: 0px;
+		height: calc(100% - var(--Height--Header));
+		margin: 0px;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .children {
-	margin: 0px;
-	border: 0px;
-	padding-left: var(--ROOT-padLeftRight);
-	padding-bottom: 30px;
+		margin: 0px;
+		border: 0px;
+		padding-left: var(--ROOT-padLeftRight);
+		padding-bottom: 30px;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .name {
-	height: unset;
-	padding-bottom: var(--ROOT-padBot);
-	padding-left: var(--ROOT-padLeftRight);
+		height: unset;
+		padding-bottom: var(--ROOT-padBot);
+		padding-left: var(--ROOT-padLeftRight);
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name {
-	padding-bottom: 0px;
+		padding-bottom: 0px;
 }
 #app .project.board.root.noted > .notes {
-	padding-bottom: var(--ROOT-padBot);
-	padding-left: var(--ROOT-padLeftRight)
+		padding-bottom: var(--ROOT-padBot);
+		padding-left: var(--ROOT-padLeftRight)
 }
 .project.board.root > .name > .menu {
-	left: calc(var(--children-Indent) * .5) !important
+		left: calc(var(--children-Indent) * .5) !important
 }
 
 .project.board.root .boardColumn > .children {
-	padding-left: 10px;
-	padding-right: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
 }
 .project.board.root .boardCard,
 .project.board.root .boardColumn > .children > div:last-of-type {
-	background: var(--BOARD-ROOT--CARD--BG);
-	border: 1px solid var(--BOARD-ROOT--CARD--BORDER-INNER-CLR);
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border-radius: 5px !important;
+		background: var(--BOARD-ROOT--CARD--BG);
+		border: 1px solid var(--BOARD-ROOT--CARD--BORDER-INNER-CLR);
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border-radius: 5px !important;
 }
 .project.board.root .boardCard.comment {
-	background: var(--COMMENT-CONTAINER--BG)
+		background: var(--COMMENT-CONTAINER--BG)
 }
 .project.board.root .boardColumn.comment .boardCard {
-	background: var(--BG-primary)
+		background: var(--BG-primary)
 }
 
 .boardColumn > .children > .project.comment:first-of-type {
-	border-top: 0px !important;
+		border-top: 0px !important;
 }
 /*REFERENCES*/
 .board .references > .children > .project {
-	padding-bottom: 3px;
+		padding-bottom: 3px;
 }
 .board .references .project .breadcrumbs {
-	flex: 1;
-	min-width: 100% !important;
-	padding-left: 10px !important;
+		flex: 1;
+		min-width: 100% !important;
+		padding-left: 10px !important;
 }
 .board .references .project .breadcrumbs a:last-of-type {
-	margin-top: 2px !important;
+		margin-top: 2px !important;
 }
 
 
@@ -2704,7 +2708,7 @@ BOARDCARD HIDE "ADD BOArD CARD BUTTON"
 ********************************
 ********************************/
 .board:not(.board.root) .boardColumn > .children > ._1eifi39 {
-	display: none;
+		display: none;
 }
 /*******************************
 ********************************
@@ -2712,24 +2716,24 @@ BOARDS LAST BOARD COLUMN
 ********************************
 ********************************/
 .board > .children > ._1en9fmv {
-	min-width: 1000px !important;
-	background: var(--COMMENT-CONTAINER--BG);
-	border-left: 1px solid var(--brd-brdrClr);
-	order: 90000;
+		min-width: 1000px !important;
+		background: var(--COMMENT-CONTAINER--BG);
+		border-left: 1px solid var(--brd-brdrClr);
+		order: 90000;
 }
 .board > .children > ._1en9fmv > div{
-	margin: unset;
-	border: 1px solid var(--brd-brdrClr);
-	margin-left: 10px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	width: 26px;
-	height:26px;
-	
+		margin: unset;
+		border: 1px solid var(--brd-brdrClr);
+		margin-left: 10px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width: 26px;
+		height:26px;
+		
 }
 /*EXPAND COLUMN BUTTON*/
 .board a._2ide7e{
-	display: none;
+		display: none;
 }
 
 /*******************************
@@ -2740,22 +2744,22 @@ BOARDS COMMENT CONTAINER
 
 /*COMMENT CONTAINER - INSIDE BOARD CARD - PADDING*/
 .boardCard .comment-container > .name > .content{
-	/*margin-left: 0px !important;*/
+		/*margin-left: 0px !important;*/
 }
 
 /*COMMENT REPLY BUTTON*/
 /*FOR COMMENT CONTAINER*/
 .project.board .comment-container > .name > .content ~ span{
-	padding-right: 20px;
+		padding-right: 20px;
 }
 
 .project.board .comment ._3ypimw {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	margin-bottom: var(--content-PadTopBtm) !important;
-	padding-right: var(--content-PadTopBtm) !important;
-	width: auto;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin-bottom: var(--content-PadTopBtm) !important;
+		padding-right: var(--content-PadTopBtm) !important;
+		width: auto;
 }
 /*******************************
 ********************************
@@ -2766,7 +2770,7 @@ BOARDS FLOW FIX
 .project.board .boardColumn > .notes > .content,
 .project.board .boardColumn .project .name > .content,
 .project.board .boardColumn .project .notes > .content {
-	padding-top: 0px;
+		padding-top: 0px;
 }
 
 /*padding-top & bottom*/
@@ -2774,10 +2778,10 @@ BOARDS FLOW FIX
 .project.board .boardCard > .notes,
 .project.board .boardCard .project > .name,
 .project.board .boardCard .project > .notes {
-	--content-PadTopBtm: 5px;
+		--content-PadTopBtm: 5px;
 }
 .project.board .project > .name{
-	padding-top: var(--content-PadTopBtm);
+		padding-top: var(--content-PadTopBtm);
 }
 
 /*BUTTONS*/
@@ -2785,7 +2789,7 @@ BOARDS FLOW FIX
 .project.board .boardCard > .notes,
 .project.board .boardCard .project > .name,
 .project.board .boardCard .project > .notes {
-	
+		
 }
 
 
@@ -2793,33 +2797,33 @@ BOARDS FLOW FIX
 
 .project.board .comment-container,
 .project.board .comment {
-	max-width: 100% !important;
-	min-width: unset !important;
+		max-width: 100% !important;
+		min-width: unset !important;
 }
 
 
 .project.comment-container > .name:before{
-	content:var(--ICON--COMMENT-CONTAINER);
-	display: block;
-	position: absolute;
-	left: calc(var(--children-Indent) * 1);
-	width: 20px;
-	margin-top: var(--btn-MargTop);
+		content:var(--ICON--COMMENT-CONTAINER);
+		display: block;
+		position: absolute;
+		left: calc(var(--children-Indent) * 1);
+		width: 20px;
+		margin-top: var(--btn-MargTop);
 }
 .board .project.comment-container > .name:before{
-	left: calc(var(--children-Indent) * .25);
-		width: 18px;
-	--btn-MargTop:1px;
+		left: calc(var(--children-Indent) * .25);
+				width: 18px;
+		--btn-MargTop:1px;
 }
 .board .boardCard.project.comment-container > .name:before{
-	left: calc(var(--children-Indent) * 1.75);
+		left: calc(var(--children-Indent) * 1.75);
 }
 .board .boardColumn.project.comment-container > .name:before{
-	left: calc(var(--children-Indent) * 1.75);
-	width: 25px;
+		left: calc(var(--children-Indent) * 1.75);
+		width: 25px;
 }
 .board .boardColumn.project.comment-container > .name > .contentEditablePlaceholderWrapper{
-	opacity: 0;
+		opacity: 0;
 }
 
 /*******************************
@@ -2829,20 +2833,20 @@ BOARDS - ROOT
 ********************************/
 /*children*/
 .project.board.root .boardColumn > .children {
-	padding: 0px;
+		padding: 0px;
 }
 .project.board.root .boardCard,
 .project.board.root .boardColumn > .children > div:last-of-type {
-	border-radius: 0px !important;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	border: none;
-	background: transparent;
+		border-radius: 0px !important;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		border: none;
+		background: transparent;
 }
 
 /*board Card*/
 .board.root .boardCard:not(.board.root .boardCard:first-of-type) {
-	border-top: 1px solid var(--brd-brdrClr) !important;
+		border-top: 1px solid var(--brd-brdrClr) !important;
 }
 
 /*******************************
@@ -2851,113 +2855,113 @@ DASHBOARD
 ********************************
 ********************************/
 .pageContainer .page.dashboard-page {
-	max-width: 100%;
-	box-sizing: border-box;
+		max-width: 100%;
+		box-sizing: border-box;
 }
 html body #app .page.dashboard-page {
-	width: 100% !important;
-	margin-top: 0px !Important;
-	min-width: 100% !important;
-	padding-top: 96px;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	flex-direction: column;
-	background: var(--DASHBOARD-PAGE--BG) !important;
+		width: 100% !important;
+		margin-top: 0px !Important;
+		min-width: 100% !important;
+		padding-top: 96px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		background: var(--DASHBOARD-PAGE--BG) !important;
 }
 
 #app .page.dashboard-page > .project.root.dashboard {
-	width: 600px !important;
-	max-width: 100%;
-	box-sizing: border-box;
+		width: 600px !important;
+		max-width: 100%;
+		box-sizing: border-box;
 }
 #app .project.root.dashboard > .children {
-	padding: 0px;
-	padding-top: 30px !important;
-	flex-wrap: nowrap;
-	flex-direction: column;
-	gap: unset;
+		padding: 0px;
+		padding-top: 30px !important;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		gap: unset;
 }
 
 
 :root {
-	--dashCrd-MargTop: -1px;
-	--dashCrd-MargBot: 0px;
-	--dashCrd-BrdWidth: 1px;
+		--dashCrd-MargTop: -1px;
+		--dashCrd-MargBot: 0px;
+		--dashCrd-BrdWidth: 1px;
 }
 html #app .dashboard-card {
-	min-height: unset !important;
-	height: unset !important;
-	box-shadow: none;
-	border: 1px solid var(--DashCrd--BrdClr);
-	padding: unset;
-	flex: unset;
-	transition: .15s;
+		min-height: unset !important;
+		height: unset !important;
+		box-shadow: none;
+		border: 1px solid var(--DashCrd--BrdClr);
+		padding: unset;
+		flex: unset;
+		transition: .15s;
 }
 
 .dashboard-card {
-	--prjct-BrdRad: 0px;
+		--prjct-BrdRad: 0px;
 }
 .dashboard .comment .project {
-	--prjct-BrdRad: 0px
+		--prjct-BrdRad: 0px
 }
 .dashboard .comment .project.comment,
 .dashboard .comment {
-	--prjct-BrdRad: 6px;
+		--prjct-BrdRad: 6px;
 }
 html #app .dashboard-card {
-	border-radius: 0px !important;
+		border-radius: 0px !important;
 }
 html #app .dashboard-card:first-of-type {
-	border-radius: 6px !important;
-	border-bottom-right-radius: 0px !important;
-	border-bottom-left-radius: 0px !important;
+		border-radius: 6px !important;
+		border-bottom-right-radius: 0px !important;
+		border-bottom-left-radius: 0px !important;
 }
 
 
 html #app .dashboard > .children > .dashboard-card:last-child {
-	border-radius: var(--prjct-BrdRad);
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 0px;
-	background: red !important;
+		border-radius: var(--prjct-BrdRad);
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 0px;
+		background: red !important;
 }
 
 html #app .dashboard-card > .children {
-	overflow-y: unset;
-	position: relative;
+		overflow-y: unset;
+		position: relative;
 }
 html #app .dashboard-card > .children:not(html #app .dashboard-card.comment > .children) {
-	background: var(--DashCrd-ChldrnBgClr) !important;
+		background: var(--DashCrd-ChldrnBgClr) !important;
 }
 
 html #app .dashboard-card:not(html #app .dashboard-card:first-of-type) {
-	margin-top: var(--dashCrd-MargTop);
-	margin-bottom: var(--dashCrd-MargBot);
+		margin-top: var(--dashCrd-MargTop);
+		margin-bottom: var(--dashCrd-MargBot);
 }
 
 html #app .dashboard-card:not(html #app .dashboard-card.comment) {
-	background: var(--DASHBOARD-CARD--BG);
+		background: var(--DASHBOARD-CARD--BG);
 }
 
 html #app .dashboard-card.open {
-	/*    margin-bottom: 20px !important;
-	margin-top: 5px !important;
-	border-radius: 6px !important;
-	overflow: hidden;*/
+		/*    margin-bottom: 20px !important;
+		margin-top: 5px !important;
+		border-radius: 6px !important;
+		overflow: hidden;*/
 }
 html #app .dashboard-card:first-of-type {
-	margin-top: 0px !important;
+		margin-top: 0px !important;
 }
 html #app .dashboard-card.open {
-	/*
-	padding-bottom: 10px;
-	border-left: 1px solid var(--DashCrd--BrdClr);
-	border-right: 1px solid var(--DashCrd--BrdClr);
-	box-shadow: 0px 8px 31px rgba(43, 41, 0, 0.16);*/
+		/*
+		padding-bottom: 10px;
+		border-left: 1px solid var(--DashCrd--BrdClr);
+		border-right: 1px solid var(--DashCrd--BrdClr);
+		box-shadow: 0px 8px 31px rgba(43, 41, 0, 0.16);*/
 }
 
 .dashboard-add-button-bottom {
-	display: none;
+		display: none;
 }
 
 /*bullets*/
@@ -2965,25 +2969,25 @@ html #app .dashboard-card.open {
 #app .dashboard-card > .name > .prefix,
 #app .dashboard-card > .name > .expand,
 #app .dashboard-card > .name > .menu {
-	opacity: 1 !important;
-	transition: .15s !important;
-	--btn-BrdRad: 3px;
-	animation: none !important;
+		opacity: 1 !important;
+		transition: .15s !important;
+		--btn-BrdRad: 3px;
+		animation: none !important;
 }
 
 
 
 /*font-sizes*/
 .dashboard .project.header1 > .name > .content {
-	--header1-fontSize: 24px;
-	--header1-lineHeight: 28px;
-	--InnerContentPadTop: 0px;
+		--header1-fontSize: 24px;
+		--header1-lineHeight: 28px;
+		--InnerContentPadTop: 0px;
 }
 
 .dashboard .project.header2 > .name > .content {
-	--header2-fontSize: 22px;
-	--header2-lineHeight: 27px;
-	--InnerContentPadTop: 0px;
+		--header2-fontSize: 22px;
+		--header2-lineHeight: 27px;
+		--InnerContentPadTop: 0px;
 }
 
 
@@ -2991,8 +2995,8 @@ html #app .dashboard-card.open {
 ********
 universals*/
 .dashboard {
-	--children-Indent: 20px;
-	--prjct-MargTopBtm: 0px;
+		--children-Indent: 20px;
+		--prjct-MargTopBtm: 0px;
 }
 .dashboard .name > .bullet,
 .dashboard .name > .prefix,
@@ -3000,320 +3004,320 @@ universals*/
 .dashboard .name > .expand,
 .dashboard .name > .expand ._3hmsj,
 .dashboard .name > .menu {
-	--btn-Width: 20px;
-	transition: .15s;
+		--btn-Width: 20px;
+		transition: .15s;
 }
 .dashboard > .children {
-	--content-PadLeftRight: 4px
+		--content-PadLeftRight: 4px
 }
 
 /*prefix - universal*/
 #app .dashboard-card .project.checkmark > .name > .prefix {
-	display: flex;
+		display: flex;
 }
-#app .dashboard-card > .name > .prefix > .item-checkbox:before {
-	content: "" !important;
-	background-image: var(--ICON--CHECKMARK);
+#app .dashboard-card > .name > .prefix > .inline-flex > .item-checkbox:before {
+		content: "" !important;
+		background-image: var(--ICON--CHECKMARK);
 }
 #app .dashboard-card.checkmark > .name > .bullet {
-	opacity: 0;
-	display: none;
+		opacity: 0;
+		display: none;
 }
 #app .dashboard-card > .name > .prefix {
-	opacity: 1
+		opacity: 1
 }
 /*bullet - universal*/
 #app .dashboard-card > .name > .bullet {
-	animation: none !important;
+		animation: none !important;
 }
 #app .dashboard-card > .name > .bullet:before {
-	width: var(--btnIcn-ExpandB4Up-W);
-	height: var(--btnIcn-ExpandB4Up-H);
-	border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
-	z-index: 1;
-	content: "";
-	background: var(--BG-Bullet-open);
+		width: var(--btnIcn-ExpandB4Up-W);
+		height: var(--btnIcn-ExpandB4Up-H);
+		border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
+		z-index: 1;
+		content: "";
+		background: var(--BG-Bullet-open);
 }
 #app .dashboard-card > .name > .bullet.diamond:before,
 #app .dashboard-card > .name > .bullet.diamond:after {
-	border-radius: 1px;
-	transform: rotate(-45deg);
+		border-radius: 1px;
+		transform: rotate(-45deg);
 }
 #app .dashboard-card.paragraph > .name > .bullet {
-	--btnIcn-ExpandB4Up-W: 3px;
-	--btnIcn-ExpandB4Low-W: 10px;
+		--btnIcn-ExpandB4Up-W: 3px;
+		--btnIcn-ExpandB4Low-W: 10px;
 }
 #app .dashboard-card > .name > .bullet:after {
-	opacity: 1;
-	z-index: 0
+		opacity: 1;
+		z-index: 0
 }
 /*expand - universal*/
 .dashboard-card > .name > .expand:before,
 .dashboard-card > .name > .expand:after {
-	display: none;
+		display: none;
 }
 .dashboard-card > .name > .expand ._3hmsj:before {
-	content: "";
-	background-image: var(--ICON--ARROW);
-	;
-	display: block;
-	width: 12px;
-	height: 12px;
-	transform: scale(1)rotate(90deg);
-	transition: .15s;
-	background-repeat: no-repeat;
+		content: "";
+		background-image: var(--ICON--ARROW);
+		;
+		display: block;
+		width: 12px;
+		height: 12px;
+		transform: scale(1)rotate(90deg);
+		transition: .15s;
+		background-repeat: no-repeat;
 }
 .dashboard-card.collapsed > .name > .expand ._3hmsj:before {
-	transform: scale(1)rotate(0deg);
+		transform: scale(1)rotate(0deg);
 }
 
 
 
 /*menu - universal*/
 #app .dashboard-card > .name > .menu {
-	left: calc(var(--children-Indent) * 0) !important;
-	right: unset!important;
-	cursor: pointer !important;
+		left: calc(var(--children-Indent) * 0) !important;
+		right: unset!important;
+		cursor: pointer !important;
 }
 #app .dashboard-card .project > .name > .menu {
-	left: calc(var(--children-Indent) * -1) !important;
-	right: unset !important;
+		left: calc(var(--children-Indent) * -1) !important;
+		right: unset !important;
 }
 
 #app .dashboard .project > .name > .menu:before {
-	content: "" !important;
-	background-image: var(--ICON--MENU-DOTS);
-	background-repeat: no-repeat;
-	transform: scale(1)rotate(90deg);
+		content: "" !important;
+		background-image: var(--ICON--MENU-DOTS);
+		background-repeat: no-repeat;
+		transform: scale(1)rotate(90deg);
 }
 /*comment universal*/
 #app .dashboard .comment-container > .name {
-	padding-top: 0px;
-	padding-bottom: 0px;
+		padding-top: 0px;
+		padding-bottom: 0px;
 }
 #app .dashboard .project.comment {
-	width: 100%
+		width: 100%
 }
 
 .dashboard .project.comment > .children .project {
-	margin-top: 0px;
+		margin-top: 0px;
 }
 .dashboard .project.comment > .children .project > .name {
-	--btn-MargTop: 2.5px;
+		--btn-MargTop: 2.5px;
 }
 
 .dashboard .project.comment > .children .project.header1 > .name {
-	--btn-MargTop: 1.5px;
+		--btn-MargTop: 1.5px;
 }
 
 .dashboard .project.comment > .children .project.header2 > .name {
-	--btn-MargTop: 2.5px;
+		--btn-MargTop: 2.5px;
 }
 
 .dashboard .project.comment-container .project.comment > .name,
 .dashboard .project.comment > .name *:not(.references .project.comment > .name *) {
-	--btn-MargTop: 22px !important;
+		--btn-MargTop: 22px !important;
 }
 
 #app .dashboard .project.comment-container > .name * {
-	--btn-MargTop: 5px !important;
+		--btn-MargTop: 5px !important;
 }
 .dashboard-card .comment {
-	border-top-left-radius: var(--prjct-BrdRad) !important;
-	border-bottom-left-radius: var(--prjct-BrdRad) !important;
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
-	border-right: 0px;
+		border-top-left-radius: var(--prjct-BrdRad) !important;
+		border-bottom-left-radius: var(--prjct-BrdRad) !important;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-right: 0px;
 }
 .dashboard-card .nameHoverButtons,
 .board .nameHoverButtons,
 .project.comment .nameHoverButtons {
-	display: flex !important;
-	position: absolute;
-	left: unset !important;
-	right: 5px !important;
-	z-index: 90903i493930 !important;
+		display: flex !important;
+		position: absolute;
+		left: unset !important;
+		right: 5px !important;
+		z-index: 90903i493930 !important;
 }
 .board .nameHoverButtons{
-	opacity: 1 !important
+		opacity: 1 !important
 }
 .comment {
-	--prjct-MargTopBtm: 5px;
+		--prjct-MargTopBtm: 5px;
 }
 .nameHoverButtons {}
 .comment:hover .nameHoverButtons {}
 .dashboard .comment .project {
-	--prjct-MargTopBtm: 0px;
+		--prjct-MargTopBtm: 0px;
 }
 .dashboard .comment .project.comment {
-	--prjct-MargTopBtm: 5px;
+		--prjct-MargTopBtm: 5px;
 }
 .dashboard-card.comment > .children {
-	padding-bottom: 5px !important;
+		padding-bottom: 5px !important;
 }
 /******* 
 ********
 LEVEL 1 Dashboard Card*/
 :root {
-	--dashCrdLvl-PadLeft: 8px;
+		--dashCrdLvl-PadLeft: 8px;
 }
 
 /*children*/
 .dashboard-card .children,
 .dashboard-card .children .project:not(.dashboard-card .children > .project:first-of-type, .comment-container > .children, .dashboard-card .comment) {
-	border-top: 1px solid var(--DashCrd--BrdClr) !important;
-	border-radius: 0px;
+		border-top: 1px solid var(--DashCrd--BrdClr) !important;
+		border-radius: 0px;
 }
 .dashboard-card.comment-container > .children,
 .dashboard-card .comment-container > .children,
 .dashboard-card .comment .children,
 .dashboard-card > .children {
-	border-top: 0PX !important;
+		border-top: 0PX !important;
 }
 .dashboard-card .comment .children > .project:first-of-type:not(.dashboard-card .comment .children > .project.comment:first-of-type) {
-	border-top: 1px solid var(--DashCrd--BrdClr);
+		border-top: 1px solid var(--DashCrd--BrdClr);
 }
 
 #app .dashboard-card > .children {
-	padding-left: calc(var(--children-Indent) * 0)
+		padding-left: calc(var(--children-Indent) * 0)
 }
 /*name padding*/
 .dashboard .dashboard-card > .name,
 .dashboard .dashboard-card > .commentAttribution,
 .dashboard .dashboard-card > .notes {
-	--btn-MargTop: 5px;
-	padding-left: calc(var(--children-Indent) * 1) !important;
+		--btn-MargTop: 4px;
+		padding-left: calc(var(--children-Indent) * 1) !important;
 }
 
 /*content padding*/
 .dashboard .dashboard-card > .name > .content,
 .dashboard .dashboard-card > .notes > .content {
-	--content-PadTopBtm: 6px;
+		--content-PadTopBtm: 6px;
 }
 .dashboard .dashboard-card > .notes > .contentEditablePlaceholderWrapper {
-	padding-top: var(--content-PadTopBtm);
-	padding-bottom: var(--content-PadTopBtm);
+		padding-top: var(--content-PadTopBtm);
+		padding-bottom: var(--content-PadTopBtm);
 }
 
 /*font-sizes*/
 #app .dashboard-card > .name > .content,
 #app .dashboard-card > .name > .contentEditablePlaceholderWrapper {
-	font-size: var(--name-fontSize);
-	line-height: var(--name-lineHeight);
-	font-weight: 400 !important;
-	padding-right: calc(var(--children-Indent) * 2)
+		font-size: var(--name-fontSize);
+		line-height: var(--name-lineHeight);
+		font-weight: 400 !important;
+		padding-right: calc(var(--children-Indent) * 2)
 }
 #app .dashboard-card > .notes > .content {
-	padding-right: calc(var(--children-Indent) * 2)
+		padding-right: calc(var(--children-Indent) * 2)
 }
 #app .dashboard-card.header1 > .name > .content {
-	font-size: var(--header1-fontSize);
-	line-height: var(--header1-lineHeight);
-	font-weight: 600 !important
+		font-size: var(--header1-fontSize);
+		line-height: var(--header1-lineHeight);
+		font-weight: 600 !important
 }
 #app .dashboard-card.header2 > .name > .content {
-	font-size: var(--header2-fontSize);
-	line-height: var(--header2-lineHeight);
-	font-weight: 600 !important
+		font-size: var(--header2-fontSize);
+		line-height: var(--header2-lineHeight);
+		font-weight: 600 !important
 }
 
 /*bullets*/
 #app .dashboard .dashboard-card > .name > .bullet,
 #app .dashboard .dashboard-card > .name > .prefix {
-	right: calc(var(--children-Indent) * 1) !important;
-	left: unset !important;
+		right: calc(var(--children-Indent) * .25) !important;
+		left: unset !important;
 }
 #app .dashboard .dashboard-card > .name > .prefix{
-	right: unset !important;
-	left: calc(var(--children-Indent) * 1) !important;
+		right: unset !important;
+		left: calc(var(--children-Indent) * 1) !important;
 }
 
 #app .dashboard .dashboard-card > .name > .expand {
-	left: calc(var(--children-Indent) * 1);
+		left: calc(var(--children-Indent) * 1);
 }
 
 
 /*comments*/
 #app .dashboard-card.project.comment-container > .name {
-	--prjct-CmntContainPadTopBtm: 0px;
+		--prjct-CmntContainPadTopBtm: 0px;
 }
 /******* 
 ********
 LEVEL 2 Dashboard Card - First Child*/
 /*children*/
 #app .dashboard-card > .children {
-	padding-left: calc(var(--children-Indent) * 2)!important;
-	margin-bottom: 0px;
+		padding-left: calc(var(--children-Indent) * 2)!important;
+		margin-bottom: 0px;
 }
 
 /*name padding*/
 .dashboard-card .children > .project > .name,
 .dashboard-card .children > .project > .commentAttribution,
 .dashboard-card .children > .project > .notes {
-	--btn-MargTop: 5px;
-	padding-left: calc(var(--dashCrdLvl-PadLeft) * 0) !important;
+		--btn-MargTop: 5px;
+		padding-left: calc(var(--dashCrdLvl-PadLeft) * 0) !important;
 }
 
 
 /*content padding*/
 .dashboard-card .children > .project > .name > .content,
 .dashboard-card .children > .project > .notes > .content {
-	--content-PadTopBtm: 6px;
-	padding-right: calc(var(--children-Indent) * 1);
+		--content-PadTopBtm: 6px;
+		padding-right: calc(var(--children-Indent) * 1);
 }
 .dashboard-card > .notes > .content,
 .dashboard-card .children > .project > .notes > .content {
-	padding-bottom: 0px !important;
-	margin-bottom: var(--content-PadTopBtm);
+		padding-bottom: 0px !important;
+		margin-bottom: var(--content-PadTopBtm);
 }
 
 .project.dashboard.root > .children .project.paragraph:not(.project.root.board > .children .project.paragraph) {
-	--prjct-ParaMargTopBtm: 0px;
+		--prjct-ParaMargTopBtm: 0px;
 }
 .dashboard-card .children > .project.paragraph > .name > .content,
 .dashboard-card .children > .project.paragraph > .notes > .content {}
 .dashboard-card .children > .project > .name .contentEditablePlaceholderWrapper {
-	padding-top: var(--content-PadTopBtm);
-	padding-bottom: var(--content-PadTopBtm);
+		padding-top: var(--content-PadTopBtm);
+		padding-bottom: var(--content-PadTopBtm);
 }
 
 /*EXPAND*/
 #app .dashboard-card .children > .project > .name > .expand {
-	left: calc(var(--children-Indent) * 0)
+		left: calc(var(--children-Indent) * 0)
 }
 .dashboard-card .children > .project > .name > .expand ._3hmsj:before {
-	width: 10px;
-	height: 10px;
+		width: 10px;
+		height: 10px;
 }
 /*BULLETS PREFIX*/
 .dashboard-card .children > .project > .name > .bullet:before {
-	transform: scale(1)
+		transform: scale(1)
 }
 .dashboard-card .children > .project > .name > .bullet {
-	left: unset !important;
-	right: calc(var(--children-Indent) * 1) !important;
+		left: unset !important;
+		right: calc(var(--children-Indent) * 1) !important;
 }
 
 
 /*BULLETS PREFIX - Paragraph*/
 #app .dashboard-card > .children .project.paragraph > .name > .bullet {
-	left: unset !important;
-	right: calc(var(--children-Indent) * 1) !important;
+		left: unset !important;
+		right: calc(var(--children-Indent) * 1) !important;
 }
 #app .dashboard-card > .children .project.paragraph > .name > .menu {
-	left: calc(var(--children-Indent) * 0) !important;
+		left: calc(var(--children-Indent) * 0) !important;
 }
 #app .dashboard-card > .children .project.paragraph.collapsed > .name > .menu,
 #app .dashboard-card > .children .project.paragraph.open > .name > .menu {
-	left: calc(var(--children-Indent) * -1) !important;
+		left: calc(var(--children-Indent) * -1) !important;
 }
 #app .dashboard-card .project.paragraph > .name > .bullet {
-	/*opacity: 0 !important;
-	display: none;*/
+		/*opacity: 0 !important;
+		display: none;*/
 }
 #app .dashboard-card .paragraph.open > .name > .bullet,
 #app .dashboard-card .paragraph.collapsed > .name > .menu {
-	/*opacity: 1*/
+		/*opacity: 1*/
 }
 
 #app .dashboard-card > .children .project.paragraph > .name > .content,
@@ -3324,8 +3328,8 @@ LEVEL 2 Dashboard Card - First Child*/
 LEVEL 3 Dashboard Card - First Child > all Children*/
 /*children*/
 #app .dashboard-card .children {
-	padding-left: calc(var(--children-Indent) * 1);
-	margin-bottom: 0px;
+		padding-left: calc(var(--children-Indent) * 1);
+		margin-bottom: 0px;
 }
 /*bullets*/
 /*comments*/
@@ -3333,32 +3337,32 @@ LEVEL 3 Dashboard Card - First Child > all Children*/
 ********
 EXPAND COLLAPSE BORDER ANIMATION*/
 .dashboard-card > .children:before {
-	content: "";
-	display: block;
-	position: absolute;
-	height: var(--dashCrd-BrdWidth);
-	background: var(--DashCrd--BrdClr);
-	right: 0;
-	z-index: 0;
+		content: "";
+		display: block;
+		position: absolute;
+		height: var(--dashCrd-BrdWidth);
+		background: var(--DashCrd--BrdClr);
+		right: 0;
+		z-index: 0;
 }
 
 .dashboard-card.comment > .children:before {
-	display: none;
+		display: none;
 }
 .dashboard-card > .children:before {
-	left: calc(var(--children-Indent) * 2);
-	transition: .1s
+		left: calc(var(--children-Indent) * 2);
+		transition: .1s
 }
 
 #app .dashboard-card.open > .children:before {
-	left: calc(var(--children-Indent) * 1);
+		left: calc(var(--children-Indent) * 1);
 }
 
 #app .dashboard-card > .children {
-	padding-bottom: 0px;
+		padding-bottom: 0px;
 }
 #app .dashboard-card.open > .children {
-	padding-bottom: 10px;
+		padding-bottom: 0px;
 }
 
 
@@ -3366,179 +3370,181 @@ EXPAND COLLAPSE BORDER ANIMATION*/
 
 .dashboard .addChildButton,
 .dashboard .addSiblingButton {
-	display: none !important;
+		display: none !important;
 }
 .dashboard .project > .name:after {
-	display: none;
+		display: none;
 }
 .selected.dashboard .comment-container {
-	width: 100% !important;
+		width: 100% !important;
 }
 
 .dashboard-card.comment-container .name {
-	flex-flow: unset !important;
-	-webkit-box-align: unset !important;
-	align-items: unset !important;
+		flex-flow: unset !important;
+		-webkit-box-align: unset !important;
+		align-items: unset !important;
 }
 /*reply*/
 #app .dashboard-card.comment-container > .children > .project:first-of-type {
-	margin-top: calc(var(--prjct-CmntPadTopBtm) * 1.25) !important;
+		margin-top: calc(var(--prjct-CmntPadTopBtm) * 1.25) !important;
 }
 #app .dashboard-card.comment-container > .name > .content + div + span,
 #app .dashboard-card.comment-container > .name > span {
-	align-items: flex-start;
-	display: flex !important;
-	justify-content: center;
-	align-items: center;
-	line-height: 1 !important;
-	height: unset;
-	max-height: unset !important;
-	position: relative;
-	padding: 10px 12px !important;
-	padding-right: 50px !important;
-	box-shadow: inset 0 0 0 1px hsl(0, 0%, 50%, .0);
-	padding: 0px;
-	border-radius: 4px;
-	font-weight: 500;
-	font-size: .95rem;
-	color: var(--NODE--TXT-CLR--main) !important;
-	opacity: .76;
-	text-decoration: none;
-	transition: .2s;
+		align-items: flex-start;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		line-height: 1 !important;
+		height: unset;
+		max-height: unset !important;
+		position: relative;
+		padding: 10px 12px !important;
+		padding-right: 50px !important;
+		box-shadow: inset 0 0 0 1px hsl(0, 0%, 50%, .0);
+		padding: 0px;
+		border-radius: 4px;
+		font-weight: 500;
+		font-size: .95rem;
+		color: var(--NODE--TXT-CLR--main) !important;
+		opacity: .76;
+		text-decoration: none;
+		transition: .2s;
 }
 #app .dashboard-card.comment-container > .name > .content + div + span:hover {
-	background: var(--COMMENT-CONTAINER--BG);
-	box-shadow: inset 0 0 0 1px hsl(0, 0%, 50%, .2);
+		background: var(--COMMENT-CONTAINER--BG);
+		box-shadow: inset 0 0 0 1px hsl(0, 0%, 50%, .2);
 }
 /*mover zoom over*/
 #app .dashboard-card > .children .project.paragraph > .name > .bullet,
 #app .dashboard-card > .children .project > .name > .bullet {
-	left: unset !important;
-	right: calc(var(--children-Indent) * .25) !important;
+		left: unset !important;
+		right: calc(var(--children-Indent) * .25) !important;
 }
 
 html #app .root .dashboard-card {
-	border-left: 0px !important;
-	border-radius: 0px !important;
-	border-right: 0px !important;
-	border-top: 0px !important;
+		border-left: 0px !important;
+		border-radius: 0px !important;
+		border-right: 0px !important;
+		border-top: 0px !important;
 }
 html #app .root .dashboard-card:after{
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -100vw;
-	right: -100vw;
-	height: 1px;
-	z-index: 0;
-	background: var(--DashCrd--BrdClr);
-	transition: .15s;
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: -100vw;
+		right: -100vw;
+		height: 1px;
+		z-index: 0;
+		background: var(--DashCrd--BrdClr);
+		transition: .15s;
 }
 
 
 html #app .dashboard-card.open,
 html #app .dashboard-card.open > .children:not(html #app .dashboard-card.comment > .children) {
 
-	transition: .1s !important;
+		transition: .1s !important;
 }
 
 html #app .dashboard .contentEditablePlaceholder {
-	font-size: var(--name-fontSize) !important;
-	line-height: var(--name-lineHeight);
-	padding-top: calc(var(--content-PadTopBtm) + 3px)!important;
+		font-size: var(--name-fontSize) !important;
+		line-height: var(--name-lineHeight);
+		padding-top: calc(var(--content-PadTopBtm) + 3px)!important;
 }
 html #app .dashboard .contentEditablePlaceholderWrapper {
-	top: var(--content-PadTopBtm) !important
+		top: var(--content-PadTopBtm) !important
 }
 
 .dashboard-card > .children .project > .name > .expand:after {
-	transition: .2s !important;
-	opacity: 0 !important;
+		transition: .2s !important;
+		opacity: 0 !important;
 }
 
 .dashboard-card > .children .project > .name > .expand ._3hmsj {
-	width: calc(var(--btnIcn-ExpandB4Low-W));
-	height: calc(var(--btnIcn-ExpandB4Low-H));
-	background: var(--BG-Bullet-under);
-	border-radius: 100px;
-	z-index: 0 !important;
-	opacity: 1;
-	transition: .1s !important;
-	transform: scale(1);
-	box-shadow: none;
+		width: calc(var(--btnIcn-ExpandB4Low-W));
+		height: calc(var(--btnIcn-ExpandB4Low-H));
+		background: var(--BG-Bullet-under);
+		border-radius: 100px;
+		z-index: 0 !important;
+		opacity: 1;
+		transition: .1s !important;
+		transform: scale(1);
+		box-shadow: none;
 }
 .dashboard-card > .children .project > .name > .expand ._3hmsj {
-	background: transparent;
-	box-shadow: 0 0 0 8px var(--BG-Bullet-under);
-	transform: scale(.5);
+		background: transparent;
+		box-shadow: 0 0 0 8px var(--BG-Bullet-under);
+		transform: scale(.5);
 }
 .dashboard-card > .children .project .bullet.diamond ~ .expand ._3hmsj {
-	background: var(--BG-Bullet-under);
-	transform: rotate(-45deg)scale(1);
-	border-radius: 3px;
-	box-shadow: none;
+		background: var(--BG-Bullet-under);
+		transform: rotate(-45deg)scale(1);
+		border-radius: 3px;
+		box-shadow: none;
 }
 .dashboard-card > .children .project.open .bullet.diamond ~ .expand ._3hmsj {
-	transform: rotate(-45deg)scale(0);
+		transform: rotate(-45deg)scale(0);
 }
 
 /**HOVER*/
 /*open*/
 .dashboard-card > .children .project.open > .name > .expand ._3hmsj {
-	transform: scale(0);
-	transition: .1S !important
+		transform: scale(0);
+		transition: .1S !important
 }
 .dashboard-card > .children .project.open > .name > .expand:hover ._3hmsj {
-	transform: scale(.5);
-	filter: brightness(.925)
+		transform: scale(.5);
+		filter: brightness(.925)
 }
 /*diamond*/
 .dashboard-card > .children .project.open .bullet.diamond ~ .expand ._3hmsj {
-	box-shadow: none !important
+		box-shadow: none !important
 }
 .dashboard-card > .children .project .bullet.diamond ~ .expand:hover ._3hmsj {
-	transform: rotate(-45deg)scale(1);
-	box-shadow: none !important;
-	filter: brightness(.925)
+		transform: rotate(-45deg)scale(1);
+		box-shadow: none !important;
+		filter: brightness(.925)
 }
 
 /**COLLAPSED*/
 /*normal*/
 .dashboard-card > .children .project.collapsed > .name > .expand ._3hmsj {
-	transform: scale(.5);
+		transform: scale(.5);
 
-	box-shadow: 0 0 0 8px var(--BG-Bullet-under);
+		box-shadow: 0 0 0 8px var(--BG-Bullet-under);
 }
 .dashboard-card > .children .project.collapsed > .name > .expand:hover ._3hmsj {
-	transform: scale(.5);
-	filter: brightness(.925)
+		transform: scale(.5);
+		filter: brightness(.925)
 }
 
 /*diamond*/
 .dashboard-card > .children .project.collapsed .bullet.diamond ~ .expand ._3hmsj {
-	transform: rotate(45deg)scale(1.1);
-	box-shadow: none !important
+		transform: rotate(45deg)scale(1.1);
+		box-shadow: none !important
 }
 .dashboard-card > .children .project.collapsed .bullet.diamond ~ .expand:hover ._3hmsj {
-	transform: rotate(45deg)scale(1.15);
+		transform: rotate(45deg)scale(1.15);
 }
 
 #app .dashboard .project.hasMirrors > .name > .bullet.diamond:before {
-	background: transparent;
-	/* box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
-	inset 0 0 0 8px var(--CHECKBOX--BG); */
-	outline: transparent;
+		background: transparent;
+		/* box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
+		inset 0 0 0 8px var(--CHECKBOX--BG); */
+		outline: transparent;
 }
 /*PARENTS*/
 .dashboard .dashboard-card > .name > .expand ._3hmsj:hover {
-	background: var(--BG-BUTTON--HOVER);
+		background: var(--BG-BUTTON--HOVER);
 }
 
 /*HEIGHT FIX*/
 .dashboard .children > div[style*="height"] {
-	height: unset !important;
+		height: unset !important;
 }
+
+
 
 /*******************************
 ********************************
@@ -3546,41 +3552,41 @@ PRESENTATION
 ********************************
 ********************************/
 [role="presentation"] .name > .expand, [role="presentation"] .children.children .name > .expand{
-	display: flex !important;
+		display: flex !important;
 }
 
 
 /*TITLE PAGE*/
 .presentationTitleText{
-	box-shadow: 
-		inset 0 0 0 20vw var(--BG-primary),
-		0 0 0 60vw var(--BG-primary);
+		box-shadow: 
+				inset 0 0 0 20vw var(--BG-primary),
+				0 0 0 60vw var(--BG-primary);
 }
 /*FORWARD BACKWARDS BAR */
 ._5b07xk {
-	opacity: 1;
+		opacity: 1;
 }
 /*FORWARD BACKWARDS BAR - POSITIONING*/
 .present-navigation{
-	z-index: 949494949494;
-	background: var(--BG-primary);
-	padding-top: 25px;
-	padding-bottom: 25px;
-	bottom: 0;
-	border-top: 1px solid var(--HEADER--BORDER-CLR)
+		z-index: 949494949494;
+		background: var(--BG-primary);
+		padding-top: 25px;
+		padding-bottom: 25px;
+		bottom: 0;
+		border-top: 1px solid var(--HEADER--BORDER-CLR)
 }
 
 .made-with-workflowy{
-	display: none;
+		display: none;
 }
 
 /*HEADER*/
 ._1s3i4sw {
-	background: var(--BG-primary);
+		background: var(--BG-primary);
 }
 ._1s3i4sw .iconButton {
-	transform: scale(1.3);
-	cursor: pointer;
+		transform: scale(1.3);
+		cursor: pointer;
 }
 
 /*******************************
@@ -3590,14 +3596,14 @@ SCROLLBAR / SCROLL BARS
 ********************************/
 ::-webkit-scrollbar,
 :-webkit-scrollbar {
-	width: 0px !important;
-	height: 2px;
+		width: 0px !important;
+		height: 2px;
 }
 
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-track {
-	width: 0px !important;
-	height: 0px !important;
+		width: 0px !important;
+		height: 0px !important;
 }
 
 /*******************************
@@ -3606,85 +3612,85 @@ POPUP - IMAGE MODAL
 ********************************
 ********************************/
 .overlay {
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
 }
 .overlay > div:first-of-type {
-	position: absolute;
-	z-index: 20202;
-	top: 20px;
-	right: 20px;
-	height: unset;
-	padding: unset;
+		position: absolute;
+		z-index: 20202;
+		top: 20px;
+		right: 20px;
+		height: unset;
+		padding: unset;
 }
 /*BUTTON*/
 .overlay > div:first-of-type > div > div > div > div {
-	width: 60px;
-	height: 60px;
-	background: rgba(125, 125, 125, .5);
-	backdrop-filter: blur(10px)contrast(2);
-	-webkit-backdrop-filter: blur(1px);
-	border-radius: 10px;
-	opacity: .7 !important;
+		width: 60px;
+		height: 60px;
+		background: rgba(125, 125, 125, .5);
+		backdrop-filter: blur(10px)contrast(2);
+		-webkit-backdrop-filter: blur(1px);
+		border-radius: 10px;
+		opacity: .7 !important;
 }
 .overlay > div:first-of-type > div > div > div > div:hover {
-	opacity: 1 !important;
-	transition: .2s;
+		opacity: 1 !important;
+		transition: .2s;
 }
 .overlay > div:first-of-type > div > div > div > div svg {
-	width: 30px;
-	height: 30px;
+		width: 30px;
+		height: 30px;
 }
 .overlay > div:first-of-type > div > div > div > div svg path {
-	fill: white;
+		fill: white;
 }
 /********
 IMAGE MODAL > IMAGE CONTAINER
 *********/
 .overlay > div[data-id="measured"] > div[style*="width"] {
-	width: auto !important;
-	height: auto !important;
+		width: auto !important;
+		height: auto !important;
 }
 /*FOR ALL*/
 .overlay > div[data-id="measured"] > div[style*="width"],
 .overlay > div[data-id="measured"] > div[style*="width"] > div.image--graybox,
 .overlay > div[data-id="measured"] div.image--graybox{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: transparent;
 }
 .overlay div[data-id="measured"]{
-	position: fixed;
-	right: 0;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+		position: fixed;
+		right: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 }
 .overlay div[data-id="measured"] > div{
-	width: unset !important;
-	height: unset !important;
+		width: unset !important;
+		height: unset !important;
 }
 
 
 .overlay > div[data-id="measured"] > div[style*="width"] > div.image--graybox,
 .overlay div[data-id="measured"] div.image--graybox{
-	box-shadow: 0 0 0 1px rgba(125, 125, 125, .3);
-	border-radius: 10px;
-	overflow: auto;
-	max-height: 92vh;
-	display: block;
+		box-shadow: 0 0 0 1px rgba(125, 125, 125, .3);
+		border-radius: 10px;
+		overflow: auto;
+		max-height: 92vh;
+		display: block;
 }
 
 /*FOR NORMAL IMAGES*/
 .overlay > div[data-id="measured"] > div[style*="width"] img {
-	width: auto;
-	height: unset;
-	margin: 0 auto;
-	max-width: 100vw;
+		width: auto;
+		height: unset;
+		margin: 0 auto;
+		max-width: 100vw;
 }
 /****************
 IMAGES FIX
@@ -3700,9 +3706,9 @@ margin-left:calc(var(--children-Indent) * 1) !important;
 }
 /*FOR SVGS*/
 .overlay > div[data-id="measured"] > div[style*="width"] img[alt*=".svg"] {
-	max-width: 95vw !important;
-	min-width: 60vw !important;
-	display: block;
+		max-width: 95vw !important;
+		min-width: 60vw !important;
+		display: block;
 }
 
 /*******************************
@@ -3793,10 +3799,10 @@ POPUP - MENU - SETTINGS
 ********************************
 ********************************/
 html #app .dialog-box {
-	background: var(--BG-primary) !important;
-	border: 1px solid var(--switcher--modal--border-clr) !important;
-	border-radius: 20px !important;
-	z-index: 984849393939393939393 !important;
+		background: var(--BG-primary) !important;
+		border: 1px solid var(--switcher--modal--border-clr) !important;
+		border-radius: 20px !important;
+		z-index: 984849393939393939393 !important;
 }
 /*SETTINGS HEADER*/
 html #app .dialog-box [data-section-title="Account"] > div:first-of-type,
@@ -3806,20 +3812,20 @@ html #app .dialog-box [data-section-title="Images"] > div:first-of-type,
 html #app .dialog-box [data-section-title="Embed"] > div:first-of-type,
 html #app .dialog-box [data-section-title="Experimental features"] > div:first-of-type,
 html #app .dialog-box [data-section-title="Delete my account"] > div:first-of-type {
-	border-bottom: 1px solid var(--switcher--modal--border-clr) !important;
-	background: var(--BG-primary) !important;
-	padding-top: 20px;
-	padding-bottom: 10px;
-	position: sticky !important;
-	color: var(--NODE--TXT-CLR--bold) !important;
-	z-index: 10101010101;
-	top: calc(var(--quick-switcher--padding) * -1) !important;
-	margin: 0px !important;
-	margin-top: 20px !important;
-	font-size: 1.2rem !important;
-	font-weight: 700;
-	backdrop-filter: unset !important;
-	-webkit-backdrop-filter: unset !important;
+		border-bottom: 1px solid var(--switcher--modal--border-clr) !important;
+		background: var(--BG-primary) !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		position: sticky !important;
+		color: var(--NODE--TXT-CLR--bold) !important;
+		z-index: 10101010101;
+		top: calc(var(--quick-switcher--padding) * -1) !important;
+		margin: 0px !important;
+		margin-top: 20px !important;
+		font-size: 1.2rem !important;
+		font-weight: 700;
+		backdrop-filter: unset !important;
+		-webkit-backdrop-filter: unset !important;
 }
 
 
@@ -3832,64 +3838,64 @@ html #app .dialog-box [data-section-title="Delete my account"] > div:first-of-ty
 #app ._1556mxt .dialog-box._1v2koym ._94of9i,
 /*light*/
 #app ._1556mxt .dialog-box._1ebc1qn ._yh0wlv {
-	border: none !important;
-	border-bottom: 0px solid hsla(0, 0%, 50%, .2) !important;
-	background: hsla(0, 0%, 50%, .15) !important;
-	width: 50px !important;
-	height: 50px !important;
-	border-radius: 10px;
-	top: 10px;
-	right: 10px;
-	cursor: pointer;
-	display: flex;
-	justify-content: center !important;
-	align-items: center;
-	box-shadow: none !important;
+		border: none !important;
+		border-bottom: 0px solid hsla(0, 0%, 50%, .2) !important;
+		background: hsla(0, 0%, 50%, .15) !important;
+		width: 50px !important;
+		height: 50px !important;
+		border-radius: 10px;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+		display: flex;
+		justify-content: center !important;
+		align-items: center;
+		box-shadow: none !important;
 }
 
 #app ._1556mxt .dialog-box._1v2koym ._94of9i svg,
 /*light*/
 #app ._1556mxt .dialog-box._1ebc1qn ._yh0wlv svg {
-	width: 12px !important;
-	height: 12px !important;
+		width: 12px !important;
+		height: 12px !important;
 }
 
 #app ._1556mxt .dialog-box._1v2koym ._94of9i:hover,
 /*light*/
 #app ._1556mxt .dialog-box._1ebc1qn ._yh0wlv:hover {
 
-	background: hsla(0, 0%, 50%, .25) !important;
+		background: hsla(0, 0%, 50%, .25) !important;
 }
 
 /*dark*/
 #app ._1556mxt .dialog-box._1v2koym ._94of9i .hoverBG,
 /*light*/
 #app ._1556mxt .dialog-box._1ebc1qn ._yh0wlv .hoverBG {
-	display: none;
+		display: none;
 }
 
 /*dark*/
 #app ._1556mxt .dialog-box._1v2koym ._94of9i .shortcutHint,
 /*light*/
 #app ._1556mxt .dialog-box._1ebc1qn ._yh0wlv .shortcutHint {
-	text-align: center;
-	box-shadow: none;
-	color: hsla(0, 0%, 50%, .7) !important;
-	margin: 0px !important;
-	padding: 0px !important;
+		text-align: center;
+		box-shadow: none;
+		color: hsla(0, 0%, 50%, .7) !important;
+		margin: 0px !important;
+		padding: 0px !important;
 }
 
 html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:last-of-type {
-	display: flex;
-	flex-direction: row;
-	flex-grow: 1;
-	margin: unset !important;
-	margin-top: 10px !important;
-	margin-bottom: 20px !important;
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+		margin: unset !important;
+		margin-top: 10px !important;
+		margin-bottom: 20px !important;
 }
 html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:last-of-type > a,
 html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:last-of-type > button {
-	width: auto;
+		width: auto;
 }
 
 /*******************************
@@ -4261,22 +4267,22 @@ SEARCH - NAV - BAR
 
 /*OLD / DONT KNOW
 #app .header ._5kaapu {
-	position: relative !important;
-	display: flex;
-	align-items: flex-start;
-	justify-content: flex-start;
-	padding: 0px;
-	height: 100%;
-	flex: 0;
+		position: relative !important;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 0px;
+		height: 100%;
+		flex: 0;
 }*/
 
 /*searchbox wrapper*/
 
 #app .header .breadcrumbs + div[style*="display: flex"] {
-	outline: 0px solid red !important;
-	position: relative;
-	height: 100%;
-	align-items: flex-start !important;
+		outline: 0px solid red !important;
+		position: relative;
+		height: 100%;
+		align-items: flex-start !important;
 }
 
 #app .searchBox {
@@ -4611,23 +4617,23 @@ DROPDOWN WRAPPER
 
 /*******************************
 ********************************
-SEARCH - NAV - RESULTS
+! SEARCH - NAV - RESULTS
 ********************************
 ********************************/
 
 .page.active.searching{
-	
+		
 }
 /*results - breadcrumbs*/
 .page.active.searching .project.half-open{
-	
+		
 }
 
 /*results - open notes with matches*/
 .page.active.searching .project.noted.matches > .notes.matches.fullMatch > .content {
-	-webkit-line-clamp:unset !important;
-	overflow: visible !important;
-	opacity: 1;
+		-webkit-line-clamp:unset !important;
+		overflow: visible !important;
+		opacity: 1;
 }
 
 /*******************************
@@ -4636,37 +4642,37 @@ SEARCH - NAV - RESULTS
 ********************************
 ********************************/
 .project > .name:after {
-	content: "";
-	display: block;
-	position: absolute;
-	left: calc(var(--children-Indent) / 2 - 0.75px);
-	width: 1.5px;
-	z-index: 0;
-	border-radius: 100px;
-	background: var(--EXPAND-BORDER--BG);
-	top: calc(var(--children-Indent) + 10px);
-	bottom: 100%;
-	transition: 200ms cubic-bezier(.77, 1.5, 0, .95) !important;
-	opacity: .8
+		content: "";
+		display: block;
+		position: absolute;
+		left: calc(var(--children-Indent) / 2 - 0.75px);
+		width: 1.5px;
+		z-index: 0;
+		border-radius: 100px;
+		background: var(--EXPAND-BORDER--BG);
+		top: calc(var(--children-Indent) + 10px);
+		bottom: 100%;
+		transition: 200ms cubic-bezier(.77, 1.5, 0, .95) !important;
+		opacity: .8
 }
 
 .project.open > .name:after,
 .project.references > .children .project.open > div:first-child:after,
 .project.references > .children .project.open > .children:after {
-	bottom: calc(var(--prjct-MargTopBtm) * 0);
-	z-index: 1;
+		bottom: calc(var(--prjct-MargTopBtm) * 0);
+		z-index: 1;
 }
 .project.comment > .name:after {
-	top: calc(var(--children-Indent) + 22px);
+		top: calc(var(--children-Indent) + 22px);
 }
 
 
 #app .project.shared > .name:after {
-	background: var(--BG-expand-border-shared-BY-me) !important;
+		background: var(--BG-expand-border-shared-BY-me) !important;
 }
 
 #app .project.addedShared > .name:after {
-	background: var(--BG-expand-border-shared-WITH-me) !important;
+		background: var(--BG-expand-border-shared-WITH-me) !important;
 }
 
 /*******************************
@@ -4676,233 +4682,238 @@ SEARCH - NAV - RESULTS
 ********************************/
 
 :root {
-	--mobileDocPadLeft:24px;
+		--mobileDocPadLeft:24px;
 }
 
 @media (max-width: 650px) {
-	/**********
-	BOARDS ADJUST
-	***********/
-	:root {
-		--pagePadLeft: 1vw;
-		--pagePadRight: .5vw;
-		--pageMaxWidth: calc(100% - var(--pagePadLeft) - var(--pagePadRight));
-	}
+		/**********
+		BOARDS ADJUST
+		***********/
+		:root {
+				--pagePadLeft: 1vw;
+				--pagePadRight: .5vw;
+				--pageMaxWidth: calc(100% - var(--pagePadLeft) - var(--pagePadRight));
+		}
 
 
-	#app .project.board > .children:not(#app .project.board.root > .children) {
-		min-width: 1210px !important;
-		left: calc(var(--pagePadLeft) * -55) !important;
-		padding-left: calc(var(--pagePadLeft) * 56.5) !important;
-	}
-	/**********
-	ZOOM & MENU ADJUST
+		#app .project.board > .children:not(#app .project.board.root > .children) {
+				min-width: 1210px !important;
+				left: calc(var(--pagePadLeft) * -55) !important;
+				padding-left: calc(var(--pagePadLeft) * 56.5) !important;
+		}
+		#app .page.dashboard-page > .project.root > .children{
+				padding-left: 0px;
+		}
+		#app .dashboard-card > .name > .content, 
+		#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
+				padding-right: calc(var(--children-Indent)* 1);
+		}
+		/**********
+		ZOOM & MENU ADJUST
 
-	#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet),
-	#app .project.root > .children > .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
-	left: calc(var(--children-Indent) * -0.74) !important;
-	height: 24px !important;
-	width: 24px !important;
+		#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet),
+		#app .project.root > .children > .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
+		left: calc(var(--children-Indent) * -0.74) !important;
+		height: 24px !important;
+		width: 24px !important;
 }    ***********/
 
-	/*ZOOM
-	#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet) {
-	transform: scale(.8) !important
+		/*ZOOM
+		#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet) {
+		transform: scale(.8) !important
 }
-	#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet) {
-	top: -10px !important;
+		#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet) {
+		top: -10px !important;
 }
-	#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet):before {
-	transform: scale(.9) !important
+		#app .project.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board.root .bullet):before {
+		transform: scale(.9) !important
 }
-	*/
+		*/
 
-	/*MENU*/
-	#app .project > .name > .menu:before{
+		/*MENU*/
+		#app .project > .name > .menu:before{
+				transform: rotate(90deg);
+		}
+		/*
+		#app .project.root > .children > .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
+		top: 7px;
+		z-index: 9393939
+}
+		#app .project.root > .children .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
+		transform: scale(0.8);
+}
+		#app .project > .name > .menu:before {
 		transform: rotate(90deg);
-	}
-	/*
-	#app .project.root > .children > .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
-	top: 7px;
-	z-index: 9393939
 }
-	#app .project.root > .children .project > .name > .menu:not(.dashboard .menu, .board.root .menu) {
-	transform: scale(0.8);
-}
-	#app .project > .name > .menu:before {
-	transform: rotate(90deg);
-}
-	*/
+		*/
 
-	/*just paragraph
-	#app .project.root > .name > .bullet:not(.dashboard .bullet, .board .bullet),
-	#app .project.root > .name > .prefix:not(.dashboard .prefix, .board .prefix) {
-	top: -10px;
+		/*just paragraph
+		#app .project.root > .name > .bullet:not(.dashboard .bullet, .board .bullet),
+		#app .project.root > .name > .prefix:not(.dashboard .prefix, .board .prefix) {
+		top: -10px;
 }
-	#app .project.root.checkmark > .name > .prefix{
-	top: 3px !important;
-	left:0 !important
+		#app .project.root.checkmark > .name > .prefix{
+		top: 3px !important;
+		left:0 !important
 }
-	#app .project.root.checkmark > .name > .content,
-	#app .project.root.checkmark > .notes > .content{
-	padding-left:30px !important
+		#app .project.root.checkmark > .name > .content,
+		#app .project.root.checkmark > .notes > .content{
+		padding-left:30px !important
 }
-	#app .project.root > .children > .project.paragraph > .name > .bullet:not(.dashboard .bullet, .board .bullet) {
-	top: -14px;
+		#app .project.root > .children > .project.paragraph > .name > .bullet:not(.dashboard .bullet, .board .bullet) {
+		top: -14px;
 }
 
-	#app .project.root > .children > .project.paragraph > .name > .menu:not(.dashboard .menu, .board .menu) {
-	top: 10px;
-	z-index: 2020;
+		#app .project.root > .children > .project.paragraph > .name > .menu:not(.dashboard .menu, .board .menu) {
+		top: 10px;
+		z-index: 2020;
 }
-	*/
+		*/
 }
 
 @media (max-width: 650px) {
-	
-	:root {
-		--root-padtop:20px;
-		--root-font-size: 1.7rem;
-		--root-line-height: 1.15;
+		
+		:root {
+				--root-padtop:20px;
+				--root-font-size: 1.7rem;
+				--root-line-height: 1.15;
 
-		--name-fontSize: 1.61rem;
-		--name-lineHeight: 423px;
-		--notes-fontSize: .185rem;
-		--notes-lineHeight: 16px;
-		--header1-fontSize: 1.5rem;
-		--header1-lineHeight: 1.225;
-		--header2-fontSize: 1.3rem;
-		--header2-lineHeight: 1.225;
+				--name-fontSize: 1.61rem;
+				--name-lineHeight: 423px;
+				--notes-fontSize: .185rem;
+				--notes-lineHeight: 16px;
+				--header1-fontSize: 1.5rem;
+				--header1-lineHeight: 1.225;
+				--header2-fontSize: 1.3rem;
+				--header2-lineHeight: 1.225;
 
-		--btn-Width: var(--children-Indent);
-		--children-Indent: 20px;
-		--btnIcn-ExpandB4Up-W: 6.5px;
-		--btnIcn-ExpandB4Up-H: 6.5px;
-		--btnIcn-ExpandB4Low-H: 13px;
-		--btnIcn-ExpandB4Low-W: 13px;
-		/*bullet marg*/
-		--btn-MargTop: -1px;
-		/*checkbox*/
-		--btnIcn-ChkBx-W: 10px;
-		--btnIcn-ChkBx-H: 10PX;
-		--children-MargBtm: 0px;
-		--btnIcn-ChkBx-BrdRad:2.5px;
-	}
-	.project.checkmark.collapsed > .name > .prefix:after{
-		width:16px;
-		height:16px;
-	}
-	html #app .project.root > .notes > .content {
-		padding-top: 10px;
-		--notes-fontSize: 1.0rem;
-		--notes-lineHeight: 19px;
-	}
-	/*ROOT MENU*/
-	.project.root > .name > .menu {
-		left: calc(var(--children-Indent) * .5) !important;
-		top: -29px !important;
-	}
-	#app .searchBox {
-		width: 39px;
-		min-width: 39px;
-		position: relative;
-		margin-right: 0px;
-	}
-	#app .searchBox > div {
-		border: 1px solid hsla(0,0%,0%,0);
-	}
-	#app .searchBox._zpqjyh {
-		width: 66vw;
-		min-width: 66vw;
-		margin-left: -106px;
+				--btn-Width: var(--children-Indent);
+				--children-Indent: 20px;
+				--btnIcn-ExpandB4Up-W: 6.5px;
+				--btnIcn-ExpandB4Up-H: 6.5px;
+				--btnIcn-ExpandB4Low-H: 13px;
+				--btnIcn-ExpandB4Low-W: 13px;
+				/*bullet marg*/
+				--btn-MargTop: -1px;
+				/*checkbox*/
+				--btnIcn-ChkBx-W: 10px;
+				--btnIcn-ChkBx-H: 10PX;
+				--children-MargBtm: 0px;
+				--btnIcn-ChkBx-BrdRad:2.5px;
+		}
+		.project.checkmark.collapsed > .name > .prefix:after{
+				width:16px;
+				height:16px;
+		}
+		html #app .project.root > .notes > .content {
+				padding-top: 10px;
+				--notes-fontSize: 1.0rem;
+				--notes-lineHeight: 19px;
+		}
+		/*ROOT MENU*/
+		.project.root > .name > .menu {
+				left: calc(var(--children-Indent) * .5) !important;
+				top: -29px !important;
+		}
+		#app .searchBox {
+				width: 39px;
+				min-width: 39px;
+				position: relative;
+				margin-right: 0px;
+		}
+		#app .searchBox > div {
+				border: 1px solid hsla(0,0%,0%,0);
+		}
+		#app .searchBox._zpqjyh {
+				width: 66vw;
+				min-width: 66vw;
+				margin-left: -106px;
 }
-	#app .searchBox._zpqjyh > div {
-		border:var(--search-nav-border);
-	}
-	#app .project > .name > .bullet.diamond ~ .expand:before,
-	#app .dashboard .project > .name > .bullet.diamond:before,
-	#app .board .project > .name > .bullet.diamond:before {
-		border-radius: 1px !important;
-	}
-	#app .project > .name > .bullet.diamond ~ .expand:after {
-		--btnIcn-ChkBx-BrdRad: 4px;
-	}
-	#app .page > .project.root > name > .content {
-		font-size: 30px !important;
-		line-height: 1.25 !important;
-	}
-	#app .page > .project.root > .children {
-		padding-left: 13px;
-	}
-	/*
-	.project.header1 > .name {
-		--btn-MargTop: -1px !important;
-	}
-	.project.header2 > .name {
-		--btn-MargTop: -4px !important;
-	}*/
+		#app .searchBox._zpqjyh > div {
+				border:var(--search-nav-border);
+		}
+		#app .project > .name > .bullet.diamond ~ .expand:before,
+		#app .dashboard .project > .name > .bullet.diamond:before,
+		#app .board .project > .name > .bullet.diamond:before {
+				border-radius: 1px !important;
+		}
+		#app .project > .name > .bullet.diamond ~ .expand:after {
+				--btnIcn-ChkBx-BrdRad: 4px;
+		}
+		#app .page > .project.root > name > .content {
+				font-size: 30px !important;
+				line-height: 1.25 !important;
+		}
+		#app .page > .project.root > .children {
+				padding-left: 13px;
+		}
+		/*
+		.project.header1 > .name {
+				--btn-MargTop: -1px !important;
+		}
+		.project.header2 > .name {
+				--btn-MargTop: -4px !important;
+		}*/
 
-	.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board .bullet),
-	.root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
-	.root > .children > .project > .name > .expand:not(.dashboard .expand, .board .expand),
-	.root > .children > .project > .name > .menu:not(.dashboard .menu, .board .menu) {
-		border-radius: 2px;
-		width: 20px !important;
-	}
-
-
-	#app .page {
-		padding-right: var(--pagePadRight);
-		padding-left: var(--pagePadLeft);
-	}
-
-	#app .page > .project.root > name > .content {
-		font-size: 30px !important;
-		line-height: 1.25 !important;
-	}
-
-	#app .page > .project.root > .children {
-		padding-left: var(--mobileDocPadLeft);
-	}
+		.root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board .bullet),
+		.root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
+		.root > .children > .project > .name > .expand:not(.dashboard .expand, .board .expand),
+		.root > .children > .project > .name > .menu:not(.dashboard .menu, .board .menu) {
+				border-radius: 2px;
+				width: 20px !important;
+		}
 
 
-	/**********
-	BOARD - CURSOR NOT FLOWING - CORRECTION
-	***********/
-	.project.board .boardColumn > .name > .content,
-	.project.board .boardColumn > .notes > .content,
-	.project.board .boardColumn .project .name > .content,
-	.project.board .boardColumn .project .notes > .content {
-		padding-top: 0px;
-	}
-	/*root checkmark*/
-	.project.checkmark.root > .name,
-	.project.checkmark.root > .notes{
-		padding-left: var(--mobileDocPadLeft) !important;
-	}
-	/*root checkmark - MENU*/
-	.project.checkmark.root > .name > .prefix{
-		left: calc(var(--children-Indent) * 0.3) !important;
-		--btn-MargTop: 3px !important;
+		#app .page {
+				padding-right: var(--pagePadRight);
+				padding-left: var(--pagePadLeft);
+		}
 
-	}
-	.project.checkmark.root > .name > .menu {
-		--btn-MargTop: 41px !important;
-		left: calc(var(--children-Indent) * 0) !important;
-	}
+		#app .page > .project.root > name > .content {
+				font-size: 30px !important;
+				line-height: 1.25 !important;
+		}
+
+		#app .page > .project.root > .children {
+				padding-left: var(--mobileDocPadLeft);
+		}
+
+
+		/**********
+		BOARD - CURSOR NOT FLOWING - CORRECTION
+		***********/
+		.project.board .boardColumn > .name > .content,
+		.project.board .boardColumn > .notes > .content,
+		.project.board .boardColumn .project .name > .content,
+		.project.board .boardColumn .project .notes > .content {
+				padding-top: 0px;
+		}
+		/*root checkmark*/
+		.project.checkmark.root > .name,
+		.project.checkmark.root > .notes{
+				padding-left: var(--mobileDocPadLeft) !important;
+		}
+		/*root checkmark - MENU*/
+		.project.checkmark.root > .name > .prefix{
+				left: calc(var(--children-Indent) * 0.3) !important;
+				--btn-MargTop: 3px !important;
+
+		}
+		.project.checkmark.root > .name > .menu {
+				--btn-MargTop: 41px !important;
+				left: calc(var(--children-Indent) * 0) !important;
+		}
 
 
 }
 
 @media (max-width: 400px) {
-	#app .searchBox._zpqjyh {
-		width: 88vw;
-		min-width: 88vw;
-		margin-left: -100px;
-	}
+		#app .searchBox._zpqjyh {
+				width: 88vw;
+				min-width: 88vw;
+				margin-left: -100px;
+		}
 }
-
-
 
 
 /*******************************
@@ -4985,6 +4996,7 @@ SEARCH - NAV - RESULTS
 
 
 
+
 /*******************************
 ********************************
 ! FONTS
@@ -4997,73 +5009,9 @@ WHITNEY FONTS
 *************/
 body,
 body * {
-		font-family: Whitney, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
+		font-family: "IBM Plex Sans", Whitney, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
 }
 
-
-
-
-/*REGULAR(BOOK)*/
-@font-face {
-		font-family: "Whitney";
-		src: url('https://blankmann.github.io/fonts/whitney/Whitney-Book.ttf') format('truetype');
-		font-weight: 400;
-		font-style: normal;
-}
-
-@font-face {
-		font-family: "Whitney";
-		src: url('https://blankmann.github.io/fonts/whitney/Whitney-Book-Italic.ttf') format('truetype');
-		font-weight: 400;
-		font-style: italic;
-}
-
-/*MEDIUM*/
-@font-face {
-		font-family: "Whitney";
-		src: url('https://blankmann.github.io/fonts/whitney/Whitney-Medium.ttf') format('truetype');
-		font-weight: 500;
-		font-style: normal;
-}
-
-@font-face {
-		font-family: "Whitney";
-		src: url('https://blankmann.github.io/fonts/whitney/Whitney-Medium-Italic.ttf') format('truetype');
-		font-weight: 500;
-		font-style: italic;
-}
-
-
-
-/*BOLD*/
-@font-face {
-		font-family: "Whitney";
-		src: url('https://blankmann.github.io/fonts/whitney/Whitney-Bold.ttf') format('truetype');
-		font-weight: 700;
-		font-style: normal;
-}
-
-@font-face {
-		font-family: "Whitney";
-		src: url('https://blankmann.github.io/fonts/whitney/Whitney-Bold-Italic.ttf') format('truetype');
-		font-weight: 700;
-		font-style: italic;
-}
-
-/*BLACK*/
-@font-face {
-		font-family: "Whitney";
-		src: url('https://blankmann.github.io/fonts/whitney/Whitney-Black.ttf') format('truetype');
-		font-weight: 900;
-		font-style: normal;
-}
-
-@font-face {
-		font-family: "Whitney";
-		src: url('https://blankmann.github.io/fonts/whitney/Whitney-Black-Italic.ttf') format('truetype');
-		font-weight: 900;
-		font-style: italic;
-}
 
 
 /************
@@ -5123,12 +5071,10 @@ body * {
 }
 :root {
 		/*fonts*/
-		/*
-		--name-fontSize: 1rem;
-		--name-lineHeight: 22px;
-		--notes-fontSize: 0.95rem;
-		--notes-lineHeight: 17px;
-		*/
+		--name-fontSize: 1.1rem;
+		--name-lineHeight: 24px;
+		--notes-fontSize: .85rem;
+		--notes-lineHeight: 18px;
 		--header1-fontSize: 2.0rem;
 		--header1-lineHeight: 1.3;
 		--header2-fontSize: 1.5rem;
@@ -5173,10 +5119,12 @@ body * {
 @media (max-width: 400px) {
 
 		:root {
+				/*
 				--name-fontSize: 1rem;
 				--name-lineHeight: 22px;
 				--notes-fontSize: 0.95rem;
 				--notes-lineHeight: 17px;
+				*/
 				--header1-fontSize: 2.0rem;
 				--header1-lineHeight: 1.3;
 				--header2-fontSize: 1.5rem;
@@ -5188,15 +5136,12 @@ body * {
 				--wavy--BG-size: 7px;
 				--wavy--BG-position: 0px 100%;
 				--wavy--padding-bottom: 0px;
-				--btn-MargTop: -1.5px;
 				--underlineOffset: 3px;
 				--underlineThickness: 1.5px;
 		}
-		.dashboard-card .children .project > .name {
-				--btn-MargTop: 2.5px !important;
-		}
+
 		.dashboard > .children {
-				--content-PadLeftRight: 0px;
+				--content-PadLeftRight: 2px;
 		}
 
 		.project.root > .children .project > .name > .content,
