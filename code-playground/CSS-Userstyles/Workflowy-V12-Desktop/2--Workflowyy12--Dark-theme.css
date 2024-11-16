@@ -22,7 +22,7 @@ html,
 		--NODE--TXT-CLR--completed: var(--NODE--TXT-CLR--FAINT);
 		--NODE--TXT-CLR--bold: hsl(0, 0%, 96%);
 		--NODE--TXT-CLR--heading: hsl(0, 0%, 90%);
-		--NODE-NOTES--TXT-CLR-ALL: hsl(195, 4%, 45%);
+		--NODE-NOTES--TXT-CLR-ALL: hsl(195, 2%, 60%);
 		--NODE-NOTESROOT--TXT-CLR-ALL: hsl(195, 4%, 65%);
 		--NODE-NOTESROOT--TXT-CLR-ALL: hsl(195, 0%, 65%);
 		--NODE-NOTESROOT--TXT-CLR-ALL-BOLD: hsl(195, 4%, 78%);
@@ -150,11 +150,11 @@ html,
 		/*************
 	DASHBOARD
 	*************/
-		--DASHBOARD-PAGE--BG:hsl(0, 0%, 7%) !important;
+		--DASHBOARD-PAGE--BG:hsl(0, 0%, 7%);
 		--DashCrd--BrdClr: hsl(198, 9%, 15%);
 		--COMMENT-CONTAINER--BG: hsl(200, 12%, 22%);
 		--DashCrd-ChldrnBgClr: hsl(198, 12%, 21%);
-		--DASHBOARD-CARD--BG: hsl(300, 0%, 13%);
+		--DASHBOARD-CARD--BG: hsl(198, 9%, 23%, 0);
 		--DASHBOARD-CARD--BORDER: 1px solid hsl(197, 6%, 34%);
 		--DASHBOARD-CARD--BORDER-INNER: 1px solid hsl(197, 6%, 30%);
 		--DASHBOARD-CARD--BORDER-CLR: hsl(197, 10%, 29%);
@@ -438,5 +438,4 @@ html,
 }
 
 body._theme-dark{
-		background: blue;
 }
