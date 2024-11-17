@@ -8,6 +8,11 @@ body {
 * {
   box-sizing: border-box;
 }
+:root {
+  --bodyFontSize: 1rem;
+  --bodyLineHeight: 1.2;
+}
+
 
 html {
   padding: 10px 20px;
@@ -16,8 +21,8 @@ html {
 body {z-index:   font-family: "Iowan-Old-Style", Georgia,serif;
   font-size: var(--bodyFontSize);
   line-height: var(--bodyLineHeight);
-  background: black;
-  color: white;
+  background: white;
+  color: black;
 }
  
 
@@ -36,11 +41,6 @@ ul li,
 ul li:before,
 p {
   outline: var(--boxshadtestBrdWidth) solid rgba(255, 0, 0, 0.2);
-}
-
-:root {
-  --bodyFontSize: 1rem;
-  --bodyLineHeight: 1.0;
 }
 
 /*********

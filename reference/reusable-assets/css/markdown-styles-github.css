@@ -1,7 +1,17 @@
 * {
 	box-sizing: border-box;
-	
+
 }
+:root {
+	--paragraphMargTopBtm:6px;
+	--listIndentPadLeft:25px;
+	--bodyFontSize:15px;
+	--bodyLineHeight:1.25;
+}
+
+/*****************
+******************/
+
 html,
 body {
 	margin: 0px;
@@ -9,8 +19,8 @@ body {
 }
 body {
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica, arial, sans-serif;
-	font-size: 16px;
-	line-height: 1.6;
+	font-size: var(--bodyFontSize);
+	line-height: var(--bodyLineHeight);
 	padding-top: 10px;
 	padding-bottom: 10px;
 	background-color: white;
@@ -21,17 +31,39 @@ body {
 	width: 750px;
 	max-width: 100%
 }
-body > *:first-child {
-	margin-top: 0 !important;
-}
 
-body > *:last-child {
-	margin-bottom: 0 !important;
+
+p,
+blockquote,
+dl,
+li,
+table,
+pre {
+	margin-top: var(--paragraphMargTopBtm);
+	margin-bottom: var(--paragraphMargTopBtm);
+}
+ul,
+ol {
+	margin: 0px;
+	padding: 0px;
+}
+ul li,
+ol li {
+	margin-left: var(--listIndentPadLeft);
+	position: relative;
+}
+ul > li:first-child,
+ol > li:first-child {
+	margin-top: 0px
+}
+ul > li:last-child,
+ol > li:last-child {
+	margin-bottom: 0px
 }
 img {
 	display: block;
 	max-width: 100%;
-	border: 1px solid hsla(0,0%,50%,.3);
+	border: 1px solid hsla(0, 0%, 50%, .3);
 }
 a {
 	color: hsla(212, 97%, 43%, 1);
@@ -41,7 +73,7 @@ a {
 	text-underline-offset: 1.5px;
 }
 a:hover {
-text-decoration-color: hsla(212, 97%, 43%, 1);
+	text-decoration-color: hsla(212, 97%, 43%, 1);
 }
 
 a.absent {
@@ -59,7 +91,12 @@ a.anchor {
 	bottom: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin: 20px 0 10px;
 	padding: 0;
 	font-weight: bold;
@@ -68,27 +105,33 @@ h1, h2, h3, h4, h5, h6 {
 	position: relative;
 }
 
-h1 tt, h1 code {
+h1 tt,
+h1 code {
 	font-size: inherit;
 }
 
-h2 tt, h2 code {
+h2 tt,
+h2 code {
 	font-size: inherit;
 }
 
-h3 tt, h3 code {
+h3 tt,
+h3 code {
 	font-size: inherit;
 }
 
-h4 tt, h4 code {
+h4 tt,
+h4 code {
 	font-size: inherit;
 }
 
-h5 tt, h5 code {
+h5 tt,
+h5 code {
 	font-size: inherit;
 }
 
-h6 tt, h6 code {
+h6 tt,
+h6 code {
 	font-size: inherit;
 }
 
@@ -128,17 +171,15 @@ h6 {
 	font-size: 14px;
 }
 
-p, blockquote, ul, ol, dl, li, table, pre {
-	margin: 15px 0;
-}
 
 hr {
 	background-color: #e1e4e8;
 	border: 0 none;
 	color: #cccccc;
-	height: .25em;
+	height: 2px;
 	padding: 0;
-	margin: 24px 0;
+	margin-top: var(--paragraphMargTopBtm);
+	margin-bottom: var(--paragraphMargTopBtm);
 }
 
 body > h2:first-child {
@@ -156,40 +197,39 @@ body > h1:first-child + h2 {
 	padding-top: 0;
 }
 
-dy > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+dy > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
 	margin-top: 0;
 	padding-top: 0;
 }
 
-a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
 	margin-top: 0;
 	padding-top: 0;
 }
 
-h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
 	margin-top: 0;
 }
 
-li p.first {
-	display: inline-block;
-}
-
-ul, ol {
-	padding-left: 30px;
-}
 
 ol#footnotes {
 	padding-top: 15px;
 	background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
 }
 
-ul :first-child, ol :first-child {
-	margin-top: 0;
-}
-
-ul :last-child, ol :last-child {
-	margin-bottom: 0;
-}
 
 dl {
 	padding: 0;
@@ -274,11 +314,13 @@ table tr td {
 	vertical-align: top;
 }
 
-table tr th :first-child, table tr td :first-child {
+table tr th :first-child,
+table tr td :first-child {
 	margin-top: 0;
 }
 
-table tr th :last-child, table tr td :last-child {
+table tr th :last-child,
+table tr td :last-child {
 	margin-bottom: 0;
 }
 
@@ -374,17 +416,20 @@ span.float-right > span {
 	text-align: right;
 }
 
-code, pre, tt {
-	font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+code,
+pre,
+tt {
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
 	line-height: 1.45;
 }
 
-code, tt {
+code,
+tt {
 	font-size: 85%;
 	margin: 0 2px;
 	padding: .2em .4em;
 	white-space: nowrap;
-	background-color: rgba(27,31,35,.05);
+	background-color: rgba(27, 31, 35, .05);
 	border-radius: 3px;
 }
 
@@ -415,13 +460,13 @@ pre {
 	border-radius: 3px;
 }
 
-pre code, pre tt {
+pre code,
+pre tt {
 	background-color: transparent;
 	border: none;
 }
 
-.syntax-all {
-}
+.syntax-all {}
 
 .syntax-entity {
 	color: #6f42c1;
@@ -453,7 +498,7 @@ pre code, pre tt {
 
 .syntax-escape {
 	font-weight: bold;
-	color:       #22863a;
+	color: #22863a;
 }
 
 .syntax-comment {
@@ -468,37 +513,37 @@ pre code, pre tt {
 
 .syntax-heading {
 	font-weight: bold;
-	color:       #005cc5;
+	color: #005cc5;
 }
 
 .syntax-italic {
 	font-style: italic;
-	color:      #24292e;
+	color: #24292e;
 }
 
 .syntax-bold {
 	font-weight: bold;
-	color:       #24292e;
+	color: #24292e;
 }
 
 .syntax-deleted {
-	color:            #b31d28;
+	color: #b31d28;
 	background-color: #ffeef0;
 }
 
 .syntax-inserted {
-	color:            #22863a;
+	color: #22863a;
 	background-color: #f0fff4;
 }
 
 .syntax-changed {
-	color:            #e36209;
+	color: #e36209;
 	background-color: #ffebda;
 }
 
 .syntax-link {
 	text-decoration: underline;
-	color:           #032f62;
+	color: #032f62;
 }
 
 .syntax-list {
