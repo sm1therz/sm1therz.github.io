@@ -64,10 +64,10 @@ BOX SHADOW TESTING - BOARDS
 }
 
 ****/
-/**{
+/***/ * {
 	box-shadow: inset 0 0 0 0px red;
 }
-*/
+
 
 
 
@@ -1084,7 +1084,9 @@ Bullet:AFTER*/
 .project.collapsed > .name > .bullet ~ .expand:after {
 		transform: rotate(45deg)scale(1.1);
 }
-.project.paragraph.collapsed > .name > .bullet ~ .expand:after {
+.project.paragraph.collapsed > .name > .bullet ~ .expand:after,
+.project.quote-block.collapsed > .name > .bullet ~ .expand:after,
+.project.code-block.collapsed > .name > .bullet ~ .expand:after{
 		transform: rotate(0deg)scale(1.1);
 }
 .project.collapsed > .name > .prefix:after {
@@ -1537,6 +1539,10 @@ HIGHLIGHT - CODE
 #app code,
 #app code * {
 		font-family: var(--wf-font-family-mono) !important;
+		font-size: calc(var(--name-fontSize) - 2.5px);
+		padding-top: 1px;
+		padding-bottom: 1px;
+		letter-spacing: -.1px
 		
 }
 /***************
@@ -1732,17 +1738,29 @@ UNDERLINE
 		--underlineThickness: 1.5px;
 }
 
+:root {
+		--codeblockPadLeftRight:20px;
+		--blockquoteBrdW:5px;
+}
 /***************
 CODE BLOCKS
 ****************/
-#app .code-block>.name .content{
+#app .code-block >.name .content{
 		display: block !important;
+		border: unset !important;
+		outline: 1px solid var(--wf-border-default);
+		outline-offset: -1px;
+}
+#app .dashboard .code-block >.name .content{
+		background:hsl(0, 0%, 5%);
+		--wf-border-default:hsl(0, 0%, 24%);
 }
 #app .project.code-block > .name > .content,
 #app .project.code-block.noted > .name > .content{
-padding-bottom:5px !important;
-padding-top:5px !important;
-		border-radius: 5px;
+		padding-left: calc(var(--codeblockPadLeftRight) + var(--blockquoteBrdW)) !important;
+padding-bottom:11px !important;
+padding-top:12px !important;
+		border-radius: 7px;
 }
 
 #app .project.code-block > .name > .content,
@@ -1756,10 +1774,33 @@ font-family: var(--wf-font-family-mono),mono,monospace !important;
 #app .project.code-block > .name > .content,
 #app .project.code-block > .name > .content > .innerContentContainer {
 
-font-size: 15px !important;
-line-height:22px !important
+font-size: calc(var(--name-fontSize) - 2px) !important;
+line-height:calc(var(--name-lineHeight) - 2px) !important
 }
+#app .project.code-block,
+#app .project.quote-block {
+		margin-top:calc(var(--prjct-MargTopBtm) * 5) !important;
+}
+/***************
+BLOCK QUOTE
+****************/
+#app .project.quote-block >.name .content{
+		display: flex !important;
+			padding-top: var(--content-PadTopBtm) !important;
+	padding-bottom: var(--content-PadTopBtm) !important;
+}
+#app .project.quote-block >.name .content .innerContentContainer{
+				padding-left: var(--codeblockPadLeftRight) !important;
+		padding-bottom: 4px;
+		padding-top: 4px;
+		background: hsla(0,0%,50%,.095);
+		border-radius: 3px;
+		width: 100%;
+		box-shadow: 0 0 0 1px hsla(0,0%,50%,0.3);
+		border-left-width: var(--blockquoteBrdW);
+		
 
+}
 /***************
 TAGS
 ****************/
@@ -2140,9 +2181,9 @@ NODE ADJUSTMENTS
 /***************
 LEVEL 1 > Adjustments
 ****************/
-.project.root > .children .project.paragraph:not(.project.root.board > .children .project.paragraph) {
-		margin-top: var(--prjct-ParaMargTopBtm);
-		margin-bottom: var(--prjct-ParaMargTopBtm);
+.project.root > .children .project.paragraph:not(.project.root.board > .children .project.paragraph){
+		margin-top: var(--prjct-ParaMargTopBtm) !important;
+		margin-bottom: var(--prjct-ParaMargTopBtm) !important;
 }
 /***************
 LEVEL 3 > Button Adjustments
@@ -2153,37 +2194,57 @@ LEVEL 3 > Button Adjustments
 		--btn-MargTop: 8.5px;
 }
 .project.header2 > .name {
-		--btn-MargTop: 4px;
+		--btn-MargTop: 2.5px;
 }
 
 /*Buttons - Paragraph*/
-.project.paragraph > .name > .expand {
+.project.paragraph > .name > .expand,
+.project.quote-block > .name > .expand,
+.project.code-block > .name > .expand{
 		opacity: 0;
 		transition: 0s;
 }
-.project.paragraph > .name > .expand {
+.project.paragraph > .name > .expand,
+.project.quote-block > .name > .expand,
+.project.code-block > .name > .expand{
 		--btnIcn-ExpandB4Up-W: 2px;
 		--btnIcn-ExpandB4Low-W: 8px;
 }
-#app .project.paragraph > .name > .bullet {
+#app .project.paragraph > .name > .bullet,
+#app .project.quote-block > .name > .bullet,
+#app .project.code-block > .name > .bullet{
 		left: calc(var(--children-Indent) * 0);
 		z-index: 3;
 }
-#app .project.paragraph > .name > .menu {
+#app .project.paragraph > .name > .menu,
+#app .project.quote-block > .name > .menu,
+#app .project.code-block > .name > .menu{
 		left: calc(var(--children-Indent) * -1);
 }
 /*Button - Paragraph Parent - Make visible*/
 .project.paragraph.open > .name > .expand,
-.project.paragraph.collapsed > .name > .expand {
+.project.paragraph.collapsed > .name > .expand,
+.project.quote-block.open > .name > .expand,
+.project.quote-block.collapsed > .name > .expand,
+.project.code-block.open > .name > .expand,
+.project.code-block.collapsed > .name > .expand{
 		opacity: 1;
 		transition: var(--btn-transition)
 }
 #app .project.paragraph.open > .name > .bullet,
-#app .project.paragraph.collapsed > .name > .bullet {
+#app .project.paragraph.collapsed > .name > .bullet,
+#app .project.quote-block.open > .name > .bullet,
+#app .project.quote-block.collapsed > .name > .bullet,
+#app .project.code-block.open > .name > .bullet,
+#app .project.code-block.collapsed > .name > .bullet{
 		left: calc(var(--children-Indent) * -1);
 }
 #app .project.paragraph.open > .name > .menu,
-#app .project.paragraph.collapsed > .name > .menu {
+#app .project.paragraph.collapsed > .name > .menu,
+#app .project.quote-block.open > .name > .menu,
+#app .project.quote-block.collapsed > .name > .menu,
+#app .project.code-block.open > .name > .menu,
+#app .project.code-block.collapsed > .name > .menu{
 		left: calc(var(--children-Indent) * -2);
 }
 .project.comment-container.open,
@@ -3082,8 +3143,8 @@ html #app .dashboard-card.open {
 }
 
 .dashboard .project.header2 > .name > .content {
-		--header2-fontSize: 22px;
-		--header2-lineHeight: 27px;
+		--header2-fontSize: 19px;
+		--header2-lineHeight: 26px;
 		--InnerContentPadTop: 0px;
 }
 
@@ -3332,7 +3393,7 @@ LEVEL 1 Dashboard Card*/
 #app .dashboard .dashboard-card > .name > .expand {
 		left: calc(var(--children-Indent) * 1);
 		transform-origin: top right;
-		transform: scale(1.25);
+
 }
 
 
@@ -3429,6 +3490,10 @@ LEVEL 3 Dashboard Card - First Child > all Children*/
 #app .dashboard-card .children {
 		padding-left: calc(var(--children-Indent) * 1);
 		margin-bottom: 0px;
+}
+#app .dashboard-card > .children {
+				padding-right: 20px;
+
 }
 /*bullets*/
 /*comments*/
@@ -3671,7 +3736,6 @@ NEW DASH
 		margin-bottom: var(--dashGap) !important;
 }
 #app .dashboard-card.collapsed {
-		--dashGap:0px
 }
 #app .dashboard-card  .name > .prefix{
 		--btn-MargTop:4px !important;
@@ -3686,7 +3750,7 @@ NEW DASH
 
 #app .dashboard-card.project.checkmark > .name > .prefix,
 #app .dashboard-card.project.checkmark > .children .prefix{
-s
+
 }
 #app .dashboard-card.project.checkmark > .name > .prefix{
 		--btn-MargTop:13px !important;
@@ -3714,6 +3778,7 @@ s
 		font-weight: 700 !important;
 		padding-top: calc(var(--dashTitlePadTopBtm) * 1.5);
 		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.5);
+		padding-right: calc(var(--children-Indent) * .25) !important;
 		
 }
 #app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
@@ -3751,16 +3816,17 @@ padding-bottom: 0px;
 		--btn-MargTop:1px !important;
 
 }
+.dashboard-card > .children{
+		padding-top: 10px !important;
+}
 .dashboard-card > .children > .project:first-child  > .name > .content{
-		padding-top: 10px;
+
 }
 .dashboard-card 
 .children > .project  > .name > .prefix{
 		top: 1px !important;
 }
-.dashboard-card > .children > .project:first-child  > .name > .prefix {
-		top: 8px !important;
-}
+
 #app .dashboard .project .prefix > .inline-flex > .item-checkbox:before{
 		content: var(--ICON--CHECKMARK-DASHBOARD) !important;
 		background-image: var(--ICON--CHECKMARK-DASHBOARD) !important;
@@ -3781,9 +3847,7 @@ padding-bottom: 0px;
 		--notes-fontSize: 0.95rem;
 		--notes-lineHeight: 18px;
 }
-#app .dashboard .dashboard-card > .children > .project:first-child > .name .expand{
-		top: 8px !important;
-}
+
 
 #app .dashboard-card.open > .children:before,
 html #app .root .dashboard-card:after{
@@ -3799,13 +3863,11 @@ html #app .root .dashboard-card {
 #app .dashboard .dashboard-card > .name > .expand{
 		right:5px;
 		top: 9px;
-		transform: scale(1.25);
 		transform-origin: top right;
 }
 #app .dashboard .dashboard-card > .name > .menu{
 		left:5px;
 		top: 11px;
-		transform: scale(1.15);
 		transform-origin: top right;
 }
 #app .dashboard-card.done{
@@ -3840,6 +3902,9 @@ html #app .root .dashboard-card.done {
 		right: unset;
 		left: calc(var(--children-Indent) * 1) !important;
 		top: 15px;
+}
+#app .dashboard .dashboard-card > .name > .prefix {
+		left: calc(var(--children-Indent) * .5) !important;
 }
 
 #app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
@@ -3886,6 +3951,52 @@ html body #app .page.dashboard-page > .dashboard:after {
 		right: 0;
 		height: 500px;
 		z-index: 0
+}
+html #app .root .dashboard-card{
+		overflow: unset !important;
+		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.5) !important;
+}
+#app .dashboard .dashboard-card > .name,
+#app .dashboard .dashboard-card > .notes{
+		width: calc(100% - var(--children-Indent) * 0) !important;
+		padding-right: calc(var(--children-Indent) * 2) !important;
+		position: relative;
+		padding-left: 0px !important;
+}
+#app .dashboard .dashboard-card > .name > .content,
+#app .dashboard .dashboard-card > .notes > .content{
+		max-width: unset !important;
+		margin-left: calc(var(--children-Indent)* 1.5) !important;
+		padding-bottom: 0px !important;
+}
+
+#app .dashboard-card.project.checkmark > .name > .prefix,
+#app .dashboard-card.project > .name > .bullet{
+	left: calc(var(--children-Indent)* .4) !important;
+}
+#app .dashboard .dashboard-card > .name > .expand,
+#app .dashboard .dashboard-card > .name > .menu {
+		top: 8px !important;
+		--btn-Height:40px;
+}
+#app .dashboard .dashboard-card > .name > .expand > div {
+		transform: scale(1.2);
+		width: 100% !important;
+}
+#app .dashboard .dashboard-card > .name > .expand{
+		right: calc(var(--children-Indent) * 0 + 6px) !important;
+		width: calc(var(--children-Indent) * 1.6 - 6px) !important;
+		overflow: hidden;
+}
+#app .dashboard .dashboard-card > .name > .menu{
+		left: unset !important;
+		right: calc(var(--children-Indent) * -1) !important;
+		width: calc(var(--children-Indent) * 1) !important;
+}
+#app .dashboard-card > .children{
+		padding-left: calc(var(--children-Indent)* 1.5) !important;
+		padding-top: 0px !important;
+		margin-top: 12px !important;
 }
 /********************
 *********************
@@ -4788,7 +4899,10 @@ SEARCH - NAV - BAR
 	height: 10px;
 	display: block;
 }
+#app .searchBox ._1bxfrxq ._xp9229 svg path{
+		fill: rgb(248, 196, 118) !important;
 
+}
 /*NAV FAVORITE SEARCH BUTTON - ACTIVE*/
 #app .searchBox ._1bxfrxq > div._nqa6xz svg,
 #app .searchBox ._1bxfrxq > div._fgiwtn svg {
@@ -5240,6 +5354,31 @@ DROPDOWN WRAPPER
 		#app .project.checkmark > .name > .expand {
 				width: 23px !important;
 		}
+		.dashboard .dashboard-card > .name {
+				padding-left: calc(var(--children-Indent) * 1) !important;
+		}
+		#app .dashboard-card > .children {
+				padding-right: 7px;
+				padding-left: calc(var(--children-Indent) * 1) !important;
+		}
+		#app .dashboard .dashboard-card > .name > .expand,
+		#app .dashboard .dashboard-card > .name > .menu {
+				top: 5px !important;
+		}
+		#app .dashboard .dashboard-card > .name > .expand {
+				right: calc(var(--children-Indent) * 0 + 4px) !important;
+				width: calc(var(--children-Indent) * 1) !important;
+				overflow: hidden;
+				top: 5px !important
+		}
+		#app .dashboard .dashboard-card > .name > .expand > div {
+				transform: scale(1);
+		}
+		#app .dashboard .dashboard-card > .name > .menu {
+				left: unset !important;
+				right: calc(var(--children-Indent) * 1) !important;
+				width: calc(var(--children-Indent) * 1) !important;
+		}
 }
 
 @media (max-width: 400px) {
@@ -5413,8 +5552,8 @@ body * {
 		--notes-lineHeight: 17px;
 		--header1-fontSize: 2.0rem;
 		--header1-lineHeight: 1.3;
-		--header2-fontSize: 1.5rem;
-		--header2-lineHeight: 1.3;
+		--header2-fontSize: 1.3rem;
+		--header2-lineHeight: 1.35;
 		/*highlights*/
 		--InnerContentPadTop: 0px;
 		--InnerContentPadBtm: 0px;
@@ -5466,8 +5605,7 @@ body * {
 				*/
 				--header1-fontSize: 2.0rem;
 				--header1-lineHeight: 1.3;
-				--header2-fontSize: 1.5rem;
-				--header2-lineHeight: 1.3;
+
 				/*highlights*/
 				--InnerContentPadTop: 0px;
 				--InnerContentPadBtm: 0px;
@@ -5502,7 +5640,5 @@ body * {
 		.project.header1 > .name {
 				--btn-MargTop: 9px !important;
 		}
-		.project.header2 > .name {
-				--btn-MargTop: 4px !important;
-		}
+
 }
