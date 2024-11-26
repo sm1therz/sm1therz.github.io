@@ -757,6 +757,7 @@ BOOKMARK GROUPS
 }
 .bookmark-widget__folders > .bookmark-widget__folder .bookmark-folder__head {
     margin-bottom: 1px!important; 
+  padding-bottom: 0px !important;
 }
 .bookmark-widget__folders > .bookmark-widget__folder:last-child .bookmark-folder__head{
     margin-bottom: unset !important
