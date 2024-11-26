@@ -380,7 +380,7 @@ COLUMN CONTAINER
 ***********/
 :root {
     --columnContainerMaxWidth: 100%;
-    --quicklinkWidth: 320px;
+    --quicklinkWidth: 366px;
     --floatingcolumnMargTop: 142px;
 }
 html .page-section {
@@ -692,7 +692,7 @@ SECTION - MULTIPLE COLUMNS
 
 .widget-header__title,
 .bookmark-folder__title{
-    font-size: calc(var(--bodyFontSize) + 2.5px) !important;
+    font-size: calc(var(--bodyFontSize) + 2px) !important;
     line-height: calc(var(--bodyLineHeight) + 1px) !important;
     font-weight: 500 !important;
     -webkit-font-smoothing:subpixel-antialiased !important;
@@ -881,7 +881,7 @@ HEADER - TRANSPARENT BACKGROUND
 }
 
 #appID .widget_transparent {
-    --containerPadBtm:6px;
+    --containerPadBtm:0px;
     --widgetBrdClr:transparent;
 }
 [class*="widget"] .widget_transparent .widget-header__title .widget-header__text,
