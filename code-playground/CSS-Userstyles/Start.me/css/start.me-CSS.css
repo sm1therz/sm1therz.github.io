@@ -2,84 +2,89 @@
 ! ROOT
 */
 :root {
-    --sectionMaxWidth: 740px;
-    --sectionPadLeftRight: 20px;
-    --widgetHeaderHeight: 38px;
-    --widgetHeaderTransition:.3s;
-    --widgetHeaderControlsBtnW:24px;
-    --widgetHeaderControlsBrdRad:5px;
-    --widgetBrdRad:8px;
-    --notesPadTopBtm: 23px;
-    /*item padding*/
-    --containerMargLeftRight:12px;
-    --containerPadBtm:12px;
-    /*notes*/
-    --notePadLeft:2px;
-    --noteEditorMargLeft:calc(var(--containerMargLeftRight) - var(--notePadLeft));
-    /*bookmarks*/
-    --bookmarksIconsGap: 10px;
-    --bookmarkLinkBrdRad: 17px;
-    --bookmarkThumbnailWidth: 90px;
-    --bookmarkThumbnailMargTopBtm: 4px;
-    /*font-sizes*/
-    --bodyFontSize: 14px;
-    --bodyLineHeight: 20px;
-    /*notes*/
-    --noteParagraphMargTopBtm: 0.35rem;
-    --noteListItemPadLeft:18px;
-    /*navigation*/
-    --navigationHeight:46px;
-    /*tasks*/
-    --todoitemMinHeight: 22px;
-    --todoitemMargTopBtm: 6px;
-    --checkboxWidth: 13px;
-    --todoitempadRight: 20px;
-    /*mobile size*/
-    --bookmarkiconMargRight:10px;
+  --sectionMaxWidth: 740px;
+  --sectionPadLeftRight: 20px;
+  --widgetHeaderHeight: 38px;
+  --widgetHeaderTransition: .3s;
+  --widgetHeaderControlsBtnW: 24px;
+  --widgetHeaderControlsBrdRad: 5px;
+  --widgetBrdRad: 8px;
+  --notesPadTopBtm: 23px;
+  /*widget padding*/
+  --widgetMargTopBtm:5px;
+  /*item padding*/
+  --containerMargLeftRight: 12px;
+  --containerPadBtm: 12px;
+  /*notes*/
+  --notePadLeft: 2px;
+  --noteEditorMargLeft: calc(var(--containerMargLeftRight) - var(--notePadLeft));
+  /*bookmarks*/
+  --bookmarksIconsGap: 10px;
+  --bookmarkLinkBrdRad: 17px;
+  --bookmarkThumbnailWidth: 90px;
+  --bookmarkThumbnailMargTopBtm: 4px;
+  /*font-sizes*/
+  --bodyFontSize: 14px;
+  --bodyLineHeight: 20px;
+  /*notes*/
+  --noteParagraphMargTopBtm: 0.35rem;
+  --noteListItemPadLeft: 18px;
+  /*navigation*/
+  --navigationHeight: 46px;
+  /*tasks*/
+  --todoitemMinHeight: 22px;
+  --todoitemMargTopBtm: 6px;
+  --checkboxWidth: 13px;
+  --todoitempadRight: 20px;
+  /*mobile size*/
+  --bookmarkiconMargRight: 10px;
+  /*search*/
+  --searchInputMargTopBtm:30px;
+  --searchContainerHeight:110px;
 }
 
-:root{
-    --headingClr:var(--bldClr);
-    --bldClr:#0f0f0f;
-    --bookmarkIconBrdClr:hsla(0,0%,0%,0.2);
-    --bookmarkDescriptionClr:hsla(0,0%,0%,0.55);
-    --bookmarkDescriptionLinkClr:var(--bookmarkDescriptionClr);
-    --bookmarkDescriptionLinkClr-Hover:hsla(0,0%,100%,1);
-    --bookmarkDescriptionLinkBgClr:hsla(0,0%,0%,0.075);
-    --bookmarkDescriptionLinkBgClr-Hover:hsla(0,0%,0%,0.5);
-    --bookmarkDescriptionLinkBrdClr:hsla(0,0%,0%,0.1);
-    --widgetDescriptionClr:hsla(0, 0%, 0%, 0.5);
-    --tableBgClr:hsla(0, 0%, 50%, .065);
-    --tableBrdClr:hsla(0, 0%, 50%, .2);
-    --bookmarkBg-Hover:hsla(0,0%,0%,0.1);
-    --bookmarkDetailBrdClr:hsla(0,0%,0%,0.1);
-    --bodyClr:#333;
-    /*widget*/
-    --widgetBrdClr:hsla(0,0%,0%,0.15);
-    /*search background color*/
-    --searchBgClr:hsl(300, 0%, 13%);
-    --searchBgClr-Focus:hsl(300, 0%, 15%);
+:root {
+  --headingClr: var(--bldClr);
+  --bldClr: #0f0f0f;
+  --bookmarkIconBrdClr: hsla(0, 0%, 0%, 0.2);
+  --bookmarkDescriptionClr: hsla(0, 0%, 0%, 0.55);
+  --bookmarkDescriptionClr-Transparent-Widget: hsla(0, 100%, 0%, 0.55);
+  --bookmarkDescriptionLinkClr: var(--bookmarkDescriptionClr);
+  --bookmarkDescriptionLinkClr-Hover: hsla(0, 0%, 100%, 1);
+  --bookmarkDescriptionLinkBgClr: hsla(0, 0%, 0%, 0.075);
+  --bookmarkDescriptionLinkBgClr-Hover: hsla(0, 0%, 0%, 0.5);
+  --bookmarkDescriptionLinkBrdClr: hsla(0, 0%, 0%, 0.1);
+  --widgetDescriptionClr: hsla(0, 0%, 0%, 0.5);
+  --tableBgClr: hsla(0, 0%, 50%, .065);
+  --tableBrdClr: hsla(0, 0%, 50%, .2);
+  --bookmarkBg-Hover: hsla(0, 0%, 0%, 0.1);
+  --bookmarkDetailBrdClr: hsla(0, 0%, 0%, 0.1);
+  --bodyClr: #333;
+  /*widget*/
+  --widgetBrdClr: hsla(0, 0%, 0%, 0.15);
+  /*search background color*/
+  --searchBgClr: hsl(300, 0%, 13%);
+  --searchBgClr-Focus: hsl(300, 0%, 15%);
 }
 .widget_theme_dark {
-    --headingClr:hsl(0, 0%, 100%);
-    --bldClr:hsl(0, 0%, 97%);
-    --bookmarkIconBrdClr:hsla(0,0%,60%,0.2);
-    --bodyClr:hsla(0, 0%, 100%, 0.9);
-    color: var(--bodyClr);
-    --bookmarkDescriptionClr:hsla(359, 3%, 90%, 0.56);
-    --bookmarkDescriptionLinkClr:hsla(359, 3%, 100%, 0.35);
-    --bookmarkDescriptionLinkClr-Hover:hsla(359, 3%, 90%, 1.0);
-    --bookmarkDescriptionLinkBgClr:hsla(359, 3%, 100%, 0.0);
-    --bookmarkDescriptionLinkBgClr-Hover:hsla(359, 3%, 100%, 0.31);
-    --bookmarkDescriptionLinkBrdClr:hsla(0,0%,25%,1);
-    --widgetDescriptionClr:hsla(359, 3%, 90%, 0.65);
-    --tableBgClr:hsla(0, 0%, 50%, .065);
-    --tableBrdClr:hsla(0, 0%, 50%, .2);
-    --bookmarkBg-Hover:hsla(0,0%,100%,0.045);
-    --bookmarkDetailBrdClr:hsla(0,0%,100%,0.055);
-    --widgetBrdClr:hsla(0,0%,100%,.034);
-    
-
+  --headingClr: hsl(0, 0%, 100%);
+  --bldClr: hsl(0, 0%, 97%);
+  --bookmarkIconBrdClr: hsla(0, 0%, 60%, 0.2);
+  --bodyClr: hsla(0, 0%, 100%, 0.9);
+  color: var(--bodyClr);
+  --bookmarkDescriptionClr: hsla(359, 3%, 90%, 0.56);
+  --bookmarkDescriptionClr-Transparent-Widget: hsl(0, 0%, 52%,.825);
+  --bookmarkDescriptionLinkClr: hsla(359, 3%, 100%, 0.35);
+  --bookmarkDescriptionLinkClr-Hover: hsla(359, 3%, 90%, 1.0);
+  --bookmarkDescriptionLinkBgClr: hsla(359, 3%, 100%, 0.0);
+  --bookmarkDescriptionLinkBgClr-Hover: hsla(359, 3%, 100%, 0.31);
+  --bookmarkDescriptionLinkBrdClr: hsla(0, 0%, 25%, 1);
+  --widgetDescriptionClr: hsla(359, 3%, 90%, 0.65);
+  --tableBgClr: hsla(0, 0%, 50%, .065);
+  --tableBrdClr: hsla(0, 0%, 50%, .2);
+  --bookmarkBg-Hover: hsla(0, 0%, 100%, 0.045);
+  --bookmarkDetailBrdClr: hsla(0, 0%, 100%, 0.055);
+  --widgetBrdClr: hsla(0, 0%, 100%, .034);
 }
 
 /*testing
@@ -88,23 +93,30 @@ html .page-section *{
     outline-offset: -1px;
 }
 
-.widget__container,
-.widget__container * {
-    outline: .1px solid hsla(0, 100%, 50%, 1);
+.widget > .widget__container,
+.widget > .widget__container > .widget__header{
+  border: 1px solid hsla(0, 100%, 50%, 1);
+  outline-offset: 4px;
 }
+*//*
 span.notes-widget__result * {
-    outline: .1px solid hsla(0, 100%, 50%, 1);
-}
-*/
+  outline: .1px solid hsla(0, 100%, 50%, 1);
+}*/
+
 
 
 
 /***/
+.widget-page__searchbar,
+.page-section,
+.page-section > div,
+.page-section > div > div,
+.page-section > div > div > div,
 .widget-page__container,
 .widget-page__container > .page-section,
-.widget-page__container > .page-section > .page-section__column{
-     border: 0px solid orange !important;   
-    outline-offset: 0px
+.widget-page__container > .page-section > .page-section__column {
+  outline: 0px solid orange !important;
+  outline-offset: -1px
 }
 
 
@@ -122,8 +134,15 @@ span.notes-widget__result * {
 }
 .widget-page__searchbar {
   padding: 0px !important;
-  padding-top: 30px !important;
-  margin-bottom: 30px;
+  padding-top: var(--searchInputMargTopBtm) !important;
+  padding-bottom: var(--searchInputMargTopBtm) !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  min-height: var(--searchContainerHeight) !important;
+  position: relative !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .search__wrapper:focus-within {
     --searchBgClr:var(--searchBgClr-Focus);
@@ -218,13 +237,32 @@ MOBILE
 
 
 /***********
-VIVALDI SPECIFIC
+VIVALDI 
 ************/
+
 .is-chrome #appID .widget-page__searchbar,
 .mobile.browser-mobile #appID .widget-page__searchbar{
     display: none !important;
     height: 0px !Important;
     overflow: hidden !important;
+}
+
+/***********
+CHATGPT FLUID 
+.browser-other #appID .widget-page__searchbar{
+    display: none !important;
+    height: 0px !Important;
+    overflow: hidden !important;
+}
+************/
+
+.browser-other #appID .page-section[style*="--total-column-size: 2"],
+.browser-other #appID .page-section[style*="--total-column-size: 3"] {
+  padding-top: unset !important;
+  /*margin-top: var(--navigationHeight)!important;*/
+  position: relative !important;
+    height: calc(100vh - var(--searchContainerHeight) - var(--navigationHeight));
+
 }
 
 
@@ -381,7 +419,8 @@ COLUMN CONTAINER
 :root {
     --columnContainerMaxWidth: 100%;
     --quicklinkWidth: 366px;
-    --floatingcolumnMargTop: 142px;
+    /*--floatingcolumnMargTop: 142px;*/
+    --floatingcolumnMargTop: 0px;
 }
 html .page-section {
     padding-right: 6px !important;
@@ -513,6 +552,14 @@ WIDGET WIDTH
   width: var(--columnContainerMaxWidth);
   max-width: 100% !important;
 }
+
+.page-section[style*="--total-column-size: 7"],
+.page-section[style*="--total-column-size: 8"],
+.page-section[style*="--total-column-size: 9"]{
+  --columnContainerMaxWidth:1600px;
+  width: var(--columnContainerMaxWidth);
+  max-width: 100% !important;
+}
 /***********
 MAX WIDTH 1000px
 ************/
@@ -631,8 +678,8 @@ header.header,
     margin: 0px !important;
 }
 .widget > .widget__container{
-    margin-bottom: 6px;
-    margin-top: 6px;
+    margin-bottom: var(--widgetMargTopBtm);
+    margin-top: var(--widgetMargTopBtm);
 }
 
 
@@ -692,7 +739,7 @@ SECTION - MULTIPLE COLUMNS
 
 .widget-header__title,
 .bookmark-folder__title{
-    font-size: calc(var(--bodyFontSize) + 2px) !important;
+    font-size: calc(var(--bodyFontSize) + 2.5px) !important;
     line-height: calc(var(--bodyLineHeight) + 1px) !important;
     font-weight: 500 !important;
     -webkit-font-smoothing:subpixel-antialiased !important;
@@ -852,7 +899,8 @@ BOOKMARK GROUPS
 }
 .bookmark-folder__name{
     font-size: unset !important;
-    font-weight: unset !important
+    font-weight: unset !important;
+  white-space: nowrap;
 }
 
 .bookmark-folder__caret{
@@ -876,6 +924,7 @@ HEADER - TRANSPARENT BACKGROUND
         outline: 1px solid var(--widgetBrdClr) !important;
     outline-offset: -1px;
     box-shadow: unset !important;
+  overflow: hidden;
 }
 #appID .widget__container[style*="rgb(0, 0, 0)"]{
     --widgetBrdClr:hsla(0,0%,100%,.09);;
@@ -920,11 +969,15 @@ HEADER - TRANSPARENT BACKGROUND
 .bookmark-description {
     opacity: 1.75 !important
 }
-#appID .bookmark-widget .widget__container[style*=", 0)"] .bookmark-description,
+
 #appID .bookmark-widget .widget__container .bookmark-description{
         color: var(--bookmarkDescriptionClr);
-
 }
+/*BOOKMARK DESCRIPTION - TRANSPARENT WIDGET*/
+#appID .bookmark-widget .widget__container[style*=", 0)"] .bookmark-description{
+  --bookmarkDescriptionClr:var(--bookmarkDescriptionClr-Transparent-Widget);
+}
+
 .bookmark-item_mode_detail .bookmark-item__description p + p{
 
 }
@@ -1947,6 +2000,13 @@ font-weight:500!important;
 }
 
 
+#appID .wysiwyg-editor h4,
+#appID span.notes-widget__result h4,
+#appID .widget__box h4 {
+font-size: calc(var(--bodyFontSize) + 1px) !important;
+    line-height: calc(var(--bodyLineHeight) - 0px) !important;
+}
+
 
 .widget__description textarea {
     margin-bottom: -4.5px !important;
@@ -2144,7 +2204,14 @@ html .notes-widget-wrapper .widget__description li{
     margin-bottom: var(--noteParagraphMargTopBtm) !important;
     line-height: var(--bodyLineHeight) !important;
 }
-
+/*WIDGET DESCRIPTION*/
+html .widget__description > textarea,
+html .widget__description > .markdown-description *,
+html .notes-widget-wrapper .widget__description p,
+html .notes-widget-wrapper .widget__description li{
+    line-height: calc(var(--bodyLineHeight) - 1px) !important;
+  
+}
 /*notes description - lists*/
 
 html .notes-widget-wrapper .widget__description ol,
@@ -2183,7 +2250,8 @@ html .notes-widget-wrapper .widget__description ol li:before{
 .notes-widget__result  blockquote,
 .wysiwyg-editor__input_editable  blockquote,
 .wysiwyg-editor__input  blockquote,
-.bookmark-item__info .bookmark-item__description blockquote{
+.bookmark-item__info .bookmark-item__description blockquote,
+#appID blockquote{
     padding-left: var(--noteListItemPadLeft) !important;
     box-shadow: inset 4px 0 0 0 hsla(0,0%,50%,0.5);
     margin: 0px !important;
@@ -2194,7 +2262,8 @@ html .notes-widget-wrapper .widget__description ol li:before{
 .notes-widget__result  pre,
 .wysiwyg-editor__input_editable  pre,
 .wysiwyg-editor__input  pre,
-.bookmark-item__info .bookmark-item__description pre{
+.bookmark-item__info .bookmark-item__description pre,
+#appID pr {
     background:hsla(0,0%,50%,.15);
     border-radius: 5px;
     padding: 4px 10px;
@@ -2243,25 +2312,42 @@ html .notes-widget-wrapper .widget__description ol li:before{
 }
 #appID .notes-widget__result h3,
 #appID .notes-widget__result h3 *,
+#appID .widget__box h3,
+#appID .widget__box h3 *,
 #appID .wysiwyg-editor  h3,
 #appID .wysiwyg-editor  h3 *,
 #appID .notes-widget__result h2,
 #appID .notes-widget__result h2 *,
+#appID .widget__box h2,
+#appID .widget__box h2 *,
 #appID .wysiwyg-editor  h2,
 #appID .wysiwyg-editor  h2 *,
 #appID .notes-widget__result h1,
 #appID .notes-widget__result h1 *,
+#appID .widget__box h1,
+#appID .widget__box h1 *,
 #appID .wysiwyg-editor  h1,
 #appID .wysiwyg-editor  h1 *,
 #appID .notes-widget__result h4,
 #appID .notes-widget__result h4 *,
+#appID .widget__box h4,
+#appID .widget__box h4 *,
 #appID .wysiwyg-editor  h4,
 #appID .wysiwyg-editor  h4 *,
 #appID .bookmark-item__info .bookmark-item__description h3,
-#appID .bookmark-item__info .bookmark-item__description h3 *{
-    font-weight: 600 !important;
+#appID .bookmark-item__info .bookmark-item__description h3 *
+{
+    font-weight: 500 !important;
     color: var(--headingClr) !important;
     -webkit-font-smoothing:subpixel-antialiased !important;
+}
+#appID .widget__box h1 strong,
+#appID .widget__box h2 strong,
+#appID .widget__box h3 strong,
+#appID .widget__box h4 strong{
+      font-weight: 750 !important;
+
+  
 }
 /*NOTES - LINKS - TEXT COLORS*/
 .notes-widget__result a,
@@ -2355,6 +2441,10 @@ html .notes-widget-wrapper .widget__description ol li:before{
 .bookmark-item__info .bookmark-item__description table * {
     white-space: pre-wrap
 }
+.notes-widget__result table td {
+  white-space: normal;
+  vertical-align: top;
+}
 
 /*NOTES - TABLE THEAD*/
 
@@ -2378,10 +2468,21 @@ html .notes-widget-wrapper .widget__description ol li:before{
 #appID .bookmark-item__info .bookmark-item__description table td {
     border: 1px solid var(--tableBrdClr);
     padding: 4px 6px;
-    line-height: calc(var(--bodyLineHeight) + 0px) !important;
+    line-height: calc(var(--bodyLineHeight) - 1.5px) !important;
 }
 .bookmark-item__info .bookmark-item__description table td{
     
+}
+
+#appID .notes-widget__result table{
+table-layout: fixed !important;
+}
+#appID table,
+#appID table * {
+  max-width:100% !important;
+}
+#appID table td > p:first-child {
+  margin-top: 0px !important;
 }
 
 .notes-widget .notes-widget__result table tbody tr:nth-child(odd) td,
