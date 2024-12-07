@@ -454,7 +454,7 @@ html .page-section {
     top: 0;
     left: 0;
     right: 0;
-    padding-top: var(--navigationHeight)!important;
+    padding-top: calc(var(--navigationHeight) + 20px) !important;
  }
 /***********
 2 COLUMNS > CONVERSION > FIRST COLUMN
