@@ -14,7 +14,7 @@
   --widgetMargTopBtm:5px;
   /*item padding*/
   --containerMargLeftRight: 12px;
-  --containerPadBtm: 12px;
+  --containerPadBtm: 7px;
   /*notes*/
   --notePadLeft: 2px;
   --noteEditorMargLeft: calc(var(--containerMargLeftRight) - var(--notePadLeft));
@@ -444,7 +444,7 @@ html .page-section {
 .page-section.columns-2[style*="--total-column-size: 3"] {
   display: grid !important;
   grid-template-columns: 1fr 1fr minmax(auto, var(--OneColumn-firstColumnWidth)) 1fr 1fr !important; /* Defines three columns */
-    gap: 0px !important;
+    gap: 2px !important;
     grid-auto-flow: unset !important;
     grid-auto-columns:  unset !important;
     grid-template-rows: unset !important;
@@ -454,7 +454,7 @@ html .page-section {
     top: 0;
     left: 0;
     right: 0;
-    padding-top: calc(var(--navigationHeight) + 20px) !important;
+    padding-top: calc(var(--navigationHeight) + 20px)!important;
  }
 /***********
 2 COLUMNS > CONVERSION > FIRST COLUMN
@@ -595,7 +595,7 @@ MAX WIDTH 700px
         align-items: center;
     }
 }
-@media (max-width: 00px) {
+@media (max-width: 1000px) {
     .page-section[style*="--column-count: 2"],
     .page-section[style*="--column-count: 3"],
     .page-section[style*="--column-count: 4"],
@@ -605,7 +605,7 @@ MAX WIDTH 700px
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: c;
+        justify-content: center;
         gap: 10px;
     }
     section.page-section__column {
@@ -616,7 +616,7 @@ MAX WIDTH 700px
         position: relative;
         --floatingcolumnMargTop: 0px;
         width: 100% !important;
-        border-top: 1px dashed red !important;
+        border-top: 1px dashed hsla(0,0%,100%,.1) !important;
     }
     .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:first-child,
     .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:first-child {
@@ -736,7 +736,12 @@ SECTION - MULTIPLE COLUMNS
     -webkit-font-smoothing:antialiased;
     font-weight: 500 !important;
 }
+#appID [class*="theme_dark"]  .bookmark-folder__title .bookmark-folder__name,
+#appID [class*="theme_dark"]  .widget-header__title .widget-header__text {
+  font-weight: 500 !important;
+    -webkit-font-smoothing:antialiased !important;
 
+}
 .widget-header__title,
 .bookmark-folder__title{
     font-size: calc(var(--bodyFontSize) + 2.5px) !important;
@@ -746,6 +751,10 @@ SECTION - MULTIPLE COLUMNS
     gap: 4px !important;
     color: var(--bldClr);
     margin-right: 0px !important;
+}
+#appID .bookmark-folder__title {
+  -webkit-font-smoothing:subpixel-antialiased !important;
+  font-weight: 400 !important;
 }
 .widget-header__title > [class*="text"] {
     font-weight: 500 !important;
@@ -807,7 +816,11 @@ BOOKMARK GROUPS
   padding-bottom: 0px !important;
 }
 .bookmark-widget__folders > .bookmark-widget__folder:last-child .bookmark-folder__head{
-    margin-bottom: unset !important
+    margin-bottom: unset !important;
+  transition: .05s;
+}
+.bookmark-widget__folders > .bookmark-widget__folder[class*="collapsed"]:last-child .bookmark-folder__head{
+  box-shadow: 0 1px 0 0 transparent;
 }
 
 .bookmark-folder--collapsed{
@@ -934,8 +947,8 @@ HEADER - TRANSPARENT BACKGROUND
     --containerPadBtm:0px;
     --widgetBrdClr:transparent;
 }
-[class*="widget"] .widget_transparent .widget-header__title .widget-header__text,
-[class*="widget"] .widget_transparent .bookmark-folder__name{
+#appID [class*="widget"] .widget_transparent .widget-header__title .widget-header__text,
+#appID [class*="widget"] .widget_transparent .bookmark-folder__name{
     opacity: 0.5;
 -webkit-font-smoothing: antialiased !important;
     font-weight: 400 !important;
@@ -1463,7 +1476,8 @@ BOOKMARK SECTION TYPE - DETAILS
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail .bookmark-widget__list > li+li{
     border-top-color: hsla(0,0%,50%,.1)
 }
-.bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail .bookmark-widget__list > li .bookmark-item:after {
+.bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail .bookmark-widget__list > li .bookmark-item:after,
+.bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail:before{
     content: "";
     display: block;
     position: absolute;
@@ -1480,6 +1494,26 @@ BOOKMARK SECTION TYPE - DETAILS
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail .bookmark-widget__list > li:last-child .bookmark-item:after{
     opacity: 0;
 }
+
+.bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail{
+  position: relative;
+}
+.bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail:before{
+  bottom: unset;
+  top: -1px;
+}
+.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent .bookmark-widget__body_mode_detail:before {
+  opacity: 1;
+  transition: .15s !important;
+  transition-delay: calc(var(--widgetHeaderTransition) * .25) !important;
+}
+.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent[class*="collapsed"] .bookmark-widget__body_mode_detail:before {
+  opacity: 1 !important;
+transition-delay: calc(var(--widgetHeaderTransition) * .25) !important;
+  
+}
+
+
 
 /*
 .bookmark-widget li:hover + li {
@@ -1520,6 +1554,12 @@ BOOKMARK SECTION TYPE - DETAILS
 --bookmarkThumbnailMargTopBtm:27px;
         margin-right:0px !important;
 }
+#appID .bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__info{
+  padding-left: 1px !important
+}
+.bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__icon-wrapper{
+  display: none;
+}
 .bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__link{
     --bookmarkThumbnailMargTopBtm:7px;
 }
@@ -1535,7 +1575,8 @@ BOOKMARK SECTION TYPE - DETAILS
 }
 /*small title spacing*/
 .bookmark-item_mode_detail.bookmark-item_size_small .bookmark-item__info,
-.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__info{
+.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__info,
+.bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__info{
     padding: 0px !important;
     display: flex !important;
     align-items: flex-start !important;
@@ -1544,10 +1585,26 @@ BOOKMARK SECTION TYPE - DETAILS
     height: 100% !important;
 
 }
+.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__title-container,
+.bookmark-item_mode_detail.bookmark-item_size_large .bookmark-item__title-container,
+.bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__title-container {
+  top: .5px !important;
+  position: relative;
+}
+.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-description.bookmark-item__description,
+.bookmark-item_mode_detail.bookmark-item_size_large .bookmark-description.bookmark-item__description,
+.bookmark-item_mode_detail.bookmark-item_size_none .bookmark-description.bookmark-item__description{
+  top: 0 ;
+  position: relative;
+}
+.bookmark-item_mode_detail.bookmark-item_size_large .bookmark-item__info,
+.bookmark-item_mode_detail.bookmark-item_size_large .bookmark-item__info *,
+.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__info,
+.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__info *,
 .bookmark-item_mode_detail.bookmark-item_size_small .bookmark-item__info,
 .bookmark-item_mode_detail.bookmark-item_size_small .bookmark-item__info *,
-.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__info,
-.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__info * {
+.bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__info,
+.bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__info *{
     flex:  unset !important;
     font-size: 14px !important;
     line-height: unset !important;
@@ -1583,7 +1640,8 @@ BOOKMARK SECTION TYPE - DETAILS
     min-width: 20px;
 }
 
-.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__info .bookmark-item__description{
+.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__info .bookmark-item__description,
+.bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__info .bookmark-item__description{
         line-height: calc(var(--bodyLineHeight) - 0px) !important;    
     --bodyLineHeight:18px;
 }
@@ -1639,7 +1697,8 @@ BOOKMARK SECTION TYPE - DETAILS
     --bookmarkThumbnailMargTopBtm:7px;
     --bookmarkLinkBrdRad:8px;
 }
-.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__link{
+.bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__link,
+.bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__link{
     --bookmarkThumbnailMargTopBtm:8px;
 }
 /*large*/
