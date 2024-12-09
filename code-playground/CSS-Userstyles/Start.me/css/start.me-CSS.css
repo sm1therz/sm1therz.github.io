@@ -37,7 +37,7 @@
   --checkboxWidth: 13px;
   --todoitempadRight: 20px;
   /*mobile size*/
-  --bookmarkiconMargRight: 10px;
+  --bookmarkiconMargRight: 12px;
   /*search*/
   --searchInputMargTopBtm:30px;
   --searchContainerHeight:110px;
@@ -73,7 +73,7 @@
   --bodyClr: hsla(0, 0%, 100%, 0.9);
   color: var(--bodyClr);
   --bookmarkDescriptionClr: hsla(359, 3%, 90%, 0.56);
-  --bookmarkDescriptionClr-Transparent-Widget: hsl(0, 0%, 52%,.825);
+  --bookmarkDescriptionClr-Transparent-Widget: hsl(0, 0%, 52%,1);
   --bookmarkDescriptionLinkClr: hsla(359, 3%, 100%, 0.35);
   --bookmarkDescriptionLinkClr-Hover: hsla(359, 3%, 90%, 1.0);
   --bookmarkDescriptionLinkBgClr: hsla(359, 3%, 100%, 0.0);
@@ -744,7 +744,7 @@ SECTION - MULTIPLE COLUMNS
 }
 .widget-header__title,
 .bookmark-folder__title{
-    font-size: calc(var(--bodyFontSize) + 2.5px) !important;
+    font-size: calc(var(--bodyFontSize) + 1.5px) !important;
     line-height: calc(var(--bodyLineHeight) + 1px) !important;
     font-weight: 500 !important;
     -webkit-font-smoothing:subpixel-antialiased !important;
@@ -893,7 +893,7 @@ BOOKMARK GROUPS
     align-items: center;
     justify-content: flex-start !important;
     -webkit-font-smoothing:antialiased !important;
-    font-size: calc(var(--bodyFontSize) + 0px) !important;
+    font-size: calc(var(--bodyFontSize) - .5px) !important;
     line-height: calc(var(--bodyLineHeight) + 0px) !important;
     height: var(--groupHeaderHeight);
     -webkit-font-smoothing:subpixel-antialiased !important;
@@ -1477,7 +1477,8 @@ BOOKMARK SECTION TYPE - DETAILS
     border-top-color: hsla(0,0%,50%,.1)
 }
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail .bookmark-widget__list > li .bookmark-item:after,
-.bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail:before{
+.bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail:before,
+.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent .bookmark-widget__body_mode_detail > [class*="folder"]:before{
     content: "";
     display: block;
     position: absolute;
@@ -1501,19 +1502,23 @@ BOOKMARK SECTION TYPE - DETAILS
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_detail:before{
   bottom: unset;
   top: -1px;
+  opacity: 0 !important;
 }
-.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent .bookmark-widget__body_mode_detail:before {
-  opacity: 1;
-  transition: .15s !important;
-  transition-delay: calc(var(--widgetHeaderTransition) * .25) !important;
+.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent .bookmark-widget__body_mode_detail:before{
+  opacity: 0;
+  transition: 0s !important;
+  transition-delay: calc(var(--widgetHeaderTransition) * 0) !important;
 }
-.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent[class*="collapsed"] .bookmark-widget__body_mode_detail:before {
+.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent[class*="collapsed"] .bookmark-widget__body_mode_detail:before,
+.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent[class*="collapsed"] .bookmark-widget__body_mode_detail > [class*="folder"]:before{
   opacity: 1 !important;
-transition-delay: calc(var(--widgetHeaderTransition) * .25) !important;
   
 }
 
-
+.bookmark-widget:not(.bookmark-widget_edited) .widget_transparent .bookmark-widget__body_mode_detail > [class*="folder"]:before{
+  opacity: 1;
+  top: 0;
+}
 
 /*
 .bookmark-widget li:hover + li {
@@ -1568,10 +1573,10 @@ transition-delay: calc(var(--widgetHeaderTransition) * .25) !important;
 .bookmark-item_mode_detail.bookmark-item_size_small .bookmark-item__icon-wrapper{
     --bookmarkThumbnailWidth:32px;
 --bookmarkThumbnailMargTopBtm:7px;
-    --bookmarkLinkBrdRad:8px;
+    --bookmarkLinkBrdRad:6px;
 }
 .bookmark-item_mode_detail.bookmark-item_size_small .bookmark-item__link{
-    --bookmarkThumbnailMargTopBtm:7px;
+    --bookmarkThumbnailMargTopBtm:8px;
 }
 /*small title spacing*/
 .bookmark-item_mode_detail.bookmark-item_size_small .bookmark-item__info,
@@ -1695,11 +1700,11 @@ transition-delay: calc(var(--widgetHeaderTransition) * .25) !important;
 .bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__icon-wrapper {
     --bookmarkThumbnailWidth:40px;
     --bookmarkThumbnailMargTopBtm:7px;
-    --bookmarkLinkBrdRad:8px;
+    --bookmarkLinkBrdRad:6px;
 }
 .bookmark-item_mode_detail.bookmark-item_size_medium .bookmark-item__link,
 .bookmark-item_mode_detail.bookmark-item_size_none .bookmark-item__link{
-    --bookmarkThumbnailMargTopBtm:8px;
+    --bookmarkThumbnailMargTopBtm:10px;
 }
 /*large*/
 .bookmark-item_mode_detail.bookmark-item_size_large,
