@@ -241,6 +241,7 @@ VIVALDI
 ************/
 
 .is-chrome #appID .widget-page__searchbar,
+.device-type-touch #appID .widget-page__searchbar,
 .mobile.browser-mobile #appID .widget-page__searchbar{
     display: none !important;
     height: 0px !Important;
