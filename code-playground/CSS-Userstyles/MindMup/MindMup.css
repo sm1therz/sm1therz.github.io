@@ -137,6 +137,7 @@ transform: scale(1.9) !important;
 }
 
 
+
 /************
 SIDEBAR
 *************/
@@ -192,10 +193,16 @@ sidebar{
 	color: var(--sidebarTxtClr);
 overflow: hidden !important;
 	display: -webkit-box;
-	-webkit-line-clamp: 1;
+	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	border-bottom: 1px solid hsla(0,0%,50%,0.3);
-	z-index: 8487
+	z-index: 8487;
+	white-space: pre-wrap;
+}
+.writer > .note .header br {
+	white-space: nowrap;
+	display: none;
+	height: 10px !important;
 }
 .writer > .note .viewer{
 	padding-top: 10px !important;
@@ -229,6 +236,9 @@ font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue, Arial, sans-serif 
 .writer > .note.active .viewer{
 	--sidebarBgClr:var(--sidebarBgClr-Active);
 	--sidebarTxtClr-Faint:var(--sidebarTxtClr)
+}
+.writer > .note.active .viewer{
+	cursor: text;
 }
 .writer > .note.folded .viewer{
 	color: var(--sidebarTxtClr-Faint) !important;

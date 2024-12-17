@@ -1,0 +1,51 @@
+ /************
+ARGUMENT MAPPING 
+*************/
+:root {
+	--argGroupBgClr: hsl(120, 50%, 50%, 0.25);
+	--argGroupBgClr: hsl(117, 37%, 30%);
+	--argGroupBrdClr: hsl(147, 100%, 37%);
+	/**/
+	--argGroupHeight: 80px;
+	--argGroupBrdRad: 10px;
+}
+.attr_group {
+	z-index: 0 !important
+}
+/*Group BG*/
+.attr_group:before{
+	content: "";
+	display: block;
+	position: absolute;
+	background: linear-gradient(to bottom, var(--argGroupBgClr), var(--canvasBg));
+	left: -8px;
+	right: -8px;
+	top: -3px;
+	z-index: -12 !important;
+	border-radius: calc(var(--argGroupBrdRad) * 1) !important;
+	height: var(--argGroupHeight) !important;
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 80%);
+	border: 1px solid var(--argGroupBrdClr);
+}
+path.mapjs-connector{
+}
+.attr_group_opposing {
+	--argGroupBgClr: hsl(0, 50%, 40%);
+	--argGroupBrdClr:hsl(0, 50%, 50%);
+}
+/*Group BORDER
+
+[id*="node"].attr_group:after {
+	background: transparent;
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 80%);
+	border: 1px solid var(--argGroupBrdClr) !important;
+	border-radius: var(--argGroupBrdRad) !important;
+	outline: none !important;
+	transition: unset !important;
+}*/
+
+
+/*CONNECTORS*/
+[data-mapjs-role="connector"][style*="rgb(51, 153, 102)"] {
+	stroke: var(--argGroupBrdClr) !important
+}
