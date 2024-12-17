@@ -101,7 +101,6 @@ transform: scale(1.9) !important;
 	outline-offset: 0px;
 	border: unset !important;
 	border-radius: 4px !important;
-;
 }
 
 
@@ -132,14 +131,14 @@ transform: scale(1.9) !important;
 /*groups*/
 /*DRAGGING - REORDER ARROW*/
 .mapjs-reorder-bounds[mapjs-edge=top] {
-	transform: rotate(-90deg) scaleX(1.5) scaleY(1.2) translateX(0px);
+	transform: rotate(-90deg) scaleX(2.65) scaleY(1.95) translateX(16px);
 	transform-origin: right;
+	filter: invert(1)
 }
 
 
-
 /************
-SIDEBAR
+! SIDEBAR
 *************/
 :root {
 	--sidebarBgClr:hsl(0,0%,16%);
@@ -217,6 +216,9 @@ overflow: hidden !important;
 .mapjs-node [data-mapjs-role="title"]{
 	z-index: 9494994;
 	position: relative;
+	word-break: break-word !important;
+	white-space: normal;
+	
 }
  strong,
 .writer > .note .viewer b {
