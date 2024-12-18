@@ -1,37 +1,45 @@
- /************
+/************
 ARGUMENT MAPPING 
 *************/
 :root {
 	--argGroupBgClr: hsl(120, 50%, 50%, 0.25);
-	--argGroupBgClr: hsl(117, 37%, 30%);
-	--argGroupBrdClr: hsl(147, 100%, 37%);
+	--argGroupBgClr: hsl(147, 100%, 37%, 0.1);
+	--argGroupBrdClr: hsl(147, 70%, 37%);
 	/**/
-	--argGroupHeight: 80px;
+	--argGroupHeight: 40px;
 	--argGroupBrdRad: 10px;
+	--argGroupHandleHeight:13px;
 }
 .attr_group {
 	z-index: 0 !important
 }
 /*Group BG*/
-.attr_group:before{
+.attr_group:before {
 	content: "";
 	display: block;
 	position: absolute;
 	background: linear-gradient(to bottom, var(--argGroupBgClr), var(--canvasBg));
 	left: -8px;
 	right: -8px;
-	top: -3px;
+	top: 1px;
 	z-index: -12 !important;
 	border-radius: calc(var(--argGroupBrdRad) * 1) !important;
 	height: var(--argGroupHeight) !important;
 	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 80%);
-	border: 1px solid var(--argGroupBrdClr);
+	border: 2px solid var(--argGroupBrdClr);
 }
-path.mapjs-connector{
-}
+path.mapjs-connector {}
 .attr_group_opposing {
 	--argGroupBgClr: hsl(0, 50%, 40%);
-	--argGroupBrdClr:hsl(0, 50%, 50%);
+	--argGroupBrdClr: hsl(0, 50%, 50%);
+}
+.mapjs-node.attr_group.level_1:before {
+	display: none !important;
+}
+html .mapjs-node.attr_group.level_1{
+	height: var(--argGroupHandleHeight) !important;
+	max-height: var(--argGroupHandleHeight) !important;
+	min-height: unset !important;
 }
 /*Group BORDER
 
@@ -43,9 +51,47 @@ path.mapjs-connector{
 	outline: none !important;
 	transition: unset !important;
 }*/
+/*groups*/
+.mapjs-node.attr_group.activated:not(.editing):after {
+	--nodeActiveBrdClr: hsl(147, 90%, 47%);
+	--nodeBrdStyle: dashed;
+	outline-offset: -2px;
+	--nodeBrdW: 1px;
+	border-radius: 100px !important;
+	height: 10px;
+	top: 3px !important;
+	left: 0px !important;
+	right: -3px !important;
+	width: unset;
+}
+path.mapjs-connector[data-mm-role="mapjs-connector-after-arrow"] {
+	display: none;
+}
+.mapjs-node.attr_group_opposing.activated:not(.editing):after {
+	--nodeActiveBrdClr: hsl(0, 90%, 50%);
+}
+
 
 
 /*CONNECTORS*/
 [data-mapjs-role="connector"][style*="rgb(51, 153, 102)"] {
-	stroke: var(--argGroupBrdClr) !important
+	stroke: var(--argGroupBrdClr) !important;
+}
+.mapjs-node.attr_group {
+	margin-top: -5px !important;
+	height: 10px !important;
+}
+
+.mapjs-node.attr_group.level_1:after{
+	height: 13px !important;
+	margin-top: -3px !important;
+	width: unset !important;
+	max-width: unset !important;
+	left: 0px !important;
+	margin-right: 4px !important;
+	margin-left: 0px !important;
+}
+/*NODES*/
+.mapjs-node{
+	margin-top: -13px !important;
 }
