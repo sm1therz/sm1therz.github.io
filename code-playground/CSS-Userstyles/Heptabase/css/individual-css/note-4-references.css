@@ -1,16 +1,122 @@
 /*****************
 ******************
 ******************
-REFERENCES
+REFERENCES - REORDER
 ******************
 ******************
 ******************/
+
+
+/*info popup - reference container */
+.hepta-pseudo-overlay > .absolute + .bg-background-secondary > div > div,
+/*sidebar - reference container*/
+[style*="width"]>[style*="width"] > div > .h-full.bg-background-secondary > div > div,
+[class*="info"] > div:nth-child(4){
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/*info popup - all divs*/
+.hepta-pseudo-overlay > .absolute + .bg-background-secondary > div > div > div,
+/*sidebar - all divs*/
+[style*="width"]>[style*="width"] > div > .h-full.bg-background-secondary > div > div > div,
+/*note - all divs*/
+[class*="info"] > div:nth-child(4) > div{
+    width: 100% !important;
+    max-width: 100%;
+    order: 2
+}
+
+/*info popup - tags and whiteboard*/
+.bg-background-secondary > div > div > .flex.mt-1.flex-row.items-start,
+/*sidebar - tags and whiteboard*/
+[style*="width"]>[style*="width"] > div > .h-full.bg-background-secondary > div > div > div.flex.mt-1.flex-row.items-start{
+    order: 0;
+}
+
+
+/*info - popup*/
+/*sidebar - properties*/
+[style*="width"]>[style*="width"] > div > .h-full.bg-background-secondary > div > div > div.my-1{
+    order: 1;
+    box-shadow: 0 -1px 0 0 hsla(0,0%,50%,.2);
+}
+
+
+/*date created*/
+.bg-background-secondary > div > div > .py-1,
+[class*="info"] > div:nth-child(4) > .py-1,
+/*sidebar - all divs*/
+[style*="width"]>[style*="width"] > div > .h-full.bg-background-secondary > div > div > div.py-1{
+    order: 4;
+    box-shadow: 0 -1px 0 0 hsla(0,0%,50%,.2);
+}
 
 
 /*****************
-REFERENCES - NEW
+******************
+******************
+REFERENCES - LABEL WIDTH
+******************
+******************
 ******************/
+:root {
+    --reflabel-property-MinWidth: 150px;
+    --reflabel-tag-MinWidth: 150px;
+    --reflabel-created-MinWidth: 150px;
+}
 
+/*all properties*/
 .w-40 {
-    min-width: 260px;
+    width: unset;
+}
+/*LABELS > TAGS*/
+.text-label.w-40.text-middle-grey{
+    min-width: var(--reflabel-tag-MinWidth);
+}
+/*LABELS > CREATED*/
+.h-8 .w-40 {
+    min-width: var(--reflabel-created-MinWidth)
+}
+/*LABELS > PARAMETERS*/
+.clickable-overlay.w-40 {
+    min-width: var(--reflabel-property-MinWidth);
+}
+/*LABELS > CREATED*/
+@media (max-width:600px) {
+    :root{
+    --reflabel-property-MinWidth: 150px;
+    --reflabel-tag-MinWidth: 85px;
+    --reflabel-created-MinWidth: 100px;
+    }
+}
+
+/*****************
+******************
+******************
+REFERENCES - TAGS
+******************
+******************
+******************/
+:root {
+    --refTagBgClr: hsla(214, 8%, 30%, .075);
+    --refTagBrdClr: hsla(214, 8%, 20%, 0.15);
+    --refTagFilter-Hover:brightness(.8)contrast(9);
+}
+[data-theme="dark"] {
+    --refTagBgClr: hsl(214, 8%, 55%,0.15);
+    --refTagBrdClr: hsl(214, 8%, 55%,0.135);
+}
+.w-40 + div .text-label-mini [class*="_tag"] {
+    background: var(--refTagBgClr);
+    border-color: var(--refTagBrdClr);
+    transition: .1s;
+}
+.w-40 + div .text-label-mini [class*="_tag"]:hover {
+    --refTagBgClr:hsla(214, 8%, 50%, 0.2);
 }

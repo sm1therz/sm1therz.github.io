@@ -1,0 +1,45 @@
+/*****************
+******************
+******************
+TEXT ELEMENTS > TABLES
+******************
+******************
+******************/
+
+[data-object-type="textElement"] .ProseMirror [data-node-type=table]{
+		margin-top: 1px;
+		margin-bottom: 1px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+}/*bottom row adder*/
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > div.absolute.left-0.top-0{
+opacity:0;
+		visibility: hidden !important;
+		display: none;
+}
+/*ROW/COLUMN ADDER - MAKE BIGGER*/
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > .touch-none{
+		transition: .12s !important;
+		background:transparent !important;
+		box-shadow: none !important;
+		
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > .touch-none:hover {
+		background: hsla(0,0%,50%,0.3) !important;
+}
+/*COLUMN ADDER*/
+:root{
+		--columnAdderWidth:70px;
+		--tableBrdRad:3px;
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > .touch-none.h-4{
+		width: var(--columnAdderWidth);
+		margin-left: calc(var(--columnAdderWidth) * -.5)
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type="table"] table + div > .touch-none.ease-in-out {
+		background: transparent !important;
+		transition: .3s !important;
+		opacity: 0 !important; 
+		display: none;
+}
+/*

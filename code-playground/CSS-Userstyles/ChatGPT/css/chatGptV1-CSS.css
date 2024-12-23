@@ -5,7 +5,7 @@
 	/*backgrounds*/
 	--bgClrMobile: hsl(0, 0%, 8%);
 	--bgClr: hsl(0, 0%, 12%);
-
+ 
 	/*text*/
 	--txtClrMobile: white;
 	--text-primary: white;
@@ -402,7 +402,9 @@ article + button.bg-token-main-surface-primary {
 	width: var(--leftSideBarWidth) !important;
 }
 
-
+.bg-token-sidebar-surface-primary[style*="260"] li div {
+	height: unset !important;
+}
 .bg-token-sidebar-surface-primary[style*="260"] li a div {
 	white-space: normal;
 	overflow: hidden;
@@ -410,6 +412,7 @@ article + button.bg-token-main-surface-primary {
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	padding-right: 10px;
+	height: unset !important;
 }
 .bg-token-sidebar-surface-primary[style*="260"] li a + div.absolute {
 	display: flex;
@@ -573,9 +576,3 @@ nav._sidebar_rlhi9_56 li a > div {
 		margin-top: 3px;
 	}
 }
-
-/***********
-************
-FONT SIZE
-************
-************/

@@ -29,8 +29,8 @@ EDITOR TEXT COLORS - ROOT
 
 
 [data-theme="dark"] {
-		--bldClr: hsl(0, 0%, 96%);
-		--highlightClr:hsl(0, 0%, 96%);
+		--bldClr: hsl(0, 0%, 97%);
+		--highlightClr:hsl(0, 0%, 97%);
 		--strikethrough-Clr: hsl(0, 0%, 61%);
 		--strikethroughStrike-Clr:hsl(0, 0%, 61%,0.65);
 		/*text highlights*/

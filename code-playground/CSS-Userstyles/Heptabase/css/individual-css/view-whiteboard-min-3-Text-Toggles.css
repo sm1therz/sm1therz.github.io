@@ -1,5 +1,10 @@
-(function() {
-	let style = `<style>
+/*****************
+******************
+******************
+WHITEBOARD TOGGLES
+******************
+******************
+******************/
 
 
 :root {
@@ -15,25 +20,22 @@
 [data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"] {
 	width:var(--tblToggleBulletW) !important;
 	position:absolute !important;
-	left:calc(var(--tblToggleBulletW) * -1);
+	left:calc(var(--tblToggleBulletW) * -1 + 0px);
 	z-index:949494949494;
-	background:var(--whiteboard-background) !important;
 	border-radius:4px;
-	height:26px !important;
+	height:30px !important;
+	overflow:hidden;
 	top:-1px;
+	transition:.15s;
 }
 
 [data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"] {
 height:100% !important;
+transform:scale(.7);
 }
+
 [data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="nested"] {
 	background:transparent;
 }
 
 
-
-
-</style>`;
-
-	document.head.insertAdjacentHTML("beforeend", style);
-})();

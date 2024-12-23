@@ -4,18 +4,24 @@
 ************
 ************
 ************
-EDITOR - ROOT
+! EDITOR - ROOT
 ************
 ************
 ************
 ************
 ************
 ************/
-
 :root {
 	--blockquoteBrdClr: hsla(0, 0%, 0%, .1);
 	--blockquoteBrdLeftClr: hsla(0, 0%, 0%, .25);
 	--blockquoteBgClr: hsla(0, 0%, 0%, .015);
+	--codeblockBgClr: hsl(0, 0%, 90%);
+	--codeblockBrdClr: hsl(0, 0%, 24%, 0.2);
+	--inlineCodeClr: red;
+	--inlineCodeBgClr: rgba(0, 0, 0, .075);
+	--inlineCodeBrdClr: rgba(0, 0, 0, .048);
+	--inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.0);
+	--inlineCodeClr: hsla(0, 0%, 0%, .8);
 }
 
 
@@ -23,6 +29,13 @@ EDITOR - ROOT
 	--blockquoteBrdClr: hsl(216, 6%, 100.5%, .1);
 	--blockquoteBrdLeftClr: hsl(216, 6%, 100%, .1);
 	--blockquoteBgClr: hsl(216, 6%, 100%, .0125);
+	--codeblockBgClr: #0d0d0d;
+	--codeblockBrdClr: hsl(0, 0%, 24%);
+	--inlineCodeClr: red;
+	--inlineCodeBgClr: rgba(255, 255, 255, .089);
+	--inlineCodeBrdClr: hsl(214, 8%, 0%, 0.46);
+	--inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.06);
+	--inlineCodeClr: inherit;
 }
 
 /***********
@@ -30,7 +43,6 @@ EDITOR - ROOT
 BLOCKQUOTES 
 ************
 ************/
-
 :root {
 	--blockquoteBrdRad: 3px;
 }
@@ -42,11 +54,10 @@ BLOCKQUOTES
 	border-radius: var(--blockquoteBrdRad);
 	background: var(--blockquoteBgClr);
 	border-top-left-radius: calc(var(--blockquoteBrdRad) * 1.75) !important;
-	border-bottom-left-radius: calc(var(--blockquoteBrdRad) * 1.75) !important;
+	border-bottom-left-radius: calc(var(--blockquoteBrdRad) * 1.75)!important;
 }
 
 /*blockquote left border pseudo*/
-
 .ProseMirror blockquote:before {
 	content: "";
 	display: block;
@@ -60,6 +71,15 @@ BLOCKQUOTES
 	border-bottom-left-radius: calc(var(--blockquoteBrdRad) * 1.75);
 }
 
+
+/***********
+************
+HORIZONTAL RUL
+************
+************/
+.ProseMirror [data-node-type="horizontal_rule"] > div.h-px {
+	height: 1.5px;
+}
 /***********
 ************
 MENTIONS 
@@ -86,7 +106,6 @@ MENTIONS
 TABLES
 ************
 ************/
-
 /*cells - normal*/
 [data-node-type="table"] table td {
 	transition: .1s;
@@ -127,7 +146,54 @@ TABLES - Hover thingys
 
 
 /***********
-************ 
+************
+CODEBLOCK
+************
+************/
+.ProseMirror .cm-editor {
+	background: var(--codeblockBgClr);
+	box-shadow: inset 0 0 0 1px var(--codeblockBrdClr);
+	padding-top: 24px;
+	border-radius: 10px
+}
+.ProseMirror .cm-editor > .cm-scroller {
+	padding-bottom: 24px;
+}
+/***********
+************
+INLINE CODE
+************
+************/
+:root {
+	--inlinecodeBrdRad: 4px;
+	--inlinecodePad: 0.125em .3em 0.12em .3em;
+}
+code {
+	font-size: calc(1em - 2px);
+	border-radius: var(--inlinecodeBrdRad);
+	padding: var(--inlinecodePad);
+	display: inline;
+	background: var(--inlineCodeBgClr);
+	border: 1px solid var(--inlineCodeBrdClr);
+	box-shadow: inset 0 0 0 .75px var(--inlineCodeBoxShadClr);
+	color: var(--inlineCodeClr);
+}
+h1 {
+	--inlinecodeBrdRad: 7px;
+	--inlinecodePad: 0.15em .3em 0.05em .3em !important;
+}
+h2 {
+	--inlinecodeBrdRad: 7px;
+	--inlinecodePad: 0.15em .3em 0.025em .3em !important;
+}
+h3,
+h4{
+	--inlinecodeBrdRad: 5px;
+	--inlinecodePad: .15em .3em 0.05em .3em;
+
+}
+/***********
+************
 HIGHLIGHTS
 ************
 ************/
@@ -139,8 +205,6 @@ HIGHLIGHTS
 IMAGES
 ************
 ************/
-
-
 /*exclude embedded images and svgs*/
 .ProseMirror [data-node-type="embed"][class*="self-start"],
 .ProseMirror [data-node-type="embed"][class*="self-center"],
@@ -174,8 +238,6 @@ EMBEDDED - IMAGES - POPUP TITLE / MEDIA TOOLBAR
 ******************
 ******************
 ******************/
-
-
 .ProseMirror [data-node-type="embed"][class*="self-"] {
 	padding-top: 0px !important;
 	padding-bottom: 0px !important;
@@ -196,7 +258,6 @@ EMBEDDED - IMAGES - POPUP TITLE / MEDIA TOOLBAR
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-
 }
 
 /*MEDIA TOOLBAR - ELEMENTS - ALL*/
@@ -214,10 +275,8 @@ EMBEDDED - IMAGES - POPUP TITLE / MEDIA TOOLBAR
 	justify-content: flex-start;
 	max-width: 100% !important;
 	overflow: hidden;
-	overflow: hidden;
 }
 /*MEDIA TOOLBAR - ELEMENTS - TITLE - TEXT*/
-
 .ProseMirror [data-node-type="embed"][class*="self-"] .bg-media-toolbar-bg > div.border-r-media-divider:nth-of-type(1) .truncate,
 [data-object-type="imageCardInstance"] > .overflow-hidden + .absolute .bg-media-toolbar-bg > div.border-r-media-divider:nth-of-type(1) .truncate {
 	text-overflow: ellipsis;
@@ -234,7 +293,6 @@ EMBEDDED - IMAGES - POPUP TITLE / MEDIA TOOLBAR
 }
 
 /**/
-
 [class*="content"] .ProseMirror [data-node-type] {
 	word-break: break-word;
 }

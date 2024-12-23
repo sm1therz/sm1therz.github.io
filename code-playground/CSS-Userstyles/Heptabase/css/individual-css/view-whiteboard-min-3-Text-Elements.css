@@ -1,0 +1,37 @@
+/*****************
+******************
+******************
+TEXT ELEMENTS > BULLETS
+******************
+******************
+******************/
+
+/*TOGGLES*/
+[data-object-type="textElement"] .ProseMirror  [data-node-type*="toggle"] > [class*="bulletWrapper"],
+[data-object-type="textElement"] [data-node-type="table_cell"] [data-node-type*="toggle"] > [class*="bulletWrapper"]{
+		width: 14px;
+		margin-right: 2px;
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type*="toggle"] > [class*="bulletWrapper"] svg,
+[data-object-type="textElement"] [data-node-type="table_cell"] [data-node-type*="toggle"] > [class*="bulletWrapper"] svg{
+		width: 14px !important;
+		height: 14px !important; 
+}
+/*BULLETS*/
+[data-object-type="textElement"] .ProseMirror  [data-node-type*="list_item"] > [class*="bulletWrapper"],
+[data-object-type="textElement"] [data-node-type="table_cell"] [data-node-type*="list_item"] > [class*="bulletWrapper"]{
+		width: 14px;
+		margin-right: 2px;
+}
+[data-object-type="textElement"] .ProseMirror [data-node-type*="list_item"] > [class*="bulletWrapper"] svg,
+[data-object-type="textElement"] [data-node-type="table_cell"] [data-node-type*="list_item"] > [class*="bulletWrapper"] svg{
+		width: 14px !important;
+		height: 14px !important; 
+}
+
+
+/*HIDE THREE DOT MENU*/
+
+[data-object-type="textElement"] > div > .absolute {
+		display: none !important;
+}
