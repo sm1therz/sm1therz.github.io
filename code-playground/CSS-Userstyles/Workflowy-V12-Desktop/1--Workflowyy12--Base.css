@@ -3078,7 +3078,9 @@ BOARDS FLOW FIX
 .board .boardColumn.project.comment-container > .name > .contentEditablePlaceholderWrapper{
 		opacity: 0;
 }
-
+.board ._1ut32c0{
+	order: 2929 !important;
+}
 /*******************************
 ********************************
 BOARDS - ROOT
