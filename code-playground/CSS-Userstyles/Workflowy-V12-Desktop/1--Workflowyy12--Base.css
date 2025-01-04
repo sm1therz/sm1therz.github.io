@@ -4343,7 +4343,31 @@ COMMENTS - NEW
 .comment.thread>.children .comment:not(.thread,.draft){
 	
 }
+.floating-comments-blurred #app .floating-comments-container .comment-container > .children {
+	padding-left: 0px !important;
+}
 
+#app .floating-comments-container{
+	margin-left: 0px;
+
+	transition: .5s;
+}
+.floating-comments-blurred #app .floating-comments-container{
+	margin-left: -150px;
+}
+#app .floating-comments-container .comment-container .thread{
+	transition: .5s !important;
+	transition-delay: .15s !important;
+	max-width: 100% !important;
+
+
+}
+.floating-comments-blurred #app .floating-comments-container .project.root.comment-container .thread{
+	transition-delay: 0s !important;
+
+	max-width: 350px !important;
+	min-width: 250px !important;
+}
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
