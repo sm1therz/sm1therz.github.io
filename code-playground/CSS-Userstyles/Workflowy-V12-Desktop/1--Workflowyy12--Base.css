@@ -4320,7 +4320,7 @@ COMMENTS - NEW
 
 }
 .project.floating-conversations:before{
-	border: none;
+	border: unset !important;
 	outline: 2px solid var(--accent);
 	outline-offset: 4px;
 	opacity: .5;
