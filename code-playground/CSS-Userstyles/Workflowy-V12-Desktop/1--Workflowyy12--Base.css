@@ -1915,8 +1915,9 @@ html #app .project > .notes > .content {
 }
 html #app .project > .notes > .content code {
 		color: hsla(0, 0%, 70%);
-		font-size: calc(1em - 1px);
-		letter-spacing: -.5px;
+	font-size: calc(1em - 2px);
+	letter-spacing: -.5px;
+line-height: 0px !important;
 }
 
 html #app .project.root > .notes > .content > .innerContentContainer b {
