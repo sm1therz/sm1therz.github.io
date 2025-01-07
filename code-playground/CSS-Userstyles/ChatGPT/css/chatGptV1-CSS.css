@@ -59,7 +59,7 @@ li a * {
 
 	/*text*/
 	--txtClrMobile: white;
-	--text-primary: white;
+	--text-primary: hsl(0, 0%, 95%);
 	/*text-chatgpt*/
 	--tw-prose-body: hsla(0, 0%, 90%) !important;
 	/*input area*/
@@ -157,7 +157,16 @@ PARAGRAPHS
 	margin-top: calc(var(--paragraphMargTopBtm) * .5);
 }
 
-
+/***********
+************
+LISTS
+************
+************/
+.prose ul,
+.prose ol {
+	margin-bottom: 0px !important;
+	margin-top: 0px !important;
+}
 /***********
 ************
 HORIZONTAL RULES
@@ -176,9 +185,30 @@ HEADINGS
 .markdown.prose h2,
 .markdown.prose h3,
 .markdown.prose h4{
-	margin-top: calc(var(--paragraphMargTopBtm) * 2);
-margin-bottom: var(--paragraphMargTopBtm);
+	margin-top: calc(var(--paragraphMargTopBtm) * 2.35);
+margin-bottom: calc(var(--paragraphMargTopBtm) * 1.65);
+	line-height: calc(var(--line-height) * .85);
+	font-weight: 600;
+
 }
+.markdown.prose h2 strong,
+.markdown.prose h3 strong,
+.markdown.prose h4 strong{
+	font-weight:700;
+}
+
+.markdown.prose h2 {
+	font-size: calc(var(--font-size) * 1.5);
+}
+
+.markdown.prose h3 {
+	font-size: calc(var(--font-size) * 1.25);
+
+}
+.markdown.prose h4 {
+	font-size: calc(var(--font-size) * 1);
+}
+
 /***********
 ************
 INLINE CODE
@@ -522,8 +552,23 @@ nav._sidebar_rlhi9_56 li a > div {
 ************/
 @media (max-width: 700px) {
 	:root {
-		--font-size: .965rem;
+		--font-size: .955rem;
 		--line-height: 1.5;
+	}
+	.markdown.prose h2,
+	.markdown.prose h3,
+	.markdown.prose h4 {
+		margin-top: calc(var(--paragraphMargTopBtm) * 2.35);
+		margin-bottom: calc(var(--paragraphMargTopBtm) * 1.65);
+		line-height: calc(var(--line-height) * .9);
+	}
+	
+	.markdown.prose h2 {
+		font-size: calc(var(--font-size) * 1.4);
+	}
+
+	.markdown.prose h3 {
+		font-size: calc(var(--font-size) * 1.2);
 	}
 
 	/*background color*/
