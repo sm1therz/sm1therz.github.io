@@ -1,0 +1,27 @@
+/***********
+************
+************
+************
+************
+************
+WHITEBOARD - COLLAPSED CARDS
+************
+************
+************
+************
+************
+************/
+
+[class*="whiteboardObject"][data-is-folded="true"] [class*="firstBlockEditor"] .ProseMirror-hepta-style h1,
+[class*="whiteboardObject"][data-is-folded="true"] [class*="firstBlockEditor"] .ProseMirror-hepta-style h2,
+[class*="whiteboardObject"][data-is-folded="true"] [class*="firstBlockEditor"] .ProseMirror-hepta-style h3,
+[class*="whiteboardObject"][data-is-folded="true"] [class*="firstBlockEditor"] .ProseMirror-hepta-style h4,
+[class*="whiteboardObject"][data-is-folded="true"] [class*="firstBlockEditor"] .ProseMirror-hepta-style h5,
+[class*="whiteboardObject"][data-is-folded="true"] [class*="firstBlockEditor"] .ProseMirror-hepta-style h6 {
+	font-size: 22px;
+}
+
+[class*="whiteboardObject"][data-is-folded="true"] > div {
+	padding-top: 0.15rem;
+	padding-bottom: .15rem;
+}

@@ -629,3 +629,8 @@ CARD LIBRARY - COUNTER
 #root .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror [class*="list"]  [class*="bulletWrapper"].unselectable{ 
 	height: 32px !important;
 }
+
+/*
+#root .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type]:first-child * ~ * {
+	opacity: .4
+}*/

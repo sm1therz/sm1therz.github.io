@@ -187,10 +187,18 @@ h2 {
 	--inlinecodePad: 0.15em .3em 0.025em .3em !important;
 }
 h3,
-h4{
+h4 {
 	--inlinecodeBrdRad: 5px;
 	--inlinecodePad: .15em .3em 0.05em .3em;
+}
 
+/***********
+************
+BULLETS
+************
+************/
+[class*="bulletIcon"] + [class*="_hint"] {
+	opacity: 0;
 }
 /***********
 ************

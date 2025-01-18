@@ -12,69 +12,73 @@ EDITOR TEXT COLORS - ROOT
 ************
 ************/
 :root {
-		--bldClr: black;
-		--highlightClr:hsl(0, 0%, 0%);
-		--strikethrough-Clr: hsl(0, 0%, 70%);
-		--strikethroughStrike-Clr:hsl(0, 0%, 70%);
-		/*text highlights*/
-		--highlightUnderlineClr-Yellow:hsl(50, 100%,20%,1);
-		--highlightBrdClr-Yellow:hsl(50, 100%,50%,.45);
-		--highlightBgClr-Yellow:hsl(50, 100%,50%,.2);
-		/*text highlights*/
-		--underlineClr:black;
-		/*Internal Link*/
-		--linkUnderlineClr:var(--active-item);
-		--internalLinkUnderlineClr:hsl(0, 0%, 0%,.15);
+	--text-color: #2e2e2e;
+	--headingClr:var(--bldClr);
+	--bldClr: black;
+	--highlightClr: hsl(0, 0%, 0%);
+	--strikethrough-Clr: hsl(0, 0%, 70%);
+	--strikethroughStrike-Clr: hsl(0, 0%, 70%);
+	/*text highlights*/
+	--highlightUnderlineClr-Yellow: hsl(50, 100%, 20%, 1);
+	--highlightBrdClr-Yellow: hsl(50, 100%, 50%, .45);
+	--highlightBgClr-Yellow: hsl(50, 100%, 50%, .2);
+	/*text highlights*/
+	--underlineClr: black;
+	/*Internal Link*/
+	--linkUnderlineClr: var(--active-item);
+	--internalLinkUnderlineClr: hsl(0, 0%, 0%, .15);
 }
 
 
 [data-theme="dark"] {
-		--bldClr: hsl(0, 0%, 97%);
-		--highlightClr:hsl(0, 0%, 97%);
-		--strikethrough-Clr: hsl(0, 0%, 61%);
-		--strikethroughStrike-Clr:hsl(0, 0%, 61%,0.65);
-		/*text highlights*/
-		--highlightUnderlineClr-Yellow:hsl(50, 100%,50%,.65);
-		--highlightBrdClr-Yellow:hsl(50, 100%,50%,.25);
-		--highlightBgClr-Yellow:hsl(50, 100%,50%,.15);
-		/*Underline*/
-		--underlineClr:hsl(0, 0%, 100%,.64);
-		/*Internal Link*/
-		--linkUnderlineClr:var(--active-item);
-		--internalLinkUnderlineClr:hsl(0, 0%, 35%,1);
+	--text-color: hsl(0, 0%, 81%) !important;
+	--headingClr:hsl(0, 0%, 95%);
+	--bldClr: hsl(0, 0%, 90%);
+	--highlightClr: hsl(0, 0%, 97%);
+	--strikethrough-Clr: hsl(0, 0%, 61%);
+	--strikethroughStrike-Clr: hsl(0, 0%, 61%, 0.65);
+	/*text highlights*/
+	--highlightUnderlineClr-Yellow: hsl(50, 100%, 50%, .65);
+	--highlightBrdClr-Yellow: hsl(50, 100%, 50%, .25);
+	--highlightBgClr-Yellow: hsl(50, 100%, 50%, .15);
+	/*Underline*/
+	--underlineClr: hsl(0, 0%, 100%, .64);
+	/*Internal Link*/
+	--linkUnderlineClr: var(--active-item);
+	--internalLinkUnderlineClr: hsl(0, 0%, 35%, 1);
 }
 
 /***********
 BODY COLOR
 ************/
-
 [class*="text-middle-hard-grey"] .ProseMirror {
-		color: var(--text-color)
+	color: var(--text-color)
 }
 
 /***********
 BOLD
 ************/
 .ProseMirror strong {
-		color: var(--bldClr);
+	color: var(--bldClr);
 }
 .ProseMirror strong a {
-		color: var(--active-item);
+	color: var(--active-item);
 }
 /***********
 HEADINGS
 ************/
-.ProseMirror [data-node-type="heading"]{
-		color: var(--bldClr)
+.ProseMirror [data-node-type="heading"],
+.ProseMirror [data-node-type="heading"] strong{
+	color: var(--headingClr)
 }
 
 /***********
 STRIKETHROUGH
 ************/
 .ProseMirror s {
-		text-decoration-thickness: 2px !important;
-		text-decoration-color: var(--strikethroughStrike-Clr);
-		color: var(--strikethrough-Clr) !important;
+	text-decoration-thickness: 2px !important;
+	text-decoration-color: var(--strikethroughStrike-Clr);
+	color: var(--strikethrough-Clr) !important;
 }
 
 
@@ -82,8 +86,8 @@ STRIKETHROUGH
 INLINE MENTION
 ************/
 .ProseMirror .text-active .border-b {
-		border-bottom-style: dashed;
-		border-bottom-width:1px;
+	border-bottom-style: dashed;
+	border-bottom-width: 1px;
 }
 
 
@@ -92,7 +96,7 @@ INLINE MENTION
 COLORED TEXT
 ************/
 .ProseMirror [data-underline="true"] [data-color="gray"] {
-		border-bottom: 1px solid var(--text-gray-editor);
+	border-bottom: 1px solid var(--text-gray-editor);
 }
 
 
@@ -101,85 +105,83 @@ COLORED TEXT
 LINKS
 ************/
 .ProseMirror a {
-	background-image: linear-gradient(0deg, 
-		var(--linkUnderlineClr) 0%,
-		var(--linkUnderlineClr) var(--underlineH),      
-		var(--linkUnderlineClr) var(--underlineH),
-		transparent 0%) !important;
+	background-image: linear-gradient(0deg,
+	var(--linkUnderlineClr) 0%,
+	var(--linkUnderlineClr) var(--underlineH),
+	var(--linkUnderlineClr) var(--underlineH),
+	transparent 0%) !important;
 }
 
 .ProseMirror a[data-hepta-link] {
-	--linkUnderlineClr:var(--internalLinkUnderlineClr);
+	--linkUnderlineClr: var(--internalLinkUnderlineClr);
 }
 .ProseMirror a,
 .ProseMirror a * {
-	border:unset !important
+	border: unset !important
 }
 
 /*UNDERLINE IN LINK & HIGHLIGHTED LINK*/
 .ProseMirror a [data-color="yellow"][data-type="background"],
 .ProseMirror a [data-underline="true"] {
-	background-image: linear-gradient(to top, 
-		var(--linkUnderlineClr) 0%, 
-		var(--linkUnderlineClr) var(--underlineH), 
-		transparent var(--underlineH),
-		transparent 100%) !important;
+	background-image: linear-gradient(to top,
+	var(--linkUnderlineClr) 0%,
+	var(--linkUnderlineClr) var(--underlineH),
+	transparent var(--underlineH),
+	transparent 100%) !important;
 }
 
 /***********
 UNDERLINE
 ************/
 :root {
-		/*underline*/
-	--underlineH:1.5px;
+	/*underline*/
+	--underlineH: 1.5px;
 }
-[data-node-type="table"]{
-	--underlineH:1px;
+[data-node-type="table"] {
+	--underlineH: 1px;
 }
-[data-underline="true"]{
-	background-image: linear-gradient(0deg, 
-		var(--underlineClr) 0%,
-		var(--underlineClr) var(--underlineH),      
-		var(--underlineClr) var(--underlineH),
-		transparent 0%) !important;
-		border: unset !important;
+[data-underline="true"] {
+	background-image: linear-gradient(0deg,
+	var(--underlineClr) 0%,
+	var(--underlineClr) var(--underlineH),
+	var(--underlineClr) var(--underlineH),
+	transparent 0%) !important;
+	border: unset !important;
 }
 [data-underline="true"],
 [data-underline="true"] * {
-	border:unset !important
+	border: unset !important
 }
 
 /*UNDERLINE IN HIGHLIGHT*/
-[data-underline="true"] [data-color="yellow"][data-type="background"]{
-	background-image: linear-gradient(to top, 
-		var(--highlightUnderlineClr-Yellow) 0%, 
-		var(--highlightUnderlineClr-Yellow) var(--underlineH), 
-		transparent var(--underlineH),
-		transparent 100%);
+[data-underline="true"] [data-color="yellow"][data-type="background"] {
+	background-image: linear-gradient(to top,
+	var(--highlightUnderlineClr-Yellow) 0%,
+	var(--highlightUnderlineClr-Yellow) var(--underlineH),
+	transparent var(--underlineH),
+	transparent 100%);
 }
 
 /***********
 TEXT HIGHLIGHTS
 ************/
-
 :root {
-	--highlightBgPosition-X:0px;
-	--highlightBgPosition-Y:100%;
-
+	--highlightBgPosition-X: 0px;
+	--highlightBgPosition-Y: 100%;
 }
 
 /*TEXT HIGHIGHT - YELLOW*/
 [data-color="yellow"][data-type="background"] {
-background-image: linear-gradient(to top, 
-		var(--highlightBrdClr-Yellow) 0%, 
-		var(--highlightBrdClr-Yellow) var(--underlineH), 
-		transparent var(--underlineH),
-		transparent 100%);
-		background-repeat: no-repeat !important;
-		background-size: 100% 100% !important;
-		background-position-x: 0px !important;
-		background-position-y: 75% !important;
-		/*color: var(--highlightClr) !important;*/
-		/**/
-		background-color: var(--highlightBgClr-Yellow) !important;
+	background-image: linear-gradient(to top,
+	var(--highlightBrdClr-Yellow) 0%,
+	var(--highlightBrdClr-Yellow) var(--underlineH),
+	transparent var(--underlineH),
+	transparent 100%);
+	background-repeat: no-repeat !important;
+	background-size: 100% 100% !important;
+	background-position-x: 0px !important;
+	background-position-y: 75% !important;
+	/*color: var(--highlightClr) !important;*/
+	/**/
+	background-color: var(--highlightBgClr-Yellow) !important;
 }

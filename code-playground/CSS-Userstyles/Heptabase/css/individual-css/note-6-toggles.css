@@ -1,9 +1,22 @@
-/*FIRST LINE TOGGLE*/
+/***********
+************
+************
+************
+************
+************
+FIRST LINE TOGGLE
+************
+************
+************
+************
+************
+************/
 :root {
     --bulletwrapperW: 1.75rem;
 }
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"],
-.p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"] {
+.p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"],
+.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"]{
     position: relative;
     padding-left: var(--bulletwrapperW);
     width: calc(100% + var(--bulletwrapperW));
@@ -11,7 +24,8 @@
     align-self: flex-end;
 }
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"],
-.p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"] {
+.p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"],
+.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
     position: absolute;
     left: calc(var(--bulletwrapperW) * 0);
     width: var(--bulletwrapperW);
@@ -19,7 +33,8 @@
 }
 
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"],
-.p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"] {
+.p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"],
+.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"]{
     width: 100%;
 }
 @media (max-width: 600px) {
@@ -31,18 +46,19 @@
 
 /*middle brder*/
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"]:before,
-.p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"]:before{
+.p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"]:before,
+.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"]:before{
     content:"";
     display: block;
     position: absolute;
     width: 1px;
-    background: hsla(0,0%,50%,0.26);
+    background: hsla(0,0%,50%,1);
     top: 30px;
     bottom: 0;
     left: calc(var(--bulletwrapperW) * .5 - .5px);
     border-radius: 1px;
     transition: .1s;
-  opacity: 0;
+  opacity: .1;
     
 }
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"][class*="folded"]:before,

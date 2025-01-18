@@ -10,14 +10,16 @@ WHITEBOARD TOGGLES
 :root {
 --tblToggleBulletW:1.25rem;
 }
-[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] {
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"],
+[data-object-type="mindMapTextElementNode"] .ProseMirror > [data-node-type*="table"]{
 	overflow:unset !important;;
 }
 [data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] {
 
 }
 
-[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"] {
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"],
+[data-object-type="mindMapTextElementNode"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"]{
 	width:var(--tblToggleBulletW) !important;
 	position:absolute !important;
 	left:calc(var(--tblToggleBulletW) * -1 + 0px);
@@ -29,12 +31,14 @@ WHITEBOARD TOGGLES
 	transition:.15s;
 }
 
-[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"] {
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"],
+[data-object-type="mindMapTextElementNode"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"]{
 height:100% !important;
 transform:scale(.7);
 }
 
-[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="nested"] {
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="nested"],
+[data-object-type="mindMapTextElementNode"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="nested"]{
 	background:transparent;
 }
 

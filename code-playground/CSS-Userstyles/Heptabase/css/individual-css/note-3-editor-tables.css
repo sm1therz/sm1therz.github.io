@@ -1,0 +1,72 @@
+/*****************
+******************
+******************
+EDITOR > TABLES
+******************
+******************
+******************/
+
+/*
+.ProseMirror [data-node-type=table] {
+	margin-top: 1px;
+	margin-bottom: 1px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+*/
+/*bottom row adder*/
+.ProseMirror [data-node-type="table"] table + div > div.absolute.left-0.top-0 {
+	opacity: 0;
+	visibility: hidden !important;
+	display: none;
+}
+/*ROW/COLUMN ADDER - MAKE BIGGER*/ 
+.ProseMirror [data-node-type="table"] table + div > .touch-none {
+	transition: .12s !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+.ProseMirror [data-node-type="table"] table + div > .touch-none:hover {
+	background: hsla(0, 0%, 50%, 0.3) !important;
+}
+/*COLUMN ADDER*/
+:root {
+	--columnAdderWidth: 70px;
+	--tableBrdRad: 3px;
+}
+.ProseMirror [data-node-type="table"] table + div > .touch-none.h-4 {
+	width: var(--columnAdderWidth);
+	margin-left: calc(var(--columnAdderWidth) * -.5)
+}
+.ProseMirror [data-node-type="table"] table + div > .touch-none.ease-in-out {
+	background: transparent !important;
+	transition: .3s !important;
+	opacity: 0 !important;
+	display: none;
+}
+
+/*****************
+******************
+******************
+EDITOR > TABLES > BORDER RADIUS
+******************
+******************
+******************/
+ .ProseMirror table {
+	border-radius: var(--tableBrdRad) !important;
+	border-color: hsla(0, 0%, 40%, .1)!important;
+	outline: 1px solid var(--light-middle-grey);
+	outline-offset: -1px
+}
+ .ProseMirror table tbody tr > td:first-child {
+	border-left-color: transparent;
+}
+ .ProseMirror table tbody > tr > td:last-child {
+	border-right-color: transparent
+}
+ .ProseMirror table tbody tr:first-child > td {
+	border-top-color: transparent;
+}
+ .ProseMirror table tbody tr:last-child > td {
+	border-bottom-color: transparent
+}
