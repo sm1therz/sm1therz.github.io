@@ -5780,6 +5780,7 @@ body.shared.is-desktop #app .project.checkmark.root > .name > .prefix label{
 }
 body.shared.is-desktop #app .project.checkmark > .name > .content{
 	width: 100% !important;
+	max-width: 100% !important;
 }
 /********
 HEADER
