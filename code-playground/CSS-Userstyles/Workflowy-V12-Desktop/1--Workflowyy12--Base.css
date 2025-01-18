@@ -5739,6 +5739,10 @@ body.shared.is-desktop {
 body.shared.is-desktop #app .project > .name > .prefix:not(.board .project > .name > .prefix){
 		--btn-MargTop:-3px !important;
 }
+body.shared .page .root + div[style*="height:"] {
+	height: 1px !important;
+	display: none;
+}
 
 /*END OVERRIDES*/
 

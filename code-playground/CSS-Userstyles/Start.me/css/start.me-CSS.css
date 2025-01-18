@@ -100,6 +100,15 @@
   --bookmarkIconBrdClr: hsla(0, 0%, 60%, 0.15);
 }
 
+
+/*DESCRIPTION - COLORS*/
+#appID .bookmark-description .chatgpt {
+color:hsl(35, 30%, 50%) !important;
+}
+#appID .bookmark-description .chatkit {
+color:hsl(0, 37%, 50%) !important;
+}
+
 /*testing
 html .page-section *{
     outline: .3px solid red;
@@ -263,39 +272,37 @@ MOBILE
 /***********
 VIVALDI 
 ************/
-
 .is-chrome #appID .widget-page__searchbar,
 .device-type-touch #appID .widget-page__searchbar,
-.mobile.browser-mobile #appID .widget-page__searchbar{
-    display: none !important;
-    height: 0px !Important;
-    overflow: hidden !important;
+.mobile.browser-mobile #appID .widget-page__searchbar {
+  display: none !important;
+  height: 0px !Important;
+  overflow: hidden !important;
 }
 
 /***********
 CHATGPT FLUID 
-.browser-other #appID .widget-page__searchbar{
-    display: none !important;
-    height: 0px !Important;
-    overflow: hidden !important;
-}
 ************/
+.browser-other #appID .widget-page__searchbar {
+  --searchContainerHeight: 80px
+}
 
+.browser-other #appID main.widget-page__main {}
 .browser-other #appID .page-section[style*="--total-column-size: 2"],
 .browser-other #appID .page-section[style*="--total-column-size: 3"] {
   padding-top: unset !important;
-  /*margin-top: var(--navigationHeight)!important;*/
-  position: relative !important;
-    height: calc(100vh - var(--searchContainerHeight) - var(--navigationHeight));
-
-
+  margin-top: calc(var(--navigationHeight) + var(--searchContainerHeight))!important;
+  height: calc(100vh - var(--searchContainerHeight) - var(--navigationHeight)) - 10px;
+  max-height: 100%;
+  outline-offset: -1px;
+  outline: 0px solid red !important;
 }
-
-.browser-other.touch-api #appID .page-section[style*="--total-column-size: 2"],
-.browser-other.touch-api #appID .page-section[style*="--total-column-size: 3"] {
-    height: calc(100vh - var(--navigationHeight));
-
-
+@media (max-width: 1000px) {
+  .browser-other #appID .page-section[style*="--total-column-size: 2"],
+  .browser-other #appID .page-section[style*="--total-column-size: 3"] {
+    height: unset;
+    margin-top: 0px !important;
+  }
 }
 
 /***********
@@ -1655,7 +1662,7 @@ BOOKMARK SECTION TYPE - DETAILS
   --bookmarkLinkBrdRad: 6px;
 }
 .bookmark-item_mode_detail.bookmark-item_size_small .bookmark-item__link {
-  --bookmarkThumbnailMargTopBtm: 8px;
+  --bookmarkThumbnailMargTopBtm: 7px;
 }
 /*small title spacing*/
 .bookmark-item_mode_detail.bookmark-item_size_small .bookmark-item__info,
@@ -1943,6 +1950,9 @@ header.widget__header .widget-header__controls {
     z-index: 94994;
     background: inherit;
     gap: 3px;
+}
+.todo-widget .widget-header__controls {
+  opacity: 1 !important;
 }
 header.widget__header .widget-header__controls > div {
     margin: 0px;
@@ -2644,6 +2654,7 @@ html .notes-widget-wrapper .widget__description ol li:before{
 .bookmark-item__info .bookmark-item__description > img:last-child{
     margin-bottom: 0px !important
 }
+
 
 /*NOTES - TABLE*/
 .notes-widget__result  table,
