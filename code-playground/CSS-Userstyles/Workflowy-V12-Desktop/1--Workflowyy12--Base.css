@@ -5731,6 +5731,17 @@ DROPDOWN WRAPPER
 ! SHARED PAGES
 ********************************
 ********************************/
+body.shared.is-desktop {
+	--name-fontSize: .965rem !important;
+	--name-lineHeight: 20px !important;
+	--btn-MargTop:-2px
+}
+body.shared.is-desktop #app .project > .name > .prefix:not(.board .project > .name > .prefix){
+		--btn-MargTop:-3px !important;
+}
+
+/*END OVERRIDES*/
+
 body.shared.is-desktop .page {
 	margin-top: 0px;
 	padding-top: 10px !important
@@ -5748,7 +5759,7 @@ body.shared.is-desktop .header {
 
 /*ROOT FONT SIZE*/
 body.shared.is-desktop .project.root > .name > .content{
-	--root-font-size:var(--name-fontSize);
+	--root-font-size:1rem;
 }
 body.shared.is-desktop .project.root > .name,
 body.shared.is-desktop .project.root > .notes {
@@ -5766,6 +5777,9 @@ body.shared.is-desktop #app .project.checkmark.root > .name > .prefix {
 body.shared.is-desktop #app .project.checkmark.root > .name > .prefix label{
 	width: 14px !important;
 	height: 14px !important
+}
+body.shared.is-desktop #app .project.checkmark > .name > .content{
+	width: 100% !important;
 }
 /********
 HEADER
@@ -5805,16 +5819,21 @@ body.shared.is-desktop .header > .iconButton,
 body.shared.is-desktop .header > .pagination{
 	display: none;
 }
-body.shared.is-desktop .header  [data-handbook="complete.toggle"]{
-	width: 17px;
-	overflow: visible
+body.shared.is-desktop .header > div [data-handbook="complete.toggle"]{
+	margin-top: 100px !important;
+}
+/*COMMENTS*/
+body.shared.is-desktop .comment-hover-btn-group{
+	display: none;
 }
 :root {
-	--sharedHeaderBtnPosRight:1px
+	--sharedHeaderBtnPosRight:0px
 }
+
+
 @media (max-width:600px) {
 		.header > button.button.primary{
-			display: none; 
+			display: none;
 		}
 	body.shared.is-desktop #app .searchBox{
 	}
