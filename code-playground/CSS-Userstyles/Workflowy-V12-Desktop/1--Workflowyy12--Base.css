@@ -366,7 +366,8 @@ LEVEL 0 > ROOT
 		min-height: unset;
 		height: unset;
 		transition: 1s;
-		color: var()
+		color: var();
+		--NODE--TXT-CLR--main:var(--NODE--TXT-CLR--bold);
 }
 .project.root {
 		margin-top: 0px;
@@ -1310,7 +1311,7 @@ MIRRORS*/
 }
 /*checkmark*/
 #app .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
-		--btnIcn-Scale: 1.0;
+		--btnIcn-Scale: .9;
 		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - .5px);
 }
 #app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
@@ -2259,12 +2260,34 @@ LEVEL 3 > Button Adjustments
 #app .root.checkmark .checkmark.done {
 		order: 99 !important;
 }
+/*ADD CHILD BUTTON*/
+.children > div:not(.project).mt-m {
+	order:98;
+	margin-bottom: 1rem;
+	margin-top: 1.0rem;
+	
+}
 
+/*ADD CHILD BUTTON - IF COMPLETED TASKS ARE ABOVE*/
+.children > .project.done ~ div:not(.project).mt-m{
+	border-top: 1px solid hsla(0,0%,50%,.3)
+}
+.children > .project.done ~ div:not(.project).mt-m:before{
+	content:"Complete";
+	display: none;
+	color: var(--NODE--TXT-CLR--main);
+	opacity: calc(var(--doneNameOpacity) * 0);
+
+	
+}
+.children > .project.done ~ div:not(.project).mt-m .addChildButton{
+	display: none;
+}
 
 
 
 /***********
-NORMAL STATE OVERRIDES
+! NORMAL STATE OVERRIDES
 ************/
 
 
@@ -2334,10 +2357,10 @@ PUT COMPLETED TASKS AT THE BOTTOM
 ************/
 
 
-#app .page .project > .children > .project {
+#app .page .project:not(.board) > .children > .project {
 		order: 1;
 }
-#app .page .project > .children > .project.done {
+#app .page .project:not(.board) > .children > .project.done {
 		order: 99;
 		transition-delay: 1s;
 }
@@ -2368,7 +2391,7 @@ COMPLETED TASKS - BULLET COLOR
 
 /*******************************
 ********************************
-BOARDS
+! BOARDS
 ********************************
 ********************************/
 .board > .children {
@@ -2863,6 +2886,236 @@ PREFIX*/
 /*EXTRAS*/
 .project.board .name:after {
 		display: none;
+}
+
+
+
+
+/*******************************
+********************************
+BOARDS ROOT
+********************************
+********************************/
+:root {
+		--ROOT-padBot: 30px;
+		--ROOT-padLeftRight: 40px;
+}
+.board > .children {
+		--content-PadLeftRight: 3px;
+}
+/*Page & Title*/
+#app .page[style="overflow-y: auto;"] {
+		width: 100%;
+		max-width: 100%;
+		padding: 0px;
+		margin: 0px;
+		height: 99vh;
+}
+#app .page[style="overflow-y: auto;"] > .project.board.root {
+		position: relative;
+		top: var(--Height--Header);
+		overflow: hidden;
+		padding: 20px 30px;
+		padding-left: 0px;
+		padding-right: 0px;
+		height: calc(100% - var(--Height--Header));
+		margin: 0px;
+}
+#app .page[style="overflow-y: auto;"] > .project.board.root > .children {
+		margin: 0px;
+		border: 0px;
+		padding-left: var(--ROOT-padLeftRight);
+		padding-bottom: 30px;
+}
+#app .page[style="overflow-y: auto;"] > .project.board.root > .name {
+		height: unset;
+		padding-bottom: var(--ROOT-padBot);
+		padding-left: var(--ROOT-padLeftRight);
+}
+#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name {
+		padding-bottom: 0px;
+}
+#app .project.board.root.noted > .notes {
+		padding-bottom: var(--ROOT-padBot);
+		padding-left: var(--ROOT-padLeftRight)
+}
+.project.board.root > .name > .menu {
+		left: calc(var(--children-Indent) * .5) !important
+}
+
+.project.board.root .boardColumn > .children {
+		padding-left: 10px;
+		padding-right: 10px;
+}
+.project.board.root .boardCard,
+.project.board.root .boardColumn > .children > div:last-of-type {
+		background: var(--BOARD-ROOT--CARD--BG);
+		border: 1px solid var(--BOARD-ROOT--CARD--BORDER-INNER-CLR);
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border-radius: 5px !important;
+}
+.project.board.root .boardCard.comment {
+		background: var(--COMMENT-CONTAINER--BG)
+}
+.project.board.root .boardColumn.comment .boardCard {
+		background: var(--BG-primary)
+}
+
+.boardColumn > .children > .project.comment:first-of-type {
+		border-top: 0px !important;
+}
+/*REFERENCES*/
+.board .references > .children > .project {
+		padding-bottom: 3px;
+}
+.board .references .project .breadcrumbs {
+		flex: 1;
+		min-width: 100% !important;
+		padding-left: 10px !important;
+}
+.board .references .project .breadcrumbs a:last-of-type {
+		margin-top: 2px !important;
+}
+
+
+/*******************************
+********************************
+BOARDCARD HIDE "ADD BOArD CARD BUTTON"
+********************************
+********************************/
+.board:not(.board.root) .boardColumn > .children > ._1eifi39 {
+		display: none;
+}
+/*******************************
+********************************
+BOARDS LAST BOARD COLUMN
+********************************
+********************************/
+.board > .children > ._1en9fmv {
+		min-width: 1000px !important;
+		background: var(--COMMENT-CONTAINER--BG);
+		border-left: 1px solid var(--brd-brdrClr);
+		order: 90000;
+}
+.board > .children > ._1en9fmv > div{
+		margin: unset;
+		border: 1px solid var(--brd-brdrClr);
+		margin-left: 10px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width: 26px;
+		height:26px;
+		
+}
+/*EXPAND COLUMN BUTTON*/
+.board a._2ide7e{
+		display: none;
+}
+
+/*******************************
+********************************
+BOARDS COMMENT CONTAINER
+********************************
+********************************/
+
+/*COMMENT CONTAINER - INSIDE BOARD CARD - PADDING*/
+.boardCard .comment-container > .name > .content{
+		/*margin-left: 0px !important;*/
+}
+
+/*COMMENT REPLY BUTTON*/
+/*FOR COMMENT CONTAINER*/
+.project.board .comment-container > .name > .content ~ span{
+		padding-right: 20px;
+}
+
+.project.board .comment ._3ypimw {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin-bottom: var(--content-PadTopBtm) !important;
+		padding-right: var(--content-PadTopBtm) !important;
+		width: auto;
+}
+/*******************************
+********************************
+BOARDS FLOW FIX
+********************************
+********************************/
+.project.board .boardColumn > .name > .content,
+.project.board .boardColumn > .notes > .content,
+.project.board .boardColumn .project .name > .content,
+.project.board .boardColumn .project .notes > .content {
+		padding-top: 0px;
+}
+.project.board .boardColumn.noted > .notes{
+	padding-top: calc(var(--content-PadTopBtm) * .5)
+}
+/*padding-top & bottom*/
+.project.board .boardCard > .name, 
+.project.board .boardCard > .notes,
+.project.board .boardCard .project > .name,
+.project.board .boardCard .project > .notes {
+		--content-PadTopBtm: 5px;
+}
+.project.board .project > .name{
+		padding-top: var(--content-PadTopBtm);
+}
+.project.board .project.noted > .notes{
+	padding-bottom: var(--content-PadTopBtm);
+}
+
+/*BUTTONS*/
+.project.board .project > .name > .expand, 
+.project.board .boardCard > .notes,
+.project.board .boardCard .project > .name,
+.project.board .boardCard .project > .notes {
+		
+}
+
+
+
+
+.project.board .comment-container,
+.project.board .comment {
+		max-width: 100% !important;
+		min-width: unset !important;
+}
+
+
+.project.comment-container > .name:before{
+		content:var(--ICON--COMMENT-CONTAINER);
+		display: block;
+		position: absolute;
+		left: calc(var(--children-Indent) * 1);
+		width: 20px;
+		margin-top: var(--btn-MargTop);
+}
+.board .project.comment-container > .name:before{
+		left: calc(var(--children-Indent) * .25);
+				width: 18px;
+		--btn-MargTop:1px;
+}
+.board .boardCard.project.comment-container > .name:before{
+		left: calc(var(--children-Indent) * 1.75);
+}
+.board .boardColumn.project.comment-container > .name:before{
+		left: calc(var(--children-Indent) * 1.75);
+		width: 25px;
+}
+.board .boardColumn.project.comment-container > .name > .contentEditablePlaceholderWrapper{
+		opacity: 0;
+}
+.board ._1ut32c0 {
+	order: 9393 !important;
+	height: 28px;
+	padding-top: 8px
+}
+
+
+.project.board > .children{
+	margin-top: 10px;
 }
 
 
@@ -5012,7 +5265,18 @@ SEARCH - NAV - BAR
 	height: var(--Height--Header);
 	right: 1px;
 }
-
+/*ADD SHARED NODE TO YOUR WORKFLOWY*/
+.header > button.button.primary span {
+	white-space: nowrap;
+	max-width: 26px;
+	display: block;
+	overflow: hidden;
+}
+@media max-width(600px) {
+		.header > button.button.primary{
+			display: none;
+		}
+}
 /*overrides*/
 #app ._5kaapu,
 #app .searchbox,
@@ -5464,6 +5728,114 @@ DROPDOWN WRAPPER
 
 /*******************************
 ********************************
+! SHARED PAGES
+********************************
+********************************/
+body.shared.is-desktop .page {
+	margin-top: 0px;
+	padding-top: 10px !important
+}
+body.shared.is-desktop .header {
+	height: 20px;
+	justify-content: flex-end;
+	border: none;
+	backdrop-filter: none;
+	background: none;
+	left: unset !important;
+	width: unset !important;
+	gap: 0px !important;
+}
+
+/*ROOT FONT SIZE*/
+body.shared.is-desktop .project.root > .name > .content{
+	--root-font-size:var(--name-fontSize);
+}
+body.shared.is-desktop .project.root > .name,
+body.shared.is-desktop .project.root > .notes {
+	padding-right: 30px !important;
+}
+body.shared.is-desktop #app .page > .project.root > .children{
+	padding-top: var(--children-MargTop) !important;
+}
+/*ROOT CHECKBOX*/
+body.shared.is-desktop #app .project.checkmark.root > .name > .prefix {
+	--btn-MargTop: 0px !important;
+	top: -3px !important;
+	left: 0px !important
+}
+body.shared.is-desktop #app .project.checkmark.root > .name > .prefix label{
+	width: 14px !important;
+	height: 14px !important
+}
+/********
+HEADER
+********
+*/
+/*ADD SHARED NODE TO YOUR WORKFLOWY*/
+.header > button.button.primary{
+	background: hsla(0,0%,50%,0.3);
+	padding-left: 8px;
+	padding-right: 8px
+}
+.header > button.button.primary span {
+	white-space: nowrap;
+	max-width: 26px;
+	display: block;
+	overflow: hidden;
+	color:var(--NODE--TXT-CLR--main);
+	opacity: .7
+}
+
+/*header buttons*/
+
+/*search button container*/
+body.shared.is-desktop .header .breadcrumbs + div[style*="display: flex"]{
+	margin-top: 0 !important
+}
+
+body.shared.is-desktop .header > div,
+body.shared.is-desktop .header > button{
+	margin-top: 24px !important
+}
+
+body.shared.is-desktop .header > div[style*="position: relative"],
+body.shared.is-desktop .header > .breadcrumbs,
+body.shared.is-desktop .header > .headerShareButton,
+body.shared.is-desktop .header > .iconButton,
+body.shared.is-desktop .header > .pagination{
+	display: none;
+}
+body.shared.is-desktop .header  [data-handbook="complete.toggle"]{
+	width: 17px;
+	overflow: visible
+}
+:root {
+	--sharedHeaderBtnPosRight:1px
+}
+@media (max-width:600px) {
+		.header > button.button.primary{
+			display: none;
+		}
+	body.shared.is-desktop #app .searchBox{
+	}
+	body.shared.is-desktop .header > .itemTypePickerMenu{
+		top: 70px;
+	}
+	body.shared.is-desktop .header > .gearMenu{
+		top: 36px;
+	}
+	body.shared.is-desktop .header > div,
+	body.shared.is-desktop .header > button{
+		position: fixed !important;
+		height: 20px !important;
+		right: var(--sharedHeaderBtnPosRight) !important;
+		margin-top: unset !important;
+	}
+	
+}
+
+/*******************************
+********************************
 ! MOBILE - NEW
 ********************************
 ********************************/
@@ -5657,7 +6029,7 @@ DROPDOWN WRAPPER
 		.project.root.checkmark > .name > .prefix {
 				transform: scale(1.1);
 		}
-		#app .project.checkmark > .name > .expand {
+		#app .project.checkmark:not(.board .project.checkmark) > .name > .expand {
 				width: 23px !important;
 		}
 		.dashboard .dashboard-card > .name {
