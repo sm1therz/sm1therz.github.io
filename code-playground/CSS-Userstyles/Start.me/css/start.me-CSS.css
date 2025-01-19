@@ -2777,7 +2777,7 @@ margin-top: calc(var(--noteParagraphMargTopBtm) * 2) !important;
 }
 .modal.notes-edit-modal .modal__container--top{
   max-height: calc(100% - var(--notesModalMargTopBtm) * 2) !important;
-  height: 900px;
+  height: 700px;
   top: unset;
 }
 .notes-edit-modal__toolbar{
