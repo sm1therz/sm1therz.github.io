@@ -5838,6 +5838,14 @@ body.shared.is-desktop .header > div [data-handbook="complete.toggle"]{
 }
 /*COMMENTS*/
 
+
+body.shared.is-desktop .nameButtons{
+left:unset !important;
+}
+body.shared.is-desktop .nameButtons > *{
+margin-left:unset;
+}
+
 body.shared.is-desktop .comment-hover-btn-group{
 display:flex !important;
 opacity: 1 !important;
