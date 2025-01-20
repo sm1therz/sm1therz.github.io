@@ -1,0 +1,1 @@
+.browser-other #appID .widget-page__searchbar{
