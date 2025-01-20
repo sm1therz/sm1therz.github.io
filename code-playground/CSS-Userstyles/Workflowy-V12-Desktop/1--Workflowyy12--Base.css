@@ -4457,6 +4457,14 @@ COMMENTS - NEW
 .floating-comments-blurred #app .floating-comments-container .project.root > .children > .project {
 		box-shadow: unset !important;
 }
+
+
+@media (max-width:600px) {
+	#app .floating-comments-container {
+		left:unset !important;
+	}
+
+}
 #app .project.comment.thread,
 #app .project.comment.thread *{
 		box-sizing: border-box;
@@ -5832,6 +5840,9 @@ body.shared.is-desktop .header > div [data-handbook="complete.toggle"]{
 body.shared.is-desktop .comment-hover-btn-group{
 	display: none;
 }
+
+
+
 :root {
 	--sharedHeaderBtnPosRight:0px
 }
