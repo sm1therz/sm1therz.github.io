@@ -624,11 +624,10 @@ INTERNAL MBP DISPLAY - 2 COLUMN PAGE
 
 /***********
 IPAD MINI - 2 COLUMN PAGE
+************/
 
-
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
   :root{
-
       --quicklinkWidth:356px;
 
   }
@@ -636,17 +635,15 @@ IPAD MINI - 2 COLUMN PAGE
   .page-section.columns-2[style*="--total-column-size: 2"],
   .page-section.columns-2[style*="--total-column-size: 3"] {
     grid-template-columns: 1fr fr minmax(auto, var(--OneColumn-firstColumnWidth)) 1fr 1fr !important; 
-
    }
   .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:first-child,
   .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:first-child {
   grid-column-start: 1;
-      grid-column-end: 3;
+    grid-column-end: 3;
     max-width: 100% !important;
-      margin: 0 auto !important;
-  padding-left:30px!important;
-
-  padding-right:30px!important;
+    margin: 0 auto !important;
+    padding-left:30px!important;
+    padding-right:30px!important;
   }
   .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child,
   .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child {
@@ -656,7 +653,7 @@ IPAD MINI - 2 COLUMN PAGE
   }
 
 }
-************/
+
 
 /***********
 MAX WIDTH 1000px - 2 COLUMN PAGE
@@ -672,16 +669,15 @@ MAX WIDTH 1000px - 2 COLUMN PAGE
         left: unset;
         right: unset;
         bottom: unset;
-            --quicklinkWidth: 100% ;
+        --quicklinkWidth: 100% ;
         padding-top: calc(var(--navigationHeight) * 0 + 20px) !important;
-
-      
     }
     :root {
-    --floatingcolumnMargTop: 0px;
+      --floatingcolumnMargTop: 0px;
     }
-    .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child > div, .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child > div{
-        align-items: center;
+    .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child > div, 
+    .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child > div{
+      align-items: center;
     }
 }
 /***********
