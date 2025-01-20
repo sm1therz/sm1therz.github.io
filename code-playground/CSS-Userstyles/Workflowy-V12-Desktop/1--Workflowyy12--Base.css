@@ -5837,7 +5837,7 @@ body.shared.is-desktop .header > div [data-handbook="complete.toggle"]{
 	margin-top: 100px !important;
 }
 /*COMMENTS*/
-body.shared.is-desktop .comment-hover-btn-group > .add-comment-hover-btn,
+body.shared.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
 body.shared.is-desktop .comment-hover-btn-group > .name-hover-btn.undefined.add-comment-hover-btn {
 	display: none;
 }
