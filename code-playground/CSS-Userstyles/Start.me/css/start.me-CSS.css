@@ -624,7 +624,7 @@ INTERNAL MBP DISPLAY - 2 COLUMN PAGE
 
 /***********
 IPAD MINI - 2 COLUMN PAGE
-************/
+
 
 @media (max-width: 1300px) {
   :root{
@@ -635,14 +635,9 @@ IPAD MINI - 2 COLUMN PAGE
 
   .page-section.columns-2[style*="--total-column-size: 2"],
   .page-section.columns-2[style*="--total-column-size: 3"] {
-
-    grid-template-columns: 1fr fr minmax(auto, var(--OneColumn-firstColumnWidth)) 1fr 1fr !important; /* Defines three columns */
+    grid-template-columns: 1fr fr minmax(auto, var(--OneColumn-firstColumnWidth)) 1fr 1fr !important; 
 
    }
-
-  /***********
-  2 COLUMNS > CONVERSION > FIRST COLUMN
-  ************/
   .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:first-child,
   .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:first-child {
   grid-column-start: 1;
@@ -653,9 +648,6 @@ IPAD MINI - 2 COLUMN PAGE
 
   padding-right:30px!important;
   }
-  /***********
-  2 COLUMNS > CONVERSION > FLOATING COLUMN
-  ************/
   .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child,
   .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child {
       grid-column-start: 3;
@@ -664,6 +656,7 @@ IPAD MINI - 2 COLUMN PAGE
   }
 
 }
+************/
 
 /***********
 MAX WIDTH 1000px - 2 COLUMN PAGE
