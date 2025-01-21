@@ -6107,7 +6107,7 @@ body * {
 	--InnerContentPadTop: 0px;
 	--InnerContentPadBtm: 0px;
 	/*wavy*/
-	--wavy--BG-size: 8px;
+	--wavy--BG-size: 0px;
 	--wavy--BG-position: -0px 100%;
 	--wavy--padding-bottom: 2px;
 	--underlineOffset: 3px;
@@ -6152,7 +6152,7 @@ body * {
 		--InnerContentPadTop: 0px;
 		--InnerContentPadBtm: 0px;
 		/*wavy*/
-		--wavy--BG-size: 7px;
+		--wavy--BG-size: 0px;
 		--wavy--BG-position: 0px 100%;
 		--wavy--padding-bottom: 2px;
 		--underlineOffset: 3px;
