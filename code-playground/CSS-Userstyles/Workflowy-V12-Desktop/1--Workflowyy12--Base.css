@@ -671,6 +671,12 @@ REFERENCES*/
 		line-height: 1.1 !important;
 		width: 100%;
 }
+#app .references .project .breadcrumbs a:last-of-type{
+	font-size: .89rem;
+	max-width: 100% !important;
+	width: 100% !important;
+	white-space: normal;
+}
 .references .project .breadcrumbs a:hover {
 		transform: scale(1.1);
 		color: var(--NODE--TXT-CLR--CONTRAST)
