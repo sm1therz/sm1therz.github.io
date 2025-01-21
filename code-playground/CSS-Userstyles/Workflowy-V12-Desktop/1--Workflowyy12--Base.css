@@ -675,6 +675,7 @@ REFERENCES*/
 		transform: scale(1.1);
 		color: var(--NODE--TXT-CLR--CONTRAST)
 }
+/*
 .references .breadcrumbs > a:before {
 		content: var(--ICON--BREADCRUMB--CHEVRON);
 		display: block;
@@ -685,10 +686,7 @@ REFERENCES*/
 		position: absolute;
 		left: 0;
 		top: 0px
-}
-#app .references .project svg {
-		display: none;
-}
+}*/
 
 
 
@@ -696,7 +694,11 @@ REFERENCES*/
 gap:4px !important;
 }
 #app .project .breadcrumbs a {
-margin:0px !important;
+margin-right:5px !important;
+}
+#app .project .breadcrumbs svg{
+	position: relative;
+	top: 1px !important;
 }
 
 
@@ -6358,7 +6360,7 @@ body * {
 }
 .references .project .breadcrumbs a:last-of-type {
 		margin-left: 10px !important;
-		font-size: .77rem;
+		font-size: .9rem;
 		max-width: 100% !important;
 		white-space: normal;
 		line-height: 1.35 !important;
