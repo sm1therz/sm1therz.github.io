@@ -4639,20 +4639,26 @@ COMMENTS - NEW
 
 
 /*COMMENT BUTTONS*/
+body.is-desktop .comment-container .comment >.children{
+margin-left:20px !important;
 
-body.shared.is-desktop .nameButtons{
+width:calc(100% - 20px)!important;
+
+}
+
+body.is-desktop .nameButtons{
 left:unset !important;
 right:0 !important
 }
-body.shared.is-desktop .nameButtons > *{
+body.is-desktop .nameButtons > *{
 margin-left:8px;
 }
 
-body.shared.is-desktop .comment-hover-btn-group{
+body.is-desktop .comment-hover-btn-group{
 display:flex !important;
 opacity: 1 !important;
 }
-body.shared.is-desktop .comment-hover-btn-group > .floating-comments-btn {
+body.is-desktop .comment-hover-btn-group > .floating-comments-btn {
 display:flex !important;
 opacity: 1 !important;
 }
