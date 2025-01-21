@@ -691,6 +691,14 @@ REFERENCES*/
 
 
 
+#app .project .breadcrumbs{
+gap:4px !important;
+}
+#app .project .breadcrumbs a {
+margin:0px !important;
+}
+
+
 /*REFERENCES - Border-top - ALL*/
 .root > .children > .project.references:before,
 .root > .children > .project.references:after {
@@ -2978,12 +2986,7 @@ BOARDS ROOT
 		margin-top: 2px !important;
 }
 
-#app .project .breadcrumbs{
-gap:4px !important;
-}
-#app .project .breadcrumbs a {
-margin:0px !important;
-}
+
 
 
 /*******************************
