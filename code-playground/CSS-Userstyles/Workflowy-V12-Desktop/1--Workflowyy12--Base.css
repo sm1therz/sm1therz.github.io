@@ -2184,10 +2184,9 @@ html #app .comment * {
 html #app .board * {
 	--wavy--BG-size: 5.5px !important;
 	--wavy--BG-position: 0px 100%;
-	--wavy--padding-bottom: -0.5px !important;
+	--wavy--padding-bottom: 2px !important;
 	--InnerContentPadTop: 0px;
 }
-
 
 
 /*******************************
@@ -6001,7 +6000,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 
 	/*DARK*/
 	--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
-	--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.25" stroke-width="10"/></svg>');
+	--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.2" stroke-width="10"/></svg>');
 	/*DARK - UNDERLINE*/
 	--ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 	/*DARK  - LINK*/
