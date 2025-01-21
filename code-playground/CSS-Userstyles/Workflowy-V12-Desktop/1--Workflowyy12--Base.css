@@ -2978,6 +2978,13 @@ BOARDS ROOT
 		margin-top: 2px !important;
 }
 
+#app .project .breadcrumbs{
+gap:4px !important;
+}
+#app .project .breadcrumbs a {
+margin:0px !important;
+}
+
 
 /*******************************
 ********************************
