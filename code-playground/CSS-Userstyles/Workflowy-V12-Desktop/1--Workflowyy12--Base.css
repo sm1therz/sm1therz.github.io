@@ -4660,7 +4660,7 @@ is-desktop .comment-hover-btn-group > .floating-comments-btn {
 display:flex !important;
 opacity: 1 !important;
 }
-shared.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
+.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
 body.shared.is-desktop .comment-hover-btn-group > .name-hover-btn.undefined.add-comment-hover-btn {
 	display: none;
 }
