@@ -4447,9 +4447,7 @@ COMMENTS - NEW
 #app .project.comment.thread,
 #app .project.comment.thread * {
 }
-.nameButtons.active,
-.nameButtons.active *{
-}
+
 #app .floating-comments-container .project.root > .children > .project {
 		box-shadow: 0 0 10px black !important
 }
@@ -4570,7 +4568,7 @@ COMMENTS - NEW
 		transition: .14s !important;
 }
 #app .floating-comments-container .nameButtons {
-		opacity: 0 !important;
+		opacity: 1 !important;
 }
 #app .floating-comments-container .nameButtons.active{
 		opacity: .4 !important;
