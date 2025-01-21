@@ -4664,7 +4664,6 @@ COMMENTS - NEW
 /*COMMENT BUTTONS*/
 .is-desktop .comment > .children{
 margin-left:20px !important;
-
 width:calc(100% - 20px)!important;
 
 }
@@ -6367,6 +6366,14 @@ body * {
 		line-height: 1.05 !important;
 		-webkit-font-smoothing: antialiased !important;
 }
+ #app .project .breadcrumbs{
+	gap:5px !important;
+ }
+ #app .project .breadcrumbs a {
+	margin-top:0px !important;
+	margin:0px !important;
+
+ }
 .references .project .breadcrumbs a:last-of-type {
 		margin-left: 10px !important;
 		font-size: .9rem;
