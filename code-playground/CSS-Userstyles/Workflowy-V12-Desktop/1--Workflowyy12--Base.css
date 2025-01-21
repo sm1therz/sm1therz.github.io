@@ -4662,7 +4662,7 @@ COMMENTS - NEW
 
 
 /*COMMENT BUTTONS*/
-.is-desktop .comment-container .comment >.children{
+.is-desktop .comment > .children{
 margin-left:20px !important;
 
 width:calc(100% - 20px)!important;
