@@ -11,7 +11,7 @@ html,
 body,
 #app,
 #app .page,
-.pageContainer{
+.pageContainer{ 
 	background: var(--BG-primary) !important;
 }
 
@@ -636,8 +636,11 @@ REFERENCES*/
 #app .references > .children .addSiblingButton {
   display: none;
 }
-#app .references > .children > .project{
+#app .references > .children > .project:not(.board .references > .children > .project){
   margin-bottom: 10px !important
+}
+#app .references > .children > .project:last-of-type{
+  margin-bottom: 0px !important;
 }
 .references .project .breadcrumbs {
 	justify-content: flex-start;
@@ -646,7 +649,7 @@ REFERENCES*/
 	margin-top: 0px !important;
 	padding-bottom: 2px;
   row-gap: 5px !important;
-  padding-top: 10px
+  padding-top: 8px
 }
 
 .references .project.comment .breadcrumbs {
@@ -741,10 +744,9 @@ REFERENCES*/
 .project.root > .children > .project.references {
 	margin-top: 22px;
 }
-.project.root > .children .project.references > .name > .content,
+#app .project.root > .children .project.references > .name > .content,
 .project.references > .name > .content {
-	font-size: 1rem !important;
-	text-transform: uppercase;
+	font-size: .95em !important;
 	color: var(--LnkWFTxtClr);
 }
 .project.references > .name > .expand {
@@ -1962,8 +1964,8 @@ html #app .project > .notes > .content.active {
 
 :root {
 	--rootNotesPadTop: 10px;
-	--rootnotes-fontSize: calc(var(--notes-fontSize) + 2px);
-	--rootnotes-lineHeight: calc(var(--notes-lineHeight) + 2px)
+	--rootnotes-fontSize: calc(var(--notes-fontSize) + 3px);
+	--rootnotes-lineHeight: calc(var(--notes-lineHeight) + 4px)
 }
 html #app .project.root > .notes > .content {
 	-webkit-line-clamp: unset;
@@ -2187,6 +2189,7 @@ html #app .board * {
 	--wavy--padding-bottom: 2px !important;
 	--InnerContentPadTop: 0px;
 }
+
 
 
 /*******************************
@@ -2560,7 +2563,8 @@ LEVEL 2 > Name, Notes, Children
 	--boardMargBtm: 5px;
 }
 
-.project.board.open > .name > .content:not(.project.board.root > .name > .content) {
+.project.board.open > .name > .content:not(.project.board.root > .name > .content),
+.project.board.open.noted > .notes > .content:not(.project.board.root > .name > .content){
 	margin-bottom: var(--boardMargBtm) !important;
 }
 .project.board.noted.open > .name > .content:not(.project.board.root.noted > .name > .content) {
@@ -2624,6 +2628,8 @@ BOARD COLUMN Level
 	--header2-fontSize: 1.2rem;
 	--header2-lineHeight: 22px;
 }
+
+
 #app .boardColumn > .name > .bullet,
 #app .boardColumn > .name > .prefix,
 #app .boardColumn > .name > .expand,
@@ -2992,10 +2998,8 @@ BOARDS ROOT
 .board .references .project .breadcrumbs {
 	flex: 1;
 	min-width: 100% !important;
-	padding-left: 10px !important;
 }
 .board .references .project .breadcrumbs a:last-of-type {
-	margin-top: 2px !important;
 }
 
 
@@ -3168,7 +3172,7 @@ BOARDS FLOW FIX
 position: relative;
 }
 .board.root .boardColumn.checkmark > .name .item-checkbox:before{
-	margin-top: 0px !important;
+	margin-top: -17px !important;
 }
 
 #app .board .project.code-block, 
@@ -3181,6 +3185,29 @@ position: relative;
 #app .boardCard > .children .project > .name {
 	padding-right: calc(var(--children-Indent) * 0.4) !important;
 }
+
+
+/******
+BOARD COLUMN SIZES
+*******/
+
+#app .board > .boardColumn > .name {
+  
+}
+
+/******
+BOARD ROOT SIZES
+*******/
+
+
+#app .board.root,
+#app .board.root > .children{
+	--name-fontSize: 14.5px;
+  --name-lineHeight: 19.5px;
+  --notes-fontSize: 13.25px;
+  --notes-lineHeight: 16.25px;
+}
+
 
 
 /*******************************
@@ -4249,32 +4276,80 @@ COMMENTS - NEW
 ********************************/
 :root {
 	--commentauthorPadTopBtm:10px;
+  --floatCommentW:470px;
+  --floatCommentMaxW:calc(100vw - 50px - var(--floatCommentPosRight));
+  --floatCommentPosRight:0px;
+  --floatCommentBtnCloseW:30px;
 }
 #app .project.comment.thread,
 #app .project.comment.thread * {
 }
-.nameButtons.active,
-.nameButtons.active *{
+
+/*OVERRIDES*/
+html #app .floating-comments-container,
+html #app .floating-comments-container .vertical-scrollable-container,
+html #app .floating-comments-container .comment-container,
+html #app .floating-comments-container .comment-container > .children,
+html #app .floating-comments-container .comment-container > .children > .comment{
+
+width:100% !important;
+  box-sizing: border-box;
+  margin: unset !important;
+  min-width: unset !important;
 }
-#app .floating-comments-container{
+html #app .floating-comments-container .comment-container{
+  padding-left: 0px !important;
+}
+html #app .floating-comments-container .comment-container > .children{
+	  padding-left: 40px !important;
+  padding-right: 10px!important;
+
+
+}
+html #app .floating-comments-container .comment-container > .children > .comment:last-of-type {
+  margin-bottom: 10px !important; 
+}
+html #app .floating-comments-container > button.threads--comment-button{
+  transform: unset !important;
+  right: 80px !important;
+  left: unset !important;
+  position: relative;
+  margin-left: calc(100% - var(--floatCommentBtnCloseW) - 10px)!important;
+}
+
+/*OPEN*/
+html body.floating-comments #app .floating-comments-container,
+html body.floating-comments.windowBlurred #app .floating-comments-container{
   z-index: 4;
+  width: var(--floatCommentW) !important;
+  min-width: unset !important;
+  max-width: var(--floatCommentMaxW) !important;
+  left: unset !important;
+  right: var(--floatCommentPosRight) !important;
+  margin: unset !important;
+  padding: 0px !important;
+  transition: .5s !important;
+  transform: unset !important;
+  
 }
-@media (max-width:900px) {
-  #app .floating-comments-container{
-	left: unset !important;
-	right: 0 !important;
-	margin: 0px !important;
+/*INACTIVE*/
+html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
+  --floatCommentW:400px;
+  --floatCommentPosRight: calc(var(--floatCommentW) * -0.4);
+  }
+
+
+/**/
+@media (max-width:700px) {
+  html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
+	  --floatCommentPosRight: calc(var(--floatCommentW) * -0.7);
 
   }
-  [class*="blur"] #app .floating-comments-container{
-	right: 300px !important;
-  }
-  #app .floating-comments-container .comment-container {
-	padding-right:5px;
-		margin: 0px !important;
-		padding-bottom: 10px !important;
+  :root {
+	--floatCommentMaxW:calc(100vw - 10vw);
   }
 }
+
 #app .floating-comments-container .project.root > .children > .project {
 	box-shadow: 0 0 10px black !important
 }
@@ -4282,6 +4357,14 @@ COMMENTS - NEW
 .floating-comments-blurred #app .floating-comments-container .project.root > .children > .project {
 	box-shadow: unset !important;
 }
+
+
+#app .floating-comments-container .comment-container > .children, 
+#app .comment-container > .children{
+row-gap: 20px !important;
+}
+
+/*NORMAL COMMENTS*/
 #app .project.comment.thread,
 #app .project.comment.thread *{
 	box-sizing: border-box;
@@ -4306,14 +4389,10 @@ COMMENTS - NEW
 	--comment-NameFontSize:15px;
 	--comment-NameLineHeight:20px;
 }
+
 #app  .project.comment .name > .content{
 	
 }
-#app .floating-comments-container .comment-container > .children, 
-#app .comment-container > .children{
-row-gap: 20px !important;
-}
-
 #app  .project.comment .code-block .name > .content .innerContentContainer{
 	font-size: calc(var(--comment-NameFontSize) + -1px) !important;
 	line-height: calc(var(--comment-NameLineHeight) + 0px) !important;
@@ -4428,39 +4507,35 @@ row-gap: 20px !important;
 .comment.thread>.children .comment:not(.thread,.draft){
   
 }
-.floating-comments-blurred #app .floating-comments-container .comment-container > .children {
-  padding-left: 0px !important;
-}
 
 #app .floating-comments-container{
   margin-left: 0px;
 
   transition: .5s;
 }
-.floating-comments-blurred #app .floating-comments-container{
-  margin-left: -150px;
-}
-#app .floating-comments-container .comment-container .thread{
-  transition: .5s !important;
-  transition-delay: .15s !important;
-  max-width: 100% !important;
 
 
-}
-.floating-comments-blurred #app .floating-comments-container .project.root.comment-container .thread{
-  transition-delay: 0s !important;
 
-  max-width: 350px !important;
-  min-width: 250px !important;
-}
 
 #app .project.root.comment > .name,
-#app .project.root.comment > .notes{
+#app .project.root.comment > .notes,
+#app .project.root.comment > .text-sm{
   padding-left: calc(var(--children-Indent) * 1) !important;
 }
+#app .project.root.comment {
+  --root-padtop:11px;
+  --rootNotesPadTop: 3px;
+}
+#app .project.root.comment > .text-sm .breadcrumbs {
+  flex-wrap: wrap;
+  row-gap: 4px
+}
+
 #app .comment > .children {
   padding-left: var(--children-Indent) !important;
 }
+
+
 
 /*******************************
 ********************************
@@ -6100,8 +6175,8 @@ body * {
 	/*fonts*/
 	--name-fontSize: 1.15rem;
 	--name-lineHeight: 25px;
-	--notes-fontSize: 13px;
-	--notes-lineHeight: 17px;
+	--notes-fontSize: 14px;
+	--notes-lineHeight: 19px;    
 	--header1-fontSize: 2.0rem;
 	--header1-lineHeight: 1.3;
 	--header2-fontSize: 1.3rem;
@@ -6174,16 +6249,12 @@ body * {
 	.dashboard .dashboard-card > .notes > .content {
 		--content-PadTopBtm: 6px !important;
 	}
-	.references .project .breadcrumbs a {
-
-		font-size: .69rem !important;
-	}
-	.references .project .breadcrumbs a:last-of-type {
-		margin-left: 10px !important;
-		font-size: .73rem !important;
-	}
 	.project.header1 > .name {
 		--btn-MargTop: 9px !important;
 	}
 
 }
+
+
+
+
