@@ -4639,30 +4639,30 @@ COMMENTS - NEW
 
 
 /*COMMENT BUTTONS*/
-body.is-desktop .comment-container .comment >.children{
+is-desktop .comment-container .comment >.children{
 margin-left:20px !important;
 
 width:calc(100% - 20px)!important;
 
 }
 
-body.is-desktop .nameButtons{
+is-desktop .nameButtons{
 left:unset !important;
 right:0 !important
 }
-body.is-desktop .nameButtons > *{
+is-desktop .nameButtons > *{
 margin-left:8px;
 }
 
-body.is-desktop .comment-hover-btn-group{
+is-desktop .comment-hover-btn-group{
 display:flex !important;
 opacity: 1 !important;
 }
-body.is-desktop .comment-hover-btn-group > .floating-comments-btn {
+is-desktop .comment-hover-btn-group > .floating-comments-btn {
 display:flex !important;
 opacity: 1 !important;
 }
-body.shared.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
+shared.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
 body.shared.is-desktop .comment-hover-btn-group > .name-hover-btn.undefined.add-comment-hover-btn {
 	display: none;
 }
