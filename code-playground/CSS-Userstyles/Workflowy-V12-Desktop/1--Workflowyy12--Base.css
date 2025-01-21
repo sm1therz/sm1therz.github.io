@@ -4581,28 +4581,7 @@ COMMENTS - NEW
 
 
 
-/*COMMENT BUTTONS*/
 
-body.shared.is-desktop .nameButtons{
-left:unset !important;
-right:0 !important
-}
-body.shared.is-desktop .nameButtons > *{
-margin-left:8px;
-}
-
-body.shared.is-desktop .comment-hover-btn-group{
-display:flex !important;
-opacity: 1 !important;
-}
-body.shared.is-desktop .comment-hover-btn-group > .floating-comments-btn {
-display:flex !important;
-opacity: 1 !important;
-}
-body.shared.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
-body.shared.is-desktop .comment-hover-btn-group > .name-hover-btn.undefined.add-comment-hover-btn {
-	display: none;
-}
 
 ._pfk70.floating-conversations::before{
 		background: transparent;
@@ -4656,6 +4635,30 @@ body.shared.is-desktop .comment-hover-btn-group > .name-hover-btn.undefined.add-
 
 	max-width: 350px !important;
 	min-width: 250px !important;
+}
+
+
+/*COMMENT BUTTONS*/
+
+body.shared.is-desktop .nameButtons{
+left:unset !important;
+right:0 !important
+}
+body.shared.is-desktop .nameButtons > *{
+margin-left:8px;
+}
+
+body.shared.is-desktop .comment-hover-btn-group{
+display:flex !important;
+opacity: 1 !important;
+}
+body.shared.is-desktop .comment-hover-btn-group > .floating-comments-btn {
+display:flex !important;
+opacity: 1 !important;
+}
+body.shared.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
+body.shared.is-desktop .comment-hover-btn-group > .name-hover-btn.undefined.add-comment-hover-btn {
+	display: none;
 }
 /*******************************
 ********************************
