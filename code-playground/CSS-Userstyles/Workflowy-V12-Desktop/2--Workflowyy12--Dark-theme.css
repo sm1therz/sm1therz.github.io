@@ -223,7 +223,7 @@ html,
 		--LnkBgClr: hsl(209, 100%, 50%, .151);
 		--LnkBgClrHov: hsl(208, 100%, 50%, .171);
 		/*V9 LINK - INTERNAL*/
-		--LnkWFTxtClr: hsl(221, 6%, 54%);
+		--LnkWFTxtClr: hsl(221, 6%, 60%);
 		--LnkWFBrdClr: hsl(211, 5%, 50%, 0.4);
 		--LnkWFBgClr: hsla(221, 5%, 50%, 0.27);
 		--LnkWFBgClrHov: hsl(208, 10%, 50%, .171);
