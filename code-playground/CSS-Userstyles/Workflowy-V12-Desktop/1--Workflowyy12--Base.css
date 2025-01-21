@@ -2182,7 +2182,7 @@ html #app .comment * {
 	--InnerContentPadTop: 0px;
 }
 html #app .board * {
-	--wavy--BG-size: 5.5px !important;
+	--wavy--BG-size: 0px !important;
 	--wavy--BG-position: 0px 100%;
 	--wavy--padding-bottom: 2px !important;
 	--InnerContentPadTop: 0px;
