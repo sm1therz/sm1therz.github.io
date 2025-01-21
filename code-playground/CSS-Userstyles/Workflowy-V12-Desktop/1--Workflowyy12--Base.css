@@ -4633,6 +4633,7 @@ COMMENTS - NEW
 .comment.thread>.children .comment:not(.thread,.draft){
 	
 }
+.windowBlurred #app .floating-comments-container .comment-container > .children,
 .floating-comments-blurred #app .floating-comments-container .comment-container > .children {
 	padding-left: 0px !important;
 }
@@ -4642,6 +4643,7 @@ COMMENTS - NEW
 
 	transition: .5s;
 }
+.windowBlurred #app .floating-comments-container,
 .floating-comments-blurred #app .floating-comments-container{
 	margin-left: -150px;
 }
@@ -4652,6 +4654,7 @@ COMMENTS - NEW
 
 
 }
+.windowBlurred #app .floating-comments-container .project.root.comment-container .thread,
 .floating-comments-blurred #app .floating-comments-container .project.root.comment-container .thread{
 	transition-delay: 0s !important;
 
