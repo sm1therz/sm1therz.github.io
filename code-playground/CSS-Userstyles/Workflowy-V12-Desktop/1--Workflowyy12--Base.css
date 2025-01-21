@@ -4458,6 +4458,9 @@ row-gap: 20px !important;
 #app .project.root.comment > .notes{
   padding-left: calc(var(--children-Indent) * 1) !important;
 }
+#app .comment > .children {
+  padding-left: var(--children-Indent) !important;
+}
 
 /*******************************
 ********************************
