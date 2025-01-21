@@ -4572,7 +4572,7 @@ COMMENTS - NEW
 }
 #app .project.comment.thread .children {
 		max-width: 100%;
-		padding-right: 0px;
+		padding-right: 10px;
 }
 
 /*nested comments*/
@@ -4583,14 +4583,12 @@ COMMENTS - NEW
 		transform: unset !important;
 }
 
-
-/*
 #app .floating-comments-container .nameButtons,
 #app .floating-comments-container .nameButtons.active {
 		transition: .14s !important;
 }
 #app .floating-comments-container .nameButtons {
-		opacity: 1 !important;
+		opacity: 0 !important;
 }
 #app .floating-comments-container .nameButtons.active{
 		opacity: .4 !important;
@@ -4599,99 +4597,10 @@ COMMENTS - NEW
 		opacity: 1 !important;
 }
 
-*/
-
-
-
 
 
 ._pfk70.floating-conversations::before{
 		background: transparent;
-
-}
-.project.floating-conversations:before{
-	border: unset !important;
-	outline: 2px solid var(--accent);
-	outline-offset: 4px;
-	opacity: .5;
-	transition: .2s;
-}
-
-.comment.thread .inline-reply,
-.inline-reply{
-	order: 11;
-	padding-bottom: 3px;
-	margin-top: 4px;
-		padding-top: 9px;
-	display: none;
-}
-.comment .comment-toolbar {
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
-
-.comment.thread>.children .comment:not(.thread,.draft){
-	
-}
-.floating-comments-blurred #app .floating-comments-container .comment-container > .children {
-	padding-left: 0px !important;
-}
-
-#app .floating-comments-container{
-	margin-left: 0px;
-
-	transition: .5s;
-}
-.floating-comments-blurred #app .floating-comments-container{
-	margin-left: -150px;
-}
-#app .floating-comments-container .comment-container .thread{
-	transition: .5s !important;
-	transition-delay: .15s !important;
-	width:800px !important;
-	max-width: 100vw !important;
-
-
-}
-.floating-comments-blurred #app .floating-comments-container .project.root.comment-container .thread{
-	transition-delay: 0s !important;
-
-	max-width: 350px !important;
-	min-width: 250px !important;
-}
-
-
-/*COMMENT BUTTONS*/
-.is-desktop .comment > .children{
-margin-left:20px !important;
-width:calc(100% - 20px)!important;
-
-}
-
-
-
-is-desktop .nameButtons > *{
-margin-left:8px;
-}
-
-is-desktop .comment-hover-btn-group{
-display:flex !important;
-opacity: 1 !important;
-}
-is-desktop .comment-hover-btn-group > .floating-comments-btn {
-display:flex !important;
-opacity: 1 !important;
-}
-.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
-body.shared.is-desktop .comment-hover-btn-group > .name-hover-btn.undefined.add-comment-hover-btn {
-	display: none;
-}
-
-@media (max-width:600px){
-is-desktop .nameButtons{
-left:unset !important;
-right:0 !important
-}
 
 }
 /*******************************
