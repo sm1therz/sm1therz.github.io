@@ -705,6 +705,8 @@ margin-right:5px !important;
 #app .project .breadcrumbs svg{
 	position: relative;
 	top: 1px !important;
+	opacity:.64;
+	display:block !important;  
 }
 
 
