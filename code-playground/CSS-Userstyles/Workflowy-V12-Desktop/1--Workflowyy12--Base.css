@@ -4646,10 +4646,8 @@ width:calc(100% - 20px)!important;
 
 }
 
-is-desktop .nameButtons{
-left:unset !important;
-right:0 !important
-}
+
+
 is-desktop .nameButtons > *{
 margin-left:8px;
 }
@@ -4665,6 +4663,14 @@ opacity: 1 !important;
 shared.is-desktop .comment-hover-btn-group > .has-comments.add-comment-hover-btn,
 body.shared.is-desktop .comment-hover-btn-group > .name-hover-btn.undefined.add-comment-hover-btn {
 	display: none;
+}
+
+@media (max-width:600px){
+is-desktop .nameButtons{
+left:unset !important;
+right:0 !important
+}
+
 }
 /*******************************
 ********************************
