@@ -4563,6 +4563,8 @@ COMMENTS - NEW
 		transform: unset !important;
 }
 
+
+/*
 #app .floating-comments-container .nameButtons,
 #app .floating-comments-container .nameButtons.active {
 		transition: .14s !important;
@@ -4577,7 +4579,7 @@ COMMENTS - NEW
 		opacity: 1 !important;
 }
 
-
+*/
 
 ._pfk70.floating-conversations::before{
 		background: transparent;
