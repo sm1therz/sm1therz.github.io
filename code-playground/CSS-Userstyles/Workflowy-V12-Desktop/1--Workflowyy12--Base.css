@@ -5839,9 +5839,7 @@ body.shared.is-desktop .header > div [data-handbook="complete.toggle"]{
 /*COMMENTS*/
 
 
-body.shared.is-desktop .nameButtons{
-left:unset !important;
-}
+
 body.shared.is-desktop .nameButtons > *{
 margin-left:unset;
 }
