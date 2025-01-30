@@ -6084,7 +6084,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 	/*DARK  - LINK*/
 	--ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
 	/*DARK  - LINK - Internal*/
-	--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23848D94" stroke-opacity="1" stroke-width="10"/></svg>');
+	--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%239fa1a3" stroke-opacity=".5" stroke-width="10"/></svg>');
 	/*DARK - REFERENCES*/
 	--ICON--UNDERLINE-WAVY-REFERENCE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23E9F5FA"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 }
@@ -6185,7 +6185,7 @@ body * {
 	--InnerContentPadTop: 0px;
 	--InnerContentPadBtm: 0px;
 	/*wavy*/
-	--wavy--BG-size: 0px;
+	--wavy--BG-size: 7px;
 	--wavy--BG-position: -0px 100%;
 	--wavy--padding-bottom: 2px;
 	--underlineOffset: 3px;
@@ -6230,7 +6230,7 @@ body * {
 		--InnerContentPadTop: 0px;
 		--InnerContentPadBtm: 0px;
 		/*wavy*/
-		--wavy--BG-size: 0px;
+		--wavy--BG-size: 6px;
 		--wavy--BG-position: 0px 100%;
 		--wavy--padding-bottom: 2px;
 		--underlineOffset: 3px;
@@ -6254,6 +6254,11 @@ body * {
 	}
 
 }
+
+
+
+
+
 
 
 
