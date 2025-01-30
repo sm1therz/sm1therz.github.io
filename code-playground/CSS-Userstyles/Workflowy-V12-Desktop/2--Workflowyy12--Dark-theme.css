@@ -22,7 +22,7 @@ html,
 	--NODE--TXT-CLR--completed: var(--NODE--TXT-CLR--FAINT);
 	--NODE--TXT-CLR--bold: hsl(0, 0%, 96%);
 	--NODE--TXT-CLR--heading: hsl(0, 0%, 90%);
-	--NODE-NOTES--TXT-CLR-ALL: hsl(195, 2%, 60%);
+	--NODE-NOTES--TXT-CLR-ALL: hsl(199, 2%, 63%);
 	--NODE-NOTESROOT--TXT-CLR-ALL: hsl(195, 4%, 65%);
 	--NODE-NOTESROOT--TXT-CLR-ALL: hsl(195, 0%, 65%);
 	--NODE-NOTESROOT--TXT-CLR-ALL-BOLD: hsl(195, 4%, 78%);
@@ -193,8 +193,8 @@ html,
 	/*************
 	BOARDS - ROOT
 	*************/
-	--BOARD-ROOT--CARD--BG: hsl(200, 10%, 22%);
-	--BOARD-ROOT--CARD--BORDERCLR:hsla(201, 13%, 9%, 1);
+	--BOARD-ROOT--CARD--BG: #353c3f;
+	--BOARD-ROOT--CARD--BORDERCLR:#42484b;
 	--BOARD-ROOT--CARD--BORDER-INNER-CLR: hsl(201, 13%, 9%);
 
 
