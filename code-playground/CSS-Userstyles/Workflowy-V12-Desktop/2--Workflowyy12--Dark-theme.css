@@ -194,7 +194,7 @@ html,
 	BOARDS - ROOT
 	*************/
 	--BOARD-ROOT--CARD--BG: hsl(200, 10%, 22%);
-	--BOARD-ROOT--CARD--BORDER: 1px solid hsla(201, 13%, 9%, 1);
+	--BOARD-ROOT--CARD--BORDERCLR:hsla(201, 13%, 9%, 1);
 	--BOARD-ROOT--CARD--BORDER-INNER-CLR: hsl(201, 13%, 9%);
 
 
@@ -202,7 +202,7 @@ html,
 	LINK COLORS
 	**************/
 	--Link-TxtClr: hsl(200, 70%, 58%);
-	--LinkInternal-TxtClr: hsl(199, 2%, 66%);
+	
 	--NODE-LINK--TXT-CLR-2: hsl(211, 100%, 43%);
 	--NODE-LINK--TXT-CLR-2-HIGHLIGHT: hsl(211, 100%, 43%);
 
@@ -223,7 +223,7 @@ html,
 	--LnkBgClr: hsl(209, 100%, 50%, .151);
 	--LnkBgClrHov: hsl(208, 100%, 50%, .171);
 	/*V9 LINK - INTERNAL*/
-	--LnkWFTxtClr: hsl(221, 6%, 60%);
+	--LnkWFTxtClr: hsl(199, 2%, 66%);
 	--LnkWFBrdClr: hsl(211, 5%, 50%, 0.4);
 	--LnkWFBgClr: hsla(221, 5%, 50%, 0.27);
 	--LnkWFBgClrHov: hsl(208, 10%, 50%, .171);
