@@ -202,7 +202,7 @@ html,
 	LINK COLORS
 	**************/
 	--Link-TxtClr: hsl(200, 70%, 58%);
-	--LinkInternal-TxtClr: hsl(199, 2%, 64%);
+	--LinkInternal-TxtClr: hsl(199, 2%, 66%);
 	--NODE-LINK--TXT-CLR-2: hsl(211, 100%, 43%);
 	--NODE-LINK--TXT-CLR-2-HIGHLIGHT: hsl(211, 100%, 43%);
 
