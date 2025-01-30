@@ -4556,7 +4556,7 @@ SCROLLBAR / SCROLL BARS
 
 /*******************************
 ********************************
-POPUP - IMAGE MODAL
+! POPUP - IMAGE MODAL
 ********************************
 ********************************/
 .overlay {
@@ -4661,7 +4661,7 @@ margin-left:calc(var(--children-Indent) * 1) !important;
 
 /*******************************
 ********************************
-POPUP - 'MOVE TO' MENU
+! POPUP - 'MOVE TO' MENU
 ********************************
 ********************************/
 #app > [tabindex="-1"] > [style*="position: absolute"]{
@@ -4670,7 +4670,7 @@ POPUP - 'MOVE TO' MENU
 
 /*******************************
 ********************************
-POPUP - WFX - RECENTS MENU
+! POPUP - WFX - RECENTS MENU
 ********************************
 ********************************/
 
@@ -4743,7 +4743,7 @@ select option:checked{
 
 /*******************************
 ********************************
-POPUP - MENU - SETTINGS
+! POPUP - MENU - SETTINGS
 ********************************
 ********************************/
 
@@ -4849,7 +4849,7 @@ html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:
 
 /*******************************
 ********************************
-POPUP - QUICK SEARCH
+! POPUP - QUICK SEARCH
 ********************************
 ********************************/
 :root {
@@ -5157,7 +5157,17 @@ html #app .dialog-box ._157gzxf > div > div {
 	background: rgba(0, 0, 0, .55);
 	backdrop-filter: blur(1px) !important;
 }
-
+/*******************************
+********************************
+! POPUP - EXPORT
+********************************
+********************************/
+#app .dialog-box div > textarea[readonly][contenteditable="false"]{
+  white-space: pre-wrap;
+  height: 700px;
+  max-height: 75vh;
+  font-size: 14px;
+}
 /*******************************
 ********************************
 SEARCH - NAV - BAR
@@ -6084,7 +6094,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 	/*DARK  - LINK*/
 	--ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
 	/*DARK  - LINK - Internal*/
-	--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%239fa1a3" stroke-opacity=".5" stroke-width="10"/></svg>');
+	--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%239fa1a3" stroke-opacity="1" stroke-width="10"/></svg>');
 	/*DARK - REFERENCES*/
 	--ICON--UNDERLINE-WAVY-REFERENCE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23E9F5FA"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 }
