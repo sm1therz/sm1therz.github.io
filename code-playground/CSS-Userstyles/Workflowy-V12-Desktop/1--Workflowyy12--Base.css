@@ -5324,8 +5324,8 @@ html #app .dialog-box ._157gzxf > div > div {
 ********************************/
 #app .dialog-box div > textarea[readonly][contenteditable="false"]{
   white-space: pre-wrap;
-  height: 700px;
-  max-height: 75vh;
+  height: 600px;
+  max-height: 70vh;
   font-size: 14px;
 }
 
