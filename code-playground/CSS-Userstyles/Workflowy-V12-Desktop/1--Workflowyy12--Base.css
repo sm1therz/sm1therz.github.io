@@ -1597,7 +1597,7 @@ HIGHLIGHT - CODE
 }
 #app code,
 #app code * {
-		font-size: calc(var(--name-fontSize) - 2.5px);
+		font-size: calc(var(--name-fontSize) - 2px);
 		font-family: var(--wf-font-family-mono) !important;
 }
 :root {
