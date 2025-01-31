@@ -1477,9 +1477,12 @@ NOTES > innerCONTENT*/
 		padding-bottom: var(--InnerContentPadBtm)
 }
 
-.name .innerContentContainer .colored {
-				padding-top: var(--InnerContentPadTop);
+.name > .content > .innerContentContainer .colored {
+		padding-top: var(--InnerContentPadTop);
+}
+.name > .content:not(.bullet.diamond ~ .content) > .innerContentContainer .colored{
 		padding-bottom: calc(var(--InnerContentPadBtm) + 1px)!important
+
 }
 .notes .innerContentContainer .colored{
 		padding-top: var(--InnerContentPadTop);
@@ -1613,10 +1616,6 @@ html #app b .colored[class*="c-"] {
 		-webkit-font-smoothing: antialiased !important;
 }
 
-.colored[class*="c-"] {
-		-webkit-font-smoothing: subpixel-antialiased !important;
-		-webkit-text-stroke: 0.25px;
-}
 /*RED*/
 .c-red,
 u .c-red,
