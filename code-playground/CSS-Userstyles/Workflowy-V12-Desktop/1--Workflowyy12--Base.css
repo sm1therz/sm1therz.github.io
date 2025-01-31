@@ -1,75 +1,3 @@
-/****
-! ROOT
-****/
-
-* {
-	box-sizing: border-box;
-}
-
-html,
-body,
-#app,
-#app .page,
-.pageContainer {
-	background: var(--BG-primary) !important;
-}
-
-.matching-node {
-	background: var(--SIDEBAR-BUTTON--BG--HOVER);
-	color: var(--NODE--TXT-CLR--main);
-	-webkit-backdrop-filter: blur(24px);
-	backdrop-filter: blur(24px);
-	z-index: 222221;
-}
-
-.root > .children > .project.references:before,
-.root > .children > .project.references:after {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 1px;
-	border-radius: .5px;
-	background: var(--SIDEBAR--BORDER-RIGHT)
-}
-
-
-[data-popper-reference-hidden][data-popper-escaped] {
-	z-index: 2;
-}
-
-
-/****
-BOX SHADOW TESTING - BOARDS
-
-.board > .children .project {
-	box-shadow: inset 0 0 0 1px red !important;
-}
-#app .board .boardCard {
-	border-left: 0px !important;
-	border-right: 0px !important;
-}
-.board > .children .project > .name,
-.board > .children .project > .notes {
-	box-shadow: inset 0 0 0 1px green !important;
-}
-.board > .children .project > .name .content,
-.board > .children .project > .notes .content {
-	box-shadow: inset 0 0 0 1px blue !important;
-}
-.board > .children .project > .name .content .innerContentContainer,
-.board > .children .project > .notes .content .innerContentContainer {
-	box-shadow: inset 0 0 0 1px purple !important;
-
-}
-
-****/
-/***/
-.project {
-	box-shadow: inset 0 0 0px red;
-}
-
-
-
 
 /****
 ! OVERRIDES
@@ -78,35 +6,35 @@ BOX SHADOW TESTING - BOARDS
 .project > .name,
 .project > .notes,
 .project > .children:not(.board>.children) {
-	margin: 0px;
-	padding: 0;
-	min-height: unset;
-	border-left: 0px;
-	width: 100%;
-	max-width: 100%;
+		margin: 0px;
+		padding: 0;
+		min-height: unset;
+		border-left: 0px;
+		width: 100%;
+		max-width: 100%;
 }
 
 /*root overrides*/
 .project.root > .children .header1 > .name,
 .project.root > .children .header2 > .name {
-	margin-bottom: unset;
+		margin-bottom: unset;
 }
 
 /*Comment Overrides*/
 .comment {
-	box-shadow: none;
+		box-shadow: none;
 }
 .comment.selected {
-	padding-left: unset;
+		padding-left: unset;
 }
 .boardColumn .project.comment-container {
-	width: unset !important;
+		width: unset !important;
 }
 .comment .commentAttribution {
-	padding: unset;
+		padding: unset;
 }
 .commentContainer svg {
-	display: none;
+		display: none;
 }
 
 /*Button overrides*/
@@ -127,22 +55,22 @@ BOX SHADOW TESTING - BOARDS
 .project.root > .children [class*="header"] > .name > .expand,
 .project.root > .children [class*="header"] > .name > .menu,
 .root > .name .itemMenu {
-	min-height: unset;
-	top: unset;
-	left: unset;
-	right: unset;
-	bottom: unset;
-	margin: unset;
-	border: unset;
-	vertical-align: unset;
-	padding: unset;
-	outline: unset;
-	font-size: unset;
-	display: flex;
-	opacity: unset;
-	transform: unset;
-	transition: unset;
-	background: unset;
+		min-height: unset;
+		top: unset;
+		left: unset;
+		right: unset;
+		bottom: unset;
+		margin: unset;
+		border: unset;
+		vertical-align: unset;
+		padding: unset;
+		outline: unset;
+		font-size: unset;
+		display: flex;
+		opacity: unset;
+		transform: unset;
+		transition: unset;
+		background: unset;
 }
 /*reference override*/
 .references .project > div,
@@ -150,46 +78,46 @@ BOX SHADOW TESTING - BOARDS
 .references .breadcrumbs .menu,
 .references .breadcrumbs .menu div,
 .references .breadcrumbs a {
-	height: unset !important;
-	top: unset !important;
-	margin: unset !important;
-	flex-grow: unset !important;
-	overflow: unset;
-	flex-shrink: unset;
-	-webkit-box-align: unset;
-	max-width: unset !important;
-	white-space: unset;
-	line-height: unset;
+		height: unset !important;
+		top: unset !important;
+		margin: unset !important;
+		flex-grow: unset !important;
+		overflow: unset;
+		flex-shrink: unset;
+		-webkit-box-align: unset;
+		max-width: unset !important;
+		white-space: unset;
+		line-height: unset;
 }
 
 
 .references .breadcrumbs .menu > div {
-	background: var(--COMMENT-CONTAINER--BG);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: inset 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR);
-	border-radius: 4px;
-	width: unset;
-	min-width: 20px;
-	min-height: 12px;
-	padding: 1px 4px;
+		background: var(--COMMENT-CONTAINER--BG);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: inset 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR);
+		border-radius: 4px;
+		width: unset;
+		min-width: 20px;
+		min-height: 12px;
+		padding: 1px 4px;
 }
 .references .breadcrumbs .menu > div:before {
-	content: "...";
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	margin: 0 auto;
-	font-size: 19px;
-	line-height: 0;
-	letter-spacing: -0.5px;
-	color: var(--NODE--TXT-CLR--main);
-	opacity: .45
+		content: "...";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: 0 auto;
+		font-size: 19px;
+		line-height: 0;
+		letter-spacing: -0.5px;
+		color: var(--NODE--TXT-CLR--main);
+		opacity: .45
 }
 .references .breadcrumbs .menu > div > div {
-	opacity: 0;
-	display: none;
+		opacity: 0;
+		display: none;
 }
 
 /*Buttons - Removes old Icons*/
@@ -198,17 +126,17 @@ BOX SHADOW TESTING - BOARDS
 .name > .prefix > .inline-flex > .item-checkbox svg,
 .name > .expand svg,
 .name > .menu svg {
-	display: none;
+		display: none;
 }
 
 
 /*Name with image overrides*/
 .file-preview > div {
-	margin-top: unset;
+		margin-top: unset;
 }
 .checkmark > .name--with-image > .prefix {
-	float: unset;
-	margin-top: unset;
+		float: unset;
+		margin-top: unset;
 }
 
 
@@ -219,39 +147,39 @@ BOX SHADOW TESTING - BOARDS
 /*Board overrides*/
 .boardCard > .name > .content,
 .boardCard.checkmark > .name > .content {
-	max-width: 100%;
+		max-width: 100%;
 }
 .checkmark > .name > .file-preview {
-	max-width: 100%;
-	margin: unset;
+		max-width: 100%;
+		margin: unset;
 }
 
 #app .boardCard > .name > .expand {
-	opacity: 1;
+		opacity: 1;
 }
 
 
 /*name & notes overrides*/
 .name > .content,
 .notes > .content {
-	min-height: unset;
+		min-height: unset;
 }
 /*innerContent overrides*/
 .content > .innerContentContainer,
 .content > .innerContentContainer {
-	padding: 0px;
-	min-height: unset;
-	opacity: 1;
-	height: unset;
+		padding: 0px;
+		min-height: unset;
+		opacity: 1;
+		height: unset;
 }
-#app .leftBar > div {
+#app .leftBar > div{
 	background: var(--SIDEBAR--BG) !important;
 }
-._5n0sjv.collapsed > .name > .bullet {
-	background: transparent !important;
+._5n0sjv.collapsed > .name > .bullet{
+		background: transparent !important;
 }
 #app .project > .name {
-	display: flex !important;
+ display: flex !important;
 }
 
 /*******************************
@@ -341,13 +269,30 @@ LEVEL 0 > ROOT
 ****************/
 :root {
 		--root-font-size: 2.2rem;
-		--root-line-height: 1.15;
+		--root-line-height: 1.23;
 		--root-inlineCode-font-size: calc(var(--root-font-size) - .45rem);
 		--root-inlineCode-line-height: calc(var(--root-line-height) + .05);
 }
-.project.root.mainTreeRoot > .name > .content {
+#app .project.root > .name > .content .innerContentContainera{
 		user-select: none;
+		text-underline-offset: 20px;
+		--underlineOffset:3.5px;
+		
 }
+
+#app .project.root > .name > .content > .innerContentContainer a,
+#app .project.root > .name > .content > .innerContentContainer u{
+				text-underline-offset: 3.5px !important;
+text-decoration-thickness:
+		background: var(--underlineOffset);
+
+}
+
+/*root mirrored checkboxes*/
+app .project.root > .name > .bullet.diamond ~ .prefix .item-checkbox{
+		background: blue !important;
+}
+
 .project.root.mainTreeRoot > .name > .content,
 .project.root > .name > .content,
 .project.root.paragraph > .name > .content,
@@ -2302,11 +2247,2202 @@ LEVEL 3 > Button Adjustments
 
 
 
-
-
 /***********
 ! NORMAL STATE OVERRIDES
 ************/
+
+
+
+#app .project:not(.board) > .children {
+		display: flex;
+		flex-direction: column;
+		--prjct-MargTopBtm:1.5px;
+}
+
+/*PROJECT*/
+
+.project {
+		margin-top: 0px;
+		position: relative;
+		border-radius: var(--prjct-BrdRad);
+}
+.project .children > .project:first-of-type {
+		margin-top: calc(var(--prjct-MargTopBtm) * 1);
+}
+.project .children > .project:last-of-type {
+		margin-bottom: calc(var(--prjct-MargTopBtm) * 0) !important;
+}
+
+/*
+#app .project.code-block,
+#app .project.quote-block {
+}
+#app .comment .project.code-block,
+#app .comment .project.quote-block {
+}
+*/
+/*NAME*/
+.project.code-block > .name,
+.project > .name.name--with-image{
+		padding-top: var(--content-PadTopBtm) !important;
+		padding-bottom: var(--content-PadTopBtm) !important;
+}
+
+/*CONTENT*/
+.project:not(.root) > .notes > .content{
+		margin-bottom: 0px !important;
+		padding-top: calc(var(--content-PadTopBtm) * 0) !important;
+		padding-bottom: var(--content-PadTopBtm) !important;
+}
+
+.project.noted:not(.root) > .notes{
+		margin-bottom: 0px !important;
+}
+
+/*BUTTONS*/
+.project > .name.name--with-image > .expand {
+		--btn-MargTop:3px;
+}
+
+/***********
+************
+COMPLETED TASKS
+************
+************/
+
+/***********
+PUT COMPLETED TASKS AT THE BOTTOM
+************/
+
+#app .root.checkmark .checkmark:not(.root.checkmark .board .checkmark) {
+		order: 1;
+}
+#app .root.checkmark .checkmark.done:not(.root.checkmark .board .checkmark.done) {
+		order: 99 !important;
+}
+
+
+/*ADD CHILD BUTTON*/
+.children > div:not(.project).mt-m {
+	order:98;
+	margin-bottom: 1rem;
+	margin-top: 1.0rem;
+	
+}
+
+/*ADD CHILD BUTTON - IF COMPLETED TASKS ARE ABOVE*/
+.children > .project.done ~ div:not(.project).mt-m{
+	border-top: 1px solid hsla(0,0%,50%,.3)
+}
+.children > .project.done ~ div:not(.project).mt-m:before{
+	content:"Complete";
+	display: none;
+	color: var(--NODE--TXT-CLR--main);
+	opacity: calc(var(--doneNameOpacity) * 0);
+
+	
+}
+.children > .project.done ~ div:not(.project).mt-m .addChildButton{
+	display: none;
+}
+/***/
+
+
+#app .page .project:not(.project.board) > .children > .project {
+		order: 1;
+}
+#app .page .project:not(.project.board) > .children > .project.done {
+		order: 99;
+		transition-delay: 1s;
+}
+#app .page .project.root .children > svg.addChildButton {
+		order: 98;
+}
+
+
+/***********
+COMPLETED TASKS - STRIKETHROUGH
+************/
+#app .project.done > .name > .content{
+		text-decoration: unset;
+}
+
+/***********
+COMPLETED TASKS - BULLET COLOR
+************/
+#app .project.done > .name > .expand:before, 
+#app .project.done > .children .name > .expand:before {
+		opacity: 0.3 !important;
+}
+#app .project.done > .name > .expand:after, 
+#app .project.done > .children .name > .expand:after{
+		opacity: 0.4 !important;
+}
+
+
+/*******************************
+********************************
+! NORMAL STATE
+********************************
+********************************/
+:root {
+
+		/*root*/
+		--name-fontSize: 1.25rem;
+		--name-lineHeight: 26px;
+		--notes-fontSize: .95rem;
+		--notes-lineHeight: 18px;
+		--header1-fontSize: 2.1rem;
+		--header1-lineHeight: 1.3;
+		--header2-fontSize: 1.5rem;
+		--header2-lineHeight: 1.3;
+		--cmntContain-fontSize: 1rem;
+		--cmntContain-lineHeight: 20px;
+
+		/*Level 1*/
+		/*project*/
+		--prjct-MargTopBtm: 1px;
+		--prjct-ParaMargTopBtm: 5px;
+		--prjct-BrdRad: 6px;
+		--prjct-CmntContainPadTopBtm: 5px;
+		--prjct-CmntPadTopBtm: 5px;
+
+		/*Level 2*/
+		/*name*/
+		/*notes*/
+		/*children*/
+		--children-Indent: 30px;
+		--children-MargBtm: 0px;
+		--children-MargTop: 0px;
+		/*Level 3*/
+		/*content*/
+		--content-PadTopBtm: 2px;
+		--content-PadLeftRight: 2px;
+		/*Buttons*/
+		--btn-Width: 30px;
+		--btn-Height: 30px;
+		--btn-BrdRad: var(--prjct-BrdRad);
+		--btnIcn-Scale: 1;
+		--btnIcn-Width: 26px;
+		--btnIcn-Height: 26px;
+		--btnIcn-ChkBx-BrdRad: 3.5px;
+		--btnIcn-ChkBx-W: 13px;
+		--btnIcn-ChkBx-H: 13px;
+		--btnIcn-ChkBx-Transition: 350ms cubic-bezier(.4, 3.9, .31, .4);
+		--btnIcn-ChkBx-BoxShad: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR);
+		--btnIcn-ChkMrk-W: 14px;
+		--btnIcn-ChkMrk-H: 14px;
+		--btnIcn-ExpandB4Up-BrdRad: 10px;
+		--btnIcn-ExpandB4Up-W: 7px;
+		--btnIcn-ExpandB4Up-H: 7px;
+		--btnIcn-ExpandB4Low-BrdRad: 12px;
+		--btnIcn-ExpandB4Low-W: 14px;
+		--btnIcn-ExpandB4Low-H: 14px;
+		--btnIcn-ExpandB4Low-HovTransition: 250ms cubic-bezier(.47, 2.2, .29, .6);
+		--btn-MargTop: 1px;
+		--btn-MargTopBullet: 1px;
+		--btn-MargTopCmnt: 18px;
+		--btn-MargTopCmntContain: 5px;
+		--btn-MargTopH1: 10px;
+		--btn-MargTopH2: 1px;
+		--btn-transition: .15s;
+		--btn-MirrorTransition: 450ms cubic-bezier(.27, 2.9, .51, .6);
+		--cmnt-btnPadRight: 10px;
+
+		/*Level 4*/
+		/*inner content*/
+		/*innerContent Padtop = line-spacing*/
+		--InnerContentPadTop: 1px;
+		--InnerContentPadBtm: .5px;
+
+		/*MISC*/
+		--Height--Header: 48px;
+}
+
+
+/***************
+**************** 
+LEVEL 0 > ROOT
+****************
+****************/
+:root {
+		--root-font-size: 2.2rem;
+		--root-line-height: 1.23;
+		--root-inlineCode-font-size: calc(var(--root-font-size) - .45rem);
+		--root-inlineCode-line-height: calc(var(--root-line-height) + .05);
+}
+#app .project.root > .name > .content .innerContentContainera{
+		user-select: none;
+		text-underline-offset: 20px;
+		--underlineOffset:3.5px;
+		
+}
+
+#app .project.root > .name > .content > .innerContentContainer a,
+#app .project.root > .name > .content > .innerContentContainer u{
+				text-underline-offset: 3.5px !important;
+text-decoration-thickness:
+		background: var(--underlineOffset);
+
+}
+
+/*root mirrored checkboxes*/
+app .project.root > .name > .bullet.diamond ~ .prefix .item-checkbox{
+		background: blue !important;
+}
+
+.project.root.mainTreeRoot > .name > .content,
+.project.root > .name > .content,
+.project.root.paragraph > .name > .content,
+.project.root.header1 > .name > .content,
+.project.root.header2 > .name > .content,
+.project.root.comment > .name > .content,
+.project.root.comment-container > .name > .content,
+.project.root.references > .name > .content {
+		font-size: var(--root-font-size);
+		line-height: var(--root-line-height);
+		margin-left: 0px;
+		margin-top: 0px;
+		visibility: visible;
+		opacity: 1;
+		min-height: unset;
+		height: unset;
+		transition: 1s;
+		color: var();
+	--NODE--TXT-CLR--main:var(--NODE--TXT-CLR--bold);
+ 
+}
+#app .project.root > .name > .content code {
+		font-size: var(--root-inlineCode-font-size);
+		line-height: var(--root-inlineCode-line-height);
+	padding-top: 2.5px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	letter-spacing: -0.2px;
+		--inlineCodeBrdRad:6px;
+}
+#app .project.root > .name > .content code * {
+		font-size: var(--root-inlineCode-font-size);
+		line-height: var(--root-inlineCode-line-height);
+}
+.project.root {
+		margin-top: 0px;
+}
+.project.root > .notes > .content {
+		margin-left: 0px;
+}
+
+.project.root > .name .innerContentContainer,
+.project.root > .innerContentContainer .colored {
+		--InnerContentPadTop: 0px;
+		--InnerContentPadBtm: 0px;
+}
+
+
+
+
+/*ZOOMING IN AND OUT OF NODES*/
+:root {
+		--root-padtop: 30px;
+		--pagePadLeft: 20px;
+		--pagePadRight: 20px;
+		--pageMaxWidth: 700px;
+}
+#app .page > .project.root > .children {
+		transition: 0s !important;
+		padding-top: var(--root-padtop) !important;
+}
+#app .page {
+		max-width: var(--pageMaxWidth);
+		padding-left: var(--pagePadLeft);
+		padding-right: var(--pagePadRight);
+}
+
+/*
+#app ~ div[style]{
+		border:2px solid red !important;
+		position: absolute !important;
+		transition:1s ease-in-out !important;
+		top:unset !important;
+		left: unset !important;
+}*/
+/*new title during animation
+.children._oqw2mn .project > .name > .content[style="visibility: hidden;"]{
+		visibility: visible !important;
+		font-size: var(--name-fontSize)!important;
+		line-height: var(--name-lineHeight)!important;
+		--name-fontSize: 2.5rem !important;
+		--name-lineHeight: 1.2 !important;
+		opacity:0 !important;
+
+*/
+/***************
+**************** 
+LEVEL 1 > PROJECT
+****************
+****************/
+.project {
+		margin-top: var(--prjct-MargTopBtm);
+		margin-bottom: var(--prjct-MargTopBtm);
+		position: relative;
+		border-radius: var(--prjct-BrdRad);
+}
+.project.root > .children .header1,
+.project.root > .children .header2 {
+		margin-top: var(--prjct-MargTopBtm)
+}
+
+/****
+Added to selection*/
+.project.addedToSelection:before {
+		background: var(--ADDED-TO-SELECTION--BG);
+		inset: 0;
+		border-radius: var(--prjct-BrdRad)
+}
+.project.addedToSelection .project {
+		border-radius: var(--prjct-BrdRad);
+}
+.project.addedToSelection .project:not(.dashboard-card,
+.dashboard-card .comment,
+.board .comment) {
+		border-radius: 0px !important;
+}
+
+
+/****
+ADDED TO SELECTION - BOARDS*/
+.boardColumn.addedToSelection > .children,
+.boardCard.addedToSelection,
+.boardCard .project.addedToSelection {
+		--brd-brdrClr: var(--ADDED-TO-SELECTION--BrdClr) !important;
+}
+
+/*comments*/
+.project.comment {
+		border: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR);
+		border-radius: var(--prjct-BrdRad);
+		padding-bottom: calc(var(--prjct-CmntPadTopBtm) * 1.25);
+		padding-top: 0px;
+		background: var(--COMMENT-CONTAINER--BG);
+		--prjct-BrdRad: 4px;
+		--btnIcn-ExpandB4Up-W: 5px;
+		--btnIcn-ExpandB4Up-H: 5px;
+		--btnIcn-ExpandB4Low-W: 14px;
+		--btnIcn-ExpandB4Low-H: 14px;
+		--prjct-MargTopBtm: 5px;
+		;
+}
+.project.comment.highlighted {
+		filter: brightness(.96);
+		background: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+}
+.project.comment-container {
+		padding-bottom: 0px;
+}
+.project.comment-container.open {
+		padding-bottom: var(--prjct-CmntPadTopBtm);
+}
+
+.project.comment-container > .children > .project:first-of-type:not(.project.boardColumn.comment > .children > .project:first-of-type) {
+		margin-top: 0px;
+}
+
+
+.project.comment .project.comment {
+		background: var(--COMMENT--BG--even);
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-right: 0px;
+}
+.project.comment .project.comment .project.comment,
+.project.comment .project.comment .project.comment .project.comment .project.comment {
+		background: var(--COMMENT-CONTAINER--BG);
+}
+.project.comment .project.comment .project.comment .project.comment {
+		background: var(--COMMENT--BG--even);
+}
+.comment .project {
+		--prjct-MargTopBtm: 5px;
+		margin-top: var(--prjct-MargTopBtm);
+		margin-bottom: var(--prjct-MargTopBtm)
+}
+.project.comment.draft > div:last-child {
+		margin-top: 0px !important;
+		margin-left: 0px !important;
+		padding-left: calc(var(--content-PadLeftRight) + var(--children-Indent));
+}
+.project.comment.draft button {
+		margin: 0px;
+		position: relative;
+		bottom: unset;
+		right: unset;
+}
+.project.comment button {
+		margin: 0px;
+		position: absolute;
+		bottom: 0px;
+		padding: 0 5px;
+		right: 0px;
+}
+
+
+
+
+/***************
+****************
+LEVEL 2 > Name, Notes, Children, Comment Attribution
+****************
+****************/
+/****
+NAME & NOTES*/
+.project > .name,
+.project > .name.name--with-image,
+.project.noted > .notes,
+.project > .commentAttribution {
+		display: flex !important;
+		padding: 0px;
+		/*flex-grow: 1;*/
+}
+#app .project.noted > .notes,
+#app .project.noted > .notes > .content {
+		display: block
+}
+.project > .commentAttribution {
+		padding-top: var(--prjct-CmntPadTopBtm);
+}
+.project > .name.name--with-image {
+		flex-direction: column;
+		align-items: flex-end;
+
+}
+.project.noted > .name.name--with-image {
+		margin-bottom: 0px;
+}
+.project.noted > .notes {
+		margin-bottom: 5px;
+}
+/****
+NAME ONLY*/
+.project > .name {
+		position: unset;
+}
+.project.references .project .name {
+		position: relative;
+}
+
+/*compensates for commentattribution*/
+.project.comment-container .project.comment > .name,
+.project.comment > .name *:not(.references .project.comment > .name *) {
+		--btn-MargTop: 18px;
+}
+/*IN REFERENCES*/
+.project.references > .children .project.comment-container > .children > .comment > .name {
+		--btn-MargTop: -2px;
+}
+
+/**non-comment nodes inside comment*/
+.project.comment > .children .project > .name {
+		--btn-MargTop: -4px;
+}
+/*non-comment Header1 nodes inside comment*/
+.project.comment > .children .project.header1 > .name {
+		--btn-MargTop: -2px;
+}
+/*non-comment Header2 nodes inside comment*/
+.project.comment > .children .project.header2 > .name {
+		--btn-MargTop: -1px;
+}
+/*comment-container*/
+.project.comment-container > .name * {
+		--btn-MargTop: 5px !important;
+}
+
+.project.comment-container > .name {
+		--btn-MargTop: 5px !important;
+		padding-top: var(--prjct-CmntContainPadTopBtm);
+		padding-bottom: var(--prjct-CmntContainPadTopBtm);
+}
+
+/*referenced comment bullet*/
+.references .project.comment > .name {
+		--btn-MargTop: -1px;
+}
+/****
+NOTES ONLY*/
+.project.noted > .notes {
+		max-height: unset;
+}
+
+/****
+CHILDREN*/
+#app .project > .children {
+		transform: unset !important;
+		transform-origin: unset !important;
+		transition: .2s ease-in-out !important;
+		margin-bottom: var(--children-MargBtm);
+		padding-top: var(--children-MargTop);
+}
+
+.project > .children:not(.board>.children) {
+		padding-left: var(--children-Indent)
+}
+/****
+REFERENCES*/
+#app .references > .children .addSiblingButton {
+	display: none;
+}
+#app .references > .children > .project:not(.board .references > .children > .project){
+	margin-bottom: 10px !important
+}
+#app .references > .children > .project:last-of-type{
+	margin-bottom: 0px !important;
+}
+.references .project .breadcrumbs {
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		margin-top: 0px !important;
+		padding-bottom: 2px;
+	row-gap: 5px !important;
+	padding-top: 8px
+}
+
+.references .project.comment .breadcrumbs {
+		padding-left: calc(var(--children-Indent) * .5) !important;
+}
+.references .project .breadcrumbs a {
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-right: 0px !important;
+		display: inline;
+		float: left;
+		font-size: .74rem;
+		opacity: .9;
+		line-height: .95 !important;
+		margin-top: 4px !important;
+		transition: .2s;
+		font-weight: 500;
+		-webkit-font-smoothing: antialiased;
+		max-width: 150px !important;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-bottom: 1px;
+	transform-origin: left !important;
+	margin: 0px !important;
+}
+.references .project:not(.comment) .breadcrumbs a:last-of-type {
+/*    margin-left: 10px !important;
+			white-space: normal;
+		width: 100%;
+	 font-size: .83rem;*/
+		max-width: 77% !important;
+
+}
+.references .project .breadcrumbs a:hover {
+		transform: scale(1.1) !important;
+		color: var(--NODE--TXT-CLR--CONTRAST);
+
+}
+/*
+.references .breadcrumbs > a:before {
+		content: var(--ICON--BREADCRUMB--CHEVRON);
+		display: block;
+		filter: var(--inverted-chevron-icn);
+		min-width: 5px;
+		height: auto;
+		opacity: .26;
+		position: absolute;
+		left: 0;
+		top: 0px
+}
+*/
+#app .references .project svg {
+	position: relative;
+	top: 1px;
+	opacity: .6
+}
+
+
+.breadcrumb-overflow-menu div,
+.breadcrumb-overflow-menu div a {
+	white-space: normal !important;
+}
+/*REFERENCES - Border-top - ALL*/
+.root > .children > .project.references:before,
+.root > .children > .project.references:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: -100vw;
+		right: -100vw;
+		width: unset;
+		height: 1px;
+		border-radius: .5px;
+		background: hsl(205, 9%, 50%, .25);
+}
+.pageContainer {
+		overflow-x: hidden;
+}
+/*REFERENCES - Border-top - Direct CHildren of ZOomed Parent*/
+.root > .children > .project.references:before,
+.root > .children > .project.references:after {
+		top: -12px;
+}
+
+
+.root.dashboard > .children .project.references:before {
+		display: none;
+}
+
+.project.root > .children > .project.references {
+		margin-top: 22px;
+}
+#app .project.root > .children .project.references > .name > .content,
+.project.references > .name > .content {
+		font-size: .95em !important;
+		color: var(--LnkWFTxtClr);
+}
+.project.references > .name > .expand {
+		opacity: .5;
+}
+.root > .children > .project.references > .name,
+.root > .children > .project.references > .notes,
+.root > .children > .project.references > .name > .bullet,
+.root > .children > .project.references > .name > .content,
+.root > .children > .project.references > .name > .expand,
+.root > .children > .project.references > .name > .prefix,
+.root > .children > .project.references > .children {
+		z-index: 1
+}
+.root > .children > .project.references:after {
+		bottom: -30px;
+		z-index: 0;
+		opacity: .11;
+}
+
+/***************
+****************
+LEVEL 3 > Bullet, Prefix, Content, Expand, Menu, Comment Attribution Name
+****************
+****************/
+/****
+NAME > CONTENT
+&
+NOTES > CONTENT*/
+.name > .content,
+.notes > .content,
+.commentAttribution > span,
+.name > [class*="PlaceholderWrapper"] {
+		display: inline;
+		margin-left: var(--children-Indent);
+		padding-top: var(--content-PadTopBtm);
+		padding-bottom: var(--content-PadTopBtm);
+		padding-left: var(--content-PadLeftRight);
+		padding-right: var(--content-PadLeftRight);
+		flex: 1;
+}
+
+.notes > .content {
+		padding-bottom: 0px;
+		margin-bottom: var(--content-PadTopBtm)
+}
+.commentAttribution > span {
+		flex: unset !important;
+		font-weight: 400 !important;
+		font-size: 11px;
+		color: var(--COMMENT-ATTRIBUTION--TXT-CLR)!important;
+}
+.commentAttribution > span:last-of-type {
+		margin-left: 0px;
+}
+/****
+NAME > CONTENT only*/
+.project.root > .children .project > .name > .content,
+.project > .name > .content {
+		font-size: var(--name-fontSize);
+		line-height: var(--name-lineHeight);
+		color: var(--NODE--TXT-CLR--main);
+}
+:root {
+		--doneNameOpacity: .45;
+		--doneNotesOpacity: .45;
+		--doneClr:
+}
+#app .project.root > .children .project.done > .name > .content,
+.project.done > .name > .content,
+#app .project.root.done > .children .project > .name > .content,
+.project.done > .name > .content {
+		text-decoration-thickness: 1.5px;
+		opacity: var(--doneNameOpacity);
+}
+#app .project.done > .name > .expand:before,
+#app .project.done > .children .name > .expand:before {
+		opacity: var(--doneNameOpacity) !important;
+}
+#app .project.done > .notes,
+#app .project.done > .children .notes {
+		opacity: calc(var(--doneNameOpacity) + -0.1);
+		--NODE-NOTES--TXT-CLR-ALL: var(--NODE--TXT-CLR--main);
+}
+#app .project.root > .name,
+#app .project.root > .name * {
+		text-decoration-thickness: 4px;
+}
+
+#app .project.root > .notes {}
+.project > .name > .content > .commentContainer {
+		font-size: var(--cmntContain-fontSize);
+		line-height: var(--cmntContain-lineHeight);
+		color: var(--NODE--TXT-CLR--main);
+		text-decoration-color: var(--NODE--TXT-CLR--main);
+}
+
+/*reply btn padding*/
+.project > .name > .content > .commentContainer > div {
+		padding-right: var(--cmnt-btnPadRight);
+}
+
+/*comment font size*/
+.project.comment > .name > .content,
+/*Font size - non-comment children inside comment*/
+.project.comment > .children .project > .name > .content {
+		--name-fontSize: .95rem;
+		--name-lineHeight: 19.5px;
+}
+.project.comment > .children .project.header1 > .name > .content {
+		--header1-fontSize: 1.22rem;
+		--header1-lineHeight: 19px;
+}
+.project.comment > .children .project.header2 > .name > .content {
+		--header2-fontSize: 1.05rem;
+		--header2-lineHeight: 20px;
+}
+/*comment notes font size*/
+.project.comment > .notes > .content,
+/*Font size - non-comment notes children inside comment*/
+.project.comment > .children .project > .notes > .content {
+		--notes-fontSize: .72rem;
+		--notes-lineHeight: 14px;
+}
+/*comment draft*/
+.project.comment.draft {}
+/*comment draft button*/
+.comment.draft button {
+		margin-right: var(--cmnt-btnPadRight);
+		border-radius: 3px;
+		padding: 1px 5px 1px 5px;
+		font-weight: 500 !important;
+		cursor: pointer;
+}
+
+.project.root > .children .header1 > .name > .content,
+.project.header1 > .name > .content {
+		font-size: var(--header1-fontSize);
+		line-height: var(--header1-lineHeight)
+}
+.project.root > .children .header2 > .name > .content,
+.project.header2 > .name > .content {
+		font-size: var(--header2-fontSize);
+		line-height: var(--header2-lineHeight)
+}
+/****
+NAME-WITH-IMAGE
+*/
+.name--with-image > .content:empty {
+		max-height: 30px !important;
+		position: absolute;
+		z-index: 9494;
+		left: 3px;
+}
+.name--with-image > .content {
+		max-height: 900px !important;
+		height: unset !important;
+		display: block !important;
+		min-height: unset !important;
+		transition: 0.3s;
+		opacity: 1 !important;
+}
+.name--with-image > .content:focus,
+.name--with-image > .content:active {
+		max-height: 300px !important
+}
+.name--with-image > .content,
+.name--with-image > .file-preview {
+		width: calc(100% - var(--children-Indent))
+}
+.name--with-image > .file-preview {
+		padding-left: var(--content-PadLeftRight);
+}
+.name--with-image > .file-preview .image-viewer {
+		overflow: unset;
+}
+.name--with-image > .file-preview .image-viewer {
+		border-radius: var(--btn-BrdRad);
+		overflow: hidden;
+		transition: .2s;
+		border: var(--IMAGE-BOX--BORDER);
+}
+.name--with-image.name--focused > .file-preview .image-viewer {
+		box-shadow: 0 0 0 0px var(--BG-primary),
+		0 0 0 3px var(--IMAGE--SELECTED--BOX-SHADOW-CLR);
+}
+/****
+NOTED > CONTENT only*/
+.project.noted > .name > .content {
+		padding-bottom: 0px;
+}
+
+/****
+NOTES > CONTENT only*/
+.project > .notes > .content {
+		max-height: unset;
+		padding-top: 0px;
+		font-size: var(--notes-fontSize);
+		line-height: var(--notes-lineHeight);
+}
+#app .project .notes,
+#app .project .notes .content,
+#app .project .notes u,
+#app .project .notes .contentTag,
+#app .project .notes .contentLink {
+		--underlineOffset: 2px !important;
+		--underlineThickness: 1px !important;
+		text-underline-offset: var(--underlineOffset) !important;
+		text-decoration-thickness: var(--underlineThickness) !important;
+}
+
+
+
+
+
+/***************
+BUTTONS
+****************/
+/****
+Bullet, Expand, Prefix, & Menu
+(Button containers - center new icons)*/
+.name > .bullet,
+.name > .prefix,
+.name > .prefix .item-checkbox,
+.name > .expand,
+.name > .expand ._3hmsj,
+.name > .menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: var(--btn-Width);
+		height: var(--btn-Height);
+		transition: var(--btn-transition);
+		cursor: pointer;
+		border-radius: var(--btn-BrdRad)
+}
+
+
+
+/*Button containers - center new icons*/
+/* Button Icons - ALL BUTTONS*/
+.name > .bullet:before,
+.name > .bullet:after,
+.name > .prefix .item-checkbox:before,
+.name > .prefix:after,
+.name > .expand:before,
+.name > .expand:after,
+.name > .menu:before,
+.name > .menu:after {
+		content: "";
+		display: block;
+		width: var(--btnIcn-Width);
+		height: var(--btnIcn-Width);
+		position: absolute;
+		top: auto !important;
+		left: auto !important;
+		right: auto;
+		bottom: auto;
+		transition: var(--btn-transition);
+		margin-left: unset !important;
+		margin-right: unset !important;
+		margin-top: unset !important;
+		inset: unset !important;
+}
+
+
+
+
+/****
+Prefix
+AND
+Expand*/
+#app .project > .name > .prefix,
+#app .project > .name > .expand {
+		top: var(--btn-MargTop);
+}
+
+
+/****
+Prefix ONLY*/
+.project > .name > .prefix {
+		left: (calc var(--children-Indent) * 0);
+		/*hide checkbox, on all bullets*/
+		opacity: 0;
+}
+.project.checkmark > .name > .prefix {
+		opacity: 1;
+}
+/*checkbox*/
+.project > .name > .prefix > .inline-flex > .item-checkbox {
+		width: var(--btnIcn-ChkBx-W);
+		height: var(--btnIcn-ChkBx-H);
+		background: var(--CHECKBOX--BG);
+		box-shadow: var(--btnIcn-ChkBx-BoxShad);
+		border-radius: var(--btnIcn-ChkBx-BrdRad);
+		transition: var(--btnIcn-ChkBx-Transition);
+		z-index: 3;
+		background: var(--BG-primary);
+}
+/*checkbox - done*/
+.project.done > .name > .prefix > .inline-flex > .item-checkbox {
+		background: var(--CHECKBOX--BG--DONE);
+		transition: var(--btnIcn-ChkBx-Transition);
+		--btnIcn-ChkBx-BoxShad: 0 0 0 2px var(--CHECKBOX--BG--DONE);
+		--btnIcn-ChkBx-BrdRad: 3px;
+}
+/*checkmark*/
+.project > .name > .prefix > .inline-flex > .item-checkbox:before {
+		content: var(--ICON--CHECKMARK) !important;
+		width: var(--btnIcn-ChkMrk-W);
+		height: var(--btnIcn-ChkMrk-H);
+		transform: scale(var(--btnIcn-Scale));
+		--btnIcn-Scale: 0;
+		transition: .1s;
+		z-index: 5;
+}
+/*checkmark - done*/
+.project.done > .name > .prefix > .inline-flex > .item-checkbox:before {
+		--btnIcn-Scale: 1.0;
+		transition: var(--btnIcn-ExpandB4Low-HovTransition);
+}
+
+.project.checkmark:not(.board .project) > .name > .expand {
+		--btn-Width: 32px;
+		opacity: 0;
+}
+.project.checkmark.collapsed > .name > .prefix:after {
+		--btnIcn-ExpandB4Low-W: 21px;
+		--btnIcn-ExpandB4Low-H: 21px;
+		--btnIcn-ExpandB4Low-BrdRad: 7px;
+}
+
+
+/****
+Expand:AFTER
+&
+Item Checkbox:AFTER
+&
+Bullet:AFTER*/
+.project > .name > .bullet:after,
+.project > .name > .prefix:after,
+.project > .name > .expand:after {
+		width: var(--btnIcn-ExpandB4Low-W);
+		height: var(--btnIcn-ExpandB4Low-H);
+		border-radius: var(--btnIcn-ExpandB4Low-BrdRad);
+		background: var(--BG-Bullet-under);
+		transform: rotate(-45deg)scale(0);
+		border: none;
+		transition: .15s
+}
+.project.collapsed > .name > .bullet:after,
+.project.collapsed > .name > .prefix:after,
+.project.collapsed > .name > .bullet ~ .expand:after {
+		transform: rotate(45deg)scale(1.1);
+}
+.project.paragraph.collapsed > .name > .bullet ~ .expand:after,
+.project.quote-block.collapsed > .name > .bullet ~ .expand:after,
+.project.code-block.collapsed > .name > .bullet ~ .expand:after {
+		transform: rotate(0deg)scale(1.1);
+}
+.project.collapsed > .name > .prefix:after {
+		transform: rotate(0deg)scale(1.1);
+}
+
+
+
+/****
+Expand ONLY*/
+.project > .name > .expand {
+		left: calc(var(--children-Indent) * 0)
+}
+.project > .name > .expand:before {
+		background: var(--BG-Bullet-open);
+		width: var(--btnIcn-ExpandB4Up-W);
+		height: var(--btnIcn-ExpandB4Up-H);
+		border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
+		z-index: 1;
+}
+
+.project.collapsed {
+		--BG-Bullet-open: var(--BG-Bullet-closed);
+}
+
+
+/*checkboxes, hide bullet*/
+.project.checkmark > .name > .expand:before,
+.project.checkmark > .name > .expand:after {
+		opacity: 0;
+}
+
+
+
+/****
+Bullets
+AND
+Menu*/
+#app .project > .name > .bullet,
+#app .project > .name > .menu {
+		z-index: 2;
+		opacity: 0;
+		animation: menu-animation-in .25s ease-in-out;
+		top: var(--btn-MargTop);
+}
+#app .project > .name:hover > .bullet,
+#app .project > .name:hover > .menu {
+		opacity: .5;
+		animation: menu-animation-out .25s ease-in-out;
+}
+#app .project > .name:hover > .bullet:hover,
+#app .project > .name:hover > .menu:hover {
+		opacity: 1;
+		background: var(--BG-BUTTON--HOVER);
+		box-shadow: inset 0 0 0 .5px var(--btnBgHover-BrdClr);
+}
+
+/****
+Bullets ONLY*/
+#app .project > .name > .bullet {
+		left: calc(var(--children-Indent) * -1);
+}
+#app .project > .name > .bullet:before {
+		content: var(--ICON--MAGNIFYING-GLASS-ZOOM);
+}
+#app .project > .name > .bullet:after {
+		opacity: 0;
+}
+/*hide bullet before & after until boards*/
+.project.collapsed > .name > .bullet:after {}
+
+/****
+Menu ONLY*/
+#app .project > .name > .menu {
+		left: calc(var(--children-Indent) * -2);
+}
+#app .project > .name > .menu:before {
+		content: var(--ICON--MENU-DOTS);
+}
+
+/*root*/
+.project.root > .name {
+		--btn-MargTop: 16px;
+}
+
+:root {
+		--rootCheckboxMargTop: 7px;
+}
+/*root checkmark*/
+#app .project.checkmark.root > .name > .prefix {
+		--btn-MargTop: 11px !important;
+		top: var(--rootCheckboxMargTop) !important;
+}
+/*root checkmark - MENU*/
+.project.checkmark.root > .name > .menu {
+		--btn-MargTop: 41px !important;
+		left: calc(var(--children-Indent) * -2) !important;
+}
+/*root - Menu*/
+.project.root > .name > .menu {
+		left: calc(var(--children-Indent) * -1) !important;
+}
+.project.root.checkmark > .name > .menu {
+		left: calc(var(--children-Indent) * -1.2) !important;
+		--btn-MargTop: calc(var(--btn-Width) + 16px);
+}
+/*root - checkbox*/
+.project.root.checkmark > .name > .prefix {
+		left: calc(var(--children-Indent) * -1.2) !important;
+		top: 1px !important;
+		transform: scale(1.3);
+		--btnIcn-ChkBx-BrdRad: 5px
+}
+.project.root.checkmark > .name > .prefix > .inline-flex > .item-checkbox,
+#app .project.root.checkmark.done > .name > .prefix > .inline-flex > .item-checkbox:before {
+		--btnIcn-ChkBx-W: 18px;
+		--btnIcn-ChkBx-H: 18px;
+		--btnIcn-Scale: 1.3;
+		--btnIcn-ChkBx-BrdRad: 4px;
+}
+#app .project.root.checkmark > .name > .prefix > .inline-flex > .item-checkbox:before {
+		top: -10px !important;
+}
+
+
+
+
+/****
+Bullet Icon
+AND
+Menu Icon*/
+.project > .name > .bullet:hover,
+.project > .name > .menu:hover {
+		opacity: 1;
+}
+
+@keyframes menu-animation-out {
+		0% {
+				opacity: 0;
+		}
+
+		20% {
+				opacity: 0;
+		}
+
+		100% {
+				opacity: .5;
+		}
+}
+
+@keyframes menu-animation-in {
+		0% {
+				opacity: .5;
+		}
+
+		0% {
+				opacity: 0;
+		}
+
+		100% {
+				opacity: 0;
+		}
+}
+
+
+/****
+MIRRORS*/
+/*OPEN*/
+/*EXPAND - NOT IN board*/
+#app .project > .name > .bullet.diamond ~ .expand:before,
+#app .dashboard .project > .name > .bullet.diamond:before,
+/*BULLET - IN board*/
+#app .board .project > .name > .bullet.diamond:before {
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - 3px) !important;
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+		transition: var(--btn-MirrorTransition);
+}
+/*CHECKMARK - in all places*/
+#app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox,
+#app .project > .name > .bullet.diamond ~ .prefix .item-checkbox,
+#app .project > .name > .bullet.diamond ~ .prefix:after,
+#app .dashboard .project > .name > .bullet.diamond:after {
+		--btnIcn-Scale: .9;
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+		transition: var(--btn-MirrorTransition);
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 2.5px);
+}
+#app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 0px);
+}
+#app .board .project.boardColumn > .name > .bullet.diamond ~ .prefix .item-checkbox,
+#app .board .project.boardColumn > .name > .bullet.diamond ~ .prefix:after {
+		--btnIcn-Scale: 1;
+}
+
+#app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox:after,
+#app .project > .name > .bullet.diamond ~ .prefix:after,
+#app .dashboard .project > .name > .bullet.diamond:after {
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+}
+#app .project.collapsed > .name > .bullet.diamond ~ .prefix:after {
+		transform: rotate(45deg)scale(var(--btnIcn-Scale));
+		--btnIcn-Scale: 1;
+}
+
+#app .project > .name > .bullet.diamond ~ .expand:after {
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 0px);
+		transition: 350ms cubic-bezier(.27, 1.7, .51, .9);
+}
+
+#app .project > .name > .bullet.diamond ~ .prefix .item-checkbox:before {
+		transform: rotate(45deg)scale(var(--btnIcn-Scale));
+}
+
+/*COLLAPSED*/
+/*EXPAND - NOT IN board*/
+#app .project.collapsed > .name > .bullet.diamond ~ .expand:before,
+/*BULLET - IN board*/
+#app .board .project.collapsed > .name > .bullet.diamond:before,
+/*checkmark*/
+#app .project.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox,
+#app .dashboard .project.collapsed > .name > .bullet.diamond:before {
+		transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important;
+}
+/*checkmark*/
+#app .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
+		--btnIcn-Scale: 0.9;
+		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - .5px);
+}
+#app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
+		--btnIcn-Scale: .789;
+}
+#app .board .project > .name > .bullet.diamond ~ .prefix:after {
+		--btnIcn-Scale: .815;
+}
+#app .project.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox:before {
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+}
+#app .project.hasMirrors.collapsed > .name > .prefix:after {
+		opacity: 1;
+}
+#app .dashboard .project.paragraph > .name > .bullet.diamond:before,
+#app .project.paragraph > .name > .bullet.diamond ~ .expand:before,
+#app .dashboard .project.paragraph > .name > .bullet.diamond:after,
+#app .project.paragraph > .name > .bullet.diamond ~ .expand:after {
+		transform: rotate(0deg)scale(var(--btnIcn-Scale)) !important;
+}
+#app .dashboard .project.paragraph.collapsed > .name > .bullet.diamond:before,
+#app .project.paragraph.collapsed > .name > .bullet.diamond ~ .expand:before,
+#app .dashboard .project.paragraph.collapsed > .name > .bullet.diamond:after,
+#app .project.paragraph.collapsed > .name > .bullet.diamond ~ .expand:after {
+		transform: rotate(-180deg)scale(var(--btnIcn-Scale)) !important
+}
+
+
+
+/*MIRROR SOURCES*/
+#app .board .project.hasMirrors > .name > .bullet:before,
+#app .dashboard .project.hasMirrors > .name > .bullet.diamond:before,
+#app .project.hasMirrors > .name > .expand:before {
+		background: var(--BG-primary);
+		box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
+		inset 0 0 0 8px var(--CHECKBOX--BG);
+		outline: 1.4px solid var(--BG-Bullet-open);
+}
+
+#app .project.hasMirrors > .name > .prefix .item-checkbox {
+		box-shadow: 0 0 0 2px var(--BG-Bullet-open),
+		var(--btnIcn-ChkBx-BoxShad) !important;
+}
+#app .project.hasMirrors > .name > .prefix .item-checkbox,
+#app .project.done.hasMirrors > .name > .prefix .item-checkbox {
+		border-radius: 2px;
+		box-shadow: 0 0 0 2px var(--btnIcn-ChkBx-BoxShad);
+}
+#app .project.done > .name > .prefix .item-checkbox {
+		box-shadow: 0 0 0 1.5px var(--CHECKBOX--BG--DONE) !important;
+		border-radius: var(--btnIcn-ChkBx-BrdRad) !important;
+		overflow: hidden;
+}
+
+#app .project.done .children .project.checkmark > .name .prefix .item-checkbox:not(#app .project.done .children .project.checkmark.done > .name .prefix .item-checkbox) {
+		--CHECKBOX--BOX-CLR: var(--CHECKBOX--BOX-CLR--ChildDone) !important;
+		box-shadow: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR--ChildDone) !important;
+}
+/****
+SHARED*/
+/*SHARED BY ME*/
+#app .project.shared > .name > .bullet ~ .expand:before {
+		background: var(--shared-BY-me--bullet-1);
+}
+
+#app .project.shared.collapsed > .name > .bullet ~ .expand:before {
+		background: var(--shared-BY-me--bullet-2)
+}
+
+#app .project.shared > .name > .bullet ~ .expand:after,
+#app .project.shared.collapsed > .name > .bullet ~ .expand:after {
+		background: var(--shared-BY-me--bullet-color-3)
+}
+
+/*SHARED WITH ME*/
+#app .project.addedShared > .name > .bullet ~ .expand:before {
+		background: var(--shared-WITH-me--me--bullet-1)
+}
+
+#app .project.addedShared.collapsed > .name > .bullet ~ .expand:before {
+		background: var(--shared-WITH-me--me--bullet-2)
+}
+
+#app .project.addedShared > .name > .bullet ~ .expand:after,
+#app .project.addedShared.collapsed > .name > .bullet ~ .expand:after {
+		background: var(--shared-WITH-me--me--bullet-3)
+}
+
+
+/*SHARED - BY ME - COLORS*/
+#app .project.shared > .name {
+		--BG-Bullet-open: var(--shared-BY-me--bullet-1);
+		--BG-Bullet-under: var(--shared-BY-me--bullet-color-3);
+}
+/*SHARED - WITH ME - COLORS*/
+#app .project.addedShared > .name {
+		--BG-Bullet-open: var(--shared-WITH-me--me--bullet-1);
+		--BG-Bullet-under: var(--BG-expand-border-shared-WITH-me);
+}
+/***************
+****************
+LEVEL 4
+****************
+****************/
+/****
+NAME > innerCONTENT
+&
+NOTES > innerCONTENT*/
+.name .innerContentContainer,
+.notes .innerContentContainer {
+		padding-top: var(--InnerContentPadTop);
+		padding-bottom: var(--InnerContentPadBtm)
+}
+
+.name .innerContentContainer .colored,
+.notes .innerContentContainer .colored {
+		padding-top: var(--InnerContentPadTop);
+		padding-bottom: var(--InnerContentPadBtm)
+}
+
+
+
+/***************
+BOLD Text
+****************/
+b,
+i b {
+		color: var(--NODE--TXT-CLR--bold);
+}
+
+
+/***************
+highlights
+****************/
+:root {
+		--HiLtAlt: var(--BG-primary)
+}
+/**
+ HIGHLIGHT REBUILD
+
+#app .colored[class*="bc-"] {
+
+		background:linear-gradient(
+				var(--HiLtAlt) 0%,
+				var(--HiLtAlt) 20%,
+				var(--HiBgClr) 20%,
+				var(--HiBgClr))
+}
+*/
+.bc-red.bc-red {
+		--HiBgClr: var(--HIGHLIGHT--RED)
+}
+.bc-orange.bc-orange {
+		--HiBgClr: var(--HIGHLIGHT--ORANGE)
+}
+.bc-yellow.bc-yellow {
+		--HiBgClr: var(--HIGHLIGHT--YELLOW)
+}
+.bc-green.bc-green {
+		--HiBgClr: var(--HIGHLIGHT--GREEN)
+}
+.bc-sky.bc-sky {
+		--HiBgClr: var(--HIGHLIGHT--SKY)
+}
+.bc-blue.bc-blue {
+		--HiBgClr: var(--HIGHLIGHT--BLUE)
+}
+.bc-purple.bc-purple {
+		--HiBgClr: var(--HIGHLIGHT--PURP)
+}
+
+
+/***************
+HIGHLIGHT - GREYED OUT
+****************/
+.bc-gray.bc-gray {
+		background-color: var(--HIGHLIGHT--Grey--GREYED-OUT);
+		color: var(--HIGHLIGHT-TXT--Grey--GREYED-OUT) !important;
+		-webkit-font-smoothing: antialiased !important;
+		-webkit-text-stroke: 0px !important;
+}
+.board.root .bc-gray.bc-gray {
+		--HIGHLIGHT--Grey--GREYED-OUT: var(--BOARD-ROOT--CARD--BG);
+}
+.bc-gray.bc-gray::selection {
+		background: var(--selectionBg2) !important;
+		color: var(--NODE--TXT-CLR--CONTRAST)!important
+}
+
+/*GREYED OUT - POPUP*/
+.picker-background [title="Gray"]:before {
+		content: "GREYED OUT";
+		width: 50px;
+		display: block;
+		position: absolute;
+		font-size: 8px;
+		text-align: center;
+		top: -12px;
+		left: -14px;
+		right: auto;
+		color: var(--NODE--TXT-CLR--main)
+}
+
+
+/***************
+HIGHLIGHT - CODE
+****************/
+/*CODE*/
+.bc-pink.bc-pink {
+		background: var(--HIGHLIGHT--pink-CODE--BG) !important;
+		padding: 1.5px 3px .5px 3px !important;
+		border-radius: 3px;
+		color: var(--HIGHLIGHT--pink-CODE--TXT-CLR) !important;
+		font-family: 'SF Mono', monospace !important;
+		font-size: 0.85em;
+		display: inline;
+		/*vertical-align: text-top;*/
+		vertical-align: unset;
+		line-height: 1 !important;
+}
+#app code{
+		padding-top: 1px;
+		padding-bottom: 1px;
+		letter-spacing: -.1px;
+}
+#app code,
+#app code * {
+		font-size: calc(var(--name-fontSize) - 2.5px);
+		font-family: var(--wf-font-family-mono) !important;
+}
+:root {
+		--inlineCodeBrdRad:4px;
+}
+#app code{
+		border-radius: var(--inlineCodeBrdRad);
+}
+/***************
+HIGHLIGHT - LINE BREAK
+****************/
+/***************
+TEXT COLORS
+****************/
+html #app b .colored[class*="c-"] {
+		-webkit-font-smoothing: antialiased !important;
+}
+
+.colored[class*="c-"] {
+		-webkit-font-smoothing: subpixel-antialiased !important;
+		-webkit-text-stroke: 0.25px;
+}
+/*RED*/
+.c-red,
+u .c-red,
+.c-red u,
+b .c-red,
+.c-red b {
+		color: var(--TXT-CLR--RED) !important;
+		text-decoration-color: var(--TXT-CLR--RED);
+}
+
+/*ORANGE*/
+.c-orange,
+u .c-orange,
+.c-orange u,
+b .c-orange,
+.c-orange b {
+		color: var(--TXT-CLR--ORANGE) !important;
+		text-decoration-color: var(--TXT-CLR--ORANGE);
+}
+
+/*YELLOW*/
+.c-yellow,
+u .c-yellow,
+.c-yellow u,
+b .c-yellow,
+.c-yellow b {
+		color: var(--TXT-CLR--YELLOW) !important;
+		-webkit-text-stroke-color: hsl(50, 100%, 37%);
+		text-decoration-color: var(--TXT-CLR--YELLOW);
+}
+
+/*GREEN*/
+.c-green,
+u .c-green,
+.c-green u,
+b .c-green,
+.c-green b {
+		color: var(--TXT-CLR--GREEN) !important;
+		text-decoration-color: var(--TXT-CLR--GREEN);
+}
+
+/*TEAL*/
+.c-teal,
+u .c-teal,
+.c-teal u,
+b .c-teal,
+.c-teal b {
+		color: var(--TXT-CLR--TEAL) !important;
+		text-decoration-color: var(--TXT-CLR--TEAL);
+}
+
+/*SKY*/
+.c-sky,
+u .c-sky,
+.c-sky u,
+b .c-sky,
+.c-sky b {
+		color: var(--TXT-CLR--SKY) !important;
+		text-decoration-color: var(--TXT-CLR--SKY);
+}
+
+/*BLUE*/
+.c-blue,
+u .c-blue,
+.c-blue u,
+b .c-blue,
+.c-blue b {
+		color: var(--TXT-CLR--BLUE) !important;
+		text-decoration-color: var(--TXT-CLR--BLUE);
+}
+
+/*PURPLE*/
+.c-purple,
+u .c-purple,
+.c-purple u,
+.c-purple b,
+b .c-purple {
+		color: var(--TXT-CLR--PURPLE) !important;
+		text-decoration-color: var(--TXT-CLR--PURPLE);
+}
+
+/*PINK*/
+.c-pink,
+u .c-pink,
+.c-pink u,
+b .c-pink,
+.c-pink b {
+		color: var(--TXT-CLR--PINK) !important;
+		text-decoration-color: var(--TXT-CLR--PINK);
+}
+
+/*GRAY*/
+.c-gray,
+u .c-gray,
+.c-gray u,
+b .c-gray,
+.c-gray b {
+		color: var(--TXT-CLR--GRAY) !important;
+		text-decoration-color: var(--TXT-CLR--GRAY);
+		-webkit-font-smoothing: antialiased !important;
+}
+
+
+/***************
+UNDERLINE
+****************/
+:root {
+		--underlineOffset: 2.5px;
+		--underlineThickness: 1.5px;
+}
+
+
+/*root*/
+.project.root > .name,
+.project.root > .name * {
+		--underlineOffset: 5px;
+		--underlineThickness: 3px;
+}
+
+
+.project > .name > .content .innerContentContainer u,
+.project > .name > .content .innerContentContainer u .colored[class*="bc"] {
+		text-underline-offset: var(--underlineOffset);
+		text-decoration-thickness: var(--underlineThickness);
+}
+.comment {
+		--underlineOffset: 2px;
+		--underlineThickness: 1.5px;
+}
+.board {
+		--underlineOffset: 2px;
+		--underlineThickness: 1.5px;
+}
+
+
+
+/*header1*/
+.project.header1 > .name,
+.project.header1 > .name * {
+		--underlineOffset: 4.5px;
+		--underlineThickness: 2.5px;
+}
+/*header2*/
+.project.header2 > .name,
+.project.header2 > .name * {
+		--underlineOffset: 3px;
+		--underlineThickness: 2.5px;
+}
+
+/*boards - header1*/
+.board .project.header1 > .name,
+.board .project.header1 > .name * {
+		--underlineOffset: 3px;
+		--underlineThickness: 1.5px;
+}
+/*boards - header2*/
+.board .project.header2 > .name,
+.board .project.header2 > .name * {
+		--underlineOffset: 2.5px;
+		--underlineThickness: 1.5px;
+}
+
+/*comments - header1*/
+.comment .project.header1 > .name,
+.comment .project.header1 > .name * {
+		--underlineOffset: 3px;
+		--underlineThickness: 1.5px;
+}
+/*comments - header2*/
+.comment .project.header2 > .name,
+.comment .project.header2 > .name * {
+		--underlineOffset: 2.5px;
+		--underlineThickness: 1.5px;
+}
+
+:root {
+		--codeblockPadLeftRight: 20px;
+		--blockquoteBrdW: 5px;
+}
+/***************
+CODE BLOCKS
+****************/
+#app .code-block > .name .content {
+		display: block !important;
+		border: unset !important;
+		outline: 1px solid var(--wf-border-default);
+		outline-offset: -1px;
+}
+#app .dashboard .code-block > .name .content {
+		background: hsl(0, 0%, 5%);
+		--wf-border-default: hsl(0, 0%, 24%);
+}
+#app .project.code-block > .name > .content,
+#app .project.code-block.noted > .name > .content {
+		padding-left: calc(var(--codeblockPadLeftRight) + var(--blockquoteBrdW)) !important;
+		padding-bottom: 11px !important;
+		padding-top: 12px !important;
+		border-radius: 7px;
+}
+
+#app .project.code-block > .name > .content,
+#app .project.code-block > .name > .content *,
+#app .project.code-block > .name > .content > .innerContentContainer,
+#app .project.code-block > .name > .content > .innerContentContainer * {
+		font-family: var(--wf-font-family-mono), mono, monospace !important;
+		-webkit-font-smoothing: subpixel-antialiased;
+}
+
+#app .project.code-block > .name > .content,
+#app .project.code-block > .name > .content > .innerContentContainer {
+
+		font-size: calc(var(--name-fontSize) - 2px) !important;
+		line-height: calc(var(--name-lineHeight) - 2px) !important
+}
+
+/***************
+BLOCK QUOTE
+****************/
+#app .project.quote-block > .name .content {
+		display: flex !important;
+		padding-top: var(--content-PadTopBtm) !important;
+		padding-bottom: var(--content-PadTopBtm) !important;
+}
+#app .project.quote-block > .name .content .innerContentContainer {
+		padding-left: var(--codeblockPadLeftRight) !important;
+		padding-bottom: 4px;
+		padding-top: 4px;
+		background: hsla(0, 0%, 50%, .095);
+		border-radius: 3px;
+		width: 100%;
+		box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.3);
+		border-left-width: var(--blockquoteBrdW);
+}
+/***************
+TAGS
+****************/
+.innerContentContainer .contentTag,
+.innerContentContainer .contentTag * {
+		text-decoration: none !important
+}
+.innerContentContainer .contentTag {}
+.innerContentContainer .contentTag:hover {
+		background: var(--LnkWFBgClrHov);
+}
+/***************
+LINKS
+****************/
+:root {
+		--link-BrdRad: 3px;
+		--linkArrow-Size: 5px;
+		--linkArrow-BrdClr: var(--Link-TxtClr);
+		--linkIcnAfter-Width: 10px;
+		--linkIcnAfter-Height: 10px;
+}
+.contentLink,
+u .contentLink,
+.contentLink u,
+.colored a.contentLink,
+a.contentLink .colored {
+		color: var(--LnkTxtClr) !important;
+		position: relative;
+}
+#app a.contentLink,
+#app u a.contentLink,
+#app a.contentLink u {
+		text-decoration: underline;
+}
+#app .colored a.contentLink,
+#app a.contentLink .colored {
+		color: var(--LnkTxtClr)
+}
+
+
+/*
+
+html #app .project > .name > .content a.contentLink {
+		border-radius: var(--link-BrdRad);
+		transition: .1s;
+		padding-left: 3px;
+		padding-right: 3px;
+		text-underline-offset: var(--underlineOffset);
+		text-decoration-thickness: var(--underlineThickness);
+		text-decloration-color: var(--LnkTxtClr) !important;
+		text-decoration: none;
+		box-shadow: inset 0 0 0 1px var(--LnkBrdClr)!important;
+		background: var(--LnkBgClr);
+		--link-BrdRad: 4px;
+}*/
+html #app .project > .name > .content a.contentLink {
+		border-radius: var(--link-BrdRad);
+		transition: .1s;
+		padding-left: 0px;
+		padding-right: 0px;
+		text-underline-offset: var(--underlineOffset);
+		text-decoration-thickness: var(--underlineThickness);
+		text-decloration-color: var(--LnkTxtClr) !important;
+		--link-BrdRad: 4px;
+}
+html #app .project > .name > .content a.contentLink:hover {
+		background: var(--LnkBgClrHov);
+		background-image: var(--LinkIcn);
+		background-repeat: no-repeat;
+}
+
+html #app .project.root > .name {
+		--link-BrdRad: 7px;
+}
+html #app .project.root > .name > .content {
+		max-width: 100% !important;
+		font-weight: 600 !important;
+}
+:root {
+		--lnkicnW: 15px;
+		--lnkicnH: 15px;
+}
+/*
+#app a.contentLink:after{
+		content:"....";
+		color:transparent;
+		display: inline;
+		background-image: var(--ICON--LINK--EXTERNAL);
+		background-repeat: no-repeat;
+		background-size:var(--lnkicnW) var(--lnkicnH);
+		background-position:1px 72%;
+		opacity:.8;
+		transition: .2s;
+}
+#app .contentLink:hover:after{
+		opacity: 1;
+}
+*/
+html #app .project .content a.contentLink[href*="workflowy"],
+html #app .project .content a.contentLink[href*="workflowy"]:after {
+		--LnkTxtClr: var(--LnkWFTxtClr);
+		--LnkBrdClr: transparent;
+		--LnkBgClr: transparent;
+		--LnkBgClrHov: var(--LnkWFBgClrHov);
+		--ICON--LINK--EXTERNAL: var(--ICON--LINK--INTERNAL2) !important;
+		--lnkicnW: 14px;
+		--lnkicnH: 14px;
+		text-decoration: underline !important;
+		opacity: 1;
+		padding-left: 0px;
+		padding-right: 0px;
+}
+
+html #app .project > .notes > .content a.contentLink[href*="workflowy"] {}
+html #app .project > .notes > .content .contentLink {
+		color: var(--NODE-NOTES--TXT-CLR-ALL) !important;
+}
+html #app .project > .notes > .content {
+		color: var(--NODE-NOTES--TXT-CLR-ALL);
+		max-height: unset;
+		overflow: hidden;
+		transition: .0s !important;
+		white-space: pre-wrap !important;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 100;
+		display: -webkit-box;
+}
+html #app .project > .notes > .content code {
+		color: hsla(0, 0%, 70%);
+		font-size: calc(1em - 2px);
+		letter-spacing: -.5px;
+	line-height: 0px !important;
+
+	
+}
+
+html #app .project.root > .notes > .content > .innerContentContainer b {
+		color: var(--NODE-NOTESROOT--TXT-CLR-ALL-BOLD);
+}
+/*html #app .project > .notes > .content > .innerContentContainer{
+				white-space: pre-wrap !important;
+}*/
+html #app .project > .notes > .content > .innerContentContainer b {
+		color: var(--NODE-NOTES--TXT-CLR-Bold);
+}
+
+html #app .project > .notes > .content.active {
+		max-height: 900px;
+		-webkit-line-clamp: 900;
+		overflow: visible;
+}
+
+
+
+:root {
+		--rootNotesPadTop: 10px;
+		--rootnotes-fontSize: calc(var(--notes-fontSize) + 3px);
+		--rootnotes-lineHeight: calc(var(--notes-lineHeight) + 4px)
+}
+html #app .project.root > .notes > .content {
+		-webkit-line-clamp: unset;
+		max-height: 100% !important;
+		max-height: unset !important;
+		padding-top: var(--rootNotesPadTop);
+		transition: .15s !important;
+		font-size: var(--rootnotes-fontSize);
+		line-height: var(--rootnotes-lineHeight);
+}
+
+/***************
+PROJECT > NAME > FILE ATTACHMENT
+****************/
+/*LIGHT*/
+.project > .name._1fqag8m > .file-preview,
+/*DARK*/
+.project > .name._1qns2ax > .file-preview {
+		position: absolute;
+		left: var(--children-Indent);
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		z-index: 20;
+}
+
+
+/*LIGHT*/
+.project > .name._1fqag8m > .file-preview *,
+/*DARK*/
+.project > .name._1qns2ax > .file-preview * {
+		cursor: pointer;
+}
+
+/*LIGHT*/
+.project > .name._1fqag8m > .file-preview > button,
+/*DARK*/
+.project > .name._1qns2ax > .file-preview > button {
+		margin-top: -30px;
+		opacity: 0;
+		font-size: 0.8em;
+		transition: .2s;
+		padding: 3px 7px;
+		margin-left: 3px;
+		border-radius: 4px;
+		background: var(--FILE-DOWNLOAD-BUTTON--BG-CLR);
+		color: var(--FILE-DOWNLOAD-BUTTON--TXT-CLR) !important;
+}
+#app .project > .name--with-file > .file-preview {
+		position: relative;
+}
+#app .project > .name--with-file > .file-preview button {
+		height: 100%;
+		margin-left: var(--children-Indent);
+}
+
+/*LIGHT*/
+html #app .project > .name._1fqag8m:hover > .file-preview > button,
+/*DARK*/
+html #app .project > .name._1qns2ax:hover > .file-preview > button {
+		margin-top: 0px;
+		opacity: 1;
+}
+
+/*LIGHT*/
+html #app .project > .name._1fqag8m > .content,
+/*DARK*/
+html #app .project > .name._1qns2ax > .content {
+		border-radius: 5px;
+		background: var(--FileAttchmnt-BG);
+		color: var(--FileAttchmnt-TxtClr);
+		border: 1px solid var(--FileAttchmnt-BrdClr);
+		padding: 0.5px 4px 0px 4px;
+		display: inline;
+		flex: unset;
+}
+
+
+/*LIGHT*/
+html #app .project > .name._1fqag8m > .content:before,
+/*DARK*/
+html #app .project > .name._1qns2ax > .content:before {
+		display: inline-block;
+		vertical-align: sub;
+		z-index: 1;
+		width: 1.2em;
+		height: 1.2em;
+		transform: scale(.8);
+		margin-right: 1px;
+		transition: .14s;
+		content: var(--ICON--FILE);
+		position: relative;
+		filter: saturate(.2)brightness(.8)
+}
+
+.project > .name > .content + .file-preview:not(.project > .name.name--with-image > .content + .file-preview) {
+		padding-left: var(--children-Indent);
+}
+
+/************
+*************
+*************
+WAVY TEXT UNDERLINE - FOR MIRRORS & SOURCES
+*************
+*************
+*************/
+:root {
+		--wavy--BG-size: 9px;
+		--wavy--BG-position: -0px 100%;
+		--wavy--padding-bottom: 1.5px;
+}
+
+
+/*PARENTS  - Sources AND Mirrors  */
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer,
+/*CHILDREN - of - Mirrored Parents (not sources)*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer,
+/*PARENTS  - Underlined*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u,
+/*CHILDREN - Underlined*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u,
+/*PARENTS  - LINK*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
+/*CHILDREN - LINK*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
+/*PARENTS  - Highlighted*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"],
+/*CHILDREN - Highlighted*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"],
+/*PARENTS  - Highlighted AND Underlined*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u .colored[class*="bc"],
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] u,
+/*CHILDREN - Highlighted AND Underlined*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
+		text-decoration: none !important;
+		background-image: var(--ICON--UNDERLINE-WAVY);
+		background-repeat: repeat-x;
+		background-position: var(--wavy--BG-position);
+		background-size: var(--wavy--BG-size);
+		padding-bottom: var(--wavy--padding-bottom);
+}
+html #app .project.code-block > .name > .bullet.diamond ~ .content > .innerContentContainer {
+		background-image: var(--ICON--UNDERLINE-WAVY-CODEBLOCK);
+		--wavy--BG-size: 8px;
+		--wavy--BG-position: -0px 100%;
+		--wavy--padding-bottom: 2.5px;
+}
+html #app .comment .project.code-block > .name > .bullet.diamond ~ .content > .innerContentContainer {
+		--wavy--BG-size: 8px !important;
+		--wavy--BG-position: -0px 100%;
+		--wavy--padding-bottom: 3.5px !important;
+}
+
+/************
+WAVY TEXT - UNDERLINED & HIGHLIGHTED
+*************/
+/*PARENTS  - Underlined*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u,
+/*CHILDREN - Underlined*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u,
+/*PARENTS  - Highlighted AND Underlined*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u .colored[class*="bc"],
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] u,
+/*CHILDREN - Highlighted AND Underlined*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
+		background-image: var(--ICON--UNDERLINE-WAVY--UNDERLINE);
+}
+
+/************
+WAVY TEXT - LINKS
+*************/
+/*PARENTS  - Underlined*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
+/*CHILDREN - Underlined*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
+/*PARENTS  - Highlighted AND Underlined*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a .colored[class*="bc"],
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] a,
+/*CHILDREN - Highlighted AND Underlined*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a .colored[class*="bc"],
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a {
+		background-image: var(--ICON--UNDERLINE-WAVY--LINK);
+		--LnkBgClr: transparent;
+		--LnkBrdClr: transparent;
+}
+
+/************
+WAVY TEXT - LINKS - INTERNAL
+*************/
+/*PARENTS  - Underlined*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"],
+/*CHILDREN - Underlined*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"],
+/*PARENTS  - Highlighted AND Underlined*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"],
+/*CHILDREN - Highlighted AND Underlined*/
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"] {
+		background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL);
+}
+
+
+/************
+WAVY TEXT - BOARDS
+*************/
+html #app .comment * {
+		--wavy--BG-size: 0px !important;
+		--wavy--BG-position: 0px 101%;
+		--wavy--padding-bottom: 1px !important;
+		--InnerContentPadTop: 0px;
+}
+html #app .board * {
+		--wavy--BG-size: 0px !important;
+		--wavy--BG-position: 0px 100%;
+		--wavy--padding-bottom: 2px !important;
+		--InnerContentPadTop: 0px;
+}
+
+html #app .project .name .content {
+	-webkit-font-smoothing:subpixel-antialiased !important;
+}
+
+/*******************************
+********************************
+NORMAL STATE
+
+NODE ADJUSTMENTS
+********************************
+********************************/
+/***************
+LEVEL 1 > Adjustments
+****************/
+.project.root > .children .project.paragraph:not(.project.root.board > .children .project.paragraph) {
+		margin-top: var(--prjct-ParaMargTopBtm) !important;
+		margin-bottom: var(--prjct-ParaMargTopBtm) !important;
+}
+/***************
+LEVEL 3 > Button Adjustments
+****************/
+/*Button - Checkbox*/
+/*Button - Top margins*/
+.project.header1 > .name {
+		--btn-MargTop: 8.5px;
+}
+.project.header2 > .name {
+		--btn-MargTop: 1px;
+}
+
+/*Buttons - Paragraph*/
+.project.paragraph > .name > .expand,
+.project.quote-block > .name > .expand,
+.project.code-block > .name > .expand {
+		opacity: 0;
+		transition: 0s;
+}
+.project.paragraph > .name > .expand,
+.project.quote-block > .name > .expand,
+.project.code-block > .name > .expand {
+		--btnIcn-ExpandB4Up-W: 2px;
+		--btnIcn-ExpandB4Low-W: 8px;
+}
+#app .project.paragraph > .name > .bullet,
+#app .project.quote-block > .name > .bullet,
+#app .project.code-block > .name > .bullet {
+		left: calc(var(--children-Indent) * 0);
+		z-index: 3;
+}
+#app .project.paragraph > .name > .menu,
+#app .project.quote-block > .name > .menu,
+#app .project.code-block > .name > .menu {
+		left: calc(var(--children-Indent) * -1);
+}
+/*Button - Paragraph Parent - Make visible*/
+.project.paragraph.open > .name > .expand,
+.project.paragraph.collapsed > .name > .expand,
+.project.quote-block.open > .name > .expand,
+.project.quote-block.collapsed > .name > .expand,
+.project.code-block.open > .name > .expand,
+.project.code-block.collapsed > .name > .expand {
+		opacity: 1;
+		transition: var(--btn-transition)
+}
+#app .project.paragraph.open > .name > .bullet,
+#app .project.paragraph.collapsed > .name > .bullet,
+#app .project.quote-block.open > .name > .bullet,
+#app .project.quote-block.collapsed > .name > .bullet,
+#app .project.code-block.open > .name > .bullet,
+#app .project.code-block.collapsed > .name > .bullet {
+		left: calc(var(--children-Indent) * -1);
+}
+#app .project.paragraph.open > .name > .menu,
+#app .project.paragraph.collapsed > .name > .menu,
+#app .project.quote-block.open > .name > .menu,
+#app .project.quote-block.collapsed > .name > .menu,
+#app .project.code-block.open > .name > .menu,
+#app .project.code-block.collapsed > .name > .menu {
+		left: calc(var(--children-Indent) * -2);
+}
+.project.comment-container.open,
+.project.comment-container {
+		width: 100%
+}
+
+.project.comment.thread {
+		box-shadow: none !important
+}
+
 
 #app .project:not(.board) > .children {
 	display: flex;
@@ -6000,7 +8136,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn {
 	:root {
 		--root-padtop: 20px;
 		--root-font-size: 1.7rem;
-		--root-line-height: 1.15;
+		--root-line-height: 1.21;
 
 		--name-fontSize: 1.61rem;
 		--name-lineHeight: 423px;
@@ -6366,7 +8502,7 @@ body * {
 	/*wavy*/
 	--wavy--BG-size: 7px;
 	--wavy--BG-position: -0px 100%;
-	--wavy--padding-bottom: 2px;
+	--wavy--padding-bottom: 2.5px;
 	--underlineOffset: 3px;
 
 	--btn-MargTop: 0px;
@@ -6411,7 +8547,7 @@ body * {
 		/*wavy*/
 		--wavy--BG-size: 6px;
 		--wavy--BG-position: 0px 100%;
-		--wavy--padding-bottom: 2px;
+	
 		--underlineOffset: 3px;
 		--underlineThickness: 1.5px;
 	}
