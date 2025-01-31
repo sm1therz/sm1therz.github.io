@@ -342,7 +342,7 @@ LEVEL 0 > ROOT
 :root {
 		--root-font-size: 2.2rem;
 		--root-line-height: 1.15;
-		--root-inlineCode-font-size: calc(var(--root-font-size) - .5rem);
+		--root-inlineCode-font-size: calc(var(--root-font-size) - .45rem);
 		--root-inlineCode-line-height: calc(var(--root-line-height) + .05);
 }
 .project.root.mainTreeRoot > .name > .content {
@@ -372,7 +372,7 @@ LEVEL 0 > ROOT
 #app .project.root > .name > .content code {
 		font-size: var(--root-inlineCode-font-size);
 		line-height: var(--root-inlineCode-line-height);
-	padding-top: 2px;
+	padding-top: 2.5px;
 	padding-bottom: 1px;
 	padding-left: 5px;
 	padding-right: 5px;
