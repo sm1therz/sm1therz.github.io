@@ -983,10 +983,20 @@ BOOKMARK GROUPS
 #appID .bookmark-folder__head{
   box-shadow: 0 1px 0 0 var(--bookmarkDetailBrdClr) !important;
 }
-#appID [class*="collapsed"] .bookmark-folder__head{
-  box-shadow: 0 1px 0 0 var(--bookmarkDetailBrdClr) !important;
+
+#appID .bookmark-widget__folder:not([class*="collapsed"]) .bookmark-folder__head{
+      box-shadow: 0 0px 0 0 var(--bookmarkDetailBrdClr) !important;
+}
+#appID .bookmark-widget__folder:not([class*="collapsed"]) + .bookmark-widget__folder:not([class*="collapsed"]){
+    box-shadow: 0 -1px 0 0 var(--bookmarkDetailBrdClr) !important;
 }
 
+#appID .bookmark-widget__folder[class*="collapsed"] .bookmark-folder__head{
+  box-shadow: 0 1px 0 0 var(--bookmarkDetailBrdClr) !important;
+}
+#appID .bookmark-widget__folder:not([class*="collapsed"]) + .bookmark-widget__folder[class*="collapsed"]{
+    box-shadow: 0 -1px 0 0 var(--bookmarkDetailBrdClr) !important;
+}
 .bookmark-widget__folders .bookmark-widget__folder:first-child {
   box-shadow: inset 0 1px 0 0 hsla(0, 0%, 50%, .00) !important;
 }
@@ -996,6 +1006,7 @@ BOOKMARK GROUPS
 .bookmark-widget .widget__container[style*=", 0)"] .bookmark-widget__folders .bookmark-widget__folder:last-child .bookmark-folder__head {
   border-bottom-width: 1px !important;
 }
+
 .bookmark-folder__title {
   display: flex !important;
   align-items: center;
