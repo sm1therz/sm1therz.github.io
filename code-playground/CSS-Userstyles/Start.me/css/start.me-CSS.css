@@ -852,7 +852,7 @@ SECTION - MULTIPLE COLUMNS
 }
 .widget-header__title,
 .bookmark-folder__title {
-  font-size: calc(var(--bodyFontSize) + 2px) !important;
+  font-size: calc(var(--bodyFontSize) + 3px) !important;
   line-height: calc(var(--bodyLineHeight) + 1px) !important;
   font-weight: 500 !important;
   -webkit-font-smoothing: subpixel-antialiased !important;
