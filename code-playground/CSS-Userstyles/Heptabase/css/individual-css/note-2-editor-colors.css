@@ -129,7 +129,9 @@ LINKS
 	transparent var(--underlineH),
 	transparent 100%) !important;
 }
-
+.ProseMirror a code {
+		color: var(--active-item) !important;
+}
 /***********
 UNDERLINE
 ************/
