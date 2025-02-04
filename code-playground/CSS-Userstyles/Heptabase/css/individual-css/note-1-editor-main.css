@@ -20,6 +20,7 @@
 	--inlineCodeClr: red;
 	--inlineCodeBgClr: rgba(0, 0, 0, .075);
 	--inlineCodeBrdClr: rgba(0, 0, 0, .048);
+		--inlineCodeLinkOverrideBgClr:#ececec;
 	--inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.0);
 	--inlineCodeClr: hsla(0, 0%, 0%, .8);
 }
@@ -34,6 +35,7 @@
 	--inlineCodeClr: red;
 	--inlineCodeBgClr: rgba(255, 255, 255, .089);
 	--inlineCodeBrdClr: hsl(214, 8%, 0%, 0.46);
+		--inlineCodeLinkOverrideBgClr:#383a3c;
 	--inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.06);
 	--inlineCodeClr: inherit;
 }
@@ -168,15 +170,33 @@ INLINE CODE
 	--inlinecodeBrdRad: 4px;
 	--inlinecodePad: 0.125em .3em 0.12em .3em;
 }
-code {
+#root code {
 	font-size: calc(1em - 2px);
 	border-radius: var(--inlinecodeBrdRad);
 	padding: var(--inlinecodePad);
 	display: inline;
 	background: var(--inlineCodeBgClr);
-	border: 1px solid var(--inlineCodeBrdClr);
+	border: 1px solid var(--inlineCodeBrdClr) !important;
 	box-shadow: inset 0 0 0 .75px var(--inlineCodeBoxShadClr);
 	color: var(--inlineCodeClr);
+		position: relative;
+		overflow: hidden !important;
+}
+#root a code  {
+		text-decoration: none !important;
+}
+
+a code:after{
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right:0;
+		height: 5px;
+		background: var(--inlineCodeLinkOverrideBgClr);
+		border-bottom-right-radius: calc(var(--inlinecodeBrdRad) - 1px);
+		border-bottom-left-radius: calc(var(--inlinecodeBrdRad) - 1px);
 }
 h1 {
 	--inlinecodeBrdRad: 7px;
