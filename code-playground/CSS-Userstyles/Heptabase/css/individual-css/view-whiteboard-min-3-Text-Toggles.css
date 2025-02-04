@@ -43,3 +43,10 @@ transform:scale(.7);
 }
 
 
+
+
+/***/
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="toggle"] > [class*="nested"] > [data-node-type*="table"] table,
+[data-object-type="mindMapTextElementNode"] .ProseMirror > [data-node-type*="toggle"] > [class*="nested"] > [data-node-type*="table"] table{
+		width:100%;
+}

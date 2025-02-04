@@ -1,0 +1,47 @@
+/*****************
+******************
+******************
+WHITEBOARD CARD TOGGLES
+******************
+******************
+******************/
+
+
+:root {
+--whiteboardCardToggleBulletW:.85rem;
+}
+
+
+[data-object-type="cardInstance"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"],
+[data-object-type="mindMapCardNode"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
+	width:var(--whiteboardCardToggleBulletW) !important;
+	position:absolute !important;
+	margin-left:calc(var(--whiteboardCardToggleBulletW) * -1 + 1px);
+		margin-right: 00px !important;
+	z-index:949494949494;
+	border-radius:4px;
+	height:30px !important;
+	overflow:hidden;
+	top:-1px;
+	transition:.15s;
+
+}
+
+
+[data-object-type="cardInstance"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"],
+[data-object-type="mindMapCardNode"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"]{
+height:100% !important;
+transform:scale(0.75);
+}
+[data-object-type="cardInstance"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"] svg,
+[data-object-type="mindMapCardNode"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"] [class*="bullet"] svg {
+		opacity: 0.45
+}
+
+
+[data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="nested"],
+[data-object-type="mindMapTextElementNode"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="nested"]{
+	background:transparent;
+}
+
+
