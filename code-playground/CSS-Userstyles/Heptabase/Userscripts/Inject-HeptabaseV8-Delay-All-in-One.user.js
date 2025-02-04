@@ -103,5 +103,9 @@
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-4-Card-Toggles.css');
 	}, 5200);
+	
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-4-Card-Tables.css');
+	}, 5400);
 
 })();

@@ -21,6 +21,12 @@ tr td {
 	padding: 4px 5px;
 	vertical-align: top;
 }
+tr > td{
+	min-width: 25%;
+	max-width: 35%;
+	
+}
 tr > td:last-child {
 	width:79%;
+	
 }
