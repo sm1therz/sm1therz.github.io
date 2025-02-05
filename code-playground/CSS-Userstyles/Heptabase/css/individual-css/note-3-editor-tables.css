@@ -91,6 +91,6 @@ EDITOR > TABLES > FIX WIDTH THING
 }
 [data-node-type="table"] > [style*="0px"] > table,
 [data-node-type="table"] > [style*="21px"] > table {
-				min-width: calc(100% - 21px) !important;
+				min-width: calc(100% - 0px) !important;
 }
 
