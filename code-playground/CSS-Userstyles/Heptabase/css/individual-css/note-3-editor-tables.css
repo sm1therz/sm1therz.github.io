@@ -70,3 +70,27 @@ EDITOR > TABLES > BORDER RADIUS
  .ProseMirror table tbody tr:last-child > td {
 	border-bottom-color: transparent
 }
+
+/*****************
+******************
+******************
+EDITOR > TABLES > FIX WIDTH THING
+******************
+******************
+******************/
+
+[data-node-type="table"][style*="padding-left: 0px"]{
+		min-width: 100% !important;
+}
+[data-node-type="table"][style*="padding-left: 0px"] {
+}
+
+[data-node-type="table"] > [style*="0px"],
+[data-node-type="table"] > [style*="21px"]{
+		min-width: 100% !important;
+}
+[data-node-type="table"] > [style*="0px"] > table,
+[data-node-type="table"] > [style*="21px"] > table {
+				min-width: 100% !important;
+}
+
