@@ -104,9 +104,10 @@ EDITOR > TABLES > FIX WIDTH THING
 [data-node-type="table"] > [style*="0px"] > table,
 [data-node-type="table"] > [style*="21px"] > table,
 [data-node-type="table"][style*="24px"]  > div > table{
-				min-width: calc(100% - 0px) !important;
 }
-[class*="nested"] > [data-node-type="table"] > div > table[style*="min-width"]{
+
+
+[class*="nested"]  [data-node-type="table"] > div > table[style*="min-width"]{
 		width:100% !important;
 }
 
