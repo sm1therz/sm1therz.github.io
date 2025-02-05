@@ -6,6 +6,17 @@ EDITOR > TABLES
 ******************
 ******************/
 
+
+
+:root {
+		--tableHeaderBgClr:hsla(0, 0%, 0%, .035);
+		--tabbleCellBgClr-Gray:var(--tableHeaderBgClr);
+
+}
+[data-theme="dark"] {
+		--tableHeaderBgClr:hsla(0, 0%, 100%, .08);
+		--tabbleCellBgClr-Gray:var(--tableHeaderBgClr);
+}
 /*
 .ProseMirror [data-node-type=table] {
 	margin-top: 1px;
@@ -14,6 +25,7 @@ EDITOR > TABLES
 	padding-bottom: 3px;
 }
 */
+
 /*bottom row adder*/
 .ProseMirror [data-node-type="table"] table + div > div.absolute.left-0.top-0 {
 	opacity: 0;
@@ -79,18 +91,43 @@ EDITOR > TABLES > FIX WIDTH THING
 ******************
 ******************/
 
-[data-node-type="table"][style*="padding-left: 0px"]{
+[data-node-type="table"][style*="padding-left: 0px"],
+[data-node-type="table"][style*="padding-left: 24px"]{
 		min-width: 100% !important;
-}
-[data-node-type="table"][style*="padding-left: 0px"] {
 }
 
 [data-node-type="table"] > [style*="0px"],
-[data-node-type="table"] > [style*="21px"]{
-		min-width: 100% !important;
+[data-node-type="table"] > [style*="21px"],
+[data-node-type="table"][style*="24px"]  > div{
+		width: calc(100% - 0px) !important;
 }
 [data-node-type="table"] > [style*="0px"] > table,
-[data-node-type="table"] > [style*="21px"] > table {
+[data-node-type="table"] > [style*="21px"] > table,
+[data-node-type="table"][style*="24px"]  > div > table{
 				min-width: calc(100% - 0px) !important;
 }
+[class*="nested"] > [data-node-type="table"] > div > table[style*="min-width"]{
+		width:100% !important;
+}
 
+/*****************
+******************
+******************
+EDITOR > TABLES > BACKGROUNDS
+******************
+******************
+******************/
+
+/*COLUMN AND ROW HEADERS*/
+[data-node-type="table"]
+._hasColumnHeader_7b1uz_13>div>table>tbody>tr>td:first-child, 
+._hasColumnHeader_7b1uz_13>div>table>tbody>tr>th:first-child,
+._hasRowHeader_7b1uz_8>div>table>tbody>tr:first-child>td, ._hasRowHeader_7b1uz_8>div>table>tbody>tr:first-child>th,
+._hasColumnHeader_7b1uz_13>div>table>tbody>tr>td:first-child, ._hasColumnHeader_7b1uz_13>div>table>tbody>tr>th:first-child{
+		background-color: var(--tableHeaderBgClr) !important;
+}
+
+/*BACKGROUND COLOR - GRAY*/
+[data-node-type="table"] [data-node-type="table_cell"][data-background-color="gray"]{
+		background-color: var(--tabbleCellBgClr-Gray)!important;
+}
