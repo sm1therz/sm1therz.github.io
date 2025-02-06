@@ -1980,7 +1980,7 @@ BOOKMARK SECTION TYPE - LIST
 }
 /*medium*/
 .bookmark-item_mode_list.bookmark-item_size_medium .bookmark-item__icon-wrapper {
-  --bookmarkThumbnailWidth: 32px;
+  --bookmarkThumbnailWidth: 25px;
   --bookmarkThumbnailMargTopBtm: 5px;
 }
 /*large*/
@@ -2016,7 +2016,7 @@ ul.bookmark-widget__list > li:first-child .bookmark-item_mode_list.bookmark-item
     margin-bottom: 6px 
 }
 #appID [class*="bookmark-widget"][class*="_mode_list"][class*="medium"] .bookmark-folder__content ul > li:last-child{
-    margin-bottom: 0px 
+    margin-bottom: 2px 
 }
 
 #appID [class*="bookmark-widget"][class*="detail"][class*="small"] .bookmark-folder__content ul > li:last-child{
