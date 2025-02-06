@@ -17,6 +17,12 @@ EDITOR > TABLES
 		--tableHeaderBgClr:hsla(0, 0%, 100%, .08);
 		--tabbleCellBgClr-Gray:var(--tableHeaderBgClr);
 }
+
+
+
+[data-theme="dark"] [data-node-type="table"] [data-node-type="table_cell"] {
+	--bg-blue-editor: hsla(200, 100%, 44%, 0.2);
+}
 /*
 .ProseMirror [data-node-type=table] {
 	margin-top: 1px;
@@ -132,3 +138,6 @@ EDITOR > TABLES > BACKGROUNDS
 [data-node-type="table"] [data-node-type="table_cell"][data-background-color="gray"]{
 		background-color: var(--tabbleCellBgClr-Gray)!important;
 }
+
+
+

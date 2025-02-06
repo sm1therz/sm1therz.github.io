@@ -159,7 +159,7 @@ CODEBLOCK
 	border-radius: 10px
 }
 .ProseMirror .cm-editor > .cm-scroller {
-	padding-bottom: 24px;
+	padding-bottom: 20px;
 }
 /***********
 ************
@@ -170,7 +170,7 @@ INLINE CODE
 	--inlinecodeBrdRad: 4px;
 	--inlinecodePad: 0.125em .3em 0.12em .3em;
 }
-#root code {
+.ProseMirror code {
 	font-size: calc(1em - 2px);
 	border-radius: var(--inlinecodeBrdRad);
 	padding: var(--inlinecodePad);
@@ -181,8 +181,9 @@ INLINE CODE
 	color: var(--inlineCodeClr);
 		position: relative;
 		overflow: hidden !important;
+		white-space: nowrap;
 }
-#root a code  {
+.ProseMirror a code  {
 		text-decoration: none !important;
 }
 
