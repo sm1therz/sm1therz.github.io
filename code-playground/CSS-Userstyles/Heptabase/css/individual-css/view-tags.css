@@ -49,6 +49,10 @@ VIEW - TABLE - DATABASE
 }
 
 
+[data-hepta-dnd-is-selected="true"] [id*="database-table-cell"]{
+		background: hsla(210,77%,51%,0.1) !important;
+}
+
 /*ROW TITLE/NAME*/
 [id*="database-table-cell"] > div > div.z-30 {
 	display: flex;
@@ -308,7 +312,10 @@ PROPERTIES > RELATION > DROPDOWN MENU
 	padding-top: var(--relationItemPadTopBtm);
 	padding-bottom: var(--relationItemPadTopBtm);
 	display: flex;
-	align-items: flex-start
+	align-items: flex-start;
+	min-height: unset;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 .z-dropdown-menu[class*="436"] .hepta-menu-item > svg {
 	margin-top: var(--relationItemPadTopBtm);
@@ -351,7 +358,7 @@ PROPERTIES > MULTI SELECT - DROPDOWN
 ******************/
 
 div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.min-w-80:not(div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.w-62, div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.max-h-70vh) {
-	width: 330px !important;
+	width: 400px !important;
 	min-width: 30px !important;
 }
 

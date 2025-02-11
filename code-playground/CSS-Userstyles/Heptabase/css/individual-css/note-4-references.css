@@ -61,7 +61,7 @@ REFERENCES - REORDER
 /*****************
 ******************
 ******************
-REFERENCES - LABEL WIDTH
+! REFERENCES - LABEL WIDTH
 ******************
 ******************
 ******************/
@@ -96,6 +96,34 @@ REFERENCES - LABEL WIDTH
     }
 }
 
+/*URL properties*/
+.clickable-overlay.w-40 + div > [class*="group"] a,
+[id*="database-table-cell"] [class*="group"] a {
+      overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  max-height: 28px;
+  -webkit-line-clamp: 1;
+    word-break: break-all;
+    text-overflow: ellipsis;
+}
+.clickable-overlay.w-40 + div > [class*="group"] a{
+      max-height: 28px;
+  -webkit-line-clamp: 2;
+}
+
+/*LABEL > RELATIONS*/
+[id*="database-table-cell"] > div > [class*="gap"] > div[class*="gap-x-1.5"],
+.clickable-overlay.w-40 + div.grow > [class*="gap"] > div{
+    width: 100%;
+    cursor: pointer;
+    transition: .1s;
+}
+[id*="database-table-cell"] > div > [class*="gap"] > div:hover,
+.clickable-overlay.w-40 + div.grow > [class*="gap"] > div:hover {
+    background:hsla(0,0%,50%,.15);
+    border-radius: 5px;
+}
 /*****************
 ******************
 ******************
