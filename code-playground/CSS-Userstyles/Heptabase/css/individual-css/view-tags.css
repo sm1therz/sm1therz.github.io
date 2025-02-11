@@ -22,7 +22,7 @@
 
 /*REMOVE LEFT BORDER - From sticky table view header*/
 .grow > .float-left > .sticky {
-	border-left: none !important
+	border-left: none !important; 
 }
 
 
