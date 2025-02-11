@@ -346,6 +346,22 @@ section#details .bg-token-main-surface-primary {
 	border: 1px solid var(--blockquoteBrdClr);
 }
 
+/*canvas*/
+
+[class*="main"] .cm-editor,
+[class*="main"] .cm-editor .cm-scroller,
+[class*="main"] .cm-editor .cm-scroller .cm-content{
+		flex-basis: unset !important;
+		display: block !important;
+		width: 100%;
+		white-space: pre-wrap;
+}
+[class*="main"] .cm-editor {
+		background: black;
+		box-shadow: 0 0 0 1px var(--blockquoteBrdClr);
+		
+}
+
 /***********
 ************
 !gpt - TEXT AREA > Make Taller
