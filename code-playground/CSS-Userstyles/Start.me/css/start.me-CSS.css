@@ -1126,13 +1126,16 @@ HEADER - TRANSPARENT BACKGROUND
   --widgetBrdClr: transparent;
 }
 #appID [class*="bookmark-widget"] .widget_transparent .widget-header__title .widget-header__text,
-#appID [class*="bookmark-widget"] .widget_transparent .bookmark-folder__name {
+#appID [class*="bookmark-widget"] .widget__container[style*=", 0.0"] .widget-header__title .widget-header__text,
+#appID [class*="bookmark-widget"] .widget_transparent .bookmark-folder__name,
+#appID [class*="bookmark-widget"] .widget__container[style*=", 0.0"] .bookmark-folder__name{
   opacity: 1;
   -webkit-font-smoothing: antialiased !important;
   font-weight: 500 !important;
   transition: var(--widgetHeaderTransition) !important;
   color: var(--bookmarkDescriptionClr) !important
 }
+
 
 #appID [class*="bookmark-widget"] .widget__container[style*="rgb(0, 0, 0)"] .bookmark-folder__name {
   color: var(--bookmarkDescriptionClr) !important
