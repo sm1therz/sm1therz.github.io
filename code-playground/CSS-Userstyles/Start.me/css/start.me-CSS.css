@@ -585,12 +585,7 @@ WIDGET WIDTH
     max-width: 100% !important;
     max-width: 97% !important;
 }
-/*transparent widgets*/
-#appID .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget article .widget__container[style*=", 0);"],
-#appID .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget article .widget__container[style*=", 0);"] {
-    background: hsl(0, 0%, 7%) !important;
-    box-shadow: inset 0 0 0 1px hsl(0, 0%, 100%, 0) !important
-}
+
 /*
 [class*="collapsed"] {
     --quicklinkWidth: 160px;
@@ -1116,19 +1111,59 @@ HEADER - TRANSPARENT BACKGROUND
   box-shadow: unset !important;
   overflow: hidden;
 }
-#appID .widget__container[style*="rgb(0, 0, 0)"] {
-  --widgetBrdClr: hsla(0, 0%, 100%, .09);
-  ;
+#appID .widget__container{
+    border: 1px solid var(--widgetBrdClr);
 }
 
+/*OPAQUE*/
+#appID .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget article .widget__container[style*=", 0);"],
+#appID .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget article .widget__container[style*=", 0);"] {
+    box-shadow: inset 0 0 0 1px hsl(0, 0%, 100%, 0) !important;
+    background: transparent !important;
+
+}
+
+/*BLACK - OPAQUE*/
+#appID .widget__container[style*="rgb(0, 0, 0)"] {
+  --widgetBrdClr: hsla(0, 0%, 100%, .045);
+        background: hsl(0, 0%, 0%, 0) !important;
+
+}
+/*BLACK - 90%*/
+#appID .widget__container[style*="rgba(0, 0, 0, 0.9"] {
+  --widgetBrdClr: hsla(0, 0%, 100%, .07);
+        background: hsl(0, 0%, 0%, 1) !important;
+
+}
+/*BLACK - 80%*/
+#appID .widget__container[style*="rgba(0, 0, 0, 0.8"] {
+  --widgetBrdClr: hsla(0, 0%, 100%, .07);
+        background: hsl(0, 0%, 0%, 1) !important;
+
+}
+
+
+/*TRANSPARENT*/
 #appID .widget_transparent {
   --containerPadBtm: 0px;
   --widgetBrdClr: transparent;
 }
-#appID [class*="bookmark-widget"] .widget_transparent .widget-header__title .widget-header__text,
-#appID [class*="bookmark-widget"] .widget__container[style*=", 0.0"] .widget-header__title .widget-header__text,
-#appID [class*="bookmark-widget"] .widget_transparent .bookmark-folder__name,
-#appID [class*="bookmark-widget"] .widget__container[style*=", 0.0"] .bookmark-folder__name{
+#appID [class*="widget"] .widget_transparent .widget-header__title .widget-header__text,
+#appID [class*="widget"] .widget__container[style*=", 0.0"] .widget-header__title .widget-header__text,
+#appID [class*="widget"] .widget__container[style*=", 0.1"] .widget-header__title .widget-header__text,
+#appID [class*="widget"] .widget__container[style*=", 0.2"] .widget-header__title .widget-header__text,
+#appID [class*="widget"] .widget__container[style*=", 0.3"] .widget-header__title .widget-header__text,
+#appID [class*="widget"] .widget__container[style*=", 0.9"] .widget-header__title .widget-header__text,
+/*black opaque*/
+#appID [class*="widget"] .widget__container[style*=", 0)"] .widget-header__title .widget-header__text,
+#appID [class*="widget"] .widget_transparent .bookmark-folder__name,
+#appID [class*="widget"] .widget__container[style*=", 0.0"] .bookmark-folder__name,
+#appID [class*="widget"] .widget__container[style*=", 0.1"] .bookmark-folder__name,
+#appID [class*="widget"] .widget__container[style*=", 0.2"] .bookmark-folder__name,
+#appID [class*="widget"] .widget__container[style*=", 0.3"] .bookmark-folder__name,
+#appID [class*="widget"] .widget__container[style*=", 0.9"] .bookmark-folder__name,
+/*black opaque*/
+#appID [class*="widget"] .widget__container[style*=", 0)"] .bookmark-folder__name{
   opacity: 1;
   -webkit-font-smoothing: antialiased !important;
   font-weight: 500 !important;
@@ -1137,7 +1172,8 @@ HEADER - TRANSPARENT BACKGROUND
 }
 
 
-#appID [class*="bookmark-widget"] .widget__container[style*="rgb(0, 0, 0)"] .bookmark-folder__name {
+#appID [class*="bookmark-widget"] .widget__container[style*="rgb(0, 0, 0)"] .bookmark-folder__name,
+#appID .widget__container[style*="rgba(0, 0, 0, 0.9"] .bookmark-folder__name {
   color: var(--bookmarkDescriptionClr) !important
 }
 #appID .bookmark-widget .widget__container .widget-header__title .widget-header__text,
@@ -1398,7 +1434,7 @@ ICONS > NOT TRANSPARENT BACKGROUND
 /******
 ICONS > TRANSPARENT BACKGROUND
 *******/
-#appID .bookmark-widget:not(.bookmark-widget_edited) .widget__container[style*=", 0)"] ul li .bookmark-item__icon-wrapper {
+#appID .bookmark-widget:not(.bookmark-widget_edited) .widget__container[style*=","] ul li .bookmark-item__icon-wrapper {
   background: var(--bookmarkIconBgClr) !important;
   outline: 1px solid var(--bookmarkIconBrdClr) !important;
 }
@@ -2934,6 +2970,18 @@ height: 100% !important;
 }
 .modal.notes-edit-modal .modal__component-container .notes-widget .wysiwyg-editor__input > *:last-child {
   padding-bottom: 10px;
+}
+
+/***********
+************
+! CONTEXT MENUS
+************
+************/
+.actions-list .actions-list__item_separated {
+    padding-top: 10px !important;
+}
+.actions-list__item+.actions-list__item_separated, .actions-list_wrapped .actions-list__item+.actions-list__item_separated{
+    margin-top: 10px 
 }
 
 /*********
