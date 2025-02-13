@@ -352,15 +352,20 @@ section#details .bg-token-main-surface-primary {
 [class*="main"] .cm-editor .cm-scroller,
 [class*="main"] .cm-editor .cm-scroller .cm-content{
 		flex-basis: unset !important;
-		display: block !important;
 		width: 100%;
 		white-space: pre-wrap;
 }
-[class*="main"] .cm-editor {
+
+[class*="main"] .cm-editor .cm-content{
+		display: block;
+		max-width: calc(100% - 70px)!important;
+}
+/*
+article #codemirror .cm-editor {
 		background: black;
 		box-shadow: 0 0 0 1px var(--blockquoteBrdClr);
 		
-}
+}*/
 
 /***********
 ************
