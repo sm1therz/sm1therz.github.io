@@ -13,7 +13,7 @@
     --bookmarkFolderHeaderHeight: 30px;
     --notesPadTopBtm: 10px;
     /*widget padding*/
-    --widgetMargTopBtm: 5px;
+    --widgetMargTopBtm: 8px;
     /*item padding*/
     --containerMargLeftRight: 12px;
     --containerPadBtm: 7px;
@@ -1627,7 +1627,7 @@ BOOKMARK SECTION TYPE - ICONS
 }
 /*medium*/
 .bookmark-widget__body_mode_icon[class*="medium"] ul li {
-  --bookmarkThumbnailWidth: 85px;
+  --bookmarkThumbnailWidth: 84.6px;
   /*--bodyFontSize: 12px;
     --bodyLineHeight: 15px;*/
 }
@@ -1684,7 +1684,7 @@ BOOKMARK SECTION TYPE - ICONS
   --containerPadBtm: 20px;
 }
 #appID .bookmark-widget .widget__body > .bookmark-widget__body[class*="mode_icon"][class*="medium"] {
-  --containerPadBtm: 20px;
+  --containerPadBtm: 25px;
 }
 #appID .bookmark-widget .widget__body > .bookmark-widget__body[class*="mode_icon"][class*="small"] {
   --containerPadBtm: 20px;
