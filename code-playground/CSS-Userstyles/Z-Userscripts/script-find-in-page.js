@@ -11,7 +11,7 @@
 				<span id='customFindCounter'>0 / 0</span>
 				<input id='customFindInput' type='text' placeholder='Find in page...'/>
 				<button id='customFindNext'>Next</button>
-		`;
+		`; 
 		document.body.appendChild(container);
 
 		const searchButton = document.getElementById('customFindButton');
