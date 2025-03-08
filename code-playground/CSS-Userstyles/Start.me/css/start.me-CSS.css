@@ -148,6 +148,16 @@ span.notes-widget__result * {
     outline-offset: -1px
 }
 
+/*****
+! EXTENSION BACKGROUND FIX
+*/
+html,
+body,
+#appId,
+#appId .app__background {
+    background: rgb(18, 18, 18) !important
+}
+
 /***********
 ************
 ! GOOGLE SEARCH
