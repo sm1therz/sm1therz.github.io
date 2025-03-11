@@ -148,14 +148,31 @@ span.notes-widget__result * {
     outline-offset: -1px
 }
 
-/*****
+
+
+/***********
+************
 ! EXTENSION BACKGROUND FIX
-*/
+************
+************/
+:root {
+    --startMeBg:rgb(18, 18, 18);
+}
 html,
 body,
-#appId,
-#appId .app__background {
-    background: rgb(18, 18, 18) !important
+body #appId ,
+body #appId .app__background,
+body #appId .app__background span.app__color-layer,
+body #appId .app__main-layout,
+body #appId .app__main-layout .app__body,
+body #appId .app__main-layout .app__body .widget-page,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container .widget-page__section,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container .widget-page__section section.page-section__column,
+html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__sidebar, .app__sidebar *,.modal,.modal *,.modal__overlay, .search, .search *){
+    background: var(--startMeBg) !important;
+    background-image: linear-gradient(var(--startMeBg),var(--startMeBg)) !important;
 }
 
 /***********
