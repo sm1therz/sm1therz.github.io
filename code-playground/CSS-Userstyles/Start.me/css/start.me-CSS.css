@@ -1669,7 +1669,7 @@ BOOKMARK SECTION TYPE - ICONS
 }
 /*large*/
 .bookmark-widget__body_mode_icon[class*="large"] ul li {
-  --bookmarkThumbnailWidth: 102px;
+  --bookmarkThumbnailWidth: 101px;
 }
 .bookmark-item_mode_icon[class*="large"] .bookmark-item__icon-wrapper {
   --bookmarkLinkBrdRad: 17px;
