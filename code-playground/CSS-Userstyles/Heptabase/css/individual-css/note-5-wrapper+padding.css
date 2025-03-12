@@ -13,15 +13,26 @@ NOTE PADDING - POPUP AND FULLSCREEN ONLY
 ************/
 :root {
     --notePadLeftRight: 1.5rem;
+    --noteMaxWidth:700px;
 }
+
+/*note content*/
 [data-card-tab-id] > [class*="editor"] > .ProseMirror,
 .p-12.hepta-scrim > .bg-background-secondary.max-h-220.max-w-270 ._editor_1rg43_1 .ProseMirror-hepta-style {
     width: 100% !important;
-    max-width: 700px !Important;
+    max-width: var(--noteMaxWidth) !Important;
     margin: 0 auto;
     padding-left: var(--notePadLeftRight)!important;
     padding-right: var(--notePadLeftRight)!important;
-    
+    box-sizing: border-box;
+}
+
+/*note info*/
+[class*="editor"] + [class*="info"]{
+    max-width: var(--noteMaxWidth) !Important;
+    margin: 0 auto;
+    padding-left: var(--notePadLeftRight)!important;
+    padding-right: var(--notePadLeftRight)!important;
     box-sizing: border-box;
 }
 
