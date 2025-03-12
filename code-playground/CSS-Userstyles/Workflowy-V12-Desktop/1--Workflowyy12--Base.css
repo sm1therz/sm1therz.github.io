@@ -74,6 +74,11 @@ BOX SHADOW TESTING - BOARDS
 /****
 ! OVERRIDES
 ****/
+
+:root {
+		--nameMinHeight:29px;
+		--notesMinHeight:21px;
+}
 .project,
 .project > .name,
 .project > .notes,
@@ -85,6 +90,74 @@ BOX SHADOW TESTING - BOARDS
 		width: 100%;
 		max-width: 100%;
 }
+
+/***
+MIN HEIGHTS
+****/
+
+.project > .name > .content:empty {
+		min-height: var(--nameMinHeight) !important;
+}
+.project.noted > .notes > .content:empty {
+		min-height: var(--notesMinHeight) !important;
+}
+
+
+/***
+MIN HEIGHTS - ROOT
+****/
+.project.root > .name > .content:empty {
+		--nameMinHeight:42.5px;
+
+}
+.project.root > .notes > .content:empty {
+		--notesMinHeight:33px;
+}
+/***
+MIN HEIGHTS > BOARDS
+****/
+
+.board .project > .name > .content:empty {
+		--nameMinHeight:25px;
+
+}
+.board .project > .notes > .content:empty {
+		--notesMinHeight:15px;
+}
+/***
+MIN HEIGHTS > BOARDS > BOARD COLUMNS
+****/
+.project.board > .children > .boardColumn > .name > .content:empty {
+		--nameMinHeight:29px;
+
+}
+.project.board > .children > .boardColumn > .notes > .content:empty {
+		--notesMinHeight:15px;
+}
+
+/***
+MIN HEIGHTS > BOARDS ROOT
+****/
+
+.board.root .project > .name > .content:empty {
+		--nameMinHeight:25.5px;
+
+}
+.board.root .project > .notes > .content:empty {
+		--notesMinHeight:16.5px;
+}
+/***
+MIN HEIGHTS - BOARDS ROOT > BOARDS COLUMNS
+****/
+.project.board > .children > .boardColumn > .name > .content:empty {
+		--nameMinHeight:31px;
+
+}
+.project.board > .children > .boardColumn > .notes > .content:empty {
+		--notesMinHeight:16.5px !important;
+}
+
+
 
 /*root overrides*/
 .project.root > .children .header1 > .name,
