@@ -64,8 +64,8 @@ BOX SHADOW TESTING - BOARDS
 }
 
 ****/
-/***/ .project {
-	box-shadow: inset 0 0 0px red;
+/***/ .project, .project * {
+	box-shadow: inset 0 0 0px 0px red;
 }
 
 
@@ -75,10 +75,6 @@ BOX SHADOW TESTING - BOARDS
 ! OVERRIDES
 ****/
 
-:root {
-		--nameMinHeight:29px;
-		--notesMinHeight:21px;
-}
 .project,
 .project > .name,
 .project > .notes,
@@ -91,71 +87,7 @@ BOX SHADOW TESTING - BOARDS
 		max-width: 100%;
 }
 
-/***
-MIN HEIGHTS
-****/
 
-.project > .name > .content:empty {
-		min-height: var(--nameMinHeight) !important;
-}
-.project.noted > .notes > .content:empty {
-		min-height: var(--notesMinHeight) !important;
-}
-
-
-/***
-MIN HEIGHTS - ROOT
-****/
-.project.root > .name > .content:empty {
-		--nameMinHeight:42.5px;
-
-}
-.project.root > .notes > .content:empty {
-		--notesMinHeight:33px;
-}
-/***
-MIN HEIGHTS > BOARDS
-****/
-
-.board .project > .name > .content:empty {
-		--nameMinHeight:25px;
-
-}
-.board .project > .notes > .content:empty {
-		--notesMinHeight:15px;
-}
-/***
-MIN HEIGHTS > BOARDS > BOARD COLUMNS
-****/
-.project.board > .children > .boardColumn > .name > .content:empty {
-		--nameMinHeight:29px;
-
-}
-.project.board > .children > .boardColumn > .notes > .content:empty {
-		--notesMinHeight:15px;
-}
-
-/***
-MIN HEIGHTS > BOARDS ROOT
-****/
-
-.board.root .project > .name > .content:empty {
-		--nameMinHeight:25.5px;
-
-}
-.board.root .project > .notes > .content:empty {
-		--notesMinHeight:16.5px;
-}
-/***
-MIN HEIGHTS - BOARDS ROOT > BOARDS COLUMNS
-****/
-.project.board > .children > .boardColumn > .name > .content:empty {
-		--nameMinHeight:31px;
-
-}
-.project.board > .children > .boardColumn > .notes > .content:empty {
-		--notesMinHeight:16.5px !important;
-}
 
 
 
@@ -325,6 +257,19 @@ MIN HEIGHTS - BOARDS ROOT > BOARDS COLUMNS
 }
 #app .project > .name {
  display: flex !important;
+}
+
+
+/*PLACEHOLDER - ROOT*/
+.project.root > .name > [class*="PlaceholderWrapper"] {
+		margin: unset;
+		font-size: unset !important;
+		line-height: unset !important;
+		
+}
+.project.root > .name > [class*="PlaceholderWrapper"] > div {
+				font-size: var(--root-font-size);
+	line-height: var(--root-line-height);
 }
 
 /*******************************
@@ -1670,7 +1615,7 @@ HIGHLIGHT - CODE
 }
 #app code,
 #app code * {
-		font-size: calc(var(--name-fontSize) - 2px);
+		font-size: calc(var(--name-fontSize) - 2.5px);
 		font-family: var(--wf-font-family-mono) !important;
 }
 :root {
@@ -2528,6 +2473,76 @@ COMPLETED TASKS - BULLET COLOR
 }
 
 
+
+
+
+
+/*********
+**********
+! MIN HEIGHTS
+**********
+**********/
+:root {
+		--nameMinHeight:29px;
+		--notesMinHeight:21px;
+}
+
+/*********
+**********
+MIN HEIGHTS - ALL NODES
+.project > .name > .content:empty {
+		min-height: var(--nameMinHeight) !important;
+}
+.project.noted > .notes > .content:empty {
+		min-height: var(--notesMinHeight) !important;
+}
+**********
+**********/
+
+
+/*********
+**********
+MIN HEIGHTS - ROOT
+
+.project.root > .name {
+		--nameMinHeight:42.5px;
+
+}
+.project.root > .notes {
+		--notesMinHeight:33px;
+}
+**********
+**********/
+
+/*********
+**********
+MIN HEIGHTS > BOARDS
+
+
+.board .project > .name > .content:empty {
+		--nameMinHeight:25px !important;
+
+}
+.board .project > .notes > .content:empty {
+		--notesMinHeight:15px !important;
+}
+**********
+**********/
+
+/*********
+**********
+MIN HEIGHTS > BOARDS > BOARD COLUMNS
+
+.project.board > .children > .boardColumn > .name > .content:empty {
+		--nameMinHeight:29px;
+
+}
+.project.board > .children > .boardColumn > .notes > .content:empty {
+		--notesMinHeight:15px;
+}
+**********
+**********/
+
 /*******************************
 ********************************
 ! BOARDS
@@ -3271,6 +3286,25 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 }*/
 .project.board.open + .project {
 	margin-top: 6px;
+}
+
+#app .boardColumn > .name > .contentEditablePlaceholderWrapper{
+		position: absolute;
+		width: 100% !important;
+		padding-bottom: calc(var(--content-PadTopBtm) + 1px);
+		padding-top: 0px !important;
+		padding-left: var(--content-PadLeftRight) !important;
+		font-size: unset !important;
+		line-height: unset !important;
+}
+
+#app .boardColumn > .name > .contentEditablePlaceholderWrapper * {
+		position: absolute !important;
+		font-size: unset !important;;
+		line-height: unset !important;;
+				font-size: var(--name-fontSize) !important;
+		line-height: var(--name-lineHeight) !important;
+		top: unset !important;
 }
 
 /*******************************
@@ -6389,7 +6423,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		/*DARK  - LINK*/
 		--ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
 		/*DARK  - LINK - Internal*/
-		--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%239fa1a3" stroke-opacity="1" stroke-width="10"/></svg>');
+		--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%239fa1a3" stroke-opacity="0" stroke-width="10"/></svg>');
 		/*DARK - REFERENCES*/
 		--ICON--UNDERLINE-WAVY-REFERENCE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23E9F5FA"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 }
