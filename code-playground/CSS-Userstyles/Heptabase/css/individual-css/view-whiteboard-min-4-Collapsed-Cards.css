@@ -10,7 +10,7 @@ WHITEBOARD - COLLAPSED CARDS
 ************
 ************
 ************
-************/
+
 
 [class*="whiteboardObject"][data-is-folded="true"] .w-6 + .truncate,
 [class*="whiteboardObject"][data-is-folded="true"] h1,
@@ -35,8 +35,8 @@ WHITEBOARD - COLLAPSED CARDS
 		
 }
 
-/**ARROW*/
 [class*="whiteboardObject"][data-is-folded="true"] > div > .flex.h-8.w-6.shrink-0.items-center{
 		top: 10px;
 		position: relative;
 }
+************/
