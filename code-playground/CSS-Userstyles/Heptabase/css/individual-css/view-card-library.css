@@ -126,6 +126,7 @@ CARD LIBRARY - VARIABLES
 	pointer-events: all !important;
 	user-select: all !important;
 	z-index: 94949494;
+	
 }
 #root .grid.select-none .ProseMirror a:not([data-hepta-link]) {
 	--linkUnderlineClr: var(--text-color) !important;
