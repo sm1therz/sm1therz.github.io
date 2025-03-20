@@ -179,6 +179,9 @@ CARD - BACKGROUNDS
 [class*="_whiteboardObject"] [class*="contentContainer"] {
 	box-shadow: inset 0 0 0 1px var(--whiteBoardCardBrdClr);
 }
+[class*="_whiteboardObject"] [data-object-type="mindMapHighlightElementNode"] > [style*="background"]{
+	box-shadow: inset 0 0 0 1px var(--whiteBoardCardBrdClr) !important;
+}
 [class*="_whiteboardObject"] [class*="contentContainer"][style*="--background-secondary"] {
 	background: var(--whiteBoardCardBgClr) !important;
 }
