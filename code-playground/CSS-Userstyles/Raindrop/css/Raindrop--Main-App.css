@@ -1,5 +1,7 @@
 
 
+
+
 /********
 *********
 *********
@@ -73,6 +75,7 @@ ROOT
 	--editBoxBrdClrFocus: hsl(0, 0%, 50%, .4);
 		/*masonry cards*/
 		--gridbookmarkBgClr:hsla(228,3%,17%,1);
+		--gridbookmarkBgClr-Hover:hsla(228,3%,20%,1);
 		--gridbookmarkBrdClr:hsl(0, 0%, 0%, 1);
 		/*masonry cards - right clicked*/
 		--gridbookmarkBgClr-RightClick:hsla(211, 100%, 50%, 1);
@@ -175,6 +178,8 @@ article [class*="about"] [class*="info"]{
 article [class*="about"] [class*="description"] [class*="highlight"] [class*="text"]{
 		border: 1px solid green
 }*/
+
+
 
 
 
@@ -1071,10 +1076,12 @@ article .actions-wrq5 a[data-button="current_tab"][href*="gif"]~a[data-button="p
 
 /*HOVER BACKGROUND*/
 article:hover [class*="permalink"]{
-		background: hsla(200, 0%, 65%, .075) !important;
-				backdrop-filter: contrast(1)brightness(1.1);
+		background: hsla(200, 0%, 65%, .00) !important;
+				backdrop-filter: unset;
 }
-
+#react article:hover{
+		--gridbookmarkBgClr:var(--gridbookmarkBgClr-Hover);
+}
 /*HOVER BACKGROUND*/
 article:hover [class*="permalink"][href*="api.raindrop.io"],
 article:hover [class*="permalink"][href*="jpg"],
@@ -1815,6 +1822,9 @@ MEDIA QUERIES
 		height: auto !Important;
 	}
 }
+
+
+
 
 
 
