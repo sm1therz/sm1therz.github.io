@@ -183,6 +183,8 @@ article [class*="about"] [class*="description"] [class*="highlight"] [class*="te
 
 
 
+
+
 /********
 *********
 *********
@@ -1170,7 +1172,7 @@ body aside.svReader {
 	right: 0 !important;
 	z-index: 1000 !important;
 	height: var(--modalHeight) !important;
-	max-height: calc(100vh - var(--modalMargTopBtm) * 2) !important;
+	max-height: calc(100vh - var(--modalMargTopBtm) * 1) !important;
 		min-height: unset !important;
 	border-radius: var(--modalBrdRad) !important;
 	border: 1px solid;
@@ -1180,7 +1182,7 @@ body aside.svReader {
 	overflow: unset !important;
 	border: none !important;
 		align-self: center;
-		margin-top: var(--modalMargTopBtm) !important;
+		margin-top: calc(var(--modalMargTopBtm) * .5) !important;
 		margin-bottom:calc(var(--modalMargTopBtm) * 0.5) !important;
 		
 }
@@ -1822,6 +1824,9 @@ MEDIA QUERIES
 		height: auto !Important;
 	}
 }
+
+
+
 
 
 
