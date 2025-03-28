@@ -17,7 +17,9 @@ WHITEBOARD TOGGLES
 [data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] {
 
 }
-
+[class*="whiteboardCanvas"] .ProseMirror [data-node-type*="toggle"] {
+		position: relative;
+}
 [data-object-type="textElement"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"],
 [data-object-type="mindMapTextElementNode"] .ProseMirror > [data-node-type*="table"] [data-node-type="table_cell"] > div > [data-node-type*="toggle"] > [class*="bullet"]{
 	width:var(--tblToggleBulletW) !important;
