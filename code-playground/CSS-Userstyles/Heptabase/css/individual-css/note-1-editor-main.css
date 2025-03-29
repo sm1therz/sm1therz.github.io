@@ -17,13 +17,14 @@
 	--blockquoteBgClr: hsla(0, 0%, 0%, .015);
 	--codeblockBgClr: hsl(0, 0%, 90%);
 	--codeblockBrdClr: hsl(0, 0%, 24%, 0.2);
-	--inlineCodeClr: red;
-	--inlineCodeBgClr: rgba(0, 0, 0, .075);
-	--inlineCodeBrdClr: rgba(0, 0, 0, .048);
+	--inlineCodeBgClr: rgba(0, 0, 0, .085);
+	--inlineCodeBrdClr: rgba(0, 0, 0, .068);
 	--inlineCodeLinkOverrideBgClr: #ececec;
 	--inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.0);
 	--inlineCodeClr: hsla(0, 0%, 0%, .8);
 	--embedHighlightBgClr:hsla(0, 0%, 0%, .024);
+	/*text color - gray*/
+	--text-gray-editor: hsl(51, 3%, 60%);
 }
 
 
@@ -40,6 +41,9 @@
 	--inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.06);
 	--inlineCodeClr: inherit;
 	--embedHighlightBgClr:hsla(0, 0%, 100%, .0125);
+		/*text color - gray*/
+	--text-gray-editor: hsla(0, 0%, 53%, 1) !important;
+	
 
 	/*
 		--background-primary: hsl(0, 0%, 11%) !important;
