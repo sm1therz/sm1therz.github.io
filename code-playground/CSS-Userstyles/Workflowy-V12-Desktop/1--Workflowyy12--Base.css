@@ -3682,6 +3682,9 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 		line-height: var(--name-lineHeight) !important;
 		top: unset !important;
 }
+.boardColumn > .children > div[style*="height"]{
+	display: none !important;
+}
 
 /*******************************
 ********************************
