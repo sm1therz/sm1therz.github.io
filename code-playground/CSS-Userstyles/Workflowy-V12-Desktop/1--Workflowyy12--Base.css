@@ -64,12 +64,16 @@ BOX SHADOW TESTING - BOARDS
 }
 
 ****/
-/***/ .project, .project * {
-	box-shadow: inset 0 0 0px 0px red;
+
+/**
+.project, .project * {
+	box-shadow: inset 0 0 0px .1px red;
 }
-
-
-
+.project[class*="quote"] > .name > .content{
+	 box-shadow:  0 0 0px .5px #00ff2f;
+ 
+}
+**/ 
 
 /****
 ! OVERRIDES
@@ -1828,7 +1832,7 @@ CODE BLOCKS
 }
 #app .project.code-block > .name > .content,
 #app .project.code-block.noted > .name > .content {
-		padding-left: calc(var(--codeblockPadLeftRight) + var(--blockquoteBrdW)) !important;
+		padding-left: var(--quotePadLeft);
 		padding-bottom: 11px !important;
 		padding-top: 12px !important;
 		border-radius: 7px;
@@ -1852,11 +1856,50 @@ CODE BLOCKS
 /***************
 BLOCK QUOTE
 ****************/
-#app .project.quote-block > .name .content {
-		display: flex !important;
-		padding-top: var(--content-PadTopBtm) !important;
-		padding-bottom: var(--content-PadTopBtm) !important;
+#app .project.quote-block > .name{
+	
 }
+:root{
+	--quotePadLeft:calc(var(--children-Indent) * 1);
+	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 2);
+	--quoteBrdLeftW:calc(var(--content-PadLeftRight) * 2);
+}
+#app .project.quote-block:not(.board .project) > .name .content {
+		padding-top: var(--quotePadTopBtm);
+		padding-bottom: var(--quotePadTopBtm);
+		position: relative;
+}
+
+
+
+#app .quote-block > .name > .content,
+#app .quote-block > .name > .content:empty,
+#app .quote-block > .notes > .content {
+padding-left: var(--quotePadLeft);
+}
+
+/*quote - border left */
+#app .quote-block>.name>.content:before,
+#app .quote-block>.name>.content:empty:before{
+	content: "";
+	display: block;
+	height: unset !important;
+	position: absolute ;
+	top: 1px;
+	bottom: 1px;
+	left: calc(var(--children-Indent) * -.5 - var(--content-PadLeftRight));
+	left: calc(var(--content-PadLeftRight) * 0);
+	width: var(--quoteBrdLeftW);
+	background: var(--wf-border-default);
+	border:unset;
+}
+#app .quote-block > .name > .content > .innerContentContainer,
+#app .quote-block > .name > .content:empty > .innerContentContainer{
+	padding-left: 0px;
+	padding-right: 0px;
+	border: unset;
+}
+/*
 #app .project.quote-block > .name .content .innerContentContainer {
 		padding-left: var(--codeblockPadLeftRight) !important;
 		padding-bottom: 4px;
@@ -1866,7 +1909,7 @@ BLOCK QUOTE
 		width: 100%;
 		box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.3);
 		border-left-width: var(--blockquoteBrdW);
-}
+}*/
 /***************
 TAGS
 ****************/
@@ -2263,10 +2306,7 @@ NODE ADJUSTMENTS
 /***************
 LEVEL 1 > Adjustments
 ****************/
-.project.root > .children .project.paragraph:not(.project.root.board > .children .project.paragraph) {
-		margin-top: var(--prjct-ParaMargTopBtm) !important;
-		margin-bottom: var(--prjct-ParaMargTopBtm) !important;
-}
+
 /***************
 LEVEL 3 > Button Adjustments
 ****************/
@@ -2346,6 +2386,8 @@ LEVEL 3 > Button Adjustments
 
 
 
+
+
 #app .project:not(.board) > .children {
 		display: flex;
 		flex-direction: column;
@@ -2359,13 +2401,16 @@ LEVEL 3 > Button Adjustments
 		position: relative;
 		border-radius: var(--prjct-BrdRad);
 }
+.project .children > .project.paragraph {
+		margin-top: 0px;
+		margin-bottom: var(--prjct-MargTopBtm);
+}
 .project .children > .project:first-of-type {
 		margin-top: calc(var(--prjct-MargTopBtm) * 1);
 }
 .project .children > .project:last-of-type {
 		margin-bottom: calc(var(--prjct-MargTopBtm) * 0) !important;
 }
-
 /*
 #app .project.code-block,
 #app .project.quote-block {
@@ -2396,6 +2441,35 @@ LEVEL 3 > Button Adjustments
 .project > .name.name--with-image > .expand {
 		--btn-MargTop:3px;
 }
+
+/*QUOTE > BULLET > UPPER
+
+.project.quote-block > .name > .expand {
+	opacity: 1;
+}
+.project.quote-block > .name > .expand:before {
+	opacity: 1;
+}
+.project.quote-block.open > .name > .expand:before,
+.project.quote-block.collapsed > .name > .expand:before {
+	opacity: 1;
+}
+*/
+/*QUOTE > BULLET > UNDER
+
+.project.quote-block > .name > .expand {
+	opacity: 1;
+}
+.project.quote-block > .name > .expand:after {
+
+}
+.project.quote-block.open > .name > .expand:after,
+.project.quote-block.collapsed > .name > .expand:after {
+
+}
+*/
+
+
 
 /***********
 ************
@@ -2900,11 +2974,22 @@ BOARDCARD Children - Level*/
 .board .boardCard .project > .name > .content,
 .board .boardCard .project > .notes > .content {
 		margin-left: calc(var(--children-Indent) * 1);
+	--quotePadLeft:calc(var(--children-Indent) * 1);
+	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 1);
+	--quoteBrdLeftW:calc(var(--content-PadLeftRight) * 1.35);
+}
+.board .boardCard > .name > .content,
+.board .boardCard > .notes > .content{
+		--quotePadLeft:calc(var(--children-Indent) * 1);
+	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 1);
+	--quoteBrdLeftW:calc(var(--content-PadLeftRight) * 1.35);
 }
 
 /*bullets & prefix*/
 #app .boardCard .project > .name > .bullet,
 #app .boardCard .project.paragraph > .name > .bullet,
+#app .boardCard .project.quote-block > .name > .bullet,
+#app .boardCard .project.code-block > .name > .bullet,
 #app .boardCard .project > .name > .prefix {
 		left: calc(var(--children-Indent) * 0);
 		right: unset;
@@ -3031,7 +3116,9 @@ PREFIX*/
 /****
  MENU ONLY*/
 #app .board .project > .name > .menu,
-#app .board .project.paragraph > .name > .menu {
+#app .board .project.paragraph > .name > .menu,
+#app .boardCard .project.quote-block > .name > .menu,
+#app .boardCard .project.code-block > .name > .menu{
 		left: unset;
 		right: calc(var(--children-Indent) * 0) !important;
 		overflow: hidden;
@@ -3448,11 +3535,14 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	border-top-color: transparent !important;
 	
 }
-#app .project.board .project.code-block > .name > .content{
-	padding-top: 8px !important;
-	padding-bottom: 8px !important;
-	padding-left: 11px !important;
+#app .project.board .project.code-block > .name > .content,
+#app .project.board .project.quote-block > .name > .content{
+	padding-top: var(--quotePadTopBtm) !important;
+	padding-bottom: var(--quotePadTopBtm)  !important;
 	padding-right: 11px !important;
+}
+#app .project.board .project.quote-block > .name{
+	padding-bottom: var(--content-PadTopBtm) !important;
 }
 #app .project.board.root .project.code-block > .name > .content{
 	background:hsla(0,0%,50%,.1)
