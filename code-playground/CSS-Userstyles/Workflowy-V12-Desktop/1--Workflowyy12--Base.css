@@ -3878,7 +3878,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .board.root .boardCard.noted > .name > .content {
 	padding-bottom: 3px;
 }
-#app .board.root .boardCard > .name > .content{
+#app .board.root .boardCard:not(.comment) > .name > .content{
 	font-size: calc(var(--name-fontSize) + 2px);
 	line-height: calc(var(--name-lineHeight) + 2px);  
 
@@ -3939,11 +3939,23 @@ max-width:calc(100% - var(--children-Indent) * 1) !important;
 		
 }
 
-#app .board.root .boardColumn .project.boardCard.comment{
+#app .project.board.root > .children > .boardColumn > .children > .boardCard.comment{
 		background:hsl(202, 23%, 17.5%,0.5) !Important;
-		background:hsl(220, 0%, 11%) !Important;
-		--COMMENT--BG--even:hsl(220, 0%,15%);
+		background:hsl(220, 0%, 10%) !Important;
+		--COMMENT--BG--even:hsl(220, 0%,13.5%);
 		--COMMENT-CONTAINER--BG:hsl(220, 0%, 11.5%);
+		box-shadow:0 0 0 1px hsl(220, 0%, 17%) !important;
+}
+
+#app .project.board.root .boardColumn > .name > .expand {
+		z-index:3;
+}
+#app .project.board.root .boardColumn > .name [class*="Place"],
+#app .project.board.root .boardColumn > .name > .content{
+		font-weight:400 !important;
+		color:hsla(0,0%,100%,0.55);
+			font-size: calc(var(--name-fontSize) + 2px)!important;
+	line-height: calc(var(--name-lineHeight) + 2px) !important;
 }
 
 /*******************************
