@@ -9,7 +9,7 @@
 
 html,
 body,
-#app,
+#app, 
 #app .page,
 .pageContainer{ 
 		background: var(--BG-primary) !important;
@@ -69,11 +69,27 @@ BOX SHADOW TESTING - BOARDS
 .project, .project * {
 	box-shadow: inset 0 0 0px .1px red;
 }
-.project[class*="quote"] > .name > .content{
-	 box-shadow:  0 0 0px .5px #00ff2f;
- 
+
+ **/
+:root {
+	--testBrdW:0px;
 }
-**/ 
+.project,
+.project > .name,
+.project > .notes{
+	outline: 0px solid red;
+	outline-offset: .5px
+}
+/*
+#app .project.comment.thread .children {
+	border: 3px solid #ff00e1;
+	border-radius: 0px !important;
+}
+#app .project.comment.thread > .children .project {
+	border: 2px solid #00f7ff;
+	outline-offset: .5px;
+	border-radius: 0px !important;
+}*/
 
 /****
 ! OVERRIDES
@@ -425,7 +441,7 @@ app .project.root > .name > .bullet.diamond ~ .prefix .item-checkbox{
 .project.root {
 		margin-top: 0px;
 }
-.project.root > .notes > .content {
+.project.root:not(.comment) > .notes > .content {
 		margin-left: 0px;
 }
 
@@ -526,8 +542,14 @@ ADDED TO SELECTION - BOARDS*/
 		--btnIcn-ExpandB4Up-H: 5px;
 		--btnIcn-ExpandB4Low-W: 14px;
 		--btnIcn-ExpandB4Low-H: 14px;
-		--prjct-MargTopBtm: 5px;
-		;
+	border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+	
+}
+.board .project.comment{
+				--btnIcn-ExpandB4Up-W: 8px;
+		--btnIcn-ExpandB4Up-H: 8px;
+		--btnIcn-ExpandB4Low-W: 14px;
+		--btnIcn-ExpandB4Low-H: 14px;
 }
 .project.comment.highlighted {
 		filter: brightness(.96);
@@ -558,11 +580,7 @@ ADDED TO SELECTION - BOARDS*/
 .project.comment .project.comment .project.comment .project.comment {
 		background: var(--COMMENT--BG--even);
 }
-.comment .project {
-		--prjct-MargTopBtm: 5px;
-		margin-top: var(--prjct-MargTopBtm);
-		margin-bottom: var(--prjct-MargTopBtm)
-}
+
 .project.comment.draft > div:last-child {
 		margin-top: 0px !important;
 		margin-left: 0px !important;
@@ -628,19 +646,14 @@ NAME ONLY*/
 }
 
 /*compensates for commentattribution*/
-.project.comment-container .project.comment > .name,
-.project.comment > .name *:not(.references .project.comment > .name *) {
-		--btn-MargTop: 18px;
-}
+
 /*IN REFERENCES*/
 .project.references > .children .project.comment-container > .children > .comment > .name {
 		--btn-MargTop: -2px;
 }
 
 /**non-comment nodes inside comment*/
-.project.comment > .children .project > .name {
-		--btn-MargTop: -4px;
-}
+
 /*non-comment Header1 nodes inside comment*/
 .project.comment > .children .project.header1 > .name {
 		--btn-MargTop: -2px;
@@ -901,13 +914,6 @@ NAME > CONTENT only*/
 		padding-right: var(--cmnt-btnPadRight);
 }
 
-/*comment font size*/
-.project.comment > .name > .content,
-/*Font size - non-comment children inside comment*/
-.project.comment > .children .project > .name > .content {
-		--name-fontSize: .95rem;
-		--name-lineHeight: 19.5px;
-}
 .project.comment > .children .project.header1 > .name > .content {
 		--header1-fontSize: 1.22rem;
 		--header1-lineHeight: 19px;
@@ -1832,7 +1838,7 @@ CODE BLOCKS
 }
 #app .project.code-block > .name > .content,
 #app .project.code-block.noted > .name > .content {
-		padding-left: var(--quotePadLeft);
+		padding-left: calc(var(--quotePadLeft) + var(--content-PadLeftRight));
 		padding-bottom: 11px !important;
 		padding-top: 12px !important;
 		border-radius: 7px;
@@ -1875,7 +1881,7 @@ BLOCK QUOTE
 #app .quote-block > .name > .content,
 #app .quote-block > .name > .content:empty,
 #app .quote-block > .notes > .content {
-padding-left: var(--quotePadLeft);
+		padding-left: calc(var(--quotePadLeft) + var(--content-PadLeftRight));
 }
 
 /*quote - border left */
@@ -1888,7 +1894,7 @@ padding-left: var(--quotePadLeft);
 	top: 1px;
 	bottom: 1px;
 	left: calc(var(--children-Indent) * -.5 - var(--content-PadLeftRight));
-	left: calc(var(--content-PadLeftRight) * 0);
+	left: calc(var(--content-PadLeftRight) * 1);
 	width: var(--quoteBrdLeftW);
 	background: var(--wf-border-default);
 	border:unset;
@@ -2322,25 +2328,23 @@ LEVEL 3 > Button Adjustments
 /*Buttons - Paragraph*/
 .project.paragraph > .name > .expand,
 .project.quote-block > .name > .expand,
-.project.code-block > .name > .expand {
+.project.code-block > .name > .expand{
 		opacity: 0;
 		transition: 0s;
 }
-.project.paragraph > .name > .expand,
-.project.quote-block > .name > .expand,
-.project.code-block > .name > .expand {
+.project.paragraph > .name > .expand {
 		--btnIcn-ExpandB4Up-W: 2px;
 		--btnIcn-ExpandB4Low-W: 8px;
 }
 #app .project.paragraph > .name > .bullet,
 #app .project.quote-block > .name > .bullet,
-#app .project.code-block > .name > .bullet {
+#app .project.code-block > .name > .bullet{
 		left: calc(var(--children-Indent) * 0);
 		z-index: 3;
 }
 #app .project.paragraph > .name > .menu,
 #app .project.quote-block > .name > .menu,
-#app .project.code-block > .name > .menu {
+#app .project.code-block > .name > .menu{
 		left: calc(var(--children-Indent) * -1);
 }
 /*Button - Paragraph Parent - Make visible*/
@@ -2348,25 +2352,35 @@ LEVEL 3 > Button Adjustments
 .project.paragraph.collapsed > .name > .expand,
 .project.quote-block.open > .name > .expand,
 .project.quote-block.collapsed > .name > .expand,
+.project.quote-block.hasMirrors > .name > .expand,
 .project.code-block.open > .name > .expand,
-.project.code-block.collapsed > .name > .expand {
+.project.code-block.collapsed > .name > .expand,
+.project.code-block.hasMirrors > .name > .expand,
+.project.quote-block > .name > .bullet.diamond ~ .expand,
+.project.code-block > .name > .bullet.diamond ~ .expand{
 		opacity: 1;
 		transition: var(--btn-transition)
 }
 #app .project.paragraph.open > .name > .bullet,
 #app .project.paragraph.collapsed > .name > .bullet,
+#app .project.paragraph.hasMirrors > .name > .bullet,
 #app .project.quote-block.open > .name > .bullet,
 #app .project.quote-block.collapsed > .name > .bullet,
+#app .project.quote-block.hasMirrors > .name > .bullet,
 #app .project.code-block.open > .name > .bullet,
-#app .project.code-block.collapsed > .name > .bullet {
+#app .project.code-block.collapsed > .name > .bullet,
+#app .project.code-block.hasMirrors > .name > .bullet{
 		left: calc(var(--children-Indent) * -1);
 }
 #app .project.paragraph.open > .name > .menu,
 #app .project.paragraph.collapsed > .name > .menu,
+#app .project.paragraph.hasMirrors > .name > .menu,
 #app .project.quote-block.open > .name > .menu,
 #app .project.quote-block.collapsed > .name > .menu,
+#app .project.quote-block.hasMirrors > .name > .menu,
 #app .project.code-block.open > .name > .menu,
-#app .project.code-block.collapsed > .name > .menu {
+#app .project.code-block.collapsed > .name > .menu,
+#app .project.code-block.hasMirrors > .name > .menu{
 		left: calc(var(--children-Indent) * -2);
 }
 .project.comment-container.open,
@@ -2547,6 +2561,22 @@ COMPLETED TASKS - BULLET COLOR
 }
 
 
+#app .project.quote-block > .name > .expand,
+#app .project.quote-block > .name > .bullet,
+#app .project.quote-block > .name > .menu{
+	--btn-MargTop:2px
+}
+#app .project.code-block > .name > .expand,
+#app .project.code-block > .name > .bullet,
+#app .project.code-block > .name > .menu{
+	--btn-MargTop:10px
+}
+
+#app .project.quote-block > .name:after,
+#app .project.code-block > .name:after{
+	opacity: 0;
+}
+
 
 
 
@@ -2646,11 +2676,12 @@ MIN HEIGHTS > BOARDS > BOARD COLUMNS
 .board > .children .header2 > .name{
 		font-weight: 600 !important;
 }
+/*
 .board .project.comment > .name > .content, 
 .board .project.comment > .children .project > .name > .content{
 		--name-fontSize: .925rem;
 		--name-lineHeight: 19px;
-}
+}*/
 
 /***************
 **************** 
@@ -2824,7 +2855,7 @@ BOARD COLUMN Level
 
 .project.board .boardColumn > .name,
 .project.board .boardColumn > .notes {
-		padding-left: 8px !important;
+		padding-left: var(--boardCardPadLeftRight) !important;
 		--content-PadTopBtm: 6px;
 		--name-fontSize: 1.2rem;
 		--name-lineHeight: 22px;
@@ -2832,8 +2863,21 @@ BOARD COLUMN Level
 		--header1-lineHeight: 22px;
 		--header2-fontSize: 1.2rem;
 		--header2-lineHeight: 22px;
+	box-shadow: inset 0 0 0 var(--testBrdW) red;
 }
+#app .boardCard > .name,
+#app .boardCard > .notes{
+	box-shadow: inset 0 0 0 var(--testBrdW) red;
+	padding-left: var(--boardCardPadLeftRight) !important;
+	padding-right: var(--boardCardPadLeftRight) !important;
+} 
 
+.project.board .boardColumn > .name > .content,
+.project.board .boardColumn > .notes > .content,
+#app .boardCard > .name > .content,
+#app .boardCard > .notes > .content{
+	box-shadow: 0 0 0 var(--testBrdW) green
+}
 
 #app .boardColumn.project > .name > .bullet,
 #app .boardColumn.project > .name > .prefix,
@@ -2883,9 +2927,12 @@ BOARDCARD - Level
 ****************
 ****************/
 /*Padding*/
+:root {
+	--boardCardPadLeftRight:8px;
+}
 .project.board .boardCard > .name,
 .project.board .boardCard > .notes {
-		padding-left: 8px !important;
+		padding-left: var(--boardCardPadLeftRight) !important;
 		--content-PadTopBtm: 6px;
 }
 .project.board .boardCard > .name > .content,
@@ -3201,8 +3248,12 @@ BOARDS ROOT
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .name {
 		height: unset;
-		padding-bottom: var(--ROOT-padBot);
+		padding-bottom: 10px;
 		padding-left: var(--ROOT-padLeftRight);
+}
+#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes{
+			padding-bottom: 10px;
+
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name {
 		padding-bottom: 0px;
@@ -3467,6 +3518,74 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 	z-index: 3;
 }
 
+/********
+BOARD COMMENTS
+**********/
+#app .board .boardCard.comment {
+	border-radius: 0px !important;
+}
+#app .board .project.thread.boardCard.comment .commentAttribution {
+	padding-left: var(--boardCardPadLeftRight) !important;
+	
+}
+#app .board .project.thread.boardCard.comment > .name,
+#app .board .project.thread.boardCard.comment > .notes{
+	padding-left: calc(var(--boardCardPadLeftRight)) !important;
+}
+#app .board .project.thread.boardCard.comment > .children{
+	padding-left: calc(var(--boardCardPadLeftRight) + var(--children-Indent)) !important;
+}
+#app .board .project.thread.boardCard.comment > .name > .content,
+#app .board .boardCard.comment > .notes > .content{
+	margin-left: var(--children-Indent) !important;
+}
+#app .board .project.thread.boardCard.comment > .children .name{
+	padding-top: calc(var(--content-PadTopBtm) + 1px) !important;
+}
+
+#app .boardCard.comment > .name > .bullet, 
+#app .boardCard.comment > .name > .expand, 
+#app .boardCard.comment > .name > .menu{
+	--btn-MargTop:3px !important;
+}
+
+#app .board .project.thread.comment > .children  .name{
+	position: relative;
+}
+#app .board .project.thread.comment > .children  .name > .menu{
+	display: flex !important;
+	transform: unset !important;
+	position: absolute !important;
+}
+#app .board .project.thread.comment > .children  .name > .menu,
+#app .board .project.thread.comment > .children  .name > .expand,
+#app .board .project.thread.comment > .children  .name > .bullet,
+#app .board .project.thread.comment > .children  .name > .nameButtons {
+	--btn-MargTop:4px !important;
+}
+
+#app .board .comment .nameButtons {
+	right: calc(var(--children-Indent) * .745) !important;
+	background: transparent;
+	border: transparent;
+	box-shadow: unset;
+	opacity: 0; !important;
+	transition: .1s !important;
+}
+#app .board .comment .nameButtons.active,
+#app .board .comment .nameButtons:hover{
+	opacity: 1 !important;
+}
+#app .board .comment .nameButtons * {
+	background: transparent;
+}
+#app .board .comment .nameButtons svg{
+	transform: scale(1.6)!important
+}
+#app .board .comment .nameButtons:hover svg {
+	filter:brightness(1.5);
+}
+
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -3501,11 +3620,6 @@ position: relative;
 #app .board .project.quote-block{
 		margin-top: unset !important;
 		
-}
-
-#app .boardCard > .name,
-#app .boardCard > .children .project > .name {
-		padding-right: calc(var(--children-Indent) * 0.4) !important;
 }
 
 
@@ -3629,7 +3743,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 #app .project.board.root .project.code-block > .name > .content{
 	background:hsl(0, 0%, 19%);
-	outline-color: hsla(0,0%,0%,0.5);
+	outline-color: hsla(0,0%,0%,0.695);
 	
 }
 
@@ -3668,7 +3782,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .project.board.root .project.noted > .notes{
 		padding-bottom: calc(var(--content-PadTopBtm) + -2px);
 }
-#app .board.root .boardCard > .children{
+#app .board.root .boardCard > .children,
+#app .board.root .project.boardCard.comment > .children{
 	padding-left: calc(var(--children-Indent) * .5) !important;
 }
 #app .board.root .boardCard {
@@ -3722,7 +3837,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	
 }
 #app .board.root .boardCard > .children .innerContentContainer b {
-	font-weight: 500 !important; 
+	font-weight: 600 !important; 
+	-webkit-font-smoothing:subpixel-antialiased !important;
 }
 .board.root .project > .name > .expand ._3hmsj:before{
 	content:var(--ICON--ARROW-BLACK);
@@ -3763,8 +3879,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	padding-bottom: 3px;
 }
 #app .board.root .boardCard > .name > .content{
-	font-size: calc(var(--name-fontSize) + 1.5px);
-	line-height: calc(var(--name-lineHeight) + 1.5px);  
+	font-size: calc(var(--name-fontSize) + 2px);
+	line-height: calc(var(--name-lineHeight) + 2px);  
 
 }
 #app .project.board.root > .children > .boardColumn > .children > .boardCard:first-child{
@@ -3785,6 +3901,49 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 
 #app .board.root .innerContentContainer b {
 	font-weight: 500;
+}
+
+#app .page[style="overflow-y: auto;"]{
+	height: 100vh
+}
+
+#app .board.root .project.quote-block + .project.quote-block > .name {
+	padding-top: 0px;
+	margin-top: calc(var(--content-PadTopBtm) * -1 - 1px) ;
+}
+#app .board.root .project.quote-block.hasMirrors > .name > .bullet:before{
+	opacity: 1 !important;
+}
+#app .board.root .project.quote-block.hasMirrors > .name > .bullet:before,
+#app .board.root .project.quote-block > .name > .bullet.diamond:before{
+	opacity: 1 !important;
+	width: 6px !important;
+	height: 6px;
+	border-radius: 0px !important;
+}
+#app .board.root .boardColumn .comment {
+	border-top-width: 1px !important;
+}
+#app .board.root .boardCard .comment {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+#app .board.root .boardCard .project.comment > .children{
+	padding-left: calc(var(--children-Indent) * 0) !important;
+}
+
+#app .board.root .boardCard .project.comment > .children  .comment{
+ margin-left: calc(var(--children-Indent) * 1) !important;
+max-width:calc(100% - var(--children-Indent) * 1) !important;
+		
+}
+
+#app .board.root .boardColumn .project.boardCard.comment{
+		background:hsl(202, 23%, 17.5%,0.5) !Important;
+		background:hsl(220, 0%, 11%) !Important;
+		--COMMENT--BG--even:hsl(220, 0%,15%);
+		--COMMENT-CONTAINER--BG:hsl(220, 0%, 11.5%);
 }
 
 /*******************************
@@ -4080,9 +4239,7 @@ universals*/
 .board .nameHoverButtons{
 		opacity: 1 !important
 }
-.comment {
-		--prjct-MargTopBtm: 5px;
-}
+
 .nameHoverButtons {}
 .comment:hover .nameHoverButtons {}
 .dashboard .comment .project {
@@ -4958,31 +5115,34 @@ row-gap: 20px !important;
 		width: 100% !important;
 		--btn-Height:24px;
 		--btn-Width:var(--children-Indent);
-		--children-Indent:24px;
 		--codeblockPadLeftRight:9px;
 }
 
 :root {
 		--comment-NameFontSize:15px;
 		--comment-NameLineHeight:20px;
+		--commentTopContentIndent:var(--children-Indent);
+	--commentChildContentIndent:24px;
+	--commentThreadBrdRad:10px;
+	--commentThreadBrdW:1px;
+	
 }
 
-#app  .project.comment .name > .content{
-		
+#app .project.comment.thread .name{
+	position: relative;
 }
+
 #app  .project.comment .code-block .name > .content .innerContentContainer{
 		font-size: calc(var(--comment-NameFontSize) + -1px) !important;
 		line-height: calc(var(--comment-NameLineHeight) + 0px) !important;
 }
-#app  .project.comment .code-block .name{
+/*
+#app  .project.comment:not(.board .comment) .code-block .name{
 		margin-top: 4px;
 }
-#app  .project.comment .code-block .name > .content{
-		background: hsla(0,0%,0%,.2)
-}
+*/
 
-
-#app .project.comment .name > .content{
+#app .project.comment:not(.board .project) .name > .content{
 		--name-fontSize: var(--comment-NameFontSize);
 	--name-lineHeight: var(--comment-NameLineHeight);
 }
@@ -4991,25 +5151,32 @@ row-gap: 20px !important;
 			--notes-fontSize: 0.825rem;
 	--notes-lineHeight: 1.4;
 }
+/*
 .comment .project {
 	--prjct-MargTopBtm: 1px;
-	margin-top: var(--prjct-MargTopBtm);
-	margin-bottom: var(--prjct-MargTopBtm);
-}
+}*/
 
 #app .project.comment.thread .commentAttribution{
 		padding-top: var(--commentauthorPadTopBtm);
 		padding-left: calc(var(--children-Indent) * 1) !important;
 		margin-bottom:calc(var(--children-Indent) * .2) !important;
+	--children-Indent:30px;
+}
+#app .board .project.comment.thread .commentAttribution{
+	margin-bottom: 0px !important;
 }
 #app .project.comment.thread .commentAttribution * {
 		margin-left: unset;
 }
-#app .project.comment.thread > .name,
-#app .project.comment.thread > .children .name,
-#app .project.comment.thread > .notes,
-#app .project.comment.thread > .children .notes{
+#app .project.comment.thread:not(.board .project) > .name,
+#app .project.comment.thread:not(.board .project) > .children .name,
+#app .project.comment.thread:not(.board .project) > .notes,
+#app .project.comment.thread:not(.board .project) > .children .notes,
+#app .project.comment.thread:not(.board .project.comment) > .name{
 		padding: 0px !important;
+}
+#app .project.comment.thread > .children .project.code-block > .name{
+		padding-right:16px !important;
 }
 #app .project.comment.thread > .name > .content, 
 #app .project.comment.thread .name > .content, 
@@ -5018,8 +5185,8 @@ row-gap: 20px !important;
 		margin-bottom: 0px;
 
 }
-#app .project.comment.thread > .name > .expand,
-#app .project.comment.thread .name > .expand{
+#app .project.comment.thread:not(.board .project) > .name > .expand,
+#app .project.comment.thread:not(.board .project) .name > .expand{
 		left: calc(var(--children-Indent)* 0) !important;
 		margin-top: 0px !important;
 		top: unset;
@@ -5033,8 +5200,15 @@ row-gap: 20px !important;
 }
 
 /*nested comments*/
- .project.comment.thread {
+ .project.comment.thread:not(.comment .comment) {
 		margin: unset !important;
+	 margin-top: var(--prjct-MargTopBtm) !important;
+	 margin-bottom: var(--prjct-MargTopBtm) !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		transform: unset !important;
+}
+.project.comment.thread .comment {
 		width: 100% !important;
 		max-width: 100% !important;
 		transform: unset !important;
@@ -5163,6 +5337,62 @@ row-gap: 20px !important;
 
 #app .comment.thread{
 	min-width: unset !important;
+}
+
+#app .project.comment.thread .commentAttribution {
+	padding-left: var(--commentauthorPadLeft)
+}
+#app .project.comment.thread > .children{
+	padding-left: 0px !important;
+}
+#app .project.comment > .name:after {
+	opacity:0 !important;
+}
+#app .project.comment.thread > .children > .project > .content {}
+
+#app .thread .comment{
+	margin-left: unset !important;
+	margin-right: 0px !important;
+}
+#app .thread.comment,
+#app .thread.comment .comment{
+	margin-top: var(--prjct-MargTopBtm) !important;
+	margin-bottom: var(--prjct-MargTopBtm) !important;
+}
+#app .thread.comment .comment > .children {
+	padding-left: 30px !important;
+}
+
+#app .project.comment.thread:not(.board .comment) > .name > .content{
+
+	margin-left: var(--commentTopContentIndent);
+}
+#app .project.comment.thread > .children{
+	padding-left: var(--commentTopContentIndent) !important;
+}
+#app .thread.comment > .children > .comment{
+	border-top-left-radius: var(--commentThreadBrdRad);
+	border-bottom-left-radius: var(--commentThreadBrdRad);
+	border-left-width: var(--commentThreadBrdW) !important;
+}
+#app .thread.comment > .children > .comment .comment{
+	border-top-left-radius: var(--commentThreadBrdRad);
+	border-bottom-left-radius: var(--commentThreadBrdRad); 
+}
+
+#app .project.comment.thread.root > .name > .content{
+	margin-left: 0px;
+}
+#app .project.comment.thread > .children .code-block > .name {
+	padding-right: 16px !important;
+}
+.comment.comment.project .content{
+	
+}
+
+#app .project.comment.thread > .children .prooject.code-block > .name{
+		padding-right:16px !important;
+
 }
 
 /*******************************
