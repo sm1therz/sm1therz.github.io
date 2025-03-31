@@ -3423,270 +3423,48 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 }
 
 
-
-/*******************************
-********************************
-BOARDS ROOT
-********************************
-********************************/
-:root {
-		--ROOT-padBot: 30px;
-		--ROOT-padLeftRight: 40px;
-}
-.board > .children {
-		--content-PadLeftRight: 3px;
-}
-/*Page & Title*/
-#app .page[style="overflow-y: auto;"] {
-		width: 100%;
-		max-width: 100%;
-		padding: 0px;
-		margin: 0px;
-		height: 99vh;
-}
-#app .page[style="overflow-y: auto;"] > .project.board.root {
-		position: relative;
-		top: var(--Height--Header);
-		overflow: hidden;
-		padding: 20px 30px;
-		padding-left: 0px;
-		padding-right: 0px;
-		height: calc(100% - var(--Height--Header));
-		margin: 0px;
-}
-#app .page[style="overflow-y: auto;"] > .project.board.root > .children {
-		margin: 0px;
-		border: 0px;
-		padding-left: var(--ROOT-padLeftRight);
-		padding-bottom: 30px;
-}
-#app .page[style="overflow-y: auto;"] > .project.board.root > .name {
-		height: unset;
-		padding-bottom: var(--ROOT-padBot);
-		padding-left: var(--ROOT-padLeftRight);
-}
-#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name {
-		padding-bottom: 0px;
-}
-#app .project.board.root.noted > .notes {
-		padding-bottom: var(--ROOT-padBot);
-		padding-left: var(--ROOT-padLeftRight)
-}
-.project.board.root > .name > .menu {
-		left: calc(var(--children-Indent) * .5) !important
-}
-
-.project.board.root .boardColumn > .children {
-		padding-left: 10px;
-		padding-right: 10px;
-}
-.project.board.root .boardCard,
-.project.board.root .boardColumn > .children > div:last-of-type {
-		background: var(--BOARD-ROOT--CARD--BG);
-		border: 1px solid var(--BOARD-ROOT--CARD--BORDER-INNER-CLR);
-		margin-top: 10px;
-		margin-bottom: 10px;
-		border-radius: 5px !important;
-}
-.project.board.root .boardCard.comment {
-		background: var(--COMMENT-CONTAINER--BG)
-}
-.project.board.root .boardColumn.comment .boardCard {
-		background: var(--BG-primary)
-}
-
-.boardColumn > .children > .project.comment:first-of-type {
-		border-top: 0px !important;
-}
-/*REFERENCES*/
-.board .references > .children > .project {
-		padding-bottom: 3px;
-}
-.board .references .project .breadcrumbs {
-		flex: 1;
-		min-width: 100% !important;
-}
-.board .references .project .breadcrumbs a:last-of-type {
-}
-
-
-/*******************************
-********************************
-BOARDCARD HIDE "ADD BOArD CARD BUTTON"
-********************************
-********************************/
-.board:not(.board.root) .boardColumn > .children > ._1eifi39 {
-		display: none;
-}
-/*******************************
-********************************
-BOARDS LAST BOARD COLUMN
-********************************
-********************************/
-.board > .children > ._1en9fmv {
-		min-width: 1000px !important;
-		background: var(--COMMENT-CONTAINER--BG);
-		border-left: 1px solid var(--brd-brdrClr);
-		order: 90000;
-}
-.board > .children > ._1en9fmv > div{
-		margin: unset;
-		border: 1px solid var(--brd-brdrClr);
-		margin-left: 10px;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		width: 26px;
-		height:26px;
-		
-}
-/*EXPAND COLUMN BUTTON*/
-.board a._2ide7e{
-		display: none;
-}
-
-/*******************************
-********************************
-BOARDS COMMENT CONTAINER
-********************************
-********************************/
-
-/*COMMENT CONTAINER - INSIDE BOARD CARD - PADDING*/
-.boardCard .comment-container > .name > .content{
-		/*margin-left: 0px !important;*/
-}
-
-/*COMMENT REPLY BUTTON*/
-/*FOR COMMENT CONTAINER*/
-.project.board .comment-container > .name > .content ~ span{
-		padding-right: 20px;
-}
-
-.project.board .comment ._3ypimw {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		margin-bottom: var(--content-PadTopBtm) !important;
-		padding-right: var(--content-PadTopBtm) !important;
-		width: auto;
-}
-/*******************************
-********************************
-BOARDS FLOW FIX
-********************************
-********************************/
-.project.board .boardColumn > .name > .content,
-.project.board .boardColumn > .notes > .content,
-.project.board .boardColumn .project .name > .content,
-.project.board .boardColumn .project .notes > .content {
-		padding-top: 0px;
-}
-.project.board .boardColumn.noted > .notes{
-	padding-top: calc(var(--content-PadTopBtm) * .5)
-}
-/*padding-top & bottom*/
-.project.board .boardCard > .name, 
-.project.board .boardCard > .notes,
-.project.board .boardCard .project > .name,
-.project.board .boardCard .project > .notes {
-		--content-PadTopBtm: 5px;
-}
-.project.board .project > .name{
-		padding-top: calc(var(--content-PadTopBtm) + 1px);
-
-}
-
-.project.board .project > .name > .content {
-padding-bottom: calc(var(--content-PadTopBtm) + 1px);
-}
-.project.board .project.noted > .name > .content{
-	padding-bottom: 0px;
-}
-.project.board .project.noted > .notes{
-padding-bottom: calc(var(--content-PadTopBtm) + 1px);
-
-}
-.project.board .project > .name{
-	
-}
-
-/*BUTTONS*/
-.project.board .project > .name > .expand, 
-.project.board .boardCard > .notes,
-.project.board .boardCard .project > .name,
-.project.board .boardCard .project > .notes {
-		
-}
-
-
-
-
-.project.board .comment-container,
-.project.board .comment {
-		max-width: 100% !important;
-		min-width: unset !important;
-}
-
-
-.project.comment-container > .name:before{
-		content:var(--ICON--COMMENT-CONTAINER);
-		display: block;
-		position: absolute;
-		left: calc(var(--children-Indent) * 1);
-		width: 20px;
-		margin-top: var(--btn-MargTop);
-}
-.board .project.comment-container > .name:before{
-		left: calc(var(--children-Indent) * .25);
-				width: 18px;
-		--btn-MargTop:1px;
-}
-.board .boardCard.project.comment-container > .name:before{
-		left: calc(var(--children-Indent) * 1.75);
-}
-.board .boardColumn.project.comment-container > .name:before{
-		left: calc(var(--children-Indent) * 1.75);
-		width: 25px;
-}
-.board .boardColumn.project.comment-container > .name > .contentEditablePlaceholderWrapper{
-		opacity: 0;
-}
-.board ._1ut32c0 {
-	order: 9393 !important;
-	height: 28px;
-	padding-top: 8px
-}
-
-/*
-.project.board > .children{
-	margin-top: 6px;
-}*/
-.project.board.open + .project {
-	margin-top: 6px;
-}
-
-#app .boardColumn > .name > .contentEditablePlaceholderWrapper{
-		position: absolute;
-		width: 100% !important;
-		padding-bottom: calc(var(--content-PadTopBtm) + 1px);
-		padding-top: 0px !important;
-		padding-left: var(--content-PadLeftRight) !important;
-		font-size: unset !important;
-		line-height: unset !important;
-}
-
-#app .boardColumn > .name > .contentEditablePlaceholderWrapper * {
-		position: absolute !important;
-		font-size: unset !important;;
-		line-height: unset !important;;
-				font-size: var(--name-fontSize) !important;
-		line-height: var(--name-lineHeight) !important;
-		top: unset !important;
-}
 .boardColumn > .children > div[style*="height"]{
 	display: none !important;
 }
-.board .highlighted::before{
-	opacity: 0 !important;
+
+.board .highlighted::before,
+.board .floating-conversations::before,
+[class*="name--highlighted"]:hover:before{
+	background: transparent !important;
+	inset: -1px !important;
+	border-radius: 3px;
+}
+#app .board:not(.board.root) .project.floating-conversations:before {
+	left: 5px !important;
+	right: 5px !important;
+	bottom: 4px !important;
+	top: 4px !important;
+	height: unset !important;
+	width: unset !important;
+	outline-offset: 0px;
+	inset: 2px !important;
+}
+#app .board.root .project.floating-conversations:before {
+	outline-offset: 3px;
+	inset: -1px !important;
+}
+
+
+
+.board.root .boardCard.floating-conversations:before{
+	border-radius: 8px;
+	
+
+}
+.board .floating-conversations:before{
+	background: hsla(0,0%,100%,.15) !important;
+}
+.floating-comments-blurred .board .floating-conversations:before {
+	opacity: .4 !important;
+	background: transparent !important;
+}
+#app .board .project > .name .nameButtons{
+	z-index: 3;
 }
 
 /*******************************
@@ -3815,7 +3593,10 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .project.board.root .boardColumn > .children{
 
 	padding-left: calc(var(--boardRoot-ColumnGap) * 1);
-	padding-right: calc(var(--boardRoot-ColumnGap) * 1);
+	padding-right: calc(var(--boardRoot-ColumnGap) * 2);
+}
+#app .project.board.root .boardColumn > .children{
+	padding-left: 5px;
 }
 
 #app .project.board.root .boardColumn > .children > .boardCard {
@@ -3828,6 +3609,9 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	outline-offset: -1px;
 	border-radius: var(--boardRoot-CardBrdRad) !important;
 	border-top-color: transparent !important;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	--boardRoot-CardBrdRad:9px;
 	
 }
 #app .project.board .project.code-block > .name > .content,
@@ -3836,11 +3620,17 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	padding-bottom: var(--quotePadTopBtm)  !important;
 	padding-right: 11px !important;
 }
+#app .project.board .project.code-block > .name > .content{
+	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 1.3);
+	border-radius: 9px;
+}
 #app .project.board .project.quote-block > .name{
 	padding-bottom: var(--content-PadTopBtm) !important;
 }
 #app .project.board.root .project.code-block > .name > .content{
-	background:hsla(0,0%,50%,.1)
+	background:hsl(0, 0%, 19%);
+	outline-color: hsla(0,0%,0%,0.5);
+	
 }
 
 #app .project.board .boardCard > .children .project .content {
@@ -3848,6 +3638,152 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 #app .project.board .boardCard > .name .content {
 		max-width: calc(100% - 27px) !important;
+}
+
+
+
+/****/
+.board.root > .children, 
+.board.root .boardColumn > .children, 
+.board.root .boardCard > .children, 
+.board.root .boardCard > .children .project:not(.boardCard > .children > .project:first-of-type){
+	border-top-width: 0px !important
+}
+.board.root .boardColumn > .children {
+	border-top: 1px solid hsla(0,0%,100%,0.1) !important;
+}
+
+#app .board.root .boardColumn{
+	max-width: 410px !important;
+	flex: 0 0 450px;
+	overflow-x: visible !important;
+}
+#app .board.root .boardColumn{
+	border-left-color: transparent !important;
+}
+#app .board.root .project > .name {
+	padding-top: calc(var(--content-PadTopBtm) + 1px);
+}
+#app .project.board.root .project:not(.noted) > .name > .content{
+		padding-bottom: calc(var(--content-PadTopBtm) + -2px);
+}
+#app .board.root .boardCard > .children{
+	padding-left: calc(var(--children-Indent) * .5) !important;
+}
+#app .board.root .boardCard {
+	background: rgb(34, 34, 34) !important;
+	--BOARD-ROOT--CARD--BORDERCLR:hsla(0, 0%, 100%, .13) !important;
+}
+
+#app .board.root .project.paragraph > .name > .bullet:before,
+#app .board.root .project.quote-block > .name > .bullet:before,
+#app .board.root .project.code-block > .name > .bullet:before{
+	opacity: 0;
+}
+#app .board.root .project.paragraph.open > .name > .bullet:before,
+#app .board.root .project.paragraph.collapsed > .name > .bullet:before,
+#app .board.root .project.quote-block.open > .name > .bullet:before,
+#app .board.root .project.quote-block.collapsed > .name > .bullet:before,
+#app .board.root .project.code-block.open > .name > .bullet:before,
+#app .board.root .project.code-block.collapsed > .name > .bullet:before{
+	opacity: 1;
+}
+
+#app .page[style="overflow-y: auto;"] {
+	background: hsl(0, 0%, 7%) !important;
+	--BG-primary:hsl(0, 0%, 7%) !important;
+}
+#app .page[style="overflow-y: auto;"] .project.root > .children{
+	padding-top: 0px !important;
+}
+#app .page[style="overflow-y: auto;"] .board .name .content{
+	color:hsl(0, 0%, 86%);
+}
+#app .page[style="overflow-y: auto;"]{
+	--NODE--TXT-CLR--bold:hsla(0,0%,97%)!important;
+	--NODE-NOTES--TXT-CLR-ALL:hsla(359, 3%, 90%, 0.65);
+}
+#app .board.root .boardCard > .children > .project > .name > .expand{
+	left: unset !important;
+	right: calc(var(--children-Indent) * 1);
+	z-index: 3;
+}
+
+#app .board.root .boardCard.header2 > .name > .content{
+	--header2-fontSize: 16px;
+	--header2-lineHeight: 20px;
+}
+#app .board.root .boardCard.header1 > .name > .content{
+	--header1-fontSize: 18px !important;
+	--header1-lineHeight: 22px;
+}
+#app .board.root .boardCard > .children > .project:last-child {
+	
+}
+#app .board.root .boardCard > .children .innerContentContainer b {
+	font-weight: 500 !important; 
+}
+.board.root .project > .name > .expand ._3hmsj:before{
+	content:var(--ICON--ARROW-BLACK);
+	opacity: 0.5
+}
+#app .board.root .project > .name .nameButtons{
+	right: calc(var(--children-Indent) * -1.4) !important;
+	z-index: 3;
+	filter: saturate(0)
+}
+/*
+#app .board.root .project.open > .name .nameButtons,
+#app .board.root .project.collapsed > .name .nameButtons{
+	right: calc(var(--children-Indent) * 2) !important;
+}*/
+#app .board.root .nameButtons svg {
+	background: var(--BG-primary);
+	transform: scale(.9);
+}
+#app .board.root .nameButtons:not(.nameButtons:hover) svg:not(svg:hover) path {
+	fill: hsla(0,0%,100%,0.4);
+}
+
+#app .board .project.code-block > .name > .content, 
+#app .board .project.code-block > .name > .content > .innerContentContainer {
+	font-size: calc(var(--name-fontSize) - 1px) !important;
+	line-height: calc(var(--name-lineHeight) - 0px) !important;
+}
+
+#app .board.root .project.hasMirrors > .name > .bullet:before {
+	background: var(--BG-primary) !important;
+	box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
+		inset 0 0 0 8px var(--BG-primary) ;
+	outline: 1.4px solid var(--BG-Bullet-open);
+}
+
+#app .board.root .boardCard.noted > .name > .content {
+	padding-bottom: 3px;
+}
+#app .board.root .boardCard > .name > .content{
+	font-size: calc(var(--name-fontSize) + 1.5px);
+	line-height: calc(var(--name-lineHeight) + 1.5px);  
+
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:first-child{
+	margin-top: 20px!important
+}
+
+#app .board.root, 
+#app .board.root > .children{
+	--notes-fontSize:13.75px;
+	--notes-lineHeight:18.75px
+	
+}
+#app .board.root .boardColumn > .notes,
+#app .board.root .boardCard > .notes {
+	--notes-fontSize:14.5px;
+	--notes-lineHeight:19px
+}
+
+#app .board.root .innerContentContainer b {
+	font-weight: 500;
 }
 
 /*******************************
@@ -5119,10 +5055,10 @@ row-gap: 20px !important;
 
 
 #app .board .nameButtons {
-	right: calc(var(--children-Indent) * 1) !important;
+	right: calc(var(--children-Indent) * 1 - 4px) !important;
 	width: var(--btn-Width) !important;
 	left: unset;
-	top: 0px;
+	top: 2px;
 	height: calc(var(--btn-Height) * 1) !important;
 	display: flex;
 	align-items: center;
@@ -6742,6 +6678,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		--ICON--ARROW: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M56.1193 27.226C62.0728 30.6989 62.0728 39.3011 56.1193 42.774L22.981 62.1047C16.9811 65.6046 9.44616 61.2768 9.44616 54.3307L9.44617 15.6693C9.44617 8.72321 16.9811 4.39537 22.981 7.89532L56.1193 27.226Z" fill="%232C3235"/><path fill-rule="evenodd" clip-rule="evenodd" d="M56.1193 42.774C62.0728 39.3011 62.0728 30.6989 56.1193 27.226L22.981 7.89531C16.9811 4.39536 9.44617 8.7232 9.44617 15.6693L9.44617 54.3306C9.44617 61.2768 16.9811 65.6046 22.981 62.1047L56.1193 42.774ZM50.5676 37.5913C52.5521 36.4337 52.5521 33.5663 50.5676 32.4086L21.3945 15.391C19.3946 14.2244 16.8829 15.667 16.8829 17.9824L16.8829 52.0176C16.8829 54.333 19.3946 55.7756 21.3946 54.6089L50.5676 37.5913Z" fill="%23828687"/></svg>');
 		--ICON--ARROW-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5151 12.3648C28.299 13.9888 28.299 18.0112 25.5151 19.6352L10.6472 28.3081C7.84163 29.9447 4.31825 27.921 4.31825 24.6729L4.31825 7.32707C4.31825 4.07903 7.84163 2.0553 10.6472 3.6919L25.5151 12.3648Z" fill="%23ffffff"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.515 19.6351C28.2989 18.0112 28.2989 13.9887 25.515 12.3648L10.6471 3.69186C7.8415 2.05527 4.31812 4.07899 4.31812 7.32704V24.6729C4.31812 27.9209 7.8415 29.9447 10.6471 28.3081L25.515 19.6351ZM23.07 17.2117C23.998 16.6704 23.998 15.3296 23.07 14.7882L9.82744 7.06341C8.89225 6.51788 7.71779 7.19245 7.71779 8.27514L7.71779 23.7248C7.71779 24.8075 8.89224 25.482 9.82744 24.9365L23.07 17.2117Z" fill="%23A0A7AB"/></svg>');
 		--ICON--ARROW-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5151 12.3648C28.299 13.9888 28.299 18.0112 25.5151 19.6352L10.6472 28.3081C7.84163 29.9447 4.31825 27.921 4.31825 24.6729L4.31825 7.32707C4.31825 4.07903 7.84163 2.0553 10.6472 3.6919L25.5151 12.3648Z" fill="%232C3235"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.515 19.6351C28.2989 18.0112 28.2989 13.9887 25.515 12.3648L10.6471 3.69186C7.8415 2.05527 4.31812 4.07899 4.31812 7.32704V24.6729C4.31812 27.9209 7.8415 29.9447 10.6471 28.3081L25.515 19.6351ZM23.07 17.2117C23.998 16.6704 23.998 15.3296 23.07 14.7882L9.82744 7.06341C8.89225 6.51788 7.71779 7.19245 7.71779 8.27514L7.71779 23.7248C7.71779 24.8075 8.89224 25.482 9.82744 24.9365L23.07 17.2117Z" fill="%23828687"/></svg>');
+	--ICON--ARROW-BLACK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5151 12.3648C28.299 13.9888 28.299 18.0112 25.5151 19.6352L10.6472 28.3081C7.84163 29.9447 4.31825 27.921 4.31825 24.6729L4.31825 7.32707C4.31825 4.07903 7.84163 2.0553 10.6472 3.6919L25.5151 12.3648Z" fill="%23121212"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.515 19.6351C28.2989 18.0112 28.2989 13.9887 25.515 12.3648L10.6471 3.69186C7.8415 2.05527 4.31812 4.07899 4.31812 7.32704V24.6729C4.31812 27.9209 7.8415 29.9447 10.6471 28.3081L25.515 19.6351ZM23.07 17.2117C23.998 16.6704 23.998 15.3296 23.07 14.7882L9.82744 7.06341C8.89225 6.51788 7.71779 7.19245 7.71779 8.27514L7.71779 23.7248C7.71779 24.8075 8.89224 25.482 9.82744 24.9365L23.07 17.2117Z" fill="%23dbdbdb"/></svg>');
 		--LinkIcn-MiniArrow: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.13484 1.45048C7.52536 1.05996 8.15853 1.05996 8.54905 1.45048C8.93958 1.84101 8.93958 2.47417 8.54905 2.8647L2.12132 9.29243C1.7308 9.68296 1.09763 9.68296 0.707107 9.29243C0.316582 8.90191 0.316582 8.26874 0.707107 7.87822L7.13484 1.45048Z" fill="%230068DA"/><path fill-rule="evenodd" clip-rule="evenodd" d="M0.16349 0.819014C0.0282878 1.08436 0.00489449 1.41754 0.000846867 2H6.7925C7.21962 2 7.43318 2 7.59573 2.08444C7.73271 2.1556 7.8444 2.26729 7.91556 2.40427C8 2.56682 8 2.78038 8 3.2075V9.99915C8.58246 9.99511 8.91564 9.97171 9.18099 9.83651C9.46323 9.6927 9.6927 9.46323 9.83651 9.18099C10 8.86012 10 8.44008 10 7.6V2.4C10 1.55992 10 1.13988 9.83651 0.819014C9.6927 0.536771 9.46323 0.3073 9.18099 0.16349C8.86012 0 8.44008 0 7.6 0H2.4C1.55992 0 1.13988 0 0.819014 0.16349C0.536771 0.3073 0.3073 0.536771 0.16349 0.819014Z" fill="%230068DA"/></svg>');
 		--ICON--MAGNIFYING-GLASS: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11.9714" y="9.5741" width="1.24321" height="7.99019" rx="0.621604" fill="%23828687"/><rect x="16.5881" y="12.8512" width="1.23811" height="7.99019" rx="0.619055" transform="rotate(90 16.5881 12.8512)" fill="%23828687"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.8724 20.6509C14.3946 23.2559 9.44085 22.9773 6.27871 19.8151C2.81107 16.3475 2.81107 10.7254 6.27871 7.25771C9.74635 3.79007 15.3685 3.79007 18.8361 7.25771C21.9984 10.42 22.2769 15.3739 19.6716 18.8518L26.6181 25.7982L24.8189 27.5974L17.8724 20.6509ZM17.7897 18.7686C14.9 21.6583 10.2149 21.6583 7.32518 18.7686C4.43548 15.8789 4.43548 11.1938 7.32518 8.3041C10.2149 5.4144 14.9 5.4144 17.7897 8.3041C20.6794 11.1938 20.6794 15.8789 17.7897 18.7686Z" fill="%23828687"/></svg>');
 		--ICON--MAGNIFYING-GLASS-ZOOM--LIGHT: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.2739 24.546C24.7621 24.0578 24.7621 23.2664 24.2739 22.7782L21.2687 19.7731L19.501 21.5408L22.5062 24.546C22.9943 25.0341 23.7858 25.0341 24.2739 24.546V24.546Z" fill="%23A0A7AB"/><circle cx="14.728" cy="15" r="7.90331" transform="rotate(-45 14.728 15)" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M21.0919 21.364C24.6066 17.8492 24.6066 12.1508 21.0919 8.63604C17.5772 5.12132 11.8787 5.12132 8.36396 8.63604C4.84924 12.1508 4.84924 17.8492 8.36396 21.364C11.8787 24.8787 17.5772 24.8787 21.0919 21.364ZM20.0312 20.3033C22.9602 17.3744 22.9602 12.6256 20.0312 9.6967C17.1023 6.76777 12.3536 6.76777 9.42462 9.6967C6.49569 12.6256 6.49569 17.3744 9.42462 20.3033C12.3536 23.2322 17.1023 23.2322 20.0312 20.3033Z" fill="%23A0A7AB"/><path d="M18.478 14.25C18.8922 14.25 19.228 14.5858 19.228 15V15C19.228 15.4142 18.8922 15.75 18.478 15.75L10.978 15.75C10.5638 15.75 10.228 15.4142 10.228 15V15C10.228 14.5858 10.5638 14.25 10.978 14.25L18.478 14.25Z" fill="%23A0A7AB"/><path d="M15.478 18.75C15.478 19.1642 15.1422 19.5 14.728 19.5V19.5C14.3138 19.5 13.978 19.1642 13.978 18.75L13.978 11.25C13.978 10.8358 14.3138 10.5 14.728 10.5V10.5C15.1422 10.5 15.478 10.8358 15.478 11.25L15.478 18.75Z" fill="%23A0A7AB"/></svg>');
