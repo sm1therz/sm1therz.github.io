@@ -3664,7 +3664,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .board.root .project > .name {
 	padding-top: calc(var(--content-PadTopBtm) + 1px);
 }
-#app .project.board.root .project:not(.noted) > .name > .content{
+#app .project.board.root .project:not(.noted) > .name > .content, 
+#app .project.board.root .project.noted > .notes{
 		padding-bottom: calc(var(--content-PadTopBtm) + -2px);
 }
 #app .board.root .boardCard > .children{
