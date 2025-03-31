@@ -3942,9 +3942,17 @@ max-width:calc(100% - var(--children-Indent) * 1) !important;
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment{
 		background:hsl(202, 23%, 17.5%,0.5) !Important;
 		background:hsl(220, 0%, 10%) !Important;
-		--COMMENT--BG--even:hsl(220, 0%,13.5%);
+		--COMMENT--BG--even:hsl(220, 0%,14%);
 		--COMMENT-CONTAINER--BG:hsl(220, 0%, 11.5%);
 		box-shadow:0 0 0 1px hsl(220, 0%, 17%) !important;
+}
+#app .project.board.root > .children > .boardColumn .comment > .notes .content{
+	--NODE--TXT-CLR--bold: hsla(0,0%,97%)!important;
+	--NODE-NOTES--TXT-CLR-ALL: hsla(359, 3%, 90%, 0.5);
+		font-size:var(--notes-fontSize) !important;
+		line-height:var(--notes-lineHeight);
+		--notes-fontSize:13.75px;
+		--notes-lineHeight:18.75px;
 }
 
 #app .project.board.root .boardColumn > .name > .expand {
@@ -3956,6 +3964,16 @@ max-width:calc(100% - var(--children-Indent) * 1) !important;
 		color:hsla(0,0%,100%,0.55);
 			font-size: calc(var(--name-fontSize) + 2px)!important;
 	line-height: calc(var(--name-lineHeight) + 2px) !important;
+}
+
+div#app ~ div[style*="color: rgb(60, 64"]{
+		display:none !Important;
+		transition:.25s !important;
+		
+}
+div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
+		opacity:1 !important;
+		display:block !important;
 }
 
 /*******************************
