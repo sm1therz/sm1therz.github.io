@@ -4039,10 +4039,10 @@ max-width:calc(100% - var(--children-Indent) * 1) !important;
 
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment{
 		background:hsl(202, 23%, 17.5%,0.5) !Important;
-		background:hsl(220, 0%, 10%) !Important;
-		--COMMENT--BG--even:hsl(220, 0%,14%);
-		--COMMENT-CONTAINER--BG:hsl(220, 0%, 11.5%);
-		box-shadow:0 0 0 1px hsl(220, 0%, 17%) !important;
+		background:hsl(202, 12%, 21%) !Important;
+				--COMMENT--BG--even:hsl(197, 18%, 15%);
+		--COMMENT-CONTAINER--BG:hsl(202, 12%, 21%);
+		box-shadow:0 0 0 1px hsla(200, 3%, 37%, .78) !important;
 }
 #app .project.board.root > .children > .boardColumn .comment > .notes .content{
 	--NODE--TXT-CLR--bold: hsla(0,0%,97%)!important;
@@ -4094,7 +4094,6 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 #app .board.root .boardCard .project[class*="header3"] > .name > .menu{
 		--btn-MargTop:6px !important;
 }
-
 /*******************************
 ********************************
 ! DASHBOARD
