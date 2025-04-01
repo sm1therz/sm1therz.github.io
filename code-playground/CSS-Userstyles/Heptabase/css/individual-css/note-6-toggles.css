@@ -16,7 +16,9 @@ FIRST LINE TOGGLE
 }
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"],
 .p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"],
-.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"]{
+.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"],
+[data-is-whiteboard-panel-container="true"] > .bg-background-secondary[style*="width"]> .bg-background-primary div > .relative.grow.flex.flex-col .mt-3 .ProseMirror > [data-node-type*="toggle"],
+[data-is-whiteboard-panel-container]  .ProseMirror > [data-node-type*="toggle"]{
     position: relative;
     padding-left: var(--bulletwrapperW);
     width: calc(100% + var(--bulletwrapperW));
@@ -25,7 +27,9 @@ FIRST LINE TOGGLE
 }
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"],
 .p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"],
-.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
+.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"],
+[data-is-whiteboard-panel-container="true"] > .bg-background-secondary[style*="width"]> .bg-background-primary div > .relative.grow.flex.flex-col .mt-3 .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"],
+[data-is-whiteboard-panel-container]  .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
     position: absolute;
     left: calc(var(--bulletwrapperW) * 0);
     width: var(--bulletwrapperW);
@@ -34,7 +38,9 @@ FIRST LINE TOGGLE
 
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"],
 .p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"],
-.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"]{
+.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"],
+[data-is-whiteboard-panel-container="true"] > .bg-background-secondary[style*="width"]> .bg-background-primary div > .relative.grow.flex.flex-col .mt-3 .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"],
+[data-is-whiteboard-panel-container]  .ProseMirror > [data-node-type*="toggle"] > [class*="nestedBlocks"]{
     width: 100%;
 }
 @media (max-width: 600px) {
@@ -47,7 +53,9 @@ FIRST LINE TOGGLE
 /*middle brder*/
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"]:before,
 .p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"]:before,
-.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"]:before{
+.bg-background-primary > [style*="width: "] .app-region-drag + div [class*="group/"] .ProseMirror > [data-node-type*="toggle"]:before,
+[data-is-whiteboard-panel-container="true"] > .bg-background-secondary[style*="width"]> .bg-background-primary div > .relative.grow.flex.flex-col .mt-3 .ProseMirror > [data-node-type*="toggle"]:before,
+[data-is-whiteboard-panel-container]  .ProseMirror > [data-node-type*="toggle"]:before{
     content:"";
     display: block;
     position: absolute;
@@ -65,4 +73,8 @@ FIRST LINE TOGGLE
 .p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"][class*="folded"]:before {
     bottom: 50%;
     
+}
+
+._hasNestedBlock_mglho_11>._bulletWrapper_mglho_1>div>span>div>._toggleIcon_mglho_4{
+  opacity: .5
 }
