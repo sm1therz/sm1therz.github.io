@@ -72,13 +72,15 @@ BOX SHADOW TESTING - BOARDS
 
  **/
 :root {
-	--testBrdW:0px;
+	--testBrdW:.0px;
 }
 .project,
 .project > .name,
-.project > .notes{
-	outline: 0px solid red;
-	outline-offset: .5px
+.project > .name > .content,
+.project > .notes,
+.project > .notes > .content{
+
+		box-shadow: 0 0 0 var(--testBrdW)red;
 }
 /*
 #app .project.comment.thread .children {
@@ -111,11 +113,6 @@ BOX SHADOW TESTING - BOARDS
 
 
 
-/*root overrides*/
-.project.root > .children .header1 > .name,
-.project.root > .children .header2 > .name {
-		margin-bottom: unset;
-}
 
 /*Comment Overrides*/
 .comment {
@@ -304,10 +301,12 @@ BOX SHADOW TESTING - BOARDS
 		--name-lineHeight: 26px;
 		--notes-fontSize: .95rem;
 		--notes-lineHeight: 18px;
-		--header1-fontSize: 2.1rem;
+		--header1-fontSize: 2.0rem;
 		--header1-lineHeight: 1.3;
-		--header2-fontSize: 1.5rem;
-		--header2-lineHeight: 1.3;
+		--header2-fontSize: 1.4rem;
+		--header2-lineHeight: 1.35;
+		--header3-fontSize: 1.25rem;
+		--header3-lineHeight: 1.3;
 		--cmntContain-fontSize: 1rem;
 		--cmntContain-lineHeight: 20px;
 
@@ -500,11 +499,15 @@ LEVEL 1 > PROJECT
 		position: relative;
 		border-radius: var(--prjct-BrdRad);
 }
+.children > .project[class*="header2"]:first-child {
+		margin-top: calc(var(--wf-space-xl) + var(--prjct-MargTopBtm))!important
+}
+/*
 .project.root > .children .header1,
 .project.root > .children .header2 {
 		margin-top: var(--prjct-MargTopBtm)
 }
-
+*/
 /****
 Added to selection*/
 .project.addedToSelection:before {
@@ -869,10 +872,10 @@ NOTES > CONTENT*/
 }
 /****
 NAME > CONTENT only*/
-.project.root > .children .project > .name > .content,
-.project > .name > .content {
-		font-size: var(--name-fontSize);
-		line-height: var(--name-lineHeight);
+.project.root > .children .project:not([class*="header"]) > .name > .content,
+.project:not([class*="header"]) > .name > .content {
+		/*font-size: var(--name-fontSize);*/
+		/*line-height: var(--name-lineHeight);*/
 		color: var(--NODE--TXT-CLR--main);
 }
 :root {
@@ -941,14 +944,19 @@ NAME > CONTENT only*/
 }
 
 .project.root > .children .header1 > .name > .content,
-.project.header1 > .name > .content {
+.project.header1:not(.root) > .name > .content {
 		font-size: var(--header1-fontSize);
 		line-height: var(--header1-lineHeight)
 }
 .project.root > .children .header2 > .name > .content,
-.project.header2 > .name > .content {
+.project.header2:not(.root) > .name > .content {
 		font-size: var(--header2-fontSize);
 		line-height: var(--header2-lineHeight)
+}
+.project.root > .children .header3 > .name > .content,
+.project.header3:not(.root) > .name > .content {
+		font-size: var(--header3-fontSize);
+		line-height: var(--header3-lineHeight)
 }
 /****
 NAME-WITH-IMAGE
@@ -1015,7 +1023,12 @@ NOTES > CONTENT only*/
 		text-underline-offset: var(--underlineOffset) !important;
 		text-decoration-thickness: var(--underlineThickness) !important;
 }
-
+.project[class*="header"].noted:not(.root) > .name {
+		margin-bottom:0px;
+}
+.project[class*="header"].noted:not(.root) > .notes {
+		margin-bottom: var(--wf-space-s) !important;;
+}
 
 
 
@@ -2033,6 +2046,9 @@ html #app .project > .notes > .content a.contentLink[href*="workflowy"] {}
 html #app .project > .notes > .content .contentLink {
 		color: var(--NODE-NOTES--TXT-CLR-ALL) !important;
 }
+html #app .project > .notes > .content .contentLink{
+		color:var(--NoteLinkClr)!important;
+}
 html #app .project > .notes > .content {
 		color: var(--NODE-NOTES--TXT-CLR-ALL);
 		max-height: unset;
@@ -2326,44 +2342,55 @@ LEVEL 3 > Button Adjustments
 }
 
 /*Buttons - Paragraph*/
-.project.paragraph > .name > .expand,
-.project.quote-block > .name > .expand,
-.project.code-block > .name > .expand{
+#app .project.paragraph > .name > .expand,
+#app .project[class*="header"] > .name > .expand,
+#app .project.quote-block > .name > .expand,
+#app .project.code-block > .name > .expand{
 		opacity: 0;
 		transition: 0s;
+		
 }
 .project.paragraph > .name > .expand {
 		--btnIcn-ExpandB4Up-W: 2px;
 		--btnIcn-ExpandB4Low-W: 8px;
 }
 #app .project.paragraph > .name > .bullet,
+#app .project[class*="header"] > .name > .bullet,
 #app .project.quote-block > .name > .bullet,
 #app .project.code-block > .name > .bullet{
 		left: calc(var(--children-Indent) * 0);
 		z-index: 3;
 }
+#app .project[class*="header"] > .name > .menu,
 #app .project.paragraph > .name > .menu,
 #app .project.quote-block > .name > .menu,
 #app .project.code-block > .name > .menu{
 		left: calc(var(--children-Indent) * -1);
 }
 /*Button - Paragraph Parent - Make visible*/
-.project.paragraph.open > .name > .expand,
-.project.paragraph.collapsed > .name > .expand,
+#app .project.paragraph.open > .name > .expand,
+#app .project.paragraph.collapsed > .name > .expand,
+#app .project[class*="header"].open > .name > .expand,
+#app .project[class*="header"].collapsed > .name > .expand,
+#app .project[class*="header"].hasMirrors > .name > .expand,
+#app .project[class*="header"] > .name > .bullet.diamond ~ .expand,
 .project.quote-block.open > .name > .expand,
 .project.quote-block.collapsed > .name > .expand,
 .project.quote-block.hasMirrors > .name > .expand,
+.project.quote-block > .name > .bullet.diamond ~ .expand,
 .project.code-block.open > .name > .expand,
 .project.code-block.collapsed > .name > .expand,
 .project.code-block.hasMirrors > .name > .expand,
-.project.quote-block > .name > .bullet.diamond ~ .expand,
 .project.code-block > .name > .bullet.diamond ~ .expand{
 		opacity: 1;
-		transition: var(--btn-transition)
+		transition: var(--btn-transition);
 }
 #app .project.paragraph.open > .name > .bullet,
 #app .project.paragraph.collapsed > .name > .bullet,
 #app .project.paragraph.hasMirrors > .name > .bullet,
+#app .project[class*="header"].open > .name > .bullet,
+#app .project[class*="header"].collapsed > .name > .bullet,
+#app .project[class*="header"].hasMirrors > .name > .bullet,
 #app .project.quote-block.open > .name > .bullet,
 #app .project.quote-block.collapsed > .name > .bullet,
 #app .project.quote-block.hasMirrors > .name > .bullet,
@@ -2375,6 +2402,9 @@ LEVEL 3 > Button Adjustments
 #app .project.paragraph.open > .name > .menu,
 #app .project.paragraph.collapsed > .name > .menu,
 #app .project.paragraph.hasMirrors > .name > .menu,
+#app .project[class*="header"].open > .name > .menu,
+#app .project[class*="header"].collapsed > .name > .menu,
+#app .project[class*="header"].hasMirrors > .name > .menu,
 #app .project.quote-block.open > .name > .menu,
 #app .project.quote-block.collapsed > .name > .menu,
 #app .project.quote-block.hasMirrors > .name > .menu,
@@ -2394,6 +2424,15 @@ LEVEL 3 > Button Adjustments
 
 
 
+#app .board .project[class*="header"] > .name > .bullet{
+		opacity: 0;
+}
+#app .board .project[class*="header"].open > .name > .bullet,
+#app .board .project[class*="header"].collapsed > .name > .bullet,
+#app .board .project[class*="header"].hasMirrors > .name > .bullet{
+		opacity: 1;
+}
+
 /***********
 ! NORMAL STATE OVERRIDES
 ************/
@@ -2405,7 +2444,7 @@ LEVEL 3 > Button Adjustments
 #app .project:not(.board) > .children {
 		display: flex;
 		flex-direction: column;
-		--prjct-MargTopBtm:1.5px;
+		--prjct-MargTopBtm:2px;
 }
 
 /*PROJECT*/
@@ -2415,12 +2454,17 @@ LEVEL 3 > Button Adjustments
 		position: relative;
 		border-radius: var(--prjct-BrdRad);
 }
+
 .project .children > .project.paragraph {
 		margin-top: 0px;
 		margin-bottom: var(--prjct-MargTopBtm);
 }
-.project .children > .project:first-of-type {
+.project .children > .project:not([class*="header"]):first-of-type {
 		margin-top: calc(var(--prjct-MargTopBtm) * 1);
+}
+.board .project .children > .project:not([class*="header"]):first-of-type{
+				margin-top: calc(var(--prjct-MargTopBtm) * 0);
+
 }
 .project .children > .project:last-of-type {
 		margin-bottom: calc(var(--prjct-MargTopBtm) * 0) !important;
@@ -2433,6 +2477,10 @@ LEVEL 3 > Button Adjustments
 #app .comment .project.quote-block {
 }
 */
+.paragraph:not(.root) > .name > .content, 
+.paragraph:not(.root) > .note > .content{
+		line-height: var(--wf-item-line-height)
+}
 /*NAME*/
 .project.code-block > .name,
 .project > .name.name--with-image{
@@ -2576,6 +2624,13 @@ COMPLETED TASKS - BULLET COLOR
 #app .project.code-block > .name:after{
 	opacity: 0;
 }
+/*
+#app .project[class*="header"] > .name > .bullet{
+		opacity:0 !important;
+}
+#app .project[class*="header"] > .name > .bullet:before {
+		opacity:0 !important;
+}*/
 
 
 
@@ -2661,13 +2716,17 @@ MIN HEIGHTS > BOARDS > BOARD COLUMNS
 }
 
 .board > .children .header1 {
-		--header1-fontSize: 1rem;
-		--header1-lineHeight: 20px;
+		--header1-fontSize: 1.3rem;
+		--header1-lineHeight: 25px;
 }
 
 .board > .children .header2 {
-		--header2-fontSize: 1rem;
-		--header2-lineHeight: 20px;
+		--header2-fontSize: 1.15rem;
+		--header2-lineHeight: 23px;
+}
+.board > .children .header3 {
+		--header3-fontSize: 1.075rem;
+		--header3-lineHeight: 21px;
 }
 .boardColumn > .children {
 		--cmntContain-fontSize: .9rem;
@@ -3033,6 +3092,7 @@ BOARDCARD Children - Level*/
 }
 
 /*bullets & prefix*/
+#app .boardCard .project[class*="header"] > .name > .bullet,
 #app .boardCard .project > .name > .bullet,
 #app .boardCard .project.paragraph > .name > .bullet,
 #app .boardCard .project.quote-block > .name > .bullet,
@@ -3043,11 +3103,10 @@ BOARDCARD Children - Level*/
 		--btnIcn-Scale: .75;
 }
 /*bullets & prefix - comment-container*/
-#app .project.boardCard .project.comment-container > .name > .bullet,
-#app .project.boardCard .project.comment-container > .name > .prefix {}
+#app .boardCard .project[class*="header"] > .name > .expand,
 .boardCard .project > .name > .expand,
 #app .boardCard .project.header1 > .name > .expand,
-#app .boardCard .project.header2 > .name > .expand {
+#app .boardCard .project.header > .name > .expand {
 		left: calc(var(--children-Indent) * -1);
 }
 
@@ -3079,6 +3138,8 @@ BOARDCARD Children - Level*/
 #app .boardCard.code-block > .name > .expand{
 	--btn-MargTop:4px !important;
 }
+#app .boardCard .project[class*="header"] > .name > .menu,
+#app .boardCard .project[class*="header"] > .name > .menu,
 #app .boardCard .project.quote-block > .name > .menu,
 #app .boardCard.quote-block > .name > .menu,
 #app .boardCard .project.code-block > .name > .menu,
@@ -3218,6 +3279,7 @@ BOARDS ROOT
 :root {
 		--ROOT-padBot: 30px;
 		--ROOT-padLeftRight: 40px;
+		--ROOT-BOARD-TITLE-HEIGHT:40px;
 }
 .board > .children {
 		--content-PadLeftRight: 3px;
@@ -3239,24 +3301,46 @@ BOARDS ROOT
 		padding-right: 0px;
 		height: calc(100% - var(--Height--Header));
 		margin: 0px;
+		padding-bottom:0px;
+		padding-top:0px;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .children {
 		margin: 0px;
 		border: 0px;
 		padding-left: var(--ROOT-padLeftRight);
-		padding-bottom: 30px;
+		padding-bottom: 0px !important;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .name {
 		height: unset;
-		padding-bottom: 10px;
+		padding-bottom: 5px;
 		padding-left: var(--ROOT-padLeftRight);
+		position:fixed;
+		top:0px;
+		z-index:949494949494;
+		height:unset;
+		width:unset;
 }
-#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes{
-			padding-bottom: 10px;
+
+#app .page[style="overflow-y: auto;"] > .project.board.root > .notes{
+		position:fixed;
+		top:26px;
+		z-index:9544;
+		height:var(--ROOT-BOARD-TITLE-HEIGHT);
+		width:unset;
+}
+#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes,
+#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes .content{
+			padding-top: 0px;
+		padding-bottom:0px;
+		margin:0px;
+		height:unset !important;
 
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name {
 		padding-bottom: 0px;
+}
+#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name .content{
+		font-size:25px;
 }
 #app .project.board.root.noted > .notes {
 		padding-bottom: var(--ROOT-padBot);
@@ -3586,6 +3670,27 @@ BOARD COMMENTS
 	filter:brightness(1.5);
 }
 
+/*
+#app .project.board.root .project.header3 > .name .content {
+		font-size:calc(var(--name-fontSize) + 2px);
+		line-height:calc(var(--name-lineHeight) + 2px);
+}*/
+
+
+.board.project.root > .children .project:not([class*="header"]) > .name > .content,
+.board .project:not([class*="header"]) > .name > .content {
+		font-size: var(--name-fontSize);
+		line-height: var(--name-lineHeight);
+		color: var(--NODE--TXT-CLR--main);
+}
+
+#app .board:not(.root) .project[class*="header"]{
+		margin-top: 0px !important;
+}
+#app .board:not(.root) .project[class*="header"] > .name {
+		margin-bottom: 0px 
+}
+
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -3719,7 +3824,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 /*BOARD ROOT - BOARD CARDS*/
 #app .project.board.root > .children > .boardColumn > .children > .boardCard{
 	background: var(--BOARD-ROOT--CARD--BG);
-	box-shadow: 0 0 0 1px var(--BOARD-ROOT--CARD--BORDERCLR) !important;
+	box-shadow: 0 0 0 1px var(--wf-border-default) !important;
 	outline-offset: -1px;
 	border-radius: var(--boardRoot-CardBrdRad) !important;
 	border-top-color: transparent !important;
@@ -3787,7 +3892,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	padding-left: calc(var(--children-Indent) * .5) !important;
 }
 #app .board.root .boardCard {
-	background: rgb(34, 34, 34) !important;
+	background: var(--BOARD-ROOT--CARD--BG) !important;
 	--BOARD-ROOT--CARD--BORDERCLR:hsla(0, 0%, 100%, .13) !important;
 }
 
@@ -3806,17 +3911,17 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 
 #app .page[style="overflow-y: auto;"] {
-	background: hsl(0, 0%, 7%) !important;
-	--BG-primary:hsl(0, 0%, 7%) !important;
+	background: var(--wf-background-secondary) !important;
+	--BG-primary:var(--wf-background-secondary) !important;
 }
 #app .page[style="overflow-y: auto;"] .project.root > .children{
 	padding-top: 0px !important;
 }
-#app .page[style="overflow-y: auto;"] .board .name .content{
-	color:hsl(0, 0%, 86%);
+#app .page[style="overflow-y: auto;"] .board .project .name .content{
+	--NODE--TXT-CLR--main:hsl(0, 0%, 84%);
 }
 #app .page[style="overflow-y: auto;"]{
-	--NODE--TXT-CLR--bold:hsla(0,0%,97%)!important;
+	--NODE--TXT-CLR--bold:hsla(0,0%,96%)!important;
 	--NODE-NOTES--TXT-CLR-ALL:hsla(359, 3%, 90%, 0.65);
 }
 #app .board.root .boardCard > .children > .project > .name > .expand{
@@ -3825,14 +3930,6 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	z-index: 3;
 }
 
-#app .board.root .boardCard.header2 > .name > .content{
-	--header2-fontSize: 16px;
-	--header2-lineHeight: 20px;
-}
-#app .board.root .boardCard.header1 > .name > .content{
-	--header1-fontSize: 18px !important;
-	--header1-lineHeight: 22px;
-}
 #app .board.root .boardCard > .children > .project:last-child {
 	
 }
@@ -3878,11 +3975,12 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .board.root .boardCard.noted > .name > .content {
 	padding-bottom: 3px;
 }
+/*
 #app .board.root .boardCard:not(.comment) > .name > .content{
 	font-size: calc(var(--name-fontSize) + 2px);
 	line-height: calc(var(--name-lineHeight) + 2px);  
 
-}
+}*/
 #app .project.board.root > .children > .boardColumn > .children > .boardCard:first-child{
 	margin-top: 20px!important
 }
@@ -3974,6 +4072,27 @@ div#app ~ div[style*="color: rgb(60, 64"]{
 div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 		opacity:1 !important;
 		display:block !important;
+}
+
+.project.board.root .boardColumn .project[class*="header"]:not(.boardCard) > .name{
+		padding-top: calc(var(--content-PadTopBtm) * 2) !important
+}
+
+
+#app .board.root .boardCard .project[class*="header1"] > .name > .bullet,
+#app .board.root .boardCard .project[class*="header1"] > .name > .expand,
+#app .board.root .boardCard .project[class*="header1"] > .name > .menu{
+		--btn-MargTop:7px !important;
+}
+#app .board.root .boardCard .project[class*="header2"] > .name > .bullet,
+#app .board.root .boardCard .project[class*="header2"] > .name > .expand,
+#app .board.root .boardCard .project[class*="header2"] > .name > .menu{
+		--btn-MargTop:6px !important;
+}
+#app .board.root .boardCard .project[class*="header3"] > .name > .bullet,
+#app .board.root .boardCard .project[class*="header3"] > .name > .expand,
+#app .board.root .boardCard .project[class*="header3"] > .name > .menu{
+		--btn-MargTop:6px !important;
 }
 
 /*******************************
@@ -7099,10 +7218,7 @@ body * {
 		--name-lineHeight: 25px;
 		--notes-fontSize: 14px;
 		--notes-lineHeight: 19px;    
-		--header1-fontSize: 2.0rem;
-		--header1-lineHeight: 1.3;
-		--header2-fontSize: 1.3rem;
-		--header2-lineHeight: 1.35;
+
 		/*highlights*/
 		--InnerContentPadTop: 0px;
 		--InnerContentPadBtm: 0px;
