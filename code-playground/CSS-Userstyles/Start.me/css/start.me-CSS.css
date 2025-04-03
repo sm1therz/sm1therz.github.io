@@ -2122,210 +2122,210 @@ ul.bookmark-widget__list > li:first-child .bookmark-item_mode_list.bookmark-item
     right: 0;
 }*/
 header.widget__header {
-  position: relative
+    position: relative
 }
 header.widget__header .widget-header__controls {
-  position: absolute;
-  right: calc(var(--containerMargLeftRight) * .5);
-  top: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  opacity: 0;
-  height: var(--widgetHeaderHeight) !important;
-  transition: var(--widgetHeaderTransition);
-  z-index: 94994;
-  background: inherit;
-  gap: 3px;
+    position: absolute;
+    right: calc(var(--containerMargLeftRight) * .5);
+    top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 0;
+    height: var(--widgetHeaderHeight) !important;
+    transition: var(--widgetHeaderTransition);
+    z-index: 94994;
+    background: inherit;
+    gap: 3px;
 }
 .todo-widget .widget-header__controls {
-  opacity: 1 !important;
+    opacity: 1 !important;
 }
 header.widget__header .widget-header__controls > div {
-  margin: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--widgetHeaderControlsBtnW) !important;
-  height: var(--widgetHeaderControlsBtnW) !important;
-  max-width: var(--widgetHeaderControlsBtnW) !important;
-  max-height: var(--widgetHeaderControlsBtnW) !important;
-  border-radius: var(--widgetHeaderControlsBrdRad);
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--widgetHeaderControlsBtnW) !important;
+    height: var(--widgetHeaderControlsBtnW) !important;
+    max-width: var(--widgetHeaderControlsBtnW) !important;
+    max-height: var(--widgetHeaderControlsBtnW) !important;
+    border-radius: var(--widgetHeaderControlsBrdRad);
 }
 header.widget__header:hover .widget-header__controls {
-  opacity: 1;
-  transition-delay: .1s;
+    opacity: 1;
+    transition-delay: .1s;
 }
 [class*="editing"] .widget-header__controls {
-  opacity: 1 !important;
+    opacity: 1 !important;
 }
 
 #appID .widget-header__title > a.widget-header__description-toggler,
 #appID .widget-header__title > a.widget-header__emoji-toggler,
 #appID .widget-header__title > a.widget-header__markdown-mode-toggler {
-  height: calc(var(--widgetHeaderHeight) * 0.6);
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  opacity: 1 !important;
+    height: calc(var(--widgetHeaderHeight) * 0.6);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
 
-  padding: 0px !important;
-  min-width: var(--widgetHeaderControlsBtnW) !important;
-  min-height: var(--widgetHeaderControlsBtnW) !important;
+    padding: 0px !important;
+    min-width: var(--widgetHeaderControlsBtnW) !important;
+    min-height: var(--widgetHeaderControlsBtnW) !important;
 
-  border-radius: var(--widgetHeaderControlsBrdRad);
+    border-radius: var(--widgetHeaderControlsBrdRad);
 }
 #appID .widget-header__title > a.widget-header__description-toggler:hover,
 #appID .widget-header__title > a.widget-header__emoji-toggler:hover,
 #appID .widget-header__title > a.widget-header__markdown-mode-toggler:hover {
-  background: hsla(0, 0%, 40%, 0.18) !important;
+    background: hsla(0, 0%, 40%, 0.18) !important;
 }
 #appID .widget-header__title > a[class*="toggler"] svg,
 header.widget__header .widget-header__controls > div svg {
-  width: 16px;
-  height: 16px;
-  padding: 0px;
-  top: unset;
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    top: unset;
 }
 #appID .widget-header__title > a.widget-header__markdown-mode-toggler {
-  margin-right: calc(var(--widgetHeaderControlsBtnW) * 2.1) !important
+    margin-right: calc(var(--widgetHeaderControlsBtnW) * 2.1) !important
 }
 #appID .widget-header__title > a.widget-header__markdown-mode-toggler svg {
-  transform: translateY(-4px)scale(1.5)
+    transform: translateY(-4px)scale(1.5)
 }
 /*NOTES - BOTTOM BUTTONS*/
 .notes-widget__controls {
-  height: unset !important;
-  min-height: unset !important;
-  position: absolute !important;
-  bottom: 0px !important;
-  width: unset;
-  left: unset !important;
-  right: 0 !important;
-  margin-right: unset !important;
-  margin-left: unset !important;
-  height: var(--notesPadTopBtm) !important;
-  padding: 0px !important;
-  padding-left: 9px !important;
-  margin: 0px;
+    height: unset !important;
+    min-height: unset !important;
+    position: absolute !important;
+    bottom: 0px !important;
+    width: unset;
+    left: unset!important;
+    right: 0 !important;
+    margin-right: unset !important;
+    margin-left: unset !important;
+    height: var(--notesPadTopBtm) !important;
+    padding: 0px !important;
+    padding-left: 9px !important;
+    margin: 0px;
 }
 .notes-widget__controls a {
-  min-height: unset;
-  height: 16px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  color: hsla(0, 0%, 50%, 0.9);
-  cursor: pointer !important;
-  font-size: 0.8em !important;
-  text-decoration: none !important;
-  padding: 3px 6px !important;
-  margin: unset !important;
-  min-width: unset !important;
+    min-height: unset;
+    height: 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: hsla(0, 0%, 50%, 0.9);
+    cursor: pointer !important;
+    font-size: 0.8em !important;
+    text-decoration: none !important;
+    padding: 3px 6px !important;
+    margin: unset !important;
+    min-width: unset !important;
 }
 .notes-widget__controls a:hover {
-  background: hsla(0, 0%, 50%, .15) !important;
-  color: inherit !important;
+    background: hsla(0, 0%, 50%, .15) !important;
+    color: inherit !important;
 }
 /*NOTES - TOP BUTTONS*/
 .wysiwyg-editor__toolbar {
-  position: absolute;
-  bottom: calc(var(--notesPadTopBtm) * -1 + -4px);
-  top: unset;
-  width: 100%;
-  left: 0;
-  padding-left: 6px;
-  right: 0 !important;
-  margin-right: unset !important;
-  margin-left: unset !important;
-  box-shadow: 0px -1px 0 0 hsla(0, 0%, 50%, .15);
-  margin: 0px !important;
-  height: 20px !important;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+    position: absolute;
+    bottom: calc(var(--notesPadTopBtm) * -1 + -4px);
+    top: unset;
+    width: 100%;
+    left: 0;
+    padding-left: 6px;
+    right: 0 !important;
+    margin-right: unset !important;
+    margin-left: unset !important;
+    box-shadow: 0px -1px 0 0 hsla(0, 0%, 50%, .15);
+    margin: 0px !important;
+    height: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 .wysiwyg-editor__toolbar * {
-  height: 20px;
+    height: 20px;
 }
 .wysiwyg-action,
 .wysiwyg-action_left,
 .wysiwyg-action_middle,
 .wysiwyg-action_right {
-  width: 20px;
-  height: unset !important;
-  border: none;
-  background: transparent;
-  border-radius: 5px !important;
+    width: 20px;
+    height: unset !important;
+    border: none;
+    background: transparent;
+    border-radius: 5px !important;
 }
 .wysiwyg-action-wrapper__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .wysiwyg-action-wrapper__container:hover svg {
-  background: hsla(0, 0%, 50%, .24) !important;
+    background: hsla(0, 0%, 50%, .24) !important;
 }
 .wysiwyg-editor__toolbar svg {
-  height: 17px !important;
-  border: none !important;
-  fill: hsla(0, 0%, 50%);
+    height: 17px !important;
+    border: none !important;
+    fill: hsla(0, 0%, 50%);
 }
 
 /*NOTES - TABS - WRAPPER*/
 html .notes-widget-wrapper__tabs-list {
-  column-gap: 10px;
-  row-gap: 0px;
-  margin-bottom: 6px !important;
+    column-gap: 10px;
+    row-gap: 0px;
+    margin-bottom: 6px !important;
 }
 .notes-widget-wrapper__tabs,
 .widget__description {
-  margin-bottom: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .notes-widget-wrapper__tabs {
-  border-bottom: none !important;
-  box-shadow: 0px 1px 0 0 hsla(0, 0%, 50%, .15) !important;
+    border-bottom: none !important;
+    box-shadow: 0px 1px 0 0 hsla(0, 0%, 50%, .15)!important;
 }
 .widget__container .widget__box > .widget__description:not(.widget__description_empty) + .widget__body > .notes-widget-wrapper__tabs {
-  margin-top: 2px;
+    margin-top: 2px;
 }
 
 
 
 
 #appID .widget__description {
-  transition: opacity .1s !important;
-  border: none !important;
-  color: var(--widgetDescriptionClr);
-  position: relative;
-  top: -3px;
-  margin: 0px !important;
-  padding-left: 12px !important;
-  padding-right: 12px !important;
+    transition: opacity .1s !important;
+    border: none !important;
+    color: var(--widgetDescriptionClr);
+    position: relative;
+    top: -3px;
+    margin: 0px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
 }
 .widget__description_empty {
-  display: none !important;
-  height: 0px !important;
-  overflow: hidden !important;
-  position: fixed !important;
-  margin: 0px !important;
+    display: none !important;
+    height: 0px !important;
+    overflow: hidden !important;
+    position: fixed !important;
+    margin: 0px !important;
 }
 
 html .widget__description * {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  margin-bottom: 0px !important;
-  margin-top: 0px !important;
-  font-size: calc(var(--bodyFontSize) + .5px) !important;
-  line-height: calc(var(--bodyLineHeight) - 0px) !important;
-  white-space: initial !important;
-  overflow-wrap: unset !important;
-  word-wrap: unset !important;
-  word-break: unset !important;
-  text-align: left !important;
-  font-family: sans-serif !important
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    font-size: calc(var(--bodyFontSize) + .5px) !important;
+    line-height: calc(var(--bodyLineHeight) - 0px) !important;
+    white-space: initial !important;
+    overflow-wrap: unset !important;
+    word-wrap: unset !important;
+    word-break: unset !important;
+    text-align: left !important;
+    font-family: sans-serif !important
 }
 html .notes-widget-wrapper .widget__description {}
 
@@ -2335,22 +2335,22 @@ html .notes-widget-wrapper .widget__description {}
 #appID .widget__description h4,
 #appID .widget__description h5,
 #appID .widget__description h6 {
-  font-weight: 500 !important;
-  line-height: calc(var(--bodyLineHeight) - 1px) !important;
-  -webkit-font-smoothing: subpixel-antialiased !important;
+    font-weight: 500!important;
+    line-height: calc(var(--bodyLineHeight) - 1px) !important;
+    -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
 
 #appID .wysiwyg-editor h4,
 #appID span.notes-widget__result h4,
 #appID .widget__box h4 {
-  font-size: calc(var(--bodyFontSize) + 1px) !important;
-  line-height: calc(var(--bodyLineHeight) - 0px) !important;
+    font-size: calc(var(--bodyFontSize) + 1px) !important;
+    line-height: calc(var(--bodyLineHeight) - 0px) !important;
 }
 
 
 .widget__description textarea {
-  margin-bottom: -4.5px !important;
+    margin-bottom: -4.5px !important;
 }
 /*
 .widget__description .markdown-description *{
@@ -2358,11 +2358,11 @@ html .notes-widget-wrapper .widget__description {}
 }
 */
 #appID .widget__description textarea[style*="height: 29px"] {
-  height: unset !important;
-  margin-bottom: -3px !important;
+    height: unset !important;
+    margin-bottom: -3px !important;
 }
 .widget__description textarea::empty {
-  display: none !important;
+    display: none !important;
 }
 
 
@@ -2373,119 +2373,119 @@ html .notes-widget-wrapper .widget__description {}
 #appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body,*/
 #appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget,
 #appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget textarea.notes-widget__textarea {
-  line-height: var(--bodyLineHeight) !important;
+    line-height: var(--bodyLineHeight) !important;
 }
 
 #appID .notes-widget-wrapper .widget__body .notes-widget-wrapper__body .notes-widget textarea.notes-widget__textarea {
-  margin-top: 5px !important;
-  margin-bottom: 4px !important;
+    margin-top: 5px !important;
+    margin-bottom: 4px !important;
 }
 
 /*HR*/
 #appID .notes-widget hr,
 #appID .widget__description hr {
-  height: 1px !important;
-  background: hsla(0, 0%, 50%, 0.5) !important;
-  border: none !important;
-  margin-top: calc(var(--noteParagraphMargTopBtm) * 2) !important;
-  margin-bottom: calc(var(--noteParagraphMargTopBtm) * 2) !important;
+    height: 1px !important;
+    background: hsla(0, 0%, 50%, 0.5) !important;
+    border: none !important;
+    margin-top: calc(var(--noteParagraphMargTopBtm) * 2) !important;
+    margin-bottom: calc(var(--noteParagraphMargTopBtm) * 2) !important;
 }
 .notes-widget-wrapper__tab,
 .notes-widget-wrapper__tabs-changer input {
-  margin: 0px !important;
-  padding: 0px 0px !important;
-  box-shadow: 0px 0 0 0 hsla(0, 0%, 100%, 0.1);
-  height: unset !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  top: unset !important;
-  transition: .1s;
+    margin: 0px !important;
+    padding: 0px 0px !important;
+    box-shadow: 0px 0 0 0 hsla(0, 0%, 100%, 0.1);
+    height: unset !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    top: unset !important;
+    transition: .1s;
 }
 .notes-widget-wrapper__tab[class*="active"] {
-  background: hsla(0, 0%, 100%, 0) !important;
+    background: hsla(0, 0%, 100%, 0) !important;
 }
 
 .notes-widget-wrapper__tab[class*="active"]:before {
-  content: "";
-  display: block;
-  height: 1px;
-  background: #00b2ff;
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    background: #00b2ff;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
 }
 
 /*NOTES - TABS - TAB TITLE*/
 .custom-tab,
 .folder-title-changer input,
 .notes-widget-wrapper__tab-creator_small {
-  line-height: 17px !important;
-  font-size: 10.5px !important;
-  text-transform: uppercase !important;
+    line-height: 17px !important;
+    font-size: 10.5px !important;
+    text-transform: uppercase !important;
 }
 .custom-tab__name {
-  padding-bottom: 0px !important;
-  border: none !important;
-  margin: 0px !important
+    padding-bottom: 0px !important;
+    border: none !important;
+    margin: 0px !important
 }
 /*EDIT TAB TITLE - CONTAINER*/
 .notes-widget-wrapper__tabs-changer,
 .notes-widget-wrapper__tabs-changer input {
-  background: transparent !important;
-  border: none !important;
+    background: transparent !important;
+    border: none !important;
 }
 .custom-tab .custom-tab__controls {
-  display: none;
+    display: none;
 }
 
 /*NOTES - CONTAINER*/
 .notes-widget__result,
 .wysiwyg-editor,
 [id] .notes-widget__textarea {
-  padding-bottom: 0px !important;
-  padding-top: 0px !important;
-  min-height: unset !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    min-height: unset !important;
 }
 .notes-widget-wrapper__body {
-  padding-bottom: var(--notesPadTopBtm);
-  padding-top: 0px !important;
-  position: relative;
+    padding-bottom: var(--notesPadTopBtm);
+    padding-top: 0px !important;
+    position: relative;
 }
 .notes-widget__result,
 .wysiwyg-editor {
-  -webkit-font-smoothing: subpixel-antialiased !important;
-  font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    font-weight: 400;
 }
 #appID .notes-widget > .notes-widget__result,
 #appID .notes-widget > .wysiwyg-editor,
 #appID .notes-widget > textarea.notes-widget__textarea {
-  padding-left: var(--notePadLeft) !important;
-  margin-left: var(--noteEditorMargLeft) !important;
-  min-height: unset !important;
+    padding-left: var(--notePadLeft) !important;
+    margin-left: var(--noteEditorMargLeft) !important;
+    min-height: unset !important;
 }
 .notes-widget .wysiwyg-editor__input-wrapper,
 .notes-widget .wysiwyg-editor__input {
-  margin: 0px !important;
-  padding: 0px;
-  min-height: unset !important;
+    margin: 0px !important;
+    padding: 0px;
+    min-height: unset !important;
 }
 /*EMPTY NOTE HEIGHT*/
 .notes-widget-wrapper .empty-widget-body,
 .notes-widget-wrapper .empty-widget-body a {
-  padding: 0px;
-  margin: unset
+    padding: 0px;
+    margin: unset
 }
 .notes-widget-wrapper .empty-widget-body {
-  padding-top: 10px;
-  padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 /*******
 NOTES - FORMATTING
 *********/
 .notes-widget__result p {
-  white-space: pre-wrap;
+    white-space: pre-wrap;
 }
 
 /*NOTES - LISTS - OVERRIDES*/
@@ -2496,10 +2496,12 @@ NOTES - FORMATTING
 /*notes description*/
 html .notes-widget-wrapper .widget__description ul,
 html .notes-widget-wrapper .widget__description ol {
-  line-height: unset !important;
-  margin: unset !important;
-  padding-left: var(--noteListItemPadLeft) !important;
+    line-height: unset !important;
+    margin: unset !important;
+    padding-left: var(--noteListItemPadLeft) !important;
 }
+
+.bookmark-item__description * {  white-space: normal; }
 /*NOTES - PARAGRAPH MARGIN*/
 .notes-widget__result p,
 .wysiwyg-editor__input_editable > p,
@@ -2533,46 +2535,46 @@ html .notes-widget-wrapper .widget__description ol {
 /*notes description*/
 html .notes-widget-wrapper .widget__description p,
 html .notes-widget-wrapper .widget__description li {
-  margin-top: var(--noteParagraphMargTopBtm) !important;
-  margin-bottom: var(--noteParagraphMargTopBtm) !important;
-  line-height: var(--bodyLineHeight) !important;
+    margin-top: var(--noteParagraphMargTopBtm) !important;
+    margin-bottom: var(--noteParagraphMargTopBtm) !important;
+    line-height: var(--bodyLineHeight) !important;
 }
 /*WIDGET DESCRIPTION*/
 html .widget__description > textarea,
 html .widget__description > .markdown-description *,
 html .notes-widget-wrapper .widget__description p,
 html .notes-widget-wrapper .widget__description li {
-  line-height: calc(var(--bodyLineHeight) - 1px) !important;
+    line-height: calc(var(--bodyLineHeight) - 1px) !important;
 }
 /*notes description - lists*/
 html .notes-widget-wrapper .widget__description ol,
 html .notes-widget-wrapper .widget__description ul {
-  position: relative;
+    position: relative;
 }
 html .notes-widget-wrapper .widget__description ol li,
 html .notes-widget-wrapper .widget__description ul li {
-  padding-left: 0px;
+    padding-left: 0px;
 }
 html .notes-widget-wrapper .widget__description ul li:before {
-  position: absolute !important;
-  float: unset;
-  margin: unset;
-  left: 0;
-  margin-top: .5px;
-  left: 1px;
-  color: hsla(0, 0%, 50%, 0.7)
+    position: absolute !important;
+    float: unset;
+    margin: unset;
+    left: 0;
+    margin-top: .5px;
+    left: 1px;
+    color: hsla(0, 0%, 50%, 0.7)
 }
 html .notes-widget-wrapper .widget__description ol li:before {
-  display: none;
+    display: none;
 }
 
 #appID .notes-widget-wrapper .widget__description .markdown-description,
 #appID .notes-widget-wrapper .widget__description .markdown-description > p:first-child {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 #appID .widget__description {
-  padding-bottom: 3px !important;
+    padding-bottom: 3px !important;
 }
 /*
 .widget__description{
@@ -2587,11 +2589,11 @@ html .notes-widget-wrapper .widget__description ol li:before {
 .wysiwyg-editor__input blockquote,
 .bookmark-item__info .bookmark-item__description blockquote,
 #appID blockquote {
-  padding-left: var(--noteListItemPadLeft) !important;
-  box-shadow: inset 4px 0 0 0 hsla(0, 0%, 50%, 0.5);
-  margin: 0px !important;
-  margin-top: calc(var(--noteParagraphMargTopBtm) * 1.5) !important;
-  margin-bottom: calc(var(--noteParagraphMargTopBtm) * 1.5) !important;
+    padding-left: var(--noteListItemPadLeft) !important;
+    box-shadow: inset 4px 0 0 0 hsla(0, 0%, 50%, 0.5);
+    margin: 0px !important;
+    margin-top: calc(var(--noteParagraphMargTopBtm) * 1.5) !important;
+    margin-bottom: calc(var(--noteParagraphMargTopBtm) * 1.5) !important;
 }
 /*NOTES - CODEBLOCK*/
 .notes-widget__result pre,
@@ -2599,12 +2601,12 @@ html .notes-widget-wrapper .widget__description ol li:before {
 .wysiwyg-editor__input pre,
 .bookmark-item__info .bookmark-item__description pre,
 #appID pr {
-  background: hsla(0, 0%, 50%, .15);
-  border-radius: 5px;
-  padding: 4px 10px;
-  white-space: pre-wrap;
-  display: block;
-  line-height: calc(var(--bodyLineHeight) + 1px) !important;
+    background: hsla(0, 0%, 50%, .15);
+    border-radius: 5px;
+    padding: 4px 10px;
+    white-space: pre-wrap;
+    display: block;
+    line-height: calc(var(--bodyLineHeight) + 1px) !important;
 }
 /*NOTES - INLINE CODE*/
 .notes-widget__result code:not(html pre code),
@@ -2612,26 +2614,26 @@ html .notes-widget-wrapper .widget__description ol li:before {
 .wysiwyg-editor__input_editable code:not(html pre code),
 .wysiwyg-editor__input code:not(html pre code),
 .bookmark-item__info .bookmark-item__description code:not(html pre code) {
-  background: hsla(0, 0%, 50%, .15);
-  border-radius: 4px;
-  padding: 1px 4px;
-  display: inline;
-  margin-left: -2px;
-  margin-right: -2px;
+    background: hsla(0, 0%, 50%, .15);
+    border-radius: 4px;
+    padding: 1px 4px;
+    display: inline;
+    margin-left: -2px;
+    margin-right: -2px;
 }
 
 .notes-widget__result code:not(pre code) {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  pointer-events: none !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    pointer-events: none !important;
 }
 /*NOTES - CODE FONT*/
 .notes-widget__result code,
 .wysiwyg-editor__input_editable code,
 .wysiwyg-editor__input code {
-  font-family: "SF Mono", monospace !important;
-  font-weight: 400;
-  font-size: calc(var(--bodyFontSize) - 1px) !important;
+    font-family: "SF Mono", monospace !important;
+    font-weight: 400;
+    font-size: calc(var(--bodyFontSize) - 1px) !important;
 }
 
 /*NOTES - BOLD - TEXT COLORS*/
@@ -2640,9 +2642,9 @@ html .notes-widget-wrapper .widget__description ol li:before {
 #appID .notes-widget__result strong,
 #appID .wysiwyg-editor strong,
 #appID .bookmark-item__info .bookmark-item__description b {
-  font-weight: 600 !important;
-  color: var(--bldClr) !important;
-  -webkit-font-smoothing: subpixel-antialiased !important;
+    font-weight: 600 !important;
+    color: var(--bldClr) !important;
+    -webkit-font-smoothing: subpixel-antialiased !important;
 }
 #appID .notes-widget__result h3,
 #appID .notes-widget__result h3 *,
@@ -2670,76 +2672,78 @@ html .notes-widget-wrapper .widget__description ol li:before {
 #appID .wysiwyg-editor h4 *,
 #appID .bookmark-item__info .bookmark-item__description h3,
 #appID .bookmark-item__info .bookmark-item__description h3 * {
-  font-weight: 500 !important;
-  color: var(--headingClr) !important;
-  -webkit-font-smoothing: subpixel-antialiased !important;
+    font-weight: 500 !important;
+    color: var(--headingClr) !important;
+    -webkit-font-smoothing: subpixel-antialiased !important;
 }
 #appID .widget__box h1 strong,
 #appID .widget__box h2 strong,
 #appID .widget__box h3 strong,
 #appID .widget__box h4 strong {
-  font-weight: 750 !important;
+    font-weight: 750 !important;
 }
 /*NOTES - LINKS - TEXT COLORS*/
 .notes-widget__result a,
 .wysiwyg-editor a {
-  color: #00b2ff !important
+    color: #00b2ff !important
 }
 
 #appID .bookmark-item__info .bookmark-item__description a {
-  color: var(--bookmarkDescriptionLinkClr) !important;
-  background: var(--bookmarkDescriptionLinkBgClr) !important;
-  border-radius: 3px;
-  transition: .15s !important;
-  box-shadow: inset 1px 0px 0 0px var(--bookmarkDescriptionLinkBrdClr),
+    color: var(--bookmarkDescriptionLinkClr) !important;
+    background: var(--bookmarkDescriptionLinkBgClr) !important;
+    border-radius: 3px;
+    transition: .15s !important;
+    box-shadow: inset 1px 0px 0 0px var(--bookmarkDescriptionLinkBrdClr),
     inset -1px 0px 0 0px var(--bookmarkDescriptionLinkBrdClr),
     inset 0px 1px 0 0px var(--bookmarkDescriptionLinkBrdClr),
     inset 0px -1px 0 0px var(--bookmarkDescriptionLinkBrdClr) !important;
-  outline-offset: -1px;
-  padding-left: 4px;
-  padding-right: 3px;
-  display: inline;
-  padding-bottom: 0px;
-  padding-top: .5px;
-  z-index: 949494;
-  /*font-size: calc(1em - 1px) !important;*/
-  text-decoration: none !important;
-  -webkit-font-smoothing: antialiased;
-  text-underline-offset: 1.5px;
-  text-decoration-color: hsla(0, 0%, 50%, 0.5) !important;
+    outline-offset: -1px;
+    padding-left: 4px;
+    padding-right: 3px;
+    display: inline;
+    padding-bottom: 0px;
+    padding-top: .5px;
+    z-index: 949494;
+    /*font-size: calc(1em - 1px) !important;*/
+    text-decoration: none !important;
+    -webkit-font-smoothing: antialiased;
+    text-underline-offset: 1.5px;
+    text-decoration-color: hsla(0, 0%, 50%, 0.5) !important;
 }
 #appID .bookmark-item__info .bookmark-item__description a:hover {
-  color: var(--bookmarkDescriptionLinkClr-Hover) !important;
-  background: var(--bookmarkDescriptionLinkBgClr-Hover) !important;
-  transition: .15s !important;
-  --bookmarkDescriptionLinkBrdClr: transparent;
+    color: var(--bookmarkDescriptionLinkClr-Hover) !important;
+    background: var(--bookmarkDescriptionLinkBgClr-Hover) !important;
+    transition: .15s !important;
+    --bookmarkDescriptionLinkBrdClr: transparent;
 }
 /*NOTES - EDITING - PREVENT BACKGROUND FROM DARKENING*/
 .app__main-layout_shadowed {
-  background: transparent;
+    background: transparent;
 }
 
 
 /*DESCRIPTION LIST ITEMS*/
 #appID .bookmark-description strong,
 #appID .bookmark-description b {
-  color: var(--bookmarkDescriptionBldClr);
+    color: var(--bookmarkDescriptionBldClr);
 }
 .bookmark-item__info .bookmark-item__description ol li,
 .bookmark-item__info .bookmark-item__description ul li {
-  border-bottom: 1px solid var(--bookmarkDetailBrdClr) !important;
-  box-shadow: 0 0px 0 hsla(0, 0%, 50%, .2);
-  border-top: 0px !important;
+    border-bottom: 1px solid var(--bookmarkDetailBrdClr) !important;
+    box-shadow: 0 0px 0 hsla(0, 0%, 50%, .2);
+    border-top: 0px !important;
 }
 .bookmark-item__info .bookmark-item__description ul li {
-  list-style: disc
+    list-style: disc
 }
 #appID .bookmark-item__info .bookmark-item__description {
-  text-underline-offset: 2px !important;
+    text-underline-offset: 2px !important;
 }
 #appID .bookmark-item__info .bookmark-item__description u {
-  text-decoration: underline !important;
+    text-decoration: underline !important;
 }
+#appID .bookmark-item_mode_detail .bookmark-description blockquote,
+#appID .bookmark-item_mode_detail .bookmark-description pre,
 #appID .bookmark-item_mode_detail .bookmark-description ol li,
 #appID .bookmark-item_mode_detail .bookmark-description ul li,
 #appID .bookmark-item_mode_detail .bookmark-description p,
@@ -2749,61 +2753,61 @@ html .notes-widget-wrapper .widget__description ol li:before {
 #appID .bookmark-item_mode_detail .bookmark-description h3,
 #appID .bookmark-item_mode_detail .bookmark-description h4,
 #appID .bookmark-item_mode_detail .bookmark-description h5 {
-  margin-top: var(--bookmarkDescriptionListMargTopBtm) !important;
-  margin-bottom: var(--bookmarkDescriptionListMargTopBtm) !important;
-  box-sizing: border-box !important;
+    margin-top: var(--bookmarkDescriptionListMargTopBtm) !important;
+    margin-bottom: var(--bookmarkDescriptionListMargTopBtm) !important;
+    box-sizing: border-box !important;
 }
 #appID .bookmark-item__info .bookmark-item__description ul,
 #appID .bookmark-item__info .bookmark-item__description ul li,
 #appID .bookmark-item__info .bookmark-item__description ol,
 #appID .bookmark-item__info .bookmark-item__description ol li {
-  width: 100% !important;
-  max-width: calc(100% - 10px) !important;
-  white-space: pre-line;
-  display: list-item;
+    width: 100% !important;
+    max-width: calc(100% - 10px) !important;
+    white-space: pre-line;
+    display: list-item;
 }
 #appID .bookmark-item_mode_detail .bookmark-description > *:first-child {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 #appID .bookmark-item_mode_detail[class*="small"] .bookmark-description > *:first-child {
-  margin-top: 0px !important;
+    margin-top: 0px !important;
 }
 #appID .bookmark-item_mode_detail .bookmark-description > table:first-child {
-  margin-top: 7px !important;
+    margin-top: 7px !important;
 }
 #appID .bookmark-item_mode_detail .bookmark-description > table tr th,
 #appID .bookmark-item_mode_detail .bookmark-description > table tr th strong,
 #appID .bookmark-item_mode_detail .bookmark-description > table tr th b {
-  color: var(--bookmarkDescriptionBldClr) !important;
+    color: var(--bookmarkDescriptionBldClr) !important;
 }
 #appID .bookmark-item_mode_detail .bookmark-description > table tr,
 #appID .bookmark-item_mode_detail .bookmark-description > table td {
-  color: var(--bookmarkDescriptionClr) !important;
+    color: var(--bookmarkDescriptionClr) !important;
 }
 #appID .bookmark-item_mode_detail .bookmark-description > table tr strong,
 #appID .bookmark-item_mode_detail .bookmark-description > table td strong,
 #appID .bookmark-item_mode_detail .bookmark-description > table tr bold,
 #appID .bookmark-item_mode_detail .bookmark-description > table td bold {
-  color: var(--bookmarkDescriptionBldClr) !important;
+    color: var(--bookmarkDescriptionBldClr) !important;
 }
 
 #appID .bookmark-item_mode_detail .bookmark-description table {
-  margin-top: 4px !important;
-  margin-bottom: 4px !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
 }
 #appID .bookmark-item_mode_detail .bookmark-description ol li,
 #appID .bookmark-item_mode_detail .bookmark-description ul li {
-  border: none !important;
+    border: none !important;
 }
 .bookmark-item__info .bookmark-item__description > ol:last-child li:last-child,
 .bookmark-item__info .bookmark-item__description > ul:last-child li:last-child {
-  border-bottom: 0px !important;
+    border-bottom: 0px !important;
 }
 
 .bookmark-item__info .bookmark-item__description > p:first-child {
-  margin-bottom: 0px !important;
-  margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
 }
 
 .bookmark-item__info .bookmark-item__description > p:last-child,
@@ -2815,7 +2819,7 @@ html .notes-widget-wrapper .widget__description ol li:before {
 .bookmark-item__info .bookmark-item__description > blockquote:last-child,
 .bookmark-item__info .bookmark-item__description > table:last-child,
 .bookmark-item__info .bookmark-item__description > img:last-child {
-  margin-bottom: 0px !important
+    margin-bottom: 0px !important
 }
 
 
@@ -2824,22 +2828,22 @@ html .notes-widget-wrapper .widget__description ol li:before {
 .wysiwyg-editor__input_editable table,
 .wysiwyg-editor__input table,
 .bookmark-item__info .bookmark-item__description table {
-  display: table;
-  border-collapse: collapse;
-  width: 100%;
-  color: var(--bodyClr) !important;
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--bodyClr) !important;
 }
 
 .notes-widget__result table,
 .notes-widget__result table *,
 .bookmark-item__info .bookmark-item__description table,
 .bookmark-item__info .bookmark-item__description table * {
-  white-space: pre-wrap
+    white-space: pre-wrap
 }
 .notes-widget__result table td,
 .notes-widget__result table th {
-  white-space: normal;
-  vertical-align: top;
+    white-space: normal;
+    vertical-align: top;
 }
 
 /*NOTES - TABLE THEAD*/
@@ -2848,12 +2852,12 @@ html .notes-widget-wrapper .widget__description ol li:before {
 .wysiwyg-editor__input table thead,
 .bookmark-item__info .bookmark-item__description table thead,
 .bookmark-item__info .bookmark-item__description table th {
-  background: var(--tableBgClr) !important;
-  text-align: left;
-  font-weight: 500;
-  color: inherit;
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
+    background: var(--tableBgClr) !important;
+    text-align: left;
+    font-weight: 500;
+    color: inherit;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
 }
 
 #appID .notes-widget .notes-widget__result table td,
@@ -2861,33 +2865,33 @@ html .notes-widget-wrapper .widget__description ol li:before {
 #appID .bookmark-item__info .bookmark-item__description table thead,
 #appID .bookmark-item__info .bookmark-item__description table th,
 #appID .bookmark-item__info .bookmark-item__description table td {
-  border: 1px solid var(--tableBrdClr);
-  padding: 4px 6px;
+    border: 1px solid var(--tableBrdClr);
+    padding: 4px 6px;
 }
 #appID .notes-widget .notes-widget__result table {
-  line-height: calc(var(--tableLineHeight) - 1.5px) !important;
+    line-height: calc(var(--tableLineHeight) - 1.5px) !important;
 }
 #appID .notes-widget table tbody tr:nth-child(2n) {
-  background: transparent !important;
+    background: transparent !important;
 }
 .bookmark-item__info .bookmark-item__description table td {}
 
 #appID .notes-widget__result table {
-  table-layout: auto !important;
-  margin-top: calc(var(--noteParagraphMargTopBtm) * 2) !important;
-  margin-bottom: calc(var(--noteParagraphMargTopBtm) * 2) !important;
+    table-layout: auto !important;
+    margin-top: calc(var(--noteParagraphMargTopBtm) * 2) !important;
+    margin-bottom: calc(var(--noteParagraphMargTopBtm) * 2) !important;
 }
 #appID table,
 #appID table * {
-  max-width: 100% !important;
+    max-width: 100% !important;
 }
 #appID table td > p:first-child {
-  margin-top: 0px !important;
+    margin-top: 0px !important;
 }
 
 .notes-widget .notes-widget__result table tbody tr:nth-child(even) td,
 .bookmark-item__info .bookmark-item__description table tr:nth-child(even) td {
-  background: var(--tableBgClr);
+    background: var(--tableBgClr);
 }
 
 #appID .notes-widget .notes-widget__result table tbody > tr:first-child > th:first-child,
@@ -2896,23 +2900,23 @@ html .notes-widget-wrapper .widget__description ol li:before {
 #appID .bookmark-item__info .bookmark-item__description table tbody > tr:first-child > thead:first-child,
 #appID .notes-widget .notes-widget__result table tbody > tr:first-child > td:first-child,
 #appID .bookmark-item__info .bookmark-item__description table tbody > tr:first-child > td:first-child {
-  border-top-left-radius: 5px !important;
+    border-top-left-radius: 5px !important;
 }
 #appID .notes-widget .notes-widget__result table,
 #appID .bookmark-item__info .bookmark-item__description table {
-  border-radius: 5px !important;
-  overflow: hidden;
-  border: 1px solid transparent !important;
-  outline: 1px solid var(--tableBrdClr);
-  outline-offset: -1px;
-  width: 100% !important;
+    border-radius: 5px !important;
+    overflow: hidden;
+    border: 1px solid transparent !important;
+    outline: 1px solid var(--tableBrdClr);
+    outline-offset: -1px;
+    width: 100% !important;
 }
 
 
 /***/
 .widget_marginless .widget__body {
-  margin: unset !important;
-  overflow: hidden;
+    margin: unset !important;
+    overflow: hidden;
 }
 
 
