@@ -2397,7 +2397,8 @@ LEVEL 3 > Button Adjustments
 #app .project.quote-block.hasMirrors > .name > .bullet,
 #app .project.code-block.open > .name > .bullet,
 #app .project.code-block.collapsed > .name > .bullet,
-#app .project.code-block.hasMirrors > .name > .bullet{
+#app .project.code-block.hasMirrors > .name > .bullet,
+#app .project > .name > .bullet.diamond {
 		left: calc(var(--children-Indent) * -1);
 }
 #app .project.paragraph.open > .name > .menu,
@@ -2411,7 +2412,8 @@ LEVEL 3 > Button Adjustments
 #app .project.quote-block.hasMirrors > .name > .menu,
 #app .project.code-block.open > .name > .menu,
 #app .project.code-block.collapsed > .name > .menu,
-#app .project.code-block.hasMirrors > .name > .menu{
+#app .project.code-block.hasMirrors > .name > .menu,
+#app .project > .name > .bullet.diamond ~ .menu{
 		left: calc(var(--children-Indent) * -2);
 }
 .project.comment-container.open,
@@ -3695,7 +3697,9 @@ BOARD COMMENTS
 #app .board:not(.root) .project[class*="header"] > .name {
 		margin-bottom: 0px 
 }
-
+#app .board .project > .name > .bullet.diamond ~ .menu {
+		left: unset 
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
