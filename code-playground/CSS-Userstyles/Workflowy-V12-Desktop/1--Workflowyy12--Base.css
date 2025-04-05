@@ -5349,7 +5349,7 @@ row-gap: 20px !important;
 #app .project.comment.thread:not(.board .project) > .name > .expand,
 #app .project.comment.thread:not(.board .project) .name > .expand{
 		left: calc(var(--children-Indent)* 0) !important;
-		margin-top: 0px !important;
+		margin-top: 3px !important;
 		top: unset;
 }
 #app .project.comment.thread {
@@ -6209,6 +6209,7 @@ html #app .dialog-box ._157gzxf > div > div {
 :root {
 		--mirrorMenuHeight:18px;
 		--mirrorMenuWidth:22px;
+		--mirrorLastChevronWidth:14px;
 }
 #app .dialog-box .breadcrumbs{
 
@@ -6241,6 +6242,19 @@ html #app .dialog-box ._157gzxf > div > div {
 		fill: hsla(0,0%,100%,.5);
 }
 
+
+#app .dialog-box .breadcrumbs svg:not(.breadcrumbs .menu svg){
+
+		display: block;
+		align-self: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: calc(var(--mirrorMenuHeight) * .5);
+		max-height: calc(var(--mirrorMenuHeight) * 0.5);
+		opacity: .5
+}
+
 #app .dialog-box .breadcrumbs a {
 		white-space: nowrap;
 		text-overflow: ellipsis;
@@ -6264,21 +6278,37 @@ html #app .dialog-box ._157gzxf > div > div {
 	transform-origin: left !important;
 		margin-top: 0px !important;
 }
-#app .dialog-box .breadcrumbs > a:last-child {
-		max-width: 100% !important;
-		white-space: normal;
+#app .dialog-box .breadcrumbs a:hover {
+		transform: scale(1.04);
+		text-decoration: unset;
+		color: white;
 }
 
-#app .dialog-box .breadcrumbs svg:not(.breadcrumbs .menu svg){
 
-		display: block;
-		align-self: center;
+/*LAST ITEM*/
+
+#app .dialog-box .breadcrumbs > a:last-child {
+		max-width: calc(100% - var(--mirrorLastChevronWidth)) !important;
+		white-space: normal;
 		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: calc(var(--mirrorMenuHeight) * .5);
-		max-height: calc(var(--mirrorMenuHeight) * 0.5);
-		opacity: .6
+		gap: 10px;
+}
+
+
+#app .dialog-box .breadcrumbs > svg:last-of-type{
+		display: none !important;
+}
+
+#app .dialog-box .breadcrumbs > a:last-child:before{
+		content: "";
+		display: block;
+		width: var(--mirrorLastChevronWidth);
+		height: 20px;
+		background-image: var(--ICON--BREADCRUMB--CHEVRON);
+		background-repeat: no-repeat;
+		background-position: center 3px;
+		background-size: 6px;
+		opacity: .5
 }
 
 /*******************************
