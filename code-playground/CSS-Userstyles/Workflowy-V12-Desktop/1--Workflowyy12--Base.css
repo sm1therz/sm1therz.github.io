@@ -72,7 +72,7 @@ BOX SHADOW TESTING - BOARDS
 
  **/
 :root {
-	--testBrdW:.0px;
+	--testBrdW:0px;
 }
 .project,
 .project > .name,
@@ -1635,6 +1635,7 @@ HIGHLIGHT - CODE
 		padding-top: 1px;
 		padding-bottom: 1px;
 		letter-spacing: -.1px;
+
 }
 #app code,
 #app code * {
@@ -2374,14 +2375,14 @@ LEVEL 3 > Button Adjustments
 #app .project[class*="header"].collapsed > .name > .expand,
 #app .project[class*="header"].hasMirrors > .name > .expand,
 #app .project[class*="header"] > .name > .bullet.diamond ~ .expand,
-.project.quote-block.open > .name > .expand,
-.project.quote-block.collapsed > .name > .expand,
-.project.quote-block.hasMirrors > .name > .expand,
-.project.quote-block > .name > .bullet.diamond ~ .expand,
-.project.code-block.open > .name > .expand,
-.project.code-block.collapsed > .name > .expand,
-.project.code-block.hasMirrors > .name > .expand,
-.project.code-block > .name > .bullet.diamond ~ .expand{
+#app .project.quote-block.open > .name > .expand,
+#app .project.quote-block.collapsed > .name > .expand,
+#app .project.quote-block.hasMirrors > .name > .expand,
+#app .project.quote-block > .name > .bullet.diamond ~ .expand,
+#app .project.code-block.open > .name > .expand,
+#app .project.code-block.collapsed > .name > .expand,
+#app .project.code-block.hasMirrors > .name > .expand,
+#app .project.code-block > .name > .bullet.diamond ~ .expand{
 		opacity: 1;
 		transition: var(--btn-transition);
 }
@@ -2438,7 +2439,11 @@ LEVEL 3 > Button Adjustments
 ************/
 
 
+/*MAIN FONT SIZE*/
 
+.project:not(.root, .board.root, [class*="header"]) > .name {
+		font-size: 17px;
+}
 
 
 #app .project:not(.board) > .children {
@@ -3117,11 +3122,11 @@ BOARDCARD Children - Level*/
 		transform: scale(.38)rotate(0deg);
 }
 
-
+/*
 #app .board .project.quote-block > .name > .bullet:before,
 #app .board .project.code-block > .name > .bullet:before{
 	width: 2.5px !important;
-}
+}*/
 #app .boardCard .project.quote-block > .name > .bullet,
 #app .boardCard.quote-block > .name > .bullet,
 #app .boardCard .project.quote-block > .name > .menu,
@@ -3721,8 +3726,8 @@ position: relative;
 		margin-top: -17px !important;
 }
 
-#app .board .project.code-block, 
-#app .board .project.quote-block{
+#app .board .project.code-block:not(.boarCard), 
+#app .board .project.quote-block:not(.boarCard){
 		margin-top: unset !important;
 		
 }
@@ -4005,9 +4010,12 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	height: 100vh
 }
 
-#app .board.root .project.quote-block + .project.quote-block > .name {
+#app .board.root .project.quote-block:not(.open) + .project.quote-block:not(.boardCard) > .name {
 	padding-top: 0px;
 	margin-top: calc(var(--content-PadTopBtm) * -1 - 1px) ;
+}
+#app .board.root .project.quote-block + .project.quote-block:not(.boardCard) > .name > .bullet{
+		--btn-MargTop:0px  !important;
 }
 #app .board.root .project.quote-block.hasMirrors > .name > .bullet:before{
 	opacity: 1 !important;
@@ -4094,6 +4102,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 #app .board.root .boardCard .project[class*="header3"] > .name > .menu{
 		--btn-MargTop:6px !important;
 }
+
 /*******************************
 ********************************
 ! DASHBOARD
@@ -7122,7 +7131,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		/*DARK - UNDERLINE*/
 		--ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 		/*DARK  - LINK*/
-		--ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
+		--ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%233c88af" stroke-opacity="1" stroke-width="10"/></svg>');
 		/*DARK  - LINK - Internal*/
 		--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%239fa1a3" stroke-opacity="0" stroke-width="10"/></svg>');
 		/*DARK - REFERENCES*/
