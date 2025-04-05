@@ -6209,7 +6209,9 @@ html #app .dialog-box ._157gzxf > div > div {
 :root {
 		--mirrorMenuHeight:18px;
 		--mirrorMenuWidth:22px;
-		--mirrorLastChevronWidth:14px;
+		--mirrorChevronWidth:14px;
+		--mirrorLinkGap:5px;
+		--mirrorBreadCrumbGap:10px;
 }
 #app .dialog-box .breadcrumbs{
 
@@ -6217,7 +6219,8 @@ html #app .dialog-box ._157gzxf > div > div {
 		justify-content: flex-start;
 		flex-wrap: wrap;
 		flex-shrink: unset;
-		column-gap: 10px;
+		column-gap: var(--mirrorBreadCrumbGap);
+		
 }
 #app .dialog-box .breadcrumbs * {
 		box-shadow: inset 0 0 0 0px red;
@@ -6265,12 +6268,12 @@ html #app .dialog-box ._157gzxf > div > div {
 	margin-right: 0px !important;
 	display: inline;
 	float: left;
-	opacity: .9;
+	opacity: .7;
 	margin-top: 4px !important;
 	transition: .2s;
 	font-weight: 500;
 	-webkit-font-smoothing: antialiased;
-	max-width: 175px !important;
+	max-width: 250px !important;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -6279,36 +6282,44 @@ html #app .dialog-box ._157gzxf > div > div {
 		margin-top: 0px !important;
 }
 #app .dialog-box .breadcrumbs a:hover {
-		transform: scale(1.04);
+		transform: scale(1.074);
 		text-decoration: unset;
 		color: white;
 }
 
 
-/*LAST ITEM*/
 
-#app .dialog-box .breadcrumbs > a:last-child {
-		max-width: calc(100% - var(--mirrorLastChevronWidth)) !important;
-		white-space: normal;
-		display: flex;
-		gap: 10px;
-}
+/***/
 
-
-#app .dialog-box .breadcrumbs > svg:last-of-type{
-		display: none !important;
-}
 
 #app .dialog-box .breadcrumbs > a:last-child:before{
 		content: "";
 		display: block;
-		width: var(--mirrorLastChevronWidth);
-		height: 20px;
+		min-width: var(--mirrorChevronWidth) !important;
+		height: 20px !important;
 		background-image: var(--ICON--BREADCRUMB--CHEVRON);
 		background-repeat: no-repeat;
 		background-position: center 3px;
 		background-size: 6px;
-		opacity: .5
+		opacity: .5;
+}
+/*LAST ITEM*/
+
+#app .dialog-box .breadcrumbs > a:last-child {
+		max-width: calc(100% - var(--mirrorChevronWidth)) !important;
+		width: calc(100% - var(--mirrorChevronWidth) - var(--mirrorLinkGap)) !important;
+		white-space: normal;
+		display: flex;
+		gap: var(--mirrorLinkGap);
+		font-size: calc(1em + 1.5px);
+		opacity: 1;
+}
+
+#app .dialog-box .breadcrumbs > a:last-child:before {
+		position: relative;
+}
+#app .dialog-box .breadcrumbs > a:first-child:before {
+		display: none;
 }
 
 /*******************************
