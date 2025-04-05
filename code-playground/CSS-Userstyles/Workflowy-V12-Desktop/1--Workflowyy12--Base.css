@@ -2427,7 +2427,7 @@ LEVEL 3 > Button Adjustments
 
 
 
-#app .board .project[class*="header"] > .name > .bullet{
+#app .board .project[class*="header"] > .name > .bullet:not(.diamond){
 		opacity: 0;
 }
 #app .board .project[class*="header"].open > .name > .bullet,
