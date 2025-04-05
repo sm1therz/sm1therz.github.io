@@ -135,7 +135,7 @@ javascript:(function () {
 	}
 	@media (prefers-color-scheme: dark) {
 		#toc-panel {
-			background: hsla(0,0%,14%,0.45) !important;
+			background: hsla(190,3%,24%,0.25) !important;
 			border-left: 1px solid #555;
 			box-shadow: -4px 0 8px rgba(0,0,0,0.7);
 		}
