@@ -174,6 +174,7 @@ font-weight:600 !important;
 			}
 		}
 	`;
+
 		document.head.appendChild(css);
 
 		const panel = document.createElement("div");
@@ -224,7 +225,16 @@ font-weight:600 !important;
 						const heads = [];
 
 						if (isAI) {
-								heads.push(...art.querySelectorAll("h2, h3, h4, h6"));
+								const headingTags = art.querySelectorAll("h2, h3, h4, h6");
+								if (headingTags.length > 0) {
+										heads.push(...headingTags);
+								} else {
+										const firstParagraph = art.querySelector(".markdown.prose p");
+										if (firstParagraph) {
+												heads.push(firstParagraph);
+												firstParagraph.classList.add("p-1");
+										}
+								}
 						}
 
 						if (isUser) {
@@ -313,9 +323,15 @@ font-weight:600 !important;
 		}
 
 		attachObserver();
+
+		// Restore panel state from localStorage
+		if (localStorage.getItem("tocPanelCollapsed") === "1") {
+				panel.classList.add("collapsed");
+		}
 		const reAttachInterval = setInterval(attachObserver, 2000);
 
 		handle.addEventListener("click", function () {
 				panel.classList.toggle("collapsed");
+				localStorage.setItem("tocPanelCollapsed", panel.classList.contains("collapsed") ? "1" : "0");
 		});
 })();
