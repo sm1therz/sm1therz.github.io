@@ -6191,6 +6191,98 @@ html #app .dialog-box ._157gzxf > div > div {
 
 /*******************************
 ********************************
+! POPUP - MIRRORS
+********************************
+********************************/
+
+/***/
+#app .dialog-box .flex.flex-col.gap-xl > .flex.flex-col.gap-m > div > div:last-child{
+		display: flex;
+		align-items: flex-start;
+		margin-top: 10px;
+}
+#app .dialog-box .flex.flex-col.gap-xl > .flex.flex-col.gap-m > div > div:last-child > p {
+		padding-top: 1px;
+		margin-right: 5px;
+}
+/***/
+:root {
+		--mirrorMenuHeight:18px;
+		--mirrorMenuWidth:22px;
+}
+#app .dialog-box .breadcrumbs{
+
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		flex-shrink: unset;
+		column-gap: 10px;
+}
+#app .dialog-box .breadcrumbs * {
+		box-shadow: inset 0 0 0 0px red;
+}
+#app .dialog-box .breadcrumbs,
+#app .dialog-box .breadcrumbs *{
+		height: unset !important;
+}
+#app .dialog-box .breadcrumbs > .menu .iconButton{
+		height: var(--mirrorMenuHeight) !important;
+		width: var(--mirrorMenuWidth);
+		padding: 3px;
+		border-radius: 3px;
+		transition: .1s;
+		box-shadow:inset 0 0 0 1px hsla(0,0%,100%,0.3);
+}
+#app .dialog-box .breadcrumbs > .menu .iconButton:hover {
+		background:hsla(0,0%,20%,0.4)
+}
+
+#app .dialog-box .breadcrumbs > .menu .iconButton svg path{
+		fill: hsla(0,0%,100%,.5);
+}
+
+#app .dialog-box .breadcrumbs a {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		flex: unset;
+		width: auto;
+		padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 0px !important;
+	display: inline;
+	float: left;
+	opacity: .9;
+	margin-top: 4px !important;
+	transition: .2s;
+	font-weight: 500;
+	-webkit-font-smoothing: antialiased;
+	max-width: 175px !important;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-bottom: 1px;
+	transform-origin: left !important;
+		margin-top: 0px !important;
+}
+#app .dialog-box .breadcrumbs > a:last-child {
+		max-width: 100% !important;
+		white-space: normal;
+}
+
+#app .dialog-box .breadcrumbs svg:not(.breadcrumbs .menu svg){
+
+		display: block;
+		align-self: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: calc(var(--mirrorMenuHeight) * .5);
+		max-height: calc(var(--mirrorMenuHeight) * 0.5);
+		opacity: .6
+}
+
+/*******************************
+********************************
 SEARCH - NAV - BAR
 ********************************
 ********************************/
