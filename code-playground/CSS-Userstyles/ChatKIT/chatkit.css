@@ -1,3 +1,7 @@
+/*****************
+ROOT
+******************/
+
 /*************
 **************
 ! SIDEBAR
@@ -107,8 +111,8 @@ header + div > div.py-10.pt-10 > .mx-auto > div {
 EDITOR - FONT SIZES
 **************/
 .prose {
-    font-size: 1rem;
-    line-height: 1.75;
+    font-size: var(--editorFontSize);
+    line-height: var(--editorLineHeight);
 }
 
 /*************
@@ -117,12 +121,29 @@ EDITOR - MESSAGE CONTAINER
 :root {
     --usermessagePadLeftRight: 1rem;
     --usermessagePadTopBtm: .75rem;
-    --listMargTopBtm: 5px;
+    --editorListMargTopBtm: 6px;
+    --editorFontSize:1rem;
+    --editorLineHeight:1.65rem;
+    --editorUserMessageWidth: 570px;
 }
 
 /*overrides*/
 .message-contents > .max-w-full[class*="90%"] {
     max-width: 100%;
+    position: relative;
+}
+.message-contents > .max-w-full[class*="90%"] .message-tools {
+    position: sticky;
+    bottom: 0px;
+    opacity: 1;
+}
+.message-contents > .max-w-full[class*="90%"] .message-tools > div {
+    backdrop-filter: blur(100px);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: hsl(240, 6%, 10%,.5);
 }
 .message > .flex > div[aria-hidden="true"] {
     max-width: 0px;
@@ -133,10 +154,24 @@ EDITOR - MESSAGE CONTAINER
 EDITOR - MESSAGE
 **************/
 /*user message normal text padding*/
-.message .message-contents .w-fit {
+#__next .message .message-contents .w-fit{
+    padding: 0px !important;
+}
+.message .message-contents .w-fit > div,
+.message .message-contents .w-fit > textarea{
     padding-left: var(--usermessagePadLeftRight) !important;
-    padding-right: 0px !important;
-
+    padding-right:var(--usermessagePadLeftRight) !important;
+      padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+.message .message-contents .w-fit > textarea {
+    font-size: var(--editorFontSize);
+    line-height: var(--editorLineHeight);
+    background: rgb(39 39 42/var(--tw-bg-opacity));
+    border-radius: 10px;
+    outline: 1px dashed var(--border-color);
+    border: unset;
+    outline-offset: 0px;
 }
 /*************
 EDITOR - USER MESSAGE
@@ -149,13 +184,16 @@ EDITOR - USER MESSAGE
     flex-direction: column !important;
 }
 .message.user-message .message-contents > .max-w-full {
-    max-width: 570px !important;
-    width: 100%;
+    max-width: var(--editorUserMessageWidth) !important;
+    width: 100% !important;
 }
 @media (max-width:600px) {
     .message.user-message .message-contents > .max-w-full {
         max-width: 80%
     }
+}
+.message.user-message .message-contents .code-wrapper > div[style*="width: "] {
+    width: var(--editorUserMessageWidth) !important;
 }
 /*user message normal text padding*/
 .message.user-message .message-contents .w-fit {
@@ -178,10 +216,13 @@ EDITOR - USER MESSAGE
 /*************
 EDITOR - LISTS
 **************/
+.message .prose ol,
 .message .prose ol li,
-.message .prose ol li {
-    margin-top: var(--listMargTopBtm) !important;
-    margin-bottom: var(--listMargTopBtm) !important;
+.message .prose ul,
+.message .prose ul li,
+.message .prose p{
+    margin-top: var(--editorListMargTopBtm) !important;
+    margin-bottom: var(--editorListMargTopBtm) !important;
 }
 
 /*************
@@ -196,8 +237,8 @@ EDITOR - CODEBLOCKS
     margin-right: 0px !important;
 }
 pre {
-    margin-top: calc(var(--listMargTopBtm) * 1.9) !important;
-    margin-bottom: calc(var(--listMargTopBtm) * 1.9) !important
+    margin-top: calc(var(--editorListMargTopBtm) * 1.9) !important;
+    margin-bottom: calc(var(--editorListMargTopBtm) * 1.9) !important
 }
 .code-block {
     white-space: pre-wrap
@@ -206,12 +247,57 @@ pre {
 .code-wrapper > .code-block {
     max-height: unset !important;
 }
+
+
 /*************
 EDITOR - CODE PREVIEW
 **************/
-
-.code-wrapper > div[style*="width"] iframe{
+.code-wrapper > div[style*="width"] iframe {
     height: 1200px;
+}
+
+/*************
+EDITOR - HEADINGS
+**************/
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5 {
+    padding-bottom: var(--editorListMargTopBtm);
+    margin-bottom: calc(var(--editorListMargTopBtm) * 1);
+    font-weight: 700;
+}
+.prose h1 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+.prose h2 {
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+    margin-bottom: calc(var(--editorListMargTopBtm) * 1.5);
+}
+.prose h3 {
+    font-size: calc(var(--editorFontSize) * 1.125);
+    line-height: 1.7rem;
+}
+.prose h4 {
+    font-size: calc(var(--editorFontSize) * 1.05);
+    line-height: 1.7rem;
+    padding-bottom: var(--editorListMargTopBtm);
+}
+
+
+/*************
+EDITOR - FIRST LINE
+**************/
+
+#__next .prose > :first-child {
+    margin-top: 0px !important;
+}
+
+#__next .prose > :last-child {
+    margin-bottom: 0px !important;
 }
 
 /*************
@@ -222,6 +308,9 @@ EDITOR - CODE PREVIEW
 .dark header[class*="sidebar-width"] + div,
 footer {
     background: hsl(240, 4%, 8%) !important;
+}
+
+footer * {
 }
 
 footer textarea {
