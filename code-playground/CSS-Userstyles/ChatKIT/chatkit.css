@@ -8,63 +8,63 @@ ROOT
 **************
 **************/
 :root {
-    --linkPadTopBtm: 5px;
-    --linkPadLeftRight: .5rem;
+  --linkPadTopBtm: 5px;
+  --linkPadLeftRight: .5rem;
 }
 
 
 .bg-sidebar a,
 .bg-sidebar a:hover {
-    height: unset !important;
-    padding-top: var(--linkPadTopBtm);
-    padding-bottom: var(--linkPadTopBtm);
-    padding-left: var(--linkPadLeftRight);
-    padding-right: var(--linkPadLeftRight);
-    position: relative;
+  height: unset !important;
+  padding-top: var(--linkPadTopBtm);
+  padding-bottom: var(--linkPadTopBtm);
+  padding-left: var(--linkPadLeftRight);
+  padding-right: var(--linkPadLeftRight);
+  position: relative;
 }
 
 
 /*Wrapper*/
 .bg-sidebar a > .overflow-hidden {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /*text*/
 .bg-sidebar a > .overflow-hidden,
 .bg-sidebar a > .overflow-hidden .truncate {
-    overflow: unset;
-    white-space: normal;
-    text-overflow: unset;
+  overflow: unset;
+  white-space: normal;
+  text-overflow: unset;
 }
 .bg-sidebar a > .overflow-hidden .truncate {
-    line-height: 1.2rem;
-    padding-top: 2px;
+  line-height: 1.2rem;
+  padding-top: 2px;
 }
 
 /*buttons*/
 .bg-sidebar a > .hidden {
-    display: flex;
-    width: 0px;
-    overflow: hidden;
-    right: 5px;
-    top: calc(var(--linkPadTopBtm) - 1px);
-    position: absolute;
-    background: var(--bg-sidebar);
-    border-radius: 6px;
-    z-index: 10;
+  display: flex;
+  width: 0px;
+  overflow: hidden;
+  right: 5px;
+  top: calc(var(--linkPadTopBtm) - 1px);
+  position: absolute;
+  background: var(--bg-sidebar);
+  border-radius: 6px;
+  z-index: 10;
 }
 
 .bg-sidebar a:hover > .hidden {
-    width: auto;
+  width: auto;
 }
 
 /*EDITING*/
 .bg-sidebar .px-2 form {
-    height: unset;
-    padding-top: calc(var(--linkPadTopBtm) - 3px);
-    padding-bottom: calc(var(--linkPadTopBtm) - 3px);
+  height: unset;
+  padding-top: calc(var(--linkPadTopBtm) - 3px);
+  padding-bottom: calc(var(--linkPadTopBtm) - 3px);
 }
 
 /*
@@ -86,24 +86,24 @@ text-overflow: unset;
 **************/
 .prose,
 .prose * {
-    box-sizing: border-box !important;
+  box-sizing: border-box !important;
 }
 
 /*main editor container*/
 /*DARTH THEME*/
 .dark header[class*="sidebar-width"] {
-    background: hsl(240, 4%, 8%) !important;
+  background: hsl(240, 4%, 8%) !important;
 }
 header + div > div.py-10.pt-10 > .mx-auto > div {
-    width: 750px;
-    max-width: 100%;
-    margin: 0 auto;
+  width: 750px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 /*chat response container*/
 .message:not(.user-message) {}
 .message:not(.user-message) .bg-zinc-100[class*="dark"][class*="text-white"] {
-    background: hsla(240, 4%, 16%, 0);
-    box-shadow: inset 0 0 0 1px hsla(240, 4%, 16%, .2);
+  background: hsla(240, 4%, 16%, 0);
+  box-shadow: inset 0 0 0 1px hsla(240, 4%, 16%, .2);
 }
 
 
@@ -111,106 +111,107 @@ header + div > div.py-10.pt-10 > .mx-auto > div {
 EDITOR - FONT SIZES
 **************/
 .prose {
-    font-size: var(--editorFontSize);
-    line-height: var(--editorLineHeight);
+  font-size: var(--editorFontSize);
+  line-height: var(--editorLineHeight);
 }
 
 /*************
 EDITOR - MESSAGE CONTAINER
 **************/
 :root {
-    --usermessagePadLeftRight: 1rem;
-    --usermessagePadTopBtm: .75rem;
-    --editorListMargTopBtm: 6px;
-    --editorFontSize:1rem;
-    --editorLineHeight:1.65rem;
-    --editorUserMessageWidth: 570px;
+  --usermessagePadLeftRight: 1rem;
+  --usermessagePadTopBtm: .75rem;
+  --editorListMargTopBtm: 6px;
+  --editorFontSize: 1rem;
+  --editorLineHeight: 1.65rem;
+  --editorUserMessageWidth: 570px;
 }
 
 /*overrides*/
 .message-contents > .max-w-full[class*="90%"] {
-    max-width: 100%;
-    position: relative;
+  max-width: 100%;
+  position: relative;
 }
 .message-contents > .max-w-full[class*="90%"] .message-tools {
-    position: sticky;
-    bottom: 0px;
-    opacity: 1;
+  position: sticky;
+  bottom: 0px;
+  opacity: 1;
 }
 .message-contents > .max-w-full[class*="90%"] .message-tools > div {
-    backdrop-filter: blur(100px);
-    padding-top: 4px;
-    padding-bottom: 4px;
-    border-radius: 5px;
-    overflow: hidden;
-    background: hsl(240, 6%, 10%,.5);
+  backdrop-filter: blur(100px);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: hsl(240, 6%, 10%, .5);
 }
 .message > .flex > div[aria-hidden="true"] {
-    max-width: 0px;
-    margin: 0px;
+  max-width: 0px;
+  margin: 0px;
 }
 
 /*************
 EDITOR - MESSAGE
 **************/
 /*user message normal text padding*/
-#__next .message .message-contents .w-fit{
-    padding: 0px !important;
+#__next .message .message-contents .w-fit {
+  padding: 0px !important;
 }
 .message .message-contents .w-fit > div,
-.message .message-contents .w-fit > textarea{
-    padding-left: var(--usermessagePadLeftRight) !important;
-    padding-right:var(--usermessagePadLeftRight) !important;
-      padding-top: .75rem;
+.message .message-contents .w-fit > textarea {
+  padding-left: var(--usermessagePadLeftRight) !important;
+  padding-right: var(--usermessagePadLeftRight) !important;
+  padding-top: .75rem;
   padding-bottom: .75rem;
 }
 .message .message-contents .w-fit > textarea {
-    font-size: var(--editorFontSize);
-    line-height: var(--editorLineHeight);
-    background: rgb(39 39 42/var(--tw-bg-opacity));
-    border-radius: 10px;
-    outline: 1px dashed var(--border-color);
-    border: unset;
-    outline-offset: 0px;
+  font-size: var(--editorFontSize);
+  line-height: var(--editorLineHeight);
+  background: rgb(39 39 42/var(--tw-bg-opacity));
+  border-radius: 10px;
+  outline: 1px dashed var(--border-color);
+  border: unset;
+  outline-offset: 0px;
+  overflow: hidden;
 }
 /*************
 EDITOR - USER MESSAGE
 **************/
 :is(.dark .dark\:bg-blue-600) {}
 .message.user-message .message-contents {
-    display: flex;
-    justify-content: flex-end !important;
-    align-items: flex-end !important;
-    flex-direction: column !important;
+  display: flex;
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  flex-direction: column !important;
 }
 .message.user-message .message-contents > .max-w-full {
-    max-width: var(--editorUserMessageWidth) !important;
-    width: 100% !important;
+  max-width: var(--editorUserMessageWidth) !important;
+  width: 100% !important;
 }
 @media (max-width:600px) {
-    .message.user-message .message-contents > .max-w-full {
-        max-width: 80%
-    }
+  .message.user-message .message-contents > .max-w-full {
+    max-width: 80%
+  }
 }
 .message.user-message .message-contents .code-wrapper > div[style*="width: "] {
-    width: var(--editorUserMessageWidth) !important;
+  width: var(--editorUserMessageWidth) !important;
 }
 /*user message normal text padding*/
 .message.user-message .message-contents .w-fit {
-    padding-left: var(--usermessagePadLeftRight) !important;
-    padding-right: var(--usermessagePadLeftRight) !important;
-    padding-top: var(--usermessagePadTopBtm) !important;
-    padding-bottom: var(--usermessagePadTopBtm) !important;
-    background: hsla(240, 2%, 0%, 0.2);
-    box-shadow: 0 0 0 1px hsla(240, 2%, 35%);
-    border-radius: 17px;
+  padding-left: var(--usermessagePadLeftRight) !important;
+  padding-right: var(--usermessagePadLeftRight) !important;
+  padding-top: var(--usermessagePadTopBtm) !important;
+  padding-bottom: var(--usermessagePadTopBtm) !important;
+  background: hsla(240, 2%, 0%, 0.2);
+  box-shadow: 0 0 0 1px hsla(240, 2%, 35%);
+  border-radius: 17px;
 }
 .message.user-message .message-contents .code-wrapper {
-    border-radius: 0px !important;
-    border-left-style: none !important;
-    border-right-style: none !important;
-    margin-left: calc(var(--usermessagePadLeftRight) * -1) !important;
-    margin-right: calc(var(--usermessagePadLeftRight) * -1) !important;
+  border-radius: 0px !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+  margin-left: calc(var(--usermessagePadLeftRight) * -1) !important;
+  margin-right: calc(var(--usermessagePadLeftRight) * -1) !important;
 }
 
 /*************
@@ -220,32 +221,32 @@ EDITOR - LISTS
 .message .prose ol li,
 .message .prose ul,
 .message .prose ul li,
-.message .prose p{
-    margin-top: var(--editorListMargTopBtm) !important;
-    margin-bottom: var(--editorListMargTopBtm) !important;
+.message .prose p {
+  margin-top: var(--editorListMargTopBtm) !important;
+  margin-bottom: var(--editorListMargTopBtm) !important;
 }
 
 /*************
 EDITOR - CODEBLOCKS
 **************/
 .code-wrapper {
-    background-color: rgb(39 39 42 / var(--tw-bg-opacity));
-    border-radius: 10px !important;
-    border-style: solid !important;
-    overflow: hidden;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+  border-radius: 10px !important;
+  border-style: solid !important;
+  overflow: hidden;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 pre {
-    margin-top: calc(var(--editorListMargTopBtm) * 1.9) !important;
-    margin-bottom: calc(var(--editorListMargTopBtm) * 1.9) !important
+  margin-top: calc(var(--editorListMargTopBtm) * 1.9) !important;
+  margin-bottom: calc(var(--editorListMargTopBtm) * 1.9) !important
 }
 .code-block {
-    white-space: pre-wrap
+  white-space: pre-wrap
 }
 
 .code-wrapper > .code-block {
-    max-height: unset !important;
+  max-height: unset !important;
 }
 
 
@@ -253,7 +254,7 @@ pre {
 EDITOR - CODE PREVIEW
 **************/
 .code-wrapper > div[style*="width"] iframe {
-    height: 1200px;
+  height: 1200px;
 }
 
 /*************
@@ -264,27 +265,27 @@ EDITOR - HEADINGS
 .prose h3,
 .prose h4,
 .prose h5 {
-    padding-bottom: var(--editorListMargTopBtm);
-    margin-bottom: calc(var(--editorListMargTopBtm) * 1);
-    font-weight: 700;
+  padding-bottom: var(--editorListMargTopBtm);
+  margin-bottom: calc(var(--editorListMargTopBtm) * 1);
+  font-weight: 700;
 }
 .prose h1 {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
 }
 .prose h2 {
-    font-size: 1.25rem;
-    line-height: 1.8rem;
-    margin-bottom: calc(var(--editorListMargTopBtm) * 1.5);
+  font-size: 1.25rem;
+  line-height: 1.8rem;
+  margin-bottom: calc(var(--editorListMargTopBtm) * 1.5);
 }
 .prose h3 {
-    font-size: calc(var(--editorFontSize) * 1.125);
-    line-height: 1.7rem;
+  font-size: calc(var(--editorFontSize) * 1.125);
+  line-height: 1.7rem;
 }
 .prose h4 {
-    font-size: calc(var(--editorFontSize) * 1.05);
-    line-height: 1.7rem;
-    padding-bottom: var(--editorListMargTopBtm);
+  font-size: calc(var(--editorFontSize) * 1.05);
+  line-height: 1.7rem;
+  padding-bottom: var(--editorListMargTopBtm);
 }
 
 
@@ -293,11 +294,11 @@ EDITOR - FIRST LINE
 **************/
 
 #__next .prose > :first-child {
-    margin-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 #__next .prose > :last-child {
-    margin-bottom: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 /*************
@@ -307,13 +308,12 @@ EDITOR - FIRST LINE
 **************/
 .dark header[class*="sidebar-width"] + div,
 footer {
-    background: hsl(240, 4%, 8%) !important;
+  background: hsl(240, 4%, 8%) !important;
 }
 
-footer * {
-}
+footer * {}
 
 footer textarea {
-    resize: vertical !important;
-    max-height: 80vh !important;
+  resize: vertical !important;
+  max-height: 80vh !important;
 }
