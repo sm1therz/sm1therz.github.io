@@ -705,7 +705,8 @@ REFERENCES*/
 	display: none;
 }
 #app .references > .children > .project:not(.board .references > .children > .project){
-	margin-bottom: 10px !important
+	margin-bottom: 10px !important;
+	margin-top: 0px !important;
 }
 #app .references > .children > .project:last-of-type{
 	margin-bottom: 0px !important;
@@ -715,7 +716,7 @@ REFERENCES*/
 		align-items: flex-start;
 		flex-wrap: wrap;
 		margin-top: 0px !important;
-		padding-bottom: 2px;
+		padding-bottom: 8px;
 	row-gap: 5px !important;
 	padding-top: 8px
 }
@@ -2295,7 +2296,7 @@ html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .
 /*CHILDREN - Highlighted AND Underlined*/
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"] {
-		background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL);
+		background-image: unset;
 }
 
 
