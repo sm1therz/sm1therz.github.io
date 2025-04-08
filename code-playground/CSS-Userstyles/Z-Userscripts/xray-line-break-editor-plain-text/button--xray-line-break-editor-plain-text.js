@@ -1,15 +1,19 @@
+(function run() {
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', run);
+		return;
+	}
 
+	// Inject the button into the page
+	const container = document.createElement('div');
+	container.id = 'customLineBreakContainer';
+	container.innerHTML = `<button id="customLineBreakButton">Line Break</button>`;
+	document.body.appendChild(container);
 
-// Inject the button into the page
-const container = document.createElement('div');
-container.id = 'customLineBreakContainer';
-container.innerHTML = `<button id="customLineBreakButton">Line Break</button>`;
-document.body.appendChild(container);
-
-// Inject style tag into <head>
-const style = document.createElement('style');
-style.textContent = `
-	:root {
+	// Inject style tag into <head>
+	const style = document.createElement('style');
+	style.textContent = `
+		:root {
 			--customLineBreakFontSize:12px;
 			--customLineBreakHeight:24px;
 			--customLineBreakBrdRad:3px;
@@ -21,10 +25,10 @@ style.textContent = `
 			--customLineBreakBtnBgClr:hsl(0,0%,50%,.8);
 			--customLineBreakBtnBgClr-Hover:hsl(0,0%,40%,.8);
 			--customLineBreakBtnBrdClr:hsl(0, 0%, 46%);
-	}
-	#customLineBreakContainer {
+		}
+		#customLineBreakContainer {
 			position: fixed;
-			bottom: 10px;
+			bottom: 10px; 
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -34,8 +38,8 @@ style.textContent = `
 			z-index: 10000;
 			gap: 5px;
 			height:var(--customLineBreakHeight);
-	}
-	#customLineBreakButton {
+		}
+		#customLineBreakButton {
 			height:100%;
 			border: none;
 			cursor: pointer;
@@ -52,13 +56,14 @@ style.textContent = `
 			font-size: var(--customLineBreakFontSize);
 			background: var(--customLineBreakBtnBgClr);
 			color: var(--customLineBreakBtnClr) !important;
-	}
-`;
-document.head.appendChild(style);
+		}
+	`;
+	document.head.appendChild(style);
 
-// Add the script injection behavior
-document.getElementById('customFindButton').addEventListener('click', () => {
-	const script = document.createElement('script');
-	script.src = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Z-Userscripts/xray-line-break-editor-plain-text/function--xray-line-break-editor-plain-text.js';
-	document.body.appendChild(script);
-});
+	// Add the script injection behavior
+	document.getElementById('customLineBreakButton').addEventListener('click', () => {
+		const script = document.createElement('script');
+		script.src = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Z-Userscripts/xray-line-break-editor-plain-text/function--xray-line-break-editor-plain-text.js';
+		document.body.appendChild(script);
+	});
+})();
