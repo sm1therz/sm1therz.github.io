@@ -706,7 +706,7 @@ REFERENCES*/
 }
 #app .references > .children > .project:not(.board .references > .children > .project){
 	margin-bottom: 10px !important;
-	margin-top: 0px !important;
+		margin-top:0px; 
 }
 #app .references > .children > .project:last-of-type{
 	margin-bottom: 0px !important;
@@ -1638,8 +1638,8 @@ HIGHLIGHT - CODE
 		letter-spacing: -.1px;
 
 }
-#app code,
-#app code * {
+#app .project:not([class*="header"]) > .name > .content code,
+#app .project:not([class*="header"]) > .name > .content code * {
 		font-size: calc(var(--name-fontSize) - 2.5px);
 		font-family: var(--wf-font-family-mono) !important;
 }
@@ -1870,8 +1870,9 @@ CODE BLOCKS
 #app .project.code-block > .name > .content,
 #app .project.code-block > .name > .content > .innerContentContainer {
 
-		font-size: calc(var(--name-fontSize) - 2px) !important;
-		line-height: calc(var(--name-lineHeight) - 2px) !important
+		font-size: calc(var(--name-fontSize) - 3px) !important;
+		line-height: calc(var(--name-lineHeight) - 2px) !important;
+		color:white !important;
 }
 
 /***************
@@ -1901,7 +1902,8 @@ BLOCK QUOTE
 
 /*quote - border left */
 #app .quote-block>.name>.content:before,
-#app .quote-block>.name>.content:empty:before{
+#app .quote-block>.name>.content:empty:before,
+#app .quote-block>.name>.content:before{
 	content: "";
 	display: block;
 	height: unset !important;
@@ -2235,7 +2237,7 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 		background-repeat: repeat-x;
 		background-position: var(--wavy--BG-position);
 		background-size: var(--wavy--BG-size);
-		padding-bottom: var(--wavy--padding-bottom);
+		padding-bottom: var(--wavy--padding-bottom) !important;
 }
 html #app .project.code-block > .name > .bullet.diamond ~ .content > .innerContentContainer {
 		background-image: var(--ICON--UNDERLINE-WAVY-CODEBLOCK);
@@ -2297,6 +2299,10 @@ html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"] {
 		background-image: unset;
+}
+
+html #app .project [projectid*="virtual"].code-block > .name > .content > .innerContentContainer{
+		background-image:var(--ICON--UNDERLINE-WAVY-CodeBlock);
 }
 
 
@@ -2398,6 +2404,7 @@ LEVEL 3 > Button Adjustments
 #app .project.quote-block.hasMirrors > .name > .bullet,
 #app .project.code-block.open > .name > .bullet,
 #app .project.code-block.collapsed > .name > .bullet,
+#app .project.code-block.hasMirrors > .name > .bullet,
 #app .project.code-block.hasMirrors > .name > .bullet,
 #app .project > .name > .bullet.diamond {
 		left: calc(var(--children-Indent) * -1);
@@ -3698,9 +3705,12 @@ BOARD COMMENTS
 #app .board:not(.root) .project[class*="header"] > .name {
 		margin-bottom: 0px 
 }
+
+
 #app .board .project > .name > .bullet.diamond ~ .menu {
 		left: unset 
 }
+
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -7265,7 +7275,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 
 		/*DARK*/
 		--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
-		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.2" stroke-width="10"/></svg>');
+		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.15" stroke-width="10"/></svg>');
 		/*DARK - UNDERLINE*/
 		--ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 		/*DARK  - LINK*/
@@ -7369,9 +7379,9 @@ body * {
 		--InnerContentPadTop: 0px;
 		--InnerContentPadBtm: 0px;
 		/*wavy*/
-		--wavy--BG-size: 8px;
+		--wavy--BG-size: 9px;
 		--wavy--BG-position: -0px 100%;
-		--wavy--padding-bottom: 2.5px;
+		--wavy--padding-bottom: 3px;
 		--underlineOffset: 3px;
 
 		--btn-MargTop: 0px;
