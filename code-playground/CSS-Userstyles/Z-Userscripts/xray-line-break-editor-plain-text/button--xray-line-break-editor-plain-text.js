@@ -28,14 +28,14 @@
 		}
 		#customLineBreakContainer {
 			position: fixed;
-			bottom: 10px; 
+			bottom: calc(10px + 24px + 5px); 
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			flex-direction:row-reverse;
 			right: 10px;
 			font-size: 12px;
-			z-index: 10000;
+			z-index: 90000;
 			gap: 5px;
 			height:var(--customLineBreakHeight);
 		}
