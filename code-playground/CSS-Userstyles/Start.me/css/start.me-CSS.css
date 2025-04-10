@@ -2902,6 +2902,9 @@ html .notes-widget-wrapper .widget__description ol li:before {
 #appID .bookmark-item__info .bookmark-item__description table tbody > tr:first-child > td:first-child {
     border-top-left-radius: 5px !important;
 }
+#appID .notes-widget .notes-widget__result table{
+    width: 100% !important;
+}
 #appID .notes-widget .notes-widget__result table,
 #appID .bookmark-item__info .bookmark-item__description table {
     border-radius: 5px !important;
@@ -2909,7 +2912,6 @@ html .notes-widget-wrapper .widget__description ol li:before {
     border: 1px solid transparent !important;
     outline: 1px solid var(--tableBrdClr);
     outline-offset: -1px;
-    width: 100% !important;
 }
 
 
