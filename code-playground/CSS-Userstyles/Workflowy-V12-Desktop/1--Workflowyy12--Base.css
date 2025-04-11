@@ -1883,7 +1883,7 @@ BLOCK QUOTE
 }
 :root{
 	--quotePadLeft:calc(var(--children-Indent) * 1);
-	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 2);
+	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 3.5);
 	--quoteBrdLeftW:calc(var(--content-PadLeftRight) * 2);
 }
 #app .project.quote-block:not(.board .project) > .name .content {

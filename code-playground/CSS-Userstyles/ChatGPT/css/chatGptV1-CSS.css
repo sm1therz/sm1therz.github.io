@@ -372,6 +372,12 @@ article #codemirror .cm-editor {
 		
 }*/
 
+.markdown .overflow-y-auto > code,
+.markdown .overflow-y-auto > code > span{
+		white-space: pre-line !important;
+		display: block !important;
+}
+
 
 /***********
 ************
