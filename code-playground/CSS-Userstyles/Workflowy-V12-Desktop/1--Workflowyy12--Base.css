@@ -1350,7 +1350,8 @@ MIRRORS*/
 #app .project > .name > .bullet.diamond ~ .expand:before,
 #app .dashboard .project > .name > .bullet.diamond:before,
 /*BULLET - IN board*/
-#app .board .project > .name > .bullet.diamond:before {
+#app .board .project > .name > .bullet.diamond:before,
+#app .board .project[projectid*="virtual"] > .name > .bullet:before{
 		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - 3px) !important;
 		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
 		transition: var(--btn-MirrorTransition);
@@ -1399,7 +1400,8 @@ MIRRORS*/
 #app .board .project.collapsed > .name > .bullet.diamond:before,
 /*checkmark*/
 #app .project.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox,
-#app .dashboard .project.collapsed > .name > .bullet.diamond:before {
+#app .dashboard .project.collapsed > .name > .bullet.diamond:before,
+#app .board .project[projectid*="virtual"].collapsed > .name > .bullet:before{
 		transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important;
 }
 /*checkmark*/
@@ -1882,7 +1884,7 @@ BLOCK QUOTE
 }
 :root{
 	--quotePadLeft:calc(var(--children-Indent) * 1);
-	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 3.5);
+	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 4);
 	--quoteBrdLeftW:calc(var(--content-PadLeftRight) * 2);
 }
 #app .project.quote-block:not(.board .project) > .name .content {
@@ -3850,11 +3852,11 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	padding-top: 5px;
 	padding-bottom: 5px;
 	--boardRoot-CardBrdRad:9px;
-	
 }
 #app .project.board.root > .children > .boardColumn > .children > .boardCard:not([class*="header"], .quote-block, .code-block){
 		padding-bottom: 7px;
 }
+
 #app .project.board .project.code-block > .name > .content,
 #app .project.board .project.quote-block > .name > .content{
 	padding-top: var(--quotePadTopBtm) !important;
@@ -3918,9 +3920,9 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	--BOARD-ROOT--CARD--BORDERCLR:hsla(0, 0%, 100%, .13) !important;
 }
 
-#app .board.root .project.paragraph > .name > .bullet:before,
-#app .board.root .project.quote-block > .name > .bullet:before,
-#app .board.root .project.code-block > .name > .bullet:before{
+#app .board.root .project.paragraph:not([projectid*="virtual"]) > .name > .bullet:before,
+#app .board.root .project.quote-block:not([projectid*="virtual"]) > .name > .bullet:before,
+#app .board.root .project.code-block:not([projectid*="virtual"]) > .name > .bullet:before{
 	opacity: 0;
 }
 #app .board.root .project.paragraph.open > .name > .bullet:before,
