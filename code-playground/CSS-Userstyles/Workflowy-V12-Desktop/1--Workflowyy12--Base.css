@@ -3979,7 +3979,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	transform: scale(.9);
 }
 #app .board.root .nameButtons:not(.nameButtons:hover) svg:not(svg:hover) path {
-	fill: hsla(0,0%,100%,0.4);
+	fill: hsla(0,0%,100%,1);
 }
 
 #app .board .project.code-block > .name > .content, 
