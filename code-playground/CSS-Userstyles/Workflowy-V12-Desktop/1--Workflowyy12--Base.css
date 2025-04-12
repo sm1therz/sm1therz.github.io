@@ -5136,7 +5136,7 @@ html body #app .page.dashboard-page{
 
 /*******************************
 ********************************
-PRESENTATION
+! PRESENTATION
 ********************************
 ********************************/
 [role="presentation"] .name > .expand, [role="presentation"] .children.children .name > .expand{
@@ -5179,7 +5179,7 @@ PRESENTATION
 
 /*******************************
 ********************************
-COMMENTS - NEW
+! COMMENTS - NEW
 ********************************
 ********************************/
 :root {
@@ -5568,10 +5568,27 @@ row-gap: 20px !important;
 		padding-right:16px !important;
 
 }
+#app .comment-container > .name > .add-comment-button {
+		display: none !important;
+}
+
+#app .comment-container.open > .name > .bullet .conversation-container-bullet{
+		opacity: 0;
+}
+
+#app .comment-container > .name > .expand:before {
+		background: var(--ICON--COMMENT);
+		width: var(--btn-Width);
+		height: var(--btn-Width);
+		background-size: 71%;
+		background-repeat: no-repeat;
+		background-position: center;
+		opacity: .8;
+}
 
 /*******************************
 ********************************
-SCROLLBAR / SCROLL BARS
+! SCROLLBAR / SCROLL BARS
 ********************************
 ********************************/
 ::-webkit-scrollbar,
