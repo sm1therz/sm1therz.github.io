@@ -3853,6 +3853,9 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	--boardRoot-CardBrdRad:9px;
 	
 }
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:not([class*="header"], .quote-block, .code-block){
+		padding-bottom: 7px;
+}
 #app .project.board .project.code-block > .name > .content,
 #app .project.board .project.quote-block > .name > .content{
 	padding-top: var(--quotePadTopBtm) !important;
