@@ -1758,7 +1758,6 @@ b .c-gray,
 .c-gray b {
 		color: var(--TXT-CLR--GRAY) !important;
 		text-decoration-color: var(--TXT-CLR--GRAY);
-		-webkit-font-smoothing: antialiased !important;
 }
 
 
@@ -6313,11 +6312,11 @@ html #app .dialog-box ._157gzxf > div > div {
 
 #app .dialog-box ._1560f70{
 		background: transparent;
-		box-shadow: -0px 2px 0 0 var(--wf-background-accent);
+		border-bottom: 4px dotted hsla(0,0%,50%,.5);
 		border-radius: 0px;
-		
+		padding-bottom: 18px;
+		margin-bottom: 7px;
 }
-
 /***/
 
 
