@@ -6350,6 +6350,19 @@ html #app .dialog-box ._157gzxf > div > div {
 #app .dialog-box .breadcrumbs > a:first-child:before {
 		display: none;
 }
+/*******************************
+********************************
+! POPUP WIDTH - ALL - EXCEPT, QUICK SWITCHER
+********************************
+********************************/
+
+
+#app > div > .dialog-box:not(.p-0) {
+		max-width: calc(100% - 40px);
+		width: 900px !important;
+		z-index: 94949494944949494 !important;
+				
+}
 
 /*******************************
 ********************************
