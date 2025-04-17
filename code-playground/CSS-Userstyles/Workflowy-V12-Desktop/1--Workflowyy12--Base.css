@@ -4062,7 +4062,23 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 
 #app .board.root .boardCard .project.comment > .children{
+	padding-left: calc(var(--children-Indent) * 2) !important;
+}
+#app .board.root .boardCard .project.comment > .notes{
 	padding-left: calc(var(--children-Indent) * 0) !important;
+		
+}
+#app .board.root .boardCard .project.comment > .name{
+	margin-left: calc(var(--children-Indent) * 0) !important;
+}
+#app .board.root .boardCard .project.comment.thread > .commentAttribution{
+		padding-left:calc(var(--children-Indent) * .5) !important;
+}
+
+#app .board.root .boardCard .project.comment.thread > .name > .bullet,
+#app .board.root .boardCard .project.comment.thread > .name > .expand,
+#app .board.root .boardCard .project.comment.thread > .name > .menu{
+		--btn-MargTop:4px !important;
 }
 
 #app .board.root .boardCard .project.comment > .children  .comment{
