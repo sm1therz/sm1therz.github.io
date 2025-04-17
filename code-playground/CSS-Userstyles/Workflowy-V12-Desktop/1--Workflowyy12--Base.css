@@ -2778,7 +2778,10 @@ LEVEL 1 > Project
 		background: var(--BG-primary);
 		margin-top: 0px !important;
 }
-
+.boardColumn:not(.root.board .boardColumn){
+		flex: 0 0 370px !important;
+		max-width: 400px;
+}
 
 /*All border-colors*/
 #app .boardColumn,
