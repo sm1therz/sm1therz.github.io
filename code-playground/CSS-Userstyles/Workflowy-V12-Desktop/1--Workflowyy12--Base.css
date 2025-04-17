@@ -2045,7 +2045,13 @@ html #app .project .content a.contentLink[href*="workflowy"]:after {
 		padding-right: 0px;
 }
 
-html #app .project > .notes > .content a.contentLink[href*="workflowy"] {}
+html #app .project > .notes > .content a.contentLink[href*="workflowy"],
+html #app .project > .notes > .content u a.contentLink[href*="workflowy"],
+html #app .project > .notes > .content a.contentLink[href*="workflowy"] u,
+html #app .project > .notes > .content .colored a.contentLink[href*="workflowy"],
+html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored {
+		color:var(--LnkWFTxtClr) !important;
+}
 html #app .project > .notes > .content .contentLink {
 		color: var(--NODE-NOTES--TXT-CLR-ALL) !important;
 }
