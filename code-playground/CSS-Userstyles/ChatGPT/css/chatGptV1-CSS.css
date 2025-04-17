@@ -239,8 +239,16 @@ BLOCKQUOTE
 	border-left-width: 10px;
 	position: relative;
 }
-
-
+/***********
+************
+HORIZONTAL RULE
+************
+************/
+.markdown hr {
+		border-color: hsla(0,0%,50%,.5);
+	 margin-bottom: calc(var(--paragraphMargTopBtm) * 3) !important;
+	margin-top: calc(var(--paragraphMargTopBtm) * 3) !important;
+}
 
 /***********
 ************
@@ -599,6 +607,12 @@ nav[aria-label="Chat history"] > div > div[class*="border-white"]{
 !gpt - CANVAS TITLES
 ************
 ************/
+
+/*IN CANVAS EDITOR*/
+button > h2 {
+		max-width: 100% !important;
+}
+/*IN POPUP*/
 [data-radix-popper-content-wrapper] > div[data-side="bottom"]{
 		max-width: 1000px;
 }
