@@ -1,8 +1,7 @@
-(() => {
+function initializeMinimap() {
 	const oldMinimap = document.querySelector('#minimap-wrapper');
 	if (oldMinimap) oldMinimap.remove();
 
-	// Inject style tag for all CSS used
 	const styleTag = document.createElement('style');
 	styleTag.textContent = `
 		#minimap-wrapper {
@@ -16,8 +15,6 @@
 			z-index: 9999;
 			background: rgba(0, 0, 0, 0.05);
 			padding: 60px 0 170px 0;
-			max-height:80vh!important;
-			min-height:80vh !important
 		}
 		.minimap-dot {
 			height: var(--dot-height, 5px);
@@ -29,9 +26,6 @@
 			cursor: pointer;
 			border: none;
 		}
-		.minimap-dot[style*="--dot-height: 5px"] {
-			height: 4px !important;
-		}
 		.minimap-dot.pinned {
 			background: gold;
 			border: 1px solid orange;
@@ -39,7 +33,6 @@
 		.minimap-dot.hovered:not(.pinned) {
 			background: hsla(0,0%,50%,.5);
 		}
-		/*Floating Preview*/
 		#minimap-preview {
 			position: fixed;
 			right: 30px;
@@ -63,7 +56,6 @@
 			--font-size: 0.75rem;
 			--line-height: 1.05rem;
 		}
-		/*OVERRIDES*/
 		#minimap-preview > article {
 			overflow-y: auto !important;
 		}
@@ -80,9 +72,10 @@
 	minimap.id = 'minimap-wrapper';
 
 	const articles = document.querySelectorAll('main article');
+	if (!articles.length) return;
+
 	const main = document.querySelector('main');
 	const totalHeight = main ? main.offsetHeight - 240 : 1000;
-
 	let totalMessageHeight = 0;
 	articles.forEach(article => totalMessageHeight += article.offsetHeight);
 
@@ -161,4 +154,30 @@
 	}
 
 	document.body.appendChild(minimap);
+}
+
+function waitForMessagesThenInit() {
+	const observer = new MutationObserver((_, obs) => {
+		const articles = document.querySelectorAll('main article');
+		if (articles.length > 0) {
+			initializeMinimap();
+			obs.disconnect();
+		}
+	});
+	observer.observe(document.body, { childList: true, subtree: true });
+}
+
+waitForMessagesThenInit();
+
+// Re-initialize on navigation or when new content is dynamically inserted
+(function monitorRouteChanges() {
+	let lastPath = location.pathname;
+	const recheck = () => {
+		if (location.pathname !== lastPath) {
+			lastPath = location.pathname;
+			setTimeout(waitForMessagesThenInit, 500);
+		}
+		requestAnimationFrame(recheck);
+	};
+	requestAnimationFrame(recheck);
 })();
