@@ -56,7 +56,6 @@
 				width:0px;
 			}
 			.minimap-dot {
-				height: var(--dot-height, 5px);
 				flex: 0 0 auto;
 				width: 100%;
 				border-radius: 4px;
@@ -65,9 +64,8 @@
 				cursor: pointer;
 				border: none;
 				max-height:200px !important;
-			}
-			.minimap-dot[style*="--dot-height: 5px"] {
-				height: 4px !important;
+				min-height:3px;
+				height: calc(var(--dot-height) - 20px) !important;
 			}
 			.minimap-dot.pinned {
 				background: gold;
@@ -124,8 +122,64 @@
 				max-width:calc(var(--minimapPreviewWidth) * .8) !important;
 				border-radius:14px;
 			}
+			
 			/**MORE THAN 30 MESSAGES*/
 			#minimap-wrapper:not([style*="overflow-y: auto"]){
+			}
+			/**MINI DOT - SIZE 1*/
+			.minimap-dot[style*="--dot-height: 1."],
+			.minimap-dot[style*="--dot-height: 2."],
+			.minimap-dot[style*="--dot-height: 3."],
+			.minimap-dot[style*="--dot-height: 4."]{
+				min-height:3px !important;
+			}
+			 /**MINI DOT - SIZE 2*/
+			.minimap-dot[style*="--dot-height: 5."],
+			.minimap-dot[style*="--dot-height: 6."],
+			.minimap-dot[style*="--dot-height: 7."],
+			.minimap-dot[style*="--dot-height: 8."]{
+				min-height:6px !important;
+				border-radius:2px;
+			}
+			 /**MINI DOT - SIZE 3*/
+			.minimap-dot[style*="--dot-height: 9."],
+			.minimap-dot[style*="--dot-height: 10."],
+			.minimap-dot[style*="--dot-height: 11."],
+			.minimap-dot[style*="--dot-height: 12."],
+			.minimap-dot[style*="--dot-height: 13."],
+			.minimap-dot[style*="--dot-height: 14."]{
+				min-height:9px !important;
+			}
+			 /**MINI DOT - SIZE 4*/
+			.minimap-dot[style*="--dot-height: 15."],
+			.minimap-dot[style*="--dot-height: 16."],
+			.minimap-dot[style*="--dot-height: 17."],
+			.minimap-dot[style*="--dot-height: 18."],
+			.minimap-dot[style*="--dot-height: 19."],
+			.minimap-dot[style*="--dot-height: 20."],
+			.minimap-dot[style*="--dot-height: 21."],
+			.minimap-dot[style*="--dot-height: 22."]{
+				min-height:12px !important;
+			}
+			 /**MINI DOT - SIZE 5*/
+			.minimap-dot[style*="--dot-height: 26."],
+			.minimap-dot[style*="--dot-height: 27."],
+			.minimap-dot[style*="--dot-height: 28."],
+			.minimap-dot[style*="--dot-height: 29."],
+			.minimap-dot[style*="--dot-height: 30."],
+			.minimap-dot[style*="--dot-height: 31."],
+			.minimap-dot[style*="--dot-height: 32."],
+			.minimap-dot[style*="--dot-height: 33."]{
+				min-height:15px !important;
+				border-radius:3px;
+			}
+			 /**MINI DOT - SIZE 6*/
+			.minimap-dot[style*="--dot-height: 34."],
+			.minimap-dot[style*="--dot-height: 35."],
+			.minimap-dot[style*="--dot-height: 36."],
+			.minimap-dot[style*="--dot-height: 37."],
+			.minimap-dot[style*="--dot-height: 38."]{
+				min-height:18px !important;
 			}
 		`;
 		document.head.appendChild(styleTag);
