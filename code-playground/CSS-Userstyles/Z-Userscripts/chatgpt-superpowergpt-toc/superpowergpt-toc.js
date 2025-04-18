@@ -1,28 +1,36 @@
 (() => {
 	const oldMinimap = document.querySelector('#minimap-wrapper');
 	if (oldMinimap) oldMinimap.remove();
+
 	// Inject style tag for all CSS used
 	const styleTag = document.createElement('style');
 	styleTag.textContent = `
 		#minimap-wrapper {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 20px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	z-index: 9999;
-	background: rgba(0, 0, 0, 0.05);
-	padding: 60px 0 170px 0;
-}
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			z-index: 9999;
+			background: rgba(0, 0, 0, 0.05);
+			padding: 60px 0 170px 0;
+			max-height:80vh!important;
+			min-height:80vh !important
+		}
 		.minimap-dot {
+			height: var(--dot-height, 5px);
+			flex: 0 0 auto;
 			width: 100%;
 			border-radius: 4px;
 			background: gray;
 			margin: 1px 0;
 			cursor: pointer;
 			border: none;
+		}
+		.minimap-dot[style*="--dot-height: 5px"] {
+			height: 4px !important;
 		}
 		.minimap-dot.pinned {
 			background: gold;
@@ -49,7 +57,7 @@
 			--line-height: 1.65;
 		}
 		#minimap-preview [data-message-author-role="user"] pre {
-		overflow: hidden;
+			overflow: hidden;
 			font-size: var(--font-size);
 			line-height: var(--line-height);
 			--font-size: 0.75rem;
@@ -57,7 +65,7 @@
 		}
 		/*OVERRIDES*/
 		#minimap-preview > article {
-			overflow-y:auto !important;
+			overflow-y: auto !important;
 		}
 		#minimap-preview > article > div {
 			padding: 0px !important;
@@ -67,39 +75,53 @@
 		}
 	`;
 	document.head.appendChild(styleTag);
+
 	const minimap = document.createElement('div');
 	minimap.id = 'minimap-wrapper';
+
 	const articles = document.querySelectorAll('main article');
 	const main = document.querySelector('main');
 	const totalHeight = main ? main.offsetHeight - 240 : 1000;
+
+	let totalMessageHeight = 0;
+	articles.forEach(article => totalMessageHeight += article.offsetHeight);
+
 	const pinnedFromStorage = new Set(JSON.parse(localStorage.getItem('minimapPinned') || '[]'));
 	const pinnedMessages = new Set(pinnedFromStorage);
+
 	articles.forEach((article, index) => {
 		const dot = document.createElement('div');
 		const messageHeight = article.offsetHeight;
-		const scaledHeight = Math.max(5, (messageHeight / totalHeight) * 100 * 5);
+		const scaledHeight = Math.max(5, (messageHeight / totalMessageHeight) * 100 * 5);
+
 		dot.className = 'minimap-dot';
-		dot.style.height = `${scaledHeight}px`;
+		dot.style.setProperty('--dot-height', `${scaledHeight}px`);
 		dot.title = `Message ${index + 1}`;
+
 		let previewBox;
 		let isPinned = pinnedMessages.has(index);
+
 		const updateStyle = () => {
 			dot.classList.toggle('pinned', isPinned);
 		};
+
 		dot.addEventListener('mouseenter', () => {
 			dot.classList.add('hovered');
+
 			const preview = article.cloneNode(true);
 			preview.style.maxHeight = '300px';
 			preview.style.overflow = 'hidden';
 			preview.style.fontSize = '12px';
+
 			previewBox = document.createElement('div');
 			previewBox.id = 'minimap-preview';
-			const top = dot.getBoundingClientRect()
-				.top;
+			const top = dot.getBoundingClientRect().top;
 			previewBox.style.top = `${top}px`;
+
 			previewBox.appendChild(preview);
 			document.body.appendChild(previewBox);
 		});
+
 		dot.addEventListener('mouseleave', () => {
 			dot.classList.remove('hovered');
 			if (previewBox) {
@@ -107,7 +129,14 @@
 				previewBox = null;
 			}
 		});
+
 		dot.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			article.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		});
+
+		dot.addEventListener('dblclick', (e) => {
 			e.preventDefault();
 			e.stopPropagation();
 			isPinned = !isPinned;
@@ -118,16 +147,18 @@
 			}
 			localStorage.setItem('minimapPinned', JSON.stringify([...pinnedMessages]));
 			updateStyle();
-			article.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		});
+
 		updateStyle();
 		minimap.appendChild(dot);
 	});
+
 	if (articles.length > 30) {
 		minimap.style.overflowY = 'auto';
 		minimap.style.maxHeight = '100vh';
 		minimap.style.minHeight = '100vh';
 		minimap.style.justifyContent = 'flex-start';
 	}
+
 	document.body.appendChild(minimap);
 })();
