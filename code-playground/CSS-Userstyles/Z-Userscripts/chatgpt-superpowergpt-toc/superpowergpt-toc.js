@@ -43,12 +43,14 @@
 				width: var(--minimapWidth);
 				display: flex;
 				flex-direction: column;
-				align-items: center;
+				align-items: flex-start;
 				z-index: 9999;
 				background: rgba(0, 0, 0, 0.05);
 				padding: 60px 0 170px 0;
-				max-height:80vh!important;
-				min-height:80vh !important;
+				max-height:73vh!important;
+				min-height:73vh !important;
+				padding-bottom:0px !important;
+				overflow-y:auto !important;
 			}
 			#minimap-wrapper::-webkit-scrollbar{
 				width:0px;
@@ -62,6 +64,7 @@
 				margin: 1px 0;
 				cursor: pointer;
 				border: none;
+				max-height:200px !important;
 			}
 			.minimap-dot[style*="--dot-height: 5px"] {
 				height: 4px !important;
@@ -121,6 +124,9 @@
 				max-width:calc(var(--minimapPreviewWidth) * .8) !important;
 				border-radius:14px;
 			}
+			/**MORE THAN 30 MESSAGES*/
+			#minimap-wrapper:not([style*="overflow-y: auto"]){
+			}
 		`;
 		document.head.appendChild(styleTag);
 
@@ -177,10 +183,11 @@
 				}
 			});
 
+			// Added scroll into view with block: 'start'
 			dot.addEventListener('click', (e) => {
 				e.preventDefault();
 				e.stopPropagation();
-				article.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				article.scrollIntoView({ behavior: 'smooth', block: 'start' }); // scroll to the top of the message
 			});
 
 			dot.addEventListener('dblclick', (e) => {
