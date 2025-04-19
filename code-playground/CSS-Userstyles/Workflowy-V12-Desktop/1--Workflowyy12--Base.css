@@ -5316,6 +5316,27 @@ row-gap: 20px !important;
 		--btn-Width:var(--children-Indent);
 		--codeblockPadLeftRight:9px;
 }
+/*WHEN FRACTAL COMMENTS IS TURNED OFF*/
+/*inside comment-container > parent comments */
+#app .comment-container:not(.board .comment-container, .floating-comments-container .comment-container) > .children > .comment {
+		border-radius: var(--commentBrdRad);
+}
+/*inside comment-container > child comments inside parent comments*/
+#app .comment-container:not(.board .comment-container, .floating-comments-container .comment-container) > .children > .comment > .children .comment{
+		border-top-left-radius: var(--commentBrdRad);
+		border-bottom-left-radius: var(--commentBrdRad);
+}
+/*all comments > parent comments, not child comments*/
+#app .project.comment:not(.board .comment, .comment > .children .comment) {
+		border-radius: var(--commentBrdRad);
+}
+
+/*all comments > child comments inside parent comments*/
+#app .project.comment:not(.board .comment) > .children .comment{
+				border-top-left-radius: var(--commentBrdRad);
+		border-bottom-left-radius: var(--commentBrdRad);
+}
+
 
 :root {
 		--comment-NameFontSize:15px;
@@ -5327,7 +5348,7 @@ row-gap: 20px !important;
 	
 }
 
-#app .project.comment.thread .name{
+#app .project.comment .name{
 	position: relative;
 }
 
