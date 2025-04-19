@@ -98,89 +98,6 @@
 				--font-size: 0.75rem;
 				--line-height: 1.05rem;
 			}
-			/**OVERRIDES**/
-			#minimap-preview article {
-				box-shadow:none !important;
-			}
-			#minimap-preview .markdown.prose > *:first-child {
-				margin-top:0px !important;
-			}
-			#minimap-preview .markdown.prose > *:last-child {
-				margin-bottom:0px !important;
-			}
-			#minimap-preview > article {
-				overflow-y: auto !important;
-			}
-			#minimap-preview > article > div {
-				padding: 0px !important;
-			}
-			#minimap-preview [data-message-author-role="user"] div[class*="max-w-"] {
-				max-width: 100%;
-			}
-			#minimap-preview [data-message-author-role="user"] .bg-token-message-surface{
-				background:hsla(0,0%,80%,.1) !important;
-				max-width:calc(var(--minimapPreviewWidth) * .8) !important;
-				border-radius:14px;
-			}
-			
-			/**MORE THAN 30 MESSAGES*/
-			#minimap-wrapper:not([style*="overflow-y: auto"]){
-			}
-			/**MINI DOT - SIZE 1*/
-			.minimap-dot[style*="--dot-height: 1."],
-			.minimap-dot[style*="--dot-height: 2."],
-			.minimap-dot[style*="--dot-height: 3."],
-			.minimap-dot[style*="--dot-height: 4."]{
-				min-height:3px !important;
-			}
-			 /**MINI DOT - SIZE 2*/
-			.minimap-dot[style*="--dot-height: 5."],
-			.minimap-dot[style*="--dot-height: 6."],
-			.minimap-dot[style*="--dot-height: 7."],
-			.minimap-dot[style*="--dot-height: 8."]{
-				min-height:6px !important;
-				border-radius:2px;
-			}
-			 /**MINI DOT - SIZE 3*/
-			.minimap-dot[style*="--dot-height: 9."],
-			.minimap-dot[style*="--dot-height: 10."],
-			.minimap-dot[style*="--dot-height: 11."],
-			.minimap-dot[style*="--dot-height: 12."],
-			.minimap-dot[style*="--dot-height: 13."],
-			.minimap-dot[style*="--dot-height: 14."]{
-				min-height:9px !important;
-			}
-			 /**MINI DOT - SIZE 4*/
-			.minimap-dot[style*="--dot-height: 15."],
-			.minimap-dot[style*="--dot-height: 16."],
-			.minimap-dot[style*="--dot-height: 17."],
-			.minimap-dot[style*="--dot-height: 18."],
-			.minimap-dot[style*="--dot-height: 19."],
-			.minimap-dot[style*="--dot-height: 20."],
-			.minimap-dot[style*="--dot-height: 21."],
-			.minimap-dot[style*="--dot-height: 22."]{
-				min-height:12px !important;
-			}
-			 /**MINI DOT - SIZE 5*/
-			.minimap-dot[style*="--dot-height: 26."],
-			.minimap-dot[style*="--dot-height: 27."],
-			.minimap-dot[style*="--dot-height: 28."],
-			.minimap-dot[style*="--dot-height: 29."],
-			.minimap-dot[style*="--dot-height: 30."],
-			.minimap-dot[style*="--dot-height: 31."],
-			.minimap-dot[style*="--dot-height: 32."],
-			.minimap-dot[style*="--dot-height: 33."]{
-				min-height:15px !important;
-				border-radius:3px;
-			}
-			 /**MINI DOT - SIZE 6*/
-			.minimap-dot[style*="--dot-height: 34."],
-			.minimap-dot[style*="--dot-height: 35."],
-			.minimap-dot[style*="--dot-height: 36."],
-			.minimap-dot[style*="--dot-height: 37."],
-			.minimap-dot[style*="--dot-height: 38."]{
-				min-height:18px !important;
-			}
 		`;
 		document.head.appendChild(styleTag);
 
@@ -223,6 +140,24 @@
 				previewBox = document.createElement('div');
 				previewBox.id = 'minimap-preview';
 				const top = dot.getBoundingClientRect().top;
+				const previewHeight = previewBox.offsetHeight;
+
+				// Dynamic positioning based on space available in viewport
+				const windowHeight = window.innerHeight;
+				const availableSpaceBelow = windowHeight - top; // Available space from the preview to the bottom of the screen
+				const availableSpaceAbove = top; // Available space from the preview to the top of the screen
+				const maxPreviewHeight = 500;
+
+				if (availableSpaceBelow < maxPreviewHeight) {
+					previewBox.style.maxHeight = `${availableSpaceBelow}px`; // Limit height to fit in screen
+				} else {
+					previewBox.style.maxHeight = `${maxPreviewHeight}px`; // Default max height
+				}
+
+				if (availableSpaceAbove < previewBox.offsetHeight) {
+					previewBox.style.maxHeight = `${availableSpaceAbove}px`; // If there is insufficient space at the top, adjust accordingly
+				}
+
 				previewBox.style.top = `${top}px`;
 
 				previewBox.appendChild(preview);
@@ -237,7 +172,6 @@
 				}
 			});
 
-			// Added scroll into view with block: 'start'
 			dot.addEventListener('click', (e) => {
 				e.preventDefault();
 				e.stopPropagation();
