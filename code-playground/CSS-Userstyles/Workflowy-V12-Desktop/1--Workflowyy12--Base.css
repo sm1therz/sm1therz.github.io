@@ -5313,7 +5313,7 @@ row-gap: 20px !important;
 		border-radius: 10px;
 		width: 100% !important;
 		--btn-Height:24px;
-		--btn-Width:var(--children-Indent);
+		--btn-Width:var(--children-Indent); 
 		--codeblockPadLeftRight:9px;
 }
 /*WHEN FRACTAL COMMENTS IS TURNED OFF*/
