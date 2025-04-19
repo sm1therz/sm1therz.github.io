@@ -20,6 +20,8 @@
 		if (oldMinimap) oldMinimap.remove();
 		const oldStyle = document.querySelector('#minimap-style');
 		if (oldStyle) oldStyle.remove();
+		const oldPreviewZone = document.querySelector('.minimap-hover-zone');
+		if (oldPreviewZone) oldPreviewZone.remove();
 	}
 
 	function shouldRenderMinimap() {
@@ -28,7 +30,6 @@
 
 	function initializeMinimap() {
 		destroyMinimap();
-
 		const styleTag = document.createElement('style');
 		styleTag.id = 'minimap-style';
 		styleTag.textContent = `
@@ -75,21 +76,21 @@
 			background: hsla(0,0%,50%,.5);
 		}
 		#minimap-preview {
-			position: fixed;
-			right: 30px;
-			z-index: 10000;
-			background: #2f2f2f;
-			color: white;
-			border: 1px solid #ffffff26;
-			border-radius: 10px;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-			padding: 10px;
-			width:var(--minimapPreviewWidth);
-			max-width: var(--minimapPreviewWidth);
-			max-height: 500px;
-			overflow-y: auto;
-			--font-size: 0.75rem;
-			--line-height: 1.65;
+				position: fixed;
+				right: 30px;
+				background: #2f2f2f;
+				color: white;
+				border: 1px solid #ffffff26;
+				border-radius: 10px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+				padding: 10px;
+				width:var(--minimapPreviewWidth);
+				max-width: var(--minimapPreviewWidth);
+				max-height: 500px;
+				overflow-y: auto;
+				--font-size: 0.75rem;
+				--line-height: 1.65;
+				pointer-events: auto;
 		}
 		#minimap-preview [data-message-author-role="user"] pre {
 			overflow: hidden;
@@ -180,19 +181,14 @@
 		.minimap-dot[style*="--dot-height: 37."],
 		.minimap-dot[style*="--dot-height: 38."]{
 			min-height:18px !important;
-		}
 		`;
 		document.head.appendChild(styleTag);
 
-		// dot building logic starts here
 		const minimap = document.createElement('div');
 		minimap.id = 'minimap-wrapper';
 
 		const main = document.querySelector('main');
 		const articles = Array.from(main?.querySelectorAll('article') || []).filter(article => article.offsetHeight > 0);
-		const totalHeight = main ? main.offsetHeight - 240 : 1000;
-
-		let totalMessageHeight = articles.reduce((acc, article) => acc + (article.offsetHeight || 0), 0);
 
 		const pinnedFromStorage = new Set(JSON.parse(localStorage.getItem('minimapPinned') || '[]'));
 		const pinnedMessages = new Set(pinnedFromStorage);
@@ -205,7 +201,6 @@
 			dot.style.setProperty('--dot-height', `${scaledHeight}px`);
 			dot.title = `Message ${index + 1}`;
 
-			let previewBox;
 			let isPinned = pinnedMessages.has(index) === true;
 
 			const updateStyle = () => {
@@ -215,50 +210,73 @@
 			dot.addEventListener('mouseenter', () => {
 				dot.classList.add('hovered');
 
+				const existingZone = document.querySelector('.minimap-hover-zone');
+				if (existingZone) existingZone.remove();
+
 				const preview = article.cloneNode(true);
 				preview.style.maxHeight = '300px';
 				preview.style.overflow = 'hidden';
 				preview.style.fontSize = '12px';
 
-				previewBox = document.createElement('div');
+				const previewBox = document.createElement('div');
 				previewBox.id = 'minimap-preview';
-				const top = dot.getBoundingClientRect().top;
-				const previewHeight = previewBox.offsetHeight;
+				previewBox.appendChild(preview);
 
-				// Dynamic positioning based on space available in viewport
+				const top = dot.getBoundingClientRect().top;
 				const windowHeight = window.innerHeight;
-				const availableSpaceBelow = windowHeight - top; // Available space from the preview to the bottom of the screen
-				const availableSpaceAbove = top; // Available space from the preview to the top of the screen
+				const availableSpaceBelow = windowHeight - top;
+				const availableSpaceAbove = top;
 				const maxPreviewHeight = 500;
 
-				if (availableSpaceBelow < maxPreviewHeight) {
-					previewBox.style.maxHeight = `${availableSpaceBelow}px`; // Limit height to fit in screen
-				} else {
-					previewBox.style.maxHeight = `${maxPreviewHeight}px`; // Default max height
-				}
-
-				if (availableSpaceAbove < previewBox.offsetHeight) {
-					previewBox.style.maxHeight = `${availableSpaceAbove}px`; // If there is insufficient space at the top, adjust accordingly
-				}
-
 				previewBox.style.top = `${top}px`;
+				previewBox.style.maxHeight = `${Math.min(maxPreviewHeight, availableSpaceBelow, availableSpaceAbove)}px`;
 
-				previewBox.appendChild(preview);
-				document.body.appendChild(previewBox);
-			});
+				const hoverZone = document.createElement('div');
+				hoverZone.className = 'minimap-hover-zone';
+				hoverZone.style.pointerEvents = 'none';
+				previewBox.style.pointerEvents = 'auto';
+				hoverZone.appendChild(previewBox);
+				document.body.appendChild(hoverZone);
 
-			dot.addEventListener('mouseleave', () => {
-				dot.classList.remove('hovered');
-				if (previewBox) {
-					previewBox.remove();
-					previewBox = null;
-				}
+				let hoveringDot = true;
+				let hoveringPreview = false;
+
+				const cleanup = () => {
+					dot.classList.remove('hovered');
+					hoverZone.remove();
+				};
+
+				const scheduleCleanup = () => {
+					setTimeout(() => {
+						if (!hoveringDot && !hoveringPreview) {
+							cleanup();
+						}
+					}, 100);
+				};
+
+				dot.addEventListener('mouseleave', () => {
+					hoveringDot = false;
+					scheduleCleanup();
+				});
+
+				dot.addEventListener('mouseenter', () => {
+					hoveringDot = true;
+				});
+
+				previewBox.addEventListener('mouseleave', () => {
+					hoveringPreview = false;
+					scheduleCleanup();
+				});
+
+				previewBox.addEventListener('mouseenter', () => {
+					hoveringPreview = true;
+				});
 			});
 
 			dot.addEventListener('click', (e) => {
 				e.preventDefault();
 				e.stopPropagation();
-				article.scrollIntoView({ behavior: 'smooth', block: 'start' }); // scroll to the top of the message
+				article.scrollIntoView({ behavior: 'smooth', block: 'start' });
 			});
 
 			dot.addEventListener('dblclick', (e) => {
@@ -302,7 +320,6 @@
 	}
 
 	const debouncedRender = debounce(() => {
-		// Wait for the DOM to finish layout calculations
 		requestAnimationFrame(() => requestAnimationFrame(() => renderMinimapIfChatLoaded()));
 	}, 500);
 
