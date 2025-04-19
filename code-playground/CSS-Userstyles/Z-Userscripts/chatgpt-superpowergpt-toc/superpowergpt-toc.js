@@ -48,16 +48,16 @@
 			z-index: 9999;
 			background: rgba(0, 0, 0, 0.05);
 			padding: 60px 0 170px 0;
-			max-height:73vh!important;
-			min-height:73vh !important;
-			padding-bottom:0px !important;
+			max-height:100vh !important;
+			min-height:100vh !important;
+			padding-bottom:60px !important;
 			overflow-y:auto !important;
 		}
 		#minimap-wrapper::-webkit-scrollbar{
 			width:0px;
 		}
 		.minimap-dot {
-			flex: 0 0 auto;
+			/*flex: 0 0 auto;*/
 			width: 100%;
 			border-radius: 4px;
 			background: gray;
@@ -86,11 +86,11 @@
 				padding: 10px;
 				width:var(--minimapPreviewWidth);
 				max-width: var(--minimapPreviewWidth);
-				max-height: 500px;
+				max-height: 500px ;
 				overflow-y: auto;
 				--font-size: 0.75rem;
 				--line-height: 1.65;
-				pointer-events: auto;
+				pointer-events: hidden;
 		}
 		#minimap-preview [data-message-author-role="user"] pre {
 			overflow: hidden;
@@ -111,6 +111,7 @@
 		}
 		#minimap-preview > article {
 			overflow-y: auto !important;
+						max-height:unset !important;
 		}
 		#minimap-preview > article > div {
 			padding: 0px !important;
@@ -226,7 +227,7 @@
 				const windowHeight = window.innerHeight;
 				const availableSpaceBelow = windowHeight - top;
 				const availableSpaceAbove = top;
-				const maxPreviewHeight = 500;
+				const maxPreviewHeight = 900;
 
 				previewBox.style.top = `${top}px`;
 				previewBox.style.maxHeight = `${Math.min(maxPreviewHeight, availableSpaceBelow, availableSpaceAbove)}px`;
