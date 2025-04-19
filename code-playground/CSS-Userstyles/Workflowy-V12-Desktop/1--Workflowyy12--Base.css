@@ -7496,8 +7496,12 @@ body * {
 
 		--btn-MargTop: 0px;
 }
-#app .project > .name > .prefix{
-		--btn-MargTop:0px !important
+#app .project:not(.board .project, .comment .project) > .name > .prefix{
+		--btn-MargTop:-1px !important
+}
+
+#app .comment .project > .name > .prefix{
+		--btn-MargTop:-1px !important
 }
 
 .project.root > .children .project > .name > .content,
