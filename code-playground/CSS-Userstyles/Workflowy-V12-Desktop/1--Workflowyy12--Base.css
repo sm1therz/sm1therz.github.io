@@ -5204,7 +5204,7 @@ html body #app .page.dashboard-page{
 
 /*******************************
 ********************************
-! COMMENTS - NEW
+COMMENTS - NEW
 ********************************
 ********************************/
 :root {
@@ -5309,11 +5309,14 @@ row-gap: 20px !important;
 		border-top-right-radius: 0px;
 		border-bottom-right-radius: 0px;
 }
+:root {
+		--commentBrdRad:10px;
+}
 #app .project.comment.thread {
-		border-radius: 10px;
+		border-radius: var(--commentBrdRad);
 		width: 100% !important;
 		--btn-Height:24px;
-		--btn-Width:var(--children-Indent); 
+		--btn-Width:var(--children-Indent);
 		--codeblockPadLeftRight:9px;
 }
 /*WHEN FRACTAL COMMENTS IS TURNED OFF*/
@@ -5336,7 +5339,6 @@ row-gap: 20px !important;
 				border-top-left-radius: var(--commentBrdRad);
 		border-bottom-left-radius: var(--commentBrdRad);
 }
-
 
 :root {
 		--comment-NameFontSize:15px;
@@ -5614,6 +5616,7 @@ row-gap: 20px !important;
 		padding-right:16px !important;
 
 }
+
 #app .comment-container > .name > .add-comment-button {
 		display: none !important;
 }
@@ -5631,7 +5634,6 @@ row-gap: 20px !important;
 		background-position: center;
 		opacity: .8;
 }
-
 /*******************************
 ********************************
 ! SCROLLBAR / SCROLL BARS
