@@ -1,7 +1,19 @@
+// ==UserScript==
+// @name         ChatGPT TOC - SuperpowerGPT
+// @namespace    http://tampermonkey.net/
+// @version      2025-04-05
+// @description  try to take over the world!
+// @author       You
+// @match        https://chatgpt.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=chatgpt.com
+// @grant        none
+// ==/UserScript==
 (() => {
 	let currentConversationId = null;
 	let minimapObserver = null;
 	let debounceTimer = null;
+	let dotArticleMap = [];
+	let visibilityObserver = null;
 
 	function getConversationIdFromUrl() {
 		const match = location.pathname.match(/\/c\/([a-z0-9\-]+)/);
@@ -22,6 +34,11 @@
 		if (oldStyle) oldStyle.remove();
 		const oldPreviewZone = document.querySelector('.minimap-hover-zone');
 		if (oldPreviewZone) oldPreviewZone.remove();
+		if (visibilityObserver) {
+			visibilityObserver.disconnect();
+			visibilityObserver = null;
+		}
+		dotArticleMap = [];
 	}
 
 	function shouldRenderMinimap() {
@@ -34,7 +51,7 @@
 		styleTag.id = 'minimap-style';
 		styleTag.textContent = `
 		:root {
-			--minimapWidth:20px;
+			--minimapWidth:40px;
 			--minimapPreviewWidth:440px;
 		}
 		#minimap-wrapper {
@@ -44,7 +61,7 @@
 			width: var(--minimapWidth);
 			display: flex;
 			flex-direction: column;
-			align-items: flex-start;
+			align-items: flex-end;
 			z-index: 9999;
 			background: rgba(0, 0, 0, 0.05);
 			padding: 60px 0 170px 0;
@@ -58,7 +75,7 @@
 		}
 		.minimap-dot {
 			/*flex: 0 0 auto;*/
-			width: 100%;
+			width: calc(var(--minimapWidth) * .5);
 			border-radius: 4px;
 			background: gray;
 			margin: 1px 0;
@@ -67,10 +84,16 @@
 			max-height:200px !important;
 			min-height:3px;
 			height: calc(var(--dot-height) - 20px) !important;
+						transition:.05s;
 		}
+				/***ACTIVE MESSAGE*/
+				.minimap-dot.active{
+					width:calc(var(--minimapWidth) * 1);
+					back
+				}
 		.minimap-dot.pinned {
-			background: gold;
-			border: 1px solid orange;
+			background: gold !important;
+
 		}
 		.minimap-dot.hovered:not(.pinned) {
 			background: hsla(0,0%,50%,.5);
@@ -124,7 +147,7 @@
 			max-width:calc(var(--minimapPreviewWidth) * .8) !important;
 			border-radius:14px;
 		}
-		
+
 		/**MORE THAN 30 MESSAGES*/
 		#minimap-wrapper:not([style*="overflow-y: auto"]){
 		}
@@ -182,6 +205,7 @@
 		.minimap-dot[style*="--dot-height: 37."],
 		.minimap-dot[style*="--dot-height: 38."]{
 			min-height:18px !important;
+						}
 		`;
 		document.head.appendChild(styleTag);
 
@@ -194,9 +218,33 @@
 		const pinnedFromStorage = new Set(JSON.parse(localStorage.getItem('minimapPinned') || '[]'));
 		const pinnedMessages = new Set(pinnedFromStorage);
 
+		visibilityObserver = new IntersectionObserver((entries) => {
+			let visibleArticle = null;
+			let maxRatio = 0;
+
+			for (const entry of entries) {
+				if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+					visibleArticle = entry.target;
+					maxRatio = entry.intersectionRatio;
+				}
+			}
+
+			if (visibleArticle) {
+				dotArticleMap.forEach(({ dot, article }) => {
+					dot.classList.toggle('active', article === visibleArticle);
+				});
+			}
+		}, {
+			root: null,
+			threshold: [0.25, 0.5, 0.75]
+		});
+
 		articles.forEach((article, index) => {
 			const dot = document.createElement('div');
 			const scaledHeight = Math.max(4, article.offsetHeight * 0.05);
+			dotArticleMap.push({ dot, article });
+
+			visibilityObserver.observe(article);
 
 			dot.className = 'minimap-dot';
 			dot.style.setProperty('--dot-height', `${scaledHeight}px`);
