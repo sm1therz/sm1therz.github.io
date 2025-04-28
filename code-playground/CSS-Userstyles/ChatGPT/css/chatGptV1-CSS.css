@@ -157,6 +157,10 @@ PARAGRAPHS
 	margin-top: calc(var(--paragraphMargTopBtm) * .5);
 }
 
+.markdown.prose > *:first-child {
+	margin-top: 0px !important;
+}
+
 /***********
 ************
 LISTS
@@ -238,6 +242,9 @@ BLOCKQUOTE
 	border-radius: 6px;
 	border-left-width: 10px;
 	position: relative;
+}
+.markdown blockquote:after{
+		display: none !important; 
 }
 /***********
 ************
@@ -386,6 +393,15 @@ article #codemirror .cm-editor {
 		display: block !important;
 }
 
+
+/***********
+************
+!gpt - EDITOR > ADJUSTMENT > FOR TOC
+************
+************/
+#page-header + div[class*="composer"] > div.h-full {
+	overflow-y: auto;
+}
 
 /***********
 ************
@@ -704,8 +720,7 @@ button > h2 {
 /***********
 ************
 ! MEMEX HIGHLIGHTS
-************
-************/
+
 .hypothesis-highlight[class*="memex-highlight"] {
 	background-color: hsl(160, 50%, 62%,0.15) !important;
 	color: unset !important;
@@ -714,3 +729,5 @@ button > h2 {
 .hypothesis-highlight[class*="memex-highlight"][class*="selected"] {
 	border-bottom: 2px solid hsl(150, 58.62%, 65.88%,.5) !important;
 }
+************
+************/
