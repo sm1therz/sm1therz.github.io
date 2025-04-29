@@ -63,6 +63,10 @@
   setTimeout(function() {
     injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/right-sidebar-1-thin.css');
   }, 3000);
+  
+  setTimeout(function() {
+    injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/right-sidebar-2-toc.css');
+  }, 3100);
 
   setTimeout(function() {
     injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-card-library.css');

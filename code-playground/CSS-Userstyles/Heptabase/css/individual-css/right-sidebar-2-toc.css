@@ -1,0 +1,98 @@
+/***********
+************
+************
+************
+************
+************
+RIGHT SIDEBAR - TOC
+************
+************
+************
+************
+************
+************/
+
+:root {
+		--tocIndentLeft: 30px;
+		--tocH1IndentLeft: 8px;
+		--tocH1IndentLeftAdjust:calc(var(--tocIndentLeft) * .25);
+		--tocTextSize: 14px;
+		--tocTextClr: var(--bldClr);
+		--tocTextClrActive: var(--active-item);
+}
+
+/***/
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*="padding-left: "] p {
+		transform-origin: center left !important;
+		pointer-events: all;
+		z-index: 0;
+		transition: .1s;
+}
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*="padding-left: "] p.text-active {
+		color: var(--active-item) !important;
+		opacity: 1;
+}
+
+/*LEVEL 1*/
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 8px"] {
+		padding-left: calc(var(--tocIndentLeft) * .25) !important;
+
+
+}
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 8px"] p {
+		color: var(--bldClr);
+		font-weight: 600;
+		/****/
+		font-size: calc(var(--tocTextSize) * 1.2);
+
+		/*max-width: calc(100% - 30px);
+		transform: scale(1.15);*/
+}
+
+
+/*LEVEL 2*/
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 32px"] {
+		padding-left: calc(var(--tocIndentLeft) * .25) !important;
+}
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 32px"] p {
+		color: var(--bldClr);
+		font-weight: 500;
+		opacity: 0.8;
+		/****/
+		font-size: calc(var(--tocTextSize) * 1.05);
+
+		/*max-width: calc(100% - 30px);
+		transform: scale(1.05);*/
+}
+
+/*LEVEL 3*/
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 56px"] {
+		padding-left: calc(var(--tocIndentLeft) * 1) !important;
+}
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 56px"] p {
+		color: var(--bldClr);
+		font-weight: 450;
+		opacity: 0.55;
+}
+
+/*LEVEL 4*/
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 80px"] {
+		padding-left: calc(var(--tocIndentLeft) * 2) !important;
+
+}
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 80px"] p {
+		color: var(--bldClr);
+		opacity: 0.55;
+}
+
+
+/*LEVEL 5*/
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 104px"] {
+		padding-left: calc(var(--tocIndentLeft) * 3) !important;
+
+}
+#root .bg-background-primary > div.relative[style*="width: "] > .flex.h-screen > .app-region-drag + div > div > div.relative.w-full > [style*=": 104px"] p {
+		color: var(--bldClr);
+		opacity: 0.55;
+}
+
