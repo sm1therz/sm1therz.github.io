@@ -2652,6 +2652,39 @@ COMPLETED TASKS - BULLET COLOR
 		opacity:0 !important;
 }*/
 
+/*REFERENCES FIX*/
+
+#app .project:not(.board) .project.references > .children > .project:first-child{
+		margin-top: 10px !important;
+}
+
+#app .project:not(.board) .project.references .project .breadcrumbs a {
+		font-size: .85rem;
+		line-height: 1.2 !important;
+}
+
+#app .project:not(.board) .project.references .project .breadcrumbs > svg {
+		height: 100%;
+		top: 3px;
+		align-items: center;
+		width: 6px;
+}
+
+
+/***
+NOTES LINE CLAMP
+****/
+
+.noted > .notes > ._hxhmtg.showAsEditing, 
+.project > .notes.expandedNote > ._hxhmtg, 
+.noted > .notes > ._hxhmtg.copyOrPasteInProgress, 
+.noted > .notes > ._hxhmtg.active, 
+.root > .notes > ._hxhmtg.content, 
+.page.searching .notes.matches > ._hxhmtg.content, 
+body.read_only_main_tree .notes > ._hxhmtg.content {
+		
+}
+
 
 
 
@@ -2788,6 +2821,7 @@ LEVEL 1 > Project
 		flex: 0 0 370px !important;
 		max-width: 400px;
 }
+
 
 /*All border-colors*/
 #app .boardColumn,
@@ -3342,6 +3376,9 @@ BOARDS ROOT
 		z-index:949494949494;
 		height:unset;
 		width:unset;
+		max-width: 100vw !important;
+	background: linear-gradient(to right, var(--BG-primary) 0, var(--BG-primary) 90%, transparent);
+	padding-right: 30px !important;
 }
 
 #app .page[style="overflow-y: auto;"] > .project.board.root > .notes{
@@ -3904,7 +3941,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 
 #app .board.root .boardColumn{
-	max-width: 410px !important;
+	max-width: 430px !important;
 	flex: 0 0 450px;
 	overflow-x: visible !important;
 }
@@ -3932,6 +3969,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .board.root .project.code-block > .name > .bullet:before{
 	opacity: 0;
 }
+
 #app .board.root .project.paragraph.open > .name > .bullet:before,
 #app .board.root .project.paragraph.collapsed > .name > .bullet:before,
 #app .board.root .project.quote-block.open > .name > .bullet:before,
@@ -4018,8 +4056,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 
 #app .board.root, 
 #app .board.root > .children{
-	--notes-fontSize:13.75px;
-	--notes-lineHeight:18.75px
+	--notes-fontSize:13.35px;
+	--notes-lineHeight:18.25px
 	
 }
 #app .board.root .boardColumn > .notes,
@@ -4143,6 +4181,32 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 #app .board.root .boardCard .project[class*="header3"] > .name > .expand,
 #app .board.root .boardCard .project[class*="header3"] > .name > .menu{
 		--btn-MargTop:6px !important;
+}
+
+/***/
+
+
+
+
+/*******************************
+********************************
+! BOARDS - ROOT - CHILD BORDERS
+********************************
+********************************/
+
+#app .board.root .boardCard > .children > .project:not(.quote-block,.comment,.code-block,.references .project,.noted) > .name,
+#app .board.root .boardCard > .children > .project.noted:not(.quote-block,.comment,.code-block,.references .project) > .notes{
+		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.65);
+		border-bottom: 1px solid hsl(200, 6%, 30%,0) !important;
+}
+
+
+#app .board.root .boardCard > .children > .project:not(.open):last-of-type > .name,
+#app .board.root .boardCard > .children > .project:last-of-type > .notes{
+		box-shadow: 0 0px 0 0 var(--brd-brdrClr) !important;
+}
+#app .board.root .boardCard > .children > .project.open:not(.project:last-of-type) > .children{
+		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.65);
 }
 
 /*******************************
@@ -5634,9 +5698,10 @@ row-gap: 20px !important;
 		background-position: center;
 		opacity: .8;
 }
+
 /*******************************
 ********************************
-! SCROLLBAR / SCROLL BARS
+SCROLLBAR / SCROLL BARS
 ********************************
 ********************************/
 ::-webkit-scrollbar,
@@ -6448,6 +6513,7 @@ html #app .dialog-box ._157gzxf > div > div {
 #app .dialog-box .breadcrumbs > a:first-child:before {
 		display: none;
 }
+
 /*******************************
 ********************************
 ! POPUP WIDTH - ALL - EXCEPT, QUICK SWITCHER
@@ -7223,7 +7289,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 	}
 	#app .project > .name > .bullet.diamond ~ .expand:before,
 	#app .dashboard .project > .name > .bullet.diamond:before,
-	#app .board .project > .name > .bullet.diamond:before {
+	#app .board .project > .name > .bullet.diamond:before{
 		border-radius: 1px !important;
 	}
 	#app .project > .name > .bullet.diamond ~ .expand:after {
@@ -7406,7 +7472,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 
 		/*DARK*/
 		--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
-		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.15" stroke-width="10"/></svg>');
+		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.075" stroke-width="10"/></svg>');
 		/*DARK - UNDERLINE*/
 		--ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 		/*DARK  - LINK*/
