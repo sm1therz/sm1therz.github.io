@@ -4197,7 +4197,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 #app .board.root .boardCard > .children > .project:not(.quote-block,.comment,.code-block,.references .project,.noted) > .name,
 #app .board.root .boardCard > .children > .project.noted:not(.quote-block,.comment,.code-block,.references .project) > .notes{
 		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.65);
-		border-bottom: 1px solid hsl(200, 6%, 30%,0) !important;
+		border-bottom: 0px solid hsl(200, 6%, 30%,0) !important;
 }
 
 
@@ -4208,7 +4208,6 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 #app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
 		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.65);
 }
-
 /*******************************
 ********************************
 ! DASHBOARD
