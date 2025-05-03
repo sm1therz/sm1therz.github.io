@@ -4203,7 +4203,14 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 
 #app .board.root .boardCard > .children > .project:not(.open):last-of-type > .name,
 #app .board.root .boardCard > .children > .project:last-of-type > .notes{
-		box-shadow: 0 0px 0 0 var(--brd-brdrClr) !important;
+		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.65) !important;
+}
+#app .board.root .boardCard > .children > .project.open > .name,
+#app .board.root .boardCard > .children > .project.open > .notes{
+				box-shadow: 0 0px 0 0 hsl(200, 6%, 30%,.65) !important;
+		transition-delay: .1s !important;
+		transition: .115s !important;
+		
 }
 #app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
 		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.65);
