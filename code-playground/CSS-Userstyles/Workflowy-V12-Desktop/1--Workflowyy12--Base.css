@@ -2685,6 +2685,10 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 		
 }
 
+.project:hover > .name > .nameButtons {
+		z-index: 9494;
+}
+
 
 
 
@@ -4196,23 +4200,24 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 
 #app .board.root .boardCard > .children > .project:not(.quote-block,.comment,.code-block,.references .project,.noted) > .name,
 #app .board.root .boardCard > .children > .project.noted:not(.quote-block,.comment,.code-block,.references .project) > .notes{
-		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.65);
+		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.45);
 		border-bottom: 0px solid hsl(200, 6%, 30%,0) !important;
 }
 
 
 #app .board.root .boardCard > .children > .project:not(.open):last-of-type > .name,
 #app .board.root .boardCard > .children > .project:last-of-type > .notes{
-		box-shadow: 0 0px 0 0 hsl(200, 6%, 30%,.65) !important;
+		box-shadow: 0 0px 0 0 hsl(200, 6%, 30%,.45) !important;
 }
 #app .board.root .boardCard > .children > .project.open > .name,
 #app .board.root .boardCard > .children > .project.open > .notes{
-				box-shadow: 0 0px 0 0 hsl(200, 6%, 30%,.65) !important;
+				box-shadow: 0 0px 0 0 hsl(200, 6%, 30%,.45) !important;
 		
 }
 #app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
-		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.65);
+		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.45);
 }
+
 /*******************************
 ********************************
 ! DASHBOARD
@@ -4221,17 +4226,6 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 .pageContainer .page.dashboard-page {
 		max-width: 100%;
 		box-sizing: border-box;
-}
-html body #app .page.dashboard-page {
-		width: 100% !important;
-		margin-top: 0px !Important;
-		min-width: 100% !important;
-		padding-top: 96px;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		flex-direction: column;
-		background: var(--DASHBOARD-PAGE--BG) !important;
 }
 
 #app .page.dashboard-page > .project.root.dashboard {
@@ -4298,16 +4292,27 @@ html #app .dashboard-card > .children {
 html #app .dashboard-card > .children:not(html #app .dashboard-card.comment > .children) {
 		background: var(--DashCrd-ChldrnBgClr) !important;
 }*/
-
+html #app .root .dashboard-card,
+html #app .root .dashboard-card .project{
+			margin-top: var(--prjct-MargTopBtm) !important;
+	margin-bottom: var(--prjct-MargTopBtm) !important;
+		--prjct-MargTopBtm:0px;
+}
+html #app .root .dashboard-card {
+		--prjct-MargTopBtm:-1px;
+}
+html #app .root.dashboard .project.noted > .notes > .content{
+		padding-bottom: var(--content-PadTopBtm) !important;
+}
 html #app .dashboard-card:not(html #app .dashboard-card:first-of-type) {
 		margin-top: var(--dashCrd-MargTop);
 		margin-bottom: var(--dashCrd-MargBot);
 }
 
-html #app .dashboard-card:not(html #app .dashboard-card.comment) {
-		background: var(--DASHBOARD-CARD--BG);
+html #app .dashboard-card > [class*="mobile"],
+html #app .dashboard-card > .children > [class*="mobile"] {
+		display: none;
 }
-
 html #app .dashboard-card.open {
 		/*    margin-bottom: 20px !important;
 		margin-top: 5px !important;
@@ -4342,12 +4347,6 @@ html #app .dashboard-card.open {
 
 
 
-/*font-sizes*/
-.dashboard .project.header1 > .name > .content {
-		--header1-fontSize: 24px;
-		--header1-lineHeight: 28px;
-		--InnerContentPadTop: 0px;
-}
 
 .dashboard .project.header2 > .name > .content {
 		--header2-fontSize: 19px;
@@ -4455,45 +4454,7 @@ universals*/
 		background-repeat: no-repeat;
 		transform: scale(1)rotate(90deg);
 }
-/*comment universal*/
-#app .dashboard .comment-container > .name {
-		padding-top: 0px;
-		padding-bottom: 0px;
-}
-#app .dashboard .project.comment {
-		width: 100%
-}
 
-.dashboard .project.comment > .children .project {
-		margin-top: 0px;
-}
-.dashboard .project.comment > .children .project > .name {
-		--btn-MargTop: 2.5px;
-}
-
-.dashboard .project.comment > .children .project.header1 > .name {
-		--btn-MargTop: 1.5px;
-}
-
-.dashboard .project.comment > .children .project.header2 > .name {
-		--btn-MargTop: 2.5px;
-}
-
-.dashboard .project.comment-container .project.comment > .name,
-.dashboard .project.comment > .name *:not(.references .project.comment > .name *) {
-		--btn-MargTop: 22px !important;
-}
-
-#app .dashboard .project.comment-container > .name * {
-		--btn-MargTop: 5px !important;
-}
-.dashboard-card .comment {
-		border-top-left-radius: var(--prjct-BrdRad) !important;
-		border-bottom-left-radius: var(--prjct-BrdRad) !important;
-		border-top-right-radius: 0px;
-		border-bottom-right-radius: 0px;
-		border-right: 0px;
-}
 .dashboard-card .nameHoverButtons,
 .board .nameHoverButtons,
 .project.comment .nameHoverButtons {
@@ -4541,13 +4502,11 @@ LEVEL 1 Dashboard Card*/
 		border-top: 1px solid var(--DashCrd--BrdClr);
 }
 
-#app .dashboard-card > .children {
-		padding-left: calc(var(--children-Indent) * 0)
-}
+
 /*name padding*/
-.dashboard .dashboard-card > .name,
-.dashboard .dashboard-card > .commentAttribution,
-.dashboard .dashboard-card > .notes {
+#app .dashboard .dashboard-card > .name,
+#app .dashboard .dashboard-card > .commentAttribution,
+#app .dashboard .dashboard-card > .notes {
 		--btn-MargTop: 4px;
 		padding-left: calc(var(--children-Indent) * 1) !important;
 }
@@ -4562,27 +4521,6 @@ LEVEL 1 Dashboard Card*/
 		padding-bottom: var(--content-PadTopBtm);
 }
 
-/*font-sizes*/
-#app .dashboard-card > .name > .content,
-#app .dashboard-card > .name > .contentEditablePlaceholderWrapper {
-		font-size: var(--name-fontSize);
-		line-height: var(--name-lineHeight);
-		font-weight: 400 !important;
-		padding-right: calc(var(--children-Indent) * 2)
-}
-#app .dashboard-card > .notes > .content {
-		padding-right: calc(var(--children-Indent) * 2)
-}
-#app .dashboard-card.header1 > .name > .content {
-		font-size: var(--header1-fontSize);
-		line-height: var(--header1-lineHeight);
-		font-weight: 600 !important
-}
-#app .dashboard-card.header2 > .name > .content {
-		font-size: var(--header2-fontSize);
-		line-height: var(--header2-lineHeight);
-		font-weight: 600 !important
-}
 
 /*bullets*/
 #app .dashboard .dashboard-card > .name > .bullet,
@@ -4757,28 +4695,7 @@ EXPAND COLLAPSE BORDER ANIMATION*/
 #app .dashboard-card.comment-container > .children > .project:first-of-type {
 		margin-top: calc(var(--prjct-CmntPadTopBtm) * 1.25) !important;
 }
-#app .dashboard-card.comment-container > .name > .content + div + span,
-#app .dashboard-card.comment-container > .name > span {
-		align-items: flex-start;
-		display: flex !important;
-		justify-content: center;
-		align-items: center;
-		line-height: 1 !important;
-		height: unset;
-		max-height: unset !important;
-		position: relative;
-		padding: 10px 12px !important;
-		padding-right: 50px !important;
-		box-shadow: inset 0 0 0 1px hsl(0, 0%, 50%, .0);
-		padding: 0px;
-		border-radius: 4px;
-		font-weight: 500;
-		font-size: .95rem;
-		color: var(--NODE--TXT-CLR--main) !important;
-		opacity: .76;
-		text-decoration: none;
-		transition: .2s;
-}
+
 #app .dashboard-card.comment-container > .name > .content + div + span:hover {
 		background: var(--COMMENT-CONTAINER--BG);
 		box-shadow: inset 0 0 0 1px hsl(0, 0%, 50%, .2);
@@ -4816,11 +4733,6 @@ html #app .dashboard-card.open > .children:not(html #app .dashboard-card.comment
 		transition: .1s !important;
 }
 
-html #app .dashboard .contentEditablePlaceholder {
-		font-size: var(--name-fontSize) !important;
-		line-height: var(--name-lineHeight);
-		padding-top: calc(var(--content-PadTopBtm) + 3px)!important;
-}
 html #app .dashboard .contentEditablePlaceholderWrapper {
 		top: var(--content-PadTopBtm) !important
 }
@@ -4914,317 +4826,138 @@ html #app .dashboard .contentEditablePlaceholderWrapper {
 }
 
 
-/********************
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************
-NEW DASH
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************/
-:root {
-		--dashGap:4px;
-		--dashTitlePadTopBtm:10px;
+/*font-sizes*/
+.dashboard .project.header1 > .name > .content {
+		--header1-fontSize: 24px;
+		--header1-lineHeight: 28px;
+		--InnerContentPadTop: 0px;
 }
 
-#app .dashboard-card{
-		margin-top: var(--dashGap) !important;
-		margin-bottom: var(--dashGap) !important;
-}
-#app .dashboard-card.collapsed {
-}
-#app .dashboard-card  .name > .prefix{
-		--btn-MargTop:4px !important;
-}
-#app .project.root.dashboard > .children{
-		gap: var(--dashGap);
-}
-.dashboard-card .children, .dashboard-card .children .project:not(.dashboard-card .children > .project:first-of-type, .comment-container > .children, .dashboard-card .comment) {
-		border-top-color: hsla(0,0%,50%,0) !important;
-}
-
-
-#app .dashboard-card.project.checkmark > .name > .prefix,
-#app .dashboard-card.project.checkmark > .children .prefix{
-
-}
-#app .dashboard-card.project.checkmark > .name > .prefix{
-		--btn-MargTop:13px !important;
-
-}
-#app .dashboard-card .children > .project > .name > .expand{
-		
-}
-#app .dashboard-card.project.checkmark.collapsed > .name > .prefix:after,
-#app .dashboard-card .children > .project.checkmark > .name > .expand{
-		opacity: 0 !important;
-}
-#app .dashboard-card.noted{
-		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.25)!important;
-}
-#app .dashboard-card.open{
-		border-bottom-width: 0px !important;
-		padding-bottom: calc(var(--dashTitlePadTopBtm) * 2)!important;
-}
-
+/*font-sizes*/
 #app .dashboard-card > .name > .content,
-#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
-		--name-fontSize: 1.3rem;
-	--name-lineHeight: 25px;
-		font-weight: 700 !important;
-		padding-top: calc(var(--dashTitlePadTopBtm) * 1.5);
-		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.5);
-		padding-right: calc(var(--children-Indent) * .25) !important;
-		
-}
-#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
-		position: absolute;
-		top: 0 !important;
-		bottom: 0 !important;
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper {
+		font-size: 1em !important;
+		line-height: var(--name-lineHeight);
 		font-weight: 400 !important;
-		opacity: 0.2
+		padding-right: calc(var(--children-Indent) * 2)
 }
-#app .dashboard-card > .name > .contentEditablePlaceholderWrapper *{
-		padding: unset !important;
+#app .dashboard-card > .notes > .content {
+		padding-right: calc(var(--children-Indent) * 2)
 }
-#app .dashboard-card.open > .name > .content{
-		padding-top: calc(var(--dashTitlePadTopBtm) * 1.5);
-		padding-bottom: calc(var(--dashTitlePadTopBtm) * 0.5);
+#app .dashboard-card.header1 > .name > .content {
+		font-size: var(--header1-fontSize);
+		line-height: var(--header1-lineHeight);
+		font-weight: 600 !important
 }
-#app .dashboard-card.noted > .name > .content{
-padding-bottom: 0px;
+#app .dashboard-card.header2 > .name > .content {
+		font-size: var(--header2-fontSize);
+		line-height: var(--header2-lineHeight);
+		font-weight: 600 !important
 }
-#app .dashboard-card > .notes{
-		margin-bottom:0px;
-}
-#app .dashboard-card > .notes > .content{
-		margin-bottom: 0px;
-		padding-bottom: calc(var(--dashTitlePadTopBtm) * 0)!important;
-}
-#app .dashboard .dashboard-card > .name > .expand{
-		left: unset;
-		right: 0;
+/*COMMENTS*/
+
+#app .dashboard-card.comment-container > .name > .content + div + span,
+#app .dashboard-card.comment-container > .name > span {
+		align-items: flex-start;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		line-height: 1 !important;
+		height: unset;
+		max-height: unset !important;
+		position: relative;
+		padding: 10px 12px !important;
+		padding-right: 50px !important;
+		box-shadow: inset 0 0 0 1px hsl(0, 0%, 50%, .0);
+		padding: 0px;
+		border-radius: 4px;
+		font-weight: 500;
+		font-size: .95rem;
+		color: var(--NODE--TXT-CLR--main) !important;
+		opacity: .76;
+		text-decoration: none;
+		transition: .2s;
 }
 
-.dashboard-card .children > .project > .name, 
-.dashboard-card .children > .project > .commentAttribution, 
-.dashboard-card .children > .project > .notes{
-		--btn-MargTop:1px !important;
-
-}
-.dashboard-card > .children{
-		padding-top: 10px !important;
-}
-.dashboard-card > .children > .project:first-child  > .name > .content{
-
-}
-.dashboard-card 
-.children > .project  > .name > .prefix{
-		top: 1px !important;
+html #app .dashboard .contentEditablePlaceholder {
+		font-size: var(--name-fontSize) !important;
+		line-height: var(--name-lineHeight);
+		padding-top: calc(var(--content-PadTopBtm) + 3px)!important;
 }
 
-#app .dashboard .project .prefix > .inline-flex > .item-checkbox:before{
-		content: var(--ICON--CHECKMARK-DASHBOARD) !important;
-		background-image: var(--ICON--CHECKMARK-DASHBOARD) !important;
-} 
-.dashboard-card > .children .project > .name .item-checkbox:not(.dashboard .project.done > .name .item-checkbox){
-		--CHECKBOX--BOX-CLR--ChildDone:hsla(0,0%,50%,0.5);
+.dashboard .project .nameButtons {
+		display: flex !important;
 }
-.dashboard-card .children > .project > .name > .content, 
-.dashboard-card .children > .project > .notes > .content{
-		--content-PadTopBtm:3px;
-
+.dashboard .project.comment .project .name > .nameButtons {
+		opacity: 0;
 }
-.dashboard-card.project > .notes,
-.dashboard-card.project > .notes > .content,
-.dashboard-card .children > .project > .notes,
-.dashboard-card .children > .project > .notes .content{
-		margin-bottom: 0px !important;
-		--notes-fontSize: 0.95rem;
-		--notes-lineHeight: 18px;
+.dashboard .project.comment .project:hover .name > .nameButtons {
+		opacity: .4;
+}
+.dashboard .project.comment .project:hover .name > .nameButtons:hover{
+		opacity: 1;
 }
 
+.dashboard-card.comment-container.root {
+		border-width: 0px !important;
+}
+.dashboard .project.floating-conversations:before{
+		outline-offset: 0px !important;
+}
 
-#app .dashboard-card.open > .children:before,
-html #app .root .dashboard-card:after{
+.dashboard-card.comment-container{
+		background: transparent !important;
+}
+.dashboard-card.comment-container > .name > .contentEditablePlaceholderWrapper{
+		display: none;
+}
+.dashboard-card.comment-container > .children:before {
 		opacity: 0;
 }
 
-html #app .root .dashboard-card {
-		background: hsl(300, 0%, 13%) !important;
-		border: 1px solid hsl(201, 3%, 51%,.2) !important;
-		border-radius: 8px !important;
-		overflow: hidden !important;
+
+#app .dashboard.root .project.dashboard-card.comment.thread > .name,
+#app .dashboard.root .project.dashboard-card.comment.thread > .notes{
+		padding-left: calc(var(--children-Indent) * 1) !important;
 }
-#app .dashboard .dashboard-card > .name > .expand{
-		right:5px;
-		top: 9px;
-		transform-origin: top right;
-}
-#app .dashboard .dashboard-card > .name > .menu{
-		left:5px;
-		top: 11px;
-		transform-origin: top right;
-}
-#app .dashboard-card.done{
-				--CHECKBOX--BG--DONE:hsla(0,0%,49%,.8);
-		background: hsl(200, 12%, 13%);
-		box-shadow: 0 0 0 1px transparent !important;
+#app .dashboard-card > .name > .content,
+#app .root .dashboard-card.comment.thread > .name > .content{
+			--children-Indent: 20px!important;
+		margin-left: var(--children-Indent) !important;
 }
 
-#app .dashboard-card .item-checkbox:not(.done .item-checkbox){
-		background: var(--DASHBOARD-CARD--BG);
-;
-		box-shadow: 0 0 0 1px var(--CHECKBOX--BOX-CLR);
-		--CHECKBOX--BOX-CLR:hsla(0,0%,50%,0.8)
-		
-}
-#app .dashboard-card.done > .name .item-checkbox:not(.done .item-checkbox),
-#app .dashboard-card.done .checkmark .item-checkbox{
-		
-}
-#app .dashboard-card .name > .prefix:after{
-		opacity: .5;
-}
-#app .dashboard-card > .name > .prefix > .inline-flex > .item-checkbox:before{
-}
-html #app .root .dashboard-card.done {
-		transition-delay: var(--dashDoneDelay) !important;
-		background: transparent !important;
-		border-color: transparent !important;
+#app .project.comment.thread.dashboard-card:not(.board .project) > .name > .expand {
+		left: calc(var(--children-Indent)* 1) !important
 }
 
-#app .dashboard .dashboard-card > .name > .bullet{
-		right: unset;
-		left: calc(var(--children-Indent) * 1) !important;
-		top: 15px;
-}
-#app .dashboard .dashboard-card > .name > .prefix {
-		left: calc(var(--children-Indent) * .5) !important;
+#loadingScreen ~ #app .dashboard-card.comment.thread.project > .children{
+		margin-left: calc(var(--children-Indent) * 0)
 }
 
-#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
-		
-}
-.dashboard-button-top {
-		background: transparent;
-		cursor: pointer
-}
-.dashboard-button-top:hover{
-		background: hsl(200, 0%, 13%) !important;
-}
-#app .root .dashboard-card.done {
-		order: 99 !important;
-		transition-delay: var(--dashDoneDelay) !important;
-}
-:root {
-		--dashDoneDelay:1s;
-}
-#app .dashboard .dashboard-card > .children .project.checkmark > .name .expand {
-		width:24px;
-}
-#app .dashboard .project.done .project.checkmark > .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
-		box-shadow: 0 0 0 1.25px var(--CHECKBOX--BOX-CLR--ChildDone) !important;
-		background: var(--DASHBOARD-PAGE--BG) !important;
-}
-#app .dashboard .dashboard-card .project.checkmark.done .children .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
-background: var(--DASHBOARD-CARD--BG) !important;
-}
-#app .dashboard .dashboard-card.done .project.checkmark.done .children .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
-background: var(--DASHBOARD-PAGE--BG) !important;
-}
-html #app .root .dashboard-card {
-		background:var(--DASHBOARD-CARD--BG) !important;
+#app .dashboard.root > .children .project.comment.thread .expand,
+#app .dashboard.root > .children .project.comment.thread .bullet,
+#app .dashboard.root > .children .project.comment.thread .menu,
+#app .dashboard.root > .children .project.comment.thread .prefix{
+		--btn-MargTop:6px !important;
+		top: var(--btn-MargTop) !important;
+
+
 }
 
-html body #app .page.dashboard-page > .dashboard:after {
-		content:"";
-		display: block;
-		position: relative;
-		bottom: 0;
-		background: var(--DASHBOARD-PAGE--BG);
-		left: 0;
-		right: 0;
-		height: 500px;
-		z-index: 0
+#app .dashboard.root > .children .project.comment.thread > .name .expand{
+		--btn-MargTop:3px !important;
+		top: var(--btn-MargTop) !important;
+
 }
-html #app .root .dashboard-card{
-		overflow: unset !important;
-		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.5) !important;
+#app .dashboard.root > .children .project.comment.thread > .name > .content{
+		margin-left: var(--children-Indent) !important;
 }
-#app .dashboard .dashboard-card > .name,
-#app .dashboard .dashboard-card > .notes{
-		width: calc(100% - var(--children-Indent) * 0) !important;
-		padding-right: calc(var(--children-Indent) * 2) !important;
-		position: relative;
-		padding-left: 0px !important;
-}
-#app .dashboard .dashboard-card > .name > .content,
-#app .dashboard .dashboard-card > .notes > .content{
-		max-width: unset !important;
-		margin-left: calc(var(--children-Indent)* 1.5) !important;
-		padding-bottom: 0px !important;
+#app .dashboard.root > .children .dashboard-card.project.comment.thread > .children {
+		padding-left: calc(var(--children-Indent) * 2)!important;
 }
 
-#app .dashboard-card.project.checkmark > .name > .prefix,
-#app .dashboard-card.project > .name > .bullet{
-	left: calc(var(--children-Indent)* .4) !important;
-}
-#app .dashboard .dashboard-card > .name > .expand,
-#app .dashboard .dashboard-card > .name > .menu {
-		top: 8px !important;
-		--btn-Height:40px;
-}
-#app .dashboard .dashboard-card > .name > .expand > div {
-		transform: scale(1.2);
-		width: 100% !important;
-}
-#app .dashboard .dashboard-card > .name > .expand{
-		right: calc(var(--children-Indent) * 0 + 6px) !important;
-		width: calc(var(--children-Indent) * 1.6 - 6px) !important;
-		overflow: hidden;
-}
-#app .dashboard .dashboard-card > .name > .menu{
-		left: unset !important;
-		right: calc(var(--children-Indent) * -1) !important;
-		width: calc(var(--children-Indent) * 1) !important;
-}
-#app .dashboard-card > .children{
-		padding-left: calc(var(--children-Indent)* 1.5) !important;
-		padding-top: 0px !important;
-		margin-top: 12px !important;
-}
-/********************
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************
-NEW DASH - COLORS
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************
-*********************/
-/*THEME EDIT*/
-html body #app .page.dashboard-page{
-		--DASHBOARD-PAGE--BG:hsl(0, 0%, 7%) !important;
-		--NODE-NOTES--TXT-CLR-ALL:hsl(195, 0%, 45%);
-		--CHECKBOX--BG--DONE:hsl(195, 0%, 40%);
+#app .dashboard.root > .children .dashboard-card > .children > .project.comment.thread > .children {
+		padding-left: calc(var(--children-Indent) * 1)!important;
 }
 
 /*******************************
@@ -5336,14 +5069,23 @@ html body.floating-comments.windowBlurred #app .floating-comments-container{
 /*INACTIVE*/
 html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
 	--floatCommentW:400px;
-	--floatCommentPosRight: calc(var(--floatCommentW) * -0.4);
+	--floatCommentPosRight: calc(var(--floatCommentW) * 0);
 	}
 
+@media (max-width: 1200px) {
+		html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
+					--floatCommentW:calc(530px - 20vw);
+				--floatCommentMaxW:calc(530px - 20vw) !important;
+				max-width: var(--floatCommentMaxW) !important;
+	--floatCommentPosRight: calc(var(--floatCommentW) * -0.045);
+		}
+}
 
 /**/
-@media (max-width:700px) {
+@media (max-width:800px) {
 	html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
 			--floatCommentPosRight: calc(var(--floatCommentW) * -0.7);
+			right: var(--floatCommentPosRight) !important;
 
 	}
 	:root {
@@ -5462,7 +5204,7 @@ row-gap: 20px !important;
 #app .project.comment.thread:not(.board .project) > .children .name,
 #app .project.comment.thread:not(.board .project) > .notes,
 #app .project.comment.thread:not(.board .project) > .children .notes,
-#app .project.comment.thread:not(.board .project.comment) > .name{
+#app .project.comment.thread:not(.board .project.comment,.dashboard-card) > .name{
 		padding: 0px !important;
 }
 #app .project.comment.thread > .children .project.code-block > .name{
@@ -5476,7 +5218,7 @@ row-gap: 20px !important;
 
 }
 #app .project.comment.thread:not(.board .project) > .name > .expand,
-#app .project.comment.thread:not(.board .project) .name > .expand{
+#app .project.comment.thread:not(.board .project, .dashboard .project) .name > .expand{
 		left: calc(var(--children-Indent)* 0) !important;
 		margin-top: 3px !important;
 		top: unset;
@@ -5564,6 +5306,10 @@ row-gap: 20px !important;
 	outline-offset: 4px;
 	opacity: .5;
 	transition: .2s;
+}
+
+.floating-comments-blurred .project.floating-conversations:before {
+		opacity: 0.2 !important;
 }
 
 .comment.thread .inline-reply,
@@ -7601,7 +7347,7 @@ body * {
 .project > .name > .content {
 		-webkit-font-smoothing: antialiased;
 }
-.dashboard-card .children > .project > .name,
+.dashboard-card:not(.comment) .children > .project > .name,
 .dashboard-card .children > .project > .commentAttribution,
 .dashboard-card .children > .project > .notes {
 		--btn-MargTop: 4px;
