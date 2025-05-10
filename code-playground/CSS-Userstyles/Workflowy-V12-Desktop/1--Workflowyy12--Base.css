@@ -76,6 +76,8 @@ BOX SHADOW TESTING - BOARDS
 }
 .project,
 .project > .name,
+.project > .name > .bullet,
+.project > .name > .prefix,
 .project > .name > .content,
 .project > .notes,
 .project > .notes > .content{
@@ -92,7 +94,6 @@ BOX SHADOW TESTING - BOARDS
 	outline-offset: .5px;
 	border-radius: 0px !important;
 }*/
-
 /****
 ! OVERRIDES
 ****/
@@ -288,7 +289,6 @@ BOX SHADOW TESTING - BOARDS
 				font-size: var(--root-font-size);
 	line-height: var(--root-line-height);
 }
-
 /*******************************
 ********************************
 ! NORMAL STATE
@@ -1000,6 +1000,49 @@ NAME-WITH-IMAGE
 		box-shadow: 0 0 0 0px var(--BG-primary),
 		0 0 0 3px var(--IMAGE--SELECTED--BOX-SHADOW-CLR);
 }
+
+.name--with-image > .file-preview .image-viewer .resizer{
+		display: flex !important;
+		opacity: 0;
+		transition: .15s;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 13px;
+		z-index: 9999
+		
+}
+
+
+.name--with-image >  .file-preview:hover .image-viewer .resizer,
+.name--with-image >  .file-preview .image-viewer .resizer:hover,
+.name--with-image.name--focused >  .file-preview .image-viewer .resizer{
+		opacity: 1 !important;
+}
+.name--with-image > .file-preview .image-viewer .resizer > div{
+		min-height: 10px;
+		height: 50%;
+		max-height: 300px;
+		width: 6px;
+}
+
+.name--with-image > .file-preview > div{
+		
+}
+.name--with-image >  .file-preview .image-viewer {
+		padding: 0px !important;
+		height: unset;
+		width: unset;
+}
+.name--with-image >  .file-preview .image-viewer img {
+		display: block !important;
+		width: calc(100% + 1px) !important;
+		margin-top: -1px
+
+}
 /****
 NOTED > CONTENT only*/
 .project.noted > .name > .content {
@@ -1638,10 +1681,14 @@ HIGHLIGHT - CODE
 		letter-spacing: -.1px;
 
 }
-#app .project:not([class*="header"]) > .name > .content code,
-#app .project:not([class*="header"]) > .name > .content code * {
+#app .project:not([class*="header"],.comment, .comment *) > .name > .content code,
+#app .project:not([class*="header"],.comment, .comment *) > .name > .content code * {
 		font-size: calc(var(--name-fontSize) - 2.5px);
 		font-family: var(--wf-font-family-mono) !important;
+}
+#app .project.comment .content code{
+		font-family: var(--wf-font-family-mono) !important;
+
 }
 :root {
 		--inlineCodeBrdRad:4px;
@@ -2068,14 +2115,25 @@ html #app .project > .notes > .content {
 		-webkit-line-clamp: 100;
 		display: -webkit-box;
 }
-html #app .project > .notes > .content code {
-		color: hsla(0, 0%, 70%);
-		font-size: calc(1em - 2px);
-		letter-spacing: -.5px;
-	line-height: 0px !important;
 
-	
+html #app .project > .notes > .content code {
+	font-size: calc(1em - 2px);
+	line-height: 0px !important;
+	font-family: var(--wf-font-family-mono) !important;
+	padding-top: .5px !important;
+	padding-right: 2px;
+	border-radius: 3px;
+	padding-left: 2px;
+	padding-bottom: .5px !important;
+		--wf-border-default:hsla(0,0%,50%,0.4);
 }
+html #app .project > .notes > .content code,
+html #app .project > .notes > .content code * {
+	font-family: var(--wf-font-family-mono) !important;
+
+}
+
+
 
 html #app .project.root > .notes > .content > .innerContentContainer b {
 		color: var(--NODE-NOTESROOT--TXT-CLR-ALL-BOLD);
@@ -2448,7 +2506,6 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
 		opacity: 1;
 }
-
 /***********
 ! NORMAL STATE OVERRIDES
 ************/
@@ -2689,6 +2746,60 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 		z-index: 9494;
 }
 
+.contentTag[data-val*="v1"],
+.contentTag[data-val*="v2"],
+.contentTag[data-val*="v3"],
+.contentTag[data-val*="v4"],
+.contentTag[data-val*="v5"],
+.contentTag[data-val*="v6"],
+.contentTag[data-val*="v7"],
+.contentTag[data-val*="v8"]{
+		font-weight: 500;
+		color: var(--BG-primary) !important;
+}
+.contentTag[data-val*="v1"] .contentTagText,
+.contentTag[data-val*="v2"] .contentTagText,
+.contentTag[data-val*="v3"] .contentTagText,
+.contentTag[data-val*="v4"] .contentTagText,
+.contentTag[data-val*="v5"] .contentTagText,
+.contentTag[data-val*="v6"] .contentTagText,
+.contentTag[data-val*="v7"] .contentTagText,
+.contentTag[data-val*="v8"] .contentTagText{
+		-webkit-font-smoothing:subpixel-antialiased !important;
+}
+
+.board.root .contentTag[data-val*="v1"],
+.board.root .contentTag[data-val*="v2"],
+.board.root .contentTag[data-val*="v3"],
+.board.root .contentTag[data-val*="v4"],
+.board.root .contentTag[data-val*="v5"],
+.board.root .contentTag[data-val*="v6"],
+.board.root .contentTag[data-val*="v7"],
+.board.root .contentTag[data-val*="v8"]{
+color: var(--BOARD-ROOT--CARD--BG) !important;
+}
+
+
+
+.contentTag[data-val*="v"] {
+		filter: saturate(1) contrast(1.0) brightness(1.25);
+		display: inline-block;
+		line-height: 1.2em;
+		border-radius: 3.5px !important;
+}
+.contentTag[data-val*="v"]:hover{
+		filter: contrast(1.2) brightness(1.3);
+}
+.notes .contentTag[data-val*="v"] {
+		filter: saturate(0.0) contrast(1.0) brightness(1.0);
+		display: inline;
+		color: var(--wf-link-primary) !important;
+		font-weight: 400;
+}
+.notes .contentTag[data-val*="v"],
+.notes .contentTag[data-val*="v"] *{
+				-webkit-text-fill-color: var(--wf-link-primary) !important;
+}
 
 
 
@@ -2758,7 +2869,6 @@ MIN HEIGHTS > BOARDS > BOARD COLUMNS
 }
 **********
 **********/
-
 /*******************************
 ********************************
 ! BOARDS
@@ -2822,7 +2932,7 @@ LEVEL 1 > Project
 		margin-top: 0px !important;
 }
 .boardColumn:not(.root.board .boardColumn){
-		flex: 0 0 370px !important;
+		flex: 0 0 400px !important;
 		max-width: 400px;
 }
 
@@ -3760,6 +3870,9 @@ BOARD COMMENTS
 		left: unset 
 }
 
+#app .boardCard:not(.board.root .boardCard) > .children .project {
+		--brd-brdrClr:hsla(0,0%,50%,.15)
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -3783,41 +3896,35 @@ BOARD COMMENTS
 		border-top: 1px solid var(--brd-brdrClr) !important;
 }
 
-.board .boardColumn.checkmark > .name .item-checkbox{
-position: relative;
+.board .boardColumn.checkmark > .name .item-checkbox {
+		position: relative;
 }
-.board.root .boardColumn.checkmark > .name .item-checkbox:before{
+.board.root .boardColumn.checkmark > .name .item-checkbox:before {
 		margin-top: -17px !important;
 }
 
-#app .board .project.code-block:not(.boarCard), 
-#app .board .project.quote-block:not(.boarCard){
+#app .board .project.code-block:not(.boarCard),
+#app .board .project.quote-block:not(.boarCard) {
 		margin-top: unset !important;
-		
 }
 
 
 /******
 BOARD COLUMN SIZES
 *******/
-
-#app .board > .boardColumn > .name {
-	
-}
+#app .board > .boardColumn > .name {}
 
 /******
 BOARD ROOT SIZES
 *******/
-
-
 #app .board.root,
-#app .board.root > .children{
-		--name-fontSize: 14.5px;
-	--name-lineHeight: 19.5px;
-	--notes-fontSize: 13.25px;
-	--notes-lineHeight: 16.25px;
-	--boardRoot-CardBrdRad:8px;
-	--boardRoot-ColumnGap:10px;
+#app .board.root > .children {
+		--name-fontSize: 16px;
+		--name-lineHeight: 21px;
+		--notes-fontSize: 13.25px;
+		--notes-lineHeight: 16.25px;
+		--boardRoot-CardBrdRad: 8px;
+		--boardRoot-ColumnGap: 10px;
 }
 
 
@@ -3825,8 +3932,6 @@ BOARD ROOT SIZES
 /*****
 BOARD ROOT DESIGN ADJUST
 ******/
-
-
 /*BOARD ROOT - COLUMNS*/
 #app .project.board.root .boardColumn > .name,
 #app .project.board.root .boardColumn > .notes {
@@ -3834,190 +3939,196 @@ BOARD ROOT DESIGN ADJUST
 }
 
 /*BOARD ROOT - COLUMNS - NOTES*/
-#app .project.board.root .boardColumn > .notes{
-	padding-top: 0px !important;
+#app .project.board.root .boardColumn > .notes {
+		padding-top: 0px !important;
 }
 
 /*BOARD ROOT - COLUMNS - BULLETS*/
-#app .project.board.root .boardColumn > .name > .bullet, 
-#app .project.board.root .boardColumn > .name > .prefix, 
-#app .project.board.root .boardColumn > .name > .expand, 
-#app .project.board.root .boardColumn > .name > .menu{
-	--btn-MargTop: 5px !important;
+#app .project.board.root .boardColumn > .name > .bullet,
+#app .project.board.root .boardColumn > .name > .prefix,
+#app .project.board.root .boardColumn > .name > .expand,
+#app .project.board.root .boardColumn > .name > .menu {
+		--btn-MargTop: 5px !important;
 }
 
 /*****
 BOARD COLUMNS - MIRRORED CHECKBOX
 ******/
 #app .board .project.boardColumn > .name > .bullet.diamond ~ .prefix > .inline-flex {
-	line-height: 9px !important;
-	margin-left: unset !important;
+		line-height: 9px !important;
+		margin-left: unset !important;
 }
 /*BOARDS COLUMNS - MIRRORED CHECKBOX - OPEN*/
-#app .page .board .project.boardColumn > .name > .bullet.diamond ~ .prefix .item-checkbox{
-	transform: rotate(-45deg)scale(var(--btnIcn-Scale))translateY(0px)translateX(0px)!important;
-	margin: unset !important;
+#app .page .board .project.boardColumn > .name > .bullet.diamond ~ .prefix .item-checkbox {
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale))translateY(0px)translateX(0px)!important;
+		margin: unset !important;
 }
-#app .page .board .project.boardColumn > .name > .bullet.diamond ~ .prefix .item-checkbox:before{
-	margin-top: 0px !important;
-	margin-bottom: 0px !important;
-	left: unset !important;
-	right: unset !important;
-	transform: rotate(45deg)scale(var(--btnIcn-Scale))translateY(.5px)translateX(.5px)!important;
-	transform-origin: center !important;
-	
-
+#app .page .board .project.boardColumn > .name > .bullet.diamond ~ .prefix .item-checkbox:before {
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+		left: unset !important;
+		right: unset !important;
+		transform: rotate(45deg)scale(var(--btnIcn-Scale))translateY(.5px)translateX(.5px)!important;
+		transform-origin: center !important;
 }
 /*BOARD COLUMNS - MIRRORED CHECKBOX - COLLAPSED*/
-#app .page .board .project.boardColumn.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox{
-	transform: rotate(45deg)scale(var(--btnIcn-Scale))translateY(0px)translateX(0px)!important;
+#app .page .board .project.boardColumn.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox {
+		transform: rotate(45deg)scale(var(--btnIcn-Scale))translateY(0px)translateX(0px)!important;
 }
-#app .page .board .project.boardColumn.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox:before{
-	transform: rotate(-45deg)scale(var(--btnIcn-Scale))translateY(.5px)translateX(.5px)!important;
+#app .page .board .project.boardColumn.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox:before {
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale))translateY(.5px)translateX(.5px)!important;
 }
 
 
 /*BOARD ROOT - COLUMNS - CHILDREN*/
-#app .project.board.root .boardColumn > .children{
+#app .project.board.root .boardColumn > .children {
 
-	padding-left: calc(var(--boardRoot-ColumnGap) * 1);
-	padding-right: calc(var(--boardRoot-ColumnGap) * 2);
+		padding-left: calc(var(--boardRoot-ColumnGap) * 1);
+		padding-right: calc(var(--boardRoot-ColumnGap) * 2);
 }
-#app .project.board.root .boardColumn > .children{
-	padding-left: 5px;
+#app .project.board.root .boardColumn > .children {
+		padding-left: 5px;
 }
 
 #app .project.board.root .boardColumn > .children > .boardCard {
-	margin-top: var(--boardRoot-ColumnGap) !important;
+		margin-top: var(--boardRoot-ColumnGap) !important;
 }
 /*BOARD ROOT - BOARD CARDS*/
-#app .project.board.root > .children > .boardColumn > .children > .boardCard{
-	background: var(--BOARD-ROOT--CARD--BG);
-	box-shadow: 0 0 0 1px var(--wf-border-default) !important;
-	outline-offset: -1px;
-	border-radius: var(--boardRoot-CardBrdRad) !important;
-	border-top-color: transparent !important;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	--boardRoot-CardBrdRad:9px;
+#app .project.board.root > .children > .boardColumn > .children > .boardCard {
+		background: var(--BOARD-ROOT--CARD--BG);
+		box-shadow: 0 0 0 1px var(--wf-border-default) !important;
+		outline-offset: -1px;
+		border-radius: var(--boardRoot-CardBrdRad) !important;
+		border-top-color: transparent !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		--boardRoot-CardBrdRad: 9px;
 }
-#app .project.board.root > .children > .boardColumn > .children > .boardCard:not([class*="header"], .quote-block, .code-block){
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:not([class*="header"], .quote-block, .code-block) {
 		padding-bottom: 7px;
 }
 
 #app .project.board .project.code-block > .name > .content,
-#app .project.board .project.quote-block > .name > .content{
-	padding-top: var(--quotePadTopBtm) !important;
-	padding-bottom: var(--quotePadTopBtm)  !important;
-	padding-right: 11px !important;
+#app .project.board .project.quote-block > .name > .content {
+		padding-top: var(--quotePadTopBtm) !important;
+		padding-bottom: var(--quotePadTopBtm) !important;
+		padding-right: 11px !important;
 }
-#app .project.board .project.code-block > .name > .content{
-	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 1.3);
-	border-radius: 9px;
+#app .project.board .project.code-block > .name > .content {
+		--quotePadTopBtm: calc(var(--content-PadTopBtm) * 1.3);
+		border-radius: 9px;
 }
-#app .project.board .project.quote-block > .name{
-	padding-bottom: var(--content-PadTopBtm) !important;
+#app .project.board .project.quote-block > .name {
+		padding-bottom: var(--content-PadTopBtm) !important;
 }
-#app .project.board.root .project.code-block > .name > .content{
-	background:hsl(0, 0%, 19%);
-	outline-color: hsla(0,0%,0%,0.695);
-	
+#app .project.board.root .project.code-block > .name > .content {
+	background: hsl(0, 0%, 30%,0.4);
+	outline-color: hsla(0, 0%, 10%, 0.695);
+	border-radius: 7px !important;
 }
 
 #app .project.board .boardCard > .children .project .content {
-	max-width: 100% !important;
+		max-width: 100% !important;
 }
 #app .project.board .boardCard > .name .content {
 		max-width: calc(100% - 27px) !important;
 }
 
+#app .project.board .boardCard .project.code-block > .name > .content {
+		border-top-right-radius: 0px !important;
+		border-bottom-right-radius: 0px !important;
+}
 
 
 /****/
-.board.root > .children, 
-.board.root .boardColumn > .children, 
-.board.root .boardCard > .children, 
-.board.root .boardCard > .children .project:not(.boardCard > .children > .project:first-of-type){
-	border-top-width: 0px !important
+.board.root > .children,
+.board.root .boardColumn > .children,
+.board.root .boardCard > .children,
+.board.root .boardCard > .children .project:not(.boardCard > .children > .project:first-of-type) {
+		border-top-width: 0px !important
 }
 .board.root .boardColumn > .children {
-	border-top: 1px solid hsla(0,0%,100%,0.1) !important;
+		border-top: 1px solid hsla(0, 0%, 100%, 0.1) !important;
 }
 
-#app .board.root .boardColumn{
-	max-width: 430px !important;
-	flex: 0 0 450px;
-	overflow-x: visible !important;
+#app .board.root .boardColumn {
+		max-width: 475px !important;
+		flex: 0 0 475px;
+		overflow-x: visible !important;
 }
-#app .board.root .boardColumn{
-	border-left-color: transparent !important;
+#app .board.root .boardColumn {
+		border-left-color: transparent !important;
 }
 #app .board.root .project > .name {
-	padding-top: calc(var(--content-PadTopBtm) + 1px);
+		padding-top: calc(var(--content-PadTopBtm) + 1px);
 }
-#app .project.board.root .project:not(.noted) > .name > .content, 
-#app .project.board.root .project.noted > .notes{
+#app .project.board.root .project:not(.noted) > .name > .content,
+#app .project.board.root .project.noted > .notes {
 		padding-bottom: calc(var(--content-PadTopBtm) + -2px);
 }
 #app .board.root .boardCard > .children,
-#app .board.root .project.boardCard.comment > .children{
-	padding-left: calc(var(--children-Indent) * .5) !important;
+#app .board.root .project.boardCard.comment > .children {
+		padding-left: calc(var(--children-Indent) * .5) !important;
 }
 #app .board.root .boardCard {
-	background: var(--BOARD-ROOT--CARD--BG) !important;
-	--BOARD-ROOT--CARD--BORDERCLR:hsla(0, 0%, 100%, .13) !important;
+		background: var(--BOARD-ROOT--CARD--BG) !important;
+		--BOARD-ROOT--CARD--BORDERCLR: hsla(0, 0%, 100%, .13) !important;
 }
 
 #app .board.root .project.paragraph > .name > .bullet:before,
 #app .board.root .project.quote-block > .name > .bullet:before,
-#app .board.root .project.code-block > .name > .bullet:before{
-	opacity: 0;
+#app .board.root .project.code-block > .name > .bullet:before {
+		opacity: 0;
 }
+
+#app .board.root .boardCard.project.quote-block > .name > .bullet.diamond:before,
+#app .board.root .boardCard.code-block > .name > .bullet.bullet.diamond:before {
+		opacity: 1;
+}
+
 
 #app .board.root .project.paragraph.open > .name > .bullet:before,
 #app .board.root .project.paragraph.collapsed > .name > .bullet:before,
 #app .board.root .project.quote-block.open > .name > .bullet:before,
 #app .board.root .project.quote-block.collapsed > .name > .bullet:before,
 #app .board.root .project.code-block.open > .name > .bullet:before,
-#app .board.root .project.code-block.collapsed > .name > .bullet:before{
-	opacity: 1;
+#app .board.root .project.code-block.collapsed > .name > .bullet:before {
+		opacity: 1;
 }
 
 #app .page[style="overflow-y: auto;"] {
-	background: var(--wf-background-secondary) !important;
-	--BG-primary:var(--wf-background-secondary) !important;
+		background: var(--wf-background-secondary) !important;
+		--BG-primary: var(--wf-background-secondary) !important;
 }
-#app .page[style="overflow-y: auto;"] .project.root > .children{
-	padding-top: 0px !important;
+#app .page[style="overflow-y: auto;"] .project.root > .children {
+		padding-top: 0px !important;
 }
-#app .page[style="overflow-y: auto;"] .board .project .name .content{
-	--NODE--TXT-CLR--main:hsl(0, 0%, 84%);
+#app .page[style="overflow-y: auto;"] .board .project .name .content {
+		--NODE--TXT-CLR--main: hsl(0, 0%, 84%);
 }
-#app .page[style="overflow-y: auto;"]{
-	--NODE--TXT-CLR--bold:hsla(0,0%,96%)!important;
-	--NODE-NOTES--TXT-CLR-ALL:hsla(359, 3%, 90%, 0.65);
+#app .page[style="overflow-y: auto;"] {
+		--NODE--TXT-CLR--bold: hsla(0, 0%, 96%)!important;
+		--NODE-NOTES--TXT-CLR-ALL: hsla(359, 3%, 90%, 0.65);
 }
-#app .board.root .boardCard > .children > .project > .name > .expand{
-	left: unset !important;
-	right: calc(var(--children-Indent) * 1);
-	z-index: 3;
+#app .board.root .boardCard > .children > .project > .name > .expand {
+		left: unset !important;
+		right: calc(var(--children-Indent) * 1);
+		z-index: 3;
 }
 
-#app .board.root .boardCard > .children > .project:last-child {
-	
-}
+#app .board.root .boardCard > .children > .project:last-child {}
 #app .board.root .boardCard > .children .innerContentContainer b {
-	font-weight: 600 !important; 
-	-webkit-font-smoothing:subpixel-antialiased !important;
+		font-weight: 600 !important;
+		-webkit-font-smoothing: subpixel-antialiased !important;
 }
-.board.root .project > .name > .expand ._3hmsj:before{
-	content:var(--ICON--ARROW-BLACK);
-	opacity: 0.5
+.board.root .project > .name > .expand ._3hmsj:before {
+		content: var(--ICON--ARROW-BLACK);
+		opacity: 0.5
 }
-#app .board.root .project > .name .nameButtons{
-	right: calc(var(--children-Indent) * -1.4) !important;
-	z-index: 3;
-	filter: saturate(0)
+#app .board.root .project > .name .nameButtons {
+		right: calc(var(--children-Indent) * -1.4) !important;
+		z-index: 3;
+		filter: saturate(0)
 }
 /*
 #app .board.root .project.open > .name .nameButtons,
@@ -4025,28 +4136,28 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	right: calc(var(--children-Indent) * 2) !important;
 }*/
 #app .board.root .nameButtons svg {
-	background: var(--BG-primary);
-	transform: scale(.9);
+		background: var(--BG-primary);
+		transform: scale(.9);
 }
 #app .board.root .nameButtons:not(.nameButtons:hover) svg:not(svg:hover) path {
-	fill: hsla(0,0%,100%,1);
+		fill: hsla(0, 0%, 100%, 1);
 }
 
-#app .board .project.code-block > .name > .content, 
+#app .board .project.code-block > .name > .content,
 #app .board .project.code-block > .name > .content > .innerContentContainer {
-	font-size: calc(var(--name-fontSize) - 1px) !important;
-	line-height: calc(var(--name-lineHeight) - 0px) !important;
+		font-size: calc(var(--name-fontSize) - 1px) !important;
+		line-height: calc(var(--name-lineHeight) - 0px) !important;
 }
 
 #app .board.root .project.hasMirrors > .name > .bullet:before {
-	background: var(--BG-primary) !important;
-	box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
-		inset 0 0 0 8px var(--BG-primary) ;
-	outline: 1.4px solid var(--BG-Bullet-open);
+		background: var(--BG-primary) !important;
+		box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
+		inset 0 0 0 8px var(--BG-primary);
+		outline: 1.4px solid var(--BG-Bullet-open);
 }
 
 #app .board.root .boardCard.noted > .name > .content {
-	padding-bottom: 3px;
+		padding-bottom: 3px;
 }
 /*
 #app .board.root .boardCard:not(.comment) > .name > .content{
@@ -4054,144 +4165,159 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	line-height: calc(var(--name-lineHeight) + 2px);  
 
 }*/
-#app .project.board.root > .children > .boardColumn > .children > .boardCard:first-child{
-	margin-top: 20px!important
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:first-child {
+		margin-top: 20px!important
 }
 
-#app .board.root, 
-#app .board.root > .children{
-	--notes-fontSize:13.35px;
-	--notes-lineHeight:18.25px
-	
+#app .board.root,
+#app .board.root > .children {
+		--notes-fontSize: 13.5px;
+		--notes-lineHeight: 18.25px
 }
-#app .board.root .boardColumn > .notes,
-#app .board.root .boardCard > .notes {
-	--notes-fontSize:14.5px;
-	--notes-lineHeight:19px
+#app .board.root .boardColumn[class*="header"] > .notes,
+#app .board.root .boardCard[class*="header"] > .notes {
+		--notes-fontSize: 15px;
+		--notes-lineHeight: 19.5px
+}
+#app .board.root > .children code {
+		font-size: calc(var(--notes-fontSize) + 1.0px) !important;
 }
 
 #app .board.root .innerContentContainer b {
-	font-weight: 500;
+		font-weight: 500;
 }
 
-#app .page[style="overflow-y: auto;"]{
-	height: 100vh
+#app .page[style="overflow-y: auto;"] {
+		height: 100vh
 }
 
 #app .board.root .project.quote-block:not(.open) + .project.quote-block:not(.boardCard) > .name {
-	padding-top: 0px;
-	margin-top: calc(var(--content-PadTopBtm) * -1 - 1px) ;
+		padding-top: 0px;
+		margin-top: calc(var(--content-PadTopBtm) * -1 - 1px);
 }
-#app .board.root .project.quote-block + .project.quote-block:not(.boardCard) > .name > .bullet{
-		--btn-MargTop:0px  !important;
+#app .board.root .project.quote-block + .project.quote-block:not(.boardCard) > .name > .bullet {
+		--btn-MargTop: 0px !important;
 }
-#app .board.root .project.quote-block.hasMirrors > .name > .bullet:before{
-	opacity: 1 !important;
+#app .board.root .project.quote-block.hasMirrors > .name > .bullet:before {
+		opacity: 1 !important;
 }
 #app .board.root .project.quote-block.hasMirrors > .name > .bullet:before,
-#app .board.root .project.quote-block:not([projectid*="virtual"]) > .name > .bullet.diamond:before{
-	opacity: 1 !important;
-	width: 6px !important;
-	height: 6px;
-	border-radius: 0px !important;
+#app .board.root .project.quote-block:not([projectid*="virtual"]) > .name > .bullet.diamond:before {
+		opacity: 1 !important;
+		width: 6px !important;
+		height: 6px;
+		border-radius: 0px !important;
 }
 #app .board.root .boardColumn .comment {
-	border-top-width: 1px !important;
+		border-top-width: 1px !important;
 }
 #app .board.root .boardCard .comment {
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
 }
 
-#app .board.root .boardCard .project.comment > .children{
-	padding-left: calc(var(--children-Indent) * 2) !important;
+#app .board.root .boardCard .project.comment > .children {
+		padding-left: calc(var(--children-Indent) * 2) !important;
 }
-#app .board.root .boardCard .project.comment > .notes{
-	padding-left: calc(var(--children-Indent) * 0) !important;
-		
+#app .board.root .boardCard .project.comment > .notes {
+		padding-left: calc(var(--children-Indent) * 0) !important;
 }
-#app .board.root .boardCard .project.comment > .name{
-	margin-left: calc(var(--children-Indent) * 0) !important;
+#app .board.root .boardCard .project.comment > .name {
+		margin-left: calc(var(--children-Indent) * 0) !important;
 }
-#app .board.root .boardCard .project.comment.thread > .commentAttribution{
-		padding-left:calc(var(--children-Indent) * .5) !important;
+#app .board.root .boardCard .project.comment.thread > .commentAttribution {
+		padding-left: calc(var(--children-Indent) * .5) !important;
 }
 
 #app .board.root .boardCard .project.comment.thread > .name > .bullet,
 #app .board.root .boardCard .project.comment.thread > .name > .expand,
-#app .board.root .boardCard .project.comment.thread > .name > .menu{
-		--btn-MargTop:4px !important;
+#app .board.root .boardCard .project.comment.thread > .name > .menu {
+		--btn-MargTop: 4px !important;
 }
 
-#app .board.root .boardCard .project.comment > .children  .comment{
- margin-left: calc(var(--children-Indent) * 1) !important;
-max-width:calc(100% - var(--children-Indent) * 1) !important;
-		
+#app .board.root .boardCard .project.comment > .children .comment {
+		margin-left: calc(var(--children-Indent) * 1) !important;
+		max-width: calc(100% - var(--children-Indent) * 1) !important;
 }
 
-#app .project.board.root > .children > .boardColumn > .children > .boardCard.comment{
-		background:hsl(202, 23%, 17.5%,0.5) !Important;
-		background:hsl(202, 12%, 21%) !Important;
-				--COMMENT--BG--even:hsl(197, 18%, 15%);
-		--COMMENT-CONTAINER--BG:hsl(202, 12%, 21%);
-		box-shadow:0 0 0 1px hsla(200, 3%, 37%, .78) !important;
+#app .project.board.root > .children > .boardColumn > .children > .boardCard.comment {
+		background: hsl(202, 23%, 17.5%, 0.5) !Important;
+		background: hsl(202, 12%, 21%) !Important;
+		--COMMENT--BG--even: hsl(197, 18%, 15%);
+		--COMMENT-CONTAINER--BG: hsl(202, 12%, 21%);
+		box-shadow: 0 0 0 1px hsla(200, 3%, 37%, .78) !important;
 }
-#app .project.board.root > .children > .boardColumn .comment > .notes .content{
-	--NODE--TXT-CLR--bold: hsla(0,0%,97%)!important;
-	--NODE-NOTES--TXT-CLR-ALL: hsla(359, 3%, 90%, 0.5);
-		font-size:var(--notes-fontSize) !important;
-		line-height:var(--notes-lineHeight);
-		--notes-fontSize:13.75px;
-		--notes-lineHeight:18.75px;
+#app .project.board.root > .children > .boardColumn .comment > .notes .content {
+		--NODE--TXT-CLR--bold: hsla(0, 0%, 97%)!important;
+		--NODE-NOTES--TXT-CLR-ALL: hsla(359, 3%, 90%, 0.5);
+		font-size: var(--notes-fontSize) !important;
+		line-height: var(--notes-lineHeight);
+		--notes-fontSize: 13.75px;
+		--notes-lineHeight: 18.75px;
 }
 
 #app .project.board.root .boardColumn > .name > .expand {
-		z-index:3;
+		z-index: 3;
 }
 #app .project.board.root .boardColumn > .name [class*="Place"],
-#app .project.board.root .boardColumn > .name > .content{
-		font-weight:400 !important;
-		color:hsla(0,0%,100%,0.55);
-			font-size: calc(var(--name-fontSize) + 2px)!important;
-	line-height: calc(var(--name-lineHeight) + 2px) !important;
+#app .project.board.root .boardColumn > .name > .content {
+		font-weight: 400 !important;
+		color: hsla(0, 0%, 100%, 0.55);
+		font-size: calc(var(--name-fontSize) + 2px)!important;
+		line-height: calc(var(--name-lineHeight) + 2px) !important;
 }
 
-div#app ~ div[style*="color: rgb(60, 64"]{
-		display:none !Important;
-		transition:.25s !important;
-		
+div#app ~ div[style*="color: rgb(60, 64"] {
+		display: none !Important;
+		transition: .25s !important;
 }
-div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
-		opacity:1 !important;
-		display:block !important;
+div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
+		opacity: 1 !important;
+		display: block !important;
 }
 
-.project.board.root .boardColumn .project[class*="header"]:not(.boardCard) > .name{
+.project.board.root .boardColumn .project[class*="header"]:not(.boardCard) > .name {
 		padding-top: calc(var(--content-PadTopBtm) * 2) !important
 }
 
 
 #app .board.root .boardCard .project[class*="header1"] > .name > .bullet,
 #app .board.root .boardCard .project[class*="header1"] > .name > .expand,
-#app .board.root .boardCard .project[class*="header1"] > .name > .menu{
-		--btn-MargTop:7px !important;
+#app .board.root .boardCard .project[class*="header1"] > .name > .menu {
+		--btn-MargTop: 7px !important;
 }
 #app .board.root .boardCard .project[class*="header2"] > .name > .bullet,
 #app .board.root .boardCard .project[class*="header2"] > .name > .expand,
-#app .board.root .boardCard .project[class*="header2"] > .name > .menu{
-		--btn-MargTop:6px !important;
+#app .board.root .boardCard .project[class*="header2"] > .name > .menu {
+		--btn-MargTop: 6px !important;
 }
 #app .board.root .boardCard .project[class*="header3"] > .name > .bullet,
 #app .board.root .boardCard .project[class*="header3"] > .name > .expand,
-#app .board.root .boardCard .project[class*="header3"] > .name > .menu{
-		--btn-MargTop:6px !important;
+#app .board.root .boardCard .project[class*="header3"] > .name > .menu {
+		--btn-MargTop: 6px !important;
 }
 
 /***/
+#app .board.root .boardCard .project > .name > .bullet,
+#app .board.root .project > .name > .prefix,
+#app .board.root .project > .name > .expand,
+#app .board.root .project > .name > .menu {
+		--btn-MargTop:2px !important;
+}
+#app .project.board.root .boardColumn > .name{
+		position: relative;
+}
+#app .project.board.root .boardColumn > .name > .bullet,
+#app .project.board.root .boardColumn > .name > .prefix{
+		right:calc(var(--children-Indent) * 2.25) !important;
+}
 
 
-
-
+#app .board.root .project.code-block > .name > .content, #app .board .project.code-block > .name > .content > .innerContentContainer {
+	font-size: calc(var(--name-fontSize) - 1.5px) !important;
+	line-height: calc(var(--name-lineHeight) - 0px) !important;
+		letter-spacing: -.2px
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT - CHILD BORDERS
@@ -4217,7 +4343,6 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"]{
 #app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
 		box-shadow: 0 1px 0 0 hsl(200, 6%, 30%,.45);
 }
-
 /*******************************
 ********************************
 ! DASHBOARD
@@ -4891,7 +5016,7 @@ html #app .dashboard .contentEditablePlaceholder {
 .dashboard .project.comment .project .name > .nameButtons {
 		opacity: 0;
 }
-.dashboard .project.comment .project:hover .name > .nameButtons {
+.dashboard .project.comment .project:hover > .name > .nameButtons {
 		opacity: .4;
 }
 .dashboard .project.comment .project:hover .name > .nameButtons:hover{
@@ -4959,6 +5084,372 @@ html #app .dashboard .contentEditablePlaceholder {
 #app .dashboard.root > .children .dashboard-card > .children > .project.comment.thread > .children {
 		padding-left: calc(var(--children-Indent) * 1)!important;
 }
+#app .project.dashboard-card:not(.floating-comments-container .dashboard-card) > .children .project.comment:not(.comment .comment) {
+	border: unset !important;
+	border-radius: 0px !important;
+	border-top: 1px solid var(--DashCrd--BrdClr) !important;
+}
+
+#app .dashboard-card .comment + .project {
+	border-top-color: transparent !important;
+}
+
+#app .dashboard .dashboard-card .prefix,
+#app .dashboard.root .dashboard-card.project > .name > .prefix,
+#app .dashboard .dashboard-card.project > .children .project > .name > .prefix {
+		--btn-MargTop: 3px !important;
+}
+#app .dashboard.root .dashboard-card > .name > .prefix {
+	right: calc(var(--children-Indent)* .25) !important;
+	left: unset !important;
+}
+#app .dashboard.root .dashboard-card.checkmark > .name > .expand{
+		--btn-Width:20px
+}
+
+#app .dashboard .project.hasMirrors.checkmark > .name > .bullet.diamond:before {
+		box-shadow: unset;
+		transform: unset !important;
+}
+/********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+DASHBOARD - NEW / TODOS
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************/
+:root {
+		--dashGap:4px;
+		--dashTitlePadTopBtm:10px;
+}
+
+#app .dashboard-card{
+		margin-top: var(--dashGap) !important;
+		margin-bottom: var(--dashGap) !important;
+}
+#app .dashboard-card.collapsed {
+}
+#app .dashboard-card  .name > .prefix{
+		--btn-MargTop:4px !important;
+}
+#app .project.root.dashboard > .children{
+		gap: var(--dashGap);
+}
+.dashboard-card .children, .dashboard-card .children .project:not(.dashboard-card .children > .project:first-of-type, .comment-container > .children, .dashboard-card .comment) {
+		border-top-color: hsla(0,0%,50%,0) !important;
+}
+
+
+#app .dashboard-card.project.checkmark > .name > .prefix,
+#app .dashboard-card.project.checkmark > .children .prefix{
+
+}
+#app .dashboard-card.project.checkmark > .name > .prefix{
+		--btn-MargTop:13px !important;
+
+}
+#app .dashboard-card .children > .project > .name > .expand{
+		
+}
+#app .dashboard-card.project.checkmark.collapsed > .name > .prefix:after,
+#app .dashboard-card .children > .project.checkmark > .name > .expand{
+		opacity: 0 !important;
+}
+#app .dashboard-card.noted{
+		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.25)!important;
+}
+#app .dashboard-card.open{
+		border-bottom-width: 0px !important;
+		padding-bottom: calc(var(--dashTitlePadTopBtm) * 2)!important;
+}
+
+#app .dashboard-card > .name > .content,
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
+		--name-fontSize: 1.3rem;
+	--name-lineHeight: 25px;
+		font-weight: 700 !important;
+		padding-top: calc(var(--dashTitlePadTopBtm) * 1.5);
+		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.5);
+		padding-right: calc(var(--children-Indent) * .25) !important;
+		
+}
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
+		position: absolute;
+		top: 0 !important;
+		bottom: 0 !important;
+		font-weight: 400 !important;
+		opacity: 0.2
+}
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper *{
+		padding: unset !important;
+}
+#app .dashboard-card.open > .name > .content{
+		padding-top: calc(var(--dashTitlePadTopBtm) * 1.5);
+		padding-bottom: calc(var(--dashTitlePadTopBtm) * 0.5);
+}
+#app .dashboard-card.noted > .name > .content{
+padding-bottom: 0px;
+}
+#app .dashboard-card > .notes{
+		margin-bottom:0px;
+}
+#app .dashboard-card > .notes > .content{
+		margin-bottom: 0px;
+		padding-bottom: calc(var(--dashTitlePadTopBtm) * 0)!important;
+}
+#app .dashboard .dashboard-card > .name > .expand{
+		left: unset;
+		right: 0;
+}
+
+.dashboard-card .children > .project > .name, 
+.dashboard-card .children > .project > .commentAttribution, 
+.dashboard-card .children > .project > .notes{
+		--btn-MargTop:1px !important;
+
+}
+.dashboard-card > .children{
+		padding-top: 10px !important;
+}
+.dashboard-card > .children > .project:first-child  > .name > .content{
+
+}
+.dashboard-card 
+.children > .project  > .name > .prefix{
+		top: 1px !important;
+}
+
+#app .dashboard .project .prefix > .inline-flex > .item-checkbox:before{
+		content: var(--ICON--CHECKMARK-DASHBOARD) !important;
+		background-image: var(--ICON--CHECKMARK-DASHBOARD) !important;
+} 
+.dashboard-card > .children .project > .name .item-checkbox:not(.dashboard .project.done > .name .item-checkbox){
+		--CHECKBOX--BOX-CLR--ChildDone:hsla(0,0%,50%,0.5);
+}
+.dashboard-card .children > .project > .name > .content, 
+.dashboard-card .children > .project > .notes > .content{
+		--content-PadTopBtm:3px;
+
+}
+.dashboard-card.project > .notes,
+.dashboard-card.project > .notes > .content,
+.dashboard-card .children > .project > .notes,
+.dashboard-card .children > .project > .notes .content{
+		margin-bottom: 0px !important;
+		--notes-fontSize: 0.95rem;
+		--notes-lineHeight: 18px;
+}
+
+
+#app .dashboard-card.open > .children:before,
+html #app .root .dashboard-card:after{
+		opacity: 0;
+}
+
+html #app .root .dashboard-card {
+		background: hsl(300, 0%, 13%) !important;
+		border: 1px solid hsl(201, 3%, 51%,.2) !important;
+		border-radius: 8px !important;
+		overflow: hidden !important;
+}
+#app .dashboard .dashboard-card > .name > .expand{
+		right:5px;
+		top: 9px;
+		transform-origin: top right;
+}
+#app .dashboard .dashboard-card > .name > .menu{
+		left:5px;
+		top: 11px;
+		transform-origin: top right;
+}
+#app .dashboard-card.done{
+				--CHECKBOX--BG--DONE:hsla(0,0%,49%,.8);
+		background: hsl(200, 12%, 13%);
+		box-shadow: 0 0 0 1px transparent !important;
+}
+
+#app .dashboard-card .item-checkbox:not(.done .item-checkbox){
+		background: var(--DASHBOARD-CARD--BG);
+;
+		box-shadow: 0 0 0 1px var(--CHECKBOX--BOX-CLR);
+		--CHECKBOX--BOX-CLR:hsla(0,0%,50%,0.8)
+		
+}
+#app .dashboard-card.done > .name .item-checkbox:not(.done .item-checkbox),
+#app .dashboard-card.done .checkmark .item-checkbox{
+		
+}
+#app .dashboard-card .name > .prefix:after{
+		opacity: .5;
+}
+#app .dashboard-card > .name > .prefix > .inline-flex > .item-checkbox:before{
+}
+html #app .root .dashboard-card.done {
+		transition-delay: var(--dashDoneDelay) !important;
+		background: transparent !important;
+		border-color: transparent !important;
+}
+
+#app .dashboard .dashboard-card > .name > .bullet{
+		right: unset;
+		left: calc(var(--children-Indent) * 1) !important;
+		top: 15px;
+}
+#app .dashboard .dashboard-card > .name > .prefix {
+		left: calc(var(--children-Indent) * .5) !important;
+}
+
+#app .dashboard-card > .name > .contentEditablePlaceholderWrapper{
+		
+}
+.dashboard-button-top {
+		background: transparent;
+		cursor: pointer
+}
+.dashboard-button-top:hover{
+		background: hsl(200, 0%, 13%) !important;
+}
+#app .root .dashboard-card.done {
+		order: 99 !important;
+		transition-delay: var(--dashDoneDelay) !important;
+}
+:root {
+		--dashDoneDelay:1s;
+}
+#app .dashboard .dashboard-card > .children .project.checkmark > .name .expand {
+		width:24px;
+}
+#app .dashboard .project.done .project.checkmark > .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
+		box-shadow: 0 0 0 1.25px var(--CHECKBOX--BOX-CLR--ChildDone) !important;
+		background: var(--DASHBOARD-PAGE--BG) !important;
+}
+#app .dashboard .dashboard-card .project.checkmark.done .children .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
+background: var(--DASHBOARD-CARD--BG) !important;
+}
+#app .dashboard .dashboard-card.done .project.checkmark.done .children .name .item-checkbox:not(#app .dashboard .project.done .project.checkmark.done > .name .item-checkbox){
+background: var(--DASHBOARD-PAGE--BG) !important;
+}
+html #app .root .dashboard-card {
+		background:var(--DASHBOARD-CARD--BG) !important;
+}
+
+html body #app .page.dashboard-page > .dashboard:after {
+		content:"";
+		display: block;
+		position: relative;
+		bottom: 0;
+		background: var(--DASHBOARD-PAGE--BG);
+		left: 0;
+		right: 0;
+		height: 500px;
+		z-index: 0
+}
+html #app .root .dashboard-card{
+		overflow: unset !important;
+		padding-bottom: calc(var(--dashTitlePadTopBtm) * 1.5) !important;
+}
+#app .dashboard .dashboard-card > .name,
+#app .dashboard .dashboard-card > .notes{
+		width: calc(100% - var(--children-Indent) * 0) !important;
+		padding-right: calc(var(--children-Indent) * 2) !important;
+		position: relative;
+		padding-left: 0px !important;
+}
+#app .dashboard .dashboard-card > .name > .content,
+#app .dashboard .dashboard-card > .notes > .content{
+		max-width: unset !important;
+		margin-left: calc(var(--children-Indent)* 1.5) !important;
+		padding-bottom: 0px !important;
+}
+
+#app .dashboard-card.project.checkmark > .name > .prefix,
+#app .dashboard-card.project > .name > .bullet{
+	left: calc(var(--children-Indent)* .4) !important;
+}
+#app .dashboard .dashboard-card > .name > .expand,
+#app .dashboard .dashboard-card > .name > .menu {
+		top: 8px !important;
+		--btn-Height:40px;
+}
+#app .dashboard .dashboard-card > .name > .expand > div {
+		transform: scale(1.2);
+		width: 100% !important;
+}
+#app .dashboard .dashboard-card > .name > .expand{
+		right: calc(var(--children-Indent) * 0 + 6px) !important;
+		width: calc(var(--children-Indent) * 1.6 - 6px) !important;
+		overflow: hidden;
+}
+#app .dashboard .dashboard-card > .name > .menu{
+		left: unset !important;
+		right: calc(var(--children-Indent) * -1) !important;
+		width: calc(var(--children-Indent) * 1) !important;
+}
+#app .dashboard-card > .children{
+		padding-left: calc(var(--children-Indent)* 1.5) !important;
+		padding-top: 0px !important;
+		margin-top: 12px !important;
+}
+html #app .dashboard-card:not(html #app .dashboard-card.comment) {
+		background: var(--DASHBOARD-CARD--BG);
+}
+
+html #app .root .dashboard-card,
+html #app .root .dashboard-card .project{
+			margin-top: var(--prjct-MargTopBtm) !important;
+	margin-bottom: var(--prjct-MargTopBtm) !important;
+		--prjct-MargTopBtm:0px;
+}
+html #app .root .dashboard-card {
+		--prjct-MargTopBtm:10px;
+}
+
+/********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+NEW DASH - COLORS
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************/
+/*THEME EDIT*/
+html body #app .page.dashboard-page{
+		--DASHBOARD-PAGE--BG:hsl(0, 0%, 7%) !important;
+		--NODE-NOTES--TXT-CLR-ALL:hsl(195, 0%, 45%);
+		--CHECKBOX--BG--DONE:hsl(195, 0%, 40%);
+}
+
+html body #app .page.dashboard-page {
+		width: 100% !important;
+		margin-top: 0px !Important;
+		min-width: 100% !important;
+		padding-top: 96px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		background: var(--DASHBOARD-PAGE--BG) !important;
+}
+
 
 /*******************************
 ********************************
@@ -5002,7 +5493,6 @@ html #app .dashboard .contentEditablePlaceholder {
 		transform: scale(1.3);
 		cursor: pointer;
 }
-
 /*******************************
 ********************************
 COMMENTS - NEW
@@ -5010,7 +5500,7 @@ COMMENTS - NEW
 ********************************/
 :root {
 		--commentauthorPadTopBtm:10px;
-	--floatCommentW:470px;
+	--floatCommentW:500px;
 	--floatCommentMaxW:calc(100vw - 50px - var(--floatCommentPosRight));
 	--floatCommentPosRight:0px;
 	--floatCommentBtnCloseW:30px;
@@ -5050,7 +5540,9 @@ html #app .floating-comments-container > button.threads--comment-button{
 	position: relative;
 	margin-left: calc(100% - var(--floatCommentBtnCloseW) - 10px)!important;
 }
-
+html body.floating-comments #app .floating-comments-container{
+		pointer-events: all !important
+}
 /*OPEN*/
 html body.floating-comments #app .floating-comments-container,
 html body.floating-comments.windowBlurred #app .floating-comments-container{
@@ -5066,19 +5558,66 @@ html body.floating-comments.windowBlurred #app .floating-comments-container{
 	transform: unset !important;
 	
 }
-/*INACTIVE*/
+/*INACTIVE - ALL*/
+html body.floating-comments #app .floating-comments-container,
 html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
-	--floatCommentW:400px;
+	--floatCommentW:500px;
 	--floatCommentPosRight: calc(var(--floatCommentW) * 0);
+		
 	}
 
+html body.floating-comments #app .floating-comments-container .project.root > .children > .project,
+html body.floating-comments #app .floating-comments-blurred .floating-comments-container .project.root > .children > .project{
+		box-shadow: 0 0 6px #00000021 !important;
+		opacity: 1;
+		transition-delay: .5s !important;
+		transition: .15s;
+		backdrop-filter: blur(10px);
+}
+
+/*ACTIVE - ALL*/
+html body.floating-comments #app .floating-comments-container:focus-within,
+html body.floating-comments #app .floating-comments-container:focus-visible,
+html body.floating-comments #app .floating-comments-container:focus{
+	--floatCommentW:500px !important;
+}
+
+html body.floating-comments #app .floating-comments-container:focus .project.root > .children > .project,
+html body.floating-comments #app .floating-comments-container:focus-within .project.root > .children > .project{
+		box-shadow: 0 0 10px black !important;
+		opacity: 1;
+		transition-delay: 0s !important;
+}
+
+
 @media (max-width: 1200px) {
+/*INACTIVE - 1200px*/
 		html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
 					--floatCommentW:calc(530px - 20vw);
 				--floatCommentMaxW:calc(530px - 20vw) !important;
 				max-width: var(--floatCommentMaxW) !important;
 	--floatCommentPosRight: calc(var(--floatCommentW) * -0.045);
+				
 		}
+/*ACTIVE - 1200px*/
+		html body.floating-comments:focus-within #app .floating-comments-container {
+					--floatCommentW:450px;
+		}
+		html.floating-comments-blurred body.floating-comments #app .floating-comments-container .project.root > .children > .project{
+								box-shadow: 0 0 1px black !important;
+
+		}
+		html body.floating-comments #app .floating-comments-container .project.root > .children > .project {
+		opacity: 5;
+		transition-delay: unset !important;
+		transition: .2s !important;
+				box-shadow: 0 0 10px black !important;
+		}
+
+html body.floating-comments:focus-within #app .floating-comments-container .project.root > .children > .project{
+		opacity: 1;
+		transition-delay: unset !important
+}
 }
 
 /**/
@@ -5448,7 +5987,40 @@ row-gap: 20px !important;
 		background-position: center;
 		opacity: .8;
 }
+.floating-comments-container .dashboard-card.comment-container.root > .children .project > .name .expand,
+.floating-comments-container .dashboard-card.comment-container.root > .children .project > .name .bullet,
+.floating-comments-container .dashboard-card.comment-container.root > .children .project > .name .prefix{
+		top: var(--btn-MargTop) !important;
+}
 
+.floating-comments-container .dashboard-card.comment-container.root > .children .project > .name .expand > div,
+.dashboard-card[class*="comment"] > .children .project > .name .expand > div,
+.dashboard-card > .children .project[class*="comment"] > .name .expand > div,
+.dashboard-card > .children .project[class*="comment"] > .children .project > .name .expand > div{
+		box-shadow: unset;
+}
+.floating-comments-container .dashboard-card.comment-container.root > .children .project > .name:after,
+.dashboard-card[class*="comment"] > .children .project > .name:after,
+.dashboard-card > .children .project[class*="comment"] > .name:after,
+.dashboard-card > .children .project[class*="comment"] > .children .project > .name:after{
+		display: none !important;
+}
+.floating-comments-container .dashboard-card.comment-container.root > .children .project.collapsed > .name .expand > div,
+.dashboard-card[class*="comment"] > .children .project.collapsed > .name .expand > div,
+.dashboard-card > .children [class*="comment"].project.collapsed > .name .expand > div,
+.dashboard-card > .children [class*="comment"].project > .children .project.collapsed > .name .expand > div{
+		background: var(--BG-Bullet-under);
+		box-shadow: unset !important;
+}
+
+
+html #app .comment .comment-toolbar {
+		opacity: .4;
+		
+}
+html #app .comment .comment-toolbar:hover{
+opacity: 1;
+}
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
@@ -5465,7 +6037,6 @@ SCROLLBAR / SCROLL BARS
 		width: 0px !important;
 		height: 0px !important;
 }
-
 /*******************************
 ********************************
 ! POPUP - IMAGE MODAL
@@ -5570,7 +6141,6 @@ margin-left:calc(var(--children-Indent) * 1) !important;
 		min-width: 60vw !important;
 		display: block;
 }
-
 /*******************************
 ********************************
 ! POPUP - 'MOVE TO' MENU
@@ -5579,7 +6149,6 @@ margin-left:calc(var(--children-Indent) * 1) !important;
 #app > [tabindex="-1"] > [style*="position: absolute"]{
 	z-index: 4;
 }
-
 /*******************************
 ********************************
 ! POPUP - WFX - RECENTS MENU
@@ -5647,7 +6216,6 @@ select option:checked{
 	display: inline-flex;
 	position: absolute;
 }
-
 
 
 
@@ -5758,7 +6326,6 @@ html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:
 html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:last-of-type > button {
 		width: auto;
 }
-
 /*******************************
 ********************************
 ! POPUP - QUICK SEARCH
@@ -6069,7 +6636,6 @@ html #app .dialog-box ._157gzxf > div > div {
 		background: rgba(0, 0, 0, .55);
 		backdrop-filter: blur(1px) !important;
 }
-
 /*******************************
 ********************************
 ! POPUP - EXPORT
@@ -6081,7 +6647,6 @@ html #app .dialog-box ._157gzxf > div > div {
 	max-height: 57vh;
 	font-size: 14px;
 }
-
 /*******************************
 ********************************
 ! POPUP - MIRRORS
@@ -6263,7 +6828,6 @@ html #app .dialog-box ._157gzxf > div > div {
 #app .dialog-box .breadcrumbs > a:first-child:before {
 		display: none;
 }
-
 /*******************************
 ********************************
 ! POPUP WIDTH - ALL - EXCEPT, QUICK SWITCHER
@@ -6277,7 +6841,6 @@ html #app .dialog-box ._157gzxf > div > div {
 		z-index: 94949494944949494 !important;
 				
 }
-
 /*******************************
 ********************************
 SEARCH - NAV - BAR
@@ -6708,7 +7271,6 @@ DROPDOWN WRAPPER
 SEARCH RESULTS
 **************/
 
-
 /*******************************
 ********************************
 ! SEARCH - NAV - RESULTS
@@ -6729,7 +7291,6 @@ SEARCH RESULTS
 		overflow: visible !important;
 		opacity: 1;
 }
-
 /*******************************
 ********************************
 ! EXPAND COLLAPSE
@@ -6768,7 +7329,6 @@ SEARCH RESULTS
 #app .project.addedShared > .name:after {
 		background: var(--BG-expand-border-shared-WITH-me) !important;
 }
-
 /*******************************
 ********************************
 ! SHARED PAGES
@@ -6902,7 +7462,6 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 	}
 	
 }
-
 /*******************************
 ********************************
 ! MOBILE - NEW
@@ -7148,7 +7707,6 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		margin-left: -100px;
 	}
 }
-
 /*******************************
 ********************************
 ! ICONS
@@ -7243,7 +7801,6 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		--ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
 		--ICON--COMMENT:var(--ICON--COMMENT-DARK);
 }
-
 /*******************************
 ********************************
 ! FONTS
@@ -7306,7 +7863,6 @@ Menlo
 		font-weight: 400;
 		font-style: normal;
 }
-
 /*******************************
 ********************************
 ! FONTS - IBM PLEX SANS
