@@ -1,7 +1,7 @@
  /*****************
 !gpt - ROOT
 ******************/
-.dark {
+.dark { 
 	/*backgrounds*/
 	--bgClrMobile: hsl(0, 0%, 8%);
 	--bgClr: hsl(0, 0%, 12%);
@@ -105,7 +105,6 @@ li a * {
 	--line-height: 1.65;
 	--paragraphMargTopBtm: 6px;
 }
-
 /***********
 ************
 !gpt - EDITOR
@@ -348,7 +347,6 @@ CANVAS EDITOR
 section#details .bg-token-main-surface-primary {
 	background: hsla(0, 0%, 18%, 1.0) !important;
 }
-
 /***********
 ************
 !gpt - EDITOR > CODE BLOCKS
@@ -393,7 +391,6 @@ article #codemirror .cm-editor {
 		display: block !important;
 }
 
-
 /***********
 ************
 !gpt - EDITOR > ADJUSTMENT > FOR TOC
@@ -402,7 +399,6 @@ article #codemirror .cm-editor {
 #page-header + div[class*="composer"] > div.h-full {
 	overflow-y: auto;
 }
-
 /***********
 ************
 !gpt - TEXT AREA > Make Taller
@@ -480,7 +476,6 @@ article + button.bg-token-main-surface-primary {
 [role="presentation"] > div.w-full > .text-token-text-secondary {
 		display: none;
 }
-
 /***********
 ************
 !gpt - LEFT SIDEBAR
@@ -533,27 +528,7 @@ HIDE 3 DOT MENU ON IMPORTANT CHATS
 	display: none !important;
 }
 
-/***********
-************
-HIDE DELETE BUTTON IN 3 DOT MENU
-************
-************/
-[data-radix-popper-content-wrapper] [role="menuitem"].text-token-text-error {
-	display: none;
-}
-[data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:last-of-type {
-	display: none;
-}
 
-/*MAKE ARCHIVE SIGNIFICANT
-[data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:nth-of-type(3){
-		color: hsl(134, 74%, 60%);
-		
-}
-[data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:nth-of-type(3) path {
-		fill: hsl(134, 74%, 60%)
-}
-*/
 /***********
 ************
 SIDEBAR - MOBILE
@@ -561,7 +536,7 @@ SIDEBAR - MOBILE
 ************/
 @media (max-width:767px) {
 	:root {
-		--leftSideBarWidth: 0px !important;
+		--leftSideBarWidth: 900px !important;
 	}
 }
 [class*="sidebar"][style*="width: 0px"][style*="visibility: hidden"] {}
@@ -587,7 +562,33 @@ SIDEBAR - HIDE BOTTOM VIEW PLANS
 nav[aria-label="Chat history"] > div > div[class*="border-white"]{
 		display:none; 
 }
+/***********
+************
+!gpt - HIDE DELETE - IN 3 DOT MENU
+************
+************/
+/***********
+************
+HIDE DELETE BUTTON 
+************
+************/
+[role="menuitem"][data-testid*="delete-chat"],
+[role="menuitem"].text-token-text-status-error{
+	display: none;
+}
+[data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:last-of-type {
+	display: none;
+}
 
+/*MAKE ARCHIVE SIGNIFICANT
+[data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:nth-of-type(3){
+		color: hsl(134, 74%, 60%);
+		
+}
+[data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:nth-of-type(3) path {
+		fill: hsl(134, 74%, 60%)
+}
+*/
 /***********
 ************
 !gpt - SEARCH
@@ -617,7 +618,6 @@ nav[aria-label="Chat history"] > div > div[class*="border-white"]{
 	width: 60px;
 	right: 0;
 }
-
 /***********
 ************
 !gpt - CANVAS TITLES
@@ -635,7 +635,6 @@ button > h2 {
 [data-radix-popper-content-wrapper] [role="menuitem"] span.block.truncate[class*="max-w-[200px]"]{
 		max-width: 100%;
 }
-
 /***********
 ************
 !gpt - MOBILE
@@ -716,7 +715,6 @@ button > h2 {
 		margin-top: 3px;
 	}
 }
-
 /***********
 ************
 ! MEMEX HIGHLIGHTS
