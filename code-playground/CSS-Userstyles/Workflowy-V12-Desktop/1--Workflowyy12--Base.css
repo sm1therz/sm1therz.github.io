@@ -8323,7 +8323,7 @@ body * {
 		-webkit-line-clamp:100 !important;
 		max-height: 100% !important;
 		overflow: unset !important;
-}
+} 
 
 #app .page.active.searching .project.board:not(.board.root) > .children{
 		max-height: unset !important;
