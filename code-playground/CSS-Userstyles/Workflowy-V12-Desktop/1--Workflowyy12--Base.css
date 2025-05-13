@@ -72,7 +72,7 @@ BOX SHADOW TESTING - BOARDS
 
  **/
 :root {
-	--testBrdW:0px;
+	--testBrdW:0.25px;
 }
 .project,
 .project > .name,
@@ -82,7 +82,7 @@ BOX SHADOW TESTING - BOARDS
 .project > .notes,
 .project > .notes > .content{
 
-		box-shadow: 0 0 0 var(--testBrdW)red;
+		box-shadow: 0 0 0 var(--testBrdW) blue !important;
 }
 /*
 #app .project.comment.thread .children {
@@ -2765,6 +2765,13 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 .project:not(.board) .project > .name > .prefix .item-checkbox:before {
 		margin-top: -1px !important
 }
+
+html #app .project:not(.board) .project.comment [class*="name--highlighted"]:before{
+
+		opacity: 0 !important;
+}
+
+
 /***********
 ! TAGS
 ************/
@@ -3461,7 +3468,7 @@ BOARDS ROOT
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .name {
 		height: unset;
-		padding-bottom: 5px;
+		padding-bottom: 0px;
 		padding-left: var(--ROOT-padLeftRight);
 		position:fixed;
 		top:0px;
@@ -3475,7 +3482,7 @@ BOARDS ROOT
 
 #app .page[style="overflow-y: auto;"] > .project.board.root > .notes{
 		position:fixed;
-		top:26px;
+		top:31px;
 		z-index:9544;
 		height:var(--ROOT-BOARD-TITLE-HEIGHT);
 		width:unset;
@@ -3716,7 +3723,7 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 
 .board .highlighted::before,
 .board .floating-conversations::before,
-[class*="name--highlighted"]:hover:before{
+[class*="name--highlighted"]:not(.comment [class*="name--highlighted"]):hover:before{
 	background: transparent !important;
 	inset: -1px !important;
 	border-radius: 3px;
@@ -3746,10 +3753,7 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 .board .floating-conversations:before{
 	background: hsla(0,0%,100%,.15) !important;
 }
-.floating-comments-blurred .board .floating-conversations:before {
-	opacity: .4 !important;
-	background: transparent !important;
-}
+
 #app .board .project > .name .nameButtons{
 	z-index: 3;
 }
@@ -3861,6 +3865,42 @@ html #app .board .boardColumn .notes > .content code {
 		font-size: calc(var(--notes-fontSize) - .5px) !important;
 }
 
+
+html #app .board:not(.root) > .children > .boardColumn.comment {
+		margin: 0px !important;
+		border-radius: 0px !important;
+}
+
+html #app .board:not(.root) > .children > .boardColumn.comment > .commentAttribution {
+		padding-top: 0px !important;
+		position: absolute;
+		top: 0px;
+		z-index: 94;
+		display: none !important;
+}
+html #app .board:not(.root) > .children > .boardColumn.comment > .name > .expand,
+html #app .board:not(.root) > .children > .boardColumn.comment > .name > .menu,
+html #app .board:not(.root) > .children > .boardColumn.comment > .name > .bullet{
+			--btn-MargTop: 7px !important;
+}
+html #app .board:not(.root) > .children > .boardColumn.comment > .children {
+		padding-left: 0px !important;
+}
+html #app .board:not(.root) > .children > .boardColumn.comment > .children .boardCard{
+		background: transparent;
+}
+html #app .board:not(.root) .comment [class*="name--highlighted"]:before {
+		opacity: 0 !important;
+}
+
+html #app .board .project.highlighted:before{
+		content: "";
+	display: block;
+	position: absolute;
+	inset: 0px -5px;
+	border-radius: 5px;
+	background: var(--wf-background-tertiary) !important;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -4330,6 +4370,32 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root .boardCard > .children > .comment button.reply-button.button.secondary {
 		right: 30px;
 }
+
+#app .board.root {
+			--rootnotes-fontSize: calc(var(--notes-fontSize) + 0px);
+	--rootnotes-lineHeight: calc(var(--notes-lineHeight) + -1px);
+}
+
+#app .board.root > .notes > .content {
+		display: -webkit-box !important;
+		-webkit-line-clamp:1 !important;
+		overflow: hidden !important;
+		max-width: 150px;
+}
+
+#app .board.root > .notes > .content.active{
+		-webkit-line-clamp:100 !important;
+		max-width: 100% !important;
+		background-image: linear-gradient(to right, var(--BG-primary) 0, var(--BG-primary) 90%, transparent);
+		overflow: visible !important;
+}
+
+#app .board.root > .children > .boardColumn.comment {
+		margin-top: 0px !important;
+}
+#app .board.root > .children > .boardColumn.comment > .children {
+		padding-bottom: 5px;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT - CHILD BORDERS
@@ -4381,7 +4447,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 		right: 0;
 		bottom: -1px;
 		opacity: var(--boardChild-FakeBrdOpacity);
-		z-index: 1
+		z-index: 1;
 }
 #app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project,.noted) > .name,
 #app .board.root .boardCard > .children > .project.noted.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .notes{
@@ -5384,8 +5450,6 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .root.dashboard .dashboard-card .project.comment > .commentAttribution {
 		margin-bottom: 0px !important
 }
-
-
 /*******************************
 ********************************
 ! PRESENTATION
@@ -5493,11 +5557,19 @@ html body.floating-comments.windowBlurred #app .floating-comments-container{
 	transform: unset !important;
 	
 }
+.floating-comments-container > .vertical-scrollable-container .project.root.comment-container > .name{
+		height: 1px !important;
+}
 /*INACTIVE - ALL*/
-html body.floating-comments #app .floating-comments-container,
-html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
-	--floatCommentW:500px;
+html body.floating-comments #app .floating-comments-container {
 	--floatCommentPosRight: calc(var(--floatCommentW) * 0);
+	--floatCommentW:450px;
+		
+}
+html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
+	--floatCommentW:410px;
+	--floatCommentPosRight: calc(var(--floatCommentW) * -0.1);
+		
 		
 	}
 
@@ -5514,9 +5586,9 @@ html body.floating-comments #app .floating-comments-blurred .floating-comments-c
 html body.floating-comments #app .floating-comments-container:focus-within,
 html body.floating-comments #app .floating-comments-container:focus-visible,
 html body.floating-comments #app .floating-comments-container:focus{
-	--floatCommentW:500px !important;
 }
 
+html body.floating-comments #app .floating-comments-container .project.root > .children > .project,
 html body.floating-comments #app .floating-comments-container:focus .project.root > .children > .project,
 html body.floating-comments #app .floating-comments-container:focus-within .project.root > .children > .project{
 		box-shadow: 0 0 10px black !important;
@@ -5524,6 +5596,9 @@ html body.floating-comments #app .floating-comments-container:focus-within .proj
 		transition-delay: 0s !important;
 }
 
+html body.floating-comments #app .floating-comments-container .project.root > .children > .project:first-child {
+		margin-top: 4px !important;
+}
 
 @media (max-width: 1200px) {
 /*INACTIVE - 1200px*/
@@ -5531,12 +5606,11 @@ html body.floating-comments #app .floating-comments-container:focus-within .proj
 					--floatCommentW:calc(530px - 20vw);
 				--floatCommentMaxW:calc(530px - 20vw) !important;
 				max-width: var(--floatCommentMaxW) !important;
-	--floatCommentPosRight: calc(var(--floatCommentW) * -0.045);
+	--floatCommentPosRight: calc(var(--floatCommentW) * -0.145);
 				
 		}
 /*ACTIVE - 1200px*/
 		html body.floating-comments:focus-within #app .floating-comments-container {
-					--floatCommentW:450px;
 		}
 		html.floating-comments-blurred body.floating-comments #app .floating-comments-container .project.root > .children > .project{
 								box-shadow: 0 0 1px black !important;
@@ -5747,6 +5821,11 @@ row-gap: 20px !important;
 	z-index: 2;
 	transition: .1s;
 	opacity: 1;
+}
+#app .board:not(.root) .nameButtons{
+		right: 0 !important;
+		height: 10px !important;
+		min-height: 10px !important;
 }
 #app .board .project.checkmark > .name .nameButtons {
 		right: calc(var(--children-Indent) * 2) !important;
@@ -5972,6 +6051,13 @@ opacity: 1;
 #app .root.project .project.comment > .commentAttribution > span.commentAttributionName {
 		max-width: 100%!important;
 		padding-right: 0px !important;
+}
+
+#app .root .project.comment .commentAttribution {
+		margin-bottom: 2px !important;
+}
+html #app .comment.draft .comment-toolbar {
+		padding-bottom: 8px !important;
 }
 /*******************************
 ********************************
@@ -7967,58 +8053,3 @@ body * {
 
 
 
-/*******************************
-********************************
-! FLAT SEARCH
-********************************
-********************************/
-
-/*notes*/
-#app .page.active.searching .project > .notes > .content{
-		-webkit-line-clamp:1 !important;
-		display: -webkit-box !important;
-		overflow: hidden !important;
-}
-
-#app .page.active.searching .project > .notes > .content.active,
-#app .page.active.searching .project > .notes.matches > .content{
-		-webkit-line-clamp:100 !important;
-		max-height: 100% !important;
-		overflow: unset !important;
-} 
-
-#app .page.active.searching .project.board:not(.board.root) > .children{
-		max-height: unset !important;
-}
-
-/*MATCH COLORS*/
-
-
-
-/*LINE CONTAINING MATCH
-.project.metaMatches > .name > .content  .innerContentContainer{
-				background: hsl(200, 100%, 30%, 0.5) !;
-}
-#app .project > .name > .content,
-#app .project > .name > .content{
-
-		color: var(--NODE--TXT-CLR--main) !important;
-}
-
-.project.metaMatches > .name > .content > .innerContentContainer,
-.project.metaMatches > .name > .content > .innerContentContainer{
-		background: hsl(200, 100%, 40%, 0);
-}
-.project.metaMatches > .name > ._1wsppdf > .innerContentContainer .colored[class*="c-"] {
-		color: var(--NODE--TXT-CLR--main) !important
-}
-*/
-/*ACTUAL MATCH*/
-
-#app .name.fullMatch > .content > .innerContentContainer .contentMatch,
-#app .project.fullMatch > .notes > .content > .innerContentContainer .contentMatch{
-		 background: hsl(200, 100%, 50%, 1.0) !important;  
-		box-shadow: 0 0 0 2px hsl(200, 100%, 50%, 1.0);
-		border-radius: 3px;
-		-webkit-text-fill-color: white !important;
-}
