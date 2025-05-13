@@ -3901,6 +3901,22 @@ html #app .board .project.highlighted:before{
 	border-radius: 5px;
 	background: var(--wf-background-tertiary) !important;
 }
+
+html #app .board:not(.root) .boardColumn > .children > .project.comment {
+		margin: 0px !important;
+}
+html #app .board .boardColumn > .children > .project.comment > .commentAttribution{
+		padding-left: 25px !important;
+		padding-top: 6px !important;
+}
+
+html #app .board .boardColumn > .children > .project.comment .comment > .commentAttribution{
+		padding-left: 15px !important;
+		padding-top: 6px !important;
+}
+html #app .board:not(.root) .boardColumn > .children > .project.comment .comment > .children{
+		padding-left: calc(var(--children-Indent) * 1) !important
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -4270,9 +4286,9 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment {
 		background: hsl(202, 23%, 17.5%, 0.5) !Important;
-		background: hsl(202, 12%, 21%) !Important;
-		--COMMENT--BG--even: hsl(197, 18%, 15%);
-		--COMMENT-CONTAINER--BG: hsl(202, 12%, 21%);
+		background: hsl(197, 18%, 15%) !Important;
+		--COMMENT--BG--even: hsl(202, 12%, 21%);
+		--COMMENT-CONTAINER--BG: hsl(197, 18%, 15%);
 		box-shadow: 0 0 0 1px hsla(200, 3%, 37%, .78) !important;
 }
 #app .project.board.root > .children > .boardColumn .comment > .notes .content {
@@ -4423,7 +4439,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 				box-shadow: 0 0px 0 0 var(--boardChildBrdClr) !important;
 		
 }
-#app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
+#app .board.root .boardCard:not(.comment) > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
 		box-shadow: 0 1px 0 0 var(--boardChildBrdClr) !important;
 }
 
@@ -5450,6 +5466,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .root.dashboard .dashboard-card .project.comment > .commentAttribution {
 		margin-bottom: 0px !important
 }
+
 /*******************************
 ********************************
 ! PRESENTATION
@@ -5494,7 +5511,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 /*******************************
 ********************************
-COMMENTS - NEW
+COMMENTS - NEW - FLOATING
 ********************************
 ********************************/
 :root {
@@ -5504,11 +5521,14 @@ COMMENTS - NEW
 	--floatCommentPosRight:0px;
 	--floatCommentBtnCloseW:30px;
 }
-#app .project.comment.thread,
-#app .project.comment.thread * {
-}
 
 /*OVERRIDES*/
+html #app .floating-comments-container{
+		bottom: unset !important;
+		max-height: calc(99%  - var(--Height--Header))!important;
+		overflow-y: auto;
+		
+}
 html #app .floating-comments-container,
 html #app .floating-comments-container .vertical-scrollable-container,
 html #app .floating-comments-container .comment-container,
@@ -5532,12 +5552,20 @@ html #app .floating-comments-container .comment-container > .children{
 html #app .floating-comments-container .comment-container > .children > .comment:last-of-type {
 	margin-bottom: 10px !important; 
 }
+/*CLOSE COMMENTS BUTTON*/
+
 html #app .floating-comments-container > button.threads--comment-button{
 	transform: unset !important;
-	right: 80px !important;
+	right: 0 !important;
 	left: unset !important;
-	position: relative;
-	margin-left: calc(100% - var(--floatCommentBtnCloseW) - 10px)!important;
+	position: absolute !important;
+	margin-left: unset !important;
+		margin-right: 10px;
+}
+html.floating-comments-blurred #app .floating-comments-container > button.threads--comment-button{
+	margin-left: unset !important;
+		margin-right: calc(100% - var(--floatCommentBtnCloseW) - 40px);
+
 }
 html body.floating-comments #app .floating-comments-container{
 		pointer-events: all !important
@@ -5557,7 +5585,7 @@ html body.floating-comments.windowBlurred #app .floating-comments-container{
 	transform: unset !important;
 	
 }
-.floating-comments-container > .vertical-scrollable-container .project.root.comment-container > .name{
+#app .floating-comments-container > .vertical-scrollable-container .project.root.comment-container > .name{
 		height: 1px !important;
 }
 /*INACTIVE - ALL*/
@@ -5613,7 +5641,7 @@ html body.floating-comments #app .floating-comments-container .project.root > .c
 		html body.floating-comments:focus-within #app .floating-comments-container {
 		}
 		html.floating-comments-blurred body.floating-comments #app .floating-comments-container .project.root > .children > .project{
-								box-shadow: 0 0 1px black !important;
+								box-shadow: 0 0 7px #0000008c !important;
 
 		}
 		html body.floating-comments #app .floating-comments-container .project.root > .children > .project {
@@ -5654,6 +5682,22 @@ html body.floating-comments:focus-within #app .floating-comments-container .proj
 #app .comment-container > .children{
 row-gap: 20px !important;
 }
+
+#app .floating-comments-container .nameButtons,
+#app .floating-comments-container .nameButtons.active {
+		transition: .14s !important;
+}
+#app .floating-comments-container .nameButtons {
+		opacity: 0 !important;
+}
+#app .floating-comments-container .nameButtons.active{
+		opacity: .4 !important;
+}
+#app .floating-comments-container .nameButtons.active:hover {
+		opacity: 1 !important;
+}
+
+
 
 /*NORMAL COMMENTS*/
 #app .project.comment.thread,
@@ -5792,20 +5836,6 @@ row-gap: 20px !important;
 		width: 100% !important;
 		max-width: 100% !important;
 		transform: unset !important;
-}
-
-#app .floating-comments-container .nameButtons,
-#app .floating-comments-container .nameButtons.active {
-		transition: .14s !important;
-}
-#app .floating-comments-container .nameButtons {
-		opacity: 0 !important;
-}
-#app .floating-comments-container .nameButtons.active{
-		opacity: .4 !important;
-}
-#app .floating-comments-container .nameButtons.active:hover {
-		opacity: 1 !important;
 }
 
 
@@ -6059,6 +6089,24 @@ opacity: 1;
 html #app .comment.draft .comment-toolbar {
 		padding-bottom: 8px !important;
 }
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project.comment{
+		--commentTopContentIndent:26px;
+}
+/**/
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project.comment .children{
+		padding-left: 20px !important;
+}
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children .project > .name > .content {
+		margin-left: var(--commentTopContentIndent) !important;
+}
+/*******************************
+********************************
+COMMENTS - NEW - NORMAL
+********************************
+********************************/
+
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
