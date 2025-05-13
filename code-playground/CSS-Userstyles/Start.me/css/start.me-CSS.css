@@ -149,7 +149,6 @@ span.notes-widget__result * {
 }
 
 
-
 /***********
 ************
 ! EXTENSION BACKGROUND FIX
@@ -174,7 +173,6 @@ html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__si
     background: var(--startMeBg) !important;
     background-image: linear-gradient(var(--startMeBg),var(--startMeBg)) !important;
 }
-
 /***********
 ************
 ! GOOGLE SEARCH
@@ -371,7 +369,6 @@ BROWSER OTHER / FLOATING BROWSERS
     margin-top: 0px !important;
   }
 }************/
-
 /***********
 ************
 ! NAV
@@ -473,7 +470,6 @@ BROWSER OTHER / FLOATING BROWSERS
     }
     .widget-page .header__right {}
 }
-
 /***********
 ************
 ! COLUMNS
@@ -836,7 +832,6 @@ MAX WIDTH 500px
         width: calc(100%);
     }
 }
-
 /***********
 ************
 ! MAIN APP
@@ -2097,7 +2092,6 @@ ul.bookmark-widget__list > li:first-child .bookmark-item_mode_list.bookmark-item
 #appID [class*="bookmark-widget"][class*="detail"][class*="small"] .bookmark-folder__content ul > li:last-child{
     margin-bottom: 1px 
 }
-
 /***********
 ************
 ! NOTES
@@ -2935,7 +2929,6 @@ BIGGER TABLES - ON WHITE WIDGETS
 #appID .notes-widget-wrapper .widget__container[style*="rgb(255, 255, 255"] table td,
 #appID .notes-widget-wrapper .widget__container[style*="rgb(255, 255, 255"] table th,
 #appID .notes-widget-wrapper .widget__container[style*="rgb(255, 255, 255"] table thead {}
-
 /***********
 ************
 ! NOTES MODAL
@@ -2991,7 +2984,6 @@ height: 100% !important;
 .modal.notes-edit-modal .modal__component-container .notes-widget .wysiwyg-editor__input > *:last-child {
   padding-bottom: 10px;
 }
-
 /***********
 ************
 ! CONTEXT MENUS
@@ -3003,7 +2995,6 @@ height: 100% !important;
 .actions-list__item+.actions-list__item_separated, .actions-list_wrapped .actions-list__item+.actions-list__item_separated{
     margin-top: 10px 
 }
-
 /*********
 **********
 **********
@@ -3141,7 +3132,6 @@ a.notes-widget-wrapper__tab-creator.notes-widget-wrapper__tab-creator_small{
     display: none;
 }
 
-
 /*********
 **********
 **********
@@ -3196,7 +3186,6 @@ ul.notes-widget-wrapper__tabs-list li[class*="active"]{
     box-shadow: unset !important;
     border: unset !important;
 }
-
 
 /***********
 ************
