@@ -1601,6 +1601,27 @@ i b {
 
 
 /***************
+STRIKETHROUGH
+****************/
+s,
+i s,
+s i,
+b s,
+s b {
+		color: hsl(180, 2%, 55%) !important;
+}
+s a.contentLink{
+		filter:saturate(.5);
+}
+s {
+		text-decoration:line-through;
+		text-decoration-thickness: 1.25px;
+		text-decoration-style: solid;
+		text-decoration-color: hsl(180, 2%, 55%,0.75);
+}
+
+
+/***************
 highlights
 ****************/
 :root {
@@ -1737,6 +1758,7 @@ u .c-orange,
 b .c-orange,
 .c-orange b {
 		color: var(--TXT-CLR--ORANGE) !important;
+		--LnkTxtClr:var(--TXT-CLR--ORANGE);
 		text-decoration-color: var(--TXT-CLR--ORANGE);
 }
 
@@ -1747,6 +1769,7 @@ u .c-yellow,
 b .c-yellow,
 .c-yellow b {
 		color: var(--TXT-CLR--YELLOW) !important;
+		--LnkTxtClr:var(--TXT-CLR--YELLOW);
 		-webkit-text-stroke-color: hsl(50, 100%, 37%);
 		text-decoration-color: var(--TXT-CLR--YELLOW);
 }
@@ -1758,6 +1781,7 @@ u .c-green,
 b .c-green,
 .c-green b {
 		color: var(--TXT-CLR--GREEN) !important;
+		--LnkTxtClr:var(--TXT-CLR--GREEN);
 		text-decoration-color: var(--TXT-CLR--GREEN);
 }
 
@@ -1768,6 +1792,7 @@ u .c-teal,
 b .c-teal,
 .c-teal b {
 		color: var(--TXT-CLR--TEAL) !important;
+		--LnkTxtClr:var(--TXT-CLR--TEAL);
 		text-decoration-color: var(--TXT-CLR--TEAL);
 }
 
@@ -1778,6 +1803,7 @@ u .c-sky,
 b .c-sky,
 .c-sky b {
 		color: var(--TXT-CLR--SKY) !important;
+		--LnkTxtClr:var(--TXT-CLR--SKY);
 		text-decoration-color: var(--TXT-CLR--SKY);
 }
 
@@ -1788,6 +1814,7 @@ u .c-blue,
 b .c-blue,
 .c-blue b {
 		color: var(--TXT-CLR--BLUE) !important;
+		--LnkTxtClr:var(--TXT-CLR--BLUE);
 		text-decoration-color: var(--TXT-CLR--BLUE);
 }
 
@@ -1798,6 +1825,7 @@ u .c-purple,
 .c-purple b,
 b .c-purple {
 		color: var(--TXT-CLR--PURPLE) !important;
+		--LnkTxtClr:var(--TXT-CLR--PURPLE);
 		text-decoration-color: var(--TXT-CLR--PURPLE);
 }
 
@@ -1808,6 +1836,7 @@ u .c-pink,
 b .c-pink,
 .c-pink b {
 		color: var(--TXT-CLR--PINK) !important;
+				--LnkTxtClr:var(--TXT-CLR--PINK);
 		text-decoration-color: var(--TXT-CLR--PINK);
 }
 
@@ -1818,6 +1847,7 @@ u .c-gray,
 b .c-gray,
 .c-gray b {
 		color: var(--TXT-CLR--GRAY) !important;
+		--LnkTxtClr:var(--TXT-CLR--GRAY);
 		text-decoration-color: var(--TXT-CLR--GRAY);
 }
 
@@ -2766,7 +2796,9 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 		margin-top: -1px !important
 }
 
-html #app .project:not(.board) .project.comment [class*="name--highlighted"]:before{
+html #app .project:not(.board) .project.comment [class*="name--highlighted"]:before,
+html #app .project.board.root .project.boardColumn.comment [class*="name--highlighted"]:before,
+html #app .project.comment.root [class*="name--highlighted"]:before{
 
 		opacity: 0 !important;
 }
@@ -3964,7 +3996,7 @@ BOARD ROOT SIZES
 #app .board.root,
 #app .board.root > .children {
 		--name-fontSize: 16px;
-		--name-lineHeight: 21px;
+		--name-lineHeight: 23px;
 		--notes-fontSize: 13.25px;
 		--notes-lineHeight: 16.25px;
 		--boardRoot-CardBrdRad: 8px;
@@ -4228,7 +4260,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 
 #app .board.root .innerContentContainer b {
-		font-weight: 500;
+		font-weight: 550;
 }
 
 #app .page[style="overflow-y: auto;"] {
@@ -4306,9 +4338,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .project.board.root .boardColumn > .name [class*="Place"],
 #app .project.board.root .boardColumn > .name > .content {
 		font-weight: 400 !important;
-		color: hsla(0, 0%, 100%, 0.55);
 		font-size: calc(var(--name-fontSize) + 2px)!important;
-		line-height: calc(var(--name-lineHeight) + 2px) !important;
+		line-height: calc(var(--name-lineHeight) + 6px) !important;
 }
 
 div#app ~ div[style*="color: rgb(60, 64"] {
@@ -4346,7 +4377,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root .project > .name > .prefix,
 #app .board.root .project > .name > .expand,
 #app .board.root .project > .name > .menu {
-		--btn-MargTop: 2px !important;
+		--btn-MargTop: 3px !important;
 }
 #app .project.board.root .boardColumn > .name {
 		position: relative;
@@ -4418,15 +4449,18 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 ********************************
 ********************************/
 :root {
-		--boardChildBrdClr:hsl(200, 6%, 30%,.45);
+		--boardChildBrdClr:hsl(200, 8%, 24%);
 		--boardChild-FakeBrdOpacity:0;
 		--boardChildBgClr:hsl(202, 16%, 17%)
 }
 
-#app .board.root .boardCard > .children > .project:not(.quote-block,.comment,.code-block,.references .project,.noted),
-#app .board.root .boardCard > .children > .project.noted:not(.quote-block,.comment,.code-block,.references .project){
-		box-shadow: 0 1px 0 0 var(--boardChildBrdClr);
+#app .board.root .boardCard > .children > .project:not(.project:last-child, .quote-block,.comment,.code-block,.references .project,.noted),
+#app .board.root .boardCard > .children > .project.noted:not(.project.noted:last-child, .quote-block,.comment,.code-block,.references .project){
+		box-shadow: 0 1px 0 0 var(--boardChildBrdClr) !important;
 		border-bottom: 0px solid hsl(200, 6%, 30%,0) !important;
+}
+#app .board.root .boardCard > .children > .project.collapsed + .project:last-child {
+		display: none !important;
 }
 
 
@@ -4465,8 +4499,12 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 		opacity: var(--boardChild-FakeBrdOpacity);
 		z-index: 1;
 }
-#app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project,.noted) > .name,
-#app .board.root .boardCard > .children > .project.noted.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .notes{
+
+
+#app .board.root .boardCard > .children > .project.open:not(.quote-block,.comment,.code-block,.references .project,.noted) > .name,
+#app .board.root .boardCard > .children > .project.collapsed:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project,.noted) > .name,
+#app .board.root .boardCard > .children > .project.noted.open:not(.quote-block,.comment,.code-block,.references .project) > .notes,
+#app .board.root .boardCard > .children > .project.noted.collapsed:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .notes{
 		box-shadow: 
 				0 0px 0 0 var(--boardChildBrdClr) !important;
 		--boardChild-FakeBrdOpacity:1;
@@ -6100,6 +6138,33 @@ html #app .comment.draft .comment-toolbar {
 
 #app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children .project > .name > .content {
 		margin-left: var(--commentTopContentIndent) !important;
+}
+
+#app .project.comment .project.checkmark > .name > .prefix{
+}
+
+#app .project.comment .project.checkmark > .name > .prefix{
+			--btn-MargTop: 2px !important;
+}
+#app .board .project.comment .project.checkmark > .name > .prefix{
+			--btn-MargTop: 3.5px !important;
+}
+
+#app .board .project.comment .project.checkmark > .name > .prefix .item-checkbox{
+		transform: rotate(0deg)scale(var(--btnIcn-Scale)) !important;
+		--btnIcn-Scale: 0.7;
+}
+
+#app .board .project.comment .project.checkmark > .name > .bullet.diamond ~ .prefix{
+		transform: unset !important;
+}
+#app .board .project.comment .project.checkmark > .name > .bullet.diamond ~ .prefix .item-checkbox{
+		--btnIcn-Scale: .7;
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale)) !important
+}
+#app .board .project.comment .project.checkmark.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox{
+		--btnIcn-Scale: 0.7;
+		transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important
 }
 /*******************************
 ********************************
@@ -7921,7 +7986,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 
 		/*DARK*/
 		--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
-		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.075" stroke-width="10"/></svg>');
+		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.06" stroke-width="10"/></svg>');
 		/*DARK - UNDERLINE*/
 		--ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 		/*DARK  - LINK*/
