@@ -72,7 +72,7 @@ BOX SHADOW TESTING - BOARDS
 
  **/
 :root {
-	--testBrdW:0.25px;
+	--testBrdW:0px;
 }
 .project,
 .project > .name,
