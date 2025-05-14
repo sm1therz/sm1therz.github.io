@@ -237,6 +237,7 @@
 	STRIKETHROUGH
 	**************/
 		--strikeThroughColor:hsl(180, 2%, 55%);
+		--strikeThroughLineColor:hsl(180, 2%, 55%,0.75);
 
 		/*************
 	TAGS AND LINKS IN NOTES
