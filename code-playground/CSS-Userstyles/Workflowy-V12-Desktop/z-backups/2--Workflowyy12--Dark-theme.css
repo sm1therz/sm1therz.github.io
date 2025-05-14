@@ -1,12 +1,23 @@
-/****
-! ROOT - THEME - DARK
-****/
-:root {
+/********
+*********
+*********
+THEME - DARK
+*********
+*********
+*********/
+html,
+:root body,
+:root .page,
+:root .header,
+:root .leftBar,
+:root .flyout,
+:root .picker-background {
+
 
 		/*************
 	NODES
 	**************/
-		--NODE--TXT-CLR--main: hsl(180, 2%, 88%);
+		--NODE--TXT-CLR--main: hsl(180, 2%, 92%);
 		--NODE--TXT-CLR--FAINT: hsl(180, 2%, 50%);
 		--NODE--TXT-CLR--completed: var(--NODE--TXT-CLR--FAINT);
 		--NODE--TXT-CLR--bold: hsl(0, 0%, 96%);
@@ -99,7 +110,7 @@
 		--CHECKBOX--BG--DONE: hsla(218, 82%, 65%);
 		--CHECKBOX--BG--DONE: hsl(203, 4%, 46%);
 		--CHECKBOX--BOX-CLR: hsl(192, 2%, 52%);
-		--CHECKBOX--BOX-CLR--ChildDone: hsl(192, 2%, 44%);
+		--CHECKBOX--BOX-CLR--ChildDone:hsl(192, 2%, 44%);
 		--CHECKBOX--BOX-MIRROR-CLR: hsl(203, 2%, 55%);
 
 
@@ -140,7 +151,7 @@
 		/*************
 	DASHBOARD
 	*************/
-		--DASHBOARD-PAGE--BG: hsl(0, 0%, 7%);
+		--DASHBOARD-PAGE--BG:hsl(0, 0%, 7%);
 		--DashCrd--BrdClr: hsl(198, 9%, 15%);
 		--COMMENT-CONTAINER--BG: hsl(200, 12%, 22%);
 		--DashCrd-ChldrnBgClr: hsl(198, 12%, 21%);
@@ -160,7 +171,16 @@
 		--DashCrd--BrdClr: hsl(198, 9%, 12%)
 }
 
-
+/*
+.dashboard {
+		--COMMENT-CONTAINER--BG: hsl(199, 15%, 19%);
+		--COMMENT-CONTAINER--BORDER-CLR: hsl(199, 15%, 9%);
+		--COMMENT--BG--even: hsl(198, 13%, 21.5%);
+}*/
+.dashboard-card:not(.dashboard-card.comment) {
+		border-left-color: transparent !important;
+		border-right-color: transparent !important;
+}
 :root {
 		/*TEST*/
 		--DASHBOARD-CARD--BG: hsl(300, 0%, 13%);
@@ -178,7 +198,7 @@
 	*************/
 		--BOARD-ROOT--CARD--BG: #353c3f;
 		--BOARD-ROOT--CARD--BG: #2a3135;
-		--BOARD-ROOT--CARD--BORDERCLR: #42484b;
+		--BOARD-ROOT--CARD--BORDERCLR:#42484b;
 		--BOARD-ROOT--CARD--BORDER-INNER-CLR: hsl(201, 13%, 9%);
 
 
@@ -186,7 +206,7 @@
 	LINK COLORS
 	**************/
 		--Link-TxtClr: hsl(200, 70%, 58%);
-
+		
 		--NODE-LINK--TXT-CLR-2: hsl(211, 100%, 43%);
 		--NODE-LINK--TXT-CLR-2-HIGHLIGHT: hsl(211, 100%, 43%);
 
@@ -212,7 +232,7 @@
 		--LnkWFBrdClr: hsl(211, 5%, 50%, 0.4);
 		--LnkWFBgClr: hsla(221, 5%, 50%, 0.27);
 		--LnkWFBgClrHov: hsl(208, 10%, 50%, .171);
-		--NoteLinkClr: #3c88af;
+		--NoteLinkClr:#3c88af;
 		/**/
 		/*************
 	TAG-COLORS
@@ -232,11 +252,8 @@
 		--NODE-TAG--MATCHED--SYMBOL-CLR: hsl(202, 6%, 30%, .7);
 		--NODE-TAG--MATCHED--TXT-CLR: black;
 		--NODE-TAG--MATCHED--BORDER-CLR: ;
-		
-		/*************
-	STRIKETHROUGH
-	**************/
-		--strikeThroughColor:hsl(180, 2%, 55%);
+
+
 
 		/*************
 	TAGS AND LINKS IN NOTES
@@ -395,32 +412,37 @@
 		--ICON--UNDERLINE-WAVY-REFERENCE: var(--ICON--UNDERLINE-WAVY-REFERENCE--DARK);
 		--ICON--UNDERLINE-WAVY-REFERENCE--UNDERLINE: var(--ICON--UNDERLINE-WAVY-REFERENCE--UNDERLINE--DARK);
 }
-
-:root {
-
-		--ICON--MAGNIFYING-GLASS-ZOOM: var(--ICON--MAGNIFYING-GLASS-ZOOM--DARK);
-		#app div > .dialog-box > ._3hmsj > div:last-of-type > div > span {
-				box-shadow: inset 0 0 0 300px hsl(202, 13%, 18.5%, .5),
-				0 1px 0 0px var(--switcher--search-bottom-border-clr);
-		}
-
-
-		.fullMatch ._uanex1 .contentMatch {
-				color: var(--Search--Txt-match);
-		}
-		.colored.bc-Grey {
-				-webkit-text-stroke: 0px !important;
-				-webkit-font-smoothing: antialiased;
-		}
-		.colored.bc-Grey::selection {
-				color: var(--NODE--TXT-CLR--main) !important;
-		}
-		.page.active.searching .project.noted.matches > .notes.matches.fullMatch > .content {
-				--NODE-NOTES--TXT-CLR-ALL: hsl(195, 4%, 65%);
-				--NODE-NOTES--TXT-CLR-Bold: hsl(195, 4%, 57%);
-		}
+#app div > .dialog-box > ._3hmsj > div:last-of-type > div > span {
+		box-shadow: inset 0 0 0 300px hsl(202, 13%, 18.5%, .5),
+		0 1px 0 0px var(--switcher--search-bottom-border-clr);
 }
+
+
+.fullMatch ._uanex1 .contentMatch {
+		color: var(--Search--Txt-match);
+}
+/*ZOOM ICON*/
+:root {
+		--ICON--MAGNIFYING-GLASS-ZOOM: var(--ICON--MAGNIFYING-GLASS-ZOOM--DARK);
+}
+.colored.bc-Grey {
+		-webkit-text-stroke: 0px !important;
+		-webkit-font-smoothing: antialiased;
+}
+.colored.bc-Grey::selection {
+		color: var(--NODE--TXT-CLR--main) !important;
+}
+.page.active.searching .project.noted.matches > .notes.matches.fullMatch > .content {
+		--NODE-NOTES--TXT-CLR-ALL: hsl(195, 4%, 65%);
+		--NODE-NOTES--TXT-CLR-Bold: hsl(195, 4%, 57%);
+}
+
+
 
 :root {
 		--selectionBg2: rgba(54, 102, 119, 0.9);
+}
+
+body._theme-dark{
+		background: blue;
 }
