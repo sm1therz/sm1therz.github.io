@@ -238,6 +238,8 @@
 	**************/
 		--strikeThroughColor:hsl(180, 2%, 55%);
 		--strikeThroughLineColor:hsl(180, 2%, 55%,0.75);
+		--strikeThroughTagBgColor:hsl(180, 2%, 55%,0.45);
+
 
 		/*************
 	TAGS AND LINKS IN NOTES
