@@ -1,3 +1,4 @@
+
 /****
 ! ROOT
 ****/
@@ -78,10 +79,11 @@ BOX SHADOW TESTING - BOARDS
 .project > .name > .bullet,
 .project > .name > .prefix,
 .project > .name > .content,
+.project > .name > .content .innerContentContainer,
 .project > .notes,
 .project > .notes > .content{
 
-		box-shadow: 0 0 0 var(--testBrdW)red;
+		box-shadow: 0 0 0 var(--testBrdW) red !important;
 }
 /*
 #app .project.comment.thread .children {
@@ -758,17 +760,7 @@ REFERENCES*/
 
 }
 /*
-.references .breadcrumbs > a:before {
-		content: var(--ICON--BREADCRUMB--CHEVRON);
-		display: block;
-		filter: var(--inverted-chevron-icn);
-		min-width: 5px;
-		height: auto;
-		opacity: .26;
-		position: absolute;
-		left: 0;
-		top: 0px
-}
+
 */
 #app .references .project svg {
 	position: relative;
@@ -1600,6 +1592,27 @@ i b {
 
 
 /***************
+STRIKETHROUGH
+****************/
+s,
+i s,
+s i,
+b s,
+s b {
+		color: var(--strikeThroughColor) !important;
+}
+s a.contentLink{
+		filter:saturate(.5);
+}
+s {
+		text-decoration:line-through;
+		text-decoration-thickness: 1.25px;
+		text-decoration-style: solid;
+		text-decoration-color: var(--strikeThroughLineColor);
+}
+
+
+/***************
 highlights
 ****************/
 :root {
@@ -1643,11 +1656,20 @@ highlights
 /***************
 HIGHLIGHT - GREYED OUT
 ****************/
-.bc-gray.bc-gray {
-		background-color: var(--HIGHLIGHT--Grey--GREYED-OUT);
-		color: var(--HIGHLIGHT-TXT--Grey--GREYED-OUT) !important;
-		-webkit-font-smoothing: antialiased !important;
+:root {
+		--hilightTxTShadW:.5px
+}
+[class*="bc-"][class*="bc-"]{
+		text-shadow: 
+				0 var(--hilightTxTShadW) black,
+				0 calc(var(--hilightTxTShadW) * -1) black,
+				var(--hilightTxTShadW) 0 black,
+				calc(var(--hilightTxTShadW) * -1) 0 black;
 		-webkit-text-stroke: 0px !important;
+}
+.bc-gray.bc-gray {
+		color: ;
+
 }
 .board.root .bc-gray.bc-gray {
 		--HIGHLIGHT--Grey--GREYED-OUT: var(--BOARD-ROOT--CARD--BG);
@@ -1736,6 +1758,7 @@ u .c-orange,
 b .c-orange,
 .c-orange b {
 		color: var(--TXT-CLR--ORANGE) !important;
+		--LnkTxtClr:var(--TXT-CLR--ORANGE);
 		text-decoration-color: var(--TXT-CLR--ORANGE);
 }
 
@@ -1746,6 +1769,7 @@ u .c-yellow,
 b .c-yellow,
 .c-yellow b {
 		color: var(--TXT-CLR--YELLOW) !important;
+		--LnkTxtClr:var(--TXT-CLR--YELLOW);
 		-webkit-text-stroke-color: hsl(50, 100%, 37%);
 		text-decoration-color: var(--TXT-CLR--YELLOW);
 }
@@ -1757,6 +1781,7 @@ u .c-green,
 b .c-green,
 .c-green b {
 		color: var(--TXT-CLR--GREEN) !important;
+		--LnkTxtClr:var(--TXT-CLR--GREEN);
 		text-decoration-color: var(--TXT-CLR--GREEN);
 }
 
@@ -1767,6 +1792,7 @@ u .c-teal,
 b .c-teal,
 .c-teal b {
 		color: var(--TXT-CLR--TEAL) !important;
+		--LnkTxtClr:var(--TXT-CLR--TEAL);
 		text-decoration-color: var(--TXT-CLR--TEAL);
 }
 
@@ -1777,6 +1803,7 @@ u .c-sky,
 b .c-sky,
 .c-sky b {
 		color: var(--TXT-CLR--SKY) !important;
+		--LnkTxtClr:var(--TXT-CLR--SKY);
 		text-decoration-color: var(--TXT-CLR--SKY);
 }
 
@@ -1787,6 +1814,7 @@ u .c-blue,
 b .c-blue,
 .c-blue b {
 		color: var(--TXT-CLR--BLUE) !important;
+		--LnkTxtClr:var(--TXT-CLR--BLUE);
 		text-decoration-color: var(--TXT-CLR--BLUE);
 }
 
@@ -1797,6 +1825,7 @@ u .c-purple,
 .c-purple b,
 b .c-purple {
 		color: var(--TXT-CLR--PURPLE) !important;
+		--LnkTxtClr:var(--TXT-CLR--PURPLE);
 		text-decoration-color: var(--TXT-CLR--PURPLE);
 }
 
@@ -1807,6 +1836,7 @@ u .c-pink,
 b .c-pink,
 .c-pink b {
 		color: var(--TXT-CLR--PINK) !important;
+				--LnkTxtClr:var(--TXT-CLR--PINK);
 		text-decoration-color: var(--TXT-CLR--PINK);
 }
 
@@ -1817,6 +1847,7 @@ u .c-gray,
 b .c-gray,
 .c-gray b {
 		color: var(--TXT-CLR--GRAY) !important;
+		--LnkTxtClr:var(--TXT-CLR--GRAY);
 		text-decoration-color: var(--TXT-CLR--GRAY);
 }
 
@@ -1844,8 +1875,8 @@ UNDERLINE
 		text-decoration-thickness: var(--underlineThickness);
 }
 .comment {
-		--underlineOffset: 2px;
-		--underlineThickness: 1.5px;
+		/*--underlineOffset: 2px;*/
+		/*--underlineThickness: 1.5px;*/
 }
 .board {
 		--underlineOffset: 2px;
@@ -2056,6 +2087,7 @@ html #app .project > .name > .content a.contentLink {
 		text-decoration-thickness: var(--underlineThickness);
 		text-decloration-color: var(--LnkTxtClr) !important;
 		--link-BrdRad: 4px;
+		text-shadow:none !important;
 }
 html #app .project > .name > .content a.contentLink:hover {
 		background: var(--LnkBgClrHov);
@@ -2293,11 +2325,11 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 /*PARENTS  - Underlined*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u,
 /*CHILDREN - Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u,
+html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer u,
 /*PARENTS  - LINK*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
 /*CHILDREN - LINK*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
+html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a,
 /*PARENTS  - Highlighted*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"],
 /*CHILDREN - Highlighted*/
@@ -2333,7 +2365,7 @@ WAVY TEXT - UNDERLINED & HIGHLIGHTED
 /*PARENTS  - Underlined*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u,
 /*CHILDREN - Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u,
+html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer u,
 /*PARENTS  - Highlighted AND Underlined*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u .colored[class*="bc"],
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] u,
@@ -2349,13 +2381,13 @@ WAVY TEXT - LINKS
 /*PARENTS  - Underlined*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
 /*CHILDREN - Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
+html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a,
 /*PARENTS  - Highlighted AND Underlined*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a .colored[class*="bc"],
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] a,
 /*CHILDREN - Highlighted AND Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a .colored[class*="bc"],
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a {
+html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a .colored[class*="bc"],
+html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer .colored[class*="bc"] a {
 		background-image: var(--ICON--UNDERLINE-WAVY--LINK);
 		--LnkBgClr: transparent;
 		--LnkBrdClr: transparent;
@@ -2764,6 +2796,24 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 .project:not(.board) .project > .name > .prefix .item-checkbox:before {
 		margin-top: -1px !important
 }
+
+html #app .project:not(.board) .project.comment [class*="name--highlighted"]:before,
+html #app .project.board.root .project.boardColumn.comment [class*="name--highlighted"]:before,
+html #app .project.comment.root [class*="name--highlighted"]:before{
+
+		opacity: 0 !important;
+}
+
+
+html #app .project [projectid*="virtual"].comment > .name > .content > .innerContentContainer a,
+html #app .project [projectid*="virtual"].comment > .children .project > .name > .content > .innerContentContainer a,
+html #app .project [projectid*="virtual"].comment > .name > .content > .innerContentContainer u,
+html #app .project [projectid*="virtual"].comment > .children .project > .name > .content > .innerContentContainer u{
+	text-decoration: underline !important;
+	text-underline-offset: var(--underlineOffset) !important;
+}
+
+
 /***********
 ! TAGS
 ************/
@@ -2782,7 +2832,6 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 .contentTag[data-val*="v8"],
 .contentTag[data-val*="ecause"]{
 		font-weight: 500;
-		color: var(--BG-primary) !important;
 }
 .contentTag[data-val*="v1"] .contentTagText,
 .contentTag[data-val*="v2"] .contentTagText,
@@ -2802,17 +2851,26 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 .board.root .contentTag[data-val*="v5"],
 .board.root .contentTag[data-val*="v6"],
 .board.root .contentTag[data-val*="v7"]{
-color: var(--BOARD-ROOT--CARD--BG) !important;
+		--wf-tag-text:var(--BOARD-ROOT--CARD--BG) !important;
 }
 
+s .contentTag {
+		color: var(--strikeThroughColor) !important;
+}
 
 .contentTag {
 		border-radius: var(--TagBrdRad) !important;
 }
+.contentTag [class*="bc-"],
+.contentTag {
+		text-shadow: none !important;
+}
+
+/*
 .contentTag[data-val*="v"]{
 		display: inline-block;
 		line-height: 1.2em;
-}
+}*/
 .contentTag:hover{
 		filter: contrast(1.2) brightness(1.3);
 }
@@ -2842,7 +2900,23 @@ color: var(--BOARD-ROOT--CARD--BG) !important;
 		--wf-tag-background-blue:hsl(221, 39%, 53%) !important;
 		--wf-tag-background-purple:hsl(263, 33%, 50%) !important;
 		--wf-tag-background-pink:hsl(299, 33%, 42%) !important;
-		--wf-tag-background-gray:hsl(194, 4%, 55%) !important;
+		--wf-tag-background-gray:hsl(194, 4%, 50%) !important;
+
+}
+._theme-dark s .contentTag{
+		--wf-tag-background-red:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-orange:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-yellow:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-green:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-teal:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-sky:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-blue:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-purple:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-pink:var(--strikeThroughTagBgColor) !important;
+		--wf-tag-background-gray:var(--strikeThroughTagBgColor) !important;
+}
+
+._theme-dark .contentTag {
 		--wf-tag-text:var(--BG-primary);
 }
 
@@ -3460,7 +3534,7 @@ BOARDS ROOT
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .name {
 		height: unset;
-		padding-bottom: 5px;
+		padding-bottom: 0px;
 		padding-left: var(--ROOT-padLeftRight);
 		position:fixed;
 		top:0px;
@@ -3474,7 +3548,7 @@ BOARDS ROOT
 
 #app .page[style="overflow-y: auto;"] > .project.board.root > .notes{
 		position:fixed;
-		top:26px;
+		top:31px;
 		z-index:9544;
 		height:var(--ROOT-BOARD-TITLE-HEIGHT);
 		width:unset;
@@ -3715,7 +3789,7 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 
 .board .highlighted::before,
 .board .floating-conversations::before,
-[class*="name--highlighted"]:hover:before{
+[class*="name--highlighted"]:not(.comment [class*="name--highlighted"]):hover:before{
 	background: transparent !important;
 	inset: -1px !important;
 	border-radius: 3px;
@@ -3745,10 +3819,7 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 .board .floating-conversations:before{
 	background: hsla(0,0%,100%,.15) !important;
 }
-.floating-comments-blurred .board .floating-conversations:before {
-	opacity: .4 !important;
-	background: transparent !important;
-}
+
 #app .board .project > .name .nameButtons{
 	z-index: 3;
 }
@@ -3797,6 +3868,12 @@ BOARD COMMENTS
 #app .board .project.thread.comment > .children  .name > .bullet,
 #app .board .project.thread.comment > .children  .name > .nameButtons {
 	--btn-MargTop:4px !important;
+}
+#app .board.root .project.thread.comment > .children  .name > .menu,
+#app .board.root .project.thread.comment > .children  .name > .expand,
+#app .board.root .project.thread.comment > .children  .name > .bullet,
+#app .board.root .project.thread.comment > .children  .name > .nameButtons {
+	--btn-MargTop:6px !important;
 }
 
 #app .board .comment .nameButtons {
@@ -3859,7 +3936,82 @@ html #app .board .boardColumn .notes > .content code {
 		line-height: 0px !important;
 		font-size: calc(var(--notes-fontSize) - .5px) !important;
 }
+html #app .board:not(.root) .boardColumn .notes > .content code {
+		padding-top: 0px !important;
+		padding-bottom:.5px !important;
+		font-size: calc(1em - 1px) !important;
+				
+}
+html #app .board:not(.root) .boardColumn .notes > .content{
+		overflow: unset;
+}
 
+
+html #app .board:not(.root) > .children > .boardColumn.comment {
+		margin: 0px !important;
+		border-radius: 0px !important;
+}
+
+html #app .board:not(.root) > .children > .boardColumn.comment > .commentAttribution {
+		padding-top: 0px !important;
+		position: absolute;
+		top: 0px;
+		z-index: 94;
+		display: none !important;
+}
+html #app .board:not(.root) > .children > .boardColumn.comment > .name > .expand,
+html #app .board:not(.root) > .children > .boardColumn.comment > .name > .menu,
+html #app .board:not(.root) > .children > .boardColumn.comment > .name > .bullet{
+			--btn-MargTop: 7px !important;
+}
+html #app .board:not(.root) > .children > .boardColumn.comment > .children {
+		padding-left: 0px !important;
+}
+html #app .board:not(.root) > .children > .boardColumn.comment > .children .boardCard{
+		background: transparent;
+}
+html #app .board:not(.root) .comment [class*="name--highlighted"]:before {
+		opacity: 0 !important;
+}
+
+html #app .board .project.highlighted:before{
+		content: "";
+	display: block;
+	position: absolute;
+	inset: 0px -5px;
+	border-radius: 5px;
+	background: var(--wf-background-tertiary) !important;
+}
+
+html #app .board:not(.root) .boardColumn > .children > .project.comment {
+		margin: 0px !important;
+}
+html #app .board .boardColumn > .children > .project.comment > .commentAttribution{
+		padding-left: 25px !important;
+		padding-top: 6px !important;
+}
+
+html #app .board .boardColumn > .children > .project.comment .comment > .commentAttribution{
+		padding-left: 15px !important;
+		padding-top: 6px !important;
+}
+html #app .board:not(.root) .boardColumn > .children > .project.comment .comment > .children{
+		padding-left: calc(var(--children-Indent) * 1) !important
+}
+
+.project.references > .children .project.board > .children {
+		overflow-y: auto;
+}
+.boardCard.paragraph > .name > .bullet:not(.diamond):before{
+		width: 3px !important;
+}
+.boardCard.paragraph:not(.open,.collapsed) > .name > .bullet:not(.diamond):before{
+		opacity: 0 !important;
+}
+
+.board ._1ut32c0{
+	display: none !important;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -3907,7 +4059,7 @@ BOARD ROOT SIZES
 #app .board.root,
 #app .board.root > .children {
 		--name-fontSize: 16px;
-		--name-lineHeight: 21px;
+		--name-lineHeight: 23px;
 		--notes-fontSize: 13.25px;
 		--notes-lineHeight: 16.25px;
 		--boardRoot-CardBrdRad: 8px;
@@ -4171,7 +4323,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 
 #app .board.root .innerContentContainer b {
-		font-weight: 500;
+		font-weight: 550;
 }
 
 #app .page[style="overflow-y: auto;"] {
@@ -4229,9 +4381,9 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment {
 		background: hsl(202, 23%, 17.5%, 0.5) !Important;
-		background: hsl(202, 12%, 21%) !Important;
-		--COMMENT--BG--even: hsl(197, 18%, 15%);
-		--COMMENT-CONTAINER--BG: hsl(202, 12%, 21%);
+		background: hsl(197, 18%, 15%) !Important;
+		--COMMENT--BG--even: hsl(202, 12%, 21%);
+		--COMMENT-CONTAINER--BG: hsl(197, 18%, 15%);
 		box-shadow: 0 0 0 1px hsla(200, 3%, 37%, .78) !important;
 }
 #app .project.board.root > .children > .boardColumn .comment > .notes .content {
@@ -4249,9 +4401,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .project.board.root .boardColumn > .name [class*="Place"],
 #app .project.board.root .boardColumn > .name > .content {
 		font-weight: 400 !important;
-		color: hsla(0, 0%, 100%, 0.55);
 		font-size: calc(var(--name-fontSize) + 2px)!important;
-		line-height: calc(var(--name-lineHeight) + 2px) !important;
+		line-height: calc(var(--name-lineHeight) + 6px) !important;
 }
 
 div#app ~ div[style*="color: rgb(60, 64"] {
@@ -4289,7 +4440,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root .project > .name > .prefix,
 #app .board.root .project > .name > .expand,
 #app .board.root .project > .name > .menu {
-		--btn-MargTop: 2px !important;
+		--btn-MargTop: 3px !important;
 }
 #app .project.board.root .boardColumn > .name {
 		position: relative;
@@ -4329,21 +4480,54 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root .boardCard > .children > .comment button.reply-button.button.secondary {
 		right: 30px;
 }
+
+#app .board.root {
+			--rootnotes-fontSize: calc(var(--notes-fontSize) + 0px);
+	--rootnotes-lineHeight: calc(var(--notes-lineHeight) + -1px);
+}
+
+#app .board.root > .notes > .content {
+		display: -webkit-box !important;
+		-webkit-line-clamp:1 !important;
+		overflow: hidden !important;
+		max-width: 150px;
+}
+
+#app .board.root > .notes > .content.active{
+		-webkit-line-clamp:100 !important;
+		max-width: 100% !important;
+		background-image: linear-gradient(to right, var(--BG-primary) 0, var(--BG-primary) 90%, transparent);
+		overflow: visible !important;
+}
+
+#app .board.root > .children > .boardColumn.comment {
+		margin-top: 0px !important;
+}
+#app .board.root > .children > .boardColumn.comment > .children {
+		padding-bottom: 5px;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT - CHILD BORDERS
 ********************************
 ********************************/
 :root {
-		--boardChildBrdClr:hsl(200, 6%, 30%,.45);
+		--boardChildBrdClr:hsl(200, 8%, 24%);
 		--boardChild-FakeBrdOpacity:0;
 		--boardChildBgClr:hsl(202, 16%, 17%)
 }
 
-#app .board.root .boardCard > .children > .project:not(.quote-block,.comment,.code-block,.references .project,.noted),
-#app .board.root .boardCard > .children > .project.noted:not(.quote-block,.comment,.code-block,.references .project){
-		box-shadow: 0 1px 0 0 var(--boardChildBrdClr);
+.board.root .comment {
+	--boardChildBrdClr:hsla(0,0%,100%,.1);
+}
+
+#app .board.root .boardCard > .children > .project:not(.project:last-child, .quote-block,.comment,.code-block,.references .project,.noted),
+#app .board.root .boardCard > .children > .project.noted:not(.project.noted:last-child, .quote-block,.comment,.code-block,.references .project){
+		box-shadow: 0 1px 0 0 var(--boardChildBrdClr) !important;
 		border-bottom: 0px solid hsl(200, 6%, 30%,0) !important;
+}
+#app .board.root .boardCard > .children > .project.collapsed + .project:last-child {
+		display: none !important;
 }
 
 
@@ -4356,12 +4540,12 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 				box-shadow: 0 0px 0 0 var(--boardChildBrdClr) !important;
 		
 }
-#app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
+#app .board.root .boardCard:not(.comment) > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
 		box-shadow: 0 1px 0 0 var(--boardChildBrdClr) !important;
 }
 
-#app .board.root .boardCard.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project,.noted) > .name,
-#app .board.root .boardCard.noted.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .notes {
+#app .board.root .boardCard.open:not(.project:last-of-type,.quote-block,.code-block,.references .project,.noted) > .name,
+#app .board.root .boardCard.noted.open:not(.project:last-of-type,.quote-block,.code-block,.references .project) > .notes {
 				box-shadow: 0 1px 0 0 var(--boardChildBrdClr) !important;
 }
 
@@ -4380,10 +4564,14 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 		right: 0;
 		bottom: -1px;
 		opacity: var(--boardChild-FakeBrdOpacity);
-		z-index: 1
+		z-index: 1;
 }
-#app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project,.noted) > .name,
-#app .board.root .boardCard > .children > .project.noted.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .notes{
+
+
+#app .board.root .boardCard > .children > .project.open:not(.quote-block,.comment,.code-block,.references .project,.noted) > .name,
+#app .board.root .boardCard > .children > .project.collapsed:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project,.noted) > .name,
+#app .board.root .boardCard > .children > .project.noted.open:not(.quote-block,.comment,.code-block,.references .project) > .notes,
+#app .board.root .boardCard > .children > .project.noted.collapsed:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .notes{
 		box-shadow: 
 				0 0px 0 0 var(--boardChildBrdClr) !important;
 		--boardChild-FakeBrdOpacity:1;
@@ -4420,6 +4608,10 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 }
 #app .board > .children .boardCard > .children .project > .name > .expand:before {
 		transform: scale(.8) rotate(0deg);
+}
+#app .board > .children .boardCard > .children .project > .name > .expand:before,
+#app .board > .children .boardCard.comment > .children .project.comment > .name > .expand:before{
+			transform: scale(.625) rotate(0deg);
 }
 /*paragraph*/
 #app .board > .children .boardCard > .children .project.paragraph:not(.open,.collapsed) > .name > .expand:before{
@@ -4481,8 +4673,18 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 /*MIRRORS (not TASKS) - bullet top - open*/
 #app .board > .children .boardCard > .children .project:not(.checkmark) > .name > .bullet.diamond ~ .expand:before {
 		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
-		--btnIcn-Scale:.8;
+		--btnIcn-Scale:.65;
 }
+#app .board > .children .boardCard.comment > .children .project.comment:not(.checkmark) > .name > .bullet.diamond ~ .expand:before,
+#app .board > .children .boardCard.comment > .children .project:not(.checkmark) > .name > .bullet.diamond ~ .expand:before{
+		--btnIcn-Scale:.6;
+
+}
+#app .board.root > .children .boardCard.comment > .children > .project > .children .project.comment:not(.checkmark) > .name > .expand{
+		--btn-MargTop:5.5px !important;
+
+}
+
 /*MIRRORS (not TASKS) - bullet top - closed*/
 #app .board > .children .boardCard > .children .project.collapsed:not(.checkmark) > .name > .bullet.diamond ~ .expand:before {
 
@@ -4518,6 +4720,16 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board > .children .boardCard > .children .project.code-block + .code-block > .name > .expand {
 		--btn-MargTop:2px !important;
 }
+
+
+#app .board:not(.root) > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand{
+		--btn-MargTop:3.5px !important;
+
+}
+#app .board > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand{
+		--btn-MargTop:5.5px !important;
+
+}
 /*******************************
 ********************************
 ! DASHBOARD
@@ -4532,6 +4744,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 		width: 600px !important;
 		max-width: 100%;
 		box-sizing: border-box;
+		margin: 0 auto;
 }
 #app .project.root.dashboard > .children {
 		padding: 0px;
@@ -4799,7 +5012,8 @@ LEVEL 1 Dashboard Card*/
 		border-top: 0PX !important;
 }
 .dashboard-card .comment .children > .project:first-of-type:not(.dashboard-card .comment .children > .project.comment:first-of-type) {
-		border-top: 1px solid var(--DashCrd--BrdClr);
+		border-top: 0px solid var(--DashCrd--BrdClr);
+		
 }
 
 
@@ -4813,9 +5027,18 @@ LEVEL 1 Dashboard Card*/
 
 /*content padding*/
 .dashboard .dashboard-card > .name > .content,
-.dashboard .dashboard-card > .notes > .content {
+.dashboard .dashboard-card > .notes > .content,
+.dashboard .dashboard-card > .children .project > .name > .content,
+.dashboard .dashboard-card > .children .project > .notes > .content{
 		--content-PadTopBtm: 6px;
 }
+#app .page.dashboard-page .dashboard.root .dashboard-card,
+#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project{
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+}
+
+
 .dashboard .dashboard-card > .notes > .contentEditablePlaceholderWrapper {
 		padding-top: var(--content-PadTopBtm);
 		padding-bottom: var(--content-PadTopBtm);
@@ -4987,18 +5210,6 @@ html #app .root .dashboard-card {
 		border-radius: 0px !important;
 		border-right: 0px !important;
 		border-top: 0px !important;
-}
-html #app .root .dashboard-card:after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 0;
-		left: -100vw;
-		right: -100vw;
-		height: 1px;
-		z-index: 0;
-		background: var(--DashCrd--BrdClr);
-		transition: .15s;
 }
 
 
@@ -5300,23 +5511,9 @@ html #app .dashboard .contentEditablePlaceholder {
 		border: unset !important;
 		box-shadow: inset 0px 1px 0 0 var(--DashCrd--BrdClr)
 }
-/******* 
-EXPAND COLLAPSE BORDER ANIMATION
-*/
-.dashboard-card > .children:before {
-		content: "";
-		display: block;
-		position: absolute;
-		height: var(--dashCrd-BrdWidth);
-		background: var(--DashCrd--BrdClr);
-		right: 0;
-		z-index: 0;
-		top: 0;
-}
 
-.dashboard-card.comment > .children:before {
-		display: none;
-}
+
+
 .dashboard-card > .children:before {
 		left: calc(var(--children-Indent) * 2);
 		transition: .1s
@@ -5385,6 +5582,106 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 
+#app .dashboard.root > .children .project.comment.thread .prefix{
+		 --btn-MargTop: 5.5px !important;   
+}
+
+#app .page.dashboard-page {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+}
+
+.dashboard.root .project.comment,
+.dashboard.root .project.comment > .children{
+		padding-bottom: 0px !important
+}
+
+
+/*******************************
+********************************
+! DASHBOARD - BORDERS
+********************************
+********************************/
+
+._theme-dark {
+	--dashboardChildBrdClr:hsl(204, 9%, 22%);
+}
+html #app .page.dashboard-page .root.dashboard .dashboard-card {
+		box-shadow: 0 -1px 0 0 var(--DashCrd--BrdClr) !important;
+}
+html #app .page.dashboard-page .root.dashboard .dashboard-card > .name,
+html #app .page.dashboard-page .root.dashboard .dashboard-card > .notes{
+		padding-left: var(--children-Indent) !important;
+		padding-right: var(--children-Indent) !important;
+}
+html #app .root .dashboard-card,
+html #app .root .dashboard-card > .children > .project {
+		border-top: 0px solid red !important;
+		border-bottom: 0px solid red !important;
+}
+
+/******* 
+EXPAND COLLAPSE BORDER ANIMATION
+*/
+.dashboard-card .children {
+		position: relative;
+}
+
+.dashboard-card:not(.noted) > .name:after,
+.dashboard-card.noted > .notes:after {
+		content: "";
+		display: block;
+		position: absolute;
+		height: var(--dashCrd-BrdWidth);
+		background: var(--DashCrd--BrdClr);
+		right: calc(var(--children-Indent) * 0);
+		z-index: 0;
+		bottom: 0 !important;
+		opacity: 1;
+		left: calc(var(--children-Indent) * 0);
+		width: unset !important;
+		transition: .1s;
+		top: unset !important
+}
+.dashboard-card:not(.noted) > .name:before,
+.dashboard-card.noted > .notes:before {
+		
+}
+
+
+
+#app .dashboard-card .children {
+					--DashCrd--BrdClr: var(--dashboardChildBrdClr);
+}
+#app .dashboard-card > .children .project:not(.noted) > .name,
+#app .dashboard-card > .children .project.noted > .notes {
+		position: relative !important;
+		box-shadow: 0 1px 0 0 var(--DashCrd--BrdClr) !important;
+
+}
+#app .dashboard-card.comment,
+#app .dashboard-card.comment  .children,
+#app .dashboard-card .comment,
+#app .dashboard-card .comment .children  {
+	--DashCrd--BrdClr: hsla(0, 0%, 50%, 0.125) !important;
+}
+/*
+#app .dashboard-card .project:not(.comment) .children {
+		box-shadow: inset 0 1px 0 0 var(--dashboardChildBrdClr) !important;
+}
+*/
+
+.dashboard-card .children .project.open > .children > .project:first-child > .name {}
+.dashboard-card .children .project.open > .children > .project:first-child > .name:after {
+		opacity: 1 !important;
+		--DashCrd--BrdClr: hsla(0, 0%, 50%, .25)
+}
+
+/*BACKGROUNDS*/
+
+.dashboard.root > .children > .dashboard-card:not(.comment):nth-of-type(odd){
+	 background: hsl(201, 13%, 18%); 
+}
 /*******************************
 ********************************
 ! PRESENTATION
@@ -5429,7 +5726,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 /*******************************
 ********************************
-COMMENTS - NEW
+COMMENTS - NEW - FLOATING
 ********************************
 ********************************/
 :root {
@@ -5439,11 +5736,16 @@ COMMENTS - NEW
 	--floatCommentPosRight:0px;
 	--floatCommentBtnCloseW:30px;
 }
-#app .project.comment.thread,
-#app .project.comment.thread * {
-}
 
 /*OVERRIDES*/
+html #app .floating-comments-container{
+		bottom: unset !important;
+		max-height: calc(99%  - var(--Height--Header))!important;
+		overflow-y: auto;
+	z-index: 10 !important;
+
+		
+}
 html #app .floating-comments-container,
 html #app .floating-comments-container .vertical-scrollable-container,
 html #app .floating-comments-container .comment-container,
@@ -5460,19 +5762,27 @@ html #app .floating-comments-container .comment-container{
 }
 html #app .floating-comments-container .comment-container > .children{
 			padding-left: 40px !important;
-	padding-right: 10px!important;
+	padding-right: 5px!important;
 
 
 }
 html #app .floating-comments-container .comment-container > .children > .comment:last-of-type {
 	margin-bottom: 10px !important; 
 }
+/*CLOSE COMMENTS BUTTON*/
+
 html #app .floating-comments-container > button.threads--comment-button{
 	transform: unset !important;
-	right: 80px !important;
+	right: 0 !important;
 	left: unset !important;
-	position: relative;
-	margin-left: calc(100% - var(--floatCommentBtnCloseW) - 10px)!important;
+	position: absolute !important;
+	margin-left: unset !important;
+		margin-right: 10px;
+}
+html.floating-comments-blurred #app .floating-comments-container > button.threads--comment-button{
+	margin-left: unset !important;
+		margin-right: calc(100% - var(--floatCommentBtnCloseW) - 40px);
+
 }
 html body.floating-comments #app .floating-comments-container{
 		pointer-events: all !important
@@ -5492,11 +5802,19 @@ html body.floating-comments.windowBlurred #app .floating-comments-container{
 	transform: unset !important;
 	
 }
+#app .floating-comments-container > .vertical-scrollable-container .project.root.comment-container > .name{
+		height: 1px !important;
+}
 /*INACTIVE - ALL*/
-html body.floating-comments #app .floating-comments-container,
-html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
-	--floatCommentW:500px;
+html body.floating-comments #app .floating-comments-container {
 	--floatCommentPosRight: calc(var(--floatCommentW) * 0);
+	--floatCommentW:450px;
+		
+}
+html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
+	--floatCommentW:410px;
+	--floatCommentPosRight: calc(var(--floatCommentW) * -0.1);
+		
 		
 	}
 
@@ -5513,9 +5831,9 @@ html body.floating-comments #app .floating-comments-blurred .floating-comments-c
 html body.floating-comments #app .floating-comments-container:focus-within,
 html body.floating-comments #app .floating-comments-container:focus-visible,
 html body.floating-comments #app .floating-comments-container:focus{
-	--floatCommentW:500px !important;
 }
 
+html body.floating-comments #app .floating-comments-container .project.root > .children > .project,
 html body.floating-comments #app .floating-comments-container:focus .project.root > .children > .project,
 html body.floating-comments #app .floating-comments-container:focus-within .project.root > .children > .project{
 		box-shadow: 0 0 10px black !important;
@@ -5523,6 +5841,9 @@ html body.floating-comments #app .floating-comments-container:focus-within .proj
 		transition-delay: 0s !important;
 }
 
+html body.floating-comments #app .floating-comments-container .project.root > .children > .project:first-child {
+		margin-top: 4px !important;
+}
 
 @media (max-width: 1200px) {
 /*INACTIVE - 1200px*/
@@ -5530,15 +5851,14 @@ html body.floating-comments #app .floating-comments-container:focus-within .proj
 					--floatCommentW:calc(530px - 20vw);
 				--floatCommentMaxW:calc(530px - 20vw) !important;
 				max-width: var(--floatCommentMaxW) !important;
-	--floatCommentPosRight: calc(var(--floatCommentW) * -0.045);
+	--floatCommentPosRight: calc(var(--floatCommentW) * -0.145);
 				
 		}
 /*ACTIVE - 1200px*/
 		html body.floating-comments:focus-within #app .floating-comments-container {
-					--floatCommentW:450px;
 		}
 		html.floating-comments-blurred body.floating-comments #app .floating-comments-container .project.root > .children > .project{
-								box-shadow: 0 0 1px black !important;
+								box-shadow: 0 0 7px #0000008c !important;
 
 		}
 		html body.floating-comments #app .floating-comments-container .project.root > .children > .project {
@@ -5580,9 +5900,29 @@ html body.floating-comments:focus-within #app .floating-comments-container .proj
 row-gap: 20px !important;
 }
 
+#app .floating-comments-container .nameButtons,
+#app .floating-comments-container .nameButtons.active {
+		transition: .14s !important;
+}
+#app .floating-comments-container .nameButtons {
+		opacity: 0 !important;
+}
+#app .floating-comments-container .nameButtons.active{
+		opacity: .4 !important;
+}
+#app .floating-comments-container .nameButtons.active:hover {
+		opacity: 1 !important;
+}
+
+
+
 /*NORMAL COMMENTS*/
-#app .project.comment.thread,
-#app .project.comment.thread *{
+#app .project.comment.thread{
+		box-sizing: border-box;
+		transform: unset !important;
+		max-width: 100% !important;
+}
+#app .project.comment.thread *:not(.prefix, .prefix *){
 		box-sizing: border-box;
 		transform: unset !important;
 		max-width: 100% !important;
@@ -5719,20 +6059,6 @@ row-gap: 20px !important;
 		transform: unset !important;
 }
 
-#app .floating-comments-container .nameButtons,
-#app .floating-comments-container .nameButtons.active {
-		transition: .14s !important;
-}
-#app .floating-comments-container .nameButtons {
-		opacity: 0 !important;
-}
-#app .floating-comments-container .nameButtons.active{
-		opacity: .4 !important;
-}
-#app .floating-comments-container .nameButtons.active:hover {
-		opacity: 1 !important;
-}
-
 
 #app .board .nameButtons {
 	right: calc(var(--children-Indent) * 1 - 4px) !important;
@@ -5746,6 +6072,11 @@ row-gap: 20px !important;
 	z-index: 2;
 	transition: .1s;
 	opacity: 1;
+}
+#app .board:not(.root) .nameButtons{
+		right: 0 !important;
+		height: 10px !important;
+		min-height: 10px !important;
 }
 #app .board .project.checkmark > .name .nameButtons {
 		right: calc(var(--children-Indent) * 2) !important;
@@ -5972,6 +6303,67 @@ opacity: 1;
 		max-width: 100%!important;
 		padding-right: 0px !important;
 }
+
+#app .root .project.comment .commentAttribution {
+		margin-bottom: 2px !important;
+}
+html #app .comment.draft .comment-toolbar {
+		padding-bottom: 8px !important;
+}
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project.comment{
+		--commentTopContentIndent:26px;
+}
+/**/
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project.comment .children{
+		padding-left: 20px !important;
+}
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children .project > .name > .content {
+		margin-left: var(--commentTopContentIndent) !important;
+}
+
+#app .project.comment .project.checkmark > .name > .prefix{
+}
+
+#app .project.comment .project.checkmark > .name > .prefix{
+			--btn-MargTop: 2px !important;
+}
+#app .board .project.comment .project.checkmark > .name > .prefix{
+			--btn-MargTop: 3.5px !important;
+}
+
+#app .board .project.comment .project.checkmark > .name > .prefix .item-checkbox{
+		transform: rotate(0deg)scale(var(--btnIcn-Scale)) !important;
+		--btnIcn-Scale: 0.7;
+}
+
+#app .board .project.comment .project.checkmark > .name > .bullet.diamond ~ .prefix{
+		transform: unset !important;
+}
+#app .board .project.comment .project.checkmark > .name > .bullet.diamond ~ .prefix .item-checkbox{
+		--btnIcn-Scale: .7;
+		transform: rotate(-45deg)scale(var(--btnIcn-Scale)) !important
+}
+#app .board .project.comment .project.checkmark.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox{
+		--btnIcn-Scale: 0.7;
+		transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important
+}
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root > .children > .project.comment > .name .menu {
+	left: unset !important;
+	right: 10px;
+	top: -20px !important;
+	transform: scale(1.2) !important;
+	transform-origin: top right;
+	opacity: 0.65;
+}
+/*******************************
+********************************
+COMMENTS - NEW - NORMAL
+********************************
+********************************/
+
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
@@ -6603,90 +6995,91 @@ html #app .dialog-box ._157gzxf > div > div {
 ! POPUP - MIRRORS
 ********************************
 ********************************/
-
 /***/
-#app .dialog-box .flex.flex-col.gap-xl > .flex.flex-col.gap-m > div > div:last-child{
-		display: flex;
-		align-items: flex-start;
-		margin-top: 10px;
+#app .dialog-box .flex.flex-col.gap-xl > .flex.flex-col.gap-m > div > div:last-child {
+	display: flex;
+	align-items: flex-start;
+	margin-top: 10px;
 }
 #app .dialog-box .flex.flex-col.gap-xl > .flex.flex-col.gap-m > div > div:last-child > p {
-		padding-top: 1px;
-		margin-right: 5px;
+	padding-top: 1px;
+	margin-right: 5px;
 }
 /***/
 :root {
-		--mirrorMenuHeight:18px;
-		--mirrorMenuWidth:22px;
-		--mirrorChevronWidth:14px;
-		--mirrorLinkGap:5px;
-		--mirrorBreadCrumbGap:10px;
+	--mirrorMenuHeight: 16px;
+	--mirrorMenuWidth: 20px;
+	--mirrorChevronWidth: 14px;
+	--mirrorChevronLastHeight: 17px;
+	--mirrorLinkGap: 5px;
+	--mirrorBreadCrumbGap: 10px;
 }
-#app .dialog-box .breadcrumbs{
+#app .dialog-box .breadcrumbs {
 
-		align-items: flex-start;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-		flex-shrink: unset;
-		column-gap: var(--mirrorBreadCrumbGap);
-		
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	flex-shrink: unset;
+	column-gap: var(--mirrorBreadCrumbGap);
 }
 #app .dialog-box .breadcrumbs * {
-		box-shadow: inset 0 0 0 0px red;
+	box-shadow: inset 0 0 0 0px red;
 }
 #app .dialog-box .breadcrumbs,
-#app .dialog-box .breadcrumbs *{
-		height: unset !important;
+#app .dialog-box .breadcrumbs * {
+	height: unset !important;
 }
-#app .dialog-box .breadcrumbs > .menu .iconButton{
-		height: var(--mirrorMenuHeight) !important;
-		width: var(--mirrorMenuWidth);
-		padding: 3px;
-		border-radius: 3px;
-		transition: .1s;
-		box-shadow:inset 0 0 0 1px hsla(0,0%,100%,0.3);
+#app .dialog-box .breadcrumbs > .menu .iconButton {
+	height: var(--mirrorMenuHeight) !important;
+	width: var(--mirrorMenuWidth);
+	padding: 3px;
+	border-radius: 3px;
+	transition: .1s;
+	box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.15) !important;
+	transform: translateX(4px);
+	transform-origin: center left
 }
 #app .dialog-box .breadcrumbs > .menu .iconButton:hover {
-		background:hsla(0,0%,20%,0.4)
+	background: hsla(0, 0%, 20%, 0.4)
 }
 
-#app .dialog-box .breadcrumbs > .menu .iconButton svg path{
-		fill: hsla(0,0%,100%,.5);
+#app .dialog-box .breadcrumbs > .menu .iconButton svg path {
+	fill: hsla(0, 0%, 100%, .5);
 }
 
 
-#app .dialog-box .breadcrumbs svg:not(.breadcrumbs .menu svg){
+#app .dialog-box .breadcrumbs svg:not(.breadcrumbs .menu svg) {
 
-		display: block;
-		align-self: center;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: calc(var(--mirrorMenuHeight) * .5);
-		max-height: calc(var(--mirrorMenuHeight) * 0.5);
-		opacity: .5;
-		display: none;
+	display: block;
+	align-self: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: calc(var(--mirrorMenuHeight) * .5);
+	max-height: calc(var(--mirrorMenuHeight) * 0.5);
+	opacity: .5;
+	display: none;
 }
 #app .dialog-box .breadcrumbs svg.fa-message-lines {
-		width: calc(var(--mirrorMenuHeight) * 1) !important;
-		height: calc(var(--mirrorMenuHeight) * 1) !important;
-		min-width: calc(var(--mirrorMenuHeight) * 1) !important;
-		min-height: calc(var(--mirrorMenuHeight) * 0.9) !important;
-		display: inline-flex !important; 
-		align-items: center;
-		justify-content: center;
-		top: 1px !important;
-		position: relative;
-		opacity: 1 !important;
-		margin-right: 5px;
+	width: calc(var(--mirrorMenuHeight) * 1) !important;
+	height: calc(var(--mirrorMenuHeight) * 1) !important;
+	min-width: calc(var(--mirrorMenuHeight) * 1) !important;
+	min-height: calc(var(--mirrorMenuHeight) * 0.9) !important;
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
+	top: 1px !important;
+	position: relative;
+	opacity: 1 !important;
+	margin-right: 5px;
 }
 
 #app .dialog-box .breadcrumbs a {
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		flex: unset;
-		width: auto;
-		padding-left: 0px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	flex: unset;
+	width: auto;
+	padding-left: 0px;
 	padding-right: 0px;
 	margin-right: 0px !important;
 	display: inline;
@@ -6702,82 +7095,128 @@ html #app .dialog-box ._157gzxf > div > div {
 	text-overflow: ellipsis;
 	padding-bottom: 1px;
 	transform-origin: left !important;
-		margin-top: 0px !important;
-		max-height: 19px;
-		position: relative;
-		padding-left: calc(var(--mirrorChevronWidth) * 1.25);
+	margin-top: 0px !important;
+	max-height: 19px;
+	position: relative;
+	padding-left: calc(var(--mirrorChevronWidth) * 1.25);
+
 }
 
 /*Fake Chevron*/
-
-#app .dialog-box .breadcrumbs a:before{
-		content: "";
-		display: block;
-		width: var(--mirrorChevronWidth) !important;
-		height: 20px !important;
-		background-image: var(--ICON--BREADCRUMB--CHEVRON);
-		background-repeat: no-repeat;
-		background-position: center 3px;
-		background-size: 6px;
-		opacity: .5;
-		position: absolute;
-		left: calc(var(--mirrorBreadCrumbGap) * 0)
+#app .dialog-box .breadcrumbs a:before {
+	content: "";
+	display: block;
+	width: var(--mirrorChevronWidth) !important;
+	height: 20px !important;
+	background-image: var(--ICON--MIRROR--CHEVRON);
+	background-repeat: no-repeat;
+	background-position: center 3px;
+	background-size: 6px;
+	opacity: .5;
+	position: absolute;
+	left: calc(var(--mirrorBreadCrumbGap) * 0)
 }
-#app .dialog-box .breadcrumbs > a:first-child{
-		padding-left: 0px;
+#app .dialog-box .breadcrumbs > a:first-child {
+	padding-left: 0px;
 }
-#app .dialog-box .breadcrumbs > a:first-child:before{
-		display: none;
+#app .dialog-box .breadcrumbs > a:first-child:before {
+	display: none;
 }
 /*HOVER*/
 #app .dialog-box .breadcrumbs a:hover {
-		transform: scale(1.074);
-		text-decoration: unset;
-		color: white;
+	transform: scale(1.074);
+	text-decoration: unset;
+	color: white;
 }
 
 /*ORIGINAL MIRROR**/
-#app .dialog-box ._1560f70{
-		background: transparent;
-		border-bottom: 4px dotted hsla(0,0%,50%,.5);
-		border-radius: 0px;
-		padding-bottom: 18px;
-		margin-bottom: 7px;
+#app .dialog-box ._1560f70 {
+	background: transparent;
+	border-bottom: 4px dotted hsla(0, 0%, 50%, .5);
+	border-radius: 0px;
+	padding-bottom: 18px;
+	margin-bottom: 7px;
 }
 
 /***/
-
-/*LAST ITEM*/
-
-#app .dialog-box .breadcrumbs > a:last-child {
-		max-width: calc(100% - var(--mirrorChevronWidth)) !important;
-		width: calc(100% - var(--mirrorChevronWidth) - var(--mirrorLinkGap)) !important;
-		gap: var(--mirrorLinkGap);
-		font-size: calc(1em + 1.5px);
-		opacity: 1;
-		padding-left: calc(var(--mirrorChevronWidth) * 1.5);
-		
-
+/*SECOND TO LAST ITEM*/
+#app .dialog-box .breadcrumbs > a:nth-last-child(-n + 3) {
+	-webkit-text-fill-color: red !important;
 }
-#app .dialog-box .breadcrumbs > a:last-child:before{
-		content: "";
-		display: block;
-		min-width: var(--mirrorChevronWidth) !important;
-		height: 21px !important;
-		background-image: var(--ICON--BREADCRUMB--CHEVRON);
-		background-repeat: no-repeat;
-		background-position: center 3px;
-		background-size: 7px;
-		opacity: .5;
-		position: absolute !important;
+
+/*********
+SECOND TO LAST ITEM
+**********/
+#app .dialog-box .breadcrumbs > a:nth-last-child(-n + 3) {
+	max-width: calc(100% - var(--mirrorChevronWidth)) !important;
+	width: calc(100% - var(--mirrorChevronWidth) - var(--mirrorLinkGap)) !important;
+	gap: var(--mirrorLinkGap);
+	font-size: calc(1em + 2px);
+	opacity: 1;
+	padding-left: calc(var(--mirrorChevronWidth) * 2.0);
+	-webkit-text-fill-color: white !important;
+	font-weight: 600;
+	margin-top: 3px !important
+}
+#app .dialog-box .breadcrumbs > a:nth-last-child(-n + 3):before {
+	content: var(--ICON--MIRROR--CHEVRON-DOUBLE);
+	display: block;
+	min-width: 17px !important;
+	height: var(--mirrorChevronLastHeight) !important;
+	background-image: unset;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 9px;
+	opacity: 0.3;
+	position: absolute !important;
+	top: 1px;
+	transition: .1s;
+	left: 4px
+}
+#app .dialog-box .breadcrumbs > a:nth-last-child(-n + 3):hover:before {
+	opacity: .7;
+	transform-origin: center left
+}
+
+#app .dialog-box .breadcrumbs > a:nth-last-child(-n + 3):before {
+	position: relative;
+}
+
+/*********
+LAST ITEM
+**********/
+#app .dialog-box .breadcrumbs > a:last-child {
+	max-width: calc(100% - var(--mirrorChevronWidth)) !important;
+	width: calc(100% - var(--mirrorChevronWidth) - var(--mirrorLinkGap)) !important;
+	gap: var(--mirrorLinkGap);
+	font-size: calc(1em + 1px);
+	opacity: 0.7;
+	padding-left: calc(var(--mirrorChevronWidth) * 1.4);
+	font-weight: 400;
+	margin-top: 0px !important;
+}
+#app .dialog-box .breadcrumbs > a:last-child:hover {
+	opacity: 1;
+}
+#app .dialog-box .breadcrumbs > a:last-child:before {
+	content: var(--ICON--MIRROR--CHEVRON);
+	display: block;
+	min-width: unset !important;
+	width: 7.5px !important;
+	height: var(--mirrorChevronLastHeight) !important;
+	background-image: unset;
+	background-repeat: no-repeat;
+	background-position: center 3px;
+	background-size: 7px;
+	opacity: 0.5;
+	position: absolute !important;
+	left: 4px;
+	top: 1px
 }
 
 
 #app .dialog-box .breadcrumbs > a:last-child:before {
-		position: relative;
-}
-#app .dialog-box .breadcrumbs > a:first-child:before {
-		display: none;
+	position: relative;
 }
 /*******************************
 ********************************
@@ -7500,7 +7939,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		--pageMaxWidth: calc(100% - var(--pagePadLeft) - var(--pagePadRight));
 		--rootCheckboxMargTop: 3px
 	}
-
+ 
 
 	#app .project.board > .children:not(#app .project.board.root > .children) {
 		min-width: 1210px !important;
@@ -7738,7 +8177,11 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		--ICON--MENU-DOTS-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.75" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23707577"/><rect x="6" y="14.5" width="3" height="3" rx="1.5" fill="%232A3135"/><rect x="13.25" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23707577"/><rect x="14.5" y="14.5" width="3" height="3" rx="1.5" fill="%232A3135"/><rect x="21.75" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23707577"/><rect x="23" y="14.5" width="3" height="3" rx="1.5" fill="%232A3135"/></svg>');
 		--ICON--MENU-DOTS-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.75" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23A0A7AB"/><rect x="6" y="14.5" width="3" height="3" rx="1.5" fill="%23ffffff"/><rect x="13.25" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23A0A7AB"/><rect x="14.5" y="14.5" width="3" height="3" rx="1.5" fill="%23ffffff"/><rect x="21.75" y="13.25" width="5.5" height="5.5" rx="2.75" fill="%23A0A7AB"/><rect x="23" y="14.5" width="3" height="3" rx="1.5" fill="%23ffffff"/></svg>');
 		--ICON--MENU-DOTS-2: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.25 15C6.25 13.4812 5.01878 12.25 3.5 12.25C1.98122 12.25 0.75 13.4812 0.75 15C0.75 16.5188 1.98122 17.75 3.5 17.75C5.01878 17.75 6.25 16.5188 6.25 15Z" fill="%239ea1a2"/><path d="M17.75 15C17.75 13.4812 16.5188 12.25 15 12.25C13.4812 12.25 12.25 13.4812 12.25 15C12.25 16.5188 13.4812 17.75 15 17.75C16.5188 17.75 17.75 16.5188 17.75 15Z" fill="%239ea1a2"/><path d="M29.25 15C29.25 13.4812 28.0188 12.25 26.5 12.25C24.9812 12.25 23.75 13.4812 23.75 15C23.75 16.5188 24.9812 17.75 26.5 17.75C28.0188 17.75 29.25 16.5188 29.25 15Z" fill="%239ea1a2"/></svg>');
-		--ICON--BREADCRUMB--CHEVRON: url('data:image/svg+xml;utf8,<svg viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.251953 1.28333C0.251953 1.35086 0.277347 1.41002 0.328131 1.46081L3.36721 4.49988L0.328131 7.53896C0.277347 7.58975 0.251953 7.64891 0.251953 7.71643C0.251953 7.77558 0.277347 7.83477 0.328131 7.89392L0.720779 8.27401C0.771566 8.32481 0.830718 8.35019 0.898266 8.35019C0.965787 8.35019 1.02494 8.32481 1.07574 8.27401L4.67197 4.67778C4.72277 4.62698 4.74815 4.56783 4.74815 4.50028C4.74815 4.43276 4.72277 4.3736 4.67197 4.32281L1.07574 0.726571C1.02494 0.675784 0.965787 0.650391 0.898266 0.650391C0.830718 0.650391 0.771566 0.675784 0.720779 0.726571L0.328131 1.10666C0.277347 1.16582 0.251953 1.22498 0.251953 1.28414V1.28333Z" fill="%23ffffff"/></svg>');
+		--ICON--MIRROR--CHEVRON--LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.251953 1.28333C0.251953 1.35086 0.277347 1.41002 0.328131 1.46081L3.36721 4.49988L0.328131 7.53896C0.277347 7.58975 0.251953 7.64891 0.251953 7.71643C0.251953 7.77558 0.277347 7.83477 0.328131 7.89392L0.720779 8.27401C0.771566 8.32481 0.830718 8.35019 0.898266 8.35019C0.965787 8.35019 1.02494 8.32481 1.07574 8.27401L4.67197 4.67778C4.72277 4.62698 4.74815 4.56783 4.74815 4.50028C4.74815 4.43276 4.72277 4.3736 4.67197 4.32281L1.07574 0.726571C1.02494 0.675784 0.965787 0.650391 0.898266 0.650391C0.830718 0.650391 0.771566 0.675784 0.720779 0.726571L0.328131 1.10666C0.277347 1.16582 0.251953 1.22498 0.251953 1.28414V1.28333Z" fill="black"/></svg>');
+		--ICON--MIRROR--CHEVRON-DOUBLE--LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.251953 1.28333C0.251953 1.35086 0.277347 1.41002 0.328131 1.46081L3.36721 4.49988L0.328131 7.53896C0.277347 7.58975 0.251953 7.64891 0.251953 7.71643C0.251953 7.77558 0.277347 7.83477 0.328131 7.89392L0.720779 8.27401C0.771566 8.32481 0.830718 8.35019 0.898266 8.35019C0.965787 8.35019 1.02494 8.32481 1.07574 8.27401L4.67197 4.67778C4.72277 4.62698 4.74815 4.56783 4.74815 4.50028C4.74815 4.43276 4.72277 4.3736 4.67197 4.32281L1.07574 0.726571C1.02494 0.675784 0.965787 0.650391 0.898266 0.650391C0.830718 0.650391 0.771566 0.675784 0.720779 0.726571L0.328131 1.10666C0.277347 1.16582 0.251953 1.22498 0.251953 1.28414V1.28333Z" fill="black"/></svg>');
+		--ICON--MIRROR--CHEVRON--DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.251953 1.28333C0.251953 1.35086 0.277347 1.41002 0.328131 1.46081L3.36721 4.49988L0.328131 7.53896C0.277347 7.58975 0.251953 7.64891 0.251953 7.71643C0.251953 7.77558 0.277347 7.83477 0.328131 7.89392L0.720779 8.27401C0.771566 8.32481 0.830718 8.35019 0.898266 8.35019C0.965787 8.35019 1.02494 8.32481 1.07574 8.27401L4.67197 4.67778C4.72277 4.62698 4.74815 4.56783 4.74815 4.50028C4.74815 4.43276 4.72277 4.3736 4.67197 4.32281L1.07574 0.726571C1.02494 0.675784 0.965787 0.650391 0.898266 0.650391C0.830718 0.650391 0.771566 0.675784 0.720779 0.726571L0.328131 1.10666C0.277347 1.16582 0.251953 1.22417 0.251953 1.28333Z" fill="white"/></svg>');
+		--ICON--MIRROR--CHEVRON-DOUBLE--DARK: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.25 1.28309C0.25 1.35062 0.275394 1.40978 0.326178 1.46057L3.36526 4.49964L0.326178 7.53872C0.275394 7.58951 0.25 7.64867 0.25 7.71619C0.25 7.77534 0.275394 7.83453 0.326178 7.89368L0.718826 8.27377C0.769613 8.32457 0.828765 8.34995 0.896313 8.34995C0.963834 8.34995 1.02299 8.32457 1.07379 8.27377L4.67002 4.67754C4.72082 4.62674 4.7462 4.56759 4.7462 4.50004C4.7462 4.43252 4.72082 4.37336 4.67002 4.32257L1.07379 0.726327C1.02299 0.67554 0.963834 0.650146 0.896313 0.650146C0.828765 0.650146 0.769613 0.67554 0.718826 0.726327L0.326178 1.10642C0.275394 1.16558 0.25 1.22393 0.25 1.28309Z" fill="white" fill-opacity="1"/><path d="M6.25391 1.28309C6.25391 1.35062 6.2793 1.40978 6.33008 1.46057L9.36916 4.49964L6.33008 7.53872C6.2793 7.58951 6.25391 7.64867 6.25391 7.71619C6.25391 7.77534 6.2793 7.83453 6.33008 7.89368L6.72273 8.27377C6.77352 8.32457 6.83267 8.34995 6.90022 8.34995C6.96774 8.34995 7.02689 8.32457 7.07769 8.27377L10.6739 4.67754C10.7247 4.62674 10.7501 4.56759 10.7501 4.50004C10.7501 4.43252 10.7247 4.37336 10.6739 4.32257L7.07769 0.726327C7.02689 0.67554 6.96774 0.650146 6.90022 0.650146C6.83267 0.650146 6.77352 0.67554 6.72273 0.726327L6.33008 1.10642C6.2793 1.16558 6.25391 1.22393 6.25391 1.28309Z" fill="white" fill-opacity="1"/></svg>');
+		--ICON--MIRROR--CHEVRON-TRIPLE--DARK: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 17 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.25 1.28309C0.25 1.35062 0.275394 1.40978 0.326178 1.46057L3.36526 4.49964L0.326178 7.53872C0.275394 7.58951 0.25 7.64867 0.25 7.71619C0.25 7.77534 0.275394 7.83453 0.326178 7.89368L0.718826 8.27377C0.769613 8.32457 0.828765 8.34995 0.896313 8.34995C0.963834 8.34995 1.02299 8.32457 1.07379 8.27377L4.67002 4.67754C4.72082 4.62674 4.7462 4.56759 4.7462 4.50004C4.7462 4.43252 4.72082 4.37336 4.67002 4.32257L1.07379 0.726327C1.02299 0.67554 0.963834 0.650146 0.896313 0.650146C0.828765 0.650146 0.769613 0.67554 0.718826 0.726327L0.326178 1.10642C0.275394 1.16558 0.25 1.22393 0.25 1.28309Z" fill="white" fill-opacity="0.5"/><path d="M6.25195 1.28309C6.25195 1.35062 6.27735 1.40978 6.32813 1.46057L9.36721 4.49964L6.32813 7.53872C6.27735 7.58951 6.25195 7.64867 6.25195 7.71619C6.25195 7.77534 6.27735 7.83453 6.32813 7.89368L6.72078 8.27377C6.77157 8.32457 6.83072 8.34995 6.89827 8.34995C6.96579 8.34995 7.02494 8.32457 7.07574 8.27377L10.672 4.67754C10.7228 4.62674 10.7481 4.56759 10.7481 4.50004C10.7481 4.43252 10.7228 4.37336 10.672 4.32257L7.07574 0.726327C7.02494 0.67554 6.96579 0.650146 6.89827 0.650146C6.83072 0.650146 6.77157 0.67554 6.72078 0.726327L6.32813 1.10642C6.27735 1.16558 6.25195 1.22393 6.25195 1.28309Z" fill="white" fill-opacity="0.5"/><path d="M12.2539 1.28309C12.2539 1.35062 12.2793 1.40978 12.3301 1.46057L15.3692 4.49964L12.3301 7.53872C12.2793 7.58951 12.2539 7.64867 12.2539 7.71619C12.2539 7.77534 12.2793 7.83453 12.3301 7.89368L12.7227 8.27377C12.7735 8.32457 12.8327 8.34995 12.9002 8.34995C12.9677 8.34995 13.0269 8.32457 13.0777 8.27377L16.6739 4.67754C16.7247 4.62674 16.7501 4.56759 16.7501 4.50004C16.7501 4.43252 16.7247 4.37336 16.6739 4.32257L13.0777 0.726327C13.0269 0.67554 12.9677 0.650146 12.9002 0.650146C12.8327 0.650146 12.7735 0.67554 12.7227 0.726327L12.3301 1.10642C12.2793 1.16558 12.2539 1.22393 12.2539 1.28309Z" fill="white"/></svg>');
 		--ICON--MIRROR-UNDERLINE: url('data:image/svg+xml;utf8,<svg viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="6" transform="translate(0 24)" fill="%23ffffff"/></svg>');
 		--ICON--IMAGE-PLACEHOLDER: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M80.397 80.2353C80.397 84.3004 78.9745 87.7553 76.1295 90.6C73.2846 93.4447 69.8294 94.8671 65.7639 94.8671C61.6985 94.8671 58.2433 93.4447 55.3983 90.6C52.5533 87.7553 51.1309 84.3004 51.1309 80.2353C51.1309 76.1702 52.5533 72.7153 55.3983 69.8706C58.2433 67.0259 61.6985 65.6035 65.7639 65.6035C69.8294 65.6035 73.2846 67.0259 76.1295 69.8706C78.9745 72.7153 80.397 76.1702 80.397 80.2353ZM158.601 107.342V134.909C158.601 140.032 154.447 144.185 149.324 144.185H56.5508L82.7008 111.755C85.1947 108.662 89.7678 108.283 92.7378 110.922L105.815 122.541L130.505 91.9222C133.01 88.8158 137.608 88.4491 140.574 91.1186L158.601 107.342Z" fill="%23808080"/><rect x="29.8726" y="44.5523" width="140.257" height="110.898" rx="19.6657" stroke="%23808080" stroke-width="7.04996"/></svg>');
 		--ICON--MIRROR-SOURCE: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.1353 0.161377L3.83838 5.80982V13.093L18.976 20.5525L14.8749 22.6022L11.0075 20.6685L3.83838 24.3144L14.8749 29.8326L26.1906 24.1773V16.9469L11.0353 9.47863L15.1353 7.41956L19.0013 9.35257L26.1906 12.924L26.1906 5.68904L15.1353 0.161377Z" fill="%2325323A"/><path d="M3.83839 17.0792L3.83838 24.3144L11.0075 20.6685L3.83839 17.0792Z" fill="%2325323A"/></svg>');
@@ -7755,6 +8198,25 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		--ICON--LINK-EDIT--CHEVRON: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M82.1696 33.3366C81.4943 33.3366 80.9027 33.5905 80.3948 34.0984L50.0041 64.4892L19.6133 34.0984C19.1054 33.5905 18.5138 33.3366 17.8386 33.3366C17.2471 33.3366 16.6552 33.5905 16.0637 34.0984L12.2628 38.0249C11.7548 38.5327 11.501 39.1243 11.501 39.7997C11.501 40.4749 11.7548 41.0665 12.2628 41.5745L48.2251 77.5368C48.7331 78.0448 49.3246 78.2986 50.0001 78.2986C50.6753 78.2986 51.2669 78.0448 51.7748 77.5368L87.7372 41.5745C88.2451 41.0665 88.499 40.4749 88.499 39.7997C88.499 39.1243 88.2451 38.5327 87.7372 38.0249L83.9363 34.0984C83.3447 33.5905 82.7612 33.3366 82.1696 33.3366Z" fill="%23808080"/></svg>');
 		--ICON--COMMENT-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.6 24.0006C13.6 22.6756 12.525 21.6006 11.2 21.6006H6.39995C5.95995 21.6006 5.59995 21.2406 5.59995 20.8006V6.40056C5.59995 5.96056 5.95995 5.60056 6.39995 5.60056H25.6C26.04 5.60056 26.4 5.96056 26.4 6.40056V20.8006C26.4 21.2406 26.04 21.6006 25.6 21.6006H18.665C18.145 21.6006 17.64 21.7706 17.225 22.0806L13.6 24.8006V24.0006ZM13.59 27.8106L13.6 27.8006L18.665 24.0006H25.6C27.365 24.0006 28.8 22.5656 28.8 20.8006V6.40056C28.8 4.63556 27.365 3.20056 25.6 3.20056H6.39995C4.63495 3.20056 3.19995 4.63556 3.19995 6.40056V20.8006C3.19995 22.5656 4.63495 24.0006 6.39995 24.0006H8.79995H11.2V26.4006V26.6006V26.6156V26.9356V28.0006C11.2 28.3056 11.37 28.5806 11.64 28.7156C11.91 28.8506 12.235 28.8206 12.48 28.6406L13.335 28.0006L13.59 27.8106ZM10.8 10.4006C10.135 10.4006 9.59995 10.9356 9.59995 11.6006C9.59995 12.2656 10.135 12.8006 10.8 12.8006H21.2C21.865 12.8006 22.4 12.2656 22.4 11.6006C22.4 10.9356 21.865 10.4006 21.2 10.4006H10.8ZM10.8 15.2006C10.135 15.2006 9.59995 15.7356 9.59995 16.4006C9.59995 17.0656 10.135 17.6006 10.8 17.6006H16.4C17.065 17.6006 17.6 17.0656 17.6 16.4006C17.6 15.7356 17.065 15.2006 16.4 15.2006H10.8Z" fill="white"/></svg>');
 		--ICON--COMMENT-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.6 24.0006C13.6 22.6756 12.525 21.6006 11.2 21.6006H6.39995C5.95995 21.6006 5.59995 21.2406 5.59995 20.8006V6.40056C5.59995 5.96056 5.95995 5.60056 6.39995 5.60056H25.6C26.04 5.60056 26.4 5.96056 26.4 6.40056V20.8006C26.4 21.2406 26.04 21.6006 25.6 21.6006H18.665C18.145 21.6006 17.64 21.7706 17.225 22.0806L13.6 24.8006V24.0006ZM13.59 27.8106L13.6 27.8006L18.665 24.0006H25.6C27.365 24.0006 28.8 22.5656 28.8 20.8006V6.40056C28.8 4.63556 27.365 3.20056 25.6 3.20056H6.39995C4.63495 3.20056 3.19995 4.63556 3.19995 6.40056V20.8006C3.19995 22.5656 4.63495 24.0006 6.39995 24.0006H8.79995H11.2V26.4006V26.6006V26.6156V26.9356V28.0006C11.2 28.3056 11.37 28.5806 11.64 28.7156C11.91 28.8506 12.235 28.8206 12.48 28.6406L13.335 28.0006L13.59 27.8106ZM10.8 10.4006C10.135 10.4006 9.59995 10.9356 9.59995 11.6006C9.59995 12.2656 10.135 12.8006 10.8 12.8006H21.2C21.865 12.8006 22.4 12.2656 22.4 11.6006C22.4 10.9356 21.865 10.4006 21.2 10.4006H10.8ZM10.8 15.2006C10.135 15.2006 9.59995 15.7356 9.59995 16.4006C9.59995 17.0656 10.135 17.6006 10.8 17.6006H16.4C17.065 17.6006 17.6 17.0656 17.6 16.4006C17.6 15.7356 17.065 15.2006 16.4 15.2006H10.8Z" fill="black"/></svg>');
+}
+
+:root {
+	--ICON--MIRROR--CHEVRON: var(--ICON--MIRROR--CHEVRON--LIGHT);
+	--ICON--MIRROR--CHEVRON-DOUBLE: var(--ICON--MIRROR--CHEVRON-DOUBLE--LIGHT);
+	--ICON--MIRROR--CHEVRON-TRIPLE: var(--ICON--MIRROR--CHEVRON-TRIPLE--LIGHT);
+
+}
+._theme-dark {
+	--ICON--MIRROR--CHEVRON: var(--ICON--MIRROR--CHEVRON--DARK);
+	--ICON--MIRROR--CHEVRON-DOUBLE: var(--ICON--MIRROR--CHEVRON-DOUBLE--DARK);
+	--ICON--MIRROR--CHEVRON-TRIPLE: var(--ICON--MIRROR--CHEVRON-DOUBLE--TRIPLE);
+
+
+}
+
+/****
+! ICONS - WAVY UNDERLINE
+******/
 		/*LIGHT*/
 		/*OLD
 	--ICON--UNDERLINE-WAVY--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="19" viewBox="0 0 50 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23000000" stroke-opacity="0.25" stroke-width="10"/></svg>');
@@ -7766,6 +8228,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		NORMAL UNDERLINE
 		 *******/
 		/*LIGHT*/
+:root{
 		--ICON--UNDERLINE-FLAT--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="4" width="50" height="12" fill="black" fill-opacity="0.95"/><rect y="16" width="50" height="6" fill="%23FBFBFB"/></svg>');
 
 		/*******
@@ -7778,23 +8241,15 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		--ICON--UNDERLINE-WAVY--UNDERLINE--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="1" stroke-width="10"/></svg>');
 		/*LIGHT  - LINK*/
 		--ICON--UNDERLINE-WAVY--LINK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
-		/*LIGHT  - LINK - Internal*/
-		--ICON--UNDERLINE-WAVY--LINK-INTERNAL--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23848D94" stroke-opacity="1" stroke-width="10"/></svg>');
-		/*LIGHT  - REFERENCES - LINK*/
-		--ICON--LINK-WAVY-REFERENCE--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23E9F5FA"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%230f9ee6" stroke-opacity="1" stroke-width="10"/></svg>');
-
 
 		/*DARK*/
 		--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
-		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.075" stroke-width="10"/></svg>');
+		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.06" stroke-width="10"/></svg>');
 		/*DARK - UNDERLINE*/
 		--ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 		/*DARK  - LINK*/
 		--ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%233c88af" stroke-opacity="1" stroke-width="10"/></svg>');
-		/*DARK  - LINK - Internal*/
-		--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%239fa1a3" stroke-opacity="0" stroke-width="10"/></svg>');
-		/*DARK - REFERENCES*/
-		--ICON--UNDERLINE-WAVY-REFERENCE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23E9F5FA"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
+
 }
 
 
@@ -7807,6 +8262,84 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 		--ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
 		--ICON--COMMENT:var(--ICON--COMMENT-DARK);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****
+! ICONS - WAVY UNDERLINE - DASHED
+******/
+
+/**************
+***************
+***************
+LIGHT - WAVY MIRROR UNDERLINE
+
+:root {
+
+		--ICON--UNDERLINE-WAVY--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
+
+		--ICON--UNDERLINE-WAVY--UNDERLINE--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="1" stroke-width="10"/></svg>');
+
+		--ICON--UNDERLINE-WAVY--LINK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
+
+		--ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
+}
+
+***************
+***************
+**************/
+
+/**************
+***************
+***************
+DARK - WAVY MIRROR UNDERLINE
+
+
+:root {
+
+		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="9" width="25" height="10" rx="5" fill="white" fill-opacity="0.1"/><rect x="25" y="9" width="25" height="10" rx="5" fill="%232A3237" fill-opacity=".01"/></svg>');
+
+		--ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="40" height="22" viewBox="0 0 40 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="11" width="20" height="8" rx="3.18804" fill="white" fill-opacity="1"/></svg>');
+
+		--ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%233c88af" stroke-opacity="1" stroke-width="10"/></svg>');
+
+		--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
+
+}
+***************
+***************
+**************/
+
+
+/********
+
+:root {
+		--ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT);
+		--ICON--COMMENT:var(--ICON--COMMENT-LIGHT);
+
+}
+._theme-dark {
+		--ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
+		--ICON--COMMENT:var(--ICON--COMMENT-DARK);
+}
+
+********/
 /*******************************
 ********************************
 ! FONTS
@@ -7966,58 +8499,3 @@ body * {
 
 
 
-/*******************************
-********************************
-! FLAT SEARCH
-********************************
-********************************/
-
-/*notes*/
-#app .page.active.searching .project > .notes > .content{
-		-webkit-line-clamp:1 !important;
-		display: -webkit-box !important;
-		overflow: hidden !important;
-}
-
-#app .page.active.searching .project > .notes > .content.active,
-#app .page.active.searching .project > .notes.matches > .content{
-		-webkit-line-clamp:100 !important;
-		max-height: 100% !important;
-		overflow: unset !important;
-} 
-
-#app .page.active.searching .project.board:not(.board.root) > .children{
-		max-height: unset !important;
-}
-
-/*MATCH COLORS*/
-
-
-
-/*LINE CONTAINING MATCH
-.project.metaMatches > .name > .content  .innerContentContainer{
-				background: hsl(200, 100%, 30%, 0.5) !;
-}
-#app .project > .name > .content,
-#app .project > .name > .content{
-
-		color: var(--NODE--TXT-CLR--main) !important;
-}
-
-.project.metaMatches > .name > .content > .innerContentContainer,
-.project.metaMatches > .name > .content > .innerContentContainer{
-		background: hsl(200, 100%, 40%, 0);
-}
-.project.metaMatches > .name > ._1wsppdf > .innerContentContainer .colored[class*="c-"] {
-		color: var(--NODE--TXT-CLR--main) !important
-}
-*/
-/*ACTUAL MATCH*/
-
-#app .name.fullMatch > .content > .innerContentContainer .contentMatch,
-#app .project.fullMatch > .notes > .content > .innerContentContainer .contentMatch{
-		 background: hsl(200, 100%, 50%, 1.0) !important;  
-		box-shadow: 0 0 0 2px hsl(200, 100%, 50%, 1.0);
-		border-radius: 3px;
-		-webkit-text-fill-color: white !important;
-}
