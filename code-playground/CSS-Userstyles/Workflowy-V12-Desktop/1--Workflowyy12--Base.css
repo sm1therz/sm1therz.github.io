@@ -1,4 +1,3 @@
-
 /****
 ! ROOT
 ****/
@@ -82,7 +81,7 @@ BOX SHADOW TESTING - BOARDS
 .project > .notes,
 .project > .notes > .content{
 
-		box-shadow: 0 0 0 var(--testBrdW) blue !important;
+		box-shadow: 0 0 0 var(--testBrdW)red;
 }
 /*
 #app .project.comment.thread .children {
@@ -1601,27 +1600,6 @@ i b {
 
 
 /***************
-STRIKETHROUGH
-****************/
-s,
-i s,
-s i,
-b s,
-s b {
-		color: hsl(180, 2%, 55%) !important;
-}
-s a.contentLink{
-		filter:saturate(.5);
-}
-s {
-		text-decoration:line-through;
-		text-decoration-thickness: 1.25px;
-		text-decoration-style: solid;
-		text-decoration-color: hsl(180, 2%, 55%,0.75);
-}
-
-
-/***************
 highlights
 ****************/
 :root {
@@ -1758,7 +1736,6 @@ u .c-orange,
 b .c-orange,
 .c-orange b {
 		color: var(--TXT-CLR--ORANGE) !important;
-		--LnkTxtClr:var(--TXT-CLR--ORANGE);
 		text-decoration-color: var(--TXT-CLR--ORANGE);
 }
 
@@ -1769,7 +1746,6 @@ u .c-yellow,
 b .c-yellow,
 .c-yellow b {
 		color: var(--TXT-CLR--YELLOW) !important;
-		--LnkTxtClr:var(--TXT-CLR--YELLOW);
 		-webkit-text-stroke-color: hsl(50, 100%, 37%);
 		text-decoration-color: var(--TXT-CLR--YELLOW);
 }
@@ -1781,7 +1757,6 @@ u .c-green,
 b .c-green,
 .c-green b {
 		color: var(--TXT-CLR--GREEN) !important;
-		--LnkTxtClr:var(--TXT-CLR--GREEN);
 		text-decoration-color: var(--TXT-CLR--GREEN);
 }
 
@@ -1792,7 +1767,6 @@ u .c-teal,
 b .c-teal,
 .c-teal b {
 		color: var(--TXT-CLR--TEAL) !important;
-		--LnkTxtClr:var(--TXT-CLR--TEAL);
 		text-decoration-color: var(--TXT-CLR--TEAL);
 }
 
@@ -1803,7 +1777,6 @@ u .c-sky,
 b .c-sky,
 .c-sky b {
 		color: var(--TXT-CLR--SKY) !important;
-		--LnkTxtClr:var(--TXT-CLR--SKY);
 		text-decoration-color: var(--TXT-CLR--SKY);
 }
 
@@ -1814,7 +1787,6 @@ u .c-blue,
 b .c-blue,
 .c-blue b {
 		color: var(--TXT-CLR--BLUE) !important;
-		--LnkTxtClr:var(--TXT-CLR--BLUE);
 		text-decoration-color: var(--TXT-CLR--BLUE);
 }
 
@@ -1825,7 +1797,6 @@ u .c-purple,
 .c-purple b,
 b .c-purple {
 		color: var(--TXT-CLR--PURPLE) !important;
-		--LnkTxtClr:var(--TXT-CLR--PURPLE);
 		text-decoration-color: var(--TXT-CLR--PURPLE);
 }
 
@@ -1836,7 +1807,6 @@ u .c-pink,
 b .c-pink,
 .c-pink b {
 		color: var(--TXT-CLR--PINK) !important;
-				--LnkTxtClr:var(--TXT-CLR--PINK);
 		text-decoration-color: var(--TXT-CLR--PINK);
 }
 
@@ -1847,7 +1817,6 @@ u .c-gray,
 b .c-gray,
 .c-gray b {
 		color: var(--TXT-CLR--GRAY) !important;
-		--LnkTxtClr:var(--TXT-CLR--GRAY);
 		text-decoration-color: var(--TXT-CLR--GRAY);
 }
 
@@ -2795,15 +2764,6 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 .project:not(.board) .project > .name > .prefix .item-checkbox:before {
 		margin-top: -1px !important
 }
-
-html #app .project:not(.board) .project.comment [class*="name--highlighted"]:before,
-html #app .project.board.root .project.boardColumn.comment [class*="name--highlighted"]:before,
-html #app .project.comment.root [class*="name--highlighted"]:before{
-
-		opacity: 0 !important;
-}
-
-
 /***********
 ! TAGS
 ************/
@@ -3500,7 +3460,7 @@ BOARDS ROOT
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .name {
 		height: unset;
-		padding-bottom: 0px;
+		padding-bottom: 5px;
 		padding-left: var(--ROOT-padLeftRight);
 		position:fixed;
 		top:0px;
@@ -3514,7 +3474,7 @@ BOARDS ROOT
 
 #app .page[style="overflow-y: auto;"] > .project.board.root > .notes{
 		position:fixed;
-		top:31px;
+		top:26px;
 		z-index:9544;
 		height:var(--ROOT-BOARD-TITLE-HEIGHT);
 		width:unset;
@@ -3755,7 +3715,7 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 
 .board .highlighted::before,
 .board .floating-conversations::before,
-[class*="name--highlighted"]:not(.comment [class*="name--highlighted"]):hover:before{
+[class*="name--highlighted"]:hover:before{
 	background: transparent !important;
 	inset: -1px !important;
 	border-radius: 3px;
@@ -3785,7 +3745,10 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 .board .floating-conversations:before{
 	background: hsla(0,0%,100%,.15) !important;
 }
-
+.floating-comments-blurred .board .floating-conversations:before {
+	opacity: .4 !important;
+	background: transparent !important;
+}
 #app .board .project > .name .nameButtons{
 	z-index: 3;
 }
@@ -3897,58 +3860,6 @@ html #app .board .boardColumn .notes > .content code {
 		font-size: calc(var(--notes-fontSize) - .5px) !important;
 }
 
-
-html #app .board:not(.root) > .children > .boardColumn.comment {
-		margin: 0px !important;
-		border-radius: 0px !important;
-}
-
-html #app .board:not(.root) > .children > .boardColumn.comment > .commentAttribution {
-		padding-top: 0px !important;
-		position: absolute;
-		top: 0px;
-		z-index: 94;
-		display: none !important;
-}
-html #app .board:not(.root) > .children > .boardColumn.comment > .name > .expand,
-html #app .board:not(.root) > .children > .boardColumn.comment > .name > .menu,
-html #app .board:not(.root) > .children > .boardColumn.comment > .name > .bullet{
-			--btn-MargTop: 7px !important;
-}
-html #app .board:not(.root) > .children > .boardColumn.comment > .children {
-		padding-left: 0px !important;
-}
-html #app .board:not(.root) > .children > .boardColumn.comment > .children .boardCard{
-		background: transparent;
-}
-html #app .board:not(.root) .comment [class*="name--highlighted"]:before {
-		opacity: 0 !important;
-}
-
-html #app .board .project.highlighted:before{
-		content: "";
-	display: block;
-	position: absolute;
-	inset: 0px -5px;
-	border-radius: 5px;
-	background: var(--wf-background-tertiary) !important;
-}
-
-html #app .board:not(.root) .boardColumn > .children > .project.comment {
-		margin: 0px !important;
-}
-html #app .board .boardColumn > .children > .project.comment > .commentAttribution{
-		padding-left: 25px !important;
-		padding-top: 6px !important;
-}
-
-html #app .board .boardColumn > .children > .project.comment .comment > .commentAttribution{
-		padding-left: 15px !important;
-		padding-top: 6px !important;
-}
-html #app .board:not(.root) .boardColumn > .children > .project.comment .comment > .children{
-		padding-left: calc(var(--children-Indent) * 1) !important
-}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -3996,7 +3907,7 @@ BOARD ROOT SIZES
 #app .board.root,
 #app .board.root > .children {
 		--name-fontSize: 16px;
-		--name-lineHeight: 23px;
+		--name-lineHeight: 21px;
 		--notes-fontSize: 13.25px;
 		--notes-lineHeight: 16.25px;
 		--boardRoot-CardBrdRad: 8px;
@@ -4260,7 +4171,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 
 #app .board.root .innerContentContainer b {
-		font-weight: 550;
+		font-weight: 500;
 }
 
 #app .page[style="overflow-y: auto;"] {
@@ -4318,9 +4229,9 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment {
 		background: hsl(202, 23%, 17.5%, 0.5) !Important;
-		background: hsl(197, 18%, 15%) !Important;
-		--COMMENT--BG--even: hsl(202, 12%, 21%);
-		--COMMENT-CONTAINER--BG: hsl(197, 18%, 15%);
+		background: hsl(202, 12%, 21%) !Important;
+		--COMMENT--BG--even: hsl(197, 18%, 15%);
+		--COMMENT-CONTAINER--BG: hsl(202, 12%, 21%);
 		box-shadow: 0 0 0 1px hsla(200, 3%, 37%, .78) !important;
 }
 #app .project.board.root > .children > .boardColumn .comment > .notes .content {
@@ -4338,8 +4249,9 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .project.board.root .boardColumn > .name [class*="Place"],
 #app .project.board.root .boardColumn > .name > .content {
 		font-weight: 400 !important;
+		color: hsla(0, 0%, 100%, 0.55);
 		font-size: calc(var(--name-fontSize) + 2px)!important;
-		line-height: calc(var(--name-lineHeight) + 6px) !important;
+		line-height: calc(var(--name-lineHeight) + 2px) !important;
 }
 
 div#app ~ div[style*="color: rgb(60, 64"] {
@@ -4377,7 +4289,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root .project > .name > .prefix,
 #app .board.root .project > .name > .expand,
 #app .board.root .project > .name > .menu {
-		--btn-MargTop: 3px !important;
+		--btn-MargTop: 2px !important;
 }
 #app .project.board.root .boardColumn > .name {
 		position: relative;
@@ -4417,50 +4329,21 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root .boardCard > .children > .comment button.reply-button.button.secondary {
 		right: 30px;
 }
-
-#app .board.root {
-			--rootnotes-fontSize: calc(var(--notes-fontSize) + 0px);
-	--rootnotes-lineHeight: calc(var(--notes-lineHeight) + -1px);
-}
-
-#app .board.root > .notes > .content {
-		display: -webkit-box !important;
-		-webkit-line-clamp:1 !important;
-		overflow: hidden !important;
-		max-width: 150px;
-}
-
-#app .board.root > .notes > .content.active{
-		-webkit-line-clamp:100 !important;
-		max-width: 100% !important;
-		background-image: linear-gradient(to right, var(--BG-primary) 0, var(--BG-primary) 90%, transparent);
-		overflow: visible !important;
-}
-
-#app .board.root > .children > .boardColumn.comment {
-		margin-top: 0px !important;
-}
-#app .board.root > .children > .boardColumn.comment > .children {
-		padding-bottom: 5px;
-}
 /*******************************
 ********************************
 ! BOARDS - ROOT - CHILD BORDERS
 ********************************
 ********************************/
 :root {
-		--boardChildBrdClr:hsl(200, 8%, 24%);
+		--boardChildBrdClr:hsl(200, 6%, 30%,.45);
 		--boardChild-FakeBrdOpacity:0;
 		--boardChildBgClr:hsl(202, 16%, 17%)
 }
 
-#app .board.root .boardCard > .children > .project:not(.project:last-child, .quote-block,.comment,.code-block,.references .project,.noted),
-#app .board.root .boardCard > .children > .project.noted:not(.project.noted:last-child, .quote-block,.comment,.code-block,.references .project){
-		box-shadow: 0 1px 0 0 var(--boardChildBrdClr) !important;
+#app .board.root .boardCard > .children > .project:not(.quote-block,.comment,.code-block,.references .project,.noted),
+#app .board.root .boardCard > .children > .project.noted:not(.quote-block,.comment,.code-block,.references .project){
+		box-shadow: 0 1px 0 0 var(--boardChildBrdClr);
 		border-bottom: 0px solid hsl(200, 6%, 30%,0) !important;
-}
-#app .board.root .boardCard > .children > .project.collapsed + .project:last-child {
-		display: none !important;
 }
 
 
@@ -4473,7 +4356,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 				box-shadow: 0 0px 0 0 var(--boardChildBrdClr) !important;
 		
 }
-#app .board.root .boardCard:not(.comment) > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
+#app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .children{
 		box-shadow: 0 1px 0 0 var(--boardChildBrdClr) !important;
 }
 
@@ -4497,14 +4380,10 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 		right: 0;
 		bottom: -1px;
 		opacity: var(--boardChild-FakeBrdOpacity);
-		z-index: 1;
+		z-index: 1
 }
-
-
-#app .board.root .boardCard > .children > .project.open:not(.quote-block,.comment,.code-block,.references .project,.noted) > .name,
-#app .board.root .boardCard > .children > .project.collapsed:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project,.noted) > .name,
-#app .board.root .boardCard > .children > .project.noted.open:not(.quote-block,.comment,.code-block,.references .project) > .notes,
-#app .board.root .boardCard > .children > .project.noted.collapsed:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .notes{
+#app .board.root .boardCard > .children > .project.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project,.noted) > .name,
+#app .board.root .boardCard > .children > .project.noted.open:not(.project:last-of-type,.quote-block,.comment,.code-block,.references .project) > .notes{
 		box-shadow: 
 				0 0px 0 0 var(--boardChildBrdClr) !important;
 		--boardChild-FakeBrdOpacity:1;
@@ -5505,6 +5384,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 		margin-bottom: 0px !important
 }
 
+
 /*******************************
 ********************************
 ! PRESENTATION
@@ -5549,7 +5429,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 /*******************************
 ********************************
-COMMENTS - NEW - FLOATING
+COMMENTS - NEW
 ********************************
 ********************************/
 :root {
@@ -5559,14 +5439,11 @@ COMMENTS - NEW - FLOATING
 	--floatCommentPosRight:0px;
 	--floatCommentBtnCloseW:30px;
 }
+#app .project.comment.thread,
+#app .project.comment.thread * {
+}
 
 /*OVERRIDES*/
-html #app .floating-comments-container{
-		bottom: unset !important;
-		max-height: calc(99%  - var(--Height--Header))!important;
-		overflow-y: auto;
-		
-}
 html #app .floating-comments-container,
 html #app .floating-comments-container .vertical-scrollable-container,
 html #app .floating-comments-container .comment-container,
@@ -5590,20 +5467,12 @@ html #app .floating-comments-container .comment-container > .children{
 html #app .floating-comments-container .comment-container > .children > .comment:last-of-type {
 	margin-bottom: 10px !important; 
 }
-/*CLOSE COMMENTS BUTTON*/
-
 html #app .floating-comments-container > button.threads--comment-button{
 	transform: unset !important;
-	right: 0 !important;
+	right: 80px !important;
 	left: unset !important;
-	position: absolute !important;
-	margin-left: unset !important;
-		margin-right: 10px;
-}
-html.floating-comments-blurred #app .floating-comments-container > button.threads--comment-button{
-	margin-left: unset !important;
-		margin-right: calc(100% - var(--floatCommentBtnCloseW) - 40px);
-
+	position: relative;
+	margin-left: calc(100% - var(--floatCommentBtnCloseW) - 10px)!important;
 }
 html body.floating-comments #app .floating-comments-container{
 		pointer-events: all !important
@@ -5623,19 +5492,11 @@ html body.floating-comments.windowBlurred #app .floating-comments-container{
 	transform: unset !important;
 	
 }
-#app .floating-comments-container > .vertical-scrollable-container .project.root.comment-container > .name{
-		height: 1px !important;
-}
 /*INACTIVE - ALL*/
-html body.floating-comments #app .floating-comments-container {
-	--floatCommentPosRight: calc(var(--floatCommentW) * 0);
-	--floatCommentW:450px;
-		
-}
+html body.floating-comments #app .floating-comments-container,
 html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
-	--floatCommentW:410px;
-	--floatCommentPosRight: calc(var(--floatCommentW) * -0.1);
-		
+	--floatCommentW:500px;
+	--floatCommentPosRight: calc(var(--floatCommentW) * 0);
 		
 	}
 
@@ -5652,9 +5513,9 @@ html body.floating-comments #app .floating-comments-blurred .floating-comments-c
 html body.floating-comments #app .floating-comments-container:focus-within,
 html body.floating-comments #app .floating-comments-container:focus-visible,
 html body.floating-comments #app .floating-comments-container:focus{
+	--floatCommentW:500px !important;
 }
 
-html body.floating-comments #app .floating-comments-container .project.root > .children > .project,
 html body.floating-comments #app .floating-comments-container:focus .project.root > .children > .project,
 html body.floating-comments #app .floating-comments-container:focus-within .project.root > .children > .project{
 		box-shadow: 0 0 10px black !important;
@@ -5662,9 +5523,6 @@ html body.floating-comments #app .floating-comments-container:focus-within .proj
 		transition-delay: 0s !important;
 }
 
-html body.floating-comments #app .floating-comments-container .project.root > .children > .project:first-child {
-		margin-top: 4px !important;
-}
 
 @media (max-width: 1200px) {
 /*INACTIVE - 1200px*/
@@ -5672,14 +5530,15 @@ html body.floating-comments #app .floating-comments-container .project.root > .c
 					--floatCommentW:calc(530px - 20vw);
 				--floatCommentMaxW:calc(530px - 20vw) !important;
 				max-width: var(--floatCommentMaxW) !important;
-	--floatCommentPosRight: calc(var(--floatCommentW) * -0.145);
+	--floatCommentPosRight: calc(var(--floatCommentW) * -0.045);
 				
 		}
 /*ACTIVE - 1200px*/
 		html body.floating-comments:focus-within #app .floating-comments-container {
+					--floatCommentW:450px;
 		}
 		html.floating-comments-blurred body.floating-comments #app .floating-comments-container .project.root > .children > .project{
-								box-shadow: 0 0 7px #0000008c !important;
+								box-shadow: 0 0 1px black !important;
 
 		}
 		html body.floating-comments #app .floating-comments-container .project.root > .children > .project {
@@ -5720,22 +5579,6 @@ html body.floating-comments:focus-within #app .floating-comments-container .proj
 #app .comment-container > .children{
 row-gap: 20px !important;
 }
-
-#app .floating-comments-container .nameButtons,
-#app .floating-comments-container .nameButtons.active {
-		transition: .14s !important;
-}
-#app .floating-comments-container .nameButtons {
-		opacity: 0 !important;
-}
-#app .floating-comments-container .nameButtons.active{
-		opacity: .4 !important;
-}
-#app .floating-comments-container .nameButtons.active:hover {
-		opacity: 1 !important;
-}
-
-
 
 /*NORMAL COMMENTS*/
 #app .project.comment.thread,
@@ -5876,6 +5719,20 @@ row-gap: 20px !important;
 		transform: unset !important;
 }
 
+#app .floating-comments-container .nameButtons,
+#app .floating-comments-container .nameButtons.active {
+		transition: .14s !important;
+}
+#app .floating-comments-container .nameButtons {
+		opacity: 0 !important;
+}
+#app .floating-comments-container .nameButtons.active{
+		opacity: .4 !important;
+}
+#app .floating-comments-container .nameButtons.active:hover {
+		opacity: 1 !important;
+}
+
 
 #app .board .nameButtons {
 	right: calc(var(--children-Indent) * 1 - 4px) !important;
@@ -5889,11 +5746,6 @@ row-gap: 20px !important;
 	z-index: 2;
 	transition: .1s;
 	opacity: 1;
-}
-#app .board:not(.root) .nameButtons{
-		right: 0 !important;
-		height: 10px !important;
-		min-height: 10px !important;
 }
 #app .board .project.checkmark > .name .nameButtons {
 		right: calc(var(--children-Indent) * 2) !important;
@@ -6120,58 +5972,6 @@ opacity: 1;
 		max-width: 100%!important;
 		padding-right: 0px !important;
 }
-
-#app .root .project.comment .commentAttribution {
-		margin-bottom: 2px !important;
-}
-html #app .comment.draft .comment-toolbar {
-		padding-bottom: 8px !important;
-}
-
-#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project.comment{
-		--commentTopContentIndent:26px;
-}
-/**/
-#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project.comment .children{
-		padding-left: 20px !important;
-}
-
-#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children .project > .name > .content {
-		margin-left: var(--commentTopContentIndent) !important;
-}
-
-#app .project.comment .project.checkmark > .name > .prefix{
-}
-
-#app .project.comment .project.checkmark > .name > .prefix{
-			--btn-MargTop: 2px !important;
-}
-#app .board .project.comment .project.checkmark > .name > .prefix{
-			--btn-MargTop: 3.5px !important;
-}
-
-#app .board .project.comment .project.checkmark > .name > .prefix .item-checkbox{
-		transform: rotate(0deg)scale(var(--btnIcn-Scale)) !important;
-		--btnIcn-Scale: 0.7;
-}
-
-#app .board .project.comment .project.checkmark > .name > .bullet.diamond ~ .prefix{
-		transform: unset !important;
-}
-#app .board .project.comment .project.checkmark > .name > .bullet.diamond ~ .prefix .item-checkbox{
-		--btnIcn-Scale: .7;
-		transform: rotate(-45deg)scale(var(--btnIcn-Scale)) !important
-}
-#app .board .project.comment .project.checkmark.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox{
-		--btnIcn-Scale: 0.7;
-		transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important
-}
-/*******************************
-********************************
-COMMENTS - NEW - NORMAL
-********************************
-********************************/
-
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
@@ -7986,7 +7786,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 
 		/*DARK*/
 		--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
-		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.06" stroke-width="10"/></svg>');
+		--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.075" stroke-width="10"/></svg>');
 		/*DARK - UNDERLINE*/
 		--ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.9" stroke-width="10"/></svg>');
 		/*DARK  - LINK*/
@@ -8166,3 +7966,58 @@ body * {
 
 
 
+/*******************************
+********************************
+! FLAT SEARCH
+********************************
+********************************/
+
+/*notes*/
+#app .page.active.searching .project > .notes > .content{
+		-webkit-line-clamp:1 !important;
+		display: -webkit-box !important;
+		overflow: hidden !important;
+}
+
+#app .page.active.searching .project > .notes > .content.active,
+#app .page.active.searching .project > .notes.matches > .content{
+		-webkit-line-clamp:100 !important;
+		max-height: 100% !important;
+		overflow: unset !important;
+} 
+
+#app .page.active.searching .project.board:not(.board.root) > .children{
+		max-height: unset !important;
+}
+
+/*MATCH COLORS*/
+
+
+
+/*LINE CONTAINING MATCH
+.project.metaMatches > .name > .content  .innerContentContainer{
+				background: hsl(200, 100%, 30%, 0.5) !;
+}
+#app .project > .name > .content,
+#app .project > .name > .content{
+
+		color: var(--NODE--TXT-CLR--main) !important;
+}
+
+.project.metaMatches > .name > .content > .innerContentContainer,
+.project.metaMatches > .name > .content > .innerContentContainer{
+		background: hsl(200, 100%, 40%, 0);
+}
+.project.metaMatches > .name > ._1wsppdf > .innerContentContainer .colored[class*="c-"] {
+		color: var(--NODE--TXT-CLR--main) !important
+}
+*/
+/*ACTUAL MATCH*/
+
+#app .name.fullMatch > .content > .innerContentContainer .contentMatch,
+#app .project.fullMatch > .notes > .content > .innerContentContainer .contentMatch{
+		 background: hsl(200, 100%, 50%, 1.0) !important;  
+		box-shadow: 0 0 0 2px hsl(200, 100%, 50%, 1.0);
+		border-radius: 3px;
+		-webkit-text-fill-color: white !important;
+}
