@@ -165,7 +165,7 @@
 		/*TEST*/
 		--DASHBOARD-CARD--BG: hsl(300, 0%, 13%);
 		--DashCrd-ChldrnBgClr: var(--DASHBOARD-PAGE--BG);
-		--DashCrd--BrdClr: hsl(190, 8%, 25.5%);
+		--DashCrd--BrdClr: hsl(190, 8%, 24%);
 
 		/*************
 	BOARDS
@@ -234,7 +234,7 @@
 		--NODE-TAG--MATCHED--BORDER-CLR: ;
 		
 		/*************
-	STRIKETHROUGH 
+	STRIKETHROUGH
 	**************/
 		--strikeThroughColor:hsl(180, 2%, 55%);
 		--strikeThroughLineColor:hsl(180, 2%, 55%,0.75);
