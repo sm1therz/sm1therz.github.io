@@ -206,7 +206,7 @@
 		--LnkTxtClr: #3c88af;
 		--LnkBrdClr: hsl(211, 100%, 74%, .4);
 		--LnkBgClr: hsl(209, 100%, 50%, .151);
-		--LnkBgClrHov: hsl(208, 100%, 50%, .171); 
+		--LnkBgClrHov: hsl(208, 100%, 50%, .171);
 		/*V9 LINK - INTERNAL*/
 		--LnkWFTxtClr: hsl(199, 2%, 66%);
 		--LnkWFBrdClr: hsl(211, 5%, 50%, 0.4);
@@ -234,7 +234,7 @@
 		--NODE-TAG--MATCHED--BORDER-CLR: ;
 		
 		/*************
-	STRIKETHROUGH
+	STRIKETHROUGH 
 	**************/
 		--strikeThroughColor:hsl(180, 2%, 55%);
 		--strikeThroughLineColor:hsl(180, 2%, 55%,0.75);
