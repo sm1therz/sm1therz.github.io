@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Workflowy > Focus Mode
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.3
 // @description  Highlight the active and sibling children blocks based on cursor focus in Workflowy
 // @match        https://workflowy.com/*
 // @grant        none
@@ -34,14 +34,16 @@
 			transition:.15s !important
 		}
 		/*LEVEL 1*/
+		#app .root > .name > .content,
+		#app .root > .notes > .content,
 		#app .root > .children > .project > .name,
 		#app .root > .children > .project > .notes{
-			opacity: 0.25;
+			opacity: 0.15;
 		}
 		/*LEVEL 2*/
 		#app .root > .children > .project > .children > .project > .name,
 		#app .root > .children > .project > .children > .project > .notes{
-			opacity: 0.2
+			opacity: 0.125
 		}
 		/*LEVEL 3*/
 		#app .root > .children > .project > .children > .project > .children > .project > .name,
@@ -53,39 +55,127 @@
 		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .notes{
 			opacity: 0.075;
 		}
-		/*LEVEL 6*/
+		/*LEVEL 5*/
 		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .name,
 		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .notes{
 			opacity: 0.05;
 		}
-		/*LEVEL 7*/
+		/*LEVEL 6*/
 		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .name,
 		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .notes{
-			opacity: 0.025;
+			opacity: 0.02;
 		}
-		/*LEVEL 7 + */
-		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .children .project > .name,
-		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .children  .project > .notes{
-			opacity: 0.025;
+		/*LEVEL 6 + */
+		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project .children .project .name,
+		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project .children .project .notes{
+			opacity: 0.014;
 		}
+
+		/********
+		ACTIVE
+		*********/
+		#app .root > .name:focus-within > .content,
+		#app .root > .name:focus-within ~ .notes > .content,
+		#app .root > .notes:focus-within > .content,
 		#app .children.childActiveSibling > .project > .name,
 		#app .children.childActiveSibling > .project > .notes,
 		#app .children.childActive > .project > .name,
 		#app .children.childActive > .project > .notes{
 			opacity: 1 !important;
 		}
+		/********
+		1 LEVEL > BELOW > ACTIVE
+		*********/
 		#app .children.childActiveSibling > .project > .children > .project > .name,
 		#app .children.childActiveSibling > .project > .children > .project > .notes,
 		#app .children.childActive > .project > .children > .project > .name,
 		#app .children.childActive > .project > .children > .project > .notes {
-			opacity: .35 !important;
-		}
-		#app .children.childActiveSibling > .project > .children > .project > .children > .project > .name,
-		#app .children.childActiveSibling > .project > .children > .project  > .children > .project> .notes,
-		#app .children.childActive > .project > .children > .project > .children > .project > .name,
-		#app .children.childActive > .project > .children > .project > .children > .project > .notes {
 			opacity: .15 !important;
 		}
+		/********
+		2 LEVEL > BELOW > ACTIVE
+		*********/
+		#app .root .children.childActiveSibling > .project > .children > .project > .children > .project > .name,
+		#app .root .children.childActiveSibling > .project > .children > .project  > .children > .project> .notes,
+		#app .root .children.childActive > .project > .children > .project > .children > .project > .name,
+		#app .root .children.childActive > .project > .children > .project > .children > .project > .notes {
+			opacity: .05 !important;
+		}
+		/********
+		3 LEVEL > BELOW > ACTIVE
+		*********/
+		#app .root .children.childActiveSibling > .project > .children > .project > .children > .project > .children > .project > .name,
+		#app .root .children.childActiveSibling > .project > .children > .project  > .children > .project > .children > .project > .notes,
+		#app .root .children.childActive > .project > .children > .project > .children > .project > .children > .project > .name,
+		#app .root .children.childActive > .project > .children > .project > .children > .project > .children > .project > .notes {
+			opacity: .015;
+		}
+		
+		/********
+		BOARD OVERRIDE
+		*********/
+		#app .root .project.board > .children > .project.boardColumn > .name,
+		#app .root .project.board > .children > .project.boardColumn > .notes,
+		#app .root .children > .project.board > .name,
+		#app .root .children > .project.board > .notes,
+		#app .page .root .project.board  .children > .project .children .project > .name,
+		#app .page .root .project.board  .children > .project .children .project > .notes,
+		#app .page .root .project.board > .children .project .children .project > .name,
+		#app .page .root .project.board > .children .project .children .project > .notes,
+		/*root*/
+		#app .page .root.board > .name > .content,
+		#app .page .root.board > .notes > .content,
+		#app .root.board > .children > .project > .name,
+		#app .root.board > .children > .project > .notes,
+		#app .page .root.project.board  .children > .project .children .project > .name,
+		#app .page .root.project.board  .children > .project .children .project > .notes,
+		#app .page .root.project.board > .children .project .children .project > .name,
+		#app .page .root.project.board > .children .project .children .project > .notes,
+		#app .page .root.project.board  * .children * .name,
+		#app .page .project.board > .children * .name {
+		opacity:1 !important;
+		}
+		#app .root .board .children.childActiveSibling > .project > .children > .project > .children > .project > .children > .project > .name,
+		#app .root .board .children.childActiveSibling > .project > .children > .project > .children > .project > .children > .project > .notes,
+		app .root .children.childActive > .project.board > .children > .project > .children > .project > .children > .project > .name,
+		app .root .children.childActive > .project.board > .children > .project > .children > .project > .children > .project > .name,
+		#app .root > .children.childActive > .project.board > .children > .project > .children > .project > .children > .project > .name,
+		#app .root > .children.childActive > .project.board > .children > .project > .children > .project > .children > .project > .notes,
+		#app .root > .children.childActive > .project.board > .children > .project > .children > .project > .children > .project > .children > .project > .name,
+		#app .root > .children.childActive > .project.board > .children > .project > .children > .project > .children > .project > .children > .project > .notes,
+		#app .page .root > .children.childActive > .project.board  .children > .project > .name,
+		#app .page .root > .children.childActive > .project.board  .children > .project > .notes{
+		opacity:1 !important;
+		border:3px silid red;
+		}
+		/********
+		FLOATING COMMENTS OVERRIDE
+		*********/
+		html #app .pageContainer ~ .floating-comments-container .root .children > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children > .project > .notes,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .notes,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .notes,
+		/***/
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .children > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .children > .project > .notes,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .notes,
+		/***/
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .children > .project > .children > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .children > .project > .children > .project > .notes,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .children > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .children > .project > .notes,
+		/***/
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .children > .project > .children > .project > .children > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .children > .project > .children > .project > .children > .project > .notes,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .children > .project > .children > .project > .name,
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .children > .project > .children > .project > .notes{
+		opacity:1 !important;
+		}
+		
+
 	`);
 
 	function clearAllHighlights() {
@@ -112,7 +202,9 @@
 	}
 
 	function getSiblingsAtSameLevel(targetChildrenEl) {
-		const root = document.querySelector('.project.root');
+		const root = targetChildrenEl.closest('.page')?.querySelector('.project.root');
+		if (!root) return [];
+
 		const targetLevel = getIndentationLevel(targetChildrenEl);
 
 		return Array.from(root.querySelectorAll('.children')).filter((el) => {
