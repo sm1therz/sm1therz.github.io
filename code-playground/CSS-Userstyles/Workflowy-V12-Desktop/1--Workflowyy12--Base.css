@@ -4530,9 +4530,12 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 	--boardChildChildBrdClr:hsla(0, 0%, 50%, .0825);
 	--boardChild-FakeBrdOpacity:1;
 }
-#app .page .project.board.root > .children > .boardColumn > .boardCard.comment{
-	box-shadow: 0 0 0 1px red !important;
+#app .board.root .boardCard.comment{
+	--boardChildBrdClr: hsl(200, 15%, 18%) !important;
 }
+#app .page .project.board.root > .children > .boardColumn > .boardCard.comment{
+}
+
 #app .board.root .boardCard > .children {
 	border-color: var(--boardChildBrdClr)!important;
 	border-width: 1px !important;
@@ -4548,7 +4551,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 	height: 1px !important;
 	background: var(--boardChildBrdClr) !important;
 	position: absolute !important;
-	opacity: var(--boardChild-FakeBrdOpacity);
+	opacity: var(--boardChild-FakeBrdOpacity) !important;
 	z-index: 1 !important;
 	inset: unset !important;
 	left: calc(var(--children-Indent) * -.5) !important;
@@ -4556,11 +4559,11 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 	bottom: -1px !important;
 }
 
-#app .board.root .boardCard > .children > .project:not(.noted) > .name:before,
-#app .board.root .boardCard > .children > .project.noted > .notes:before {
-	
+#app .board.root .boardCard > .children > .project:not(.noted) > .name,
+#app .board.root .boardCard > .children > .project.noted > .notes {
+	position: relative !important;
 }
-#app .board.root .boardCard > .children > .project:not(.open):last-of-type {
+#app .board.root > .children > .boardColumn > .children > .boardCard > .children > .project:not(.open):last-of-type{
 	--boardChild-FakeBrdOpacity:0 !important;
 }
 /*******************************
