@@ -58,7 +58,7 @@
 		/*LEVEL 5*/
 		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .name,
 		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .notes{
-			opacity: 0.05;
+			opacity: 0.029;
 		}
 		/*LEVEL 6*/
 		#app .root > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .children > .project > .name,
@@ -116,8 +116,6 @@
 		*********/
 		#app .root .project.board > .children > .project.boardColumn > .name,
 		#app .root .project.board > .children > .project.boardColumn > .notes,
-		#app .root .children > .project.board > .name,
-		#app .root .children > .project.board > .notes,
 		#app .page .root .project.board  .children > .project .children .project > .name,
 		#app .page .root .project.board  .children > .project .children .project > .notes,
 		#app .page .root .project.board > .children .project .children .project > .name,
@@ -171,8 +169,36 @@
 		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .children > .project > .children > .project > .children > .project > .name,
 		html #app .pageContainer ~ .floating-comments-container .root .children.childActive > .project > .children > .project > .children > .project > .children > .project > .notes,
 		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .children > .project > .children > .project > .name,
-		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .children > .project > .children > .project > .notes{
+		html #app .pageContainer ~ .floating-comments-container .root .children.childActiveSibling > .project > .children > .project > .children > .project > .children > .project > .notes {
 		opacity:1 !important;
+		}
+		/********
+		FLOATING COMMENTS > IN EDITOR > OVERRIDE
+		*********/
+		html.floating-comments-blurred #app .page .root > .children .project.floating-conversations > .name,
+		html:not(.floating-comments-blurred) #app .page .root > .children .project.floating-conversations > .notes,
+		html:not(.floating-comments-blurred) #app .page .root > .children > .project > .children > .project > .children > .project.floating-conversations > .name,
+		html:not(.floating-comments-blurred) #app .page .root > .children > .project > .children > .project > .children > .project.floating-conversations > .notes {
+		opacity:1 !important;
+		}
+		/********
+		FLAT SEARCH OVERRIDE
+		*********/
+		#app > .pageContainer > .searching * .name,
+		#app > .pageContainer > .searching * .name,
+		#app .page.searching .root.project > .name > .content,
+		#app .page.searching .root.project > .notes > .content,
+		/****/
+		#app .page.searching .root > .children > .project > .name,
+		#app .page.searching .root > .children > .project > .notes,
+		#app .page.searching .root.project > .children .project .children .project > .name,
+		#app .page.searching .root.project > .children .project .children .project > .notes,
+		/****/
+		#app .page.searching .children.childActive > .project > .children > .project > .name,
+		#app .page.searching .children.childActive > .project > .children > .project > .notes,
+		#app .page.searching .root .children.childActive > .project > .children > .project > .children > .project > .name,
+		#app .page.searching .root .children.childActive > .project > .children > .project > .children > .project > .notes{
+		opacity: 1 !important;
 		}
 		
 
