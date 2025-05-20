@@ -2974,6 +2974,11 @@ s .contentTag {
 LEVEL 1 > Project
 ****************
 ****************/
+
+:root {
+	--boardColumnWidth:400px;
+	--boardRootColumnWidth:475px
+}
 .project.board > .children {
 		--brd-brdrClr: var(--COMMENT-CONTAINER--BORDER-CLR);
 		--brd-brdrClrCmnt: var(--COMMENT-CONTAINER--BORDER-CLR);
@@ -2992,9 +2997,16 @@ LEVEL 1 > Project
 		margin-top: 0px !important;
 }
 .boardColumn:not(.root.board .boardColumn){
-		flex: 0 0 400px !important;
-		max-width: 400px;
+		flex: 0 0 var(--boardColumnWidth) !important;
+		max-width: var(--boardColumnWidth);
 }
+@media (max-width: 650px) {
+	:root {
+		--boardColumnWidth:340px;
+		--boardRootColumnWidth:400px
+	}
+}
+
 
 
 /*All border-colors*/
@@ -3143,6 +3155,22 @@ BOARD COLUMN Level
 ****************
 ****************/
 
+
+.project.board:not(.root) .boardColumn > .name,
+.project.board:not(.root) .boardColumn > .notes {
+		padding-left: var(--boardCardPadLeftRight) !important;
+		--content-PadTopBtm: 6px;
+		--name-fontSize: 1em;
+		--name-lineHeight: 21px;
+		--header1-fontSize: 1.15rem;
+		--header1-lineHeight: 21px;
+		--header2-fontSize: 1.1rem;
+		--header2-lineHeight: 21px;
+	--header3-fontSize: 1.05rem;
+	--header3-lineHeight: 21px;
+	font-weight: 500
+}
+
 .project.board .boardColumn > .name,
 .project.board .boardColumn > .notes {
 		padding-left: var(--boardCardPadLeftRight) !important;
@@ -3155,6 +3183,7 @@ BOARD COLUMN Level
 		--header2-lineHeight: 22px;
 	box-shadow: inset 0 0 0 var(--testBrdW) red;
 }
+
 #app .boardCard > .name,
 #app .boardCard > .notes{
 	box-shadow: inset 0 0 0 var(--testBrdW) red;
@@ -3542,11 +3571,9 @@ BOARDS ROOT
 		padding-bottom: 0px !important;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .name {
-		height: unset;
 		padding-bottom: 0px;
 		padding-left: var(--ROOT-padLeftRight);
-		position:fixed;
-		top:0px;
+		position:relative !important;
 		z-index:949494949494;
 		height:unset;
 		width:unset;
@@ -3556,8 +3583,6 @@ BOARDS ROOT
 }
 
 #app .page[style="overflow-y: auto;"] > .project.board.root > .notes{
-		position:fixed;
-		top:31px;
 		z-index:9544;
 		height:var(--ROOT-BOARD-TITLE-HEIGHT);
 		width:unset;
@@ -3568,13 +3593,23 @@ BOARDS ROOT
 		padding-bottom:0px;
 		margin:0px;
 		height:unset !important;
-
 }
+
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name {
 		padding-bottom: 0px;
 }
+#app .page[style="overflow-y: auto;"] > .project.board.root > .name .content{
+		font-size:24px;
+}
+._theme-dark #app .page[style="overflow-y: auto;"] > .project.board.root > .name .content{
+	color: white !important;
+}
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name .content{
-		font-size:25px;
+		font-size:20px;
+}
+
+#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes .content {
+	padding-bottom: var(--content-PadTopBtm) !important
 }
 #app .project.board.root.noted > .notes {
 		padding-bottom: var(--ROOT-padBot);
@@ -3758,7 +3793,7 @@ padding-bottom: calc(var(--content-PadTopBtm) + 1px);
 .board .boardColumn.project.comment-container > .name > .contentEditablePlaceholderWrapper{
 		opacity: 0;
 }
-.board ._1ut32c0 {
+.board:not(.root) ._1ut32c0 {
 	order: 9393 !important;
 	height: 28px;
 	padding-top: 8px
@@ -4024,13 +4059,19 @@ html #app .board:not(.root) .boardColumn > .children > .project.comment .comment
 		opacity: 0 !important;
 }
 
-.board ._1ut32c0{
+.board:not(.root) .boardColumn > .children > ._1ut32c0{
 	display: none !important;
 }
+.board.root .boardColumn > .children > ._1ut32c0{
+	order: 929292
+}
+
 
 #app .board:not(.root) > .children > .boardColumn > .children {
 	border-top: 1px solid var(--brd-ClmBrdClr) !important;
 }
+
+
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -4208,8 +4249,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 
 #app .board.root .boardColumn {
-	max-width: 475px !important;
-	flex: 0 0 475px;
+	max-width: var(--boardRootColumnWidth) !important;
+	flex: 0 0 var(--boardRootColumnWidth);
 	overflow-x: visible !important;
 }
 #app .board.root .boardColumn {
@@ -4578,6 +4619,11 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 }
 #app .board.root > .children > .boardColumn > .children > .boardCard > .children > .project:not(.open):last-of-type{
 	--boardChild-FakeBrdOpacity:0 !important;
+}
+
+
+#app .board.root > .children > .boardColumn > .children > div:not(.project){
+	margin-bottom: 20px !important;
 }
 /*******************************
 ********************************
@@ -7326,6 +7372,7 @@ SEARCH - NAV - BAR
 		position: relative;
 		height: 100%;
 		align-items: flex-start !important;
+		z-index: 9494949494;
 }
 
 #app .searchBox {
