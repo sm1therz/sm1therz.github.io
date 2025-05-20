@@ -9,4 +9,4 @@
 	</style>`;
 	
 	document.head.insertAdjacentHTML("beforeend", style);
-})();
+})(); 

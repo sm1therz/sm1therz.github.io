@@ -1,12 +1,3 @@
-// ==UserScript==
-// @name         Workflowy > Focus Mode Toggle Buttons
-// @namespace    http://tampermonkey.net/
-// @version      1.2
-// @description  Adds button to toggle Focus Mode in Workflowy
-// @match        https://workflowy.com/*
-// @grant        none
-// ==/UserScript==
-
 (function () {
 	'use strict';
 
@@ -15,7 +6,7 @@
 		#WfFocusWrapper {
 			z-index: 9999;
 			position: fixed;
-			bottom: 38px;
+			bottom: 30px;
 			right: 10px;
 			display: flex;
 			flex-direction: column;
@@ -52,7 +43,7 @@
 
 		const onButton = document.createElement('button');
 		onButton.id = 'WfFocusOn';
-		onButton.textContent = 'Focus mode on';
+		onButton.textContent = 'focus mode';
 
 		wrapper.appendChild(onButton);
 		document.body.appendChild(wrapper);
