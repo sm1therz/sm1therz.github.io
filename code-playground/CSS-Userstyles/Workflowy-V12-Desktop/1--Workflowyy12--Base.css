@@ -7282,7 +7282,7 @@ LAST ITEM
 }
 /*******************************
 ********************************
-SEARCH - NAV - BAR
+! SEARCH - NAV - BAR
 ********************************
 ********************************/
 
@@ -7372,7 +7372,6 @@ SEARCH - NAV - BAR
 		position: relative;
 		height: 100%;
 		align-items: flex-start !important;
-		z-index: 9494949494;
 }
 
 #app .searchBox {
@@ -7707,9 +7706,17 @@ DROPDOWN WRAPPER
 	bottom: 0;
 	margin-top: unset;
 }
-/*************
-SEARCH RESULTS
-**************/
+
+.header .pagination {
+	display: none !important;
+}
+
+
+.header > div > .iconButton {
+	margin: 0px !important;
+	width: 24px;
+	border-radius: 4px;
+}
 
 /*******************************
 ********************************
