@@ -76,6 +76,7 @@ BOX SHADOW TESTING - BOARDS
 }
 .project,
 .project > .name,
+.project > .name > .nameButtons,
 .project > .name > .bullet,
 .project > .name > .prefix,
 .project > .name > .content,
@@ -2329,7 +2330,7 @@ html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .in
 /*PARENTS  - LINK*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
 /*CHILDREN - LINK*/
-html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a,
+html #app .project:not(.comment) [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a,
 /*PARENTS  - Highlighted*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"],
 /*CHILDREN - Highlighted*/
@@ -2790,7 +2791,15 @@ body.read_only_main_tree .notes > ._hxhmtg.content {
 .project:hover > .name > .nameButtons {
 		z-index: 9494;
 }
-
+#app .project > .name > .nameButtons {
+	margin-left: 0px !important;
+}
+@media (max-width: 650px) {
+	#app .project:not(.board, .dashboard) .project > .name > .nameButtons {
+		right: 10px !important;
+		left: unset !important;
+	}
+}
 
 
 .project:not(.board) .project > .name > .prefix .item-checkbox:before {
@@ -4018,6 +4027,10 @@ html #app .board:not(.root) .boardColumn > .children > .project.comment .comment
 .board ._1ut32c0{
 	display: none !important;
 }
+
+#app .board:not(.root) > .children > .boardColumn > .children {
+	border-top: 1px solid var(--brd-ClmBrdClr) !important;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -4093,7 +4106,7 @@ BOARD ROOT DESIGN ADJUST
 #app .project.board.root .boardColumn > .name > .prefix,
 #app .project.board.root .boardColumn > .name > .expand,
 #app .project.board.root .boardColumn > .name > .menu {
-	--btn-MargTop: 5px !important;
+	--btn-MargTop: 9px !important;
 }
 
 /*****
@@ -4451,7 +4464,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 }
 #app .project.board.root .boardColumn > .name > .bullet,
 #app .project.board.root .boardColumn > .name > .prefix {
-	right: calc(var(--children-Indent) * 2.25) !important;
+	right: calc(var(--children-Indent) * 1) !important;
 }
 
 
@@ -5667,6 +5680,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 .dashboard.root > .children > .dashboard-card:not(.comment):nth-of-type(odd){
 	 background: hsl(201, 13%, 18%); 
 }
+
 /*******************************
 ********************************
 ! PRESENTATION
@@ -5860,9 +5874,9 @@ html body.floating-comments:focus-within #app .floating-comments-container .proj
 }
 
 /**/
-@media (max-width:800px) {
+@media (max-width:900px) {
 	html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
-			--floatCommentPosRight: calc(var(--floatCommentW) * -0.7);
+			--floatCommentPosRight: calc(var(--floatCommentW) * -0.8);
 			right: var(--floatCommentPosRight) !important;
 
 	}
@@ -6042,6 +6056,10 @@ row-gap: 20px !important;
 		width: 100% !important;
 		max-width: 100% !important;
 		transform: unset !important;
+}
+
+.floating-comments-container > .vertical-scrollable-container > .comment-container{
+	padding-right: 5px !important
 }
 
 
