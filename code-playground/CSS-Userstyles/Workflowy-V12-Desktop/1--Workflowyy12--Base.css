@@ -3168,7 +3168,7 @@ BOARD COLUMN Level
 		--header2-lineHeight: 21px;
 	--header3-fontSize: 1.05rem;
 	--header3-lineHeight: 21px;
-	font-weight: 500
+	font-weight: 600
 }
 
 .project.board .boardColumn > .name,
