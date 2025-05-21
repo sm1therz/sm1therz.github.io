@@ -4625,6 +4625,33 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root > .children > .boardColumn > .children > div:not(.project){
 	margin-bottom: 20px !important;
 }
+
+#app .board.root .boardCard .project.comment > .children .comment{
+	margin-left: 0px !important;
+	max-width: 100% !important;
+}
+#app .page .board.root .boardCard > .children > .project.comment {
+	border-color:var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+	--COMMENT-CONTAINER--BORDER-CLR:hsl(197, 13%, 0%) !important;
+	border-bottom-width: 11px !important;
+}
+#app .page .board.root .boardCard > .children > .project.comment + .project:not(.comment) {
+	box-shadow: inset 0 1px 0 0 var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+	 --COMMENT-CONTAINER--BORDER-CLR:hsl(197, 13%, 0%) !important;
+
+}
+
+#app .board.root .boardCard:not(.open){
+	padding-bottom: 7px !important;
+}
+#app .page .board.root .boardCard:not(.collapsed,.open) > .children > .project:last-of-type{
+	padding-bottom: 7px !important;
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard.comment{
+	--COMMENT--BG--even:var(--BOARD-ROOT--CARD--BG);
+}
+
 /*******************************
 ********************************
 ! BOARDS - BULLET / MENU CHANGE
