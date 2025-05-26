@@ -9,7 +9,7 @@
 
 html,
 body,
-#app, 
+#app,
 #app .page,
 .pageContainer{ 
 		background: var(--BG-primary) !important;
