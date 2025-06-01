@@ -3566,8 +3566,8 @@ BOARDCARD - Level
 	right: calc(var(--children-Indent) * 1) !important;
 }
 /*Expand*/
-.project.boardCard > .name > .expand {
-	left: calc(var(--children-Indent) * .5);
+#app .board .project.boardCard > .name > .expand {
+	left: calc(var(--children-Indent) * .5) !important;
 }
 
 /*Expand - Scale*/
