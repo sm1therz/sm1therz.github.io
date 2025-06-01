@@ -6228,6 +6228,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card > .children > .project > .children:before,
+#app .page.dashboard-page .dashboard-card > .children > .project > .children > .project > .children:before,
 #app .page.dashboard-page .dashboard-card  .children > .comment:not(.comment .comment):before{
   content: "";
   display: block;
@@ -6243,33 +6244,114 @@ top: -1px;
 
   
 }
-#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before{
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before,
+#app .page.dashboard-page .dashboard-card > .children > .project > .children > .project > .children:before{
   box-shadow:
 	inset 0 1px 0 0 var(--DashCrd--BrdClr),
 	inset 0 -1px 0 0 var(--DashCrd--BrdClr);
 }
 
+
+
 /*CHILDREN 1*/
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children{
+  background: var(--BG-primary);
+}
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children:before{
-  background: var(--dashBg-Color1);
+  background: var(--BG-primary);
 
 }
-#app .page.dashboard-page .dashboard-card:not(.comment) > .children{
-  background: var(--dashBg-Color1);
-  padding-left: 0px;
-}
+
 /*CHILDREN 2*/
-#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before{
-  background: var(--dashBg-Color2);
-}
+
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children{
-  background: var(--dashBg-Color2);
-  
+  background: var(--dashBg-Color1);
+  padding-left: 0px !important;
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before{
+  background: var(--dashBg-Color1);
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project.addedToSelection:not(.comment) > .children{
   background: var(--ADDED-TO-SELECTION--BG);
 }
 
+/*CHILDREN 3*/
+
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children{
+  background: var(--dashBg-Color2);
+  padding-left: 0px !important;
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children:before{
+  background: var(--dashBg-Color2);
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project.addedToSelection:not(.comment) > .children{
+  background: var(--ADDED-TO-SELECTION--BG);
+}
+
+
+/***********
+PARAGRAPH CHEVRON
+************/
+#app .dashboard-card > .children .project.paragraph > .name > .expand{
+  background: transparent !important;
+}
+.dashboard-card > .children .project.paragraph > .name > .expand > div{
+  width: 100% !important;
+  height: 100% !important;
+  box-shadow: unset !important;
+  background: transparent !important;
+  transform: unset !important;
+  border-radius: 3px !important;
+}
+.dashboard-card > .children .project.paragraph > .name > .expand > div:hover{
+  background: var(--BG-BUTTON--HOVER) !important;
+}
+#app .dashboard-card > .children .project.paragraph > .name > .expand:before,
+#app .dashboard-card > .children .project.paragraph > .name > .expand:after {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph > .name > .expand ._3hmsj:before{
+  content: "";
+  background-image: var(--ICON--ARROW);
+  display: block;
+  width: 12px !important;
+  height: 12px !important;
+  transform: scale(.85) rotate(90deg) !important;
+  transition: .15s;
+  background-repeat: no-repeat;
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph.collapsed > .name > .expand ._3hmsj:before{
+
+  transform: scale(.85) rotate(0deg) !important;
+}
+
+/***********
+PARAGRAPH CHEVRON > IS MIRROR
+************/
+#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph > .name > .bullet.diamond {
+  opacity: 1 !important;
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph > .name > .bullet.diamond:before {
+  content:"";
+	background: var(--BG-Bullet-open);
+  width: var(--btnIcn-ExpandB4Up-W);
+  height: var(--btnIcn-ExpandB4Up-H);
+  transform: rotate(-45deg)scale(.85) !important;
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph.collapsed > .name > .bullet.diamond:after{
+  content:"";
+  width: var(--btnIcn-ExpandB4Low-W);
+  height: var(--btnIcn-ExpandB4Low-H);
+  border-radius: var(--btnIcn-ExpandB4Low-BrdRad);
+  background: var(--BG-Bullet-under);
+  opacity: 1 !important;
+  border-radius: 3px !important;
+  transform: rotate(-45deg)scale(.85) !important;
+
+}
+  
 /*BACKGROUNDS*/
 :root {
   --dashBg-Color1:hsl(202, 13%, 17.5%);
@@ -6284,8 +6366,6 @@ top: -1px;
 }
 
 
-
-
 /*******************************
 ********************************
 ! DASHBOARD - BORDERS
@@ -6296,7 +6376,7 @@ top: -1px;
   --dashboardChildBrdClr:hsl(204, 9%, 22%);
 }
 html #app .page.dashboard-page .root.dashboard .dashboard-card {
-	box-shadow: 0 -1px 0 0 var(--DashCrd--BrdClr) !important;
+	box-shadow: 0 0px 0 0 var(--DashCrd--BrdClr) !important;
 }
 html #app .page.dashboard-page .root.dashboard > .name,
 html #app .page.dashboard-page .root.dashboard > .notes,
@@ -6330,7 +6410,8 @@ EXPAND COLLAPSE BORDER ANIMATION
 	z-index: 0;
 	bottom: 0 !important;
 	opacity: 1;
-	left: calc(var(--children-Indent) * 0);
+	left: -100vw;
+	right: -100vw !important;
 	width: unset !important;
 	transition: .1s;
 	top: unset !important
@@ -6424,6 +6505,16 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .dashboard-card > .children > .project:not(.noted):first-child > .name, #app .dashboard-card > .children > .project.noted:first-child > .notes{
   box-shadow: unset !important;
 }
+
+
+/*DASHBOARD CARD BORDER*/
+
+#app .page.dashboard-page .dashboard-card:not(.noted) > .name:before,
+#app .page.dashboard-page .dashboard-card.noted > .notes:before{
+  
+}
+
+
 
 /*******************************
 ********************************
