@@ -291,6 +291,7 @@ BOX SHADOW TESTING - BOARDS
 		font-size: var(--root-font-size);
   line-height: var(--root-line-height);
 }
+
 /*******************************
 ********************************
 ! NORMAL STATE
@@ -2085,7 +2086,7 @@ BLOCK QUOTE
 #app .quote-block > .name > .content,
 #app .quote-block > .name > .content:empty,
 #app .quote-block > .notes > .content {
-	padding-left: calc(var(--quotePadLeft) + var(--content-PadLeftRight));
+	padding-left: calc(var(--content-PadLeftRight));
 }
 
 /*quote - border left */
@@ -2155,7 +2156,8 @@ BLOCK QUOTES V2
 #app .page .project.quote-block > .name > .expand, 
 #app .page .project.quote-block > .name > .bullet, 
 #app .page .project.quote-block > .name > .menu{
-  --btn-MargTop:6px !important;
+  --btn-MargTop:5.5px !important;
+  top: var(--btn-MargTop)!important;
 }
 
 
@@ -2184,7 +2186,9 @@ BLOCK QUOTES V2
 }
 
 #app .project:not(.board) .project.collapsed > .name > .bullet.diamond ~ .expand:after{
-  transform:rotate(45deg)scale(0.85)
+  transform:rotate(45deg)scale(0.85);
+  border-radius: 2px !important
+	
 }
 
 #app .board .project.quote-block > .name > .bullet ~ .expand:after {
@@ -2192,6 +2196,37 @@ BLOCK QUOTES V2
   height: calc(var(--quoteBrdLeftW) * 2.75)  !important;
   border-radius: 2px !important;
 }
+
+
+/*V3*/
+/*non mirrors*/
+#app .project.quote-block:not(.collapsed) > .name > .bullet:not(.diamond) ~ .expand:before,
+#app .project.quote-block:not(.collapsed) > .name > .bullet:not(.diamond) ~ .expand:after{
+  opacity: 0 !important;
+}
+#app .project.quote-block:not(.hasMirrors) > .name > .bullet ~ .expand:before{
+  background:var(--wf-border-default)!important
+}
+
+#app .project.quote-block > .name > .bullet:not(.diamond) ~ .expand:after{
+  border-radius: 10px !important;
+  transform: scale(.9) !important;
+}
+/*mirrors*/
+
+#app .project.quote-block > .name > .bullet ~ .expand:after {
+  background: var(--BG-primary) !important;
+}
+#app .project.quote-block > .name > .bullet.diamond ~ .expand:after {
+  transform:rotate(45deg)scale(0.75) !important;
+  border-radius: 2px !important;
+
+}
+#app .comment.thread .project.quote-block > .name > .expand:after{
+  background: var(--COMMENT-CONTAINER--BG) !important;
+}
+
+
 /*******
 EXPAND MIRROR BULLET V2
 
@@ -2751,6 +2786,7 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
 	opacity: 1;
 }
+
 /***********
 ! NORMAL STATE OVERRIDES
 ************/
