@@ -291,7 +291,6 @@ BOX SHADOW TESTING - BOARDS
 		font-size: var(--root-font-size);
   line-height: var(--root-line-height);
 }
-
 /*******************************
 ********************************
 ! NORMAL STATE
@@ -1499,12 +1498,6 @@ MIRRORS*/
 	transform: rotate(-180deg)scale(var(--btnIcn-Scale)) !important
 }
 
-#app .project.dashboard .project.paragraph > .name > .bullet.diamond ~ .expand > div{
-  width: var(--btnIcn-ExpandB4Low-W) !important;
-  height: var(--btnIcn-ExpandB4Low-H) !important;
-  --btnIcn-ExpandB4Low-W:10px !important;
-  --btnIcn-ExpandB4Low-H:10px !important;
-}
 #app .project:not(.dashboard,.board) .project.paragraph > .name > .bullet.diamond ~ .expand:after{
   width: var(--btnIcn-ExpandB4Low-W) !important;
   height: var(--btnIcn-ExpandB4Low-H) !important;
@@ -2180,12 +2173,12 @@ BLOCK QUOTES V2
 #app .project:not(.board) .project.quote-block > .name > .bullet:not(.diamond) ~ .expand:before {
   width: var(--quoteBrdLeftW);
 }
-#app .project:not(.board) .project.quote-block > .name > .bullet ~ .expand:after {
+#app .project .project.quote-block > .name > .bullet ~ .expand:after {
   opacity: 1 !important;
-	background:var(--wf-border-default)
+	background:var(--wf-border-default);
 }
 
-#app .project:not(.board) .project.collapsed > .name > .bullet.diamond ~ .expand:after{
+#app .project .project.collapsed > .name > .bullet.diamond ~ .expand:after{
   transform:rotate(45deg)scale(0.85);
   border-radius: 2px !important
 	
@@ -2224,6 +2217,10 @@ BLOCK QUOTES V2
 }
 #app .comment.thread .project.quote-block > .name > .expand:after{
   background: var(--COMMENT-CONTAINER--BG) !important;
+}
+
+#app .board.root .boardCard:not(.comment) .project.quote-block > .name > .expand:after{
+  background: var(--BOARD-ROOT--CARD--BG) !important !important;
 }
 
 
@@ -2786,7 +2783,6 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
 	opacity: 1;
 }
-
 /***********
 ! NORMAL STATE OVERRIDES
 ************/
@@ -3068,6 +3064,10 @@ html #app .project [projectid*="virtual"].comment > .children .project > .name >
   z-index: 99;
   
 }
+
+.mirror-warning{
+  display: none 
+}
 /***********
 ! TAGS
 ************/
@@ -3248,7 +3248,7 @@ LEVEL 1 > Project
 ****************/
 
 :root {
-  --boardColumnWidth:400px;
+  --boardColumnWidth:380px;
   --boardRootColumnWidth:475px
 }
 .project.board > .children {
@@ -3272,7 +3272,7 @@ LEVEL 1 > Project
 	flex: 0 0 var(--boardColumnWidth) !important;
 	max-width: var(--boardColumnWidth);
 }
-@media (max-width: 1100px) {
+@media (max-width: 1640px) {
   :root {
 	--boardColumnWidth:340px;
 	--boardRootColumnWidth:400px
@@ -3389,8 +3389,9 @@ LEVEL 2 > Name, Notes, Children
 	z-index: 1;
 }
 #app .project.board > .children:not(#app .project.board.root > .children) {
-	max-height: 65vh;
+	max-height: 75vh;
 	background: var(--BG-primary)!important;
+  min-width: calc(100vw + 20px);
 }
 
 /*BOARD (not-zoomed) - BOTTOM BORDER*/
@@ -3447,7 +3448,7 @@ BOARD COLUMN Level
 .project.board .boardColumn > .notes {
 	padding-left: var(--boardCardPadLeftRight) !important;
 	--content-PadTopBtm: 6px;
-	--name-fontSize: 1.2rem;
+	--name-fontSize: 1.1rem;
 	--name-lineHeight: 22px;
 	--header1-fontSize: 1.2rem;
 	--header1-lineHeight: 22px;
@@ -3566,8 +3567,8 @@ BOARDCARD - Level
 	right: calc(var(--children-Indent) * 1) !important;
 }
 /*Expand*/
-#app .board .project.boardCard > .name > .expand {
-	left: calc(var(--children-Indent) * .5) !important;
+.project.boardCard > .name > .expand {
+	left: calc(var(--children-Indent) * .5);
 }
 
 /*Expand - Scale*/
@@ -4457,6 +4458,9 @@ max-width: calc(100% - 70px) !important;
 #app .board:not(.root) > .children code {
   font-size: calc(var(--name-fontSize) - 1.5px) !important;
 }
+#app .project.board > .children > .boardColumn > a {
+  display: none !important;
+}
 
 /*******************************
 ********************************
@@ -4769,31 +4773,25 @@ BOARD COLUMNS - MIRRORED CHECKBOX
   font-size: calc(var(--notes-fontSize) + 1.0px) !important;
 }
 
-#app .board.root .innerContentContainer b {
-  font-weight: 550;
-}
+
 
 #app .page[style="overflow-y: auto;"] {
   height: 100vh
 }
 
-#app .board.root .project.quote-block:not(.open) + .project.quote-block:not(.boardCard) > .name {
-  padding-top: 0px;
-  margin-top: calc(var(--content-PadTopBtm) * -1 - 1px);
-}
-#app .board.root .project.quote-block + .project.quote-block:not(.boardCard) > .name > .bullet {
-  --btn-MargTop: 0px !important;
-}
+/*
 #app .board.root .project.quote-block.hasMirrors > .name > .bullet:before {
   opacity: 1 !important;
 }
+*/
+/*
 #app .board.root .project.quote-block.hasMirrors > .name > .bullet:before,
 #app .board.root .project.quote-block:not([projectid*="virtual"]) > .name > .bullet.diamond:before {
   opacity: 1 !important;
   width: 6px !important;
   height: 6px;
   border-radius: 0px !important;
-}
+}*/
 #app .board.root .boardColumn .comment {
   border-top-width: 1px !important;
 }
@@ -5058,6 +5056,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 
 #app .board.root > .children > .boardColumn > .children > div:not(.project){
   margin-bottom: 20px !important;
+  padding-bottom: 200px !important;
 }
 
 #app .board.root .boardCard .project.comment > .children .comment{
@@ -5114,6 +5113,76 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 }
 #app .board.root > .children > .boardColumn > .children > .boardCard.noted.comment > .notes > .content{
   padding-bottom:calc(var(--content-PadTopBtm) + 0px) !important;
+}
+
+
+
+
+/*******************************
+********************************
+! BOARDS - ROOT - SHARED (WRAP)
+********************************
+********************************/
+
+#app .page .board.root.shared{
+  position: fixed !important;
+  bottom: 100px;
+}
+#app .board.root.shared > .children{
+  position: relative !important;
+  display: flex;
+  flex-wrap: wrap !important;
+  border-top-color: hsla(210, 90%, 66%, .35) !important;
+  overflow-y: scroll !important;
+  height: 100% !important;
+  margin-bottom: 10000px !important;
+}
+#app .board.root.shared > .children {
+}
+
+#app .board.root.shared > .children > .boardColumn{
+  flex: unset !important;
+  box-shadow: inset 0 0 0 1px red !important;
+  overflow-y: hidden !important; 
+}
+#app .board.root.shared > .children > .boardColumn > .children {
+  overflow-y: hidden !important;
+  height: auto !important;
+  flex: unset !important;
+}
+/*
+#app .board.root.shared > .children > .boardColumn:before{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: hsla(0, 0%, 100%, 0.1);
+  z-index: 2;
+  opacity: 0
+}*/
+#app .board.root.shared > .children > .boardColumn.collapsed:before{
+  opacity: 1
+}
+
+.mirror-warning{
+  display: none 
+}
+
+#app .board.root.shared > .children > .boardColumn > .children > div:not(.project){
+  padding-bottom: 0px !important;
+  margin: unset !important;
+  height: 1px !important;
+}
+
+#app .board.root.shared > .children > .boardColumn > .boardCard:last-child {
+  margin-bottom: 10px !important; 
+}
+
+.board.root.shared > .children > ._1en9fmv {
+  display: none !important;
 }
 /*******************************
 ********************************
@@ -5234,29 +5303,6 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 	--btnIcn-Scale:.85
 }
 
-/*QUOTES*/
-
-#app .board > .children .boardCard > .children .project.quote-block > .name > .expand {
-	top: var(--btn-MargTop)!important;
-	--btn-MargTop:7px !important;
-	margin-top: 0px !important;
-	opacity: 0;
-}
-#app .board.root > .children .boardCard > .children .project.quote-block > .name > .expand{
-	top: var(--btn-MargTop)!important;
-	--btn-MargTop:8px !important;
-}
-/*QUOTES FOLLOWED BY ANOTHER QUOTE*/
-
-#app .board > .children .boardCard > .children .project.quote-block + .quote-block > .name > .expand,
-#app .board > .children .boardCard > .children .project.code-block + .code-block > .name > .expand {
-  top: var(--btn-MargTop)!important;
-	--btn-MargTop:7px !important;
-}
-#app .board.root > .children .boardCard > .children .project.quote-block + .quote-block > .name > .expand,
-#app .board.root > .children .boardCard > .children .project.code-block + .code-block > .name > .expand {
-	--btn-MargTop:2px !important;
-}
 
 #app .board > .children .boardCard > .children .project.quote-block.open > .name > .expand,
 #app .board > .children .boardCard > .children .project.quote-block.collapsed > .name > .expand,
@@ -5277,6 +5323,82 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 	--btn-MargTop:5.5px !important;
 
 
+}
+
+
+/***********
+************
+BULLETS > QUOTE BLOCKS
+************
+************/
+
+/***********
+BULLETS > QUOTE BLOCKS > FLOATING COMMENTS
+************/
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .project.comment .project.quote-block > .name > .expand,
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .project.comment .project.quote-block > .name > .bullet{
+	top: var(--btn-MargTop)!important;
+	--btn-MargTop:8px !important;
+	margin-top: 0px !important;
+}
+/***********
+BULLETS > QUOTE BLOCKS > BOARDS
+************/
+
+/*BOARD:NOT(ROOT) > QUOTES*/
+
+#app .board > .children .project.quote-block > .name > .expand,
+#app .board > .children .project.quote-block > .name > .bullet,
+#app .board > .children .project.quote-block > .name > .menu{
+	top: var(--btn-MargTop)!important;
+	--btn-MargTop:6px !important;
+	margin-top: 0px !important;
+}
+/*BOARD:NOT(ROOT) > COMMENTS > QUOTES*/
+#app .board > .children .project.comment .project.quote-block > .name > .expand,
+#app .board > .children .project.comment .project.quote-block > .name > .bullet,
+#app .board > .children .project.comment .project.quote-block > .name > .menu{
+	  --btn-MargTop:8.5px !important;
+
+}
+
+/*BOARD ROOT > BOARD COLUMN > QUOTE*/
+#app .board.root > .children .boardCard.project.quote-block > .name > .expand,
+#app .board.root > .children .boardCard.project.quote-block  > .name > .bullet,
+#app .board.root > .children .boardCard.project.quote-block  > .name > .menu{
+	--btn-MargTop:8px !important;
+}
+/*BOARD.ROOT > QUOTES*/
+#app .board.root > .children .project.quote-block > .name > .expand,
+#app .board.root > .children .project.quote-block > .name > .bullet,
+#app .board.root > .children .project.quote-block > .name > .menu{
+	--btn-MargTop:8px !important;
+
+}
+/*BOARD.ROOT > COMMENTS > QUOTES*/
+#app .board.root > .children .project.comment .project.quote-block > .name > .expand,
+#app .board.root > .children .project.comment .project.quote-block > .name > .bullet,
+#app .board.root > .children .project.comment .project.quote-block > .name > .menu{
+	  --btn-MargTop:10px !important;
+
+}
+
+
+/*BOARD ROOT > QUOTES + QUOTE*/
+
+#app .board.root .project.quote-block:not(.open) + .project.quote-block:not(.boardCard) > .name {
+  padding-top: 0px !important;
+  margin-top: calc(var(--content-PadTopBtm) * -1 - 1px);
+}
+#app .board.root .project.quote-block:not(.open) + .project.quote-block:not(.boardCard) > .name > .expand,
+#app .board.root .project.quote-block:not(.open) + .project.quote-block:not(.boardCard) > .name > .bullet {
+  --btn-MargTop: 2px !important;
+}
+
+/*BOARD ROOT > COMMENTS > QUOTES + QUOTE*/
+#app .board.root .project.comment .project.quote-block + .project.quote-block:not(.boardCard) > .name > .expand,
+#app .board.root .project.comment .project.quote-block + .project.quote-block:not(.boardCard) > .name > .bullet {
+  --btn-MargTop: 5px !important;
 }
 /*******************************
 ********************************
@@ -6366,6 +6488,8 @@ PARAGRAPH CHEVRON > IS MIRROR
 }
 
 
+
+
 /*******************************
 ********************************
 ! DASHBOARD - BORDERS
@@ -6513,8 +6637,6 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .page.dashboard-page .dashboard-card.noted > .notes:before{
   
 }
-
-
 
 /*******************************
 ********************************
@@ -7414,6 +7536,18 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
   display: none !important;
   height: 1px !important;
 }
+
+
+#app .board > .children .project.comment > .name > .bullet.diamond ~ .expand,
+#app .board > .children .project.comment .name > .bullet.diamond ~ .expand{
+}
+
+#app .board > .children .comment > .children .project > .name > .bullet.diamond ~ .expand:before, 
+#app .board > .children .boardCard.comment > .children .project:not(.checkmark) > .name > .bullet.diamond ~ .expand:before{
+	--btnIcn-Scale:0.8 !important;
+
+}
+
 /*******************************
 ********************************
 COMMENTS - NEW - NORMAL
