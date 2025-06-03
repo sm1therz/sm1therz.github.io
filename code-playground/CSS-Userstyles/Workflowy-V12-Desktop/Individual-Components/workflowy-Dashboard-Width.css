@@ -1,0 +1,125 @@
+/*******************************
+********************************
+! DASHBOARD - WIDTH - V2
+********************************
+********************************/
+:root {
+  --dashboardContentMaxW: 600px;
+  --dashboardIndentW: calc(var(--children-Indent) * 2)!important;
+}
+#app .dashboard-page.page {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#app .page.dashboard-page > .project.root.dashboard {
+  margin: 0 auto;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0px;
+}
+#app .page.dashboard-page > .project.root.dashboard > .name,
+#app .page.dashboard-page > .project.root.dashboard > .notes {
+  width: 100% !important;
+}
+#app .page.dashboard-page > .project.root.dashboard > .name,
+#app .page.dashboard-page > .project.root.dashboard > .notes {}
+#app .page.dashboard-page > .project.root.dashboard > .name,
+#app .page.dashboard-page > .project.root.dashboard > .notes,
+#app .page.dashboard-page > .project.root.dashboard .dashboard-card {
+  padding-left: calc(100vw * .5 - 600px * 0.5 - var(--pagePadLeft))!important;
+}
+#app .page.dashboard-page > .project.root.dashboard > .name > .content,
+#app .page.dashboard-page > .project.root.dashboard > .notes > .content,
+#app .page.dashboard-page > .project.root.dashboard > .commentAttribution {
+  max-width: var(--dashboardContentMaxW) !important;
+  padding-left: calc(var(--children-Indent) * 1.5) !important;
+  z-index: 2;
+}
+#app .page.dashboard-page > .project.root.dashboard > .name > .nameButtons {
+
+  width: calc(var(--dashboardContentMaxW) + var(--children-Indent) * 1.5) !important;
+  min-width: unset !important;
+  padding-left: calc(100vw * .5 - var(--dashboardContentMaxW) * 0.5 - var(--pagePadLeft));
+  left: unset !important;
+  right: unset !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 1;
+
+}
+#app .page.dashboard-page > .project.root.dashboard > .name > .nameButtons > div {}
+
+.dashboard-button-top {
+  display: none;
+}
+#app .page.dashboard-page > .root.dashboard > .name,
+#app .page.dashboard-page > .root.dashboard > .notes,
+#app .page.dashboard-page > .root.dashboard > .commentAttribution {
+  width: var(--dashboardContentMaxW) !important;
+  max-width: 100% !important;
+}
+#app .page.dashboard-page > .root.dashboard .dashboard-card > .name,
+#app .page.dashboard-page > .root.dashboard .dashboard-card > .notes,
+#app .page.dashboard-page > .root.dashboard .dashboard-card > .commentAttribution {
+  width: var(--dashboardContentMaxW) !important;
+  max-width: 100% !important;
+}
+
+/***/
+#app .dashboard-card > .name,
+#app .dashboard-card > .notes,
+#app .dashboard-card > .commentAttribution {
+  width: var(--dashboardContentMaxW);
+}
+#app .page.dashboard-page > .root.dashboard .children {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#app .dashboard-card > .children .project > .name,
+#app .dashboard-card > .children .project > .notes,
+#app .dashboard-card > .children .project > .commentAttribution {
+  width: var(--dashboardContentMaxW);
+}
+/**/
+#app .page.dashboard-page > .root.dashboard .dashboard-card > .children > .project > .name,
+#app .page.dashboard-page > .root.dashboard .dashboard-card > .children > .project > .notes,
+#app .page.dashboard-page > .root.dashboard .dashboard-card > .children > .project > .commentAttribution {
+  width: var(--dashboardContentMaxW) !important;
+  max-width: 100% !important;
+}
+
+
+@media (max-width: 650px) {
+  #app .pageContainer .page.dashboard-page > .project.root.dashboard > .name,
+  #app .pageContainer .page.dashboard-page > .project.root.dashboard > .notes {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  #app .page.dashboard-page > .project.root.dashboard > .name > .content,
+  #app .page.dashboard-page > .project.root.dashboard > .notes > .content,
+  #app .page.dashboard-page > .project.root.dashboard > .commentAttribution {
+  }
+  #app .page.dashboard-page > .project.root.dashboard > .name > .nameButtons{
+    width: calc(var(--children-Indent) * 1) !important;
+    padding: unset !important;
+    right: 0px !important;
+    z-index: 5;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+#app .page.dashboard-page .dashboard-card > .children > .comment > .commentAttribution span {
+  z-index: 1;
+}
+.dashboard-card:not(.noted) > .name:after,
+.dashboard-card.noted > .notes:after {
+  right: -100vw;
+  left: -100vw;
+}

@@ -1,0 +1,126 @@
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] {
+  background: transparent !important;
+  box-shadow: unset !important;
+  margin-top: var(--boardRoot-ColumnGap) !important;
+  padding-bottom: 0px !important;
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] + .boardCard[class*="header3"] {
+  margin-top: calc(var(--boardRoot-ColumnGap) * 1) !important;
+
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"]:not(.open) + .boardCard[class*="header3"] {
+  margin-top: calc(var(--boardRoot-ColumnGap) * .5) !important;
+
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] + .boardCard:not([class*="header3"]) {
+  margin-top: calc(var(--boardRoot-ColumnGap) * 1.5) !important;
+
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"].open + .boardCard:not([class*="header3"]) {
+  margin-top: calc(var(--boardRoot-ColumnGap) * 3) !important;
+
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"]:first-child{
+  margin-top: calc(var(--boardRoot-ColumnGap) * 2) !important;
+}
+
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"].noted > .notes > .content{
+  padding-bottom: calc(var(--content-PadTopBtm) * 2) !important
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.noted) > .name > .content,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project.noted > .notes > .content,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project.comment.noted > .notes > .content{
+  padding-bottom: calc(var(--content-PadTopBtm) * 2 + 0px) !important
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project[class*="header"]:not(.noted) > .name > .content,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project[class*="header"].noted > .notes > .content,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project.comment.noted > .notes > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * 2 + 4px) !important
+
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"]:not(.noted) > .name {
+  padding-bottom: 5px !important;
+}
+
+
+/*CHILDREN AS CARD - TOP LEVEL NAME / NOTE  > BOTTOM BORDER*/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .name,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .notes,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .name,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .notes{
+  position: relative;
+  margin-bottom: 0px !important
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"]:not(.noted) > .name:before,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"].noted > .notes:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: hsla(0, 0%, 100%, 0.1);
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children{
+  row-gap:var(--boardRoot-ColumnGap);
+}
+
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.comment){
+	box-shadow: 0 0 0 1.25px var(--BoardRootCardBrdClr) !important;
+  background: var(--BOARD-ROOT--CARD--BG);
+  border-radius: var(--boardRoot-CardBrdRad) !important;
+  
+}
+/*CHILDREN AS CARD - MAKE BOARD CARDS*/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project.comment{
+  border-radius: var(--boardRoot-CardBrdRad) !important;
+  border: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+}
+/*CHILDREN AS CARD - PADDING*/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project{
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+/*CHILDREN AS CARD - PADDING*/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.open){
+  padding-bottom: 0px !important;
+  --boardChildBrdClr:transparent;
+}
+
+/*CHILDREN AS CARD - FIRST CARD*/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:first-child{
+  margin-top: calc(var(--boardRoot-ColumnGap) * 1) !important;
+}
+
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .children {
+  padding-left: 0px !important;
+}
+
+
+/*BORDER COLOR OVERRIDES*/
+#app .board.root .boardCard[class*="header3"] > .children > .project > .children > .project:not(.noted) > .name:before, 
+#app .board.root .boardCard[class*="header3"] > .children > .project > .children > .project.noted > .notes:before {
+	content: "";
+  display: block !important;
+  height: 1px !important;
+  background: var(--boardChildBrdClr) !important;
+  position: absolute !important;
+  opacity: var(--boardChild-FakeBrdOpacity) !important;
+  z-index: 2 !important;
+  inset: unset !important;
+  left: calc(var(--children-Indent) * -.5) !important;
+  right: 0 !important;
+  bottom: -1px !important;
+}
+#app .board.root .boardCard[class*="header3"] > .children > .project:not(.project:last-of-type, .comment) > .children:before{
+  opacity: 0 !important;
+}
