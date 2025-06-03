@@ -72,7 +72,7 @@ BOX SHADOW TESTING - BOARDS
 
  **/
 :root {
-  --testBrdW:0px;
+  --testBrdW:.0px;
 }
 .project,
 .project > .name,
@@ -1768,8 +1768,13 @@ HIGHLIGHT - CODE
 }
 #app .project:not([class*="header"]) > .name > .content code{
 	font-size: calc(var(--name-fontSize) - 3.5px);
-
 }
+#app .project.root > .name > .content code{
+	font-size: calc(var(--root-font-size) - 6px);
+}
+
+
+
 #app .project > .name > .content code,
 #app .project > .name > .content code *{
 	font-family: SF Mono, var(--wf-font-family-mono) !important; 
@@ -3052,6 +3057,9 @@ html #app .project.comment.root [class*="name--highlighted"]:before{
 
 html #app .project [projectid*="virtual"].comment > .name > .content > .innerContentContainer a,
 html #app .project [projectid*="virtual"].comment > .children .project > .name > .content > .innerContentContainer a,
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u,
+html #app .project [projectid*="virtual"] > .children .project > .name > .content > .innerContentContainer u,
+html #app .project.board .project > .name > .bullet.diamond ~ .content > .innerContentContainer u,
 html #app .project [projectid*="virtual"].comment > .name > .content > .innerContentContainer u,
 html #app .project [projectid*="virtual"].comment > .children .project > .name > .content > .innerContentContainer u{
   text-decoration: underline !important;
@@ -3285,6 +3293,17 @@ LEVEL 1 > Project
 #app .boardColumn,
 #app .boardCard * {
 	border-color: var(--brd-brdrClr);
+}
+#app .boardColumn code,
+#app .boardCard code {
+  border-color: var(--wf-border-default);
+}
+#app .boardCard code {
+  padding-top: .5px !important;
+}
+#app .board.root .boardCard code {
+  padding-top: .5px !important;
+  padding-bottom: .5px ;
 }
 
 .boardColumn,
@@ -4462,6 +4481,20 @@ max-width: calc(100% - 70px) !important;
   display: none !important;
 }
 
+#app .project.board:not(.root) .boardColumn> .name > .content code{
+	font-size: calc(var(--name-fontSize) - 3.5px) !important;
+  padding-top: .5px !important;
+  padding-bottom: .5px !important;
+
+}
+
+
+#app .project.board.root .boardColumn> .name > .content code{
+	font-size: calc(var(--name-fontSize) + 1px)!important;
+  padding-top: .5px !important;
+  padding-bottom: .5px !important;
+
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -4657,10 +4690,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .board.root .project.boardCard.comment > .children {
   padding-left: calc(var(--children-Indent) * .5) !important;
 }
-#app .board.root .boardCard {
-  background: var(--BOARD-ROOT--CARD--BG) !important;
-  --BOARD-ROOT--CARD--BORDERCLR: hsla(0, 0%, 100%, .13) !important;
-}
+
 
 #app .board.root .project.paragraph > .name > .bullet:before,
 #app .board.root .project.quote-block > .name > .bullet:before,
@@ -4683,10 +4713,6 @@ BOARD COLUMNS - MIRRORED CHECKBOX
   opacity: 1;
 }
 
-#app .page[style="overflow-y: auto;"] {
-  background: var(--wf-background-secondary) !important;
-  --BG-primary: var(--wf-background-secondary) !important;
-}
 #app .page[style="overflow-y: auto;"] .project.root > .children {
   padding-top: 0px !important;
 }
@@ -5117,6 +5143,63 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 
 
 
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:not(.comment) {
+  box-shadow: 0 0 0 1.25px var(--BoardRootCardBrdClr) !important;
+
+}
+
+
+#app .page[style="overflow-y: auto;"] {
+  background: var(--wf-background-secondary) !important;
+  --BG-primary: var(--wf-background-secondary) !important;
+}
+
+#app .board.root > .children > .boardColumn > .children > div:not(.project) {
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0px !important;
+  margin-bottom: 100px !important;
+}
+#app .project.board.root > .children > .boardColumn > .name > .content {
+  color: white !important;
+}
+
+.board.project.root > .children .project > .name > .content {
+  --NODE--TXT-CLR--main:hsl(0, 0%, 86%) !important;
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard.references {
+  background: transparent !important;
+  box-shadow: 0 0 0 1px transparent !important;
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard.references.open {
+  background: hsla(0,0%,100%,.025) !important;
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.15) !important;
+}
+
+
+#app .project.board.root .boardColumn:not(.noted) > .name > .content{
+  min-height: 64px;
+}
+
+#app .project.board.root .boardColumn.noted > .notes > .content{
+  min-height: 36px;
+}
+
+
+
+#app .board.root .project.boardCard[class*="header"].collapsed > .name,
+#app .board.root .project.boardCard[class*="header"] > .name{
+  margin-bottom: 0px !important;
+}
+#app .board.root .project.boardCard[class*="header"].open:not(.noted) > .name{
+  margin-bottom: var(--content-PadTopBtm) !important;
+
+}
+#app .board.root .project.boardCard[class*="header"] > .notes {
+  margin-bottom: 0px !important;
+}
 
 /*******************************
 ********************************
