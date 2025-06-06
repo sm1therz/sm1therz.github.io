@@ -46,7 +46,7 @@ nav {
 
 li a,
 li a * {
-	box-shadow: inset 0 0 0 .1px red;
+    box-shadow: inset 0 0 0 .1px red;
 }
 */
 /*****************
@@ -97,7 +97,7 @@ nav {
 
 li a,
 li a * {
-	box-shadow: inset 0 0 0 .1px red;
+    box-shadow: inset 0 0 0 .1px red;
 }
 */
 :root {
@@ -244,7 +244,7 @@ BLOCKQUOTE
   position: relative;
 }
 .markdown blockquote:after{
-	display: none !important; 
+    display: none !important; 
 }
 /***********
 ************
@@ -252,7 +252,7 @@ HORIZONTAL RULE
 ************
 ************/
 .markdown hr {
-	border-color: hsla(0,0%,50%,.5);
+    border-color: hsla(0,0%,50%,.5);
    margin-bottom: calc(var(--paragraphMargTopBtm) * 3) !important;
   margin-top: calc(var(--paragraphMargTopBtm) * 3) !important;
 }
@@ -354,7 +354,7 @@ article[data-testid*="conversation-turn"] [class*="group/"] [class*="group-hover
 
 [data-testid*="conversation-turn"] [class*="row-reverse"] .font-semibold.tabular-nums,
 [data-testid*="conversation-turn"] [class*="row-reverse"] .icon-md-heavy,
-article[data-testid*="conversation-turn"] [class*="group/"] .flex.justify-end,
+article[data-testid*="conversation-turn"] [class*="group/"] .flex.justify-end:not([class*="text-token"]),
 article[data-testid*="conversation-turn"] [class*="group/"] [class*="group-hover"] button[aria-label*="Previous"],
 article[data-testid*="conversation-turn"] [class*="group/"] [class*="group-hover"] button[aria-label*="Previous"] + div,
 article[data-testid*="conversation-turn"] [class*="group/"] [class*="group-hover"] button[aria-label*="Next"]{
@@ -392,26 +392,26 @@ section#details .bg-token-main-surface-primary {
 [class*="main"] .cm-editor,
 [class*="main"] .cm-editor .cm-scroller,
 [class*="main"] .cm-editor .cm-scroller .cm-content{
-	flex-basis: unset !important;
-	width: 100%;
-	white-space: pre-wrap;
+    flex-basis: unset !important;
+    width: 100%;
+    white-space: pre-wrap;
 }
 
 [class*="main"] .cm-editor .cm-content{
-	display: block;
-	max-width: calc(100% - 70px)!important;
+    display: block;
+    max-width: calc(100% - 70px)!important;
 }
 /*
 article #codemirror .cm-editor {
-	background: black;
-	box-shadow: 0 0 0 1px var(--blockquoteBrdClr);
-	
+    background: black;
+    box-shadow: 0 0 0 1px var(--blockquoteBrdClr);
+    
 }*/
 
 .markdown .overflow-y-auto > code,
 .markdown .overflow-y-auto > code > span{
-	white-space: pre-wrap !important;
-	display: block !important;
+    white-space: pre-wrap !important;
+    display: block !important;
 }
 
 /***********
@@ -421,7 +421,7 @@ article #codemirror .cm-editor {
 ************/
 
 section.popover {
-	background: hsl(0, 0%, 13.5%) !important;
+    background: hsl(0, 0%, 13.5%) !important;
 }
 /***********
 ************
@@ -506,7 +506,7 @@ article + button.bg-token-main-surface-primary {
 
 /*DELETE BOTTOM DISCLAIMER*/
 [role="presentation"] > div.w-full > .text-token-text-secondary {
-	display: none;
+    display: none;
 }
 /***********
 ************
@@ -539,7 +539,7 @@ article + button.bg-token-main-surface-primary {
   justify-content: center;
   visibility: visible;
   z-index: 929;
-	min-width: 18px !important;
+    min-width: 18px !important;
 }
 .bg-token-sidebar-surface-primary a[class*="menu-item"] > div + div .trailing.highlight {
   align-self: flex-start !important;
@@ -595,7 +595,7 @@ SIDEBAR - MOBILE
 ************/
 @media (max-width:767px) {
   :root {
-	--leftSideBarWidth: 900px !important;
+    --leftSideBarWidth: 900px !important;
   }
 }
 [class*="sidebar"][style*="width: 0px"][style*="visibility: hidden"] {}
@@ -619,7 +619,7 @@ SIDEBAR - HIDE BOTTOM VIEW PLANS
 ************
 ************/
 nav[aria-label="Chat history"] > div > div[class*="border-white"]{
-	display:none; 
+    display:none; 
 }
 /***********
 ************
@@ -641,11 +641,11 @@ HIDE DELETE BUTTON
 
 /*MAKE ARCHIVE SIGNIFICANT
 [data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:nth-of-type(3){
-	color: hsl(134, 74%, 60%);
-	
+    color: hsl(134, 74%, 60%);
+    
 }
 [data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:nth-of-type(3) path {
-	fill: hsl(134, 74%, 60%)
+    fill: hsl(134, 74%, 60%)
 }
 */
 /***********
@@ -685,14 +685,14 @@ HIDE DELETE BUTTON
 
 /*IN CANVAS EDITOR*/
 button > h2 {
-	max-width: 100% !important;
+    max-width: 100% !important;
 }
 /*IN POPUP*/
 [data-radix-popper-content-wrapper] > div[data-side="bottom"]{
-	max-width: 1000px;
+    max-width: 1000px;
 }
 [data-radix-popper-content-wrapper] [role="menuitem"] span.block.truncate[class*="max-w-[200px]"]{
-	max-width: 100%;
+    max-width: 100%;
 }
 /***********
 ************
@@ -701,28 +701,28 @@ button > h2 {
 ************/
 @media (max-width: 700px) {
   :root {
-	--font-size: .955rem;
-	--line-height: 1.5;
+    --font-size: .955rem;
+    --line-height: 1.5;
   }
 
   .markdown.prose h1,
   .markdown.prose h2,
   .markdown.prose h3,
   .markdown.prose h4 {
-	margin-top: calc(var(--paragraphMargTopBtm) * 2.35);
-	margin-bottom: calc(var(--paragraphMargTopBtm) * 1.65);
-	line-height: calc(var(--line-height) * .9);
-	
+    margin-top: calc(var(--paragraphMargTopBtm) * 2.35);
+    margin-bottom: calc(var(--paragraphMargTopBtm) * 1.65);
+    line-height: calc(var(--line-height) * .9);
+    
   }
   .markdown.prose h1 {
-	font-size: calc(var(--font-size) * 1.6) !important;
+    font-size: calc(var(--font-size) * 1.6) !important;
   }
   .markdown.prose h2 {
-	font-size: calc(var(--font-size) * 1.4);
+    font-size: calc(var(--font-size) * 1.4);
   }
 
   .markdown.prose h3 {
-	font-size: calc(var(--font-size) * 1.2);
+    font-size: calc(var(--font-size) * 1.2);
   }
 
   /*background color*/
@@ -730,49 +730,49 @@ button > h2 {
   div[class*="bg-token-surface-primary pl-1 dark:bg-token-surface-secondary"],
   div[class*="flex w-full items-center justify-center bg-token-surface-primary py-1"],
   .bg-token-main-surface-primary {
-	background: var(--bgClrMobile) !important;
+    background: var(--bgClrMobile) !important;
   }
   .prose:not(section.popover .prose),
   .text-base {
-	font-size: var(--font-size);
-	line-height: var(--line-height);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
   }
   .prose pre {
-	border: 1px solid red;
-	font-size: calc(var(--font-size) - 2.5px);
-	line-height: var(--line-height);
+    border: 1px solid red;
+    font-size: calc(var(--font-size) - 2.5px);
+    line-height: var(--line-height);
   }
 
   /*chat container */
   [data-testid*="conversation-turn"] > div {
-	padding-left: 5px !important;
-	padding-right: 5px;
+    padding-left: 5px !important;
+    padding-right: 5px;
   }
   .react-scroll-to-bottom--css-ranco-1n7m0yu {
-	padding-right: 0px !important;
-	overflow: auto;
+    padding-right: 0px !important;
+    overflow: auto;
   }
 
   /*container - gap between user thumbnail and text*/
   .group.w-full > div > div.gap-4 {
-	gap: .5rem;
+    gap: .5rem;
   }
 
   /*container - left column - flex-grow*/
   .group.w-full > div > div.gap-4 > div.gap-1 {
-	flex: 1;
+    flex: 1;
   }
 
   /*container - padding*/
   .group.w-full > div.p-4 {
-	padding: .5rem
+    padding: .5rem
   }
 
 
   .group.w-full > div > div > div[class*="flex-shrink-0"] > div > div {
-	height: 20px !important;
-	width: 20px !important;
-	margin-top: 3px;
+    height: 20px !important;
+    width: 20px !important;
+    margin-top: 3px;
   }
 }
 /***********
@@ -789,11 +789,3 @@ button > h2 {
 }
 ************
 ************/
-/***********
-************
-! ICONS
-**/
-:root {
-
-	--iconDashLine: url('data:image/svg+xml;utf8,<svg viewBox="0 0 5 11" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.84668" y="0.185791" width="2" height="5" rx="0.8" fill="%23808080" fill-opacity="0.5"/></svg>');
-}
