@@ -73,7 +73,7 @@
 
 
 #app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.comment){
-	box-shadow: 0 0 0 1.25px var(--BoardRootCardBrdClr) !important;
+    box-shadow: 0 0 0 1.25px var(--BoardRootCardBrdClr) !important;
   background: var(--BOARD-ROOT--CARD--BG);
   border-radius: var(--boardRoot-CardBrdRad) !important;
   
@@ -109,7 +109,7 @@
 /*BORDER COLOR OVERRIDES*/
 #app .board.root .boardCard[class*="header3"] > .children > .project > .children > .project:not(.noted) > .name:before, 
 #app .board.root .boardCard[class*="header3"] > .children > .project > .children > .project.noted > .notes:before {
-	content: "";
+    content: "";
   display: block !important;
   height: 1px !important;
   background: var(--boardChildBrdClr) !important;
