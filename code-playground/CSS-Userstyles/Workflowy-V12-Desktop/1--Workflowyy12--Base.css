@@ -5225,7 +5225,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 
 #app .board.root.shared > .children > .boardColumn{
   flex: unset !important;
-  box-shadow: inset 0 0 0 1px red !important;
+  box-shadow: inset 0 0 0 0px red !important;
   overflow-y: hidden !important; 
 }
 #app .board.root.shared > .children > .boardColumn > .children {
