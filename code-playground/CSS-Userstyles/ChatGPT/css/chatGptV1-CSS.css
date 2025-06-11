@@ -519,7 +519,8 @@ article + button.bg-token-main-surface-primary {
 }
 .bg-token-sidebar-surface-primary[style*="260"],
 [class*="--sidebar-width"],
-.bg-token-sidebar-surface-primary[style*="260"] > [class*="260px"] {
+.bg-token-sidebar-surface-primary[style*="260"] > [class*="260px"],
+#stage-slideover-sidebar[style*="--sidebar-width"] {
   width: var(--leftSideBarWidth) !important;
 }
 
