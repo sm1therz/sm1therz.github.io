@@ -2423,9 +2423,7 @@ html #app .project.root > .notes > .content > .innerContentContainer b {
 /*html #app .project > .notes > .content > .innerContentContainer{
 		white-space: pre-wrap !important;
 }*/
-html #app .project > .notes > .content > .innerContentContainer b {
-	color: var(--NODE-NOTES--TXT-CLR-Bold);
-}
+
 
 html #app .project > .notes > .content.active {
 	max-height: 900px;
