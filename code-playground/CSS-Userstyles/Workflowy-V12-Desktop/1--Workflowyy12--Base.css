@@ -3076,11 +3076,13 @@ html #app .project [projectid*="virtual"].comment > .children .project > .name >
 .mirror-warning{
   display: none 
 }
+
 /***********
 ! TAGS
 ************/
 :root {
-  --TagBrdRad: 4px;
+  --tagBrdRad: 3px;
+  --tagPadLR:2px;
 }
 
 .contentTag[data-val*="v1"],
@@ -3095,6 +3097,10 @@ html #app .project [projectid*="virtual"].comment > .children .project > .name >
 .contentTag[data-val*="type"]{
   font-weight: 500;
 }
+.contentTag[data-val] b,
+b .contentTag[data-val]{
+ font-weight: 600; 
+}
 
 .board.root .contentTag[data-val*="v1"],
 .board.root .contentTag[data-val*="v2"],
@@ -3108,12 +3114,21 @@ html #app .project [projectid*="virtual"].comment > .children .project > .name >
 
 s .contentTag {
   color: var(--strikeThroughColor) !important;
+  
 }
 
 .contentTag {
-  border-radius: var(--TagBrdRad) !important;
+  border-radius: var(--tagBrdRad) !important;
   font-weight: normal;
   -webkit-font-smoothing:subpixel-antialiased;
+  padding-left: var(--tagPadLR)!important;
+  padding-right: var(--tagPadLR) !important;
+  margin-left: calc(var(--tagPadLR) * -1) !important;
+  margin-right: calc(var(--tagPadLR) * -1) !important;
+
+}
+.contentTag + .contentTag {
+  margin-left: 0px !important;
 }
 .contentTag [class*="bc-"],
 .contentTag {
@@ -3125,22 +3140,18 @@ s .contentTag {
 	display: inline-block;
 	line-height: 1.2em;
 }*/
-.contentTag:hover {
-  filter: contrast(1.2) brightness(1.3);
+.contentTag:hover,
+.done .contentTag:hover{
+  filter: contrast(1.2) brightness(1.3) !important;
 }
 .notes .contentTag[data-val*="v"] {
   filter: saturate(0.0) contrast(1.0) brightness(1.0);
   display: inline;
-  color: var(--wf-link-primary) !important;
-  font-weight: 400;
-}
-.notes .contentTag[data-val*="v"],
-.notes .contentTag[data-val*="v"] * {
-  -webkit-text-fill-color: var(--wf-link-primary) !important;
 }
 
+
 .root.project > .name {
-  --TagBrdRad: 7px;
+  --tagBrdRad: 7px;
 }
 
 
@@ -3154,9 +3165,10 @@ s .contentTag {
   --wf-tag-background-blue: hsl(221, 39%, 53%) !important;
   --wf-tag-background-purple: hsl(263, 33%, 50%) !important;
   --wf-tag-background-pink: hsl(299, 33%, 42%) !important;
-  --wf-tag-background-gray: hsl(194, 4%, 49%,.8) !important;
+  --wf-tag-background-gray: hsl(194, 5%, 49%,.8) !important;
 }
-._theme-dark s .contentTag {
+._theme-dark s .contentTag,
+._theme-dark .done .contentTag{
   --wf-tag-background-red: var(--strikeThroughTagBgColor) !important;
   --wf-tag-background-orange: var(--strikeThroughTagBgColor) !important;
   --wf-tag-background-yellow: var(--strikeThroughTagBgColor) !important;
@@ -3187,6 +3199,7 @@ s .contentTag {
 ._theme-dark .contentTag {
   --wf-tag-text: var(--BG-primary);
 }
+
 /*******************************
 ********************************
 ! BOARDS
