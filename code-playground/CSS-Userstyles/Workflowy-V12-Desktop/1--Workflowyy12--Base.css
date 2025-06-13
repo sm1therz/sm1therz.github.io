@@ -6478,14 +6478,13 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   position: absolute;
   top: 0px;
   left: calc(-100vw + var(--children-Indent) * 4);
-top: -1px;
+  right: calc(-100vw + var(--children-Indent) * 4);
+  top: -1px;
   bottom: 0px;
-  right: unset;
-  width: 100vw;
+  width: unset;
   background: var(--COMMENT-CONTAINER--BG);
   z-index: 0;
-
-  
+--DashCrd--BrdClr: hsl(204, 9%, 25%);
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card > .children > .project > .children > .project > .children:before{
@@ -6494,7 +6493,18 @@ top: -1px;
 	inset 0 -1px 0 0 var(--DashCrd--BrdClr);
 }
 
-
+/*PARENT INDICATOR
+#app .page.dashboard-page .root > .children .project:is(.collapsed,.open):not(.noted) > .name:before,
+#app .page.dashboard-page .root > .children .project.noted:is(.collapsed,.open) > .notes:before{ 
+  
+  background: var(--DashCrd--BrdClr) !important;
+--DashCrd--BrdClr: hsl(204, 9%, 25%);
+  left: calc(-100vw + var(--children-Indent) * 4);
+  right: calc(-100vw + var(--children-Indent) * 4);
+  z-index: 2;
+  
+}
+*/
 
 /*CHILDREN 1*/
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children{
@@ -6508,11 +6518,13 @@ top: -1px;
 /*CHILDREN 2*/
 
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children{
-  background: var(--dashBg-Color1);
+  background: var(--BG-primary);
+
   padding-left: 0px !important;
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before{
-  background: var(--dashBg-Color1);
+  background: var(--BG-primary);
+
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project.addedToSelection:not(.comment) > .children{
   background: var(--ADDED-TO-SELECTION--BG);
@@ -6521,11 +6533,11 @@ top: -1px;
 /*CHILDREN 3*/
 
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children{
-  background: var(--dashBg-Color2);
   padding-left: 0px !important;
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children:before{
-  background: var(--dashBg-Color2);
+  background: var(--BG-primary);
+
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project.addedToSelection:not(.comment) > .children{
   background: var(--ADDED-TO-SELECTION--BG);
@@ -6607,6 +6619,10 @@ PARAGRAPH CHEVRON > IS MIRROR
   --COMMENT-CONTAINER--BG:var(--ADDED-TO-SELECTION--BG);;
 
 }
+
+
+
+
 
 
 
