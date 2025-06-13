@@ -3104,6 +3104,7 @@ VERSION TAGS
 .contentTag[data-val*="v8"],
 .contentTag[data-val*="v9"],
 .contentTag[data-val*="v10"],
+.contentTag[data-val*="versions"],
 .contentTag[data-val*="ecause"],
 .contentTag[data-val*="type"]{
   color: hsl(201, 13%, 17%,0.6) !important;
@@ -3120,6 +3121,7 @@ VERSION TAGS
 .contentTag[data-val*="v8"] .contentTagText,
 .contentTag[data-val*="v9"] .contentTagText,
 .contentTag[data-val*="v10"] .contentTagText,
+.contentTag[data-val*="versions"] .contentTagText,
 .contentTag[data-val*="because"] .contentTagText,
 .contentTag[data-val*="type"] .contentTagText{
   color: var(--negTagClr) !important;
@@ -3139,7 +3141,8 @@ VERSION TAGS > IN BOARD ROOT
 .board.root .contentTag[data-val*="v7"],
 .board.root .contentTag[data-val*="v8"],
 .board.root .contentTag[data-val*="v9"],
-.board.root .contentTag[data-val*="v10"]{
+.board.root .contentTag[data-val*="v10"],
+.contentTag[data-val*="versions"]{
   --wf-tag-text: var(--BOARD-ROOT--CARD--BG) !important;
 
 }
