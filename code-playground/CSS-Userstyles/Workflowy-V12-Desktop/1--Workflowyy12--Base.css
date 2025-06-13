@@ -7690,9 +7690,54 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 
 /*******************************
 ********************************
-COMMENTS - NEW - NORMAL
+! COMMENTS - OVERRIDES
 ********************************
 ********************************/
+
+#app .project.comment .project.board > .children{
+	margin-bottom: var(--children-MargBtm) !important;
+  padding-top: var(--children-MargTop) !important;
+}
+#app .project.comment .project.board > .children > .boardColumn > .name,
+#app .project.comment .project.board > .children > .boardColumn > .notes{
+  padding-left: var(--boardCardPadLeftRight) !important;
+  padding-top: calc(var(--content-PadTopBtm) + 1px) !important;
+  --content-PadTopBtm: 6px;
+  --name-fontSize: 1em;
+  --name-lineHeight: 21px;
+  --header1-fontSize: 1.15rem;
+  --header1-lineHeight: 21px;
+  --header2-fontSize: 1.1rem;
+  --header2-lineHeight: 21px;
+  --header3-fontSize: 1.05rem;
+  --header3-lineHeight: 21px;
+  font-weight: 600;
+}
+#app .project.comment .project.board > .children{
+  padding-left: 200px !important;
+}
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .name,
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .notes{
+  padding-left: var(--boardCardPadLeftRight) !important;
+  padding-top: calc(var(--content-PadTopBtm) + 1px) !important;
+}
+#app .project.comment .project.board > .children > .boardColumn > .name  .content,
+#app .project.comment .project.board > .children > .boardColumn > .notes .content,
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .name  .content,
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .notes  .content {
+  padding-right: 8px !important;
+}
+
+#app .project.comment .project.board > .children > .boardColumn > .name > .expand,
+#app .project.comment .project.board > .children > .boardColumn > .children > .boardCard > .name > .expand {
+	left: calc(var(--children-Indent) * .25)!important
+}
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .children{
+  padding-left: calc(var(--children-Indent) * 1)!important
+}
+#app .project.comment .project.board > .children > .boardColumn .project > .name{
+  padding-top: calc(var(--content-PadTopBtm) + 1px) !important;
+}
 
 /*******************************
 ********************************
