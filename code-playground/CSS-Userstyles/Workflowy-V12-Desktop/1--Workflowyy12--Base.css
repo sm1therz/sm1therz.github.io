@@ -3084,6 +3084,16 @@ html #app .project [projectid*="virtual"].comment > .children .project > .name >
   --tagPadLR:2px;
 }
 
+._theme-dark {
+  --negTagClr:hsl(201, 13%, 16%)
+}
+.root.project > .name {
+  --tagBrdRad: 7px;
+}
+/**************
+VERSION TAGS
+***************/
+
 .contentTag[data-val*="v1"],
 .contentTag[data-val*="v2"],
 .contentTag[data-val*="v3"],
@@ -3092,27 +3102,58 @@ html #app .project [projectid*="virtual"].comment > .children .project > .name >
 .contentTag[data-val*="v6"],
 .contentTag[data-val*="v7"],
 .contentTag[data-val*="v8"],
+.contentTag[data-val*="v9"],
+.contentTag[data-val*="v10"],
 .contentTag[data-val*="ecause"],
 .contentTag[data-val*="type"]{
+  color: hsl(201, 13%, 17%,0.6) !important;
   font-weight: 500;
 }
-.contentTag[data-val] b,
-b .contentTag[data-val]{
- font-weight: 600; 
+
+.contentTag[data-val*="v1"] .contentTagText,
+.contentTag[data-val*="v2"] .contentTagText,
+.contentTag[data-val*="v3"] .contentTagText,
+.contentTag[data-val*="v4"] .contentTagText,
+.contentTag[data-val*="v5"] .contentTagText,
+.contentTag[data-val*="v6"] .contentTagText,
+.contentTag[data-val*="v7"] .contentTagText,
+.contentTag[data-val*="v8"] .contentTagText,
+.contentTag[data-val*="v9"] .contentTagText,
+.contentTag[data-val*="v10"] .contentTagText,
+.contentTag[data-val*="because"] .contentTagText,
+.contentTag[data-val*="type"] .contentTagText{
+  color: var(--negTagClr) !important;
+
 }
 
+
+/**************
+VERSION TAGS > IN BOARD ROOT
+***************/
 .board.root .contentTag[data-val*="v1"],
 .board.root .contentTag[data-val*="v2"],
 .board.root .contentTag[data-val*="v3"],
 .board.root .contentTag[data-val*="v4"],
 .board.root .contentTag[data-val*="v5"],
 .board.root .contentTag[data-val*="v6"],
-.board.root .contentTag[data-val*="v7"] {
+.board.root .contentTag[data-val*="v7"],
+.board.root .contentTag[data-val*="v8"],
+.board.root .contentTag[data-val*="v9"],
+.board.root .contentTag[data-val*="v10"]{
   --wf-tag-text: var(--BOARD-ROOT--CARD--BG) !important;
+
 }
 
+
+
+
+.contentTag[data-val] b,
+b .contentTag[data-val]{
+ font-weight: 600; 
+}
 s .contentTag {
   color: var(--strikeThroughColor) !important;
+  --negTagClr:var(--BG-primary);
   
 }
 
@@ -3134,37 +3175,29 @@ s .contentTag {
   text-shadow: none !important;
 }
 
-/*
-.contentTag[data-val*="v"]{
-	display: inline-block;
-	line-height: 1.2em;
-}*/
+
 .contentTag:hover,
 .done .contentTag:hover{
   filter: contrast(1.2) brightness(1.3) !important;
 }
-.notes .contentTag[data-val*="v"] {
-  filter: saturate(0.0) contrast(1.0) brightness(1.0);
-  display: inline;
-}
 
 
-.root.project > .name {
-  --tagBrdRad: 7px;
-}
 
 
+/**************
+COLORS
+***************/
 ._theme-dark {
-  --wf-tag-background-red: #954a4a !important;
+  --wf-tag-background-red: hsl(0, 34%, 38%,1) !important;
   --wf-tag-background-orange: hsl(24, 45%, 45%) !important;
-  --wf-tag-background-yellow: #b09658 !important;
-  --wf-tag-background-green: #509f86 !important;
-  --wf-tag-background-teal: #4697a7 !important;
+  --wf-tag-background-yellow: hsl(42, 36%, 52%) !important;
+  --wf-tag-background-green: hsl(161, 37%, 47%,0.8) !important;
+  --wf-tag-background-teal: hsl(190, 41%, 46%,.85) !important;
   --wf-tag-background-sky: hsl(209, 38%, 50%) !important;
   --wf-tag-background-blue: hsl(221, 39%, 53%) !important;
   --wf-tag-background-purple: hsl(263, 33%, 50%) !important;
   --wf-tag-background-pink: hsl(299, 33%, 42%) !important;
-  --wf-tag-background-gray: hsl(194, 5%, 49%,.8) !important;
+  --wf-tag-background-gray: hsl(194, 5%, 49%,.75) !important;
 }
 ._theme-dark s .contentTag,
 ._theme-dark .done .contentTag{
