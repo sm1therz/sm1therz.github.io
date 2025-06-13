@@ -2635,13 +2635,14 @@ WAVY TEXT - LINKS - INTERNAL
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"],
 /*CHILDREN - Underlined*/
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"],
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
 /*PARENTS  - Highlighted AND Underlined*/
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"],
 /*CHILDREN - Highlighted AND Underlined*/
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"] {
-	background-image: unset;
+	background-image: unset !important;
 }
 
 html #app .project [projectid*="virtual"].code-block > .name > .content > .innerContentContainer{
