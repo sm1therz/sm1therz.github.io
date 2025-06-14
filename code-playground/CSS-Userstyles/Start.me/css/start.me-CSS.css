@@ -1164,10 +1164,33 @@ HEADER - TRANSPARENT BACKGROUND
 
 }
 
+/*****
+WIDGET SPACING > ALL WIDGETS
+******/
+#appID .page-section__widget {
+  margin-bottom: var(--widgetMargTopBtm) !important;
+  margin-top: var(--widgetMargTopBtm) !important;
+}
+#appID .widget > .widget__container {
+  margin-top: 0px !important;
+  margin-bottom:0px !important;
+  }
+
+/*****
+WIDGET SPACING > 2 COLUMN > RIGHT COLUMN
+******/
+:root {
+  --widgetRightColMargTopBtm:calc(var(--widgetMargTopBtm) * 1);
+}
+#appID .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child > div .page-section__widget{
+  margin-bottom: var(--widgetRightColMargTopBtm) !important;
+  margin-top: var(--widgetRightColMargTopBtmH) !important; 
+}
+
+
 
 /*TRANSPARENT*/
-#appID .widget_transparent {
-  --containerPadBtm: 0px;
+#appID article.widget_transparent {
   --widgetBrdClr: transparent;
 }
 #appID [class*="widget"] .widget_transparent .widget-header__title .widget-header__text,
@@ -1219,6 +1242,13 @@ HEADER - TRANSPARENT BACKGROUND
 }
 #appID .widget__shadow {
   display: none !important;
+}
+
+/**BRIGHT HEADER > ALMOST TRANSPARENT*/
+#appID [class*="widget"] .widget__container:is([style*=", 0.01"],[style*=", 0.00"],[style*=", 0.02"]) .widget-header__title .widget-header__text {
+  font-weight: 500 !important;
+  -webkit-font-smoothing: antialiased !important;
+  color: var(--bldClr) !important;
 }
 
 /* BOOKMARK description*/
@@ -1387,7 +1417,10 @@ widget container and body
 }
 #appID .bookmark-widget .widget__container {}
 
+#appID .bookmark-widget .widget__body > .bookmark-widget__body[class*="detail"]{
+  padding-bottom: calc(var(--containerPadBtm) - 2px) !important;
 
+}
 /********
 ********/
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_icon ul {
@@ -3368,7 +3401,7 @@ li.todo-item.todo-item_wrapped .todo-item__container .todo-item__delete {
     top: 0;
     bottom: 0;
     opacity: 0 !important;
-    transition: .15s !important; 
+    transition: .15s !important;
     box-shadow:inset 0 0 0 1px hsla(0,0%,50%,0);
 
     /*************************
