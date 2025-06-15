@@ -6474,8 +6474,8 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card > .children > .project > .children:before,
-#app .page.dashboard-page .dashboard-card > .children > .project > .children > .project > .children:before,
-#app .page.dashboard-page .dashboard-card  .children > .comment:not(.comment .comment):before{
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project > .children:before,
+#app .page.dashboard-page .dashboard-card:not(.comment)  .children > .comment:not(.comment .comment):before{
   content: "";
   display: block;
   position: absolute;
