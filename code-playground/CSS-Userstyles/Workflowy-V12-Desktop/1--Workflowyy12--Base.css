@@ -6495,7 +6495,12 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 	inset 0 1px 0 0 var(--DashCrd--BrdClr),
 	inset 0 -1px 0 0 var(--DashCrd--BrdClr);
 }
-
+#app .page.dashboard-page .dashboard-card.comment > .children > .project:not(.comment) > .children:before,
+#app .page.dashboard-page .dashboard-card.comment > .children > .project > .children > .project > .children:before {
+  
+  background: transparent !important;
+  --DashCrd--BrdClr:hsl(204, 9%, 27%);
+}
 
 
 /*PARENT INDICATOR
