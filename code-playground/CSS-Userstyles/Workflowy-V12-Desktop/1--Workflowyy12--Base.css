@@ -6544,7 +6544,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 
 /*CHILDREN 3*/
 
-#app .page.dashboard-page .dashboard-card > .children > .project > .children > .project:not(.comment) > .children{
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children{
   padding-left: 0px !important;
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children:before{
