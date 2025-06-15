@@ -6664,14 +6664,15 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 .dashboard-card:not(.noted) > .name:after,
-.dashboard-card.noted > .notes:after{
+.dashboard-card.noted > .notes:after,
+.dashboard-card > .name:before{
 	content: "";
 	display: block;
 	position: absolute;
 	height: var(--dashCrd-BrdWidth);
 	background: var(--DashCrd--BrdClr);
-	right: calc(var(--children-Indent) * 0);
-	z-index: 0;
+	right: calc(var(--children-Indent) * 0) !important;
+	z-index: 1 !important;
 	bottom: 0 !important;
 	opacity: 1;
 	left: -100vw;
@@ -6680,10 +6681,22 @@ EXPAND COLLAPSE BORDER ANIMATION
 	transition: .1s;
 	top: unset !important
 }
-.dashboard-card:not(.noted) > .name:before,
-.dashboard-card.noted > .notes:before {
-	
+
+.dashboard-card > .name:before {
+  top: -1px !important;
+  opacity: 0;
 }
+.dashboard-card.open + .dashboard-card > .name:before {
+  opacity: 1
+}
+#app .dashboard-card.comment:not(.noted) > .name:after,
+#app .dashboard-card.comment.noted > .notes:after,
+#app .dashboard-card .project.comment:not(.noted) > .name:after,
+#app .dashboard-card .project.comment.noted > .notes:after{
+  opacity: 1 !important;
+  
+}
+
 
 
 
@@ -6721,15 +6734,24 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 #app .dashboard-card > .children .project:not(.noted) > .name:before,
-#app .dashboard-card > .children .project.noted > .notes:before{
+#app .dashboard-card > .children .project.noted > .notes:before,
+#app .dashboard-card.comment > .children .project:not(.noted) > .name:before,
+#app .dashboard-card.comment > .children .project.noted > .notes:before,
+#app .dashboard-card > .children .project.comment .project:not(.noted) > .name:before,
+#app .dashboard-card > .children .project.comment .project.noted > .notes:before{
   content:"";
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 0 !important;
+  top: unset !important;
   left: var(--children-Indent);
   right: 0;
   background: var(--DashCrd--BrdClr);
   height: 1px;
+  z-index: 9941 !important;
+  opacity: 1 !important;
+  transform: unset !important;
+  outline: unset !important;
 }
 
 
@@ -6777,6 +6799,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .page.dashboard-page .dashboard-card.noted > .notes:before{
   
 }
+
 
 /*******************************
 ********************************
