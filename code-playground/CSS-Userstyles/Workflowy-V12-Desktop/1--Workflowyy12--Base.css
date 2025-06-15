@@ -6488,7 +6488,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   background: var(--COMMENT-CONTAINER--BG);
   z-index: 0;
 --DashCrd--BrdClr: hsl(204, 9%, 25%);
-}
+} 
 #app .page.dashboard-page .dashboard-card > .children > .project:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card > .children > .project > .children > .project > .children:before{
   box-shadow:
