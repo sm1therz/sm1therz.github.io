@@ -5734,12 +5734,12 @@ universals*/
 	display: block;
 	width: 12px;
 	height: 12px;
-	transform: scale(1)rotate(90deg);
+	transform: scale(1.2)rotate(90deg);
 	transition: .15s;
 	background-repeat: no-repeat;
 }
 .dashboard-card.collapsed > .name > .expand ._3hmsj:before {
-	transform: scale(1)rotate(0deg);
+	transform: scale(1.2)rotate(0deg);
 }
 
 
@@ -6489,12 +6489,14 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   z-index: 0;
 --DashCrd--BrdClr: hsl(204, 9%, 25%);
 }
-#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before,
+#app .page.dashboard-page .dashboard-card > .children > .project:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card > .children > .project > .children > .project > .children:before{
   box-shadow:
 	inset 0 1px 0 0 var(--DashCrd--BrdClr),
 	inset 0 -1px 0 0 var(--DashCrd--BrdClr);
 }
+
+
 
 /*PARENT INDICATOR
 #app .page.dashboard-page .root > .children .project:is(.collapsed,.open):not(.noted) > .name:before,
@@ -6519,11 +6521,13 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 }
 
 /*CHILDREN 2*/
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children{
+  padding-left: 0px !important;
+}
 
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children{
   background: var(--BG-primary);
 
-  padding-left: 0px !important;
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before{
   background: var(--BG-primary);
@@ -6535,7 +6539,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 
 /*CHILDREN 3*/
 
-#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children{
+#app .page.dashboard-page .dashboard-card > .children > .project > .children > .project:not(.comment) > .children{
   padding-left: 0px !important;
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children:before{
@@ -6570,7 +6574,7 @@ PARAGRAPH CHEVRON
   display: none !important;
 }
 
-#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph > .name > .expand ._3hmsj:before{
+#app .page.dashboard-page .dashboard-card .project.paragraph > .name > .expand ._3hmsj:before{
   content: "";
   background-image: var(--ICON--ARROW);
   display: block;
@@ -6580,7 +6584,7 @@ PARAGRAPH CHEVRON
   transition: .15s;
   background-repeat: no-repeat;
 }
-#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph.collapsed > .name > .expand ._3hmsj:before{
+#app .page.dashboard-page .dashboard-card .project.paragraph.collapsed > .name > .expand ._3hmsj:before{
 
   transform: scale(.85) rotate(0deg) !important;
 }
@@ -6623,12 +6627,18 @@ PARAGRAPH CHEVRON > IS MIRROR
 
 }
 
+/*HEIGHT FIX*/
+#app .dashboard,
+#app .page.dashboard-page .dashboard-card,
+#app .page.dashboard-page .dashboard-card > .children,
+#app .page.dashboard-page .dashboard-card .project{
+  height: unset !important;
+  min-height: unset !important;
+  max-height: unset !important;
+}
 
-
-
-
-
-
+#app .page.dashboard-page .dashboard-card > .children {
+}
 
 /*******************************
 ********************************
