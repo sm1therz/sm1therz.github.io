@@ -3430,6 +3430,13 @@ LEVEL 1 > Project
 .boardCard {
 	background: var(--BG-primary)
 }
+#app .comment .board > .children .boardColumn,
+#app .comment .board > .children .boardCard,
+#app .comment .board > .children{
+	background: transparent !important;
+  --BG-primary:transparent !important;
+	backdrop-filter: blur(81px);
+}
 
 /********
 BOARD - BORDERS
