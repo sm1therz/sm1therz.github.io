@@ -2260,6 +2260,16 @@ HORIZONTAL RULES / DIVIDERS
 .project.divider:is(.open,.collapsed) > .name > [class*="selection-handle"]{
   left:calc(var(--children-Indent) ) !important;
 }
+<<<<<<< HEAD
+
+.project.divider:not(.open,.collapsed) > .name > .bullet:not(.diamond) ~ .expand {
+  opacity: 0 !important;
+}
+.project.divider > .name > .bullet.diamond ~ .expand{
+  opacity: 1 !important;
+}
+=======
+>>>>>>> main
 
 .project.divider:not(.open,.collapsed) > .name > .bullet:not(.diamond) ~ .expand {
   opacity: 0 !important;
@@ -2268,6 +2278,36 @@ HORIZONTAL RULES / DIVIDERS
   opacity: 1 !important;
 }
 
+
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:before,
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
+  --btnIcn-ExpandB4Up-H:2px;
+  --btnIcn-ExpandB4Low-H:8px;
+}
+
+.board .project.divider > .name > .bullet:not(.diamond) ~ .expand:before,
+.board .project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
+  --btnIcn-ExpandB4Up-H:2px;
+  --btnIcn-ExpandB4Low-H:6px;
+}
+.board .project.divider.boardCard > .name > .bullet:before,
+.board .project.divider.boardColumn > .name > .bullet:before{
+  opacity: 0 !important;
+}
+.board .project.divider.boardCard.collapsed > .name > .bullet:after,
+.board .project.divider.boardColumn.collapsed > .name > .bullet:after{
+  transform: scale(.2);
+}
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
+  transform: scale(0) rotate(0deg);
+}
+.project.divider.collapsed > .name > .bullet:not(.diamond) ~ .expand:after{
+  transform: scale(1) rotate(0deg);
+
+}
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:after {
+  --btnIcn-ExpandB4Up-H:6px
+}
 
 .project.divider > .name > .bullet:not(.diamond) ~ .expand:before,
 .project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
