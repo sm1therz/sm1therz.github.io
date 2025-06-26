@@ -2227,7 +2227,77 @@ BLOCK QUOTES V2
 #app .board.root .boardCard:not(.comment) .project.quote-block > .name > .expand:after{
   background: var(--BOARD-ROOT--CARD--BG) !important !important;
 }
+/***************
+HORIZONTAL RULES / DIVIDERS
+****************/
+.project.divider > .name{
+  position: relative;
+}
+.project.divider > .name > [class*="selection-handle"]{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: calc(var(--children-Indent) * 0 + 5px);
+  bottom:0;
+  height:unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: unset !important;
+}
+.board .project.divider:not(.boardColumn) > .name > [class*="selection-handle"]{
+  right: calc(var(--children-Indent) * 1);
+}
+.project.divider > .name > [class*="selection-handle"] hr{
+  margin: unset;
+  border-radius: 1px;
+  height: 1.5px;
+  border:unset !important;
+  background: var(--wf-border-subtle);
+  margin-top: 2px !important;
+}
 
+.project.divider:is(.open,.collapsed) > .name > [class*="selection-handle"]{
+  left:calc(var(--children-Indent) ) !important;
+}
+
+.project.divider:not(.open,.collapsed) > .name > .bullet:not(.diamond) ~ .expand {
+  opacity: 0 !important;
+}
+.project.divider > .name > .bullet.diamond ~ .expand{
+  opacity: 1 !important;
+}
+
+
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:before,
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
+  --btnIcn-ExpandB4Up-H:2px;
+  --btnIcn-ExpandB4Low-H:8px;
+}
+
+.board .project.divider > .name > .bullet:not(.diamond) ~ .expand:before,
+.board .project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
+  --btnIcn-ExpandB4Up-H:2px;
+  --btnIcn-ExpandB4Low-H:6px;
+}
+.board .project.divider.boardCard > .name > .bullet:before,
+.board .project.divider.boardColumn > .name > .bullet:before{
+  opacity: 0 !important;
+}
+.board .project.divider.boardCard.collapsed > .name > .bullet:after,
+.board .project.divider.boardColumn.collapsed > .name > .bullet:after{
+  transform: scale(.2);
+}
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
+  transform: scale(0) rotate(0deg);
+}
+.project.divider.collapsed > .name > .bullet:not(.diamond) ~ .expand:after{
+  transform: scale(1) rotate(0deg);
+
+}
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:after {
+  --btnIcn-ExpandB4Up-H:6px
+}
 
 /*******
 EXPAND MIRROR BULLET V2
@@ -6489,6 +6559,9 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   z-index: 0;
 --DashCrd--BrdClr: hsl(204, 9%, 25%);
 } 
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project.comment .children:before{
+	background: var(--COMMENT-CONTAINER--BG) !important;
+}
 #app .page.dashboard-page .dashboard-card > .children > .project:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card > .children > .project > .children > .project > .children:before{
   box-shadow:
