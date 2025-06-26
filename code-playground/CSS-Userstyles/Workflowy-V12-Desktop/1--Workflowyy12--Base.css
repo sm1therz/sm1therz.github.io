@@ -12,7 +12,7 @@ body,
 #app, 
 #app .page,
 .pageContainer{ 
-	background: var(--BG-primary) !important;
+	background: var(--BG-primary) !important; 
 }
 
 .matching-node {
