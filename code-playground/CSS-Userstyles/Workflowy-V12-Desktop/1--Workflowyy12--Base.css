@@ -6717,96 +6717,164 @@ PARAGRAPH CHEVRON > IS MIRROR
 
 #app .page.dashboard-page .dashboard-card > .children {
 }
-
+.dashboard .comment .comment-toolbar {
+  padding:0px !important;
+}
 /*******************************
 ********************************
 ! DASHBOARD - BORDERS
 ********************************
 ********************************/
-
 ._theme-dark {
-  --dashboardChildBrdClr:hsl(204, 9%, 22%);
+  --dashboardChildBrdClr: hsl(204, 9%, 22%);
 }
 html #app .page.dashboard-page .root.dashboard .dashboard-card {
-	box-shadow: 0 0px 0 0 var(--DashCrd--BrdClr) !important;
+  box-shadow: 0 0px 0 0 var(--DashCrd--BrdClr) !important;
 }
 html #app .page.dashboard-page .root.dashboard > .name,
 html #app .page.dashboard-page .root.dashboard > .notes,
 html #app .page.dashboard-page .root.dashboard > .commentAttribution,
 html #app .page.dashboard-page .root.dashboard .dashboard-card > .name,
-html #app .page.dashboard-page .root.dashboard .dashboard-card > .notes{
-	padding-left: var(--children-Indent) !important;
-	padding-right: var(--children-Indent) !important;
+html #app .page.dashboard-page .root.dashboard .dashboard-card > .notes {
+  padding-left: var(--children-Indent) !important;
+  padding-right: var(--children-Indent) !important;
 }
 html #app .root .dashboard-card,
 html #app .root .dashboard-card > .children > .project {
-	border-top: 0px solid red !important;
-	border-bottom: 0px solid red !important;
+  border-top: 0px solid red !important;
+  border-bottom: 0px solid red !important;
 }
 
 /******* 
 EXPAND COLLAPSE BORDER ANIMATION
 */
 .dashboard-card .children {
-	position: relative;
+  position: relative;
 }
 
 .dashboard-card:not(.noted) > .name:after,
 .dashboard-card.noted > .notes:after,
-.dashboard-card > .name:before{
-	content: "";
-	display: block;
-	position: absolute;
-	height: var(--dashCrd-BrdWidth);
-	background: var(--DashCrd--BrdClr);
-	right: calc(var(--children-Indent) * 0) !important;
-	z-index: 1 !important;
-	bottom: 0 !important;
-	opacity: 1;
-	left: -100vw;
-	right: -100vw !important;
-	width: unset !important;
-	transition: .1s;
-	top: unset !important
+.dashboard-card > .name:before,
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment):after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: var(--dashCrd-BrdWidth);
+  background: var(--DashCrd--BrdClr);
+  right: calc(var(--children-Indent) * 0) !important;
+  z-index: 2 !important;
+  bottom: 0 !important;
+  opacity: 1;
+  left: -100vw;
+  right: -100vw !important;
+  width: unset !important;
+  transition: .1s;
+  top: unset !important
 }
 
+
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment, .comment + .comment):before {
+  top: -2px;
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment, .comment + .comment):after {
+  bottom: 0px !important;
+}
+
+:root {
+  --DashComment--BrdClr: hsl(200, 10%, 30%);
+  --DashCommentChildren--BrdClr: hsl(200, 10%, 26.5%);
+
+}
+
+/*COMMENTS > CONTAINER BORDERS*/
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment):after,
+#app .page.dashboard-page .dashboard-card:not(.noted) > .name:before, 
+#app .page.dashboard-page .dashboard-card.noted > .notes:before,
+#app .dashboard-card.comment:not(.noted) > .name:after,
+#app .dashboard-card.comment.noted > .notes:after,
+#app .dashboard-card.comment > .name:before {
+  --DashCrd--BrdClr: var(--DashComment--BrdClr) !important;
+}
+
+/*COMMENTS > CHILDREN BORDERS*/
+#app .project.dashboard-card:not(.floating-comments-container .dashboard-card) > .children .project.comment:not(.comment .comment) {
+  border-width: 0px !important;
+}
+
+#app .dashboard .dashboard-card.comment .name:before,
+#app .dashboard .dashboard-card.comment .notes:before,
+#app .dashboard .dashboard-card > .children .project.comment .name:before,
+#app .dashboard .dashboard-card > .children .project.comment .notes:before {
+  --DashCrd--BrdClr: var(--DashCommentChildren--BrdClr) !important;
+}
+/*expanded*/
+#app .page.dashboard-page .dashboard-card.comment .project.open:not(.comment) > .children:before,
+#app .page.dashboard-page .dashboard-card:not(.comment) .project.comment .project.open:not(.comment) > .children:before{
+  --DashCrd--BrdClr:var(--DashCommentChildren--BrdClr);
+  
+  opacity: 1 !important
+}
+
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment) {
+  border-top: 1px solid var(--DashComment--BrdClr);
+  border-bottom: 1px solid var(--DashComment--BrdClr) !important;
+}
+
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment):before {
+  border-top: 1px solid var(--DashComment--BrdClr);
+}
+
+
+/*COMMENTS + COMMENTS > BORDERS*/
+
+#app .page.dashboard-page .dashboard.root .dashboard-card:not(.comment) > .children .project.comment .comment {
+
+  border-width: 0px !important;
+  box-shadow: inset 0 0 0 1px var(--DashComment--BrdClr) !important
+}
+
+ 
 .dashboard-card > .name:before {
   top: -1px !important;
   opacity: 0;
 }
+
 .dashboard-card.open + .dashboard-card > .name:before {
   opacity: 1
 }
-#app .dashboard-card.comment:not(.noted) > .name:after,
-#app .dashboard-card.comment.noted > .notes:after,
-#app .dashboard-card .project.comment:not(.noted) > .name:after,
-#app .dashboard-card .project.comment.noted > .notes:after{
+#app .dashboard-card.comment > .name:before,
+#app .dashboard-card:not(.comment) .comment > .name:before {
   opacity: 1 !important;
-  
 }
 
+#app .dashboard.root .dashboard-card.comment:not(.open) > .name:after {
+  opacity: 1 !important;
+}
+#app .dashboard.root .dashboard-card.comment:is(.open) > .name:after {
+  opacity: 1 !important;
+}
 
-
+.comment .project.divider > .name > [class*="selection-handle"] hr {
+	background: hsla(0,0%,100%,0.16)
+}
 
 #app .dashboard-card .children {
-		  --DashCrd--BrdClr: var(--dashboardChildBrdClr);
+  --DashCrd--BrdClr: var(--dashboardChildBrdClr);
 }
 #app .dashboard-card > .children .project:not(.noted) > .name,
 #app .dashboard-card > .children .project.noted > .notes {
-	position: relative !important;
-	box-shadow: inset 0 1px 0 0 var(--DashCrd--BrdClr) !important;
-
+  position: relative !important;
+  box-shadow: inset 0 1px 0 0 var(--DashCrd--BrdClr) !important;
 }
 
 #app .dashboard-card > .children > .project:not(.noted):first-child > .name,
-#app .dashboard-card > .children > .project.noted:first-child > .notes{
-	box-shadow: 0 1px 0 0 var(--DashCrd--BrdClr) !important;
-
+#app .dashboard-card > .children > .project.noted:first-child > .notes {
+  box-shadow: 0 1px 0 0 var(--DashCrd--BrdClr) !important;
 }
 #app .dashboard-card.comment,
-#app .dashboard-card.comment  .children,
+#app .dashboard-card.comment .children,
 #app .dashboard-card .comment,
-#app .dashboard-card .comment .children  {
+#app .dashboard-card .comment .children {
   --DashCrd--BrdClr: hsla(0, 0%, 50%, 0.125) !important;
 }
 /*
@@ -6814,11 +6882,10 @@ EXPAND COLLAPSE BORDER ANIMATION
 	box-shadow: inset 0 1px 0 0 var(--dashboardChildBrdClr) !important;
 }
 */
-
 .dashboard-card .children .project.open > .children > .project:first-child > .name {}
 .dashboard-card .children .project.open > .children > .project:first-child > .name:after {
-	opacity: 1 !important;
-	--DashCrd--BrdClr: hsla(0, 0%, 50%, .25)
+  opacity: 1 !important;
+  --DashCrd--BrdClr: hsla(0, 0%, 50%, .25)
 }
 
 #app .dashboard-card > .children .project:not(.noted) > .name:before,
@@ -6826,8 +6893,8 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .dashboard-card.comment > .children .project:not(.noted) > .name:before,
 #app .dashboard-card.comment > .children .project.noted > .notes:before,
 #app .dashboard-card > .children .project.comment .project:not(.noted) > .name:before,
-#app .dashboard-card > .children .project.comment .project.noted > .notes:before{
-  content:"";
+#app .dashboard-card > .children .project.comment .project.noted > .notes:before {
+  content: "";
   display: block;
   position: absolute;
   bottom: 0 !important;
@@ -6836,7 +6903,7 @@ EXPAND COLLAPSE BORDER ANIMATION
   right: 0;
   background: var(--DashCrd--BrdClr);
   height: 1px;
-  z-index: 9941 !important;
+  z-index: 2 !important;
   opacity: 1 !important;
   transform: unset !important;
   outline: unset !important;
@@ -6849,46 +6916,35 @@ EXPAND COLLAPSE BORDER ANIMATION
 .dashboard.root > .children > .dashboard-card:not(.comment):nth-of-type(odd) > .children > .project:nth-of-type(odd) > .commentAttribution{
   background: var(--dashBg-Color1)!important
 }*/
-
-
-
-
 /*ROOT COMMENTS*/
-#app .dashboard-card.root > .children .project:not(.noted) > .name, 
-#app .dashboard-card.root > .children .project.noted > .notes{
-  --DashCrd--BrdClr:hsla(0, 0%, 50%, 0.125) !important;
+#app .dashboard-card.root > .children .project:not(.noted) > .name,
+#app .dashboard-card.root > .children .project.noted > .notes {
+  --DashCrd--BrdClr: hsla(0, 0%, 50%, 0.125) !important;
 }
 
-#app .dashboard-card.root > .children .project.comment:not(.noted,.open) > .name, 
+#app .dashboard-card.root > .children .project.comment:not(.noted, .open) > .name,
 #app .dashboard-card.root > .children .project.comment.noted:not(.open) > .notes {
-  --DashCrd--BrdClr:hsla(0, 0%, 50%, 0) !important;
+  --DashCrd--BrdClr: hsla(0, 0%, 50%, 0) !important;
 }
 
 #app .root.dashboard-card.comment-container .children > .project:last-of-type > .name,
-#app .root.dashboard-card.comment-container > .children > .comment.thread  .children > .project:last-of-type > .name{
-
-}
+#app .root.dashboard-card.comment-container > .children > .comment.thread .children > .project:last-of-type > .name {}
 
 /**NEW BORDER*/
 #app .dashboard-card > .children .project:not(.noted) > .name,
 #app .dashboard-card > .children .project.noted > .notes {
-	position: relative !important;
-	box-shadow: unset !important;
-
+  position: relative !important;
+  box-shadow: unset !important;
 }
-#app .dashboard-card > .children > .project:not(.noted):first-child > .name, #app .dashboard-card > .children > .project.noted:first-child > .notes{
+#app .dashboard-card > .children > .project:not(.noted):first-child > .name,
+#app .dashboard-card > .children > .project.noted:first-child > .notes {
   box-shadow: unset !important;
 }
 
 
 /*DASHBOARD CARD BORDER*/
-
 #app .page.dashboard-page .dashboard-card:not(.noted) > .name:before,
-#app .page.dashboard-page .dashboard-card.noted > .notes:before{
-  
-}
-
-
+#app .page.dashboard-page .dashboard-card.noted > .notes:before {}
 /*******************************
 ********************************
 ! PRESENTATION
