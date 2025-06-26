@@ -6851,7 +6851,7 @@ EXPAND COLLAPSE BORDER ANIMATION
   opacity: 1 !important;
 }
 #app .dashboard.root .dashboard-card.comment:is(.open) > .name:after {
-  opacity: 1 !important;
+  opacity: .5 !important;
 }
 
 .comment .project.divider > .name > [class*="selection-handle"] hr {
