@@ -3437,7 +3437,9 @@ LEVEL 1 > Project
   --BG-primary:transparent !important;
 	backdrop-filter: blur(81px);
 }
-
+#app .comment .project.board:not(.root) {
+  z-index: 3 !important;
+}
 /********
 BOARD - BORDERS
 *********/
