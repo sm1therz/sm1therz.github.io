@@ -1,0 +1,18 @@
+/*****
+******
+Blockquote and Code block overrides, Just for FloatBrowser
+******
+******/
+
+.project:not(.board) .project.code-block {
+	--wf-space-ml:var(--prjct-MargTopBtm);
+}
+
+.project:not(.board) .project.quote-block {
+	--wf-space-m: var(--prjct-MargTopBtm);
+}
+
+.project:not(.board) .children > .project.code-block:first-child,
+.project:not(.board) .children > .project.quote-block:first-child {
+	margin-top: calc(var(--prjct-MargTopBtm) * 2) !important
+}
