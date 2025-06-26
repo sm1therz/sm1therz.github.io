@@ -7925,11 +7925,22 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
   padding-left: 0px !important;
 }
 
-#app .project.comment.root .project.board > .children, 
-#app .project.comment .project.board > .children {
-  padding-left: calc(60vw - 30px - 30px - var(--pageMaxWidth) * 0.5 - var(--pagePadLeft)) !important
-}
+/*******************************
+********************************
+! BOARDS in COMMENTS
+********************************
+********************************/
 
+:root {
+  --pagePadLeft: 1vw;
+  --pagePadRight: 1.0vw;
+  --pageMaxWidth: 630px;
+}
+#app .project.board > .children:not(#app .project.board.root > .children) {
+  min-width: 2200px !important;
+  left: calc(var(--pagePadLeft) * -56) !important;
+  padding-left: calc(var(--pagePadLeft) * 56.5) !important;
+}
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
