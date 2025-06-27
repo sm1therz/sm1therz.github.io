@@ -291,6 +291,8 @@ BOX SHADOW TESTING - BOARDS
 		font-size: var(--root-font-size);
   line-height: var(--root-line-height);
 }
+
+
 /*******************************
 ********************************
 ! NORMAL STATE
@@ -574,40 +576,6 @@ ADDED TO SELECTION - BOARDS*/
 
 .project.comment-container > .children > .project:first-of-type:not(.project.boardColumn.comment > .children > .project:first-of-type) {
 	margin-top: 0px;
-}
-
-
-.project.comment .project.comment {
-	background: var(--COMMENT--BG--even);
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
-	border-right: 0px;
-}
-.project.comment .project.comment .project.comment,
-.project.comment .project.comment .project.comment .project.comment .project.comment {
-	background: var(--COMMENT-CONTAINER--BG);
-}
-.project.comment .project.comment .project.comment .project.comment {
-	background: var(--COMMENT--BG--even);
-}
-
-.project.comment.draft > div:last-child {
-	margin-top: 0px !important;
-	margin-left: 0px !important;
-	padding-left: calc(var(--content-PadLeftRight) + var(--children-Indent));
-}
-.project.comment.draft button {
-	margin: 0px;
-	position: relative;
-	bottom: unset;
-	right: unset;
-}
-.project.comment button {
-	margin: 0px;
-	position: absolute;
-	bottom: 0px;
-	padding: 0 5px;
-	right: 0px;
 }
 
 
@@ -1631,17 +1599,27 @@ s,
 i s,
 s i,
 b s,
-s b {
+s b,
+.project.done > .name > .content,
+.project.done > .name > .content i,
+.project.done > .name > .content b,
+.project.done > .name > .content i b,
+.project.done > .name > .content b i{
 	color: var(--strikeThroughColor) !important;
 }
-s a.contentLink{
+s a.contentLink,
+s .project.done > .name a.contentLink{
 	filter:saturate(.5);
 }
-s {
+s,
+#app .project.done > .name > .content{
 	text-decoration:line-through;
 	text-decoration-thickness: 1.25px;
 	text-decoration-style: solid;
 	text-decoration-color: var(--strikeThroughLineColor);
+}
+#app .project.done > .name > .content {
+  --strikeThroughLineColor:var(--strikeThroughLineColor-Faint);
 }
 
 
@@ -2227,6 +2205,8 @@ BLOCK QUOTES V2
 #app .board.root .boardCard:not(.comment) .project.quote-block > .name > .expand:after{
   background: var(--BOARD-ROOT--CARD--BG) !important !important;
 }
+
+
 /***************
 HORIZONTAL RULES / DIVIDERS
 ****************/
@@ -2298,7 +2278,6 @@ HORIZONTAL RULES / DIVIDERS
 .project.divider > .name > .bullet:not(.diamond) ~ .expand:after {
   --btnIcn-ExpandB4Up-H:6px
 }
-
 /*******
 EXPAND MIRROR BULLET V2
 
@@ -2857,6 +2836,7 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
 	opacity: 1;
 }
+
 /***********
 ! NORMAL STATE OVERRIDES
 ************/
@@ -7871,13 +7851,12 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 ! COMMENTS - OVERRIDES
 ********************************
 ********************************/
-
-#app .project.comment .project.board > .children{
-	margin-bottom: var(--children-MargBtm) !important;
+#app .project.comment .project.board > .children {
+  margin-bottom: var(--children-MargBtm) !important;
   padding-top: var(--children-MargTop) !important;
 }
 #app .project.comment .project.board > .children > .boardColumn > .name,
-#app .project.comment .project.board > .children > .boardColumn > .notes{
+#app .project.comment .project.board > .children > .boardColumn > .notes {
   padding-left: var(--boardCardPadLeftRight) !important;
   padding-top: calc(var(--content-PadTopBtm) + 1px) !important;
   --content-PadTopBtm: 6px;
@@ -7891,32 +7870,34 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
   --header3-lineHeight: 21px;
   font-weight: 600;
 }
-#app .project.comment.root .project.board > .children{
+#app .project.comment.root .project.board > .children,
+#app .project.comment .project.board > .children {
   padding-left: 200px !important;
 }
-#app .project.comment .project.board > .children{
+
+#app .project.comment .project.board > .children {
   opacity: 1 !important;
 }
 #app .project.comment .project.board > .children > .boardColumn .boardCard > .name,
-#app .project.comment .project.board > .children > .boardColumn .boardCard > .notes{
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .notes {
   padding-left: var(--boardCardPadLeftRight) !important;
   padding-top: calc(var(--content-PadTopBtm) + 1px) !important;
 }
-#app .project.comment .project.board > .children > .boardColumn > .name  .content,
+#app .project.comment .project.board > .children > .boardColumn > .name .content,
 #app .project.comment .project.board > .children > .boardColumn > .notes .content,
-#app .project.comment .project.board > .children > .boardColumn .boardCard > .name  .content,
-#app .project.comment .project.board > .children > .boardColumn .boardCard > .notes  .content {
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .name .content,
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .notes .content {
   padding-right: 8px !important;
 }
 
 #app .project.comment .project.board > .children > .boardColumn > .name > .expand,
 #app .project.comment .project.board > .children > .boardColumn > .children > .boardCard > .name > .expand {
-	left: calc(var(--children-Indent) * .25)!important
+  left: calc(var(--children-Indent) * .25)!important
 }
-#app .project.comment .project.board > .children > .boardColumn .boardCard > .children{
+#app .project.comment .project.board > .children > .boardColumn .boardCard > .children {
   padding-left: calc(var(--children-Indent) * 1)!important
 }
-#app .project.comment .project.board > .children > .boardColumn .project > .name{
+#app .project.comment .project.board > .children > .boardColumn .project > .name {
   padding-top: calc(var(--content-PadTopBtm) + 1px) !important;
 }
 
@@ -7925,22 +7906,108 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
   padding-left: 0px !important;
 }
 
-/*******************************
-********************************
-! BOARDS in COMMENTS
-********************************
-********************************/
 
-:root {
-  --pagePadLeft: 1vw;
-  --pagePadRight: 1.0vw;
-  --pageMaxWidth: 630px;
+
+.project.comment .project.comment {
+	background: var(--COMMENT--BG--even);
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-right: 0px;
 }
-#app .project.board > .children:not(#app .project.board.root > .children) {
-  min-width: 2200px !important;
-  left: calc(var(--pagePadLeft) * -56) !important;
-  padding-left: calc(var(--pagePadLeft) * 56.5) !important;
+.project.comment .project.comment .project.comment,
+.project.comment .project.comment .project.comment .project.comment .project.comment,
+.project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment{
+	background: var(--COMMENT-CONTAINER--BG);
 }
+.project.comment .project.comment,
+.project.comment .project.comment .project.comment .project.comment,
+.project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,.project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment{
+	background: var(--COMMENT--BG--even);
+  border-right-width: 0px !important;
+  border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+  --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important
+}
+#app .board.root .boardColumn.comment .boardCard,
+#app .board.root .boardColumn.comment .boardCard *{
+  --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important
+
+}
+#app .board.root .boardColumn.comment .boardCard{
+  
+}
+.project.comment.draft > div:last-child {
+	margin-top: 0px !important;
+	margin-left: 0px !important;
+	padding-left: calc(var(--content-PadLeftRight) + var(--children-Indent));
+}
+.project.comment.draft button {
+	margin: 0px;
+	position: relative;
+	bottom: unset;
+	right: unset;
+}
+.project.comment button {
+	margin: 0px;
+	position: absolute;
+	bottom: 0px;
+	padding: 0 5px;
+	right: 0px;
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:not(.comment){
+  box-shadow: 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+  --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important;
+}
+
+#app .project.board.root > .children > .boardColumn.comment > .children > .boardCard.comment{
+  background: var(--BOARD-ROOT--CARD--BG)!important;
+  box-shadow: 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+  --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important;
+	--boardChildBrdClr: hsl(200, 12%, 23%) !important;
+}
+#app .project.board.root .comment{
+  border-color: var(--COMMENT-CONTAINER--BORDER-CLR)!important;
+}
+
+#app .project.board.root .comment,
+#app .project.board.root .comment *,
+#app .board.root .boardColumn.comment .boardCard, 
+#app .board.root .boardColumn.comment .boardCard *,
+#app .board.root .boardColumn.comment .boardCard.comment, 
+#app .board.root .boardColumn.comment .boardCard.comment *,
+#app .board.root .boardColumn .boardCard > .children > .project.comment{
+  --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important;
+
+}
+#app .board.root .boardColumn .boardCard.comment,
+#app .board.root .boardColumn .boardCard > .children > .project.comment{
+  border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard.comment{
+  box-shadow: 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+}
+#app .board.root .boardColumn.comment{
+  border-color: transparent !important;
+}
+
+#app .board.root .boardColumn > .children > .comment-toolbar {
+  display: none !important;
+}
+
+#app .project.board .project.comment .commentAttribution,
+#app .project.board.root .project.comment .commentAttribution{
+  display: flex !important;
+}
+#app .project.board.root .comment.boardColumn > .commentAttribution{
+  display: none !important;;
+}
+#app .project.board.root .boardColumn.comment > .children > .boardCard.comment:first-child,
+#app .project.board.root > .children > .boardColumn.comment > .children > .boardCard:first-child{
+  margin-top: 20px !important;
+}
+
+
+
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
