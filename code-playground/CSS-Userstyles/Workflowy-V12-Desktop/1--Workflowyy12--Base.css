@@ -7958,6 +7958,10 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
   box-shadow: 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR) !important;
   --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important;
 }
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:not(.comment).divider {
+  box-shadow: unset !important;
+  background: transparent !important;
+}
 
 #app .project.board.root > .children > .boardColumn.comment > .children > .boardCard.comment{
   background: var(--BOARD-ROOT--CARD--BG)!important;
