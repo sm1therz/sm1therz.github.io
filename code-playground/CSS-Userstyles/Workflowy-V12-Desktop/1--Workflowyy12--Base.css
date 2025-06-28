@@ -7516,11 +7516,14 @@ html body.floating-comments #app .floating-comments-container .project.root > .c
 .thread.paper-stacked-2 > .stacked-paper-area {
   display: none !important;
 }
+
 html #app .comment .comment-toolbar {
-  opacity: .4;
 }
 html #app .comment .comment-toolbar:hover {
   opacity: 1;
+}
+html #app .comment .comment-toolbar button[class*="draft"]:hover{
+  background: var(--wf-button-background-primary-hover) !important;
 }
 
 #app .root.project .project.comment > .commentAttribution > span {
