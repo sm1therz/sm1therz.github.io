@@ -53,6 +53,10 @@
   }, 2400);
 
   setTimeout(function() {
+    injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-7-codeblock-markdown-syntax-highlighting.css');
+  }, 2500);
+
+  setTimeout(function() {
     injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-popup-1-context-menus.css');
   }, 2600);
 
