@@ -1057,13 +1057,13 @@ BOOKMARK GROUPS
 #appID .bookmark-folder__head{
   box-shadow: 0 1px 0 0 var(--bookmarkDetailBrdClr) !important;
 }
-
+/*
 #appID .bookmark-widget__folder:not([class*="collapsed"]) .bookmark-folder__head{
       box-shadow: 0 0px 0 0 var(--bookmarkDetailBrdClr) !important;
 }
 #appID .bookmark-widget__folder:not([class*="collapsed"]) + .bookmark-widget__folder:not([class*="collapsed"]) .bookmark-folder__head{
     box-shadow:inset 0 -1px 0 0 var(--bookmarkDetailBrdClr) !important;
-}
+}*/
 
 #appID .bookmark-widget__folder[class*="collapsed"] .bookmark-folder__head{
   box-shadow: 0 1px 0 0 var(--bookmarkDetailBrdClr) !important;
@@ -1491,9 +1491,51 @@ ICONS > TRANSPARENT BACKGROUND
   background: var(--bookmarkIconBgClr) !important;
   outline: 1px solid var(--bookmarkIconBrdClr) !important;
 }
+
+#appID .bookmark-widget:not(.bookmark-widget_edited) .widget__container[style*=","] ul li [class*="_detail"] .bookmark-item__icon-wrapper{
+  background: transparent !important;
+  outline: unset !important;
+  
+  
+}
+#appID .bookmark-widget:not(.bookmark-widget_edited) .widget__container ul li [class*="_detail"] .bookmark-item__icon-wrapper,
+#appID .bookmark-widget:not(.bookmark-widget_edited) .widget__container ul li [class*="_detail"] .bookmark-item__icon-wrapper * {
+  display: flex !important; 
+  align-items: center !important;
+  justify-content: center !important;
+  margin:unset !important;
+  border: unset !important;
+}
+#appID a.bookmark-item__link, 
+a.bookmark-item__link > .bookmark-item__icon-wrapper,
+a.bookmark-item__link > .bookmark-item__icon-wrapper .generic-icon{
+  overflow: visible !important;
+}
+#appID .bookmark-widget:not(.bookmark-widget_edited) .widget__container ul li [class*="_detail"] .bookmark-item__icon-wrapper img {
+
+  box-shadow: inset 0 0 0 1px var(--bookmarkIconBrdClr) !important;
+  background: var(--bookmarkIconBgClr) !important; 
+  outline: 1px solid var(--bookmarkIconBrdClr)  !important;
+  outline-offset: -1px;
+  opacity: 1 !important;
+  border-radius: var(--bookmarkLinkBrdRad);
+  --bookmarkIconBrdClr:hsla(0, 0%, 100%, 0.05);
+}
+
+
+/*********
+BLANK ICON
+**********/
+#appID .bookmark-widget:not(.bookmark-widget_edited) .widget__container ul li [class*="_detail"] .bookmark-item__icon-wrapper img[src*="https://static.start.me/favicons/ood8tre8gnrqsollkc7z"] {
+  opacity:0 !important;
+}
+
+
+/**/
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_icon ul.bookmark-widget__list li .bookmark-item__icon-wrapper:hover {
   transform: scale(1.075);
 }
+
 
 /*BOOKMARK - LINK CONTAINER*/
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_icon a.bookmark-item__link {
