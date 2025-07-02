@@ -7961,10 +7961,7 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
   box-shadow: 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR) !important;
   --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important;
 }
-#app .project.board.root > .children > .boardColumn > .children > .boardCard:not(.comment).divider {
-  box-shadow: unset !important;
-  background: transparent !important;
-}
+
 
 #app .project.board.root > .children > .boardColumn.comment > .children > .boardCard.comment{
   background: var(--BOARD-ROOT--CARD--BG)!important;
@@ -8011,6 +8008,46 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 #app .project.board.root .boardColumn.comment > .children > .boardCard.comment:first-child,
 #app .project.board.root > .children > .boardColumn.comment > .children > .boardCard:first-child{
   margin-top: 20px !important;
+}
+
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:not(.comment).divider,
+#app .project.board > .children > .boardColumn > .children > .boardCard:not(.comment).divider,
+#app .pageContainer .page .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children .divider{
+  box-shadow: unset !important;
+  background: transparent !important;
+}
+
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .project.boardCard.divider hr{
+  margin-right: calc(var(--children-Indent) * 0) !important;
+  margin-left: calc(var(--children-Indent) * 1.5) !important;
+  width: calc(100% + var(--children-Indent) * -1.5);
+}
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .project.boardCard > .children  .divider,
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .project.boardCard > .children .project + .divider,
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .project.boardCard > .children .divider + .project{
+  border-color:transparent !important;
+  
+}
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .project.boardCard > .children > .divider hr{
+  margin-right: calc(var(--children-Indent) * 0) !important;
+  margin-left: calc(var(--children-Indent) * 0) !important;
+  width: calc(100% + var(--children-Indent) * 2) !important;
+}
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .divider > .name .content{
+ max-height: 10px
+}
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn > .children > .project.boardCard > .children > .project.divider {
+  border-top-color: var(--BOARD-ROOT--CARD--BG) !important;
+  z-index: 2;
+}
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn > .children > .project+ .project.divider,
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn > .children > .project.divider + .project,
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn > .children > .project.boardCard > .children > .project.divider + .project {
+  border-top-color: var(--BOARD-ROOT--CARD--BG) !important;
+}
+#app .pageContainer .page .project.board.root > .children > .boardColumn > .children > .project.boardCard > .children > .project.divider > .name:before {
+  opacity: 0 !important;
 }
 
 
