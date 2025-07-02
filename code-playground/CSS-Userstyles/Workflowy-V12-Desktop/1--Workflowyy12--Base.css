@@ -2392,6 +2392,7 @@ html #app .project.root > .name > .content {
 	--lnkicnW: 15px;
 	--lnkicnH: 15px;
 }
+
 /*
 #app a.contentLink:after{
 	content:"....";
@@ -2611,7 +2612,7 @@ html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u
 /*CHILDREN - Underlined*/
 html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer u,
 /*PARENTS  - LINK*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
+html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a,
 /*CHILDREN - LINK*/
 html #app .project:not(.comment) [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a,
 /*PARENTS  - Highlighted*/
@@ -2663,7 +2664,7 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 WAVY TEXT - LINKS
 *************/
 /*PARENTS  - Underlined*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
+html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a,
 /*CHILDREN - Underlined*/
 html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a,
 /*PARENTS  - Highlighted AND Underlined*/
@@ -2836,6 +2837,7 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
 	opacity: 1;
 }
+
 
 /***********
 ! NORMAL STATE OVERRIDES
