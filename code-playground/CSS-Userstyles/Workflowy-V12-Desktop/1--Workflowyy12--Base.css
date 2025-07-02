@@ -10077,7 +10077,7 @@ html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u
 html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] u,
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
-  --wavy--padding-bottom: 1.5px;
+  --wavy--padding-bottom: 1px;
 }
 
 /*LINK FIX*/
