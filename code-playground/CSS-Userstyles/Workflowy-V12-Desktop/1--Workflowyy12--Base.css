@@ -10091,14 +10091,15 @@ DARK - WAVY MIRROR UNDERLINE
 /********
 ********/
 :root {
-  --ICON--UNDERLINE-WAVY-CODEBLOCK: var(--ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT);
-  --ICON--COMMENT: var(--ICON--COMMENT-LIGHT);
-  --ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--LIGHT);
+	--ICON--UNDERLINE-WAVY-CODEBLOCK: var(--ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT);
+	--ICON--COMMENT: var(--ICON--COMMENT-LIGHT);
+	--ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--LIGHT);
 }
 ._theme-dark {
-  --ICON--UNDERLINE-WAVY-CODEBLOCK: var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
-  --ICON--COMMENT: var(--ICON--COMMENT-DARK);
-  --ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK);
+	--ICON--UNDERLINE-WAVY-CODEBLOCK: var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
+	--ICON--COMMENT: var(--ICON--COMMENT-DARK);
+	--ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK);
+	--ICON--UNDERLINE-WAVY--LINK:var(--ICON--UNDERLINE-WAVY--LINK--DARK);
 }
 
 
@@ -10120,8 +10121,22 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 }
 
 /*LINK FIX*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"],#app .project:not(.comment) [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a[href*="workflowy.com"]{
-  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
+html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"],
+#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy.com"]{
+	background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
+}
+
+
+
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a{
+	background-image: var(--ICON--UNDERLINE-WAVY--LINK) !important;
+ 
+}
+
+
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] {
+	background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
+ 
 }
 /*******************************
 ********************************
