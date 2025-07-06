@@ -10120,22 +10120,8 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 }
 
 /*LINK FIX*/
-html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"],
-#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy.com"]{
-	background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
-}
-
-
-
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a{
-	background-image: var(--ICON--UNDERLINE-WAVY--LINK) !important;
- 
-}
-
-
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] {
-	background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
- 
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"],#app .project:not(.comment) [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a[href*="workflowy.com"]{
+  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
 }
 /*******************************
 ********************************
