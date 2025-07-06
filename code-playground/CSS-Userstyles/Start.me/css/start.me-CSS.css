@@ -2649,6 +2649,13 @@ html .notes-widget-wrapper .widget__description ol li:before {
 #appID .widget__description {
     padding-bottom: 3px !important;
 }
+
+#appID .bookmark-item_mode_detail .bookmark-item__info hr {
+  border: unset;
+  height: 1px;
+  background: hsla(0,0%,50%,0.5);
+}
+
 /*
 .widget__description{
   box-shadow: 0 1px 0 0 hsla(0,0%,0%,.2)
@@ -2795,10 +2802,11 @@ html .notes-widget-wrapper .widget__description ol li:before {
 }
 
 
-/*DESCRIPTION LIST ITEMS*/
+/*DESCRIPTION BOLD*/
 #appID .bookmark-description strong,
 #appID .bookmark-description b {
-    color: var(--bookmarkDescriptionBldClr);
+    color: var(--bookmarkDescriptionBldClr) !important;
+  -webkit-text-fill-color:var(--bookmarkDescriptionBldClr) !important;
 }
 .bookmark-item__info .bookmark-item__description ol li,
 .bookmark-item__info .bookmark-item__description ul li {
