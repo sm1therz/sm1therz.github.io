@@ -2431,12 +2431,7 @@ html #app .project > .notes > .content .colored a.contentLink[href*="workflowy"]
 html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored {
 		color:var(--LnkWFTxtClr) !important;
 }
-html #app .project > .notes > .content .contentLink {
-		color: var(--NODE-NOTES--TXT-CLR-ALL) !important;
-}
-html #app .project > .notes > .content .contentLink{
-		color:var(--NoteLinkClr)!important;
-}
+
 html #app .project > .notes > .content {
 		color: var(--NODE-NOTES--TXT-CLR-ALL);
 		max-height: unset;
@@ -3127,6 +3122,14 @@ html #app .project [projectid*="virtual"].comment > .children .project > .name >
 .mirror-warning{
   display: none 
 }
+
+/*
+html #app .project > .notes > .content .contentLink {
+		color: var(--NODE-NOTES--TXT-CLR-ALL) !important;
+}
+html #app .project > .notes > .content .contentLink{
+		color:var(--NoteLinkClr)!important;
+}*/
 
 /***********
 ! TAGS
