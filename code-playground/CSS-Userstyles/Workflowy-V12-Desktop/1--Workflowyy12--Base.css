@@ -1590,6 +1590,10 @@ b,
 i b {
 		color: var(--NODE--TXT-CLR--bold);
 }
+*:not(.board) .notes b,
+*:not(.board) .notes i b{
+	--NODE--TXT-CLR--bold:var(--NOTES--TXT-CLR--bold);
+}
 
 
 /***************
@@ -2158,7 +2162,15 @@ BLOCK QUOTES V2
 }
 #app .project .project.quote-block > .name > .bullet ~ .expand:after {
 	opacity: 1 !important;
-		background:var(--wf-border-default);
+	background:var(--wf-border-default);
+}
+
+#app *:not(.board) .project.quote-block:is(.collapsed):not(.done) > .name > .bullet:not(.diamond) ~ .expand:after{
+	width:10px
+}
+
+#app *:not(.board) .project.quote-block:is(.collapsed):not(.done) > .name > .bullet ~ .expand:after{
+	box-shadow:0 0 0 2px var(--wf-border-default);
 }
 
 #app .project .project.collapsed > .name > .bullet.diamond ~ .expand:after{
@@ -2188,7 +2200,7 @@ BLOCK QUOTES V2
 	border-radius: 10px !important;
 	transform: scale(.9) !important;
 }
-/*mirrors*/
+/*mirrors*/ 
 
 #app .project.quote-block > .name > .bullet ~ .expand:after {
 	background: var(--BG-primary) !important;
@@ -2207,6 +2219,20 @@ BLOCK QUOTES V2
 }
 
 
+
+/***************
+DOUBLE BLOCK QUOTES 
+****************/
+
+/*removes margin above a blockquote if it is immediately preceded by a blockquote*/
+#app *:not(.board) .project.quote-block:not(.noted) + .project.quote-block {
+	margin-top: calc(var(--prjct-MargTopBtm) * -1)
+}
+/*removes margin above a blockquote if it is the first child of a parent that is also a blockquote*/
+
+#app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) {
+	margin-top: calc(var(--prjct-MargTopBtm) * 0)
+}
 /***************
 HORIZONTAL RULES / DIVIDERS
 ****************/
