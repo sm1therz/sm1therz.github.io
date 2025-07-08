@@ -295,2566 +295,873 @@ BOX SHADOW TESTING - BOARDS
 
 /*******************************
 ********************************
-! NORMAL STATE
+! COMMENTS - NEW - FLOATING
 ********************************
 ********************************/
 :root {
-
-		/*root*/
-		--name-fontSize: 1.25rem;
-		--name-lineHeight: 26px;
-		--notes-fontSize: .95rem;
-		--notes-lineHeight: 18px;
-		--header1-fontSize: 2.0rem;
-		--header1-lineHeight: 1.3;
-		--header2-fontSize: 1.4rem;
-		--header2-lineHeight: 1.35;
-		--header3-fontSize: 1.25rem;
-		--header3-lineHeight: 1.3;
-		--cmntContain-fontSize: 1rem;
-		--cmntContain-lineHeight: 20px;
-
-		/*Level 1*/
-		/*project*/
-		--prjct-MargTopBtm: 1px;
-		--prjct-ParaMargTopBtm: 5px;
-		--prjct-BrdRad: 6px;
-		--prjct-CmntContainPadTopBtm: 5px;
-		--prjct-CmntPadTopBtm: 5px;
-
-		/*Level 2*/
-		/*name*/
-		/*notes*/
-		/*children*/
-		--children-Indent: 30px;
-		--children-MargBtm: 0px;
-		--children-MargTop: 0px;
-		/*Level 3*/
-		/*content*/
-		--content-PadTopBtm: 2px;
-		--content-PadLeftRight: 2px;
-		/*Buttons*/
-		--btn-Width: 30px;
-		--btn-Height: 30px;
-		--btn-BrdRad: var(--prjct-BrdRad);
-		--btnIcn-Scale: 1;
-		--btnIcn-Width: 26px;
-		--btnIcn-Height: 26px;
-		--btnIcn-ChkBx-BrdRad: 3.5px;
-		--btnIcn-ChkBx-W: 13px;
-		--btnIcn-ChkBx-H: 13px;
-		--btnIcn-ChkBx-Transition: 350ms cubic-bezier(.4, 3.9, .31, .4);
-		--btnIcn-ChkBx-BoxShad: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR);
-		--btnIcn-ChkMrk-W: 14px;
-		--btnIcn-ChkMrk-H: 14px;
-		--btnIcn-ExpandB4Up-BrdRad: 10px;
-		--btnIcn-ExpandB4Up-W: 7px;
-		--btnIcn-ExpandB4Up-H: 7px;
-		--btnIcn-ExpandB4Low-BrdRad: 12px;
-		--btnIcn-ExpandB4Low-W: 14px;
-		--btnIcn-ExpandB4Low-H: 14px;
-		--btnIcn-ExpandB4Low-HovTransition: 250ms cubic-bezier(.47, 2.2, .29, .6);
-		--btn-MargTop: 1px;
-		--btn-MargTopBullet: 1px;
-		--btn-MargTopCmnt: 18px;
-		--btn-MargTopCmntContain: 5px;
-		--btn-MargTopH1: 10px;
-		--btn-MargTopH2: 1px;
-		--btn-transition: .15s;
-		--btn-MirrorTransition: 450ms cubic-bezier(.27, 2.9, .51, .6);
-		--cmnt-btnPadRight: 10px;
-
-		/*Level 4*/
-		/*inner content*/
-		/*innerContent Padtop = line-spacing*/
-		--InnerContentPadTop: 1px;
-		--InnerContentPadBtm: .5px;
-
-		/*MISC*/
-		--Height--Header: 48px;
+	--commentauthorPadTopBtm: 10px;
+	--floatCommentW: calc(550px - 5vw);
+	--floatCommentMaxW: calc(35vw - 50px - var(--floatCommentPosRight));
+	--floatCommentPosRight: 0px;
+	--floatCommentBtnCloseW: 30px;
+	--floatCommentBtnHeaderH:40px;
 }
 
-
-/***************
-**************** 
-LEVEL 0 > ROOT
-****************
-****************/
-:root {
-		--root-font-size: 2.2rem;
-		--root-line-height: 1.23;
-		--root-inlineCode-font-size: calc(var(--root-font-size) - .45rem);
-		--root-inlineCode-line-height: calc(var(--root-line-height) + .05);
-}
-#app .project.root > .name > .content .innerContentContainera{
-		user-select: none;
-		text-underline-offset: 20px;
-		--underlineOffset:3.5px;
-		
+/*OVERRIDES*/
+html #app .floating-comments-container {
+	max-height: calc(99% - var(--Height--Header))!important;
+	overflow-y: auto;
+	z-index: 10 !important;
+	bottom: 0 !important;
 }
 
-#app .project.root > .name > .content > .innerContentContainer a,
-#app .project.root > .name > .content > .innerContentContainer u{
-				text-underline-offset: 3.5px !important;
-text-decoration-thickness:
-		background: var(--underlineOffset);
-
+.floating-comments-container .threads--comment-button-container{
+	height: var(--floatCommentBtnHeaderH);
+	align-items: center;
+	justify-content: center;
+}
+.floating-comments-container > .vertical-scrollable-container{
+	overflow-y: scroll !important
+}
+.floating-comments-container > .vertical-scrollable-container > .comment-container > .children > div:not(.comment) {
+	height: 100px !important;
 }
 
-/*root mirrored checkboxes*/
-app .project.root > .name > .bullet.diamond ~ .prefix .item-checkbox{
-		background: blue !important;
-}
+html #app .floating-comments-container,
+html #app .floating-comments-container .vertical-scrollable-container,
+html #app .floating-comments-container .comment-container,
+html #app .floating-comments-container .comment-container > .children,
+html #app .floating-comments-container .comment-container > .children > .comment {
 
-.project.root.mainTreeRoot > .name > .content,
-.project.root > .name > .content,
-.project.root.paragraph > .name > .content,
-.project.root.header1 > .name > .content,
-.project.root.header2 > .name > .content,
-.project.root.comment > .name > .content,
-.project.root.comment-container > .name > .content,
-.project.root.references > .name > .content {
-		font-size: var(--root-font-size);
-		line-height: var(--root-line-height);
-		margin-left: 0px;
-		margin-top: 0px;
-		visibility: visible;
-		opacity: 1;
-		min-height: unset;
-		height: unset;
-		transition: 1s;
-		color: var();
-	--NODE--TXT-CLR--main:var(--NODE--TXT-CLR--bold);
- 
+	width: 100% !important;
+	box-sizing: border-box;
+	margin: unset !important;
+	min-width: unset !important;
 }
-#app .project.root > .name > .content code {
-		font-size: var(--root-inlineCode-font-size);
-		line-height: var(--root-inlineCode-line-height);
-	padding-top: 2.5px;
-	padding-bottom: 1px;
-	padding-left: 5px;
-	padding-right: 5px;
-	letter-spacing: -0.2px;
-		--inlineCodeBrdRad:6px;
+html #app .floating-comments-container .comment-container {
+	padding-left: 0px !important;
+	padding-bottom: 100px !important;
 }
-#app .project.root > .name > .content code * {
-		font-size: var(--root-inlineCode-font-size);
-		line-height: var(--root-inlineCode-line-height);
+html #app .floating-comments-container .comment-container > .children {
+	padding-left: 40px !important;
+	padding-right: -px!important;
 }
-.project.root {
-		margin-top: 0px;
-}
-.project.root:not(.comment) > .notes > .content {
-		margin-left: 0px;
-}
-
-.project.root > .name .innerContentContainer,
-.project.root > .innerContentContainer .colored {
-		--InnerContentPadTop: 0px;
-		--InnerContentPadBtm: 0px;
-}
-
-
-
-
-/*ZOOMING IN AND OUT OF NODES*/
-:root {
-		--root-padtop: 30px;
-		--pagePadLeft: 20px;
-		--pagePadRight: 20px;
-		--pageMaxWidth: 650px;
-}
-#app .page > .project.root > .children {
-		transition: 0s !important;
-		padding-top: var(--root-padtop) !important;
-}
-#app .page {
-		max-width: var(--pageMaxWidth);
-		padding-left: var(--pagePadLeft);
-		padding-right: var(--pagePadRight);
-}
-
-/*
-#app ~ div[style]{
-		border:2px solid red !important;
-		position: absolute !important;
-		transition:1s ease-in-out !important;
-		top:unset !important;
-		left: unset !important;
-}*/
-/*new title during animation
-.children._oqw2mn .project > .name > .content[style="visibility: hidden;"]{
-		visibility: visible !important;
-		font-size: var(--name-fontSize)!important;
-		line-height: var(--name-lineHeight)!important;
-		--name-fontSize: 2.5rem !important;
-		--name-lineHeight: 1.2 !important;
-		opacity:0 !important;
-
-*/
-/***************
-**************** 
-LEVEL 1 > PROJECT
-****************
-****************/
-.project {
-		margin-top: var(--prjct-MargTopBtm);
-		margin-bottom: var(--prjct-MargTopBtm);
-		position: relative;
-		border-radius: var(--prjct-BrdRad);
-}
-.children > .project[class*="header2"]:first-child {
-		margin-top: calc(var(--wf-space-xl) + var(--prjct-MargTopBtm))!important
-}
-/*
-.project.root > .children .header1,
-.project.root > .children .header2 {
-		margin-top: var(--prjct-MargTopBtm)
-}
-*/
-/****
-Added to selection*/
-.project.addedToSelection:before {
-		background: var(--ADDED-TO-SELECTION--BG);
-		inset: 0;
-		border-radius: var(--prjct-BrdRad)
-}
-.project.addedToSelection .project {
-		border-radius: var(--prjct-BrdRad);
-}
-.project.addedToSelection .project:not(.dashboard-card,
-.dashboard-card .comment,
-.board .comment) {
-		border-radius: 0px !important;
-}
-
-
-/****
-ADDED TO SELECTION - BOARDS*/
-.boardColumn.addedToSelection > .children,
-.boardCard.addedToSelection,
-.boardCard .project.addedToSelection {
-		--brd-brdrClr: var(--ADDED-TO-SELECTION--BrdClr) !important;
-}
-
-/*comments*/
-.project.comment {
-		border: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR);
-		border-radius: var(--prjct-BrdRad);
-		padding-bottom: calc(var(--prjct-CmntPadTopBtm) * 1.25);
-		padding-top: 0px;
-		background: var(--COMMENT-CONTAINER--BG);
-		--prjct-BrdRad: 4px;
-		--btnIcn-ExpandB4Up-W: 5px;
-		--btnIcn-ExpandB4Up-H: 5px;
-		--btnIcn-ExpandB4Low-W: 14px;
-		--btnIcn-ExpandB4Low-H: 14px;
-	border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
-	
-}
-#app .project:not(.board) .project.comment > .name > .expand:before,
-#app .project:not(.board) .project.comment {
-		--btnIcn-ExpandB4Up-W: 6px;
-		--btnIcn-ExpandB4Up-H: 6px;
-}
-.board .project.comment{
-				--btnIcn-ExpandB4Up-W: 8px;
-		--btnIcn-ExpandB4Up-H: 8px;
-		--btnIcn-ExpandB4Low-W: 14px;
-		--btnIcn-ExpandB4Low-H: 14px;
-}
-.project.comment.highlighted {
-		filter: brightness(.96);
-		background: 1px solid var(--COMMENT-CONTAINER--BORDER-CLR) !important;
-}
-.project.comment-container {
-		padding-bottom: 0px;
-}
-.project.comment-container.open {
-		padding-bottom: var(--prjct-CmntPadTopBtm);
-}
-
-.project.comment-container > .children > .project:first-of-type:not(.project.boardColumn.comment > .children > .project:first-of-type) {
-		margin-top: 0px;
-}
-
-
-
-
-/***************
-****************
-LEVEL 2 > Name, Notes, Children, Comment Attribution
-****************
-****************/
-/****
-NAME & NOTES*/
-.project > .name,
-.project > .name.name--with-image,
-.project.noted > .notes,
-.project > .commentAttribution {
-		display: flex !important;
-		padding: 0px;
-		/*flex-grow: 1;*/
-}
-#app .project.noted > .notes,
-#app .project.noted > .notes > .content {
-		display: block
-}
-.project > .commentAttribution {
-		padding-top: var(--prjct-CmntPadTopBtm);
-}
-.project > .name.name--with-image {
-		flex-direction: column;
-		align-items: flex-end;
-
-}
-.project.noted > .name.name--with-image {
-		margin-bottom: 0px;
-}
-.project.noted > .notes {
-		margin-bottom: 5px;
-}
-/****
-NAME ONLY*/
-.project > .name {
-		position: unset;
-}
-.project.references .project .name {
-		position: relative;
-}
-
-/*compensates for commentattribution*/
-
-/*IN REFERENCES*/
-.project.references > .children .project.comment-container > .children > .comment > .name {
-		--btn-MargTop: -2px;
-}
-
-/**non-comment nodes inside comment*/
-
-/*non-comment Header1 nodes inside comment*/
-.project.comment > .children .project.header1 > .name {
-		--btn-MargTop: -2px;
-}
-/*non-comment Header2 nodes inside comment*/
-.project.comment > .children .project.header2 > .name {
-		--btn-MargTop: -1px;
-}
-/*comment-container*/
-.project.comment-container > .name * {
-		--btn-MargTop: 5px !important;
-}
-
-.project.comment-container > .name {
-		--btn-MargTop: 5px !important;
-		padding-top: var(--prjct-CmntContainPadTopBtm);
-		padding-bottom: var(--prjct-CmntContainPadTopBtm);
-}
-
-/*referenced comment bullet*/
-.references .project.comment > .name {
-		--btn-MargTop: -1px;
-}
-/****
-NOTES ONLY*/
-.project.noted > .notes {
-		max-height: unset;
-}
-
-/****
-CHILDREN*/
-#app .project > .children {
-		transform: unset !important;
-		transform-origin: unset !important;
-		transition: .2s ease-in-out !important;
-		margin-bottom: var(--children-MargBtm);
-		padding-top: var(--children-MargTop);
-}
-
-.project > .children:not(.board>.children) {
-		padding-left: var(--children-Indent)
-}
-/****
-REFERENCES*/
-#app .references > .children .addSiblingButton {
-	display: none;
-}
-#app .references > .children > .project:not(.board .references > .children > .project){
+html #app .floating-comments-container .comment-container > .children > .comment:last-of-type {
 	margin-bottom: 10px !important;
-		margin-top:0px; 
 }
-#app .references > .children > .project:last-of-type{
-	margin-bottom: 0px !important;
-}
-.references .project .breadcrumbs {
-		justify-content: flex-start;
-		align-items: flex-start;
-		flex-wrap: wrap;
-		margin-top: 0px !important;
-		padding-bottom: 4px;
-	row-gap: 4px !important;
-	padding-top: 8px
-}
-
-.references .project.comment .breadcrumbs {
-		padding-left: calc(var(--children-Indent) * .5) !important;
-}
-.references .project .breadcrumbs a {
-		padding-left: 0px;
-		padding-right: 0px;
-		margin-right: 0px !important;
-		display: inline;
-		float: left;
-		font-size: .74rem;
-		opacity: .9;
-		line-height: .95 !important;
-		margin-top: 4px !important;
-		transition: .2s;
-		font-weight: 500;
-		-webkit-font-smoothing: antialiased;
-		max-width: 150px !important;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		padding-bottom: 1px;
-	transform-origin: left !important;
-	margin: 0px !important;
-}
-.references .project:not(.comment) .breadcrumbs a:last-of-type {
-/*    margin-left: 10px !important;
-			white-space: normal;
-		width: 100%;
-	 font-size: .83rem;*/
-		max-width: 77% !important;
-
-}
-.references .project .breadcrumbs a:hover {
-		transform: scale(1.1) !important;
-		color: var(--NODE--TXT-CLR--CONTRAST);
-
-}
-/*
-
-*/
-#app .references .project svg {
-	position: relative;
-	top: 1px;
-	opacity: .6
-}
-
-
-.breadcrumb-overflow-menu div,
-.breadcrumb-overflow-menu div a {
-	white-space: normal !important;
-}
-/*REFERENCES - Border-top - ALL*/
-.root > .children > .project.references:before,
-.root > .children > .project.references:after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 0px;
-		left: -100vw;
-		right: -100vw;
-		width: unset;
-		height: 1px;
-		border-radius: .5px;
-		background: hsl(205, 9%, 50%, .25);
-}
-.pageContainer {
-		overflow-x: hidden;
-}
-/*REFERENCES - Border-top - Direct CHildren of ZOomed Parent*/
-.root > .children > .project.references:before,
-.root > .children > .project.references:after {
-		top: -12px;
-}
-
-
-.root.dashboard > .children .project.references:before {
-		display: none;
-}
-
-.project.root > .children > .project.references {
-		margin-top: 22px;
-}
-#app .project.root > .children .project.references > .name > .content,
-.project.references > .name > .content {
-		font-size: .95em !important;
-		color: var(--LnkWFTxtClr);
-}
-.project.references > .name > .expand {
-		opacity: .5;
-}
-.root > .children > .project.references > .name,
-.root > .children > .project.references > .notes,
-.root > .children > .project.references > .name > .bullet,
-.root > .children > .project.references > .name > .content,
-.root > .children > .project.references > .name > .expand,
-.root > .children > .project.references > .name > .prefix,
-.root > .children > .project.references > .children {
-		z-index: 1
-}
-.root > .children > .project.references:after {
-		bottom: -30px;
-		z-index: 0;
-		opacity: .11;
-}
-
-/***************
-****************
-LEVEL 3 > Bullet, Prefix, Content, Expand, Menu, Comment Attribution Name
-****************
-****************/
-/****
-NAME > CONTENT
-&
-NOTES > CONTENT*/
-.name > .content,
-.notes > .content,
-.commentAttribution > span,
-.name > [class*="PlaceholderWrapper"] {
-		display: inline;
-		margin-left: var(--children-Indent);
-		padding-top: var(--content-PadTopBtm);
-		padding-bottom: var(--content-PadTopBtm);
-		padding-left: var(--content-PadLeftRight);
-		padding-right: var(--content-PadLeftRight);
-		flex: 1;
-}
-
-.notes > .content {
-		padding-bottom: 0px;
-		margin-bottom: var(--content-PadTopBtm)
-}
-.commentAttribution > span {
-		flex: unset !important;
-		font-weight: 400 !important;
-		font-size: 11px;
-		color: var(--COMMENT-ATTRIBUTION--TXT-CLR)!important;
-}
-.commentAttribution > span:last-of-type {
-		margin-left: 0px;
-}
-/****
-NAME > CONTENT only*/
-.project.root > .children .project:not([class*="header"]) > .name > .content,
-.project:not([class*="header"]) > .name > .content {
-		/*font-size: var(--name-fontSize);*/
-		/*line-height: var(--name-lineHeight);*/
-		color: var(--NODE--TXT-CLR--main);
-}
-:root {
-		--doneNameOpacity: .45;
-		--doneNotesOpacity: .45;
-		--doneClr:
-}
-#app .project.root > .children .project.done > .name > .content,
-.project.done > .name > .content,
-#app .project.root.done > .children .project > .name > .content,
-.project.done > .name > .content {
-		text-decoration-thickness: 1.5px;
-		opacity: var(--doneNameOpacity);
-}
-#app .project.done > .name > .expand:before,
-#app .project.done > .children .name > .expand:before {
-		opacity: var(--doneNameOpacity) !important;
-}
-#app .project.done > .notes,
-#app .project.done > .children .notes {
-		opacity: calc(var(--doneNameOpacity) + -0.1);
-		--NODE-NOTES--TXT-CLR-ALL: var(--NODE--TXT-CLR--main);
-}
-#app .project.root > .name,
-#app .project.root > .name * {
-		text-decoration-thickness: 4px;
-}
-
-#app .project.root > .notes {}
-.project > .name > .content > .commentContainer {
-		font-size: var(--cmntContain-fontSize);
-		line-height: var(--cmntContain-lineHeight);
-		color: var(--NODE--TXT-CLR--main);
-		text-decoration-color: var(--NODE--TXT-CLR--main);
-}
-
-/*reply btn padding*/
-.project > .name > .content > .commentContainer > div {
-		padding-right: var(--cmnt-btnPadRight);
-}
-
-.project.comment > .children .project.header1 > .name > .content {
-		--header1-fontSize: 1.22rem;
-		--header1-lineHeight: 19px;
-}
-.project.comment > .children .project.header2 > .name > .content {
-		--header2-fontSize: 1.05rem;
-		--header2-lineHeight: 20px;
-}
-
-/*comment draft*/
-.project.comment.draft {}
-/*comment draft button*/
-.comment.draft button {
-		margin-right: var(--cmnt-btnPadRight);
-		border-radius: 3px;
-		padding: 1px 5px 1px 5px;
-		font-weight: 500 !important;
-		cursor: pointer;
-}
-
-.project.root > .children .header1 > .name > .content,
-.project.header1:not(.root) > .name > .content {
-		font-size: var(--header1-fontSize);
-		line-height: var(--header1-lineHeight)
-}
-.project.root > .children .header2 > .name > .content,
-.project.header2:not(.root) > .name > .content {
-		font-size: var(--header2-fontSize);
-		line-height: var(--header2-lineHeight)
-}
-.project.root > .children .header3 > .name > .content,
-.project.header3:not(.root) > .name > .content {
-		font-size: var(--header3-fontSize);
-		line-height: var(--header3-lineHeight)
-}
-/****
-NAME-WITH-IMAGE
-*/
-.name--with-image > .content:empty {
-		max-height: 30px !important;
-		position: absolute;
-		z-index: 9494;
-		left: 3px;
-}
-.name--with-image > .content {
-		max-height: 900px !important;
-		height: unset !important;
-		display: block !important;
-		min-height: unset !important;
-		transition: 0.3s;
-		opacity: 1 !important;
-}
-.name--with-image > .content:focus,
-.name--with-image > .content:active {
-		max-height: 300px !important
-}
-.name--with-image > .content,
-.name--with-image > .file-preview {
-		width: calc(100% - var(--children-Indent))
-}
-.name--with-image > .file-preview {
-		padding-left: var(--content-PadLeftRight);
-}
-.name--with-image > .file-preview .image-viewer {
-		overflow: unset;
-}
-.name--with-image > .file-preview .image-viewer {
-		border-radius: var(--btn-BrdRad);
-		overflow: hidden;
-		transition: .2s;
-		border: var(--IMAGE-BOX--BORDER);
-}
-.name--with-image.name--focused > .file-preview .image-viewer {
-		box-shadow: 0 0 0 0px var(--BG-primary),
-		0 0 0 3px var(--IMAGE--SELECTED--BOX-SHADOW-CLR);
-}
-
-.name--with-image > .file-preview .image-viewer .resizer{
-		display: flex !important;
-		opacity: 0;
-		transition: .15s;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		width: 13px;
-		z-index: 9999
-		
-}
-
-
-.name--with-image >  .file-preview:hover .image-viewer .resizer,
-.name--with-image >  .file-preview .image-viewer .resizer:hover,
-.name--with-image.name--focused >  .file-preview .image-viewer .resizer{
-		opacity: 1 !important;
-}
-.name--with-image > .file-preview .image-viewer .resizer > div{
-		min-height: 10px;
-		height: 50%;
-		max-height: 300px;
-		width: 6px;
-}
-
-.name--with-image > .file-preview > div{
-		
-}
-.name--with-image >  .file-preview .image-viewer {
-		padding: 0px !important;
-		height: unset;
-		width: unset;
-}
-.name--with-image >  .file-preview .image-viewer img {
-		display: block !important;
-		width: calc(100% + 1px) !important;
-		margin-top: -1px
-
-}
-/****
-NOTED > CONTENT only*/
-.project.noted > .name > .content {
-		padding-bottom: 0px;
-}
-
-/****
-NOTES > CONTENT only*/
-.project > .notes > .content {
-		max-height: unset;
-		padding-top: 0px;
-		font-size: var(--notes-fontSize);
-		line-height: var(--notes-lineHeight);
-}
-#app .project .notes,
-#app .project .notes .content,
-#app .project .notes u,
-#app .project .notes .contentTag,
-#app .project .notes .contentLink {
-		--underlineOffset: 2px !important;
-		--underlineThickness: 1px !important;
-		text-underline-offset: var(--underlineOffset) !important;
-		text-decoration-thickness: var(--underlineThickness) !important;
-}
-.project[class*="header"].noted:not(.root) > .name {
-		margin-bottom:0px;
-}
-.project[class*="header"].noted:not(.root) > .notes {
-		margin-bottom: var(--wf-space-s) !important;;
-}
-
-
-
-
-/***************
-BUTTONS
-****************/
-/****
-Bullet, Expand, Prefix, & Menu
-(Button containers - center new icons)*/
-.name > .bullet,
-.name > .prefix,
-.name > .prefix .item-checkbox,
-.name > .expand,
-.name > .expand ._3hmsj,
-.name > .menu {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: absolute;
-		width: var(--btn-Width);
-		height: var(--btn-Height);
-		transition: var(--btn-transition);
-		cursor: pointer;
-		border-radius: var(--btn-BrdRad)
-}
-
-
-
-/*Button containers - center new icons*/
-/* Button Icons - ALL BUTTONS*/
-.name > .bullet:before,
-.name > .bullet:after,
-.name > .prefix .item-checkbox:before,
-.name > .prefix:after,
-.name > .expand:before,
-.name > .expand:after,
-.name > .menu:before,
-.name > .menu:after {
-		content: "";
-		display: block;
-		width: var(--btnIcn-Width);
-		height: var(--btnIcn-Width);
-		position: absolute;
-		top: auto !important;
-		left: auto !important;
-		right: auto;
-		bottom: auto;
-		transition: var(--btn-transition);
-		margin-left: unset !important;
-		margin-right: unset !important;
-		margin-top: unset !important;
-		inset: unset !important;
-}
-
-
-
-
-/****
-Prefix
-AND
-Expand*/
-#app .project > .name > .prefix,
-#app .project > .name > .expand {
-		top: var(--btn-MargTop);
-}
-
-
-/****
-Prefix ONLY*/
-.project > .name > .prefix {
-		left: (calc var(--children-Indent) * 0);
-		/*hide checkbox, on all bullets*/
-		opacity: 0;
-}
-.project.checkmark > .name > .prefix {
-		opacity: 1;
-}
-/*checkbox*/
-.project > .name > .prefix > .inline-flex > .item-checkbox {
-		width: var(--btnIcn-ChkBx-W);
-		height: var(--btnIcn-ChkBx-H);
-		background: var(--CHECKBOX--BG);
-		box-shadow: var(--btnIcn-ChkBx-BoxShad);
-		border-radius: var(--btnIcn-ChkBx-BrdRad);
-		transition: var(--btnIcn-ChkBx-Transition);
-		z-index: 3;
-		background: var(--BG-primary);
-}
-/*checkbox - done*/
-.project.done > .name > .prefix > .inline-flex > .item-checkbox {
-		background: var(--CHECKBOX--BG--DONE);
-		transition: var(--btnIcn-ChkBx-Transition);
-		--btnIcn-ChkBx-BoxShad: 0 0 0 2px var(--CHECKBOX--BG--DONE);
-		--btnIcn-ChkBx-BrdRad: 3px;
-}
-/*checkmark*/
-.project > .name > .prefix > .inline-flex > .item-checkbox:before {
-		content: var(--ICON--CHECKMARK) !important;
-		width: var(--btnIcn-ChkMrk-W);
-		height: var(--btnIcn-ChkMrk-H);
-		transform: scale(var(--btnIcn-Scale));
-		--btnIcn-Scale: 0;
-		transition: .1s;
-		z-index: 5;
-}
-/*checkmark - done*/
-.project.done > .name > .prefix > .inline-flex > .item-checkbox:before {
-		--btnIcn-Scale: 1.0;
-		transition: var(--btnIcn-ExpandB4Low-HovTransition);
-}
-
-.project.checkmark:not(.board .project) > .name > .expand {
-		--btn-Width: 32px;
-		opacity: 0;
-}
-.project.checkmark.collapsed > .name > .prefix:after {
-		--btnIcn-ExpandB4Low-W: 21px;
-		--btnIcn-ExpandB4Low-H: 21px;
-		--btnIcn-ExpandB4Low-BrdRad: 7px;
-}
-
-
-/****
-Expand:AFTER
-&
-Item Checkbox:AFTER
-&
-Bullet:AFTER*/
-.project > .name > .bullet:after,
-.project > .name > .prefix:after,
-.project > .name > .expand:after {
-		width: var(--btnIcn-ExpandB4Low-W);
-		height: var(--btnIcn-ExpandB4Low-H);
-		border-radius: var(--btnIcn-ExpandB4Low-BrdRad);
-		background: var(--BG-Bullet-under);
-		transform: rotate(-45deg)scale(0);
-		border: none;
-		transition: .15s
-}
-.project.collapsed > .name > .bullet:after,
-.project.collapsed > .name > .prefix:after,
-.project.collapsed > .name > .bullet ~ .expand:after {
-		transform: rotate(45deg)scale(1.1);
-}
-.project.paragraph.collapsed > .name > .bullet ~ .expand:after,
-.project.quote-block.collapsed > .name > .bullet ~ .expand:after,
-.project.code-block.collapsed > .name > .bullet ~ .expand:after {
-		transform: rotate(0deg)scale(1.1);
-}
-.project.collapsed > .name > .prefix:after {
-		transform: rotate(0deg)scale(1.1);
-}
-:root {
-	--mirrorBulletUnderScale:1;
-}
-#app .project:not(.board) .project.collapsed > .name > .bullet.diamond ~ .expand:after {
-			transform: rotate(45deg)scale(var(--mirrorBulletUnderScale));
-}
-#app .project:not(.board) .project.comment.collapsed > .name > .bullet.diamond ~ .expand:after {
-	--mirrorBulletUnderScale:0.85;
-}
-#app .project:not(.board) .project.comment.collapsed > .name > .bullet:not(.diamond) ~ .expand:after,
-#app .project:not(.board) .project.comment > .children .project.collapsed > .name > .bullet:not(.diamond) ~ .expand:after{
-				transform: rotate(45deg)scale(var(--mirrorBulletUnderScale)) !important;
-	--mirrorBulletUnderScale:0.9;
-}
-
-
-
-/****
-Expand ONLY*/
-.project > .name > .expand {
-		left: calc(var(--children-Indent) * 0)
-}
-.project > .name > .expand:before {
-		background: var(--BG-Bullet-open);
-		width: var(--btnIcn-ExpandB4Up-W);
-		height: var(--btnIcn-ExpandB4Up-H);
-		border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
-		z-index: 1;
-}
-
-.project.collapsed {
-		--BG-Bullet-open: var(--BG-Bullet-closed);
-}
-
-
-/*checkboxes, hide bullet*/
-.project.checkmark > .name > .expand:before,
-.project.checkmark > .name > .expand:after {
-		opacity: 0;
-}
-
-
-
-/****
-Bullets
-AND
-Menu*/
-#app .project > .name > .bullet,
-#app .project > .name > .menu {
-		z-index: 2;
-		opacity: 0;
-		animation: menu-animation-in .25s ease-in-out;
-		top: var(--btn-MargTop);
-}
-#app .project > .name:hover > .bullet,
-#app .project > .name:hover > .menu {
-		opacity: .5;
-		animation: menu-animation-out .25s ease-in-out;
-}
-#app .project > .name:hover > .bullet:hover,
-#app .project > .name:hover > .menu:hover {
-		opacity: 1;
-		background: var(--BG-BUTTON--HOVER);
-		box-shadow: inset 0 0 0 .5px var(--btnBgHover-BrdClr);
-}
-
-/****
-Bullets ONLY*/
-#app .project > .name > .bullet {
-		left: calc(var(--children-Indent) * -1);
-}
-#app .project > .name > .bullet:before {
-		content: var(--ICON--MAGNIFYING-GLASS-ZOOM);
-}
-#app .project > .name > .bullet:after {
-		opacity: 0;
-}
-/*hide bullet before & after until boards*/
-.project.collapsed > .name > .bullet:after {}
-
-/****
-Menu ONLY*/
-#app .project > .name > .menu {
-		left: calc(var(--children-Indent) * -2);
-}
-#app .project > .name > .menu:before {
-		content: var(--ICON--MENU-DOTS);
-}
-
-/*root*/
-.project.root > .name {
-		--btn-MargTop: 16px;
-}
-
-:root {
-		--rootCheckboxMargTop: 7px;
-}
-/*root checkmark*/
-#app .project.checkmark.root > .name > .prefix {
-		--btn-MargTop: 11px !important;
-		top: var(--rootCheckboxMargTop) !important;
-}
-/*root checkmark - MENU*/
-.project.checkmark.root > .name > .menu {
-		--btn-MargTop: 41px !important;
-		left: calc(var(--children-Indent) * -2) !important;
-}
-/*root - Menu*/
-.project.root > .name > .menu {
-		left: calc(var(--children-Indent) * -1) !important;
-}
-.project.root.checkmark > .name > .menu {
-		left: calc(var(--children-Indent) * -1.2) !important;
-		--btn-MargTop: calc(var(--btn-Width) + 16px);
-}
-/*root - checkbox*/
-.project.root.checkmark > .name > .prefix {
-		left: calc(var(--children-Indent) * -1.2) !important;
-		top: 1px !important;
-		transform: scale(1.3);
-		--btnIcn-ChkBx-BrdRad: 5px
-}
-.project.root.checkmark > .name > .prefix > .inline-flex > .item-checkbox,
-#app .project.root.checkmark.done > .name > .prefix > .inline-flex > .item-checkbox:before {
-		--btnIcn-ChkBx-W: 18px;
-		--btnIcn-ChkBx-H: 18px;
-		--btnIcn-Scale: 1.3;
-		--btnIcn-ChkBx-BrdRad: 4px;
-}
-#app .project.root.checkmark > .name > .prefix > .inline-flex > .item-checkbox:before {
-		top: -10px !important;
-}
-
-
-
-
-/****
-Bullet Icon
-AND
-Menu Icon*/
-.project > .name > .bullet:hover,
-.project > .name > .menu:hover {
-		opacity: 1;
-}
-
-@keyframes menu-animation-out {
-		0% {
-				opacity: 0;
-		}
-
-		20% {
-				opacity: 0;
-		}
-
-		100% {
-				opacity: .5;
-		}
-}
-
-@keyframes menu-animation-in {
-		0% {
-				opacity: .5;
-		}
-
-		0% {
-				opacity: 0;
-		}
-
-		100% {
-				opacity: 0;
-		}
-}
-
-
-/****
-MIRRORS*/
-
-#app .project:not(.board) .project > .name > .bullet.diamond ~ .expand:before {
-	--btnIcn-Scale:0.85;
+/*CLOSE COMMENTS BUTTON*/
+html #app .floating-comments-container > button.threads--comment-button {
+	transform: unset !important;
+	right: 0 !important;
+	left: unset !important;
+	position: absolute !important;
+	margin-left: unset !important;
+	margin-right: 10px;
+}
+
+html body.floating-comments #app .floating-comments-container {
+	pointer-events: all !important
 }
 /*OPEN*/
-/*EXPAND - NOT IN board*/
-#app .project > .name > .bullet.diamond ~ .expand:before,
-#app .dashboard .project > .name > .bullet.diamond:before,
-/*BULLET - IN board*/
-#app .board .project > .name > .bullet.diamond:before{
-		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - 3px) !important;
-		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
-		transition: var(--btn-MirrorTransition);
+html body.floating-comments #app .floating-comments-container,
+html body.floating-comments.windowBlurred #app .floating-comments-container {
+	z-index: 4;
+	width: var(--floatCommentW) !important;
+	min-width: unset !important;
+	max-width: var(--floatCommentMaxW) !important;
+	left: unset !important;
+	right: var(--floatCommentPosRight) !important;
+	margin: unset !important;
+	padding: 0px !important;
+	transition: .5s !important;
+	transform: unset !important;
 }
-#app .dashboard .project.comment.hasMirrors > .name > .bullet.diamond:before {
-		transform: rotate(-45deg)scale(calc(var(--btnIcn-Scale) * 1.6));
+#app .floating-comments-container > .vertical-scrollable-container .project.root.comment-container > .name {
+	height: 1px !important;
 }
-#app .dashboard .project.comment > .children .project > .name > .bullet.diamond ~ .expand:before{
-		transform: rotate(-45deg)scale(calc(var(--btnIcn-Scale) * 1.3));
+/*INACTIVE - ALL*/
+html body.floating-comments #app .floating-comments-container {
+	--floatCommentPosRight: calc(var(--floatCommentW) * 0);
+
 }
-/*CHECKMARK - in all places*/
-#app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox,
-#app .project > .name > .bullet.diamond ~ .prefix .item-checkbox,
-#app .project > .name > .bullet.diamond ~ .prefix:after,
-#app .dashboard .project > .name > .bullet.diamond:after {
-		--btnIcn-Scale: .9;
-		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
-		transition: var(--btn-MirrorTransition);
-		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 2.5px);
-}
-#app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
-		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 0px);
-}
-#app .board .project.boardColumn > .name > .bullet.diamond ~ .prefix .item-checkbox,
-#app .board .project.boardColumn > .name > .bullet.diamond ~ .prefix:after {
-		--btnIcn-Scale: 1;
+html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
+
+	--floatCommentPosRight: calc(var(--floatCommentW) * -0);
 }
 
-#app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox:after,
-#app .project > .name > .bullet.diamond ~ .prefix:after,
-#app .dashboard .project > .name > .bullet.diamond:after {
-		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+html body.floating-comments #app .floating-comments-container .project.root > .children > .project,
+html body.floating-comments #app .floating-comments-blurred .floating-comments-container .project.root > .children > .project {
+	box-shadow: 0 0 6px #00000021 !important;
+	opacity: 1;
+	transition-delay: .5s !important;
+	transition: .15s;
+	backdrop-filter: blur(10px);
 }
-#app .project.collapsed > .name > .bullet.diamond ~ .prefix:after {
-		transform: rotate(45deg)scale(var(--btnIcn-Scale));
-		--btnIcn-Scale: 1;
+html body.floating-comments #app .floating-comments-container > button.threads--comment-button{
+		margin-right: 10px !important;
+	transition: .3s !important;
+	top: 6px
+}
+/*ACTIVE - ALL*/
+html body.floating-comments #app .floating-comments-container:focus-within,
+html body.floating-comments #app .floating-comments-container:focus-visible,
+html body.floating-comments #app .floating-comments-container:focus {}
+
+html body.floating-comments #app .floating-comments-container .project.root > .children > .project,
+html body.floating-comments #app .floating-comments-container:focus .project.root > .children > .project,
+html body.floating-comments #app .floating-comments-container:focus-within .project.root > .children > .project {
+	box-shadow: 0 0 10px black !important;
+	opacity: 1;
+	transition-delay: 0s !important;
 }
 
-#app .project > .name > .bullet.diamond ~ .expand:after {
-		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) + 0px);
-		transition: 350ms cubic-bezier(.27, 1.7, .51, .9);
+html body.floating-comments #app .floating-comments-container .project.root > .children > .project:first-child {
+	margin-top: 4px !important;
 }
 
-#app .project > .name > .bullet.diamond ~ .prefix .item-checkbox:before {
-		transform: rotate(45deg)scale(var(--btnIcn-Scale));
-}
+@media (max-width: 1200px) {
+	/*INACTIVE - 1200px*/
+	html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
 
-/*COLLAPSED*/
-/*EXPAND - NOT IN board*/
-#app .project.collapsed > .name > .bullet.diamond ~ .expand:before,
-/*BULLET - IN board*/
-#app .board .project.collapsed > .name > .bullet.diamond:before,
-/*checkmark*/
-#app .project.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox,
-#app .dashboard .project.collapsed > .name > .bullet.diamond:before{
-		transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important;
-}
-#app .dashboard .project.comment.collapsed.hasMirrors > .name > .bullet.diamond:before,
-#app .dashboard .project.comment > .children .project.collapsed.hasMirrors .name > .bullet.diamond:before{
-		transform: rotate(45deg)scale(calc(var(--btnIcn-Scale) * 1.6)) !important;
-}
-#app .dashboard .project.comment > .children .project.collapsed .name > .bullet.diamond ~ .expand:before{
-		transform: rotate(45deg)scale(calc(var(--btnIcn-Scale) * 1.3)) !important;
-}
+		max-width: var(--floatCommentMaxW) !important;
+		--floatCommentPosRight: calc(var(--floatCommentW) * -0.485);
+	}
+	/*ACTIVE - 1200px*/
+	html body.floating-comments #app .floating-comments-container {
+		--floatCommentW: calc(500px - 10vw);
+		--floatCommentMaxW: calc(500px - 10vw) !important;
+	}
+	html.floating-comments-blurred body.floating-comments #app .floating-comments-container .project.root > .children > .project {
+		box-shadow: 0 0 7px #0000008c !important;
+	}
+	html body.floating-comments #app .floating-comments-container .project.root > .children > .project {
+		opacity: 5;
+		transition-delay: unset !important;
+		transition: .2s !important;
+		box-shadow: 0 0 10px black !important;
+	}
 
-/*checkmark*/
-#app .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
-		--btnIcn-Scale: 0.9;
-		border-radius: calc(var(--btnIcn-ChkBx-BrdRad) - .5px);
-}
-#app .board .project > .name > .bullet.diamond ~ .prefix .item-checkbox {
-		--btnIcn-Scale: .725;
-}
-#app .board .project > .name > .bullet.diamond ~ .prefix:after {
-		--btnIcn-Scale: .8;
-}
-#app .project.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox:before {
-		transform: rotate(-45deg)scale(var(--btnIcn-Scale));
-}
-#app .project.hasMirrors.collapsed > .name > .prefix:after {
+	html body.floating-comments:focus-within #app .floating-comments-container .project.root > .children > .project {
 		opacity: 1;
+		transition-delay: unset !important
+	}
+		html.floating-comments-blurred body.floating-comments #app .floating-comments-container > button.threads--comment-button {
+	margin-left: unset !important;
+	margin-right: calc(var(--floatCommentW) *  1 - 70px) !important;
 }
-#app .dashboard .project.paragraph > .name > .bullet.diamond:before,
-#app .project.paragraph > .name > .bullet.diamond ~ .expand:before,
-#app .dashboard .project.paragraph > .name > .bullet.diamond:after,
-#app .project.paragraph > .name > .bullet.diamond ~ .expand:after {
-		transform: rotate(0deg)scale(var(--btnIcn-Scale)) !important;
-}
-#app .dashboard .project.paragraph.collapsed > .name > .bullet.diamond:before,
-#app .project.paragraph.collapsed > .name > .bullet.diamond ~ .expand:before,
-#app .dashboard .project.paragraph.collapsed > .name > .bullet.diamond:after,
-#app .project.paragraph.collapsed > .name > .bullet.diamond ~ .expand:after {
-		transform: rotate(-180deg)scale(var(--btnIcn-Scale)) !important
-}
-
-#app .project:not(.dashboard,.board) .project.paragraph > .name > .bullet.diamond ~ .expand:after{
-	width: var(--btnIcn-ExpandB4Low-W) !important;
-	height: var(--btnIcn-ExpandB4Low-H) !important;
-	--btnIcn-ExpandB4Low-W:10px !important;
-	--btnIcn-ExpandB4Low-H:10px !important;
-}
-#app .project:not(.dashboard,.board) .project.paragraph > .name > .bullet.diamond ~ .expand:after{
-	transform: rotate(-45deg)scale(0) !important;
-	
-}
-#app .project:not(.dashboard,.board) .project.paragraph.collapsed > .name > .bullet.diamond ~ .expand:after{
-	transform: rotate(135deg) scale(var(--mirrorBulletUnderScale)) !important;
-}
-
-
-
-
-/*MIRROR SOURCES*/
-#app .board .project.hasMirrors > .name > .bullet:before,
-#app .dashboard .project.hasMirrors > .name > .bullet.diamond:before,
-#app .project.hasMirrors > .name > .expand:before {
-		background: var(--BG-primary);
-		box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
-		inset 0 0 0 8px var(--CHECKBOX--BG);
-		outline: 1.4px solid var(--BG-Bullet-open);
-}
-
-#app .project.hasMirrors > .name > .prefix .item-checkbox {
-		box-shadow: 0 0 0 2px var(--BG-Bullet-open),
-		var(--btnIcn-ChkBx-BoxShad) !important;
-}
-#app .project.hasMirrors > .name > .prefix .item-checkbox,
-#app .project.done.hasMirrors > .name > .prefix .item-checkbox {
-		border-radius: 2px;
-		box-shadow: 0 0 0 2px var(--btnIcn-ChkBx-BoxShad);
-}
-#app .project.done > .name > .prefix .item-checkbox {
-		box-shadow: 0 0 0 1.5px var(--CHECKBOX--BG--DONE) !important;
-		border-radius: var(--btnIcn-ChkBx-BrdRad) !important;
-		overflow: hidden;
-}
-
-#app .project.done .children .project.checkmark > .name .prefix .item-checkbox:not(#app .project.done .children .project.checkmark.done > .name .prefix .item-checkbox) {
-		--CHECKBOX--BOX-CLR: var(--CHECKBOX--BOX-CLR--ChildDone) !important;
-		box-shadow: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR--ChildDone) !important;
-}
-/****
-SHARED*/
-/*SHARED BY ME*/
-#app .project.shared > .name > .bullet ~ .expand:before {
-		background: var(--shared-BY-me--bullet-1);
-}
-
-#app .project.shared.collapsed > .name > .bullet ~ .expand:before {
-		background: var(--shared-BY-me--bullet-2)
-}
-
-#app .project.shared > .name > .bullet ~ .expand:after,
-#app .project.shared.collapsed > .name > .bullet ~ .expand:after {
-		background: var(--shared-BY-me--bullet-color-3)
-}
-
-/*SHARED WITH ME*/
-#app .project.addedShared > .name > .bullet ~ .expand:before {
-		background: var(--shared-WITH-me--me--bullet-1)
-}
-
-#app .project.addedShared.collapsed > .name > .bullet ~ .expand:before {
-		background: var(--shared-WITH-me--me--bullet-2)
-}
-
-#app .project.addedShared > .name > .bullet ~ .expand:after,
-#app .project.addedShared.collapsed > .name > .bullet ~ .expand:after {
-		background: var(--shared-WITH-me--me--bullet-3)
-}
-
-
-/*SHARED - BY ME - COLORS*/
-#app .project.shared > .name {
-		--BG-Bullet-open: var(--shared-BY-me--bullet-1);
-		--BG-Bullet-under: var(--shared-BY-me--bullet-color-3);
-}
-/*SHARED - WITH ME - COLORS*/
-#app .project.addedShared > .name {
-		--BG-Bullet-open: var(--shared-WITH-me--me--bullet-1);
-		--BG-Bullet-under: var(--BG-expand-border-shared-WITH-me);
-}
-/***************
-****************
-LEVEL 4
-****************
-****************/
-/****
-NAME > innerCONTENT
-&
-NOTES > innerCONTENT*/
-.name .innerContentContainer,
-.notes .innerContentContainer {
-		padding-top: var(--InnerContentPadTop);
-		padding-bottom: var(--InnerContentPadBtm)
-}
-
-.name > .content > .innerContentContainer .colored {
-		padding-top: var(--InnerContentPadTop);
-}
-.name > .content:not(.bullet.diamond ~ .content) > .innerContentContainer .colored{
-		padding-bottom: calc(var(--InnerContentPadBtm) + 1px)!important
-
-}
-.notes .innerContentContainer .colored{
-		padding-top: var(--InnerContentPadTop);
-		padding-bottom: calc(var(--InnerContentPadBtm) + 0px)!important
-		
-}
-
-
-
-/***************
-BOLD Text
-****************/
-b,
-i b {
-		color: var(--NODE--TXT-CLR--bold);
-}
-*:not(.board) .notes b,
-*:not(.board) .notes i b{
-	--NODE--TXT-CLR--bold:var(--NOTES--TXT-CLR--bold);
-}
-
-
-/***************
-STRIKETHROUGH
-****************/
-s,
-i s,
-s i,
-b s,
-s b,
-.project.done > .name > .content,
-.project.done > .name > .content i,
-.project.done > .name > .content b,
-.project.done > .name > .content i b,
-.project.done > .name > .content b i{
-		color: var(--strikeThroughColor) !important;
-}
-s a.contentLink,
-s .project.done > .name a.contentLink{
-		filter:saturate(.5);
-}
-s,
-#app .project.done > .name > .content{
-		text-decoration:line-through;
-		text-decoration-thickness: 1.25px;
-		text-decoration-style: solid;
-		text-decoration-color: var(--strikeThroughLineColor);
-}
-#app .project.done > .name > .content {
-	--strikeThroughLineColor:var(--strikeThroughLineColor-Faint);
-}
-
-
-/***************
-highlights
-****************/
-:root {
-		--HiLtAlt: var(--BG-primary)
-}
-/**
- HIGHLIGHT REBUILD
-
-#app .colored[class*="bc-"] {
-
-		background:linear-gradient(
-				var(--HiLtAlt) 0%,
-				var(--HiLtAlt) 20%,
-				var(--HiBgClr) 20%,
-				var(--HiBgClr))
-}
-*/
-.bc-red.bc-red {
-		--HiBgClr: var(--HIGHLIGHT--RED)
-}
-.bc-orange.bc-orange {
-		--HiBgClr: var(--HIGHLIGHT--ORANGE)
-}
-.bc-yellow.bc-yellow {
-		--HiBgClr: var(--HIGHLIGHT--YELLOW)
-}
-.bc-green.bc-green {
-		--HiBgClr: var(--HIGHLIGHT--GREEN)
-}
-.bc-sky.bc-sky {
-		--HiBgClr: var(--HIGHLIGHT--SKY)
-}
-.bc-blue.bc-blue {
-		--HiBgClr: var(--HIGHLIGHT--BLUE)
-}
-.bc-purple.bc-purple {
-		--HiBgClr: var(--HIGHLIGHT--PURP)
-}
-
-
-/***************
-HIGHLIGHT - GREYED OUT
-****************/
-:root {
-		--hilightTxTShadW:.5px
-}
-[class*="bc-"][class*="bc-"]{
-		text-shadow: 
-				0 var(--hilightTxTShadW) black,
-				0 calc(var(--hilightTxTShadW) * -1) black,
-				var(--hilightTxTShadW) 0 black,
-				calc(var(--hilightTxTShadW) * -1) 0 black;
-		-webkit-text-stroke: 0px !important;
-}
-.bc-gray.bc-gray {
-		color: ;
-
-}
-.board.root .bc-gray.bc-gray {
-		--HIGHLIGHT--Grey--GREYED-OUT: var(--BOARD-ROOT--CARD--BG);
-}
-.bc-gray.bc-gray::selection {
-		background: var(--selectionBg2) !important;
-		color: var(--NODE--TXT-CLR--CONTRAST)!important
-}
-
-/*GREYED OUT - POPUP*/
-.picker-background [title="Gray"]:before {
-		content: "GREYED OUT";
-		width: 50px;
-		display: block;
-		position: absolute;
-		font-size: 8px;
-		text-align: center;
-		top: -12px;
-		left: -14px;
-		right: auto;
-		color: var(--NODE--TXT-CLR--main)
-}
-
-
-/***************
-HIGHLIGHT - CODE
-****************/
-/*CODE*/
-.bc-pink.bc-pink {
-		background: var(--HIGHLIGHT--pink-CODE--BG) !important;
-		padding: 1.5px 3px .5px 3px !important;
-		border-radius: 3px;
-		color: var(--HIGHLIGHT--pink-CODE--TXT-CLR) !important;
-		font-family: 'SF Mono', monospace !important;
-		font-size: 0.85em;
-		display: inline;
-		/*vertical-align: text-top;*/
-		vertical-align: unset;
-		line-height: 1 !important;
-}
-/*
-#app code {
-	padding-top: 1.5px;
-	padding-bottom: 1px;
-	letter-spacing: -.2px;
-	word-spacing: -3.5px;
-
-}
-*/
-#app code {
-	padding-top: 1.5px !important;
-	padding-bottom: 1px;
-	letter-spacing: -.2px;
-	word-spacing: -3.5px;
-		text-rendering:optimizelegibility !important;
-	 /* top:-.5px;
-		position:relative;*/
-}
-#app .board:not(.root) code {
-		padding-top: 1px;
-	padding-bottom: .25px;
-
-}
-#app .project:not([class*="header"]) > .name > .content code{
-		font-size: calc(var(--name-fontSize) - 3.5px);
-}
-#app .project.root > .name > .content code{
-		font-size: calc(var(--root-font-size) - 6px);
-}
-
-
-
-#app .project > .name > .content code,
-#app .project > .name > .content code *{
-		font-family: SF Mono, var(--wf-font-family-mono) !important; 
-}
-#app .project.comment:not([class*="header"]) > .name > .content code{
-		font-size: calc(var(--name-fontSize) - 3.85px);
-}
-#app .project.comment > .name .content code,
-#app .project.comment .project:not([class*="header"]) .content code{
-	font-size: calc(95% - 1.5px) !important;
-
-}
-:root {
-		--inlineCodeBrdRad:4px;
-}
-#app code{
-		border-radius: var(--inlineCodeBrdRad);
-}
-/***************
-HIGHLIGHT - LINE BREAK
-****************/
-/***************
-TEXT COLORS
-****************/
-html #app b .colored[class*="c-"] {
-		-webkit-font-smoothing: antialiased !important;
-}
-
-/*RED*/
-.c-red,
-u .c-red,
-.c-red u,
-b .c-red,
-.c-red b {
-		color: var(--TXT-CLR--RED) !important;
-		text-decoration-color: var(--TXT-CLR--RED);
-}
-
-/*ORANGE*/
-.c-orange,
-u .c-orange,
-.c-orange u,
-b .c-orange,
-.c-orange b {
-		color: var(--TXT-CLR--ORANGE) !important;
-		--LnkTxtClr:var(--TXT-CLR--ORANGE);
-		text-decoration-color: var(--TXT-CLR--ORANGE);
-}
-
-/*YELLOW*/
-.c-yellow,
-u .c-yellow,
-.c-yellow u,
-b .c-yellow,
-.c-yellow b {
-		color: var(--TXT-CLR--YELLOW) !important;
-		--LnkTxtClr:var(--TXT-CLR--YELLOW);
-		-webkit-text-stroke-color: hsl(50, 100%, 37%);
-		text-decoration-color: var(--TXT-CLR--YELLOW);
-}
-
-/*GREEN*/
-.c-green,
-u .c-green,
-.c-green u,
-b .c-green,
-.c-green b {
-		color: var(--TXT-CLR--GREEN) !important;
-		--LnkTxtClr:var(--TXT-CLR--GREEN);
-		text-decoration-color: var(--TXT-CLR--GREEN);
-}
-
-/*TEAL*/
-.c-teal,
-u .c-teal,
-.c-teal u,
-b .c-teal,
-.c-teal b {
-		color: var(--TXT-CLR--TEAL) !important;
-		--LnkTxtClr:var(--TXT-CLR--TEAL);
-		text-decoration-color: var(--TXT-CLR--TEAL);
-}
-
-/*SKY*/
-.c-sky,
-u .c-sky,
-.c-sky u,
-b .c-sky,
-.c-sky b {
-		color: var(--TXT-CLR--SKY) !important;
-		--LnkTxtClr:var(--TXT-CLR--SKY);
-		text-decoration-color: var(--TXT-CLR--SKY);
-}
-
-/*BLUE*/
-.c-blue,
-u .c-blue,
-.c-blue u,
-b .c-blue,
-.c-blue b {
-		color: var(--TXT-CLR--BLUE) !important;
-		--LnkTxtClr:var(--TXT-CLR--BLUE);
-		text-decoration-color: var(--TXT-CLR--BLUE);
-}
-
-/*PURPLE*/
-.c-purple,
-u .c-purple,
-.c-purple u,
-.c-purple b,
-b .c-purple {
-		color: var(--TXT-CLR--PURPLE) !important;
-		--LnkTxtClr:var(--TXT-CLR--PURPLE);
-		text-decoration-color: var(--TXT-CLR--PURPLE);
-}
-
-/*PINK*/
-.c-pink,
-u .c-pink,
-.c-pink u,
-b .c-pink,
-.c-pink b {
-		color: var(--TXT-CLR--PINK) !important;
-				--LnkTxtClr:var(--TXT-CLR--PINK);
-		text-decoration-color: var(--TXT-CLR--PINK);
-}
-
-/*GRAY*/
-.c-gray,
-u .c-gray,
-.c-gray u,
-b .c-gray,
-.c-gray b {
-		color: var(--TXT-CLR--GRAY) !important;
-		--LnkTxtClr:var(--TXT-CLR--GRAY);
-		text-decoration-color: var(--TXT-CLR--GRAY);
-}
-
-
-/***************
-UNDERLINE
-****************/
-:root {
-		--underlineOffset: 2.5px;
-		--underlineThickness: 1.5px;
-}
-
-
-/*root*/
-.project.root > .name,
-.project.root > .name * {
-		--underlineOffset: 5px;
-		--underlineThickness: 3px;
-}
-
-
-.project > .name > .content .innerContentContainer u,
-.project > .name > .content .innerContentContainer u .colored[class*="bc"] {
-		text-underline-offset: var(--underlineOffset);
-		text-decoration-thickness: var(--underlineThickness);
-}
-.comment {
-		/*--underlineOffset: 2px;*/
-		/*--underlineThickness: 1.5px;*/
-}
-.board {
-		--underlineOffset: 2px;
-		--underlineThickness: 1.5px;
-}
-
-
-
-/*header1*/
-.project.header1 > .name,
-.project.header1 > .name * {
-		--underlineOffset: 4.5px;
-		--underlineThickness: 2.5px;
-}
-/*header2*/
-.project.header2 > .name,
-.project.header2 > .name * {
-		--underlineOffset: 3px;
-		--underlineThickness: 2.5px;
-}
-
-/*boards - header1*/
-.board .project.header1 > .name,
-.board .project.header1 > .name * {
-		--underlineOffset: 3px;
-		--underlineThickness: 1.5px;
-}
-/*boards - header2*/
-.board .project.header2 > .name,
-.board .project.header2 > .name * {
-		--underlineOffset: 2.5px;
-		--underlineThickness: 1.5px;
-}
-
-/*comments - header1*/
-.comment .project.header1 > .name,
-.comment .project.header1 > .name * {
-		--underlineOffset: 3px;
-		--underlineThickness: 1.5px;
-}
-/*comments - header2*/
-.comment .project.header2 > .name,
-.comment .project.header2 > .name * {
-		--underlineOffset: 2.5px;
-		--underlineThickness: 1.5px;
-}
-
-:root {
-		--codeblockPadLeftRight: 20px;
-		--blockquoteBrdW: 5px;
-}
-/***************
-CODE BLOCKS
-****************/
-#app .code-block > .name .content {
-		display: block !important;
-		border: unset !important;
-	box-shadow:inset 0 0 0 1px var(--wf-border-default) !important;
-}
-#app .dashboard .code-block > .name .content {
-		background: hsl(0, 0%, 5%);
-		--wf-border-default: hsl(0, 0%, 24%);
-}
-#app .project.code-block > .name > .content,
-#app .project.code-block.noted > .name > .content {
-		padding-left: calc(var(--quotePadLeft) + var(--content-PadLeftRight));
-		padding-bottom: 11px !important;
-		padding-top: 12px !important;
-		border-radius: 7px;
-}
-
-.project:not(.board) .comment {
-	--quotePadLeft:20px ;
-}
-#app .project.code-block > .name > .content,
-#app .project.code-block > .name > .content *,
-#app .project.code-block > .name > .content > .innerContentContainer,
-#app .project.code-block > .name > .content > .innerContentContainer * {
-		font-family: SF Mono, var(--wf-font-family-mono), mono, monospace !important;
-		-webkit-font-smoothing: subpixel-antialiased;
-}
-
-#app .project.code-block > .name > .content,
-#app .project.code-block > .name > .content > .innerContentContainer {
-
-		font-size: calc(var(--name-fontSize) - 3px) !important;
-		line-height: calc(var(--name-lineHeight) - 2px) !important;
-		color:white !important;
-}
-
-
-/***************
-CODE BLOCKS V2
-****************/
-:root{
-	--codeBlockV2Offset:0px;
-}
-#app  .project.code-block > .name > .content{
-
-	padding-left: var(--content-PadLeftRight) !important;
-	padding-right: 5px !important;
-	border-top-left-radius: 0px !important;
-	border-bottom-left-radius: 0px !important;
-}
-
-
-#app  .project.code-block > .name > .content:before {
-	content: "";
-	display: block;
-	position: absolute;
-	width: calc(var(--children-Indent) + 1px);
-	left: calc(var(--children-Indent) * -1);
-	right: var(--codeBlockV2Offset);
-	top: var(--codeBlockV2Offset);
-	bottom: var(--codeBlockV2Offset);
-	background:var(--wf-background-secondary);
-	z-index: 0;
-	border:1px solid var(--wf-border-default);
-	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;
-	border-right-width: 0px;
-}
-
-/***************
-BLOCK QUOTE
-****************/
-#app .project.quote-block > .name{
-	
-}
-:root{
-	--quotePadLeft:calc(var(--children-Indent) * 1);
-	--quotePadTopBtm:calc(var(--content-PadTopBtm) * 4);
-	--quoteBrdLeftW:calc(var(--content-PadLeftRight) * 2);
-}
-#app .project.quote-block:not(.board .project) > .name .content {
-		padding-top: var(--quotePadTopBtm);
-		padding-bottom: var(--quotePadTopBtm);
-		position: relative;
-}
 
-
-
-#app .quote-block > .name > .content,
-#app .quote-block > .name > .content:empty,
-#app .quote-block > .notes > .content {
-		padding-left: calc(var(--content-PadLeftRight));
-}
-
-/*quote - border left */
-#app .quote-block>.name>.content:before,
-#app .quote-block>.name>.content:empty:before,
-#app .quote-block>.name>.content:before{
-	content: "";
-	display: block;
-	height: unset !important;
-	position: absolute ;
-	top: 1px;
-	bottom: 1px;
-	left: calc(var(--children-Indent) * -.5 - var(--content-PadLeftRight));
-	left: calc(var(--content-PadLeftRight) * 1);
-	width: var(--quoteBrdLeftW);
-	background: var(--wf-border-default);
-	border:unset;
-}
-#app .quote-block > .name > .content > .innerContentContainer,
-#app .quote-block > .name > .content:empty > .innerContentContainer{
-	padding-left: 0px;
-	padding-right: 0px;
-	border: unset;
-}
-/*
-#app .project.quote-block > .name .content .innerContentContainer {
-		padding-left: var(--codeblockPadLeftRight) !important;
-		padding-bottom: 4px;
-		padding-top: 4px;
-		background: hsla(0, 0%, 50%, .095);
-		border-radius: 3px;
-		width: 100%;
-		box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.3);
-		border-left-width: var(--blockquoteBrdW);
-}*/
-
-/***************
-BLOCK QUOTES V2
-****************/
-:root{
-	--codeBlockV2Offset:0px;
-}
-#app  .project.quote-block > .name > .content{
-
-	padding-left: var(--content-PadLeftRight) !important;
-	padding-right: 5px !important;
-	border-top-left-radius: 0px !important;
-	border-bottom-left-radius: 0px !important;
-}
-
-#app .quote-block>.name>.content:before,
-#app .quote-block>.name>.content:empty:before,
-#app .quote-block>.name>.content:before{
-	content: "";
-	display: block;
-	height: unset !important;
-	position: absolute ;
-	top: 1px;
-	bottom: 1px;
-	left: calc(var(--children-Indent) * -.5 - var(--quoteBrdLeftW) * .5);
-	width: var(--quoteBrdLeftW);
-	background: var(--wf-border-default);
-	border:unset;
 }
 
 
-#app .page .project.quote-block > .name > .expand, 
-#app .page .project.quote-block > .name > .bullet, 
-#app .page .project.quote-block > .name > .menu{
-	--btn-MargTop:5.5px !important;
-	top: var(--btn-MargTop)!important;
+/**/
+@media (max-width:900px) {
+	html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
+		--floatCommentPosRight: calc(var(--floatCommentW) * -0.8);
+		right: var(--floatCommentPosRight) !important;
+	}
+	:root {
+		--floatCommentMaxW: calc(100vw - 10vw);
+	}
 }
 
-
-#app .page .project.quote-block > .name{
-	position: relative;
-}
-
-
-
-#app .project.quote-block > .name > .bullet:not(.diamond) ~ .expand:before {
-	width: var(--quoteBrdLeftW) !important;
-}
-
-/*
-#app .project:not(.board) .project.quote-block > .name > .bullet.diamond ~ .expand:before {
-	outline: var(--quoteBrdLeftW) solid var(--wf-border-default) !important;
-	outline-offset: 0px;
-}*/
-
-#app .project:not(.board) .project.quote-block > .name > .bullet:not(.diamond) ~ .expand:before {
-	width: var(--quoteBrdLeftW);
-}
-#app .project .project.quote-block > .name > .bullet ~ .expand:after {
-	opacity: 1 !important;
-	background:var(--wf-border-default);
+#app .floating-comments-container .project.root > .children > .project {
+	box-shadow: 0 0 10px black !important
 }
 
-#app *:not(.board) .project.quote-block:is(.collapsed):not(.done) > .name > .bullet:not(.diamond) ~ .expand:after{
-	width:10px
+.floating-comments-blurred #app .floating-comments-container .project.root > .children > .project {
+	box-shadow: unset !important;
 }
 
-#app *:not(.board) .project.quote-block:is(.collapsed):not(.done) > .name > .bullet ~ .expand:after{
-	box-shadow:0 0 0 2px var(--wf-border-default);
-}
 
-#app .project .project.collapsed > .name > .bullet.diamond ~ .expand:after{
-	transform:rotate(45deg)scale(0.85);
-	border-radius: 2px !important
-		
+#app .floating-comments-container .comment-container > .children,
+#app .comment-container > .children {
+	row-gap: 20px !important;
 }
 
-#app .board .project.quote-block > .name > .bullet ~ .expand:after {
-	width: calc(var(--quoteBrdLeftW) * 2.75)  !important;
-	height: calc(var(--quoteBrdLeftW) * 2.75)  !important;
-	border-radius: 2px !important;
+#app .floating-comments-container .nameButtons,
+#app .floating-comments-container .nameButtons.active {
+	transition: .14s !important;
 }
-
-
-/*V3*/
-/*non mirrors*/
-#app .project.quote-block:not(.collapsed) > .name > .bullet:not(.diamond) ~ .expand:before,
-#app .project.quote-block:not(.collapsed) > .name > .bullet:not(.diamond) ~ .expand:after{
+#app .floating-comments-container .nameButtons {
 	opacity: 0 !important;
 }
-#app .project.quote-block:not(.hasMirrors) > .name > .bullet ~ .expand:before{
-	background:var(--wf-border-default)!important
+#app .floating-comments-container .nameButtons.active {
+	opacity: .4 !important;
 }
-
-#app .project.quote-block > .name > .bullet:not(.diamond) ~ .expand:after{
-	border-radius: 10px !important;
-	transform: scale(.9) !important;
-}
-/*mirrors*/ 
-
-#app .project.quote-block > .name > .bullet ~ .expand:after {
-	background: var(--BG-primary) !important;
-}
-#app .project.quote-block > .name > .bullet.diamond ~ .expand:after {
-	transform:rotate(45deg)scale(0.75) !important;
-	border-radius: 2px !important;
-
-}
-#app .comment.thread .project.quote-block > .name > .expand:after{
-	background: var(--COMMENT-CONTAINER--BG) !important;
-}
-
-#app .board.root .boardCard:not(.comment) .project.quote-block > .name > .expand:after{
-	background: var(--BOARD-ROOT--CARD--BG) !important !important;
+#app .floating-comments-container .nameButtons.active:hover {
+	opacity: 1 !important;
 }
 
 
 
-/***************
-DOUBLE BLOCK QUOTES 
-****************/
-
-/*removes margin above a blockquote if it is immediately preceded by a blockquote*/
-#app *:not(.board) .project.quote-block:not(.noted) + .project.quote-block {
-	margin-top: calc(var(--prjct-MargTopBtm) * -1)
+/*NORMAL COMMENTS*/
+#app .project.comment.thread {
+	box-sizing: border-box;
+	transform: unset !important;
+	max-width: 100% !important;
 }
-/*removes margin above a blockquote if it is the first child of a parent that is also a blockquote*/
-
-#app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) {
-	margin-top: calc(var(--prjct-MargTopBtm) * 0)
+#app .project.comment.thread *:not(.prefix, .prefix *) {
+	box-sizing: border-box;
+	transform: unset !important;
+	max-width: 100% !important;
 }
-/***************
-HORIZONTAL RULES / DIVIDERS
-****************/
-.project.divider > .name{
+#app .project.comment.thread .project.comment.thread {
+	min-width: unset;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+:root {
+	--commentBrdRad: 10px;
+}
+#app .project.comment.thread {
+	border-radius: var(--commentBrdRad);
+	width: 100% !important;
+	--btn-Height: 24px;
+	--btn-Width: var(--children-Indent);
+	--codeblockPadLeftRight: 9px;
+}
+/*WHEN FRACTAL COMMENTS IS TURNED OFF*/
+/*inside comment-container > parent comments */
+#app .comment-container:not(.board .comment-container, .floating-comments-container .comment-container) > .children > .comment {
+	border-radius: var(--commentBrdRad);
+}
+/*inside comment-container > child comments inside parent comments*/
+#app .comment-container:not(.board .comment-container, .floating-comments-container .comment-container) > .children > .comment > .children .comment {
+	border-top-left-radius: var(--commentBrdRad);
+	border-bottom-left-radius: var(--commentBrdRad);
+}
+/*all comments > parent comments, not child comments*/
+#app .project.comment:not(.board .comment, .comment > .children .comment) {
+	border-radius: var(--commentBrdRad);
+}
+
+/*all comments > child comments inside parent comments*/
+#app .project.comment:not(.board .comment) > .children .comment {
+	border-top-left-radius: var(--commentBrdRad);
+	border-bottom-left-radius: var(--commentBrdRad);
+}
+
+:root {
+	--comment-NameFontSize: 15px;
+	--comment-NameLineHeight: 20px;
+	--commentTopContentIndent: var(--children-Indent);
+	--commentChildContentIndent: 24px;
+	--commentThreadBrdRad: 10px;
+	--commentThreadBrdW: 1px;
+}
+
+#app .project.comment .name {
 	position: relative;
 }
-.project.divider > .name > [class*="selection-handle"]{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: calc(var(--children-Indent) * 0 + 5px);
-	bottom:0;
-	height:unset;
+
+#app .project.comment .code-block > .name > .content .innerContentContainer {
+	font-size: calc(1em - 1px) !important;
+}
+#app .project:not(.board) .project.comment:not(.board .comment) > .name > .content{
+	font-size: inherit !important;
+}
+/*
+#app  .project.comment:not(.board .comment) .code-block .name{
+		margin-top: 4px;
+}
+*/
+/*
+.comment .project {
+	--prjct-MargTopBtm: 1px;
+}*/
+#app .project.comment.thread .commentAttribution {
+	padding-top: var(--commentauthorPadTopBtm);
+	padding-left: calc(var(--children-Indent) * 1) !important;
+	margin-bottom: calc(var(--children-Indent) * .2) !important;
+	--children-Indent: 30px;
+}
+#app .board .project.comment.thread .commentAttribution {
+	margin-bottom: 0px !important;
+	display: none !important;
+}
+#app .project.comment.thread .commentAttribution * {
+	margin-left: unset;
+}
+#app .project.comment.thread:not(.board .project) > .name,
+#app .project.comment.thread:not(.board .project) > .children .name,
+#app .project.comment.thread:not(.board .project) > .notes,
+#app .project.comment.thread:not(.board .project) > .children .notes,
+#app .project.comment.thread:not(.board .project.comment, .dashboard-card) > .name {
+	padding: 0px !important;
+}
+#app .project.comment.thread > .children .project.code-block > .name {
+	padding-right: 0px !important;
+}
+#app .project.comment.thread > .name > .content,
+#app .project.comment.thread .name > .content,
+#app .project.comment.thread > .notes > .content,
+#app .project.comment.thread .notes > .content {
+	margin-bottom: 0px;
+}
+#app .project.comment.thread:not(.board .project) > .name > .expand,
+#app .project.comment.thread:not(.board .project, .dashboard .project) .name > .expand {
+	left: calc(var(--children-Indent)* 0) !important;
+	margin-top: 3px !important;
+	/*top: unset;*/
+}
+#app .project.comment.thread {
+	padding-left: calc(var(--children-Indent)* 0) !important;
+}
+#app .project.comment.thread .children {
+	max-width: 100%;
+	padding-right: 0px;
+}
+
+/*nested comments*/
+.project.comment.thread:not(.comment .comment) {
+	margin: unset !important;
+	margin-top: var(--prjct-MargTopBtm) !important;
+	margin-bottom: var(--prjct-MargTopBtm) !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	transform: unset !important;
+}
+.project.comment.thread .comment {
+	width: 100% !important;
+	max-width: 100% !important;
+	transform: unset !important;
+}
+
+.floating-comments-container > .vertical-scrollable-container > .comment-container {
+	padding-right: 5px !important
+}
+
+
+#app .board .nameButtons {
+	right: calc(var(--children-Indent) * 1 - 4px) !important;
+	width: var(--btn-Width) !important;
+	left: unset;
+	top: 2px;
+	height: calc(var(--btn-Height) * 1) !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: unset !important;
+	z-index: 2;
+	transition: .1s;
+	opacity: 1;
 }
-.board .project.divider:not(.boardColumn) > .name > [class*="selection-handle"]{
-	right: calc(var(--children-Indent) * 1);
+#app .board:not(.root) .nameButtons {
+	right: 0 !important;
+	height: 10px !important;
+	min-height: 10px !important;
 }
-.project.divider > .name > [class*="selection-handle"] hr{
+#app .board .project.checkmark > .name .nameButtons {
+	right: calc(var(--children-Indent) * 2) !important;
+}
+#app .board .nameButtons > div,
+#app .board .nameButtons > div * {
+	padding: unset !important;
 	margin: unset;
-	border-radius: 1px;
-	height: 1.5px;
-	border:unset !important;
-	background: var(--wf-border-subtle);
-	margin-top: 2px !important;
+}
+#app .boardColumn > .name > .nameButtons {
+	top: 3px;
 }
 
-.project.divider:is(.open,.collapsed) > .name > [class*="selection-handle"]{
-	left:calc(var(--children-Indent) ) !important;
+#app .board .nameButtons svg {
+	transform: scale(0.8);
+	transform-origin: center;
+	top: 2px;
+	position: relative;
+	background: var(--BG-primary);
 }
 
-.project.divider:not(.open,.collapsed) > .name > .bullet:not(.diamond) ~ .expand {
+
+._pfk70.floating-conversations::before {
+	background: transparent;
+}
+.project.floating-conversations:before {
+	border: none;
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+	opacity: .5;
+	transition: .2s;
+}
+
+.floating-comments-blurred .project.floating-conversations:before {
+	opacity: 0.2 !important;
+}
+
+
+
+.comment.thread > .children .comment:not(.thread, .draft) {}
+
+#app .floating-comments-container {
+	margin-left: 0px;
+
+	transition: .5s;
+}
+
+
+
+
+#app .project.root.comment > .name,
+#app .project.root.comment > .notes,
+#app .project.root.comment > .text-sm {
+	padding-left: calc(var(--children-Indent) * 1) !important;
+}
+#app .project.root.comment {
+	--root-padtop: 11px;
+	--rootNotesPadTop: 3px;
+}
+#app .project.root.comment > .text-sm .breadcrumbs {
+	flex-wrap: wrap;
+	row-gap: 4px
+}
+
+#app .comment > .children {
+	padding-left: var(--children-Indent) !important;
+}
+
+
+#app .conversation-container-bullet {
+	height: unset !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#app .conversation-container-bullet svg {
+	display: block !important;
+}
+#app .project.comment-container > .name:before {
+	display: none;
+}
+
+#app .comment.thread {
+	min-width: unset !important;
+}
+
+#app .project.comment.thread .commentAttribution {
+	padding-left: var(--commentauthorPadLeft)
+}
+#app .project.comment.thread > .children {
+	padding-left: 0px !important;
+}
+#app .project.comment > .name:after {
 	opacity: 0 !important;
 }
-.project.divider > .name > .bullet.diamond ~ .expand{
+#app .project.comment.thread > .children > .project > .content {}
+
+#app .thread .comment {
+	margin-left: unset !important;
+	margin-right: 0px !important;
+}
+#app .thread.comment,
+#app .thread.comment .comment {
+	margin-top: var(--prjct-MargTopBtm) !important;
+	margin-bottom: var(--prjct-MargTopBtm) !important;
+}
+#app .thread.comment .comment > .children {
+	padding-left: 30px !important;
+}
+
+#app .project.comment.thread:not(.board .comment) > .name > .content {
+
+	margin-left: var(--commentTopContentIndent);
+}
+#app .project.comment.thread > .children {
+	padding-left: var(--commentTopContentIndent) !important;
+}
+#app .thread.comment > .children > .comment {
+	border-top-left-radius: var(--commentThreadBrdRad);
+	border-bottom-left-radius: var(--commentThreadBrdRad);
+	border-left-width: var(--commentThreadBrdW) !important;
+}
+#app .thread.comment > .children > .comment .comment {
+	border-top-left-radius: var(--commentThreadBrdRad);
+	border-bottom-left-radius: var(--commentThreadBrdRad);
+}
+
+#app .project.comment.thread.root > .name > .content {
+	margin-left: 0px;
+}
+#app .project.comment.thread > .children .code-block > .name {
+	padding-right: 16px !important;
+}
+.comment.comment.project .content {}
+
+#app .project.comment.thread > .children .prooject.code-block > .name {
+	padding-right: 16px !important;
+}
+
+#app .comment-container > .name > .add-comment-button {
+	display: none !important;
+}
+
+#app .comment-container.open > .name > .bullet .conversation-container-bullet {
+	opacity: 0;
+}
+
+#app .comment-container > .name > .expand:before {
+	background: var(--ICON--COMMENT);
+	width: var(--btn-Width);
+	height: var(--btn-Width);
+	background-size: 71%;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: .8;
+}
+
+
+.floating-comments-container .dashboard-card.comment-container.root > .children .project > .name .expand > div,
+.dashboard-card[class*="comment"] > .children .project > .name .expand > div,
+.dashboard-card > .children .project[class*="comment"] > .name .expand > div,
+.dashboard-card > .children .project[class*="comment"] > .children .project > .name .expand > div {
+	box-shadow: unset;
+}
+.floating-comments-container .dashboard-card.comment-container.root > .children .project > .name:after,
+.dashboard-card[class*="comment"] > .children .project > .name:after,
+.dashboard-card > .children .project[class*="comment"] > .name:after,
+.dashboard-card > .children .project[class*="comment"] > .children .project > .name:after {
+	display: none !important;
+}
+.floating-comments-container .dashboard-card.comment-container.root > .children .project.collapsed > .name .expand > div,
+.dashboard-card[class*="comment"] > .children .project.collapsed > .name .expand > div,
+.dashboard-card > .children [class*="comment"].project.collapsed > .name .expand > div,
+.dashboard-card > .children [class*="comment"].project > .children .project.collapsed > .name .expand > div {
+	background: var(--BG-Bullet-under);
+	box-shadow: unset !important;
+}
+
+.thread.paper-stacked-2 > .stacked-paper-area {
+	display: none !important;
+}
+html #app .comment .comment-toolbar {
+}
+html #app .comment .comment-toolbar:hover {
+	opacity: 1;
+}
+html #app .comment .comment-toolbar button[class*="draft"]:hover{
+	background: var(--wf-button-background-primary-hover);
+}
+
+
+#app .root.project .project.comment > .commentAttribution > span {
+	transition: .2s;
+	max-width: 30px !important;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#app .root.project .project.comment > .commentAttribution > span + span:hover {
+	max-width: 200px !important;
+	transition-delay: 1s !important;
+}
+
+#app .root.project .project.comment > .commentAttribution > span.commentAttributionName {
+	max-width: 100%!important;
+	padding-right: 0px !important;
+}
+
+#app .root .project.comment .commentAttribution {
+	margin-bottom: 2px !important;
+}
+html #app .comment.draft .comment-toolbar {
+	padding-bottom: 8px !important;
+}
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project.comment {
+	--commentTopContentIndent: 26px;
+}
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children .project > .name > .content {
+	margin-left: var(--children-Indent) !important;
+}
+
+#app .project.comment .project.checkmark > .name > .prefix {}
+
+#app .project.comment .project.checkmark > .name > .prefix {
+	--btn-MargTop: 2px !important;
+}
+#app .board .project.comment .project.checkmark > .name > .prefix {
+	--btn-MargTop: 3.5px !important;
+}
+
+#app .board .project.comment .project.checkmark > .name > .prefix .item-checkbox {
+	transform: rotate(0deg)scale(var(--btnIcn-Scale)) !important;
+	--btnIcn-Scale: 0.7;
+}
+
+#app .board .project.comment .project.checkmark > .name > .bullet.diamond ~ .prefix {
+	transform: unset !important;
+}
+#app .board .project.comment .project.checkmark > .name > .bullet.diamond ~ .prefix .item-checkbox {
+	--btnIcn-Scale: .7;
+	transform: rotate(-45deg)scale(var(--btnIcn-Scale)) !important
+}
+#app .board .project.comment .project.checkmark.collapsed > .name > .bullet.diamond ~ .prefix .item-checkbox {
+	--btnIcn-Scale: 0.7;
+	transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important
+}
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root > .children > .project.comment > .name .menu {
+	left: unset !important;
+	right: 10px;
+	top: -20px !important;
+	transform: scale(1.2) !important;
+	transform-origin: top right;
+	opacity: 0.65;
+}
+
+
+/*COMMENT TOOLBAR*/
+:root {
+	--replyBtnSvgMargRight: 2px;
+}
+html #app .project:not(.board) .comment .comment-toolbar {
+	order: 2 !important;
+}
+
+html #app .project:not(.board) .comment .comment-toolbar .reply-button {
+	font-size: calc(1em - 4px);
+	transition: .1s !important;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border-radius: 8px;
+	right: 2px;
+}
+
+html #app .project:not(.board) .comment .comment-toolbar .reply-button svg {
+	margin-right: var(--replyBtnSvgMargRight);
+	margin-left: var(--replyBtnSvgMargRight);
+}
+
+html #app .project:not(.board) .comment.open > .children > .comment-toolbar {
+	opacity: 1;
+}
+html #app .project:not(.board) .comment.open > .children > .comment-toolbar .reply-button {
+	top: unset;
+	bottom: -4px !important;
+	background: hsla(0, 0%, 50%, 0.3);
+	box-shadow: inset 0 0 0 1px hsla(0, 0%, 50%, .2);
+	opacity: 1 !important;
+	width: 40px;
+}
+html #app .project:not(.board) .comment.open > .children > .comment-toolbar .reply-button:hover {
+	background: hsla(0, 0%, 50%, 0.7);
+	box-shadow: inset 0 0 0 1px hsla(0, 0%, 50%, .2);
+}
+html #app .project:not(.board) .comment.open > .children > .comment-toolbar .reply-button svg {
 	opacity: 1 !important;
 }
 
-
-.project.divider > .name > .bullet:not(.diamond) ~ .expand:before,
-.project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
-	--btnIcn-ExpandB4Up-H:2px;
-	--btnIcn-ExpandB4Low-H:8px;
+/*inline reply*/
+.comment.thread .inline-reply,
+.inline-reply {
+	order: 11;
+	padding-bottom: 3px;
+	margin-top: 4px;
+	padding-top: 9px;
+	min-width: calc(100% + var(--children-Indent))!important;
+	margin-left: calc(var(--children-Indent) * -1);
+	display: none;
+}
+.comment .comment-toolbar {
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 
-.board .project.divider > .name > .bullet:not(.diamond) ~ .expand:before,
-.board .project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
-	--btnIcn-ExpandB4Up-H:2px;
-	--btnIcn-ExpandB4Low-H:6px;
-}
-.board .project.divider.boardCard > .name > .bullet:before,
-.board .project.divider.boardColumn > .name > .bullet:before{
-	opacity: 0 !important;
-}
-.board .project.divider.boardCard.collapsed > .name > .bullet:after,
-.board .project.divider.boardColumn.collapsed > .name > .bullet:after{
-	transform: scale(.2);
-}
-.project.divider > .name > .bullet:not(.diamond) ~ .expand:after{
-	transform: scale(0) rotate(0deg);
-}
-.project.divider.collapsed > .name > .bullet:not(.diamond) ~ .expand:after{
-	transform: scale(1) rotate(0deg);
-
-}
-.project.divider > .name > .bullet:not(.diamond) ~ .expand:after {
-	--btnIcn-ExpandB4Up-H:6px
-}
-/*******
-EXPAND MIRROR BULLET V2
-
-#app .page .project.quote-block > .name > .expand {
-height: 100% !important;
-	top: 0 !important;
-	bottom:0 !important;
-	
-}
-#app .page .project.quote-block > .name > .expand:before,
-#app .page .project.quote-block.collapsed > .name > .expand:before {
-	height: calc(100% - 2px) !important;
-	transform: unset !important;
-	width: var(--quoteBrdLeftW)
+html #app .pageContainer .page .project.comment .project > .name > .content > .innerContentContainer u, html #app .pageContainer .page .project:not(.board) .project.comment .project > .name > .content > .innerContentContainer u {
+	text-decoration: underline !important;
 }
 
-#app .page .project.quote-block.hasMirrors > .name > .expand:before{
-	outline:unset !important;
-	box-shadow: 
-		-1.4px 0px 0 0 var(--BG-Bullet-open),
-		1.4px 0px 0 0 var(--BG-Bullet-open);
+
+/********
+FLOATING COMMENT FONT SIZE \
+*********/ 
+
+
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .project:not([class*="head"]) > .name{
+	font-size: 16px !important;
 }
-#app .page .project.quote-block.collapsed > .name > .expand:after {
-	opacity: 0 !important;
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .project:not([class*="head"]) > .name > .content {
+	line-height: 24px;
+}
+
+/********
+FLOATING COMMENT NOTE SIZE \
+*********/ 
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .project > .notes > .content {
+	font-size: unset !important;
+}
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .project:not([class*="head"]) > .notes{
+	font-size: 13px !important;
+}
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .project:not([class*="head"]) > .notes > .content {
+	line-height: 17px;
+}
+
+/********
+FLOATING COMMENT > TOP LEVEL > NAME
+*********/ 
+
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project.comment > .children {
+	box-shadow: inset 0 1px 0 0 hsla(0, 0%, 100%, .0) !important;
+}
+
+/********
+FLOATING COMMENT > TOP LEVEL > BULLET > MIRRORS
+*********/ 
+#app .floating-comments-container > .vertical-scrollable-container > .project.root > .children > .comment > .name > .bullet{
+	left: unset !important;
+	right: 10px !important;
+}
+#app .floating-comments-container > .vertical-scrollable-container > .project.root > .children > .comment > .name > .bullet.diamond{
+	opacity: 1 !important;
+}
+#app .floating-comments-container > .vertical-scrollable-container > .project.root > .children > .comment > .name > .bullet.diamond:before {
+	content: "";
+	background: var(--BG-Bullet-open);
+	width: 5px;
+	height: 5px;
+	transform: rotate(45deg);
+	z-index: 1;
+}
+#app .floating-comments-container > .vertical-scrollable-container > .project.root > .children > .comment > .name > .bullet.diamond:after{
+	opacity: 1 !important;
+	background: hsl(196, 7%, 34%);
+	z-index: 0;
+	border-radius: 3px;
+	width: 14px;
+	height: 14px;
+}
+/********
+FLOATING COMMENT > TOP LEVEL > CHEVRON
+*********/ 
+
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .comment .name > .expand,
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .comment .name > .menu,
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .comment .name > .bullet{
+margin-top: 3px !important;
+	border-radius: 4px !important;
+}
+#app .floating-comments-container > .vertical-scrollable-container > .project.root  .comment > .name > .expand:before,
+#app .floating-comments-container > .vertical-scrollable-container > .project.root  .comment > .name > .expand:after {
 	display: none !important;
 }
-********/
 
-
-/***************
-TAGS
-****************/
-.innerContentContainer .contentTag,
-.innerContentContainer .contentTag * {
-		text-decoration: none !important
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .comment > .name > .expand{
+	left: 1px !important
 }
-.innerContentContainer .contentTag {}
-.innerContentContainer .contentTag:hover {
-		background: var(--LnkWFBgClrHov);
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .comment > .name > .expand > div {
+	height: var(--btn-Height) !important;
+	border-radius: 3px;
+	background: transparent;
+	width: calc(var(--btnIcn-ExpandB4Low-W));
 }
-/***************
-LINKS
-****************/
-:root {
-		--link-BrdRad: 3px;
-		--linkArrow-Size: 5px;
-		--linkArrow-BrdClr: var(--Link-TxtClr);
-		--linkIcnAfter-Width: 10px;
-		--linkIcnAfter-Height: 10px;
-}
-.contentLink,
-u .contentLink,
-.contentLink u,
-.colored a.contentLink,
-a.contentLink .colored {
-		color: var(--LnkTxtClr) !important;
-		position: relative;
-}
-#app a.contentLink,
-#app u a.contentLink,
-#app a.contentLink u {
-		text-decoration: underline;
-}
-#app .colored a.contentLink,
-#app a.contentLink .colored {
-		color: var(--LnkTxtClr)
+#app .floating-comments-container > .vertical-scrollable-container > .project.root  .comment > .name > .expand > div:hover {
+	background: hsla(0,0%,50%,0.3)!important;
 }
 
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .comment > .name > .expand > div:before {
+	content: "";
+	background-image: var(--ICON--ARROW);
+	display: block;
+	width: 12px;
+	height: 12px;
+	transform: scale(.9)rotate(90deg);
+	transition: .15s;
+	background-repeat: no-repeat;
+	filter: unset !important;
+	
+}
+#app .floating-comments-container > .vertical-scrollable-container > .project.root  .comment.collapsed > .name > .expand > div:before {
+		transform: scale(.9)rotate(0deg);
+
+}
+
+
+/********
+FLOATING COMMENT > CHILDREN INDENTATION
+*********/ 
+/**/
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container,
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project .commentAttribution{
+		--children-Indent:20px !important;
+
+}
+/********
+FLOATING COMMENT > FIRST LEVEL > CHILDREN INDENTATION
+*********/ 
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project .children{
+	padding-left: var(--children-Indent) !important;
+}
 
 /*
-
-html #app .project > .name > .content a.contentLink {
-		border-radius: var(--link-BrdRad);
-		transition: .1s;
-		padding-left: 3px;
-		padding-right: 3px;
-		text-underline-offset: var(--underlineOffset);
-		text-decoration-thickness: var(--underlineThickness);
-		text-decloration-color: var(--LnkTxtClr) !important;
-		text-decoration: none;
-		box-shadow: inset 0 0 0 1px var(--LnkBrdClr)!important;
-		background: var(--LnkBgClr);
-		--link-BrdRad: 4px;
+#app .floating-comments-container > .vertical-scrollable-container > .project.root > .children > .comment {
+	padding-left: calc(var(--btnIcn-ExpandB4Low-W) * .5) !important;
+}
+#app .floating-comments-container .vertical-scrollable-container > .project.root.comment-container > .children > .project > .children {
+	padding-left: 0px !important;
+	box-shadow: inset 0 1px 0 0 hsla(0, 0%, 100%, .15) !important;
 }*/
-html #app .project > .name > .content a.contentLink {
-		border-radius: var(--link-BrdRad);
-		transition: .1s;
-		padding-left: 0px;
-		padding-right: 0px;
-		text-underline-offset: var(--underlineOffset);
-		text-decoration-thickness: var(--underlineThickness);
-		text-decloration-color: var(--LnkTxtClr) !important;
-		--link-BrdRad: 4px;
-		text-shadow:none !important;
-	border-bottom-left-radius: 0px;
-	border-bottom-right-radius: 0px;
-}
-html #app .project > .name > .content a.contentLink:hover {
-		background: var(--LnkBgClrHov);
-		background-image: var(--LinkIcn);
-		background-repeat: no-repeat;
-}
-
-html #app .project.root > .name {
-		--link-BrdRad: 7px;
-}
-html #app .project.root > .name > .content {
-		max-width: 100% !important;
-		font-weight: 600 !important;
-}
-:root {
-		--lnkicnW: 15px;
-		--lnkicnH: 15px;
-}
+/********
+DASHBOARD COMMENT FIX.
+*********/ 
 
 /*
-#app a.contentLink:after{
-		content:"....";
-		color:transparent;
-		display: inline;
-		background-image: var(--ICON--LINK--EXTERNAL);
-		background-repeat: no-repeat;
-		background-size:var(--lnkicnW) var(--lnkicnH);
-		background-position:1px 72%;
-		opacity:.8;
-		transition: .2s;
-}
-#app .contentLink:hover:after{
-		opacity: 1;
+#app .floating-comments-container > .vertical-scrollable-container .root.dashboard-card.comment-container,
+#app .floating-comments-container > .vertical-scrollable-container .root.dashboard-card.comment-container > .children,
+#app .floating-comments-container > .vertical-scrollable-container .root.dashboard-card.comment-container > .children .project{
+	border: 2px solid blue !important;
 }
 */
-html #app .project .content a.contentLink[href*="workflowy"],
-html #app .project .content a.contentLink[href*="workflowy"]:after {
-		--LnkTxtClr: var(--LnkWFTxtClr);
-		--LnkBrdClr: transparent;
-		--LnkBgClr: transparent;
-		--LnkBgClrHov: var(--LnkWFBgClrHov);
-		--ICON--LINK--EXTERNAL: var(--ICON--LINK--INTERNAL2) !important;
-		--lnkicnW: 14px;
-		--lnkicnH: 14px;
-		text-decoration: underline !important;
-		opacity: 1;
-		padding-left: 0px;
-		padding-right: 0px;
+#app .floating-comments-container > .vertical-scrollable-container {
 }
 
-html #app .project > .notes > .content a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content u a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content a.contentLink[href*="workflowy"] u,
-html #app .project > .notes > .content .colored a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored {
-		color:var(--LnkWFTxtClr) !important;
+.dashboard-card.root {
+	flex: unset !important;
+	height: auto !important;
+	overflow-y: hidden;
+	
+	
 }
 
-html #app .project > .notes > .content {
-		color: var(--NODE-NOTES--TXT-CLR-ALL);
-		max-height: unset;
-		overflow: hidden;
-		transition: .0s !important;
-		white-space: pre-wrap !important;
-		text-overflow: ellipsis;
-		-webkit-line-clamp: 100;
-		display: -webkit-box;
-}
+html #app .floating-comments-container > .vertical-scrollable-container{
 
-html #app .project > .notes > .content code {
-	font-size: calc(1em - 2px);
-	line-height: 0px !important;
-	font-family: SF Mono, var(--wf-font-family-mono) !important;
-	padding-top: .5px !important;
-	padding-right: 2px;
-	border-radius: 3px;
-	padding-left: 2px;
-	padding-bottom: .5px !important;
-		--wf-border-default:hsla(0,0%,50%,0.4);
 }
-html #app .project > .notes > .content code,
-html #app .project > .notes > .content code * {
-	font-family: SF Mono, var(--wf-font-family-mono) !important;
-
+html #app .floating-comments-container > .vertical-scrollable-container > .dashboard-card.root {
+	padding: 0px !important;
+}
+html #app .floating-comments-container > .vertical-scrollable-container > .dashboard-card.root > .name {
+	display: none !important;
+}
+html #app .floating-comments-container > .vertical-scrollable-container > .dashboard-card.root > .children{
+	position: fixed;
+	top: 0 !important;
+	bottom: 0px;
+	width: calc(var(--floatCommentW) - 5px) !important;
+	padding-right: 5px !important;
+	right: 0px;
+	padding-bottom: 100px;
+	margin: unset !important;
+	padding-top: var(--floatCommentBtnHeaderH) !important;;
+	
+}
+html #app .floating-comments-container > .vertical-scrollable-container > .dashboard-card.root > .children {
+	padding-bottom: 100px;
+}
+html #app .floating-comments-container > .vertical-scrollable-container > .dashboard-card.root ._1vs75eu {
+	display: none !important;
+	height: 1px !important;
 }
 
 
-
-html #app .project.root > .notes > .content > .innerContentContainer b {
-		color: var(--NODE-NOTESROOT--TXT-CLR-ALL-BOLD);
-}
-/*html #app .project > .notes > .content > .innerContentContainer{
-				white-space: pre-wrap !important;
-}*/
-
-
-html #app .project > .notes > .content.active {
-		max-height: 900px;
-		-webkit-line-clamp: 900;
-		overflow: visible;
+#app .board > .children .project.comment > .name > .bullet.diamond ~ .expand,
+#app .board > .children .project.comment .name > .bullet.diamond ~ .expand{
 }
 
+#app .board > .children .comment > .children .project > .name > .bullet.diamond ~ .expand:before, 
+#app .board > .children .boardCard.comment > .children .project:not(.checkmark) > .name > .bullet.diamond ~ .expand:before{
+		--btnIcn-Scale:0.8 !important;
 
-
-:root {
-		--rootNotesPadTop: 10px;
-		--rootnotes-fontSize: calc(var(--notes-fontSize) + 3px);
-		--rootnotes-lineHeight: calc(var(--notes-lineHeight) + 4px)
-}
-html #app .project.root > .notes > .content {
-		-webkit-line-clamp: unset;
-		max-height: 100% !important;
-		max-height: unset !important;
-		padding-top: var(--rootNotesPadTop);
-		transition: .15s !important;
-		font-size: var(--rootnotes-fontSize);
-		line-height: var(--rootnotes-lineHeight);
-}
-
-/***************
-PROJECT > NAME > FILE ATTACHMENT
-****************/
-/*LIGHT*/
-.project > .name._1fqag8m > .file-preview,
-/*DARK*/
-.project > .name._1qns2ax > .file-preview {
-		position: absolute;
-		left: var(--children-Indent);
-		width: 100%;
-		height: 100%;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		overflow: hidden;
-		z-index: 20;
-}
-
-
-/*LIGHT*/
-.project > .name._1fqag8m > .file-preview *,
-/*DARK*/
-.project > .name._1qns2ax > .file-preview * {
-		cursor: pointer;
-}
-
-/*LIGHT*/
-.project > .name._1fqag8m > .file-preview > button,
-/*DARK*/
-.project > .name._1qns2ax > .file-preview > button {
-		margin-top: -30px;
-		opacity: 0;
-		font-size: 0.8em;
-		transition: .2s;
-		padding: 3px 7px;
-		margin-left: 3px;
-		border-radius: 4px;
-		background: var(--FILE-DOWNLOAD-BUTTON--BG-CLR);
-		color: var(--FILE-DOWNLOAD-BUTTON--TXT-CLR) !important;
-}
-#app .project > .name--with-file > .file-preview {
-		position: relative;
-}
-#app .project > .name--with-file > .file-preview button {
-		height: 100%;
-		margin-left: var(--children-Indent);
-}
-
-/*LIGHT*/
-html #app .project > .name._1fqag8m:hover > .file-preview > button,
-/*DARK*/
-html #app .project > .name._1qns2ax:hover > .file-preview > button {
-		margin-top: 0px;
-		opacity: 1;
-}
-
-/*LIGHT*/
-html #app .project > .name._1fqag8m > .content,
-/*DARK*/
-html #app .project > .name._1qns2ax > .content {
-		border-radius: 5px;
-		background: var(--FileAttchmnt-BG);
-		color: var(--FileAttchmnt-TxtClr);
-		border: 1px solid var(--FileAttchmnt-BrdClr);
-		padding: 0.5px 4px 0px 4px;
-		display: inline;
-		flex: unset;
-}
-
-
-/*LIGHT*/
-html #app .project > .name._1fqag8m > .content:before,
-/*DARK*/
-html #app .project > .name._1qns2ax > .content:before {
-		display: inline-block;
-		vertical-align: sub;
-		z-index: 1;
-		width: 1.2em;
-		height: 1.2em;
-		transform: scale(.8);
-		margin-right: 1px;
-		transition: .14s;
-		content: var(--ICON--FILE);
-		position: relative;
-		filter: saturate(.2)brightness(.8)
-}
-
-.project > .name > .content + .file-preview:not(.project > .name.name--with-image > .content + .file-preview) {
-		padding-left: var(--children-Indent);
-}
-
-/************
-*************
-*************
-WAVY TEXT UNDERLINE - FOR MIRRORS & SOURCES
-*************
-*************
-*************/
-:root {
-		--wavy--BG-size: 9px;
-		--wavy--BG-position: -0px 100%;
-		--wavy--padding-bottom: 1.5px;
-}
-
-
-/*PARENTS  - Sources AND Mirrors  */
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer,
-/*CHILDREN - of - Mirrored Parents (not sources)*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer,
-/*PARENTS  - Underlined*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u,
-/*CHILDREN - Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u,
-/*PARENTS  - LINK*/
-html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a,
-/*CHILDREN - LINK*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
-/*PARENTS  - Highlighted*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"],
-/*CHILDREN - Highlighted*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"],
-/*PARENTS  - Highlighted AND Underlined*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u .colored[class*="bc"],
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] u,
-/*CHILDREN - Highlighted AND Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
-		text-decoration: none !important;
-		background-image: var(--ICON--UNDERLINE-WAVY);
-		background-repeat: repeat-x;
-		background-position: var(--wavy--BG-position);
-		background-size: var(--wavy--BG-size);
-		padding-bottom: var(--wavy--padding-bottom) !important;
-}
-html #app .project.code-block > .name > .bullet.diamond ~ .content > .innerContentContainer {
-		background-image: var(--ICON--UNDERLINE-WAVY-CODEBLOCK);
-		--wavy--BG-size: 8px;
-		--wavy--BG-position: -0px 100%;
-		--wavy--padding-bottom: 2.5px;
-}
-html #app .comment .project.code-block > .name > .bullet.diamond ~ .content > .innerContentContainer {
-		--wavy--BG-size: 8px !important;
-		--wavy--BG-position: -0px 100%;
-		--wavy--padding-bottom: 3.5px !important;
-}
-
-/************
-WAVY TEXT - UNDERLINED & HIGHLIGHTED
-*************/
-/*PARENTS  - Underlined*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u,
-/*CHILDREN - Underlined*/
-html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer u,
-/*PARENTS  - Highlighted AND Underlined*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u .colored[class*="bc"],
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] u,
-/*CHILDREN - Highlighted AND Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
-		background-image: var(--ICON--UNDERLINE-WAVY--UNDERLINE);
-}
-
-/************
-WAVY TEXT - LINKS
-*************/
-/*PARENTS  - Underlined*/
-html #app .project:not(.hasMirrors) .name > .bullet.diamond ~ .content > .innerContentContainer a,
-/*CHILDREN - Underlined*/
-html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a,
-/*PARENTS  - Highlighted AND Underlined*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a .colored[class*="bc"],
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] a,
-/*CHILDREN - Highlighted AND Underlined*/
-html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer a .colored[class*="bc"],
-html #app .project [projectid*="virtual"]:not(.comment) > .name > .content > .innerContentContainer .colored[class*="bc"] a {
-		background-image: var(--ICON--UNDERLINE-WAVY--LINK);
-		--LnkBgClr: transparent;
-		--LnkBrdClr: transparent;
-}
-
-/************
-WAVY TEXT - LINKS - INTERNAL
-*************/
-/*PARENTS  - Underlined*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"],
-/*CHILDREN - Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"],
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
-/*PARENTS  - Highlighted AND Underlined*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"],
-/*CHILDREN - Highlighted AND Underlined*/
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] .colored[class*="bc"],
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] a[href*="workflowy"] {
-		background-image: unset !important;
-}
-
-html #app .project [projectid*="virtual"].code-block > .name > .content > .innerContentContainer{
-		background-image:var(--ICON--UNDERLINE-WAVY-CodeBlock);
-}
-
-
-/************
-WAVY TEXT - BOARDS
-*************/
-html #app .comment * {
-
-		--InnerContentPadTop: 0px;
-}
-html #app .project.board > .children * {
-		--wavy--BG-size: 0px !important;
-		--wavy--BG-position: 0px 100%;
-		--wavy--padding-bottom: 1.75px !important;
-		--InnerContentPadTop: 0px;
-}
-
-html #app .project .name .content {
-	-webkit-font-smoothing:subpixel-antialiased !important;
-}
-
-/*******************************
-********************************
-NORMAL STATE
-
-NODE ADJUSTMENTS
-********************************
-********************************/
-/***************
-LEVEL 1 > Adjustments
-****************/
-
-/***************
-LEVEL 3 > Button Adjustments
-****************/
-/*Button - Checkbox*/
-/*Button - Top margins*/
-.project.header1 > .name {
-		--btn-MargTop: 8.5px;
-}
-.project.header2 > .name {
-		--btn-MargTop: 4px;
-}
-
-/*Buttons - Paragraph*/
-#app .project.paragraph > .name > .expand,
-#app .project[class*="header"] > .name > .expand,
-#app .project.quote-block > .name > .expand,
-#app .project.code-block > .name > .expand{
-		opacity: 0;
-		transition: 0s;
-		
-}
-.project.paragraph > .name > .expand {
-		--btnIcn-ExpandB4Up-W: 2px;
-		--btnIcn-ExpandB4Low-W: 8px;
-}
-#app .project.paragraph > .name > .bullet,
-#app .project[class*="header"] > .name > .bullet,
-#app .project.quote-block > .name > .bullet,
-#app .project.code-block > .name > .bullet{
-		left: calc(var(--children-Indent) * 0);
-		z-index: 3;
-}
-#app .project[class*="header"] > .name > .menu,
-#app .project.paragraph > .name > .menu,
-#app .project.quote-block > .name > .menu,
-#app .project.code-block > .name > .menu{
-		left: calc(var(--children-Indent) * -1);
-}
-/*Button - Paragraph Parent - Make visible*/
-#app .project.paragraph.open > .name > .expand,
-#app .project.paragraph.collapsed > .name > .expand,
-#app .project[class*="header"].open > .name > .expand,
-#app .project[class*="header"].collapsed > .name > .expand,
-#app .project[class*="header"].hasMirrors > .name > .expand,
-#app .project[class*="header"] > .name > .bullet.diamond ~ .expand,
-#app .project.quote-block.open > .name > .expand,
-#app .project.quote-block.collapsed > .name > .expand,
-#app .project.quote-block.hasMirrors > .name > .expand,
-#app .project.quote-block > .name > .bullet.diamond ~ .expand,
-#app .project.code-block.open > .name > .expand,
-#app .project.code-block.collapsed > .name > .expand,
-#app .project.code-block.hasMirrors > .name > .expand,
-#app .project.code-block > .name > .bullet.diamond ~ .expand{
-		opacity: 1;
-		transition: var(--btn-transition);
-}
-#app .project.paragraph.open > .name > .bullet,
-#app .project.paragraph.collapsed > .name > .bullet,
-#app .project.paragraph.hasMirrors > .name > .bullet,
-#app .project[class*="header"].open > .name > .bullet,
-#app .project[class*="header"].collapsed > .name > .bullet,
-#app .project[class*="header"].hasMirrors > .name > .bullet,
-#app .project.quote-block.open > .name > .bullet,
-#app .project.quote-block.collapsed > .name > .bullet,
-#app .project.quote-block.hasMirrors > .name > .bullet,
-#app .project.code-block.open > .name > .bullet,
-#app .project.code-block.collapsed > .name > .bullet,
-#app .project.code-block.hasMirrors > .name > .bullet,
-#app .project.code-block.hasMirrors > .name > .bullet,
-#app .project > .name > .bullet.diamond {
-		left: calc(var(--children-Indent) * -1);
-}
-#app .project.paragraph.open > .name > .menu,
-#app .project.paragraph.collapsed > .name > .menu,
-#app .project.paragraph.hasMirrors > .name > .menu,
-#app .project[class*="header"].open > .name > .menu,
-#app .project[class*="header"].collapsed > .name > .menu,
-#app .project[class*="header"].hasMirrors > .name > .menu,
-#app .project.quote-block.open > .name > .menu,
-#app .project.quote-block.collapsed > .name > .menu,
-#app .project.quote-block.hasMirrors > .name > .menu,
-#app .project.code-block.open > .name > .menu,
-#app .project.code-block.collapsed > .name > .menu,
-#app .project.code-block.hasMirrors > .name > .menu,
-#app .project > .name > .bullet.diamond ~ .menu{
-		left: calc(var(--children-Indent) * -2);
-}
-.project.comment-container.open,
-.project.comment-container {
-		width: 100%
-}
-
-.project.comment.thread {
-		box-shadow: none !important
-}
-
-
-
-#app .board .project[class*="header"] > .name > .bullet:not(.diamond){
-		opacity: 0;
-}
-#app .board .project[class*="header"].open > .name > .bullet,
-#app .board .project[class*="header"].collapsed > .name > .bullet,
-#app .board .project[class*="header"].hasMirrors > .name > .bullet{
-		opacity: 1;
 }
 
 
