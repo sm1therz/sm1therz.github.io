@@ -6945,6 +6945,18 @@ PARAGRAPH CHEVRON > IS MIRROR
 	padding:0px !important;
 }
 
+#app .dashboard .dashboard-card.divider > .name > [class*="Placeholder"] {
+	opacity: 0;
+}
+#app .dashboard .dashboard-card.divider{
+	z-index: 2;
+	outline: 2px solid var(--BG-primary)
+}
+#app .dashboard .dashboard-card.divider > .name:before,
+#app .dashboard .dashboard-card.divider > .name:after{
+	background: var(--BG-primary) !important;
+}
+
 /*******************************
 ********************************
 ! DASHBOARD - BORDERS
