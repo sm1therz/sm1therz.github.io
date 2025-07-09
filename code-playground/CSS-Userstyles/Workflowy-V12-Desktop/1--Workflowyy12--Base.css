@@ -4691,7 +4691,6 @@ max-width: calc(100% - 70px) !important;
 }
 
 
-
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -5046,10 +5045,12 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 	margin-left: calc(var(--children-Indent) * 1) !important;
 	max-width: calc(100% - var(--children-Indent) * 1) !important;
 }
-
+:root {
+	 --BoardCommentMainBG:hsl(197, 18%, 15%); 
+}
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment {
 	background: hsl(202, 23%, 17.5%, 0.5) !Important;
-	background: hsl(197, 18%, 15%) !Important;
+	background: var(--BoardCommentMainBG) !Important;
 	--COMMENT--BG--even: hsl(202, 12%, 21%);
 	--COMMENT-CONTAINER--BG: hsl(197, 18%, 15%);
 	box-shadow: 0 0 0 1px hsl(197, 13%, 0%) !important;
@@ -5236,9 +5237,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 	right: 0 !important;
 	bottom: -1px !important;
 }
-#app .page .board.root > .children > .boardColumn > .children > .boardCard > .children > .project:not(.comment) + .project:not(.comment) {
-	border-top-color: transparent !important;
-}
+
 #app .page .board.root > .children > .boardColumn > .children > .boardCard > .children > .project.comment + .project:not(.comment){
 	border-top-color: transparent !important;
 }
@@ -5438,6 +5437,67 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root > .children > .boardColumn.comment > .children{
 	padding-bottom: 100px !important;
 }
+
+:root{
+		--boardRootDividerBgClr:hsla(201, 13%, 19%, 1.0);
+}
+
+
+#app .board.root .boardCard > .children > .project:is(.collapsed):not(.noted) > .name:before, 
+#app .board.root .boardCard > .children > .project:is(.collapsed).noted > .notes:before, 
+#app .board.root .boardCard > .children > .project:is(.collapsed):not(.project:last-of-type, .comment) > .children:before{
+	opacity: 0 !important;
+}
+#app .page .board.root > .children > .boardColumn > .children > .boardCard > .children > .project:not(.comment) + .project:not(.comment,.divider) {
+	z-index: 3 !important;
+	border-top-color: var(--boardChildBrdClr) !important;
+}
+
+
+
+#app .pageContainer .page .project.board.root > .children > .boardColumn .divider > .name .content{
+	max-height: 12px;
+}
+
+/****
+CARD > NOT COMMENT
+****/
+
+#app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project.divider,
+#app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project + .project.divider,
+#app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project:not(.comment) + .project.divider,
+#app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project.divider + .project:not(.comment){
+
+		border-top-color: var(--boardRootDividerBgClr) !important;
+}
+
+#app .page .board.root > .children > .boardColumn > .children > .boardCard:not(.comment) > .children > .project.comment {
+	--boardRootDividerBgClr:var(--BoardCommentMainBG);
+}
+
+#app .page .board.root > .children > .boardColumn > .children > .boardCard:not(.comment) > .children > .project.comment .comment {
+	--boardRootDividerBgClr:var(--COMMENT--BG--even);
+}
+
+
+
+/****
+CARD > IS COMMENT
+****/
+
+#app .page .board.root > .children > .boardColumn > .children > .boardCard.comment {
+	--boardRootDividerBgClr:var(--BoardCommentMainBG);
+
+}
+
+#app .page .board.root > .children > .boardColumn > .children > .boardCard.comment > .children > .project.comment{
+	--boardRootDividerBgClr:var(--COMMENT--BG--even);
+}
+
+#app .page .board.root > .children > .boardColumn > .children > .boardCard.comment > .children > .project.comment .comment{
+	--boardRootDividerBgClr:var(--BoardCommentMainBG);
+}
+
 
 /*******************************
 ********************************
