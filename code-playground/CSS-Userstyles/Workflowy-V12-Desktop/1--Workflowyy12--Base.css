@@ -1977,11 +1977,10 @@ UNDERLINE
 /***************
 CODE BLOCKS
 ****************/
-#app .code-block > .name .content {
-		display: block !important;
-		border: unset !important;
-	box-shadow:inset 0 0 0 1px var(--wf-border-default) !important;
+:root {
+	--codeBlockBrdW:1px;
 }
+
 #app .dashboard .code-block > .name .content {
 		background: hsl(0, 0%, 5%);
 		--wf-border-default: hsl(0, 0%, 24%);
@@ -2021,11 +2020,15 @@ CODE BLOCKS V2
 	--codeBlockV2Offset:0px;
 }
 #app  .project.code-block > .name > .content{
-
+	display: block !important;
+	border: unset !important;
+	box-shadow:unset !important;
+	border:var(--codeBlockBrdW) solid var(--wf-border-default) !important;
 	padding-left: var(--content-PadLeftRight) !important;
 	padding-right: 5px !important;
 	border-top-left-radius: 0px !important;
 	border-bottom-left-radius: 0px !important;
+	
 }
 
 
@@ -2036,8 +2039,8 @@ CODE BLOCKS V2
 	width: calc(var(--children-Indent) + 1px);
 	left: calc(var(--children-Indent) * -1);
 	right: var(--codeBlockV2Offset);
-	top: var(--codeBlockV2Offset);
-	bottom: var(--codeBlockV2Offset);
+	top: calc(var(--codeBlockV2Offset) - var(--codeBlockBrdW));
+	bottom: calc(var(--codeBlockV2Offset) - var(--codeBlockBrdW));
 	background:var(--wf-background-secondary);
 	z-index: 0;
 	border:1px solid var(--wf-border-default);
@@ -2054,6 +2057,16 @@ CODE BLOCKS V2
 	border-bottom-right-radius: 0px !important;
 	border-right-width: 0px !important;
 	border-right: unset !important;
+}
+#app *:is(.board):not(.root) .project.code-block > .name > .bullet,
+#app *:is(.board):not(.root) .project.code-block > .name > .expand,
+#app *:is(.board):not(.root) .project.code-block > .name > .menu{
+	--btn-MargTop:6px !important;
+}
+#app *:is(.board.root) .project.code-block > .name > .bullet,
+#app *:is(.board.root) .project.code-block > .name > .expand,
+#app *:is(.board.root) .project.code-block > .name > .menu{
+	--btn-MargTop:9px !important;
 }
 
 /***************
@@ -2693,6 +2706,8 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
 		background-image: var(--ICON--UNDERLINE-WAVY--UNDERLINE);
 }
+
+
 
 /************
 WAVY TEXT - LINKS
@@ -3367,6 +3382,10 @@ COLORS
 ._theme-dark .contentTag {
 	--wf-tag-text: var(--BG-primary);
 }
+
+
+
+
 
 /*******************************
 ********************************
@@ -4306,8 +4325,8 @@ padding-bottom: calc(var(--content-PadTopBtm) + 0px) !important;
 
 #app .boardColumn > .name > .contentEditablePlaceholderWrapper * {
 		position: absolute !important;
-		font-size: unset !important;;
-		line-height: unset !important;;
+		font-size: unset !important;
+		line-height: unset !important;
 				font-size: var(--name-fontSize) !important;
 		line-height: var(--name-lineHeight) !important;
 		top: unset !important;
@@ -4694,6 +4713,8 @@ max-width: calc(100% - 70px) !important;
 	padding-bottom: .5px !important;
 
 }
+
+
 
 
 /*******************************
@@ -5501,6 +5522,11 @@ CARD > IS COMMENT
 
 #app .page .board.root > .children > .boardColumn > .children > .boardCard.comment > .children > .project.comment .comment{
 	--boardRootDividerBgClr:var(--BoardCommentMainBG);
+}
+
+#app  *:is(.project.board.root) .project.code-block > .name > .content{
+	border-top-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
 }
 
 
