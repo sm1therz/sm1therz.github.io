@@ -5455,7 +5455,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 
 
 
-#app .pageContainer .page .project.board.root > .children > .boardColumn .divider > .name .content{
+#app .pageContainer .page .project.board.root > .children > .boardColumn .project.divider:not(.boardCard) > .name .content{
 	max-height: 12px;
 }
 
@@ -8245,7 +8245,7 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 	margin-left: calc(var(--children-Indent) * 0) !important;
 	width: calc(100% + var(--children-Indent) * 2) !important;
 }
-#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .divider > .name .content{
+#app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .project.divider:not(.boardCard) > .name .content{
  max-height: 10px
 }
 #app .pageContainer .page .project.board:not(.root) > .children > .boardColumn > .children > .project.boardCard > .children > .project.divider {
