@@ -2734,6 +2734,11 @@ html #app .project [projectid*="virtual"].code-block > .name > .content > .inner
 }
 
 
+/**BYPASS MIRRORS**/
+html #app .project.hasMirrors .name > .bullet.diamond ~ .content > .innerContentContainer a:not([href*="workflowy.com"]){
+			background-image: unset !important;
+}
+
 /************
 WAVY TEXT - BOARDS
 *************/
