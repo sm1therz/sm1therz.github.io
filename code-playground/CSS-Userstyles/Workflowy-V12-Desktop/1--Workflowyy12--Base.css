@@ -2258,6 +2258,13 @@ DOUBLE BLOCK QUOTES
 #app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) {
 	margin-top: calc(var(--prjct-MargTopBtm) * 0)
 }
+#app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) > .name > .content:before,
+#app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) + .project.quote-block > .name > .content:before,
+#app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) + .project.quote-block + .project.quote-block > .name > .content:before,
+#app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) + .project.quote-block + .project.quote-block + .project.quote-block > .name > .content:before,
+#app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) + .project.quote-block + .project.quote-block + .project.quote-block + .project.quote-block > .name > .content:before{
+	left:calc(var(--children-Indent) * -1.5 - var(--quoteBrdLeftW) * .5);
+}
 /***************
 HORIZONTAL RULES / DIVIDERS
 ****************/
