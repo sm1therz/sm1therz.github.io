@@ -2264,6 +2264,7 @@ DOUBLE BLOCK QUOTES
 #app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) + .project.quote-block + .project.quote-block + .project.quote-block > .name > .content:before,
 #app *:not(.board) .project.quote-block:not(.noted) > .children > .project.quote-block:is(:first-child) + .project.quote-block + .project.quote-block + .project.quote-block + .project.quote-block > .name > .content:before{
 	left:calc(var(--children-Indent) * -1.5 - var(--quoteBrdLeftW) * .5);
+	width:calc(var(--quoteBrdLeftW) * 2)
 }
 /***************
 HORIZONTAL RULES / DIVIDERS
