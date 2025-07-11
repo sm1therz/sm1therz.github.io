@@ -1,0 +1,35 @@
+/*NORMAL*/
+
+.project .project.comment {
+  border-color: hsl(200, 12%, 10.5%) !important;
+  border-color: hsl(200, 12%, 9.5%) !important;
+  
+}
+
+
+
+*:not(.board) .project.comment .project.comment,
+*:not(.board) .project.comment .project.comment .project.comment .project.comment,
+*:not(.board) .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,
+*:not(.board) .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment {
+  
+  border-color: hsl(200, 12%, 10.5%) !important;
+  border-color: hsl(200, 12%, 9.5%) !important;
+}
+
+/*BOARD - NOT ROOT*/
+
+#app .board:not(.root) .project.comment {
+  border-color: hsl(200, 12%, 10.5%) !important;
+  border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+}
+
+
+
+#app .board:not(.root) .project.comment .project.comment,
+#app .board:not(.root) .project.comment .project.comment .project.comment .project.comment,
+#app .board:not(.root) .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,
+#app .board:not(.root) .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment {
+  
+  border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+}
