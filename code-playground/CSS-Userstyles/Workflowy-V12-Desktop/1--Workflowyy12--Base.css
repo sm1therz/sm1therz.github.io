@@ -1,5 +1,4 @@
 
-
 /****
 ! ROOT
 ****/
@@ -68,7 +67,7 @@ BOX SHADOW TESTING - BOARDS
 
 /**
 .project, .project * {
-	box-shadow: inset 0 0 0px .1px red;
+  box-shadow: inset 0 0 0px .1px red;
 }
 
  **/
@@ -99,8 +98,6 @@ BOX SHADOW TESTING - BOARDS
   outline-offset: .5px;
   border-radius: 0px !important;
 }*/
-
-
 
 /****
 ! OVERRIDES
@@ -276,7 +273,7 @@ BOX SHADOW TESTING - BOARDS
     height: unset;
 }
 #app .leftBar > div{
-	background: var(--SIDEBAR--BG) !important;
+  background: var(--SIDEBAR--BG) !important;
 }
 ._5n0sjv.collapsed > .name > .bullet{
     background: transparent !important;
@@ -297,8 +294,6 @@ BOX SHADOW TESTING - BOARDS
         font-size: var(--root-font-size);
   line-height: var(--root-line-height);
 }
-
-
 
 /*******************************
 ********************************
@@ -2818,8 +2813,6 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
     opacity: 1;
 }
-}
-
 
 /***********
 ! NORMAL STATE OVERRIDES
@@ -3163,8 +3156,6 @@ html #app .project > .notes > .content .contentLink {
 html #app .project > .notes > .content .contentLink{
     color:var(--NoteLinkClr)!important;
 }*/
-}
-
 
 /***********
 ! TAGS + HIGHLIGHTS
@@ -3414,8 +3405,6 @@ HIGHLIGHT - GREYED OUT
     right: auto;
     color: var(--NODE--TXT-CLR--main)
 }
-}
-
 
 /*******************************
 ********************************
@@ -4746,8 +4735,6 @@ max-width: calc(100% - 70px) !important;
 
 
 
-}
-
 
 /*******************************
 ********************************
@@ -5561,8 +5548,6 @@ CARD > IS COMMENT
   border-bottom-left-radius: 0px !important;
 }
 
-}
-
 
 /*******************************
 ********************************
@@ -5630,8 +5615,6 @@ CARD > IS COMMENT
 .board.root.shared > .children > ._1en9fmv {
   display: none !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -5849,8 +5832,6 @@ BULLETS > QUOTE BLOCKS > BOARDS
 #app .board.root .project.comment .project.quote-block + .project.quote-block:not(.boardCard) > .name > .bullet {
   --btn-MargTop: 5px !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -5925,7 +5906,7 @@ html #app .dashboard-card > .children {
 }
 /*
 html #app .dashboard-card > .children:not(html #app .dashboard-card.comment > .children) {
-		background: var(--DashCrd-ChldrnBgClr) !important;
+    background: var(--DashCrd-ChldrnBgClr) !important;
 }*/
 html #app .root .dashboard-card,
 html #app .root .dashboard-card .project {
@@ -5950,19 +5931,19 @@ html #app .dashboard-card > .children > [class*="mobile"] {
 }
 html #app .dashboard-card.open {
     /*    margin-bottom: 20px !important;
-		margin-top: 5px !important;
-		border-radius: 6px !important;
-		overflow: hidden;*/
+    margin-top: 5px !important;
+    border-radius: 6px !important;
+    overflow: hidden;*/
 }
 html #app .dashboard-card:first-of-type {
     margin-top: 0px !important;
 }
 html #app .dashboard-card.open {
     /*
-		padding-bottom: 10px;
-		border-left: 1px solid var(--DashCrd--BrdClr);
-		border-right: 1px solid var(--DashCrd--BrdClr);
-		box-shadow: 0px 8px 31px rgba(43, 41, 0, 0.16);*/
+    padding-bottom: 10px;
+    border-left: 1px solid var(--DashCrd--BrdClr);
+    border-right: 1px solid var(--DashCrd--BrdClr);
+    box-shadow: 0px 8px 31px rgba(43, 41, 0, 0.16);*/
 }
 
 .dashboard-add-button-bottom {
@@ -6266,7 +6247,7 @@ LEVEL 2 Dashboard Card - First Child*/
 }
 #app .dashboard-card .project.paragraph > .name > .bullet {
     /*opacity: 0 !important;
-		display: none;*/
+    display: none;*/
 }
 #app .dashboard-card .paragraph.open > .name > .bullet,
 #app .dashboard-card .paragraph.collapsed > .name > .menu {
@@ -6426,7 +6407,7 @@ html #app .dashboard .contentEditablePlaceholderWrapper {
 #app .dashboard .project.hasMirrors > .name > .bullet.diamond:before {
     background: transparent;
     /* box-shadow: inset 0 0 0 .5px var(--BG-Bullet-open),
-		inset 0 0 0 8px var(--CHECKBOX--BG); */
+    inset 0 0 0 8px var(--CHECKBOX--BG); */
     outline: transparent;
 }
 /*PARENTS*/
@@ -6994,8 +6975,6 @@ PARAGRAPH CHEVRON > IS MIRROR
 #app .dashboard .dashboard-card.divider > .name:after{
   background: var(--BG-primary) !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -7137,7 +7116,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 .comment .project.divider > .name > [class*="selection-handle"] hr {
-	background: hsla(0,0%,100%,0.16)
+  background: hsla(0,0%,100%,0.16)
 }
 
 #app .dashboard-card .children {
@@ -7161,7 +7140,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 /*
 #app .dashboard-card .project:not(.comment) .children {
-	box-shadow: inset 0 1px 0 0 var(--dashboardChildBrdClr) !important;
+  box-shadow: inset 0 1px 0 0 var(--dashboardChildBrdClr) !important;
 }
 */
 .dashboard-card .children .project.open > .children > .project:first-child > .name {}
@@ -7227,8 +7206,6 @@ EXPAND COLLAPSE BORDER ANIMATION
 /*DASHBOARD CARD BORDER*/
 #app .page.dashboard-page .dashboard-card:not(.noted) > .name:before,
 #app .page.dashboard-page .dashboard-card.noted > .notes:before {}
-}
-
 
 /*******************************
 ********************************
@@ -7272,8 +7249,6 @@ EXPAND COLLAPSE BORDER ANIMATION
     transform: scale(1.3);
     cursor: pointer;
 }
-}
-
 
 /*******************************
 ********************************
@@ -8143,8 +8118,6 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 
 }
 
-}
-
 
 /*******************************
 ********************************
@@ -8359,8 +8332,6 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 #app .pageContainer .page .project.board:not(.root) > .children > .boardColumn > .children > .project.boardCard  .children > .project.divider + .project:not(.comment){
   border-top-color: transparent !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -8378,8 +8349,6 @@ SCROLLBAR / SCROLL BARS
     width: 0px !important;
     height: 0px !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -8485,8 +8454,6 @@ margin-left:calc(var(--children-Indent) * 1) !important;
     min-width: 60vw !important;
     display: block;
 }
-}
-
 
 /*******************************
 ********************************
@@ -8494,7 +8461,7 @@ margin-left:calc(var(--children-Indent) * 1) !important;
 ********************************
 ********************************/
 #app > [tabindex="-1"] > [style*="position: absolute"]{
-	z-index: 4;
+  z-index: 4;
 }
 
 
@@ -8513,8 +8480,6 @@ margin-left:calc(var(--children-Indent) * 1) !important;
   padding-bottom: 1px;
   
 }
-}
-
 
 /*******************************
 ********************************
@@ -8523,72 +8488,70 @@ margin-left:calc(var(--children-Indent) * 1) !important;
 ********************************/
 
 :root{
-	--recentItemBulletWidth:7px;
-	--recentTitlePadTopBtm:5px;
+  --recentItemBulletWidth:7px;
+  --recentTitlePadTopBtm:5px;
 }
 #app > .dialog-backdrop > .dialog-box{
-	
+  
 }
 
 #app > .dialog-backdrop > .dialog-box > h1.title{
-	position: sticky;
-	top: calc(var(--quick-switcher--padding) * -1) !important;
-	margin-top: calc(var(--quick-switcher--padding) * -1);
-	margin-left: calc(var(--quick-switcher--padding) * -1);
-	width: calc(100% + var(--quick-switcher--padding) * 2);
-	min-height: calc(var(--quick-switcher--padding) * 1.5) !important;
-	z-index: 1;
-	overflow: unset;
+  position: sticky;
+  top: calc(var(--quick-switcher--padding) * -1) !important;
+  margin-top: calc(var(--quick-switcher--padding) * -1);
+  margin-left: calc(var(--quick-switcher--padding) * -1);
+  width: calc(100% + var(--quick-switcher--padding) * 2);
+  min-height: calc(var(--quick-switcher--padding) * 1.5) !important;
+  z-index: 1;
+  overflow: unset;
 
-	padding-left: var(--quick-switcher--padding);
-	background: var(--BG-primary);
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	margin-right: 0px;
-	border-bottom: 1px solid hsla(0,0%,50%,.2)
+  padding-left: var(--quick-switcher--padding);
+  background: var(--BG-primary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 0px;
+  border-bottom: 1px solid hsla(0,0%,50%,.2)
 }
 #app > .dialog-backdrop > .dialog-box > h1.title + div > div #selectBox{
-	font-size: 1.0rem;
-	width: 100%;
-	margin: 0px;
-	max-height: calc(70vh);
+  font-size: 1.0rem;
+  width: 100%;
+  margin: 0px;
+  max-height: calc(70vh);
 }
 #app > .dialog-backdrop > .dialog-box > h1.title + div > div #selectBox option {
-	padding-top: calc(var(--recentItemBulletWidth) * 0.5);
-	padding-bottom: calc(var(--recentItemBulletWidth) * 0.5);
-	padding-left: calc(var(--recentItemBulletWidth) * 2.5) !important;
-	position: relative;
-	border-radius: 4px;
-	line-height: .1 !important;
+  padding-top: calc(var(--recentItemBulletWidth) * 0.5);
+  padding-bottom: calc(var(--recentItemBulletWidth) * 0.5);
+  padding-left: calc(var(--recentItemBulletWidth) * 2.5) !important;
+  position: relative;
+  border-radius: 4px;
+  line-height: .1 !important;
 }
 #app > .dialog-backdrop > .dialog-box > h1.title + div > div #selectBox option:empty{
-	display: none;
+  display: none;
 }
 select option:checked{
-	background: linear-gradient(var(--wf-background-accent),var(--wf-background-accent)) !important;
-	-webkit-text-fill-color: var(--switcher--item--svg-stroke-breadcrumb) !important;
-	
+  background: linear-gradient(var(--wf-background-accent),var(--wf-background-accent)) !important;
+  -webkit-text-fill-color: var(--switcher--item--svg-stroke-breadcrumb) !important;
+  
 }
 #app > .dialog-backdrop > .dialog-box > h1.title + div > div #selectBox option:before {
-	content:"";
-	width: var(--recentItemBulletWidth);
-	height: var(--recentItemBulletWidth);
-	left: calc(var(--recentItemBulletWidth) * .5);
-	top: calc(50% - var(--recentItemBulletWidth) * .5);
-	font-size: 0px;
-	background: var(--BG-Bullet-open);
-	border-radius: 10px;
-	opacity: .8;
-	display: inline-flex;
-	position: absolute;
+  content:"";
+  width: var(--recentItemBulletWidth);
+  height: var(--recentItemBulletWidth);
+  left: calc(var(--recentItemBulletWidth) * .5);
+  top: calc(50% - var(--recentItemBulletWidth) * .5);
+  font-size: 0px;
+  background: var(--BG-Bullet-open);
+  border-radius: 10px;
+  opacity: .8;
+  display: inline-flex;
+  position: absolute;
 }
 
 
 
 
-
-}
 
 
 /*******************************
@@ -8696,8 +8659,6 @@ html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:
 html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:last-of-type > button {
     width: auto;
 }
-}
-
 
 /*******************************
 ********************************
@@ -9009,8 +8970,6 @@ html #app .dialog-box ._157gzxf > div > div {
     background: rgba(0, 0, 0, .55);
     backdrop-filter: blur(1px) !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -9023,8 +8982,6 @@ html #app .dialog-box ._157gzxf > div > div {
   max-height: 57vh;
   font-size: 14px;
 }
-}
-
 
 /*******************************
 ********************************
@@ -9254,8 +9211,6 @@ LAST ITEM
 #app .dialog-box .breadcrumbs > a:last-child:before {
   position: relative;
 }
-}
-
 
 /*******************************
 ********************************
@@ -9270,8 +9225,6 @@ LAST ITEM
     z-index: 94949494944949494 !important;
         
 }
-}
-
 
 /*******************************
 ********************************
@@ -9281,30 +9234,30 @@ LAST ITEM
 
 :root {
 
-	--search-nav-transition: 0.45s;
+  --search-nav-transition: 0.45s;
 }
 .header {
-	background: transparent !important;
-	background: transparent !important;
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
-	z-index: 10;
-	border-bottom:1px solid  hsla(0,0%,50%,.1);
-	height: var(--Height--Header);
-	right: 1px;
+  background: transparent !important;
+  background: transparent !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 10;
+  border-bottom:1px solid  hsla(0,0%,50%,.1);
+  height: var(--Height--Header);
+  right: 1px;
 }
 
 /*ADD SHARED NODE TO YOUR WORKFLOWY*/
 .header > button.button.primary span {
-	white-space: nowrap;
-	max-width: 26px;
-	display: block;
-	overflow: hidden;
+  white-space: nowrap;
+  max-width: 26px;
+  display: block;
+  overflow: hidden;
 }
 @media (max-width: 600px) {
-		.header > button.button.primary{
-			display: none;
-		}
+    .header > button.button.primary{
+      display: none;
+    }
 }
 
 /*overrides*/
@@ -9315,32 +9268,32 @@ LAST ITEM
 #app .searchBox > div > input,
 #app .searchBox > div > div > div.flyout,
 #app .searchBox > div > div > div.flyout > div {
-	background: transparent;
-	border: none;
-	border-radius: unset;
-	transition: unset;
-	visibility: visible;
-	opacity: 1;
-	top: unset !important;
-	left: unset !important;
-	right: unset!important;
-	bottom: unset !important;
-	width: 100%;
-	position: relative;
-	display: flex;
-	transform: unset;
-	max-height: unset;
-	overflow: unset;
-	box-sizing: border-box;
-	flex-shrink: unset;
-	flex-grow: unset;
-	flex: unset;
-	padding: unset;
-	background: unset;
-	display: flex;
-	height: unset;
-	margin: 0px !important;
-	margin-right: 0px;
+  background: transparent;
+  border: none;
+  border-radius: unset;
+  transition: unset;
+  visibility: visible;
+  opacity: 1;
+  top: unset !important;
+  left: unset !important;
+  right: unset!important;
+  bottom: unset !important;
+  width: 100%;
+  position: relative;
+  display: flex;
+  transform: unset;
+  max-height: unset;
+  overflow: unset;
+  box-sizing: border-box;
+  flex-shrink: unset;
+  flex-grow: unset;
+  flex: unset;
+  padding: unset;
+  background: unset;
+  display: flex;
+  height: unset;
+  margin: 0px !important;
+  margin-right: 0px;
 }
 
 /*OLD / DONT KNOW
@@ -9368,140 +9321,140 @@ LAST ITEM
 }
 
 #app .searchBox {
-	width: var(--searchboxWidth);
-	transition: var(--search-nav-transition) !important;
-	background: transparent;
-	border-radius: 10px;
-	position: absolute;
-	right: 0;
-	top: 5px;
-	margin-right: 10px;
-	border: none !important;
+  width: var(--searchboxWidth);
+  transition: var(--search-nav-transition) !important;
+  background: transparent;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  margin-right: 10px;
+  border: none !important;
 }
 
 
 /*OUTER WRAPPER - ACTIVE*/
 #app .searchBox._zpqjyh {
-	border-radius: 10px;
-	border-radius: 7px;
-	width: var(--searchboxWidth-Active);
-	box-shadow: 0 10px 16px -10px rgba(0, 0, 0, .25);
+  border-radius: 10px;
+  border-radius: 7px;
+  width: var(--searchboxWidth-Active);
+  box-shadow: 0 10px 16px -10px rgba(0, 0, 0, .25);
 }
 
 /*INPUT * DROPDOWN WRAPPER*/
 #app .searchBox > div {
-	position: relative;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: flex-start;
-	background: transparent !important;
-	border: var(--search-nav-border);
-	border-radius: 10px;
-	overflow: hidden;
-	transition: var(--search-nav-transition);
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: transparent !important;
+  border: var(--search-nav-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--search-nav-transition);
 }
 
 #app .searchBox._zpqjyh > div {
-	border-radius: 16px;
-	border: var(--search-nav-border-active);
+  border-radius: 16px;
+  border: var(--search-nav-border-active);
 }
 
 /*INput*/
 #app .searchBox > div > input {
-	border: none !important;
-	background: var(--BG-primary);
-	position: relative;
-	padding: 8px 20px 8px 35px!important;
-	order: 1;
-	z-index: 20;
-	color: var(--NODE--TXT-CLR--CONTRAST) !important;
-	transition: var(--search-nav-transition);
-	font-size: .9rem;
-	line-height: 1;
-	-webkit-font-smoothing: subpixel-antialiased;
-	backdrop-filter: blur(20px) !important;
+  border: none !important;
+  background: var(--BG-primary);
+  position: relative;
+  padding: 8px 20px 8px 35px!important;
+  order: 1;
+  z-index: 20;
+  color: var(--NODE--TXT-CLR--CONTRAST) !important;
+  transition: var(--search-nav-transition);
+  font-size: .9rem;
+  line-height: 1;
+  -webkit-font-smoothing: subpixel-antialiased;
+  backdrop-filter: blur(20px) !important;
 }
 
 
 #app .searchBox._zpqjyh input {
-	background: var(--search-nav-input-active);
+  background: var(--search-nav-input-active);
 }
 
 #app .searchBox input::placeholder {
-	color: var(--SEARCH-NAV--PLACEHOLDER-TXT-CLR) !important;
+  color: var(--SEARCH-NAV--PLACEHOLDER-TXT-CLR) !important;
 }
 
 #app .searchBox._zpqjyh input::placeholder {
-	color: var(--SEARCH-NAV--PLACEHOLDER-TXT-CLR);
+  color: var(--SEARCH-NAV--PLACEHOLDER-TXT-CLR);
 }
 
 /*INPUT SEARCH ICON*/
 #app .searchBox [data-icon="magnifying-glass"] {
-	left: 12px !important;
-	height: 16px !important;
-	top: 9px !important;
-	z-index: 31;
-	padding: 0px !important;
-	background-image: var(--ICON--SEARCH-ICON);
-	transition: var(--search-nav-transition);
-	opacity: .5
+  left: 12px !important;
+  height: 16px !important;
+  top: 9px !important;
+  z-index: 31;
+  padding: 0px !important;
+  background-image: var(--ICON--SEARCH-ICON);
+  transition: var(--search-nav-transition);
+  opacity: .5
 }
 
 #app .searchBox._zpqjyh [data-icon="magnifying-glass"] {
-	opacity: 1;
+  opacity: 1;
 }
 
 /*Hide original Icon*/
 #app .searchBox [data-icon="magnifying-glass"] > path {
-	opacity: 0;
+  opacity: 0;
 }
 
 /*INPUT CANCEL BUTTON CONTAINER*/
 #app .searchBox ._1bxfrxq {
-	position: absolute !important;
-	right: 12px !important;
-	width: unset;
-	height: unset;
-	max-height: 20px !important;
-	z-index: 35;
-	background: transparent !important;
-	top: 8px !important
+  position: absolute !important;
+  right: 12px !important;
+  width: unset;
+  height: unset;
+  max-height: 20px !important;
+  z-index: 35;
+  background: transparent !important;
+  top: 8px !important
 }
 
 /*INPUT CANCEL & FAVORITE BUTTONS - UNIVERSAL*/
 #app .searchBox ._1bxfrxq > div,
 #app .searchBox ._1bxfrxq > svg {
-	cursor: pointer;
-	width: unset;
-	height: unset;
-	border: 0px;
-	padding: 0px !important;
-	border: none;
-	transition: .12s;
-	box-shadow: none;
+  cursor: pointer;
+  width: unset;
+  height: unset;
+  border: 0px;
+  padding: 0px !important;
+  border: none;
+  transition: .12s;
+  box-shadow: none;
 }
 
 #app .searchBox ._1bxfrxq > svg:hover {
-	fill: transparent;
+  fill: transparent;
 }
 
 /*NAV FAVORITE SEARCH BUTTON*/
 #app .searchBox ._1bxfrxq svg {
-	width: 18px;
-	height: 18px;
-	border-radius: 100px;
+  width: 18px;
+  height: 18px;
+  border-radius: 100px;
 }
 
 #app .searchBox ._1bxfrxq div svg {
-	background: var(--search-nav-icon-color-BG);
-	width: 25px;
+  background: var(--search-nav-icon-color-BG);
+  width: 25px;
 }
 
 #app .searchBox ._1bxfrxq div svg path {
-	fill: var(--BG-primary) !important;
-	width: 10px;
-	height: 10px;
-	display: block;
+  fill: var(--BG-primary) !important;
+  width: 10px;
+  height: 10px;
+  display: block;
 }
 #app .searchBox ._1bxfrxq ._xp9229 svg path{
     fill: rgb(248, 196, 118) !important;
@@ -9510,22 +9463,22 @@ LAST ITEM
 /*NAV FAVORITE SEARCH BUTTON - ACTIVE*/
 #app .searchBox ._1bxfrxq > div._nqa6xz svg,
 #app .searchBox ._1bxfrxq > div._fgiwtn svg {
-	background: var(--search-nav-icon-color-BG-active)
+  background: var(--search-nav-icon-color-BG-active)
 }
 
 #app .searchBox ._1bxfrxq > div svg:hover {
-	filter: brightness(1.2)
+  filter: brightness(1.2)
 }
 
 /*NAV FAVORITE SEARCH BUTTON - ICON - NOT ACTIVE*/
 #app .searchBox ._1bxfrxq > div svg path {
-	fill: var(--BG-primary);
-	stroke: none;
+  fill: var(--BG-primary);
+  stroke: none;
 }
 
 /*NAV FAVORITE SEARCH BUTTON - ICON - ACTIVE*/
 #app .searchBox ._1bxfrxq > div._nqa6xz svg path {
-	fill: var(--search-nav-icon-color-FILL-active);
+  fill: var(--search-nav-icon-color-FILL-active);
 }
 
 
@@ -9535,74 +9488,74 @@ DROPDOWN WRAPPER
 *************/
 /*DROPDOWN WRAPPER*/
 #app .searchBox > div > div {
-	width: 100%;
-	order: 3 !important;
-	animation: search-nav-close .5s ease-in-out;
-	height: 0px;
-	overflow: hidden;
+  width: 100%;
+  order: 3 !important;
+  animation: search-nav-close .5s ease-in-out;
+  height: 0px;
+  overflow: hidden;
 }
 
 #app .searchBox._zpqjyh > div > div {
-	height: 100%;
-	background: var(--search-nav-bg-primary);
-	animation: search-nav-open .5s ease-in-out;
+  height: 100%;
+  background: var(--search-nav-bg-primary);
+  animation: search-nav-open .5s ease-in-out;
 }
 
 @keyframes search-nav-open {
-	0% {
-		height: 0px;
-	}
+  0% {
+    height: 0px;
+  }
 
-	50% {
-		height: 0px;
-	}
+  50% {
+    height: 0px;
+  }
 
-	100% {
-		height: 40px;
-	}
+  100% {
+    height: 40px;
+  }
 }
 
 @keyframes search-nav-close {
-	0% {
-		height: 40px;
-	}
+  0% {
+    height: 40px;
+  }
 
-	40% {
-		height: 0px;
-	}
+  40% {
+    height: 0px;
+  }
 
-	100% {
-		height: 0px;
-	}
+  100% {
+    height: 0px;
+  }
 }
 
 
 
 #app .searchBox .scroller {
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
 }
 
 
 
 
 #app .searchBox > div > div > .flyout {
-	padding: 7px 0px !important;
-	overflow-y: auto !important;
-	max-height: 500px !important;
-	transition: var(--search-nav-transition);
-	border-top: var(--search-nav-border-active) !important;
-	border: none !important;
-	min-width: unset !important;
-	width: 100% !important;
-	max-width: unset !important;
+  padding: 7px 0px !important;
+  overflow-y: auto !important;
+  max-height: 500px !important;
+  transition: var(--search-nav-transition);
+  border-top: var(--search-nav-border-active) !important;
+  border: none !important;
+  min-width: unset !important;
+  width: 100% !important;
+  max-width: unset !important;
 }
 #app .searchBox .flyout.menu{
-	padding: 7px !important
+  padding: 7px !important
 }
 #app .searchBox .flyout.menu > div {
-	padding:0px !important;
+  padding:0px !important;
 }
 
 #app .searchBox._zpqjyh > div > div > .flyout {}
@@ -9610,35 +9563,35 @@ DROPDOWN WRAPPER
 /*BUTTONS*/
 #app .searchBox > div > div > .flyout > div,
 #app .searchBox > div > div > .flyout > div {
-	justify-content: space-between;
+  justify-content: space-between;
 }
 
 #app .searchBox > div > div > .flyout > div > div,
 #app .searchBox > div > div > .flyout > div > div {
-	border-radius: 5px !important;
-	cursor: pointer !important;
-	padding: 6px 12px;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  padding: 6px 12px;
 }
 
 #app .searchBox > div > div > .flyout {
-	background: var(--search-nav-bg-primary-2) !important;
+  background: var(--search-nav-bg-primary-2) !important;
 }
 
 #app .searchBox > div > div > .flyout > div > div {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 #app .searchBox > div > div > .flyout > div {
-	border-bottom: 1px solid rgb(150, 150, 150, .5);
-	padding-bottom: 8px !important;
+  border-bottom: 1px solid rgb(150, 150, 150, .5);
+  padding-bottom: 8px !important;
 }
 
 #app .searchBox > div > div > .flyout .menuItem {
-	padding-left: 0px
+  padding-left: 0px
 }
 
 #app .searchBox .menuItem {
-	cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 /*DROPDOWN WRAPPER - ACTIVE*/
@@ -9651,22 +9604,22 @@ DROPDOWN WRAPPER
 .header > div.headerShareButton:hover,
 .header > div div.iconButton:hover,
 .header div.menu.gearMenu > div > div:hover {
-	background: var(--HEADER--BUTTON-HOVER);
-	color: var(--NODE--TXT-CLR--CONTRAST);
-	cursor: pointer;
+  background: var(--HEADER--BUTTON-HOVER);
+  color: var(--NODE--TXT-CLR--CONTRAST);
+  cursor: pointer;
 }
 
 .header > div.breadcrumbs > a:first-of-type:hover {
-	background: unset;
-	color: unset;
+  background: unset;
+  color: unset;
 }
 
 .header > div.breadcrumbs a {
-	color: var(--HEADER-BREADCRUMB-LINK);
+  color: var(--HEADER-BREADCRUMB-LINK);
 }
 
 .header > div.breadcrumbs a:last-of-type {
-	color: var(--HEADER-BREADCRUMB-LINK--CURRENT);
+  color: var(--HEADER-BREADCRUMB-LINK--CURRENT);
 }
 
 #app .searchBox > div > div > .flyout > div > div._5yrksw,
@@ -9677,27 +9630,27 @@ DROPDOWN WRAPPER
 #app .searchBox > div > div > .flyout > div > div._114vg2m:hover,
 #app .searchBox > div > div > .flyout > div > div._1bbz2ot:hover,
 #app .searchBox > div > div > .flyout > div > div._94kdhb:hover {
-	background-color: var(--SEARCH-NAV-MENU-ITEM--BG-ACTIVE) !important;
+  background-color: var(--SEARCH-NAV-MENU-ITEM--BG-ACTIVE) !important;
 }
 
 #app .searchBox > div > div > .flyout > div > div._5yrksw *,
 #app .searchBox > div > div > .flyout > div > div._94kdhb * {
-	color: var(--NODE--TXT-CLR--CONTRAST) !important;
+  color: var(--NODE--TXT-CLR--CONTRAST) !important;
 }
 
 #app .searchBox > div > div > .flyout > div:first-of-type:after {
-	content: "" !important;
-	display: block;
-	background: var(--HEADER--BORDER-CLR);
-	height: 1px;
-	width: 100%;
-	position: absolute;
-	left: 0;
-	inset: unset;
-	right: 0;
-	z-index: 1001;
-	bottom: 0;
-	margin-top: unset;
+  content: "" !important;
+  display: block;
+  background: var(--HEADER--BORDER-CLR);
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  inset: unset;
+  right: 0;
+  z-index: 1001;
+  bottom: 0;
+  margin-top: unset;
 }
 
 .header .pagination {
@@ -9716,8 +9669,6 @@ DROPDOWN WRAPPER
 .header  .iconButton.lg svg {
   transform: scale(.9)
 }
-}
-
 
 /*******************************
 ********************************
@@ -9739,8 +9690,6 @@ DROPDOWN WRAPPER
     overflow: visible !important;
     opacity: 1;
 }
-}
-
 
 /*******************************
 ********************************
@@ -9780,8 +9729,6 @@ DROPDOWN WRAPPER
 #app .project.addedShared > .name:after {
     background: var(--BG-expand-border-shared-WITH-me) !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -9854,10 +9801,10 @@ HEADER
   padding-right: 8px
 }
 .header > button.button.primary span {
-	white-space: nowrap;
-	max-width: 26px;
-	display: block;
-	overflow: hidden;
+  white-space: nowrap;
+  max-width: 26px;
+  display: block;
+  overflow: hidden;
   color:var(--NODE--TXT-CLR--main);
   opacity: .7
 }
@@ -9896,9 +9843,9 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 }
 
 @media (max-width:600px) {
-		.header > button.button.primary{
-			display: none;
-		}
+    .header > button.button.primary{
+      display: none;
+    }
   body.shared.is-desktop #app .searchBox{
   }
   body.shared.is-desktop .header > .itemTypePickerMenu{
@@ -9916,8 +9863,6 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
   }
   
 }
-}
-
 
 /*******************************
 ********************************
@@ -9974,8 +9919,6 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
     border-radius: 3px;
     -webkit-text-fill-color: white !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -9989,8 +9932,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   white-space: normal !important; 
   font-size: 13px;
 }
-}
-
 
 /*******************************
 ********************************
@@ -10242,8 +10183,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     margin-left: -100px;
   }
 }
-}
-
 
 /*******************************
 ********************************
@@ -10306,8 +10245,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
 
 
 }
-}
-
 
 
 /****
@@ -10315,11 +10252,11 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
 ******/
     /*LIGHT*/
     /*OLD
-	--ICON--UNDERLINE-WAVY--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="19" viewBox="0 0 50 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23000000" stroke-opacity="0.25" stroke-width="10"/></svg>');
-	*/
+  --ICON--UNDERLINE-WAVY--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="19" viewBox="0 0 50 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23000000" stroke-opacity="0.25" stroke-width="10"/></svg>');
+  */
     /*DARK*/
     /*
-	--ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="19" viewBox="0 0 50 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23ffffff" stroke-opacity="0.225" stroke-width="10"/></svg>');*/
+  --ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="19" viewBox="0 0 50 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23ffffff" stroke-opacity="0.225" stroke-width="10"/></svg>');*/
     /*******
     NORMAL UNDERLINE
      *******/
@@ -10376,8 +10313,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
 
 
 
-
-}
 
 
 /****
@@ -10439,8 +10374,6 @@ DARK - WAVY MIRROR UNDERLINE
 }
 
 ********/
-}
-
 
 /****
 ! ICONS - WAVY UNDERLINE - SOLID
@@ -10555,8 +10488,6 @@ html #app .pageContainer .page .project:is(.board) .project.comment .project[pro
 html #app .pageContainer .page *:is(.board) .project.comment .project[projectid*="virtual"] > .name > .content > .innerContentContainer u {
   text-decoration: underline !important;
 }
-}
-
 
 /*******************************
 ********************************
@@ -10622,8 +10553,6 @@ Menlo
     font-weight: 400;
     font-style: normal;
 }
-}
-
 
 /*******************************
 ********************************
@@ -10725,5 +10654,3 @@ body * {
 
 
 
-
-}
