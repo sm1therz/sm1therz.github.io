@@ -1,0 +1,2 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[34219],{11:(e,r,s)=>{Promise.resolve().then(s.bind(s,2374))},2374:(e,r,s)=>{"use strict";s.r(r),s.d(r,{GlobalError:()=>h,default:()=>o});var l=s(54568),t=s(44180),a=s(7620),d=s(2088);let h=e=>((0,a.useEffect)(()=>{t.Cp(e.error)},[e.error]),(0,l.jsx)("html",{children:(0,l.jsx)("body",{children:(0,l.jsx)(d.default,{...e})})})),o=h}},e=>{var r=r=>e(e.s=r);e.O(0,[84230,27644,27261,64152,7654,2088,587,95087,77358],()=>r(11)),_N_E=e.O()}]);
+//# sourceMappingURL=global-error-5cf3203fbe775340.js.map
