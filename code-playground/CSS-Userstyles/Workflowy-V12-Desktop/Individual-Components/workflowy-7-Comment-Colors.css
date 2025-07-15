@@ -97,3 +97,17 @@
   
   border-color: var(--boardRoot-CommentBrdClr) !important;
 }
+
+/*COMMENT BORDERS > DASHBOARD*/
+
+:root {
+  --DashCommentChildren--BrdClr:hsl(200, 6%, 21.4%);
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment):after,
+#app .page.dashboard-page .dashboard-card:not(.noted) > .name:before,
+#app .page.dashboard-page .dashboard-card.noted > .notes:before,
+#app .dashboard-card.comment:not(.noted) > .name:after,
+#app .dashboard-card.comment.noted > .notes:after,
+#app .dashboard-card.comment > .name:before {
+  --DashCrd--BrdClr:hsl(200, 6%, 30%) !important;
+}
