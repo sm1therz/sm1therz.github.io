@@ -1,9 +1,15 @@
-/*NORMAL*/
+/*root*/
 
-.project .project.comment,
+/*COMMENT BOARDERS > ALL*/
+
+:root {
+  --notBoard-CommentBrdClr:hsl(200, 12%, 9.5%);
+  --notBoard-CommentBrdClr:hsl(200, 12%, 0%);
+  --notBoard-CommentBrdClr:hsl(200, 6%, 31%) !important;
+}
+#app .project.comment,
 #app .project.root.comment{
-  border-color: hsl(200, 12%, 10.5%) !important;
-  border-color: hsl(200, 12%, 9.5%) !important;
+  border-color: var(--notBoard-CommentBrdClr) !important;
   
 }
 #app .project.root.comment{
@@ -21,7 +27,56 @@
   border-color: hsl(200, 12%, 9.5%) !important;
 }
 
-/*BOARD - NOT ROOT*/
+/*COMMENT BOARDERS > BOARDS > NOT ROOT*/
+#app .board:not(.root) .project.comment {
+  border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+  --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important;
+}
+
+
+
+#app .board:not(.root) .project.comment .project.comment,
+#app .board:not(.root) .project.comment .project.comment .project.comment .project.comment,
+#app .board:not(.root) .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,
+#app .board:not(.root) .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment {
+
+  border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+}
+
+/*COMMENT BORDERS > BOARDS.ROOT*/
+:root,
+#app .board.root
+#app .board.root *,
+#app .board.root .project.comment{
+  --boardRoot-CommentBrdClr:hsl(200, 12%, 8.5%);
+  --boardRoot-CommentBrdClr:hsl(200, 12%, 0%);
+
+}
+#app .board.root .project.comment,
+#app .board.root .project.comment{
+  border-color: var(--boardRoot-CommentBrdClr) !important;
+}
+
+
+#app .project.board.root > .children > .boardColumn > .children > .project.boardCard.comment {
+  box-shadow: 0 0 0 1px var(--boardRoot-CommentBrdClr) !important;
+  border-width: 0px !important
+}
+
+/*all*/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard.comment,
+#app .board.root .boardColumn .boardCard > .children > .project.comment,
+/***/
+#app .board.root .project.comment,
+#app .board.root .project.comment .project.comment,
+#app .board.root .project.comment .project.comment .project.comment .project.comment,
+#app .board.root .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,
+#app .board.root .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment {
+  
+  border-color: var(--boardRoot-CommentBrdClr) !important;
+}
+
+/*COMMENT BACKGROUND > ALL*/
 
 #app .board:not(.root) .project.comment {
   border-color: hsl(200, 12%, 10.5%) !important;
@@ -36,4 +91,19 @@
 #app .board:not(.root) .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment {
   
   border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+}
+
+.board {
+  
+}
+._theme-dark {
+  
+  .project.comment{
+        --COMMENT-CONTAINER--BG: hsl(197, 18%, 15%) !important;
+    }
+  
+    .board .comment {
+        --COMMENT-CONTAINER--BG: hsl(197, 18%, 15%) !important;
+    }
+  
 }
