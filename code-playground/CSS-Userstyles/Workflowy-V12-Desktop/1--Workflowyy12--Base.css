@@ -10466,11 +10466,6 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
   --wavy--padding-bottom: .5px;
 }
 
-/*LINK FIX*/
-html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a[href*="workflowy"],
-#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy.com"]{
-  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
-}
 
 
 html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
@@ -10498,6 +10493,19 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 html #app .pageContainer .page .project:is(.board) .project.comment .project[projectid*="virtual"] > .name > .content > .innerContentContainer u,
 html #app .pageContainer .page *:is(.board) .project.comment .project[projectid*="virtual"] > .name > .content > .innerContentContainer u {
   text-decoration: underline !important;
+}
+
+/*******
+LINK FIX > MIRRORS (I THINK)
+********/
+html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink,
+#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink{
+  background-image: var(--ICON--UNDERLINE-WAVY--LINK) !important;
+  background-repeat: repeat-x !important;
+}
+html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink[href*="workflowy.com"],
+#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink[href*="workflowy.com"]{
+  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
 }
 
 /*******************************
