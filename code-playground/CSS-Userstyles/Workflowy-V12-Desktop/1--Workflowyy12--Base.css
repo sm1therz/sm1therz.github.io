@@ -6976,6 +6976,17 @@ PARAGRAPH CHEVRON > IS MIRROR
   background: var(--BG-primary) !important;
 }
 
+
+#app .dashboard .project.divider:not(.open, .collapsed) > .name > .bullet {
+  opacity: 0 !important;
+}
+
+
+#app .dashboard .project.divider:is(.open, .collapsed) > .name > .divider-line {
+  left: calc(var(--children-Indent) * 2)!important;
+  margin: 0 auto !important;
+}
+
 /*******************************
 ********************************
 ! DASHBOARD - BORDERS
