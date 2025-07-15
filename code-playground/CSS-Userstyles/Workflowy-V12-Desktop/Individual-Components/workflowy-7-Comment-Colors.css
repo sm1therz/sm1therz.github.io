@@ -5,6 +5,10 @@
 :root {
   --notBoard-CommentBrdClr:hsl(200, 12%, 9.5%);
   --notBoard-CommentBrdClr:hsl(200, 12%, 0%);
+  --notBoard-CommentBrdClr:hsl(200, 6%, 31%) !important;
+  /**/
+  --Root-CommentBrdClr:black;
+
 }
 #app .project.comment,
 #app .project.root.comment{
@@ -13,6 +17,7 @@
 }
 #app .project.root.comment{
   border-width: 1.6px;
+  border-color: var(--Root-CommentBrdClr) !important;
 }
 
 
