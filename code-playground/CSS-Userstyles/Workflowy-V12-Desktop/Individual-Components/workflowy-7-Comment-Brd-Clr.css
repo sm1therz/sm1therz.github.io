@@ -1,9 +1,13 @@
 /*NORMAL*/
 
-.project .project.comment {
+.project .project.comment,
+#app .project.root.comment{
   border-color: hsl(200, 12%, 10.5%) !important;
   border-color: hsl(200, 12%, 9.5%) !important;
   
+}
+#app .project.root.comment{
+  border-width: 1.6px;
 }
 
 
