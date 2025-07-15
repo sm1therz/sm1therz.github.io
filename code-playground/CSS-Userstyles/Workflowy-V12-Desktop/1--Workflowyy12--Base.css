@@ -10496,7 +10496,7 @@ html #app .pageContainer .page *:is(.board) .project.comment .project[projectid*
 }
 
 /*******
-LINK FIX > MIRRORS (I THINK)
+LINK FIX > MIRRORS  > ALL
 ********/
 html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink,
 #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink{
@@ -10506,6 +10506,17 @@ html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .inne
 html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink[href*="workflowy.com"],
 #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink[href*="workflowy.com"]{
   background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
+}
+
+
+/*******
+LINK FIX > MIRRORS > BOARD (ADD UNDERLINE)
+********/
+
+html #app .board .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink,
+#app .board .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink {
+  background-image: unset !important;
+  text-decoration: underline !important;
 }
 
 /*******************************
