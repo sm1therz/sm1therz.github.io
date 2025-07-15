@@ -5512,7 +5512,7 @@ CARD > NOT COMMENT
 #app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project + .project.divider,
 #app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project:not(.comment) + .project.divider,
 #app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project.divider + .project:not(.comment){
-
+  z-index: 3 !important;
     border-top-color: var(--boardRootDividerBgClr) !important;
 }
 
