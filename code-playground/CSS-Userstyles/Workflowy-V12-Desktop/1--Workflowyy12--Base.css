@@ -6261,6 +6261,9 @@ LEVEL 2 Dashboard Card - First Child*/
 ********
 LEVEL 3 Dashboard Card - First Child > all Children*/
 /*children*/
+#app .dashboard-card > .children{
+    padding-left: calc(var(--children-Indent) * 2) !important;
+}
 #app .dashboard-card .children {
     padding-left: calc(var(--children-Indent) * 1);
     margin-bottom: 0px;

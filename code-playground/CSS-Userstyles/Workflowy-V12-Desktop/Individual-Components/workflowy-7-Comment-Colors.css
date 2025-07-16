@@ -109,5 +109,12 @@
 #app .dashboard-card.comment:not(.noted) > .name:after,
 #app .dashboard-card.comment.noted > .notes:after,
 #app .dashboard-card.comment > .name:before {
-  --DashCrd--BrdClr:hsl(200, 6%, 30%) !important;
+  --DashCrd--BrdClr:hsl(200, 6%, 27%) !important;
 }
+
+#app .page.dashboard-page .dashboard-card .project.comment {
+  border-top-width: 1px !important;
+  border-bottom-width: 1px !important;
+  border-color: var(--DashComment--BrdClr) !important
+}
+
