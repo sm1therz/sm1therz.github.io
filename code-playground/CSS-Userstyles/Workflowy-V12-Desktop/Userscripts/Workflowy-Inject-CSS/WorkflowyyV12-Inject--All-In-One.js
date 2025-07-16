@@ -13,13 +13,13 @@
 	// Call injectCSS() to trigger the CSS injection with a one-second delay for the last script
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/2--Workflowyy12--Dark-theme.css');
-	}, 3000);
+	}, 1000);
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/1--Workflowyy12--Base.css');
-	}, 4000);
+	}, 1500);
 	
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/3--Workflowyy12--IBM.css');
-	}, 5000);
+	}, 2000);
 })();
 
