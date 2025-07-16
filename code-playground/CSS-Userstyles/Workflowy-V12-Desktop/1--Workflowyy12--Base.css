@@ -6840,10 +6840,12 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 
 }
 
-/*CHILDREN 2*/
+
+/*CHILDREN 2
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children{
   padding-left: 0px !important;
 }
+*/
 
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children{
   background: var(--BG-primary);
@@ -6857,11 +6859,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   background: var(--ADDED-TO-SELECTION--BG);
 }
 
-/*CHILDREN 3*/
-
-#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children{
-  padding-left: 0px !important;
-}
+/*CHILDREN 3
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project:not(.comment) > .children:before{
   background: var(--BG-primary);
 
@@ -6871,68 +6869,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 }
 
 
-/***********
-PARAGRAPH CHEVRON
-************/
-#app .dashboard-card > .children .project.paragraph > .name > .expand{
-  background: transparent !important;
-}
-.dashboard-card > .children .project.paragraph > .name > .expand > div{
-  width: 100% !important;
-  height: 100% !important;
-  box-shadow: unset !important;
-  background: transparent !important;
-  transform: unset !important;
-  border-radius: 3px !important;
-}
-.dashboard-card > .children .project.paragraph > .name > .expand > div:hover{
-  background: var(--BG-BUTTON--HOVER) !important;
-}
-#app .dashboard-card > .children .project.paragraph > .name > .expand:before,
-#app .dashboard-card > .children .project.paragraph > .name > .expand:after {
-  opacity: 0 !important;
-  display: none !important;
-}
 
-#app .page.dashboard-page .dashboard-card .project.paragraph > .name > .expand ._3hmsj:before{
-  content: "";
-  background-image: var(--ICON--ARROW);
-  display: block;
-  width: 12px !important;
-  height: 12px !important;
-  transform: scale(.85) rotate(90deg) !important;
-  transition: .15s;
-  background-repeat: no-repeat;
-}
-#app .page.dashboard-page .dashboard-card .project.paragraph.collapsed > .name > .expand ._3hmsj:before{
-
-  transform: scale(.85) rotate(0deg) !important;
-}
-
-/***********
-PARAGRAPH CHEVRON > IS MIRROR
-************/
-#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph > .name > .bullet.diamond {
-  opacity: 1 !important;
-}
-#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph > .name > .bullet.diamond:before {
-  content:"";
-    background: var(--BG-Bullet-open);
-  width: var(--btnIcn-ExpandB4Up-W);
-  height: var(--btnIcn-ExpandB4Up-H);
-  transform: rotate(-45deg)scale(.85) !important;
-}
-#app .page.dashboard-page .dashboard-card:not(.comment) .project.paragraph.collapsed > .name > .bullet.diamond:after{
-  content:"";
-  width: var(--btnIcn-ExpandB4Low-W);
-  height: var(--btnIcn-ExpandB4Low-H);
-  border-radius: var(--btnIcn-ExpandB4Low-BrdRad);
-  background: var(--BG-Bullet-under);
-  opacity: 1 !important;
-  border-radius: 3px !important;
-  transform: rotate(-45deg)scale(.85) !important;
-
-}
   
 /*BACKGROUNDS*/
 :root {
@@ -6976,7 +6913,6 @@ PARAGRAPH CHEVRON > IS MIRROR
   background: var(--BG-primary) !important;
 }
 
-
 #app .dashboard .project.divider:not(.open, .collapsed) > .name > .bullet {
   opacity: 0 !important;
 }
@@ -6986,6 +6922,8 @@ PARAGRAPH CHEVRON > IS MIRROR
   left: calc(var(--children-Indent) * 2)!important;
   margin: 0 auto !important;
 }
+
+
 
 /*******************************
 ********************************
@@ -7096,16 +7034,10 @@ EXPAND COLLAPSE BORDER ANIMATION
 
 #app .page.dashboard-page .dashboard.root .dashboard-card:not(.comment) > .children .project.comment .comment {
 
-  border-width: 0px !important;
-  box-shadow: inset 0 0 0 1px var(--DashComment--BrdClr) !important
+  border-width: 1px !important;
 }
 
-#app .page.dashboard-page .dashboard.root .dashboard-card:not(.comment) > .children .project.comment .comment + .comment {
-  margin-top: 10px !important;
-}
-#app .page.dashboard-page .dashboard.root .dashboard-card:not(.comment) > .children .project.comment .comment:last-of-type{
-  margin-bottom: 10px !important;
-}
+
 .dashboard-card > .name:before {
   top: -1px !important;
   opacity: 0;
@@ -7217,6 +7149,28 @@ EXPAND COLLAPSE BORDER ANIMATION
 /*DASHBOARD CARD BORDER*/
 #app .page.dashboard-page .dashboard-card:not(.noted) > .name:before,
 #app .page.dashboard-page .dashboard-card.noted > .notes:before {}
+
+#app .page.dashboard-page .dashboard-card .project.comment{
+  z-index: 2
+}
+
+#app .page.dashboard-page .dashboard-card .project.comment .children:before{
+  display: none !important;
+}
+
+#app .page.dashboard-page .dashboard.root .project.dashboard-card > .children .project:not(.comment) + .project.comment,
+#app .page.dashboard-page .dashboard.root .project.dashboard-card > .children .project:not(.comment) + .comment-toolbar + .project.comment{
+  margin-top: -1px !important;
+}
+
+#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment + .comment,
+#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment .comment + .comment {
+  margin-top: 10px !important;
+}
+#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment:last-of-type,
+#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment .comment:last-of-type{
+  margin-bottom: 10px !important;
+}
 
 /*******************************
 ********************************
