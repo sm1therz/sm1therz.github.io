@@ -37,8 +37,8 @@
 
   .project.comment {
     --COMMENT-CONTAINER--BG: hsl(197, 18%, 15%) !important;
-    --COMMENT-CONTAINER--BG: hsl(200, 12%, 21.25%)
- !important;
+    /**--COMMENT-CONTAINER--BG: hsl(200, 12%, 21.25%)
+ !important;**/
   }
   .project.comment.root {
     --COMMENT-CONTAINER--BG: hsl(197, 18%, 15%) !important;
@@ -47,9 +47,13 @@
   .board .comment {
     --COMMENT-CONTAINER--BG: hsl(197, 18%, 15%) !important;
   }
+  .floating-comments-container .vertical-scrollable-container .root > .children > .project.comment{
+    --COMMENT-CONTAINER--BG: hsl(200, 12%, 22%)
+ !important;
+  }
 }
 
-/*COMMENT BOARDERS > BOARDS > NOT ROOT*/
+/*COMMENT BORDERS > BOARDS > NOT ROOT*/
 #app .board:not(.root) .project.comment {
   border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
   --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important;

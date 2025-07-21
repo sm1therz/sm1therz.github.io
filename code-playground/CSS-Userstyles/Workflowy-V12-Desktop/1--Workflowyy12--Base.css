@@ -7016,7 +7016,7 @@ EXPAND COLLAPSE BORDER ANIMATION
   --DashCrd--BrdClr: var(--DashCommentChildren--BrdClr) !important;
 }
 /*expanded*/
-#app .page.dashboard-page .dashboard-card.comment .project.open:not(.comment) > .children:before,
+#app .page.dashboard-page .dashboard-card.comment > .children > .project.open:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card:not(.comment) .project.comment .project.open:not(.comment) > .children:before{
   --DashCrd--BrdClr:var(--DashCommentChildren--BrdClr);
   
@@ -7166,13 +7166,17 @@ EXPAND COLLAPSE BORDER ANIMATION
   margin-top: -1px !important;
 }
 
-#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment + .comment,
-#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment .comment + .comment {
+#app .page.dashboard-page .dashboard.root .project.comment .project.comment + .comment,
+#app .page.dashboard-page .dashboard.root .project.comment .project.comment .comment + .comment {
   margin-top: 10px !important;
 }
-#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment:last-of-type,
-#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment .comment:last-of-type{
+#app .page.dashboard-page .dashboard.root .project.comment .project.comment:last-of-type,
+#app .page.dashboard-page .dashboard.root .project.comment .project.comment .comment:last-of-type{
   margin-bottom: 10px !important;
+}
+
+#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment {
+  
 }
 
 /*******************************
