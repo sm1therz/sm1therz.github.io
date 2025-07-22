@@ -13,4 +13,5 @@
   min-width: 2200px !important;
   left: calc(var(--pagePadLeft) * -56) !important;
   padding-left: calc(var(--pagePadLeft) * 56.5) !important;
+  padding-right: 1000px !important;
 }
