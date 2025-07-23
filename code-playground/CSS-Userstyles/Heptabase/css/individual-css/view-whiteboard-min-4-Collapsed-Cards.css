@@ -10,8 +10,9 @@ WHITEBOARD - COLLAPSED CARDS
 ************
 ************
 ************
+************/
 
-
+/*
 [class*="whiteboardObject"][data-is-folded="true"] .w-6 + .truncate,
 [class*="whiteboardObject"][data-is-folded="true"] h1,
 [class*="whiteboardObject"][data-is-folded="true"] h2,
@@ -23,20 +24,23 @@ WHITEBOARD - COLLAPSED CARDS
 		width: 100%;
 		text-align: left;
 }
+*/
 
-[class*="whiteboardObject"][data-is-folded="true"] > div {
+[class*="whiteboardObject"] > div [class*="firstBlockEditor"] h1,
+[class*="whiteboardObject"] > div [class*="firstBlockEditor"] h2,
+[class*="whiteboardObject"] > div [class*="firstBlockEditor"] h3,
+[class*="whiteboardObject"] > div [class*="firstBlockEditor"] h4,
+[class*="whiteboardObject"] > div [class*="firstBlockEditor"] h5,
+[class*="whiteboardObject"] > div [class*="firstBlockEditor"] h6{
+	font-size: 24px;
+	
+		width: 100%;
+		text-align: left;
+}
+
+[class*="whiteboardObject"] > div.py-3 {
 	padding-top: 0.15rem;
 	padding-bottom: .15rem;
+	padding-left: 0px;
+	padding-right: 0px !important;
 }
-
-[class*="whiteboardObject"][data-is-folded="true"] > div > [data-is-editor-container],
-[class*="whiteboardObject"][data-is-folded="true"] > div > [data-is-editor-container] *{
-		pointer-events: none !important;
-		
-}
-
-[class*="whiteboardObject"][data-is-folded="true"] > div > .flex.h-8.w-6.shrink-0.items-center{
-		top: 10px;
-		position: relative;
-}
-************/
