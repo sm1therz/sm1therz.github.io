@@ -26,21 +26,29 @@ WHITEBOARD - COLLAPSED CARDS
 }
 */
 
+[class*="whiteboardObject"] > div [class*="firstBlockEditor"]{
+	width: 100%;
+}
 [class*="whiteboardObject"] > div [class*="firstBlockEditor"] h1,
 [class*="whiteboardObject"] > div [class*="firstBlockEditor"] h2,
 [class*="whiteboardObject"] > div [class*="firstBlockEditor"] h3,
 [class*="whiteboardObject"] > div [class*="firstBlockEditor"] h4,
 [class*="whiteboardObject"] > div [class*="firstBlockEditor"] h5,
 [class*="whiteboardObject"] > div [class*="firstBlockEditor"] h6{
-	font-size: 24px;
-	
+	font-size: 23px;
+	line-height: 1.345;
 		width: 100%;
 		text-align: left;
 }
 
 [class*="whiteboardObject"] > div.py-3 {
-	padding-top: 0.15rem;
-	padding-bottom: .15rem;
+	padding-top: 0.4rem;
+	padding-bottom: .4rem;
 	padding-left: 0px;
 	padding-right: 0px !important;
+}
+
+
+[class*="_whiteboardObject"] > div[style*="min-height: 62px"] {
+	box-shadow: inset 0 0 0 1px var(--whiteBoardCardBrdClr);
 }
