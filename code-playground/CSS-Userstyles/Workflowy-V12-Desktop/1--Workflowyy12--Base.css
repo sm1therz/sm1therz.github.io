@@ -6921,7 +6921,12 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 }
 
 
-#app .dashboard .project.divider > .name > .divider-line {
+#app .dashboard .dashboard-card > .children .project.divider > .name > .divider-line {
+  left: calc(var(--children-Indent) * 1)!important;
+  margin: 0 auto !important;
+}
+
+#app .dashboard .dashboard-card.project.divider > .name > .divider-line {
   left: calc(var(--children-Indent) * 2)!important;
   margin: 0 auto !important;
 }
