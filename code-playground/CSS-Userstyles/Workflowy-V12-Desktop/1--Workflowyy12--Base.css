@@ -2210,7 +2210,7 @@ HORIZONTAL RULES / DIVIDERS
   margin-top: 2px !important;
 }
 
-.project.divider:is(.open,.collapsed) > .name > [class*="selection-handle"]{
+.project.divider > .name > [class*="selection-handle"]{
   left:calc(var(--children-Indent) ) !important;
 }
 
@@ -6921,10 +6921,11 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 }
 
 
-#app .dashboard .project.divider:is(.open, .collapsed) > .name > .divider-line {
+#app .dashboard .project.divider > .name > .divider-line {
   left: calc(var(--children-Indent) * 2)!important;
   margin: 0 auto !important;
 }
+
 
 
 
