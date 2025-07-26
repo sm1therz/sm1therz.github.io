@@ -1,0 +1,202 @@
+/***********
+************
+! INBOX - V2
+************
+************/
+:root {
+	--outerPadLR:1.5rem;
+	--outerPadTopBtm:.5rem;
+	/***/
+	--inboxItemContentMaxW:1000px;
+	--inboxItemMaxW: 750px;
+	--inboxWrapW:1050px;
+	--inboxItemPadTopBtm: 7px;
+	--inboxItemBrdAlpha: 1;
+	--inboxContainerPadLR:45px;
+	--inboxInnerPadLR:12vw;
+	--inboxBrdTstW:0px;
+}
+
+/***********
+TOP BAR > OUTER
+************/
+.isolate > .bg-background-secondary > .app-region-drag {
+	border: var(--inboxBrdTstW) solid green;
+	padding-left: var(--outerPadLR) !important;
+	padding-right: var(--outerPadLR) !important;
+	gap: 0px
+}
+
+.bg-background-secondary > .app-region-drag > .flex:last-child {
+	width: var(--inboxItemContentMaxW) !important;
+	margin: 0 auto;
+	padding-right: 40px;
+}
+.isolate  .bg-background-secondary > .app-region-drag > div.flex .app-region-no-drag{
+		border: var(--inboxBrdTstW) solid Purple;
+
+}
+
+/***********
+MIDDLE  BAR > OUTER
+************/
+
+.isolate > .bg-background-secondary > .app-region-drag + div.flex {
+	border: var(--inboxBrdTstW) solid green;
+	padding-left: var(--outerPadLR) !important;
+	padding-right: var(--outerPadLR) !important;
+	padding-top: var(--outerPadTopBtm)!important;
+	padding-bottom: var(--outerPadTopBtm)!important;
+	max-width: 100% !important;
+}
+
+/*MIDDLE  BAR > OUTER > RIGHT PREVIEW OPEN*/
+.isolate > .bg-background-secondary > .app-region-drag + div.flex[style*="max-width"]{
+	
+}
+/***********
+! MIDDLE BAR > INNER
+************/
+.isolate > .bg-background-secondary > .app-region-drag + div.flex > div {
+	border: var(--inboxBrdTstW) solid Purple;
+	width: var(--inboxItemContentMaxW);
+	margin: 0 auto !important;
+	max-width: 100% !important;
+
+}
+
+/***********
+************
+! INBOX ITEMS - WRAPPER > OUTER
+************
+************/
+
+.isolate .bg-background-secondary > .scrollbar-gutter-stable{
+	border: var(--inboxBrdTstW) solid green;
+	padding-left: var(--outerPadLR) !important;
+	padding-right: var(--outerPadLR) !important;
+	padding-top: var(--outerPadTopBtm)!important;
+	padding-bottom: var(--outerPadTopBtm)!important;
+	max-width: 100% !important;
+
+}
+.isolate .bg-background-secondary > .scrollbar-gutter-stable::-webkit-scrollbar{
+	width: 0px !important;
+}
+
+/***********
+! INBOX ITEMS - WRAPPER > INNER
+************/
+.isolate .bg-background-secondary > .scrollbar-gutter-stable > .mx-6.mt-2 {
+	border: var(--inboxBrdTstW) solid Purple;
+	margin: unset !important;
+}
+/***********
+! INBOX ITEMS - ITEM CONTAINER > OUTER
+************/
+.bg-background-secondary [data-action-item-id] {
+	border: calc(var(--inboxBrdTstW) * .5) solid #00909a;
+
+	height: unset;
+	padding-top: var(--inboxItemPadTopBtm);
+	padding-bottom: var(--inboxItemPadTopBtm) !important;
+	width: var(--inboxItemContentMaxW) !important;
+	max-width: 100% !important;
+	position: relative !important;
+	margin: 0 auto !important;
+	
+}
+
+/*HOVERING - RIGHT SIDEBAR > NOT OPEN*/
+.bg-background-secondary [data-action-item-id].bg-light-grey {
+	position: unset !important;
+}
+
+.bg-background-secondary > .app-region-drag + div:not(flex[style*="max-width"]) + .scrollbar-gutter-stable [data-action-item-id].bg-light-grey {
+	position: relative !important;
+}
+.bg-background-secondary > .app-region-drag + div.flex[style*="max-width"] + .scrollbar-gutter-stable [data-action-item-id].bg-light-grey {
+	position: unset !important;
+
+}
+/***********
+! INBOX ITEMS - ITEM CONTAINER > CONTENT WRAPPER
+************/
+
+.bg-background-secondary [data-action-item-id] > .flex.grow {
+	border: calc(var(--inboxBrdTstW) * .5) solid #07f;
+	padding: 5px !important;
+	gap: 12px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+
+
+/***********
+! INBOX ITEMS - ITEM CONTAINER > CONTENT WRAPPER > LEFT SIDE
+************/
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow{
+	border: calc(var(--inboxBrdTstW) * .5) solid green;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	height: 100% !important;
+	flex: 1;
+}
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow > div {
+	align-items: flex-start;
+}
+
+/***********
+! INBOX ITEMS - ITEM CONTAINER > CONTENT WRAPPER > RIGHT SIDE
+************/
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.shrink-0 {
+	min-height: 100% !important;
+	border: calc(var(--inboxBrdTstW) * .5) solid green;
+	display: flex;
+	max-width: 29%;
+}
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.shrink-0 .text-label-mini {
+	font-size: 13px;
+}
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.shrink-0 > div {
+height: 100% !important;
+}
+/***********
+************
+************
+************
+! HOVER MENU
+************
+************
+************
+************/
+
+.isolate > .bg-background-secondary [data-action-item-id] > .transition-opacity .absolute{
+	transform-origin: center right;
+	transform: scale(1.2);
+}
+.isolate > .bg-background-secondary [data-action-item-id] > .transition-opacity {
+}
+
+.isolate > .bg-background-secondary [data-action-item-id] > .transition-opacity{
+	height: 10px !important;
+	width: unset;
+	position: absolute !important;
+	right: 0 !important;
+}
+
+
+/*RIGHT PANEL CLOSED*/
+.transition-opacity.opacity-100 > .absolute[style*="right: 6px"] {
+margin-right: 0px !important;
+}
+.transition-opacity.opacity-100 > .absolute{
+	margin-right: 30px
+}
+.isolate > .bg-background-secondary > .app-region-drag + div.flex[style*="max-width"] + .scrollbar-gutter-stable [data-action-item-id].bg-light-grey .transition-opacity.opacity-100{
+	
+}
