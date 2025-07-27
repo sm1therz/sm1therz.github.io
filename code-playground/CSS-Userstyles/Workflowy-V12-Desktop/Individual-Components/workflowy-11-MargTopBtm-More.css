@@ -1,0 +1,4 @@
+
+#app .page .project:not(.board,.comment, .comment *) > .children:not(.comment > .children) {
+  --prjct-MargTopBtm:4px;
+}
