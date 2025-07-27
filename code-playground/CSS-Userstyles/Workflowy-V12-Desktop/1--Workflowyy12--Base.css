@@ -7023,6 +7023,10 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   --DashCrd--BrdClr:hsl(204, 9%, 27%);
 }
 
+#app .page.dashboard-page .dashboard-card > .children:before{
+  background: var(--COMMENT-CONTAINER--BG);
+}
+
 
 
 /*PARENT INDICATOR
