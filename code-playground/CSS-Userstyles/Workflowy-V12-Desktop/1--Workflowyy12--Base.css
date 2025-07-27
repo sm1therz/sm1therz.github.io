@@ -844,29 +844,10 @@ NAME > CONTENT only*/
 .project:not([class*="header"]) > .name > .content {
     /*font-size: var(--name-fontSize);*/
     /*line-height: var(--name-lineHeight);*/
-    color: var(--NODE--TXT-CLR--main);
+
 }
-:root {
-    --doneNameOpacity: .45;
-    --doneNotesOpacity: .45;
-    --doneClr:
-}
-#app .project.root > .children .project.done > .name > .content,
-.project.done > .name > .content,
-#app .project.root.done > .children .project > .name > .content,
-.project.done > .name > .content {
-    text-decoration-thickness: 1.5px;
-    opacity: var(--doneNameOpacity);
-}
-#app .project.done > .name > .expand:before,
-#app .project.done > .children .name > .expand:before {
-    opacity: var(--doneNameOpacity) !important;
-}
-#app .project.done > .notes,
-#app .project.done > .children .notes {
-    opacity: calc(var(--doneNameOpacity) + -0.1);
-    --NODE-NOTES--TXT-CLR-ALL: var(--NODE--TXT-CLR--main);
-}
+
+
 #app .project.root > .name,
 #app .project.root > .name * {
     text-decoration-thickness: 4px;
@@ -1635,6 +1616,8 @@ s{
 
 
 
+
+
 /***************
 HIGHLIGHT - CODE
 ****************/
@@ -2211,6 +2194,7 @@ HORIZONTAL RULES / DIVIDERS
   border:unset !important;
   background: var(--wf-border-subtle);
   margin-top: 2px !important;
+  
 }
 
 .project.divider > .name > [class*="selection-handle"]{
