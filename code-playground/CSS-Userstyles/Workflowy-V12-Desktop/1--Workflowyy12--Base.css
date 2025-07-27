@@ -2931,55 +2931,14 @@ PUT COMPLETED TASKS AT THE BOTTOM
   
 }
 
-/*ADD CHILD BUTTON - IF COMPLETED TASKS ARE ABOVE*/
-.children > .project.done ~ div:not(.project).mt-m{
-  border-top: 1px solid hsla(0,0%,50%,.3)
-}
-.children > .project.done ~ div:not(.project).mt-m:before{
-  content:"Complete";
-  display: none;
-  color: var(--NODE--TXT-CLR--main);
-  opacity: calc(var(--doneNameOpacity) * 0);
 
-  
-}
-.children > .project.done ~ div:not(.project).mt-m .addChildButton{
-  display: none;
-}
+
 /***/
 
 
-#app .page .project:not(.project.board) > .children > .project {
-    order: 1;
-}
-#app .page .project:not(.project.board) > .children > .project.done {
-    order: 99;
-    transition-delay: 1s;
-}
-#app .page .project.root .children > svg.addChildButton {
-    order: 98;
-}
-#app .project.comment .children .project.done {
-  order: 1 !important;
-}
-
-#app .project.comment .board > .children .project.done{
-  order: unset !important
-}
 
 
 
-/***********
-COMPLETED TASKS - BULLET COLOR
-************/
-#app .project.done > .name > .expand:before, 
-#app .project.done > .children .name > .expand:before {
-    opacity: 0.3 !important;
-}
-#app .project.done > .name > .expand:after, 
-#app .project.done > .children .name > .expand:after{
-    opacity: 0.4 !important;
-}
 
 
 #app .project.quote-block > .name > .expand,
@@ -3190,6 +3149,7 @@ html #app .project > .notes > .content .contentLink{
 
     transform: rotate(90deg)scale(var(--btnIcn-Scale)) !important;
 }
+
 /***********
 ! TAGS + HIGHLIGHTS
 ************/
@@ -3562,7 +3522,7 @@ HIGHLIGHT - GREYED OUT
     opacity: 0.4 !important;
 }
 /***********
-COMPLETED TASKS - HIDE ADD CHILD BUTTON
+! COMPLETED TASKS - HIDE ADD CHILD BUTTON
 ************/
 
 .children > .project.done ~ div:not(.project).mt-m .addChildButton{
@@ -3572,7 +3532,7 @@ COMPLETED TASKS - HIDE ADD CHILD BUTTON
 
 
 /***********
-COMPLETED TASKS - ORDER
+! COMPLETED TASKS - ORDER
 
 #app .page .project:not(.project.board) > .children > .project {
     order: 1;
@@ -5717,7 +5677,7 @@ CARD > NOT COMMENT
 #app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project + .project.divider,
 #app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project:not(.comment) + .project.divider,
 #app .page .board.root > .children > .boardColumn > .children > .boardCard > .children .project.divider + .project:not(.comment){
-  z-index: 3 !important;
+  z-index: 3;
     border-top-color: var(--boardRootDividerBgClr) !important;
 }
 
@@ -6037,7 +5997,6 @@ BULLETS > QUOTE BLOCKS > BOARDS
 #app .board.root .project.comment .project.quote-block + .project.quote-block:not(.boardCard) > .name > .bullet {
   --btn-MargTop: 5px !important;
 }
-
 
 /*******************************
 ********************************
@@ -7430,7 +7389,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 #app .page.dashboard-page .dashboard.root .project.comment .children > .project:first-child {
   
-} 
+}
 
 /*******************************
 ********************************
@@ -7979,9 +7938,10 @@ html.floating-comments-blurred body.floating-comments #app .floating-comments-co
   margin-top: var(--prjct-MargTopBtm) !important;
   margin-bottom: var(--prjct-MargTopBtm) !important;
 }
-#app .thread.comment .comment > .children {
+/*
+#app *:not(.dashboard) .thread.comment .comment > .children {
   padding-left: 30px !important;
-}
+}*/
 
 #app .project.comment.thread:not(.board .comment) > .name > .content {
 
@@ -8383,7 +8343,6 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
     --btnIcn-Scale:0.8 !important;
 
 }
-
 
 
 /*******************************
@@ -10146,7 +10105,7 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 
 #app .page.active.searching .project > .notes > .content.active,
 #app .page.active.searching .project > .notes.matches > .content{
-    -webkit-line-clamp:100 !important;
+    -webkit-line-clamp:900 !important;
     max-height: 100% !important;
     overflow: unset !important;
 }
@@ -10421,7 +10380,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
   #app .dashboard-card > .children {
     padding-right: 7px;
-    padding-left: calc(var(--children-Indent) * 1) !important;
   }
   #app .dashboard .dashboard-card > .name > .expand,
   #app .dashboard .dashboard-card > .name > .menu {
@@ -10681,7 +10639,7 @@ DARK - WAVY MIRROR UNDERLINE
   --ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="%239fa1a2" fill-opacity="1"/><rect x="25" y="12" width="25" height="8" fill="%239fa1a2" fill-opacity="1"/></svg>');
 
   --ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="13" width="25" height="7" fill="%233c88af" fill-opacity="1"/><rect x="25" y="13" width="25" height="7" fill="%233c88af" fill-opacity="1"/></svg>');
-  
+    --ICON--UNDERLINE-WAVY--DONE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="white" fill-opacity="0.04"/><rect x="25" y="12" width="25" height="8" fill="white" fill-opacity="0.04"/></svg>');
   --ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
 }
 
@@ -10702,6 +10660,8 @@ WAVY TEXT - BOARDS
   --ICON--COMMENT: var(--ICON--COMMENT-DARK);
   --ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK);
   --ICON--UNDERLINE-WAVY--LINK:var(--ICON--UNDERLINE-WAVY--LINK--DARK);
+  --ICON--UNDERLINE-WAVY--DONE:var(--ICON--UNDERLINE-WAVY--DONE--DARK);
+  
 }
 
 
@@ -10763,7 +10723,6 @@ html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .inne
 #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink[href*="workflowy.com"]{
   background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
 }
-
 
 /*******
 LINK FIX > MIRRORS > BOARD (ADD UNDERLINE)
@@ -10839,104 +10798,3 @@ Menlo
     font-weight: 400;
     font-style: normal;
 }
-
-/*******************************
-********************************
-! FONTS - IBM PLEX SANS
-********************************
-********************************/
-
-/*
-body,
-body * {
-    font-family: IBM Plex Sans, Whitney, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
-    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
-}
-*/
-:root {
-    /*fonts*/
-    --name-fontSize: 1.15rem;
-    --name-lineHeight: 25px;
-    --notes-fontSize: 13.5px;
-    --notes-lineHeight: 18.5px;    
-
-    /*highlights*/
-    --InnerContentPadTop: 0px;
-    --InnerContentPadBtm: 0px;
-    /*wavy*/
-    --wavy--BG-size: 9px;
-    --wavy--BG-position: -0px 100%;
-    --wavy--padding-bottom: 3px;
-    --underlineOffset: 2.5px;
-
-    --btn-MargTop: 0px;
-}
-#app .project:not(.board .project, .comment .project) > .name > .prefix{
-    --btn-MargTop:-1px !important
-}
-
-#app .comment .project > .name > .prefix{
-    --btn-MargTop:-1px !important
-}
-
-.project.root > .children .project > .name > .content,
-.project > .name > .content {
-    -webkit-font-smoothing: antialiased;
-}
-.dashboard-card:not(.comment) .children > .project > .name,
-.dashboard-card .children > .project > .commentAttribution,
-.dashboard-card .children > .project > .notes {
-    --btn-MargTop: 4px;
-}
-.references .project .breadcrumbs a {
-
-    font-size: .71rem;
-
-    line-height: 1.05 !important;
-    -webkit-font-smoothing: antialiased !important;
-}
-
-
-@media (max-width: 400px) {
-
-    :root {
-        /*
-        --name-fontSize: 1rem;
-        --name-lineHeight: 22px;
-        --notes-fontSize: 0.95rem;
-        --notes-lineHeight: 17px;
-        */
-        --header1-fontSize: 2.0rem;
-        --header1-lineHeight: 1.3;
-
-        /*highlights*/
-        --InnerContentPadTop: 0px;
-        --InnerContentPadBtm: 0px;
-        /*wavy*/
-        --wavy--BG-size: 6px;
-        --wavy--BG-position: 0px 100%;
-        --underlineOffset: 3px;
-        --underlineThickness: 1.5px;
-    }
-
-    .dashboard > .children {
-        --content-PadLeftRight: 2px;
-    }
-
-    .project.root > .children .project > .name > .content,
-    .project > .name > .content {
-        -webkit-font-smoothing: antialiased;
-    }
-    .dashboard .dashboard-card > .name > .content,
-    .dashboard .dashboard-card > .notes > .content {
-        --content-PadTopBtm: 6px !important;
-    }
-    .project.header1 > .name {
-        --btn-MargTop: 9px !important;
-    }
-
-}
-
-
-
-
