@@ -1,0 +1,26 @@
+.dashboard .project:not(.dashboard-card) > .name:after {
+  opacity: 0 !important;
+}
+
+#app .dashboard .project:not(.board) .project.paragraph > .name > .bullet ~ .expand:before {
+  background:hsl(201, 13%, 19%) !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+#app .dashboard .project:not(.board) .project.paragraph > .name > .bullet:not(.diamond) ~ .expand:after {
+  width: 4px;
+}
+
+/*Dashboard*/
+#app .dashboard-card > .children .project.paragraph.collapsed > .name > .expand > div{
+  width: 2px ;
+  height: 17px !important; 
+}
+#app .dashboard-card > .children .project.paragraph.collapsed > .name > .expand > div{
+  box-shadow: 0 0 0 2px var(--BG-Bullet-under);
+}
+#app .dashboard-card > .children .project.paragraph:not(.collapsed) > .name:hover > .expand > div,
+#app .dashboard-card > .children .project.paragraph:not(.collapsed) > .name > .expand:hover > div {
+  opacity: 0 !important;
+}
