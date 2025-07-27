@@ -1,0 +1,25 @@
+
+/*CHILDREN 2*/
+
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children{
+  background: var(--dashBg-Color1);
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children:before{
+  background: var(--dashBg-Color1);
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project.addedToSelection:not(.comment) > .children{
+  background: var(--ADDED-TO-SELECTION--BG);
+}
+
+/*CHILDREN 3*/
+
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children > .project:not(.comment) > .children{
+  background: var(--dashBg-Color2);
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project:not(.comment) > .children > .project:not(.comment) > .children:before{
+  background: var(--dashBg-Color2);
+}
+#app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project.addedToSelection:not(.comment) > .children{
+  background: var(--ADDED-TO-SELECTION--BG);
+}
+

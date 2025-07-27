@@ -1,0 +1,3 @@
+#app .dashboard-card > .children {
+  padding-left: calc(var(--children-Indent) * 1)!important;
+}
