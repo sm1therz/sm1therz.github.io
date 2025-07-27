@@ -6333,7 +6333,6 @@ LEVEL 1 Dashboard Card*/
 LEVEL 2 Dashboard Card - First Child*/
 /*children*/
 #app .dashboard-card > .children {
-    padding-left: calc(var(--children-Indent) * 1)!important;
     margin-bottom: 0px;
 }
 
@@ -7089,6 +7088,22 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   left: calc(var(--children-Indent) * 2)!important;
   margin: 0 auto !important;
 }
+
+#app .dashboard-card.done .project > .name > .expand > div,
+#app .dashboard-card .project.done > .name > .expand > div,
+#app .dashboard-card .project.done > .children .project > .name > .expand > div{
+  opacity: 0 !important;
+}
+#app .dashboard .project > .name > .content {
+  padding-top: var(--content-PadTopBtm) !important;
+}
+#app .dashboard .project:not(.noted) > .name > .content {
+  padding-bottom:var(--content-PadTopBtm) !important;
+}
+#app .dashboard  {
+  --commentTopContentIndent:var(--children-Indent)!important;
+}
+
 
 
 
