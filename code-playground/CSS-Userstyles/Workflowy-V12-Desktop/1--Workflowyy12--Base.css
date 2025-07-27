@@ -3409,6 +3409,178 @@ HIGHLIGHT - GREYED OUT
     color: var(--NODE--TXT-CLR--main)
 }
 
+/**********************
+***********************
+***********************
+! COMPLETED TASKS
+***********************
+***********************
+***********************/
+
+:root {
+  --doneOpacity:1;
+  --doneChildrenOpacity:0.75;
+
+    --doneClr:;
+  
+}
+
+/***********
+! GLOBAL
+************/
+#app .project.done{
+}
+#app .project.done .innerContentContainer {
+  --ICON--UNDERLINE-WAVY:var(--ICON--UNDERLINE-WAVY--DONE);
+  --negTagClr:var(--BG-primary) !important;
+}
+
+
+/***********
+! COMPLETED TASKS > NAME
+************/
+#app .pageContainer > .page .project.done > .name > .content{
+  color: var(--NODE--TXT-CLR--main)!important;
+  opacity: var(--doneOpacity) !important;
+  text-decoration: line-through !important;
+  text-decoration-color: var(--strikeThroughLineColor-Faint) !important;
+}
+#app .pageContainer > .dashboard-page  .project.done > .name > .content{
+  text-decoration-color: transparent !important;
+  text-decoration:none !important;
+}
+
+/*Strikethrough immediate parent*/
+
+#app .pageContainer > .page .project.done > .name > .content > .innerContentContainer,
+#app .pageContainer > .page .project.done > .name > .content > .innerContentContainer s {
+  text-decoration: none !important;
+}
+
+/*HIDE Strikethrough if immediate parent has strikethrough*/
+#app .project.done > .name > .content s {
+  text-decoration: none !important
+}
+
+/***********
+! COMPLETED TASKS > NOTES
+************/
+#app .project.done > .notes > .content{
+    opacity: calc(var(--doneOpacity) + -0.2);
+    --NODE-NOTES--TXT-CLR-ALL: var(--NODE--TXT-CLR--main);
+}
+
+/***********
+! COMPLETED TASKS > CHILDREN > NAME
+************/
+#app .project.done > .children .project > .name > .content{
+  color: var(--NODE--TXT-CLR--main)!important;
+  opacity: var(--doneChildrenOpacity) !important;
+  text-decoration: unset !important;
+}
+
+/***********
+! COMPLETED TASKS > CHILDREN > NOTES
+************/
+#app .project.done > .children .project > .notes > .content{
+    opacity: calc(var(--doneChildrenOpacity) + -0.25);
+  text-decoration: unset !important;
+}
+
+
+
+.project.done > .name > .content,
+#app .project.root.done > .children .project > .name > .content,
+.project.done > .name > .content {
+    text-decoration-thickness: 1.5px;
+    opacity: var(--doneNameOpacity);
+  
+}
+#app .project.done > .name > .expand:before,
+#app .project.done > .children .name > .expand:before {
+    opacity: var(--doneNameOpacity) !important;
+}
+
+/***********
+! COMPLETED TASKS - HIGHLIGHTS
+************/
+#app .project.done > .name > .content >.innerContentContainer .colored[class*="bc"],
+#app .project.done > .children .project > .name > .content >.innerContentContainer .colored[class*="bc"] {
+  color: var(--NODE--TXT-CLR--main) !important;
+  text-shadow: 
+    0 -1px .5px hsla(0, 0%, 0%, .2),
+    0 1px .5px hsla(0, 0%, 0%, .2),
+    -1px 0 .5px hsla(0, 0%, 0%, .2),
+    1px 0 .5px hsla(0, 0%, 0%, .2)
+}
+/***********
+! COMPLETED TASKS - TAGS
+************/
+#app .project.done > .name > .content .contentTag,
+#app .project.done > .notes > .content .contentTag{
+  opacity: 0.65 !important;
+}
+/***********
+! COMPLETED TASKS - BULLET COLOR
+************/
+#app .project.done > .name > .expand:before, 
+#app .project.done > .children .name > .expand:before {
+    opacity: 0.3 !important;
+}
+#app .project.done > .name > .expand:after, 
+#app .project.done > .children .name > .expand:after{
+    opacity: 0.4 !important;
+}
+/***********
+! COMPLETED TASKS - HIDE ADD CHILD BUTTON
+************/
+
+.children > .project.done ~ div:not(.project).mt-m .addChildButton{
+  display: none;
+}
+
+
+
+/***********
+! COMPLETED TASKS - ORDER
+
+#app .page .project:not(.project.board) > .children > .project {
+    order: 1;
+}
+#app .page .project:not(.project.board) > .children > .project.done {
+    order: 99;
+    transition-delay: 1s;
+}
+#app .page .project.root .children > svg.addChildButton {
+    order: 98;
+}
+#app .project.comment .children .project.done {
+  order: 1 !important;
+}
+
+#app .project.comment .board > .children .project.done{
+  order: unset !important
+}
+************/
+
+
+
+/*COMPLETED - "COMPLETE" TEXT
+.children > .project.done ~ div:not(.project).mt-m{
+  border-top: 1px solid hsla(0,0%,50%,.3)
+}
+
+
+.children > .project.done ~ div:not(.project).mt-m:before{
+  content:"Complete";
+  display: block;
+  color: var(--NODE--TXT-CLR--main);
+  opacity: calc(var(--doneNameOpacity) * 0.75);
+  margin-top: calc(var(--prjct-MargTopBtm) * 2)
+
+}
+*/
+
 /*******************************
 ********************************
 ! BOARDS
