@@ -3516,7 +3516,7 @@ HIGHLIGHT - GREYED OUT
     opacity: 0.4 !important;
 }
 /***********
-! COMPLETED TASKS - HIDE ADD CHILD BUTTON
+COMPLETED TASKS - HIDE ADD CHILD BUTTON
 ************/
 
 .children > .project.done ~ div:not(.project).mt-m .addChildButton{
@@ -3526,7 +3526,7 @@ HIGHLIGHT - GREYED OUT
 
 
 /***********
-! COMPLETED TASKS - ORDER
+COMPLETED TASKS - ORDER
 
 #app .page .project:not(.project.board) > .children > .project {
     order: 1;
@@ -7468,7 +7468,6 @@ html body.floating-comments.windowBlurred #app .floating-comments-container {
   margin: unset !important;
   padding: 0px !important;
   transition: .5s !important;
-  transform: unset !important;
 }
 #app .floating-comments-container > .vertical-scrollable-container .project.root.comment-container > .name {
   height: 1px !important;
@@ -7542,6 +7541,11 @@ html body.floating-comments #app .floating-comments-container .project.root > .c
     html.floating-comments-blurred body.floating-comments #app .floating-comments-container > button.threads--comment-button {
   margin-left: unset !important;
   margin-right: calc(var(--floatCommentW) *  1 - 70px) !important;
+}
+  html body.floating-comments #app .floating-comments-container,
+html body.floating-comments.windowBlurred #app .floating-comments-container {
+
+  transform: unset !important;
 }
 
 }
@@ -8226,7 +8230,7 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 }
 html #app .floating-comments-container > .vertical-scrollable-container > .dashboard-card.root > .children{
   position: fixed;
-  top: 0 !important;
+  top: 40px !important;
   bottom: 0px;
   width: calc(var(--floatCommentW) - 5px) !important;
   padding-right: 5px !important;
