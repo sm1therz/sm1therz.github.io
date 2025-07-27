@@ -7027,6 +7027,20 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   background: var(--COMMENT-CONTAINER--BG);
 }
 
+#app .dashboard-card.comment > .name:before{
+
+  background: var(--COMMENT-CONTAINER--BG);
+  height: unset !important;
+  z-index: 0 !important;
+  top: 0px !important;
+}
+
+.dashboard-card.comment:before {
+  top: -1px !important;
+  z-index: 100 !important;
+  background: hsla(203, 6%, 27%, 1.0);
+}
+
 
 
 /*PARENT INDICATOR
