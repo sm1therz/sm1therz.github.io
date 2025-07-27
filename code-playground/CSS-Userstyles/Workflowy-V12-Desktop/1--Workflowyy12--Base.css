@@ -6038,6 +6038,7 @@ BULLETS > QUOTE BLOCKS > BOARDS
   --btn-MargTop: 5px !important;
 }
 
+
 /*******************************
 ********************************
 ! DASHBOARD
@@ -6988,7 +6989,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   box-shadow: unset !important;
 }
 
-#app .page.dashboard-page .dashboard-card:not(.comment) > .children:before,
+#app .page.dashboard-page .dashboard-card > .children:before,
 #app .page.dashboard-page .dashboard-card > .children > .project > .children:before,
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project > .children > .project > .children:before,
 #app .page.dashboard-page .dashboard-card:not(.comment)  .children > .comment:not(.comment .comment):before{
@@ -7023,7 +7024,8 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   --DashCrd--BrdClr:hsl(204, 9%, 27%);
 }
 
-#app .page.dashboard-page .dashboard-card > .children:before{
+
+#app .page.dashboard-page .dashboard-card.comment > .children:before{
   background: var(--COMMENT-CONTAINER--BG);
 }
 
@@ -7042,8 +7044,6 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 #app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
   background-color: transparent !important;
 }
-
-
 
 /*PARENT INDICATOR
 #app .page.dashboard-page .root > .children .project:is(.collapsed,.open):not(.noted) > .name:before,
@@ -7170,13 +7170,11 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   --commentTopContentIndent:var(--children-Indent)!important;
 }
 
+
 #app .floating-comments-container > .vertical-scrollable-container > .root.dashboard-card.comment-container > .children > .comment > .name > .expand,
 #app .floating-comments-container > .vertical-scrollable-container > .root.dashboard-card.comment-container > .children > .comment .project:not([class*="header"]) > .name > .expand{
   margin-top: 0px !important;
 }
-
-
-
 
 /*******************************
 ********************************
@@ -7209,7 +7207,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 .dashboard-card .children {
   position: relative;
 }
-
+.dashboard-card.comment:before,
 .dashboard-card:not(.noted) > .name:after,
 .dashboard-card.noted > .notes:after,
 .dashboard-card > .name:before,
@@ -7229,7 +7227,6 @@ EXPAND COLLAPSE BORDER ANIMATION
   transition: .1s;
   top: unset !important
 }
-
 
 #app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment, .comment + .comment):before {
   top: -2px;
@@ -7299,6 +7296,8 @@ EXPAND COLLAPSE BORDER ANIMATION
 .dashboard-card.open + .dashboard-card > .name:before {
   opacity: 1
 }
+
+
 #app .dashboard-card.comment > .name:before,
 #app .dashboard-card:not(.comment) .comment > .name:before {
   opacity: 1 !important;
