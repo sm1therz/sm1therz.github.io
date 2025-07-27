@@ -7467,8 +7467,9 @@ html body.floating-comments.windowBlurred #app .floating-comments-container {
   right: var(--floatCommentPosRight) !important;
   margin: unset !important;
   padding: 0px !important;
-  transition: .5s !important;
+  transform: translate(1px) !important;
 }
+
 #app .floating-comments-container > .vertical-scrollable-container .project.root.comment-container > .name {
   height: 1px !important;
 }
@@ -7492,7 +7493,6 @@ html body.floating-comments #app .floating-comments-blurred .floating-comments-c
 }
 html body.floating-comments #app .floating-comments-container > button.threads--comment-button{
     margin-right: 10px !important;
-  transition: .3s !important;
   top: 6px
 }
 /*ACTIVE - ALL*/
@@ -7511,7 +7511,48 @@ html body.floating-comments #app .floating-comments-container:focus-within .proj
 html body.floating-comments #app .floating-comments-container .project.root > .children > .project:first-child {
   margin-top: 4px !important;
 }
+  /*INACTIVE - 1200px*/
+html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
+    max-width: var(--floatCommentMaxW) !important;
+    --floatCommentPosRight: calc(var(--floatCommentW) * -0.2);
+    transition-delay: .5s !important;
+      transition: .5s !important;
 
+  }
+  /*ACTIVE - 1200px*/
+  html body.floating-comments #app .floating-comments-container {
+    --floatCommentW: calc(530px - 10vw + 1%);
+    --floatCommentMaxW: calc(530px - 10vw + 1%) !important;
+      transition-delay: 2s !important;
+    transition: .2s ease-in-out !important;
+
+  }
+  html.floating-comments-blurred body.floating-comments #app .floating-comments-container .project.root > .children > .project {
+    box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.35) !important;
+  }
+  html body.floating-comments #app .floating-comments-container .project.root > .children > .project {
+    opacity: 5;
+    transition-delay: unset !important;
+    transition: .2s !important;
+    box-shadow: 0 0 10px black !important;
+  }
+
+    html.floating-comments-blurred body.floating-comments #app .floating-comments-container > button.threads--comment-button {
+  margin-left: unset !important;
+  margin-right: calc(var(--floatCommentW) *  1 - 70px) !important;
+}
+@media (max-width: 1350px) {
+  html body.floating-comments #app .floating-comments-container {
+    --floatCommentW: calc(530px - 11vw );
+    --floatCommentMaxW: calc(530px - 11vw) !important;
+  }
+}
+@media (max-width: 1300px) {
+  html body.floating-comments #app .floating-comments-container {
+    --floatCommentW: calc(530px - 12vw );
+    --floatCommentMaxW: calc(530px - 12vw) !important;
+  }
+}
 @media (max-width: 1200px) {
   /*INACTIVE - 1200px*/
   html.floating-comments-blurred body.floating-comments #app .floating-comments-container {
@@ -7542,11 +7583,7 @@ html body.floating-comments #app .floating-comments-container .project.root > .c
   margin-left: unset !important;
   margin-right: calc(var(--floatCommentW) *  1 - 70px) !important;
 }
-  html body.floating-comments #app .floating-comments-container,
-html body.floating-comments.windowBlurred #app .floating-comments-container {
 
-  transform: unset !important;
-}
 
 }
 
@@ -8258,6 +8295,7 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
     --btnIcn-Scale:0.8 !important;
 
 }
+
 
 
 /*******************************
