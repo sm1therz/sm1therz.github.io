@@ -7340,7 +7340,11 @@ EXPAND COLLAPSE BORDER ANIMATION
   margin-bottom: 10px !important;
 }
 
-#app .page.dashboard-page .dashboard.root .dashboard-card > .children .project.comment {
+#app .page.dashboard-page .dashboard.root .project.comment .children > .project.comment:first-child,
+#app .page.dashboard-page .dashboard.root .project.comment .children > .comment-toolbar + .project.comment{
+  margin-top: 10px !important;
+}
+#app .page.dashboard-page .dashboard.root .project.comment .children > .project:first-child {
   
 }
 
