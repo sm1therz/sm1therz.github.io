@@ -7037,7 +7037,6 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 
 #app .dashboard-card.comment:before {
   top: -1px !important;
-  z-index: 100 !important;
   background: hsla(195, 12%, 20.5%, 1.0);
 }
 #app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
