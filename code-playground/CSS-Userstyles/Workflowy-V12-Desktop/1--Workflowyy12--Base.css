@@ -7035,10 +7035,13 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   top: 0px !important;
 }
 
-.dashboard-card.comment:before {
+#app .dashboard-card.comment:before {
   top: -1px !important;
   z-index: 100 !important;
-  background: hsla(203, 6%, 27%, 1.0);
+  background: hsla(195, 12%, 20.5%, 1.0);
+}
+#app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
+  background-color: transparent !important;
 }
 
 
