@@ -7416,11 +7416,11 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 
+
 #app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
   background-color: transparent !important;
 }
 #app .dashboard-card.comment > .children > .project.noted.open > .name:before,
-#app .dashboard-card.comment > .children > .project:not(.noted).open > .name:before,
 #app .dashboard-card.comment > .children > .project:not(.noted).open > .name:before,
 #app .dashboard-card.comment > .children > .project.noted.open > .notes:before{
   opacity: 0 !important;
