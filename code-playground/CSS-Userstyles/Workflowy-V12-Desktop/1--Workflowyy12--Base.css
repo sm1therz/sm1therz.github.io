@@ -6996,9 +6996,19 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   top: 0px !important;
 }
 
+._theme-dark {
+  --dashCardCommentBrdClr:hsla(175, 9%, 100%, 0.075);
+}
+#app .dashboard-card.comment{
+  z-index: 2
+}
 #app .dashboard-card.comment:before {
-  top: -1px !important;
-  background: hsla(195, 12%, 20.5%, 1.0);
+  top: 0px !important;
+  background: var(--dashCardCommentBrdClr);;
+}
+
+#app .root > .children > .dashboard-card.comment ~ .dashboard-card.comment:last-child {
+  display: none !important;
 }
 #app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
   background-color: transparent !important;
@@ -7092,7 +7102,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 }
 #app .dashboard .dashboard-card.divider{
   z-index: 2;
-  /*outline: 2px solid var(--BG-primary)*/
+  outline: 2px solid var(--BG-primary)
 }
 #app .dashboard .dashboard-card.divider > .name:before,
 #app .dashboard .dashboard-card.divider > .name:after{
@@ -7219,7 +7229,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .dashboard .dashboard-card.comment .notes:before,
 #app .dashboard .dashboard-card > .children .project.comment .name:before,
 #app .dashboard .dashboard-card > .children .project.comment .notes:before {
-  --DashCrd--BrdClr: var(--DashCommentChildren--BrdClr) !important;
+  --DashCrd--BrdClr: var(--dashCommentBrdClr) !important;
 }
 /*expanded*/
 #app .page.dashboard-page .dashboard-card.comment > .children > .project.open:not(.comment) > .children:before,
@@ -7390,6 +7400,32 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .page.dashboard-page .dashboard.root .project.comment .children > .project:first-child {
   
 }
+
+
+._theme-dark {
+  --dashCardCommentBrdClr:hsla(175, 9%, 100%, 0.075);
+  --dashCommentBrdClr:hsla(175, 9%, 100%, 0.05)
+}
+#app .dashboard-card.comment{
+  z-index: 2
+}
+#app .dashboard-card.comment:before {
+  top: 0px !important;
+  background: var(--dashCardCommentBrdClr);;
+}
+
+#app .root > .children > .dashboard-card.comment ~ .dashboard-card.comment:last-child {
+  display: none !important;
+}
+#app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
+  background-color: transparent !important;
+}
+
+#app .dashboard-card.comment > .children .project:not(.noted) > .name:before,
+#app .dashboard-card.comment > .children .project:not(.noted) > .notes:before{
+  opacity: 0 !important;
+}
+
 
 /*******************************
 ********************************
