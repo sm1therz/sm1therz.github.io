@@ -7150,6 +7150,8 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   margin-top: 0px !important;
 }
 
+
+
 /*******************************
 ********************************
 ! DASHBOARD - BORDERS
@@ -7209,8 +7211,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 :root {
-  --DashComment--BrdClr: hsl(200, 10%, 30%);
-  --DashCommentChildren--BrdClr: hsl(200, 10%, 26.5%);
+
 
 }
 
@@ -7413,8 +7414,12 @@ EXPAND COLLAPSE BORDER ANIMATION
 
 
 ._theme-dark {
+  --dashCardCommentThreadBrdClr:hsla(175, 9%, 100%, 0.065);
   --dashCardCommentBrdClr:hsla(175, 9%, 100%, 0.05);
-  --dashCommentBrdClr:hsla(175, 9%, 100%, 0.05)
+  --dashCommentBrdClr:hsla(175, 9%, 100%, 0.05);
+  /***/
+  --DashComment--BrdClr: hsl(200, 10%, 27%);
+  --DashCommentChildren--BrdClr: hsl(200, 10%, 26.5%);
 }
 #app .dashboard-card.comment{
   z-index: 2
@@ -7423,7 +7428,10 @@ EXPAND COLLAPSE BORDER ANIMATION
   top: 0px !important;
   background: var(--dashCardCommentBrdClr);;
 }
-
+#app .dashboard-card.comment:before,
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment.thread:not(.comment .comment):before{
+  --dashCardCommentBrdClr:var(--dashCardCommentThreadBrdClr);
+}
 
 #app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
   background-color: transparent !important;
@@ -7441,7 +7449,6 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .dashboard .reply-button {
   display: none !important;
 }
-
 
 
 
