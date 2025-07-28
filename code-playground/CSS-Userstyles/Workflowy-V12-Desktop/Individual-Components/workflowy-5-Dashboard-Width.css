@@ -124,9 +124,3 @@
   left: -100vw;
 }
 
-#app .page.dashboard-page .dashboard-card.comment:before,
-#app .page.dashboard-page .dashboard-card.comment > .children:before,
-#app .dashboard-card.comment > .name:before{
-  display: none !important;
-}
-
