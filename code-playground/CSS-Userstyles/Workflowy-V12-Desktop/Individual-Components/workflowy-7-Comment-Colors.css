@@ -111,7 +111,7 @@
 #app .dashboard-card.comment:not(.noted) > .name:after,
 #app .dashboard-card.comment.noted > .notes:after,
 #app .dashboard-card.comment > .name:before {
-  --DashCrd--BrdClr:hsl(200, 6%, 27%) !important;
+  --DashCrd--BrdClr:var(--dashCardCommentBrdClr) !important;
 }
 
 #app .page.dashboard-page .dashboard-card .project.comment {
