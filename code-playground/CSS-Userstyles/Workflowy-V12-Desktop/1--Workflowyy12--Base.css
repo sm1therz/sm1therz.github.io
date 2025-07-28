@@ -7201,7 +7201,8 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 #app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment, .comment + .comment):before {
-  top: -2px;
+  top: -1px;
+  bottom: -1px;
 }
 #app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment, .comment + .comment):after {
   bottom: 0px !important;
@@ -7234,6 +7235,9 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .dashboard .dashboard-card > .children .project.comment .notes:before {
   --DashCrd--BrdClr: var(--dashCommentBrdClr) !important;
 }
+#app .dashboard .dashboard-card:not(.comment) > .children .project.comment.thread:not(.open) > .name:before{
+  opacity: 0 !important;
+}
 /*expanded*/
 #app .page.dashboard-page .dashboard-card.comment > .children > .project.open:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card:not(.comment) .project.comment .project.open:not(.comment) > .children:before{
@@ -7248,15 +7252,17 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 #app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment):before {
-  border-top: 1px solid var(--DashComment--BrdClr);
+  border-top: 1px solid var(--dashCardCommentBrdClr);
+  border-bottom: 1px solid var(--dashCardCommentBrdClr);
 }
 
-
+#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment) + .project:not(.comment){
+  
+}
 /*COMMENTS + COMMENTS > BORDERS*/
 
 #app .page.dashboard-page .dashboard.root .dashboard-card:not(.comment) > .children .project.comment .comment {
 
-  border-width: 1px !important;
 }
 
 
@@ -7428,6 +7434,11 @@ EXPAND COLLAPSE BORDER ANIMATION
   opacity: 0 !important;
 }
 #app .dashboard-card.comment .children > .project:last-child > .name:before {
+  display: none !important;
+}
+
+
+#app .dashboard .reply-button {
   display: none !important;
 }
 
