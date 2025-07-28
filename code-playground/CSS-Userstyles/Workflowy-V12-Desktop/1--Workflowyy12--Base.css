@@ -6598,7 +6598,7 @@ html #app .dashboard .contentEditablePlaceholderWrapper {
 }
 
 /*font-sizes*/
-#app .dashboard-card > .name > .content,
+  #app .dashboard-card:not([class*="header"]) > .name > .content,
 #app .dashboard-card > .name > .contentEditablePlaceholderWrapper {
     font-size: 1em !important;
     line-height: var(--name-lineHeight);
@@ -7174,6 +7174,28 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 #app .dashboard .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment:after,
 #app .dashboard .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment:after{
   background: var(--COMMENT-CONTAINER--BG);
+}
+
+
+#app .dashboard.root > .children .project.comment.thread .expand, 
+#app .dashboard.root > .children .project.comment.thread .bullet, #app .dashboard.root > .children .project.comment.thread .menu, #app .dashboard.root > .children .project.comment.thread .prefix{
+  
+}
+#app .dashboard .project.dashboard-card .header3 > .name {
+  margin: 0px !important;
+}
+#app .page.dashboard-page .dashboard .project.dashboard-card.header3,
+#app .page.dashboard-page  .project.dashboard-card.header3 > .name > .expand,
+#app .page.dashboard-page  .project.dashboard-card.header3 > .name > .bullet,
+#app .page.dashboard-page  .project.dashboard-card.header3 > .name > .menu,
+#app .page.dashboard-page  .project.dashboard-card .header3 > .name > .expand,
+#app .page.dashboard-page  .project.dashboard-card .header3 > .name > .bullet,
+#app .page.dashboard-page  .project.dashboard-card .header3 > .menu{
+  --btn-MargTop:8px !important;
+}
+#app .dashboard .project.header3 > .name > .expand,
+#app .dashboard .project.header3 *{
+  --btn-MargTop:8px !important;
 }
 
 /*******************************
