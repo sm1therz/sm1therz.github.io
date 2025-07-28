@@ -7150,7 +7150,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 ********************************
 ********************************/
 ._theme-dark {
-  --dashboardChildBrdClr: hsl(204, 9%, 22%);
+  --dashboardChildBrdClr: hsl(204, 9%, 23%);
 }
 html #app .page.dashboard-page .root.dashboard .dashboard-card {
   box-shadow: 0 0px 0 0 var(--DashCrd--BrdClr) !important;
