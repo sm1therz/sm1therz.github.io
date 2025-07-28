@@ -168,7 +168,7 @@
 		/*TEST*/
 		--DASHBOARD-CARD--BG: hsl(300, 0%, 13%);
 		--DashCrd-ChldrnBgClr: var(--DASHBOARD-PAGE--BG);
-		--DashCrd--BrdClr: hsl(190, 8%, 24%);
+		--DashCrd--BrdClr: hsl(190, 8%, 23%);
 
 		/*************
 	BOARDS

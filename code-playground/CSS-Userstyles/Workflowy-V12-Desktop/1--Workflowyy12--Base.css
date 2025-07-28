@@ -5998,6 +5998,9 @@ BULLETS > QUOTE BLOCKS > BOARDS
   --btn-MargTop: 5px !important;
 }
 
+
+
+
 /*******************************
 ********************************
 ! DASHBOARD
@@ -6963,7 +6966,6 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   width: unset;
   background: var(--COMMENT-CONTAINER--BG);
   z-index: 0;
---DashCrd--BrdClr: hsl(204, 9%, 25%);
 }
 
 #app .page.dashboard-page .dashboard-card:not(.comment) > .children > .project.comment .children:before{
@@ -6996,6 +6998,10 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   top: 0px !important;
 }
 
+#app .dashboard-card:not(.comment) + .dashboard-card.comment > .name:before,
+#app .dashboard-card:not(.comment) + .dashboard-card.comment:before{
+  top: -1px  !important;
+}
 ._theme-dark {
   --dashCardCommentBrdClr:hsla(175, 9%, 100%, 0.075);
 }
@@ -7101,7 +7107,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
   opacity: 0;
 }
 #app .dashboard .dashboard-card.divider{
-  z-index: 2;
+  /*outline: 2px solid var(--BG-primary)*/
 }
 #app .dashboard .dashboard-card.divider > .name:before,
 #app .dashboard .dashboard-card.divider > .name:after{
@@ -7149,9 +7155,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 ! DASHBOARD - BORDERS
 ********************************
 ********************************/
-._theme-dark {
-  --dashboardChildBrdClr: hsl(204, 9%, 23%);
-}
+
 html #app .page.dashboard-page .root.dashboard .dashboard-card {
   box-shadow: 0 0px 0 0 var(--DashCrd--BrdClr) !important;
 }
@@ -7216,7 +7220,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .dashboard-card.comment:not(.noted) > .name:after,
 #app .dashboard-card.comment.noted > .notes:after,
 #app .dashboard-card.comment > .name:before {
-  --DashCrd--BrdClr: vvar(--DashCrd--BrdClr) !important;
+  --DashCrd--BrdClr: var(--DashCrd--BrdClr) !important;
 }
 
 /*COMMENTS > CHILDREN BORDERS*/
@@ -7275,14 +7279,15 @@ EXPAND COLLAPSE BORDER ANIMATION
   opacity: 1 !important;
 }
 #app .dashboard.root .dashboard-card.comment:is(.open) > .name:after {
-  opacity: .55 !important;
+  opacity: 1 !important;
+  background:var(--dashCardCommentBrdClr) !important;
 }
 
 .comment .project.divider > .name > [class*="selection-handle"] hr {
   background: hsla(0,0%,100%,0.16)
 }
 
-#app .dashboard-card .children {
+#app .dashboard-card:not(.comment) .children > .project:not(.comment) > .name {
   --DashCrd--BrdClr: var(--dashboardChildBrdClr);
 }
 #app .dashboard-card > .children .project:not(.noted) > .name,
@@ -7402,8 +7407,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 
 
 ._theme-dark {
-  --dashCardCommentBrdClr-Open:hsla(175, 9%, 100%, 0.125);
-  --dashCardCommentBrdClr:hsla(175, 9%, 100%, 0.075);
+  --dashCardCommentBrdClr:hsla(175, 9%, 100%, 0.05);
   --dashCommentBrdClr:hsla(175, 9%, 100%, 0.05)
 }
 #app .dashboard-card.comment{
@@ -7413,7 +7417,6 @@ EXPAND COLLAPSE BORDER ANIMATION
   top: 0px !important;
   background: var(--dashCardCommentBrdClr);;
 }
-
 
 
 #app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
