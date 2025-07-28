@@ -7217,7 +7217,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .dashboard-card.comment:not(.noted) > .name:after,
 #app .dashboard-card.comment.noted > .notes:after,
 #app .dashboard-card.comment > .name:before {
-  --DashCrd--BrdClr: red !important;
+  --DashCrd--BrdClr: var(--dashCommentBrdClr) !important;
 }
 
 /*COMMENTS > CHILDREN BORDERS*/
