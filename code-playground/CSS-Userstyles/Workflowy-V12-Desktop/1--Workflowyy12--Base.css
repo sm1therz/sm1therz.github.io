@@ -7217,7 +7217,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .dashboard-card.comment:not(.noted) > .name:after,
 #app .dashboard-card.comment.noted > .notes:after,
 #app .dashboard-card.comment > .name:before {
-  --DashCrd--BrdClr: var(--DashComment--BrdClr) !important;
+  --DashCrd--BrdClr: red !important;
 }
 
 /*COMMENTS > CHILDREN BORDERS*/
@@ -7234,7 +7234,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 /*expanded*/
 #app .page.dashboard-page .dashboard-card.comment > .children > .project.open:not(.comment) > .children:before,
 #app .page.dashboard-page .dashboard-card:not(.comment) .project.comment .project.open:not(.comment) > .children:before{
-  --DashCrd--BrdClr:var(--DashCommentChildren--BrdClr);
+  --DashCrd--BrdClr:var(--dashCardCommentBrdClr);
   
   opacity: 1 !important
 }
@@ -7276,7 +7276,7 @@ EXPAND COLLAPSE BORDER ANIMATION
   opacity: 1 !important;
 }
 #app .dashboard.root .dashboard-card.comment:is(.open) > .name:after {
-  opacity: .5 !important;
+  opacity: .75 !important;
 }
 
 .comment .project.divider > .name > [class*="selection-handle"] hr {
@@ -7403,6 +7403,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 
 
 ._theme-dark {
+  --dashCardCommentBrdClr-Open:hsla(175, 9%, 100%, 0.125);
   --dashCardCommentBrdClr:hsla(175, 9%, 100%, 0.075);
   --dashCommentBrdClr:hsla(175, 9%, 100%, 0.05)
 }
@@ -7414,17 +7415,21 @@ EXPAND COLLAPSE BORDER ANIMATION
   background: var(--dashCardCommentBrdClr);;
 }
 
-#app .root > .children > .dashboard-card.comment ~ .dashboard-card.comment:last-child {
-  display: none !important;
-}
+
 #app .dashboard.root .dashboard-card.comment.collapsed > .name:after {
   background-color: transparent !important;
 }
-
-#app .dashboard-card.comment > .children .project:not(.noted) > .name:before,
-#app .dashboard-card.comment > .children .project:not(.noted) > .notes:before{
+#app .dashboard-card.comment > .children > .project.noted.open > .name:before,
+#app .dashboard-card.comment > .children > .project:not(.noted).open > .name:before,
+#app .dashboard-card.comment > .children > .project:not(.noted).open > .name:before,
+#app .dashboard-card.comment > .children > .project.noted.open > .notes:before{
   opacity: 0 !important;
 }
+#app .dashboard-card.comment .children > .project:last-child > .name:before {
+  display: none !important;
+}
+
+
 
 
 /*******************************
