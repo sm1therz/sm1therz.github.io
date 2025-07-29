@@ -564,7 +564,6 @@ ITEM WRAPPER
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: row !important;
-  box-shadow: inset 0 0 0 1px red;
   margin-right: 0px;
   padding-right: 0px;
   padding-top: var(--leftSideBarItemPadTopBtm);
