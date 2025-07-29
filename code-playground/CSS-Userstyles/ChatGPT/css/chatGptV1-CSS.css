@@ -522,35 +522,38 @@ article + button.bg-token-main-surface-primary {
   --leftSideBarItemDotBtnW:30px;
   --leftSideBarItemDotBtnH:var(--leftSideBarItemDotBtnW);
 }
+
+
+/*********
+**********
+SIDEBAR WIDTH > VERSION 1
+**********
+**********/
+
+/*
 .bg-token-sidebar-surface-primary[style*="260"],
 [class*="--sidebar-width"],
 .bg-token-sidebar-surface-primary[style*="260"] > [class*="260px"],
 #stage-slideover-sidebar[style*="--sidebar-width"]{
   width: var(--leftSideBarWidth) !important;
+}*/
+
+
+/*********
+**********
+SIDEBAR WIDTH > VERSION 2
+**********
+**********/
+
+/*They us a variable to define the sidebar's width. (--sidebar-width). Kust */
+
+[style*="--sidebar-width"],
+[class*="--sidebar-width"] {
+  
 }
 
-.bg-token-sidebar-surface-primary a[class*="menu-item"]{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 8px;
-}
-.bg-token-sidebar-surface-primary a[class*="menu-item"] > div {
-  height: unset !important;
-}
-/*3 dot menu*/
-
-.bg-token-sidebar-surface-primary a[class*="menu-item"] > div + div {
-  display: flex !important;
-  align-items: flex-start;
-  justify-content: center;
-  visibility: visible;
-  z-index: 929;
-    min-width: 18px !important;
-}
-
-.bg-token-sidebar-surface-primary a[class*="menu-item"] > div + div,
-.bg-token-sidebar-surface-primary a[class*="menu-item"] > div + div *{
-  opacity: 1 !important;
+:root {
+  --sidebar-width:360px;
 }
 
 /*********
@@ -577,6 +580,7 @@ ITEM WRAPPER > LEFT WRAPPER
 **********/
 [style*="--sidebar-width"] a[class*="menu-item"] > div.flex:not(.justify-center),
 [class*="--sidebar-width"] a[class*="menu-item"] > div.flex:not(.justify-center){
+  
   max-width: calc(100%  - var(--leftSideBarItemPadLR) - var(--leftSideBarItemGap) * 2);
   flex: 1;
   align-items: flex-start;
@@ -595,6 +599,7 @@ ITEM WRAPPER > LEFT WRAPPER > ITEM TEXT
   padding-right: 2px;
   height: unset !important;
   hyphens: auto;
+  line-height: 1.5;
 }
 /*********
 ITEM WRAPPER > RIGHT > DOT BUTTON WRAPPER
@@ -626,8 +631,8 @@ ITEM WRAPPER > RIGHT > DOT BUTTON WRAPPER
   opacity: 1;
   visibility: visible;
 }
-[style*="--sidebar-width"] a[class*="menu-item"] > div.trailing *,
-[class*="--sidebar-width"] a[class*="menu-item"] > div.trailing *{
+/**/
+[style*="--sidebar-width"] a[class*="menu-item"] > div.trailing *{
   width: 100% !important;
   max-width: 100% !important;
   min-width: 100% !important;
@@ -644,22 +649,6 @@ ITEM WRAPPER > RIGHT > DOT BUTTON WRAPPER
 }
 
 
-
-/*******/
-.bg-token-sidebar-surface-primary[style*="260"] li a + div.absolute {
-  display: flex;
-  align-items: flex-start;
-  top: var(--leftSideBarItemLinkPad);
-  opacity: 0;
-}
-.bg-token-sidebar-surface-primary[style*="260"] li:hover a + div.absolute {
-  opacity: 1;
-}
-.bg-token-sidebar-surface-primary[style*="260"] li a + div.absolute span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 /***********
 ************
@@ -707,6 +696,7 @@ nav[aria-label="Chat history"] > div > div[class*="border-white"]{
 }
 
 
+
 /***********
 ************
 !gpt - 3 DOT MENU - HIDE "DELETE" BUTTON
@@ -734,6 +724,9 @@ HIDE DELETE BUTTON
     fill: hsl(134, 74%, 60%)
 }
 */
+
+
+
 /***********
 ************
 !gpt - SEARCH
