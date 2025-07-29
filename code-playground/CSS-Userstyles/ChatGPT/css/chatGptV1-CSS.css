@@ -508,14 +508,19 @@ article + button.bg-token-main-surface-primary {
 [role="presentation"] > div.w-full > .text-token-text-secondary {
     display: none;
 }
+
 /***********
 ************
 !gpt - LEFT SIDEBAR
 ************
 ************/
 :root {
-  --leftSideBarWidth: 330px;
-  --leftSideBarLinkPad: .5rem;
+  --leftSideBarWidth: 340px;
+  --leftSideBarItemPadLR: .5rem;
+  --leftSideBarItemPadTopBtm: 0.35rem;
+  --leftSideBarItemGap:.5rem;
+  --leftSideBarItemDotBtnW:30px;
+  --leftSideBarItemDotBtnH:var(--leftSideBarItemDotBtnW);
 }
 .bg-token-sidebar-surface-primary[style*="260"],
 [class*="--sidebar-width"],
@@ -542,31 +547,110 @@ article + button.bg-token-main-surface-primary {
   z-index: 929;
     min-width: 18px !important;
 }
-.bg-token-sidebar-surface-primary a[class*="menu-item"] > div + div .trailing.highlight {
-  align-self: flex-start !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 25px !important;
-}
+
 .bg-token-sidebar-surface-primary a[class*="menu-item"] > div + div,
 .bg-token-sidebar-surface-primary a[class*="menu-item"] > div + div *{
   opacity: 1 !important;
 }
-.border-token-border-light[style*="--sidebar-width"] a[class*="menu-item"] .truncate {
+
+/*********
+**********
+ITEM WRAPPER
+**********
+**********/
+[style*="--sidebar-width"] a[class*="menu-item"],
+[class*="--sidebar-width"] a[class*="menu-item"]{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row !important;
+  box-shadow: inset 0 0 0 1px red;
+  margin-right: 0px;
+  padding-right: 0px;
+  padding-top: var(--leftSideBarItemPadTopBtm);
+  padding-bottom: calc(var(--leftSideBarItemPadTopBtm) * 1.25);
+  gap: var(--leftSideBarItemGap);
+  min-height: unset;
+}
+
+/*********
+ITEM WRAPPER > LEFT WRAPPER
+**********/
+[style*="--sidebar-width"] a[class*="menu-item"] > div.flex:not(.justify-center),
+[class*="--sidebar-width"] a[class*="menu-item"] > div.flex:not(.justify-center){
+  max-width: calc(100%  - var(--leftSideBarItemPadLR) - var(--leftSideBarItemGap) * 2);
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+/*********
+ITEM WRAPPER > LEFT WRAPPER > ITEM TEXT
+**********/
+[style*="--sidebar-width"] a[class*="menu-item"] .truncate,
+[class*="--sidebar-width"] a[class*="menu-item"] .truncate{
   white-space: normal;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   padding-right: 2px;
   height: unset !important;
   hyphens: auto;
 }
+/*********
+ITEM WRAPPER > RIGHT > DOT BUTTON WRAPPER
+**********/
+
+[style*="--sidebar-width"] aside a[class*="menu-item"] > div.flex.min-w-0  ~ div.trailing,
+[class*="--sidebar-width"] aside a[class*="menu-item"] > div.flex.min-w-0 ~ div.trailing{
+  display: flex;
+  align-items: flex-start;
+  width: var(--leftSideBarItemDotBtnW);
+  height: 100%;
+  position: absolute;
+  align-self: stretch;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: unset;
+}
+/*overrides*/
+
+[style*="--sidebar-width"] a[class*="menu-item"] > div.trailing,
+[class*="--sidebar-width"] a[class*="menu-item"] > div.trailing
+[style*="--sidebar-width"] a[class*="menu-item"] > div.trailing button,
+[class*="--sidebar-width"] a[class*="menu-item"] > div.trailing button,
+[style*="--sidebar-width"] a[class*="menu-item"] > div.trailing button div,
+[class*="--sidebar-width"] a[class*="menu-item"] > div.trailing button div{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  opacity: 1;
+  visibility: visible;
+}
+[style*="--sidebar-width"] a[class*="menu-item"] > div.trailing *,
+[class*="--sidebar-width"] a[class*="menu-item"] > div.trailing *{
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  border: unset !important
+}
+
+[style*="--sidebar-width"] a[class*="menu-item"] > div.trailing button svg,
+[class*="--sidebar-width"] a[class*="menu-item"] > div.trailing button svg{
+  
+}
+[style*="--sidebar-width"] a[class*="menu-item"] > div.trailing button ,
+[class*="--sidebar-width"] a[class*="menu-item"] > div.trailing button {
+  display: flex;
+}
+
+
+
+/*******/
 .bg-token-sidebar-surface-primary[style*="260"] li a + div.absolute {
   display: flex;
   align-items: flex-start;
-  top: var(--leftSideBarLinkPad);
+  top: var(--leftSideBarItemLinkPad);
   opacity: 0;
 }
 .bg-token-sidebar-surface-primary[style*="260"] li:hover a + div.absolute {
@@ -623,50 +707,7 @@ nav[aria-label="Chat history"] > div > div[class*="border-white"]{
     display:none; 
 }
 
-/***********
-************
-HIDE 3 DOT MENU ON IMPORTANT CHATS
-************
-************/
-/*CHOP SHOP: Simplify Sentence Instructions*/
-[aria-label="Chat history"] [href="/c/7ce3fda1-c150-4e36-8ef8-98b459ddcbf4"] + div {
-  display: none !important;
-}
 
-
-/***********
-************
-SIDEBAR - MOBILE
-************
-************/
-@media (max-width:767px) {
-  :root {
-    --leftSideBarWidth: 900px !important;
-  }
-}
-[class*="sidebar"][style*="width: 0px"][style*="visibility: hidden"] {}
-
-/***********
-************
-SIDEBAR - CANVAS
-************
-************/
-nav._sidebar_rlhi9_56 li a > div {
-  white-space: normal;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-/***********
-************
-SIDEBAR - HIDE BOTTOM VIEW PLANS
-************
-************/
-nav[aria-label="Chat history"] > div > div[class*="border-white"]{
-    display:none; 
-}
 /***********
 ************
 !gpt - 3 DOT MENU - HIDE "DELETE" BUTTON
