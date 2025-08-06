@@ -11,12 +11,12 @@
 ************
 ************
 ************/
-:root { 
-    --mentionmenuBgClr:hsla(0,0%,97%,1);
+:root {
+    --mentionmenuBgClr: hsla(0, 0%, 97%, 1);
 }
 
 [data-theme="dark"] {
-    --mentionmenuBgClr:hsl(207, 4%, 24%);
+    --mentionmenuBgClr: hsl(207, 4%, 24%);
 }
 
 
@@ -25,14 +25,12 @@
 ! CONTEXT MENUS
 ******************
 ******************/
-
 /*****************
 ******************
 BACKSLASH MENU
 ******************
 ******************/
-.fixed.z-dropdown-menu + .max-h-\[40vh\].w-62.overflow-x-hidden.py-1.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl {
-}
+.fixed.z-dropdown-menu + .max-h-\[40vh\].w-62.overflow-x-hidden.py-1.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl {}
 
 
 /*****************
@@ -40,8 +38,7 @@ BACKSLASH MENU
 COMMAND + BACKSLASH
 ******************
 ******************/
-.fixed.z-dropdown-menu + .w-62.overflow-hidden.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl {
-}
+.fixed.z-dropdown-menu + .w-62.overflow-hidden.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl {}
 
 
 /*****************
@@ -49,11 +46,11 @@ COMMAND + BACKSLASH
 MENTION / @ "AT" MENU
 ******************
 ******************/
-:root{
-    --mentionContextMenuItemWrapper-PadLeftRight:10px;
-    --mentionContextMenuItemWrapper-PadTopBtm:10px;
+:root {
+    --mentionContextMenuItemWrapper-PadLeftRight: 10px;
+    --mentionContextMenuItemWrapper-PadTopBtm: 10px;
     /**/
-    --mentionContextMenuItem-PadLeft:7px;
+    --mentionContextMenuItem-PadLeft: 7px;
 }
 #root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl {
     width: 600px !important;
@@ -61,7 +58,6 @@ MENTION / @ "AT" MENU
     border-radius: 17px !important;
     background: var(--mentionmenuBgClr);
     backdrop-filter: blur(10px);
-    
 }
 
 
@@ -78,17 +74,15 @@ MENTION / @ "AT" MENU > LIST
 /*****************
 MENTION / @ "AT" MENU > LIST > CONTENT TYPE CONTAINTER
 ******************/
-#root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div:first-child > div{
-    
-}
+#root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div:first-child > div {}
 
 /*****************
 MENTION / @ "AT" MENU > LIST > CONTENT TYPE LABEL
 ******************/
-#root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div:first-child > div > p.text-label-mini{
+#root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div:first-child > div > p.text-label-mini {
     color: var(--bldClr);
     font-weight: 500 !important;
-    -webkit-font-smoothing:subpixel-antialiased !important;
+    -webkit-font-smoothing: subpixel-antialiased !important;
     font-size: 0.75rem;
     letter-spacing: 0.4px;
     position: sticky;
@@ -108,15 +102,14 @@ MENTION / @ "AT" MENU > LIST > ITEMS
 ******************/
 #root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div:first-child > div > div {
     padding-left: var(--mentionContextMenuItem-PadLeft);
-    word-break: break-word !important; 
+    word-break: break-word !important;
     padding-top: .3rem;
     padding-bottom: .3rem;
-        
 }
 #root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div:first-child > div > div .grow {
-    -webkit-font-smoothing:subpixel-antialiased !important;
+    -webkit-font-smoothing: subpixel-antialiased !important;
 }
-#root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div:first-child > div > div svg{
+#root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div:first-child > div > div svg {
     margin-top: 1px;
 }
 /*****************
@@ -131,8 +124,8 @@ MENTION / @ "AT" MENU > PREVIEW
 }
 @media (max-width: 600px) {
     :root {
-        --mentionContextMenuItemWrapper-PadLeftRight:6px;
-        --mentionContextMenuItemWrapper-PadTopBtm:6px;
+        --mentionContextMenuItemWrapper-PadLeftRight: 6px;
+        --mentionContextMenuItemWrapper-PadTopBtm: 6px;
     }
     /*preview*/
     #root ~ div .fixed.left-0.top-0.z-dropdown-menu.h-screen.w-screen + .flex[class*="90vh"].max-h-80.overflow-hidden[class*="--scrollbar-width"].fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > div.rounded-xl {
@@ -174,10 +167,9 @@ WHITEBOARD - LINK TO WHITEBOARD
 WHITEBOARD - CONTEXT MENU - THE MAIN ONE
 ******************
 ******************/
-#root~div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
+#root ~ div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
     width: 248px !important;
     background: var(--menu-texture-bg-medium)!important;
-    
 }
 
 /*****************
@@ -185,10 +177,9 @@ WHITEBOARD - CONTEXT MENU - THE MAIN ONE
 WHITEBOARD - CONTEXT MENU - CONNECTOR
 ******************
 ******************/
-#root~div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
+#root ~ div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
     width: 248px !important;
     background: var(--menu-texture-bg-medium)!important;
-    
 }
 
 /*****************
@@ -200,12 +191,12 @@ WHITEBOARD - CONTEXT MENU - TIDY
     --whiteboardTidyAdjustWidth: 100px;
 }
 
-#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div {
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div {
     position: relative;
 }
 
-#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div:after,
-#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div:before {
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:after,
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:before {
     content: "";
     display: block;
     position: absolute;
@@ -217,25 +208,72 @@ WHITEBOARD - CONTEXT MENU - TIDY
     ;
 }
 
-#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div:after {
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div:after {
     top: unset;
     bottom: -150px;
 }
 
-#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div>div.box-border:after,
-#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div>div.box-border:before {
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:after,
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before {
     content: "";
     display: block;
     position: absolute;
     background: transparent;
-    top: -150px;
+  /*˜ top: -150px;*/
     bottom: -150px;
     left: -120px;
     width: 120px;
     z-index: 0;
 }
 
-#root~.fixed.z-dropdown-menu.backdrop-blur-2xl>div>div.box-border:before {
+#root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before {
     left: unset;
     right: -120px;
+}
+
+
+/*****************
+******************
+
+TEXT SELECTION MENU
+******************
+******************/
+:root {
+    --txtClrMenuBtnBgClr: white;
+    --txtClrMenuBtnSVGBgClr:#c1c1c1;
+    --txtClrMenuBtnSVGBrdClr: black;
+}
+[data-theme="dark"] {
+    --txtClrMenuBtnBgClr: hsla(207, 5%, 24%, 1.0);
+    --txtClrMenuBtnSVGBgClr:#000;
+    --txtClrMenuBtnSVGBrdClr: white;
+}
+
+/*FIRST MENU*/
+[data-is-floating-menu="true"] > div > button:last-child {
+    background: var(--txtClrMenuBtnBgClr);
+}
+[data-is-floating-menu="true"] > div > button:last-child > svg:first-child {
+    background: var(--txtClrMenuBtnSVGBgClr);
+    box-shadow: 0 0 0 2px var(--txtClrMenuBtnSVGBrdClr) !important;
+  filter: brightness(2)
+}
+
+/*2ND MENU*/
+.z-dropdown-menu[style*="width: 136"] {
+  padding-left: 0px;
+  padding-right: 0px;
+  background: var(--txtClrMenuBtnBgClr);
+}
+.z-dropdown-menu[style*="width: 136"] > div{
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+/*INFO POPUP*/
+
+.p-12.hepta-scrim > [class*="680"][class*="max-w-120"] {
+  width: 700px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: 900px;
 }

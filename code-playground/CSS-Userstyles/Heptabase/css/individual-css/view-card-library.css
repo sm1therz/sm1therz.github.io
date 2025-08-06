@@ -94,6 +94,10 @@ CARD LIBRARY - VARIABLES
   --cardlibFontWeight: 600;
   -webkit-font-smoothing: subpixel-antialiased;
 }
+#root .grid.select-none > div .ProseMirror [data-node-type="heading"] a[href*="heptabase.com"]{
+  --text-color:var(--internalLinkClr);
+--underlineH:1.5px;
+}
 /*headings - Normal cards*/
 #root .grid.select-none > div.px-5 .ProseMirror [data-node-type="heading"] {
   --cardlibFontSize: inherit;
@@ -141,7 +145,7 @@ CARD LIBRARY - VARIABLES
 }
 /*
 #root .grid.select-none .ProseMirror span[data-color]:not(a [data-color]){
-	color: var(--text-color) !important;
+    color: var(--text-color) !important;
 }*/
 #root .grid.select-none .ProseMirror [data-node-type] strong {
   color: var(--text-color) !important;
@@ -578,7 +582,7 @@ CARD LIBRARY - PDFS IMAGES AND VIDEO
   height: unset !important;
   
   filter: 
-	var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) saturate(2)
+    var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) saturate(2)
 }
 #root .grid.select-none > div img.object-cover{
   box-shadow: unset !important;
@@ -666,17 +670,63 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 ******************
 ******************
 ******************/
+#root .grid.select-none > div,
+#root .grid.select-none > div > div,
+#root .grid.select-none > div > div > div,
+#root .grid.select-none > div > div > div > div,
+#root .grid.select-none > div > div > div > div > div {
+  max-height: unset !important;
+}
+
+#root .grid.select-none .ProseMirror > div {
+  max-height: var(--cardlibContentMaxHeight) !important;
+}
 /*hide all block types - first block*/
 #root .grid.select-none .ProseMirror > * {
   display: none;
 }
 /*show all block types - first block*/
-#root .grid.select-none .ProseMirror > *:first-child {
+#root .grid.select-none .ProseMirror > *:first-child,
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"]:nth-child(2){
   display: block;
 }
 #root .grid.select-none .ProseMirror > [data-node-type*="list_item"]:first-child {
   display: flex;
   margin-bottom: 0px;
+}
+
+/**CODE BLOCKS*/
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"]:first-child,
+#root .grid.select-none .ProseMirror > *:first-child + div[data-node-type="code_block"]:nth-child(2),
+#root .grid.select-none .ProseMirror > *:first-child + div:not([data-node-type="code_block"]) + div[data-node-type="code_block"]:nth-child(3){
+  display: block !important;
+  transform-origin: top center;
+}
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"]:first-child,
+#root .grid.select-none .ProseMirror > *:first-child + div[data-node-type="code_block"]:nth-child(2),
+#root .grid.select-none .ProseMirror > *:first-child + div:not([data-node-type="code_block"]) + div[data-node-type="code_block"]:nth-child(3) {
+
+}
+
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] > div{
+ max-height: calc() !important;
+}
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] > div > div{
+  box-shadow: 0 0 0 1px hsla(0,0%,50%,0.2)
+}
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"],
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-line {
+    --cardlibFontSize:16px;
+  line-height: 22px
+}
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor {
+  padding-top: 13px;
+}
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor [class*="scroller"] {
+  padding: 0 17px 13px
+}
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] {
+  max-height: calc(var(--cardlibContentMaxHeight) - 100px);
 }
 
 /*ALL FIRST ITEMS EXCEPT LIST ITEMS*/

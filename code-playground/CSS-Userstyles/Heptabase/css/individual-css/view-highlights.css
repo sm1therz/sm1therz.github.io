@@ -1,0 +1,5 @@
+/*root*/
+[style*="--annotation-"] + div{
+  margin-left: unset;
+  padding-left: .75rem;
+}

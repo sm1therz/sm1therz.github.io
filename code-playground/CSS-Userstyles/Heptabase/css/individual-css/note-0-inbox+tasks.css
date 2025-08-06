@@ -20,7 +20,7 @@
 /***********
 TOP BAR > OUTER
 ************/
-.isolate > .bg-background-secondary > .app-region-drag {
+.isolate > .bg-background-secondary.relative > .app-region-drag {
 	border: var(--inboxBrdTstW) solid green;
 	padding-left: var(--outerPadLR) !important;
 	padding-right: var(--outerPadLR) !important;
@@ -41,7 +41,7 @@ TOP BAR > OUTER
 MIDDLE  BAR > OUTER
 ************/
 
-.isolate > .bg-background-secondary > .app-region-drag + div.flex {
+.isolate > .bg-background-secondary.relative > .app-region-drag + div.flex {
 	border: var(--inboxBrdTstW) solid green;
 	padding-left: var(--outerPadLR) !important;
 	padding-right: var(--outerPadLR) !important;
@@ -51,13 +51,13 @@ MIDDLE  BAR > OUTER
 }
 
 /*MIDDLE  BAR > OUTER > RIGHT PREVIEW OPEN*/
-.isolate > .bg-background-secondary > .app-region-drag + div.flex[style*="max-width"]{
+.isolate > .bg-background-secondary.relative > .app-region-drag + div.flex[style*="max-width"]{
 	
 }
 /***********
 ! MIDDLE BAR > INNER
 ************/
-.isolate > .bg-background-secondary > .app-region-drag + div.flex > div {
+.isolate > .bg-background-secondary.relative > .app-region-drag + div.flex > div {
 	border: var(--inboxBrdTstW) solid Purple;
 	width: var(--inboxItemContentMaxW);
 	margin: 0 auto !important;
@@ -71,7 +71,7 @@ MIDDLE  BAR > OUTER
 ************
 ************/
 
-.isolate .bg-background-secondary > .scrollbar-gutter-stable{
+.isolate .bg-background-secondary.relative > .scrollbar-gutter-stable{
 	border: var(--inboxBrdTstW) solid green;
 	padding-left: var(--outerPadLR) !important;
 	padding-right: var(--outerPadLR) !important;
@@ -106,6 +106,11 @@ MIDDLE  BAR > OUTER
 	margin: 0 auto !important;
 	
 }
+[class*="sidebar"] + .relative.bg-background-secondary > .scrollbar-gutter-stable [data-action-item-id],
+[class*="sidebar"] + .relative.bg-background-secondary > .app-region-drag + div.flex > div{
+	margin:unset !important;
+	
+}
 
 /*HOVERING - RIGHT SIDEBAR > NOT OPEN*/
 .bg-background-secondary [data-action-item-id].bg-light-grey {
@@ -138,6 +143,9 @@ MIDDLE  BAR > OUTER
 /***********
 ! INBOX ITEMS - ITEM CONTAINER > CONTENT WRAPPER > LEFT SIDE
 ************/
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex{
+
+}
 .bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow{
 	border: calc(var(--inboxBrdTstW) * .5) solid green;
 	display: flex;
@@ -145,11 +153,20 @@ MIDDLE  BAR > OUTER
 	justify-content: flex-start;
 	height: 100% !important;
 	flex: 1;
+	order: 0;
 }
 .bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow > div {
 	align-items: flex-start;
 }
 
+/**REMINDER*/
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow.items-center {
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow.items-center .invisible {
+	visibility: visible;
+}
 /***********
 ! INBOX ITEMS - ITEM CONTAINER > CONTENT WRAPPER > RIGHT SIDE
 ************/
@@ -158,6 +175,7 @@ MIDDLE  BAR > OUTER
 	border: calc(var(--inboxBrdTstW) * .5) solid green;
 	display: flex;
 	max-width: 29%;
+	flex: 0;
 }
 .bg-background-secondary [data-action-item-id] > .flex.grow > .flex.shrink-0 .text-label-mini {
 	font-size: 13px;
@@ -175,14 +193,14 @@ height: 100% !important;
 ************
 ************/
 
-.isolate > .bg-background-secondary [data-action-item-id] > .transition-opacity .absolute{
+.isolate > .bg-background-secondary.relative [data-action-item-id] > .transition-opacity .absolute{
 	transform-origin: center right;
 	transform: scale(1.2);
 }
-.isolate > .bg-background-secondary [data-action-item-id] > .transition-opacity {
+.isolate > .bg-background-secondary.relative [data-action-item-id] > .transition-opacity {
 }
 
-.isolate > .bg-background-secondary [data-action-item-id] > .transition-opacity{
+.isolate > .bg-background-secondary.relative [data-action-item-id] > .transition-opacity{
 	height: 10px !important;
 	width: unset;
 	position: absolute !important;
@@ -197,6 +215,67 @@ margin-right: 0px !important;
 .transition-opacity.opacity-100 > .absolute{
 	margin-right: 30px
 }
-.isolate > .bg-background-secondary > .app-region-drag + div.flex[style*="max-width"] + .scrollbar-gutter-stable [data-action-item-id].bg-light-grey .transition-opacity.opacity-100{
+.isolate > .bg-background-secondary.relative > .app-region-drag + div.flex[style*="max-width"] + .scrollbar-gutter-stable [data-action-item-id].bg-light-grey .transition-opacity.opacity-100{
 	
+}
+
+/*****
+SIDE PANEL
+******/
+[data-is-inbox-app-panel] {
+	background: hsla(0, 0%, 23%, 50%);
+	box-shadow: 0 0 0px 0.5px black,
+	0 4px 8px rgb(0, 0, 0, 25%),
+	0 28px 50px rgb(0, 0, 0, 28%);
+	backdrop-filter: blur(20px)saturate(5) brightness(0.5);
+	border-left: 1px solid hsla(0, 0%, 100%, .1);
+}
+
+
+
+/*****
+INNER STUFF
+******/
+
+/*Text*/
+[data-action-item-id] > .flex > .grow .truncate {
+	white-space: normal;
+	font-size: .925rem;
+	line-height: 1.6
+}
+
+/*ICON*/
+[data-action-item-id] > .flex > .grow > div svg {
+	width: 1.2rem;
+	height: 1.2rem;
+	top:0px;
+	position: relative;
+}
+
+/*borders*/
+[data-action-item-id] > [class*="gap"]:before,
+[data-action-item-id] > [class*="gap"]:after {
+	content: "";
+	display: block;
+	height: 1px;
+	background: hsla(214, 5%, 25%, 1.0);
+	right: 7px;
+	left: 37px;
+	position: absolute;
+	z-index: 0 !important;
+	top: -1px;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	transition-duration: .15s;
+	opacity: var(--inboxItemBrdAlpha);
+}
+[data-action-item-id]:first-of-type > [class*="gap"]:before {
+	left: 0;
+	top: 0;
+}
+
+
+
+[data-action-item-id] > [class*="gap"]:after {
+	top: unset;
+	bottom: 0;
 }

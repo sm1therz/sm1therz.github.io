@@ -50,6 +50,11 @@
 	--background-secondary: hsl(226, 8%, 14%) !important;*/
 }
 
+[data-theme="dark"] [class*="whiteboardCanvas"]{
+	--text-gray-editor: hsl(51, 3%, 60%);
+}
+
+
 /***********
 ************
 BLOCKQUOTES 
@@ -192,8 +197,8 @@ INLINE CODE
 	box-shadow: inset 0 0 0 .75px var(--inlineCodeBoxShadClr);
 	color: var(--inlineCodeClr);
 	position: relative;
-	overflow: hidden !important;
-	white-space: nowrap;
+	/*overflow: hidden !important;
+	white-space: nowrap;*/
 }
 .ProseMirror [data-node-type*="paragraph"] code,
 .ProseMirror [data-node-type*="list"]:not([class*="Heading"]) > [class*="nested"] code {

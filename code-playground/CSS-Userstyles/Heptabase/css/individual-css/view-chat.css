@@ -1,0 +1,98 @@
+/*root*/
+
+
+/*OVERRIDES*/
+#dummybodyid .pt-4.pb-3 > div > .mb-4 {
+  margin: 0px !important;
+
+}
+[data-chat-message-id]{
+  border-bottom: .5px solid hsla(0,0%,50%,.35);
+  padding-top: 10px !important;
+  padding-bottom: 20px;
+  padding-left: 0px !important;
+  
+}
+[data-chat-message-id]:hover:after{
+  background: transparent;
+}
+
+/*HEADER*/
+:root {
+  --chatHeaderH:36px;
+  --chatHeaderPadTopBtm:5px;
+}
+[data-chat-message-id] > .relative > .h-8 {
+  height: var(--chatHeaderH) !important;
+  margin-bottom: 0px;
+  position: sticky;
+  top: 0;
+  display: flex !important;
+  align-items: center;
+  padding-top: var(--chatHeaderPadTopBtm);
+  padding-bottom: var(--chatHeaderPadTopBtm);
+  box-shadow: inset 0 0 0 0px red;
+  z-index: 21;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(40px);
+  background: hsla(216, 6%, 15%, .16);
+  padding-left: 30px;
+}
+
+/*left sidebar open*/
+
+div[style*="min-width"] + .flex [data-chat-message-id] > .relative > .h-8{
+  padding-left: 15px !important;
+}
+
+
+/*HEADER BUTTON*/
+[data-chat-message-id] .absolute[class*="right"][class*="top"] {
+  height: 0px;
+  position: relative !important;
+  top: unset !important;
+  display: flex !important;
+  align-items: center;
+  opacity: 0;
+  overflow: visible;
+  transition: 190ms cubic-bezier(.7, 1.5, 0, .95);
+  transform-origin: top right;
+  transform: scale(.8);
+}
+[data-chat-message-id]:hover .absolute[class*="right"][class*="top"] {
+ opacity: 1; 
+  transform: scale(1);
+}
+
+[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"]{
+  display: flex !important;
+  height: calc(var(--chatHeaderH) - 6px);
+}
+[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"] [class*="clickable"]{
+  padding-left: 7px;
+  padding-right: 7px;
+}
+[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"] svg {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+/**ASSISTANT ICON*/
+[data-chat-message-id] > .relative > .h-8 > div:first-child svg.fill-middle-hard-grey{
+  fill: hsl(300, 100%, 75%) !important;
+}
+/*MESSAGE BODY*/
+
+
+/*CHAT TITLES*/
+
+div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child{
+  height: unset;
+}
+div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child > .truncate{
+  white-space: normal;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+

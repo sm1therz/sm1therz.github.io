@@ -1,7 +1,7 @@
 /*****************
 ******************
 ******************
-Markdown
+! Codeblocks > Markdown Syntax Highlighting
 ******************
 ******************
 ******************/
@@ -132,3 +132,26 @@ BOLD AND HEADINGS AS WHITE
 ******************
 ******************
 ******************/
+
+
+/*****************
+******************
+******************
+! Codeblocks > Paragraph Spacing
+******************
+******************
+******************/
+:root {
+  --codeBlockParagraphMargTopBtm:1px;
+}
+.cm-editor .cm-content > .cm-line {
+  margin-top: var(--codeBlockParagraphMargTopBtm);
+  margin-bottom: var(--codeBlockParagraphMargTopBtm);
+}
+
+.cm-editor .cm-content > .cm-line:first-child{
+  margin-top: 0px;
+}
+.cm-editor .cm-content > .cm-line:last-child{
+  margin-bottom: 0px;
+}
