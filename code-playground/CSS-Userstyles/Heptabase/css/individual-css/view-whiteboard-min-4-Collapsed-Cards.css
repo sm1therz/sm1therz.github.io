@@ -42,8 +42,8 @@ WHITEBOARD - COLLAPSED CARDS
 }
 
 [class*="whiteboardObject"] > div.py-3 {
-	padding-top: 0.4rem;
-	padding-bottom: .4rem;
+	padding-top: 0.6rem;
+	padding-bottom: .6rem;
 	padding-left: 0px;
 	padding-right: 0px !important;
 }

@@ -1,10 +1,3 @@
-/*****************
-******************
-******************
-WHITEBOARD CARD TOGGLES
-******************
-******************
-******************/
 /*
 [data-object-type="cardInstance"] .ProseMirror > [data-node-type*="toggle"] > [class*="nested"] > [data-node-type*="table"] table, 
 [data-object-type="mindMapTextElementNode"] .ProseMirror > [data-node-type*="toggle"] > [class*="nested"] > [data-node-type*="table"] table {
@@ -12,16 +5,16 @@ WHITEBOARD CARD TOGGLES
 }*/
 
 
-.ProseMirror > [data-node-type*="table"] table[style*="min-width"]{
+.ProseMirror [data-node-type*="table"] table[style*="min-width"]{
 		table-layout: auto !important;
 }
-.ProseMirror > [data-node-type*="table"] table[style*="min-width"] tr > td > div{
+.ProseMirror [data-node-type*="table"] table[style*="min-width"] tr > td > div{
 		flex: 1; 
 }
-.ProseMirror > [data-node-type*="table"] table[style*="min-width"]  tr > td > div > [data-node-type]{
+.ProseMirror [data-node-type*="table"] table[style*="min-width"]  tr > td > div > [data-node-type]{
 		word-break: auto-phrase !important;
 }
 
-.ProseMirror > [data-node-type*="table"] table[style*="min-width"]  tr > td *{
+.ProseMirror [data-node-type*="table"] table[style*="min-width"]  tr > td *{
 		white-space: pre-wrap;
 }

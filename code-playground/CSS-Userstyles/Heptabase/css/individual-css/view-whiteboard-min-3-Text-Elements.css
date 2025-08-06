@@ -50,9 +50,16 @@ TEXT ELEMENTS
 [data-object-type*="extElement"] > div > .absolute[class*="menu"] {
 	display: none !important;
 }
+
+/*black*/
+
+[data-object-type*="extElement"] > div.border-solid[style*="border-black-sect"]{
+	box-shadow:inset 0 0 0 1px hsla(0,0%,50%,0.3) !important;
+}
 /*editing*/
 
 [data-object-type*="extElement"] .border-tooltip-bg {
 	border-color: var(--textElementBrdClr-Editing);
 	outline: 2px solid var(--textElementBrdClr-Editing) !important;
 }
+

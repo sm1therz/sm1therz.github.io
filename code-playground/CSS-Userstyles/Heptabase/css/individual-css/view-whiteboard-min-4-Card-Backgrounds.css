@@ -12,31 +12,37 @@ WHITEBOARD - CARD BACKGROUNDS
 ************
 ************/
 
-[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-red"] {
+[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-red"],
+[class*="_whiteboardObject"] > div[style*="min-height: 62px"][style*="--bg-red"]{
 	background: var(--whiteBoardCardBg-Red) !important;
 --whiteBoardCardBrdClr:var(--whiteBoardCardBrd-Red);
 }
-[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-orange"] {
+[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-orange"],
+[class*="_whiteboardObject"] > div[style*="min-height: 62px"][style*="--bg-orange"]{
 	background: var(--whiteBoardCardBg-Orange) !important;
 --whiteBoardCardBrdClr:var(--whiteBoardCardBrd-Orange);
 }
-[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-yellow"] {
+[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-yellow"],
+[class*="_whiteboardObject"] > div[style*="min-height: 62px"][style*="--bg-yellow"]{
 	background: var(--whiteBoardCardBg-Yellow) !important;
 --whiteBoardCardBrdClr:var(--whiteBoardCardBrd-Yellow);
 }
-[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-green"] {
+[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-green"],
+[class*="_whiteboardObject"] > div[style*="min-height: 62px"][style*="--bg-green"]{
 	background: var(--whiteBoardCardBg-Green) !important;
 --whiteBoardCardBrdClr:var(--whiteBoardCardBrd-Green);
 }
-[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-blue"] {
+[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-blue"],
+[class*="_whiteboardObject"] > div[style*="min-height: 62px"][style*="--bg-blue"]{
 	background: var(--whiteBoardCardBg-Blue) !important;
 --whiteBoardCardBrdClr:var(--whiteBoardCardBrd-Blue);
 }
-[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-purple"] {
+[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-purple"],
+[class*="_whiteboardObject"] > div[style*="min-height: 62px"][style*="--bg-purple"]{
 	background: var(--whiteBoardCardBg-Purple) !important;
 --whiteBoardCardBrdClr:var(--whiteBoardCardBrd-Purple);
 }
-[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-black"] {
+[class*="_whiteboardObject"] [class*="contentContainer"][style*="--bg-black"]{
 	background: var(--whiteBoardCardBg-Black) !important;
 --whiteBoardCardBrdClr:var(--whiteBoardCardBrd-Black);
 }
