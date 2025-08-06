@@ -21,9 +21,9 @@
   }
   // Call injectCSS() to trigger the CSS injection with a one-second delay for the last script
   setTimeout(function() {
-    injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-1-editor-main.css');
+    injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-0-inbox+tasks.css');
   }, 750);
-  /Volumes/Macintosh HD/Users/robert/Documents/Git/sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-0-inbox+tasks.css
+  
   setTimeout(function() {
     injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-1-editor-main.css');
   }, 1000);
@@ -79,6 +79,14 @@
   setTimeout(function() {
     injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-card-library.css');
   }, 3200);
+  
+  setTimeout(function() {
+    injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-chat.css');
+  }, 3250);
+
+  setTimeout(function() {
+    injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-highlights.css');
+  }, 3300);
 
   setTimeout(function() {
     injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-tags.css');
