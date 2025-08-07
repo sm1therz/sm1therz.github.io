@@ -95,8 +95,8 @@ BLOCKQUOTES V2
 ************/
 
 :root {
-	--blockquoteBrdRad: 1px;
-	--blockquoteBrdW:5px;
+	--blockquoteBrdRad: 0px;
+	--blockquoteBrdW:4px;
 }
 .ProseMirror blockquote {
 	position: relative;
@@ -107,11 +107,12 @@ BLOCKQUOTES V2
 	border-radius: calc(var(--blockquoteBrdRad) * 2) !important;
 }
 div .ProseMirror blockquote:not([class*="whiteboardCanvas"] blockquote) {
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 1.2rem;
 	margin-left: 0px !important;
 	left: unset;
-	background: hsla(0,0%,100%,0.0);
+	background: hsla(0,0%,100%,0);
 	border-left-width: 0px!important;
 	margin-left: var(--blockquoteBrdW) !important;
 	width:calc(100% - var(--blockquoteBrdW));
@@ -230,7 +231,7 @@ INLINE CODE
 	--inlinecodePad: 0.125em .3em 0.12em .3em;
 }
 .ProseMirror code {
-	font-size: calc(1em - 1.5px);
+	font-size: calc(1em - 2px);
 	border-radius: var(--inlinecodeBrdRad);
 	padding: var(--inlinecodePad);
 	display: inline;
