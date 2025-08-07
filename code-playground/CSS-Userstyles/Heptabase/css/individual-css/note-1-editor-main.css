@@ -30,7 +30,7 @@
 
 [data-theme="dark"] {
 	--blockquoteBrdClr: hsl(216, 6%, 100.5%, .1);
-	--blockquoteBrdLeftClr: hsl(216, 6%, 100%, .1);
+	--blockquoteBrdLeftClr: hsl(216, 6%, 100%, 0.45);
 	--blockquoteBgClr: hsl(216, 6%, 100%, .0125);
 	--codeblockBgClr: #0d0d0d;
 	--codeblockBrdClr: hsl(0, 0%, 24%);
@@ -57,9 +57,8 @@
 
 /***********
 ************
-BLOCKQUOTES 
-************
-************/
+BLOCKQUOTES V1
+
 :root {
 	--blockquoteBrdRad: 3px;
 }
@@ -74,7 +73,6 @@ BLOCKQUOTES
 	border-bottom-left-radius: calc(var(--blockquoteBrdRad) * 1.75)!important;
 }
 
-/*blockquote left border pseudo*/
 .ProseMirror blockquote:before {
 	content: "";
 	display: block;
@@ -86,6 +84,50 @@ BLOCKQUOTES
 	width: 6px;
 	border-top-left-radius: calc(var(--blockquoteBrdRad) * 1.75);
 	border-bottom-left-radius: calc(var(--blockquoteBrdRad) * 1.75);
+}
+************
+************/
+
+/***********
+************
+BLOCKQUOTES V2
+************
+************/
+
+:root {
+	--blockquoteBrdRad: 1px;
+	--blockquoteBrdW:5px;
+}
+.ProseMirror blockquote {
+	position: relative;
+	border-left-color: transparent !important;
+	outline: 0px solid var(--blockquoteBrdClr);
+	outline-offset: -1px;
+	border-radius: var(--blockquoteBrdRad);
+	border-radius: calc(var(--blockquoteBrdRad) * 2) !important;
+}
+div .ProseMirror blockquote:not([class*="whiteboardCanvas"] blockquote) {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 0px !important;
+	left: unset;
+	background: hsla(0,0%,100%,0.0);
+	border-left-width: 0px!important;
+	margin-left: var(--blockquoteBrdW) !important;
+	width:calc(100% - var(--blockquoteBrdW));
+}
+
+.ProseMirror blockquote:before {
+	content: "";
+	display: block;
+	position: absolute;
+	background: var(--blockquoteBrdLeftClr);
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: var(--blockquoteBrdW);
+	border-top-left-radius: calc(var(--blockquoteBrdRad) * 1);
+	border-bottom-left-radius: calc(var(--blockquoteBrdRad) * 1);
 }
 
 
@@ -241,7 +283,7 @@ BULLETS
 ************
 ************/
 [class*="bulletIcon"] + [class*="_hint"] {
-	opacity: 0;
+	opacity: .74;
 }
 /***********
 ************
