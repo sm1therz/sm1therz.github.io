@@ -178,7 +178,7 @@ transition: .075s !important;
   left: calc(var(--chatProseMirrorEditPadTopBtm) * -3);
   right: calc(var(--chatProseMirrorEditPadTopBtm) * -0.5);
   box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.3);
-  z-index: 0;
+  z-index: -1;
   background-color: var(--ultra-light-grey);
   transition: 1s !important;
   transform: scale(.8) ease-in-out;
@@ -189,4 +189,5 @@ transition: .075s !important;
   transform: scale(1);
   transition: 1s ease-in-out;
   opacity: 1;
+  z-index: 1;
 }

@@ -55,6 +55,8 @@
 }
 
 
+
+
 /***********
 ************
 BLOCKQUOTES V1
@@ -115,7 +117,7 @@ div .ProseMirror blockquote:not([class*="whiteboardCanvas"] blockquote) {
 	background: hsla(0,0%,100%,.03);
 	border-left-width: 0px!important;
 	margin-left: var(--blockquoteBrdW) !important;
-	width:calc(100% - var(--blockquoteBrdW));
+	/*width:calc(100% - var(--blockquoteBrdW));*/
 }
 
 .ProseMirror blockquote:before {
@@ -220,6 +222,9 @@ CODEBLOCK
 }
 .ProseMirror .cm-editor > .cm-scroller {
 	padding-bottom: 20px;
+}
+[data-node-type="code_block"][style*="var(--middle-transparent-blue)"]{
+	--codeblockBgClr:var(--middle-transparent-blue);
 }
 /***********
 ************
