@@ -22,7 +22,7 @@
 	--inlineCodeLinkOverrideBgClr: #ececec;
 	--inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.0);
 	--inlineCodeClr: hsla(0, 0%, 0%, .8);
-	--embedHighlightBgClr:hsla(0, 0%, 0%, .024);
+	--embedHighlightBgClr: hsla(0, 0%, 0%, .024);
 	/*text color - gray*/
 	--text-gray-editor: hsl(51, 3%, 60%);
 }
@@ -40,17 +40,17 @@
 	--inlineCodeLinkOverrideBgClr: #383a3c;
 	--inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.06);
 	--inlineCodeClr: inherit;
-	--embedHighlightBgClr:hsla(0, 0%, 100%, .0125);
-		/*text color - gray*/
+	--embedHighlightBgClr: hsla(0, 0%, 100%, .0125);
+	/*text color - gray*/
 	--text-gray-editor: hsla(0, 0%, 53%, 1) !important;
-	
+
 
 	/*
 		--background-primary: hsl(0, 0%, 11%) !important;
 	--background-secondary: hsl(226, 8%, 14%) !important;*/
 }
 
-[data-theme="dark"] [class*="whiteboardCanvas"]{
+[data-theme="dark"] [class*="whiteboardCanvas"] {
 	--text-gray-editor: hsl(51, 3%, 60%);
 }
 
@@ -89,16 +89,14 @@ BLOCKQUOTES V1
 }
 ************
 ************/
-
 /***********
 ************
 BLOCKQUOTES V2
 ************
 ************/
-
 :root {
 	--blockquoteBrdRad: 0px;
-	--blockquoteBrdW:4px;
+	--blockquoteBrdW: 4px;
 }
 .ProseMirror blockquote {
 	position: relative;
@@ -114,7 +112,7 @@ div .ProseMirror blockquote:not([class*="whiteboardCanvas"] blockquote) {
 	padding-left: 1.2rem;
 	margin-left: 0px !important;
 	left: unset;
-	background: hsla(0,0%,100%,.03);
+	background: hsla(0, 0%, 100%, .03);
 	border-left-width: 0px!important;
 	margin-left: var(--blockquoteBrdW) !important;
 	/*width:calc(100% - var(--blockquoteBrdW));*/
@@ -223,8 +221,34 @@ CODEBLOCK
 .ProseMirror .cm-editor > .cm-scroller {
 	padding-bottom: 20px;
 }
-[data-node-type="code_block"][style*="var(--middle-transparent-blue)"]{
-	--codeblockBgClr:var(--middle-transparent-blue);
+[data-node-type="code_block"][style*="var(--middle-transparent-blue)"] {
+	--codeblockBgClr: var(--middle-transparent-blue);
+}
+
+
+/*code block > always wrap lines*/
+.ProseMirror .cm-content:not([class*="whiteboardCanvas"] .ProseMirror .cm-content){
+	white-space: pre-wrap !important
+}
+/*code block header*/
+[data-node-type="code_block"] > [class*="group"] > div:not(.cm-editor),
+[data-node-type="code_block"] > [class*="group"] > div:not(.cm-editor) > div{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+[data-node-type="code_block"] > [class*="group"] > div:not(.cm-editor) > div,
+[data-node-type="code_block"] > [class*="group"] > div:not(.cm-editor) > div * {
+	transform: unset !important;
+}
+
+[data-chat-message-id] [data-node-type="code_block"] {
+	max-width: 100% !important;
+	width: 640px !important
 }
 /***********
 ************
