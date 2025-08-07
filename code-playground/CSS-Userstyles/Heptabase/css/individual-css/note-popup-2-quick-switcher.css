@@ -29,7 +29,7 @@
 	/*search*/
 	--searchMatchBg: hsl(211, 100%, 53%);
 	--searchBgClr: hsla(0, 0%, 8%, 1.0);
-	--searchBrdClr: hsl(218, 3%, 18%);
+	--searchBrdClr: hsl(218, 3%, 13%);
 	--searchheaderClr: hsl(0, 0%, 88%);
 }
 
