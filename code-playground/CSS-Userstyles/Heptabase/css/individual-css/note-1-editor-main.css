@@ -107,12 +107,12 @@ BLOCKQUOTES V2
 	border-radius: calc(var(--blockquoteBrdRad) * 2) !important;
 }
 div .ProseMirror blockquote:not([class*="whiteboardCanvas"] blockquote) {
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	padding-left: 1.2rem;
 	margin-left: 0px !important;
 	left: unset;
-	background: hsla(0,0%,100%,0);
+	background: hsla(0,0%,100%,.03);
 	border-left-width: 0px!important;
 	margin-left: var(--blockquoteBrdW) !important;
 	width:calc(100% - var(--blockquoteBrdW));
