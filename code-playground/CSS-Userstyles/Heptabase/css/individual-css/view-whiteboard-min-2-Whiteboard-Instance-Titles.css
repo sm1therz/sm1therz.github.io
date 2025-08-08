@@ -16,10 +16,11 @@ WHITEBOARD INSTANCE > TITLES
 /*****************
 ******************
 ******************
-WHITEBOARD INSTANCE > TITLE > INLINE
+WHITEBOARD INSTANCE > TITLE > FLEX
 ******************
 ******************
 ******************/
+
 
 /*TITLE > CONTAINER */
 [data-object-type="whiteboardInstance"] > div > div.flex:first-child {
@@ -29,24 +30,23 @@ WHITEBOARD INSTANCE > TITLE > INLINE
 }
 
 /*TITLE > ICON*/
-
 [data-object-type="whiteboardInstance"] > div > div.flex:first-child > svg{
-	width: var(--whiteboardInstanceTitleIcnW);
-	margin-right: var(--whiteboardInstanceTitleGap);
-	top: var(--whiteboardInstanceTitlePadTopBtm);
-	position: absolute;
+	/*width: var(--whiteboardInstanceTitleIcnW);
+	margin-right: var(--whiteboardInstanceTitleGap);*/
+	margin-top: var(--whiteboardInstanceTitlePadTopBtm);
+	display: none;
+
 }
 
-/*TITLE > TEXT*/
+
 /*TITLE > TEXT*/
 [data-object-type="whiteboardInstance"] > div > div.flex:first-child > div[class*="min-w"] [class*="rounded"]{
-	width: calc(100% + var(--whiteboardInstanceTitlePadLR) * 2);
-	margin-left: calc(var(--whiteboardInstanceTitlePadLR) * -1);
+	width: calc(100% + var(--whiteboardInstanceTitlePadLR) * 1);
 }
 /**/
 [data-object-type="whiteboardInstance"] > div > div.flex:first-child > div[class*="min-w"] .truncate{
 	white-space: pre-wrap;
-	text-indent: calc(var(--whiteboardInstanceTitleIcnW) + var(--whiteboardInstanceTitleGap) + var(--whiteboardInstanceTitlePadLR));
+	
 }
 
 
