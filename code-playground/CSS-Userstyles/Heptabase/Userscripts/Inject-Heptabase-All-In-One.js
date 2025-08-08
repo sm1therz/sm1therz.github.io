@@ -101,6 +101,10 @@
   }, 3800);
 
   setTimeout(function() {
+    injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Whiteboard-Instance-Titles.css');
+  }, 3900);
+
+  setTimeout(function() {
     injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-3-Text-Elements.css');
   }, 4000);
 

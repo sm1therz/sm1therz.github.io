@@ -40,18 +40,24 @@ WHITEBOARD INSTANCE > TITLE > INLINE
 /*TITLE > TEXT*/
 /*TITLE > TEXT*/
 [data-object-type="whiteboardInstance"] > div > div.flex:first-child > div[class*="min-w"] [class*="rounded"]{
-	width: calc(100% + var(--whiteboardInstanceTitlePadLR));
+	width: calc(100% + var(--whiteboardInstanceTitlePadLR) * 2);
 	margin-left: calc(var(--whiteboardInstanceTitlePadLR) * -1);
 }
 /**/
 [data-object-type="whiteboardInstance"] > div > div.flex:first-child > div[class*="min-w"] .truncate{
 	white-space: pre-wrap;
-	text-indent: calc(var(--whiteboardInstanceTitleIcnW) + var(--whiteboardInstanceTitleGap) + var(--whiteboardInstanceTitlePadLR))
+	text-indent: calc(var(--whiteboardInstanceTitleIcnW) + var(--whiteboardInstanceTitleGap) + var(--whiteboardInstanceTitlePadLR));
 }
 
 
 /*TITLE > 3 DOT*/
 [data-object-type="whiteboardInstance"] > div > div.flex:first-child > [class*="group"] {
-	margin-right: -10px !important;
+	margin-right: -21px !important;
 	margin-top: calc(var(--whiteboardInstanceTitlePadTopBtm) - 4px);
+	display: flex;
+	opacity: 0;
+}
+
+[data-object-type="whiteboardInstance"]:hover > div > div.flex:first-child > [class*="group"] {
+	opacity: 1
 }
