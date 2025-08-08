@@ -764,3 +764,8 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   height: 2px;
   box-shadow: unset;
 }
+
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet"]:first-child strong{
+  font-weight: 600;
+  color: var(--bldClr) !important;
+}

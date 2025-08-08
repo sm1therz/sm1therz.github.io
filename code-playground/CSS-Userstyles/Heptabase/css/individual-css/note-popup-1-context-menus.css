@@ -169,6 +169,7 @@ WHITEBOARD - CONTEXT MENU - THE MAIN ONE
 ******************/
 #root ~ div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
     width: 248px !important;
+    min-width: unset !important;
     background: var(--menu-texture-bg-medium)!important;
 }
 
@@ -179,6 +180,7 @@ WHITEBOARD - CONTEXT MENU - CONNECTOR
 ******************/
 #root ~ div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
     width: 248px !important;
+    min-width: unset !important;
     background: var(--menu-texture-bg-medium)!important;
 }
 
