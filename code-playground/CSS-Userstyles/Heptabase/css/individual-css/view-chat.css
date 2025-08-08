@@ -112,7 +112,7 @@ transition: .075s !important;
 *******
 ********/
 :root {
-  --chatHeaderH: 36px;
+  --chatHeaderH: 32px;
   --chatHeaderH-Type2: 24px;
   --chatHeader-ZIndex: 21;
   --chatHeaderIcnW: 17px;
@@ -168,6 +168,34 @@ transition: .075s !important;
   z-index: var(--chatHeader-ZIndex);
   position: relative;
 }
+
+/******
+! HEADER > TYPE 2 AND TYPE 1
+*******/
+
+/*type 2*/
+
+[class*="group"] > .flex.items-center.gap-x-2[class*="pl-4"]{
+  position: sticky;
+  top: 0;
+  z-index: 22;
+    box-shadow: 0 .5px 0 0 hsla(0, 0%, 50%, .125);
+}
+
+/*type 1*/
+[data-chat-message-id] .flex.items-center.gap-x-2[class*="pl-4"] ~ .relative > .h-8 {
+  height: calc(var(--chatHeaderH) + var(--chatHeaderH-Type2)) !important;
+  backdrop-filter: blur(40px) !important;
+  background: hsla(216, 6%, 15%, .16);
+  margin-top: calc(var(--chatHeaderH-Type2) * -1) !important;
+  align-items: flex-end;
+}
+[data-chat-message-id] .flex.items-center.gap-x-2[class*="pl-4"] ~ .relative > .h-8  .size-5{
+margin-bottom: 2px !important;
+}
+[class*="group"] > .flex.items-center.gap-x-2[class*="pl-4"] ~ .relative{
+}
+
 
 /*******
 ********
