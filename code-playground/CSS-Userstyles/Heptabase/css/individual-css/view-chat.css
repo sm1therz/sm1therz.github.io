@@ -85,6 +85,14 @@ transition: .075s !important;
 
 
 
+/*******
+! CHAT > REASONING SUMMARY
+********/
+
+[data-chat-message-id] .h-8 ~ .rounded-md{
+  background: var(--ultra-light-grey);
+}
+
 
 /*******
 ! CHAT > PROSEMIRROR
