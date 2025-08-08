@@ -350,9 +350,11 @@ PROPERTIES > NEW PROPERTIE DROPDOWN
 ******************
 ******************/
 div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl:not(div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.w-62, div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.max-h-70vh, div.flex.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl) {
-		width: 440px !important;
-		background: var(--refBgClr);
-		backdrop-filter: blur(100px);
+		min-width: 440px !important;
+		background: hsla(210, 5%, 15%, 0.6);
+		backdrop-filter: blur(100px)brightness(.8);
+	outline: .5px solid hsla(0,0%,50%,0.3);
+	border-radius: 6px;
 }
 
 /*****************
@@ -516,3 +518,17 @@ SORT DROP DOWN
 .queryBuilder > div.flex[class*="gap"] > div:first-child {
 		width: 250px;
 }
+
+/**URL FIELD**/
+[id*="database"][data-property-type="url"] a {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+
+}
+[id*="database"][data-property-type="url"] [class*="group"] {
+	max-height: 70px;
+	overflow: hidden;
+}
+
