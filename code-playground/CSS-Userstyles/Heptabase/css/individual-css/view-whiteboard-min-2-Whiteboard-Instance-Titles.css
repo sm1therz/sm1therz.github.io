@@ -61,3 +61,8 @@ WHITEBOARD INSTANCE > TITLE > FLEX
 [data-object-type="whiteboardInstance"]:hover > div > div.flex:first-child > [class*="group"] {
 	opacity: 1
 }
+
+/*TOTAL CARDS*/
+[data-object-type="whiteboardInstance"] > div > .mt-2 {
+	padding-left: var(--whiteboardInstanceTitlePadLR)
+}
