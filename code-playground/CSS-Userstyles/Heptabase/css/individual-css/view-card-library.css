@@ -757,5 +757,10 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 }
 
 #root .grid.select-none > div [class*="bulletIcon"] + [class*="_hint"]{
-  opacity: 0 !important;
+  opacity: 0;
+}
+#root .grid.select-none > div .ProseMirror [data-node-type="horizontal_rule"] > div.h-px {
+  opacity: .7;
+  height: 2px;
+  box-shadow: unset;
 }
