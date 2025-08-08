@@ -1,0 +1,57 @@
+/*****************
+******************
+******************
+WHITEBOARD INSTANCE > TITLES
+******************
+******************
+******************/
+:root {
+	--whiteboardInstanceTitleIcnW:32px;
+	--whiteboardInstanceTitleGap:.25rem;
+	--whiteboardInstanceTitlePadTopBtm:13px;
+	--whiteboardInstanceTitlePadLR:.625rem;
+}
+
+
+/*****************
+******************
+******************
+WHITEBOARD INSTANCE > TITLE > INLINE
+******************
+******************
+******************/
+
+/*TITLE > CONTAINER */
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child {
+	align-items: flex-start;
+	outline: var(--testBrdW) solid red;
+	position: relative;
+}
+
+/*TITLE > ICON*/
+
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child > svg{
+	width: var(--whiteboardInstanceTitleIcnW);
+	margin-right: var(--whiteboardInstanceTitleGap);
+	top: var(--whiteboardInstanceTitlePadTopBtm);
+	position: absolute;
+}
+
+/*TITLE > TEXT*/
+/*TITLE > TEXT*/
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child > div[class*="min-w"] [class*="rounded"]{
+	width: calc(100% + var(--whiteboardInstanceTitlePadLR));
+	margin-left: calc(var(--whiteboardInstanceTitlePadLR) * -1);
+}
+/**/
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child > div[class*="min-w"] .truncate{
+	white-space: pre-wrap;
+	text-indent: calc(var(--whiteboardInstanceTitleIcnW) + var(--whiteboardInstanceTitleGap) + var(--whiteboardInstanceTitlePadLR))
+}
+
+
+/*TITLE > 3 DOT*/
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child > [class*="group"] {
+	margin-right: -10px !important;
+	margin-top: calc(var(--whiteboardInstanceTitlePadTopBtm) - 4px);
+}
