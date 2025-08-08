@@ -1,6 +1,6 @@
-/**********
-! MAIN 
-***********/
+/*********
+MAIN
+**********/
 /*OVERRIDES*/
 #dummybodyid .pt-4.pb-3 > div > .mb-4 {
   margin: 0px !important;
@@ -94,7 +94,7 @@ transition: .075s !important;
 }
 
 [data-chat-message-id] .ProseMirror {
-  max-height: 200px !important;
+  max-height: var(--testProseMirMaxH) !important;
   overflow: hidden;
 }
 
@@ -283,7 +283,6 @@ HEADER > BUTTON > TYPE 2
   margin-bottom: calc(var(--chatProseMirrorEditPadTopBtm) * -1);
   margin-left: calc(var(--chatProseMirrorEditPadTopBtm) * -3);
   */
-  position: relative;
   border: unset;
   padding: 0px !important;
   background: transparent;
@@ -334,6 +333,9 @@ HEADER > BUTTON > TYPE 2
 .app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4{
   gap: unset !important;
 }
+.app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4 > div:last-of-type {
+  border: unset !important;
+}
 
 /********
 ! DUPLICATED CHAT > SOURCE LINK
@@ -365,10 +367,11 @@ HEADER > BUTTON > TYPE 2
 ! DUPLICATED CHATS > END INDICATOR > BORDER
 *********/
 .app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4 + div {
-  padding: 0px;
+  padding: 0px var(--chatHeaderPadLR);
+  height: 20px;
 }
 .app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4 + div > div {
-  border-top: 5px dotted hsla(0,0%,100%,.5);
+  border-top: 5px dotted hsla(0,0%,100%,0.3);
   background: transparent;
 }
 
@@ -384,7 +387,7 @@ HEADER > BUTTON > TYPE 2
 END OF COPIED MESSAGES
 **********/
 .app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden{
-  background: var(--testBg1);
+  background: var();
 }
 
 /********
@@ -402,7 +405,7 @@ END OF COPIED MESSAGES
 /********
 ! TEXT AREA > MAX HEIGHT
 *********/
-.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh,
+.bg-background-secondary > .app-region-drag + .flex > div.px-4  .max-h-50vh,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh{
   max-height: unset !important;
   margin: 0px !important;
@@ -411,13 +414,16 @@ END OF COPIED MESSAGES
 
 /*HEIGHT*/
 .bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror,
-.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror{
-  max-height: 50vh;
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex  div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror{
+  max-height: 40vh !important;
   transition: .15s;
+
 }
 .bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:focus-within,
-.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within{
-  max-height: 65vh;
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within,
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within{
+  max-height: 65vh !important;
 }
 
 
