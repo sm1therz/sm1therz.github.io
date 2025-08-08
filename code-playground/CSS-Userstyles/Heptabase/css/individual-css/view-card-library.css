@@ -755,3 +755,7 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   background: linear-gradient(to top, var(--background-primary), transparent);
   z-index: 10;
 }
+
+#root .grid.select-none > div [class*="bulletIcon"] + [class*="_hint"]{
+  opacity: 0 !important;
+}
