@@ -32,6 +32,8 @@ div[style*="width"].bg-background-secondary .flex.h-12 + div [class*="group"] .f
   white-space: normal;
   line-height: 1.35;
   margin-bottom: 4px;
+  font-weight: 500;
+  color: var(--bldClr);
 }
 
 /*******
