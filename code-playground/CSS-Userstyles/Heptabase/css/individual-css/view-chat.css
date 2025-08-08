@@ -1,88 +1,34 @@
-/*root*/
+/**********
+! MAIN 
+***********/
 /*OVERRIDES*/
 #dummybodyid .pt-4.pb-3 > div > .mb-4 {
   margin: 0px !important;
 }
 [data-chat-message-id] {
   border-bottom: .5px solid hsla(0, 0%, 50%, .35);
-  padding-top: 10px !important;
-  padding-bottom: 20px;
+  padding-top: 0px !important;
+  padding-bottom: 10px;
   padding-left: 0px !important;
 }
 [data-chat-message-id]:after{
   background: transparent !important;
 }
 
-/*HEADER*/
-:root {
-  --chatHeaderH: 36px;
-  --chatHeaderPadTopBtm: 5px;
-}
-[data-chat-message-id] > .relative > .h-8 {
-  height: var(--chatHeaderH) !important;
-  margin-bottom: 0px;
-  position: sticky;
-  top: 0;
-  display: flex !important;
-  align-items: center;
-  padding-top: var(--chatHeaderPadTopBtm);
-  padding-bottom: var(--chatHeaderPadTopBtm);
-  box-shadow: inset 0 0 0 0px red;
-  z-index: 21;
-  margin-left: 0px;
-  margin-bottom: 10px;
-  backdrop-filter: blur(40px);
-  background: hsla(216, 6%, 15%, .16);
-  padding-left: 30px;
-}
-
-/*left sidebar open*/
-div[style*="min-width"] + .flex [data-chat-message-id] > .relative > .h-8 {
-  padding-left: 15px !important;
+[data-chat-message-id] > div {
+  padding: 0px !important;
 }
 
 
-/*HEADER BUTTON*/
-[data-chat-message-id] .absolute[class*="right"][class*="top"] {
-  height: 0px;
-  position: relative !important;
-  top: unset !important;
-  display: flex !important;
-  align-items: center;
-  opacity: 0;
-  overflow: visible;
-  transition: 190ms cubic-bezier(.7, 1.5, 0, .95);
-  transform-origin: top right;
-  transform: scale(.8);
-}
-[data-chat-message-id]:hover .absolute[class*="right"][class*="top"] {
-  opacity: 1;
-  transform: scale(1);
-}
-
-[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"] {
-  display: flex !important;
-  height: calc(var(--chatHeaderH) - 6px);
-}
-[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"] [class*="clickable"] {
-  padding-left: 7px;
-  padding-right: 7px;
-}
-[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"] svg {
-  width: 1rem !important;
-  height: 1rem !important;
-}
-
-/**ASSISTANT ICON*/
-[data-chat-message-id] > .relative > .h-8 > div:first-child svg.fill-middle-hard-grey {
-  fill: hsl(300, 100%, 75%) !important;
-}
 /*MESSAGE BODY*/
+
 /*CHAT TITLES*/
+div[style*="width"].bg-background-secondary .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child,
 div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child {
   height: unset;
 }
-div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child > .truncate {
+div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child > .truncate,
+div[style*="width"].bg-background-secondary .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child > .truncate{
   white-space: normal;
   line-height: 1.35;
   margin-bottom: 4px;
@@ -139,8 +85,188 @@ transition: .075s !important;
 
 
 
+
 /*******
-! CHAT EDITING
+! CHAT > PROSEMIRROR
+********/
+[data-chat-message-id] .h-8 ~ [class*="ProseMirror-hepta-style"]{
+  margin-left: calc(var(--chatHeaderPadLR) + var(--chatHeaderGap) + var(--chatHeaderIcnW))
+}
+
+[data-chat-message-id] .ProseMirror {
+  max-height: 200px !important;
+  overflow: hidden;
+}
+
+/*******
+********
+! CHAT > HEADER
+*******
+********/
+:root {
+  --chatHeaderH: 36px;
+  --chatHeaderH-Type2: 24px;
+  --chatHeader-ZIndex: 21;
+  --chatHeaderIcnW: 17px;
+  --chatHeaderGap: 6px;
+  --chatHeaderPadTopBtm: 5px;
+  --chatHeaderPadLR: 20px;
+  --chatHeaderBtn-ZIndex: 22;
+}
+
+/*overrides*/
+[data-chat-message-id] > .relative > .h-8 * {
+  margin: unset !important;
+  width: unset;
+}
+
+/******
+! HEADER > NORMAL
+*******/
+[data-chat-message-id] > div > .flex.h-8:not([class*="group"],[class*="max-w"]) {
+  height: var(--chatHeaderH) !important;
+  margin-bottom: 0px;
+  position: sticky;
+  top: 0;
+  display: flex !important;
+  align-items: center;
+  padding-top: calc(var(--chatHeaderPadTopBtm) * 1);
+  padding-bottom: var(--chatHeaderPadTopBtm);
+  box-shadow: inset 0 0 0 var(--testBrdW) red;
+  z-index: var(--chatHeader-ZIndex);
+  margin-left: 0px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(40px);
+  background: hsla(216, 6%, 15%, .16);
+  padding-right: 0px !important;
+  gap: var(--chatHeaderGap);
+}
+
+/*all headers*/
+[data-chat-message-id] .h-8 {
+  padding-left: var(--chatHeaderPadLR) !important;
+  gap: var(--chatHeaderGap);
+}
+
+/******
+! HEADER > TYPE 2
+*******/
+[data-chat-message-id]  .flex.h-8[class*="group"],
+[data-chat-message-id] > div.h-8{
+  padding-left: calc(var(--chatHeaderPadLR) + var(--chatHeaderGap) + 4px);
+  width: 100% !important;
+  height: var(--chatHeaderH-Type2) !important;
+  overflow: visible;
+  z-index: var(--chatHeader-ZIndex);
+  position: relative;
+}
+
+/*******
+********
+HEADER > ICONS
+*******
+********/
+/*left sidebar open*/
+[data-chat-message-id] .h-8  [class*="text-label"] {
+  outline: var(--testBrdW) solid yellow;
+  white-space: nowrap !important;
+}
+
+/**HEADER > INNER ICON > ASSISTANT*/
+[data-chat-message-id] .h-8 svg {
+  margin-right: var(--chatHeaderIcnMargR);
+  outline: var(--testBrdW) solid pink;
+}
+
+[data-chat-message-id] .h-8 > div:first-child svg.fill-middle-hard-grey {
+  fill: hsl(300, 100%, 75%) !important;
+}
+
+[data-chat-message-id] .h-8 .size-5,
+[data-chat-message-id] .h-8 .size-3 {
+  width: var(--chatHeaderIcnW) !important;
+  height: var(--chatHeaderIcnW) !important;
+}
+[data-chat-message-id] .h-8 .size-3 {
+  transform: scale(0.8)
+}
+
+[data-chat-message-id] .h-8 .size-5 *,
+[data-chat-message-id] .h-8 .size-3 * {
+  width: 100%;
+  height: 100%;
+}
+
+/**HEADER > INNER ICON > USER*/
+[data-chat-message-id] .h-8 .rounded-circle {
+  width: 100%;
+  transform: scale(1.2);
+  font-size: 11px;
+  box-shadow: inset 0 0 0 .5px hsla(0,0%,100%,0.2)
+}
+
+/*******
+********
+HEADER > BUTTON
+*******
+********/
+[data-chat-message-id] .h-8 .absolute[class*="right"][class*="top"],
+[data-chat-message-id] .h-8 ~ .absolute[class*="right"][class*="top"] {
+  height: 0px;
+  position: relative !important;
+  top: unset !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  overflow: visible;
+  transition: 190ms cubic-bezier(.7, 1.5, 0, .95);
+  transform-origin: top right;
+  transform: scale(.8);
+  flex: 1;
+  z-index: var(--chatHeaderBtn-ZIndex) !important;
+}
+
+/*******  
+HEADER > BUTTON > TYPE 2
+********/
+[data-chat-message-id] .h-8 ~ .absolute[class*="right"][class*="top"] {
+  top: calc(var(--chatHeaderH-Type2) * 1) !important;
+  align-items: flex-start;
+  height: var(--chatHeaderH-Type2) !important;
+  margin: unset;
+}
+
+[data-chat-message-id]:hover .absolute[class*="right"][class*="top"] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"] {
+  display: flex !important;
+  height: calc(var(--chatHeaderH) - 6px);
+}
+
+[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"] [class*="clickable"] {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+[data-chat-message-id] .absolute[class*="right"][class*="top"] [class*="group"] svg {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+/*EDITING > X + CHECKMARK*/
+[data-chat-message-id] > .relative > .h-8 > div:last-child {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/*******
+! CHAT > EDITING
 ********/
 :root {
   --chatProseMirrorEditPadLR: 15px;
@@ -190,4 +316,152 @@ transition: .075s !important;
   transition: 1s ease-in-out;
   opacity: 1;
   z-index: 1;
+}
+
+
+/********
+*********
+*********
+! CHAT > SOURCE LINKS
+*********
+*********
+*********/
+
+:root {
+  --chatSourceBrdW:11px;
+}
+/*overrides*/
+.app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4{
+  gap: unset !important;
+}
+
+/********
+! DUPLICATED CHAT > SOURCE LINK
+*********/
+[data-chat-message-id] [class*="ProseMirror-hepta-style"] ~ .flex.h-8{
+  margin-left: calc(var(--chatHeaderPadLR) + var(--chatHeaderGap) + var(--chatHeaderIcnW) + 1px) !important;
+  padding-top: var(--chatHeaderPadTopBtm);
+  padding-bottom: var(--chatHeaderPadTopBtm);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: unset !important;
+  padding-left: calc(var(--chatHeaderPadLR) * .5) !important;
+}
+
+[data-chat-message-id] [class*="ProseMirror-hepta-style"] ~ .flex.h-8 svg {
+
+  align-items: center;
+  margin-top:1px !important;
+}
+
+[data-chat-message-id] [class*="ProseMirror-hepta-style"] ~ .flex.h-8 .truncate {
+  font-size: 0.835rem;
+  line-height: 1.4
+}
+
+
+/********
+! DUPLICATED CHATS > END INDICATOR > BORDER
+*********/
+.app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4 + div {
+  padding: 0px;
+}
+.app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4 + div > div {
+  border-top: 5px dotted hsla(0,0%,100%,.5);
+  background: transparent;
+}
+
+/********
+! DUPLICATED CHATS > SOURCE MESSAGE > ABSOLUTE BORDER
+*********/
+[data-chat-message-id] [class*="ProseMirror-hepta-style"] ~ .absolute{
+  left: calc(var(--chatHeaderPadLR) * .5 + var(--chatHeaderGap) * .5 + var(--chatHeaderIcnW) * .5 + 9px * .5);
+  width: var(--chatSourceBrdW)!important;
+  border-bottom-left-radius: 6px;
+}
+/*********
+END OF COPIED MESSAGES
+**********/
+.app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden{
+  background: var(--testBg1);
+}
+
+/********
+*********
+*********
+! TEXT AREA
+*********
+*********
+*********/
+
+:root {
+  --chatTextAreaPadLR:13px;
+  --chatTextAreaPadTopBtm:calc(var(--chatTextAreaPadLR) * .75);
+}
+/********
+! TEXT AREA > MAX HEIGHT
+*********/
+.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh,
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh{
+  max-height: unset !important;
+  margin: 0px !important;
+  padding-bottom: 0px;
+}
+
+/*HEIGHT*/
+.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror,
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror{
+  max-height: 50vh;
+  transition: .15s;
+}
+.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:focus-within,
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within{
+  max-height: 65vh;
+}
+
+
+
+/********
+! TEXT AREA > PADDING
+*********/
+.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh > div,
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh > div{
+  margin: 0px !important;
+  padding-left: var(--chatTextAreaPadLR);
+  padding-right: var(--chatTextAreaPadLR);
+}
+
+.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror,
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror{
+  padding-left: 0px !important;
+}
+
+/********
+! BOTTOM NAV
+*********/
+:root {
+  --chatBtmNavBtnH:30px;
+}
+/*overrides*/
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh > div[class*="gap"] > div > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*container*/
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh > div[class*="gap"] {
+    padding-bottom: var(--chatTextAreaPadTopBtm) !important;
+  padding-top: var(--chatTextAreaPadTopBtm) !important;
+  box-shadow: 0 -1px 0 0 hsla(0,0%,50%,0.2)
+  
+}
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh > div[class*="gap"] > div {
+  height: var(--chatBtmNavBtnH) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
