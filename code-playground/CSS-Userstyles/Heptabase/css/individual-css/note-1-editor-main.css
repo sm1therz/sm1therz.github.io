@@ -25,6 +25,8 @@
 	--embedHighlightBgClr: hsla(0, 0%, 0%, .024);
 	/*text color - gray*/
 	--text-gray-editor: hsl(51, 3%, 60%);
+	--text-done-editor: hsl(51, 3%, 64%);
+	--text-done-editor-line: hsl(51, 3%, 64%,.8);
 }
 
 
@@ -43,6 +45,8 @@
 	--embedHighlightBgClr: hsla(0, 0%, 100%, .0125);
 	/*text color - gray*/
 	--text-gray-editor: hsla(0, 0%, 53%, 1) !important;
+	--text-done-editor: hsla(0, 0%, 49%, 1);
+	--text-done-editor-line: hsla(0, 0%, 49%, 0.5);
 
 
 	/*
@@ -453,4 +457,11 @@ EMBEDDED - IMAGES - POPUP TITLE / MEDIA TOOLBAR
 /**/
 [class*="content"] .ProseMirror [data-node-type] {
 	word-break: break-word;
+}
+
+/**TODO*/
+._checked_mglho_112>[data-node-type=paragraph]:first-child,
+._checked_mglho_112>[data-node-type=paragraph]:first-child * {
+	color: var(--text-done-editor) !important;;
+	text-decoration-color: var(--text-done-editor-line);
 }
