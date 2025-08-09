@@ -22,19 +22,57 @@ MAIN
 
 /*MESSAGE BODY*/
 
-/*CHAT TITLES*/
-div[style*="width"].bg-background-secondary .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child,
-div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child {
-  height: unset;
+:root {
+  --chatSideBarTitleFlexDirection:row;
+  --chatSideBarTitleGap:0px;
+  --chatSideBarTitleMargBtm:7px;
 }
-div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child > .truncate,
-div[style*="width"].bg-background-secondary .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child > .truncate{
+
+
+
+/*CHAT TITLES*/
+
+/*div[style*="width"].bg-background-secondary .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child,
+div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child,
+div[style*="min-width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child,*/
+div[style*="width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child{
+  height: unset !important;
+  flex-direction: var(--chatSideBarTitleFlexDirection);
+  gap: var(--chatSideBarTitleGap);
+
+}
+
+
+div[style*="width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child > .truncate{
   white-space: normal;
   line-height: 1.35;
-  margin-bottom: 4px;
+  font-size: 14.75px;
   font-weight: 500;
+  margin: 0px !important; 
   color: var(--bldClr);
+  width: 100%;
 }
+@media (max-width: 900px){
+  :root {
+      --chatSideBarTitleFlexDirection:column;
+    --chatSideBarTitleGap:5px;
+    --chatSideBarTitleMargBtm:var(--chatSideBarTitleGap);
+  }
+}
+
+div[style*="width"][class*="bg-"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child{
+  margin-bottom: var(--chatSideBarTitleMargBtm); 
+  top: 1px;
+  position: relative;
+  align-items: flex-start;
+}
+/*CHAT METADATA*/
+div[style*="width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:last-child,
+div[style*="width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:last-child > div{
+  margin: 0px;
+  padding: 0px;
+}
+
 
 /*******
 ! REFERENCED CHATS
@@ -526,4 +564,106 @@ END OF COPIED MESSAGES
   align-items: center;
   justify-content: center;
   
+}
+
+/********
+*********
+*********
+! LEFT SIDEBAR
+*********
+*********
+*********/
+:root {
+  --chatSideBarMinW:40vw;
+}
+
+@media (max-width: 1000px){
+.app-region-drag + div.flex > div[style*="min-width:"]{
+  min-width: var(--chatSideBarMinW) !important;
+}
+
+.app-region-drag + div.flex > div[style*="width: 536"]{
+  max-width:var(--chatSideBarMinW)!important;
+}
+}
+
+
+/*TOP HEADER*/
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12,
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div{
+  gap: 0px !important;
+}
+
+
+/*search*/
+:root{
+  --chatSearchIcnW:1.6rem;
+  --chatSearchPadLR:5px;
+  --chatSearchOutlineW:1px;
+}
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow{
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 6px;
+  padding-right: 6px
+}
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow *{
+  margin: unset;
+}
+
+/*icon*/
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow > div:first-of-type {
+  position: absolute;
+  left: calc(var(--chatSearchPadLR) * .2);
+  transform: scale(0.76);
+  width: var(--chatSearchIcnW);
+  height: var(--chatSearchIcnW);
+  overflow: visible;
+  pointer-events: none !important;
+  user-select: none !important;
+  opacity: .6
+}
+
+/*input*/
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input {
+  box-shadow: inset 0 0 0 1px hsla(0,0%,50%,0.2);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: calc(var(--chatSearchIcnW));
+  padding-right: 5px;
+  border-radius: 7px;
+  max-width: 350px;
+  transition: .1s !important;
+}
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input:empty{
+  background: transparent;
+}
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input:not(:empty){
+  background: red !important;
+}
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input:focus,
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input:focus-within{
+  box-shadow: inset 0 0 0 1px hsla(0,0%,50%,0.3);
+  background: hsla(0,0%,0%,0.1);
+
+}
+/*cancel*/
+
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input + div {
+  position: relative;
+  margin-left: calc(var(--chatSearchPadLR) * -5);
+  right: calc(var(--chatSearchPadLR) * 1);
+  left: unset;
+  opacity: .6;
+}
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input + div:hover{
+  opacity: 1;
+}
+.app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input + div svg{
+  transform: scale(1.1);
 }
