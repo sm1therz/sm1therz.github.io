@@ -273,6 +273,10 @@ HEADER > ICONS
   outline: var(--testBrdW) solid yellow;
   white-space: nowrap !important;
 }
+[data-chat-message-id] .h-8  [class*="text-label"].truncate {
+  min-width:93% !important
+}
+
 
 /**HEADER > INNER ICON > ASSISTANT*/
 [data-chat-message-id] .h-8 svg {

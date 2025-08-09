@@ -1,3 +1,9 @@
+/*root*/
+
+:root {
+		--inboxBrdTstW:0px;
+}
+
 /***********
 ************
 ! INBOX - V2
@@ -14,7 +20,7 @@
 	--inboxItemBrdAlpha: 1;
 	--inboxContainerPadLR:45px;
 	--inboxInnerPadLR:12vw;
-	--inboxBrdTstW:0px;
+
 }
 
 /***********
@@ -159,30 +165,94 @@ MIDDLE  BAR > OUTER
 	align-items: flex-start;
 }
 
-/**REMINDER*/
+/**
+! INBOX ITEMS - REMINDER / CHAT MESSAGE
+***/
 .bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow.items-center {
 	align-items: flex-start;
 	flex-wrap: wrap;
 }
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow.items-center .truncate {
+	white-space: pre-line;
+		overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
 .bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow.items-center .invisible {
 	visibility: visible;
 }
+
+.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.shrink-0.w-40 {
+	min-height: 100% !important;
+	border: var(--inboxBrdTstW) solid yellow;
+	display: flex;
+	flex: 0;
+}
+
 /***********
 ! INBOX ITEMS - ITEM CONTAINER > CONTENT WRAPPER > RIGHT SIDE
 ************/
-.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.shrink-0 {
+.bg-background-secondary [data-action-item-id] > .flex.grow > .grow + .flex.shrink-0[class*="gap"] {
 	min-height: 100% !important;
 	border: calc(var(--inboxBrdTstW) * .5) solid green;
 	display: flex;
-	max-width: 29%;
-	flex: 0;
+	max-width: 29vw;
+	width: 25%;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 4px;
+
+}
+
+
+
+/*RIGHT SIDE > OVERRIDES*/
+.bg-background-secondary [data-action-item-id] > .flex.grow > .grow + .flex.shrink-0[class*="gap"] * {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 .bg-background-secondary [data-action-item-id] > .flex.grow > .flex.shrink-0 .text-label-mini {
 	font-size: 13px;
+	line-height: 1.3
 }
-.bg-background-secondary [data-action-item-id] > .flex.grow > .flex.shrink-0 > div {
-height: 100% !important;
+
+/*RIGHT SIDE > LOCATION*/
+.bg-background-secondary [data-action-item-id] > .flex.grow > .grow + .flex.shrink-0[class*="gap"] > .w-40 {
+	width: 100%;
 }
+
+.bg-background-secondary [data-action-item-id] > .flex.grow > .grow + .flex.shrink-0[class*="gap"] > .w-40 .truncate {
+	white-space: pre-wrap;
+}
+.bg-background-secondary [data-action-item-id] > .flex.grow > .grow + .flex.shrink-0[class*="gap"] > .w-40 > .flex {
+	gap: var(--inboxRightIcnMargR) !important;
+	align-items: flex-start;
+}
+
+/*RIGHT SIDE > DATE + TIME*/
+.bg-background-secondary [data-action-item-id] > .flex.grow > .grow + .flex.shrink-0[class*="gap"] > .flex {
+	width: 100%;
+	gap: var(--inboxRightIcnMargR) !important;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding-left: calc(var(--inboxRightIcnW) + var(--inboxRightIcnMargR));
+}
+/*RIGHHT SIDE SVG*/
+:root {
+	--inboxRightIcnW:16px;
+	--inboxRightIcnMargR:6px;
+}
+.bg-background-secondary [data-action-item-id] > .flex.grow > .grow + .flex.shrink-0 svg{
+	transform: scale(1.1);
+	width: var(--inboxRightIcnW);
+	height: var(----inboxRightIcnW);
+}
+.bg-background-secondary [data-action-item-id] > .flex.grow > .grow + .flex.shrink-0 svg path[d*="m20.6101"] {
+	fill: hsl(300, 100%, 75%,.7);
+}
+
 /***********
 ************
 ************
