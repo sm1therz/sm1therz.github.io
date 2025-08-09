@@ -173,7 +173,7 @@ MIDDLE  BAR > OUTER
 	flex-wrap: wrap;
 }
 .bg-background-secondary [data-action-item-id] > .flex.grow > .flex.grow.items-center .truncate {
-	white-space: pre-line;
+	white-space: pre-wrap;
 		overflow: hidden;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
