@@ -254,6 +254,14 @@ margin-bottom: 2px !important;
 [class*="group"] > .flex.items-center.gap-x-2[class*="pl-4"] ~ .relative{
 }
 
+/******
+! HEADER > TYPE 2 AND TYPE 1 > INBOX SIDEBAR
+*******/
+
+[data-is-inbox-app-panel] [data-chat-message-id] .flex.items-center.gap-x-2[class*="pl-4"] ~ .relative > .h-8 {
+  backdrop-filter: unset !important;
+  background: hsla(216, 6%, 15%,1) !important;
+}
 
 /*******
 ********
@@ -424,9 +432,14 @@ HEADER > BUTTON > TYPE 2
   --chatSourceBrdW:11px;
 }
 /*overrides*/
-.app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4{
+.app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4,
+[data-is-inbox-app-panel] .pt-4 .gap-y-4{
   gap: unset !important;
 }
+[data-is-inbox-app-panel] .pt-4 .gap-y-4{
+  background: hsla(214, 8%, 15%, 1.0) !important;
+}
+
 .app-region-drag + div [class*="--light-grey"] + div > .overflow-x-hidden .gap-y-4 > div:last-of-type {
   border: unset !important;
 }
@@ -510,7 +523,7 @@ END OF COPIED MESSAGES
 .bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex  div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror{
-  max-height: 40vh !important;
+  max-height: 26vh !important;
   transition: .15s;
 
 }
