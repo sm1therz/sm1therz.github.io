@@ -1,3 +1,24 @@
+/*******
+ROOT
+********/
+/*
+#root .grid.select-none .ProseMirror,
+#root .grid.select-none .ProseMirror > *,
+#root .grid.select-none .ProseMirror > * > *,
+#root .grid.select-none .ProseMirror > * > * > *,
+#root .grid.select-none .ProseMirror > * > * > * > *{
+
+  box-shadow: inset 0 0 0 0px red;
+}
+
+#root .grid.select-none > div{
+    border: 1px solid  green !important;
+}
+*/
+
+:root {
+  --crdLibTstBrdW:0px;
+}
 /*****************
 ******************
 ******************
@@ -289,8 +310,8 @@ CARD LIBRARY - CARD WRAPPER
   background: var(--cardlibCardBgClr) !important;
   border: var(--cardlibCardBrdWidth) solid var(--cardlibBrdClr) !important;
   border-bottom: 0px solid var(--cardlibBrdClr) !important;
-  width: var(--cardlibCardWidth)!important;
-  max-width: 100% !important;
+  width:100% !important;
+  max-width:  var(--cardlibCardWidth) !important;
   margin: 0 auto;
   padding: 0px !important;
   border-radius: var(--cardlibCardBrdRad);
@@ -304,6 +325,8 @@ CARD LIBRARY - CARD WRAPPER
   padding-bottom: var(--cardlibCardPadTopBtm) !important;
   padding-top: var(--cardlibCardPadTopBtm) !important;
   position: relative;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 var(--crdLibTstBrdW) blue
 }
 .grid.select-none > div:before,
 /*right sidebar grid - card wrapper*/
@@ -769,3 +792,101 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   font-weight: 600;
   color: var(--bldClr) !important;
 }
+
+#root .grid.select-none .ProseMirror > [data-node-type="todo_list_item"]:first-child > .relative > [class*="nested"] > p ~ * {
+  display: none;
+}
+
+
+
+/*******
+! TOOLBAR
+********/
+
+:root {
+  --cardlibToolbarPadLR: 1.5rem;
+  --cardlibToolbarMaxW: 1000px;
+  
+}
+
+/*******
+! TOOLBAR > SEARCH ROW
+********/
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag {
+  box-shadow: inset 0 0 0 calc(var(--crdLibTstBrdW) * 3) green;
+  max-width: var(--cardlibToolbarMaxW);
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: var(--cardlibToolbarPadLR);
+  position: relative;
+  background: transparent;
+}
+
+/*******
+! TOOLBAR > FILTER ROW
+********/
+
+
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] {
+  box-shadow: inset 0 0 0 calc(var(--crdLibTstBrdW) * 2) red;
+  max-width: var(--cardlibToolbarMaxW);
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+/*! TOOLBAR > FILTER ROW > SIDEBAR OPEN*/
+#root .h-screen > [class*="sidebar"] + .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] {
+  padding-left: var(--cardlibToolbarPadLR);
+}
+
+/*******
+! TOOLBAR > BORDERS
+********/
+
+
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag:before,
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"]:before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -40vw;
+  right: -40vw;
+  height: 1px;
+  background: hsla(0, 0%, 100%, .04);
+  bottom: 0
+}
+
+/*SEARCH BORDER > ADD BACKGROUND */
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag:before {
+  background: hsla(0, 0%, 0%, .04);
+  height: unset;
+  top: 0;
+  z-index: -1;
+  border-bottom: 1px solid hsla(0, 0%, 100%, .08);
+}
+
+/*******
+! TOOLBAR > FILTERS
+********/
+/*FIRST 2 OPTIONS*/
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:first-child:not(:hover),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:nth-of-type(2):not(:hover),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:nth-of-type(4):not(:hover),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:nth-of-type(5):not(:hover){
+  background: hsla(0, 0%, 0%, 0.14);
+  border-color: black;
+}
+/*FIRST 2 OPTIONS > AFTER FIRST 2*/
+
+
+.max-h-\[min\(50vh\,400px\)\]{
+  max-height: min(70vh, 100vh)
+}
+
+
+/*******
+TAMPERMONKEY > CARD LIBRARY > FILTER TOOLBAR > SEPARATORS
+********/
+
