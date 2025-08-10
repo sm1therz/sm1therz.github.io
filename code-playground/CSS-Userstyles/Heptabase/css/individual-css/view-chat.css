@@ -536,14 +536,16 @@ END OF COPIED MESSAGES
 /*HEIGHT*/
 .bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
-.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex  div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror{
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex  div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
+.bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror{
   max-height: 26vh !important;
   transition: .15s;
 
 }
 .bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:focus-within,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within,
-.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within{
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within,
+.bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:focus-within{
   max-height: 65vh !important;
 }
 
@@ -592,7 +594,6 @@ END OF COPIED MESSAGES
   justify-content: center;
   
 }
-
 /********
 *********
 *********
