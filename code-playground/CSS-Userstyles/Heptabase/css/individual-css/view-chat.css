@@ -1,3 +1,10 @@
+/*root*/
+
+:root {
+  --testBrdW:0px;
+  --testProseMirMaxH:unset;
+}
+
 /*********
 MAIN
 **********/
@@ -185,6 +192,10 @@ div:hover  > [class*="remove"]:hover{
   margin: unset !important;
   width: unset;
 }
+[data-chat-message-id] .h-8 .text-label > .shrink-0.text-middle-grey,
+[data-chat-message-id] .h-8 .text-label > .truncate.text-label-mini.text-middle-grey {
+  
+}
 
 /******
 ! HEADER > NORMAL
@@ -271,12 +282,11 @@ HEADER > ICONS
 /*left sidebar open*/
 [data-chat-message-id] .h-8  [class*="text-label"] {
   outline: var(--testBrdW) solid yellow;
-  white-space: nowrap !important;
-}
-[data-chat-message-id] .h-8  [class*="text-label"].truncate {
-  min-width:93% !important
-}
 
+}
+[data-chat-message-id] .h-8 [class*="text-label"].truncate:not(.text-label-mini) {
+  min-width:93% !important;
+}
 
 /**HEADER > INNER ICON > ASSISTANT*/
 [data-chat-message-id] .h-8 svg {
