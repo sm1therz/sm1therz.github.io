@@ -19,6 +19,7 @@ ROOT
 :root {
   --crdLibTstBrdW:0px;
 }
+
 /*****************
 ******************
 ******************
@@ -805,7 +806,7 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 
 :root {
   --cardlibToolbarPadLR: 1.5rem;
-  --cardlibToolbarMaxW: 1000px;
+  --cardlibToolbarMaxW: 1100px;
   
 }
 
@@ -835,10 +836,11 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
+  row-gap: 0.5rem;
+  column-gap: 0.25rem;
 }
 /*! TOOLBAR > FILTER ROW > SIDEBAR OPEN*/
 #root .h-screen > [class*="sidebar"] + .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] {
-  padding-left: var(--cardlibToolbarPadLR);
 }
 
 /*******
@@ -870,7 +872,15 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 /*******
 ! TOOLBAR > FILTERS
 ********/
-/*FIRST 2 OPTIONS*/
+/*FIRST 4 OPTIONS > GAP*/
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:first-child,
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:nth-of-type(2),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:nth-of-type(3),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:nth-of-type(4),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:nth-of-type(5){
+  margin-right: 6px !important;
+}
+/*FIRST 4 OPTIONS > COLOR*/
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:first-child:not(:hover),
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:nth-of-type(2):not(:hover),
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:nth-of-type(4):not(:hover),
@@ -878,7 +888,52 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   background: hsla(0, 0%, 0%, 0.14);
   border-color: black;
 }
-/*FIRST 2 OPTIONS > AFTER FIRST 2*/
+
+
+/*******
+! TOOLBAR > FILTERS > ACTIVE
+********/
+
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"]{
+  background: rgba(35, 131, 226, .2);
+
+}
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"] > .truncate{
+  color: var(--active-item) !important;
+}
+
+[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"] > .truncate{
+  --active-item: hsl(200, 100%, 68%) !important;
+  
+}
+[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"] > .truncate + div svg {
+  display: none;
+}
+[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"] > .truncate + div .truncate {
+  margin: 0px !important;
+}
+
+
+/*******
+! TOOLBAR > FILTERS > HIDE STUFF
+********/
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5),[class*="active"],:hover){
+  border-color: transparent;
+}
+
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5),.app-region-no-drag) > svg{
+  display: none;
+}
+
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)) > .truncate {
+white-space: break-spaces;
+  margin: unset;
+}
+
+
+/*******
+! TOOLBAR > CONTEXT MENU
+********/
 
 
 .max-h-\[min\(50vh\,400px\)\]{
