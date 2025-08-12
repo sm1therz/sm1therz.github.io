@@ -326,11 +326,13 @@ CARD LIBRARY - CARD WRAPPER
   position: relative;
   box-sizing: border-box;
   overflow: visible;
-}
-.grid.select-none > div > div > [data-editor-type] > .ProseMirror{
   padding-bottom: var(--cardlibCardPadTopBtm) !important;
   padding-top: var(--cardlibCardPadTopBtm) !important;
   border: var(--crdLibTstBrdW) solid green !important;
+
+}
+.grid.select-none > div > div > [data-editor-type] > .ProseMirror{
+
   position: relative;
   overflow: hidden;
 }
@@ -341,23 +343,23 @@ CARD LIBRARY - CARD WRAPPER
   position: relative;
 }
 
-.grid.select-none > div > div > [data-editor-type]:before{
+.grid.select-none > div:before{
   content: "";
   display: block;
   z-index: 9595;
   position: absolute;
   bottom: calc(var(--cardLibCardBrdH) * -1);
-  left: calc(var(--cardlibCardPadLeftRight) * -1);
-  right: calc(var(--cardlibCardPadLeftRight) * -1);
+  left: calc(var(--cardlibCardPadLeftRight) * 0);
+  right: calc(var(--cardlibCardPadLeftRight) * 0);
   height: var(--cardLibCardBrdH);
   background: var(--cardlibBrdClr);
 }
-.grid.select-none > div > div > [data-editor-type]:after {
+.grid.select-none > div:after {
   content: "";
   display: block;
   position: absolute;
-  left: calc(var(--cardlibCardPadLeftRight) * -1);
-  right: calc(var(--cardlibCardPadLeftRight) * -1);
+  left: calc(var(--cardlibCardPadLeftRight) * 0);
+  right: calc(var(--cardlibCardPadLeftRight) * 0);
   height: calc(var(--cardlibCardPadTopBtm) * 2);
   background: var(--background-primary);
   bottom: calc(var(--cardlibCardPadTopBtm) * -1);
