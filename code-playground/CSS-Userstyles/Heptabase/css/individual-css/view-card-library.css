@@ -108,6 +108,8 @@ CARD LIBRARY - VARIABLES
   font-weight: var(--cardlibFontWeight);
 }
 
+
+
 /*headings - in highlights*/
 #root .grid.select-none > div .ProseMirror [data-node-type="heading"],
 #root .grid.select-none > div .ProseMirror [data-node-type="heading"] * {
@@ -829,7 +831,7 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 ********/
 
 
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] {
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12 {
   box-shadow: inset 0 0 0 calc(var(--crdLibTstBrdW) * 2) red;
   max-width: var(--cardlibToolbarMaxW);
   width: 100%;
@@ -838,9 +840,10 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   position: relative;
   row-gap: 0.5rem;
   column-gap: 0.25rem;
+  min-height: unset;
 }
 /*! TOOLBAR > FILTER ROW > SIDEBAR OPEN*/
-#root .h-screen > [class*="sidebar"] + .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] {
+#root .h-screen > [class*="sidebar"] + .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div {
 }
 
 /*******
@@ -849,7 +852,7 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 
 
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag:before,
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"]:before {
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div:before {
   content: "";
   position: absolute;
   display: block;
@@ -873,18 +876,18 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 ! TOOLBAR > FILTERS
 ********/
 /*FIRST 4 OPTIONS > GAP*/
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:first-child,
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:nth-of-type(2),
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:nth-of-type(3),
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:nth-of-type(4),
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div:nth-of-type(5){
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div:first-child,
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div:nth-of-type(2),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div:nth-of-type(3),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div:nth-of-type(4),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div:nth-of-type(5){
   margin-right: 6px !important;
 }
 /*FIRST 4 OPTIONS > COLOR*/
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:first-child:not(:hover),
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:nth-of-type(2):not(:hover),
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:nth-of-type(4):not(:hover),
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:nth-of-type(5):not(:hover){
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div.h-8:first-child:not(:hover),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div.h-8:nth-of-type(2):not(:hover),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div.h-8:nth-of-type(4):not(:hover),
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div.h-8:nth-of-type(5):not(:hover){
   background: hsla(0, 0%, 0%, 0.14);
   border-color: black;
 }
@@ -894,22 +897,22 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 ! TOOLBAR > FILTERS > ACTIVE
 ********/
 
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"]{
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div[class*="active"]{
   background: rgba(35, 131, 226, .2);
 
 }
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"] > .truncate{
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div[class*="active"] > .truncate{
   color: var(--active-item) !important;
 }
 
-[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"] > .truncate{
+[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div[class*="active"] > .truncate{
   --active-item: hsl(200, 100%, 68%) !important;
   
 }
-[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"] > .truncate + div svg {
+[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div[class*="active"] > .truncate + div svg {
   display: none;
 }
-[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div[class*="active"] > .truncate + div .truncate {
+[data-theme="dark"] #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div[class*="active"] > .truncate + div .truncate {
   margin: 0px !important;
 }
 
@@ -917,15 +920,15 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 /*******
 ! TOOLBAR > FILTERS > HIDE STUFF
 ********/
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5),[class*="active"],:hover){
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5),[class*="active"],:hover){
   border-color: transparent;
 }
 
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5),.app-region-no-drag) > svg{
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5),.app-region-no-drag) > svg{
   display: none;
 }
 
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="gap"] > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)) > .truncate {
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .min-h-12[class*="px-"] > div > div.h-8:not(:first-child,:nth-of-type(2),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)) > .truncate {
 white-space: break-spaces;
   margin: unset;
 }
