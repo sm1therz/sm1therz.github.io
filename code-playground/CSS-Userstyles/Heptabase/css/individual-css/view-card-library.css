@@ -304,9 +304,7 @@ CARD LIBRARY - GRID WRAPPER - IN RIGHT SIDEBAR
 CARD LIBRARY - CARD WRAPPER
 ******************/
 /*CARD LIBRARY - card wrapper*/
-.grid.select-none > div,
-/*right sidebar grid - card wrapper*/
-._rightSidebar_1fabk_5 .grid > div {
+.grid.select-none > div {
   transition: .15s;
   min-height: unset !important;
   height: unset !important;
@@ -325,24 +323,48 @@ CARD LIBRARY - CARD WRAPPER
   justify-content: flex-start;
   padding-left: var(--cardlibCardPadLeftRight) !important;
   padding-right: var(--cardlibCardPadLeftRight) !important;
-  padding-bottom: var(--cardlibCardPadTopBtm) !important;
-  padding-top: var(--cardlibCardPadTopBtm) !important;
   position: relative;
   box-sizing: border-box;
-  box-shadow: inset 0 0 0 var(--crdLibTstBrdW) blue
+  overflow: visible;
 }
-.grid.select-none > div:before,
-/*right sidebar grid - card wrapper*/
-._rightSidebar_1fabk_5 .grid > div:before {
+.grid.select-none > div > div > [data-editor-type] > .ProseMirror{
+  padding-bottom: var(--cardlibCardPadTopBtm) !important;
+  padding-top: var(--cardlibCardPadTopBtm) !important;
+  border: var(--crdLibTstBrdW) solid green !important;
+  position: relative;
+  overflow: hidden;
+}
+:root {
+  --cardLibCardBrdH:2px;
+}
+.grid.select-none > div > div > [data-editor-type]{
+  position: relative;
+}
+
+.grid.select-none > div > div > [data-editor-type]:before{
   content: "";
   display: block;
   z-index: 9595;
   position: absolute;
-  bottom: 0;
-  left: calc(var(--cardlibCardPadLeftRight) * 1);
-  right: calc(var(--cardlibCardPadLeftRight) * 1);
-  height: 2px;
+  bottom: calc(var(--cardLibCardBrdH) * -1);
+  left: calc(var(--cardlibCardPadLeftRight) * -1);
+  right: calc(var(--cardlibCardPadLeftRight) * -1);
+  height: var(--cardLibCardBrdH);
   background: var(--cardlibBrdClr);
+}
+.grid.select-none > div > div > [data-editor-type]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(var(--cardlibCardPadLeftRight) * -1);
+  right: calc(var(--cardlibCardPadLeftRight) * -1);
+  height: calc(var(--cardlibCardPadTopBtm) * 2);
+  background: var(--background-primary);
+  bottom: calc(var(--cardlibCardPadTopBtm) * -1);
+  z-index: 9594;
+}
+.grid.select-none > div[style*="--active-item"]{
+  --cardlibBrdClr:var(--active-item);
 }
 
 /*CARD LIBRARY - CARD WRAPPER > HOVER*/
@@ -734,23 +756,6 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 
 }
 
-#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] > div{
- max-height: calc() !important;
-}
-#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] > div > div{
-  box-shadow: 0 0 0 1px hsla(0,0%,50%,0.2)
-}
-#root .grid.select-none .ProseMirror > div[data-node-type="code_block"],
-#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-line {
-    --cardlibFontSize:16px;
-  line-height: 22px
-}
-#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor {
-  padding-top: 13px;
-}
-#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor [class*="scroller"] {
-  padding: 0 17px 13px
-}
 #root .grid.select-none .ProseMirror > div[data-node-type="code_block"] {
   max-height: calc(var(--cardlibContentMaxHeight) - 100px);
 }
@@ -801,6 +806,26 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 }
 
 
+
+/*******
+! CODEBLOCKS
+********/
+
+/*CODEBLOCKS*/
+
+
+
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"],
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-line {
+    --cardlibFontSize:16px;
+  line-height: 22px
+}
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor {
+  padding-top: 13px;
+}
+#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor [class*="scroller"] {
+  padding: 0 17px 13px
+}
 
 /*******
 ! TOOLBAR
