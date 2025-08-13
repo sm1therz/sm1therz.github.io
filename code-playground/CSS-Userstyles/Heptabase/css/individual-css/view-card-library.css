@@ -621,6 +621,7 @@ CARD LIBRARY - PDFS IMAGES AND VIDEO
   top: unset !important;
   left: unset !important;
 }
+
 #root .grid.select-none > div > div.relative.size-full > .absolute img {
   top: 43% !important;
   bottom: unset !important;
@@ -777,6 +778,7 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   overflow-y: hidden !important;
 }
 
+/*
 #root .grid.select-none .ProseMirror > [data-node-type*="list_item"] > [class*="nestedBlocks"]:after {
   content: "";
   display: block;
@@ -787,7 +789,7 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   height: 10px;
   background: linear-gradient(to top, var(--background-primary), transparent);
   z-index: 10;
-}
+}*/
 
 #root .grid.select-none > div [class*="bulletIcon"] + [class*="_hint"]{
   opacity: 0;
@@ -828,6 +830,48 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 #root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor [class*="scroller"] {
   padding: 0 17px 13px
 }
+
+/*******
+! HIGHLIGHTS
+********/
+
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror [data-node-type]:not([data-node-type="table"], [data-node-type="table"] *),
+#root .grid.select-none .flex  + [class*="ProseMirror-"] > div > .ProseMirror {
+  --cardlibFontSize:16.5px;
+  --cardlibLineHeight:1.4;
+}
+
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror code {
+  top: 0px !important;
+}
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"]{
+  overflow: hidden !important;
+}
+/*DISPLAY ALL ITEMS > BLOCK ITEMS*/
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="paragraph"],
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="image"],
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="embed"],
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="heading"],
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="quote"]{
+  display: block !important
+}
+
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="image"]{
+  min-width: 100px;
+  min-height: 100px !important;
+  max-height: 100% !important;
+}
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="image"] img{
+  min-height: unset !important;
+  display: block;
+  min-width: 100% !important
+}
+
+/*DISPLAY ALL ITEMS > FLEX ITEMS*/
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type*="list_item"]{
+  display: flex
+}
+
 
 /*******
 ! TOOLBAR
