@@ -390,12 +390,12 @@ FLOATING INFO > TITLE
 	min-width: 100% !important;
 	width: 100% !important;
 }
-
+/*
 #root~.p-12.hepta-scrim>.w-full>.flex.w-full>.flex,
 #root~.p-12.hepta-scrim>.w-full>.flex.w-full>.flex>.flex:first-child,
 #root~.p-12.hepta-scrim>.w-full>.flex.w-full>.flex>.flex>.text-label {
 	width: 100% !important
-}
+}*/
 #root~.p-12.hepta-scrim>.w-full>.flex.w-full>.flex>.flex>.text-label {
 max-width: 80%
 }
