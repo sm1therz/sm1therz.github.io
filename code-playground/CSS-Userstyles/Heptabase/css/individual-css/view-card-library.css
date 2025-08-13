@@ -852,7 +852,8 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 #root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="image"],
 #root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="embed"],
 #root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="heading"],
-#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="quote"]{
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type="quote"],
+#root .grid.select-none .flex > [style*="--annotation-yellow"] + [class*="ProseMirror-"] > div > .ProseMirror > [data-node-type*="code"]{
   display: block !important
 }
 
