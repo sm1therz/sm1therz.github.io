@@ -29,6 +29,7 @@ NOTE PADDING - POPUP AND FULLSCREEN ONLY
 
 /*note info*/
 [class*="editor"] + [class*="info"]{
+    width: 100% !important;
     max-width: var(--noteMaxWidth) !Important;
     margin: 0 auto;
     padding-left: var(--notePadLeftRight)!important;
