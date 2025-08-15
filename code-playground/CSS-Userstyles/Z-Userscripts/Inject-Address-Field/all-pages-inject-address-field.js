@@ -31,9 +31,13 @@
     --rs-addressClr:hsla(0,0%,0%,.5);
     --rs-addressPad:2px 8px;
     --rs-addressFontSize:12px;
-    --rs-addressLineHeight:1.2;
+    --rs-addressLineHeight:1.3;
     --rs-addressBrdClr:hsla(0,0%,50%,.1);
     }
+      html body .rs-address-container,
+      html .rs-address-container,
+      html > .rs-address-container,
+      * .rs-address-container,
       .rs-address-container {
         position: fixed;
         top: 0px !important;
@@ -43,7 +47,7 @@
         justify-content:flex-end;
         align-items: center;
         gap: 4px !important;
-        padding: 5px !important;
+        padding: 4px !important;
         border-radius: 8px !important;
         background: hsla(0,0%,50%,.1) !important;
         backdrop-filter: blur(4px) !important;
@@ -63,6 +67,10 @@
       max-width:100%;
       background:white;
       }
+      html body #rs-address-input,
+      html #rs-address-input,
+      html > #rs-address-input,
+      * #rs-address-input,
       #rs-address-input {
         flex:1;
         width: 100%;
@@ -71,22 +79,31 @@
         border: 1px solid var(--rs-addressBrdClr);
         border-radius: 6px;
         outline: none;
-        background: var(--rs-addressbgClr);
+        background: var(--rs-addressbgClr) !important;
         color: var(--rs-addressClr) !important;
         font-size: var(--rs-addressFontSize) !important;
         line-height: var(--rs-addressLineHeight) !important;
         transition:.1s !important;
+        margin:unset !important;
       }
+      html body .rs-address-copy,
+      html .rs-address-copy,
+      html * .rs-address-copy,
+      html[id*="start"] .rs-address-copy,
+      html[id*="start"] * .rs-address-copy,
+      html > .rs-address-copy,
+      * .rs-address-copy,
       .rs-address-copy {
         padding: var(--rs-addressPad) !important;
         border: 1px solid var(--rs-addressBrdClr) !important;
         border-radius: 6px !important;
-        background: var(--rs-addressbgClr) !important;
+        background-color: var(--rs-addressbgClr) !important;
         color: var(--rs-addressClr) !important;
         cursor: pointer !important;
         font-size: var(--rs-addressFontSize) !important;
         line-height: var(--rs-addressLineHeight) !important;
         user-select: none !important;
+        margin:unset !important;
       }
 
     `;
