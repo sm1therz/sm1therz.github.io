@@ -2700,10 +2700,10 @@ LEVEL 3 > Button Adjustments
 /*Button - Checkbox*/
 /*Button - Top margins*/
 .project.header1 > .name {
-    --btn-MargTop: 8.5px;
+    --btn-MargTop: 18px;
 }
 .project.header2 > .name {
-    --btn-MargTop: 4px;
+    --btn-MargTop: 11px;
 }
 
 /*Buttons - Paragraph*/
@@ -9575,6 +9575,7 @@ LAST ITEM
         
 }
 
+
 /*******************************
 ********************************
 ! SEARCH - NAV - BAR
@@ -9683,7 +9684,7 @@ LAST ITEM
 
 
 /*OUTER WRAPPER - ACTIVE*/
-#app .searchBox._zpqjyh {
+#app .searchBox._1bnfe30 {
   border-radius: 10px;
   border-radius: 7px;
   width: var(--searchboxWidth-Active);
@@ -9703,7 +9704,7 @@ LAST ITEM
   transition: var(--search-nav-transition);
 }
 
-#app .searchBox._zpqjyh > div {
+#app .searchBox._1bnfe30 > div {
   border-radius: 16px;
   border: var(--search-nav-border-active);
 }
@@ -9725,7 +9726,7 @@ LAST ITEM
 }
 
 
-#app .searchBox._zpqjyh input {
+#app .searchBox._1bnfe30 input {
   background: var(--search-nav-input-active);
 }
 
@@ -9733,7 +9734,7 @@ LAST ITEM
   color: var(--SEARCH-NAV--PLACEHOLDER-TXT-CLR) !important;
 }
 
-#app .searchBox._zpqjyh input::placeholder {
+#app .searchBox._1bnfe30 input::placeholder {
   color: var(--SEARCH-NAV--PLACEHOLDER-TXT-CLR);
 }
 
@@ -9749,7 +9750,7 @@ LAST ITEM
   opacity: .5
 }
 
-#app .searchBox._zpqjyh [data-icon="magnifying-glass"] {
+#app .searchBox._1bnfe30 [data-icon="magnifying-glass"] {
   opacity: 1;
 }
 
@@ -9844,7 +9845,7 @@ DROPDOWN WRAPPER
   overflow: hidden;
 }
 
-#app .searchBox._zpqjyh > div > div {
+#app .searchBox._1bnfe30 > div > div {
   height: 100%;
   background: var(--search-nav-bg-primary);
   animation: search-nav-open .5s ease-in-out;
@@ -9907,7 +9908,7 @@ DROPDOWN WRAPPER
   padding:0px !important;
 }
 
-#app .searchBox._zpqjyh > div > div > .flyout {}
+#app .searchBox._1bnfe30 > div > div > .flyout {}
 
 /*BUTTONS*/
 #app .searchBox > div > div > .flyout > div,
@@ -9944,7 +9945,7 @@ DROPDOWN WRAPPER
 }
 
 /*DROPDOWN WRAPPER - ACTIVE*/
-#app .searchBox._zpqjyh > div > input {}
+#app .searchBox._1bnfe30 > div > input {}
 
 .header > div:nth-of-type(2):hover,
 .header > div:nth-of-type(3):hover,
@@ -10018,6 +10019,8 @@ DROPDOWN WRAPPER
 .header  .iconButton.lg svg {
   transform: scale(.9)
 }
+
+
 
 /*******************************
 ********************************
