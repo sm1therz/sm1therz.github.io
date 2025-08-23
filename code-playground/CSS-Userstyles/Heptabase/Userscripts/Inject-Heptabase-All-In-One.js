@@ -37,6 +37,10 @@
   }, 1600);
   
   setTimeout(function() {
+    injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-embeds.css');
+  }, 1650);
+  
+  setTimeout(function() {
     injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-headings-h5.css');
   }, 1700);
 

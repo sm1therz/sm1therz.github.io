@@ -1,0 +1,20 @@
+/***************
+EMBEDS
+****************/
+:root {
+	--embedPadTopBtm:5px;
+	--embedPadLR:6px;
+}
+
+[data-theme="dark"] {
+	--embedBg:hsla(0,0%,0%,.1);
+	--embedBrdclr:hsla(0,0%,0%,.19);
+}
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
+	padding: var(--embedPadTopBtm) var(--embedPadLR);
+	background: var(--embedBg);
+	border-radius: 10px;
+	border-color: var(--embedBrdclr)
+	
+}
+
