@@ -1,7 +1,7 @@
 /*root*/
 
 :root {
-	--embedTstBrdW:.5px;
+	--embedTstBrdW:0px;
 }
 
 /***************
@@ -18,7 +18,7 @@
 /*COLORS*/
 
 :root {
-	--embedBg:hsla(0, 0%, 96%, 1.0);
+	--embedBg:hsla(0, 0%, 98%, 1.0);
 	--embedBg-Hover:hsla(0, 0%, 94%, 1.0);
 	--embedBg-Selected:hsla(210, 55%, 89%, 1.0);
 	--embedBrdClr:hsla(0, 0%, 89%, 1.0);
@@ -26,19 +26,19 @@
 }
 
 [data-theme="dark"] {
-	--embedBg:hsla(0,0%,0%,.1);
 	--embedBg:hsla(0, 0%, 100%, .02);
 	--embedBgClr:hsla(0, 0%, 100%, .02);
 	--embedBg:transparent;
-	--embedBg-Hover:linear-gradient(
+	/*--embedBg-Hover:linear-gradient(
 			to right, 
 			transparent 0%, 
 			var(--embedBgClr) var(--embedPadLR-Active), 
 			var(--embedBgClr) calc(100% - var(--embedPadLR-Active)), 
-			transparent);
+			transparent);*/
+	--embedBg-Hover:hsla(0, 0%, 100%, 0.015);
 	--embedBg-Selected:hsla(211, 30%, 27%, 1.0);
-	--embedBrdClr:hsla(0,0%,0%,.19);
-	--embedBrdClr-Active:hsla(211, 25%, 32%, 1.0);
+	--embedBrdClr:hsla(0,0%,0%,0.19);
+	--embedBrdClr-Active:hsla(211, 25%, 36%, 1.0);
 }
 
 html [class*="ProseMirror-hepta-style"] > .ProseMirror,
@@ -69,7 +69,7 @@ html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]
 /*EMBED > HOVER *NOT SELECTED*/
 html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
 	--embedBg:var(--embedBg-Hover);
-	--embedBrdRad:6px;
+	--embedBrdRad:3px;
 	cursor: pointer;
 
 }
@@ -79,8 +79,9 @@ html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]
 	--embedBg:var(--embedBg-Selected);
 	--embedBrdClr:var(--embedBrdClr-Active);
 	--IconEmbedDashLine:var(--IconEmbedDashLineActive);
-	--embedBrdRad:6px;
+	--embedBrdRad:5px;
 	--embedBrdDashOpacity:0;
+	border-color: var(--embedBrdClr-Active);
 	/*add faux padding*/
 
 }
@@ -95,7 +96,7 @@ html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]
 
 /*BORDER DASH*/
 :root {
-	--embedBrdDashH:2.5px;
+	--embedBrdDashH:2.25px;
 	--embedBrdDashOpacity:1
 }
 
@@ -131,9 +132,9 @@ html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]
 	/*DASHED LINE - ACTIVE - LIGHT*/
 	--IconEmbedDashLineActive-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23007BFF" fill-opacity="0.5"/></svg>');
 	/*DASHED LINE - DARK*/
-	--IconEmbedDashLine-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23808080" fill-opacity="0.2"/></svg>');
+	--IconEmbedDashLine-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23808080" fill-opacity="0.25"/></svg>');
 	/*DASHED LINE ACTIVE - DARK*/
-	--IconEmbedDashLineActive-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%234DA0FF" fill-opacity="0.4"/></svg>');
+	--IconEmbedDashLineActive-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%234DA0FF" fill-opacity="0.45"/></svg>');
 }
 
 
