@@ -1,20 +1,147 @@
+/*root*/
+
+:root {
+	--embedTstBrdW:.5px;
+}
+
 /***************
-EMBEDS
+! EMBEDS
 ****************/
 :root {
-	--embedPadTopBtm:5px;
-	--embedPadLR:6px;
+	--embedPadTopBtm:10px;
+	--embedBrdRad:0px;
+	--embedPadLR:10px;
+	--embedPadLR-Active:10px;
+	--embedTransition:.1s;
+}
+
+/*COLORS*/
+
+:root {
+	--embedBg:hsla(0, 0%, 96%, 1.0);
+	--embedBg-Hover:hsla(0, 0%, 94%, 1.0);
+	--embedBg-Selected:hsla(210, 55%, 89%, 1.0);
+	--embedBrdClr:hsla(0, 0%, 89%, 1.0);
+	--embedBrdClr-Active:hsla(210, 36%, 83%, 1.0);
 }
 
 [data-theme="dark"] {
 	--embedBg:hsla(0,0%,0%,.1);
-	--embedBrdclr:hsla(0,0%,0%,.19);
+	--embedBg:hsla(0, 0%, 100%, .02);
+	--embedBgClr:hsla(0, 0%, 100%, .02);
+	--embedBg:transparent;
+	--embedBg-Hover:linear-gradient(
+			to right, 
+			transparent 0%, 
+			var(--embedBgClr) var(--embedPadLR-Active), 
+			var(--embedBgClr) calc(100% - var(--embedPadLR-Active)), 
+			transparent);
+	--embedBg-Selected:hsla(211, 30%, 27%, 1.0);
+	--embedBrdClr:hsla(0,0%,0%,.19);
+	--embedBrdClr-Active:hsla(211, 25%, 32%, 1.0);
 }
-html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
-	padding: var(--embedPadTopBtm) var(--embedPadLR);
-	background: var(--embedBg);
-	border-radius: 10px;
-	border-color: var(--embedBrdclr)
+
+html [class*="ProseMirror-hepta-style"] > .ProseMirror,
+html [class*="ProseMirror-hepta-style"] > .ProseMirror > *{
+	box-shadow: inset  0 0 0 var(--embedTstBrdW) red;
+}
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]{
+	position: relative;
 	
 }
 
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
+	padding-top: var(--embedPadTopBtm);
+	padding-right:  var(--embedPadTopBtm);
+	padding-left:  var(--embedPadLR);
+	padding-right:  var(--embedPadLR);
+	background: var(--embedBg);
+	border-radius: var(--embedBrdRad);
+	border-color: var(--embedBrdClr);
+	border-color: transparent;
+	transition: var(--embedTransition);
+		width: calc(100% + var(--embedPadLR) * 2);
+	margin-left: calc(var(--embedPadLR) * -1);
+	--embedPadLR:var(--embedPadLR-Active);
+	outline: var(--embedTstBrdW) solid green;
+}
+
+/*EMBED > HOVER *NOT SELECTED*/
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
+	--embedBg:var(--embedBg-Hover);
+	--embedBrdRad:6px;
+	cursor: pointer;
+
+}
+
+/*EMBED > SELECTED*/
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"][class*="selecting"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
+	--embedBg:var(--embedBg-Selected);
+	--embedBrdClr:var(--embedBrdClr-Active);
+	--IconEmbedDashLine:var(--IconEmbedDashLineActive);
+	--embedBrdRad:6px;
+	--embedBrdDashOpacity:0;
+	/*add faux padding*/
+
+}
+/*EMBED > AFTER THINGY*/
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:after {
+	opacity: 0 !important;
+}
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"][class*="selecting"]:after{
+	opacity: 0;
+	
+}
+
+/*BORDER DASH*/
+:root {
+	--embedBrdDashH:2.5px;
+	--embedBrdDashOpacity:1
+}
+
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:before,
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:after {
+	content: "";
+	position: absolute;
+	display: block;
+	background-image: var(--IconEmbedDashLine);
+	background-position: center left;
+	background-repeat: repeat;
+	height: var(--embedBrdDashH);
+	top: 0;
+	left: calc(var(--embedPadLR) * -1);
+	right:  calc(var(--embedPadLR) * -1);
+	z-index: 2;
+	opacity: var(--embedBrdDashOpacity);
+	transition: var(--embedTransition);
+}
+
+html [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:after {
+	top: unset;
+	bottom: 0;
+}
+
+
+/***************
+! ICONS
+****************/
+:root {
+	/*DASHED LINE - LIGHT*/
+	--IconEmbedDashLine-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23808080" fill-opacity="0.3"/></svg>');
+	/*DASHED LINE - ACTIVE - LIGHT*/
+	--IconEmbedDashLineActive-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23007BFF" fill-opacity="0.5"/></svg>');
+	/*DASHED LINE - DARK*/
+	--IconEmbedDashLine-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23808080" fill-opacity="0.2"/></svg>');
+	/*DASHED LINE ACTIVE - DARK*/
+	--IconEmbedDashLineActive-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%234DA0FF" fill-opacity="0.4"/></svg>');
+}
+
+
+:root {
+	--IconEmbedDashLine: var(--IconEmbedDashLine-LIGHT);
+	--IconEmbedDashLineActive:var(--IconEmbedDashLineActive-LIGHT);
+}
+[data-theme="dark"] {
+	--IconEmbedDashLine: var(--IconEmbedDashLine-DARK);
+	--IconEmbedDashLineActive:var(--IconEmbedDashLineActive-DARK);
+}
