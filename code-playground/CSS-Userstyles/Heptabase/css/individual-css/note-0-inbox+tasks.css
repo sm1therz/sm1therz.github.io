@@ -622,8 +622,11 @@ border-color: hsla(0, 0%, 50%, .8);
 
 }
 
+.overflow-hidden.relative.flex.size-full > div:first-child .absolute[style*="right: "] {
+	margin-right: -90px;
+}
 [class*="sidebar"] + .overflow-hidden.relative.flex.size-full > div:first-child .absolute[style*="right: "] {
-	margin-right: 50px;
+	margin-right: 20px;
 }
 @media (max-width:700px) {
 	[data-todo-item-id] [class*="148px"] {
