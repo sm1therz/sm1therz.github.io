@@ -73,7 +73,7 @@ div[style*="width:"] > div[style*="width:"] [data-editor-type="previewer"] .Pros
     left: calc(var(--bulletwrapperW) * .5 - .5px);
     border-radius: 1px;
     transition: .1s;
-  opacity: .1;
+  opacity: .0;
     
 }
 
