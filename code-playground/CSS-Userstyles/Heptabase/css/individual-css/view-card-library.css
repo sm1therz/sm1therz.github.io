@@ -15,7 +15,7 @@ ROOT
 
 
 :root {
-  --crdLibTstBrdW:.2px;
+  --crdLibTstBrdW:0px;
 }
 
 /*****************
