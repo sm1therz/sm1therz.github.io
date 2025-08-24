@@ -1,23 +1,21 @@
 /*******
 ROOT
 ********/
-/*
+/**/
+#root .grid.select-none > div,
 #root .grid.select-none .ProseMirror,
 #root .grid.select-none .ProseMirror > *,
 #root .grid.select-none .ProseMirror > * > *,
 #root .grid.select-none .ProseMirror > * > * > *,
 #root .grid.select-none .ProseMirror > * > * > * > *{
 
-  box-shadow: inset 0 0 0 0px red;
+  box-shadow: inset 0 0 0 var(--crdLibTstBrdW) red;
 }
 
-#root .grid.select-none > div{
-    border: 1px solid  green !important;
-}
-*/
+
 
 :root {
-  --crdLibTstBrdW:0px;
+  --crdLibTstBrdW:.2px;
 }
 
 /*****************
@@ -328,7 +326,7 @@ CARD LIBRARY - CARD WRAPPER
   overflow: visible;
   padding-bottom: var(--cardlibCardPadTopBtm) !important;
   padding-top: var(--cardlibCardPadTopBtm) !important;
-  border: var(--crdLibTstBrdW) solid green !important;
+  outline: var(--crdLibTstBrdW) solid green !important;
 
 }
 .grid.select-none > div > div > [data-editor-type] > .ProseMirror{
@@ -767,6 +765,24 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 #root .grid.select-none .ProseMirror > *:not([data-node-type*="list_item"]) {
   margin-bottom: 0px !important;
 }
+
+/*LIST ITEMS - bullet lists*/
+
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet_list_item"]:first-child + [data-node-type*="bullet_list_item"],
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet_list_item"]:first-child + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"],
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet_list_item"]:first-child + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"],
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet_list_item"]:first-child + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"],
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet_list_item"]:first-child + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"] + [data-node-type*="bullet_list_item"]{
+  display: flex;
+}
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet_list_item"]:first-child + [data-node-type*="bullet_list_item"]:nth-child(2){
+  margin-top: 2px;
+}
+
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet_list_item"]:first-child ~ [data-node-type*="bullet_list_item"]:last-child{
+  margin-bottom: 0px;
+}
+
 /*LIST ITEMS - toggle bullet*/
 #root .grid.select-none .ProseMirror > [data-node-type*="list_item"]:first-child > [class*="bulletWrap"] [style*="height: "] {
   height: unset !important;
@@ -1014,7 +1030,6 @@ white-space: break-spaces;
 .max-h-\[min\(50vh\,400px\)\]{
   max-height: min(70vh, 100vh)
 }
-
 
 
 /*******
