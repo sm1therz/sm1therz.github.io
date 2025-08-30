@@ -1,0 +1,158 @@
+body {
+	background: #eee;
+	/* This is just a helper in case the element has a transparent background or white colors. */
+}
+
+html:not(.feature-scrollbars-off) * {
+	scrollbar-color: #d1cfcd transparent;
+	scrollbar-width: thin;
+}
+
+html:not(.feature-scrollbars-off) ::-webkit-scrollbar {
+	block-size: 0.625rem;
+	inline-size: 0.625rem;
+}
+
+html:not(.feature-scrollbars-off) body :not(:hover, :focus, :focus-within) {
+	scrollbar-color: transparent transparent;
+}
+
+html:not(.feature-scrollbars-off)
+	body
+	:not(:hover, :focus, :focus-within)::-webkit-scrollbar-thumb {
+	visibility: hidden;
+}
+
+html:not(.feature-scrollbars-off) ::-webkit-scrollbar-thumb {
+	background-clip: padding-box;
+	background-color: #d1cfcd;
+	border: 0.125rem solid transparent;
+	border-radius: 0.3125rem;
+}
+
+html:not(.feature-scrollbars-off) ::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+html:not(.feature-scrollbars-off) ::-webkit-scrollbar-corner {
+	visibility: hidden;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+td,
+th,
+ul {
+	font-size: 1em;
+	margin-inline-end: 0;
+	margin-inline-start: 0;
+}
+
+strong {
+	font-weight: 700;
+}
+
+.inherited-styles-for-exported-element {
+	font-family: system-ui, sans-serif;
+	quotes: "“" "”" "‘" "’";
+}
+
+:lang(fr) {
+	quotes: "« " " »" "“" "”" "‘" "’";
+}
+
+:lang(en) {
+	quotes: "“" "”" "‘" "’";
+}
+
+:lang(es) {
+	quotes: "«" "»" "“" "”";
+}
+
+:lang(it) {
+	quotes: "« " " »" "“" "”";
+}
+
+:lang(de) {
+	quotes: "„" "“" "‚" "‘";
+}
+
+:lang(ja) {
+	quotes: "「" "」" "『" "』";
+}
+
+:lang(ar) {
+	quotes: "“" "”";
+}
+
+body * {
+	line-height: 1.5;
+}
+
+table,
+td,
+th,
+ul {
+	margin-block-end: 0;
+}
+
+td,
+th,
+ul {
+	margin-block-start: 0;
+}
+
+table {
+	border-collapse: collapse;
+	table-layout: auto;
+}
+
+img {
+	border: 0 initial !important;
+	border-color: initial !important;
+	border-image: initial initial initial initial initial !important;
+	max-inline-size: none;
+	outline: 0 !important;
+}
+
+ul {
+	padding-inline-start: 2.85714em;
+}
+
+a {
+	color: #6d4aff;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+a:focus,
+a:hover {
+	color: #6243e6;
+	text-decoration: none;
+}
+
+a:active {
+	color: #573bcc;
+	text-decoration: none;
+}
+
+a:not([href]) {
+	color: inherit !important;
+	cursor: default !important;
+	pointer-events: none;
+	text-decoration: none !important;
+}
+
+a,
+span,
+td {
+	border-collapse: collapse;
+}
+
+.em_defaultlink a {
+	color: inherit;
+	text-decoration: none;
+}
