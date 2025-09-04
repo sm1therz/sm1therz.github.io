@@ -10555,6 +10555,9 @@ FLOAT BROWSER / FLUID BROWSER > OVERRIDES
   #app .project:not([class*="header"]) > .name > .content code{
     font-size: 14.25px;
 }
+#app .board.root .project > .name > .expand {
+  top: 3px !important;
+}
   
 }
 
