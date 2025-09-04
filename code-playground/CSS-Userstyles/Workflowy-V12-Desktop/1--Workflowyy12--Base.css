@@ -10553,7 +10553,7 @@ FLOAT BROWSER / FLUID BROWSER > OVERRIDES
   line-height: calc(25px - 2px) !important;
   }
   #app .project:not([class*="header"]) > .name > .content code{
-    font-size: 13.75px;
+    font-size: 14.25px;
 }
   
 }
