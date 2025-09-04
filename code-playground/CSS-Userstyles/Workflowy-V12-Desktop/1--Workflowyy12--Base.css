@@ -1658,7 +1658,7 @@ HIGHLIGHT - CODE
 
 }
 #app .project:not([class*="header"]) > .name > .content code{
-    font-size: calc(var(--name-fontSize) - 3.5px);
+    font-size: calc(var(--name-fontSize) - 4px);
 }
 #app .project.root > .name > .content code{
     font-size: calc(var(--root-font-size) - 6px);
@@ -10549,6 +10549,9 @@ FLOAT BROWSER / FLUID BROWSER > OVERRIDES
   font-size: 14.5px !important;
   line-height: calc(25px - 2px) !important;
   }
+  #app .project:not([class*="header"]) > .name > .content code{
+    font-size: 13.75px;
+}
   
 }
 
