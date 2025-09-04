@@ -10545,6 +10545,9 @@ FLOAT BROWSER / FLUID BROWSER > OVERRIDES
     font-size: 13.5px;
     line-height: 18.5px;
   }
+#app .project.code-block > .name > .content{
+  line-height:unset !Important;
+}
 #app .project.code-block > .name > .content > .innerContentContainer {
   font-size: 14.5px !important;
   line-height: calc(25px - 2px) !important;
