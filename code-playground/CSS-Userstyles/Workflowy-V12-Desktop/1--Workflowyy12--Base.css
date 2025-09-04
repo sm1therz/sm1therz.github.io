@@ -1914,7 +1914,7 @@ CODE BLOCKS
 #app .project.code-block > .name > .content,
 #app .project.code-block > .name > .content > .innerContentContainer {
 
-    font-size: calc(var(--name-fontSize) - 3px) !important;
+    font-size: calc(var(--name-fontSize) - 3.5px) !important;
     line-height: calc(var(--name-lineHeight) - 2px) !important;
     color:white !important;
 }
@@ -10533,6 +10533,23 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     min-width: 88vw;
     margin-left: -100px;
   }
+}
+
+/***********
+************
+FLOAT BROWSER / FLUID BROWSER > OVERRIDES
+************
+************/
+@media (max-width: 650px){
+  .project:not(.board) .project > .notes > .content {
+    font-size: 13.5px;
+    line-height: 18.5px;
+  }
+#app .project.code-block > .name > .content > .innerContentContainer {
+  font-size: 14.5px !important;
+  line-height: calc(25px - 2px) !important;
+  }
+  
 }
 
 /*******************************
