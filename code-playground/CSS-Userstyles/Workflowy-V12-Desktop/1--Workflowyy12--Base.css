@@ -10552,7 +10552,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
 ************
 FLOAT BROWSER / FLUID BROWSER > OVERRIDES
 ************
-************/
+************/ 
 @media (max-width: 650px){
   .project:not(.board) .project > .notes > .content {
     font-size: 13.5px;
