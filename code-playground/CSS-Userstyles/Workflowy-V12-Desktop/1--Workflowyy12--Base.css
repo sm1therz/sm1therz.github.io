@@ -10290,6 +10290,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
 ! MOBILE - NEW
 ********************************
 ********************************/
+
 :root {
   --mobileDocPadLeft: 24px;
   --mobileRootPadLeft: 20px;
@@ -10525,7 +10526,19 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     right: calc(var(--children-Indent) * 1) !important;
     width: calc(var(--children-Indent) * 1) !important;
   }
+  .project.header1 > .name {
+    --btn-MargTop: 11px;
+  }
+  .project.header2 > .name {
+    --btn-MargTop: 8px;
+  }
+
+  .project.header3 > .name {
+    --btn-MargTop: 9px;
+  }
 }
+
+
 
 @media (max-width: 400px) {
   #app .searchBox._zpqjyh {
