@@ -439,10 +439,7 @@ app .project.root > .name > .bullet.diamond ~ .prefix .item-checkbox{
   letter-spacing: -0.2px;
     --inlineCodeBrdRad:6px;
 }
-#app .project.root > .name > .content code * {
-    font-size: var(--root-inlineCode-font-size);
-    line-height: var(--root-inlineCode-line-height);
-}
+
 .project.root {
     margin-top: 0px;
 }
@@ -10290,7 +10287,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
 ! MOBILE - NEW
 ********************************
 ********************************/
-
 :root {
   --mobileDocPadLeft: 24px;
   --mobileRootPadLeft: 20px;
@@ -10552,7 +10548,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
 ************
 FLOAT BROWSER / FLUID BROWSER > OVERRIDES
 ************
-************/ 
+************/
 @media (max-width: 650px){
   .project:not(.board) .project > .notes > .content {
     font-size: 13.5px;
@@ -10565,8 +10561,11 @@ FLOAT BROWSER / FLUID BROWSER > OVERRIDES
   font-size: 14.5px !important;
   line-height: calc(25px - 2px) !important;
   }
-  #app .project:not([class*="header"]) > .name > .content code{
+  #app .project:not([class*="header"], .root) > .name > .content code{
     font-size: 14.25px;
+}
+  #app .project:is(.root) > .name > .content code{
+    font-size: 24px;
 }
 #app .board.root .project > .name > .expand {
   top: 3px !important;
