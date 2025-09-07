@@ -213,7 +213,7 @@ BOX SHADOW TESTING - BOARDS
     line-height: 0;
     letter-spacing: -0.5px;
     color: var(--NODE--TXT-CLR--main);
-    opacity: .45
+    opacity: .45;
 }
 .references .breadcrumbs .menu > div > div {
     opacity: 0;
