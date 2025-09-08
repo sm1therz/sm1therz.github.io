@@ -841,6 +841,24 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   
 }
 
+/*colors*/
+
+
+
+:root {
+  --cardlibToolBrdClr:hsla(0, 0%, 0%, .1);
+  --cardlibToolBgClr:hsla(0, 0%, 50%, 0.1);
+  --cardLibFirstTagBgClr:hsla(0, 0%, 0%, 0.04);
+  --cardLibFirstTagBrdClr:hsla(0, 0%, 0%, 0.24);
+}
+
+[data-theme="dark"] {
+  --cardlibToolBrdClr:hsla(0, 50%, 100%, .075) !important;
+  --cardlibToolBgClr:hsla(0, 0%, 0%, 0.1);
+  --cardLibFirstTagBgClr:hsla(0, 0%, 0%, 0.14);
+  --cardLibFirstTagBrdClr:black
+}
+
 /*******
 OVERRIDES
 ********/
@@ -869,10 +887,16 @@ OVERRIDES
 }
 
 /*******
-! TOP TOOLBAR > CONTAINER > ROWS
+! TOP TOOLBAR > CONTAINER > LEFT / RIGHT CONTAINERS
 ********/
 #root > .relative.flex.h-screen > .relative.flex.grow.overflow-hidden > .flex.flex-col > .app-region-drag > div{
   flex: unset !important;
+}
+
+#root > .relative.flex.h-screen > .relative.flex.grow.overflow-hidden > .flex.flex-col > .app-region-drag > div:last-child{
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 /*******
@@ -911,10 +935,10 @@ OVERRIDES
   right: -40vw;
   top: 0;
   bottom: 0;
-  background: hsla(0, 0%, 0%, 0.1) !important;
+  background: var(--cardlibToolBgClr) !important;
   height: unset;
   z-index: 0;
-  border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+  border-bottom: 1px solid var(--cardlibToolBrdClr);
 }
 
 
@@ -944,6 +968,7 @@ OVERRIDES
   display: flex !important;
   align-items: center !important;
   justify-content: center;
+  border-bottom: 1px solid var(--cardlibToolBrdClr)
 
 }
 
@@ -970,8 +995,8 @@ OVERRIDES
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div:nth-of-type(2):not(:hover),
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div:nth-of-type(4):not(:hover),
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div:nth-of-type(5):not(:hover){
-  background: hsla(0, 0%, 0%, 0.14);
-  border-color: black;
+  background: var(--cardLibFirstTagBgClr);
+  border-color: var(--cardLibFirstTagBrdClr);
 }
 
 

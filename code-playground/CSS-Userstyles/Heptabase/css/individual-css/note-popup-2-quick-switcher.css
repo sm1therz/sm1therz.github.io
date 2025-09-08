@@ -185,7 +185,13 @@ body>.hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3>.text-l
 	flex-direction: column;
 	z-index: -1
 }
+/***
+SEARCH CONTAINER
+****/
 
+.hepta-pseudo-overlay.bg-menu-texture-bg-hard-new {
+	background: var(--searchBgClr)
+}
 body>.hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3{
 	padding-top: 0px !important;
 	padding-bottom: 40px !important;
@@ -330,8 +336,36 @@ body>.hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3>.text-l
 	margin-left: 0px !important;
 	padding-top: 0px !important;
 }
-body>.hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3>.text-label>.text-label-mini~.text-label.text-middle-grey>.flex svg path[d*="m12"] {
+
+/*STICKY HEADER > CHAT ICON COLOR*/
+body>.hepta-scrim.cursor-pointer.items-center .grow.overflow-y-auto.py-3>.text-label>.text-label-mini~.text-label.text-middle-grey>.flex svg path[d*="1.8183-5.0735"] {
 	fill:hsl(300, 100%, 75%) !important
+}
+
+/*STICKY HEADER > IMAGE ICON COLOR*/
+.hepta-pseudo-overlay .flex svg path[d*="10155.0423"]{
+	fill:hsla(5, 53%, 64%, 1) !important 
+}
+
+
+/*STICKY HEADER > HIGHLIGHT ICON COLOR*/
+.hepta-pseudo-overlay .flex svg path[d*="2.5775z"],
+.hepta-pseudo-overlay .flex svg path[d*="2.5775z"] ~ path{
+	fill:hsla(51, 60%, 61%, .9) !important 
+}
+/*STICKY HEADER > WHITEBOARD ICON COLOR*/
+.hepta-pseudo-overlay .flex svg path[d*="1.33-4-1.33v"]{
+	fill:hsla(174, 48%, 46%, 1.0) !important 
+}
+
+/*STICKY HEADER > WHITEBOARD >  SECTION ICON COLOR*/
+.hepta-pseudo-overlay .flex svg path[d*="2.12132z"],
+.hepta-pseudo-overlay .flex svg path[d*="2.12132z"] ~ path{
+	fill:hsla(174, 48%, 46%, 1.0) !important 
+}
+/*STICKY HEADER > WHITEBOARD >  MIND MAP ICON COLOR*/
+.hepta-pseudo-overlay .flex svg path[d*="M6.632"]{
+	fill:hsla(174, 48%, 46%, 1.0) !important;
 }
 
 
@@ -394,7 +428,8 @@ FLOATING INFO > TITLE
 #root~.p-12.hepta-scrim>.w-full>.flex.w-full>.flex,
 #root~.p-12.hepta-scrim>.w-full>.flex.w-full>.flex>.flex:first-child,
 #root~.p-12.hepta-scrim>.w-full>.flex.w-full>.flex>.flex>.text-label {
-	width: 100% !important
+	width: 100% !important;
+	border: 1px solid red;
 }*/
 #root~.p-12.hepta-scrim>.w-full>.flex.w-full>.flex>.flex>.text-label {
 max-width: 80%
