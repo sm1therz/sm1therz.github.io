@@ -747,3 +747,15 @@ END OF COPIED MESSAGES
 .app-region-drag + div.flex > div[style*="min-width:"] > div.h-12 > div.grow  input + div svg{
   transform: scale(1.1);
 }
+
+
+/********
+*********
+*********
+! WHITEBOARD
+*********
+*********
+*********/
+[class*="whiteboard"][data-object-type="chatInstance"] [class*="_scroller"] {
+  padding-top: 0px !important;
+}
