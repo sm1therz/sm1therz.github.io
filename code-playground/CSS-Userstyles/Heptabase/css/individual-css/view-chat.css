@@ -759,3 +759,12 @@ END OF COPIED MESSAGES
 [class*="whiteboard"][data-object-type="chatInstance"] [class*="_scroller"] {
   padding-top: 0px !important;
 }
+
+[class*="whiteboard"][data-object-type="chatInstance"] [class*="_scroller"] .mb-4{
+  margin-bottom: 0rem !important;
+  padding-bottom: 1rem !important;
+}
+
+[class*="whiteboard"][data-object-type="chatInstance"] [data-chat-message-id] .h-8 ~ [class*="ProseMirror-hepta-style"] ~ [class*="gap"]{
+  position: relative;
+}
