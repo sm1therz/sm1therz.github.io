@@ -98,7 +98,7 @@ div[style*="width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:l
   
 }
 /*remove button*/
-div  > [class*="remove"]{
+div  > [class*="remove"]:not(.pdfViewer){
 transition: .1s !important;
   right: 2px !important;
   overflow: hidden;
@@ -115,7 +115,7 @@ transition: .1s !important;
   width: 14px !important;
   height: 14px !important;
 }
-div  > [class*="remove"] svg {
+div  > [class*="remove"]:not(.pdfViewer) svg {
   background:  transparent !important;
   backdrop-filter: unset !important;
   width: calc(100% - 20%) !important;
@@ -132,7 +132,7 @@ div:hover  > [class*="remove"]{
   opacity: 1;
   
 }
-div:hover  > [class*="remove"]:hover{
+div:hover  > [class*="remove"]:not(.pdfViewer):hover{
   transform: scale(1.3) !important;
   background: hsla(0,0%,100%,0.25) !important;
 }
