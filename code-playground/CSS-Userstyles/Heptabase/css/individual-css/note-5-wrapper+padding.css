@@ -15,7 +15,9 @@ NOTE PADDING - POPUP AND FULLSCREEN ONLY
     --notePadLeftRight: 1.5rem;
     --noteMaxWidth:700px;
 }
-
+[data-theme="dark"] {
+  --bg-background-secondaryRsFix:hsl(216, 6%, 15%)
+}
 /*note content*/
 [data-card-tab-id] > [class*="editor"] > .ProseMirror,
 .p-12.hepta-scrim > .bg-background-secondary.max-h-220.max-w-270 ._editor_1rg43_1 .ProseMirror-hepta-style {
@@ -35,6 +37,43 @@ NOTE PADDING - POPUP AND FULLSCREEN ONLY
     padding-left: var(--notePadLeftRight)!important;
     padding-right: var(--notePadLeftRight)!important;
     box-sizing: border-box;
+}
+
+/*SIDEBAR OPENED / CLOSED > MARGIN TOP*/
+/*********
+TOP PADDING - NOTE
+**********/
+
+[class*="paneGroup"] > .pane{
+  margin-top: .5rem !important;
+}
+
+/*********
+BACKGROUND - NOTE
+**********/
+div > .app-region-drag:first-child + [class*="paneGroup"]:not([class*="SidebarOpened"]){
+  background: var(--bg-background-secondaryRsFix);
+}
+
+/*********
+PADDING - WHITEBOARD
+**********/
+[class*="paneGroup"]:is([class*="paneGroupWithFullScreenWhenSinglePane"]){
+  margin-top: 0px !important;
+  padding-left: 0px !important;
+}
+[class*="paneGroup"]:is([class*="paneGroupWithFullScreenWhenSinglePane"]) > .pane{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+
+
+}
+
+/*********
+BACKGROUND - WHITEBOARD
+**********/
+div > .app-region-drag:first-child + [class*="paneGroup"]:is([class*="paneGroupWithFullScreenWhenSinglePane"]){
+  background: var(--whiteboard-background);
 }
 
 @media (max-width: 600px) {
