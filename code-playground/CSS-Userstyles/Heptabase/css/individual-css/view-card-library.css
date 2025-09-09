@@ -809,6 +809,10 @@ TOGGLE > 2ND CHILD
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"]{
   display: block;
 }
+
+#root .grid.select-none .ProseMirror > [data-node-type*="list_item"]:not([class*="folded"]):nth-child(1) > [class*="nested"] > :is([data-node-type*="horizontal"],[data-node-type]:not(:first-child)) {
+  display: none !important;
+}
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:nth-child(2) > [class*="nested"] > [data-node-type]{
   display: none;
 }
@@ -881,9 +885,10 @@ TOGGLE > 3RD CHILD
 
 #root .grid.select-none .ProseMirror  div[data-node-type="code_block"],
 #root .grid.select-none .ProseMirror  div[data-node-type="code_block"] .cm-line {
-    --cardlibFontSize:16px !important;
-  line-height: 20px
+    --cardlibFontSize:15.5px !important;
+  line-height: 19px
 }
+
 #root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor {
   padding-top: 13px;
 }
@@ -894,6 +899,28 @@ TOGGLE > 3RD CHILD
   position: relative !important;
 }
 
+#root .grid.select-none .ProseMirror  div[data-node-type="code_block"] {
+  max-height: calc(var(--cardlibContentMaxHeight) - 100px) !important;
+  overflow: hidden;
+}
+#root .grid.select-none .ProseMirror  div[data-node-type="code_block"]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  height: calc(var(--cardlibCardPadTopBtm) * 2) !important;
+  background: linear-gradient(
+    to top, 
+    var(--background-primary-cardLib) 0%, 
+    var(--background-primary-cardLib) 10%, 
+    transparent 100%);
+  top: unset !important;
+}
+
+#root .grid.select-none .ProseMirror > [data-node-type="code_block"]:first-child{
+  margin-top: 5px !important;
+  padding-bottom: 0px !important;
+}
 
 /*******
 ! HIGHLIGHTS
