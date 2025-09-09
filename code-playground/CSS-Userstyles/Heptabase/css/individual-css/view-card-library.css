@@ -58,7 +58,7 @@ ROOT
   --cardlibImageHeight: 300px;
   --cardlibBrdClr: hsla(0, 0%, 50%, .2);
   /**/
-  --cardlibContentMaxHeight: 600px;
+  --cardlibContentMaxHeight: 460px;
 }
 
 /*****************
@@ -67,7 +67,7 @@ CARD LIBRARY - VARIABLES
 #root .grid.select-none,
 #root ._rightSidebar_1fabk_5 .grid {
 
-  --cardlibFontSize: 18.5px;
+  --cardlibFontSize: 18px;
   --cardlibLineHeight: 1.45;
   --fontsmoothing: antialiased;
   --cardlibFontWeight: 400;
@@ -260,15 +260,19 @@ CARD LIBRARY - CARD WRAPPER
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-left: var(--cardlibCardPadLeftRight) !important;
-  padding-right: var(--cardlibCardPadLeftRight) !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
   position: relative;
   box-sizing: border-box;
   overflow: visible;
   padding-bottom: var(--cardlibCardPadTopBtm) !important;
   padding-top: var(--cardlibCardPadTopBtm) !important;
   outline: var(--crdLibTstBrdW) solid green !important;
+}
 
+#root .grid.select-none .ProseMirror{
+    padding-left: var(--cardlibCardPadLeftRight) !important;
+  padding-right: var(--cardlibCardPadLeftRight) !important;
 }
 .grid.select-none > div > div > [data-editor-type] > .ProseMirror{
 
@@ -546,8 +550,7 @@ CARD LIBRARY - PDFS IMAGES AND VIDEO
 }
 
 .grid.select-none > div .ProseMirror code {
-  padding: 0.1em .3em 0.05em .3em !important;
-  --inlineCodeBrdClr: hsla(0, 0%, 50%, .125) !important;
+
   border-radius: 4px !important;
   --inlineCodeBoxShadClr: transparent !important;
 }
@@ -645,6 +648,9 @@ CARD LIBRARY - COUNTER
 #root .grid.select-none > div > div > [data-is-editor-container] > .ProseMirror > [data-node-type]:first-child * ~ * {
   opacity: .4
 }*/
+
+
+
 /*****************
 ******************
 ******************
@@ -652,7 +658,7 @@ CARD LIBRARY - COUNTER
 ******************
 ******************
 ******************
-CARD LIBRARY - CARD > VISIBLE BLOCKS
+VISIBLE BLOCKS
 ******************
 ******************
 ******************
@@ -660,6 +666,11 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 ******************
 ******************
 ******************/
+
+:root {
+  --cardLibToggleLeftPos:-2px;
+}
+
 #root .grid.select-none > div,
 #root .grid.select-none > div > div,
 #root .grid.select-none > div > div > div,
@@ -766,7 +777,99 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
   display: none;
 }
 
+/***************
+****************
+PROSEMIRROR
+****************
+*****************/
 
+/***************
+****************
+TOGGLE > 1st CHILD
+****************
+*****************/
+#root .grid.select-none .ProseMirror > [data-node-type*="toggle"]:not([class*="folded"]):nth-child(1){
+  display: flex !important;
+}
+#root .grid.select-none .ProseMirror > [data-node-type*="toggle"]:not([class*="folded"]):nth-child(1) > [class*="bulletWrapper"]{
+  position: absolute;
+  left: var(--cardLibToggleLeftPos);
+  
+}
+
+/***************
+****************
+TOGGLE > 2ND CHILD
+****************
+*****************/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="toggle"]:not([class*="folded"]):nth-child(2){
+  display: flex !important;
+}
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child,
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"]{
+  display: block;
+}
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:nth-child(2) > [class*="nested"] > [data-node-type]{
+  display: none;
+}
+
+/*TOGGLE > 2ND CHILD > BULLET WRAPPER*/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="toggle"]:nth-child(2) > [class*="bulletWrapper"]{
+  position: absolute !important;
+}
+
+/*TOGGLE > 2RD CHILD > BULLET WRAPPER*/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="toggle"]:nth-child(2) > [class*="bulletWrapper"]{
+  position: absolute !important;
+  left: var(--cardLibToggleLeftPos) !important;
+}
+
+
+/*folded*/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child [data-node-type*="toggle"]:is([class*="folded"]):nth-child(2){
+  margin: 0px !important;
+}
+/***************
+****************
+TOGGLE > 3RD CHILD
+****************
+*****************/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:nth-child(3){
+  display: flex !important;
+}
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:not([class*="folded"]):nth-child(3) > [class*="nested"] > [data-node-type]:first-child,
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:not([class*="folded"]):nth-child(3) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"]{
+  display: block !important;
+}
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:nth-child(3) > [class*="nested"] > [data-node-type]{
+  display: none;
+}
+
+/*TOGGLE > 3RD CHILD > BULLET WRAPPER*/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type] + [data-node-type*="toggle"]:nth-child(3) > [class*="bulletWrapper"]{
+  position: absolute !important;
+  left: -3px !important;
+}
+
+/*folded*/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:is([class*="folded"]):nth-child(3){
+  margin: 0px !important;
+}
+
+/*HORIZONTAL RULE > 3RD CHILD*/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"]{
+  display: none; 
+}
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] > div{
+  height: 1.5px;
+}
+
+/*CODE > */
+#root .grid.select-none .ProseMirror > [data-node-type] code {
+  padding: 0.125em .3em 0.075em .3em !important;
+  display: inline !important;;
+  box-shadow: inset 0 0 0 .75px var(--inlineCodeBoxShadClr) !important;
+}
 
 /*******
 ! CODEBLOCKS
@@ -776,10 +879,10 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 
 
 
-#root .grid.select-none .ProseMirror > div[data-node-type="code_block"],
-#root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-line {
-    --cardlibFontSize:16px;
-  line-height: 22px
+#root .grid.select-none .ProseMirror  div[data-node-type="code_block"],
+#root .grid.select-none .ProseMirror  div[data-node-type="code_block"] .cm-line {
+    --cardlibFontSize:16px !important;
+  line-height: 20px
 }
 #root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor {
   padding-top: 13px;
@@ -787,6 +890,10 @@ CARD LIBRARY - CARD > VISIBLE BLOCKS
 #root .grid.select-none .ProseMirror > div[data-node-type="code_block"] .cm-editor [class*="scroller"] {
   padding: 0 17px 13px
 }
+#root .grid.select-none .ProseMirror  div[data-node-type="code_block"]{
+  position: relative !important;
+}
+
 
 /*******
 ! HIGHLIGHTS
