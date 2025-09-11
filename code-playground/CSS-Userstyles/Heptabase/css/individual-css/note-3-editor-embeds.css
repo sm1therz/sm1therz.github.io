@@ -8,11 +8,18 @@
 ! EMBEDS
 ****************/
 :root {
-	--embedPadTopBtm:10px;
+	--embedPadTopBtm:16px;
 	--embedBrdRad:0px;
 	--embedPadLR:10px;
 	--embedPadLR-Active:10px;
 	--embedTransition:.1s;
+	/**/
+	--embedBrdDashH:2.25px;
+	--embedBrdDashOpacity:1;
+	--embedDashPosTop:0;
+	--embedDashPosBtm:0;
+	--embedDashPosL:calc(var(--embedPadLR) * -1);
+	--embedDashPosR:calc(var(--embedPadLR) * -1);
 }
 
 /*COLORS*/
@@ -28,14 +35,14 @@
 [data-theme="dark"] {
 	--embedBg:hsla(0, 0%, 100%, .02);
 	--embedBgClr:hsla(0, 0%, 100%, .02);
-	--embedBg:transparent;
+	--embedBg:hsla(0, 0%, 0%, .052);
 	/*--embedBg-Hover:linear-gradient(
 			to right, 
 			transparent 0%, 
 			var(--embedBgClr) var(--embedPadLR-Active), 
 			var(--embedBgClr) calc(100% - var(--embedPadLR-Active)), 
 			transparent);*/
-	--embedBg-Hover:hsla(0, 0%, 100%, 0.015);
+	--embedBg-Hover:hsla(0, 0%, 0%, .1);
 	--embedBg-Selected:hsla(211, 30%, 27%, 1.0);
 	--embedBrdClr:hsla(0,0%,0%,0.19);
 	--embedBrdClr-Active:hsla(211, 25%, 36%, 1.0);
@@ -74,6 +81,7 @@
 	--embedBrdRad:3px;
 	cursor: pointer;
 
+
 }
 
 /*EMBED > SELECTED*/
@@ -98,8 +106,7 @@
 
 /*BORDER DASH*/
 :root {
-	--embedBrdDashH:2.25px;
-	--embedBrdDashOpacity:1
+
 }
 /*top border dash*/
 [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:before,
@@ -114,9 +121,9 @@
 	background-position: center left;
 	background-repeat: repeat;
 	height: var(--embedBrdDashH);
-	top: 0;
-	left: calc(var(--embedPadLR) * -1);
-	right:  calc(var(--embedPadLR) * -1);
+	top: var(--embedDashPosTop);
+	left: var(--embedDashPosL);
+	right:  var(--embedDashPosR);
 	z-index: 2;
 	opacity: var(--embedBrdDashOpacity);
 	transition: var(--embedTransition);
@@ -125,9 +132,81 @@
 [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:after,
 .grid.select-none .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:after{
 	top: unset;
-	bottom: 0;
+	bottom: var(--embedDashPosBtm);
 }
 
+
+/***************
+! EMBEDS - HOVER MENU
+****************/
+:root {
+	--embedHoverMenuH:20px;
+	--embedMargTopBtm:.25rem;
+}
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > .absolute {
+	z-index: 93939393;
+}
+
+
+
+/****
+MENU > NORMAL
+*****/
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute {
+	position: sticky;
+	height: var(--embedHoverMenuH);
+	display: flex;
+	flex-direction: column;
+	top: 0px;
+	margin-left: auto;
+	width: fit-content;
+	overflow: visible;
+	visibility: visible !important;
+	opacity: 0 !important;
+	max-width: 100%;
+	 max-width: calc(100% - 80px);
+}
+/****
+MENU > HOVER
+*****/
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]):hover > [class*="group"] > .absolute{
+	opacity: 1 !important;
+}
+/****
+MENU > TEXT OUTER
+*****/
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div {
+	min-height: fit-content;
+	display: flex;
+	justify-content: flex-end !important;
+	align-items: center;
+	margin-top: 0px;
+	
+}
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div .text-label {
+	min-height: 100%;
+	max-width: calc(100%);
+}
+
+/****
+OVERRIDES > EMBED
+*****/
+
+:root {
+	--embedDashPosTop:-1px;
+	--embedDashPosBtm:-1px;
+	--embedDashPosL:0;
+	--embedDashPosR:0;
+}
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute + div {
+	position: relative;
+}
+
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"]{
+	margin-top: calc(var(--embedHoverMenuH) * -1)
+}
 
 /***************
 ! ICONS
@@ -138,7 +217,7 @@
 	/*DASHED LINE - ACTIVE - LIGHT*/
 	--IconEmbedDashLineActive-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23007BFF" fill-opacity="0.5"/></svg>');
 	/*DASHED LINE - DARK*/
-	--IconEmbedDashLine-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23808080" fill-opacity="0.25"/></svg>');
+	--IconEmbedDashLine-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%23808080" fill-opacity="0.325"/></svg>');
 	/*DASHED LINE ACTIVE - DARK*/
 	--IconEmbedDashLineActive-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 50 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="25" height="10" rx="5" fill="%234DA0FF" fill-opacity="0.45"/></svg>');
 }
