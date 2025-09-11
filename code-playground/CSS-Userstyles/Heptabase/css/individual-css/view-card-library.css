@@ -577,9 +577,20 @@ CARD LIBRARY - PDFS IMAGES AND VIDEO
   filter: 
     var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) saturate(2)
 }
-#root .grid.select-none > div img.object-cover{
+
+/*****************
+CARD LIBRARY - AUDIO IMG
+******************/
+#root .grid.select-none > div img.object-cover.border{
+  border: 1px solid red;
   box-shadow: unset !important;
-  width: 140px
+  width: 140px;
+}
+/*****************
+CARD LIBRARY - PDFS IMG
+******************/
+#root .grid.select-none > div img.pointer-events-none.max-w-full.size-full.object-cover.object-top{
+
 }
 
 
@@ -768,7 +779,7 @@ VISIBLE BLOCKS
   box-shadow: unset;
 }
 
-#root .grid.select-none .ProseMirror > [data-node-type*="bullet"]:first-child strong{
+#root .grid.select-none .ProseMirror > [data-node-type*="bullet"] strong{
   font-weight: 600;
   color: var(--bldClr) !important;
 }
@@ -971,7 +982,7 @@ TOGGLE > 3RD CHILD
 
 :root {
   --cardlibToolbarPadLR: 1rem;
-  --cardlibToolbarMaxW: 1100px;
+  --cardlibToolbarMaxW: 1000px;
   
 }
 
@@ -1109,12 +1120,19 @@ OVERRIDES
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div {
     max-width: var(--cardlibToolbarMaxW);
   width: 100%;
+  row-gap: 10px;
+  column-gap: 5px
 }
 /*******
 ! TAGS AREA > TAG FILTERS
 ********/
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div{
   min-height: 17px;
+    outline: var(--crdLibTstBrdW) solid red
+}
+#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div .text-label {
+    min-width: 20px;
+
 }
 /*FIRST 4 OPTIONS > GAP*/
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div:first-child,
@@ -1122,7 +1140,7 @@ OVERRIDES
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div:nth-of-type(3),
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div:nth-of-type(4),
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div:nth-of-type(5){
-  margin-right: 6px !important;
+
 }
 /*FIRST 4 OPTIONS > COLOR*/
 #root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .px-4 > div > div:first-child:not(:hover),
