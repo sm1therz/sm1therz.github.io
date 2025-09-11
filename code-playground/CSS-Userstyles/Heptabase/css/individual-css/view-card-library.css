@@ -662,6 +662,7 @@ CARD LIBRARY - COUNTER
 
 
 
+
 /*****************
 ******************
 ******************
@@ -813,7 +814,7 @@ TOGGLE > 1st CHILD
 TOGGLE > 2ND CHILD
 ****************
 *****************/
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="toggle"]:not([class*="folded"]):nth-child(2){
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="toggle"]:not([class*="folded"]):not([class*="Heading"]):nth-child(2){
   display: flex !important;
 }
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child,
@@ -849,19 +850,19 @@ TOGGLE > 2ND CHILD
 TOGGLE > 3RD CHILD
 ****************
 *****************/
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:nth-child(3){
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:not([class*="Heading"]):nth-child(3){
   display: flex !important;
 }
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:not([class*="folded"]):nth-child(3) > [class*="nested"] > [data-node-type]:first-child,
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:not([class*="folded"]):nth-child(3) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"]{
   display: block !important;
 }
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:nth-child(3) > [class*="nested"] > [data-node-type]{
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="horizontal"] + [data-node-type*="toggle"]:not([class*="Heading"]):nth-child(3) > [class*="nested"] > [data-node-type]{
   display: none;
 }
 
 /*TOGGLE > 3RD CHILD > BULLET WRAPPER*/
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type] + [data-node-type*="toggle"]:nth-child(3) > [class*="bulletWrapper"]{
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type] + [data-node-type*="toggle"]:not([class*="Heading"]):nth-child(3) > [class*="bulletWrapper"]{
   position: absolute !important;
   left: -3px !important;
 }
