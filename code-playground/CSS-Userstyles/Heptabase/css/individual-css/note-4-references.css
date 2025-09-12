@@ -3,7 +3,7 @@
 ******************
 ! REFERENCES - REORDER
 ******************
-****************** 
+******************
 ******************/
 
 
@@ -91,9 +91,15 @@
 ******************
 ******************
 ******************/
-
+:root {
+  --propLabelIcnW:.875rem;
+  --propValueW:100%;
+  --propValueMaxW:calc(100% - 34px);
+  --propValueMargL:calc(var(--propLabelIcnW));
+}
 /*labels*/
-.text-label.text-middle-hard-grey.w-40{
+/*labels*/
+.text-label.text-middle-hard-grey.w-40 {
   width: 12rem
 }
 /**url**/
@@ -105,6 +111,119 @@
   max-height: 50px;
 }
 
-.grow.text-label.text-middle-grey {
+.grow.text-label.text-middle-grey {}
+
+.relative.flex[style*="max-width: calc(0px + 50vw)"] {
   
 }
+/******
+RIGHT SIDEBAR > WIDTH - UNDER 400px > 
+
+PROPERTY WRAPPER > SET TO COLUMN
+*******/
+.relative.flex:is([style*=" width: 3"], [style*=" width: 40"], [style*=" width: 41"],[style*=" width: 42"],[style*=" width: 43"],[style*=" width: 44"], [style*=" width: 45"]) .mt-2 > .my-1[class*="gap"] > div{
+  flex-direction: column;
+  
+}
+
+/*PROPERTY - LABEL*/
+.relative.flex:is([style*=" width: 3"], [style*=" width: 40"], [style*=" width: 41"],[style*=" width: 42"],[style*=" width: 43"],[style*=" width: 44"], [style*=" width: 45"]) .mt-2 > .my-1[class*="gap"] > div > div.w-40 {
+  width: 100% !important;
+  box-shadow: inset 0 0 0 var(--refTstBrdW) red;
+  margin: unset;
+}
+
+/*PROPERTY - VALUE*/
+.relative.flex:is([style*=" width: 3"], [style*=" width: 40"], [style*=" width: 41"],[style*=" width: 42"],[style*=" width: 43"],[style*=" width: 44"], [style*=" width: 45"]) .mt-2 > .my-1[class*="gap"] > div > div.w-40 + div{
+  width: var(--propValueW) !important;
+  max-width: var(--propValueMaxW) !important;
+  box-shadow: inset 0 0 0 var(--refTstBrdW) red;
+    margin: unset;
+  margin-left: var(--propValueMargL)
+
+}
+
+/*****************
+******************
+******************
+! REFERENCES - CARD TITLES
+******************
+******************
+******************/
+:root {
+  --refTitlePad: .375rem;
+  --refArrowIcnW: 18px;
+}
+
+/*CONTAINER*/
+.group\/1685197199740 {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+/*********
+CONTAINER > ROWS
+**********/
+.group\/1685197199740 > * {
+  position: relative
+}
+
+
+/*********
+CONTAINER > ROW 1: EXPAND COLLAPSE ICON
+**********/
+.group\/1685197199740 > svg[viewBox="0 0 14 14"] {
+  margin-bottom: unset;
+  margin-top: calc(var(--refTitlePad) * .5);
+}
+
+/*********
+CONTAINER > ROW 2: TEXT
+**********/
+/*TEXT CONTAINER*/
+.group\/1685197199740 > div:nth-child(2) {
+  padding-right: calc(var(--refArrowIcnW) + var(--refTitlePad));
+  align-items: flex-start;
+}
+/*TEXT*/
+.group\/1685197199740 > svg[viewBox="0 0 14 14"] + div > .truncate.text-label {
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap !important;
+
+  /*
+  max-width: calc(100% - var(--refArrowIcnW) + var(--refTitlePad)) !important;
+  */
+}
+
+/*********
+CONTAINER > ROW 3: HOVER ARROW
+**********/
+.group\/1685197199740 > div.ml-auto {
+  margin-top: calc(var(--refTitlePad) * .25)
+}
+.group\/1685197199740 > div.ml-auto > svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--refArrowIcnW);
+  height: var(--refArrowIcnW);
+}
+/*********
+HOVER ARROW
+**********/
+/*********
+OLD SELECTOR: svg after a 'group'
+
+[class*="group"] > svg[viewBox="0 0 14 14"] 
+
+NEW SELECTOR:  (the specific group that wraps Reference Card Titles)
+
+.group\/1685197199740
+
+*********/
