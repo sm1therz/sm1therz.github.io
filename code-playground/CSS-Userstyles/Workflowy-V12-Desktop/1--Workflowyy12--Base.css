@@ -213,8 +213,7 @@ BOX SHADOW TESTING - BOARDS
     line-height: 0;
     letter-spacing: -0.5px;
     color: var(--NODE--TXT-CLR--main);
-    opacity: .45; 
-    
+    opacity: .45
 }
 .references .breadcrumbs .menu > div > div {
     opacity: 0;
@@ -437,7 +436,7 @@ app .project.root > .name > .bullet.diamond ~ .prefix .item-checkbox{
   padding-bottom: 1px;
   padding-left: 5px;
   padding-right: 5px;
-  letter-spacing: -0.2px;
+  letter-spacing: -0px;
     --inlineCodeBrdRad:6px;
 }
 
@@ -1644,7 +1643,7 @@ HIGHLIGHT - CODE
 #app code {
   padding-top: 1.5px !important;
   padding-bottom: 1px;
-  letter-spacing: -.2px;
+  letter-spacing: -0px;
   word-spacing: -3.5px;
     text-rendering:optimizelegibility !important;
    /* top:-.5px;
@@ -1656,7 +1655,7 @@ HIGHLIGHT - CODE
 
 }
 #app .project:not([class*="header"]) > .name > .content code{
-    font-size: calc(var(--name-fontSize) - 4px);
+    font-size: calc(var(--name-fontSize) - 3.75px);
 }
 #app .project.root > .name > .content code{
     font-size: calc(var(--root-font-size) - 6px);
@@ -2704,6 +2703,10 @@ LEVEL 3 > Button Adjustments
     --btn-MargTop: 11px;
 }
 
+.project.header3 > .name {
+    --btn-MargTop: 9px;
+}
+
 /*Buttons - Paragraph*/
 #app .project.paragraph > .name > .expand,
 #app .project[class*="header"] > .name > .expand,
@@ -3177,7 +3180,6 @@ VERSION TAGS
 .contentTag[data-val*="v9"],
 .contentTag[data-val*="v10"],
 .contentTag[data-val*="versions"],
-.contentTag[data-val*="ecause"],
 .contentTag[data-val*="type"]{
   color: hsl(201, 13%, 17%,0.6) !important;
   font-weight: 500;
@@ -3194,7 +3196,6 @@ VERSION TAGS
 .contentTag[data-val*="v9"] .contentTagText,
 .contentTag[data-val*="v10"] .contentTagText,
 .contentTag[data-val*="versions"] .contentTagText,
-.contentTag[data-val*="because"] .contentTagText,
 .contentTag[data-val*="type"] .contentTagText{
   color: var(--negTagClr) !important;
 
@@ -5996,8 +5997,6 @@ BULLETS > QUOTE BLOCKS > BOARDS
   --btn-MargTop: 5px !important;
 }
 
-
-
 /*******************************
 ********************************
 ! DASHBOARD
@@ -7508,9 +7507,6 @@ EXPAND COLLAPSE BORDER ANIMATION
   --COMMENT-CONTAINER--BG:hsla(196, 28%, 30%, 1) !important;
   --COMMENT--BG--even:hsla(196, 28%, 22%, 1) !important;
 }
-
-
-
 
 /*******************************
 ********************************
@@ -9573,7 +9569,6 @@ LAST ITEM
         
 }
 
-
 /*******************************
 ********************************
 ! SEARCH - NAV - BAR
@@ -10017,8 +10012,6 @@ DROPDOWN WRAPPER
 .header  .iconButton.lg svg {
   transform: scale(.9)
 }
-
-
 
 /*******************************
 ********************************
@@ -10545,6 +10538,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
 }
 
+
 /***********
 ************
 FLOAT BROWSER / FLUID BROWSER > OVERRIDES
@@ -10963,3 +10957,101 @@ Menlo
     font-weight: 400;
     font-style: normal;
 }
+
+/*******************************
+********************************
+! FONTS - IBM PLEX SANS
+********************************
+********************************/
+
+/*
+body,
+body * {
+    font-family: IBM Plex Sans, Whitney, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
+}
+*/
+:root {
+    /*fonts*/
+    --name-fontSize: 1.15rem;
+    --name-lineHeight: 25px;
+    --notes-fontSize: 13.5px;
+    --notes-lineHeight: 18.5px;    
+
+    /*highlights*/
+    --InnerContentPadTop: 0px;
+    --InnerContentPadBtm: 0px;
+    /*wavy*/
+    --wavy--BG-size: 9px;
+    --wavy--BG-position: -0px 100%;
+    --wavy--padding-bottom: 3px;
+    --underlineOffset: 2.5px;
+
+    --btn-MargTop: 0px;
+}
+#app .project:not(.board .project, .comment .project) > .name > .prefix{
+    --btn-MargTop:-1px !important
+}
+
+#app .comment .project > .name > .prefix{
+    --btn-MargTop:-1px !important
+}
+
+.project.root > .children .project > .name > .content,
+.project > .name > .content {
+    -webkit-font-smoothing: antialiased;
+}
+.dashboard-card:not(.comment) .children > .project > .name,
+.dashboard-card .children > .project > .commentAttribution,
+.dashboard-card .children > .project > .notes {
+    --btn-MargTop: 4px;
+}
+.references .project .breadcrumbs a {
+
+    font-size: .71rem;
+
+    line-height: 1.05 !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+
+@media (max-width: 400px) {
+
+    :root {
+        /*
+        --name-fontSize: 1rem;
+        --name-lineHeight: 22px;
+        --notes-fontSize: 0.95rem;
+        --notes-lineHeight: 17px;
+        */
+        --header1-fontSize: 2.0rem;
+        --header1-lineHeight: 1.3;
+
+        /*highlights*/
+        --InnerContentPadTop: 0px;
+        --InnerContentPadBtm: 0px;
+        /*wavy*/
+        --wavy--BG-size: 6px;
+        --wavy--BG-position: 0px 100%;
+        --underlineOffset: 3px;
+        --underlineThickness: 1.5px;
+    }
+
+    .dashboard > .children {
+        --content-PadLeftRight: 2px;
+    }
+
+    .project.root > .children .project > .name > .content,
+    .project > .name > .content {
+        -webkit-font-smoothing: antialiased;
+    }
+    .dashboard .dashboard-card > .name > .content,
+    .dashboard .dashboard-card > .notes > .content {
+        --content-PadTopBtm: 6px !important;
+    }
+
+}
+
+
+
+
