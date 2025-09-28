@@ -1,0 +1,11 @@
+(function() {
+		let style=`<style> 
+		* {
+			border: 1px solid red !important;
+			outline: 2px solid green !important;
+			outline-offset: -3px;
+		}
+		</style>`;
+
+		document.head.insertAdjacentHTML("beforeend", style);
+	})();
