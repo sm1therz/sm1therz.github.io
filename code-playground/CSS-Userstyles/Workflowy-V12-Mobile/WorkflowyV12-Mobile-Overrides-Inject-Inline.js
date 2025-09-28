@@ -31,7 +31,7 @@
 	#app .project > .name > .expand {}
 	
 	:root {
-		--btn-MargTop: 2px !important;
+		--btn-MargTop: 5px !important;
 	
 	}
 	#app .project.header1 > .name {
