@@ -1,13 +1,12 @@
 (function() {
 	let style = `<style>
 
-
 /**ROOT*/
 	
 	:root {
 		--prjct-MargTopBtm: 7px;
 		--root-font-size: 2rem;
-		--name-fontSize: 18px;
+		--name-fontSize: 20px;
 		--name-lineHeight: 28px;
 		--notes-fontSize: .95rem;
 		--notes-lineHeight: 18px;
@@ -16,13 +15,55 @@
 		--header2-fontSize: 1.35rem;
 		--header2-lineHeight: 1.275;
 		--pagePadLR:15px;
+		--pageMarginTop:30px;
 	}
 	
 	:root {
 		--testBrdW:0px;
 		--testMobileBrdW:0px
 	}
+	/**MAIN*/
 	
+	/****************
+	BUTTON MARGIN TOP
+	*****************/
+	#app .project > .name > .prefix,
+	#app .project > .name > .expand {}
+	
+	:root {
+		--btn-MargTop: 2px !important;
+	
+	}
+	#app .project.header1 > .name {
+		--btn-MargTop: 12px !important;
+	}
+	#app .project.header2 > .name {
+		--btn-MargTop: 6px !important;
+	}
+	#app .project.header3> .name {
+		--btn-MargTop: 9.5px !important;
+	}
+	/*Header 2*/
+	#app .project.header2 > .name > .bullet:not(#app .board .header2 > .name > .bullet),
+	#app .project.header2 > .name > .prefix:not(#app .board .header2 > .name > .prefix),
+	#app .project.header2 > .name > .expand:not(#app .board .header2 > .name > .expand) {
+	
+		top: 9px !important;
+	}
+	
+	
+	/****************
+	PARAGRAPH MARGIN
+	*****************/
+	#app .project:not(.board) > .children{
+			--prjct-MargTopBtm:4px !important;
+	}
+	
+	
+	
+	.project:not([class*="head"]) > .name > .content:empty:before{
+		height: 28px !important;
+	}
 	/********
 	*********
 	*********
@@ -262,36 +303,7 @@
 	
 	}
 	
-	/****************
-	BUTTON MARGIN TOP
-	*****************/
-	#app .project > .name > .prefix,
-	#app .project > .name > .expand {}
 	
-	:root {
-		--btn-MargTop: 2px !important;
-	
-	}
-	#app .project.header1 > .name {
-		--btn-MargTop: 4px !important;
-	}
-	#app .project.header2 > .name {
-		--btn-MargTop: 3px !important;
-	}
-	#app .project.header3> .name {
-		--btn-MargTop: 6px !important;
-	}
-	/*Header 2*/
-	#app .project.header2 > .name > .bullet:not(#app .board .header2 > .name > .bullet),
-	#app .project.header2 > .name > .prefix:not(#app .board .header2 > .name > .prefix),
-	#app .project.header2 > .name > .expand:not(#app .board .header2 > .name > .expand) {
-	
-		top: 5.5px !important;
-	}
-	
-	#app .project:not(.board) > .children{
-			--prjct-MargTopBtm:4px !important;
-	}
 	.project > .name.name--with-image {}
 	/****************
 	*****************
@@ -544,7 +556,11 @@
 	}
 	
 	/*Expand - Icon Wrapper */
-	#app .project > .name > .expand > div:not(.project.board > .children .expand > div) {
+	#app .project:not(.board) .project > .name > .expand,
+	#app .project:not(.board) .project > .name > .expand > div{
+		opacity: 1 !important;
+	}
+	#app .project:not(.board) .project > .name > .expand > div:not(.project.board > .children .expand > div) {
 		background-image: var(--ICON--ARROW) !important;
 		width: var(--expandArrowWH);
 		height: var(--expandArrowWH);
@@ -1045,6 +1061,12 @@
 			padding-left: var(--pagePadLR) !important;
 			padding-right: var(--pagePadLR) !important;
 	
+		}
+	}
+	
+	@media (max-width:650px) {
+		:root {
+			--children-Indent:24px;
 		}
 	}
 	
