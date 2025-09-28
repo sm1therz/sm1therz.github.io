@@ -1,16 +1,3 @@
-// ==UserScript==
-// @name         CHATGPT INJECT EXTERNAL
-// @namespace    http://yournamespace.com
-// @version      1.0
-// @description  Injects Chatgpt css hosted on github into chatgpt webpages
-// @author       RSM
-// @match        https://chatgpt.com/*
-// @match        https://chatgpt.com*
-// @match        https://chat.openai.com/*
-// @match        https://chat.openai.com*
-// @grant        GM_addElement
-// ==/UserScript==
-
 (function() {
 	let style = `<style>
 
@@ -32,8 +19,8 @@
 	}
 	
 	:root {
-		--testBrdW:.15px;
-		--testMobileBrdW:1px
+		--testBrdW:0px;
+		--testMobileBrdW:0px
 	}
 	
 	/********
