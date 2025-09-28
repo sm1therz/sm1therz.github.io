@@ -31,17 +31,17 @@
 	#app .project > .name > .expand {}
 	
 	:root {
-		--btn-MargTop: 5px !important;
+		--btn-MargTop: 2px !important;
 	
 	}
 	#app .project.header1 > .name {
-		--btn-MargTop: 12px !important;
+		--btn-MargTop: 5px !important;
 	}
 	#app .project.header2 > .name {
-		--btn-MargTop: 6px !important;
+		--btn-MargTop: 3px !important;
 	}
 	#app .project.header3> .name {
-		--btn-MargTop: 9.5px !important;
+		--btn-MargTop: 3.5px !important;
 	}
 	/*Header 2*/
 	#app .project.header2 > .name > .bullet:not(#app .board .header2 > .name > .bullet),
@@ -971,8 +971,7 @@
 		max-width: 70px !important;
 		z-index: 949494;
 		backdrop-filter: blur(30px);
-		top: 0;
-		bottom: 0;
+
 	}
 	.root > .children > .project > .name .swipe-menu {
 		left: calc(100vw - var(--children-Indent) * 1);
