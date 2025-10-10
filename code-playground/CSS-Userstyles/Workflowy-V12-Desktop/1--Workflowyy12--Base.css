@@ -38,6 +38,7 @@ body,
     z-index: 2;
 }
 
+/* ! Im also a bookmark */
 
 /****
 BOX SHADOW TESTING - BOARDS
@@ -7507,7 +7508,19 @@ EXPAND COLLAPSE BORDER ANIMATION
   --COMMENT-CONTAINER--BG:hsla(196, 28%, 30%, 1) !important;
   --COMMENT--BG--even:hsla(196, 28%, 22%, 1) !important;
 }
+/*******************************
+********************************
+! DAILY NOTE / JOURNAL / CALENDAR
+********************************
+********************************/
+.project > .name > .bullet + span {
+    margin-left: var(--children-Indent);
+    padding-left: var(--content-PadLeftRight);
+}
 
+.project > .name > .bullet + span + .content {
+    margin-left: 0px;
+}
 /*******************************
 ********************************
 ! PRESENTATION
