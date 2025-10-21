@@ -1039,13 +1039,13 @@ HEADER BULLETS
 ********************************/
 
 #app .project.header1 > .name > .bullet:not(#app .board .header1 > .name > .bullet), #app .project.header1 > .name > .prefix:not(#app .board .header1 > .name > .prefix), #app .project.header1 > .name > .expand:not(#app .board .header1 > .name > .expand){
-		top: 9px !important;
+		top: 8px !important;
 }
 #app .project.header2 > .name > .bullet:not(#app .board .header2 > .name > .bullet), #app .project.header2 > .name > .prefix:not(#app .board .header2 > .name > .prefix), #app .project.header2 > .name > .expand:not(#app .board .header2 > .name > .expand){
-		top: 7px !important;
+		top: 5px !important;
 }
 #app .project.header3 > .name > .bullet:not(#app .board .header3 > .name > .bullet), #app .project.header3 > .name > .prefix:not(#app .board .header3 > .name > .prefix), #app .project.header3 > .name > .expand:not(#app .board .header3 > .name > .expand){
-		top: 7px !important;
+		top: 5px !important;
 }
 /*******************************
 ********************************
