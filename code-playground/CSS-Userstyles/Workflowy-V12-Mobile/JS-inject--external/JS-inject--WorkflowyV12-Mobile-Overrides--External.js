@@ -12,6 +12,6 @@
 	}
 	// Call injectCSS() to trigger the CSS injection with a one-second delay for the last script
 	setTimeout(function() {
-		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Mobile/2--Workflowyy12--Dark-theme.css');
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Mobile/WorkflowyV12--Mobile-Overrides.css');
 	}, 1000);
 })();
