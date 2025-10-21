@@ -22,6 +22,7 @@
 		--testBrdW:0px;
 		--testMobileBrdW:0px
 	}
+	
 	/**MAIN*/
 	
 	/****************
@@ -64,6 +65,7 @@
 	.project:not([class*="head"]) > .name > .content:empty:before{
 		height: 28px !important;
 	}
+	
 	/********
 	*********
 	*********
@@ -1031,6 +1033,31 @@
 	.project.open > .name:after, .project.references > .children .project.open > div:first-child:after, .project.references > .children .project.open > .children:after{
 		z-index: 0;
 	}
+	
+	
+	/*******************************
+	********************************
+	HEADER BULLETS
+	********************************
+	********************************/
+	
+	#app .project.header1 > .name > .bullet:not(#app .board .header1 > .name > .bullet), #app .project.header1 > .name > .prefix:not(#app .board .header1 > .name > .prefix), #app .project.header1 > .name > .expand:not(#app .board .header1 > .name > .expand){
+			top: 9px !important;
+	}
+	#app .project.header2 > .name > .bullet:not(#app .board .header2 > .name > .bullet), #app .project.header2 > .name > .prefix:not(#app .board .header2 > .name > .prefix), #app .project.header2 > .name > .expand:not(#app .board .header2 > .name > .expand){
+			top: 7px !important;
+	}
+	#app .project.header3 > .name > .bullet:not(#app .board .header3 > .name > .bullet), #app .project.header3 > .name > .prefix:not(#app .board .header3 > .name > .prefix), #app .project.header3 > .name > .expand:not(#app .board .header3 > .name > .expand){
+			top: 7px !important;
+	}
+	/*******************************
+	********************************
+	DIVIDER
+	********************************
+	********************************/
+	#app .project.divider:not(.collapsed,.open) > .name > .bullet:not(.board.project > .children .bullet) {
+			opacity: 0 !important; 
+	}
 	/*******************************
 	********************************
 	NOTES
@@ -1069,6 +1096,8 @@
 			--children-Indent:24px;
 		}
 	}
+	
+	
 	
 	
 
