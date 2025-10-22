@@ -1,0 +1,64 @@
+/************
+*************
+! DARK READER
+*************
+*************/
+
+
+[data-darkreader-mode] {
+		--comment-bg: hsla(0, 0%, 23%);
+		--commentTxtClr2: hsla(0, 0%, 100%, .35);
+		--commentTxtClr1: hsla(0, 0%, 100%, .99);
+}
+[data-darkreader-mode*="filter"] {
+		--comment-bg: hsla(0, 0%, 93%);
+		--commentTxtClr2: hsla(0, 0%, 30%, .35);
+		--commentTxtClr1: hsla(0, 0%, 20%, .99);
+}
+
+
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] {
+		--commentTxtClr1:hsla(0, 0%, 20%, 0.15);
+		--commentTxtClr2:hsla(0, 0%, 20%, 0.1);
+		--commentBrdClr:hsla(0, 0%, 20%, 0.13);
+		box-shadow: unset !important;
+}
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]{
+		--comment-bg: hsla(0, 0%, 100%,1);
+		background-color: var(--comment-bg) !important;
+}
+
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][role="listitem"]:hover,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"][role="listitem"],
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"][role="dialog"]{
+		box-shadow: 0 0 10px 0px white !important;
+		filter: invert(.05) !important;
+		--comment-bg: hsla(0, 0%, 93%,1) !important;
+		--commentTxtClr1:hsla(0, 0%, 20%, 0.26) !important;
+		--commentTxtClr2:hsla(0, 0%, 40%, 1.1) !important;
+		--commentBrdClr:hsla(0, 0%, 20%, 0.13);
+		border-color: transparent !important;
+		padding-right: 0px !important;
+		
+}
+
+/*bold text*/
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] [class*="view-body"],
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] [class*="view-body"] *{
+		color: var(--commentTxtClr1)!important;
+}
+
+
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover [class*="view-body"],
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] [class*="view-body"],
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover [class*="view-body"] span,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] [class*="view-body"] span,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover .docos-anchoredreplyview-authortimestamp,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] .docos-anchoredreplyview-authortimestamp,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] .docos-input-textarea{
+		--commentTxtClr1:hsla(0, 0%, 10%, 1) !important;
+		--commentTxtClr2:hsla(0, 0%, 20%, 0.26) !important;
+}
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] > div {
+}
+

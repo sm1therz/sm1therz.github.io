@@ -1,10 +1,12 @@
- /**root*/
 
-/*COMMENTS*/
 /************
 ************* 
-RIGHT SIDEBAR / COMMENTS
+! COMMENTS
 *************
+*************/
+
+/************
+RIGHT SIDEBAR / COMMENTS
 *************/
 :root {
 		--comment-bg: white;
@@ -464,86 +466,7 @@ MINIMIZED
 		display: none !important;
 }
 
-/************
-*************
-TOOLBAR - V1
-*************
-*************/
-:root {
-		--toolBarBgContainer: tr;
-		--toolBarBrdClr: hsl(220, 10%, 87%);
-		--toolBarBgBar: hsl(220, 60%, 91%);
-		--toolbarButtonBg-Hover: hsl(210, 0%, 50%,.3);
-		--toolBarButtonBg-Active: hsl(200, 40%, 50%,.5);
-		--toolBarButtonSpecialBg:hsl(200, 40%, 50%,.5);
-}
 
-
-/*Toolbar*/
-.docs-grille-gm3 #docs-chrome:not(.docs-hub-chrome),
-.docs-grille-gm3.docs-body-pageless #docs-align-palette,
-.docs-grille-gm3.docs-body-pageless #docs-align-palette .goog-toolbar-button,
-.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-button,
-.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-combo-button,
-.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-menu-button,
-.docs-grille-gm3.docs-body-pageless .docs-toolbar-more-toolbar,
-.docs-grille-gm3.docs-body-pageless.docs-gm #docs-toolbar-wrapper,
-.docs-grille-gm3 #docs-omnibox-toolbar .docs-omnibox-input {
-		background: var(--toolBarBgContainer) !important;
-}
-
-/*toolbar - Button - Hover*/
-.docs-grille-gm3 .trix-palette .goog-toolbar-menu-button-hover,
-.docs-grille-gm3.docs-gm #docs-align-palette .goog-toolbar-button-hover,
-.docs-grille-gm3.docs-gm .clean-palette .goog-palette-cell-hover,
-.docs-grille-gm3.docs-gm .docs-main-toolbars .goog-toolbar-button-hover,
-.docs-grille-gm3.docs-gm .docs-main-toolbars .goog-toolbar-menu-button-hover,
-.docs-grille-gm3.docs-gm .docs-toolbar-zoom-combobox.goog-toolbar-combo-button-hover {
-		background: var(--toolbarButtonBg-Hover) !important;
-}
-
-/*toolbar - Button - Active*/
-.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-button.goog-toolbar-button-checked,
-.docs-grille-gm3.docs-gm #docs-align-palette .goog-toolbar-button-checked,
-.docs-grille-gm3.docs-gm .clean-palette .goog-palette-cell-selected,
-.docs-grille-gm3.docs-gm .trix-palette .goog-palette-cell-selected {
-		background: var(--toolBarButtonBg-Active) !important;
-}
-
-/******
-toolbar container
-*******/
-/*toolbar container*/
-.docs-grille-gm3.docs-body-pageless #docs-align-palette,
-.docs-grille-gm3.docs-body-pageless #docs-align-palette .goog-toolbar-button,
-.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-button,
-.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-combo-button,
-.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-menu-button,
-.docs-grille-gm3.docs-body-pageless .docs-toolbar-more-toolbar,
-.docs-grille-gm3.docs-body-pageless.docs-gm #docs-toolbar-wrapper,
-.docs-grille-gm3 #docs-header:not(.docs-hub-appbar) .docs-titlebar-buttons {
-		background: var(--toolBarBgContainer);
-}
-/*toolbar container - Button - Hover*/
-.docs-grille-gm3 .docs-menubar .goog-control-hover,
-.docs-grille-gm3 .docs-menubar .goog-control-open {
-		background: var(--toolbarButtonBg-Hover);
-}
-/*toolbar container - Button - Active*/
-/*****
- COLLAPSED / OPEN
-******/
-.docs-butterbar-container.docs-butterbar-container-compact ~ #docs-bars:before {
-		content: "";
-		display: block;
-		position: absolute;
-		bottom: -8px;
-		left: 0;
-		right: 0;
-		height: 1px;
-		background: var(--toolBarBrdClr);
-		z-index: 2
-}
 
 
 /*****
@@ -559,7 +482,7 @@ div#lineSpacingMenuButton:hover{
 
 /************
 *************
-ICONS
+! ICONS
 *************
 *************/
 
@@ -567,73 +490,13 @@ ICONS
 		--iconDocsMenuCheck:url('data:image/svg+xml;utf8,<svg width="1300" height="1300" viewBox="0 0 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="30" width="1240" height="1240" rx="210" fill="black"/><rect x="30" y="30" width="1240" height="1240" rx="210" stroke="white" stroke-width="60"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1064.47 358.31C1035.48 329.324 988.489 329.324 959.503 358.31L549.119 768.694C540.527 777.285 526.598 777.285 518.006 768.694L340.542 591.229C311.545 562.233 264.533 562.233 235.536 591.229C206.54 620.226 206.54 667.238 235.536 696.235L480.987 941.685C498.35 959.048 522.173 966.014 544.719 962.583C559.853 960.3 574.417 953.332 586.07 941.679L1064.47 463.278C1093.46 434.292 1093.46 387.296 1064.47 358.31Z" fill="white"/></svg>');
 }
 
+
 /************
 *************
-DARK READER
+! MOBILE BANNER
 *************
 *************/
 
-
-[data-darkreader-mode] {
-		--comment-bg: hsla(0, 0%, 23%);
-		--commentTxtClr2: hsla(0, 0%, 100%, .35);
-		--commentTxtClr1: hsla(0, 0%, 100%, .99);
-}
-[data-darkreader-mode*="filter"] {
-		--comment-bg: hsla(0, 0%, 93%);
-		--commentTxtClr2: hsla(0, 0%, 30%, .35);
-		--commentTxtClr1: hsla(0, 0%, 20%, .99);
-}
-
-
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] {
-		--commentTxtClr1:hsla(0, 0%, 20%, 0.15);
-		--commentTxtClr2:hsla(0, 0%, 20%, 0.1);
-		--commentBrdClr:hsla(0, 0%, 20%, 0.13);
-		box-shadow: unset !important;
-}
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]{
-		--comment-bg: hsla(0, 0%, 100%,1);
-		background-color: var(--comment-bg) !important;
-}
-
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][role="listitem"]:hover,
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"][role="listitem"],
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"][role="dialog"]{
-		box-shadow: 0 0 10px 0px white !important;
-		filter: invert(.05) !important;
-		--comment-bg: hsla(0, 0%, 93%,1) !important;
-		--commentTxtClr1:hsla(0, 0%, 20%, 0.26) !important;
-		--commentTxtClr2:hsla(0, 0%, 40%, 1.1) !important;
-		--commentBrdClr:hsla(0, 0%, 20%, 0.13);
-		border-color: transparent !important;
-		padding-right: 0px !important;
-		
-}
-
-/*bold text*/
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] [class*="view-body"],
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] [class*="view-body"] *{
-		color: var(--commentTxtClr1)!important;
-}
-
-
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover [class*="view-body"],
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] [class*="view-body"],
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover [class*="view-body"] span,
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] [class*="view-body"] span,
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover .docos-anchoredreplyview-authortimestamp,
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] .docos-anchoredreplyview-authortimestamp,
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] .docos-input-textarea{
-		--commentTxtClr1:hsla(0, 0%, 10%, 1) !important;
-		--commentTxtClr2:hsla(0, 0%, 20%, 0.26) !important;
-}
-[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] > div {
-}
-
-
-
-/*MOBILE BANNER*/
 .docs-ml-promotion.docs-ml-promotion-off-screen.docs-ml-promotion-shown{
 	display: none;
 }
