@@ -1,4 +1,4 @@
-/* Dark Reader -- console-injectable, now with engine selector + 2.5s delay
+/* Dark Reader — console-injectable, now with engine selector + 2.5s delay
    - Paste into the browser console on any page.
    - Opens settings after 2.5s (Alt+D to reopen). Prefs persist via localStorage.
    - Engines:
