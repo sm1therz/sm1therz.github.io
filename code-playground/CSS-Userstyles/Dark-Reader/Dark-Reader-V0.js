@@ -5720,7 +5720,7 @@ var inversionFixes = [{
 					else if (theme.engine === 'dynamicTheme') {
 							removeStyle();
 							let fixes = getDynamicThemeFixesFor(topURL, isIFrame ? null : location.href, dynamicFixes) || {};
-							fixes = {
+							fixes = { 
 									...(fixes),
 									invert: (fixes.invert || []).concat('embed[type="application/pdf"]'),
 							};
