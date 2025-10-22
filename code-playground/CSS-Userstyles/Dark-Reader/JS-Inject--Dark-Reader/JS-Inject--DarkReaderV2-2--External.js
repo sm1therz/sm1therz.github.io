@@ -7,7 +7,7 @@
 		var script = document.createElement('script');
 		script.type = 'text/javascript';
 		// Put JavaScript link below
-		script.src = 'https://dl.dropboxusercontent.com/scl/fi/y1s91k8w7gnf943glfx4c/DarkReader.js?rlkey=c3ht7hh2hq67djxal8d6owpwe&raw=1';
+		script.src = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Dark-Reader/JS-Inject--Dark-Reader/JS-Inject--DarkReaderV2-2--External.js';
 
 		// Append the script element to the <head>
 		document.head.appendChild(script);
