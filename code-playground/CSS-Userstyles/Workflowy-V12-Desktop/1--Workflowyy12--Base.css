@@ -1659,7 +1659,7 @@ HIGHLIGHT - CODE
     font-size: calc(var(--name-fontSize) - 3.75px) !important;
 }
 #app .project.root > .name > .content code{
-    font-size: calc(var(--root-font-size) - 6px);
+    font-size: calc(var(--root-font-size) - 6px) !important;
 }
 
 
