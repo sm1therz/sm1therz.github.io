@@ -1,0 +1,36 @@
+(function() {
+	let style = `<style>
+
+
+/****************************
+*****************************
+*****************************
+CURSOR
+*****************************
+*****************************
+****************************/
+
+:root {
+	--cursorClr: hsl(214, 100%, 50%);
+}
+
+.kix-cursor-caret {
+	border-color: var(--cursorClr) !important;
+	border-radius: 2px !important;
+	margin-top: -4.5px;
+	position: relative;
+	width: 0px;
+	padding-bottom: 7px;
+	font-size: 0;
+		border-width: 3px
+
+}
+
+
+
+
+	
+</style>`;
+
+	document.head.insertAdjacentHTML("beforeend", style);
+})();
