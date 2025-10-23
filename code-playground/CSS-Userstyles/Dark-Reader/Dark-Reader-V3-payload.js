@@ -1,19 +1,19 @@
-/* Dark Reader — console-injectable, now with engine selector + 2.5s delay
-   - Paste into the browser console on any page.
-   - Opens settings after 2.5s (Alt+D to reopen). Prefs persist via localStorage.
-   - Engines:
-       • Dynamic  → Dark Reader engine (via CDN)
-       • Filter   → CSS filter invert (+ optional media re-invert)
-       • Static   → Inject a saved CSS snapshot (generate from Dynamic)
+/* Dark Reader -- console-injectable, engine selector + 2.5s delay
+   New:
+   • Auto-open only if this host hasn’t been configured yet.
+   • Once configured, show a tiny 20×20 opener button at top-right instead of auto-opening.
+   • Click outside modal closes it (kept).
 */
 (() => {
   'use strict';
 
-  if (window.__DR_INJECTOR_V2__) return;
-  window.__DR_INJECTOR_V2__ = true;
+  if (window.__DR_INJECTOR_V3__) return;
+  window.__DR_INJECTOR_V3__ = true;
 
   // ---------- Config / Storage ----------
-  const STORE = 'dr_injected_prefs_v3';
+  const STORE = 'dr_injected_prefs_v4';
+  const HOST  = location.host;
+
   const defaults = {
     enabled: true,
     engine: 'dynamic',    // 'dynamic' | 'filter' | 'static'
@@ -24,17 +24,19 @@
     sepia: 0,             // 0–100
     grayscale: 0,         // 0–100
     reInvertMedia: true,  // Filter engine: re-invert images/video/canvas
-    autoOpenSeconds: 2.5, // ⟵ requested change
-    staticCSSByHost: {}   // { [location.host]: "/* CSS */" }
+    autoOpenSeconds: 2.5, // requested delay
+    staticCSSByHost: {},  // { [host]: css }
+    configuredHosts: {}   // { [host]: true } → if true, do NOT auto-open; show opener button instead
   };
 
   const prefs = load();
   function load() {
-    try {
-      return Object.assign({}, defaults, JSON.parse(localStorage.getItem(STORE) || '{}'));
-    } catch { return { ...defaults }; }
+    try { return Object.assign({}, defaults, JSON.parse(localStorage.getItem(STORE) || '{}')); }
+    catch { return { ...defaults }; }
   }
   function save() { localStorage.setItem(STORE, JSON.stringify(prefs)); }
+  function isConfiguredHost() { return !!(prefs.configuredHosts && prefs.configuredHosts[HOST]); }
+  function markConfigured()   { prefs.configuredHosts = Object.assign({}, prefs.configuredHosts, { [HOST]: true }); save(); addOpenerButton(); }
 
   // ---------- CDN loader for Dark Reader (Dynamic/Static generation) ----------
   const CDN_URLS = [
@@ -78,7 +80,8 @@
     css: 'dr-injected-modal-css',
     filterStyle: 'dr-filter-style',
     filterFix: 'dr-filter-fix',
-    staticStyle: 'dr-static-style'
+    staticStyle: 'dr-static-style',
+    openerBtn: 'dr-opener-button'
   };
 
   function ensureStyle(id) {
@@ -107,9 +110,7 @@
   }
 
   function clearAllEngines() {
-    // Turn off DR
     try { window.DarkReader && window.DarkReader.disable(); } catch {}
-    // Remove filter/static CSS
     removeEl(IDS.filterStyle);
     removeEl(IDS.filterFix);
     removeEl(IDS.staticStyle);
@@ -125,7 +126,6 @@
   }
 
   function filterCSS(p) {
-    // Base invert pipeline approximating Filter/Filter+
     const parts = [
       'invert(1) hue-rotate(180deg)',
       `brightness(${p.brightness}%)`,
@@ -139,19 +139,16 @@
     `;
   }
   function filterFixCSS(p) {
-    if (!(p.reInvertMedia)) return '';
+    if (!p.reInvertMedia) return '';
     return `
-      img, image, video, canvas, svg image, picture, embed[type^="image/"],
-      [role="img"] {
+      img, image, video, canvas, svg image, picture, embed[type^="image/"], [role="img"] {
         filter: invert(1) hue-rotate(180deg) !important;
-        color-scheme: light;
-        isolation: isolate;
+        color-scheme: light; isolation: isolate;
       }
     `;
   }
   function applyFilter() {
     if (!prefs.enabled) { clearAllEngines(); return; }
-    // Ensure DR is fully off so engines don't conflict
     try { window.DarkReader && window.DarkReader.disable(); } catch {}
     removeEl(IDS.staticStyle);
     const s = ensureStyle(IDS.filterStyle);
@@ -162,12 +159,10 @@
 
   async function applyStatic() {
     if (!prefs.enabled) { clearAllEngines(); return; }
-    // Use saved CSS first; if none, attempt to generate from Dynamic engine.
-    let css = prefs.staticCSSByHost?.[location.host];
+    let css = prefs.staticCSSByHost?.[HOST];
     if (!css) {
       const ok = await ensureDRLoaded();
       if (!ok) return;
-      // Temporarily enable Dynamic to compute, then export and swap to static CSS.
       try {
         window.DarkReader.enable(themeFrom(prefs));
         css = await window.DarkReader.exportGeneratedCSS();
@@ -177,10 +172,9 @@
       } finally {
         try { window.DarkReader.disable(); } catch {}
       }
-      prefs.staticCSSByHost = Object.assign({}, prefs.staticCSSByHost, { [location.host]: css });
+      prefs.staticCSSByHost = Object.assign({}, prefs.staticCSSByHost, { [HOST]: css });
       save();
     }
-    // Apply saved CSS
     removeEl(IDS.filterStyle);
     removeEl(IDS.filterFix);
     const st = ensureStyle(IDS.staticStyle);
@@ -213,14 +207,36 @@
 #${IDS.dialog} .kbd{opacity:.75;}
 #${IDS.dialog} select, #${IDS.dialog} input[type="number"]{width:100%;}
 #${IDS.dialog}::backdrop{background:rgba(0,0,0,.35);}
-`;
 
+/* Tiny opener button (20×20, top-right) */
+#${IDS.openerBtn}{
+  position:fixed; top:10px; right:10px;
+  width:20px; height:20px; border-radius:6px;
+  background:rgba(0,0,0,.45); color:#fff;
+  border:1px solid rgba(255,255,255,.35);
+  font:12px/20px -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  text-align:center; cursor:pointer; user-select:none;
+  z-index:2147483647;
+}
+#${IDS.openerBtn}:hover{ background:rgba(0,0,0,.65); }
+`;
   function ensureModalCSS() {
     if (document.getElementById(IDS.css)) return;
     const st = document.createElement('style');
     st.id = IDS.css;
     st.textContent = modalCSS;
     document.head.appendChild(st);
+  }
+
+  function addOpenerButton() {
+    if (document.getElementById(IDS.openerBtn)) return;
+    ensureModalCSS();
+    const b = document.createElement('div');
+    b.id = IDS.openerBtn;
+    b.title = 'Dark Reader settings (Alt+D)';
+    b.textContent = 'D';
+    b.addEventListener('click', () => openDialog());
+    document.documentElement.appendChild(b);
   }
 
   function buildDialog() {
@@ -305,7 +321,10 @@
     });
 
     const $ = (sel) => dlg.querySelector(sel);
-    const onChange = (fn) => (e) => { fn(e); save(); applyEngine(); };
+    const onChange = (fn) => (e) => { fn(e); save(); applyEngine(); touched(); };
+
+    let userTouched = false;
+    function touched() { userTouched = true; }
 
     $('#dr-enabled').checked = prefs.enabled;
     $('#dr-follow').checked = prefs.followSystem;
@@ -329,7 +348,7 @@
       $(id).addEventListener('input', e => {
         prefs[key] = Number(e.target.value);
         $(out).value = prefs[key];
-        save(); applyEngine();
+        save(); applyEngine(); touched();
       });
     };
     linkRange('#dr-bright',   '#dr-bright-o',   'brightness');
@@ -339,20 +358,19 @@
 
     $('#dr-delay').addEventListener('change', e => {
       const v = Math.max(0, Math.min(60, Number(e.target.value) || 0));
-      prefs.autoOpenSeconds = v; save();
+      if (v !== prefs.autoOpenSeconds) { prefs.autoOpenSeconds = v; save(); touched(); }
     });
 
     $('#dr-reset').addEventListener('click', () => {
       Object.assign(prefs, defaults);
-      save();
+      save(); touched();
       dlg.close(); dlg.remove();
       buildDialog(); applyEngine();
       openDialog();
     });
 
     $('#dr-export').addEventListener('click', async () => {
-      try {
-        await ensureDRLoaded();
+      try { await ensureDRLoaded();
         const css = await window.DarkReader.exportGeneratedCSS();
         const blob = new Blob([css], { type: 'text/css' });
         const a = document.createElement('a');
@@ -360,9 +378,7 @@
         a.download = 'darkreader-generated.css';
         a.click();
         setTimeout(() => URL.revokeObjectURL(a.href), 1500);
-      } catch (e) {
-        alert('Export failed (Dynamic engine required).');
-      }
+      } catch { alert('Export failed (Dynamic engine required).'); }
     });
 
     $('#dr-static-refresh').addEventListener('click', async () => {
@@ -371,24 +387,26 @@
         window.DarkReader.enable(themeFrom(prefs));
         const css = await window.DarkReader.exportGeneratedCSS();
         window.DarkReader.disable();
-        prefs.staticCSSByHost = Object.assign({}, prefs.staticCSSByHost, { [location.host]: css });
-        save();
+        prefs.staticCSSByHost = Object.assign({}, prefs.staticCSSByHost, { [HOST]: css });
+        save(); touched();
         if (prefs.engine === 'static') applyStatic();
-      } catch (e) {
-        alert('Could not generate Static CSS. Try Dynamic engine first on this page.');
-      }
+      } catch { alert('Could not generate Static CSS. Try Dynamic engine first on this page.'); }
     });
 
     $('#dr-static-clear').addEventListener('click', () => {
-      if (prefs.staticCSSByHost && prefs.staticCSSByHost[location.host]) {
-        delete prefs.staticCSSByHost[location.host];
-        save();
+      if (prefs.staticCSSByHost && prefs.staticCSSByHost[HOST]) {
+        delete prefs.staticCSSByHost[HOST];
+        save(); touched();
         if (prefs.engine === 'static') { removeEl(IDS.staticStyle); }
         alert('Saved Static CSS cleared for this host.');
       }
     });
 
-    dlg.addEventListener('close', () => save());
+    dlg.addEventListener('close', () => {
+      // Only mark as configured when the user actually changed something.
+      if (userTouched) markConfigured();
+      save();
+    });
   }
 
   function openDialog() {
@@ -399,10 +417,17 @@
 
   // ---------- Orchestration ----------
   (async () => {
-    // Load DR early if engine is Dynamic or Static (for generation)
     if (prefs.engine !== 'filter') { try { await ensureDRLoaded(); } catch {} }
+
+    // If already configured for this host, show the tiny opener button immediately.
+    if (isConfiguredHost()) addOpenerButton();
+
     const delayMs = Math.max(0, Number(prefs.autoOpenSeconds || 0) * 1000);
-    setTimeout(() => { applyEngine(); openDialog(); }, delayMs);
+    setTimeout(() => {
+      applyEngine();
+      // Auto-open only if NOT configured for this host
+      if (!isConfiguredHost()) openDialog();
+    }, delayMs);
   })();
 
   // Hotkey to reopen settings
