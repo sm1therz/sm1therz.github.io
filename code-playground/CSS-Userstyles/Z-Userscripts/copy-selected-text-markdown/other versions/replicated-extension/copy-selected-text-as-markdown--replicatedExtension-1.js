@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Copy Selection as Markdown — Userscript Port
+// @name         Copy Selected Text as Markdown — Replicated Extension
 // @namespace    https://github.com/0x6b/copy-selection-as-markdown (userscript port)
 // @version      0.23.0-us
 // @description  Port of the Firefox extension "Copy Selection as Markdown" to a single userscript. Copies selection, page title+URL, or hovered link as Markdown, with the original conversion pipeline.
@@ -7,7 +7,7 @@
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
-// @grant        GM_setValue
+// @grant        GM_setValue 
 // @grant        GM_getValue
 // @grant        GM_addStyle
 // @run-at       document-idle
