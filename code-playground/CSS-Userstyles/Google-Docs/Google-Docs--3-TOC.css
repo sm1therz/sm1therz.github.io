@@ -48,7 +48,7 @@ TOC
 .outlines-widget-chaptered .navigation-item-content {}
 
 :root {
-		--itemPadTopBtm:5px;
+		--itemPadTopBtm:7px;
 }
 .outlines-widget .navigation-item-content {
 		white-space: unset !important;
@@ -121,7 +121,6 @@ DELETE BUTTON
 }
 .outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-2 {
 		padding-left: 60px;
-		--itemPadTopBtm:5px;
 }
 
 .outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-3 {
