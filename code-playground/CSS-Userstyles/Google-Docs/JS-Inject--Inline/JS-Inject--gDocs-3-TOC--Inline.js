@@ -124,7 +124,7 @@ DELETE BUTTON
 }
 .outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-2 {
 		padding-left: 60px;
-		--itemPadTopBtm:4px;
+		--itemPadTopBtm:5px;
 }
 
 .outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-3 {
@@ -133,6 +133,7 @@ DELETE BUTTON
 .outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-4 {
 		padding-left: 100px;
 }
+
 	
 </style>`;
 
