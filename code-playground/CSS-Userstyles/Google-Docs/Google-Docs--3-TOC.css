@@ -64,11 +64,13 @@ TOC
 }
 .navigation-item-content-container[aria-label*="level 1"] .navigation-item-content {
 		--tocTextSize: 15px;
-		font-weight: 500 !important;
+		font-weight: 550 !important;
+		color:black;
 }
 .navigation-item-content-container[aria-label*="level 2"] .navigation-item-content {
-		--tocTextSize: 14.5px;
-		font-weight: 500 !important;
+		--tocTextSize: 15px;
+		font-weight: 550 !important;
+		color:black;
 }
 
 /***
