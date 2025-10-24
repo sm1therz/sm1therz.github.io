@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Copy Selected Text > As Markdown (Popup v1.3)
+// @name         Copy Selected Text As Markdown > V1.3
 // @namespace    https://example.com
 // @version      1.3.0
 // @description  Copies selected text as Markdown via fixed popup
-// @match        https://chatgpt.com/*
-// @match        https://chatkit.app/*
-// @match        https://*.google.com/*
+
+// @match        *://*/*
+// @match        *://*/*
 // @grant        GM_setClipboard
 // @require      https://unpkg.com/turndown@7.1.2/dist/turndown.js
 // ==/UserScript==
