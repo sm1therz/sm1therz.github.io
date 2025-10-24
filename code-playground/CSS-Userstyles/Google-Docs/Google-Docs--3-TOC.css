@@ -23,7 +23,10 @@ TOC
 		font-size: .8em;
 		left: 5px;
 }
-
+.left-sidebar-container .navigation-item-content-container {
+			display:flex !important;
+	align-items:center !important;
+}
 .outlines-widget .navigation-item{
 		height: auto !important;
 		position: relative;
@@ -32,6 +35,18 @@ TOC
 .outlines-widget .navigation-item-content{
 	font-size: var(--tocTextSize) !important;
 		line-height: var(--tocLineHeight) !important;
+		height:unset !important;
+		min-height:unset !important;
+}
+.outlines-widget-chaptered .navigation-item-content{
+	padding-top:5px !important;
+	padding-bottom:5px !important;
+
+}
+
+.outlines-widget .navigation-item-content {
+		white-space:unset !important;
+		text-overflow:unset !important;
 }
 .navigation-item-content-container,
 .navigation-item-content-container * {
