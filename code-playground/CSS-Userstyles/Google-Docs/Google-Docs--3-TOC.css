@@ -65,13 +65,24 @@ TOC
 .navigation-item-content-container[aria-label*="level 1"] .navigation-item-content {
 		--tocTextSize: 15px;
 		font-weight: 550 !important;
-		color:black;
+		color: black !important;
 }
 .navigation-item-content-container[aria-label*="level 2"] .navigation-item-content {
 		--tocTextSize: 15px;
 		font-weight: 550 !important;
-		color:black;
+		color:black !important;
+		
+		
 }
+.navigation-item-content-container[aria-label*="level 3"] .navigation-item-content{
+		color: hsla(0,0%,10%) !important;
+		font-weight: 450 !important;
+}
+#kix-appview .navigation-item.location-indicator-highlight .navigation-item-content{
+		color: hsl(217, 100%, 50%) !important;
+}
+
+
 
 /***
 DELETE BUTTON
