@@ -53,28 +53,22 @@
 
 :root {
 	--minimapWidth: 32px;
-		--minimapDotWidth:calc(var(--minimapWidth) * .5);
 	--minimapPreviewWidth: 440px;
-		--minimapPosRight:10px;
 }
 #minimap-wrapper {
 	position: fixed;
 	top: 0;
-		top:var(--header-height);
-	right: var(--minimapPosRight);
+	right: 14px;
 	width: var(--minimapWidth);
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
 	z-index: 0;
-	background: rgba(0, 0, 0, 0.0);
+	background: rgba(0, 0, 0, 0.05);
 	padding: 60px 0 170px 0;
 	padding: var(--header-height) 0 170px 0;
-		padding-top:calc(var(--header-height) * .25);
 	max-height: 100vh !important;
-		max-height: calc(100vh - var(--header-height)) !important;
 	min-height: 100vh !important;
-		min-height: calc(100vh - var(--header-height)) !important;
 	padding-bottom: 60px !important;
 	overflow-y: auto !important;
 }
@@ -82,7 +76,7 @@
 	width: 0px;
 }
 .minimap-dot {
-	width: var(--minimapDotWidth);
+	width: calc(var(--minimapWidth) * .5);
 	border-radius: 4px;
 	background: gray;
 	margin: 1px 0;
@@ -109,9 +103,8 @@ display:none !important;
 div#minimap-toggle {
 		margin: 0px !important;
 		position: fixed;
-	 padding-top: 2.5px !important;
-	 top:0;
-	 right:calc(var(--minimapWidth) + 160px);
+	 top: 5px;
+	 right:calc(var(--minimapWidth) + 140px);
 	 font-size:10px;
 	 line-height:1.1;
 	 display:flex;
@@ -119,14 +112,7 @@ div#minimap-toggle {
 	 align-items:flex-start;
 	 justify-content:flex-start;
 	 gap:2px;
-	 transition:.25s;
-	 transition-delay:1.5s;
-	 max-height:12px;
-	 overflow:hidden;
-}
-div#minimap-toggle:hover {
-max-height:100px;
-transition-delay:0s;
+	 
 }
 div#minimap-toggle:before {
 		content:"Mini Map Filter";
@@ -136,14 +122,10 @@ div#minimap-toggle:before {
 		
 }
 @media (max-width: 767px) {
-	:root {
-		 --minimapPosRight:6px;
-		 --minimapDotWidth:calc(var(--minimapWidth) * .35);
-	}
-	/*
-	div#minimap-toggle {
-		 right:calc(var(--minimapWidth) + 10px);
-	}*/
+div#minimap-toggle {
+	 right:calc(var(--minimapWidth) + 10px);
+
+}
 }
 div#minimap-toggle button {
 background:hsla(0,0%,50%,.1);
@@ -169,7 +151,7 @@ background:hsla(0,0%,50%,.2);
 }
 #minimap-preview {
 	position: fixed;
-	right: calc(var(--minimapWidth) + 4px);
+	right: 30px;
 	background: #2f2f2f;
 	color: white;
 	border: 1px solid #ffffff26;
