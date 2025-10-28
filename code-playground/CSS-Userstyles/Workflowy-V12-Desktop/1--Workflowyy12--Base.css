@@ -4899,6 +4899,36 @@ max-width: calc(100% - 70px) !important;
 }
 
 
+#app .project:is(.board) .project:not([class*="header"]) > .name > .content code {
+    font-size: calc(var(--name-fontSize) - 1.5px) !important;
+    -webkit-font-smoothing:subpixel-antialiased !important;
+    letter-spacing: -.2px;
+    padding-left: 4px;
+    padding-right:3.5px !important; 
+    font-weight: 199 !important;
+}
+#app .project:is(.board) .project:is([class*="header"]) > .name > .content code {
+    font-size: calc(var(--name-fontSize) + 1px) !important;
+    -webkit-font-smoothing:subpixel-antialiased !important;
+    letter-spacing: -.2px;
+    padding-left: 4px;
+    padding-right:3.5px !important; 
+    font-weight: 199 !important;
+}
+#app .project:is(.board) .project:is([class*="header1"]) > .name > .content code {
+    font-size: calc(var(--name-fontSize) + 2.5px) !important;
+}
+#app .project:is(.board) .project:is([class*="header2"]) > .name > .content code {
+    font-size: calc(var(--name-fontSize) + 1px) !important;
+}
+
+#app .project:is(.board) .project:is([class*="header3"]) > .name > .content code{
+    font-size: calc(var(--name-fontSize) + 0px) !important;
+    padding-bottom:0px; 
+    padding-top:0px;
+}
+
+
 
 
 /*******************************
