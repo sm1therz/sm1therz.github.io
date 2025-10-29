@@ -1,4 +1,4 @@
-/*****************
+ /*****************
 !gpt - ROOT
 ******************/
 .dark { 
@@ -105,6 +105,19 @@ li a * {
   --line-height: 1.65;
   --paragraphMargTopBtm: 6px;
 }
+
+/*testing*/
+
+:root {
+  --tstBrdW:0px;
+}
+[style*="--sidebar-width"] a[class*="menu-item"],
+[style*="--sidebar-width"] a[class*="menu-item"] > div,
+[class*="--sidebar-width"] aside a[class*="menu-item"] > div.flex.min-w-0 ~ div.trailing {
+  outline: var(--tstBrdW) solid red;
+}
+
+
 /***********
 ************
 !gpt - EDITOR
@@ -121,6 +134,10 @@ div[class*="flex w-full items-center justify-center bg-token-surface-primary py-
   background: var(--bgClrMobile)
 }
 
+[data-testid*="conversation-turn"] > div{
+  padding-top: 1rem;
+  padding-bottom: .75rem;
+}
 /***********
 ************
 RESPONSE
@@ -324,7 +341,6 @@ USER MESSAGE
   margin-top: 10px;
 }
 [data-message-author-role="user"] pre code {
-  font-family: ui-monospace, Menlo, Consolas, Liberation Mono, monospace!important;
   white-space: break-spaces;
   -webkit-font-smoothing: sub !important;
 }
@@ -370,6 +386,7 @@ CANVAS EDITOR
 section#details .bg-token-main-surface-primary {
   background: hsla(0, 0%, 18%, 1.0) !important;
 }
+
 /***********
 ************
 !gpt - EDITOR > CODE BLOCKS
@@ -414,6 +431,12 @@ article #codemirror .cm-editor {
     display: block !important;
 }
 
+
+.markdown pre > div > div.flex{
+  user-select: none !important;
+}
+
+
 /***********
 ************
 !gpt - EDITOR > CANVAS - COLORS
@@ -423,6 +446,7 @@ article #codemirror .cm-editor {
 section.popover {
     background: hsl(0, 0%, 13.5%) !important;
 }
+
 /***********
 ************
 !gpt - EDITOR > ADJUSTMENT > FOR TOC
@@ -431,6 +455,16 @@ section.popover {
 #page-header + div[class*="composer"] > div.h-full {
   overflow-y: auto;
 }
+
+/***********
+************
+!gpt - TEXT AREA > EDIT PROMPT > HEIGHT
+************
+************/
+[class*="thread"] > [class*="group"][class*="conversation"] textarea {
+  padding-bottom: 70px !important;
+}
+
 /***********
 ************
 !gpt - TEXT AREA > Make Taller
@@ -509,6 +543,30 @@ article + button.bg-token-main-surface-primary {
     display: none;
 }
 
+
+/***********
+************
+!gpt - TEXT AREA > INSIDE CANVAS
+************
+************/
+
+section.popover textarea[style*="height: 96px"] {
+  min-height: 45vh !important;
+}
+
+.max-h-52 {
+    max-height: calc(73vh)
+}
+
+/***********
+************
+!gpt - TEXT AREA > NEW CHAT IN PROJECT > Make Taller
+************
+************/
+header#page-header + .flex.basis-auto.flex-col.grow > .max-h-full [class*="_prosemirror-"]{
+  max-height: unset !important;
+}
+
 /***********
 ************
 !gpt - LEFT SIDEBAR
@@ -552,9 +610,12 @@ SIDEBAR WIDTH > VERSION 2
   
 }
 
+
 :root {
-  --sidebar-width:360px;
+  --sidebar-width:340px;
 }
+
+
 
 /*********
 **********
@@ -594,7 +655,7 @@ ITEM WRAPPER > LEFT WRAPPER > ITEM TEXT
   white-space: normal;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   padding-right: 2px;
   height: unset !important;
@@ -695,11 +756,9 @@ nav[aria-label="Chat history"] > div > div[class*="border-white"]{
     display:none; 
 }
 
-
-
 /***********
 ************
-!gpt - 3 DOT MENU - HIDE "DELETE" BUTTON
+!gpt > 3 DOT MENU > HIDE BUTTON > "DELETE" BUTTON
 ************
 ************/
 /***********
@@ -725,7 +784,26 @@ HIDE DELETE BUTTON
 }
 */
 
+/***********
+************
+!gpt > 3 DOT MENU > HIDE BUTTON > "ADD FROM APPS"
+************
+************/
 
+[data-radix-popper-content-wrapper] > div.z-50.max-w-xs.rounded-2xl.popover.bg-token-main-surface-primary.shadow-long.will-change-\[opacity\,transform\].radix-side-bottom\:animate-slideUpAndFade.radix-side-left\:animate-slideRightAndFade.radix-side-right\:animate-slideLeftAndFade.radix-side-top\:animate-slideDownAndFade.py-1\.5.min-w-\[min\(125px\,95vw\)\].max-h-\[var\(--radix-dropdown-menu-content-available-height\)\].overflow-y-auto.select-none.radix-side-bottom\:flex-col-reverse.flex.flex-col  > div[data-has-submenu]{
+
+  display: none !important;
+}
+
+/*MAKE ARCHIVE SIGNIFICANT
+[data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:nth-of-type(3){
+    color: hsl(134, 74%, 60%);
+    
+}
+[data-radix-popper-content-wrapper][style*="282px"] > [style*="radix-dropdown-menu"] > [role="menuitem"]:nth-of-type(3) path {
+    fill: hsl(134, 74%, 60%)
+}
+*/
 
 /***********
 ************
@@ -746,16 +824,28 @@ HIDE DELETE BUTTON
 /*CHAT BODY MATCHED WORD*/
 [data-state="open"] ol > li svg + div .text-token-text-secondary > .truncate span.text-token-text-primary.font-medium {
   color: white !important;
-  font-weight: 600 !important;
+  font-weight: 800 !important;
   -webkit-font-smoothing: subpixel-antialiased;
+  transform: scale(1.12);
 }
 
 /*DATE*/
-[data-state="open"] ol > li svg + div .pl-6.text-xs.text-token-text-secondary {
+[data-state="open"] [role="dialog"] ol li .text-token-text-secondary.ps-6 {
   position: absolute;
   width: 60px;
   right: 0;
 }
+
+
+[data-state="open"] [role="dialog"] ol li .text-xs .truncate {
+display: -webkit-box;
+-webkit-line-clamp: 13;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: pre-wrap !important;
+}
+
 /***********
 ************
 !gpt - CANVAS TITLES
@@ -773,6 +863,7 @@ button > h2 {
 [data-radix-popper-content-wrapper] [role="menuitem"] span.block.truncate[class*="max-w-[200px]"]{
     max-width: 100%;
 }
+
 /***********
 ************
 !gpt - MOBILE
@@ -824,8 +915,8 @@ button > h2 {
 
   /*chat container */
   [data-testid*="conversation-turn"] > div {
-    padding-left: 5px !important;
-    padding-right: 5px;
+    padding-left: 10px !important;
+    padding-right: 10px;
   }
   .react-scroll-to-bottom--css-ranco-1n7m0yu {
     padding-right: 0px !important;
@@ -844,7 +935,7 @@ button > h2 {
 
   /*container - padding*/
   .group.w-full > div.p-4 {
-    padding: .5rem
+    padding: .5rem 
   }
 
 
@@ -854,6 +945,7 @@ button > h2 {
     margin-top: 3px;
   }
 }
+
 /***********
 ************
 ! MEMEX HIGHLIGHTS
@@ -868,3 +960,12 @@ button > h2 {
 }
 ************
 ************/
+
+/***********
+************
+! ICONS
+**/
+:root {
+
+    --iconDashLine: url('data:image/svg+xml;utf8,<svg viewBox="0 0 5 11" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.84668" y="0.185791" width="2" height="5" rx="0.8" fill="%23808080" fill-opacity="0.5"/></svg>');
+}
