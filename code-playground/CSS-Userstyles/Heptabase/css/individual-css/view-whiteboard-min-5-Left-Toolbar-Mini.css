@@ -1,0 +1,41 @@
+/***********
+************
+************
+************
+************
+************
+WHITEBOARD - LEFT TOOLBAR
+************
+************
+************
+************
+************
+************/
+/**MINI*/
+[class*="_whiteboardToolbarLeft"]{
+		transition: .24s;
+		max-height: 1.75rem;
+		overflow: hidden;
+		transition-delay: 1.5s;
+		opacity: .25;
+		
+}
+[class*="_whiteboardToolbarLeft"]:is(:hover,:focus-within,:focus){
+		max-height: 400px;
+		transition-delay: .5s;
+		opacity: 1;
+}
+/**/
+/*******
+PUT IT AT THE BOTTOM
+********/
+[class*="whiteboardToolbarLeft"] {
+		bottom: 300px!important;
+		top: unset !important;
+}
+
+@media (max-width:850px) {
+		[class*="whiteboardToolbarLeft"] {
+				bottom:480px !important;
+		}
+}

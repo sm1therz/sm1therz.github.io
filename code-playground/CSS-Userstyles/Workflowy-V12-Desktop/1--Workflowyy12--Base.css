@@ -7,7 +7,7 @@
     box-sizing: border-box;
 } 
 
-html,
+html, 
 body,
 #app, 
 #app .page,
@@ -38,6 +38,7 @@ body,
     z-index: 2;
 }
 
+/* ! Im also a bookmark */
 
 /****
 BOX SHADOW TESTING - BOARDS
@@ -1010,7 +1011,7 @@ NOTES > CONTENT only*/
     margin-bottom:0px;
 }
 .project[class*="header"].noted:not(.root) > .notes {
-    margin-bottom: var(--wf-space-s) !important;;
+    margin-bottom: var(--wf-space-s) !important;
 }
 
 
@@ -1655,10 +1656,10 @@ HIGHLIGHT - CODE
 
 }
 #app .project:not([class*="header"]) > .name > .content code{
-    font-size: calc(var(--name-fontSize) - 3.75px);
+    font-size: calc(var(--name-fontSize) - 3.75px) !important;
 }
 #app .project.root > .name > .content code{
-    font-size: calc(var(--root-font-size) - 6px);
+    font-size: calc(var(--root-font-size) - 6px) !important;
 }
 
 
@@ -4508,8 +4509,8 @@ padding-bottom: calc(var(--content-PadTopBtm) + 0px) !important;
 
 #app .boardColumn > .name > .contentEditablePlaceholderWrapper * {
     position: absolute !important;
-    font-size: unset !important;;
-    line-height: unset !important;;
+    font-size: unset !important;
+    line-height: unset !important;
         font-size: var(--name-fontSize) !important;
     line-height: var(--name-lineHeight) !important;
     top: unset !important;
@@ -4898,6 +4899,36 @@ max-width: calc(100% - 70px) !important;
 }
 
 
+#app .project:is(.board) .project:not([class*="header"]) > .name > .content code {
+    font-size: calc(var(--name-fontSize) - 1.5px) !important;
+    -webkit-font-smoothing:subpixel-antialiased !important;
+    letter-spacing: -.2px;
+    padding-left: 4px;
+    padding-right:3.5px !important; 
+    font-weight: 199 !important;
+}
+#app .project:is(.board) .project:is([class*="header"]) > .name > .content code {
+    font-size: calc(var(--name-fontSize) + 1px) !important;
+    -webkit-font-smoothing:subpixel-antialiased !important;
+    letter-spacing: -.2px;
+    padding-left: 4px;
+    padding-right:3.5px !important; 
+    font-weight: 199 !important;
+}
+#app .project:is(.board) .project:is([class*="header1"]) > .name > .content code {
+    font-size: calc(var(--name-fontSize) + 2.5px) !important;
+}
+#app .project:is(.board) .project:is([class*="header2"]) > .name > .content code {
+    font-size: calc(var(--name-fontSize) + 1px) !important;
+}
+
+#app .project:is(.board) .project:is([class*="header3"]) > .name > .content code{
+    font-size: calc(var(--name-fontSize) + 0px) !important;
+    padding-bottom:0px; 
+    padding-top:0px;
+}
+
+
 
 
 /*******************************
@@ -4976,6 +5007,7 @@ BOARD ROOT DESIGN ADJUST
 #app .project.board.root .boardColumn > .name > .expand,
 #app .project.board.root .boardColumn > .name > .menu {
   --btn-MargTop: 9px !important;
+  top:var(--btn-MargTop) !important;
 }
 
 /*****
@@ -5354,7 +5386,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .board.root .boardCard > .children > .project.comment,
 #app .board.root .boardCard > .children > .project.comment + .comment{
   margin-top: 0px !important;
-  margin-bottom: 0px !important;;
+  margin-bottom: 0px !important;
 }
 #app .board.root .boardCard > .children > .comment + .comment {
   border-top-width: 0px !important;
@@ -5501,7 +5533,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 #app .page .board.root .boardCard > .children > .project.comment{
   margin-left: calc(var(--children-Indent) * .5)!important;
   max-width: calc(100% - var(--children-Indent) * .5)!important;
-  padding-left: 0px !important;; 
+  padding-left: 0px !important; 
 }
 #app .page .board.root .boardColumn > .children > .boardCard > .children > .project.comment:first-of-type,
 #app .page .board.root .boardColumn > .children > .boardCard > .children > .project:not(.comment) + .project.comment,
@@ -7006,7 +7038,7 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 }
 #app .dashboard-card.comment:before {
   top: 0px !important;
-  background: var(--dashCardCommentBrdClr);;
+  background: var(--dashCardCommentBrdClr);
 }
 
 #app .root > .children > .dashboard-card.comment ~ .dashboard-card.comment:last-child {
@@ -7077,8 +7109,8 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 }
 .addedToSelection {
   --dashBg-Color2:var(--ADDED-TO-SELECTION--BG);
-  --dashBg-Color1:var(--ADDED-TO-SELECTION--BG);;
-  --COMMENT-CONTAINER--BG:var(--ADDED-TO-SELECTION--BG);;
+  --dashBg-Color1:var(--ADDED-TO-SELECTION--BG);
+  --COMMENT-CONTAINER--BG:var(--ADDED-TO-SELECTION--BG);
 
 }
 
@@ -7469,7 +7501,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 #app .dashboard-card.comment:before {
   top: 0px !important;
-  background: var(--dashCardCommentBrdClr);;
+  background: var(--dashCardCommentBrdClr);
 }
 #app .dashboard-card.comment:before,
 #app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment.thread:not(.comment .comment):before{
@@ -7507,7 +7539,19 @@ EXPAND COLLAPSE BORDER ANIMATION
   --COMMENT-CONTAINER--BG:hsla(196, 28%, 30%, 1) !important;
   --COMMENT--BG--even:hsla(196, 28%, 22%, 1) !important;
 }
+/*******************************
+********************************
+! DAILY NOTE / JOURNAL / CALENDAR
+********************************
+********************************/
+.project > .name > .bullet + span {
+    margin-left: var(--children-Indent);
+    padding-left: var(--content-PadLeftRight);
+}
 
+.project > .name > .bullet + span + .content {
+    margin-left: 0px;
+}
 /*******************************
 ********************************
 ! PRESENTATION
@@ -8439,7 +8483,7 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
   right: 0px;
   padding-bottom: 100px;
   margin: unset !important;
-  padding-top: var(--floatCommentBtnHeaderH) !important;;
+  padding-top: var(--floatCommentBtnHeaderH) !important;
   
 }
 html #app .floating-comments-container > .vertical-scrollable-container > .dashboard-card.root > .children {
@@ -8616,7 +8660,7 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
   display: flex !important;
 }
 #app .project.board.root .comment.boardColumn > .commentAttribution{
-  display: none !important;;
+  display: none !important;
 }
 #app .project.board.root .boardColumn.comment > .children > .boardCard.comment:first-child,
 #app .project.board.root > .children > .boardColumn.comment > .children > .boardCard:first-child{

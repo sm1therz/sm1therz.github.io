@@ -19,8 +19,16 @@
 	--testBrdW:0px;
 	--testMobileBrdW:0px
 }
-/**MAIN*/
 
+/**MAIN*/
+/**
+EXPAND
+***/
+.project:not(.dashboard,.board) .project > .name > .expand:not(.project.board .name > .expand, .dashboard .name > .expand) {
+	transform: scale(1.20) !important;
+	transform-origin: right;
+
+}
 /****************
 BUTTON MARGIN TOP
 *****************/
@@ -61,6 +69,7 @@ PARAGRAPH MARGIN
 .project:not([class*="head"]) > .name > .content:empty:before{
 	height: 28px !important;
 }
+
 /********
 *********
 *********
@@ -146,7 +155,7 @@ HIGHLIGHTS , UNDERLINES
 *****************/
 #app .project > .name > .content {
 	width: 100% !important;
-	max-width: 800px !important;
+	max-width: 1200px !important;
 }
 
 /****************
@@ -866,6 +875,10 @@ QUICK SWITCHER - MOBILE
 	padding: 6px 9px !important;
 }
 
+.is-mobile #app .dialog-backdrop .dialog-box .switcher-option {
+padding-top:9px !important;
+padding-bottom:9px !important;
+}
 
 
 /***************
@@ -882,6 +895,12 @@ TOP HEADER
 	height: 1px;
 	background: var(--COMMENT-CONTAINER--BORDER-CLR);
 	opacity: .4
+}
+
+/* MOBILE BREADCRUMBS*/  
+
+._1qonciq {
+gap:10px !important;
 }
 
 /*******************************
@@ -968,8 +987,8 @@ SWIPE MENU
 	max-width: 70px !important;
 	z-index: 949494;
 	backdrop-filter: blur(30px);
-	top: 0;
-	bottom: 0;
+	top: 10px;
+	bottom: unset;
 }
 .root > .children > .project > .name .swipe-menu {
 	left: calc(100vw - var(--children-Indent) * 1);
@@ -1027,6 +1046,31 @@ SWIPE MENU
 
 .project.open > .name:after, .project.references > .children .project.open > div:first-child:after, .project.references > .children .project.open > .children:after{
 	z-index: 0;
+}
+
+
+/*******************************
+********************************
+HEADER BULLETS
+********************************
+********************************/
+
+#app .project.header1 > .name > .bullet:not(#app .board .header1 > .name > .bullet), #app .project.header1 > .name > .prefix:not(#app .board .header1 > .name > .prefix), #app .project.header1 > .name > .expand:not(#app .board .header1 > .name > .expand){
+		top: 7px !important;
+}
+#app .project.header2 > .name > .bullet:not(#app .board .header2 > .name > .bullet), #app .project.header2 > .name > .prefix:not(#app .board .header2 > .name > .prefix), #app .project.header2 > .name > .expand:not(#app .board .header2 > .name > .expand){
+		top: 5px !important;
+}
+#app .project.header3 > .name > .bullet:not(#app .board .header3 > .name > .bullet), #app .project.header3 > .name > .prefix:not(#app .board .header3 > .name > .prefix), #app .project.header3 > .name > .expand:not(#app .board .header3 > .name > .expand){
+		top: 5px !important;
+}
+/*******************************
+********************************
+DIVIDER
+********************************
+********************************/
+#app .project.divider:not(.collapsed,.open) > .name > .bullet:not(.board.project > .children .bullet) {
+		opacity: 0 !important; 
 }
 /*******************************
 ********************************

@@ -1,0 +1,80 @@
+/************
+*************
+! TOOLBAR - V1
+*************
+*************/
+:root {
+		--toolBarBgContainer: tr;
+		--toolBarBrdClr: hsl(220, 10%, 87%);
+		--toolBarBgBar: hsl(220, 60%, 91%);
+		--toolbarButtonBg-Hover: hsl(210, 0%, 50%,.3);
+		--toolBarButtonBg-Active: hsl(200, 40%, 50%,.5);
+		--toolBarButtonSpecialBg:hsl(200, 40%, 50%,.5);
+}
+
+
+/*Toolbar*/
+.docs-grille-gm3 #docs-chrome:not(.docs-hub-chrome),
+.docs-grille-gm3.docs-body-pageless #docs-align-palette,
+.docs-grille-gm3.docs-body-pageless #docs-align-palette .goog-toolbar-button,
+.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-button,
+.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-combo-button,
+.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-menu-button,
+.docs-grille-gm3.docs-body-pageless .docs-toolbar-more-toolbar,
+.docs-grille-gm3.docs-body-pageless.docs-gm #docs-toolbar-wrapper,
+.docs-grille-gm3 #docs-omnibox-toolbar .docs-omnibox-input {
+		background: var(--toolBarBgContainer) !important;
+}
+
+/*toolbar - Button - Hover*/
+.docs-grille-gm3 .trix-palette .goog-toolbar-menu-button-hover,
+.docs-grille-gm3.docs-gm #docs-align-palette .goog-toolbar-button-hover,
+.docs-grille-gm3.docs-gm .clean-palette .goog-palette-cell-hover,
+.docs-grille-gm3.docs-gm .docs-main-toolbars .goog-toolbar-button-hover,
+.docs-grille-gm3.docs-gm .docs-main-toolbars .goog-toolbar-menu-button-hover,
+.docs-grille-gm3.docs-gm .docs-toolbar-zoom-combobox.goog-toolbar-combo-button-hover {
+		background: var(--toolbarButtonBg-Hover) !important;
+}
+
+/*toolbar - Button - Active*/
+.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-button.goog-toolbar-button-checked,
+.docs-grille-gm3.docs-gm #docs-align-palette .goog-toolbar-button-checked,
+.docs-grille-gm3.docs-gm .clean-palette .goog-palette-cell-selected,
+.docs-grille-gm3.docs-gm .trix-palette .goog-palette-cell-selected {
+		background: var(--toolBarButtonBg-Active) !important;
+}
+
+/******
+toolbar container
+*******/
+/*toolbar container*/
+.docs-grille-gm3.docs-body-pageless #docs-align-palette,
+.docs-grille-gm3.docs-body-pageless #docs-align-palette .goog-toolbar-button,
+.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-button,
+.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-combo-button,
+.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-menu-button,
+.docs-grille-gm3.docs-body-pageless .docs-toolbar-more-toolbar,
+.docs-grille-gm3.docs-body-pageless.docs-gm #docs-toolbar-wrapper,
+.docs-grille-gm3 #docs-header:not(.docs-hub-appbar) .docs-titlebar-buttons {
+		background: var(--toolBarBgContainer);
+}
+/*toolbar container - Button - Hover*/
+.docs-grille-gm3 .docs-menubar .goog-control-hover,
+.docs-grille-gm3 .docs-menubar .goog-control-open {
+		background: var(--toolbarButtonBg-Hover);
+}
+/*toolbar container - Button - Active*/
+/*****
+ COLLAPSED / OPEN
+******/
+.docs-butterbar-container.docs-butterbar-container-compact ~ #docs-bars:before {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: var(--toolBarBrdClr);
+		z-index: 2
+}

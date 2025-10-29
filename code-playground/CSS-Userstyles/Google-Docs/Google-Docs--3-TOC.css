@@ -1,0 +1,144 @@
+/************
+*************
+TOC
+*************
+*************/
+:root {
+		--tocTextSize: 14px;
+		--tocLineHeight: 20px;
+}
+.left-sidebar-container-content {}
+
+.outlines-widget-chaptered .kix-outlines-widget-header-container{
+		margin-right: 1px;
+}
+.navigation-widget-content {
+		padding-right: 10px !important;
+}
+.navigation-widget-content::-webkit-scrollbar {
+		width: 0px;
+}
+#docs-editor .navigation-widget-content,
+.navigation-item-list.goog-container,
+.navigation-item {
+		padding-right: 0px !important;
+}
+.navigation-item[aria-label] .navigation-item-content:before {
+		content: "#";
+		display: block;
+		position: absolute;
+		opacity: .5;
+		font-size: .8em;
+		left: 5px;
+}
+.left-sidebar-container .navigation-item-content-container {
+		display: flex !important;
+		align-items: center !important;
+}
+.outlines-widget .navigation-item {
+		height: auto !important;
+		position: relative;
+}
+.outlines-widget .navigation-item-content {
+		font-size: var(--tocTextSize) !important;
+		line-height: var(--tocLineHeight) !important;
+		height: unset !important;
+		min-height: unset !important;
+}
+.outlines-widget-chaptered .navigation-item-content {}
+
+:root {
+		--itemPadTopBtm:7px;
+}
+.outlines-widget .navigation-item-content {
+		white-space: unset !important;
+		text-overflow: unset !important;
+		padding-right: var(--deleteBtnW);
+		padding-top: var(--itemPadTopBtm) !important;
+		padding-bottom: var(--itemPadTopBtm) !important;
+}
+.navigation-item-content-container,
+.navigation-item-content-container * {
+		font-size: unset !important;
+		line-height: unset !important;
+}
+.navigation-item-content-container[aria-label*="level 1"] .navigation-item-content {
+		--tocTextSize: 15px;
+		font-weight: 550 !important;
+		color: black !important;
+}
+.navigation-item-content-container[aria-label*="level 2"] .navigation-item-content {
+		--tocTextSize: 15px;
+		font-weight: 550 !important;
+		color:black !important;
+		
+		
+}
+.navigation-item-content-container[aria-label*="level 3"] .navigation-item-content{
+		color: hsla(0,0%,10%) !important;
+		font-weight: 450 !important;
+}
+#kix-appview .navigation-item.location-indicator-highlight .navigation-item-content{
+		color: hsl(217, 100%, 50%) !important;
+}
+
+
+
+/***
+DELETE BUTTON
+***/
+:root {
+		--deleteBtnW: 24px;
+}
+.outlines-widget-chaptered .navigation-widget-row-controls {
+		z-index: 9494949;
+		border-radius: 3px;
+		transition: .14s;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+
+.outlines-widget-chaptered .navigation-widget-row-controls > div {
+		width: var(--deleteBtnW);
+		height: var(--deleteBtnW);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+.outlines-widget-chaptered .navigation-widget-row-controls:hover {
+		background: hsla(0, 0%, 50%, .2)!important;
+}
+
+/*selected*/
+.navigation-item .navigation-item-vertical-line-middle {
+		height: 100%
+}
+
+.navigation-item {
+		border-top-right-radius: 30px;
+		border-bottom-right-radius: 30px;
+		transition: .12s;
+}
+/*
+.navigation-item:hover{
+		background: hsl(215, 0%, 50%,.05) !important;
+}*/
+.location-indicator-highlight.navigation-item {
+		background: hsl(215, 100%, 50%, .1) !important;
+}
+/*PADDING*/
+.outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-1 {
+		padding-left: 40px;
+}
+.outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-2 {
+		padding-left: 60px;
+}
+
+.outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-3 {
+		padding-left: 80px;
+}
+.outlines-widget .outlines-widget-chaptered .chapter-container .navigation-item .navigation-item-level-4 {
+		padding-left: 100px;
+}

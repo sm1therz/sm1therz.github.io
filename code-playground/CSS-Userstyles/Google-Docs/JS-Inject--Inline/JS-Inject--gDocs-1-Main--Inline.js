@@ -1,0 +1,568 @@
+(function() {
+	let style = `<style>
+
+ /**root*/
+
+/*COMMENTS*/
+/************
+************* 
+RIGHT SIDEBAR / COMMENTS
+*************
+*************/
+:root {
+		--comment-bg: white;
+		--commentTxtClr1: #444746;
+		--commentTxtClr2: hsla(0, 0%, 50%, 0.8);
+		--commentBrdClr:hsla(0, 0%, 50%, .5);
+}
+
+/*ENTIRE COMMENT CONTAINER*/
+/*RESIZING DRAGGABLE BAR*/
+.docs-grille-gm3 .docos-anchoredreplyview .docos-anchoredreplyview-body {
+		color: var(--commentTxtClr1);
+		;
+}
+.right-gutter-resizer-handle-grabber.right-gutter-resizer-resizer-component {
+		display: block !important;
+		transition: .4s;
+		box-shadow: none !important;
+		filter: none !Important;
+		opacity: .2;
+		border-color: transparent;
+		border: none;
+}
+
+.right-gutter-resizer-resizer-component:hover .right-gutter-resizer-handle-grabber.right-gutter-resizer-resizer-component {
+		background: white !important;
+		opacity: 1;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .1) !important;
+		border-color: rgba(0, 0, 0, .2) !important;
+}
+
+
+/*COMMENT - OUTER CONTAINER*/
+#docos-stream-view .docos-docoview-tesla-conflict {
+		border: 1px solid hsla(0,0%,50%,.2);
+		box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+		transition: .1s !important;
+		border-radius: 10px;
+}
+.docos-docoview-tesla-conflict.docos-anchoreddocoview.docos-minimized-view-mode.docos-minimized-view {
+		border-color: transparent !important;
+}
+
+/*COMMENT - OUTER CONTAINER - ACTIVE*/
+#docos-stream-view .docos-docoview-tesla-conflict.docos-anchoreddocoview.docos-docoview-active {
+		border-color: rgba(0, 0, 0, .2) !important;
+		box-shadow: 0px 10px 25px -5px rgba(0, 0, 0, .2);
+}
+
+#docos-stream-view .docos-anchoreddocoview-internal {
+		border: none !Important;
+		border-radius: 10px !important;
+}
+#docos-stream-view .docos-docoview-rootreply > div {
+		border-top: none !important;
+		padding-top: 8px;
+		padding-bottom: 10px;
+}
+
+/*EMOJI WRAPPER*/
+.docos-replyview-emojis-wrapper {
+		padding-top: 0px;
+}
+
+/*AUTHOR*/
+#docos-stream-view .docos-anchoredreplyview-header {
+		height: 25px !important;
+		margin-bottom: 6px !important;
+}
+/* AUTHOR IMAGE */
+#docos-stream-view .docos-anchoredreplyview-avatar-holder {
+		max-width: unset;
+		width: unset;
+}
+#docos-stream-view .docos-avatar {
+		display: none;
+}
+#docos-stream-view .docos-minimized-view-mode.docos-minimized-view .docos-avatar {
+	display: inline-flex;
+}
+/*AUTHOR TEXT*/
+#docos-stream-view .docos-author,
+#docos-stream-view .docos-anchoredreplyview-timestamp,
+#docos-stream-view .docos-replyview-timestamp {
+		line-height: 1.3 !important;
+		font-size: 8px;
+		height: unset;
+		display: inline;
+}
+/*AUTHOR TIME*/
+#docos-stream-view .docos-anchoredreplyview-timestamp,
+#docos-stream-view .docos-replyview-timestamp {
+		font-size: 10px
+}
+.docs-gm .docos-anchoredreplyview-authortimestamp,
+.docs-gm .docos-anchoredreplyview-authortimestamp * {
+		color: var(--commentTxtClr2) !important;
+}
+
+.docs-gm .docos-anchoredreplyview {
+		border-top: 1px solid hsl(0, 0%, 0%, .12) !important;
+}
+
+
+.docs-gm .docos-anchoredreplyview-authortimestamp {
+		justify-content: flex-start;
+		margin-top: 0px;
+		padding-left: 0px !important;
+}
+.docs-gm .docos-docoview-rootreply .docos-anchoredreplyview-authortimestamp{
+		margin-top: 5px;
+}
+.docos-anchoreddocoview-internal {
+		border: 1px solid hsl(0, 0%, 0%, .1);
+}
+
+#docos-stream-view .docos-anchoredreplyview-header{
+		margin-bottom: 0px !important;
+}
+#docos-stream-view .docos-docoview-rootreply .docos-anchoredreplyview-header{
+		margin-bottom: 8px !important;
+}
+
+/*ACTIVE*/
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview .docos-anchoredreplyview,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview-input-pane,
+.docos-anchoreddocoview,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoreddocoview-input-pane,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoredreplyview.docs-grille-gm3.docs-gm .docos-anchoreddocoview,
+.docs-grille-gm3.docs-gm .docos-anchoreddocoview.docos-docoview-active,
+.docs-grille-gm3.docs-gm .docos-anchoreddocoview.docos-docoview-active:hover,
+.docs-grille-gm3.docs-gm .docos-docoview-active .docos-anchoreddocoview-input-pane,
+.docs-grille-gm3.docs-gm .docos-docoview-active .docos-anchoredreplyview,
+.docs-grille-gm3.docs-gm .docos-docoview-active:hover .docos-anchoreddocoview-input-pane,
+.docs-grille-gm3.docs-gm .docos-docoview-active:hover .docos-anchoredreplyview,
+.docos-replyview-body.docos-anchoredreplyview-body.docos-replyview-body-emoji-reactable.docos-replyview-body-emoji-reactable-background {
+		background: white !important;
+}
+
+
+.docs-grille-gm3 .docos-anchoredreplyview .docos-collapsed-replyview-emoji-reactions > .docos-replyview-static {
+		height: auto !important;
+}
+
+:root {
+		--emptyBg: hsl(300, 0%, 96%);
+		--editBrdClr: hsl(300, 0%, 88%)
+}
+.docs-gm .docos-anchoreddocoview .docos-anchoreddocoview-input-pane .docos-input-textarea {
+		padding: 10px;
+		border-radius: 10px;
+		background: var(--emptyBg);
+		border-color: var(--editBrdClr);
+}
+
+.docos-collapsible-replyview {
+		margin-top: 0px;
+}
+
+/*PADDING*/
+/********
+*********
+INPUT / TEXTAREA
+*********
+*********/
+
+:root {
+		--commentInputPadLR:6px;
+		--commentInputPadTopBtm:4px;
+}
+
+
+#docos-stream-view :is(.docos-anchoredreplyview-body, .docos-replyview-body.docos-anchoredreplyview-body, .docos-input-textarea) {
+	font-size: 13.75px !important;
+	letter-spacing: .1px !important;
+	line-height: 19.5px !important;
+		padding: var(--commentInputPadTopBtm) var(--commentInputPadLR) !important;
+		border-radius: 14px !important;
+		margin: 0px !important;
+		font-family: Google Sans,Roboto,sans-serif !important;
+		color: var(--commentTxtClr1) !important;
+		box-sizing: border-box !important;
+		margin-top: 2px !important;
+		margin-bottom: 0px !important;
+		cursor: text !important;
+		border: 1px solid hsla(0,0%,50%,.001);
+		min-width: calc(100% + var(--commentInputPadLR) * 2);
+		margin-left: calc(var(--commentInputPadLR) * -1) !important;
+		min-height: unset !important;
+}
+
+/********
+********* 
+INPUT / TEXTAREA > EDITING
+*********
+*********/
+.docos-input {
+		overflow-x: visible;
+}
+#docos-stream-view .docos-input-textarea {
+
+		outline-offset: 0px !important;
+		background: transparent;
+		border-color:var(--editBrdClr) !important;
+		transition: .5s !important;
+
+}
+
+/********
+********* 
+INPUT / TEXTAREA > EDITING > BUTTONS
+*********
+*********/
+#docos-stream-view .docos-input .docos-input-buttons > [role="button"] {
+	padding: 2px 10px !important;
+	height: unset !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+		margin-top: 0px !important; 
+		border: unset !important;
+}
+.docs-grille-gm3 .docos-input-contenteditable:empty:before {
+		opacity: .4;
+		padding-left: 0px;
+		padding-top: 0px;
+		color: hsl(0, 0%, 48%)
+}
+
+
+
+/*COMMENTS - RESOLVE / DOTS BUTTONS*/
+.docs-grille-gm3 .docos-anchoredreplyview-buttonholder {
+		opacity: 1;
+}
+
+.docos-replyview-body b {
+		filter: contrast(2);
+}
+[class*="active"] .docos-replyview-body b {
+		
+}
+/*button holder */
+/*3 DOTS BUTTON*/
+#docos-stream-view .docos-replyview  :is(.goog-menu-button,.docs-suggestion-button){
+		opacity: .23;
+		transition: .2s;
+		border-radius: 7px;
+		width: 26px;
+		height: 26px;
+}
+#docos-stream-view .docos-replyview.docos-replyview-suggest :is(.docs-suggestion-button) .docs-icon {
+margin: unset;
+}
+#docos-stream-view .docos-replyview :is(.goog-menu-button):hover,
+#docos-stream-view .docos-replyview:hover :is(.docs-suggestion-button) {
+		opacity: 1;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, .15);
+}
+/*RESOLVE BUTTON*/
+#docos-stream-view .docos-replyview-resolve-button {
+		opacity: 1;
+		visibility: visible;
+		transition: .2s;
+		position: absolute;
+		top: 7px;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0);
+		border-radius: 9px;
+		transform: scale(.8);
+		filter: saturate(0);
+		background: hsla(0, 0%, 50%, 0);
+		right: 44px;;
+		opacity: 0.1
+}
+
+#docos-stream-view .docos-replyview-resolve-button:hover {
+		opacity: 1;
+		background: hsla(0, 0%, 50%, .2);
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+
+		
+}
+#docos-stream-view .docos-docoview-active .docos-replyview-resolve-button {
+		visibility: visible;
+}
+
+
+
+
+
+.docos-showrepliesbutton-collapsed-internal-container {
+		background: var(--comment-bg) !important;
+}
+
+/*ACTIVE*/
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview .docos-anchoredreplyview,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview-input-pane,
+.docos-anchoreddocoview,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoreddocoview-input-pane,
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoredreplyview.docs-grille-gm3.docs-gm .docos-anchoreddocoview,
+.docs-grille-gm3.docs-gm .docos-anchoreddocoview.docos-docoview-active,
+.docs-grille-gm3.docs-gm .docos-anchoreddocoview.docos-docoview-active:hover,
+.docs-grille-gm3.docs-gm .docos-docoview-active .docos-anchoreddocoview-input-pane,
+.docs-grille-gm3.docs-gm .docos-docoview-active .docos-anchoredreplyview,
+.docs-grille-gm3.docs-gm .docos-docoview-active:hover .docos-anchoreddocoview-input-pane,
+.docs-grille-gm3.docs-gm .docos-docoview-active:hover .docos-anchoredreplyview,
+.docos-replyview-body.docos-anchoredreplyview-body.docos-replyview-body-emoji-reactable.docos-replyview-body-emoji-reactable-background {
+		background: var(--comment-bg) !important;
+}
+
+
+/********
+MENU ITEMS
+*********/
+#docs-omnibox-toolbar .goog-menuitem .goog-menuitem-content .goog-option-selected {
+		background-image: var(--iconDocsMenuCheck) !important;
+		filter: unset !important;
+		background-size: 90% !important;
+		background-position: top center !important;
+}
+
+.docos-docoview-tesla-conflict, .docos-anchoreddocoview-content, .docos-anchoreddocoview-internal{
+		max-height: unset !important;
+}
+
+:root {
+		--commentWidth:300px;
+		--commentMaxH:19200px;
+}
+
+
+/*NORMAL MODE*/
+.docs-gm .docos-docoview-tesla-conflict{
+		min-width: var(--commentWidth) !important;
+				--commentWidth:280px;
+		transform: translateX(calc(var(--commentWidth) * 0)) !important;
+		transform-origin: right;
+		right: unset !important;
+
+}
+
+.docs-gm .docos-docoview-tesla-conflict.docos-docoview-active{
+		
+}
+/******
+ANCHORED
+*******/
+
+/******
+INACTIVE - REPLIES
+*******/
+.docs-gm .docos-docoview-tesla-conflict .docos-replyview-comment {
+		display: block !important;
+}
+.docs-gm .docos-replyview-comment  .docos-replyview-body,
+.docos-streamdocoview-content .docos-replyview-static{
+		max-height: var(--commentMaxH) !important;
+		height: auto !important;
+}
+.docs-gm .docos-docoview-tesla-conflict .docos-replyview-comment  .docos-replyview-body:focus-within{
+}
+.docs-gm .docos-docoview-tesla-conflict .docos-replyview-comment [class*="collapsed"] .docos-replyview-static > .docos-replyview-body{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: block;
+		max-height: var(--commentMaxH) !important;
+		transition: .2s max-height !important;
+
+
+
+}
+
+
+/**REPLIES - SHOW MORE - COLLAPSED*/
+
+
+/******
+ACTIVE - REPLIES
+*******/
+.docs-gm .docos-docoview-tesla-conflict.docos-docoview-active{
+
+}
+
+/****
+SHOW MORE / SHOW LESS BUTTONS*/
+.docos-replyview-static .docos-show-more,
+.docos-replyview-static .docos-show-less{
+		position: relative;
+		padding-top: 2px !important;
+		bottom: -3px;
+		filter: saturate(0) brightness(2.6);
+		background: transparent !important;
+}
+.docos-replyview-static .docos-show-more:hover,
+.docos-replyview-static .docos-show-less:hover{
+				filter: saturate(1) brightness(1);
+		background: #f3f6fc !important;
+}
+.docos-docoview-active .docos-show-more,
+.docos-docoview-active .docos-show-less{
+		filter: saturate(1);
+		
+}
+
+/******
+MINIMIZED
+*******/
+/**ALL MINIMIZED - Replies*/
+.docos-docoview-tesla-conflict.docos-minimized-view-mode.docos-minimized-view .docos-replyview-comment{
+		max-height: 30px !important;
+}
+
+/**MINIMIZED - HOVER*/
+
+.docos-docoview-tesla-conflict.docos-minimized-view-mode{
+
+}
+.docos-docoview-tesla-conflict.docos-minimized-view-mode .docos-replyview-comment {
+		display: block !important;
+		overflow-y:auto !important;
+		transition: 2.15s !important;
+		transition-delay: 1s;
+
+}
+/**MINIMIZED - ACTIVE*/
+
+.docos-docoview-tesla-conflict.docos-minimized-view-mode.docos-docoview-active .docos-replyview-comment {
+		display: block !important;
+
+}
+.docos-docoview-tesla-conflict{
+		right: 20px !important;
+}
+
+.docos-docoview-tesla-conflict.docos-minimized-view-mode,
+.docos-docoview-tesla-conflict.docos-minimized-view-mode.docos-docoview-active{
+		padding: 0px !important;
+		transform: translateX(calc(var(--commentWidth) * -0.8)) !important;
+		transform-origin: right !important;
+		transition: .2s !important;
+		margin-right: -30px !important;
+}
+.docos-docoview-tesla-conflict.docos-minimized-view-mode.docos-minimized-view{
+		transform: translateX(calc(var(--commentWidth) * -1)) !important;
+		--commentWidth:0px;
+}
+.docos-docoview-tesla-conflict.docos-minimized-view-mode{
+		right: unset !important;
+		left: 25px !important;
+}
+
+.docos-showrepliesbutton{
+		display: none !important;
+}
+
+
+
+
+/*****
+CUSTOM SPACING
+******/
+
+div#lineSpacingMenuButton{
+		background: var(--toolBarButtonSpecialBg) !important;
+}
+div#lineSpacingMenuButton:hover{
+		background: var(--toolbarButtonBg-Hover) !important;
+}
+
+/************
+*************
+ICONS
+*************
+*************/
+
+:root {
+		--iconDocsMenuCheck:url('data:image/svg+xml;utf8,<svg width="1300" height="1300" viewBox="0 0 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="30" width="1240" height="1240" rx="210" fill="black"/><rect x="30" y="30" width="1240" height="1240" rx="210" stroke="white" stroke-width="60"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1064.47 358.31C1035.48 329.324 988.489 329.324 959.503 358.31L549.119 768.694C540.527 777.285 526.598 777.285 518.006 768.694L340.542 591.229C311.545 562.233 264.533 562.233 235.536 591.229C206.54 620.226 206.54 667.238 235.536 696.235L480.987 941.685C498.35 959.048 522.173 966.014 544.719 962.583C559.853 960.3 574.417 953.332 586.07 941.679L1064.47 463.278C1093.46 434.292 1093.46 387.296 1064.47 358.31Z" fill="white"/></svg>');
+}
+
+/************
+*************
+DARK READER
+*************
+*************/
+
+
+[data-darkreader-mode] {
+		--comment-bg: hsla(0, 0%, 23%);
+		--commentTxtClr2: hsla(0, 0%, 100%, .35);
+		--commentTxtClr1: hsla(0, 0%, 100%, .99);
+}
+[data-darkreader-mode*="filter"] {
+		--comment-bg: hsla(0, 0%, 93%);
+		--commentTxtClr2: hsla(0, 0%, 30%, .35);
+		--commentTxtClr1: hsla(0, 0%, 20%, .99);
+}
+
+
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] {
+		--commentTxtClr1:hsla(0, 0%, 20%, 0.15);
+		--commentTxtClr2:hsla(0, 0%, 20%, 0.1);
+		--commentBrdClr:hsla(0, 0%, 20%, 0.13);
+		box-shadow: unset !important;
+}
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]{
+		--comment-bg: hsla(0, 0%, 100%,1);
+		background-color: var(--comment-bg) !important;
+}
+
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][role="listitem"]:hover,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"][role="listitem"],
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"][role="dialog"]{
+		box-shadow: 0 0 10px 0px white !important;
+		filter: invert(.05) !important;
+		--comment-bg: hsla(0, 0%, 93%,1) !important;
+		--commentTxtClr1:hsla(0, 0%, 20%, 0.26) !important;
+		--commentTxtClr2:hsla(0, 0%, 40%, 1.1) !important;
+		--commentBrdClr:hsla(0, 0%, 20%, 0.13);
+		border-color: transparent !important;
+		padding-right: 0px !important;
+		
+}
+
+/*bold text*/
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] [class*="view-body"],
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] [class*="view-body"] *{
+		color: var(--commentTxtClr1)!important;
+}
+
+
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover [class*="view-body"],
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] [class*="view-body"],
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover [class*="view-body"] span,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] [class*="view-body"] span,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"]:hover .docos-anchoredreplyview-authortimestamp,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] .docos-anchoredreplyview-authortimestamp,
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"] .docos-input-textarea{
+		--commentTxtClr1:hsla(0, 0%, 10%, 1) !important;
+		--commentTxtClr2:hsla(0, 0%, 20%, 0.26) !important;
+}
+[data-darkreader-mode*="filter"] [class*="kix-discussion"] [class*="docos-docoview"][class*="active"] > div {
+}
+
+
+
+/*MOBILE BANNER*/
+.docs-ml-promotion.docs-ml-promotion-off-screen.docs-ml-promotion-shown{
+	display: none;
+}
+	
+</style>`;
+
+	document.head.insertAdjacentHTML("beforeend", style);
+})();
