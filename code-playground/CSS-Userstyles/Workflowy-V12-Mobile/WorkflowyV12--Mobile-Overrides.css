@@ -148,7 +148,7 @@ HIGHLIGHTS , UNDERLINES
 *****************/
 #app .project > .name > .content {
 	width: 100% !important;
-	max-width: 800px !important;
+	max-width: 1200px !important;
 }
 
 /****************
@@ -868,6 +868,10 @@ QUICK SWITCHER - MOBILE
 	padding: 6px 9px !important;
 }
 
+.is-mobile #app .dialog-backdrop .dialog-box .switcher-option {
+padding-top:9px !important;
+padding-bottom:9px !important;
+}
 
 
 /***************
