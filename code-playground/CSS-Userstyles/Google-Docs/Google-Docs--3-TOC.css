@@ -72,6 +72,10 @@ TOC
 		font-weight: 550 !important;
 		color:black;
 }
+.navigation-item-content-container[aria-label*="level 3"] .navigation-item-content {
+		font-weight: 475 !important;
+		color:hsla(0,0%,10%);
+}
 
 /***
 DELETE BUTTON
