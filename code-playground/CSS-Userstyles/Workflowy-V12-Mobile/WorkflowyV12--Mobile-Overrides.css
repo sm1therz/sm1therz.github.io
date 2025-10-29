@@ -21,7 +21,14 @@
 }
 
 /**MAIN*/
+/**
+EXPAND
+***/
+.project:not(.dashboard,.board) .project > .name > .expand:not(.project.board .name > .expand, .dashboard .name > .expand) {
+	transform: scale(1.20) !important;
+	transform-origin: right;
 
+}
 /****************
 BUTTON MARGIN TOP
 *****************/

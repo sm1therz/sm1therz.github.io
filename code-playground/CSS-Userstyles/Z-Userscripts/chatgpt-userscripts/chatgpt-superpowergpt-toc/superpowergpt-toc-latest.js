@@ -112,7 +112,14 @@ div#minimap-toggle {
 	 align-items:flex-start;
 	 justify-content:flex-start;
 	 gap:2px;
+	 max-height:10px;
+	 overflow:hidden;
+	 transition:.2s;
 	 
+}
+
+div#minimap-toggle:hover {
+max-height:100px;
 }
 div#minimap-toggle:before {
 		content:"Mini Map Filter";
@@ -126,6 +133,7 @@ div#minimap-toggle {
 	 right:calc(var(--minimapWidth) + 10px);
 
 }
+
 }
 div#minimap-toggle button {
 background:hsla(0,0%,50%,.1);
