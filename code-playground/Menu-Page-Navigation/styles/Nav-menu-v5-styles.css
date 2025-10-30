@@ -149,3 +149,11 @@ BUTTONS > COPY / PASTE
 	font-size: ;
 	letter-spacing: 2px;
 }
+
+/********
+OPEN / CLOSE BUTTON
+********/
+button.rsm-nav-btn.rsm-nav-reload {
+border:unset !important;
+
+}
