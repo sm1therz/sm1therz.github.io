@@ -12,9 +12,9 @@ TESTING BORDERS
 /********
 SIZES
 *********/
-:root { 
+:root {
   /*sidebar top row*/
-  --sidebarTopRowHeight:50px;
+  --sidebarTopRowHeight: 50px;
   /*sidebar items*/
   --sidebarItemFontSize: 14px;
   --sidebarItemBrdRad: 8px;
@@ -31,34 +31,34 @@ SIZES
   --sidebarItemIcnW: 17px;
   --sidebarItemIcnBrdRad: 5px;
   /*sidebar ungrouped chat headers*/
-  --sidebarUngroupedHeaderPadTop:20px;
+  --sidebarUngroupedHeaderPadTop: 20px;
   /*folder icons*/
   --sidebarItemFolderIcnScale: 1.2;
   --sidebarItemFolderIcnSvgPathScale: calc(var(--sidebarItemFolderIcnScale) * 0.6);
   /*message padding*/
-  --msgPadTopBtm:10px;
-  --msgPadLR:20px;
+  --msgPadTopBtm: 10px;
+  --msgPadLR: 20px;
   /*message max-width*/
-  --thread-content-max-width:748px;
+  --thread-content-max-width: 748px;
   /*user message*/
-  --userMsgPad:20px;
-  --userMsgW:80%;
+  --userMsgPad: 20px;
+  --userMsgW: 80%;
   /*edit message nav bottom*/
-  --editMsgNavPadTopBtm:4px;
+  --editMsgNavPadTopBtm: 4px;
   /****/
   /****/
   /****/
   /*editor*/
-  --paragraphMargTopBtm:5px;
+  --paragraphMargTopBtm: 5px;
   /*codeblocks*/
-  --codeBlockPad:10px;
+  --codeBlockPad: 10px;
   /****/
   /****/
   /****/
   /*chat Parameters*/
-  --settingsChatParamItemPadTopBtm:5px;
-  --settingsChatParamItemPadLR:5px;
-  --settingsChatParamGap:5px;
+  --settingsChatParamItemPadTopBtm: 5px;
+  --settingsChatParamItemPadLR: 5px;
+  --settingsChatParamGap: 5px;
   /*settings*/
 }
 /********
@@ -80,8 +80,8 @@ COLORS
   /*message*/
   --msgBrdClr: hsla(0, 0%, 0%, 0.1);
   /*editor*/
-  --codeblockBrdClr:hsla(0, 0%, 50%, .3);
-  --codeblockBgClr:#171717;
+  --codeblockBrdClr: hsla(0, 0%, 50%, .3);
+  --codeblockBgClr: #171717;
 }
 .dark {
   /*main background*/
@@ -92,6 +92,7 @@ COLORS
   --sidebarItemTxtClr: hsl(0, 0%, 95%);
   --sidebarItemBrdClr: hsla(0, 0%, 50%, .1);
   /*button*/
+  --btnBg-Inactive:hsla(0, 0%, 100%, 0.070);
   --btnBg-Hover: hsla(0, 0%, 100%, 0.070);
   --btnBg-Active: hsla(0, 0%, 100%, .051);
   /*folder buttons*/
@@ -100,12 +101,13 @@ COLORS
   /*message*/
   --msgBrdClr: hsla(0, 0%, 100%, 0.05);
   /*editor*/
-  --codeblockBrdClr:hsla(0, 0%, 50%, .3);
-  --codeblockBgClr:#171717;
-
+  --codeblockBrdClr: hsla(0, 0%, 50%, .3);
+  --codeblockBgClr: #171717;
 }
 
-/*LEFT SIDEBAR*/
+/*************
+**************
+LEFT SIDEBAR*/
 :root {
     --sideBarW: 360px;
     --sidebarBgClr: hsl(0, 0%, 8%)
@@ -123,9 +125,20 @@ COLORS
 }
 [class*="dark"]#sidebar {
     --color-gray-950: var(--sidebarBgClr);
+    backdrop-filter: blur(29px) brightness(1.1) contrast(1);
 }
 
-
+@media (max-width:1060px){
+    :root {
+        --sideBarW: 300px;
+    }
+}
+@media (max-width:767px){
+    :root {
+        --sideBarW: 360px;
+        --sidebarBgClr:hsl(0, 0%, 8%,.5);
+    }
+}
 @media (width >=48rem) {
     .md\:max-w-\[calc\(100\%-260px\)\] {
         max-width: calc(100% - var(--sideBarW));
@@ -153,7 +166,7 @@ nav > div > div > div > div[class*="translate"] {
 
 /**************
 ***************
-LEFT SIDEBAR - CONTAINERS
+! LEFT SIDEBAR - CONTAINERS
 ***************
 ***************/
 /********
@@ -295,7 +308,7 @@ ITEM CONTAINER > UNGROUPED CHATS
 
 /**************
 ***************
-LEFT SIDEBAR - ITEMS
+! LEFT SIDEBAR - ITEMS
 ***************
 ***************/
 :root {
@@ -592,7 +605,7 @@ ITEM > PINNED CHATS
 
 /**************
 ***************
-LEFT SIDEBAR - ITEMS - THREE DOT MENU
+! LEFT SIDEBAR - ITEMS - THREE DOT MENU
 ***************
 ***************/
 
@@ -696,40 +709,44 @@ THREE DOT BUTTON > CONTAINER > BUTTON > SVG  > PATH
   opacity: 0;
 }
 
-/*RIGHT SIDEBAR*/
+/**************
+***************
+! RIGHT SIDEBAR
+***************
+***************/
 [role="separator"] + [data-pane] textarea,
-.mt-auto.w-full.bg-gray-50.dark\:bg-gray-900.dark\:text-gray-100.max-h-\[100dvh\].overflow-y-auto.scrollbar-hidden.svelte-fq1rhy .w-full.cursor-pointer textarea{
-  box-shadow: 0 0 0 1px hsla(0,0%,50%,.5);
+.mt-auto.w-full.bg-gray-50.dark\:bg-gray-900.dark\:text-gray-100.max-h-\[100dvh\].overflow-y-auto.scrollbar-hidden.svelte-fq1rhy .w-full.cursor-pointer textarea {
+  box-shadow: 0 0 0 1px hsla(0, 0%, 50%, .5);
   padding: 3px 5px;
   height: 540px;
-  
 }
 
-[role="separator"] + [data-pane] textarea::-webkit-scrollbar{
+[role="separator"] + [data-pane] textarea::-webkit-scrollbar {
   display: block !important;
   width: 5px !important;
 }
 .mt-auto.w-full.bg-gray-50.overflow-y-auto.scrollbar-hidden.svelte-fq1rhy .w-full.cursor-pointer ~ div textarea {
   min-height: 70vh;
   background: black;
-    box-shadow: 0 0 0 1px hsla(0,0%,50%,.5);
+  box-shadow: 0 0 0 1px hsla(0, 0%, 50%, .5);
   padding: 10px !important;
+  border-radius: 3px;
+  margin-top: 5px;
 }
 
 
 /********
 overrides
 *********/
-*:is(#chat-container,.modal) *:is(.space-y-1.text-xs) > div * {
+*:is(#chat-container, .modal) *:is(.space-y-1.text-xs) > div * {
   margin: 0px;
-  border:unset;
+  border: unset;
 }
 
 /*********
 PARAMETER > CONTAINER
 *********/
-
-*:is(#chat-container,.modal) *:is(.space-y-1.text-xs) > div{
+*:is(#chat-container, .modal) *:is(.space-y-1.text-xs) > div {
   padding-top: var(--settingsChatParamItemPadTopBtm);
   padding-bottom: var(--settingsChatParamItemPadTopBtm);
 
@@ -737,33 +754,32 @@ PARAMETER > CONTAINER
   gap: var(--settingsChatParamGap);
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid hsla(0, 0%, 50%,.15);
+  border-bottom: 1px solid hsla(0, 0%, 50%, .15);
   border-top-width: 0px !important;
   margin: 0px !important;
 }
-*:is(#chat-container,.modal) *:is(.space-y-1.text-xs) > div:hover{
+*:is(#chat-container, .modal) *:is(.space-y-1.text-xs) > div:hover {
   background: var(--bgMain);
 }
 /*PARAMETER > BUTTON*/
-
-*:is(#chat-container,.modal) *:is(.space-y-1.text-xs) > div button {
-  border: 1px solid hsla(0, 0%, 50%,.5);
+*:is(#chat-container, .modal) *:is(.space-y-1.text-xs) > div button {
+  border: 1px solid hsla(0, 0%, 50%, .5);
 }
 
-*:is(#chat-container,.modal) *:is(.space-y-1.text-xs) > div button:hover {
+*:is(#chat-container, .modal) *:is(.space-y-1.text-xs) > div button:hover {
   background: var(--btnBg-Hover)
 }
 
 /*PARAMETER > HIDDEN OPTION*/
-*:is(#chat-container,.modal) *:is(.space-y-1.text-xs) > div > div.flex {
- margin-bottom: calc(var(--settingsChatParamItemPadTopBtm));
+*:is(#chat-container, .modal) *:is(.space-y-1.text-xs) > div > div.flex {
+  margin-bottom: calc(var(--settingsChatParamItemPadTopBtm));
   gap: var(--settingsChatParamGap);
 }
 
 
 /*PARAMETER > INPUT OPTION*/
-*:is(#chat-container,.modal) *:is(.space-y-1.text-xs) > div > div.flex input {
-  box-shadow: inset 0 0 0 1px hsla(0,0%,50%,.2);
+*:is(#chat-container, .modal) *:is(.space-y-1.text-xs) > div > div.flex input {
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 50%, .2);
   padding-left: var(--settingsChatParamItemPadLR);
   padding-right: var(--settingsChatParamItemPadLR);
   padding-top: calc(var(--settingsChatParamItemPadLR) * .5);
@@ -771,9 +787,53 @@ PARAMETER > CONTAINER
   border-radius: 5px;
 }
 
+/********
+*********
+*********
+CHAT CONTROLS BUTTONS
+*********
+*********
+*********/
+:root {
+  --chatCtrlBtnW: 26px;
+  --chatCtrlBtnPad: 4px;
+}
+/********
+TOP RIGHT SETTINGS  BUTTON
+*********/
+nav [aria-label="Controls"]{
+  padding: var(--chatCtrlBtnPad);
+  margin-right: var(--chatCtrlBtnPad);
+  margin-left: var(--chatCtrlBtnPad);
+}
+nav [aria-label="Controls"] svg{
+  width: var(--chatCtrlBtnW);
+  height: var(--chatCtrlBtnW);
+  stroke-width: 1.5 !important;
+  stroke:hsl(0, 0%, 90%) !important;
+}
+/********
+TOP RIGHT X BUTTON
+*********/
 
+/*desktop*/
+#controls-container .flex > *:is([class*="text"]) + button,
+/*mobile*/
+.svelte-fq1rhy .flex > *:is([class*="text"]) + button {
+  padding: var(--chatCtrlBtnPad);
+  background: black;
+  outline: 2px solid hsla(0, 0%, 50%);
+  outline-offset: -2px;
+}
 
+/*desktop*/
+#controls-container .flex > *:is([class*="text"]) + button svg,
+/*mobile*/
+.svelte-fq1rhy .flex > *:is([class*="text"]) + button svg {
 
+  width: var(--chatCtrlBtnW);
+  height: var(--chatCtrlBtnW);
+}
 
 /*********
 ! TOOL TIPS / TEXT SELECTION MENU
@@ -792,7 +852,11 @@ PARAMETER > CONTAINER
 }
 
 
-/*MODALS*/
+/**************
+***************
+! MODALS
+***************
+***************/
 
 
 div[role="dialog"] > div.min-h-fit{
@@ -829,7 +893,11 @@ div[role="dialog"] #tab-interface > div[class*="max-h"]{
 
 
 
-/*SETTINGS*/
+/**************
+***************
+! SETTINGS
+***************
+***************/
 :root {
   --optionHeaderPadLR:.25rem;
   --optionHeaderPadTopBtm:.25rem;
@@ -910,20 +978,42 @@ div[role="dialog"] textarea {
 
 
 
-/*FONT SIZES*/
+/**************
+***************
+! KNOWLEDGE
+***************
+***************/
+input#files-input + div > div.flex > .shrink-0 {
+  flex-shrink: 0;
+  flex-grow: 1;
+  min-width: 500px;
+}
+
+/***************
+! FONT SIZES
+****************/
 :root {
-  
-  /*font-sizes*/
-    --text-sm:.955rem;
-  --text-xs:0.895rem;
+    /*font-sizes - old*/
+    --text-sm: 0.955rem;
+    --text-xs: 0.895rem;
 }
 
-div:is(#messages-container,#messages-container *){
-    --text-sm:0.8rem !important;
-  --text-xs:0.75rem;
+
+
+div:is(#messages-container, #messages-container *) {
+    --text-sm: 0.8rem !important;
+    --text-xs: 0.75rem;
 }
 
-/*PROMPTS*/
+.markdown-prose {
+    font-size: 17px !important;
+}
+
+/**************
+***************
+! PROMPTS
+***************
+***************/
 
 #workspace-container > [class*="grid-cols-3"],
 #workspace-container > [class*="grid-cols-3"] a > div{
@@ -952,7 +1042,11 @@ div:is(#messages-container,#messages-container *){
   
 }
 
-/*MAIN UI ELEMENTS*/
+/**************
+***************
+! MAIN UI ELEMENTS
+***************
+***************/
 
 
 .dark [data-pane-group-id]{
@@ -980,9 +1074,11 @@ NAV
 *******/
 
 
-/****
-PROJECT AREA
-*****/
+/**************
+***************
+! PROJECT AREA
+***************
+***************/
 :root{
   --projectItemPadLR:1rem;
   --projectItemPadTopBtm:.5rem;
@@ -1055,9 +1151,11 @@ OVERRIDES
 
 
 
-/**********
-THREAD / EDITOR / MESSAGE
-***********/
+/**************
+***************
+! THREAD / EDITOR / MESSAGE
+***************
+***************/
 
 /****
 *****
@@ -1142,6 +1240,13 @@ ASSISTANT MESSAGE
 *****
 *****/
 
+
+
+[id*="message-"] > [class*="svelte-"] img {
+  position: sticky;
+  top: 30px;
+}
+
 /*EDIT MESSAGE > BOTTON MENU*/
 [id*="message-"] *:is(.chat-assistant) #response-content-container {
   margin-top: calc(var(--userMsgPad) * .5);
@@ -1195,9 +1300,11 @@ ELEMENTS
 
 
 
-/**********
+/**************
+***************
 ! EDITOR
-***********/
+***************
+***************/
 
 :root {
   --font-size:1rem;
@@ -1397,12 +1504,12 @@ min-width: 50px;
     margin: 1px;
 }
 
-/*EDITOR - CODE BLOCKS*/
-/***********
-************
-!CODE BLOCKS
-************
-************/
+/**************
+***************
+! EDITOR - CODE BLOCKS
+***************
+***************/
+
 div.relative > div[class*="language-"] {
   border: 1px solid var(--codeblockBrdClr);
 }
@@ -1603,9 +1710,11 @@ div[class*="language-"] > [id*="code-textarea"] .cm-content[data-language="markd
 */
 /* (Deliberately left as default in MD: bold/italic markers & text classes ͼx / ͼy) */
 
-/*********
-MESSAGE > HOVER BUTTONS 
-**********/
+/**************
+***************
+! MESSAGE > HOVER BUTTONS 
+***************
+***************/
 #messages-container *:is(.chat-user > .justify-end,.chat-assistant ~ .buttons){
   position: sticky;
   bottom: -10px;
@@ -1703,7 +1812,11 @@ METADATA
     opacity: 1 !important;
 }
 
-/*INPUTS TEXT AREA*/
+/**************
+***************
+! INPUTS TEXT AREA
+***************
+***************/
 [data-pane-group-id] .m-auto.w-full.max-w-6xl.px-2.\@2xl\:px-20.translate-y-6.py-24.text-center {
   padding-top: 40px;
 }
@@ -1754,7 +1867,16 @@ INPUT > WIDTH > BOTTOM CHAT
   background: var(--codeblockBgClr) !important;
 }
 
-/*MENUS / POPUPS*/
+
+.chat-user .max-h-96, .chat-assistant .max-h-96 {
+    max-height: unset;
+}
+
+/**************
+***************
+! MENUS / POPUPS
+***************
+***************/
 
 [role="menu"] {
   z-index: 908889878
@@ -1827,13 +1949,21 @@ MODEL MENU
 }
 
 
-/*Hide Suggestions*/
+/**************
+***************
+! Hide Suggestions
+***************
+***************/
 /* Hide "Suggested" block on the new-chat screen */
 .w-full.text-3xl.text-gray-800.dark\:text-gray-100.text-center.flex.items-center.gap-4.font-primary + .mx-auto.max-w-2xl.font-primary.mt-2 {
   display: none;
 }
 
-/*SCROLLBAR*/
+/**************
+***************
+! SCROLLBAR
+***************
+***************/
 ::-webkit-scrollbar {
   width: 3px
 }
