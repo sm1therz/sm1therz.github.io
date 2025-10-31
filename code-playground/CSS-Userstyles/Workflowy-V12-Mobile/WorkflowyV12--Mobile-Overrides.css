@@ -62,7 +62,6 @@ PARAGRAPH MARGIN
 .project:not([class*="head"]) > .name > .content:empty:before{
 	height: 28px !important;
 }
-
 /********
 *********
 *********
@@ -1139,7 +1138,7 @@ BOARD - BORDER BOTTOM - NOT ROOT
 
 
 
-#app .board.root .project > .name > .expand {
+#app .board.root .project:not(.boardCard) > .name > .expand {
 	top: 1px !important;
 }
 
@@ -1154,13 +1153,18 @@ BOARD - BORDER BOTTOM - NOT ROOT
 	padding-left: 20px !important;
 }
 #app .project.board.root > .children > .boardColumn:first-child {
-	margin-left: 10px !important;
+	margin-left: 20px !important;
 	
 }
 
 
 .MobileBreadcrumbs .items-stretch {
 	gap: 6px;
+	font-style: normal;
+}
+.MobileBreadcrumbs .items-stretch * {
+		font-style: normal;
+
 }
 .MobileBreadcrumbs .items-stretch {
 	
@@ -1181,12 +1185,12 @@ MOBILE BOARD FONT SIZE
 
 
 #app .board .project > .name > .content {
-  font-size: 16px !important;
-  line-height: 22.25px !important;
+	font-size: 16px !important;
+	line-height: 22.25px !important;
 }
 
 #app .board .project > .name > .expand {
-  transform: scale(1.15);
+	transform: scale(1.15);
 }
 
 
@@ -1215,12 +1219,12 @@ MOBILE EXPAND SCALE
 
 
 #app .board .project > .name > .bullet {
-  background: transparent;
+	background: transparent;
 }
 
 
 #app .board .project.boardCard > .name > .expand {
-  top: 2px !important;
+	top: 2px !important;
 }
 
 
