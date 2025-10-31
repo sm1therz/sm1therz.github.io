@@ -1174,8 +1174,54 @@ BOARD - BORDER BOTTOM - NOT ROOT
 }
 
 
+
+/*************
+MOBILE BOARD FONT SIZE
+**************/
+
+
+#app .board .project > .name > .content {
+  font-size: 16px !important;
+  line-height: 22.25px !important;
+}
+
+#app .board .project > .name > .expand {
+  transform: scale(1.15);
+}
+
+
+
+
+/*************
+MOBILE BREAD CRUMBS
+**************/
+
+.MobileBreadcrumbs .items-stretch {
+	gap: 6px !important;
+}
+.MobileBreadcrumbs .items-stretch {
+	
+}
+
+/*************
+MOBILE EXPAND SCALE
+**************/
+/*
 #app .page .board.root > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand,
 #app .page .board.root > .children .boardCard > .children .project.comment:not(.checkmark) > .children .project > .name > .expand{
 	top: var(--btn-MargTop) !important;
 	--btn-MargTop:3px !important
 }
+
+
+#app .board .project > .name > .bullet {
+  background: transparent;
+}
+
+
+#app .board .project.boardCard > .name > .expand {
+  top: 2px !important;
+}
+
+
+*/
