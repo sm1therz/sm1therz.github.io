@@ -69,6 +69,8 @@ COLORS
   --bgMain: hsla(0, 0%, 12%, 1.0);
   --inputBg: #303030;
   /*sidebar - text*/
+  --sidebarBrdClr:hsla(0, 0%, 0%, .1);
+  /*sidebar - text*/
   --sidebarItemTxtClr: hsl(0, 0%, 7%);
   --sidebarItemBrdClr: hsla(0, 0%, 50%, .1);
   /*button*/
@@ -89,6 +91,8 @@ COLORS
   --userMsgBg: hsl(0, 0%, 20%);
   --inputBg: #303030;
   /*sidebar - text*/
+  --sidebarBrdClr:hsla(0, 0%, 100%, .1);
+  /*sidebar - text*/
   --sidebarItemTxtClr: hsl(0, 0%, 95%);
   --sidebarItemBrdClr: hsla(0, 0%, 50%, .1);
   /*button*/
@@ -107,7 +111,9 @@ COLORS
 
 /*************
 **************
-LEFT SIDEBAR*/
+! LEFT SIDEBAR
+***************
+***************/
 :root {
     --sideBarW: 360px;
     --sidebarBgClr: hsl(0, 0%, 8%)
@@ -121,7 +127,8 @@ LEFT SIDEBAR*/
 
 
 #sidebar {
-    box-shadow: 1px 0 0 0 hsla(0, 0%, 50%, .1)
+    border-color: hsla(0, 0%, 50%, .1);
+  border-right: 1px solid var(--sidebarBrdClr)
 }
 [class*="dark"]#sidebar {
     --color-gray-950: var(--sidebarBgClr);
