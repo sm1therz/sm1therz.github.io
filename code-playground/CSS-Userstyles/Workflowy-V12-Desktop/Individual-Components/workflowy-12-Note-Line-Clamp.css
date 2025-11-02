@@ -3,27 +3,29 @@
 ************/
 
 :root {
-    --notesMaxH:21px;
+	--notesMaxH: 21px;
 }
 
-#app .page .project.root > .children .project > .notes > .content {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-    max-height: var(--notesMaxH);
+#app .page .project.root>.children .project>.notes>.content {
+	display: -webkit-box !important;
+	-webkit-box-orient: vertical !important;
+	-webkit-line-clamp: 1 !important;
+	overflow: hidden !important;
+	text-overflow: ellipses !important;
+	max-height: var(--notesMaxH) !important;
 }
 
-#app .page .project.root > .children .project > .notes > .content.active {
-  -webkit-line-clamp: 100;
-    --notesMaxH:1000px;
+#app .page .project.root>.children .project>.notes>.content.active {
+	-webkit-line-clamp: 100;
+	--notesMaxH: 1000px;
 }
 
 /*BOARD*/
 
-#app .board:not(.root){
-    --notesMaxH:22px;
+#app .board:not(.root) {
+	--notesMaxH: 22px;
 }
 
-#app .board.root{
-    --notesMaxH:22px;
-}
+#app .board.root {
+	--notesMaxH: 22px;
+} 
