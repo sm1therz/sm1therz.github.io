@@ -6,26 +6,30 @@
 	--notesMaxH: 21px;
 }
 
-#app .page .project.root>.children .project>.notes>.content {
-	display: -webkit-box !important;
-	-webkit-box-orient: vertical !important;
+#app .page .project.root>.children .project>.notes > .content {
+display:  -webkit-box !important;
+-webkit-box-orient: vertical !important;
 	-webkit-line-clamp: 1 !important;
-	overflow: hidden !important;
-	text-overflow: ellipses !important;
 	max-height: var(--notesMaxH) !important;
+overflow:hidden !important; 
+line-height:21px !important;
+font-size:14.5px !important
 }
 
-#app .page .project.root>.children .project>.notes>.content.active {
-	-webkit-line-clamp: 100;
-	--notesMaxH: 1000px;
+#app .page .project >.children .project>.notes>.content{
+margin-bottom:2px !important
+}
+#app .page .project >.children .project>.notes>.content.active {
+	-webkit-line-clamp: 100 !important;
+	--notesMaxH: 1000px !important;
 }
 
 /*BOARD*/
 
 #app .board:not(.root) {
-	--notesMaxH: 22px;
+	--notesMaxH: 25px;
 }
 
 #app .board.root {
-	--notesMaxH: 22px;
-} 
+	--notesMaxH: 25px;
+}
