@@ -19,10 +19,16 @@ font-size:14.5px !important
 #app .page .project >.children .project>.notes>.content{
 margin-bottom:2px !important
 }
-#app .page .project >.children .project>.notes>.content.active {
+/*ACTIVE*/
+#app .page .project.root > .children .project > .notes > .content.active,
+#app .page .project > .children .project > .notes > .content.active {
 	-webkit-line-clamp: 100 !important;
 	--notesMaxH: 1000px !important;
+	display:block !important;
+	overflow:unset !important;
+	-webkit-box-orient: unset !important;
 }
+
 
 /*BOARD*/
 
