@@ -3,22 +3,51 @@
 ************/
 
 :root {
+		--notesMaxH:21px;
+}
+
+#app .page .project.root > .children .project > .notes > .content {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+		max-height: var(--notesMaxH);
+}
+
+#app .page .project.root > .children .project > .notes > .content.active {
+	-webkit-line-clamp: 100;
+		--notesMaxH:1000px;
+}
+
+/*BOARD*/
+
+#app .board:not(.root){
+		--notesMaxH:22px;
+}
+
+#app .board.root{
+		--notesMaxH:22px;
+}
+
+/*********** 
+! NOTE OVERRIDES 
+************/
+:root {
 	--notesMaxH: 21px;
 }
 
-#app .page .project.root>.children .project>.notes > .content {
-display:  -webkit-box !important;
--webkit-box-orient: vertical !important;
+/*NOTES > MAKE THEM 1 LINE*/
+#app .page .project.root>.children .project>.notes>.content {
+	display: -webkit-box !important;
+	-webkit-box-orient: vertical !important;
 	-webkit-line-clamp: 1 !important;
 	max-height: var(--notesMaxH) !important;
-overflow:hidden !important; 
-line-height:21px !important;
-font-size:14.5px !important
+	overflow: hidden !important;
+	line-height: 20px !important;
+	font-size: 14.5px !important
 }
 
-#app .page .project >.children .project>.notes>.content{
-margin-bottom:2px !important
-}
+/*NOTES > SHOW ALL LINES WHEN ACTIVE*/
+
 /*ACTIVE*/
 #app .page .project.root > .children .project > .notes > .content.active,
 #app .page .project > .children .project > .notes > .content.active {
@@ -30,12 +59,11 @@ margin-bottom:2px !important
 }
 
 
-/*BOARD*/
 
-#app .board:not(.root) {
-	--notesMaxH: 25px;
-}
+/*BOARDS NOTES*/
 
-#app .board.root {
-	--notesMaxH: 25px;
+#app .page .project.board.root > .children .project>.notes>.content,
+#app .page .project.root > .children .project.board > .children .project >.notes>.content {
+	font-size: .85rem !important;
+	line-height: 18px !important;
 }
