@@ -361,7 +361,7 @@ BOX SHADOW TESTING - BOARDS
     --btnIcn-ExpandB4Low-W: 14px;
     --btnIcn-ExpandB4Low-H: 14px;
     --btnIcn-ExpandB4Low-HovTransition: 250ms cubic-bezier(.47, 2.2, .29, .6);
-    --btn-MargTop: 1px;
+    --btn-MargTop: 0px;
     --btn-MargTopBullet: 1px;
     --btn-MargTopCmnt: 18px;
     --btn-MargTopCmntContain: 5px;
