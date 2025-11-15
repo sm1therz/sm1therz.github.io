@@ -4951,6 +4951,10 @@ max-width: calc(100% - 70px) !important;
     padding-top:0px;
 }
 
+#app .project.board .boardColumn > .name.name--with-image:not(.empty) {
+  display: block !important;
+}
+
 
 
 /*******************************
