@@ -7,7 +7,7 @@
     box-sizing: border-box;
 } 
 
-html, 
+html,
 body,
 #app, 
 #app .page,
@@ -38,7 +38,6 @@ body,
     z-index: 2;
 }
 
-/* ! Im also a bookmark */
 
 /****
 BOX SHADOW TESTING - BOARDS
@@ -67,11 +66,16 @@ BOX SHADOW TESTING - BOARDS
 ****/
 
 /**
+
 .project, .project * {
-  box-shadow: inset 0 0 0px .1px red;
+  box-shadow: inset 0 0 0px .5px red;
 }
 
- **/
+.project {
+  outline: 1px solid green !important;
+
+} **/
+
 :root {
   --testBrdW:0px;
 }
@@ -1185,8 +1189,12 @@ Bullet:AFTER*/
 
 /****
 Expand ONLY*/
-.project > .name > .expand {
-    left: calc(var(--children-Indent) * 0)
+.project:not(.board) .project > .name > :is(.expand) {
+    left: calc(var(--children-Indent) * 0);
+}
+.project:not(.board) .project > .name > :is(.expand,a[data-handbook="expand.toggle"]) {
+    left: calc(var(--children-Indent) * 0) !important;
+  top:var(--btn-MargTop) !important;
 }
 .project > .name > .expand:before {
     background: var(--BG-Bullet-open);
@@ -3152,6 +3160,9 @@ html #app .project > .notes > .content .contentLink{
     transform: rotate(90deg)scale(var(--btnIcn-Scale)) !important;
 }
 
+
+
+
 /***********
 ! TAGS + HIGHLIGHTS
 ************/
@@ -3184,6 +3195,12 @@ VERSION TAGS
 .contentTag[data-val*="type"]{
   color: hsl(201, 13%, 17%,0.6) !important;
   font-weight: 500;
+}
+.contentTag[data-val*="because"]{
+    font-weight: 500 !important;
+}
+.contentTag[data-val*="because"] {
+    
 }
 
 .contentTag[data-val*="v1"] .contentTagText,
@@ -3657,6 +3674,7 @@ LEVEL 1 > Project
     flex: 0 0 var(--boardColumnWidth) !important;
     max-width: var(--boardColumnWidth);
 }
+
 @media (max-width: 1640px) {
   :root {
     --boardColumnWidth:340px;
@@ -4898,7 +4916,6 @@ max-width: calc(100% - 70px) !important;
 
 }
 
-
 #app .project:is(.board) .project:not([class*="header"]) > .name > .content code {
     font-size: calc(var(--name-fontSize) - 1.5px) !important;
     -webkit-font-smoothing:subpixel-antialiased !important;
@@ -4927,7 +4944,6 @@ max-width: calc(100% - 70px) !important;
     padding-bottom:0px; 
     padding-top:0px;
 }
-
 
 
 
@@ -5007,7 +5023,7 @@ BOARD ROOT DESIGN ADJUST
 #app .project.board.root .boardColumn > .name > .expand,
 #app .project.board.root .boardColumn > .name > .menu {
   --btn-MargTop: 9px !important;
-  top:var(--btn-MargTop) !important;
+    top: var(--btn-MargTop) !important;
 }
 
 /*****
@@ -7539,6 +7555,7 @@ EXPAND COLLAPSE BORDER ANIMATION
   --COMMENT-CONTAINER--BG:hsla(196, 28%, 30%, 1) !important;
   --COMMENT--BG--even:hsla(196, 28%, 22%, 1) !important;
 }
+
 /*******************************
 ********************************
 ! DAILY NOTE / JOURNAL / CALENDAR
@@ -7552,6 +7569,108 @@ EXPAND COLLAPSE BORDER ANIMATION
 .project > .name > .bullet + span + .content {
     margin-left: 0px;
 }
+
+
+/***************
+****************
+! CALENDAR / DAILY > LAYOUT
+****************
+****************/
+:root {
+    --calWrapPadTopBtm:20px;
+    --calBrdClr:rgba(128, 128, 128, 0.2)
+}
+
+#app .project.selected.root > .name + .inline-flex,
+#app .project.selected.root > .name + .notes ~ .inline-flex{
+    margin-top: var(--calWrapPadTopBtm);
+}
+#app .project.selected.root > .name ~ .inline-flex ~ .children {
+    position: relative;
+    padding-top: var(--calWrapPadTopBtm) !important;
+}
+
+/***BORDER***/
+
+#app .project.selected.root:not(.noted) > .name ~ .inline-flex:not(.inline-flex + .inline-flex):after,
+#app .project.selected.root.noted > .name ~ .notes + .inline-flex:after{
+    content:"";
+    position: absolute;
+    top: 55px;
+    left: -100vw;
+    right: -100vw;
+    display: block;
+    height: 1px;
+    background: var(--calBrdClr);
+}
+/*
+#app .project.selected.root > .name ~ .inline-flex ~ .children:after {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    right: -100vw;
+    display: block;
+    height: 1px;
+    background: rgba(128, 128, 128, 0.2);
+}
+*/
+/***/
+.monolith-pill{
+    text-decoration-thickness: 0px
+}
+.name > .content .monolith-pill .content-wrapper{
+    
+    border-radius: 100px;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    box-shadow: inset 0 0 0 .5px hsla(0,0%,50%,.3);
+}
+
+.root > .name > .content .monolith-pill .content-wrapper {
+    text-decoration-thickness: 3px !important;
+    text-underline-offset: 4px;
+}
+
+#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children{
+    padding-left: 0px;
+    gap: 7px;
+}
+/*
+#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project:after {
+    content:"";
+    position: absolute;
+    top: -4px;
+    left: -100vw;
+    right: -100vw;
+    height: 1px;
+    background: var(--calBrdClr);
+display:block;
+}
+*/
+/**
+#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project > .name > .bullet,
+#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project > .name > .expand,
+
+#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project > .name > .menu,
+#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project > .name > .prefix{
+   --btn-MargTop:9px !important;
+}
+
+
+#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project >.name > .content {
+    font-size: var(--name-fontSize);
+    line-height: var(--name-lineHeight);
+    --name-fontSize:1.3rem !important;
+    --name-lineHeight:28px;
+    padding-top: 10px;
+    
+}**/
+#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project{
+    box-shadow: inset 0 0 0 1px var(--calBrdClr);
+    border: 0px solid var(--calBrdClr);
+}
+
 /*******************************
 ********************************
 ! PRESENTATION
@@ -9110,8 +9229,10 @@ html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:
     margin-bottom: 2px;
 }
 #app div > .dialog-box.p-0 > div > div:last-child > .switcher-option > .opacity-60 {
-    opacity: 0.47
+    opacity: 0.47;
+    display: flex;
 }
+
 /*SEARCH RESULT ITEM - BORDERS*/
 #app div > .dialog-box.p-0 > div > div:last-child > .switcher-option:before,
 #app div > .dialog-box.p-0 > div > div:last-child > .switcher-option:after {
@@ -10087,7 +10208,7 @@ DROPDOWN WRAPPER
     content: "";
     display: block;
     position: absolute;
-    left: calc(var(--children-Indent) / 2 - 0.75px);
+    left: calc(var(--children-Indent) / 3 - 0.75px);
     width: 1.5px;
     z-index: 0;
     border-radius: 100px;
@@ -10097,6 +10218,7 @@ DROPDOWN WRAPPER
     transition: 200ms cubic-bezier(.77, 1.5, 0, .95) !important;
     opacity: .8
 }
+
 
 .project.open > .name:after,
 .project.references > .children .project.open > div:first-child:after,
@@ -10570,8 +10692,309 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   .project.header3 > .name {
     --btn-MargTop: 9px;
   }
+  .project > .name:after {
+    left: calc(var(--children-Indent) / 3 - 0.75px);
+    }
+
+}
+@media (max-width: 650px){
+  #app .project > .name:after {
+    left: calc(var(--children-Indent) / 2 - 0.75px) !important;
+    }
+}
+  /*BOARD COLUMNS*/
+@media (max-width: 500px) {
+  #app .board.root > .name {
+    --ROOT-padLeftRight:20px;
+  }
+  #app .board.root > .children {
+    --ROOT-padLeftRight:10px;
+    --boardRootColumnWidth:calc(100vw - 10px);
+  }
+
 }
 
+
+@media (max-width: 400px) {
+  #app .searchBox._zpqjyh {
+    width: 88vw;
+    min-width: 88vw;
+    margin-left: -100px;
+  }
+}
+
+
+/*******************************
+********************************
+! MOBILE - NEW
+********************************
+********************************/
+:root {
+  --mobileDocPadLeft: 24px;
+  --mobileRootPadLeft: 20px;
+}
+
+@media (max-width: 750px) {
+  .project.root.checkmark > .name {
+    position: relative;
+  }
+  .project.root.checkmark > .name,
+  .project.root.checkmark > .notes {
+    padding-left: var(--mobileRootPadLeft);
+  }
+  .project.root.checkmark > .name .prefix {
+    left: calc(var(--btnIcn-ChkBx-W) * -1.2) !important;
+  }
+}
+@media(max-width: 760px) {
+  :root {
+    --pagePadLeft: 1vw;
+    --pagePadRight: .5vw;
+  }
+  #app .project.board > .children:not(#app .project.board.root > .children) {
+    min-width: 1210px !important;
+    left: calc(var(--pagePadLeft) * -55) !important;
+    padding-left: calc(var(--pagePadLeft) * 56.5) !important;
+  }
+}
+@media (max-width: 650px) {
+  /**********
+    BOARDS ADJUST
+    ***********/
+  :root {
+    --pageMaxWidth: calc(100% - var(--pagePadLeft) - var(--pagePadRight));
+    --rootCheckboxMargTop: 3px
+  }
+
+
+
+  #app .page.dashboard-page > .project.root > .children {
+    padding-left: 0px;
+  }
+  #app .dashboard-card > .name > .content,
+  #app .dashboard-card > .name > .contentEditablePlaceholderWrapper {
+    padding-right: calc(var(--children-Indent)* 1);
+  }
+
+
+  /*MENU*/
+  #app .project > .name > .menu:before {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 650px) {
+
+  :root {
+    --root-padtop: 20px;
+    --root-font-size: 1.7rem;
+    --root-line-height: 1.23;
+
+    --name-fontSize: 1.61rem;
+    --name-lineHeight: 423px;
+    --notes-fontSize: .185rem;
+    --notes-lineHeight: 16px;
+    --header1-fontSize: 1.5rem;
+    --header1-lineHeight: 1.225;
+    --header2-fontSize: 1.3rem;
+    --header2-lineHeight: 1.225;
+
+    --btn-Width: var(--children-Indent);
+    --children-Indent: 20px;
+    --btnIcn-ExpandB4Up-W: 6.5px;
+    --btnIcn-ExpandB4Up-H: 6.5px;
+    --btnIcn-ExpandB4Low-H: 13px;
+    --btnIcn-ExpandB4Low-W: 13px;
+    /*bullet marg*/
+    --btn-MargTop: -1px;
+    /*checkbox*/
+    --btnIcn-ChkBx-W: 11px;
+    --btnIcn-ChkBx-H: 11PX;
+    --children-MargBtm: 0px;
+    --btnIcn-ChkBx-BrdRad: 2.5px;
+    --rootNotesPadTop: 5px;
+    --rootnotes-fontSize: calc(var(--notes-fontSize) + 0px);
+    --rootnotes-lineHeight: calc(var(--notes-lineHeight) + 0px)
+  }
+  .project > .name > .prefix {
+    --btn-MargTop: 1px !important;
+  }
+  .project.done > .name > .prefix > .inline-flex > .item-checkbox:before {
+    --btnIcn-Scale: 0.8;
+  }
+
+  .project.checkmark.collapsed > .name > .prefix:after {
+    width: 18px;
+    height: 18px;
+  }
+  html #app .project.root > .notes > .content {}
+  /*ROOT MENU*/
+  .project.root > .name > .menu {
+    left: calc(var(--children-Indent) * .5) !important;
+    top: -29px !important;
+  }
+  #app .searchBox > div {
+    border: 1px solid hsla(0, 0%, 0%, 0);
+  }
+  /*SEARCHBOX*/
+  #app .searchBox {
+    width: 39px;
+    min-width: 39px;
+    position: relative;
+    margin-right: 0px;
+  }
+
+  #app .searchBox [data-icon="magnifying-glass"] {
+    left: 9px !important;
+  }
+  /*SEARCHBOX > SEARCHING*/
+  .searchBox._1wugtwr {
+    width: var(--searchboxWidth)!important;
+  }
+  .searchBox._1wugtwr > div {
+    border: var(--search-nav-border) !important;
+  }
+  /*SEARCHBOX > SEARCHING > FOCUSED*/
+  #app .searchBox._zpqjyh {
+    width: 66vw;
+    min-width: 66vw;
+    margin-left: -106px;
+  }
+  #app .searchBox._zpqjyh > div {
+    border: var(--search-nav-border);
+  }
+  #app .project > .name > .bullet.diamond ~ .expand:before,
+  #app .dashboard .project > .name > .bullet.diamond:before,
+  #app .board .project > .name > .bullet.diamond:before {
+    border-radius: 1px !important;
+  }
+  #app .project > .name > .bullet.diamond ~ .expand:after {
+    --btnIcn-ChkBx-BrdRad: 4px;
+  }
+  #app .page > .project.root > name > .content {
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+  }
+  #app .page > .project.root > .children {
+    padding-left: 13px;
+  }
+  /*
+    .project.header1 > .name {
+        --btn-MargTop: -1px !important;
+    }
+    .project.header2 > .name {
+        --btn-MargTop: -4px !important;
+    }*/
+  .root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board .bullet),
+  .root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
+  .root > .children > .project > .name > .expand:not(.dashboard .expand, .board .expand),
+  .root > .children > .project > .name > .menu:not(.dashboard .menu, .board .menu) {
+    border-radius: 2px;
+    width: 20px !important;
+  }
+
+
+  #app .page {
+    padding-right: var(--pagePadRight);
+    padding-left: var(--pagePadLeft);
+  }
+
+  #app .page > .project.root > name > .content {
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+  }
+
+  #app .page > .project.root > .children {
+    padding-left: var(--mobileDocPadLeft);
+  }
+
+
+  /**********
+    BOARD - CURSOR NOT FLOWING - CORRECTION
+    ***********/
+  .project.board .boardColumn > .name > .content,
+  .project.board .boardColumn > .notes > .content,
+  .project.board .boardColumn .project .name > .content,
+  .project.board .boardColumn .project .notes > .content {
+    padding-top: 0px;
+  }
+  /*root checkmark*/
+  .project.checkmark.root > .name,
+  .project.checkmark.root > .notes {
+    padding-left: var(--mobileDocPadLeft) !important;
+  }
+  /*root checkmark - MENU*/
+  .project.checkmark.root > .name > .prefix {
+    left: calc(var(--children-Indent) * -0.1) !important;
+    --btn-MargTop: 2px !important;
+    top: -8px !important;
+    --btnIcn-ChkBx-BrdRad: 5px !important;
+  }
+  .project.checkmark.root > .name > .menu {
+    --btn-MargTop: 41px !important;
+    left: calc(var(--children-Indent) * 0) !important;
+  }
+  .project.root.checkmark > .name > .prefix {
+    transform: scale(1.1);
+  }
+  #app .project.checkmark:not(.board .project.checkmark) > .name > .expand {
+    width: 23px !important;
+  }
+  .dashboard .dashboard-card > .name {
+    padding-left: calc(var(--children-Indent) * 1) !important;
+  }
+  #app .dashboard-card > .children {
+    padding-right: 7px;
+  }
+  #app .dashboard .dashboard-card > .name > .expand,
+  #app .dashboard .dashboard-card > .name > .menu {
+    top: 5px !important;
+  }
+  #app .dashboard .dashboard-card > .name > .expand {
+    right: calc(var(--children-Indent) * 0 + 4px) !important;
+    width: calc(var(--children-Indent) * 1) !important;
+    overflow: hidden;
+    top: 5px !important
+  }
+  #app .dashboard .dashboard-card > .name > .expand > div {
+    transform: scale(1);
+  }
+  #app .dashboard .dashboard-card > .name > .menu {
+    left: unset !important;
+    right: calc(var(--children-Indent) * 1) !important;
+    width: calc(var(--children-Indent) * 1) !important;
+  }
+  .project.header1 > .name {
+    --btn-MargTop: 11px;
+  }
+  .project.header2 > .name {
+    --btn-MargTop: 8px;
+  }
+
+  .project.header3 > .name {
+    --btn-MargTop: 9px;
+  }
+  .project > .name:after {
+    left: calc(var(--children-Indent) / 3 - 0.75px);
+    }
+
+}
+@media (max-width: 650px){
+  #app .project > .name:after {
+    left: calc(var(--children-Indent) / 2 - 0.75px) !important;
+    }
+}
+  /*BOARD COLUMNS*/
+@media (max-width: 500px) {
+  #app .board.root > .name {
+    --ROOT-padLeftRight:20px;
+  }
+  #app .board.root > .children {
+    --ROOT-padLeftRight:10px;
+    --boardRootColumnWidth:calc(100vw - 10px);
+  }
+
+}
 
 
 @media (max-width: 400px) {
@@ -10936,166 +11359,3 @@ html #app .board .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content 
   background-image: unset !important;
   text-decoration: underline !important;
 }
-
-/*******************************
-********************************
-! FONTS
-********************************
-********************************/
-/************
-*************
-WHITNEY FONTS
-*************
-*************/
-
-/*
-body,
-body * {
-    font-family: "IBM Plex Sans", Whitney, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
-}
-*/
-
-
-/************
-*************
-SF MONO
-*************
-*************/
-@font-face {
-    font-family: "SF Mono";
-    src: url('https://blankmann.github.io/fonts/SF-Mono/SF-Mono--Regular.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "SF Mono";
-    src: url('https://blankmann.github.io/fonts/SF-Mono/SF-Mono--Regular-Italic.otf') format('opentype');
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "PrimaSans Mono";
-    src: url('https://blankmann.github.io/fonts/SF-Mono/SF-Mono--Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: "PrimaSans Mono";
-    src: url('https://blankmann.github.io/fonts/SF-Mono/SF-Mono--Bold-Italic.otf') format('opentype');
-    font-weight: 700;
-    font-style: italic;
-}
-
-
-
-
-/************
-*************
-Menlo
-*************
-*************/
-@font-face {
-    font-family: "Menlo";
-    src: url('https://blankmann.github.io/fonts/Menlo-mono/Menlo-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-/*******************************
-********************************
-! FONTS - IBM PLEX SANS
-********************************
-********************************/
-
-/*
-body,
-body * {
-    font-family: IBM Plex Sans, Whitney, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
-    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif !important;
-}
-*/
-:root {
-    /*fonts*/
-    --name-fontSize: 1.15rem;
-    --name-lineHeight: 25px;
-    --notes-fontSize: 13.5px;
-    --notes-lineHeight: 18.5px;    
-
-    /*highlights*/
-    --InnerContentPadTop: 0px;
-    --InnerContentPadBtm: 0px;
-    /*wavy*/
-    --wavy--BG-size: 9px;
-    --wavy--BG-position: -0px 100%;
-    --wavy--padding-bottom: 3px;
-    --underlineOffset: 2.5px;
-
-    --btn-MargTop: 0px;
-}
-#app .project:not(.board .project, .comment .project) > .name > .prefix{
-    --btn-MargTop:-1px !important
-}
-
-#app .comment .project > .name > .prefix{
-    --btn-MargTop:-1px !important
-}
-
-.project.root > .children .project > .name > .content,
-.project > .name > .content {
-    -webkit-font-smoothing: antialiased;
-}
-.dashboard-card:not(.comment) .children > .project > .name,
-.dashboard-card .children > .project > .commentAttribution,
-.dashboard-card .children > .project > .notes {
-    --btn-MargTop: 4px;
-}
-.references .project .breadcrumbs a {
-
-    font-size: .71rem;
-
-    line-height: 1.05 !important;
-    -webkit-font-smoothing: antialiased !important;
-}
-
-
-@media (max-width: 400px) {
-
-    :root {
-        /*
-        --name-fontSize: 1rem;
-        --name-lineHeight: 22px;
-        --notes-fontSize: 0.95rem;
-        --notes-lineHeight: 17px;
-        */
-        --header1-fontSize: 2.0rem;
-        --header1-lineHeight: 1.3;
-
-        /*highlights*/
-        --InnerContentPadTop: 0px;
-        --InnerContentPadBtm: 0px;
-        /*wavy*/
-        --wavy--BG-size: 6px;
-        --wavy--BG-position: 0px 100%;
-        --underlineOffset: 3px;
-        --underlineThickness: 1.5px;
-    }
-
-    .dashboard > .children {
-        --content-PadLeftRight: 2px;
-    }
-
-    .project.root > .children .project > .name > .content,
-    .project > .name > .content {
-        -webkit-font-smoothing: antialiased;
-    }
-    .dashboard .dashboard-card > .name > .content,
-    .dashboard .dashboard-card > .notes > .content {
-        --content-PadTopBtm: 6px !important;
-    }
-
-}
-
-
-
-
