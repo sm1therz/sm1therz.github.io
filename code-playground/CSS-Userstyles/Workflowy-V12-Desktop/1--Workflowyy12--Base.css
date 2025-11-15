@@ -1032,6 +1032,7 @@ Bullet, Expand, Prefix, & Menu
 .name > .prefix .item-checkbox,
 .name > .expand,
 .name > .expand ._3hmsj,
+.name > .expand > div,
 .name > .menu {
     display: flex;
     justify-content: center;
@@ -1195,6 +1196,7 @@ Expand ONLY*/
 .project:not(.board) .project > .name > :is(.expand,a[data-handbook="expand.toggle"]) {
     left: calc(var(--children-Indent) * 0) !important;
   top:var(--btn-MargTop) !important;
+  width: calc(var(--children-Indent) * 1) !important;
 }
 .project > .name > .expand:before {
     background: var(--BG-Bullet-open);
@@ -2959,7 +2961,7 @@ PUT COMPLETED TASKS AT THE BOTTOM
 #app .project.code-block > .name > .expand,
 #app .project.code-block > .name > .bullet,
 #app .project.code-block > .name > .menu{
-  --btn-MargTop:10px
+  --btn-MargTop:12px
 }
 
 #app .project.quote-block > .name:after,
@@ -3938,10 +3940,12 @@ BOARD COLUMN Level
     left: calc(var(--children-Indent) * .5);
 }
 /*Expand - Scale*/
-.project.boardColumn > .name > .expand ._3hmsj:before {
+.project.boardColumn > .name > .expand ._3hmsj:before,
+.project.boardColumn > .name > .expand > div:before{
     transform: scale(.575)rotate(90deg);
 }
-.project.boardColumn.collapsed > .name > .expand ._3hmsj:before {
+.project.boardColumn.collapsed > .name > .expand ._3hmsj:before,
+.project.boardColumn.collapsed > .name > .expand > div:before{
     transform: scale(.575)rotate(0deg);
 }
 
@@ -3968,7 +3972,6 @@ BOARDCARD - Level
 }
 .project.board .boardCard > .name > .content,
 .project.board .boardCard > .notes > .content,
-
 .project.board .comment-container > .name > .content{
     max-width: 100%;
 }
@@ -4007,14 +4010,16 @@ BOARDCARD - Level
 }
 /*Expand*/
 .project.boardCard > .name > .expand {
-    left: calc(var(--children-Indent) * .5);
+    left: calc(var(--children-Indent) * 0.5) !important;
 }
 
 /*Expand - Scale*/
-.project.boardCard > .name > .expand ._3hmsj:before {
+.project.boardCard > .name > .expand ._3hmsj:before,
+.project.boardCard > .name > .expand > div:before{
     transform: scale(.47)rotate(90deg);
 }
-.project.boardCard.collapsed > .name > .expand ._3hmsj:before {
+.project.boardCard.collapsed > .name > .expand ._3hmsj:before,
+.project.boardCard.collapsed > .name > .expand > div:before{
     transform: scale(.47)rotate(0deg);
 }
 
@@ -4208,10 +4213,11 @@ PREFIX*/
 /****
  EXPAND only*/
 /*Expand > BOARDCOLUMN only*/
-.board .project > .name > .expand ._3hmsj:hover {
+.board .project > .name > .expand div:hover {
     background: var(--BG-BUTTON--HOVER);
 }
-.board .project > .name > .expand ._3hmsj:before {
+.board .project > .name > .expand ._3hmsj:before,
+.board .project > .name > .expand > div:before{
     content: var(--ICON--ARROW);
     display: block;
     width: 24px;
@@ -5025,6 +5031,10 @@ BOARD ROOT DESIGN ADJUST
   --btn-MargTop: 9px !important;
     top: var(--btn-MargTop) !important;
 }
+#app .project.board .boardColumn > .name > .expand,
+#app .project.board .boardColumn > .children > .boardCard > .name > .expand{
+  left: 7px !important;
+}
 
 /*****
 BOARD COLUMNS - MIRRORED CHECKBOX
@@ -5187,7 +5197,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
   font-weight: 600 !important;
   -webkit-font-smoothing: subpixel-antialiased !important;
 }
-.board.root .project > .name > .expand ._3hmsj:before {
+.board.root .project > .name > .expand ._3hmsj:before,
+.board.root .project > .name > .expand > div:before{
   content: var(--ICON--ARROW-BLACK);
   opacity: 0.5
 }
@@ -6248,7 +6259,8 @@ universals*/
 .dashboard-card > .name > .expand:after {
     display: none;
 }
-.dashboard-card > .name > .expand ._3hmsj:before {
+.dashboard-card > .name > .expand ._3hmsj:before,
+.dashboard-card > .name > .expand > div:before{
     content: "";
     background-image: var(--ICON--ARROW);
     ;
@@ -6372,10 +6384,18 @@ LEVEL 1 Dashboard Card*/
 }
 
 #app .dashboard .dashboard-card > .name > .expand {
-    left: calc(var(--children-Indent) * 1);
-    transform-origin: top right;
+    left: calc(var(--children-Indent) * 1) !important;
+    transform-origin: center;
 }
-
+#app .dashboard .dashboard-card > .name > .expand > div:hover {
+  background: var(--BG-BUTTON--HOVER);
+}
+#app .dashboard .dashboard-card > .name > .expand > div:before{
+  transform: scale(1.25) rotate(0deg)
+}
+#app .dashboard .dashboard-card.open > .name > .expand > div:before{
+  transform: scale(1.25) rotate(90deg)
+}
 
 /*comments*/
 #app .dashboard-card.project.comment-container > .name {
@@ -6546,9 +6566,16 @@ html #app .dashboard .contentEditablePlaceholderWrapper {
     top: var(--content-PadTopBtm) !important
 }
 
-.dashboard-card > .children .project > .name > .expand:after {
+.dashboard-card > .children .project:is(.paragraph) > .name > .expand:after {
     transition: .2s !important;
     opacity: 0 !important;
+}
+
+.dashboard-card > .children .project > .name > .expand{
+  --btn-MargTop: 4px;
+}
+.dashboard-card > .children .project > .name > .expand > div {
+  opacity: 0;
 }
 
 .dashboard-card > .children .project > .name > .expand ._3hmsj {
@@ -7241,6 +7268,10 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 #app .dashboard .project.header3 > .name > .expand,
 #app .dashboard .project.header3 *{
   --btn-MargTop:8px !important;
+}
+
+.dashboard-button-top {
+  display: none;
 }
 
 /*******************************
@@ -10208,7 +10239,7 @@ DROPDOWN WRAPPER
     content: "";
     display: block;
     position: absolute;
-    left: calc(var(--children-Indent) / 3 - 0.75px);
+    left: calc(var(--children-Indent) / 2 - 0.75px);
     width: 1.5px;
     z-index: 0;
     border-radius: 100px;
@@ -10509,7 +10540,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     --root-line-height: 1.23;
 
     --name-fontSize: 1.61rem;
-    --name-lineHeight: 423px;
+    --name-lineHeight: 23px;
     --notes-fontSize: .185rem;
     --notes-lineHeight: 16px;
     --header1-fontSize: 1.5rem;
@@ -10723,317 +10754,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
 }
 
-
-/*******************************
-********************************
-! MOBILE - NEW
-********************************
-********************************/
-:root {
-  --mobileDocPadLeft: 24px;
-  --mobileRootPadLeft: 20px;
-}
-
-@media (max-width: 750px) {
-  .project.root.checkmark > .name {
-    position: relative;
-  }
-  .project.root.checkmark > .name,
-  .project.root.checkmark > .notes {
-    padding-left: var(--mobileRootPadLeft);
-  }
-  .project.root.checkmark > .name .prefix {
-    left: calc(var(--btnIcn-ChkBx-W) * -1.2) !important;
-  }
-}
-@media(max-width: 760px) {
-  :root {
-    --pagePadLeft: 1vw;
-    --pagePadRight: .5vw;
-  }
-  #app .project.board > .children:not(#app .project.board.root > .children) {
-    min-width: 1210px !important;
-    left: calc(var(--pagePadLeft) * -55) !important;
-    padding-left: calc(var(--pagePadLeft) * 56.5) !important;
-  }
-}
-@media (max-width: 650px) {
-  /**********
-    BOARDS ADJUST
-    ***********/
-  :root {
-    --pageMaxWidth: calc(100% - var(--pagePadLeft) - var(--pagePadRight));
-    --rootCheckboxMargTop: 3px
-  }
-
-
-
-  #app .page.dashboard-page > .project.root > .children {
-    padding-left: 0px;
-  }
-  #app .dashboard-card > .name > .content,
-  #app .dashboard-card > .name > .contentEditablePlaceholderWrapper {
-    padding-right: calc(var(--children-Indent)* 1);
-  }
-
-
-  /*MENU*/
-  #app .project > .name > .menu:before {
-    transform: rotate(90deg);
-  }
-}
-
-@media (max-width: 650px) {
-
-  :root {
-    --root-padtop: 20px;
-    --root-font-size: 1.7rem;
-    --root-line-height: 1.23;
-
-    --name-fontSize: 1.61rem;
-    --name-lineHeight: 423px;
-    --notes-fontSize: .185rem;
-    --notes-lineHeight: 16px;
-    --header1-fontSize: 1.5rem;
-    --header1-lineHeight: 1.225;
-    --header2-fontSize: 1.3rem;
-    --header2-lineHeight: 1.225;
-
-    --btn-Width: var(--children-Indent);
-    --children-Indent: 20px;
-    --btnIcn-ExpandB4Up-W: 6.5px;
-    --btnIcn-ExpandB4Up-H: 6.5px;
-    --btnIcn-ExpandB4Low-H: 13px;
-    --btnIcn-ExpandB4Low-W: 13px;
-    /*bullet marg*/
-    --btn-MargTop: -1px;
-    /*checkbox*/
-    --btnIcn-ChkBx-W: 11px;
-    --btnIcn-ChkBx-H: 11PX;
-    --children-MargBtm: 0px;
-    --btnIcn-ChkBx-BrdRad: 2.5px;
-    --rootNotesPadTop: 5px;
-    --rootnotes-fontSize: calc(var(--notes-fontSize) + 0px);
-    --rootnotes-lineHeight: calc(var(--notes-lineHeight) + 0px)
-  }
-  .project > .name > .prefix {
-    --btn-MargTop: 1px !important;
-  }
-  .project.done > .name > .prefix > .inline-flex > .item-checkbox:before {
-    --btnIcn-Scale: 0.8;
-  }
-
-  .project.checkmark.collapsed > .name > .prefix:after {
-    width: 18px;
-    height: 18px;
-  }
-  html #app .project.root > .notes > .content {}
-  /*ROOT MENU*/
-  .project.root > .name > .menu {
-    left: calc(var(--children-Indent) * .5) !important;
-    top: -29px !important;
-  }
-  #app .searchBox > div {
-    border: 1px solid hsla(0, 0%, 0%, 0);
-  }
-  /*SEARCHBOX*/
-  #app .searchBox {
-    width: 39px;
-    min-width: 39px;
-    position: relative;
-    margin-right: 0px;
-  }
-
-  #app .searchBox [data-icon="magnifying-glass"] {
-    left: 9px !important;
-  }
-  /*SEARCHBOX > SEARCHING*/
-  .searchBox._1wugtwr {
-    width: var(--searchboxWidth)!important;
-  }
-  .searchBox._1wugtwr > div {
-    border: var(--search-nav-border) !important;
-  }
-  /*SEARCHBOX > SEARCHING > FOCUSED*/
-  #app .searchBox._zpqjyh {
-    width: 66vw;
-    min-width: 66vw;
-    margin-left: -106px;
-  }
-  #app .searchBox._zpqjyh > div {
-    border: var(--search-nav-border);
-  }
-  #app .project > .name > .bullet.diamond ~ .expand:before,
-  #app .dashboard .project > .name > .bullet.diamond:before,
-  #app .board .project > .name > .bullet.diamond:before {
-    border-radius: 1px !important;
-  }
-  #app .project > .name > .bullet.diamond ~ .expand:after {
-    --btnIcn-ChkBx-BrdRad: 4px;
-  }
-  #app .page > .project.root > name > .content {
-    font-size: 30px !important;
-    line-height: 1.25 !important;
-  }
-  #app .page > .project.root > .children {
-    padding-left: 13px;
-  }
-  /*
-    .project.header1 > .name {
-        --btn-MargTop: -1px !important;
-    }
-    .project.header2 > .name {
-        --btn-MargTop: -4px !important;
-    }*/
-  .root > .children > .project > .name > .bullet:not(.dashboard .bullet, .board .bullet),
-  .root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
-  .root > .children > .project > .name > .expand:not(.dashboard .expand, .board .expand),
-  .root > .children > .project > .name > .menu:not(.dashboard .menu, .board .menu) {
-    border-radius: 2px;
-    width: 20px !important;
-  }
-
-
-  #app .page {
-    padding-right: var(--pagePadRight);
-    padding-left: var(--pagePadLeft);
-  }
-
-  #app .page > .project.root > name > .content {
-    font-size: 30px !important;
-    line-height: 1.25 !important;
-  }
-
-  #app .page > .project.root > .children {
-    padding-left: var(--mobileDocPadLeft);
-  }
-
-
-  /**********
-    BOARD - CURSOR NOT FLOWING - CORRECTION
-    ***********/
-  .project.board .boardColumn > .name > .content,
-  .project.board .boardColumn > .notes > .content,
-  .project.board .boardColumn .project .name > .content,
-  .project.board .boardColumn .project .notes > .content {
-    padding-top: 0px;
-  }
-  /*root checkmark*/
-  .project.checkmark.root > .name,
-  .project.checkmark.root > .notes {
-    padding-left: var(--mobileDocPadLeft) !important;
-  }
-  /*root checkmark - MENU*/
-  .project.checkmark.root > .name > .prefix {
-    left: calc(var(--children-Indent) * -0.1) !important;
-    --btn-MargTop: 2px !important;
-    top: -8px !important;
-    --btnIcn-ChkBx-BrdRad: 5px !important;
-  }
-  .project.checkmark.root > .name > .menu {
-    --btn-MargTop: 41px !important;
-    left: calc(var(--children-Indent) * 0) !important;
-  }
-  .project.root.checkmark > .name > .prefix {
-    transform: scale(1.1);
-  }
-  #app .project.checkmark:not(.board .project.checkmark) > .name > .expand {
-    width: 23px !important;
-  }
-  .dashboard .dashboard-card > .name {
-    padding-left: calc(var(--children-Indent) * 1) !important;
-  }
-  #app .dashboard-card > .children {
-    padding-right: 7px;
-  }
-  #app .dashboard .dashboard-card > .name > .expand,
-  #app .dashboard .dashboard-card > .name > .menu {
-    top: 5px !important;
-  }
-  #app .dashboard .dashboard-card > .name > .expand {
-    right: calc(var(--children-Indent) * 0 + 4px) !important;
-    width: calc(var(--children-Indent) * 1) !important;
-    overflow: hidden;
-    top: 5px !important
-  }
-  #app .dashboard .dashboard-card > .name > .expand > div {
-    transform: scale(1);
-  }
-  #app .dashboard .dashboard-card > .name > .menu {
-    left: unset !important;
-    right: calc(var(--children-Indent) * 1) !important;
-    width: calc(var(--children-Indent) * 1) !important;
-  }
-  .project.header1 > .name {
-    --btn-MargTop: 11px;
-  }
-  .project.header2 > .name {
-    --btn-MargTop: 8px;
-  }
-
-  .project.header3 > .name {
-    --btn-MargTop: 9px;
-  }
-  .project > .name:after {
-    left: calc(var(--children-Indent) / 3 - 0.75px);
-    }
-
-}
-@media (max-width: 650px){
-  #app .project > .name:after {
-    left: calc(var(--children-Indent) / 2 - 0.75px) !important;
-    }
-}
-  /*BOARD COLUMNS*/
-@media (max-width: 500px) {
-  #app .board.root > .name {
-    --ROOT-padLeftRight:20px;
-  }
-  #app .board.root > .children {
-    --ROOT-padLeftRight:10px;
-    --boardRootColumnWidth:calc(100vw - 10px);
-  }
-
-}
-
-
-@media (max-width: 400px) {
-  #app .searchBox._zpqjyh {
-    width: 88vw;
-    min-width: 88vw;
-    margin-left: -100px;
-  }
-}
-
-
-/***********
-************
-FLOAT BROWSER / FLUID BROWSER > OVERRIDES
-************
-************/
-@media (max-width: 650px){
-  .project:not(.board) .project > .notes > .content {
-    font-size: 13.5px;
-    line-height: 18.5px;
-  }
-#app .project.code-block > .name > .content{
-  line-height:unset !Important;
-}
-#app .project.code-block > .name > .content > .innerContentContainer {
-  font-size: 14.5px !important;
-  line-height: calc(25px - 2px) !important;
-  }
-  #app .project:not([class*="header"], .root) > .name > .content code{
-    font-size: 14.25px;
-}
-  #app .project:is(.root) > .name > .content code{
-    font-size: 24px;
-}
-#app .board.root .project > .name > .expand {
-  top: 3px !important;
-}
-  
-}
 
 /*******************************
 ********************************
@@ -11358,4 +11078,33 @@ html #app .board .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content 
 #app .board .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink {
   background-image: unset !important;
   text-decoration: underline !important;
+}
+
+/***********
+************
+FLOAT BROWSER / FLUID BROWSER > OVERRIDES
+************
+************/
+@media (max-width: 650px){
+  .project:not(.board) .project > .notes > .content {
+    font-size: 13.5px;
+    line-height: 18.5px;
+  }
+#app .project.code-block > .name > .content{
+  line-height:unset !Important;
+}
+#app .project.code-block > .name > .content > .innerContentContainer {
+  font-size: 14.5px !important;
+  line-height: calc(25px - 2px) !important;
+  }
+  #app .project:not([class*="header"], .root) > .name > .content code{
+    font-size: 14.25px;
+}
+  #app .project:is(.root) > .name > .content code{
+    font-size: 24px;
+}
+#app .board.root .project > .name > .expand {
+  top: 3px !important;
+}
+  
 }
