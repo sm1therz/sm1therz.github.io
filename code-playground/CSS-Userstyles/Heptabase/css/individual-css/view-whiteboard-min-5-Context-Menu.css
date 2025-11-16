@@ -1,0 +1,18 @@
+/***********
+************
+************
+************
+************
+************
+WHITEBOARD - CONTEXT MENU
+************
+************
+************
+************
+************
+************/
+/*CONTEXT MENU*/
+
+[data-theme="dark"] .max-h-\[80vh\].overflow-y-auto.fixed.z-dropdown-menu{
+	background: rgba(61, 64, 67, 1) !important;
+}

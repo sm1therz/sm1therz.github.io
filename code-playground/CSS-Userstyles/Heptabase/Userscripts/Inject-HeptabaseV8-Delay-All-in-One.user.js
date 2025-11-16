@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         HEPTABASE V8 - DELAY
+// @name         HEPTABASE V8 - ALL IN ONE - DELAY
 // @namespace    http://yournamespace.com
 // @version      1.0
-// @description  Injects V8 into heptabase.com.
+// @description  Injects V8 Individual Stylesheets into heptabase.com.
 // @author       RSM
 // @match        https://app.heptabase.com/*
 // @grant        GM_addElement
@@ -31,6 +31,10 @@
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-headings.css');
 	}, 1600);
+	
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-headings-h5.css');
+	}, 1700);
 
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables.css');
@@ -49,6 +53,10 @@
 	}, 2400);
 
 	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-7-codeblock-markdown-syntax-highlighting.css');
+	}, 2500);
+
+	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-popup-1-context-menus.css');
 	}, 2600);
 
@@ -59,6 +67,10 @@
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/right-sidebar-1-thin.css');
 	}, 3000);
+	
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/right-sidebar-2-toc.css');
+	}, 3100);
 
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-card-library.css');
@@ -93,13 +105,13 @@
 	}, 4600);
 
 	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-5-Left-Toolbar-Mini.css');
+	}, 4700);
+
+	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-4-Collapsed-Cards.css');
 	}, 4800);
 
-	setTimeout(function() {
-		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-5-Left-Toolbar.css');
-	}, 5000);
-	
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-4-Card-Toggles.css');
 	}, 5200);
