@@ -10342,6 +10342,16 @@ DROPDOWN WRAPPER
     background: var(--BG-expand-border-shared-WITH-me) !important;
 }
 
+#app .project:is(.header1) > .name:after {
+  top:calc(var(--children-Indent) * 2) !important
+}
+#app .project:is(.header2) > .name:after {
+  top:calc(var(--children-Indent) * 1.75) !important
+}
+#app .project:is(.header3) > .name:after {
+  top:calc(var(--children-Indent) * 1.55) !important
+}
+
 /*******************************
 ********************************
 ! SHARED PAGES
@@ -10797,6 +10807,10 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
   .project > .name:after {
     left: calc(var(--children-Indent) / 3 - 0.75px);
+    }
+    
+  #app .project:is(.header1,.header2,.header3) > .name:after {
+      top:calc(var(--children-Indent) * 2) !important
     }
 
 }
