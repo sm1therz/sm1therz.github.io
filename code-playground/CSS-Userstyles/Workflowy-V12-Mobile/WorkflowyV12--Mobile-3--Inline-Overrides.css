@@ -1,11 +1,22 @@
-
 /*********** 
-! CONTENT WIDTH OVERRIDES 
+! NAME > CONTENT > WIDTH OVERRIDES 
 ************/
 
-.project:not(.board) .project > .name > .content {
-	min-width: 94% !important;
-	/*box-shadow:inset 0 0 0 1px red !important;*/
+#app .project:not(.board) .project>.name,
+#app .project:not(.board) .project>.notes {
+	max-width: calc(100% - 40px) !important;
+}
+
+#app .project:not(.board) .project>.name>.content {
+	min-width: 100% !important;
+	/*box-shadow: inset 0 0 0 1px red !important;*/
+}
+
+/*********** 
+! NAME > EXPAND
+************/
+.project:not(.board) .project>.name>.expand {
+	/*box-shadow: inset 0 0 0 1px red !important;*/
 }
 
 /*********** 
@@ -29,12 +40,12 @@
 /*NOTES > SHOW ALL LINES WHEN ACTIVE*/
 
 /*ACTIVE*/
-#app .page .project.root > .children .project > .notes > .content.active,
-#app .page .project > .children .project > .notes > .content.active {
+#app .page .project.root>.children .project>.notes>.content.active,
+#app .page .project>.children .project>.notes>.content.active {
 	-webkit-line-clamp: 100 !important;
 	--notesMaxH: 1000px !important;
-	display:block !important;
-	overflow:unset !important;
+	display: block !important;
+	overflow: unset !important;
 	-webkit-box-orient: unset !important;
 }
 
