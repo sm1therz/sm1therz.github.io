@@ -86,9 +86,10 @@ MIDDLE  BAR > OUTER
 	max-width: 100% !important;
 
 }
+/*
 .isolate .bg-background-secondary > .scrollbar-gutter-stable::-webkit-scrollbar{
 	width: 0px !important;
-}
+}*/
 
 /***********
 ! INBOX ITEMS - WRAPPER > INNER
