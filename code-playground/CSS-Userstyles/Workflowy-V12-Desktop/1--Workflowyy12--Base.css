@@ -1,4 +1,4 @@
-
+ 
 /****
 ! ROOT
 ****/
@@ -15,7 +15,7 @@ body,
     background: var(--BG-primary) !important;
 }
 
-.matching-node {
+.matching-node { 
     background: var(--SIDEBAR-BUTTON--BG--HOVER);
     color: var(--NODE--TXT-CLR--main);
     -webkit-backdrop-filter: blur(24px);

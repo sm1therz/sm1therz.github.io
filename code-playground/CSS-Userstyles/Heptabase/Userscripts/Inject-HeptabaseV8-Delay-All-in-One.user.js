@@ -9,7 +9,7 @@
 // ==/UserScript==
 (function() {
 	'use strict';
-	// Function to inject the CSS stylesheet into the <head> of the page
+	// Function to inject the CSS stylesheet into the <head> of the page 
 	function injectCSS(href) {
 		// Create a link element for the stylesheet
 		var link = document.createElement('link');

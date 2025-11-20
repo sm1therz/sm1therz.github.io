@@ -10,7 +10,7 @@
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
-		max-height: var(--notesMaxH);
+		max-height: var(--notesMaxH); 
 }
 
 #app .page .project.root > .children .project > .notes > .content.active {
