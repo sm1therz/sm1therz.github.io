@@ -86,7 +86,7 @@
     --bookmarkDescriptionLinkBgClr: hsla(359, 3%, 100%, 0.0);
     --bookmarkDescriptionLinkBgClr-Hover: hsla(359, 3%, 100%, 0.31);
     --bookmarkDescriptionLinkBrdClr: hsla(0, 0%, 25%, 1);
-    --bookmarkDescriptionBldClr: hsla(359, 3%, 90%, 0.75);
+    --bookmarkDescriptionBldClr: hsla(359, 3%, 100%, 0.8);
     --widgetDescriptionClr: hsla(359, 3%, 90%, 0.65);
     --tableBgClr: hsla(0, 0%, 50%, .065);
     --tableBrdClr: hsla(0, 0%, 50%, .2);
@@ -149,6 +149,7 @@ span.notes-widget__result * {
 }
 
 
+
 /***********
 ************
 ! EXTENSION BACKGROUND FIX
@@ -173,6 +174,7 @@ html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__si
     background: var(--startMeBg) !important;
     background-image: linear-gradient(var(--startMeBg),var(--startMeBg)) !important;
 }
+
 /***********
 ************
 ! GOOGLE SEARCH
@@ -369,6 +371,7 @@ BROWSER OTHER / FLOATING BROWSERS
     margin-top: 0px !important;
   }
 }************/
+
 /***********
 ************
 ! NAV
@@ -391,26 +394,26 @@ BROWSER OTHER / FLOATING BROWSERS
     max-width: unset !important;
     min-width: unset !important;
 }
-#appID .widget-page > header[role="navigation"],
-#appID .widget-page > header[role="navigation"] > div {
+#appID .widget-page > header,
+#appID .widget-page > header > div {
     background: transparent !important;
 }
-#appID .widget-page > header[role="navigation"] {
+#appID .widget-page > header {
     position: fixed !important;
 }
-#appID .widget-page > header[role="navigation"] .header__main-bar {
+#appID .widget-page > header .header__main-bar {
     transition: .15s !important;
     top: calc(var(--navigationHeight) * -1) !important;
     opacity: 1.0 !important;
     transition: .2s !important;
     transition-delay: 2s !important;
 }
-#appID .widget-page > header[role="navigation"] .header__main-bar:hover {
+#appID .widget-page > header .header__main-bar:hover {
     top: 0 !important;
     transition-delay: .5s !important;
     opacity: 1;
 }
-#appID .widget-page > header[role="navigation"]  .header__main-bar:before{
+#appID .widget-page > header  .header__main-bar:before{
     content:"";
     display: block;
     position: absolute;
@@ -470,6 +473,7 @@ BROWSER OTHER / FLOATING BROWSERS
     }
     .widget-page .header__right {}
 }
+
 /***********
 ************
 ! COLUMNS
@@ -832,6 +836,7 @@ MAX WIDTH 500px
         width: calc(100%);
     }
 }
+
 /***********
 ************
 ! MAIN APP
@@ -2167,6 +2172,7 @@ ul.bookmark-widget__list > li:first-child .bookmark-item_mode_list.bookmark-item
 #appID [class*="bookmark-widget"][class*="detail"][class*="small"] .bookmark-folder__content ul > li:last-child{
     margin-bottom: 1px 
 }
+
 /***********
 ************
 ! NOTES
@@ -2650,12 +2656,12 @@ html .notes-widget-wrapper .widget__description ol li:before {
     padding-bottom: 3px !important;
 }
 
+/*HR*/
 #appID .bookmark-item_mode_detail .bookmark-item__info hr {
   border: unset;
   height: 1px;
   background: hsla(0,0%,50%,0.5);
 }
-
 /*
 .widget__description{
   box-shadow: 0 1px 0 0 hsla(0,0%,0%,.2)
@@ -2802,7 +2808,7 @@ html .notes-widget-wrapper .widget__description ol li:before {
 }
 
 
-/*DESCRIPTION BOLD*/
+/*DESCRIPTION LIST ITEMS*/
 #appID .bookmark-description strong,
 #appID .bookmark-description b {
     color: var(--bookmarkDescriptionBldClr) !important;
@@ -3012,6 +3018,7 @@ BIGGER TABLES - ON WHITE WIDGETS
 #appID .notes-widget-wrapper .widget__container[style*="rgb(255, 255, 255"] table td,
 #appID .notes-widget-wrapper .widget__container[style*="rgb(255, 255, 255"] table th,
 #appID .notes-widget-wrapper .widget__container[style*="rgb(255, 255, 255"] table thead {}
+
 /***********
 ************
 ! NOTES MODAL
@@ -3067,6 +3074,7 @@ height: 100% !important;
 .modal.notes-edit-modal .modal__component-container .notes-widget .wysiwyg-editor__input > *:last-child {
   padding-bottom: 10px;
 }
+
 /***********
 ************
 ! CONTEXT MENUS
@@ -3078,6 +3086,7 @@ height: 100% !important;
 .actions-list__item+.actions-list__item_separated, .actions-list_wrapped .actions-list__item+.actions-list__item_separated{
     margin-top: 10px 
 }
+
 /*********
 **********
 **********
@@ -3215,6 +3224,7 @@ a.notes-widget-wrapper__tab-creator.notes-widget-wrapper__tab-creator_small{
     display: none;
 }
 
+
 /*********
 **********
 **********
@@ -3270,6 +3280,7 @@ ul.notes-widget-wrapper__tabs-list li[class*="active"]{
     border: unset !important;
 }
 
+
 /***********
 ************
 TODOS
@@ -3310,6 +3321,7 @@ ul.todo-widget__drag-container {
     border: var(--testBrdWidth) solid purple;
     padding: var(--testpadLR) !important;
 }
+
 /*ITEM - OUTER WRAPPER*/
 #appID .todo-item,
 #appID li.todo-item,
@@ -3487,3 +3499,4 @@ HIDDEN TODOS
     margin: 0px !important;
     
 }
+
