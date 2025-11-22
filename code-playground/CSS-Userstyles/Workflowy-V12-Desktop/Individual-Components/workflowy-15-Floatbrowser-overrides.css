@@ -1,0 +1,36 @@
+/***********
+************
+FLOAT BROWSER / FLUID BROWSER > OVERRIDES
+************
+************/
+#app .project:not([class*="header"]) > .name > .content code {
+	font-size: calc(var(--name-fontSize) - 4.5px) !important;
+}
+@media (max-width: 650px) {
+	.project:not(.board) .project>.notes>.content {
+		font-size: 13.5px;
+		line-height: 18.5px;
+	}
+
+	#app .project.code-block>.name>.content {
+		line-height: unset !Important;
+	}
+
+	#app .project.code-block>.name>.content>.innerContentContainer {
+		font-size: 14.5px !important;
+		line-height: calc(25px - 2px) !important;
+	}
+ 
+	#app .project:not([class*="header"], .root)>.name>.content code {
+		font-size: 14.25px !important;
+	}
+
+	#app .project:is(.root)>.name>.content code {
+		font-size: 24px !important;
+	}
+
+	#app .board.root .project>.name>.expand {
+		top: 3px !important;
+	}
+
+}
