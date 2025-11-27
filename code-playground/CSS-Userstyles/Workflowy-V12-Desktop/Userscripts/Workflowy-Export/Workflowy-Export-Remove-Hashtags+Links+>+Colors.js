@@ -1,31 +1,22 @@
 // ==UserScript==
-// @name         Workflowy Export > Remove > Links + Hashtags + > + Colors
+// @name         Workflowy Export 5> Remove > Links + Hashtags + > + Colors
 // @namespace    https://workflowy.com/
-// @version      1.7
-// @description  Remove Markdown links, strip hashtags (except #numbers), clean note blockquotes with precise contextual indentation, and remove == marks
+// @version      1.8
+// @description  Remove Markdown links, strip hashtags (except #numbers), clean note blockquotes with precise contextual indentation, and remove == marks. Works with current Workflowy export DOM.
 // @match        https://workflowy.com/*
 // @grant        none
 // ==/UserScript==
 
 (function () {
-  'use strict';
+	'use strict';
 
-  const observer = new MutationObserver(() => {
-	const dialog = document.querySelector('.dialog-backdrop');
-	if (dialog && !dialog._hasCombinedCopyListener) {
-	  const textarea = dialog.querySelector('textarea._p3dqzq');
-	  if (textarea) {
-		dialog._hasCombinedCopyListener = true;
+	// process text: apply all transformations to exported markdown
+	function processText(text) {
+		const lines = text.split('\n');
+		const result = [];
 
-		textarea.addEventListener('copy', function (e) {
-		  e.preventDefault();
-
-		  let lines = textarea.value.split('\n');
-		  const result = [];
-
-		  for (let i = 0; i < lines.length; i++) {
+		for (let i = 0; i < lines.length; i++) {
 			let line = lines[i];
-			const trimmed = line.trim();
 			const prevLine = i > 0 ? lines[i - 1] : '';
 			const prevTrimmed = prevLine.trim();
 
@@ -38,37 +29,65 @@
 			const blankAbove = prevTrimmed === '';
 
 			if (!isFirstLine && !blankAbove && !isDashBlockquote && /^\s*> /.test(line)) {
-			  const prevIndent = prevLine.match(/^\s*/)[0].length;
-			  let addSpaces = 3;
+				const prevIndent = (prevLine.match(/^\s*/)[0] || '').length;
+				// compute addSpaces based on the previous line's marker
+				let addSpaces = 3; // default
+				if (/^\s*-\s*> /.test(prevLine)) addSpaces = 6;   // prev is "- >"
+				else if (/^\s*- /.test(prevLine)) addSpaces = 3;  // prev is "- "
+				else if (/^\s*> /.test(prevLine)) addSpaces = 3;   // prev is "> "
 
-			  if (/^\s*-\s*> /.test(prevLine)) addSpaces = 6;
-			  else if (/^\s*- /.test(prevLine)) addSpaces = 3;
-			  else if (/^\s*> /.test(prevLine)) addSpaces = 3;
-			  else addSpaces = 3;
-
-			  const totalIndent = ' '.repeat(prevIndent + addSpaces);
-			  line = line.replace(/^\s*>\s?/, totalIndent);
+				const totalIndent = ' '.repeat(prevIndent + addSpaces);
+				line = line.replace(/^\s*>\s?/, totalIndent);
 			}
 
 			// Rule 1: Remove markdown links (keep visible text only)
 			while (/\[[^\]]+\]\([^\)]+\)/.test(line)) {
-			  line = line.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '$1');
+				line = line.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '$1');
 			}
 
 			// Rule 2: Remove '#' unless followed by a number
-			line = line.replace(/#(?!\d)\w+/g, match => match.startsWith('#') && !/^#\d/.test(match) ? match.slice(1) : match);
+			// replace occurrences like #word or #word123 -> word or word123; keep #1 etc.
+			line = line.replace(/#(?!\d)([A-Za-z0-9_-]+)/g, '$1');
 
 			// Rule 4: Remove all instances of '=='
 			line = line.replace(/==/g, '');
 
 			result.push(line);
-		  }
+		}
 
-		  e.clipboardData.setData('text/plain', result.join('\n'));
-		});
-	  }
+		return result.join('\n');
 	}
-  });
 
-  observer.observe(document.body, { childList: true, subtree: true });
+	// attach listener when an export dialog appears
+	const observer = new MutationObserver(() => {
+		// prefer the dialog-box element where the textarea lives
+		const dialog = document.querySelector('.dialog-box') || document.querySelector('.dialog-backdrop');
+		if (!dialog || dialog._hasCombinedCopyListener) return;
+
+		const textarea = dialog.querySelector('textarea') || dialog.querySelector('div[contenteditable]');
+		if (!textarea) return;
+
+		dialog._hasCombinedCopyListener = true;
+
+		// copy handler attached to the dialog so it catches copy events regardless of how copy is triggered
+		dialog.addEventListener('copy', function (e) {
+			try {
+				e.preventDefault();
+				const raw = textarea.value ?? textarea.textContent ?? '';
+				const out = processText(raw);
+				// prefer clipboardData when available
+				if (e.clipboardData) {
+					e.clipboardData.setData('text/plain', out);
+				} else if (navigator.clipboard && navigator.clipboard.writeText) {
+					// fallback for some browsers: async API (may require permissions)
+					navigator.clipboard.writeText(out).catch(() => {});
+				}
+			} catch (err) {
+				// fail silently
+				console.error('Workflowy export script error', err);
+			}
+		}, true);
+	});
+
+	observer.observe(document.body, { childList: true, subtree: true });
 })();
