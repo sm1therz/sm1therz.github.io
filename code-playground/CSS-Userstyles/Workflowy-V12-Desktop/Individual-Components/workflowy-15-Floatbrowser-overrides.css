@@ -3,9 +3,10 @@
 FLOAT BROWSER / FLUID BROWSER > OVERRIDES
 ************
 ************/
-#app .project:not([class*="header"]) > .name > .content code {
+#app .project:not([class*="header"])>.name>.content code {
 	font-size: calc(var(--name-fontSize) - 4.5px) !important;
 }
+
 @media (max-width: 650px) {
 	.project:not(.board) .project>.notes>.content {
 		font-size: 13.5px;
@@ -20,7 +21,7 @@ FLOAT BROWSER / FLUID BROWSER > OVERRIDES
 		font-size: 14.5px !important;
 		line-height: calc(25px - 2px) !important;
 	}
- 
+
 	#app .project:not([class*="header"], .root)>.name>.content code {
 		font-size: 14.25px !important;
 	}
