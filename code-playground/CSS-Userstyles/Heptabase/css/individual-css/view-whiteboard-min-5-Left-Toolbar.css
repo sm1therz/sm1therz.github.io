@@ -1,43 +1,17 @@
-/***********
-************
-************
-************
-************
-************
-WHITEBOARD - LEFT TOOLBAR
-************
-************
-************
-************
-************
-************/
-[class*="whiteboardToolbarLeft"] {
-
-		transform-orgin: left bottom !important;
-		transform: scale(1.6);
-		margin-left: 12px !important;
-		background: transparent;
-		backdrop-filter: blur(20px) !important;
-		-webkit-backdrop-filter: blur(20px) !important;
-		margin-top: -90px !important;
-		box-shadow: inset 0 0 0 1px hsla(0, 0%, 50%, .05) !important;
-		border-radius: 8px !important;
+/**OFF*/
+[class*="_whiteboardToolbarLeft"]{
+		display: none !important;
 }
 
-#root ~ div .fixed.z-dropdown-menu[class*="80"][style*="248px"] {
-		width: 248px !important;
+/**MINI*/
+[class*="_whiteboardToolbarLeft"]{
+		transition: .24s;
+		max-height: 1.75rem;
+		overflow: hidden;
+		transition-delay: 1.5s;
+		
 }
-/**/
-/*******
-PUT IT AT THE BOTTOM
-********/
-[class*="whiteboardToolbarLeft"] {
-		bottom: 300px!important;
-		top: unset !important;
-}
-
-@media (max-width:850px) {
-		[class*="whiteboardToolbarLeft"] {
-				bottom:480px !important;
-		}
+[class*="_whiteboardToolbarLeft"]:is(:hover,:focus-within,:focus){
+		max-height: 400px;
+		transition-delay: .5s;
 }

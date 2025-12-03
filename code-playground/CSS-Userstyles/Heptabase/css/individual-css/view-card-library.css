@@ -87,8 +87,13 @@ CARD LIBRARY - VARIABLES
   --cardlibHeadingToggleBulletMargTop: var(--cardlibToggleBulletMargTop);
 }
 
-[data-theme="dark"]{
+[data-theme="dark"] #root .grid.select-none{
   --background-primary-cardLib:hsla(0, 0%, 11%, 1.0);
+  --internalLinkClr:var(--text-color);
+
+}
+[data-theme="dark"] #root .grid.select-none [data-node-type="heading"]{
+    --internalLinkClr:var(--headingClr)
 }
 
 .grid.select-none [data-node-type="numbered_list_item"],
@@ -304,7 +309,7 @@ CARD LIBRARY - CARD WRAPPER
   left: calc(var(--cardlibCardPadLeftRight) * 0);
   right: calc(var(--cardlibCardPadLeftRight) * 0);
   height: calc(var(--cardlibCardPadTopBtm) * 2);
-  background: var(--background-primary-cardLib);
+  background: var(--background-primary);
   bottom: calc(var(--cardlibCardPadTopBtm) * -1);
   z-index: 9594;
 }
@@ -661,6 +666,16 @@ CARD LIBRARY - COUNTER
 }*/
 
 
+/*CODE > */
+#root .grid.select-none .ProseMirror > [data-node-type] code {
+  padding: 0.125em .3em 0.075em .3em !important;
+  display: inline !important;;
+  box-shadow: inset 0 0 0 .75px var(--inlineCodeBoxShadClr) !important;
+}
+
+/*INTERNAL LINKS*/
+
+
 
 
 /*****************
@@ -803,7 +818,7 @@ TOGGLE > 1st CHILD
 #root .grid.select-none .ProseMirror > [data-node-type*="toggle"]:not([class*="folded"]):nth-child(1){
   display: flex !important;
 }
-#root .grid.select-none .ProseMirror > [data-node-type*="toggle"]:not([class*="folded"]):nth-child(1) > [class*="bulletWrapper"]{
+#root .grid.select-none .ProseMirror > *:is([data-node-type*="toggle"]):nth-child(1) > [class*="bulletWrapper"]{
   position: absolute;
   left: var(--cardLibToggleLeftPos);
   
@@ -823,7 +838,7 @@ TOGGLE > 2ND CHILD
 }
 
 #root .grid.select-none .ProseMirror > [data-node-type*="list_item"]:not([class*="folded"]):nth-child(1) > [class*="nested"] > :is([data-node-type*="horizontal"],[data-node-type]:not(:first-child)) {
-  display: none !important;
+
 }
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:nth-child(2) > [class*="nested"] > [data-node-type]{
   display: none;
@@ -880,11 +895,34 @@ TOGGLE > 3RD CHILD
   height: 1.5px;
 }
 
+
+
+
+/********
+HIDE > 2 <BR> ELEMENTS
+*********/
+#root .grid.select-none .ProseMirror > [data-node-type] > br + br{
+display: none;
+}
+/********
+HIDE > ANYTHING AFTER > 2 <BR> ELEMENTS
+*********/
+
+#root .grid.select-none .ProseMirror > [data-node-type] > br + br ~ *{
+  display: none
+}
+
+
+/*****************
+******************
+VISIBLE BLOCKS - EMPTY
+******************
+******************/
+
+
 /*CODE > */
-#root .grid.select-none .ProseMirror > [data-node-type] code {
-  padding: 0.125em .3em 0.075em .3em !important;
-  display: inline !important;;
-  box-shadow: inset 0 0 0 .75px var(--inlineCodeBoxShadClr) !important;
+#root .grid.select-none .ProseMirror > [data-node-type]:empty {
+  display: none !important;
 }
 
 /*******
