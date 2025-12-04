@@ -4,7 +4,7 @@
 ************
 ************
 ************
-FIRST LINE TOGGLE 
+FIRST LINE TOGGLE
 ************
 ************
 ************
@@ -85,4 +85,12 @@ div[style*="width:"] > div[style*="width:"] [data-editor-type="previewer"] .Pros
 
 ._hasNestedBlock_mglho_11>._bulletWrapper_mglho_1>div>span>div>._toggleIcon_mglho_4{
   opacity: .5
+}
+
+.group\/1700998616504 .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
+  position: absolute;
+    left: calc(var(--bulletwrapperW) * 0.0);
+    width: var(--bulletwrapperW);
+      --bulletwrapperW: 1.75rem;
+  z-index: 939393;
 }

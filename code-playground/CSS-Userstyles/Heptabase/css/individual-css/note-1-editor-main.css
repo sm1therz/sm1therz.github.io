@@ -218,8 +218,8 @@ CODEBLOCK
 ************/
 .ProseMirror .cm-editor {
 	background: var(--codeblockBgClr);
-	box-shadow: inset 0 0 0 1px var(--codeblockBrdClr);
-	padding-top: 24px;
+	box-shadow: inset 0 0 0 1px var(--codeblockBrdClr) !important;
+	padding-top: 24px !important;
 	border-radius: 10px
 }
 .ProseMirror .cm-editor > .cm-scroller {
@@ -337,6 +337,12 @@ HIGHLIGHTS
 IMAGES
 ************
 ************/
+
+.ProseMirror [data-node-type="image"] [class*="group\/"] {
+	outline: 1px solid hsla(0,0%,50%,.25);
+	outline-offset: -1px;
+	border-radius: 5px;
+}
 /*exclude embedded images and svgs*/
 .ProseMirror [data-node-type="embed"][class*="self-start"],
 .ProseMirror [data-node-type="embed"][class*="self-center"],
@@ -464,4 +470,10 @@ EMBEDDED - IMAGES - POPUP TITLE / MEDIA TOOLBAR
 ._checked_mglho_112>[data-node-type=paragraph]:first-child * {
 	color: var(--text-done-editor) !important;;
 	text-decoration-color: var(--text-done-editor-line);
+}
+
+.app-region-no-drag.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.shadow-main.backdrop-blur-2xl .max-h-\[40vh\].w-62.overflow-y-auto.overflow-x-hidden {
+	width: 350px;
+	max-width: 100% !important;
+	max-height: 50vh !important;
 }

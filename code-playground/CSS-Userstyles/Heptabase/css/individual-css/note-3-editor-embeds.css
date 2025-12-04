@@ -1,9 +1,3 @@
-/*root*/
-
-:root {
-	--embedTstBrdW:0px;
-}
-
 /***************
 ! EMBEDS
 ****************/
@@ -77,9 +71,7 @@
 /*EMBED > HOVER *NOT SELECTED*/
 [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"],
 .grid.select-none .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"]{
-	--embedBg:var(--embedBg-Hover);
 	--embedBrdRad:3px;
-	cursor: pointer;
 
 
 }
@@ -186,6 +178,13 @@ MENU > TEXT OUTER
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div .text-label {
 	min-height: 100%;
 	max-width: calc(100%);
+	white-space: nowrap
+}
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div .text-label .truncate {
+		text-overflow: ellipsis !important;
+	overflow: hidden !important;
+	white-space: nowrap !important;
 }
 
 /****

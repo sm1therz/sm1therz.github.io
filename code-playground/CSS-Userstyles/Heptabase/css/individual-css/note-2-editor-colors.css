@@ -37,8 +37,8 @@ EDITOR TEXT COLORS - ROOT
 	--headingClr: hsl(0, 0%, 95%);
 	--bldClr: hsl(0, 0%, 90%);
 	--highlightClr: hsl(0, 0%, 97%);
-	--strikethrough-Clr: hsl(0, 0%, 61%);
-	--strikethroughStrike-Clr: hsl(0, 0%, 61%, 0.65);
+	--strikethrough-Clr: hsla(0, 0%, 50%, 1);
+	--strikethroughStrike-Clr: hsla(0, 0%, 53%, 1);
 	/*text highlights*/
 	--highlightUnderlineClr-Yellow: hsl(50, 100%, 50%, .65);
 	--highlightBrdClr-Yellow: var();
@@ -52,7 +52,7 @@ EDITOR TEXT COLORS - ROOT
 	/*Internal Link*/
 	--linkUnderlineClr: var(--active-item);
 	--internalLinkUnderlineClr: hsl(200, 4%, 60%, .3);
-	--internalLinkClr: hsl(200, 0%, 61%);
+	--internalLinkClr: hsl(200, 0%, 70%);
 }
 
 /***********
@@ -86,6 +86,7 @@ STRIKETHROUGH
 	text-decoration-thickness: 2px !important;
 	text-decoration-color: var(--strikethroughStrike-Clr);
 	color: var(--strikethrough-Clr) !important;
+	--internalLinkClr:var(--strikethrough-Clr);
 }
 
 :root {

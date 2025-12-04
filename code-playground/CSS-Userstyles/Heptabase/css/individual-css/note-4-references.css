@@ -28,7 +28,7 @@
 /*****************
 ******************
 ******************
-! REFERENCES - REORDER
+! ATTRIBUTES - REORDER
 ******************
 ******************
 ******************/
@@ -86,25 +86,10 @@
 
 
 
-/********
-*********
-*********
-ATRIBUTES > CONTAINER
-*********
-*********
-*********/
 
-/*info > info popup */
-.pr-\[calc\(20px-var\(--scrollbar-width\)\)\] > div,
-/*info > bottom of note */
-[class*="info"],
-/*info > right sidebar */
-[style*="width: "] .mt-2.w-full{
-    display:flex;
-    flex-direction:column;
-    box-shadow: inset 0 0 0 var(--refTstBrdW) red;
-    
-}
+
+
+
 
 /********
 *********
@@ -114,17 +99,78 @@ ATRIBUTES > MOVE BACKLINKS TO BOTTOM
 *********
 *********/
 
+
+/********
+SET PARENT TO FLEX
+*********/
+
+/*info > info popup */
+.pr-\[calc\(20px-var\(--scrollbar-width\)\)\] > div,
+/*info > bottom of note */
+/*info > right sidebar */
+[style*="width: "] .mt-1.w-full{
+    display:flex;
+    flex-direction:column;
+    box-shadow: inset 0 0 0 var(--refTstBrdW) red;
+    
+}
+
+/********
+MOVE BACKLINKS TO BOTTOM
+*********/
+
 /*info > info popup */
 .pr-\[calc\(20px-var\(--scrollbar-width\)\)\] > div > .mt-1.flex-col,
 /*info > bottom of note */
 [class*="info"] > .mt-1.flex-col,
 /*info > right sidebar */
-[style*="width: "] .mt-2.w-full > .mt-1.flex-col{
+*:is([style*="width: "],.\@container\/reference-item) .mt-1.w-full > .my-1 + .flex.mt-1.flex-col{
     box-shadow:0px -1px 0 0 var(--light-middle-grey);
     order:9939;
     padding-bottom: 40px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
+
+
+/********
+REMOVE HEIGHT
+*********/
+
+/*info > info popup */
+.pr-\[calc\(20px-var\(--scrollbar-width\)\)\] > div .h-12,
+/*info > bottom of note */
+[class*="info"] .h-12,
+/*info > right sidebar */
+[style*="width: "] .mt-1.w-full > .h-12{
+  display: none;
+}
+
+/********
+*********
+*********
+! ATRIBUTES > WHITEBOARDS
+*********
+*********
+*********/
+
+/*MAKE COLUMN*/
+*:is([class*="info"],.hepta-pseudo-overlay,[style*="width: "],.\@container\/reference-item) .flex.flex-wrap.gap-y-1\.5.py-\[5px\].pl-2\.5{
+  flex-direction: column;
+}
+/********
+ICONS > WHITEBOARDS > GREEN
+*********/
+*:is([class*="info"],.hepta-pseudo-overlay,[style*="width: "],.\@container\/reference-item) .flex.flex-wrap.gap-y-1\.5.py-\[5px\].pl-2\.5 svg {
+  fill: rgb(61, 174, 162) !important;
+}
+
+/********
+ICONS > WHITEBOARD BACKLINS > GREEN
+*********/
+*:is([class*="info"],.hepta-pseudo-overlay,[style*="width: "],.\@container\/reference-item) *:is(.group\/1685197199740, .group\/1685197199740 + div) svg path:is([d*="m21.32 5.04999-6-2h"],[d*="M6.632 3.123a.667.667"]){
+  fill: rgb(61, 174, 162) !important;
+}
+
 
 /*****************
 ******************
@@ -208,6 +254,93 @@ PROPERTY WRAPPER > SET TO COLUMN
     margin: unset;
   margin-left: var(--propValueMargL)
 
+}
+
+/*****************
+******************
+******************
+! REFERENCES - CONNECTIONS + TAGS
+******************
+******************
+******************/
+
+
+/*CONNECTIONS + TAGS > ICONS*/
+.group\/1699370106252 .flex[style*="transform: scale"] > div[class*="gap-"] > .relative{
+  order: 0;
+  background: hsla(0,0%,0%,0.3);
+  box-shadow:unset;
+  border: 1px solid hsl(0,0%,50%,0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.group\/1699370106252 .flex[style*="transform: scale"] > div[class*="gap-"] > .relative:hover{
+  background: hsla(0,0%,50%,0.1);
+  filter: brightness(1.4);
+}
+
+.group\/1699370106252 .flex[style*="transform: scale"] > div[class*="gap-"] > .relative svg {
+  transform: scale(1.3);
+}
+/*connection text*/
+
+.group\/1699370106252 .flex[style*="transform: scale"] .ProseMirror{
+  order: 2;
+
+}
+/*connection*/
+
+.group\/1699370106252 .flex[style*="transform: scale"] .ProseMirror + [data-editor-type="previewer"]{
+  order: 1;
+  padding-top: 2px;
+    width: max-content !important; 
+  max-width: 20% !important;
+}
+
+
+.group\/1699370106252 .flex[style*="transform: scale"] .ProseMirror + [data-editor-type="previewer"] .ProseMirror p{
+  flex-basis: max-content;
+  word-break: normal;
+  width: max-content !important; 
+  max-width: 100%;
+  display: inline-block;
+  font-size: calc(1em - 1px);
+    background: hsla(0,0%,0%,0);
+  border: 1px solid hsl(0,0%,50%,0);
+  padding:1px 6px;
+  border-radius: 16px;
+  font-style: italic;
+  font-weight: 600;
+  
+}
+
+
+/*TAGS > ICON*/
+
+
+.group\/1699370106252 .flex[style*="transform: scale"] > div[class*="gap-"] > .relative.text-label-mini {
+  font-size: 14px;
+  line-height: 1;
+  padding: 7px 0.7rem !important;
+  height: 27px;
+}
+.group\/1699370106252 .flex[style*="transform: scale"] > div[class*="gap-"] > .relative.text-label-mini > p {
+  padding: 0px;
+
+}
+.group\/1699370106252 .flex[style*="transform: scale"] > div[class*="gap-"] > .relative.text-label-mini > svg {
+  margin: 0px;
+}
+
+/*TAGS > CONTENT*/
+
+.group\/1699370106252 .flex[style*="transform: scale"] > div[class*="gap-"] > .relative.text-label-mini + [data-editor-type="previewer"]{
+  padding-top: 6px;
+  padding-left: 10px;
 }
 
 /*****************
