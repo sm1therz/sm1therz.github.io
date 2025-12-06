@@ -2820,7 +2820,7 @@ LEVEL 3 > Button Adjustments
 ********************************
 ********************************/
 :root {
-  --numberTstBrdW:.5px
+  --numberTstBrdW:0px
 }
 :root {
   --numberBulletUnderScale:.7;
