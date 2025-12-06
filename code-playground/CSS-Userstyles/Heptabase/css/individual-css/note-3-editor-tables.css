@@ -16,12 +16,20 @@ EDITOR > TABLES
 [data-theme="dark"] {
 		--tableHeaderBgClr:hsla(0, 0%, 100%, .08);
 		--tabbleCellBgClr-Gray:var(--tableHeaderBgClr);
+	/***COLORS***/
 }
 
 
 
 [data-theme="dark"] [data-node-type="table"] [data-node-type="table_cell"] {
-	--bg-blue-editor: hsla(200, 100%, 44%, 0.2);
+	--bg-blue-editor: hsla(200, 100%, 50%, 0.15);
+	--bg-brown-editor: hsl(19, 30%, 29%);
+	--bg-orange-editor: hsla(25, 100%, 50%, .2);
+	--bg-yellow-editor: hsla(50, 100%, 50%, 0.25);
+	--bg-green-editor: hsla(142, 101%, 38%, .2);
+	--bg-purple-editor: hsla(271, 91%, 65%, .4);
+	--bg-pink-editor: hsla(330, 80%, 60%, .4);
+	--bg-red-editor: hsla(0, 100%, 50%, .2);
 }
 /*
 .ProseMirror [data-node-type=table] {
