@@ -180,7 +180,7 @@ html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__si
 ! GOOGLE SEARCH
 ************
 ************/
-.search {
+#appID .search {
     box-sizing: border-box;
     width: 660px;
     max-width: 100%;
@@ -197,14 +197,14 @@ html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__si
     align-items: flex-start;
     justify-content: center;
 }
-.search-container {
+#appID .search-container {
     position: relative;
     top: calc(var(--searchContainerHeight) * .1)
 }
-.search__wrapper:focus-within {
+#appID .search__wrapper:focus-within {
     --searchBgClr: var(--searchBgClr-Focus);
 }
-.search__wrapper {
+#appID .search__wrapper {
     background: var(--searchBgClr) !important;
     backdrop-filter: blur(30px) brightness(0.6);
     -webkit-backdrop-filter: blur(30px) brightness(0.6);
@@ -218,64 +218,64 @@ html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__si
     border-radius: 24px;
     transition: .1s;
 }
-.search-container,
-.search-container .search,
-.search-container,
-.search-container .search .search__wrapper {
+#appID .search-container,
+#appID .search-container .search,
+#appID .search-container,
+#appID .search-container .search .search__wrapper {
     box-shadow: none;
 }
-.search__form {
+#appID .search__form {
     height: 50px !important;
 }
-.search-results {
+#appID .search-results {
     background: var(--searchBgClr) !important;
 }
-.search-results li.search-results__search-result,
-.search-results li.search-results__search-result *,
-.search .search__wrapper .search__input {
+#appID .search-results li.search-results__search-result,
+#appID .search-results li.search-results__search-result *,
+#appID .search .search__wrapper .search__input {
     color: white;
     font-size: 1.1rem !important;
     line-height: 2 !important;
 }
-.search .search__wrapper .search__input::placeholder {
+#appID .search .search__wrapper .search__input::placeholder {
     color: white !important;
     opacity: 0.6;
 }
-.search__control-arrow-icon,
-.search__control-icon {
+#appID .search__control-arrow-icon,
+#appID .search__control-icon {
     stroke: hsla(0, 0%, 100%, .6) !important;
     transition: all .02s !important;
     outline: 3px solid hsla(0, 0%, 50%, .0);
     border-radius: 2px;
 }
-.search__control-arrow-icon:hover,
-.search__control-icon:hover {
+#appID .search__control-arrow-icon:hover,
+#appID .search__control-icon:hover {
     stroke: hsla(0, 0%, 100%, 1) !important;
     background: hsla(0, 0%, 50%, .5);
     outline: 5px solid hsla(0, 0%, 50%, .5);
     transition: .2s !important;
 }
-.search__dark_menu,
-.search__menu {
+#appID .search__dark_menu,
+#appID .search__menu {
     border: none;
     padding: 0px;
 }
-.search-results__results-list:before {
+#appID .search-results__results-list:before {
     display: none;
 }
-li.search-results__search-result {
+#appID li.search-results__search-result {
     padding-left: 50px;
 }
 
-.search-results__search-result_selected {
+#appID .search-results__search-result_selected {
     background: hsla(0, 0%, 100%, .15)
 }
-.search-container {
+#appID .search-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.search__form {
+#appID .search__form {
     padding-left: 22px;
 }
 
@@ -283,9 +283,9 @@ li.search-results__search-result {
 MOBILE
 ************/
 @media (max-width: 700px) {
-    .widget-page__searchbar,
-    .search-container,
-    .search-container > .search {
+    #appID .widget-page__searchbar,
+    #appID .search-container,
+    #appID .search-container > .search {
         left: unset !important;
         right: unset !important;
         max-width: 100% !important;
