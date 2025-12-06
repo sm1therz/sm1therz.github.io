@@ -1014,9 +1014,13 @@ NOTES > CONTENT only*/
 .project[class*="header"].noted:not(.root) > .name {
     margin-bottom:0px;
 }
-.project[class*="header"].noted:not(.root) > .notes {
+#app  {
     margin-bottom: var(--wf-space-s) !important;
 }
+#app .project[class*="header"]:not(.root,.noted) > .name{
+   padding-bottom: calc(var(--wf-space-s) * 2) !important;
+}
+
 
 
 
@@ -6032,6 +6036,9 @@ CARD > IS COMMENT
     box-shadow: unset !important;
     outline: unset !important;
 }
+#app .board > .children .boardCard > .children .project > .name > .bullet:not(:hover){
+  background: transparent;
+}
 #app .board > .children .boardCard > .children .project > .name > .bullet:before {
     content:var(--ICON--MAGNIFYING-GLASS-ZOOM) !important;
     width: 24px;
@@ -6403,7 +6410,6 @@ universals*/
 .dashboard-card > .name > .expand > div:before{
     content: "";
     background-image: var(--ICON--ARROW);
-    ;
     display: block;
     width: 12px;
     height: 12px;
@@ -8978,7 +8984,7 @@ PADDING RIGHT
 
 #app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .project.boardCard.divider hr{
   margin-right: calc(var(--children-Indent) * 0) !important;
-  margin-left: calc(var(--children-Indent) * 1.5) !important;
+  margin-left: calc(var(--children-Indent) * 0) !important;
   width: calc(100% + var(--children-Indent) * -1.5);
 }
 #app .pageContainer .page .project.board:not(.root) > .children > .boardColumn  .project.boardCard > .children  .divider,
