@@ -1,4 +1,4 @@
- 
+
 /****
 ! ROOT
 ****/
@@ -15,7 +15,7 @@ body,
     background: var(--BG-primary) !important;
 }
 
-.matching-node { 
+.matching-node {
     background: var(--SIDEBAR-BUTTON--BG--HOVER);
     color: var(--NODE--TXT-CLR--main);
     -webkit-backdrop-filter: blur(24px);
@@ -316,7 +316,7 @@ BOX SHADOW TESTING - BOARDS
     --header1-lineHeight: 1.3;
     --header2-fontSize: 1.4rem;
     --header2-lineHeight: 1.35;
-    --header3-fontSize: 1.25rem;
+    --header3-fontSize: 1.225rem;
     --header3-lineHeight: 1.3;
     --cmntContain-fontSize: 1rem;
     --cmntContain-lineHeight: 20px;
@@ -1666,7 +1666,7 @@ HIGHLIGHT - CODE
 
 }
 #app .project:not([class*="header"]) > .name > .content code{
-    font-size: calc(var(--name-fontSize) - 3.75px) !important;
+    font-size: calc(var(--name-fontSize) - 5.0px) !important;
 }
 #app .project.root > .name > .content code{
     font-size: calc(var(--root-font-size) - 6px) !important;
@@ -2390,6 +2390,7 @@ html #app .project .content a.contentLink[href*="workflowy"]:after {
     opacity: 1;
     padding-left: 0px;
     padding-right: 0px;
+  text-underline-offset: 2px;
 }
 
 html #app .project > .notes > .content a.contentLink[href*="workflowy"],
@@ -2811,6 +2812,132 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].collapsed > .name > .bullet,
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
     opacity: 1;
+}
+
+/*******************************
+********************************
+! NORMAL STATE - NUMBERS
+********************************
+********************************/
+:root {
+  --numberTstBrdW:.5px
+}
+:root {
+  --numberBulletUnderScale:.7;
+}
+
+/*overrides*/
+.project:not(.checkmark) > .name > .prefix:after{
+  opacity: 0 !important;
+}
+
+/***************
+PREFIX
+****************/
+
+/*Make number visible*/
+.project:not(.checkmark) > .name > .prefix {
+  opacity: 1 !important;
+}
+
+/***************
+PREFIX - EXPAND
+****************/
+
+.project:not(.checkmark) > .name > .prefix ~ .expand{
+  --btn-MargTop:-1px
+}
+/*BULLET > TOP */
+.project:not(.checkmark) > .name > .prefix ~ .expand:before{
+opacity: 0;
+}
+
+/*BULLET > UNDER */
+.project:not(.checkmark) > .name > .prefix ~ .expand:after{
+  transform: rotate(0deg)scale(var(--numberBulletUnderScale)) !important;
+  --btnIcn-ExpandB4Low-BrdRad:4px;
+  transition: 350ms cubic-bezier(.27, 1.7, .51, .9);
+  background: transparent;
+  box-shadow: 0 0 0 1.25px var(--BG-Bullet-under);
+  opacity: 0;
+  --btnIcn-ExpandB4Low-W:16px;
+  --btnIcn-ExpandB4Low-H:16px;
+  
+}
+
+/*BULLET > UNDER > COLLAPSED*/
+.project:not(.checkmark).collapsed > .name > .prefix ~ .expand:after{
+  transform: rotate(0deg)scale(var(--numberBulletUnderScale));
+  --numberBulletUnderScale:1.2;
+  opacity: 1;
+
+  
+}
+
+/**************
+***************
+ MIRRORS
+***************
+***************/
+
+/*MIRROR > BULLET > UNDER > SOURCE*/
+
+#app .project.hasMirrors:not(.checkmark) > .name > .bullet.diamond ~ .prefix ~ .expand:after{
+--BG-Bullet-under:var(--BG-Bullet-closed)
+}
+
+/*MIRROR > BULLET > UNDER */
+#app .project:not(.checkmark) > .name > .bullet.diamond ~ .prefix ~ .expand:after {
+  transform: rotate(-45deg)scale(var(--numberBulletUnderScale)) !important;
+  opacity: 1 !important;
+  --numberBulletUnderScale:1.1;
+  border-radius: var(--btnIcn-ExpandB4Low-BrdRad)!important;
+  
+}
+
+/*MIRROR > BULLET > UNDER > COLLAPSED*/
+#app .project:not(.checkmark).collapsed > .name > .bullet.diamond ~ .prefix ~ .expand:after{
+  transform: rotate(45deg)scale(var(--numberBulletUnderScale)) !important;
+    
+}
+
+/**************
+***************
+ ROOT
+***************
+***************/
+.project:not(.checkmark).root > .name > .menu,
+.project:not(.checkmark).root > .name > .prefix,
+.project:not(.checkmark).root > .name > .content,
+.project:not(.checkmark).root > .name > .content > .innerContentContainer{
+    box-shadow: 0 0 0 var(--numberTstBrdW) red !important;
+}
+.project:not(.checkmark).root > .name > .prefix {
+  opacity: 1 !important;
+  box-shadow: 0 0 0 var(--numberTstBrdW) red !important;
+  top: 9px !important;
+  left: calc(var(--children-Indent) * 0) !important;
+  font-size: var(--root-font-size);
+  line-height: var(--root-font-size);
+  font-weight: 600
+}
+.project:not(.checkmark).root > .name > .menu {
+  top:-19px !important;
+  left: calc(var(--children-Indent) * 0) !important;
+  
+}
+
+.project:not(.checkmark).root > .name > .prefix ~ .content {
+  margin-left: calc(var(--children-Indent) * 1 + 8px)
+}
+
+@media (max-width: 650px){
+  .project:not(.checkmark).root > .name > .prefix {
+  top: 4px !important;
+}
+  .project:not(.checkmark).root > .name > .menu{
+    top: -29px !important
+  }
 }
 
 /***********
@@ -4955,8 +5082,6 @@ max-width: calc(100% - 70px) !important;
   display: block !important;
 }
 
-
-
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -5845,7 +5970,7 @@ CARD > IS COMMENT
 
 /*******************************
 ********************************
-! BOARDS - BULLET / MENU CHANGE
+! BOARDS - BULLET / EXPAND / MENU CHANGE
 ********************************
 ********************************/
 
@@ -6058,6 +6183,17 @@ BULLETS > QUOTE BLOCKS > BOARDS
 #app .board.root .project.comment .project.quote-block + .project.quote-block:not(.boardCard) > .name > .expand,
 #app .board.root .project.comment .project.quote-block + .project.quote-block:not(.boardCard) > .name > .bullet {
   --btn-MargTop: 5px !important;
+}
+
+
+/***********
+************
+EXPAND > BOARDCOLUMN BLOCKS
+************
+************/
+
+#app .board > .children > .project.boardColumn > .name > .expand {
+  opacity: 1 !important;
 }
 
 /*******************************
@@ -7657,9 +7793,11 @@ EXPAND COLLAPSE BORDER ANIMATION
 .name > .content .monolith-pill .content-wrapper{
     
     border-radius: 100px;
-    padding-left: 5px !important;
-    padding-right: 5px !important;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
     box-shadow: inset 0 0 0 .5px hsla(0,0%,50%,.3);
+  font-size: .85em;
+  line-height: 1.6
 }
 
 .root > .name > .content .monolith-pill .content-wrapper {
@@ -7799,8 +7937,8 @@ html #app .floating-comments-container .comment-container {
   padding-bottom: 100px !important;
 }
 html #app .floating-comments-container .comment-container > .children {
-  padding-left: 40px !important;
-  padding-right: -px!important;
+  padding-left: 20px !important;
+  padding-right: 1px!important;
 }
 html #app .floating-comments-container .comment-container > .children > .comment:last-of-type {
   margin-bottom: 10px !important;
@@ -8660,6 +8798,15 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 }
 
 
+/**
+PADDING RIGHT
+**/
+
+#app .floating-comments-container .vertical-scrollable-container .project.root > .children > .project > *:is(.name,.notes,.children){
+  
+  padding-right: 10px !important;
+}
+
 /*******************************
 ********************************
 ! COMMENTS - OVERRIDES
@@ -9058,12 +9205,12 @@ margin-left:calc(var(--children-Indent) * 1) !important;
 #app > [tabindex="-1"] > [style*="position: absolute"] > .flyout .flyout.menu > div.scroller > a .breadcrumbs svg {
   opacity: .5
 }
-/**MOVE TO > LINKS > BREADCRUMBS > 3 DOT MENU */
+/**MOVE TO > LINKS > BREADCRUMBS > 3 DOT MENU 
 
 [style*="position: absolute"][data-popper-reference-hidden] .menu{
   z-index: 301;
   max-height: 50vh;
-}
+}*/
 
 @media (max-width: 650px) {
   :root {
@@ -10342,15 +10489,15 @@ DROPDOWN WRAPPER
     background: var(--BG-expand-border-shared-WITH-me) !important;
 }
 
-#app .project:is(.header1) > .name:after {
-  top:calc(var(--children-Indent) * 2) !important
-}
-#app .project:is(.header2) > .name:after {
-  top:calc(var(--children-Indent) * 1.75) !important
-}
-#app .project:is(.header3) > .name:after {
-  top:calc(var(--children-Indent) * 1.55) !important
-}
+  #app .project:is(.header1) > .name:after {
+    top:calc(var(--children-Indent) * 2) !important
+  }
+  #app .project:is(.header2) > .name:after {
+    top:calc(var(--children-Indent) * 1.75) !important
+  }
+  #app .project:is(.header3) > .name:after {
+    top:calc(var(--children-Indent) * 1.55) !important
+  }
 
 /*******************************
 ********************************
@@ -10807,28 +10954,38 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
   .project > .name:after {
     left: calc(var(--children-Indent) / 3 - 0.75px);
-    }
-    
-  #app .project:is(.header1,.header2,.header3) > .name:after {
-      top:calc(var(--children-Indent) * 2) !important
-    }
+  }
 
+  #app .project:is(.header1) > .name:after {
+    top:calc(var(--children-Indent) * 2.5) !important
+  }
+  #app .project:is(.header2) > .name:after {
+    top:calc(var(--children-Indent) * 2.25) !important
+  }
+  #app .project:is(.header3) > .name:after {
+    top:calc(var(--children-Indent) * 2) !important
+  }
 }
-@media (max-width: 650px){
+#app .project > .name > .prefix{
+--btn-MargTop: -1px !important;
+}
+@media (max-width: 650px) {
   #app .project > .name:after {
     left: calc(var(--children-Indent) / 2 - 0.75px) !important;
-    }
+  }
+  #app .project > .name > .prefix {
+    --btn-MargTop: -.5px !important;
+  }
 }
-  /*BOARD COLUMNS*/
+/*BOARD COLUMNS*/
 @media (max-width: 500px) {
   #app .board.root > .name {
-    --ROOT-padLeftRight:20px;
+    --ROOT-padLeftRight: 20px;
   }
   #app .board.root > .children {
-    --ROOT-padLeftRight:10px;
-    --boardRootColumnWidth:calc(100vw - 10px);
+    --ROOT-padLeftRight: 10px;
+    --boardRootColumnWidth: calc(100vw - 10px);
   }
-
 }
 
 
@@ -10839,8 +10996,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     margin-left: -100px;
   }
 }
-
-
 
 /*******************************
 ********************************
@@ -11185,10 +11340,10 @@ FLOAT BROWSER / FLUID BROWSER > OVERRIDES
   line-height: calc(25px - 2px) !important;
   }
   #app .project:not([class*="header"], .root) > .name > .content code{
-    font-size: 14.25px;
+    font-size: 14.25px !important;
 }
   #app .project:is(.root) > .name > .content code{
-    font-size: 24px;
+    font-size: 24px !important;
 }
 #app .board.root .project > .name > .expand {
   top: 3px !important;
