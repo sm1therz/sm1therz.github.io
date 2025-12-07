@@ -194,7 +194,7 @@ html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__si
     min-height: var(--searchContainerHeight) !important;
     position: relative !important;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 }
 #appID .search-container {
@@ -349,7 +349,7 @@ BROWSER OTHER / FLOATING BROWSERS
 ************
 ************/
 .browser-other{
-    --searchContainerHeight: 100px;
+    --searchContainerHeight: 70px;
 }
 .browser-other #appID .widget-page__searchbar {
     display: flex !important;
