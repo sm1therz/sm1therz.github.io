@@ -4262,7 +4262,7 @@ Bullet, Prefix, Content, Expand, Menu
 ****************
 ****************/
 #app .boardCard .project > .name > .bullet,
-#app .boardCard .project > .name > .prefix,
+#app .boardCard .project:is(.checkmark) > .name > .prefix,
 #app .boardCard .project > .name > .expand,
 #app .boardCard .project > .name > .menu {
     top: var(--btn-MargTop) !important;
