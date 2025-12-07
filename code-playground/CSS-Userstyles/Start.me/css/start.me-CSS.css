@@ -326,7 +326,7 @@ BROWSER OTHER / FLOATING BROWSERS
 ************
 ************/
 .browser-other{
-    --searchContainerHeight: 50px !important;
+    --searchContainerHeight: 80px !important;
 }
 .browser-other #appID .widget-page__searchbar {
     display: flex !important;
@@ -727,7 +727,7 @@ GOES FROM FIXED POSITION TO RELATIVE
         right: unset;
         bottom: unset;
         --quicklinkWidth: 100%;
-        padding-top: var(--searchContainerHeight) !important;
+        padding-top: 10px !important;
 
     }
     :root {
