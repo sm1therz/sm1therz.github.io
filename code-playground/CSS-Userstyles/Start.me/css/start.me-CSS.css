@@ -332,6 +332,7 @@ BROWSER OTHER / FLOATING BROWSERS
     display: flex !important;
   height: var(--searchContainerHeight)!important;
   overflow: visible !important;
+  align-items:flex-start !important;
   
 }
 /***********
