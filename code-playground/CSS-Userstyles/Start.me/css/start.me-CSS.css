@@ -3481,3 +3481,13 @@ HIDDEN TODOS
     
 }
 
+
+
+/***********
+************
+! REMOVE ADS
+************
+************/
+.widget-page__ads{
+  display: none !important;
+}
