@@ -2983,6 +2983,19 @@ BOARD > PREFIX > ALL
   --numberBulletPosL:unset;
 
 }
+#app *:is(.board.root) .project:not(.checkmark) > .name > .prefix{
+  --btn-MargTop: 2.5px !important;
+}
+/*comments*/
+#app *:is(.board) .comment .project:not(.checkmark) > .name > .prefix{
+  --btn-MargTop: 3px !important; 
+}
+
+#app *:is(.board.root) .comment .project:not(.checkmark) > .name > .prefix{
+  --btn-MargTop: 5.5px !important; 
+}
+
+
 /***************
 BOARD > PREFIX > EXPAND
 ****************/
