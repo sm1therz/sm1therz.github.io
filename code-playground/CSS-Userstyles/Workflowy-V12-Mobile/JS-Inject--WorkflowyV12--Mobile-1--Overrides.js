@@ -20,8 +20,10 @@
 	
 	:root {
 		--testBrdW:0px;
+		--mbltstBrdW:0px;
 		--testMobileBrdW:0px
 	}
+	
 	/**MAIN*/
 	
 	/****************
@@ -35,13 +37,13 @@
 	
 	}
 	#app .project.header1 > .name {
-		--btn-MargTop: 5px !important;
+		--btn-MargTop: 12px !important;
 	}
 	#app .project.header2 > .name {
-		--btn-MargTop: 3px !important;
+		--btn-MargTop: 6px !important;
 	}
 	#app .project.header3> .name {
-		--btn-MargTop: 3.5px !important;
+		--btn-MargTop: 9.5px !important;
 	}
 	/*Header 2*/
 	#app .project.header2 > .name > .bullet:not(#app .board .header2 > .name > .bullet),
@@ -64,6 +66,7 @@
 	.project:not([class*="head"]) > .name > .content:empty:before{
 		height: 28px !important;
 	}
+	
 	/********
 	*********
 	*********
@@ -201,8 +204,17 @@
 		height: 5px !important;
 	
 	}
+	/****************
+	BREADCRUMBS
+	*****************/
 	
-	.project.board.open > .children > .boardColumn {
+	/****************
+	BOARD
+	*****************/
+	#app .board.root > .children > .boardColumn:first-child {
+		margin-left: 0px !important;
+	}
+	.project.board.open > .children > .boardColumn{
 		padding-bottom: 10px;
 	}
 	
@@ -305,207 +317,6 @@
 	
 	
 	.project > .name.name--with-image {}
-	/****************
-	*****************
-	BOARDS
-	*****************
-	*****************/
-	#app {
-		max-width: 100vw;
-		overflow: hidden;
-	}
-	
-	/*Board Overflow*/
-	#app .project.board {
-		overflow: hidden !important;
-	}
-	#app .project.board:not(#app .project.board.root) {
-		width: calc(100% + var(--pagePadRight)) !important;
-		max-width: calc(100% + var(--pagePadRight)) !important;
-	}
-	
-	
-	#app .project.board > .name,
-	#app .project.board > .notes {
-		width: 100% !important;
-		max-width: 100% !important;
-		overflow: visible !important;
-	}
-	#app .boardColumn {
-		overflow: unset !important;
-	}
-	#app .project.board.root.noted > .notes {
-		padding-left: unset;
-	}
-	html #app .project.root > .name {
-		height: unset;
-	}
-	/****************
-	BOARD OVERRIDES
-	*****************/
-	#app .board .bullet {
-		opacity: 1 !important;
-	}
-	#app .board > .name > .content,
-	#app .board > .notes > .content {
-		padding-left: 0px;
-	}
-	/****************
-	BOARD ROOT
-	*****************/
-	#app .page[style="overflow-y: auto;"] > .project.board.root {
-		position: relative;
-		top: unset;
-		padding: unset;
-		padding-left: unset;
-		padding-right: unset;
-		height: unset;
-		margin: unset;
-	}
-	.project.board.root > .name,
-	.project.board.root > .notes {
-		padding-left: var(--pagePadLeft) !important;
-		padding-right: var(--pagePadRight) !important;
-	}
-	.project.board.root > .name .content,
-	.project.board.root > .name .content .innerContentContainer,
-	.project.board.root > .notes .content,
-	.project.board.root > .notes .content .innerContentContainer {
-		white-space: nowrap !important;
-		overflow-x: scroll !important;
-	}
-	#app .page[style="overflow-y: auto;"] > .project.board.root > .children {
-		max-height: 70vh;
-		padding-top: 0px !important;
-	}
-	.project.board.root .boardColumn > .children > div:last-of-type {
-		margin-bottom: 100px;
-	}
-	/****************
-	BOARD BUTTONS
-	*****************/
-	.board .project > .name > .expand ._fz92jl:before {
-		content: var(--ICON--ARROW);
-		display: block;
-		width: 24px;
-		height: 24px;
-		transition: .2s;
-		position: absolute;
-	}
-	
-	
-	._18kgnc6 {
-		display: none;
-	}
-	
-	.name > .bullet,
-	.name > .prefix,
-	.name > .prefix .item-checkbox,
-	.name > .expand,
-	.name > .expand ._fz92jl,
-	.name > .menu {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: absolute;
-		width: var(--btn-Width);
-		height: var(--btn-Height);
-		transition: var(--btn-transition);
-		cursor: pointer;
-		border-radius: var(--btn-BrdRad);
-	}
-	._fz92jl {
-		transform: scale(1.2);
-	}
-	
-	.board .project > .name > .expand ._fz92jl:hover {
-		background: var(--BG-BUTTON--HOVER);
-	}
-	
-	/*************
-	BOARD - BUTTONS
-	**************/
-	/*BOARD COLUMN - BUTTONS*/
-	.project.boardColumn > .name > .expand {
-		left: calc(var(--children-Indent) * .5) !important;
-	}
-	.project.boardColumn > .name > .expand ._fz92jl:before {
-		transform: scale(.575)rotate(90deg);
-	}
-	.project.boardColumn.collapsed > .name > .expand ._fz92jl:before {
-		transform: scale(.575)rotate(0deg);
-	}
-	/*BOARD CARD - BUTTONS*/
-	#app .project.boardCard > .name > .expand {
-		left: calc(var(--children-Indent) * .5) !important;
-		margin: unset;
-	}
-	.project.boardCard > .name > .expand ._fz92jl:before {
-		transform: scale(.48)rotate(90deg);
-	}
-	.project.boardCard.collapsed > .name > .expand ._fz92jl:before {
-		transform: scale(.48)rotate(0deg);
-	}
-	/*BOARD CARD CHILDREN- BUTTONS*/
-	.project.boardCard .project > .name > .expand ._fz92jl:before {
-		transform: scale(.38)rotate(90deg);
-	}
-	
-	.project.boardCard .project.collapsed > .name > .expand ._fz92jl:before {
-		transform: scale(.38)rotate(0deg);
-	}
-	
-	
-	.project.boardColumn > .name > .bullet,
-	.project.boardColumn > .name > .prefix,
-	.project.boardCard > .name > .bullet,
-	.project.boardCard > .name > .prefix {
-		right: calc(var(--children-Indent) * .25) !important
-	}
-	
-	/*************
-	BOARD - FONT SIZES
-	**************/
-	.project.board .boardColumn > .name {
-		--name-fontSize: 1.25rem !important;
-		--name-lineHeight: 1.25 !important;
-		--header1-fontSize: 1.25rem !important;
-		--header1-lineHeight: 1.25 !important;
-		--header2-fontSize: 1.25rem !important;
-		--header2-lineHeight: 1.25 !important;
-	}
-	.project.board .boardColumn > .name {
-		font-weight: 700 !important;
-	}
-	.project.board .boardColumn .name {
-		--name-fontSize: 1.05rem;
-		--name-lineHeight: 1.1;
-	}
-	.project.board .boardColumn .header1 > .name > .content {
-		--header1-fontSize: 1.15rem;
-		--header1-lineHeight: 1.175;
-	}
-	
-	.project.board .boardColumn .header2 > .name > .content {
-		--header2-fontSize: 1.1rem;
-		--header2-lineHeight: 1.15 !important;
-	}
-	/*************
-	BOARD - BORDER BOTTOM - NOT ROOT
-	**************/
-	
-	#app .project.board.open + .project:before {
-		content: "";
-		display: block;
-		left: -100vw;
-		right: -100vw;
-		height: 1px;
-		background: var(--COMMENT-CONTAINER--BORDER-CLR);
-		top: calc(var(--prjct-MargTopBtm) * -1);
-		position: absolute;
-	}
-	
-	
 	
 	/*******************************
 	********************************
@@ -564,10 +375,10 @@
 		background-image: var(--ICON--ARROW) !important;
 		width: var(--expandArrowWH);
 		height: var(--expandArrowWH);
-		transform: scale(1)rotate(90deg);
+		transform: scale(1.1)rotate(90deg) !important;
 	}
 	#app .project.collapsed > .name > .expand > div:not(.project.board.collapsed > .children .expand > div, .project.board .project.collapsed .expand > div) {
-		transform: scale(1)rotate(0deg) !important;
+		transform: scale(1.1)rotate(0deg) !important;
 	
 	}
 	
@@ -971,7 +782,8 @@
 		max-width: 70px !important;
 		z-index: 949494;
 		backdrop-filter: blur(30px);
-
+		top: 0;
+		bottom: 0;
 	}
 	.root > .children > .project > .name .swipe-menu {
 		left: calc(100vw - var(--children-Indent) * 1);
@@ -1030,6 +842,34 @@
 	.project.open > .name:after, .project.references > .children .project.open > div:first-child:after, .project.references > .children .project.open > .children:after{
 		z-index: 0;
 	}
+	
+	
+	/*******************************
+	********************************
+	HEADER BULLETS 
+	
+	DON'T DELETE! 
+	
+	THESE LOOK WRONG IN VIVALDI. THEY LOOK CORRECT ON IPAD!
+	********************************
+	********************************/
+	#app .project.header1 > .name > .bullet:not(#app .board .header1 > .name > .bullet), #app .project.header1 > .name > .prefix:not(#app .board .header1 > .name > .prefix), #app .project.header1 > .name > .expand:not(#app .board .header1 > .name > .expand){
+			top: 7px !important;
+	}
+	#app .project.header2 > .name > .bullet:not(#app .board .header2 > .name > .bullet), #app .project.header2 > .name > .prefix:not(#app .board .header2 > .name > .prefix), #app .project.header2 > .name > .expand:not(#app .board .header2 > .name > .expand){
+			top: 5px !important;
+	}
+	#app .project.header3 > .name > .bullet:not(#app .board .header3 > .name > .bullet), #app .project.header3 > .name > .prefix:not(#app .board .header3 > .name > .prefix), #app .project.header3 > .name > .expand:not(#app .board .header3 > .name > .expand){
+			top: 5px !important;
+	}
+	/*******************************
+	********************************
+	DIVIDER
+	********************************
+	********************************/
+	#app .project.divider:not(.collapsed,.open) > .name > .bullet:not(.board.project > .children .bullet) {
+			opacity: 0 !important; 
+	}
 	/*******************************
 	********************************
 	NOTES
@@ -1067,6 +907,407 @@
 		:root {
 			--children-Indent:24px;
 		}
+	}
+	
+	
+	
+	/****************
+	*****************
+	BOARDS
+	*****************
+	*****************/
+	#app {
+		max-width: 100vw;
+		overflow: hidden;
+	}
+	
+	/*Board Overflow*/
+	#app .project.board {
+		overflow: hidden !important;
+	}
+	#app .project.board:not(#app .project.board.root) {
+		width: calc(100% + var(--pagePadRight)) !important;
+		max-width: calc(100% + var(--pagePadRight)) !important;
+	}
+	
+	
+	#app .project.board > .name,
+	#app .project.board > .notes {
+		width: 100% !important;
+		max-width: 100% !important;
+		overflow: visible !important;
+	}
+	#app .boardColumn {
+		overflow: unset !important;
+	}
+	#app .project.board.root.noted > .notes {
+		padding-left: unset;
+	}
+	html #app .project.root > .name {
+		height: unset;
+	}
+	/****************
+	BOARD OVERRIDES
+	*****************/
+	#app .board .bullet {
+		opacity: 1 !important;
+	}
+	#app .board > .name > .content,
+	#app .board > .notes > .content {
+		padding-left: 0px;
+	}
+	/****************
+	BOARD ROOT
+	*****************/
+	#app .page[style="overflow-y: auto;"] > .project.board.root {
+		position: relative;
+		top: unset;
+		padding: unset;
+		padding-left: unset;
+		padding-right: unset;
+		height: unset;
+		margin: unset;
+	}
+	.project.board.root > .name,
+	.project.board.root > .notes {
+		padding-left: var(--pagePadLeft) !important;
+		padding-right: var(--pagePadRight) !important;
+	}
+	.project.board.root > .name .content,
+	.project.board.root > .name .content .innerContentContainer,
+	.project.board.root > .notes .content,
+	.project.board.root > .notes .content .innerContentContainer {
+		white-space: nowrap !important;
+		overflow-x: scroll !important;
+	}
+	#app .page[style="overflow-y: auto;"] > .project.board.root > .children {
+		max-height: 70vh;
+		padding-top: 0px !important;
+	}
+	.project.board.root .boardColumn > .children > div:last-of-type {
+		margin-bottom: 100px;
+	}
+	/****************
+	BOARD BUTTONS
+	*****************/
+	.board .project > .name > .expand ._fz92jl:before {
+		content: var(--ICON--ARROW);
+		display: block;
+		width: 24px;
+		height: 24px;
+		transition: .2s;
+		position: absolute;
+	}
+	
+	
+	._18kgnc6 {
+		display: none;
+	}
+	
+	.name > .bullet,
+	.name > .prefix,
+	.name > .prefix .item-checkbox,
+	.name > .expand,
+	.name > .expand ._fz92jl,
+	.name > .menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: var(--btn-Width);
+		height: var(--btn-Height);
+		transition: var(--btn-transition);
+		cursor: pointer;
+		border-radius: var(--btn-BrdRad);
+	}
+	._fz92jl {
+		transform: scale(1.2);
+	}
+	
+	.board .project > .name > .expand ._fz92jl:hover {
+		background: var(--BG-BUTTON--HOVER);
+	}
+	
+	/*************
+	BOARD - BUTTONS
+	**************/
+	/*BOARD COLUMN - BUTTONS*/
+	.project.boardColumn > .name > .expand {
+		left: calc(var(--children-Indent) * .5) !important;
+	}
+	.project.boardColumn > .name > .expand ._fz92jl:before {
+		transform: scale(.575)rotate(90deg);
+	}
+	.project.boardColumn.collapsed > .name > .expand ._fz92jl:before {
+		transform: scale(.575)rotate(0deg);
+	}
+	/*BOARD CARD - BUTTONS*/
+	#app .project.boardCard > .name > .expand {
+		left: calc(var(--children-Indent) * .5) !important;
+		margin: unset;
+	}
+	.project.boardCard > .name > .expand ._fz92jl:before {
+		transform: scale(.48)rotate(90deg);
+	}
+	.project.boardCard.collapsed > .name > .expand ._fz92jl:before {
+		transform: scale(.48)rotate(0deg);
+	}
+	/*BOARD CARD CHILDREN- BUTTONS*/
+	.project.boardCard .project > .name > .expand ._fz92jl:before {
+		transform: scale(.38)rotate(90deg);
+	}
+	
+	.project.boardCard .project.collapsed > .name > .expand ._fz92jl:before {
+		transform: scale(.38)rotate(0deg);
+	}
+	
+	
+	.project.boardColumn > .name > .bullet,
+	.project.boardColumn > .name > .prefix,
+	.project.boardCard > .name > .bullet,
+	.project.boardCard > .name > .prefix {
+		right: calc(var(--children-Indent) * .25) !important
+	}
+	
+	/*************
+	BOARD - FONT SIZES
+	**************/
+	.project.board .boardColumn > .name {
+		--name-fontSize: 1.25rem !important;
+		--name-lineHeight: 1.25 !important;
+		--header1-fontSize: 1.25rem !important;
+		--header1-lineHeight: 1.25 !important;
+		--header2-fontSize: 1.25rem !important;
+		--header2-lineHeight: 1.25 !important;
+	}
+	.project.board .boardColumn > .name {
+		font-weight: 700 !important;
+	}
+	.project.board .boardColumn .name {
+		--name-fontSize: 1.05rem;
+		--name-lineHeight: 1.1;
+	}
+	.project.board .boardColumn .header1 > .name > .content {
+		--header1-fontSize: 1.15rem;
+		--header1-lineHeight: 1.175;
+	}
+	
+	.project.board .boardColumn .header2 > .name > .content {
+		--header2-fontSize: 1.1rem;
+		--header2-lineHeight: 1.15 !important;
+	}
+	/*************
+	BOARD - BORDER BOTTOM - NOT ROOT
+	**************/
+	
+	#app .project.board.open + .project:before {
+		content: "";
+		display: block;
+		left: -100vw;
+		right: -100vw;
+		height: 1px;
+		background: var(--COMMENT-CONTAINER--BORDER-CLR);
+		top: calc(var(--prjct-MargTopBtm) * -1);
+		position: absolute;
+	}
+	
+	#app .page[style*="overflow-y: auto"] {
+		padding: 0px !important;
+		overflow-y: hidden !important;
+		position: fixed !important;
+		top: var(--wf-header-height);
+		bottom: 0 !important;
+		height: unset !important;
+		margin: unset !important;
+		border: var(--mbltstBrdW) solid orange !important;
+	}
+	#app .page[style="overflow-y: auto;"] > .project.board.root{
+		border: var(--mbltstBrdW) solid red !important;
+		height: 100% !important;
+	}
+	#app .page[style="overflow-y: auto;"] > .project.board.root > .children{
+		height: 100% !important;
+		max-height: calc(100% - 40px) !important;
+		border: var(--mbltstBrdW) solid purple !important;
+	
+	}
+	#app .project.board.root > .children > .boardColumn {
+		border: var(--mbltstBrdW) solid #0f1 !important;
+	}
+	#app .project.board.root > .children > .boardColumn > .name > .bullet,
+	#app .project.board.root > .children > .boardColumn > .name > .expand,
+	#app .project.board.root > .children > .boardColumn > .name > .menu,
+	#app .project.board.root > .children > .boardColumn > .name > .prefix{
+		top: 7px !important;
+	}
+	
+	
+	
+	#app .board.root .project:not(.boardCard) > .name > .expand {
+		top: 1px !important;
+	}
+	
+	#app .board.root .project.quote-block > .name > .expand{
+			top: 6px !important;
+	}
+	#app .board > .children .boardCard > .children .project > .name > .bullet{
+		background: transparent;
+	}
+	#app .board.root > .name,
+	#app .board.root> .notes {
+		padding-left: 20px !important;
+	}
+	#app .project.board.root > .children > .boardColumn:first-child {
+		margin-left: 20px !important;
+		
+	}
+	
+	
+	.MobileBreadcrumbs .items-stretch {
+		gap: 6px;
+		font-style: normal;
+	}
+	.MobileBreadcrumbs .items-stretch * {
+			font-style: normal;
+	
+	}
+	.MobileBreadcrumbs .items-stretch {
+		
+	}
+	
+	.boardCard .comment-container {
+		padding: unset !important; 
+	}
+	#app .comment-container.open > .name > .bullet .conversation-container-bullet{
+		opacity: 1;
+	}
+	
+	
+	
+	/*************
+	MOBILE BOARD FONT SIZE
+	**************/
+	
+	
+	#app .board .project > .name > .content {
+		font-size: 16px !important;
+		line-height: 22.25px !important;
+	}
+	
+	#app .board .project > .name > .expand {
+		transform: scale(1.15);
+	}
+	
+	
+	
+	
+	/*************
+	MOBILE BREAD CRUMBS
+	**************/
+	
+	.MobileBreadcrumbs .items-stretch {
+		gap: 6px !important;
+	}
+	.MobileBreadcrumbs .items-stretch {
+		
+	}
+	
+	/*************
+	MOBILE EXPAND SCALE
+	**************/
+	/*
+	#app .page .board.root > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand,
+	#app .page .board.root > .children .boardCard > .children .project.comment:not(.checkmark) > .children .project > .name > .expand{
+		top: var(--btn-MargTop) !important;
+		--btn-MargTop:3px !important
+	}
+	
+	
+	#app .board .project > .name > .bullet {
+		background: transparent;
+	}
+	
+	
+	#app .board .project.boardCard > .name > .expand {
+		top: 2px !important;
+	}
+	
+	
+	*/
+	
+	
+	/********
+	*********
+	*********
+	NUMBERS
+	*********
+	*********/
+	
+	/*******************************
+	********************************
+	! NORMAL STATE - NUMBERS
+	********************************
+	********************************/
+	:root {
+		--numberTstBrdW:0px
+	}
+	:root {
+		--numberBulletUnderScale:.7;
+	}
+	
+	/*overrides*/
+	#app .project:not(.checkmark) > .name > .prefix:after{
+		opacity: 0 !important;
+	}
+	
+	/***************
+	PREFIX
+	****************/
+	
+	/*Make number visible*/
+	#app .project:not(.checkmark) > .name > .prefix {
+		opacity: 1 !important;
+	
+	
+	}
+	#app .project:not(.checkmark,.root) > .name > .prefix{
+		font-size: var(--name-fontSize);
+		line-height: var(--name-lineHeight);
+		top: 1px;
+		z-index: 2929;
+		background: var(--BG-primary) !important;
+		
+	}
+	
+	
+	/***************
+	PREFIX - EXPAND
+	****************/
+	
+	/*BULLET > UNDER */
+	.project:not(.checkmark) > .name > .prefix ~ .expand:after{
+		opacity: 0;
+		
+	}
+	
+	/*BULLET > UNDER > COLLAPSED*/
+	.project:not(.checkmark).collapsed > .name > .prefix ~ .expand:after{
+		--numberBulletUnderScale:1.7;
+		opacity: 1 !important;
+	
+		
+	}
+	
+	/**************
+	***************
+	 MIRRORS
+	***************
+	***************/
+	
+	/*MIRROR > BULLET > UNDER */
+	#app .project:not(.checkmark) > .name > .bullet.diamond ~ .prefix ~ .expand:after {
+		--numberBulletUnderScale:1.5;
+		
 	}
 	
 	
