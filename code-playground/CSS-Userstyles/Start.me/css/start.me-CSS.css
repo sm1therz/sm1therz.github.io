@@ -349,10 +349,13 @@ BROWSER OTHER / FLOATING BROWSERS
 ************
 ************/
 .browser-other{
-    --searchContainerHeight: 70px;
+    --searchContainerHeight: 50px !important;
 }
 .browser-other #appID .widget-page__searchbar {
     display: flex !important;
+  height: var(--searchContainerHeight)!important;
+  overflow: visible !important;
+  
 }
 /***********
 .browser-other #appID .page-section[style*="--total-column-size: 2"],
