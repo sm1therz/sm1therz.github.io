@@ -2824,21 +2824,23 @@ LEVEL 3 > Button Adjustments
 ********************************
 ********************************/
 :root {
-  --numberTstBrdW:0px
-}
-:root {
-  --numberBulletUnderScale:.7;
-}
-
-/*overrides*/
-.project:not(.checkmark) > .name > .prefix:after{
-  opacity: 0 !important;
+  --numberTstBrdW: 0px
 }
 
 /***************
+OVERRIDES
+****************/
+/*CHECKBOX > UNDER*/
+.project:not(.checkmark) > .name > .prefix:after {
+  opacity: 0 !important;
+}
+/*BULLET > TOP */
+.project:not(.checkmark) > .name > .prefix ~ .expand:before {
+  opacity: 0;
+}
+/***************
 PREFIX
 ****************/
-
 /*Make number visible*/
 .project:not(.checkmark) > .name > .prefix {
   opacity: 1 !important;
@@ -2847,74 +2849,81 @@ PREFIX
 /***************
 PREFIX - EXPAND
 ****************/
-
-.project:not(.checkmark) > .name > .prefix ~ .expand{
-  --btn-MargTop:-1px
+.project:not(.checkmark) > .name > .prefix ~ .expand,
+#app *:is(.board) .project:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix{
+  /*margin top*/
+  --btn-MargTop: -1px;
+  /*border-radius*/
+  --btnIcn-ExpandB4Low-BrdRad: 4px;
+  /*scale*/
+  --numberBulletUnderScaleOpen: 0.7;
+  --numberBulletUnderScaleCollapsed:1.2;
+  /*width / height*/
+  --btnIcn-ExpandB4Low-W: 16px;
+  --btnIcn-ExpandB4Low-H: 16px;
+  /*position*/
+  --numberBulletPosL:unset;
 }
-/*BULLET > TOP */
-.project:not(.checkmark) > .name > .prefix ~ .expand:before{
-opacity: 0;
-}
 
+
+/***************
+PREFIX - EXPAND > AFTER
+****************/
 /*BULLET > UNDER */
-.project:not(.checkmark) > .name > .prefix ~ .expand:after{
-  transform: rotate(0deg)scale(var(--numberBulletUnderScale)) !important;
-  --btnIcn-ExpandB4Low-BrdRad:4px;
+.project:not(.checkmark) > .name > .prefix ~ .expand:after {
+  transform: rotate(0deg)scale(var(--numberBulletUnderScaleOpen)) !important;
   transition: 350ms cubic-bezier(.27, 1.7, .51, .9);
   background: transparent;
   box-shadow: 0 0 0 1.25px var(--BG-Bullet-under);
   opacity: 0;
-  --btnIcn-ExpandB4Low-W:16px;
-  --btnIcn-ExpandB4Low-H:16px;
-  
+  width: var(--btnIcn-ExpandB4Low-W);
+  height: var(--btnIcn-ExpandB4Low-H);
+  left: var(--numberBulletPosL) !important;
 }
 
 /*BULLET > UNDER > COLLAPSED*/
-.project:not(.checkmark).collapsed > .name > .prefix ~ .expand:after{
-  transform: rotate(0deg)scale(var(--numberBulletUnderScale));
-  --numberBulletUnderScale:1.2;
+.project:not(.checkmark).collapsed > .name > .prefix ~ .expand:after {
+  transform: rotate(0deg)scale(var(--numberBulletUnderScaleCollapsed)) !important;
   opacity: 1;
-
-  
 }
 
 /**************
 ***************
- MIRRORS
+***************
+MIRRORS
+***************
 ***************
 ***************/
-
 /*MIRROR > BULLET > UNDER > SOURCE*/
-
-#app .project.hasMirrors:not(.checkmark) > .name > .bullet.diamond ~ .prefix ~ .expand:after{
---BG-Bullet-under:var(--BG-Bullet-closed)
+#app .project.hasMirrors:not(.checkmark) > .name > .bullet.diamond ~ .prefix ~ .expand:after {
+  --BG-Bullet-under: var(--BG-Bullet-closed)
 }
 
 /*MIRROR > BULLET > UNDER */
 #app .project:not(.checkmark) > .name > .bullet.diamond ~ .prefix ~ .expand:after {
-  transform: rotate(-45deg)scale(var(--numberBulletUnderScale)) !important;
+  transform: rotate(-45deg)scale(var(--numberBulletUnderScaleOpen)) !important;
   opacity: 1 !important;
-  --numberBulletUnderScale:1.1;
   border-radius: var(--btnIcn-ExpandB4Low-BrdRad)!important;
-  
+  --numberBulletUnderScaleOpen:var(--numberBulletUnderScaleCollapsed);
 }
 
 /*MIRROR > BULLET > UNDER > COLLAPSED*/
-#app .project:not(.checkmark).collapsed > .name > .bullet.diamond ~ .prefix ~ .expand:after{
-  transform: rotate(45deg)scale(var(--numberBulletUnderScale)) !important;
-    
+#app .project:not(.checkmark).collapsed > .name > .bullet.diamond ~ .prefix ~ .expand:after {
+  transform: rotate(45deg)scale(var(--numberBulletUnderScaleCollapsed)) !important;
 }
 
 /**************
 ***************
- ROOT
+***************
+NUMBERS > ROOT
+***************
 ***************
 ***************/
 .project:not(.checkmark).root > .name > .menu,
 .project:not(.checkmark).root > .name > .prefix,
 .project:not(.checkmark).root > .name > .content,
-.project:not(.checkmark).root > .name > .content > .innerContentContainer{
-    box-shadow: 0 0 0 var(--numberTstBrdW) red !important;
+.project:not(.checkmark).root > .name > .content > .innerContentContainer {
+  box-shadow: 0 0 0 var(--numberTstBrdW) red !important;
 }
 .project:not(.checkmark).root > .name > .prefix {
   opacity: 1 !important;
@@ -2926,22 +2935,120 @@ opacity: 0;
   font-weight: 600
 }
 .project:not(.checkmark).root > .name > .menu {
-  top:-19px !important;
+  top: -19px !important;
   left: calc(var(--children-Indent) * 0) !important;
-  
 }
 
 .project:not(.checkmark).root > .name > .prefix ~ .content {
   margin-left: calc(var(--children-Indent) * 1 + 8px)
 }
 
-@media (max-width: 650px){
+@media (max-width: 650px) {
   .project:not(.checkmark).root > .name > .prefix {
-  top: 4px !important;
-}
-  .project:not(.checkmark).root > .name > .menu{
+    top: 4px !important;
+  }
+  .project:not(.checkmark).root > .name > .menu {
     top: -29px !important
   }
+}
+
+/**************
+***************
+***************
+***************
+NUMBERS > BOARDS
+***************
+***************
+***************
+***************/
+
+/***************
+OVERRIDES
+****************/
+
+
+/***************
+BOARD > PREFIX > ALL
+****************/
+#app *:is(.board) .project:not(.checkmark) > .name > .prefix {
+  font-size: var(--name-fontSize);
+  line-height: var(--name-lineHeight);
+  color: var(--NODE--TXT-CLR--main);
+  --btn-MargTop: 0.5px !important;
+  --numberBulletPosL:unset;
+
+}
+/***************
+BOARD > PREFIX > EXPAND
+****************/
+
+/*mirrored*/
+#app *:is(.board) .project:not(.checkmark) > .name >.bullet:not(.diamond) ~ .prefix ~ .expand{
+  --btnIcn-ExpandB4Low-W: 13px;
+  --btnIcn-ExpandB4Low-H: 16px;
+  --numberBulletPosL:1px
+}
+/*mirrored*/
+#app *:is(.board) .project:not(.checkmark) > .name >.bullet:is(.diamond) ~ .prefix ~ .expand{
+  --btnIcn-ExpandB4Low-W:14px;
+  --btnIcn-ExpandB4Low-H:14px;
+  --numberBulletPosL:0px;
+}
+
+
+/***************
+BOARD > PREFIX > BOARD COLUMN + BOARD CARD
+****************/
+#app *:is(.board) .project.boardColumn:not(.checkmark) > .name > .prefix {
+  --btn-MargTop: 2.5px !important;
+  background: var(--BG-primary) !important;
+  z-index: 2;
+}
+
+#app *:is(.board) .project.boardCard:not(.checkmark) > .name > .prefix {
+  --btn-MargTop: 5.0px !important;
+  background: var(--BG-primary);
+  z-index: 2;
+}
+/*root*/
+
+#app *:is(.board.root) .project.boardCard:not(.checkmark) > .name > .prefix{
+  --BG-primary:var(--BOARD-ROOT--CARD--BG);
+}
+
+/**************
+***************
+***************
+NUMBERS > BOARDS > MIRRORS
+***************
+***************
+***************/
+
+#app *:is(.board) .project:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix{
+  --numberBulletUnderScaleOpen:1.15;
+  margin-left: -2px !important;
+}
+/***************
+BOARD > PREFIX UNDER > MIRRORS > BOARD COLUMN + BOARD CARD
+****************/
+
+/*MIRROR SOURCE*/
+#app *:is(.board) .project.hasMirrors:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix:after{
+  --BG-Bullet-under:var(--BG-Bullet-closed);
+}
+/*NORMAL*/
+
+#app *:is(.board) .project:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix:after {
+transform: rotate(-45deg)scale(var(--numberBulletUnderScaleOpen)) !important;
+  opacity: 1 !important;
+  border-radius: var(--btnIcn-ExpandB4Low-BrdRad)!important;
+  background: transparent;
+  box-shadow: 0 0 0 1.25px var(--BG-Bullet-under);
+}
+
+/*COLLAPSED*/
+#app *:is(.board) .project.collapsed:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix:after {
+transform: rotate(45deg)scale(var(--numberBulletUnderScaleOpen)) !important;
 }
 
 /***********
@@ -5084,6 +5191,10 @@ max-width: calc(100% - 70px) !important;
 
 #app .project.board .boardColumn > .name.name--with-image:not(.empty) {
   display: block !important;
+}
+
+.boardColumn .boardCard:is(.checkmark)>.name>.prefix{
+  height: var(--btn-Height);
 }
 
 /*******************************
