@@ -3459,7 +3459,7 @@ li.todo-item.todo-item_wrapped:hover .todo-item__container .todo-item__delete {
 li.todo-item .todo-item__container .todo-item__delete svg,
 li.todo-item.todo-item_wrapped .todo-item__container .todo-item__delete svg {
     opacity: .35 !important;
-    transition: .05s !important;
+    transition: .05s !important; 
     width: 13px !important;
     height: 13px!important;
 }
