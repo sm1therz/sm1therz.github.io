@@ -141,6 +141,10 @@ div .ProseMirror blockquote:not([class*="whiteboardCanvas"] blockquote) {
 HORIZONTAL RUL
 ************
 ************/
+.ProseMirror [data-node-type="horizontal_rule"]{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
 .ProseMirror [data-node-type="horizontal_rule"] > div.h-px {
 	height: 1.5px;
 	border-radius: 1px;
