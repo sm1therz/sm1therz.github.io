@@ -6,14 +6,14 @@
 		--notesMaxH:21px;
 }
 
-#app .page .project.root > .children .project > .notes > .content {
+#app .page .project.root > .children .project > .notes > .content:not(.active,:empty) {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
 		max-height: var(--notesMaxH);
 }
 
-#app .page .project.root > .children .project > .notes > .content.active {
+#app .page .project.root > .children .project > .notes > .content.active:not(:empty) {
 	-webkit-line-clamp: 100;
 		--notesMaxH:1000px;
 }
