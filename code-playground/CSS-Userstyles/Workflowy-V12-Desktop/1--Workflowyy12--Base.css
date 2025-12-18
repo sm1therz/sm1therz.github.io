@@ -1024,7 +1024,6 @@ NOTES > CONTENT only*/
 
 
 
-
 /***************
 BUTTONS
 ****************/
@@ -2889,7 +2888,7 @@ PREFIX - EXPAND > AFTER
   opacity: 1 !important; 
 }
 #app .project:not(.checkmark) > .name > .prefix ~ .expand:after {
-  opacity: 0 !important;  
+  opacity: 0 !important; 
 }
 
 /**************
@@ -2917,6 +2916,12 @@ MIRRORS
   transform: rotate(45deg)scale(var(--numberBulletUnderScaleCollapsed)) !important;
 }
 
+/**************
+NUMBERS > COMMENT
+***************/
+#app .project.comment .project:not(.checkmark) > .name > .prefix {
+  --btn-MargTop:2px !important;
+}
 /**************
 ***************
 ***************
@@ -3071,7 +3076,7 @@ transform: rotate(45deg)scale(var(--numberBulletUnderScaleOpen)) !important;
 }
 
 /***********
-! NORMAL STATE OVERRIDES
+! NORMAL STATE OVERRIDES 
 ************/
 
 
@@ -4169,13 +4174,21 @@ BOARD COLUMN Level
   box-shadow: 0 0 0 var(--testBrdW) green
 }
 
-#app .boardColumn.project > .name > .bullet,
-#app .boardColumn.project > .name > .prefix,
-#app .boardColumn.project > .name > .expand,
-#app .boardColumn.project > .name > .menu {
+#app .board .boardColumn.project > .name > .bullet,
+#app .board .boardColumn.project > .name > .prefix,
+#app .board .boardColumn.project > .name > .expand,
+#app .board .boardColumn.project > .name > .menu {
     top: var(--btn-MargTop) !important;
-    --btn-MargTop: 3px !important;
+    --btn-MargTop: 8px !important;
 }
+
+#app .board.root .boardColumn.project > .name > .bullet,
+#app .board.root .boardColumn.project > .name > .prefix,
+#app .board.root .boardColumn.project > .name > .expand,
+#app .board.root .boardColumn.project > .name > .menu {
+    
+}
+
 
 /*padding*/
 .project.board .boardColumn > .name > .content,
@@ -4286,10 +4299,12 @@ BOARDCARD - Level
 #app .boardCard > .name > .expand,
 #app .boardCard > .name > .menu {
     top: var(--btn-MargTop) !important;
-    --btn-MargTop: 1px !important;
+    --btn-MargTop: 2px !important;
     --btnIcn-ExpandB4Up-W:6px;
     --btnIcn-ExpandB4Up-H:6px;
 }
+
+
 
 #app .boardCard > .name > .content,
 #app .boardCard > .notes > .content,
@@ -4392,7 +4407,7 @@ Bullet, Prefix, Content, Expand, Menu
 #app .boardCard .project > .name > .expand,
 #app .boardCard .project > .name > .menu {
     top: var(--btn-MargTop) !important;
-    --btn-MargTop: 1px !important;
+    --btn-MargTop: 3px !important;
     transition: .1s;
 }
 
@@ -4448,10 +4463,10 @@ PREFIX*/
     border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
     z-index: 2
 }
-
 #app .board .project:is(.boardCard,.boardColumn) > .name > .bullet:not(.diamond):before{
   transform: unset;
 }
+
 
 
 #app .board .project > .name > .bullet:before,
@@ -4709,7 +4724,7 @@ BOARDS FLOW FIX
 }
 .project.board .project > .name{
     padding-top: calc(var(--content-PadTopBtm) + 1px);
-
+  
 }
 
 .project.board .project > .name > .content {
@@ -4724,6 +4739,34 @@ padding-bottom: calc(var(--content-PadTopBtm) + 0px) !important;
 }
 .project.board .project > .name{
   
+}
+
+.project.board:not(.root) .project:not(.boardColumn,[class*="header"], .quote-block, .code-block) > .name{
+   padding-top: calc(var(--content-PadTopBtm) * 1.7);
+}
+.project.board:not(.root) .project:not(.noted,.boardColumn,[class*="header"]) > .name > .content{
+  padding-bottom: calc(var(--content-PadTopBtm) * 1.7);
+}
+
+.project.board:not(.root) .project:is(.boardColumn) > .name {
+  padding-top: calc(var(--content-PadTopBtm) * 2) !important;
+}
+.project.board:not(.root) .project:is(.boardColumn):not(.noted) > .name > .content{
+  padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
+}
+
+
+#app .board .project[class*="header"],
+#app .board .project[class*="header"] > .name {
+    margin-bottom: 0px !important;
+  margin-top: 0px !important;
+} 
+
+#app .board:not(.root) .project[class*="header"] > .name{
+margin-top: calc(var(--content-PadTopBtm) * 1) !important;
+}
+#app .board:not(.root) .project[class*="header"]:not(.noted) > .name > .content{
+padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
 }
 
 /*BUTTONS*/
@@ -4933,12 +4976,7 @@ BOARD COMMENTS
     color: var(--NODE--TXT-CLR--main);
 }
 
-#app .board:not(.root) .project[class*="header"]{
-    margin-top: 0px !important;
-}
-#app .board:not(.root) .project[class*="header"] > .name {
-    margin-bottom: 0px 
-}
+
 
 
 #app .board .project > .name > .bullet.diamond ~ .menu {
@@ -5214,10 +5252,11 @@ max-width: calc(100% - 70px) !important;
 #app .project.board .boardColumn > .name.name--with-image:not(.empty) {
   display: block !important;
 }
-
 .boardColumn .boardCard:is(.checkmark)>.name>.prefix{
-  height: var(--btn-Height);
+  height: var(--btn-Height) !important;
 }
+
+
 
 /*******************************
 ********************************
@@ -6237,8 +6276,8 @@ CARD > IS COMMENT
 
 
 
-#app .board:not(.root) > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand{
-    --btn-MargTop:3.5px !important;
+{
+    --btn-MargTop:6px !important;
 
 }
 
