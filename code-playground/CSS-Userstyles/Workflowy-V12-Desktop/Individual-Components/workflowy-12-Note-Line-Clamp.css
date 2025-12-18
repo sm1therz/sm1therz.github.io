@@ -49,18 +49,11 @@
 
 
 
-/*BOARDS NOTES*/
-
-#app .page .project.board.root > .children .project>.notes>.content,
-#app .page .project.root > .children .project.board > .children .project >.notes>.content {
-	font-size: .85rem !important;
-	line-height: 18px !important;
-}
 
 /*BOARD*/
 
 #app .board:not(.root){
-		--notesMaxH:21px;
+		--notesMaxH:23px;
 }
 
 #app .board.root{
