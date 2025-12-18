@@ -10,7 +10,7 @@
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
-		max-height: var(--notesMaxH); 
+		max-height: var(--notesMaxH);
 }
 
 #app .page .project.root > .children .project > .notes > .content.active {
@@ -26,15 +26,14 @@
 }
 
 /*NOTES > MAKE THEM 1 LINE*/
-#app .page .project.root>.children .project>.notes>.content:not(:empty) {
+#app .page .project.root>.children .project > .notes:not(.matches) > .content:not(:empty,.active) {
 	display: -webkit-box !important;
 	-webkit-box-orient: vertical !important;
 	-webkit-line-clamp: 1 !important;
 	max-height: var(--notesMaxH) !important;
 	overflow: hidden !important;
-	line-height: 20px !important;
-	font-size: 14.5px !important
 }
+
 
 /*NOTES > SHOW ALL LINES WHEN ACTIVE*/
 
