@@ -4449,6 +4449,9 @@ PREFIX*/
     z-index: 2
 }
 
+#app .board .project:is(.boardCard,.boardColumn) > .name > .bullet:not(.diamond):before{
+  transform: unset;
+}
 
 
 #app .board .project > .name > .bullet:before,
