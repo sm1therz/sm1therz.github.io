@@ -1,9 +1,27 @@
 /***********
 ************
-HEADINGS
+H4 HEADINGS 
 ************
-************/ 
+************/
 *:is(.p-12.hepta-scrim,.group\/1700998616504) .ProseMirror h4{
 		font-size: 1.075em;
 	
 }
+/*
+[class*="group"] + div  .ProseMirror h4 {
+		font-size: 1em;
+}*/
+
+/***********
+************
+H4 HEADINGS > SIDEBAR
+************
+************/
+[data-main-pane="true"] ~ div .ProseMirror h4{
+		font-size: 1.075em;
+	
+}
+/*
+[class*="group"] + div  .ProseMirror h4 {
+		font-size: 1em;
+}*/
