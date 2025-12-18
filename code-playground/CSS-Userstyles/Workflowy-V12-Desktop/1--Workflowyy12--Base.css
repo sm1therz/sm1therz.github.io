@@ -10777,6 +10777,14 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 ! FLAT SEARCH
 ********************************
 ********************************/
+:root {
+  --matchBgClr:hsla(202, 83%, 46%, 1.0)
+}
+
+:root {
+  --matchBrdW:2px;
+  --matchBrdRad:3px;
+}
 
 /*notes*/
 #app .page.active.searching .project > .notes > .content{
@@ -10820,12 +10828,65 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 */
 /*ACTUAL MATCH*/
 
-#app .name.fullMatch > .content > .innerContentContainer .contentMatch,
-#app .project.fullMatch > .notes > .content > .innerContentContainer .contentMatch{
-     background: hsl(200, 100%, 50%, 1.0) !important;  
-    box-shadow: 0 0 0 2px hsl(200, 100%, 50%, 1.0);
-    border-radius: 3px;
+#app *:is(.name,.notes).fullMatch .content > .innerContentContainer .contentMatch{
+    background: var(--matchBgClr) !important;  
+    box-shadow: 0 0 0 var(--matchBrdW) var(--matchBgClr);
+    border-radius: var(--matchBrdRad);
     -webkit-text-fill-color: white !important;
+}
+
+/*notes*/
+#app *:is(.notes).fullMatch .content > .innerContentContainer  .contentMatch{
+  --matchBrdW:1px;
+  --matchBrdRad:2px;
+}
+
+/****
+MATCHED TAG
+*****/
+#app *:is(.name,.notes).fullMatch .content > .innerContentContainer .contentTag{
+  --matchBrdW:3px;
+}
+#app *:is(.name).fullMatch .content > .innerContentContainer .contentTag .contentMatch{
+  box-shadow: 
+    calc(var(--matchBrdW) * -.5) 0 0 0px var(--matchBgClr),
+    calc(var(--matchBrdW) * 1) 0 0 0px var(--matchBgClr)!important;
+  --matchBrdRad:3px;
+}
+
+/*TAG HASHTAG*/
+#app *:is(.name,.notes).fullMatch .content > .innerContentContainer .contentTag > .contentMatch:first-child{
+box-shadow: 
+    calc(var(--matchBrdW) * -.5) 0 0 0px var(--matchBgClr),
+    calc(var(--matchBrdW) * 1) 0 0 0px var(--matchBgClr),
+    0 0 0 0px var(--matchBgClr) !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+/*TAG NAME*/
+
+#app *:is(.name,.notes).fullMatch .content > .innerContentContainer .contentTag > span.contentMatch:first-child + .contentTagText .contentMatch{
+box-shadow: 
+    calc(var(--matchBrdW) * -0) 0 0 0px var(--matchBgClr),
+    calc(var(--matchBrdW) * 1.5) 0 0 0px var(--matchBgClr),
+    0 0 0 0px var(--matchBgClr) !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+
+/*MATCHED TAG - Notes*/
+
+#app *:is(.notes).fullMatch .content > .innerContentContainer .contentTag .contentMatch{
+  --matchBrdW:3px;
+  --matchBrdRad:4px;
+}
+
+/*MATCHED TAG - NAME*/
+#app *:is(.name).fullMatch .content > .innerContentContainer .contentTag .contentMatch{
+  --matchBrdW:4px;
+  --matchBrdRad:5px;
 }
 
 /*******************************
