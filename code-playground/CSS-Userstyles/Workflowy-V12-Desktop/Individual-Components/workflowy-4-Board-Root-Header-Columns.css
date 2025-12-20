@@ -1,4 +1,4 @@
-#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] {
+#app .pageContainer .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] {
   background: transparent !important;
   box-shadow: unset !important;
   margin-top: var(--boardRoot-ColumnGap) !important;
@@ -7,6 +7,16 @@
 #app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] + .boardCard[class*="header3"] {
   margin-top: calc(var(--boardRoot-ColumnGap) * 1) !important;
 
+}
+
+#app .project.board:not(.root) > .children > .boardColumn > .children > .boardCard[class*="header3"] > .name > .content{
+  -webkit-font-smoothing:antialiased !important;
+  color: var(--NODE--TXT-CLR--main);
+--header3-fontSize: 17px;
+  --header3-lineHeight: 21px;
+}
+#app .project.board > .children > .boardColumn > .children > .boardCard[class*="header3"] > .name > .content{
+  -webkit-font-smoothing:antialiased !important;
 }
 #app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"]:not(.open) + .boardCard[class*="header3"] {
   margin-top: calc(var(--boardRoot-ColumnGap) * .5) !important;
@@ -152,4 +162,111 @@
 }
 #app .board.root .boardCard[class*="header3"] > .children > .project:not(.project:last-of-type, .comment) > .children:before{
   opacity: 0 !important;
+}
+
+
+
+/*************
+**************
+BULLET
+**************
+**************/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .name > .bullet,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .name > .prefix{
+  opacity: 1 !important;
+    display: flex !important;
+  right: calc(var(--children-Indent) * 1);
+  left: unset;
+  transform: scale(1) rotate(0deg) !important;
+  box-shadow: unset !important;
+  outline: unset !important;
+}
+/*************
+BULLET > NORMAL
+**************/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.divider) > .name > .bullet:before{
+  opacity: 1;
+  background: var(--BG-Bullet-open) !important;
+  width: var(--btnIcn-ExpandB4Up-W);
+  height: var(--btnIcn-ExpandB4Up-H);
+  border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
+  z-index: 2;
+  background-image: unset !important;
+  content: "" !important;
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.divider,.paragraph,.checkmark) > .name > .bullet:before{
+   transform: rotate(-45deg)scale(var(--btnIcn-Scale)) !important; 
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.divider,.paragraph,.checkmark).collapsed > .name > .bullet:before {
+   transform: rotate(45deg)scale(var(--btnIcn-Scale)) !important; 
+}
+
+/*after*/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.checkmark).collapsed > .name > .bullet:after{
+  transform: rotate(45deg)scale(1);
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.checkmark) > .name > .bullet:after{
+  transform: rotate(-45deg)scale(0);
+  opacity: 1 !important;
+  content: ""!important;
+  display: flex !important;
+}
+/*************
+BULLET > NORMAL > MIRRORED
+**************/ 
+/*************
+BULLET > CHECKMARK
+**************/
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project.checkmark > .name > .bullet:before{
+  opacity: 0 !important;
+}
+
+/*************
+**************
+EXPAND
+**************
+**************/
+
+
+/*************
+**************
+BOARDCARD > EXPAND
+**************
+**************/
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .name > .expand > div:before{
+  content: var(--ICON--ARROW-BLACK) !important;
+  opacity: 0.5;
+    width: 24px;
+  height: 24px;
+    transform: scale(.47) rotate(90deg);
+
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .name > .expand > div:hover {
+  background: var(--BG-BUTTON--HOVER) !important;
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project.collapsed > .name > .expand > div:before{
+    transform: scale(.47) rotate(0deg);
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .name > .expand:before,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .name > .expand:after {
+  opacity: 0;
+  display: none !important;
+}
+
+
+/**************
+name + Notespadding
+***************/
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .name,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project > .notes{
+  padding-right: 10px;
+}
+
+
+
+#app .board.root .floating-conversations:before{
+    background: transparent !important; 
 }

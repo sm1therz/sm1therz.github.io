@@ -987,6 +987,9 @@ NAME-WITH-IMAGE
     margin-top: -1px
 
 }
+.project:not(.board) .project.checkmark > .name--with-image > .prefix {
+  left: 0;
+}
 /****
 NOTED > CONTENT only*/
 .project.noted > .name > .content {
@@ -3858,21 +3861,21 @@ HIGHLIGHT - GREYED OUT
 ********************************
 ********************************/
 .board > .children {
-    --prjct-ParaMargTopBtm: 0px;
-    --name-fontSize: .925rem;
-    --name-lineHeight: 19px;
-    --notes-fontSize: .815rem;
-    --notes-lineHeight: 15px;
+  --prjct-ParaMargTopBtm: 0px;
+  --name-fontSize: .925rem;
+  --name-lineHeight: 20px;
+  --notes-fontSize: .815rem;
+  --notes-lineHeight: 15px;
 }
-#app .board > .children .project > .notes > .content{
+#app .board > .children .project > .notes > .content {
   font-size: var(--notes-fontSize) !important;
   line-height: var(--notes-lineHeight) !important;
-    --notes-fontSize: .8rem !important;
-    --notes-lineHeight: 18px !important;
+  --notes-fontSize: .8rem !important;
+  --notes-lineHeight: 18px !important;
 }
-#app .board.root > .children .project > .notes > .content{
-    --notes-fontSize: .85rem !important;
-    --notes-lineHeight: 18px !important;
+#app .board.root > .children .project > .notes > .content {
+  --notes-fontSize: .85rem !important;
+  --notes-lineHeight: 18px !important;
 }
 
 #app .board:not(.root) > .children > .boardColumn > .children > .references > .name > .content {
@@ -3881,24 +3884,24 @@ HIGHLIGHT - GREYED OUT
 }
 
 .board > .children .header1 {
-    --header1-fontSize: 1.3rem;
-    --header1-lineHeight: 25px;
+  --header1-fontSize: 1.3rem;
+  --header1-lineHeight: 25px;
 }
 
 .board > .children .header2 {
-    --header2-fontSize: 1.15rem;
-    --header2-lineHeight: 23px;
+  --header2-fontSize: 1.175rem;
+  --header2-lineHeight: 23px;
 }
 .board > .children .header3 {
-    --header3-fontSize: 1.075rem;
-    --header3-lineHeight: 21px;
+  --header3-fontSize: 1.1rem;
+  --header3-lineHeight: 22px;
 }
 .boardColumn > .children {
-    --cmntContain-fontSize: .9rem;
+  --cmntContain-fontSize: .9rem;
 }
 .board > .children .header1 > .name,
-.board > .children .header2 > .name{
-    font-weight: 600 !important;
+.board > .children .header2 > .name {
+  font-weight: 600 !important;
 }
 /*
 .board .project.comment > .name > .content, 
@@ -3906,43 +3909,41 @@ HIGHLIGHT - GREYED OUT
     --name-fontSize: .925rem;
     --name-lineHeight: 19px;
 }*/
-
 /***************
 **************** 
 LEVEL 1 > Project
 ****************
 ****************/
-
 :root {
-  --boardColumnWidth:380px;
-  --boardRootColumnWidth:475px
+  --boardColumnWidth: 380px;
+  --boardRootColumnWidth: 475px
 }
 .project.board > .children {
-    --brd-brdrClr: var(--COMMENT-CONTAINER--BORDER-CLR);
-    --brd-brdrClrCmnt: var(--COMMENT-CONTAINER--BORDER-CLR);
-    --brd-brdrClrRef: blueviolet;
+  --brd-brdrClr: var(--COMMENT-CONTAINER--BORDER-CLR);
+  --brd-brdrClrCmnt: var(--COMMENT-CONTAINER--BORDER-CLR);
+  --brd-brdrClrRef: blueviolet;
 
-    --btn-Width: var(--children-Indent);
-    --children-Indent: 16px;
-    --children-MargBtm: 0px;
-    --btn-BrdRad: 4px;
+  --btn-Width: var(--children-Indent);
+  --children-Indent: 16px;
+  --children-MargBtm: 0px;
+  --btn-BrdRad: 4px;
 }
 .boardColumn {
-    max-width: 320px;
-    border: 0px !important;
-    border-left: 1px solid var(--brd-ClmBrdClr) !important;
-    background: var(--BG-primary);
-    margin-top: 0px !important;
+  max-width: 320px;
+  border: 0px !important;
+  border-left: 1px solid var(--brd-ClmBrdClr) !important;
+  background: var(--BG-primary);
+  margin-top: 0px !important;
 }
-.boardColumn:not(.root.board .boardColumn){
-    flex: 0 0 var(--boardColumnWidth) !important;
-    max-width: var(--boardColumnWidth);
+.boardColumn:not(.root.board .boardColumn) {
+  flex: 0 0 var(--boardColumnWidth) !important;
+  max-width: var(--boardColumnWidth);
 }
 
 @media (max-width: 1640px) {
   :root {
-    --boardColumnWidth:340px;
-    --boardRootColumnWidth:400px
+    --boardColumnWidth: 340px;
+    --boardRootColumnWidth: 400px
   }
 }
 
@@ -3951,7 +3952,7 @@ LEVEL 1 > Project
 /*All border-colors*/
 #app .boardColumn,
 #app .boardCard * {
-    border-color: var(--brd-brdrClr);
+  border-color: var(--brd-brdrClr);
 }
 #app .boardColumn code,
 #app .boardCard code {
@@ -3962,32 +3963,32 @@ LEVEL 1 > Project
 }
 #app .board.root .boardCard code {
   padding-top: .5px !important;
-  padding-bottom: .5px ;
+  padding-bottom: .5px;
 }
 
 .boardColumn,
 .boardCard,
 .boardColumn > .children > div:last-of-type {
-    margin-left: 0px !important;
-    margin: 0px;
-    border: none;
+  margin-left: 0px !important;
+  margin: 0px;
+  border: none;
 }
 
 /*BACKGROUND*/
 .boardColumn,
 .boardCard {
-    background: var(--BG-primary)
+  background: var(--BG-primary)
 }
 
 #app .comment .board > .children .boardColumn,
 #app .comment .board > .children .boardCard,
-#app .comment .board > .children{
-    background: transparent !important;
-  --BG-primary:transparent !important;
-    backdrop-filter: blur(81px);
+#app .comment .board > .children {
+  background: transparent !important;
+  --BG-primary: transparent !important;
+  backdrop-filter: blur(81px);
 }
 
-#app .comment .board:not(.root) > .children{
+#app .comment .board:not(.root) > .children {
   border-top: 1px solid var(--brd-brdrClr) !important;
   border-bottom: 1px solid var(--brd-brdrClr) !important
 }
@@ -4000,55 +4001,54 @@ LEVEL 1 > Project
 /********
 BOARD - BORDERS
 *********/
-
 .board > .children,
 .boardColumn > .children,
 .boardCard:not(.children>.boardCard:first-child),
 .boardCard > .children,
 .boardCard > .children .project:not(.boardCard > .children > .project:first-of-type) {
-    border-top: 1px solid var(--brd-brdrClr);
+  border-top: 1px solid var(--brd-brdrClr);
 }
 
 
 
 .boardCard.comment-container > .children {
-    border-top: none !important;
+  border-top: none !important;
 }
 
 /*BORDER COLOR*/
 #app .board .comment {
-    border-color: var(--brd-brdrClrCmnt)
+  border-color: var(--brd-brdrClrCmnt)
 }
 .boardColumn .comment {
-    min-width: 100%;
+  min-width: 100%;
 }
 
 
 /*BORDER-RADIUS */
 .board .project:not(.boardCard .comment) {
-    border-radius: 0px;
+  border-radius: 0px;
 }
 /*BORDER-RIGHT */
 .board .project {
-    border-right: 0px;
+  border-right: 0px;
 }
 /*BORDER-LEFT */
 .board .project:not(.boardCard .comment) {
-    border-left: 0px;
-    border-bottom: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
 }
 
 /*MARGIN TOP */
 .boardColumn .project:not(.boardCard .comment) {
 
-    margin-top: 0px;
-    margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .board .project.comment {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    --prjct-MargTopBtm: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  --prjct-MargTopBtm: 5px;
 }
 /***************
 ****************
@@ -4057,60 +4057,60 @@ LEVEL 2 > Name, Notes, Children
 ****************/
 .boardCard > .name,
 .boardCard .project > .name {
-    position: relative;
+  position: relative;
 }
 .project.board .project > .name {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: var(--board-NamePadLeftRight) !important;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: var(--board-NamePadLeftRight) !important;
 }
 
 :root {
-    --boardMargBtm: 5px;
+  --boardMargBtm: 5px;
 }
 
 .project.board.open > .name > .content:not(.project.board.root > .name > .content),
-.project.board.open.noted > .notes > .content:not(.project.board.root > .name > .content){
-    margin-bottom: var(--boardMargBtm) !important;
+.project.board.open.noted > .notes > .content:not(.project.board.root > .name > .content) {
+  margin-bottom: var(--boardMargBtm) !important;
 }
 .project.board.noted.open > .name > .content:not(.project.board.root.noted > .name > .content) {
-    --boardMargBtm: 0px;
+  --boardMargBtm: 0px;
 }
 .project.board.noted.open > .notes > .content:not(.project.board.root.noted > .notes > .content) {
-    margin-bottom: var(--boardMargBtm);
+  margin-bottom: var(--boardMargBtm);
 }
 
 #app .project.board > .children {
-    transition: 0s !important;
-    z-index: 1;
+  transition: 0s !important;
+  z-index: 1;
 }
 #app .project.board > .children:not(#app .project.board.root > .children) {
-    max-height: 75vh;
-    background: var(--BG-primary)!important;
+  max-height: 75vh;
+  background: var(--BG-primary)!important;
   min-width: calc(100vw + 20px);
 }
 
 /*BOARD (not-zoomed) - BOTTOM BORDER*/
 .project.board.open > .name:not(.project.board.root > .name):before {
-    content: "" !important;
-    display: block;
-    left: -100vw;
-    right: -100vw;
-    background: var(--COMMENT-CONTAINER--BORDER-CLR);
-    height: 1px;
-    bottom: -1px;
-    position: absolute;
-    z-index: 9;
+  content: "" !important;
+  display: block;
+  left: -100vw;
+  right: -100vw;
+  background: var(--COMMENT-CONTAINER--BORDER-CLR);
+  height: 1px;
+  bottom: -1px;
+  position: absolute;
+  z-index: 9;
 }
 
 
 .project.board .name--with-image > .content,
 .project.board .name--with-image > .file-preview {
-    padding-right: 5px
+  padding-right: 5px
 }
 
 .project.board .boardColumn > .children {
-    padding-left: 0px;
+  padding-left: 0px;
 }
 
 
@@ -4123,54 +4123,50 @@ LEVEL 1
 BOARD COLUMN Level
 ****************
 ****************/
-
-
 .project.board:not(.root) .boardColumn > .name,
 .project.board:not(.root) .boardColumn > .notes {
-    padding-left: var(--boardCardPadLeftRight) !important;
-    --content-PadTopBtm: 6px;
-    --name-fontSize: 1em;
-    --name-lineHeight: 21px;
-    --header1-fontSize: 1.15rem;
-    --header1-lineHeight: 21px;
-    --header2-fontSize: 1.1rem;
-    --header2-lineHeight: 21px;
+  padding-left: var(--boardCardPadLeftRight) !important;
+  --content-PadTopBtm: 6px;
+  --name-fontSize: 1em;
+  --name-lineHeight: 21px;
+  --header1-fontSize: 1.15rem;
+  --header1-lineHeight: 21px;
+  --header2-fontSize: 1.1rem;
+  --header2-lineHeight: 21px;
   --header3-fontSize: 1.05rem;
   --header3-lineHeight: 21px;
   font-weight: 600
 }
 
 .project.board:not(.root) .boardColumn > .notes {
-    font-weight: 400;
+  font-weight: 400;
 }
-.project.board .boardColumn > .notes{
-  
-}
+.project.board .boardColumn > .notes {}
 
 .project.board .boardColumn > .name,
 .project.board .boardColumn > .notes {
-    padding-left: var(--boardCardPadLeftRight) !important;
-    --content-PadTopBtm: 6px;
-    --name-fontSize: 1.1rem;
-    --name-lineHeight: 22px;
-    --header1-fontSize: 1.2rem;
-    --header1-lineHeight: 22px;
-    --header2-fontSize: 1.2rem;
-    --header2-lineHeight: 22px;
+  padding-left: var(--boardCardPadLeftRight) !important;
+  --content-PadTopBtm: 6px;
+  --name-fontSize: 1.1rem;
+  --name-lineHeight: 22px;
+  --header1-fontSize: 1.2rem;
+  --header1-lineHeight: 22px;
+  --header2-fontSize: 1.2rem;
+  --header2-lineHeight: 22px;
   box-shadow: inset 0 0 0 var(--testBrdW) red;
 }
 
 #app .boardCard > .name,
-#app .boardCard > .notes{
+#app .boardCard > .notes {
   box-shadow: inset 0 0 0 var(--testBrdW) red;
   padding-left: var(--boardCardPadLeftRight) !important;
   padding-right: var(--boardCardPadLeftRight) !important;
-} 
+}
 
 .project.board .boardColumn > .name > .content,
 .project.board .boardColumn > .notes > .content,
 #app .boardCard > .name > .content,
-#app .boardCard > .notes > .content{
+#app .boardCard > .notes > .content {
   box-shadow: 0 0 0 var(--testBrdW) green
 }
 
@@ -4178,52 +4174,50 @@ BOARD COLUMN Level
 #app .board .boardColumn.project > .name > .prefix,
 #app .board .boardColumn.project > .name > .expand,
 #app .board .boardColumn.project > .name > .menu {
-    top: var(--btn-MargTop) !important;
-    --btn-MargTop: 8px !important;
+  top: var(--btn-MargTop) !important;
+  --btn-MargTop: 8px !important;
 }
 
 #app .board.root .boardColumn.project > .name > .bullet,
 #app .board.root .boardColumn.project > .name > .prefix,
 #app .board.root .boardColumn.project > .name > .expand,
-#app .board.root .boardColumn.project > .name > .menu {
-    
-}
+#app .board.root .boardColumn.project > .name > .menu {}
 
 
 /*padding*/
 .project.board .boardColumn > .name > .content,
 .project.board .boardColumn > .notes > .content {
-    padding-right: 20px;
+  padding-right: 20px;
 }
 .project.board .boardColumn > .commentAttribution {
-    padding-left: 8px;
+  padding-left: 8px;
 }
 
 /*bullets & prefix*/
 .project.boardColumn > .name > .bullet,
 .project.boardColumn > .name > .prefix {
-    left: unset !important;
-    right: calc(var(--children-Indent) * 1) !important;
+  left: unset !important;
+  right: calc(var(--children-Indent) * 1) !important;
 }
 /*expand*/
 .project.boardColumn > .name > .expand {
-    left: calc(var(--children-Indent) * .5);
+  left: calc(var(--children-Indent) * .5);
 }
 /*Expand - Scale*/
 .project.boardColumn > .name > .expand ._3hmsj:before,
-.project.boardColumn > .name > .expand > div:before{
-    transform: scale(.575)rotate(90deg);
+.project.boardColumn > .name > .expand > div:before {
+  transform: scale(.575)rotate(90deg);
 }
 .project.boardColumn.collapsed > .name > .expand ._3hmsj:before,
-.project.boardColumn.collapsed > .name > .expand > div:before{
-    transform: scale(.575)rotate(0deg);
+.project.boardColumn.collapsed > .name > .expand > div:before {
+  transform: scale(.575)rotate(0deg);
 }
 
 .project.board .boardColumn > .notes > .content,
 .project.board .boardCard > .notes > .content,
 .board .boardCard .project > .notes > .content {
-    margin-bottom: var(--content-PadTopBtm);
-    padding-bottom: 0px !important;
+  margin-bottom: var(--content-PadTopBtm);
+  padding-bottom: 0px !important;
 }
 /***************
 ****************
@@ -4233,64 +4227,64 @@ BOARDCARD - Level
 ****************/
 /*Padding*/
 :root {
-  --boardCardPadLeftRight:8px;
+  --boardCardPadLeftRight: 8px;
 }
 .project.board .boardCard > .name,
 .project.board .boardCard > .notes {
-    padding-left: var(--boardCardPadLeftRight) !important;
-    --content-PadTopBtm: 6px;
+  padding-left: var(--boardCardPadLeftRight) !important;
+  --content-PadTopBtm: 6px;
 }
 .project.board .boardCard > .name > .content,
 .project.board .boardCard > .notes > .content,
-.project.board .comment-container > .name > .content{
-    max-width: 100%;
+.project.board .comment-container > .name > .content {
+  max-width: 100%;
 }
 .project.board .boardCard > .commentAttribution {
-    padding-left: 8px;
+  padding-left: 8px;
 }
 .board.root .boardColumn.comment > .commentAttribution {
-    background: var(--COMMENT-CONTAINER--BG);
-    border: 1px solid var(--brd-ClmBrdClr);
-    border-bottom: none;
-    left: -1px;
-    right: -1px !important;
-    top: -15px;
-    width: unset !important;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    position: absolute;
-    z-index: 90909
+  background: var(--COMMENT-CONTAINER--BG);
+  border: 1px solid var(--brd-ClmBrdClr);
+  border-bottom: none;
+  left: -1px;
+  right: -1px !important;
+  top: -15px;
+  width: unset !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  position: absolute;
+  z-index: 90909
 }
 .board .project.comment {
-    padding-bottom: 0px;
+  padding-bottom: 0px;
 }
-.board .boardCard .project.comment{
-    padding-bottom: 2px;
+.board .boardCard .project.comment {
+  padding-bottom: 2px;
 }
 /*Bullets & prefix*/
 .project.boardCard.comment-container > .name > .bullet,
 .project.boardCard.comment-container > .name > .prefix {
-    display: none;
+  display: none;
 }
 .project.boardCard > .name > .bullet,
 .project.boardCard > .name > .prefix {
-    --btnIcn-Scale: .9;
-    left: unset !important;
-    right: calc(var(--children-Indent) * 1) !important;
+  --btnIcn-Scale: .9;
+  left: unset !important;
+  right: calc(var(--children-Indent) * 1) !important;
 }
 /*Expand*/
 .project.boardCard > .name > .expand {
-    left: calc(var(--children-Indent) * 0.5) !important;
+  left: calc(var(--children-Indent) * 0.5) !important;
 }
 
 /*Expand - Scale*/
 .project.boardCard > .name > .expand ._3hmsj:before,
-.project.boardCard > .name > .expand > div:before{
-    transform: scale(.47)rotate(90deg);
+.project.boardCard > .name > .expand > div:before {
+  transform: scale(.47)rotate(90deg);
 }
 .project.boardCard.collapsed > .name > .expand ._3hmsj:before,
-.project.boardCard.collapsed > .name > .expand > div:before{
-    transform: scale(.47)rotate(0deg);
+.project.boardCard.collapsed > .name > .expand > div:before {
+  transform: scale(.47)rotate(0deg);
 }
 
 /*TOP MARGIN*/
@@ -4298,10 +4292,16 @@ BOARDCARD - Level
 #app .boardCard > .name > .prefix,
 #app .boardCard > .name > .expand,
 #app .boardCard > .name > .menu {
-    top: var(--btn-MargTop) !important;
-    --btn-MargTop: 2px !important;
-    --btnIcn-ExpandB4Up-W:6px;
-    --btnIcn-ExpandB4Up-H:6px;
+  top: var(--btn-MargTop) !important;
+  --btn-MargTop: 2px !important;
+  --btnIcn-ExpandB4Up-W: 6px;
+  --btnIcn-ExpandB4Up-H: 6px;
+}
+#app .board:not(.root) .boardCard:not([class*="header"]) > .name > .bullet,
+#app .board:not(.root) .boardCard:not([class*="header"]) > .name > .prefix,
+#app .board:not(.root) .boardCard:not([class*="header"]) > .name > .expand,
+#app .board:not(.root) .boardCard:not([class*="header"]) > .name > .menu {
+  --btn-MargTop: 4px !important;
 }
 
 
@@ -4309,35 +4309,35 @@ BOARDCARD - Level
 #app .boardCard > .name > .content,
 #app .boardCard > .notes > .content,
 #app .boardCard .project > .name > .content,
-#app .boardCard .project > .notes > .content{
-    padding-right: 15px;
+#app .boardCard .project > .notes > .content {
+  padding-right: 15px;
 }
 /****
 BOARDCARD Children - Level*/
 /*Padding*/
 .project.board .boardCard > .children {
-    padding-left: calc(var(--children-Indent) * 1.5);
+  padding-left: calc(var(--children-Indent) * 1.5);
 }
 
 
 /*padding-top & bottom - comment (just for comment attribution)*/
 .boardCard.comment > .commentAttribution,
 .boardCard .project.comment > .commentAttribution {
-    margin-bottom: -2px
+  margin-bottom: -2px
 }
 /*content*/
 .board .boardCard .project > .name > .content,
 .board .boardCard .project > .notes > .content {
-    margin-left: calc(var(--children-Indent) * 1);
-  --quotePadLeft:calc(var(--children-Indent) * 1);
-  --quotePadTopBtm:calc(var(--content-PadTopBtm) * 1);
-  --quoteBrdLeftW:calc(var(--content-PadLeftRight) * 1.35);
+  margin-left: calc(var(--children-Indent) * 1);
+  --quotePadLeft: calc(var(--children-Indent) * 1);
+  --quotePadTopBtm: calc(var(--content-PadTopBtm) * 1);
+  --quoteBrdLeftW: calc(var(--content-PadLeftRight) * 1.35);
 }
 .board .boardCard > .name > .content,
-.board .boardCard > .notes > .content{
-    --quotePadLeft:calc(var(--children-Indent) * 1);
-  --quotePadTopBtm:calc(var(--content-PadTopBtm) * 1);
-  --quoteBrdLeftW:calc(var(--content-PadLeftRight) * 1.35);
+.board .boardCard > .notes > .content {
+  --quotePadLeft: calc(var(--children-Indent) * 1);
+  --quotePadTopBtm: calc(var(--content-PadTopBtm) * 1);
+  --quoteBrdLeftW: calc(var(--content-PadLeftRight) * 1.35);
 }
 
 /*bullets & prefix*/
@@ -4347,23 +4347,23 @@ BOARDCARD Children - Level*/
 #app .boardCard .project.quote-block > .name > .bullet,
 #app .boardCard .project.code-block > .name > .bullet,
 #app .boardCard .project > .name > .prefix {
-    left: calc(var(--children-Indent) * 0);
-    right: unset;
-    --btnIcn-Scale: .75;
+  left: calc(var(--children-Indent) * 0);
+  right: unset;
+  --btnIcn-Scale: .75;
 }
 /*bullets & prefix - comment-container*/
 #app .boardCard .project[class*="header"] > .name > .expand,
 .boardCard .project > .name > .expand,
 #app .boardCard .project.header1 > .name > .expand,
 #app .boardCard .project.header > .name > .expand {
-    left: calc(var(--children-Indent) * -1);
+  left: calc(var(--children-Indent) * -1);
 }
 
 .boardCard .project > .name > .expand ._3hmsj:before {
-    transform: scale(.38)rotate(90deg);
+  transform: scale(.38)rotate(90deg);
 }
 .boardCard .project.collapsed > .name > .expand ._3hmsj:before {
-    transform: scale(.38)rotate(0deg);
+  transform: scale(.38)rotate(0deg);
 }
 
 /*
@@ -4376,16 +4376,16 @@ BOARDCARD Children - Level*/
 #app .boardCard .project.quote-block > .name > .menu,
 #app .boardCard.quote-block > .name > .menu,
 #app .boardCard .project.quote-block > .name > .expand,
-#app .boardCard.quote-block > .name > .expand{
-  --btn-MargTop:6px !important;
+#app .boardCard.quote-block > .name > .expand {
+  --btn-MargTop: 6px !important;
 }
 #app .boardCard .project.code-block > .name > .bullet,
 #app .boardCard.code-block > .name > .bullet,
 #app .boardCard .project.code-block > .name > .menu,
 #app .boardCard.code-block > .name > .menu,
 #app .boardCard .project.code-block > .name > .expand,
-#app .boardCard.code-block > .name > .expand{
-  --btn-MargTop:4px !important;
+#app .boardCard.code-block > .name > .expand {
+  --btn-MargTop: 4px !important;
 }
 #app .boardCard .project[class*="header"] > .name > .menu,
 #app .boardCard .project[class*="header"] > .name > .menu,
@@ -4406,31 +4406,31 @@ Bullet, Prefix, Content, Expand, Menu
 #app .boardCard .project:is(.checkmark) > .name > .prefix,
 #app .boardCard .project > .name > .expand,
 #app .boardCard .project > .name > .menu {
-    top: var(--btn-MargTop) !important;
-    --btn-MargTop: 3px !important;
-    transition: .1s;
+  top: var(--btn-MargTop) !important;
+  --btn-MargTop: 4px !important;
+  transition: .1s;
 }
 
 
 #app .boardCard .project.paragraph > .name > .bullet,
 #app .boardCard .project.paragraph > .name > .bullet {
-    --btnIcn-ExpandB4Up-W: 2px;
-    --btnIcn-ExpandB4Low-W: 4px;
-    --btnIcn-ExpandB4Low-H: 16px;
+  --btnIcn-ExpandB4Up-W: 2px;
+  --btnIcn-ExpandB4Low-W: 4px;
+  --btnIcn-ExpandB4Low-H: 16px;
 }
 .boardColumn .project.hasMirrors > .name > .bullet:after,
-.boardColumn .project > .name > .bullet.diamond:after{
-    border-radius: 2px !important;
+.boardColumn .project > .name > .bullet.diamond:after {
+  border-radius: 2px !important;
 }
 .boardColumn .project.hasMirrors > .name > .bullet:after,
-.boardColumn .project > .name > .bullet.diamond:after{
-    border-radius: 3px!important;
-    border: none !important;
-    box-shadow: inset 0 0 0 .5px var(--brd-brdrClr)!important
+.boardColumn .project > .name > .bullet.diamond:after {
+  border-radius: 3px!important;
+  border: none !important;
+  box-shadow: inset 0 0 0 .5px var(--brd-brdrClr)!important
 }
 #app .boardColumn .project.hasMirrors.collapsed > .name > .bullet:after,
-#app .boardColumn .project.collapsed > .name > .bullet.diamond:after{
-    transform: rotate(45deg)scale(.95) !important
+#app .boardColumn .project.collapsed > .name > .bullet.diamond:after {
+  transform: rotate(45deg)scale(.95) !important
 }
 /****
 BULLET
@@ -4438,11 +4438,11 @@ BULLET
 PREFIX*/
 #app .board .project > .name > .bullet,
 #app .board .project.checkmark > .name > .prefix {
-    opacity: 1;
-    animation: none;
+  opacity: 1;
+  animation: none;
 }
-.project > .name > .prefix:after{
-    opacity: .7
+.project > .name > .prefix:after {
+  opacity: .7
 }
 
 /*CHILDREN BULLET*/
@@ -4450,20 +4450,20 @@ PREFIX*/
 #app .boardCard .project > .name > .prefix > .inline-flex > .item-checkbox,
 #app .boardCard .project.collapsed > .name > .bullet:after,
 #app .boardCard .project.collapsed > .name > .prefix:after {
-    transform: scale(.8)rotate(0deg);
-    border: none;
+  transform: scale(.8)rotate(0deg);
+  border: none;
 }
 
 /****
  BULLET only*/
 #app .board .project > .name > .bullet:before {
-    background: var(--BG-Bullet-open);
-    width: var(--btnIcn-ExpandB4Up-W);
-    height: var(--btnIcn-ExpandB4Up-H);
-    border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
-    z-index: 2
+  background: var(--BG-Bullet-open);
+  width: var(--btnIcn-ExpandB4Up-W);
+  height: var(--btnIcn-ExpandB4Up-H);
+  border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
+  z-index: 2
 }
-#app .board .project:is(.boardCard,.boardColumn) > .name > .bullet:not(.diamond):before{
+#app .board .project:is(.boardCard, .boardColumn) > .name > .bullet:not(.diamond):before {
   transform: unset;
 }
 
@@ -4472,8 +4472,8 @@ PREFIX*/
 #app .board .project > .name > .bullet:before,
 #app .board .project > .name > .expand,
 #app .board .project > .name > .bullet:after {
-    opacity: 1;
-    content: "";
+  opacity: 1;
+  content: "";
 }
 /*hide prefix on paragraph*/
 .board .project.paragraph > .name > .prefix,
@@ -4482,23 +4482,23 @@ PREFIX*/
 /* hide bullets on expand*/
 .board .project > .name > .expand:before,
 .board .project > .name > .expand:after {
-    display: none;
+  display: none;
 }
 
 /****
  EXPAND only*/
 /*Expand > BOARDCOLUMN only*/
 .board .project > .name > .expand div:hover {
-    background: var(--BG-BUTTON--HOVER);
+  background: var(--BG-BUTTON--HOVER);
 }
 .board .project > .name > .expand ._3hmsj:before,
-.board .project > .name > .expand > div:before{
-    content: var(--ICON--ARROW);
-    display: block;
-    width: 24px;
-    height: 24px;
-    transition: .2s;
-    position: absolute;
+.board .project > .name > .expand > div:before {
+  content: var(--ICON--ARROW);
+  display: block;
+  width: 24px;
+  height: 24px;
+  transition: .2s;
+  position: absolute;
 }
 
 
@@ -4507,18 +4507,18 @@ PREFIX*/
 #app .board .project > .name > .menu,
 #app .board .project.paragraph > .name > .menu,
 #app .boardCard .project.quote-block > .name > .menu,
-#app .boardCard .project.code-block > .name > .menu{
-    left: unset;
-    right: calc(var(--children-Indent) * 0) !important;
-    overflow: hidden;
+#app .boardCard .project.code-block > .name > .menu {
+  left: unset;
+  right: calc(var(--children-Indent) * 0) !important;
+  overflow: hidden;
 }
 #app .board .project > .name > .menu:before {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /*EXTRAS*/
 .project.board .name:after {
-    display: none;
+  display: none;
 }
 
 
@@ -4528,118 +4528,117 @@ PREFIX*/
 BOARDS ROOT
 ********************************/
 :root {
-    --ROOT-padBot: 30px;
-    --ROOT-padLeftRight: 40px;
-    --ROOT-BOARD-TITLE-HEIGHT:40px;
+  --ROOT-padBot: 30px;
+  --ROOT-padLeftRight: 40px;
+  --ROOT-BOARD-TITLE-HEIGHT: 40px;
 }
 .board > .children {
-    --content-PadLeftRight: 3px;
+  --content-PadLeftRight: 3px;
 }
 /*Page & Title*/
 #app .page[style="overflow-y: auto;"] {
-    width: 100%;
-    max-width: 100%;
-    padding: 0px;
-    margin: 0px;
-    height: 99vh;
+  width: 100%;
+  max-width: 100%;
+  padding: 0px;
+  margin: 0px;
+  height: 99vh;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root {
-    position: relative;
-    top: var(--Height--Header);
-    overflow: hidden;
-    padding: 20px 30px;
-    padding-left: 0px;
-    padding-right: 0px;
-    height: calc(100% - var(--Height--Header));
-    margin: 0px;
-    padding-bottom:0px;
-    padding-top:0px;
+  position: relative;
+  top: var(--Height--Header);
+  overflow: hidden;
+  padding: 20px 30px;
+  padding-left: 0px;
+  padding-right: 0px;
+  height: calc(100% - var(--Height--Header));
+  margin: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .children {
-    margin: 0px;
-    border: 0px;
-    padding-left: var(--ROOT-padLeftRight);
-    padding-bottom: 0px !important;
+  margin: 0px;
+  border: 0px;
+  padding-left: var(--ROOT-padLeftRight);
+  padding-bottom: 0px !important;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root > .name {
-    padding-bottom: 0px;
-    padding-left: var(--ROOT-padLeftRight);
-    position:relative !important;
-    height:unset;
-    width:unset;
-    max-width: 100vw !important;
+  padding-bottom: 0px;
+  padding-left: var(--ROOT-padLeftRight);
+  position: relative !important;
+  height: unset;
+  width: unset;
+  max-width: 100vw !important;
   background: linear-gradient(to right, var(--BG-primary) 0, var(--BG-primary) 90%, transparent);
   padding-right: 30px !important;
 }
 
-#app .page[style="overflow-y: auto;"] > .project.board.root > .notes{
-    height:var(--ROOT-BOARD-TITLE-HEIGHT);
-    width:unset;
+#app .page[style="overflow-y: auto;"] > .project.board.root > .notes {
+  height: var(--ROOT-BOARD-TITLE-HEIGHT);
+  width: unset;
 }
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes,
-#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes .content{
-      padding-top: 0px;
-    padding-bottom:0px;
-    margin:0px;
-    height:unset !important;
+#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes .content {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+  height: unset !important;
 }
 
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name {
-    padding-bottom: 0px;
+  padding-bottom: 0px;
 }
-#app .page[style="overflow-y: auto;"] > .project.board.root > .name .content{
-    font-size:24px;
+#app .page[style="overflow-y: auto;"] > .project.board.root > .name .content {
+  font-size: 24px;
 }
-._theme-dark #app .page[style="overflow-y: auto;"] > .project.board.root > .name .content{
+._theme-dark #app .page[style="overflow-y: auto;"] > .project.board.root > .name .content {
   color: white !important;
 }
-#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name .content{
-    font-size:20px;
+#app .page[style="overflow-y: auto;"] > .project.board.root.noted > .name .content {
+  font-size: 20px;
 }
 
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes .content {
   padding-bottom: var(--content-PadTopBtm) !important
 }
 #app .project.board.root.noted > .notes {
-    padding-bottom: var(--ROOT-padBot);
-    padding-left: var(--ROOT-padLeftRight)
+  padding-bottom: var(--ROOT-padBot);
+  padding-left: var(--ROOT-padLeftRight)
 }
 .project.board.root > .name > .menu {
-    left: calc(var(--children-Indent) * .5) !important
+  left: calc(var(--children-Indent) * .5) !important
 }
 
 .project.board.root .boardColumn > .children {
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .project.board.root .boardCard,
 .project.board.root .boardColumn > .children > div:last-of-type {
-    background: var(--BOARD-ROOT--CARD--BG);
-    border: 1px solid var(--BOARD-ROOT--CARD--BORDER-INNER-CLR);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px !important;
+  background: var(--BOARD-ROOT--CARD--BG);
+  border: 1px solid var(--BOARD-ROOT--CARD--BORDER-INNER-CLR);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px !important;
 }
 .project.board.root .boardCard.comment {
-    background: var(--COMMENT-CONTAINER--BG)
+  background: var(--COMMENT-CONTAINER--BG)
 }
 .project.board.root .boardColumn.comment .boardCard {
-    background: var(--BG-primary)
+  background: var(--BG-primary)
 }
 
 .boardColumn > .children > .project.comment:first-of-type {
-    border-top: 0px !important;
+  border-top: 0px !important;
 }
 /*REFERENCES*/
 .board .references > .children > .project {
-    padding-bottom: 3px;
+  padding-bottom: 3px;
 }
 .board .references .project .breadcrumbs {
-    flex: 1;
-    min-width: 100% !important;
+  flex: 1;
+  min-width: 100% !important;
 }
-.board .references .project .breadcrumbs a:last-of-type {
-}
+.board .references .project .breadcrumbs a:last-of-type {}
 
 
 /*******************************
@@ -4648,7 +4647,7 @@ BOARDCARD HIDE "ADD BOArD CARD BUTTON"
 ********************************
 ********************************/
 .board:not(.board.root) .boardColumn > .children > ._1eifi39 {
-    display: none;
+  display: none;
 }
 /*******************************
 ********************************
@@ -4656,24 +4655,23 @@ BOARDS LAST BOARD COLUMN
 ********************************
 ********************************/
 .board > .children > ._1en9fmv {
-    min-width: 1000px !important;
-    background: var(--COMMENT-CONTAINER--BG);
-    border-left: 1px solid var(--brd-brdrClr);
-    order: 90000;
+  min-width: 1000px !important;
+  background: var(--COMMENT-CONTAINER--BG);
+  border-left: 1px solid var(--brd-brdrClr);
+  order: 90000;
 }
-.board > .children > ._1en9fmv > div{
-    margin: unset;
-    border: 1px solid var(--brd-brdrClr);
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 26px;
-    height:26px;
-    
+.board > .children > ._1en9fmv > div {
+  margin: unset;
+  border: 1px solid var(--brd-brdrClr);
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 26px;
+  height: 26px;
 }
 /*EXPAND COLUMN BUTTON*/
-.board a._2ide7e{
-    display: none;
+.board a._2ide7e {
+  display: none;
 }
 
 /*******************************
@@ -4681,25 +4679,24 @@ BOARDS LAST BOARD COLUMN
 BOARDS COMMENT CONTAINER
 ********************************
 ********************************/
-
 /*COMMENT CONTAINER - INSIDE BOARD CARD - PADDING*/
-.boardCard .comment-container > .name > .content{
-    /*margin-left: 0px !important;*/
+.boardCard .comment-container > .name > .content {
+  /*margin-left: 0px !important;*/
 }
 
 /*COMMENT REPLY BUTTON*/
 /*FOR COMMENT CONTAINER*/
-.project.board .comment-container > .name > .content ~ span{
-    padding-right: 20px;
+.project.board .comment-container > .name > .content ~ span {
+  padding-right: 20px;
 }
 
 .project.board .comment ._3ypimw {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-bottom: var(--content-PadTopBtm) !important;
-    padding-right: var(--content-PadTopBtm) !important;
-    width: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: var(--content-PadTopBtm) !important;
+  padding-right: var(--content-PadTopBtm) !important;
+  width: auto;
 }
 /*******************************
 ********************************
@@ -4710,105 +4707,87 @@ BOARDS FLOW FIX
 .project.board .boardColumn > .notes > .content,
 .project.board .boardColumn .project .name > .content,
 .project.board .boardColumn .project .notes > .content {
-    padding-top: 0px;
+  padding-top: 0px;
 }
-.project.board .boardColumn.noted > .notes{
+.project.board .boardColumn.noted > .notes {
   padding-top: calc(var(--content-PadTopBtm) * .5)
 }
 /*padding-top & bottom*/
-.project.board .boardCard > .name, 
+.project.board .boardCard > .name,
 .project.board .boardCard > .notes,
 .project.board .boardCard .project > .name,
 .project.board .boardCard .project > .notes {
-    --content-PadTopBtm: 5px;
+  --content-PadTopBtm: 5px;
 }
-.project.board .project > .name{
-    padding-top: calc(var(--content-PadTopBtm) + 1px);
-  
+.project.board .project > .name {
+  padding-top: calc(var(--content-PadTopBtm) + 1px);
 }
 
 .project.board .project > .name > .content {
-padding-bottom: calc(var(--content-PadTopBtm) + 0px);
+  padding-bottom: calc(var(--content-PadTopBtm) + 0px);
 }
-.project.board .project.noted > .name > .content{
+.project.board .project.noted > .name > .content {
   padding-bottom: 0px !important;
 }
-.project.board:not(.root) .project.noted > .notes > .content{
-padding-bottom: calc(var(--content-PadTopBtm) + 0px) !important;
 
-}
-.project.board .project > .name{
-  
-}
 
-.project.board:not(.root) .project:not(.boardColumn,[class*="header"], .quote-block, .code-block) > .name{
-   padding-top: calc(var(--content-PadTopBtm) * 1.7);
-}
-.project.board:not(.root) .project:not(.noted,.boardColumn,[class*="header"]) > .name > .content{
-  padding-bottom: calc(var(--content-PadTopBtm) * 1.7);
-}
 
-.project.board:not(.root) .project:is(.boardColumn) > .name {
-  padding-top: calc(var(--content-PadTopBtm) * 2) !important;
-}
-.project.board:not(.root) .project:is(.boardColumn):not(.noted) > .name > .content{
-  padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
-}
+
+
+
 
 
 #app .board .project[class*="header"],
 #app .board .project[class*="header"] > .name {
-    margin-bottom: 0px !important;
+  margin-bottom: 0px !important;
   margin-top: 0px !important;
-} 
-
-#app .board:not(.root) .project[class*="header"] > .name{
-margin-top: calc(var(--content-PadTopBtm) * 1) !important;
 }
-#app .board:not(.root) .project[class*="header"]:not(.noted) > .name > .content{
-padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+
+#app .board:not(.root) .project[class*="header"] > .name {
+  margin-top: calc(var(--content-PadTopBtm) * 1) !important;
+}
+#app .board:not(.root) .boardColumn:not([class*="header"]) .project[class*="header"]:not(.noted) > .name > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
 }
 
 /*BUTTONS*/
-.project.board .project > .name > .expand, 
+.project.board .project > .name > .expand,
 .project.board .boardCard > .notes,
 .project.board .boardCard .project > .name,
-.project.board .boardCard .project > .notes {
-    
-}
+.project.board .boardCard .project > .notes {}
 
 
 
 
 .project.board .comment-container,
 .project.board .comment {
-    max-width: 100% !important;
-    min-width: unset !important;
+  max-width: 100% !important;
+  min-width: unset !important;
 }
 
 
-.project.comment-container > .name:before{
-    content:var(--ICON--COMMENT-CONTAINER);
-    display: block;
-    position: absolute;
-    left: calc(var(--children-Indent) * 1);
-    width: 20px;
-    margin-top: var(--btn-MargTop);
+.project.comment-container > .name:before {
+  content: var(--ICON--COMMENT-CONTAINER);
+  display: block;
+  position: absolute;
+  left: calc(var(--children-Indent) * 1);
+  width: 20px;
+  margin-top: var(--btn-MargTop);
 }
-.board .project.comment-container > .name:before{
-    left: calc(var(--children-Indent) * .25);
-        width: 18px;
-    --btn-MargTop:1px;
+.board .project.comment-container > .name:before {
+  left: calc(var(--children-Indent) * .25);
+  width: 18px;
+  --btn-MargTop: 1px;
 }
-.board .boardCard.project.comment-container > .name:before{
-    left: calc(var(--children-Indent) * 1.75);
+.board .boardCard.project.comment-container > .name:before {
+  left: calc(var(--children-Indent) * 1.75);
 }
-.board .boardColumn.project.comment-container > .name:before{
-    left: calc(var(--children-Indent) * 1.75);
-    width: 25px;
+.board .boardColumn.project.comment-container > .name:before {
+  left: calc(var(--children-Indent) * 1.75);
+  width: 25px;
 }
-.board .boardColumn.project.comment-container > .name > .contentEditablePlaceholderWrapper{
-    opacity: 0;
+.board .boardColumn.project.comment-container > .name > .contentEditablePlaceholderWrapper {
+  opacity: 0;
 }
 .board:not(.root) ._1ut32c0 {
   order: 9393 !important;
@@ -4824,33 +4803,33 @@ padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
   margin-top: 6px;
 }
 
-#app .boardColumn > .name > .contentEditablePlaceholderWrapper{
-    position: absolute;
-    width: 100% !important;
-    padding-bottom: calc(var(--content-PadTopBtm) + 1px);
-    padding-top: 0px !important;
-    padding-left: var(--content-PadLeftRight) !important;
-    font-size: unset !important;
-    line-height: unset !important;
+#app .boardColumn > .name > .contentEditablePlaceholderWrapper {
+  position: absolute;
+  width: 100% !important;
+  padding-bottom: calc(var(--content-PadTopBtm) + 1px);
+  padding-top: 0px !important;
+  padding-left: var(--content-PadLeftRight) !important;
+  font-size: unset !important;
+  line-height: unset !important;
 }
 
 #app .boardColumn > .name > .contentEditablePlaceholderWrapper * {
-    position: absolute !important;
-    font-size: unset !important;
-    line-height: unset !important;
-        font-size: var(--name-fontSize) !important;
-    line-height: var(--name-lineHeight) !important;
-    top: unset !important;
+  position: absolute !important;
+  font-size: unset !important;
+  line-height: unset !important;
+  font-size: var(--name-fontSize) !important;
+  line-height: var(--name-lineHeight) !important;
+  top: unset !important;
 }
 
 
-.boardColumn > .children > div[style*="height"]{
+.boardColumn > .children > div[style*="height"] {
   display: none !important;
 }
 
 .board .highlighted::before,
 .board .floating-conversations::before,
-[class*="name--highlighted"]:not(.comment [class*="name--highlighted"]):hover:before{
+[class*="name--highlighted"]:not(.comment [class*="name--highlighted"]):hover:before {
   background: transparent !important;
   inset: -1px !important;
   border-radius: 3px;
@@ -4872,19 +4851,17 @@ padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
 
 
 
-.board.root .boardCard.floating-conversations:before{
+.board.root .boardCard.floating-conversations:before {
   border-radius: 8px;
-  
-
 }
-.board .floating-conversations:before{
-  background: hsla(0,0%,100%,.0) !important;
+.board .floating-conversations:before {
+  background: hsla(0, 0%, 100%, .0) !important;
 }
-.board.root .floating-conversations:before{
-  background: hsla(0,0%,100%,.15) !important;
+.board.root .floating-conversations:before {
+  background: hsla(0, 0%, 100%, .15) !important;
 }
 
-#app .board .project > .name .nameButtons{
+#app .board .project > .name .nameButtons {
   z-index: 3;
 }
 
@@ -4896,48 +4873,47 @@ BOARD COMMENTS
 }
 #app .board .project.thread.boardCard.comment .commentAttribution {
   padding-left: var(--boardCardPadLeftRight) !important;
-  
 }
 #app .board .project.thread.boardCard.comment > .name,
-#app .board .project.thread.boardCard.comment > .notes{
+#app .board .project.thread.boardCard.comment > .notes {
   padding-left: calc(var(--boardCardPadLeftRight)) !important;
 }
-#app .board .project.thread.boardCard.comment > .children{
+#app .board .project.thread.boardCard.comment > .children {
   padding-left: calc(var(--boardCardPadLeftRight) + var(--children-Indent)) !important;
 }
 #app .board .project.thread.boardCard.comment > .name > .content,
-#app .board .boardCard.comment > .notes > .content{
+#app .board .boardCard.comment > .notes > .content {
   margin-left: var(--children-Indent) !important;
 }
-#app .board .project.thread.boardCard.comment > .children .name{
+#app .board .project.thread.boardCard.comment > .children .name {
   padding-top: calc(var(--content-PadTopBtm) + 1px) !important;
 }
 
-#app .boardCard.comment > .name > .bullet, 
-#app .boardCard.comment > .name > .expand, 
-#app .boardCard.comment > .name > .menu{
-  --btn-MargTop:3px !important;
+#app .boardCard.comment > .name > .bullet,
+#app .boardCard.comment > .name > .expand,
+#app .boardCard.comment > .name > .menu {
+  --btn-MargTop: 3px !important;
 }
 
-#app .board .project.thread.comment > .children  .name{
+#app .board .project.thread.comment > .children .name {
   position: relative;
 }
-#app .board .project.thread.comment > .children  .name > .menu{
+#app .board .project.thread.comment > .children .name > .menu {
   display: flex !important;
   transform: unset !important;
   position: absolute !important;
 }
-#app .board .project.thread.comment > .children  .name > .menu,
-#app .board .project.thread.comment > .children  .name > .expand,
-#app .board .project.thread.comment > .children  .name > .bullet,
-#app .board .project.thread.comment > .children  .name > .nameButtons {
-  --btn-MargTop:4px !important;
+#app .board .project.thread.comment > .children .name > .menu,
+#app .board .project.thread.comment > .children .name > .expand,
+#app .board .project.thread.comment > .children .name > .bullet,
+#app .board .project.thread.comment > .children .name > .nameButtons {
+  --btn-MargTop: 4px !important;
 }
-#app .board.root .project.thread.comment > .children  .name > .menu,
-#app .board.root .project.thread.comment > .children  .name > .expand,
-#app .board.root .project.thread.comment > .children  .name > .bullet,
-#app .board.root .project.thread.comment > .children  .name > .nameButtons {
-  --btn-MargTop:6px !important;
+#app .board.root .project.thread.comment > .children .name > .menu,
+#app .board.root .project.thread.comment > .children .name > .expand,
+#app .board.root .project.thread.comment > .children .name > .bullet,
+#app .board.root .project.thread.comment > .children .name > .nameButtons {
+  --btn-MargTop: 7px !important;
 }
 
 #app .board .comment .nameButtons {
@@ -4945,21 +4921,22 @@ BOARD COMMENTS
   background: transparent;
   border: transparent;
   box-shadow: unset;
-  opacity: 0; !important;
+  opacity: 0;
+  !important;
   transition: .1s !important;
 }
 #app .board .comment .nameButtons.active,
-#app .board .comment .nameButtons:hover{
+#app .board .comment .nameButtons:hover {
   opacity: 1 !important;
 }
 #app .board .comment .nameButtons * {
   background: transparent;
 }
-#app .board .comment .nameButtons svg{
+#app .board .comment .nameButtons svg {
   transform: scale(1.6)!important
 }
 #app .board .comment .nameButtons:hover svg {
-  filter:brightness(1.5);
+  filter: brightness(1.5);
 }
 
 /*
@@ -4967,80 +4944,75 @@ BOARD COMMENTS
     font-size:calc(var(--name-fontSize) + 2px);
     line-height:calc(var(--name-lineHeight) + 2px);
 }*/
-
-
 .board.project.root > .children .project:not([class*="header"]) > .name > .content,
 .board .project:not([class*="header"]) > .name > .content {
-    font-size: var(--name-fontSize);
-    line-height: var(--name-lineHeight);
-    color: var(--NODE--TXT-CLR--main);
+  font-size: var(--name-fontSize);
+  line-height: var(--name-lineHeight);
+  color: var(--NODE--TXT-CLR--main);
 }
 
 
 
 
 #app .board .project > .name > .bullet.diamond ~ .menu {
-    left: unset 
+  left: unset
 }
 
 #app .boardCard:not(.board.root .boardCard) > .children .project {
-    --brd-brdrClr:hsla(0,0%,50%,.15);
-
+  --brd-brdrClr: hsla(0, 0%, 50%, .15);
 }
 #app .boardCard:not(.board.root .boardCard) > .children .project {
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
-
 }
 
 html #app .board .boardColumn .notes > .content code {
-      --notes-fontSize: 0.815rem;
+  --notes-fontSize: 0.815rem;
   --notes-lineHeight: 15px;
-    padding-top: .5px !important;
-    padding-bottom: .5px !important;
-    line-height: 0px !important;
-    font-size: calc(var(--notes-fontSize) - .5px) !important;
+  padding-top: .5px !important;
+  padding-bottom: .5px !important;
+  line-height: 0px !important;
+  font-size: calc(var(--notes-fontSize) - .5px) !important;
 }
 html #app .board:not(.root) .boardColumn .notes > .content code {
-    padding-top: 0px !important;
-    padding-bottom:.5px !important;
-    font-size: calc(1em - 1px) !important;
-        
+  padding-top: 0px !important;
+  padding-bottom: .5px !important;
+  font-size: calc(1em - 1px) !important;
 }
-html #app .board:not(.root) .boardColumn .notes > .content{
-    overflow: unset;
+html #app .board:not(.root) .boardColumn .notes > .content {
+  overflow: unset;
 }
 
 
 html #app .board:not(.root) > .children > .boardColumn.comment {
-    margin: 0px !important;
-    border-radius: 0px !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
 }
 
 html #app .board:not(.root) > .children > .boardColumn.comment > .commentAttribution {
-    padding-top: 0px !important;
-    position: absolute;
-    top: 0px;
-    z-index: 94;
-    display: none !important;
+  padding-top: 0px !important;
+  position: absolute;
+  top: 0px;
+  z-index: 94;
+  display: none !important;
 }
 html #app .board:not(.root) > .children > .boardColumn.comment > .name > .expand,
 html #app .board:not(.root) > .children > .boardColumn.comment > .name > .menu,
-html #app .board:not(.root) > .children > .boardColumn.comment > .name > .bullet{
-      --btn-MargTop: 7px !important;
+html #app .board:not(.root) > .children > .boardColumn.comment > .name > .bullet {
+  --btn-MargTop: 7px !important;
 }
 html #app .board:not(.root) > .children > .boardColumn.comment > .children {
-    padding-left: 0px !important;
+  padding-left: 0px !important;
 }
-html #app .board:not(.root) > .children > .boardColumn.comment > .children .boardCard{
-    background: transparent;
+html #app .board:not(.root) > .children > .boardColumn.comment > .children .boardCard {
+  background: transparent;
 }
 html #app .board:not(.root) .comment [class*="name--highlighted"]:before {
-    opacity: 0 !important;
+  opacity: 0 !important;
 }
 
-html #app .board .project.highlighted:before{
-    content: "";
+html #app .board .project.highlighted:before {
+  content: "";
   display: block;
   position: absolute;
   inset: 0px -5px;
@@ -5048,68 +5020,70 @@ html #app .board .project.highlighted:before{
   background: var(--wf-background-tertiary) !important;
 }
 :root {
-  --boardCommentAttributionPadTop:7px;
+  --boardCommentAttributionPadTop: 7px;
 }
 html #app .board:not(.root) .boardColumn > .children > .project.comment {
-    margin: 0px !important;
+  margin: 0px !important;
 }
-html #app .board .boardColumn > .children > .project.comment > .commentAttribution{
-    padding-left: 25px !important;
-    padding-top: var(--boardCommentAttributionPadTop) !important;
+html #app .board .boardColumn > .children > .project.comment > .commentAttribution {
+  padding-left: 25px !important;
+  padding-top: var(--boardCommentAttributionPadTop) !important;
 }
-html #app .board.root{
-      --boardCommentAttributionPadTop:3px;
+html #app .board.root {
+  --boardCommentAttributionPadTop: 3px;
+}
 
+html #app .board .boardColumn > .children > .project.comment .comment > .commentAttribution {
+  padding-left: 15px !important;
+  padding-top: 6px !important;
 }
-
-html #app .board .boardColumn > .children > .project.comment .comment > .commentAttribution{
-    padding-left: 15px !important;
-    padding-top: 6px !important;
-}
-html #app .board:not(.root) .boardColumn > .children > .project.comment .comment > .children{
-    padding-left: calc(var(--children-Indent) * 1) !important
+html #app .board:not(.root) .boardColumn > .children > .project.comment .comment > .children {
+  padding-left: calc(var(--children-Indent) * 1) !important
 }
 
 .project.references > .children .project.board > .children {
-    overflow-y: auto;
+  overflow-y: auto;
 }
-.boardCard.paragraph > .name > .bullet:not(.diamond):before{
-    width: 3px !important;
+.boardCard.paragraph > .name > .bullet:not(.diamond):before {
+  width: 3px !important;
 }
-.boardCard.paragraph:not(.open,.collapsed) > .name > .bullet:not(.diamond):before{
-    opacity: 0 !important;
+.boardCard.paragraph:not(.open, .collapsed) > .name > .bullet:not(.diamond):before {
+  opacity: 0 !important;
 }
 
-.board:not(.root) .boardColumn > .children > ._1ut32c0{
+.board:not(.root) .boardColumn > .children > ._1ut32c0 {
   display: none !important;
 }
-.board.root .boardColumn > .children > ._1ut32c0{
+.board.root .boardColumn > .children > ._1ut32c0 {
   order: 929292
 }
 
-#app .board:not(.root) > .children > .boardColumn > .children > .project.comment {
-  
-}
+#app .board:not(.root) > .children > .boardColumn > .children > .project.comment {}
 #app .board:not(.root) > .children > .boardColumn > .children {
-  border-top: 1px solid var(--brd-ClmBrdClr) !important;
+  box-shadow: 0 0px 0 0 var(--brd-ClmBrdClr);
+  border-top: 1px solid hsla(0,0%,50%,.001) !important;
+}
+#app .board:not(.root) > .children > .boardColumn:not(.noted,.collapsed) > .name,
+#app .board:not(.root) > .children > .boardColumn.noted:not(.collapsed) > .notes{
+  box-shadow: 0 1px 0 0 var(--brd-ClmBrdClr) !important;
 }
 
-html #app .board .comment.boardCard{
-  position: relative ;
+html #app .board .comment.boardCard {
+  position: relative;
 }
-html #app .board .comment.boardCard > .comment-toolbar{
+html #app .board .comment.boardCard > .comment-toolbar {
   display: none !important;
 }
-html #app .board .comment.boardCard > .children > .comment-toolbar{
+html #app .board .comment.boardCard > .children > .comment-toolbar {
   display: none !important;
 }
 html #app .board .comment.boardCard > .comment-toolbar button.reply-button,
-html #app .board .comment.boardCard > .children > .comment-toolbar button.reply-button{
+html #app .board .comment.boardCard > .children > .comment-toolbar button.reply-button {
   font-size: calc(1em - 6px);
   padding: 3px 2px;
 }
 html #app .board .comment.boardCard > .comment-toolbar button.reply-button span,
-html #app .board .comment.boardCard > .children > .comment-toolbar button.reply-button span{
+html #app .board .comment.boardCard > .children > .comment-toolbar button.reply-button span {
   white-space: nowrap;
 }
 
@@ -5117,23 +5091,23 @@ html #app .board .project .name > .bullet.diamond ~ .content > .innerContentCont
   text-decoration: underline !important
 }
 
-#app .board > .children > .boardColumn > .children > .references > .children > .project{
+#app .board > .children > .boardColumn > .children > .references > .children > .project {
   margin: 0px !important;
 }
 #app .board > .children > .boardColumn > .children > .references > .children > .project:not(.noted) > .name,
-#app .board > .children > .boardColumn > .children > .references > .children > .project.noted > .notes{
+#app .board > .children > .boardColumn > .children > .references > .children > .project.noted > .notes {
   padding-bottom: 6px;
 }
 
 
-#app .board > .children > .boardColumn > .children > .references > .children > .project .breadcrumbs{
+#app .board > .children > .boardColumn > .children > .references > .children > .project .breadcrumbs {
   padding-bottom: 0px !important;
   padding-top: 10px !important;
   row-gap: 2px !important;
   padding-right: 10px !important;
 }
-#app .board > .children > .boardColumn > .children > .references > .children > .project .breadcrumbs a{
-max-width: calc(100% - 70px) !important;
+#app .board > .children > .boardColumn > .children > .references > .children > .project .breadcrumbs a {
+  max-width: calc(100% - 70px) !important;
   font-size: calc(1em - 2px) !important;
 }
 
@@ -5152,20 +5126,20 @@ max-width: calc(100% - 70px) !important;
 }
 #app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .name,
 #app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .notes,
-#app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .children{
+#app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .children {
   margin-left: 6px !important;
   max-width: calc(100% - 6px)!important
 }
 #app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .children,
-#app .board > .children > .boardColumn > .children > .references > .children > .project.comment .comment > .children{
+#app .board > .children > .boardColumn > .children > .references > .children > .project.comment .comment > .children {
   padding-left: var(--children-Indent) !important;
-  --children-Indent:16px;
+  --children-Indent: 16px;
 }
-#app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .commentAttribution{
+#app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .commentAttribution {
   padding-left: 7px !important
 }
-#app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .commentAttribution{
-  padding-top:7px !important;
+#app .board > .children > .boardColumn > .children > .references > .children > .project.comment > .commentAttribution {
+  padding-top: 7px !important;
 }
 
 #app .board > .children > .boardColumn > .children > .references > .children > .project.comment + .project {
@@ -5173,18 +5147,18 @@ max-width: calc(100% - 70px) !important;
 }
 
 #app .board:not(.root) > .children > .boardColumn > .children > .boardCard.comment > .name,
-#app .board:not(.root) > .children > .boardColumn > .children > .boardCard.noted.comment > .notes{
+#app .board:not(.root) > .children > .boardColumn > .children > .boardCard.noted.comment > .notes {
   padding-bottom: 0px !important;
 }
-#app .board:not(.root) > .children > .boardColumn > .children > .boardCard.comment:not(.noted) > .name > .content{
-  padding-bottom:calc(var(--content-PadTopBtm) + 4px) !important;
+#app .board:not(.root) > .children > .boardColumn > .children > .boardCard.comment:not(.noted) > .name > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) + 4px) !important;
 }
-#app .board:not(.root) > .children > .boardColumn > .children > .boardCard.noted.comment > .notes > .content{
-  padding-bottom:calc(var(--content-PadTopBtm) + 2px) !important;
+#app .board:not(.root) > .children > .boardColumn > .children > .boardCard.noted.comment > .notes > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) + 2px) !important;
 }
 
 #app .project.board:not(.root) > .children .boardCard.comment > .children,
-#app .project.board:not(.root) > .children .boardCard.comment:not(.children>.boardCard:first-child){
+#app .project.board:not(.root) > .children .boardCard.comment:not(.children>.boardCard:first-child) {
   border-color: hsl(197, 9%, 25%) !important;
 }
 
@@ -5192,10 +5166,10 @@ max-width: calc(100% - 70px) !important;
   top: -2px
 }
 
-#app .board:not(.root) .project.boardColumn > .children > .boardCard > .children  .project.comment > .children,
-#app .board:not(.root) .project.boardColumn > .children > .boardCard > .children  .project.comment > .commentAttribution{
+#app .board:not(.root) .project.boardColumn > .children > .boardCard > .children .project.comment > .children,
+#app .board:not(.root) .project.boardColumn > .children > .boardCard > .children .project.comment > .commentAttribution {
   padding-left: var(--children-Indent)!important;
-  --children-Indent:16px;
+  --children-Indent: 16px;
 }
 
 #app .board:not(.root) > .children code {
@@ -5205,57 +5179,142 @@ max-width: calc(100% - 70px) !important;
   display: none !important;
 }
 
-#app .project.board:not(.root) .boardColumn> .name > .content code{
-    font-size: calc(var(--name-fontSize) - 3.5px) !important;
+#app .project.board:not(.root) .boardColumn > .name > .content code {
+  font-size: calc(var(--name-fontSize) - 3.5px) !important;
   padding-top: .5px !important;
   padding-bottom: .5px !important;
-
 }
 
 
-#app .project.board.root .boardColumn> .name > .content code{
-    font-size: calc(var(--name-fontSize) + 1px)!important;
+#app .project.board.root .boardColumn > .name > .content code {
+  font-size: calc(var(--name-fontSize) + 1px)!important;
   padding-top: .5px !important;
   padding-bottom: .5px !important;
-
 }
 
 #app .project:is(.board) .project:not([class*="header"]) > .name > .content code {
-    font-size: calc(var(--name-fontSize) - 1.5px) !important;
-    -webkit-font-smoothing:subpixel-antialiased !important;
-    letter-spacing: -.2px;
-    padding-left: 4px;
-    padding-right:3.5px !important; 
-    font-weight: 199 !important;
+  font-size: calc(var(--name-fontSize) - 1.5px) !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  letter-spacing: -.2px;
+  padding-left: 4px;
+  padding-right: 3.5px !important;
+  font-weight: 199 !important;
 }
 #app .project:is(.board) .project:is([class*="header"]) > .name > .content code {
-    font-size: calc(var(--name-fontSize) + 1px) !important;
-    -webkit-font-smoothing:subpixel-antialiased !important;
-    letter-spacing: -.2px;
-    padding-left: 4px;
-    padding-right:3.5px !important; 
-    font-weight: 199 !important;
+  font-size: calc(var(--name-fontSize) + 1px) !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  letter-spacing: -.2px;
+  padding-left: 4px;
+  padding-right: 3.5px !important;
+  font-weight: 199 !important;
 }
 #app .project:is(.board) .project:is([class*="header1"]) > .name > .content code {
-    font-size: calc(var(--name-fontSize) + 2.5px) !important;
+  font-size: calc(var(--name-fontSize) + 2.5px) !important;
 }
 #app .project:is(.board) .project:is([class*="header2"]) > .name > .content code {
-    font-size: calc(var(--name-fontSize) + 1px) !important;
+  font-size: calc(var(--name-fontSize) + 1px) !important;
 }
 
-#app .project:is(.board) .project:is([class*="header3"]) > .name > .content code{
-    font-size: calc(var(--name-fontSize) + 0px) !important;
-    padding-bottom:0px; 
-    padding-top:0px;
+#app .project:is(.board) .project:is([class*="header3"]) > .name > .content code {
+  font-size: calc(var(--name-fontSize) + 0px) !important;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 
 #app .project.board .boardColumn > .name.name--with-image:not(.empty) {
   display: block !important;
 }
-.boardColumn .boardCard:is(.checkmark)>.name>.prefix{
+.boardColumn .boardCard:is(.checkmark) > .name > .prefix {
   height: var(--btn-Height) !important;
 }
 
+.board .boardColumn > .children > div:not(.project){
+
+  pointer-events: none;
+}
+.board:not(.root) .boardColumn > .children > div:not(.project){
+  display: none;
+}
+
+#app .board:not(.root) .project.boardCard.comment > .name > .expand{
+  --btn-MargTop: 7px !important;
+
+}
+#app .board .boardCard > .children > .project.references > .children > .project:first-child {
+  margin-top: 0px !important;
+  padding-top: 5px 
+}
+/*******
+********
+BOARD > NOT ROOT > FIX
+********
+********/
+.board:not(.root) {
+  --boarditemPadFix: 5px;
+}
+/*BOARD COLUMN - NAME*/
+#app .project.board:not(.root) .project:is(.boardColumn) > .name {
+  padding-top: calc(var(--content-PadTopBtm) * 2) !important;
+  margin-top: 0px !important;
+}
+/*BOARD COLUMN - NAME - NOT NOTED*/
+#app .project.board:not(.root) .boardColumn:not(.noted) > .name {
+  padding-bottom: calc(var(--content-PadTopBtm) * .25) !important;
+  
+}
+/*BOARD COLUMN - NAME - CONTENT - NOT NOTED*/
+.project.board:not(.root) .project:is(.boardColumn):not(.noted) > .name > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
+}
+/*BOARD COLUMN - NOTES - HAS NOTE*/
+#app .project.board:not(.root) .boardColumn.noted > .notes {
+  padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
+  padding-top: calc(var(--content-PadTopBtm) * .25) !important;
+}
+
+/*ALL ITEMS - NAME */
+.project.board:not(.root) .project:not(.boardColumn, [class*="header"], .quote-block, .code-block) > .name {
+  padding-top: calc(var(--content-PadTopBtm) * 1.7) !important;
+}
+/*ALL ITEMS - CONTENT - NOT NOTED */
+#app .project.board:not(.root) > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1.7);
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
+}
+
+/*ALL ITEMS - CONTENT - HAS NOTE */
+#app .project.board:not(.root) > .children > .boardColumn > .children *:is(.project,.boardCard):not(.quote-block,.code-block).noted > .notes > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
+  
+}
+
+/*ALL ITEMS - NAME WITH IMAGE -  NOT NOTED */
+#app .project.board:not(.root) > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image  {
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 3)!important;
+}
+
+/*ALL ITEMS - NAME WITH IMAGE -  HAS NOTE */
+#app .project.board:not(.root) > .children > .boardColumn > .children *:is(.noted, .project,.boardCard):not(.boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image > .content {
+  margin-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+}
+
+
+#app .board:not(.root) > .children > div:not(.boardColumn).grow-0.shrink-0 {
+  padding-top:5px !important;
+  padding-bottom: 5px !important;
+  display: flex;
+}
+#app .board:not(.root) > .children > div:not(.boardColumn).grow-0.shrink-0 > div{
+  margin: 0px !important;
+  height: 40px !important;
+  width:40px !important;
+  align-items: center;
+  justify-content: center;
+}
 
 
 /*******************************
@@ -5420,7 +5479,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .project.board .boardCard > .children .project .content {
   max-width: 100% !important;
 }
-#app .project.board .boardCard > .name .content {
+#app .project.board .boardCard > .name:not(.name--with-image) .content {
   max-width: calc(100% - 27px) !important;
 }
 
@@ -5889,10 +5948,10 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 }*/
 
 #app .board.root .boardCard:not(.open){
-  padding-bottom: 7px !important;
+  padding-bottom: 5px !important;
 }
 #app .page .board.root .boardCard:not(.collapsed,.open) > .children > .project:last-of-type{
-  padding-bottom: 7px !important;
+  padding-bottom: 5px !important;
 }
 
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment{
@@ -6077,6 +6136,53 @@ CARD > IS COMMENT
 }
 
 
+/*******
+********
+BOARDS - ROOT > PADDING FIX
+********
+********/
+#app .project.board.root {
+}
+#app .project.board.root,
+.project.board.root .boardCard > .name, 
+.project.board.root .boardCard > .notes, 
+.project.board.root .boardCard .project > .name, 
+.project.board.root .boardCard .project > .notes{
+
+  --content-PadTopBtm:8px !important;
+}
+/*ALL ITEMS - NAME */
+#app .project.board.root .project:not(.boardColumn, .quote-block, .code-block) > .name {
+  padding-top: calc(var(--content-PadTopBtm) * 1) !important;
+}
+/*ALL ITEMS - CONTENT - NOT NOTED */
+#app .project.board.root .project:not(.noted, .boardColumn, .quote-block, .code-block) > .name {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+}
+#app .project.board.root .project:not( .boardColumn, .quote-block, .code-block) > *:is(.name, .notes) > .content {
+  padding-bottom: 0px !important;
+}
+/*ALL ITEMS - CONTENT - HAS NOTE */
+#app .project.board.root .project.noted > .notes {
+  padding-top: calc(var(--content-PadTopBtm) * .1) !important;
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+  
+}
+
+/*ALL ITEMS - NAME WITH IMAGE -  NOT NOTED */
+#app .project.board.root > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image  {
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 1)!important;
+}
+/*ALL ITEMS - NAME WITH IMAGE -  HAS */
+#app .project.board.root > .children > .boardColumn > .children *:is(.noted) > .name--with-image{
+    padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 0.5)!important;
+}
+/*ALL ITEMS - NAME WITH IMAGE -  CONTENT - HAS NOTE */
+#app .project.board.root > .children > .boardColumn > .children *:is(.noted, .project,.boardCard):not(.boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * .5) !important;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT - SHARED (WRAP)
@@ -6276,11 +6382,12 @@ CARD > IS COMMENT
 
 
 
-{
-    --btn-MargTop:6px !important;
+/*comment*/
+#app .board:not(.root) > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand{
+    --btn-MargTop:6.5px !important;
+
 
 }
-
 
 #app .board.root > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand{
     --btn-MargTop:6px !important;
