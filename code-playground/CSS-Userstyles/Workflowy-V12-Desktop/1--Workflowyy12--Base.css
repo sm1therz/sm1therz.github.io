@@ -6487,17 +6487,17 @@ BULLETS > QUOTE BLOCKS > BOARDS
     --btn-MargTop:8px !important;
 }
 /*BOARD.ROOT > QUOTES*/
-#app .board.root > .children .project.quote-block > .name > .expand,
-#app .board.root > .children .project.quote-block > .name > .bullet,
-#app .board.root > .children .project.quote-block > .name > .menu{
-    --btn-MargTop:8px !important;
+#app .board.root > .children .project:is(.quote-block,.code-block) > .name > .expand,
+#app .board.root > .children .project:is(.quote-block,.code-block) > .name > .bullet,
+#app .board.root > .children .project:is(.quote-block,.code-block) > .name > .menu{
+    --btn-MargTop:15px !important;
 
 }
 /*BOARD.ROOT > COMMENTS > QUOTES*/
-#app .board.root > .children .project.comment .project.quote-block > .name > .expand,
-#app .board.root > .children .project.comment .project.quote-block > .name > .bullet,
-#app .board.root > .children .project.comment .project.quote-block > .name > .menu{
-      --btn-MargTop:10px !important;
+#app .board.root > .children .project.comment .project:is(.quote-block,.code-block) > .name > .expand,
+#app .board.root > .children .project.comment .project:is(.quote-block,.code-block) > .name > .bullet,
+#app .board.root > .children .project.comment .project:is(.quote-block,.code-block) > .name > .menu{
+      --btn-MargTop:17px !important;
 
 }
 
