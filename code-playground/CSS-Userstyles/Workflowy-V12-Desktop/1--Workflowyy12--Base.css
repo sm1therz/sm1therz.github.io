@@ -3000,7 +3000,7 @@ BOARD > PREFIX > ALL
 }
 #app *:is(.board.root) .project:not(.checkmark) > .name > .prefix{
   --btn-MargTop: 4px !important;
-  transform: scale(1);
+  transform: scale(1) ;
 }
 /*comments*/
 #app *:is(.board) .comment .project:not(.checkmark) > .name > .prefix{
@@ -3058,10 +3058,17 @@ NUMBERS > BOARDS > MIRRORS
 ***************
 ***************/
 
+/*NUMBERS > BOARDS > MIRRORS > BOARDCARD + BOARDCOLUMNS*/
 #app *:is(.board) .project:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix{
   --numberBulletUnderScaleCollapsed:1.05;
   --numberBulletPosL:-.5px;
   margin-left: -2px !important;
+}
+/*NUMBERS > BOARDS > MIRRORS > ALL*/
+#app *:is(.board) .project:not(.checkmark):not(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix{
+  --numberBulletUnderScaleCollapsed:1.05;
+  --numberBulletPosL:.5px;
+  --btnIcn-ExpandB4Low-BrdRad:4.5px
 }
 /***************
 BOARD > PREFIX UNDER > MIRRORS > BOARD COLUMN + BOARD CARD
@@ -5292,7 +5299,7 @@ BOARD > NOT ROOT > FIX
 }
 
 /*ALL ITEMS - CONTENT - HAS NOTE */
-#app .project.board:not(.root) > .children > .boardColumn > .children *:is(.project,.boardCard):not(.quote-block,.code-block).noted > .notes > .content {
+#app .project.board:not(.root) > .children > .boardColumn > .children *:is(.project,.boardCard).noted > .notes > .content {
   padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
   padding-bottom: 0px !important;
   margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
@@ -5322,6 +5329,24 @@ BOARD > NOT ROOT > FIX
   width:40px !important;
   align-items: center;
   justify-content: center;
+}
+
+
+#app .board > .children  .project:not(.boardColumn,.boardCard).checkmark > .name--with-image > .prefix{
+  --btn-MargTop:4px !important;
+}
+
+/*******
+********
+BOARD > NOT ROOT > PREFIX FIX
+********
+********/
+#app .project.checkmark > .name > .prefix > .inline-flex > .item-checkbox {
+  --BG-primary:var(--BOARD-ROOT--CARD--BG);
+}
+#app .project.board:not(.root) .project > .name > .prefix{
+  top: var(--btn-MargTop) !important;
+  --btn-MargTop:3px !important;
 }
 
 
