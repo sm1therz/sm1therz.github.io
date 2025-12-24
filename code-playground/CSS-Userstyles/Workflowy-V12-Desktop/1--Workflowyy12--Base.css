@@ -2849,6 +2849,14 @@ PREFIX
 }
 
 /***************
+PREFIX > INLINE FLEX
+****************/
+.project:not(.checkmark) > .name > .prefix > .inline-flex {
+  white-space: nowrap;
+  transform-origin: bottom right;
+  transform: scale(0.95);
+}
+/***************
 PREFIX - EXPAND
 ****************/
 .project:not(.checkmark) > .name > .prefix,
@@ -2983,16 +2991,16 @@ OVERRIDES
 /***************
 BOARD > PREFIX > ALL
 ****************/
-#app *:is(.board) .project:not(.checkmark) > .name > .prefix {
+#app .project.board .project:not(.checkmark) > .name > .prefix {
   font-size: var(--name-fontSize);
   line-height: var(--name-lineHeight);
   color: var(--NODE--TXT-CLR--main);
-  --btn-MargTop: 0.5px !important;
   --numberBulletPosL:unset;
 
 }
 #app *:is(.board.root) .project:not(.checkmark) > .name > .prefix{
-  --btn-MargTop: 2.5px !important;
+  --btn-MargTop: 4px !important;
+  transform: scale(1);
 }
 /*comments*/
 #app *:is(.board) .comment .project:not(.checkmark) > .name > .prefix{
