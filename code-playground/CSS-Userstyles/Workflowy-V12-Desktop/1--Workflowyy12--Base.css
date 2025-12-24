@@ -5477,19 +5477,24 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .project.board.root .boardColumn > .children > .boardCard {
   margin-top: var(--boardRoot-ColumnGap) !important;
 }
+
 /*BOARD ROOT - BOARD CARDS*/
+
+.board.root {
+  --rootBrdCrdPadTopBtm:5px;
+}
 #app .project.board.root > .children > .boardColumn > .children > .boardCard {
   background: var(--BOARD-ROOT--CARD--BG);
   box-shadow: 0 0 0 1px var(--wf-border-default) !important;
   outline-offset: -1px;
   border-radius: var(--boardRoot-CardBrdRad) !important;
   border-top-color: transparent !important;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: var(--rootBrdCrdPadTopBtm);
+  padding-bottom: var(--rootBrdCrdPadTopBtm);
   --boardRoot-CardBrdRad: 9px;
 }
 #app .project.board.root > .children > .boardColumn > .children > .boardCard:not([class*="header"], .quote-block, .code-block) {
-  padding-bottom: 7px;
+  padding-bottom: calc(var(--rootBrdCrdPadTopBtm) + 2px);
 }
 
 #app .project.board .project.code-block > .name > .content,
@@ -5983,7 +5988,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 
 }*/
 
-#app .board.root .boardCard:not(.open){
+#app .page .project.board.root > .children > .project.boardCard:not(.open){
   padding-bottom: 5px !important;
 }
 #app .page .board.root .boardCard:not(.collapsed,.open) > .children > .project:last-of-type{
@@ -6174,6 +6179,10 @@ CARD > IS COMMENT
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
+
+
+
+
 
 
 
