@@ -3932,8 +3932,8 @@ LEVEL 1 > Project
 ****************
 ****************/
 :root {
-  --boardColumnWidth: 380px;
-  --boardRootColumnWidth: 475px
+  --boardColumnWidth: 370px;
+  --boardRootColumnWidth: 370px;
 }
 .project.board > .children {
   --brd-brdrClr: var(--COMMENT-CONTAINER--BORDER-CLR);
