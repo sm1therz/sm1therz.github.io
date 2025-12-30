@@ -8382,8 +8382,8 @@ html.floating-comments-blurred body.floating-comments #app .floating-comments-co
 }
 @media (max-width: 1300px) {
   html body.floating-comments #app .floating-comments-container {
-    --floatCommentW: calc(530px - 12vw );
-    --floatCommentMaxW: calc(530px - 12vw) !important;
+    --floatCommentW: calc(530px - 11vw );
+    --floatCommentMaxW: calc(530px - 11vw) !important;
   }
 }
 @media (max-width: 1200px) {
