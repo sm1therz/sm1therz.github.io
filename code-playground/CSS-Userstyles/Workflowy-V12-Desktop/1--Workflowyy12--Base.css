@@ -8432,6 +8432,15 @@ html.floating-comments-blurred body.floating-comments #app .floating-comments-co
   }
 }
 
+@media (max-width: 500px){
+    /*ACTIVE - 1200px*/
+  html body.floating-comments #app .floating-comments-container {
+    --floatCommentW: calc(500px - 10vw);
+    --floatCommentMaxW: calc(100vw - 1vw) !important;
+  }
+}
+
+
 #app .floating-comments-container .project.root > .children > .project {
   box-shadow: 0 0 10px black !important
 }
