@@ -11372,14 +11372,27 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     --btn-MargTop: -.5px !important;
   }
 }
-/*BOARD COLUMNS*/
-@media (max-width: 500px) {
+/**********
+BOARD COLUMNS
+************/
+@media (max-width: 800px) {
   #app .board.root > .name {
     --ROOT-padLeftRight: 20px;
   }
   #app .board.root > .children {
     --ROOT-padLeftRight: 10px;
+  }
+  :root {
+    --boardRootColumnWidth: 320px;
+    --boardColumnWidth:280px;
+  }
+}
+@media (max-width: 380px) {
+  #app .board.root > .children {
+  }
+  :root {
     --boardRootColumnWidth: calc(100vw - 10px);
+    --boardColumnWidth:calc(100vw - 39px);
   }
 }
 
