@@ -36,6 +36,32 @@
 
 }
 
+/******
+HEADING 3 BOARD CARDS > INCREASE PADDING
+*******/
+#app .pageContainer .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"]{
+    padding-bottom: 0px !important;
+    margin-bottom: calc(var(--rootBrdCrdPadTopBtm) * 0.5) !important;
+    padding-top: calc(var(--content-PadTopBtm) * 1) !important;
+}
+#app .project.board.root .project.boardCard[class*="header3"]:not(.noted) > .name{
+    padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
+}
+
+#app .project.board.root .project.boardColumn .project.boardCard[class*="header3"].noted > .notes{
+    padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
+}
+
+/******
+HEADING 3 BOARD CARDS > BULLET POSITION
+*******/
+#app .project.board.root .project.boardCard[class*="header3"] > .name > .bullet,
+#app .project.board.root .project.boardCard[class*="header3"] > .name > .menu,
+#app .project.board.root .project.boardCard[class*="header3"] > .name > .expand,
+#app .project.board.root .project.boardCard[class*="header3"] > .name > .prefix {
+}
+
+
 
 /*CHILDREN AS CARD - TOP LEVEL NAME / NOTE  > BOTTOM BORDER*/
 #app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .name,
