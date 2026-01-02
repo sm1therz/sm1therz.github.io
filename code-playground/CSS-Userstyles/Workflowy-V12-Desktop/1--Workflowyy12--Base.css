@@ -1022,10 +1022,9 @@ NOTES > CONTENT only*/
 #app  {
     margin-bottom: var(--wf-space-s) !important;
 }
-#app .project[class*="header"]:not(.root,.noted) > .name{
+#app .project[class*="header"]:not(.root,.noted, .boardColumn) > .name{
    padding-bottom: calc(var(--wf-space-s) * 2) !important;
 }
-
 
 
 
@@ -3957,12 +3956,7 @@ LEVEL 1 > Project
   max-width: var(--boardColumnWidth);
 }
 
-@media (max-width: 1640px) {
-  :root {
-    --boardColumnWidth: 340px;
-    --boardRootColumnWidth: 400px
-  }
-}
+
 
 
 
@@ -6073,8 +6067,13 @@ user-select: none;
   min-height: 64px;
 }
 
-#app .project.board.root .boardColumn.noted > .notes > .content{
-  min-height: 36px;
+
+#app .project.board.root .boardColumn.noted > .notes > .content:not(.active){
+    min-height: 28px;
+    overflow: hidden;
+}
+#app .project.board.root .boardColumn.noted > .notes > .content.active{
+    min-height: 28px;
 }
 
 
@@ -6182,54 +6181,6 @@ CARD > IS COMMENT
 
 
 
-
-/*******
-********
-BOARDS - ROOT > PADDING FIX
-********
-********/
-#app .project.board.root {
-}
-#app .project.board.root,
-.project.board.root .boardCard > .name, 
-.project.board.root .boardCard > .notes, 
-.project.board.root .boardCard .project > .name, 
-.project.board.root .boardCard .project > .notes{
-
-  --content-PadTopBtm:8px !important;
-}
-/*ALL ITEMS - NAME */
-#app .project.board.root .project:not(.boardColumn, .quote-block, .code-block) > .name {
-  padding-top: calc(var(--content-PadTopBtm) * 1) !important;
-}
-/*ALL ITEMS - CONTENT - NOT NOTED */
-#app .project.board.root .project:not(.noted, .boardColumn, .quote-block, .code-block) > .name {
-  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
-}
-#app .project.board.root .project:not( .boardColumn, .quote-block, .code-block) > *:is(.name, .notes) > .content {
-  padding-bottom: 0px !important;
-}
-/*ALL ITEMS - CONTENT - HAS NOTE */
-#app .project.board.root .project.noted > .notes {
-  padding-top: calc(var(--content-PadTopBtm) * .1) !important;
-  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
-  
-}
-
-/*ALL ITEMS - NAME WITH IMAGE -  NOT NOTED */
-#app .project.board.root > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image  {
-  padding-bottom: 0px !important;
-  margin-bottom: calc(var(--content-PadTopBtm) * 1)!important;
-}
-/*ALL ITEMS - NAME WITH IMAGE -  HAS */
-#app .project.board.root > .children > .boardColumn > .children *:is(.noted) > .name--with-image{
-    padding-bottom: 0px !important;
-  margin-bottom: calc(var(--content-PadTopBtm) * 0.5)!important;
-}
-/*ALL ITEMS - NAME WITH IMAGE -  CONTENT - HAS NOTE */
-#app .project.board.root > .children > .boardColumn > .children *:is(.noted, .project,.boardCard):not(.boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image > .content {
-  padding-bottom: calc(var(--content-PadTopBtm) * .5) !important;
-}
 
 /*******************************
 ********************************
@@ -11360,18 +11311,17 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
 
   #app .project:is(.header1) > .name:after {
-    top:calc(var(--children-Indent) * 2.5) !important
+    top: calc(var(--children-Indent) * 2.5) !important
   }
   #app .project:is(.header2) > .name:after {
-    top:calc(var(--children-Indent) * 2.25) !important
+    top: calc(var(--children-Indent) * 2.25) !important
   }
   #app .project:is(.header3) > .name:after {
-    top:calc(var(--children-Indent) * 2) !important
+    top: calc(var(--children-Indent) * 2) !important
   }
-  
 }
-#app .project > .name > .prefix{
---btn-MargTop: -1px !important;
+#app .project > .name > .prefix {
+  --btn-MargTop: -1px !important;
 }
 @media (max-width: 650px) {
   #app .project > .name:after {
@@ -11381,9 +11331,19 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     --btn-MargTop: -.5px !important;
   }
 }
+
+/**********
+FLOATING COMMENTS
+***********/
 /**********
 BOARD COLUMNS
 ************/
+@media (max-width: 1640px) {
+  :root {
+    --boardColumnWidth: 370px;
+    --boardRootColumnWidth: 400px
+  }
+}
 @media (max-width: 800px) {
   #app .board.root > .name {
     --ROOT-padLeftRight: 20px;
@@ -11393,7 +11353,7 @@ BOARD COLUMNS
   }
   :root {
     --boardRootColumnWidth: 320px;
-    --boardColumnWidth:280px;
+    --boardColumnWidth:320px;
   }
 }
 @media (max-width: 380px) {
