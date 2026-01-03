@@ -1585,7 +1585,8 @@ NOTES > innerCONTENT*/
 BOLD Text
 ****************/
 b,
-i b {
+i b,
+[class*="header"] > .name > .content {
     color: var(--NODE--TXT-CLR--bold);
 }
 *:not(.board) .notes b,
