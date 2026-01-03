@@ -5733,11 +5733,11 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 #app .project.board.root .boardColumn > .name > .expand {
   z-index: 3;
 }
-#app .project.board.root .boardColumn > .name [class*="Place"],
+#app .project.board.root .boardColumn > .name [class*="Place"], 
 #app .project.board.root .boardColumn > .name > .content {
-  font-weight: 400 !important;
-  font-size: calc(var(--name-fontSize) + 2px)!important;
-  line-height: calc(var(--name-lineHeight) + 6px) !important;
+    font-weight: 600 !important;
+    font-size: calc(var(--name-fontSize) + 5px)!important;
+    line-height: calc(var(--name-lineHeight) + 6px) !important;
 }
 
 div#app ~ div[style*="color: rgb(60, 64"] {
