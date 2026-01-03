@@ -1929,7 +1929,7 @@ CODE BLOCKS
 #app .project.code-block > .name > .content,
 #app .project.code-block > .name > .content > .innerContentContainer {
 
-    font-size: calc(var(--name-fontSize) - 3.5px) !important;
+    font-size: calc(var(--name-fontSize) - 5.0px) !important;
     line-height: calc(var(--name-lineHeight) - 2px) !important;
     color:white !important;
 }
