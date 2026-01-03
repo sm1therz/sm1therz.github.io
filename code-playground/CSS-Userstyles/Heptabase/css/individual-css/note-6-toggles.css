@@ -82,7 +82,26 @@ div[style*="--annotation-"] + div .ProseMirror > [data-node-type*="toggle"] > [c
 ._hasNestedBlock_mglho_11>._bulletWrapper_mglho_1>div>span>div>._toggleIcon_mglho_4{
   opacity: .5
 }
+/*********
+! TOGGLES > CHAT
+*********/
 
+/**references*/
+.group\/1741629705525 .ProseMirror{
+    position: relative;
+}
+.group\/1741629705525 .ProseMirror > [data-node-type*="toggle"]{
+    position: relative;
+    padding-left: var(--bulletwrapperW);
+    width: calc(100% + var(--bulletwrapperW));
+    margin-right: calc(var(--bulletwrapperW) * 0);
+    align-self: flex-end;
+}
+.group\/1741629705525 .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
+        position: absolute;
+    left: calc(var(--bulletwrapperW) * 0.0);
+    width: var(--bulletwrapperW);
+}
 /*********
 ! TOGGLES > REFERENCES
 *********/
