@@ -52,11 +52,7 @@ div[style*="--annotation-"] + div .ProseMirror > [data-node-type*="toggle"] > [c
     }
 }
 
-/**references*/
-div[style*="width:"] > div[style*="width:"] [data-editor-type="previewer"] .ProseMirror > [data-node-type*="toggle"]{
-    left: calc(var(--bulletwrapperW) * .5);
-  padding-left: calc(var(--bulletwrapperW) * 1) !important;
-}
+
 /*middle brder*/
 [data-card-tab-id] > div > .ProseMirror > [data-node-type*="toggle"]:before,
 .p-12.hepta-scrim [class*="editor"] > .ProseMirror > [data-node-type*="toggle"]:before,
@@ -87,10 +83,43 @@ div[style*="width:"] > div[style*="width:"] [data-editor-type="previewer"] .Pros
   opacity: .5
 }
 
-.group\/1700998616504 .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
+/*********
+! TOGGLES > REFERENCES
+*********/
+
+/**references*/
+.group\/1685197199740 + div .ProseMirror{
+    position: relative;
+}
+.group\/1685197199740 + div .ProseMirror > [data-node-type*="toggle"]{
+    position: relative;
+    padding-left: var(--bulletwrapperW);
+    width: calc(100% + var(--bulletwrapperW));
+    margin-right: calc(var(--bulletwrapperW) * 0);
+    align-self: flex-end;
+}
+.group\/1685197199740 + div .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
+        position: absolute;
+    left: calc(var(--bulletwrapperW) * 0.0);
+    width: var(--bulletwrapperW);
+}
+
+/*********
+! TOGGLES > WHITEBOARD > RIGHT SIDEBAR
+*********/
+
+/*in note*/
+*:is(.group\/1700998616504,.group\/1741629705525) .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
   position: absolute;
     left: calc(var(--bulletwrapperW) * 0.0);
     width: var(--bulletwrapperW);
       --bulletwrapperW: 1.75rem;
   z-index: 939393;
+}
+
+.group\/1741629705525 .ProseMirror{
+    position: relative;
+}
+.group\/1741629705525 .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
+left: calc(var(--bulletwrapperW) * -1);
 }
