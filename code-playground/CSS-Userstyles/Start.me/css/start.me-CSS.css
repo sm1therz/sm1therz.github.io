@@ -2056,7 +2056,12 @@ width: 100% !important;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
-
+.bookmark-widget__item-wrapper_mode_detail.bookmark-widget__item-wrapper_size_small,
+.bookmark-widget__item-wrapper_mode_detail.bookmark-widget__item-wrapper_size_none,
+.bookmark-widget__item-wrapper_mode_detail.bookmark-widget__item-wrapper_size_medium,
+.bookmark-widget__item-wrapper_mode_detail.bookmark-widget__item-wrapper_size_large{
+    height: unset !important;
+}
 .bookmark-item_mode_detail .bookmark-item__link {
   padding-top: var(--bookmarkThumbnailMargTopBtm);
   padding-bottom: var(--bookmarkThumbnailMargTopBtm);
