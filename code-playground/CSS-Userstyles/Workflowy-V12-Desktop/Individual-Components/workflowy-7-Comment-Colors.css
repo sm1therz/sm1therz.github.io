@@ -1,3 +1,5 @@
+/*root*/
+
 /*COMMENT BOARDERS > ALL*/
 
 :root {
@@ -83,7 +85,7 @@
 
 
 #app .project.board.root > .children > .boardColumn > .children > .project.boardCard.comment {
-  box-shadow: 0 0 0 1px var(--boardRoot-CommentBrdClr) !important;
+  box-shadow: 0 0 0 1px var(--boardrootCommentBrdClr-Even) !important;
   border-width: 0px !important
 }
 
@@ -97,7 +99,7 @@
 #app .board.root .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,
 #app .board.root .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment {
   
-  border-color: var(--boardRoot-CommentBrdClr) !important;
+  border-color: var(--boardrootCommentBrdClr-Odd) !important;
 }
 
 /*COMMENT BORDERS > DASHBOARD*/
@@ -105,9 +107,9 @@
 :root {
   --DashCommentChildren--BrdClr:hsl(200, 6%, 21.4%);
 }
-#app .page.dashboard-page .dashboard-card:not(.comment) .children > .comment:not(.comment .comment):after,
-#app .page.dashboard-page .dashboard-card:not(.noted) > .name:before,
-#app .page.dashboard-page .dashboard-card.noted > .notes:before,
+#app .page.dashboard-page .dashboard-card.comment:not(.comment) .children > .comment:not(.comment .comment):after,
+#app .page.dashboard-page .dashboard-card.comment:not(.noted) > .name:before,
+#app .page.dashboard-page .dashboard-card.comment.noted > .notes:before,
 #app .dashboard-card.comment:not(.noted) > .name:after,
 #app .dashboard-card.comment.noted > .notes:after,
 #app .dashboard-card.comment > .name:before {

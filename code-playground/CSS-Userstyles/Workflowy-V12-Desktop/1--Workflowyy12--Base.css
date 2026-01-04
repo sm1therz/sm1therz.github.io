@@ -1,4 +1,5 @@
-  /****
+
+/****
 ! ROOT
 ****/
 
@@ -3931,10 +3932,7 @@ HIGHLIGHT - GREYED OUT
 LEVEL 1 > Project
 ****************
 ****************/
-:root {
-  --boardColumnWidth: 370px;
-  --boardRootColumnWidth: 370px;
-}
+
 .project.board > .children {
   --brd-brdrClr: var(--COMMENT-CONTAINER--BORDER-CLR);
   --brd-brdrClrCmnt: var(--COMMENT-CONTAINER--BORDER-CLR);
@@ -4960,7 +4958,6 @@ BOARD COMMENTS
 .board .project:not([class*="header"]) > .name > .content {
   font-size: var(--name-fontSize);
   line-height: var(--name-lineHeight);
-  color: var(--NODE--TXT-CLR--main);
 }
 
 
@@ -5397,7 +5394,8 @@ BOARD ROOT SIZES
   --notes-fontSize: 13.25px;
   --notes-lineHeight: 16.25px;
   --boardRoot-CardBrdRad: 8px;
-  --boardRoot-ColumnGap: 10px;
+  --boardRoot-ColumnGap: 12px;
+    --boardrootCardMargTop:15px
 }
 
 
@@ -5457,20 +5455,32 @@ BOARD COLUMNS - MIRRORED CHECKBOX
   transform: rotate(-45deg)scale(var(--btnIcn-Scale))translateY(.5px)translateX(.5px)!important;
 }
 
+:root {
+    --boardrootFirstColPadL:3px;
+    
+}
 
+#app .project.board.root > .children > .boardColumn:not(:last-child){
+    border-right: 1px solid var(--boardrootColumnBrdClr) !important;
+}
 /*BOARD ROOT - COLUMNS - CHILDREN*/
 #app .project.board.root .boardColumn > .children {
 
-  padding-left: calc(var(--boardRoot-ColumnGap) * 1);
+  padding-left: calc(var(--boardRoot-ColumnGap) * 2);
   padding-right: calc(var(--boardRoot-ColumnGap) * 2);
 }
-#app .project.board.root .boardColumn > .children {
-  padding-left: 5px;
+
+#app .project.board.root > .children > .boardColumn:first-child > *:is(.name,.notes,.children) {
+    padding-left: var(--boardrootFirstColPadL) !important;
+}
+#app .project.board.root > .children > .boardColumn:first-child > .name > .expand{
+    left: calc(var(--boardrootFirstColPadL) * 1) !important
 }
 
 #app .project.board.root .boardColumn > .children > .boardCard {
-  margin-top: var(--boardRoot-ColumnGap) !important;
+  margin-top: var(--boardrootCardMargTop) !important;
 }
+
 
 /*BOARD ROOT - BOARD CARDS*/
 
@@ -5478,7 +5488,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
   --rootBrdCrdPadTopBtm:5px;
 }
 #app .project.board.root > .children > .boardColumn > .children > .boardCard {
-  background: var(--BOARD-ROOT--CARD--BG);
+  background: var(--boardrootCardBgClr);
   box-shadow: 0 0 0 1px var(--wf-border-default) !important;
   outline-offset: -1px;
   border-radius: var(--boardRoot-CardBrdRad) !important;
@@ -5529,9 +5539,12 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 .board.root .boardCard > .children,
 .board.root .boardCard > .children .project:not(.boardCard > .children > .project:first-of-type) {}
 .board.root .boardColumn > .children {
-  border-top: 1px solid hsla(0, 0%, 100%, 0.1) !important;
+  border-top: 1px solid var(--boardrootColumnHeaderBrdClr) !important;
 }
-
+:root {
+  --boardColumnWidth: 370px;
+  --boardRootColumnWidth: 430px;
+}
 #app .board.root .boardColumn {
   max-width: var(--boardRootColumnWidth) !important;
   flex: 0 0 var(--boardRootColumnWidth);
@@ -5716,7 +5729,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment {
   background: hsl(202, 23%, 17.5%, 0.5) !Important;
-  background: var(--BoardCommentMainBG) !Important;
+  background: var(--boardrootCommentBgClr-Even) !Important;
   --COMMENT--BG--even: hsl(202, 12%, 21%);
   --COMMENT-CONTAINER--BG: hsl(197, 18%, 15%);
   box-shadow: 0 0 0 1px hsl(197, 13%, 0%) !important;
@@ -5857,6 +5870,9 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
   border-top: 1px solid var(--boardChildChildBrdClr) !important;
   border-top-width: 1px !important;
 }
+#app .page .board.root > .children {
+    border-top-width: 0px !important;
+}
 
 #app .board.root .boardCard > .children > .project.quote-block:not(.noted) > .name:before, 
 #app .board.root .boardCard > .children > .project.quote-block.noted > .notes:before{
@@ -5873,7 +5889,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 }
 #app .board.root .boardCard.comment,
 #app .board.root .boardCard > .children .project.comment{
-  --boardChildBrdClr: hsl(200, 12%, 21%) !important;
+  --boardChildBrdClr: var(--boardrootCommentBrdClr-Odd) !important;
 }
 #app .board.root .boardCard.comment .comment {
   --boardChildBrdClr:var(--boardChildChildBrdClr);
@@ -6033,10 +6049,7 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 }
 
 
-#app .page[style="overflow-y: auto;"] {
-  background: var(--wf-background-secondary) !important;
-  --BG-primary: var(--wf-background-secondary) !important;
-}
+
 #app .board.root > .children > .boardColumn > .children > div.references {
   order: 8
 }
@@ -6065,7 +6078,7 @@ user-select: none;
 
 
 #app .project.board.root .boardColumn:not(.noted) > .name > .content{
-  min-height: 64px;
+  min-height: 65px;
 }
 
 
@@ -6181,7 +6194,59 @@ CARD > IS COMMENT
 
 
 
+#app .board.root .project.comment {
+--COMMENT-CONTAINER--BG:var(--boardrootCommentBgClr-Even) !important;
+}
 
+
+
+/*******
+********
+BOARDS - ROOT > PADDING FIX
+********
+********/
+#app .project.board.root {
+}
+#app .project.board.root,
+.project.board.root .boardCard > .name, 
+.project.board.root .boardCard > .notes, 
+.project.board.root .boardCard .project > .name, 
+.project.board.root .boardCard .project > .notes{
+
+  --content-PadTopBtm:8px !important;
+}
+/*ALL ITEMS - NAME */
+#app .project.board.root .project:not(.boardColumn, .quote-block, .code-block) > .name {
+  padding-top: calc(var(--content-PadTopBtm) * 1) !important;
+}
+/*ALL ITEMS - CONTENT - NOT NOTED */
+#app .project.board.root .project:not(.noted, .boardColumn, .quote-block, .code-block) > .name {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+}
+#app .project.board.root .project:not( .boardColumn, .quote-block, .code-block) > *:is(.name, .notes) > .content {
+  padding-bottom: 0px !important;
+}
+/*ALL ITEMS - CONTENT - HAS NOTE */
+#app .project.board.root .project.noted > .notes {
+  padding-top: calc(var(--content-PadTopBtm) * .1) !important;
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+  
+}
+
+/*ALL ITEMS - NAME WITH IMAGE -  NOT NOTED */
+#app .project.board.root > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image  {
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 1)!important;
+}
+/*ALL ITEMS - NAME WITH IMAGE -  HAS */
+#app .project.board.root > .children > .boardColumn > .children *:is(.noted) > .name--with-image{
+    padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 0.5)!important;
+}
+/*ALL ITEMS - NAME WITH IMAGE -  CONTENT - HAS NOTE */
+#app .project.board.root > .children > .boardColumn > .children *:is(.noted, .project,.boardCard):not(.boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * .5) !important;
+}
 
 /*******************************
 ********************************
@@ -9174,13 +9239,26 @@ PADDING RIGHT
 .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment{
     background: var(--COMMENT-CONTAINER--BG);
 }
+
+.board.root .project.comment .project.comment .project.comment,
+.board.root .project.comment .project.comment .project.comment .project.comment .project.comment,
+.board.root .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment{
+    background: var(--boardrootCommentBgClr-Even);
+}
 .project.comment .project.comment,
 .project.comment .project.comment .project.comment .project.comment,
-.project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,.project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment{
+.project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,
+.project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment{
     background: var(--COMMENT--BG--even);
   border-right-width: 0px !important;
   border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
   --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important
+}
+.board.root .project.comment .project.comment,
+.board.root .project.comment .project.comment .project.comment .project.comment,
+.board.root .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment,
+.board.root .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment .project.comment{
+    background: var(--boardrootCommentBgClr-Odd)
 }
 #app .board.root .boardColumn.comment .boardCard,
 #app .board.root .boardColumn.comment .boardCard *{
@@ -9210,8 +9288,7 @@ PADDING RIGHT
 }
 
 #app .project.board.root > .children > .boardColumn > .children > .boardCard:not(.comment){
-  box-shadow: 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR) !important;
-  --COMMENT-CONTAINER--BORDER-CLR:hsl(200, 6%, 31%) !important;
+  box-shadow: 0 0 0 1px var(--boardrootCardBrdClr) !important;
 }
 
 
@@ -9237,7 +9314,7 @@ PADDING RIGHT
 }
 #app .board.root .boardColumn .boardCard.comment,
 #app .board.root .boardColumn .boardCard > .children > .project.comment{
-  border-color: var(--COMMENT-CONTAINER--BORDER-CLR) !important;
+  border-color: var(--boardrootCommentBrdClr-Odd) !important;
 }
 #app .project.board.root > .children > .boardColumn > .children > .boardCard.comment{
   box-shadow: 0 0 0 1px var(--COMMENT-CONTAINER--BORDER-CLR) !important;
@@ -11342,7 +11419,7 @@ BOARD COLUMNS
 @media (max-width: 1640px) {
   :root {
     --boardColumnWidth: 370px;
-    --boardRootColumnWidth: 400px
+    --boardRootColumnWidth: 420px
   }
 }
 @media (max-width: 800px) {
@@ -11353,8 +11430,8 @@ BOARD COLUMNS
     --ROOT-padLeftRight: 10px;
   }
   :root {
-    --boardRootColumnWidth: 320px;
-    --boardColumnWidth:320px;
+    --boardRootColumnWidth: 340px;
+    --boardColumnWidth:340px;
   }
 }
 @media (max-width: 380px) {

@@ -5,12 +5,15 @@
   padding-top: 0px !important;
 }
 
-#app .project.board:not(.root) > .children > .boardColumn > .children > .boardCard[class*="header3"] > .name > .content{
+#app .project.board:is(.root) > .children > .boardColumn > .children > .boardCard[class*="header3"] > .name > .content{
   -webkit-font-smoothing:antialiased !important;
 
---header3-fontSize: 17px;
-  --header3-lineHeight: 21px;
+--header3-fontSize: 20px;
+  --header3-lineHeight: 27px;
+    color: white !important;
 }
+
+
 #app .project.board > .children > .boardColumn > .children > .boardCard[class*="header3"] > .name > .content{
   -webkit-font-smoothing:antialiased !important;
 }
@@ -36,6 +39,8 @@
 
 }
 
+
+
 /******
 HEADING 3 BOARD CARDS > INCREASE PADDING
 *******/
@@ -59,6 +64,7 @@ HEADING 3 BOARD CARDS > BULLET POSITION
 #app .project.board.root .project.boardCard[class*="header3"] > .name > .menu,
 #app .project.board.root .project.boardCard[class*="header3"] > .name > .expand,
 #app .project.board.root .project.boardCard[class*="header3"] > .name > .prefix {
+    --btn-MargTop: 8px !important;
 }
 
 
@@ -80,7 +86,7 @@ HEADING 3 BOARD CARDS > BULLET POSITION
   right: 0;
   bottom: calc(var(--content-PadTopBtm) * 0 - 1px);
   height: 1px;
-  background: hsla(0, 0%, 100%, 0.1);
+  background: var(--boardrootH3CardBrdClr);
   z-index: 929292;
 }
 
@@ -88,13 +94,18 @@ HEADING 3 BOARD CARDS > BULLET POSITION
   row-gap:var(--boardRoot-ColumnGap);
 }
 
-
+/* HEADER 3 > CHILDREN CARDS*/
 #app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project:not(.comment){
-    box-shadow: 0 0 0 1.25px var(--BoardRootCardBrdClr) !important;
-  background: var(--BOARD-ROOT--CARD--BG);
+    box-shadow: 0 0 0 1px var(--boardrootCardBrdClr) !important;
+  background: var(--boardrootCardBgClr);
   border-radius: var(--boardRoot-CardBrdRad) !important;
   padding-top: 5px;
+    border: unset !important;
   
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project.comment{
+    --COMMENT-CONTAINER--BORDER-CLR:var(--boardRoot-CommentBrdClr) !important;
 }
 /*CHILDREN AS CARD - MAKE BOARD CARDS*/
 #app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="header3"] > .children > .project.comment{

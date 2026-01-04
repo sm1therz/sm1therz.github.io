@@ -1,0 +1,75 @@
+/*BOARD ROOT > V1*/
+:root {
+    --workflowyOgBgClr:#2a3135;
+    --workflowyOgBoardColumnBrdClr:#42484b;
+}
+/**************
+! MOD V1 > BACKGROUND - LIGHTER THAN CARD
+***************/
+
+._theme-dark #app .page[style="overflow-y: auto;"],
+._theme-dark #app .page[style="overflow-y: auto;"] .board.root {
+    /*board > background*/
+    --boardrootBgClr: #353c3f;
+    /*board Column*/
+    --boardrootColumnHeaderBrdClr:hsla(195, 5%, 31%, 1.0);
+    --boardrootColumnBrdClr:hsla(195, 5%, 31%, 0.01);
+    /*BOARD CARD*/
+    --boardrootCardBgClr:#2a3135;
+    --boardrootCardBrdClr:hsl(200, 6%, 31%);
+    /*BOARD CARD - H3*/
+    --boardrootH3CardBrdClr:var(--boardrootColumnHeaderBrdClr);
+    /*BOARD CARD - CHILD*/
+    --boardChildBrdClr: hsl(200, 8%, 28%) !important;
+    --boardChildChildBrdClr: hsla(0, 0%, 50%, 0.1825);
+    --boardChild-FakeBrdOpacity: 1;
+    /*COMMENT*/
+    --boardrootCommentBgClr-Even:hsl(197, 18%, 15%);
+    --boardrootCommentBrdClr-Even:hsl(200, 12%, 0%);
+    /*COMMENT > OD*/
+    --boardrootCommentBgClr-Odd:#2a3135;
+    --boardrootCommentBrdClr-Odd:var(--boardrootCardBrdClr);
+}
+
+
+/*BOARD ROOT > V2*/
+:root {
+    --workflowyOgBgClr:#2a3135;
+    --workflowyOgBoardColumnBrdClr:#42484b;
+}
+/**************
+! MOD V2 > BACKGROUND - LIGHTER THAN CARD
+***************/
+
+._theme-dark #app .page[style="overflow-y: auto;"],
+._theme-dark #app .page[style="overflow-y: auto;"] .board.root  {
+    /*board > background*/
+    --boardrootBgClr: hsl(202, 13%, 18.5%);
+    /*board Column*/
+    --boardrootColumnHeaderBrdClr:hsla(195, 5%, 31%, 0.01);
+    --boardrootColumnBrdClr:hsla(200, 6%, 28%, .6)
+;
+    /*BOARD CARD*/
+    --boardrootCardBgClr:hsl(197, 18%, 15%);
+    --boardrootCardBrdClr:hsla(0,0%,100%,0.1);
+    /*BOARD CARD - H3*/
+    --boardrootH3CardBrdClr:#42484b;
+    /*BOARD CARD - CHILD*/
+    --boardChildBrdClr: hsla(199, 14%, 21%, 1.0) !important;
+    --boardChildChildBrdClr: hsla(199, 14%, 19%, 0.7);
+    --boardChild-FakeBrdOpacity: 1;
+    /*COMMENT*/
+    --boardrootCommentBgClr-Even:hsl(192, 28%, 12%);
+    --boardrootCommentBrdClr-Even:hsl(200, 12%, 0%);
+    /*COMMENT > OD*/
+    --boardrootCommentBgClr-Odd:#2a3135;
+    --boardrootCommentBrdClr-Odd:hsla(0,0%,100%,0.1);
+}
+
+
+/*root*/
+
+#app .page[style="overflow-y: auto;"] {
+    background: var(--boardrootBgClr) !important;
+    --BG-primary: var(--boardrootBgClr) !important;
+}
