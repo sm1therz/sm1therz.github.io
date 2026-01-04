@@ -1028,6 +1028,8 @@ NOTES > CONTENT only*/
 
 
 
+
+
 /***************
 BUTTONS
 ****************/
@@ -1586,7 +1588,7 @@ BOLD Text
 ****************/
 b,
 i b,
-[class*="header"] > .name > .content {
+[class*="header"] > .name > .content{
     color: var(--NODE--TXT-CLR--bold);
 }
 *:not(.board) .notes b,
@@ -1911,8 +1913,7 @@ CODE BLOCKS
 #app .project.code-block > .name > .content,
 #app .project.code-block.noted > .name > .content {
     padding-left: calc(var(--quotePadLeft) + var(--content-PadLeftRight));
-    padding-bottom: 11px !important;
-    padding-top: 12px !important;
+
     border-radius: 7px;
 }
 
@@ -1947,14 +1948,13 @@ CODE BLOCKS V2
   border: unset !important;
   box-shadow:unset !important;
   border:var(--codeBlockBrdW) solid var(--wf-border-default) !important;
-  padding-left: var(--content-PadLeftRight) !important;
+  padding-left: calc(var(--content-PadLeftRight) * 4) !important;
   padding-right: 5px !important;
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
+
   
 }
 
-
+/*
 #app  .project.code-block > .name > .content:before {
   content: "";
   display: block;
@@ -1970,7 +1970,7 @@ CODE BLOCKS V2
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   border-right-width: 0px;
-}
+}*/
 
 #app *:not(.board,[class*="dashboard"]) .comment .project.code-block{
   --wf-background-secondary:hsl(200, 12%, 16%);
