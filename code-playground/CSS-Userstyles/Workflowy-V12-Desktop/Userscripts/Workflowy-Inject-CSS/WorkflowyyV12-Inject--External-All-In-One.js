@@ -21,5 +21,37 @@
 	setTimeout(function() {
 		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/3--Workflowyy12--IBM.css');
 	}, 2000);
+	
+
+	//INJECT INDIVIDUAL - 6-BOARDS
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-4-Board-Root-Colors');
+	}, 2500);
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-4-Board-Root-Header-Columns.css');
+	}, 2500);
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-6-Boards-In-Comments.css');
+	}, 2500);
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-7-Comment-Colors.css');
+	}, 3100);
+	//INJECT INDIVIDUAL - DASHBOARD
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-5-Dashboard-Width.css');
+	}, 3200);
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-9-Dashboard-Colors.css');
+	}, 3300);
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-8-Dashboard-Paragraph-Hide-Expand.css');
+	}, 3400);
+	//INJECT INDIVIDUAL - Misc
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-12-Note-Line-Clamp.css');
+	}, 3800);
+	setTimeout(function() {
+		injectCSS('https://sm1therz.github.io/code-playground/CSS-Userstyles/Workflowy-V12-Desktop/Individual-Components/workflowy-15-Floatbrowser-overrides.css');
+	}, 3900);
 })();
 
