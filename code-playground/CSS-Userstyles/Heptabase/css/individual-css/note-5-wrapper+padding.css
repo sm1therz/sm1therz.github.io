@@ -32,7 +32,7 @@ NOTE PADDING - POPUP AND FULLSCREEN ONLY
 /*note info*/
 [class*="editor"] + [class*="info"],
 #root ._info_1koo5_19,
-._editor_1koo5_1 .ProseMirror-hepta-style{
+._editor_1koo5_1  .ProseMirror-hepta-style{
     width: 100% !important;
     max-width: var(--noteMaxWidth) !Important;
     margin: 0 auto;
@@ -40,7 +40,9 @@ NOTE PADDING - POPUP AND FULLSCREEN ONLY
     padding-right: var(--notePadLeftRight)!important;
     box-sizing: border-box;
 }
-
+[data-node-type="embed"]   .ProseMirror-hepta-style{
+padding-left: 0px !important
+}
 /*SIDEBAR OPENED / CLOSED > MARGIN TOP*/
 /*********
 TOP PADDING - NOTE

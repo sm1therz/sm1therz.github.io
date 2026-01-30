@@ -107,7 +107,7 @@ SET PARENT TO FLEX
 /*info > info popup */
 .pr-\[calc\(20px-var\(--scrollbar-width\)\)\] > div,
 /*info > bottom of note */
-*:is([class*="container"],[class*="main-pane"],.p-12.hepta-scrim) [class*="info"],
+*:is([class*="container"],[class*="main-pane"],.p-12.hepta-scrim) [class*="info"]:not(.-mx-7.pt-12),
 /*info > right sidebar */
 [style*="width: "]+[style*="width: "] .mt-1.w-full{
     display:flex;

@@ -67,7 +67,7 @@ CARD LIBRARY - VARIABLES
 #root .grid.select-none,
 #root ._rightSidebar_1fabk_5 .grid {
 
-  --cardlibFontSize: 18px;
+  --cardlibFontSize: 17px;
   --cardlibLineHeight: 1.45;
   --fontsmoothing: antialiased;
   --cardlibFontWeight: 400;
@@ -121,7 +121,7 @@ CARD LIBRARY - VARIABLES
 #root .grid.select-none > div .ProseMirror [data-node-type="heading"],
 #root .grid.select-none > div .ProseMirror [data-node-type="heading"] * {
   font-weight: var(--cardlibFontWeight) !important;
-  --cardlibFontSize: 20px;
+  --cardlibFontSize: 18px;
   --cardlibFontWeight: 600;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -344,6 +344,12 @@ CARD LIBRARY - CARD
   padding-right: 0px !important;
   padding-bottom: 0px !important;
   padding-top: 0px !important;
+}
+
+
+.grid.select-none > div > div.pt-3 > .pointer-events-none {
+    transform: unset;
+    width: 100%
 }
 .grid.select-none > div [data-node-type*="_list_item"],
 ._rightSidebar_1fabk_5 .grid > div [data-node-type*="_list_item"],
@@ -673,9 +679,10 @@ CARD LIBRARY - COUNTER
   box-shadow: inset 0 0 0 .75px var(--inlineCodeBoxShadClr) !important;
 }
 
-/*INTERNAL LINKS*/
 
-
+.grid.select-none > div > div.pt-3{
+    margin: unset !important;
+}
 
 
 /*****************
@@ -840,7 +847,7 @@ TOGGLE > 2ND CHILD
 #root .grid.select-none .ProseMirror > [data-node-type*="list_item"]:not([class*="folded"]):nth-child(1) > [class*="nested"] > :is([data-node-type*="horizontal"],[data-node-type]:not(:first-child)) {
 
 }
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:nth-child(2) > [class*="nested"] > [data-node-type]{
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:nth-child(2) > [class*="nested"] > [data-node-type]:not(:first-child){
   display: none;
 }
 
@@ -895,7 +902,9 @@ TOGGLE > 3RD CHILD
   height: 1.5px;
 }
 
-
+#root .grid.select-none .ProseMirror {
+    overflow: hidden !important;
+}
 
 
 /********

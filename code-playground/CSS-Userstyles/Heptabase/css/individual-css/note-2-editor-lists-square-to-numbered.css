@@ -1,0 +1,114 @@
+
+/**RIGHT SIDEBAR > SIZE ADJUST*/
+
+[class*="paneGroup"] > div ~[style*="width: "] .ProseMirror [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]{
+				height: 100% !important;
+		top: calc(1px * 1) !important;
+		position: relative !important;
+		line-height: 18px !important;
+		font-size: 17px !important;
+}
+
+[class*="paneGroup"] > div ~[style*="width: "] .ProseMirror [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrappe/**SQUARE LIST ITEMS > To NUMBERED*/
+
+:root{
+	--dummyNumbListW:23px;
+	--dummyNumbListH:24px;
+	--dummyNumbListBrdRad:3px
+}
+
+
+[data-node-type="bullet_list_item"][style*="▪"]{
+}
+
+
+
+[data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]{
+
+	height: var(--dummyNumbListH);
+	align-self: flex-start;
+	margin-top: 2px;
+	position: relative;
+	margin-top: 2px;
+	right: 5px
+}
+[data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"1.";
+	font-size: 17px;
+	line-height: 1.2;
+	font-family: var(--font-family-default);
+	box-shadow: inset 0 0 0 0px red;
+	width: var(--dummyNumbListW) !important;
+	height: var(--dummyNumbListH);
+	display: block;
+	text-align: right;
+	padding-top: 4px
+}
+
+
+[data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"2."
+}
+[data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"3."
+}
+[data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"4."
+}
+[data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"5."
+}
+[data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"6."
+}
+[data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"7."
+}
+[data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"8."
+}
+[data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] + [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:before{
+	content:"9."
+}
+
+/***************
+AFTER
+******************/
+
+[data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:after{
+	border-radius: var(--dummyNumbListBrdRad);
+	position: absolute;
+	left: 3px;
+	right: -2px;
+	top: 4px;
+	bottom: 1px;
+	width: unset;
+	height: unset;
+	margin: unset !important;
+	transition: .1s;
+}
+[data-node-type="bullet_list_item"][style*="▪"][class*="folded"] > [class*="bulletWrapper"] [class*="Icon"]:after{
+	background: hsla(0, 0%, 100%, 0.0);
+	box-shadow: 0 0 0 2px hsla(0, 0%, 100%, 0.12)
+}
+[data-node-type="bullet_list_item"][style*="▪"]:is([class*="folded"]) > [class*="bulletWrapper"] [class*="Icon"]:hover:after{
+	background: hsla(0, 0%, 100%, 0.12) 
+}
+
+[data-node-type="bullet_list_item"][style*="▪"]:not([class*="folded"]) > [class*="bulletWrapper"] [class*="Icon"]:hover:after{
+	box-shadow: 0 0 0 2px hsla(0, 0%, 100%, 0.08) 
+}
+
+[data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:not([class*="Nested"]):after{
+	opacity: 0;
+}
+
+
+		line-height: 23px !important;
+				font-size: 17px !important;
+}
+
+[class*="paneGroup"] > div ~[style*="width: "] .ProseMirror [data-node-type="bullet_list_item"][style*="▪"] > [class*="bulletWrapper"] [class*="Icon"]:after {
+		top: 0px;
+		bottom: 5px;
+}

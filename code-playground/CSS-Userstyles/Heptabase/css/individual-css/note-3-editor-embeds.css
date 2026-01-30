@@ -129,6 +129,13 @@
 
 
 /***************
+! EMBEDS - WHITEBOARD
+****************/
+.\@container\/reference-item [data-node-type="embed"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
+	left: calc(var(--bulletwrapperW) * -0.3)
+}
+
+/***************
 ! EMBEDS - HOVER MENU
 ****************/
 :root {

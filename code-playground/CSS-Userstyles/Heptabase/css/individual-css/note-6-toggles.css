@@ -82,6 +82,8 @@ div[style*="--annotation-"] + div .ProseMirror > [data-node-type*="toggle"] > [c
 ._hasNestedBlock_mglho_11>._bulletWrapper_mglho_1>div>span>div>._toggleIcon_mglho_4{
   opacity: .5
 }
+
+
 /*********
 ! TOGGLES > CHAT
 *********/
@@ -102,6 +104,7 @@ div[style*="--annotation-"] + div .ProseMirror > [data-node-type*="toggle"] > [c
     left: calc(var(--bulletwrapperW) * 0.0);
     width: var(--bulletwrapperW);
 }
+
 /*********
 ! TOGGLES > REFERENCES
 *********/
@@ -124,21 +127,30 @@ div[style*="--annotation-"] + div .ProseMirror > [data-node-type*="toggle"] > [c
 }
 
 /*********
-! TOGGLES > WHITEBOARD > RIGHT SIDEBAR
+! TOGGLES > WHITEBOARD > RIGHT SIDEBAR > CHAT + NOTE
 *********/
-
-/*in note*/
-*:is(.group\/1700998616504,.group\/1741629705525) .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
-  position: absolute;
-    left: calc(var(--bulletwrapperW) * 0.0);
-    width: var(--bulletwrapperW);
-      --bulletwrapperW: 1.75rem;
-  z-index: 939393;
-}
-
-.group\/1741629705525 .ProseMirror{
+*:is(.group\/1700998616504, .group\/1741629705525) .ProseMirror {
     position: relative;
+    --bulletwrapperW: 1.5rem;
 }
-.group\/1741629705525 .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
-left: calc(var(--bulletwrapperW) * -1);
+*:is(.group\/1700998616504, .group\/1741629705525) .ProseMirror > [data-node-type*="toggle"] {
+    position: relative;
+    padding-left: var(--bulletwrapperW);
+    width: calc(100% + var(--bulletwrapperW));
+    margin-right: calc(var(--bulletwrapperW) * 0);
+    align-self: flex-end;
+}
+*:is(.group\/1700998616504, .group\/1741629705525) .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"] {
+    position: absolute;
+    left: calc(var(--bulletwrapperW) * 0.0) !important;
+    width: var(--bulletwrapperW);
+    z-index: 939393;
+}
+
+*:is(.group\/1741629705525) .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]:not([class*="Heading"]){
+    top: -2px;
+}
+
+.group\/1741629705525 .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"] {
+    left: calc(var(--bulletwrapperW) * -1);
 }
