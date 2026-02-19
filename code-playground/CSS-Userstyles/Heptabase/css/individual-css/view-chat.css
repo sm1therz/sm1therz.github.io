@@ -694,32 +694,6 @@ END OF DUPLICATED MESSAGES
 *********
 *********/
 
-
-:root {
-  --chatSideBarTitleFlexDirection:row;
-  --chatSideBarTitleGap:0px;
-  --chatSideBarTitleMargBtm:7px;
-  --chatShareIndicator-Position:relative;
-  --chatShareIndicator-PositionRight:unset;
-  --chatShareIndicator-PositionTop:unset;
-  --chatShareIndicator-zIndex:1;
-  /***/
-  --chatShareIndicator-BgClr:var(--ultra-light-grey);
-}
-
-/*CHAT TITLES*/
-
-/*div[style*="width"].bg-background-secondary .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child,
-div[style*="min-width"].bg-ultra-light-grey .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child,
-div[style*="min-width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > div:first-child,*/
-.group\/1741145808342 .flex.min-w-0.grow > div:first-child{
-  height: unset !important;
-  flex-direction: var(--chatSideBarTitleFlexDirection);
-  gap: var(--chatSideBarTitleGap);
-
-}
-
-
 .group\/1741145808342 .flex.min-w-0.grow > div:first-child > .truncate{
   white-space: normal;
   line-height: 1.35;
@@ -728,26 +702,6 @@ div[style*="min-width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > d
   margin: 0px !important; 
   color: var(--bldClr);
   width: 100%;
-}
-@media (max-width: 900px){
-  :root {
-      --chatSideBarTitleFlexDirection:column;
-    --chatSideBarTitleGap:5px;
-    --chatSideBarTitleMargBtm:var(--chatSideBarTitleGap);
-    --chatShareIndicator-Position:absolute;
-    --chatShareIndicator-PositionTop:0;
-    --chatShareIndicator-PositionRight:0;
-    --chatShareIndicator-zIndex:10;
-    /***/
-    --chatShareIndicator-BgClr:hsla(0,0%,20%);
-  }
-}
-
-.group\/1741145808342 .flex.min-w-0.grow > div:first-child{
-  margin-bottom: var(--chatSideBarTitleMargBtm); 
-  top: 1px;
-  position: relative;
-  align-items: flex-start;
 }
 /*last chat message*/
 
@@ -759,36 +713,7 @@ div[style*="min-width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > d
   text-overflow: ellipsis;
   white-space: pre-line;
 }
-.group\/1741145808342 .flex.min-w-0.grow > div.truncate > .text-active{
-  filter: saturate(0);
-  opacity: 0.6;
-  
-}
-/*CHAT METADATA*/
-.group\/1741145808342 .flex.min-w-0.grow > div:last-child{
-  
-}
-.group\/1741145808342 .flex.min-w-0.grow > div:last-child{
-  margin: 0px;
-  padding: 0px;
-}
 
-
-/*PRIVATE / SHARED INDICATOR*/
-
-.group\/1741145808342 .flex.min-w-0.grow > div:first-child > .ml-auto{
-    z-index: 92929;
-  opacity: 1;
-  position: var(--chatShareIndicator-Position);
-  top: var(--chatShareIndicator-PositionTop);
-  right: var(--chatShareIndicator-PositionRight);
-}
-.group\/1741145808342 .flex.min-w-0.grow > div:first-child > .ml-auto > div{
-  padding-left: 4px;
-  padding-right: 4px;
-  background:var(--chatShareIndicator-BgClr);
-
-}
 
 
 /********
