@@ -369,6 +369,7 @@ div[style*="contain:"] > [style*="contain:"]:hover .group\/1741629705525 .absolu
 .group\/1741629705525 .group\/1743526506295 + .ml-auto.shrink-0 {
   position: absolute;
   right: 0;
+  z-index: calc(var(--chatHeader-ZIndex) + 1);
 }
 
 
@@ -793,58 +794,6 @@ div[style*="min-width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > d
 /********
 *********
 *********
-! Chat > IN RIGHT SIDEBAR > FONT SIZE
-*********
-*********
-*********/
-
-:root {
-  --sideBarChatBulletMargTop:1px;
-  --sideBarChatFontSize:14.5px;
-  --sideBarChatLineHeight:21px;
-}
-
-/***/
-
-
-
-/*TEST
-[style*="width:"] > [style*="width:"]  div[style*="absolute"] > div .ProseMirror * {
-    outline: 0px solid red !important;
-}*/
-/*******
-! Chat > IN RIGHT SIDEBAR > FONT-SIZE
-********/
-
-
-
-.\@container\/main-pane ~ [style*="width: "] .ProseMirror{
-  font-size: var(--sideBarChatFontSize);
-  line-height: var(--sideBarChatLineHeight);
-}
-
-
-
-.\@container\/main-pane ~ [style*="width: "] .ProseMirror *:is([class*="bullet_"],[class*="numberIcon"]){
-
-  height: 100%;
-  top: calc(var(--sideBarChatBulletMargTop) * 1);
-  position: relative;
-  line-height: var(--sideBarChatLineHeight);
-  
-}
-
-
-
-.\@container\/main-pane ~ [style*="width: "] .ProseMirror *:is([class*="bullet_"],[class*="numberIcon"]):before{
-  line-height: 25px !important;
-}
-
-
-
-/********
-*********
-*********
 ! Chat > TEXT AREA
 *********
 *********
@@ -868,18 +817,22 @@ div[style*="min-width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > d
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex  div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror{
-  max-height: 26vh !important;
-  transition: .15s;
+  max-height: 35vh !important;
+  transition: .25s;
+    transition-delay: 1s;
+
 
 }
-.px-3.pb-3.pt-1 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within,
-.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:focus-within,
-[class*="max-h-"] + .bg-background-secondary.max-h-50vh  [data-editor-type="editor"] > .ProseMirror:focus-within,
-.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within,
-.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:focus-within,
-.bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:focus-within{
-  max-height: 65vh !important;
+.px-3.pb-3.pt-1 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
+.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
+[class*="max-h-"] + .bg-background-secondary.max-h-50vh  [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
+.bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:is(:focus-within){
+  max-height: 67.5vh !important;
+  transition-delay: 0s;
 }
+
 
 
 
@@ -932,14 +885,6 @@ div[style*="min-width"] .flex.h-12 + div [class*="group"] .flex.min-w-0.grow > d
   justify-content: center;
   
 }
-
-/********
-*********
-*********
-! Chat > TEXT AREA > SOURCE NOTES/BLOCKS
-*********
-*********
-*********/
 
 
 
