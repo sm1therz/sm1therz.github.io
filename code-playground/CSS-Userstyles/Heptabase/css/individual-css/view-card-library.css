@@ -115,6 +115,13 @@ CARD LIBRARY - VARIABLES
   font-weight: var(--cardlibFontWeight);
 }
 
+.grid.select-none > div > div > div {
+transform:unset !important;
+}
+
+.grid.select-none div[class*="w[calc-"] {
+width:100% !important;
+}
 
 
 /*headings - in highlights*/
