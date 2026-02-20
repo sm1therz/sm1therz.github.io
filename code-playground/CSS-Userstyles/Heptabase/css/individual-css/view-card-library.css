@@ -119,7 +119,7 @@ CARD LIBRARY - VARIABLES
 transform:unset !important;
 }
 
-.grid.select-none div[class*="w[calc-"] {
+.grid.select-none [class*="scale"] {
 width:100% !important;
 }
 
