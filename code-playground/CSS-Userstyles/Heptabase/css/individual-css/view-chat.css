@@ -764,7 +764,11 @@ padding-top:5px;
   transition-delay: 0s;
 }
 
-
+/*MIN HEIGHT > WHEN HOVERING OVER MESSAGES IN CHAT*/
+.h-12 + .relative:is(:hover,:focus,:focus-within) + .px-3 .max-h-50vh  [data-editor-type="editor"] > .ProseMirror {
+  max-height: 35vh !important;
+  transition-delay: 0s;
+}
 
 
 /********
