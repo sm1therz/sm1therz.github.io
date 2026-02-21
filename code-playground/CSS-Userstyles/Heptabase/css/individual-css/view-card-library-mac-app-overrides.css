@@ -1,10 +1,20 @@
-
 /*****************
 MAC APP OVERRIDES
 ******************/
 
 
-.grid.select-none > div > div {
+.grid.select-none > div > div,
+.grid.select-none > div > div:hover{
   min-height: unset !important;
   height: unset !important;
+  border-color:hsla(0,0%,50%,.0001) !important;
+  background:transparent;
+}
+.grid.select-none > div > div > div {
+    padding-top:0px !important;
+
+}
+.grid.select-none > div > div div[class*="w-"][class*="w-scale"] {
+  transform: unset !important;
+  width: 100% !important;
 }
