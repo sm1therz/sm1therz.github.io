@@ -314,7 +314,7 @@ margin-bottom: 2px !important;
 
 /*******
 ********
-HEADER > HOVER MENU
+! HOVER MENU
 *******
 ********/
 
@@ -358,6 +358,10 @@ div[style*="contain:"] > [style*="contain:"]:hover .group\/1741629705525 .absolu
   height: 1rem !important;
 }
 
+/*******
+! EDITING > TOP HEADER
+********/
+
 /*EDITING > X + CHECKMARK*/
 .group\/1741629705525 > .relative > .h-8 > div:last-child,
 .group\/1741629705525 .group\/1743526506295 + .ml-auto.shrink-0{
@@ -366,13 +370,21 @@ div[style*="contain:"] > [style*="contain:"]:hover .group\/1741629705525 .absolu
   align-items: center;
   justify-content: flex-end;
 }
+/*
 .group\/1741629705525 .group\/1743526506295 + .ml-auto.shrink-0 {
   position: absolute;
   right: 0;
   z-index: calc(var(--chatHeader-ZIndex) + 1);
+}*/
+
+/*! EDITING > HEADER > BUTTONS*/
+[class*="group"][class*="1698383979300"].w-6{
+  width: 1.5rem;
 }
-
-
+/*! HIDE REGENERATE BUTTON */
+[class*="gap"] > [class*="group"][class*="1698383979300"].w-6:last-child {
+  display: none;
+}
 /*******
 ********
 ! Chat > MESSAGE > HEADER > HOVER MENU > ABOVE USER / ASSISTANT
@@ -444,12 +456,11 @@ div[style*="contain:"] > [style*="contain:"]:hover .group\/1741629705525 .h-8 ~ 
 
 
 /*******
-! Chat > MESSAGE > HOVER
+! Chat > MESSAGE > HIDE HOVER
 ********/
-.group\/1741629705525:after {
+[class*="group"][class*="1741629705525"]:after {
   opacity: 0 !important;
 }
-
 /*******
 ! Chat > MESSAGE > EDITING
 ********/
@@ -477,37 +488,6 @@ div[style*="contain:"] > [style*="contain:"]:hover .group\/1741629705525 .h-8 ~ 
   z-index: 1
 }
 
-
-
-/*******
-! Chat > MESSAGE > EDITING > FAKE BACKGROUND
-
-
-
-.group\/1741629705525 [class*="ProseMirror-hepta-style"] > [data-editor-type] > .ProseMirror:before,
-.group\/1741629705525 [class*="ProseMirror-hepta-style"] > [data-editor-type="previewer"] > .ProseMirror:before{
-  content:"";
-  position: absolute;
-  display: block;
-  top: calc(var(--chatProseMirrorEditPadTopBtm) * -1);
-  bottom: calc(var(--chatProseMirrorEditPadTopBtm) * -1.5);
-  left: calc(var(--chatProseMirrorEditPadTopBtm) * -3);
-  right: calc(var(--chatProseMirrorEditPadTopBtm) * -0.5);
-  box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.3);
-  z-index: -1;
-  background-color: var(--ultra-light-grey);
-  transition: 1s !important;
-  transform: scale(.8) ease-in-out;
-  opacity: 0;
-  border-radius: 6px;
-}
-.group\/1741629705525 [class*="ProseMirror-hepta-style"] > [data-editor-type="editor"] > .ProseMirror:before {
-  transform: scale(1);
-  transition: 1s ease-in-out;
-  opacity: 1;
-  z-index: 1;
-}
-********/
 
 /********
 *********
@@ -920,9 +900,6 @@ SOURCE NOTES/BLOCKS > ADD SOURCE BUTTON
 .group\/1698383979300 {
   position: sticky;
   top: 0;
-
-  
-
 }
 /*******
 SOURCE NOTES/BLOCKS > LINK > CONTAINER
