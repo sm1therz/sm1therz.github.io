@@ -1,0 +1,10 @@
+
+/*****************
+MAC APP OVERRIDES
+******************/
+
+
+.grid.select-none > div > div {
+  min-height: unset !important;
+  height: unset !important;
+}
