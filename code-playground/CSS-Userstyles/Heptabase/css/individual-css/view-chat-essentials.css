@@ -297,7 +297,7 @@ margin-bottom: 2px !important;
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
 .bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:is(:focus-within){
-  max-height: 67.5vh !important;
+  max-height: calc(79.5vh - 3rem - var(--chatHeaderH) - var(--chatHeaderH-Type2)) !important;
   transition-delay: 0s;
 }
 
