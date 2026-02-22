@@ -303,6 +303,6 @@ margin-bottom: 2px !important;
 
 /*MIN HEIGHT > WHEN HOVERING OVER MESSAGES IN CHAT*/
 .h-12 + .relative:is(:hover,:focus,:focus-within) + .px-3 .max-h-50vh  [data-editor-type="editor"] > .ProseMirror {
-  max-height: 35vh !important;
+  max-height: 37.5vh !important;
   transition-delay: 0s;
 }
