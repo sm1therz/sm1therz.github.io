@@ -18,6 +18,3 @@ MAC APP OVERRIDES
   transform: unset !important;
   width: 100% !important;
 }
-* {
-  border: 1px solid red;
-}
