@@ -6,9 +6,6 @@
 ******************
 ******************/
 
-* {
-  border: 2px solid red;
-} 
 [data-theme="dark"] .cm-editor .cmt-meta{
   color: hsl(44, 100%, 62%);
   opacity: 1 !important;
