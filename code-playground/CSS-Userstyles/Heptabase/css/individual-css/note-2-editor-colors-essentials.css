@@ -12,7 +12,6 @@ EDITOR TEXT COLORS - ROOT
 ************
 ************/
 :root {
-	--text-color: #2e2e2e;
 	--text-color-Highlight:#2e2e2e
 	--headingClr: var(--bldClr);
 	--bldClr: black;
@@ -32,7 +31,6 @@ EDITOR TEXT COLORS - ROOT
 
 
 [data-theme="dark"] {
-	--text-color: hsl(0, 0%, 81%) !important;
 	--text-color-Highlight:hsla(0, 0%, 88%, 1.0);
 	--headingClr: hsl(0, 0%, 95%);
 	--bldClr: hsl(0, 0%, 90%);
@@ -53,30 +51,6 @@ EDITOR TEXT COLORS - ROOT
 	--linkUnderlineClr: var(--active-item);
 	--internalLinkUnderlineClr: hsl(200, 4%, 60%, .3);
 	--internalLinkClr: hsl(200, 0%, 70%);
-}
-
-/***********
-BODY COLOR
-************/
-[class*="text-middle-hard-grey"] .ProseMirror {
-	color: var(--text-color)
-}
-
-/***********
-BOLD
-************/
-.ProseMirror strong {
-	color: var(--bldClr);
-}
-.ProseMirror strong a {
-	color: var(--active-item);
-}
-/***********
-HEADINGS
-************/
-.ProseMirror [data-node-type="heading"],
-.ProseMirror [data-node-type="heading"] strong {
-	color: var(--headingClr)
 }
 
 /***********
@@ -146,18 +120,6 @@ INLINE LINK
 
 
 
-/***********
-COLORED TEXT
-************/
-.ProseMirror [data-underline="true"] [data-color="gray"] {
-	background-image: linear-gradient(0deg,
-	var(--text-gray-editor) 0%,
-	var(--text-gray-editor) var(--underlineH),
-	var(--text-gray-editor) var(--underlineH),
-	transparent 0%) !important
-}
-
-
 
 /***********
 LINKS
@@ -213,106 +175,3 @@ UNDERLINE
 	border: unset !important
 }
 
-/***********
-************
-HIGHLIGHTS
-************
-************/
-
-
-/*HIGHIGHT - YELLOW*/
-[data-color="yellow"][data-type="background"] {
-	background-image: linear-gradient(to top,
-		var(--highlightBrdClr-Yellow) 0%,
-		var(--highlightBrdClr-Yellow) var(--underlineH),
-		transparent var(--underlineH),
-		transparent 100%);
-	background-repeat: no-repeat !important;
-	background-size: 100% 100% !important;
-	background-position-x: 0px !important;
-	background-position-y: 75% !important;
-	/*color: var(--highlightClr) !important;*/
-	/**/
-	background-color: var(--highlightBgClr-Yellow) !important;
-}
-
-
-
-
-/*HIGHIGHT > COLOR*/
-[data-color][data-type="background"]{
-	--text-color: var(--text-color-Highlight);
-		color: var(--text-color);
-}
-/*HIGHIGHT > COLOR > BOLD*/
-strong [data-color][data-type="background"] {
-	color: var(--bldClr);
-}
-/***********
-************
-HIGHLIGHTS > UNDERLINE IN HIGHLIGHT
-************
-************/
-
-[data-underline="true"] [data-color][data-type] {
-	background-image: linear-gradient( to top,
-		var(--underlineClr) 0%,
-		var(--underlineClr) var(--underlineH),
-		transparent var(--underlineH),
-		transparent 100%);
-}
-
-/*HIGHLIGHTS > UNDERLINED > UNDERLINE COLOR*/
-[data-underline="true"] [data-color="gray"][data-type="background"] {
-	--underlineClr:var(--text-gray-editor)
-}
-[data-underline="true"] [data-color="brown"][data-type="background"] {
-	--underlineClr:var(--text-brown-editor)
-}
-[data-underline="true"] [data-color="yellow"][data-type="background"] {
-	--underlineClr:var(--highlightUnderlineClr-Yellow)
-}
-
-
-/***********
-************
-TEXT COLORS > UNDERLINES
-************
-************/
-[data-underline="true"] [data-color][data-type="text"] {
-		background-image: linear-gradient(0deg,
-		var(--underlineClr) 0%,
-		var(--underlineClr) var(--underlineH),
-		var(--underlineClr) var(--underlineH),
-		transparent 0%) !important;
-}
-
-
-/*TEXT COLOR > UNDERLINED > UNDERLINE COLOR*/
-[data-underline="true"] [data-color="gray"]{
-	--underlineClr:var(--text-gray-editor);
-}
-[data-underline="true"] [data-color="brown"]{
-	--underlineClr:var(--text-brown-editor);
-}
-[data-underline="true"] [data-color="orange"]{
-	--underlineClr:var(--text-orange-editor);
-}
-[data-underline="true"] [data-color="yellow"]{
-	--underlineClr:var(--text-yellow-editor);
-}
-[data-underline="true"] [data-color="green"]{
-	--underlineClr:var(--text-green-editor);
-}
-[data-underline="true"] [data-color="blue"]{
-	--underlineClr:var(--text-blue-editor);
-}
-[data-underline="true"] [data-color="purple"]{
-	--underlineClr:var(--text-purple-editor);
-}
-[data-underline="true"] [data-color="pink"]{
-	--underlineClr:var(--text-pink-editor);
-}
-[data-underline="true"] [data-color="red"]{
-	--underlineClr:var(--text-red-editor);
-}
