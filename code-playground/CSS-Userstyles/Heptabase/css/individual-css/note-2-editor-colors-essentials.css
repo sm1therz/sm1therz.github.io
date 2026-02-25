@@ -1,0 +1,318 @@
+/***********
+************
+************
+************
+************
+************
+EDITOR TEXT COLORS - ROOT
+************
+************
+************
+************
+************
+************/
+:root {
+	--text-color: #2e2e2e;
+	--text-color-Highlight:#2e2e2e
+	--headingClr: var(--bldClr);
+	--bldClr: black;
+	--highlightClr: hsl(0, 0%, 0%);
+	--strikethrough-Clr: hsl(0, 0%, 70%);
+	--strikethroughStrike-Clr: hsl(0, 0%, 70%);
+	/* highlight yellow*/
+	--highlightUnderlineClr-Yellow: hsl(50, 100%, 20%, 1);
+	--highlightBrdClr-Yellow: hsl(50, 100%, 50%, .45);
+	--highlightBgClr-Yellow: hsl(50, 100%, 50%, .2);
+	/*text highlights*/
+	--underlineClr: black;
+	/*Internal Link*/
+	--linkUnderlineClr: var(--active-item);
+	--internalLinkUnderlineClr: hsl(0, 0%, 0%, .15);
+}
+
+
+[data-theme="dark"] {
+	--text-color: hsl(0, 0%, 81%) !important;
+	--text-color-Highlight:hsla(0, 0%, 88%, 1.0);
+	--headingClr: hsl(0, 0%, 95%);
+	--bldClr: hsl(0, 0%, 90%);
+	--highlightClr: hsl(0, 0%, 97%);
+	--strikethrough-Clr: hsla(0, 0%, 50%, 1);
+	--strikethroughStrike-Clr: hsla(0, 0%, 53%, 1);
+	/*text highlights*/
+	--highlightUnderlineClr-Yellow: hsl(50, 100%, 50%, .65);
+	--highlightBrdClr-Yellow: var();
+	--highlightBgClr-Yellow: hsl(47, 100%, 50%, 0.29);
+	--highlightBgClr-Yellow: hsla(47, 100%, 47%, .325);
+	
+	
+
+	/*Underline*/
+	--underlineClr: hsl(0, 0%, 100%, .64);
+	/*Internal Link*/
+	--linkUnderlineClr: var(--active-item);
+	--internalLinkUnderlineClr: hsl(200, 4%, 60%, .3);
+	--internalLinkClr: hsl(200, 0%, 70%);
+}
+
+/***********
+BODY COLOR
+************/
+[class*="text-middle-hard-grey"] .ProseMirror {
+	color: var(--text-color)
+}
+
+/***********
+BOLD
+************/
+.ProseMirror strong {
+	color: var(--bldClr);
+}
+.ProseMirror strong a {
+	color: var(--active-item);
+}
+/***********
+HEADINGS
+************/
+.ProseMirror [data-node-type="heading"],
+.ProseMirror [data-node-type="heading"] strong {
+	color: var(--headingClr)
+}
+
+/***********
+STRIKETHROUGH
+************/
+.ProseMirror s {
+	text-decoration-thickness: 2px !important;
+	text-decoration-color: var(--strikethroughStrike-Clr);
+	color: var(--strikethrough-Clr) !important;
+	--internalLinkClr:var(--strikethrough-Clr);
+}
+
+:root {
+	--inlineMentionBrdW: 1.5px;
+}
+/***********
+INLINE MENTION
+************/
+.ProseMirror .text-active .border-b {
+	border-bottom-style: dashed;
+	border-bottom-width: var(--underlineH);
+	border-color: var(--internalLinkUnderlineClr);
+}
+.ProseMirror h1 [data-underline="true"],
+.ProseMirror h2 [data-underline="true"],
+.ProseMirror h1 a,
+.ProseMirror h2 a,
+.ProseMirror h1 .text-active .border-b,
+.ProseMirror h2 .text-active .border-b {
+	--underlineH: 2.75px;
+}
+
+.ProseMirror h3 [data-underline="true"],
+.ProseMirror h3 a,
+.ProseMirror h3 .text-active .border-b {
+	--underlineH: 2px;
+}
+
+[data-editor-type="previewer"] > .ProseMirror [data-underline="true"],
+[data-editor-type="previewer"] > .ProseMirror a,
+[data-editor-type="previewer"] > .ProseMirror .text-active .border-b {
+	--underlineH: 1.5px !important;
+}
+
+/***********
+INLINE LINK
+************/
+.ProseMirror a[href*="heptabase.com"] {
+	border-bottom-width: 10px !important;
+}
+.ProseMirror a[href*="heptabase.com"],
+.ProseMirror .text-active .border-b {
+	color: var(--internalLinkClr);
+}
+.ProseMirror a[href*="heptabase.com"],
+.ProseMirror a[href*="heptabase.com"] [data-color],
+.ProseMirror .text-active .border-b {
+	transition: .1s;
+}
+
+.ProseMirror a[href*="heptabase.com"]:hover,
+.ProseMirror a[href*="heptabase.com"]:hover span[data-color],
+.ProseMirror .text-active .border-b:hover {
+
+	color: var(--active-item) !important
+}
+
+
+
+/***********
+COLORED TEXT
+************/
+.ProseMirror [data-underline="true"] [data-color="gray"] {
+	background-image: linear-gradient(0deg,
+	var(--text-gray-editor) 0%,
+	var(--text-gray-editor) var(--underlineH),
+	var(--text-gray-editor) var(--underlineH),
+	transparent 0%) !important
+}
+
+
+
+/***********
+LINKS
+************/
+.ProseMirror a {
+	background-image: linear-gradient(0deg,
+	var(--linkUnderlineClr) 0%,
+	var(--linkUnderlineClr) var(--underlineH),
+	var(--linkUnderlineClr) var(--underlineH),
+	transparent 0%) !important;
+}
+
+.ProseMirror a[data-hepta-link] {
+	--linkUnderlineClr: var(--internalLinkUnderlineClr);
+}
+.ProseMirror a,
+.ProseMirror a *:not(a code) {
+	border: unset !important
+}
+
+/*UNDERLINE IN LINK & HIGHLIGHTED LINK*/
+.ProseMirror a [data-color="yellow"][data-type="background"],
+.ProseMirror a [data-underline="true"] {
+	background-image: linear-gradient(to top,
+	var(--linkUnderlineClr) 0%,
+	var(--linkUnderlineClr) var(--underlineH),
+	transparent var(--underlineH),
+	transparent 100%) !important;
+}
+.ProseMirror a code {
+	color: var(--active-item) !important;
+}
+/***********
+UNDERLINE
+************/
+:root {
+	/*underline*/
+	--underlineH: 1.5px;
+}
+[data-node-type="table"] {
+	--underlineH: 1px;
+}
+[data-underline="true"] {
+	background-image: linear-gradient(0deg,
+		var(--underlineClr) 0%,
+		var(--underlineClr) var(--underlineH),
+		var(--underlineClr) var(--underlineH),
+		transparent 0%) !important;
+	border: unset !important;
+}
+[data-underline="true"],
+[data-underline="true"] * {
+	border: unset !important
+}
+
+/***********
+************
+HIGHLIGHTS
+************
+************/
+
+
+/*HIGHIGHT - YELLOW*/
+[data-color="yellow"][data-type="background"] {
+	background-image: linear-gradient(to top,
+		var(--highlightBrdClr-Yellow) 0%,
+		var(--highlightBrdClr-Yellow) var(--underlineH),
+		transparent var(--underlineH),
+		transparent 100%);
+	background-repeat: no-repeat !important;
+	background-size: 100% 100% !important;
+	background-position-x: 0px !important;
+	background-position-y: 75% !important;
+	/*color: var(--highlightClr) !important;*/
+	/**/
+	background-color: var(--highlightBgClr-Yellow) !important;
+}
+
+
+
+
+/*HIGHIGHT > COLOR*/
+[data-color][data-type="background"]{
+	--text-color: var(--text-color-Highlight);
+		color: var(--text-color);
+}
+/*HIGHIGHT > COLOR > BOLD*/
+strong [data-color][data-type="background"] {
+	color: var(--bldClr);
+}
+/***********
+************
+HIGHLIGHTS > UNDERLINE IN HIGHLIGHT
+************
+************/
+
+[data-underline="true"] [data-color][data-type] {
+	background-image: linear-gradient( to top,
+		var(--underlineClr) 0%,
+		var(--underlineClr) var(--underlineH),
+		transparent var(--underlineH),
+		transparent 100%);
+}
+
+/*HIGHLIGHTS > UNDERLINED > UNDERLINE COLOR*/
+[data-underline="true"] [data-color="gray"][data-type="background"] {
+	--underlineClr:var(--text-gray-editor)
+}
+[data-underline="true"] [data-color="brown"][data-type="background"] {
+	--underlineClr:var(--text-brown-editor)
+}
+[data-underline="true"] [data-color="yellow"][data-type="background"] {
+	--underlineClr:var(--highlightUnderlineClr-Yellow)
+}
+
+
+/***********
+************
+TEXT COLORS > UNDERLINES
+************
+************/
+[data-underline="true"] [data-color][data-type="text"] {
+		background-image: linear-gradient(0deg,
+		var(--underlineClr) 0%,
+		var(--underlineClr) var(--underlineH),
+		var(--underlineClr) var(--underlineH),
+		transparent 0%) !important;
+}
+
+
+/*TEXT COLOR > UNDERLINED > UNDERLINE COLOR*/
+[data-underline="true"] [data-color="gray"]{
+	--underlineClr:var(--text-gray-editor);
+}
+[data-underline="true"] [data-color="brown"]{
+	--underlineClr:var(--text-brown-editor);
+}
+[data-underline="true"] [data-color="orange"]{
+	--underlineClr:var(--text-orange-editor);
+}
+[data-underline="true"] [data-color="yellow"]{
+	--underlineClr:var(--text-yellow-editor);
+}
+[data-underline="true"] [data-color="green"]{
+	--underlineClr:var(--text-green-editor);
+}
+[data-underline="true"] [data-color="blue"]{
+	--underlineClr:var(--text-blue-editor);
+}
+[data-underline="true"] [data-color="purple"]{
+	--underlineClr:var(--text-purple-editor);
+}
+[data-underline="true"] [data-color="pink"]{
+	--underlineClr:var(--text-pink-editor);
+}
+[data-underline="true"] [data-color="red"]{
+	--underlineClr:var(--text-red-editor);
+}
