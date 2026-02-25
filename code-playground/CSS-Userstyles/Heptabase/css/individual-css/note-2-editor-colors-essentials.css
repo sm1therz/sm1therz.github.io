@@ -15,7 +15,7 @@ EDITOR TEXT COLORS - ROOT
 	--text-color-Highlight:#2e2e2e
 	--headingClr: var(--bldClr);
 	--bldClr: black;
-	--highlightClr: hsl(0, 0%, 0%);
+	--highlightClr: hsl(0, 0%, 0%); 
 	--strikethrough-Clr: hsl(0, 0%, 70%);
 	--strikethroughStrike-Clr: hsl(0, 0%, 70%);
 	/* highlight yellow*/
