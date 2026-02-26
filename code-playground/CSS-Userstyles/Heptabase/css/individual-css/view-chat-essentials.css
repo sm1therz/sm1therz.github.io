@@ -311,14 +311,14 @@ margin-bottom: 2px !important;
 /********
 ! USER / ASSISTANT MESSAGE COLORS
 *********/
-.group\/1741629705525 .h-8 .size-5 > div > div:after {
-  content:"";
-  display:block;
-  position:absolute;
-  top:0px;
-  left:0;
-  right:-50vw;
-  bottom:0px;
-  background:hsl(200,100%,64%,.1) !important;
-  z-index:-2
+[class*="group-hover"][class*="1741629705525"] > .shrink-0:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: -50vw;
+    bottom: 0px;
+    background: hsl(200,100%,64%,.1) !important;
+    z-index: -2;
 }
