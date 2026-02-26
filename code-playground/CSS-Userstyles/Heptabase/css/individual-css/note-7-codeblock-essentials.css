@@ -92,6 +92,18 @@ CODEBLOCK
 /*****************
 ******************
 ******************
+! Codeblocks > LINE WRAPPING
+******************
+******************
+******************/
+
+.cm-editor .cm-content{
+    white-space: pre-wrap !important;
+    flex-shrink: 1 !important;
+}
+/*****************
+******************
+******************
 ! Codeblocks > Markdown Syntax Highlighting
 ******************
 ******************
