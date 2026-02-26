@@ -334,12 +334,12 @@ margin-bottom: 2px !important;
     left: 0;
     right: -50vw;
     bottom: 0px;
-    background: hsl(200,100%,50%,0.2) !important;
+    background: hsl(205,100%,50%,0.2) !important;
     z-index: -2;
 }
 
 /*ASSISTANT*/
-[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center > div:after{
+[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center + p:after{
     content: "";
     display: block;
     position: absolute;
