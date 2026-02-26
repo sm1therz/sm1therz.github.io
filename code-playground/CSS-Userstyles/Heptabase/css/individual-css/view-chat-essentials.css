@@ -334,7 +334,7 @@ margin-bottom: 2px !important;
     left: 0;
     right: -50vw;
     bottom: 0px;
-    background: hsl(205,100%,50%,0.2) !important;
+    background: hsl(190,100%,50%,0.15) !important;
     z-index: -2;
 }
 
