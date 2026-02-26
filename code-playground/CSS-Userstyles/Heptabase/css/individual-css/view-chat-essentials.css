@@ -311,7 +311,22 @@ margin-bottom: 2px !important;
 /********
 ! USER / ASSISTANT MESSAGE COLORS
 *********/
-[class*="group-hover"][class*="1741629705525"] > .shrink-0:after {
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"]{
+  display:flex !important;
+}
+[class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 {
+}
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 > div,
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] >  svg{
+  opacity:0;
+}
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] + [class*="group-hover"] {
+    position: absolute;
+  width:14px;
+  height:14px;
+    z-index: 5;
+}
+[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center > div > .shrink-0:after {
     content: "";
     display: block;
     position: absolute;
@@ -319,6 +334,6 @@ margin-bottom: 2px !important;
     left: 0;
     right: -50vw;
     bottom: 0px;
-    background: hsl(200,100%,64%,.1) !important;
+    background: hsl(200,100%,50%,0.15) !important;
     z-index: -2;
 }
