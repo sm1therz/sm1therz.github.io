@@ -1,3 +1,53 @@
+/**root*/
+:root {
+  --blockquoteBrdClr: hsla(0, 0%, 0%, .1);
+  --blockquoteBrdLeftClr: hsla(0, 0%, 0%, .25);
+  --blockquoteBgClr: hsla(0, 0%, 0%, .015);
+  --codeblockBgClr: hsl(0, 0%, 90%);
+  --codeblockBrdClr: hsl(0, 0%, 24%, 0.2);
+  --inlineCodeBgClr: rgba(0, 0, 0, .085);
+  --inlineCodeBrdClr: rgba(0, 0, 0, .068);
+  --inlineCodeLinkOverrideBgClr: #ececec;
+  --inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.0);
+  --inlineCodeClr: hsla(0, 0%, 0%, .8);
+  --embedHighlightBgClr: hsla(0, 0%, 0%, .024);
+  /*text color - gray*/
+  --text-gray-editor: hsl(51, 3%, 60%);
+  --text-done-editor: hsl(51, 3%, 64%);
+  --text-done-editor-line: hsl(51, 3%, 64%, .8);
+}
+
+
+[data-theme="dark"] {
+  --blockquoteBrdClr: hsl(216, 6%, 100.5%, .1);
+  --blockquoteBrdLeftClr: hsl(216, 6%, 100%, 0.45);
+  --blockquoteBgClr: hsl(216, 6%, 100%, .0125);
+  --codeblockBgClr: #0d0d0d;
+  --codeblockBrdClr: hsl(0, 0%, 24%);
+  --inlineCodeClr: red;
+  --inlineCodeBgClr: rgba(255, 255, 255, .089);
+  --inlineCodeBrdClr: hsl(214, 8%, 0%, 0.46);
+  --inlineCodeLinkOverrideBgClr: #383a3c;
+  --inlineCodeBoxShadClr: hsl(214, 8%, 100%, 0.06);
+  --inlineCodeClr: inherit;
+  --embedHighlightBgClr: hsla(0, 0%, 100%, .0125);
+  /*text color - gray*/
+  /*--text-gray-editor: hsla(0, 0%, 53%, 1) !important;*/
+  --text-done-editor: hsla(0, 0%, 49%, 1);
+  --text-done-editor-line: hsla(0, 0%, 49%, 0.5);
+
+
+  /*
+    --background-primary: hsl(0, 0%, 11%) !important;
+  --background-secondary: hsl(226, 8%, 14%) !important;*/
+}
+/*****************
+******************
+******************
+! Codeblocks > MAIN
+******************
+******************
+******************/
 /***********
 ************
 CODEBLOCK
@@ -6,12 +56,9 @@ CODEBLOCK
 .ProseMirror .cm-editor {
   background: var(--codeblockBgClr);
   box-shadow: inset 0 0 0 1px var(--codeblockBrdClr) !important;
-  padding-top: 24px !important;
   border-radius: 10px
 }
-.ProseMirror .cm-editor > .cm-scroller {
-  padding-bottom: 20px;
-}
+
 [data-node-type="code_block"][style*="var(--middle-transparent-blue)"] {
   --codeblockBgClr: var(--middle-transparent-blue);
 }
@@ -41,3 +88,138 @@ CODEBLOCK
   max-width: 100% !important;
   width: 640px !important
 }
+
+/*****************
+******************
+******************
+! Codeblocks > Markdown Syntax Highlighting
+******************
+******************
+******************/
+
+
+[data-theme="dark"] .cm-editor .tok-meta{
+  color: hsl(44, 100%, 62%);
+  opacity: 1 !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .cm-editor .tok-meta.tok-typeName,
+[data-theme="dark"] .cm-editor .tok-meta.tok-propertyName,
+[data-theme="dark"] .cm-editor .tok-meta.tok-punctuation,
+[data-theme="dark"] .cm-editor .tok-meta.tok-link{
+  font-weight: normal;
+
+}
+
+/*headings*/
+[data-theme="dark"] .cm-editor .tok-heading.tok-meta {
+
+  color: hsl(28, 100%, 76%);
+  opacity: 1 !important;
+}
+[data-theme="dark"] .cm-editor .tok-heading,
+[data-theme="dark"] .cm-editor .tok-heading.tok-link{
+  font-weight: 600;
+  color: #ffa856 !important
+}
+
+/*bold*/
+[data-theme="dark"] .cm-editor .tok-strong.tok-meta {
+  color: hsl(187, 74%, 76%) !important;
+  opacity: 1 !important;
+}
+[data-theme="dark"] .cm-editor .tok-strong {
+  font-weight: bold;
+  color: hsl(187, 60%, 53%)
+}
+
+/*italic*/
+[data-theme="dark"] .cm-editor .tok-meta.tok-emphasis {
+  color: hsl(138, 75%, 71%) !important;
+  opacity: 1 !important;
+}
+[data-theme="dark"] .cm-editor .tok-emphasis {
+  font-style: italic;
+  color: hsl(144, 64%, 50%)
+}
+
+/*type name*/
+[data-theme="dark"] .cm-editor .tok-meta.tok-typeName {
+  color: hsl(138, 75%, 71%) !important;
+  opacity: 1 !important;
+}
+[data-theme="dark"] .cm-editor .tok-typeName {
+  color: hsl(160, 80%, 55%) !important;
+  opacity: 1 !important;
+}
+
+/*property*/
+[data-theme="dark"] .cm-editor .tok-meta.tok-propertyName {
+  color: hsl(138, 75%, 71%);
+  opacity: 1 !important;
+}
+[data-theme="dark"] .cm-editor .tok-propertyName {
+  color: hsl(100, 69%, 70%) !important;
+  opacity: 1 !important;
+}
+
+/*punctuation*/
+[data-theme="dark"] .cm-editor .tok-meta.tok-punctuation {
+  color: hsl(138, 75%, 71%) !important;
+  opacity: 1 !important;
+}
+[data-theme="dark"] .cm-editor .tok-punctuation {
+  color: hsl(100, 69%, 70% ) !important;
+  opacity: 1 !important;
+}
+/*link*/
+[data-theme="dark"] .cm-editor .tok-meta.tok-link {
+  color: hsl(205, 50%, 71%,0.65) !important;
+  opacity: 1 !important;
+}
+[data-theme="dark"] .cm-editor .tok-link {
+  color: hsl(205, 0%, 100%,0.75)!important;
+  opacity: 1 !important;
+}
+
+
+[data-theme="dark"] .cm-editor .tok-url {
+  color: hsl(205, 100%, 71%)!important;
+  opacity: 1 !important;
+}
+
+
+/*****************
+******************
+******************
+MATCHING BRACKET
+******************
+******************
+******************/
+/*link*/
+[data-theme="dark"] .cm-editor .cm-matchingBracket {
+  background: hsl(211, 70%, 27%,1.0) !important;
+  box-shadow: 0px 0px 0 1px hsl(211, 70%, 27%,1.0);
+  border-radius: 2px;
+}
+[data-theme="dark"] .cm-editor .cm-matchingBracket .tok-meta {
+  filter: brightness(9);
+}
+
+
+
+/*****************
+******************
+******************
+BOLD AND HEADINGS AS WHITE
+
+
+[data-theme="dark"] .cm-editor .tok-heading:not(.tok-meta),
+[data-theme="dark"] .cm-editor .tok-strong:not(.tok-meta) {
+  color: var(--bldClr) !important
+}
+
+******************
+******************
+******************/
