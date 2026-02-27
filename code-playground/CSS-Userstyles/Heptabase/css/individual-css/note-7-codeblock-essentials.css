@@ -23,7 +23,7 @@
   --blockquoteBrdLeftClr: hsl(216, 6%, 100%, 0.45);
   --blockquoteBgClr: hsl(216, 6%, 100%, .0125);
   --codeblockBgClr: #0d0d0d;
-  --codeblockBrdClr: hsl(0, 0%, 24%);
+  --codeblockBrdClr: hsl(0, 0%, 28%);
   --inlineCodeClr: red;
   --inlineCodeBgClr: rgba(255, 255, 255, .089);
   --inlineCodeBrdClr: hsl(214, 8%, 0%, 0.46);
@@ -54,7 +54,7 @@ CODEBLOCK
 ************
 ************/
 .ProseMirror .cm-editor {
-  background: var(--codeblockBgClr);
+  /*background: var(--codeblockBgClr);*/
   box-shadow: inset 0 0 0 1px var(--codeblockBrdClr) !important;
   border-radius: 10px
 }
