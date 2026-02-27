@@ -691,7 +691,43 @@ CARD LIBRARY - COUNTER
     margin: unset !important;
 }
 
-
+/*****************
+CARD LIBRARY - SOURCE
+******************/
+#root .grid.select-none .sticky {
+    background: transparent;
+    position: relative;
+    width: 100%;
+    max-width: 100% !important;
+}
+#root .grid.select-none .sticky > .flex {
+    padding-left: var(--cardlibCardPadLeftRight) !important;
+}
+#root .grid.select-none .sticky > .flex > .text-label {
+    color: hsla(0,0%,50%);
+    opacity: .7
+}
+#root .grid.select-none .sticky + div.grow {
+    display: none;
+}
+#root .grid.select-none .sticky > .pt-5{
+    padding-top: 0px;
+    display: none;
+}
+#root .grid.select-none .sticky > .pt-5 > .flex > div:first-child {
+    padding-left: var(--cardlibCardPadLeftRight) !important;
+}
+#root .grid.select-none .sticky > .pt-5 > .flex > div:first-child > button {
+    padding-left: 0px !important;
+}
+#root .grid.select-none .sticky > .pt-5 > .flex > div{
+    border: unset;
+    padding-bottom: 0px;
+}
+#root .grid.select-none .sticky > .pt-5 > .flex > div * {
+    color: hsla(0,0%,50%);
+    opacity: .7
+}
 /*****************
 ******************
 ******************
@@ -699,7 +735,7 @@ CARD LIBRARY - COUNTER
 ******************
 ******************
 ******************
-VISIBLE BLOCKS
+! VISIBLE BLOCKS
 ******************
 ******************
 ******************
@@ -940,6 +976,7 @@ VISIBLE BLOCKS - EMPTY
 #root .grid.select-none .ProseMirror > [data-node-type]:empty {
   display: none !important;
 }
+
 
 /*******
 ! CODEBLOCKS
