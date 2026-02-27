@@ -74,10 +74,20 @@ CARD LIBRARY TOGGLE OPACITY
 CARD LIBRARY > VISIBILITY > TOGGLE > CODEBLOCKS
 ******************/
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type],
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type] + [data-node-type*="code_block"]{
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type] + [data-node-type*="code_block"] {
     display: block;
 }
 
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"]:after {
-    display: none;
+    display: none ;
+}
+
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"],
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type] + [data-node-type*="code_block"] {
+    -webkit-mask-image: linear-gradient(to top,
+    hsla(0, 0%, 0%, 0) 0px,
+    hsla(0, 0%, 0%, 1) calc(var(--cardlibCardPadTopBtm) * 3));
+    mask-image: linear-gradient(to top,
+    hsla(0, 0%, 0%, 0) 0px,
+    hsla(0, 0%, 0%, 1) calc(var(--cardlibCardPadTopBtm) * 3));
 }
