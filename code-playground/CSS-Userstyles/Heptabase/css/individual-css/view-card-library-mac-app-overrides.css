@@ -4,16 +4,18 @@ MAC APP OVERRIDES
 
 
 .grid.select-none > div > div,
-.grid.select-none > div > div:hover{
+.grid.select-none > div > div:hover {
   min-height: unset !important;
   height: unset !important;
-  border-color:hsla(0,0%,50%,.0001) !important;
-  background:transparent;
+  border-color: hsla(0, 0%, 50%, .0001) !important;
+  background: transparent;
 }
+
 .grid.select-none > div > div > div {
-    padding-top:0px !important;
+  padding-top: 0px !important;
 
 }
+
 .grid.select-none > div [class*="w-"][class*="scale-"] {
   transform: unset !important;
   width: 100% !important;
@@ -26,56 +28,64 @@ MAC APP OVERRIDES
 CARD LIBRARY - SOURCE
 ******************/
 #root .grid.select-none .sticky {
-    background: transparent;
-    position: relative;
-    width: 100%;
-    max-width: 100% !important;
+  background: transparent;
+  position: relative;
+  width: 100%;
+  max-width: 100% !important;
 }
+
 #root .grid.select-none .sticky > .flex {
-    padding-left: var(--cardlibCardPadLeftRight) !important;
+  padding-left: var(--cardlibCardPadLeftRight) !important;
 }
+
 #root .grid.select-none .sticky > .flex > .text-label {
-    color: hsla(0,0%,50%);
-    opacity: .7
+  color: hsla(0, 0%, 50%);
+  opacity: .7
 }
+
 #root .grid.select-none .sticky + div.grow {
-    display: none;
+  display: none;
 }
-#root .grid.select-none .sticky > .pt-5{
-    padding-top: 0px;
-    display: none;
+
+#root .grid.select-none .sticky > .pt-5 {
+  padding-top: 0px;
+  display: none;
 }
+
 #root .grid.select-none .sticky > .pt-5 > .flex > div:first-child {
-    padding-left: var(--cardlibCardPadLeftRight) !important;
+  padding-left: var(--cardlibCardPadLeftRight) !important;
 }
+
 #root .grid.select-none .sticky > .pt-5 > .flex > div:first-child > button {
-    padding-left: 0px !important;
+  padding-left: 0px !important;
 }
-#root .grid.select-none .sticky > .pt-5 > .flex > div{
-    border: unset;
-    padding-bottom: 0px;
+
+#root .grid.select-none .sticky > .pt-5 > .flex > div {
+  border: unset;
+  padding-bottom: 0px;
 }
+
 #root .grid.select-none .sticky > .pt-5 > .flex > div * {
-    color: hsla(0,0%,50%);
-    opacity: .7
+  color: hsla(0, 0%, 50%);
+  opacity: .7
 }
 
 /*****************
 ! CARD LIBRARY TOOLBAR DROPDOWN
 ******************/
 div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label > .flex.max-h-\[min\(50vh\, 400px\)\].flex-col {
-    max-height: 80vh
+  max-height: 80vh
 }
 
 /**********
 SCALE OVERRIDES
 ***********/
 .grid.select-none [class*="scale"] {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 .grid.select-none > div > div > div {
-    transform: unset !important;
+  transform: unset !important;
 }
 
 
@@ -85,26 +95,27 @@ SCALE OVERRIDES
 ********
 ********/
 
-#root .grid.select-none .px-5.pt-6 > div[class*="px"]{
-        padding-left: calc(var(--cardlibCardPadLeftRight) + .125rem) !important;
-    padding-right: calc(var(--cardlibCardPadLeftRight) + .125rem) !important;
-    padding-bottom: 10px;
+#root .grid.select-none .px-5.pt-6 > div[class*="px"] {
+  padding-left: calc(var(--cardlibCardPadLeftRight) + .125rem) !important;
+  padding-right: calc(var(--cardlibCardPadLeftRight) + .125rem) !important;
+  padding-bottom: 10px;
 }
 
 /*******
 ! HIGHLIGHTS
 ********/
-#root .grid.select-none .flex > [style*="--annotation-"] + [class*="ProseMirror-"] > div > .ProseMirror [data-node-type]:not([data-node-type="table"], [data-node-type="table"] *), #root .grid.select-none .flex + [class*="ProseMirror-"] > div > .ProseMirror{
-    font-size: 17px !important;
-    line-height: 1.45 !important;
+#root .grid.select-none .flex > [style*="--annotation-"] + [class*="ProseMirror-"] > div > .ProseMirror [data-node-type]:not([data-node-type="table"], [data-node-type="table"] *),
+#root .grid.select-none .flex + [class*="ProseMirror-"] > div > .ProseMirror {
+  font-size: 17px !important;
+  line-height: 1.45 !important;
 }
 
 /*****************
 CARD LIBRARY TOGGLE OPACITY
 ******************/
 #root .grid.select-none .ProseMirror [data-node-type*="toggle"] > [class*="bulletWrapper"] [class*="_bullet"] svg {
-    opacity: .5;
-    transform: scale(.75);
+  opacity: .5;
+  transform: scale(.75);
 }
 
 
@@ -113,19 +124,23 @@ CARD LIBRARY > VISIBILITY > TOGGLE > CODEBLOCKS
 ******************/
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type],
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type] + [data-node-type*="code_block"] {
-    display: block;
+  display: block;
 }
 
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"]:after {
-    display: none ;
+  display: none;
 }
 
 #root .grid.select-none .ProseMirror [data-node-type*="code_block"],
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type] + [data-node-type*="code_block"] {
-    -webkit-mask-image: linear-gradient(to top,
-    hsla(0, 0%, 0%, 0) 0px,
-    hsla(0, 0%, 0%, 1) calc(var(--cardlibCardPadTopBtm) * 3));
-    mask-image: linear-gradient(to top,
-    hsla(0, 0%, 0%, 0) 0px,
-    hsla(0, 0%, 0%, 1) calc(var(--cardlibCardPadTopBtm) * 3));
+  -webkit-mask-image: linear-gradient(to top,
+      hsla(0, 0%, 0%, 0) 0px,
+      hsla(0, 0%, 0%, 1) calc(var(--cardlibCardPadTopBtm) * 3));
+  mask-image: linear-gradient(to top,
+      hsla(0, 0%, 0%, 0) 0px,
+      hsla(0, 0%, 0%, 1) calc(var(--cardlibCardPadTopBtm) * 3));
+  transform: translateZ(0);
+
+  /* 4. Ensure background doesn't bleed through in some Webview versions */
+  background-color: transparent !important;
 }
