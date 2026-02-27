@@ -61,10 +61,48 @@ CARD LIBRARY - SOURCE
 }
 
 /*****************
+! CARD LIBRARY TOOLBAR DROPDOWN
+******************/
+div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label > .flex.max-h-\[min\(50vh\, 400px\)\].flex-col {
+    max-height: 80vh
+}
+
+/**********
+SCALE OVERRIDES
+***********/
+.grid.select-none [class*="scale"] {
+    width: 100% !important;
+}
+
+.grid.select-none > div > div > div {
+    transform: unset !important;
+}
+
+
+/*******
+********
+! JOURNAL
+********
+********/
+
+#root .grid.select-none .px-5.pt-6 > div[class*="px"]{
+        padding-left: calc(var(--cardlibCardPadLeftRight) + .125rem) !important;
+    padding-right: calc(var(--cardlibCardPadLeftRight) + .125rem) !important;
+    padding-bottom: 10px;
+}
+
+/*******
+! HIGHLIGHTS
+********/
+#root .grid.select-none .flex > [style*="--annotation-"] + [class*="ProseMirror-"] > div > .ProseMirror [data-node-type]:not([data-node-type="table"], [data-node-type="table"] *), #root .grid.select-none .flex + [class*="ProseMirror-"] > div > .ProseMirror{
+    font-size: 17px !important;
+    line-height: 1.45 !important;
+}
+
+/*****************
 CARD LIBRARY TOGGLE OPACITY
 ******************/
-
-#root .grid.select-none .ProseMirror  [data-node-type*="toggle"] > [class*="bulletWrapper"] [class*="_bullet"] svg{
+#root .grid.select-none .ProseMirror [data-node-type*="toggle"] > [class*="bulletWrapper"] [class*="_bullet"] svg {
     opacity: .5;
     transform: scale(.75);
 }
@@ -82,7 +120,7 @@ CARD LIBRARY > VISIBILITY > TOGGLE > CODEBLOCKS
     display: none ;
 }
 
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"],
+#root .grid.select-none .ProseMirror [data-node-type*="code_block"],
 #root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type] + [data-node-type*="code_block"] {
     -webkit-mask-image: linear-gradient(to top,
     hsla(0, 0%, 0%, 0) 0px,
