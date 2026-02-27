@@ -59,3 +59,25 @@ CARD LIBRARY - SOURCE
     color: hsla(0,0%,50%);
     opacity: .7
 }
+
+/*****************
+CARD LIBRARY TOGGLE OPACITY
+******************/
+
+#root .grid.select-none .ProseMirror  [data-node-type*="toggle"] > [class*="bulletWrapper"] [class*="_bullet"] svg{
+    opacity: .5;
+    transform: scale(.75);
+}
+
+
+/*****************
+CARD LIBRARY > VISIBILITY > TOGGLE > CODEBLOCKS
+******************/
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type],
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"] + [data-node-type] + [data-node-type*="code_block"]{
+    display: block;
+}
+
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child + [data-node-type*="list_item"]:not([class*="folded"]):nth-child(2) > [class*="nested"] > [data-node-type]:first-child + [data-node-type*="code_block"]:after {
+    display: none;
+}
