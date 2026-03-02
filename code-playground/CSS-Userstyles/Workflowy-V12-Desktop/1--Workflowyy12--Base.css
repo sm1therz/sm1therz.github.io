@@ -2209,7 +2209,7 @@ HORIZONTAL RULES / DIVIDERS
   border-radius: 1px;
   height: 1.5px;
   border:unset !important;
-  background: var(--wf-border-subtle);
+  background: hsla(0,0%,50%,.7);
   margin-top: 2px !important;
   
 }
@@ -9835,7 +9835,8 @@ html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:
 }
 
 /*SEARCH RESULT ITEM - ACTIVE*/
-#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option[class*="--wf-background-accent"]{
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option[class*="--wf-background-accent"],
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option.bg-tint{
     background: linear-gradient(
         to right, 
         var(--switcherItemBg) 0%, 
