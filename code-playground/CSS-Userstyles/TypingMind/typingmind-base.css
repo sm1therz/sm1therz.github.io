@@ -1,0 +1,342 @@
+/*root*/
+
+:root {
+  --typMndTstBrdW: 0px;
+}
+
+:root {
+  --sidebarItemGap: var(--sidebarItemPadLR);
+  --sidebarItemPadLR: 10px;
+  --sidebarItemPadTopBtm: 8px;
+  --sidebarItemBrdRad: 8px;
+  /*hover button wrapper*/
+  --hovbtnWrapBrdW: 1px;
+  --hovbtnTransDelay: .25s;
+  --hovbtnWrapPad: 3px;
+  --hovbtnWrapTransition: 390ms cubic-bezier(.7, 1.5, 0, .95);
+  /*hover buttons*/
+  --hovbtnW: 22px;
+  --hovbtnBrdRad: 6px;
+  --sidebarItemHovBtnTransition: .195s;
+  /*text wrapper*/
+  --sidebarItemTxtPadR: calc(var(--hovbtnW) * 2);
+  /*text wrapper - text side */
+  --sidebarItemFontSize: .875rem;
+  --sidebarItemLineHeight: 1.25rem;
+  --sidebarItemFontWeight: 500;
+}
+
+/*****
+! LEFT SIDEBAR
+******/
+
+
+/*****************
+******************
+OVERRIDES
+******************
+*******************/
+
+/*chats > item WRAPPER > remove gap*/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-"]) [class*="gap"][class*="2.5"] {
+  gap: 0px;
+}
+
+/*chats > item WRAPPER > remove min-height*/
+[data-element-id*="sidebar"] [style*="min-height: 36px"] {
+  min-height: unset !important;
+}
+
+/*chats > item WRAPPER > remove extra padding*/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-folder"]) > button {
+  padding: 0px !important;
+}
+
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-folder"]),
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-item"]) {
+  padding: var(--sidebarItemPadTopBtm) var(--sidebarItemPadLR);
+}
+
+/*****************
+******************
+ITEM WRAPPER 
+******************
+*******************/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-"]) {
+  box-shadow: 0 0 0 var(--typMndTstBrdW) orange !important;
+  border-radius: var(--sidebarItemBrdRad) !important;
+  z-index: 100
+}
+
+/*****************
+ITEM WRAPPER > FLEX WRAPPER
+*******************/
+/*folder*/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-folder"]),
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-folder"]) > button,
+/*chat*/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-"]) [class*="gap"][class*="2.5"] {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+/*****************
+ITEM WRAPPER > FLEX WRAPPER > TEXT
+*******************/
+[data-element-id*="sidebar"] *:is(.truncate, textarea) {
+  box-shadow: inset 0 0 0 calc(var(--typMndTstBrdW) * 1) green;
+  overflow: unset;
+  white-space: normal;
+  text-overflow: unset;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-right: calc(var(--sidebarItemGap) * 0) !important;
+  margin-left: 0px !important;
+  min-height: var(--hovbtnW);
+  padding: 0px !important;
+  flex: 1;
+  /*text*/
+  font-size: var(--sidebarItemFontSize) !important;
+  line-height: var(--sidebarItemLineHeight) !important;
+  font-weight: var(--sidebarItemFontWeight);
+  padding-top: 1px !important;
+}
+
+/*TEXT > Just for FOLDERS*/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-folder"]) *:is(.truncate, textarea) {
+  /*max-width: calc(100% - var(--hovbtnW) * 3 - var(--sidebarItemGap) * 0)*/
+}
+
+/*****************
+ITEM WRAPPER > FLEX WRAPPER > ITEM COUNT
+*******************/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-"]) .truncate ~ [class*="text-slate"] {
+  margin-left: calc(var(--sidebarItemGap) * .5);
+  height: var(--hovbtnW) !important;
+  border-radius: calc(var(--sidebarItemBrdRad) * .5);
+  display: flex;
+  align-self: flex-start;
+  min-width: calc(var(--hovbtnW) * .5);
+}
+
+/*****************
+ITEM WRAPPER > FLEX WRAPPER > ICON
+*******************/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-"]) svg.text-slate-400 {
+  margin-right: calc(var(--sidebarItemPadLR) * 1);
+  padding: 0px;
+  width: var(--hovbtnW);
+  height: var(--hovbtnW);
+  box-shadow: inset 0 0 0 var(--typMndTstBrdW) red;
+  transform: scale(1.1);
+}
+
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-"]) svg.text-slate-400 ~ span {
+  margin: 0px !important;
+}
+
+
+
+/*****************
+******************
+******************
+******************
+! HOVER BUTTONS
+******************
+******************
+******************
+******************/
+
+
+/*****************
+******************
+OVERRIDES
+******************
+*******************/
+
+/*override button + button wrapper opacity*/
+[data-element-id*="sidebar"] *:is([data-element-id*="chat-"]) [class*="opacity-"] {
+  opacity: 1;
+}
+
+/*hover button wrapper gap*/
+[data-element-id*="sidebar"] [data-element-id*="chat-"] *:is([class*="group-"], .truncate + div .group) {
+  gap: calc(var(--hovbtnWrapPad)) !important;
+  padding-right: 0px;
+}
+
+
+/*****************
+******************
+! HOVER BUTTON WRAPPER
+*******************
+*******************/
+
+/*chat folder > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-folder"] div[class*="group-"] {
+  outline: calc(var(--typMndTstBrdW) * 3) solid #f569ff;
+}
+
+/*chat item > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-item"] .truncate + div .group {
+  outline: calc(var(--typMndTstBrdW) * 3) solid #0ff;
+}
+
+/*****************
+HOVER BUTTON WRAPPER
+*******************/
+
+/*chat folder > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-folder"] [class*="group-"],
+/*chat item > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-item"] .truncate + div .group {
+  position: absolute;
+  top: calc(var(--sidebarItemPadTopBtm) - var(--hovbtnWrapPad) - var(--hovbtnWrapBrdW));
+  right: calc(var(--sidebarItemPadLR) - var(--hovbtnWrapPad) - var(--hovbtnWrapBrdW)) !important;
+  z-index: 9939;
+  overflow: hidden !important;
+  justify-content: flex-end;
+  /**/
+  padding: var(--hovbtnWrapPad) !important;
+  /**/
+  max-width: calc(var(--hovbtnW) + var(--hovbtnWrapPad) * 2 + var(--hovbtnWrapBrdW) * 2);
+  /**/
+  opacity: 1 !important;
+  /**/
+  background: hsla(0, 0%, 0%, var(--hovbtnWrap-BgAlpha));
+  border: var(--hovbtnWrapBrdW) solid hsl(0, 0%, 100%, var(--hovbtnWrap-BoxAlpha));
+  border-radius: calc(var(--hovbtnBrdRad) + var(--hovbtnWrapPad));
+  transition: var(--hovbtnWrapTransition);
+  transition-delay: var(--hovbtnTransDelay);
+  --hovbtnWrap-BgAlpha: 0;
+  --hovbtnWrap-BoxAlpha: 0;
+}
+
+
+/*****************
+! Item:HOVER > Button Wrapper > OPACITY
+*******************/
+/*chat folder > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-folder"]:hover [class*="group-"],
+/*chat item > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-item"]:hover .truncate + div .group {
+  --hovbtnWrap-BgAlpha: .1;
+  --hovbtnWrap-BoxAlpha: .05;
+  transition-delay: 0s;
+}
+
+/*****************
+! Item:HOVER > Button Wrapper:HOVER > WIDTH
+*******************/
+
+/*chat folder > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-folder"]:hover [class*="group-"]:hover,
+/*chat item > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-item"]:hover .truncate + div .group:hover {
+  max-width: 140px !important;
+  transition-delay: 0s;
+  --hovbtnWrap-BgAlpha: 1;
+  --hovbtnWrap-BoxAlpha: .2;
+
+}
+
+
+
+/*****************
+******************
+! HOVER BUTTONS
+******************
+******************/
+
+/*chat folder > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-folder"] [class*="group-"] button,
+/*chat item > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-item"] .truncate + div .group button {
+  width: unset;
+  min-width: var(--hovbtnW);
+  height: var(--hovbtnW);
+  cursor: pointer !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  background: hsla(0, 0%, 0%, var(--hovbtnBgAlpha));
+  box-shadow: inset 0 0 0 .5px hsl(0, 0%, 100%, var(--hovbtnBoxAlpha));
+  transition: var(--hovbtnWrapTransition);
+  transition-delay: var(--hovbtnTransDelay);
+  --hovbtnBgAlpha: 0;
+  --hovbtnBoxAlpha: 0;
+  /**/
+  opacity: 0;
+
+}
+
+[data-element-id*="sidebar"] [data-element-id*="chat-folder"]:hover [class*="group-"] button,
+/*chat item > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-item"]:hover .truncate + div .group button {
+  opacity: 1;
+  transition-delay: 0s;
+
+
+}
+
+[data-element-id*="sidebar"] [data-element-id*="chat-folder"] [class*="group-"] button:hover,
+/*chat item > button wrapper*/
+[data-element-id*="sidebar"] [data-element-id*="chat-item"] .truncate + div .group button:hover {
+  filter: contrast(1.2);
+  background: hsla(0, 0%, 27%) !important;
+  transition-delay: 0s;
+}
+
+
+
+
+
+/*****************
+! SPECIFIC BUTTONS
+******************/
+
+/*SETTING BUTTON*/
+[data-element-id*="sidebar"] [data-element-id*="chat-"] [aria-label*="setting"] {}
+
+/*DELETE BUTTON*/
+[data-element-id*="sidebar"] [data-element-id*="chat-"] [aria-label*="Delete"] {
+  width: unset;
+}
+
+[data-element-id*="sidebar"] [data-element-id*="chat-"] [aria-label*="Delete"] > span {
+  padding: 0 10px !important;
+}
+
+
+/*FAVORITE BUTTON > ACTIVE*/
+[data-element-id*="sidebar"] [data-element-id*="chat-"]:not(:hover) [aria-label*="Unfavorite"] {
+  backdrop-filter: unset !important;
+  background: transparent !important;
+  box-shadow: unset !important;
+  opacity: 1 !important;
+}
+
+/*FAVORITE BUTTON > NOT ACTIVE*/
+[data-element-id*="sidebar"] [data-element-id*="chat-"] [aria-label*="Unfavorite"] {
+  order: 10;
+}
+
+
+/*****************
+! ITEM INDENTATION
+*******************/
+
+
+/*****
+! INPUT > HEIGHTS
+******/
+
+[data-element-id="pop-up-modal"] textarea {
+  min-height: 500px;
+}
+
+#chat-input-textbox {}
