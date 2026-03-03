@@ -1,0 +1,11 @@
+/*****************
+******************
+******************
+EDITOR > TABLES > ESSENTIALS
+******************
+******************
+******************/
+
+.ProseMirror [data-node-type*="table"] table[style*="min-width"]{
+		table-layout: auto;
+}
