@@ -1,0 +1,10 @@
+[style*="--annotation-"] + [class*="text-middle-hard-grey"]{
+    background: transparent;
+}
+[style*="--annotation-"] + [class*="text-middle-hard-grey"] .ProseMirror {
+    color: var(--text-color);
+}
+
+[class*="text-middle-hard-grey"] .ProseMirror [data-node-type="heading"]{
+    color: var(--headingClr);
+}
