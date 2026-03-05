@@ -32,7 +32,7 @@ EDITOR TEXT COLORS - ROOT
 
 
 [data-theme="dark"] {
-	--text-color: hsl(0, 0%, 81%) !important;
+	--text-color: #E0E0E0 !important;
 	--text-color-Highlight:hsla(0, 0%, 88%, 1.0);
 	--headingClr: hsl(0, 0%, 95%);
 	--bldClr: hsl(0, 0%, 90%);
@@ -100,8 +100,8 @@ INLINE MENTION
 	border-bottom-width: var(--underlineH);
 	border-color: var(--internalLinkUnderlineClr);
 }
-.ProseMirror h1 [data-underline="true"],
-.ProseMirror h2 [data-underline="true"],
+.ProseMirror h1 [data-underline],
+.ProseMirror h2 [data-underline],
 .ProseMirror h1 a,
 .ProseMirror h2 a,
 .ProseMirror h1 .text-active .border-b,
@@ -109,13 +109,13 @@ INLINE MENTION
 	--underlineH: 2.75px;
 }
 
-.ProseMirror h3 [data-underline="true"],
+.ProseMirror h3 [data-underline],
 .ProseMirror h3 a,
 .ProseMirror h3 .text-active .border-b {
 	--underlineH: 2px;
 }
 
-[data-editor-type="previewer"] > .ProseMirror [data-underline="true"],
+[data-editor-type="previewer"] > .ProseMirror [data-underline],
 [data-editor-type="previewer"] > .ProseMirror a,
 [data-editor-type="previewer"] > .ProseMirror .text-active .border-b {
 	--underlineH: 1.5px !important;
@@ -128,28 +128,32 @@ INLINE LINK
 	border-bottom-width: 10px !important;
 }
 .ProseMirror a[href*="heptabase.com"],
-.ProseMirror .text-active .border-b {
+.ProseMirror .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"] {
 	color: var(--internalLinkClr);
 }
 .ProseMirror a[href*="heptabase.com"],
 .ProseMirror a[href*="heptabase.com"] [data-color],
-.ProseMirror .text-active .border-b {
+.ProseMirror .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"] {
 	transition: .1s;
 }
 
 .ProseMirror a[href*="heptabase.com"]:hover,
 .ProseMirror a[href*="heptabase.com"]:hover span[data-color],
-.ProseMirror .text-active .border-b:hover {
+.ProseMirror .text-active:hover {
 
 	color: var(--active-item) !important
 }
 
-
-
+/***********
+INLINE LINK - INSIDE COLORED TEXT
+************/
+.ProseMirror [data-color] .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"]{
+	color: inherit !important;
+}
 /***********
 COLORED TEXT
 ************/
-.ProseMirror [data-underline="true"] [data-color="gray"] {
+.ProseMirror [data-underline] [data-color="gray"] {
 	background-image: linear-gradient(0deg,
 	var(--text-gray-editor) 0%,
 	var(--text-gray-editor) var(--underlineH),
@@ -180,7 +184,7 @@ LINKS
 
 /*UNDERLINE IN LINK & HIGHLIGHTED LINK*/
 .ProseMirror a [data-color="yellow"][data-type="background"],
-.ProseMirror a [data-underline="true"] {
+.ProseMirror a [data-underline] {
 	background-image: linear-gradient(to top,
 	var(--linkUnderlineClr) 0%,
 	var(--linkUnderlineClr) var(--underlineH),
@@ -200,7 +204,7 @@ UNDERLINE
 [data-node-type="table"] {
 	--underlineH: 1px;
 }
-[data-underline="true"] {
+[data-underline] {
 	background-image: linear-gradient(0deg,
 		var(--underlineClr) 0%,
 		var(--underlineClr) var(--underlineH),
@@ -208,8 +212,8 @@ UNDERLINE
 		transparent 0%) !important;
 	border: unset !important;
 }
-[data-underline="true"],
-[data-underline="true"] * {
+[data-underline],
+[data-underline] * {
 	border: unset !important
 }
 
@@ -254,7 +258,7 @@ HIGHLIGHTS > UNDERLINE IN HIGHLIGHT
 ************
 ************/
 
-[data-underline="true"] [data-color][data-type] {
+[data-underline] [data-color][data-type] {
 	background-image: linear-gradient( to top,
 		var(--underlineClr) 0%,
 		var(--underlineClr) var(--underlineH),
@@ -263,13 +267,13 @@ HIGHLIGHTS > UNDERLINE IN HIGHLIGHT
 }
 
 /*HIGHLIGHTS > UNDERLINED > UNDERLINE COLOR*/
-[data-underline="true"] [data-color="gray"][data-type="background"] {
+[data-underline] [data-color="gray"][data-type="background"] {
 	--underlineClr:var(--text-gray-editor)
 }
-[data-underline="true"] [data-color="brown"][data-type="background"] {
+[data-underline] [data-color="brown"][data-type="background"] {
 	--underlineClr:var(--text-brown-editor)
 }
-[data-underline="true"] [data-color="yellow"][data-type="background"] {
+[data-underline] [data-color="yellow"][data-type="background"] {
 	--underlineClr:var(--highlightUnderlineClr-Yellow)
 }
 
@@ -279,7 +283,7 @@ HIGHLIGHTS > UNDERLINE IN HIGHLIGHT
 TEXT COLORS > UNDERLINES
 ************
 ************/
-[data-underline="true"] [data-color][data-type="text"] {
+[data-underline] [data-color][data-type="text"] {
 		background-image: linear-gradient(0deg,
 		var(--underlineClr) 0%,
 		var(--underlineClr) var(--underlineH),
@@ -289,30 +293,30 @@ TEXT COLORS > UNDERLINES
 
 
 /*TEXT COLOR > UNDERLINED > UNDERLINE COLOR*/
-[data-underline="true"] [data-color="gray"]{
+[data-underline] [data-color="gray"]{
 	--underlineClr:var(--text-gray-editor);
 }
-[data-underline="true"] [data-color="brown"]{
+[data-underline] [data-color="brown"]{
 	--underlineClr:var(--text-brown-editor);
 }
-[data-underline="true"] [data-color="orange"]{
+[data-underline] [data-color="orange"]{
 	--underlineClr:var(--text-orange-editor);
 }
-[data-underline="true"] [data-color="yellow"]{
+[data-underline] [data-color="yellow"]{
 	--underlineClr:var(--text-yellow-editor);
 }
-[data-underline="true"] [data-color="green"]{
+[data-underline] [data-color="green"]{
 	--underlineClr:var(--text-green-editor);
 }
-[data-underline="true"] [data-color="blue"]{
+[data-underline] [data-color="blue"]{
 	--underlineClr:var(--text-blue-editor);
 }
-[data-underline="true"] [data-color="purple"]{
+[data-underline] [data-color="purple"]{
 	--underlineClr:var(--text-purple-editor);
 }
-[data-underline="true"] [data-color="pink"]{
+[data-underline] [data-color="pink"]{
 	--underlineClr:var(--text-pink-editor);
 }
-[data-underline="true"] [data-color="red"]{
+[data-underline] [data-color="red"]{
 	--underlineClr:var(--text-red-editor);
 }
