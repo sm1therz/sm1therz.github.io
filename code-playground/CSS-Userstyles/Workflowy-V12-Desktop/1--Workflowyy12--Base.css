@@ -6214,6 +6214,15 @@ CARD > IS COMMENT
 --COMMENT-CONTAINER--BG:var(--boardrootCommentBgClr-Even) !important;
 }
 
+/*NOTES*/
+#app .page .project.root.board > .notes > .content{
+  margin-left: 0px !important;
+}
+
+#app .page .project.root.board > .children > .boardColumn > .children {
+  padding-bottom: 200px !important;
+}
+
 
 
 /*******************************
