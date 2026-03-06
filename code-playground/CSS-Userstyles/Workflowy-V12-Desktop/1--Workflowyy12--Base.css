@@ -3444,7 +3444,11 @@ html #app .project > .notes > .content .contentLink{
 
     transform: rotate(90deg)scale(var(--btnIcn-Scale)) !important;
 }
-
+/*NEW CIRLCE BORDER*/
+.circleBorder.absolute,
+.absolute.rounded-full.box-border.border-current{
+  display: none !important;
+}
 
 
 
