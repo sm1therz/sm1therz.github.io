@@ -4539,7 +4539,7 @@ BOARDS ROOT
 ********************************/
 :root {
   --ROOT-padBot: 30px;
-  --ROOT-padLeftRight: 40px;
+  --ROOT-padLeftRight: 20px;
   --ROOT-BOARD-TITLE-HEIGHT: 40px;
 }
 .board > .children {
@@ -4609,6 +4609,9 @@ BOARDS ROOT
 
 #app .page[style="overflow-y: auto;"] > .project.board.root.noted > .notes .content {
   padding-bottom: var(--content-PadTopBtm) !important
+}
+#app .project.board.root > .name{
+  padding-left: var(--ROOT-padLeftRight) !important
 }
 #app .project.board.root.noted > .notes {
   padding-bottom: var(--ROOT-padBot);
@@ -5872,6 +5875,9 @@ div#app ~ div[style*="color: rgb(60, 64"][style*="opacity: 1"] {
 }
 #app .page .board.root > .children {
     border-top-width: 0px !important;
+  margin-left: 0px!important;
+  margin-right: 0px !important;
+  padding-left: var(--ROOT-padLeftRight)!important;
 }
 
 #app .board.root .boardCard > .children > .project.quote-block:not(.noted) > .name:before, 
@@ -6199,54 +6205,6 @@ CARD > IS COMMENT
 }
 
 
-
-/*******
-********
-BOARDS - ROOT > PADDING FIX
-********
-********/
-#app .project.board.root {
-}
-#app .project.board.root,
-.project.board.root .boardCard > .name, 
-.project.board.root .boardCard > .notes, 
-.project.board.root .boardCard .project > .name, 
-.project.board.root .boardCard .project > .notes{
-
-  --content-PadTopBtm:8px !important;
-}
-/*ALL ITEMS - NAME */
-#app .project.board.root .project:not(.boardColumn, .quote-block, .code-block) > .name {
-  padding-top: calc(var(--content-PadTopBtm) * 1) !important;
-}
-/*ALL ITEMS - CONTENT - NOT NOTED */
-#app .project.board.root .project:not(.noted, .boardColumn, .quote-block, .code-block) > .name {
-  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
-}
-#app .project.board.root .project:not( .boardColumn, .quote-block, .code-block) > *:is(.name, .notes) > .content {
-  padding-bottom: 0px !important;
-}
-/*ALL ITEMS - CONTENT - HAS NOTE */
-#app .project.board.root .project.noted > .notes {
-  padding-top: calc(var(--content-PadTopBtm) * .1) !important;
-  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
-  
-}
-
-/*ALL ITEMS - NAME WITH IMAGE -  NOT NOTED */
-#app .project.board.root > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image  {
-  padding-bottom: 0px !important;
-  margin-bottom: calc(var(--content-PadTopBtm) * 1)!important;
-}
-/*ALL ITEMS - NAME WITH IMAGE -  HAS */
-#app .project.board.root > .children > .boardColumn > .children *:is(.noted) > .name--with-image{
-    padding-bottom: 0px !important;
-  margin-bottom: calc(var(--content-PadTopBtm) * 0.5)!important;
-}
-/*ALL ITEMS - NAME WITH IMAGE -  CONTENT - HAS NOTE */
-#app .project.board.root > .children > .boardColumn > .children *:is(.noted, .project,.boardCard):not(.boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image > .content {
-  padding-bottom: calc(var(--content-PadTopBtm) * .5) !important;
-}
 
 /*******************************
 ********************************
