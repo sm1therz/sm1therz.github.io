@@ -5546,7 +5546,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 .board.root .boardCard > .children,
 .board.root .boardCard > .children .project:not(.boardCard > .children > .project:first-of-type) {}
 .board.root .boardColumn > .children {
-  border-top: 1px solid var(--boardrootColumnHeaderBrdClr) !important;
+  border-top: 1px solid hsla(0,0%,100%,.1) !important;
 }
 :root {
   --boardColumnWidth: 370px;
