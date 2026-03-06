@@ -379,6 +379,8 @@ BOX SHADOW TESTING - BOARDS
 
     /*MISC*/
     --Height--Header: 48px;
+    /*colors*/
+    --wf-border-default:#5c6062;
 }
 
 
@@ -5348,6 +5350,10 @@ BOARD > NOT ROOT > PREFIX FIX
 #app .project.board:not(.root) .project > .name > .prefix{
   top: var(--btn-MargTop) !important;
   --btn-MargTop:3px !important;
+}
+
+html #app .project.board > .children > .boardColumn > .self-stretch{
+  display: none !important;
 }
 
 /*******************************
