@@ -8,7 +8,7 @@
 	--embedPadLR-Active:10px;
 	--embedTransition:.1s;
 	/**/
-	--embedBrdDashH:2.25px;
+	--embedBrdDashH:2.5px;
 	--embedBrdDashOpacity:1;
 	--embedDashPosTop:0;
 	--embedDashPosBtm:0;
@@ -29,14 +29,15 @@
 [data-theme="dark"] {
 	--embedBg:hsla(0, 0%, 100%, .02);
 	--embedBgClr:hsla(0, 0%, 100%, .02);
-	--embedBg:hsla(0, 0%, 0%, .052);
+	--embedBg:hsla(0, 0%, 0%, 0);
 	/*--embedBg-Hover:linear-gradient(
 			to right, 
 			transparent 0%, 
 			var(--embedBgClr) var(--embedPadLR-Active), 
 			var(--embedBgClr) calc(100% - var(--embedPadLR-Active)), 
 			transparent);*/
-	--embedBg-Hover:hsla(0, 0%, 0%, .1);
+	--embedBg-Hover:hsla(0, 0%, 0%, 0);
+	--embedBg-Hover:hsla(0, 0%, 0%, .052);
 	--embedBg-Selected:hsla(211, 30%, 27%, 1.0);
 	--embedBrdClr:hsla(0,0%,0%,0.19);
 	--embedBrdClr-Active:hsla(211, 25%, 36%, 1.0);
@@ -72,8 +73,12 @@
 [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"],
 .grid.select-none .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"]{
 	--embedBrdRad:3px;
+}
 
-
+[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"]{
+	--embedBg:var(--embedBg-Hover);
+	--embedDashPosL:0;
+	--embedDashPosR:0;
 }
 
 /*EMBED > SELECTED*/
