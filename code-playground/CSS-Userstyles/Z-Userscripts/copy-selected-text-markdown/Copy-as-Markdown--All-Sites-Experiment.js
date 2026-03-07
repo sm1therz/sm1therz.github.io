@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Copy as Markdown > All Sites > Experiment
+// @name         Copy as Markdown > All Sites > Main
 // @namespace    https://example.com/
 // @version      0.2.0
 // @description  Show an "MD" popup for selected text and copy selection as Markdown
@@ -8,11 +8,12 @@
 // @grant        GM_setClipboard
 // @tag          markdown
 // @tag          all sites
+// @tag          main
 // @run-at       document-idle
 // @require      https://cdn.jsdelivr.net/npm/turndown/dist/turndown.js
 // ==/UserScript==
 
-(function() {
+(function () {
   'use strict';
 
   // ---------- Markdown converter ----------
@@ -28,7 +29,7 @@
   // Keep underline as inline HTML (Markdown has no native underline)
   turndownService.addRule('underline', {
     filter: ['u'],
-    replacement: function(content) {
+    replacement: function (content) {
       return `<u>${content}</u>`;
     },
   });
@@ -36,7 +37,7 @@
   // Convert <mark> to ==highlight== (common Markdown extension)
   turndownService.addRule('mark', {
     filter: ['mark'],
-    replacement: function(content) {
+    replacement: function (content) {
       return `==${content}==`;
     },
   });
@@ -94,7 +95,7 @@
 
   turndownService.addRule('table', {
     filter: ['table'],
-    replacement: function(_content, node) {
+    replacement: function (_content, node) {
       const mdTable = tableToMarkdown(node);
       return mdTable ? `\n\n${mdTable}\n\n` : '\n\n';
     },
