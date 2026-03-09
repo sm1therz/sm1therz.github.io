@@ -74,8 +74,8 @@ INLINE MENTION
 	border-bottom-width: var(--underlineH);
 	border-color: var(--internalLinkUnderlineClr);
 }
-.ProseMirror h1 [data-underline="true"],
-.ProseMirror h2 [data-underline="true"],
+.ProseMirror h1 [data-underline],
+.ProseMirror h2 [data-underline],
 .ProseMirror h1 a,
 .ProseMirror h2 a,
 .ProseMirror h1 .text-active .border-b,
@@ -83,13 +83,13 @@ INLINE MENTION
 	--underlineH: 2.75px;
 }
 
-.ProseMirror h3 [data-underline="true"],
+.ProseMirror h3 [data-underline],
 .ProseMirror h3 a,
 .ProseMirror h3 .text-active .border-b {
 	--underlineH: 2px;
 }
 
-[data-editor-type="previewer"] > .ProseMirror [data-underline="true"],
+[data-editor-type="previewer"] > .ProseMirror [data-underline],
 [data-editor-type="previewer"] > .ProseMirror a,
 [data-editor-type="previewer"] > .ProseMirror .text-active .border-b {
 	--underlineH: 1.5px !important;
@@ -102,18 +102,18 @@ INLINE LINK
 	border-bottom-width: 10px !important;
 }
 .ProseMirror a[href*="heptabase.com"],
-.ProseMirror .text-active .border-b {
+.ProseMirror .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"] {
 	color: var(--internalLinkClr);
 }
 .ProseMirror a[href*="heptabase.com"],
 .ProseMirror a[href*="heptabase.com"] [data-color],
-.ProseMirror .text-active .border-b {
+.ProseMirror .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"] {
 	transition: .1s;
 }
 
 .ProseMirror a[href*="heptabase.com"]:hover,
 .ProseMirror a[href*="heptabase.com"]:hover span[data-color],
-.ProseMirror .text-active .border-b:hover {
+.ProseMirror .text-active:hover {
 
 	color: var(--active-item) !important
 }
@@ -124,6 +124,7 @@ INLINE LINK - INSIDE COLORED TEXT
 .ProseMirror [data-color] .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"]{
 	color: inherit !important;
 }
+
 
 
 /***********
