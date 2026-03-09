@@ -9,3 +9,7 @@ EDITOR > TABLES > ESSENTIALS
 .ProseMirror [data-node-type*="table"] table[style*="min-width"]{
 		table-layout: auto;
 }
+
+[data-node-type="table_cell"][style*="--bg-gray-editor"] {
+		background-color: rgba(255, 255, 255, .04) !important;
+}
