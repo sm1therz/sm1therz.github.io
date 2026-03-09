@@ -99,7 +99,7 @@
     },
     {
       id: 'editor-tables',
-      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials'
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials.css'
     },
     {
       id: 'note-code-blocks',
