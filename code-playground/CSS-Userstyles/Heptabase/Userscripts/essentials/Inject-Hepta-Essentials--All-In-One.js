@@ -320,6 +320,7 @@
     return (
       href.includes('/card/') ||
       href.includes('/chat') ||
+      href.includes('isOpeningRightSidebar') ||
       href.includes('isOpeningGlobalSidebar')
     );
   }
