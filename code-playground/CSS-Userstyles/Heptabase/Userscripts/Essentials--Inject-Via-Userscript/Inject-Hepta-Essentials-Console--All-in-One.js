@@ -2,7 +2,8 @@
 // @name         Heptabase CSS Loader (All Modules)
 // @namespace    sm1therz-heptabase
 // @version      1.0.0
-// @description  Injects modular CSS files by URL pattern (SPA-safe)
+// @description  Injects modular CSS files by URL pattern (SPA-safe). G
+// @source       generated in Cherry Studio.
 // @match        *://*.heptabase.com/*
 // @match        *://heptabase.com/*
 // @run-at       document-start
