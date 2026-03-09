@@ -74,7 +74,8 @@
     --bookmarkIconBgClr: hsla(220, 1%, 50%, .195);
     --bookmarkIconBrdClr: hsla(0, 0%, 0%, 0.12);
 }
-.widget_theme_dark {
+.widget_theme_dark,
+.widget_dark-bg{
     --headingClr: hsl(0, 0%, 100%);
     --bldClr: hsl(0, 0%, 97%);
     --bodyClr: hsla(0, 0%, 100%, 0.85);
@@ -147,10 +148,6 @@ span.notes-widget__result * {
 .modal__component-container .notes-widget .wysiwyg-editor__input {
     outline-offset: -1px
 }
-
-
-
-
 
 /***********
 ************
@@ -332,7 +329,8 @@ BROWSER OTHER / FLOATING BROWSERS
     display: flex !important;
   height: var(--searchContainerHeight)!important;
   overflow: visible !important;
-  align-items:flex-start !important;
+  align-items: flex-start !important;
+  
   
 }
 /***********
@@ -728,7 +726,7 @@ GOES FROM FIXED POSITION TO RELATIVE
         right: unset;
         bottom: unset;
         --quicklinkWidth: 100%;
-        padding-top: 10px !important;
+        padding-top: 0px !important;
 
     }
     :root {
@@ -2056,12 +2054,15 @@ width: 100% !important;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
+
 .bookmark-widget__item-wrapper_mode_detail.bookmark-widget__item-wrapper_size_small,
 .bookmark-widget__item-wrapper_mode_detail.bookmark-widget__item-wrapper_size_none,
 .bookmark-widget__item-wrapper_mode_detail.bookmark-widget__item-wrapper_size_medium,
 .bookmark-widget__item-wrapper_mode_detail.bookmark-widget__item-wrapper_size_large{
     height: unset !important;
+    min-height: unset;
 }
+
 .bookmark-item_mode_detail .bookmark-item__link {
   padding-top: var(--bookmarkThumbnailMargTopBtm);
   padding-bottom: var(--bookmarkThumbnailMargTopBtm);
@@ -3005,6 +3006,23 @@ BIGGER TABLES - ON WHITE WIDGETS
 #appID .notes-widget-wrapper .widget__container[style*="rgb(255, 255, 255"] table th,
 #appID .notes-widget-wrapper .widget__container[style*="rgb(255, 255, 255"] table thead {}
 
+
+/**/
+
+#appID .widget__box h1,
+#appID .widget__box h2,
+#appID .widget__box h3,
+#appID .widget__box h4 {
+  line-height: 1.2 !important;
+}
+
+#appID .widget__box h1 strong,
+#appID .widget__box h2 strong,
+#appID .widget__box h3 strong,
+#appID .widget__box h4 strong {
+  font-weight: 700 !important;
+}
+
 /***********
 ************
 ! NOTES MODAL
@@ -3464,7 +3482,7 @@ li.todo-item.todo-item_wrapped:hover .todo-item__container .todo-item__delete {
 li.todo-item .todo-item__container .todo-item__delete svg,
 li.todo-item.todo-item_wrapped .todo-item__container .todo-item__delete svg {
     opacity: .35 !important;
-    transition: .05s !important; 
+    transition: .05s !important;
     width: 13px !important;
     height: 13px!important;
 }
@@ -3485,6 +3503,8 @@ HIDDEN TODOS
     margin: 0px !important;
     
 }
+
+
 
 
 
