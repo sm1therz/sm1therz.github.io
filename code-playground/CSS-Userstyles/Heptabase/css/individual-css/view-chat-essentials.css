@@ -1,4 +1,3 @@
-
 /*******
 ! Chat > MESSAGE > HIDE HOVER
 ********/
@@ -20,7 +19,7 @@
   --chatHeaderPadTopBtm: 5px;
   --chatHeaderPadLR: 20px;
   --chatHeaderBtn-ZIndex: 22;
-  --chatHeaderMargBtm:10px
+  --chatHeaderMargBtm: 10px
 }
 
 /*overrides*/
@@ -40,7 +39,7 @@
 /******
 ! HEADER > USER/ASSISTANT
 *******/
-.group\/1741629705525 > .relative > *:is(.h-8,.z-10):not([class*="group"],[class*="max-w"]) {
+.group\/1741629705525 > .relative > *:is(.h-8, .z-10):not([class*="group"], [class*="max-w"]) {
   height: var(--chatHeaderH) !important;
   margin-bottom: 0px;
   margin-left: 1px !important;
@@ -61,7 +60,8 @@
   box-shadow: inset 0 0 0 var(--testBrdChatW) #4dedff;
   border-top: .5px solid hsla(0, 0%, 50%, .35);
 }
-#root .group\/1741629705525 > .relative > *:is(.z-10){
+
+#root .group\/1741629705525 > .relative > *:is(.z-10) {
   height: 0px !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
@@ -72,6 +72,7 @@
   margin-top: -30px !important;
   margin-bottom: 30px !important;
 }
+
 #root .group\/1741629705525 > .relative > *:is(.z-10) > div {
   align-self: flex-start;
 }
@@ -96,12 +97,13 @@
 *******
 ********/
 /*left sidebar open*/
-.group\/1741629705525 .h-8  [class*="text-label"] {
+.group\/1741629705525 .h-8 [class*="text-label"] {
   outline: var(--testBrdChatW) solid Pink;
 
 }
+
 .group\/1741629705525 .h-8 [class*="text-label"].truncate:not(.text-label-mini) {
-  min-width:93% !important;
+  min-width: 93% !important;
 }
 
 /**HEADER > USER/ASSISTANT > INNER ICON > ASSISTANT*/
@@ -120,6 +122,7 @@
   height: var(--chatHeaderIcnW) !important;
 
 }
+
 .group\/1741629705525 .h-8 .size-3 {
   transform: scale(0.8)
 }
@@ -135,14 +138,14 @@
   width: 100%;
   transform: scale(1.2);
   font-size: 11px;
-  box-shadow: inset 0 0 0 .5px hsla(0,0%,100%,0.2);
+  box-shadow: inset 0 0 0 .5px hsla(0, 0%, 100%, 0.2);
   margin-top: -1px !important;
 
-    
+
 }
 
-.group\/1741629705525 .flex.items-center.gap-x-2[class*="pl-4"] ~ .relative > .h-8  .size-5{
-margin-bottom: 2px !important;
+.group\/1741629705525 .flex.items-center.gap-x-2[class*="pl-4"] ~ .relative > .h-8 .size-5 {
+  margin-bottom: 2px !important;
 }
 
 
@@ -160,9 +163,9 @@ margin-bottom: 2px !important;
 *******
 *******/
 
-.group\/1741629705525  .flex.h-8[class*="group"],
+.group\/1741629705525 .flex.h-8[class*="group"],
 .group\/1741629705525 > div.h-8,
-.group\/1741629705525 > div.flex{
+.group\/1741629705525 > div.flex {
   padding-left: calc(var(--chatHeaderPadLR) + var(--chatHeaderGap) + 4px);
   width: 100% !important;
   height: var(--chatHeaderH-Type2) !important;
@@ -172,6 +175,7 @@ margin-bottom: 2px !important;
   box-shadow: inset 0 0 0 calc(var(--testBrdChatW) * 2) green;
   position: sticky;
 }
+
 /******
 *******
 ! HEADER > ABOVE USER/ASSISTANT > REPLIES > INNER
@@ -189,21 +193,22 @@ margin-bottom: 2px !important;
 *******/
 
 
-.group\/1741629705525 > div.flex{
+.group\/1741629705525 > div.flex {
   position: sticky;
   top: 0;
   z-index: 22;
-    box-shadow: 0 .5px 0 0 hsla(0, 0%, 50%, .125);
+  box-shadow: 0 .5px 0 0 hsla(0, 0%, 50%, .125);
   outline: var(--testBrdChatW) solid Orange !important;
   outline-offset: -1px;
 }
+
 /*******
 ! EDITING > TOP HEADER
 ********/
 
 /*EDITING > X + CHECKMARK*/
 .group\/1741629705525 > .relative > .h-8 > div:last-child,
-.group\/1741629705525 .group\/1743526506295 + .ml-auto.shrink-0{
+.group\/1741629705525 .group\/1743526506295 + .ml-auto.shrink-0 {
   flex: 1;
   display: flex;
   align-items: center;
@@ -211,14 +216,25 @@ margin-bottom: 2px !important;
 }
 
 /*! EDITING > HEADER > BUTTONS*/
-[class*="group"][class*="1698383979300"].w-6{
+[class*="group"][class*="1698383979300"].w-6 {
   width: 1.5rem;
 }
+
 /*! EDITING > HEADER > HIDE REGENERATE BUTTON */
-[class*="gap"] > [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 {
-  display: none;
+[class*="gap"] > [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 {
+  width: 0px;
+  transition: .3s;
+  transition-delay: 1.5s;
 }
 
+[class*="gap"] > [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 svg {
+  fill: red;
+}
+
+/*! EDITING > HEADER > Make REGENERATE BUTTON REAPPEAR ON HOVER */
+[class*="group"][class*="1741629705525"] .ml-8.flex.mt-2.gap-x-1\.5.items-center:hover [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 {
+  width: 1.5rem;
+}
 
 /*******
 ! HOVER MENU
@@ -243,6 +259,7 @@ margin-bottom: 2px !important;
   width: 1rem !important;
   height: 1rem !important;
 }
+
 .group\/1741629705525 .absolute[class*="right"][class*="top"] [class*="group"] [class*="clickable"] {
   padding-left: 7px;
   padding-right: 7px;
@@ -256,7 +273,7 @@ margin-bottom: 2px !important;
   position: sticky;
   bottom: 0px;
   backdrop-filter: blur(40px);
-  background: hsl(216, 6%, 15%,0.6);
+  background: hsl(216, 6%, 15%, 0.6);
   z-index: 20;
   border-radius: 3px;
   overflow: hidden;
@@ -266,7 +283,7 @@ margin-bottom: 2px !important;
 }
 
 /*hide new card button*/
-.group\/1741629705525 .h-8 ~ [class*="ProseMirror-hepta-style"] ~ div + .ml-8 > button.hepta-base-button{
+.group\/1741629705525 .h-8 ~ [class*="ProseMirror-hepta-style"] ~ div + .ml-8 > button.hepta-base-button {
   display: none;
 }
 
@@ -276,7 +293,7 @@ margin-bottom: 2px !important;
 ! TEXT AREA > MAX HEIGHT
 *********/
 .px-3.pb-3.pt-1 .max-h-50vh,
-.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh{
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh {
   max-height: unset !important;
   margin: 0px !important;
 }
@@ -284,26 +301,27 @@ margin-bottom: 2px !important;
 /*HEIGHT*/
 .px-3.pb-3.pt-1 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
-.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex  div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
-.bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror{
+.bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
+.bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror {
   max-height: 37.5vh !important;
   transition: .25s;
-    transition-delay: 1s;
+  transition-delay: 1s;
 
 
 }
+
 .px-3.pb-3.pt-1 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
-.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
-[class*="max-h-"] + .bg-background-secondary.max-h-50vh  [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
+.bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
+[class*="max-h-"] + .bg-background-secondary.max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
-.bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror:is(:focus-within){
+.bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within) {
   max-height: calc(79.5vh - 3rem - var(--chatHeaderH) - var(--chatHeaderH-Type2)) !important;
   transition-delay: 0s;
 }
 
 /*MIN HEIGHT > WHEN HOVERING OVER MESSAGES IN CHAT*/
-.h-12 + .relative:is(:hover,:focus,:focus-within) + .px-3 .max-h-50vh  [data-editor-type="editor"] > .ProseMirror {
+.h-12 + .relative:is(:hover, :focus, :focus-within) + .px-3 .max-h-50vh [data-editor-type="editor"] > .ProseMirror {
   max-height: 37.5vh !important;
   transition-delay: 0s;
 }
@@ -311,43 +329,45 @@ margin-bottom: 2px !important;
 /********
 ! Chat > HEADER COLORS > USER / ASSISTANT COLORS
 *********/
-[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"]{
-  display:flex !important;
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] {
+  display: flex !important;
 }
-[class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 {
-}
+
+[class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 {}
+
 [class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 > div,
-[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] >  svg{
-  opacity:0;
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > svg {
+  opacity: 0;
 }
+
 [class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] + [class*="group-hover"] {
-    position: absolute;
-  width:14px;
-  height:14px;
-    z-index: 5;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  z-index: 5;
 }
+
 [class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center > div > .shrink-0:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    right: -50vw;
-    bottom: 0px;
-    background: hsl(190,100%,50%,0.15) !important;
-    z-index: -2;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: -50vw;
+  bottom: 0px;
+  background: hsl(190, 100%, 50%, 0.15) !important;
+  z-index: -2;
 }
 
 /*ASSISTANT*/
-[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center + p:after{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    right: -50vw;
-    bottom: 0px;
-    background: hsl(300, 100%, 75%,0.075) !important;
-    z-index: -10
-    
+[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center + p:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: -50vw;
+  bottom: 0px;
+  background: hsl(300, 100%, 75%, 0.075) !important;
+  z-index: -10
 }
