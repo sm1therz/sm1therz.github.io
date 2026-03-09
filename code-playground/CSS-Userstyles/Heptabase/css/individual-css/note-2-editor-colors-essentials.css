@@ -182,9 +182,3 @@ UNDERLINE
 }
 
 
-/***OVERRIDE TEXT COLORS***/
-
-#root .grid.select-none > div .ProseMirror [data-node-type] [data-color] {
-		color: var(--text-color)!important;
-		 color: var(--text-color) !important;
-}

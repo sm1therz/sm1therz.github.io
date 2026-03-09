@@ -144,3 +144,10 @@ CARD LIBRARY > VISIBILITY > TOGGLE > CODEBLOCKS
   /* 4. Ensure background doesn't bleed through in some Webview versions */
   background-color: transparent !important;
 }
+
+/***OVERRIDE TEXT COLORS***/
+
+#root .grid.select-none > div .ProseMirror [data-node-type] [data-color] {
+    color: var(--text-color)!important;
+     color: var(--text-color) !important;
+}
