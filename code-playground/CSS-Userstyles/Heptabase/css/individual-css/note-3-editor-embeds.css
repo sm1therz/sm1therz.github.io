@@ -132,6 +132,15 @@
 	bottom: var(--embedDashPosBtm);
 }
 
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child ~ [data-node-type*="toggle"]{
+	position: relative
+	
+}
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child ~ [data-node-type*="toggle"] > [class*="bulletWrapper"]{
+	left: -22px !important;
+}
+
+
 
 /***************
 ! EMBEDS - HOVER MENU
