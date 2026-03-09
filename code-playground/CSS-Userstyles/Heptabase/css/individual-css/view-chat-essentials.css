@@ -220,7 +220,30 @@
   width: 1.5rem;
 }
 
+/*******
+********
+********
+! HIDE REGENERATE BUTTONS
+********
+********
+********/
+
+
+/*******
+! USER HEADER > EDITING
+********/
+
 /*! EDITING > HEADER > HIDE REGENERATE BUTTON */
+.ml-2.shrink-0 > .flex.items-center[class*="gap"] > [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6{
+  display: none !important;
+}
+
+
+/*******
+! ASSITANT HEADER > HOVER
+********/
+
+/*! ASSISTANT HEADER > HIDE REGENERATE BUTTON */
 [class*="gap"] > [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 {
   width: 0px;
   transition: .3s;
@@ -231,7 +254,7 @@
   fill: red;
 }
 
-/*! EDITING > HEADER > Make REGENERATE BUTTON REAPPEAR ON HOVER */
+/*! ASSISTANT HEADER > Make REGENERATE BUTTON REAPPEAR ON HOVER */
 [class*="group"][class*="1741629705525"] .ml-8.flex.mt-2.gap-x-1\.5.items-center:hover [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 + [class*="group"][class*="1698383979300"].w-6 {
   width: 1.5rem;
 }
