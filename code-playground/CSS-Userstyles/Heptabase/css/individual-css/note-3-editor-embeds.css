@@ -134,13 +134,6 @@
 
 
 /***************
-! EMBEDS - WHITEBOARD
-****************/
-.\@container\/reference-item [data-node-type="embed"] .ProseMirror > [data-node-type*="toggle"] > [class*="bullet"]{
-	left: calc(var(--bulletwrapperW) * -0.3)
-}
-
-/***************
 ! EMBEDS - HOVER MENU
 ****************/
 :root {
@@ -206,8 +199,8 @@ OVERRIDES > EMBED
 :root {
 	--embedDashPosTop:-1px;
 	--embedDashPosBtm:-1px;
-	--embedDashPosL:0;
-	--embedDashPosR:0;
+	--embedDashPosL:var(--embedPadLR);
+	--embedDashPosR:var(--embedPadLR);
 }
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute + div {
