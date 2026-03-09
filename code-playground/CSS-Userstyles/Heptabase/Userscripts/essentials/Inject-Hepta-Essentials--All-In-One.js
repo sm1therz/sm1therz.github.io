@@ -81,7 +81,7 @@
     '/card-library',
     '/chat',
     '/journal',
-    '/inbox
+    '/inbox'
   ];
 
   // Easily editable: add/remove stylesheets here

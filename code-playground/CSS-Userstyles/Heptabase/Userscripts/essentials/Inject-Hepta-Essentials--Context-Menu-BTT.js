@@ -1,4 +1,4 @@
-//! COLORS, NOTES, EMBEDS, CODE BLOCKS, TABLES, HIGHLIGHTS
+//! CONTEXT MENU for BTT
 (function() {
   // Easily editable: add/remove URL patterns here
   const URL_PATTERNS = [
@@ -7,31 +7,17 @@
     '/card-library',
     '/chat',
     '/journal',
+    '/whiteboard',
     '/inbox'
   ];
+  
+
 
   // Easily editable: add/remove stylesheets here
   const STYLESHEETS = [{
-      id: 'editor-colors',
-      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-2-editor-colors-essentials.css'
-    },
-    {
-      id: 'editor-embeds',
-      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-embeds.css'
-    },
-    {
-      id: 'editor-highlights',
-      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-6-highlights-essentials.css'
-    },
-    {
-      id: 'editor-tables',
-      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials'
-    },
-    {
-      id: 'note-code-blocks',
-      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-7-codeblock-essentials.css'
-    }
-  ];
+    id: 'context-menu-for-btt',
+    href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-popup-0-context-menu-for-BTT.css'
+  }];
 
   function createStylesheetLink(id, href) {
     const link = document.createElement('link');
