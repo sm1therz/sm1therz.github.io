@@ -997,7 +997,7 @@ NAME-WITH-IMAGE
 }
 /****
 NOTED > CONTENT only*/
-.project.noted > .name > .content {
+.project:not(.code-block).noted > .name > .content {
     padding-bottom: 0px;
 }
 
