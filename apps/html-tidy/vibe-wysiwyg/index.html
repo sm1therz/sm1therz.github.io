@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibePress Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">All-in-one WYSIWYG ↔ HTML ↔ Markdown lab</p>
+          <h1>VibePress Studio</h1>
+          <p class="lede">
+            Compose visually, tweak the source, and ship clean Markdown from a single workspace.
+          </p>
+        </div>
+        <div class="header-actions">
+          <button id="btn-export-html" class="ghost">Download HTML</button>
+          <button id="btn-export-markdown" class="ghost">Download Markdown</button>
+          <button id="btn-export-docx" class="primary">Download DOCX</button>
+        </div>
+      </header>
+
+      <section class="controls">
+        <div class="mode-switcher" role="group" aria-label="View layouts">
+          <button class="mode-btn" data-mode="wysiwyg-html">WYSIWYG ↔ HTML</button>
+          <button class="mode-btn" data-mode="html-markdown">HTML ↔ Markdown</button>
+          <button class="mode-btn" data-mode="wysiwyg-markdown">WYSIWYG ↔ Markdown</button>
+          <div class="solo-toggle">
+            <label for="solo-select">Solo view</label>
+            <select id="solo-select">
+              <option value="wysiwyg">WYSIWYG</option>
+              <option value="html">HTML</option>
+              <option value="markdown">Markdown</option>
+            </select>
+            <button class="mode-btn" data-mode="solo">Go</button>
+          </div>
+        </div>
+        <div class="tidy-actions">
+          <div class="checkbox-grid">
+            <label><input type="checkbox" data-clean="inlineStyles" checked /> Remove inline styles</label>
+            <label><input type="checkbox" data-clean="classesIds" checked /> Remove classes & IDs</label>
+            <label><input type="checkbox" data-clean="emptyTags" /> Remove empty tags</label>
+            <label><input type="checkbox" data-clean="nbsp" /> Collapse stray NBSPs</label>
+            <label><input type="checkbox" data-clean="comments" /> Strip HTML comments</label>
+            <label><input type="checkbox" data-clean="aiWatermarks" /> Remove AI watermarks</label>
+          </div>
+          <button id="btn-pretty" class="primary">Pretty selected</button>
+        </div>
+      </section>
+
+      <main class="workspace">
+        <div class="editor-stage">
+          <article id="wysiwyg-panel" class="editor-panel">
+            <header class="panel-header">
+              <div>
+                <h3>Visual editor</h3>
+                <p>Powered by TinyMCE</p>
+              </div>
+              <div class="badge">WYSIWYG</div>
+            </header>
+            <textarea id="wysiwyg-editor"></textarea>
+          </article>
+
+          <article id="html-panel" class="editor-panel">
+            <header class="panel-header">
+              <div>
+                <h3>HTML source</h3>
+                <p>Syntax-highlighted CodeMirror</p>
+              </div>
+              <div class="badge">HTML</div>
+            </header>
+            <textarea id="html-editor"></textarea>
+          </article>
+
+          <article id="markdown-panel" class="editor-panel">
+            <header class="panel-header">
+              <div>
+                <h3>Markdown</h3>
+                <p>Ready for docs, blogs, and notes</p>
+              </div>
+              <div class="badge">MD</div>
+            </header>
+            <textarea id="markdown-editor"></textarea>
+          </article>
+        </div>
+
+        <section class="secondary-tools">
+          <div class="card">
+            <h4>Import</h4>
+            <p>Drop HTML or DOCX files, or paste directly into any pane.</p>
+            <div class="drop-zone" id="drop-zone">
+              <p>Drop files here or</p>
+              <label class="file-input-label">
+                <input type="file" id="file-input" accept=".html,.htm,.txt,.docx" />
+                Browse
+              </label>
+            </div>
+          </div>
+          <div class="card">
+            <h4>Conversion settings</h4>
+            <form id="settings-form">
+              <label>
+                Bullet marker
+                <select name="bullet" id="bullet-select">
+                  <option value="-">- dash</option>
+                  <option value="*">* asterisk</option>
+                  <option value="+">+ plus</option>
+                </select>
+              </label>
+              <label>
+                <input type="checkbox" name="hardBreaks" /> Force hard line breaks
+              </label>
+              <label>
+                <input type="checkbox" name="fenceCode" checked /> Use fenced code blocks
+              </label>
+            </form>
+          </div>
+          <div class="card stats">
+            <h4>Live stats</h4>
+            <dl>
+              <div>
+                <dt>Words (WYSIWYG)</dt>
+                <dd id="stat-words-wysiwyg">0</dd>
+              </div>
+              <div>
+                <dt>Words (Markdown)</dt>
+                <dd id="stat-words-markdown">0</dd>
+              </div>
+              <div>
+                <dt>Characters</dt>
+                <dd id="stat-chars">0</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Autosaves to your browser every few seconds. Built with TinyMCE, CodeMirror, Turndown, and Marked.</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/turndown@7.1.2/dist/turndown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/turndown-plugin-gfm@1.0.2/dist/turndown-plugin-gfm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.4/dist/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-docx-js/0.3.1/html-docx.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

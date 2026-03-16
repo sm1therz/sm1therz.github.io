@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tri-Mode HTML · Markdown Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- TinyMCE -->
+  <script src="https://cdn.tiny.cloud/1/4djo0sog8pudu4ummd1pah55cc8awbeg9peok43x9okretlq/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <!-- CodeMirror -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5/lib/codemirror.css" />
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5/lib/codemirror.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5/mode/xml/xml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5/mode/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5/addon/edit/closetag.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5/addon/edit/closebrackets.js"></script>
+  <!-- Turndown + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/turndown@7/dist/turndown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/turndown-plugin-gfm/dist/turndown-plugin-gfm.js"></script>
+  <!-- Markdown-it -->
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it@14/dist/markdown-it.min.js"></script>
+  <!-- DOMPurify -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <!-- Split.js -->
+  <script src="https://cdn.jsdelivr.net/npm/split.js@1/dist/split.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Tri-Mode Studio</h1>
+    <p class="tagline">WYSIWYG + HTML + Markdown in lockstep, with Pretty HTML cleanup + html2md fidelity.</p>
+    <div class="mode-toggle" id="modeToggle">
+      <button data-mode="wysiwyg-html" class="active">WYSIWYG | HTML</button>
+      <button data-mode="html-markdown">HTML | Markdown</button>
+      <button data-mode="wysiwyg-markdown">WYSIWYG | Markdown</button>
+      <button data-mode="single">Single View</button>
+    </div>
+  </header>
+
+  <section class="toolbar">
+    <div class="group">
+      <button id="prettyBtn">Pretty (Batch Clean)</button>
+      <label><input type="checkbox" data-clean="inlineStyles" checked /> Inline styles</label>
+      <label><input type="checkbox" data-clean="classesIds" checked /> Classes & IDs</label>
+      <label><input type="checkbox" data-clean="emptyTags" /> Empty tags</label>
+      <label><input type="checkbox" data-clean="nbspSpaces" /> NBSP spacing</label>
+      <label><input type="checkbox" data-clean="comments" /> Comments</label>
+    </div>
+    <div class="group">
+      <button id="importHtml">Import HTML</button>
+      <button id="importDocx">Import DOCX</button>
+      <button id="exportHtml">Export HTML</button>
+      <button id="exportMarkdown">Export MD</button>
+      <button id="exportDocx">Export DOCX</button>
+      <button id="plainText">Plain text</button>
+    </div>
+    <div class="group">
+      <button id="clearStorage">Clear autosave</button>
+      <span id="status">Ready</span>
+    </div>
+    <input type="file" id="hiddenFile" accept=".html,.htm,.txt,.docx" hidden />
+  </section>
+
+  <section class="settings">
+    <details>
+      <summary>Conversion settings</summary>
+      <div class="settings-grid">
+        <label>Markdown Heading style
+          <select id="headingStyle">
+            <option value="atx" selected>ATX (##)</option>
+            <option value="setext">Setext (===)</option>
+          </select>
+        </label>
+        <label>Code fences
+          <select id="codeStyle">
+            <option value="fenced" selected>Fenced ```</option>
+            <option value="indented">Indented</option>
+          </select>
+        </label>
+        <label><input type="checkbox" id="mdBreaks" checked /> Hard line breaks</label>
+        <label><input type="checkbox" id="linkify" checked /> Auto-link URLs</label>
+      </div>
+    </details>
+  </section>
+
+  <main id="splitContainer">
+    <div class="pane" id="paneWysiwyg">
+      <div class="pane-head">WYSIWYG</div>
+      <textarea id="wysiwyg"></textarea>
+    </div>
+    <div class="pane" id="paneHtml">
+      <div class="pane-head">HTML Source</div>
+      <textarea id="htmlEditor"></textarea>
+    </div>
+    <div class="pane" id="paneMarkdown">
+      <div class="pane-head">Markdown</div>
+      <textarea id="markdownEditor"></textarea>
+    </div>
+  </main>
+
+  <footer>
+    <small>Autosaves locally • Drag-and-drop HTML/DOCX supported • Cleaning presets inspired by PrettyHTML • Markdown fidelity powered by Turndown/html-to-markdown.</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1/dist/mammoth.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-docx-js/dist/html-docx.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
