@@ -2,81 +2,82 @@
 ! EMBEDS
 ****************/
 :root {
-	--embedPadTopBtm:16px;
-	--embedBrdRad:0px;
-	--embedPadLR:10px;
-	--embedPadLR-Active:10px;
-	--embedTransition:.1s;
+	--embedPadTopBtm: 16px;
+	--embedBrdRad: 0px;
+	--embedPadLR: 10px;
+	--embedPadLR-Active: 10px;
+	--embedTransition: .1s;
 	/**/
-	--embedBrdDashH:2.5px;
-	--embedBrdDashOpacity:1;
-	--embedDashPosTop:0;
-	--embedDashPosBtm:0;
-	--embedDashPosL:calc(var(--embedPadLR) * -1);
-	--embedDashPosR:calc(var(--embedPadLR) * -1);
+	--embedBrdDashH: 2.5px;
+	--embedBrdDashOpacity: 1;
+	--embedDashPosTop: 0;
+	--embedDashPosBtm: 0;
+	--embedDashPosL: calc(var(--embedPadLR) * -1);
+	--embedDashPosR: calc(var(--embedPadLR) * -1);
 }
 
 /*COLORS*/
 
 :root {
-	--embedBg:hsla(0, 0%, 98%, 1.0);
-	--embedBg-Hover:hsla(0, 0%, 94%, 1.0);
-	--embedBg-Selected:hsla(210, 55%, 89%, 1.0);
-	--embedBrdClr:hsla(0, 0%, 89%, 1.0);
-	--embedBrdClr-Active:hsla(210, 36%, 83%, 1.0);
+	--embedBg: hsla(0, 0%, 98%, 1.0);
+	--embedBg-Hover: hsla(0, 0%, 94%, 1.0);
+	--embedBg-Selected: hsla(210, 55%, 89%, 1.0);
+	--embedBrdClr: hsla(0, 0%, 89%, 1.0);
+	--embedBrdClr-Active: hsla(210, 36%, 83%, 1.0);
 }
 
 [data-theme="dark"] {
-	--embedBg:hsla(0, 0%, 100%, .02);
-	--embedBgClr:hsla(0, 0%, 100%, .02);
-	--embedBg:hsla(0, 0%, 0%, 0);
+	--embedBg: hsla(0, 0%, 100%, .02);
+	--embedBgClr: hsla(0, 0%, 100%, .02);
+	--embedBg: hsla(0, 0%, 0%, 0);
 	/*--embedBg-Hover:linear-gradient(
 			to right, 
 			transparent 0%, 
 			var(--embedBgClr) var(--embedPadLR-Active), 
 			var(--embedBgClr) calc(100% - var(--embedPadLR-Active)), 
 			transparent);*/
-	--embedBg-Hover:hsla(0, 0%, 0%, 0);
-	--embedBg-Hover:hsla(0, 0%, 0%, .052);
-	--embedBg-Selected:hsla(211, 30%, 27%, 1.0);
-	--embedBrdClr:hsla(0,0%,0%,0.19);
-	--embedBrdClr-Active:hsla(211, 25%, 36%, 1.0);
+	--embedBg-Hover: hsla(0, 0%, 0%, 0);
+	--embedBg-Hover: hsla(0, 0%, 0%, .052);
+	--embedBg-Selected: hsla(211, 30%, 27%, 1.0);
+	--embedBrdClr: hsla(0, 0%, 0%, 0.19);
+	--embedBrdClr-Active: hsla(211, 25%, 36%, 1.0);
 }
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror,
-[class*="ProseMirror-hepta-style"] > .ProseMirror > *{
-	box-shadow: inset  0 0 0 var(--embedTstBrdW) red;
-}
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]{
-	position: relative;
-	
+[class*="ProseMirror-hepta-style"] > .ProseMirror > * {
+	box-shadow: inset 0 0 0 var(--embedTstBrdW) red;
 }
 
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"],
-.grid.select-none .ProseMirror  [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] {
+	position: relative;
+
+}
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"],
+.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] {
 	padding-top: var(--embedPadTopBtm);
-	padding-bottom:  var(--embedPadTopBtm);
-	padding-left:  var(--embedPadLR);
-	padding-right:  var(--embedPadLR);
+	padding-bottom: var(--embedPadTopBtm);
+	padding-left: var(--embedPadLR);
+	padding-right: var(--embedPadLR);
 	background: var(--embedBg);
 	border-radius: var(--embedBrdRad);
 	border-color: var(--embedBrdClr);
 	border-color: transparent;
 	transition: var(--embedTransition);
-		width: calc(100% + var(--embedPadLR) * 2);
+	width: calc(100% + var(--embedPadLR) * 2);
 	margin-left: calc(var(--embedPadLR) * -1);
-	--embedPadLR:var(--embedPadLR-Active);
+	--embedPadLR: var(--embedPadLR-Active);
 	outline: var(--embedTstBrdW) solid green;
 }
 
 /*EMBED > HOVER *NOT SELECTED*/
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"],
-.grid.select-none .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"]{
-	--embedBrdRad:3px;
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"],
+.grid.select-none .ProseMirror [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
+	--embedBrdRad: 3px;
 }
 
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"]{
-	--embedBg:var(--embedBg-Hover);
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
+	--embedBg: var(--embedBg-Hover);
 	/*
 	--embedDashPosL:0;
 	--embedDashPosR:0;
@@ -84,35 +85,36 @@
 }
 
 /*EMBED > SELECTED*/
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"][class*="selecting"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
-	--embedBg:var(--embedBg-Selected);
-	--embedBrdClr:var(--embedBrdClr-Active);
-	--IconEmbedDashLine:var(--IconEmbedDashLineActive);
-	--embedBrdRad:5px;
-	--embedBrdDashOpacity:0;
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"][class*="selecting"] > [class*="group"] > [class*="ProseMirror-hepta-style"] {
+	--embedBg: var(--embedBg-Selected);
+	--embedBrdClr: var(--embedBrdClr-Active);
+	--IconEmbedDashLine: var(--IconEmbedDashLineActive);
+	--embedBrdRad: 5px;
+	--embedBrdDashOpacity: 0;
 	border-color: var(--embedBrdClr-Active);
 	/*add faux padding*/
 
 }
+
 /*EMBED > AFTER THINGY*/
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:after {
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:after {
 	opacity: 0 !important;
 }
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"][class*="selecting"]:after{
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"][class*="selecting"]:after {
 	opacity: 0;
-	
+
 }
 
 /*BORDER DASH*/
-:root {
+:root {}
 
-}
 /*top border dash*/
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:before,
-.grid.select-none .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:before,
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]:before,
+.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]:before,
 /*bottom border dash*/
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:after,
-.grid.select-none .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:after{
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]:after,
+.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]:after {
 	content: "";
 	position: absolute;
 	display: block;
@@ -122,23 +124,23 @@
 	height: var(--embedBrdDashH);
 	top: var(--embedDashPosTop);
 	left: var(--embedDashPosL);
-	right:  var(--embedDashPosR);
+	right: var(--embedDashPosR);
 	z-index: 2;
 	opacity: var(--embedBrdDashOpacity);
 	transition: var(--embedTransition);
 }
 
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:after,
-.grid.select-none .ProseMirror  [data-node-type="embed"]> [class*="group"] > [class*="ProseMirror-hepta-style"]:after{
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]:after,
+.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]:after {
 	top: unset;
 	bottom: var(--embedDashPosBtm);
 }
 
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child ~ [data-node-type*="toggle"]{
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child ~ [data-node-type*="toggle"] {
 	position: relative
-	
 }
-#root .grid.select-none .ProseMirror > [data-node-type]:first-child ~ [data-node-type*="toggle"] > [class*="bulletWrapper"]{
+
+#root .grid.select-none .ProseMirror > [data-node-type]:first-child ~ [data-node-type*="toggle"] > [class*="bulletWrapper"] {
 	left: -22px !important;
 }
 
@@ -148,9 +150,10 @@
 ! EMBEDS - HOVER MENU
 ****************/
 :root {
-	--embedHoverMenuH:20px;
-	--embedMargTopBtm:.25rem;
+	--embedHoverMenuH: 20px;
+	--embedMargTopBtm: .25rem;
 }
+
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > .absolute {
 	z-index: 93939393;
 }
@@ -172,14 +175,16 @@ MENU > NORMAL
 	visibility: visible !important;
 	opacity: 0 !important;
 	max-width: 100%;
-	 max-width: calc(100% - 80px);
+	max-width: calc(100% - 80px);
 }
+
 /****
 MENU > HOVER
 *****/
-[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]):hover > [class*="group"] > .absolute{
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]):hover > [class*="group"] > .absolute {
 	opacity: 1 !important;
 }
+
 /****
 MENU > TEXT OUTER
 *****/
@@ -189,8 +194,9 @@ MENU > TEXT OUTER
 	justify-content: flex-end !important;
 	align-items: center;
 	margin-top: 0px;
-	
+
 }
+
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div .text-label {
 	min-height: 100%;
 	max-width: calc(100%);
@@ -198,7 +204,7 @@ MENU > TEXT OUTER
 }
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div .text-label .truncate {
-		text-overflow: ellipsis !important;
+	text-overflow: ellipsis !important;
 	overflow: hidden !important;
 	white-space: nowrap !important;
 }
@@ -208,10 +214,10 @@ OVERRIDES > EMBED
 *****/
 
 :root {
-	--embedDashPosTop:-1px;
-	--embedDashPosBtm:-1px;
-	--embedDashPosL:var(--embedPadLR);
-	--embedDashPosR:var(--embedPadLR);
+	--embedDashPosTop: -1px;
+	--embedDashPosBtm: -1px;
+	--embedDashPosL: var(--embedPadLR);
+	--embedDashPosR: var(--embedPadLR);
 }
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute + div {
@@ -219,7 +225,7 @@ OVERRIDES > EMBED
 }
 
 
-[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"]{
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] {
 	margin-top: calc(var(--embedHoverMenuH) * -1)
 }
 
@@ -240,11 +246,12 @@ OVERRIDES > EMBED
 
 :root {
 	--IconEmbedDashLine: var(--IconEmbedDashLine-LIGHT);
-	--IconEmbedDashLineActive:var(--IconEmbedDashLineActive-LIGHT);
+	--IconEmbedDashLineActive: var(--IconEmbedDashLineActive-LIGHT);
 }
+
 [data-theme="dark"] {
 	--IconEmbedDashLine: var(--IconEmbedDashLine-DARK);
-	--IconEmbedDashLineActive:var(--IconEmbedDashLineActive-DARK);
+	--IconEmbedDashLineActive: var(--IconEmbedDashLineActive-DARK);
 }
 
 /***************
@@ -253,19 +260,26 @@ OVERRIDES > EMBED
 ****************
 ****************/
 
-
-width: calc(100% + var(--embedPadLR) * 2);
---embedPadLR-Active: 5px;{
-	
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"],
+.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] .cm-editor {
+	width: calc(100% + var(--embedPadLR) * 1);
+	--embedPadLR-Active: 5px;
 }
 
-
-[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
-		--embedBg: var(--ultra-light-grey);
-		/**
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
+	--embedBg: var(--ultra-light-grey);
+	/*****
 		--embedDashPosL: 0;
 		--embedDashPosR: 0;
-		***/
+	*****/
 }
 
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] .cm-editor,
+.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] .cm-editor {
+	--codeblockBrdClr: var(--light-grey);
+}
 
+:root {
+	--embedDashPosL: calc(var(--embedPadLR-Active) * .5);
+	--embedDashPosR: calc(var(--embedPadLR-Active) * .5);
+}
