@@ -77,8 +77,10 @@
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"]{
 	--embedBg:var(--embedBg-Hover);
+	/*
 	--embedDashPosL:0;
 	--embedDashPosR:0;
+	*/
 }
 
 /*EMBED > SELECTED*/
@@ -244,3 +246,26 @@ OVERRIDES > EMBED
 	--IconEmbedDashLine: var(--IconEmbedDashLine-DARK);
 	--IconEmbedDashLineActive:var(--IconEmbedDashLineActive-DARK);
 }
+
+/***************
+****************
+! NEW OVERRIDES
+****************
+****************/
+
+
+width: calc(100% + var(--embedPadLR) * 2);
+--embedPadLR-Active: 5px;{
+	
+}
+
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror  [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
+		--embedBg: var(--ultra-light-grey);
+		/**
+		--embedDashPosL: 0;
+		--embedDashPosR: 0;
+		***/
+}
+
+
