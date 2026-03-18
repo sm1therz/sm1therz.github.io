@@ -264,7 +264,7 @@ OVERRIDES > EMBED
 .grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
 	width: calc(100% + var(--embedPadLR) * 1);
 	--embedPadLR-Active: 5px;
-	--embedBg:#242629
+	--embedBg:hsl(216,6.49%,15.1%)
 ;
 }
 
