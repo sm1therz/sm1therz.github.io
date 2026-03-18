@@ -293,17 +293,28 @@ OVERRIDES > EMBED
 	*****/
 }
 
-[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] .cm-editor,
-.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] .cm-editor {
-	--codeblockBrdClr: var(--light-grey);
-	border-radius:6px;
-}
+
+
 
 :root {
 	--embedDashPosL: calc(var(--embedPadLR-Active) * .5);
 	--embedDashPosR: calc(var(--embedPadLR-Active) * .5);
 }
 
+
+/******
+EMBEDDED CODE BLOCKS
+*******/
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] .cm-editor,
+.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] .cm-editor {
+	--codeblockBrdClr: var(--light-grey);
+	border-radius:6px;
+}
+
+/* Hide: code block hover menus when hovering over a parent embed. */
+[data-node-type="embed"] [data-node-type="code_block"] [class*="group"][class*="hover"][class*="1688490996314"] {
+		opacity: 0;
+} 
 /******
 EMBEDDED JOURNALS
 *******/
