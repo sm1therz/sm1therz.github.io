@@ -264,8 +264,14 @@ OVERRIDES > EMBED
 .grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
 	width: calc(100% + var(--embedPadLR) * 1);
 	--embedPadLR-Active: 5px;
-	--embedBg:hsl(216,6.49%,15.1%)
-;
+	--embedBg:hsl(216,6.49%,15.1%);
+	--embedBg-Darker:hsl(216,6.49%,14.8%);
+	background-image:linear-gradient( 
+		to right,
+		transparent 0%,
+		var(--embedBg-Darker) calc(var(--embedPadLR-Active) * 1.5),
+		var(--embedBg-Darker) calc(100% - var(--embedPadLR-Active) * 1.5),
+		transparent 100%);
 }
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
@@ -291,5 +297,5 @@ EMBEDDED JOURNALS
 *******/
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] > .pt-4 {
-		padding-top: 0.2rem !important;
+		padding-top: 0.15rem !important;
 }
