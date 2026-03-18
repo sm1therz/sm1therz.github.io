@@ -261,13 +261,15 @@ OVERRIDES > EMBED
 ****************/
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"],
-.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] .cm-editor {
+.grid.select-none .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"]{
 	width: calc(100% + var(--embedPadLR) * 1);
 	--embedPadLR-Active: 5px;
+	--embedBg:#242629
+;
 }
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
-	--embedBg: transparent;
+	--embedBg: inherit;
 	/*****
 		--embedDashPosL: 0;
 		--embedDashPosR: 0;
@@ -282,4 +284,12 @@ OVERRIDES > EMBED
 :root {
 	--embedDashPosL: calc(var(--embedPadLR-Active) * .5);
 	--embedDashPosR: calc(var(--embedPadLR-Active) * .5);
+}
+
+/******
+EMBEDDED JOURNALS
+*******/
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"] > [class*="group"] > [class*="ProseMirror-hepta-style"] > .pt-4 {
+		padding-top: 0.2rem !important;
 }
