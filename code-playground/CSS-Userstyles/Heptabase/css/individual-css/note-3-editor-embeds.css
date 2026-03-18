@@ -197,10 +197,16 @@ MENU > TEXT OUTER
 
 }
 
+:root {
+	--embedHoverMenuPadTopBtm:5px;
+}
+
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div .text-label {
 	min-height: 100%;
 	max-width: calc(100%);
-	white-space: nowrap
+	white-space: nowrap;
+	padding-top:var(--embedHoverMenuPadTopBtm);
+	padding-bottom:var(--embedHoverMenuPadTopBtm);
 }
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div .text-label .truncate {
