@@ -266,7 +266,12 @@ OVERRIDES > EMBED
 	--embedPadLR-Active: 5px;
 	--embedBg:hsl(216,6.49%,15.1%);
 	--embedBg-Darker:hsl(216,6.49%,14.8%);
-	background-image:linear-gradient( 
+
+}
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="select"]) > [class*="group"] > [class*="ProseMirror-hepta-style"],
+.grid.select-none .ProseMirror [data-node-type="embed"]:not([class*="select"]) > [class*="group"] > [class*="ProseMirror-hepta-style"]{
+		background-image:linear-gradient( 
 		to right,
 		transparent 0%,
 		var(--embedBg-Darker) calc(var(--embedPadLR-Active) * 1.5),
@@ -274,7 +279,7 @@ OVERRIDES > EMBED
 		transparent 100%);
 }
 
-[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="select"]):hover > [class*="group"] > [class*="ProseMirror-hepta-style"] {
 	--embedBg: inherit;
 	/*****
 		--embedDashPosL: 0;
