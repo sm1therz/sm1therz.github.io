@@ -153,6 +153,7 @@ function initEditors() {
 
   tinymce.init({
     selector: "#wysiwyg-editor",
+    min_height:700,
     skin: "oxide-dark",
     content_css: "dark",
     menubar: true,

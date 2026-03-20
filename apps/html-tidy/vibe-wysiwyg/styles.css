@@ -170,7 +170,7 @@ button:hover {
 .editor-stage {
   display: flex;
   gap: 1rem;
-  min-height: 420px;
+  min-height: 600px;
 }
 
 .editor-panel {
