@@ -297,12 +297,14 @@ VIVALDI / CHROME / MOBILE -
 ************/
 .is-chrome,
 .device-type-touch,
-.mobile.browser-mobile {
+.mobile.browser-mobile,
+.browser-firefox{
     --searchContainerHeight: 20px;
 }
 .is-chrome #appID .widget-page__searchbar,
 .device-type-touch #appID .widget-page__searchbar,
-.mobile.browser-mobile #appID .widget-page__searchbar {
+.mobile.browser-mobile #appID .widget-page__searchbar,
+.browser-firefox #appID .widget-page__searchbar {
     display: none !important;
     height: 0px !Important;
     overflow: hidden !important;
@@ -1119,6 +1121,9 @@ HEADER - TRANSPARENT BACKGROUND
 }
 #appID .widget__container{
     border: 1px solid var(--widgetBrdClr);
+}
+#appID .widget__container[style*="rgba(0, 0, 0, 0)"]{
+    --widgetBrdClr:hsla(0,0%,0%,.001)
 }
 
 /*OPAQUE*/
@@ -3510,9 +3515,38 @@ HIDDEN TODOS
 
 /***********
 ************
+! NOT MOBILE! - EXTENSION BACKGROUND FIX
+************
+************/
+:root {
+    --startMeBg:rgb(18, 18, 18);
+} 
+html,
+body,
+body #appId ,
+body #appId .app__background,
+body #appId .app__background span.app__color-layer,
+body #appId .app__main-layout,
+body #appId .app__main-layout .app__body,
+body #appId .app__main-layout .app__body .widget-page,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container .widget-page__section,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container .widget-page__section section.page-section__column,
+html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__sidebar, .app__sidebar *,.modal,.modal *,.modal__overlay, .search, .search *, .app__body_admin, .app__body_admin *, .sidebar.confirm, .sidebar.confirm *){
+    background: var(--startMeBg) !important;
+    background-image: linear-gradient(var(--startMeBg),var(--startMeBg)) !important;
+}
+
+
+
+/***********
+************
 ! REMOVE ADS
 ************
 ************/
-.widget-page__ads{
+.widget-page__ads,
+.internal-banner_signup,
+.internal-banner{
   display: none !important;
 }
