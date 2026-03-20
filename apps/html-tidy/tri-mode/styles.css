@@ -160,13 +160,10 @@ footer {
   cursor: col-resize;
   width: 6px !important;
 }
-@media (max-width: 960px) {
-  main {
-    flex-direction: column;
-  }
-  .gutter {
-    width: 100% !important;
-    height: 6px !important;
-    cursor: row-resize;
-  }
+
+#splitContainer .pane{
+  display: flex;
+  flex: 1;
+  width: 50% !important;
 }
+
