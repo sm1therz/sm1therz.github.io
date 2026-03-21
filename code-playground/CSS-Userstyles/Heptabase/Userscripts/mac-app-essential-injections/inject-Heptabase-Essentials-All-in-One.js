@@ -348,8 +348,8 @@
 })();
 //! WHITEBOARD
 (function() {
-  const LINK_ID = 'chat-essentials-style';
-  const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-chat-essentials.css';
+  const LINK_ID = 'whiteboard-essentials-style';
+  const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-essentials.css';
 
   function createStylesheetLink(id, href) {
     const link = document.createElement('link');
@@ -376,10 +376,7 @@
   function shouldApplyStyles() {
     const href = window.location.href || '';
     return (
-      href.includes('/card/') ||
-      href.includes('/chat') ||
-      href.includes('isOpeningRightSidebar') ||
-      href.includes('isOpeningGlobalSidebar')
+      href.includes('/whiteboard/')
     );
   }
 
