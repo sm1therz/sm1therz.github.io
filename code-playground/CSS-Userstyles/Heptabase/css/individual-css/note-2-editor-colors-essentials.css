@@ -12,10 +12,9 @@ EDITOR TEXT COLORS - ROOT
 ************
 ************/
 :root {
-	--text-color-Highlight:#2e2e2e
-	--headingClr: var(--bldClr);
+	--text-color-Highlight: #2e2e2e --headingClr: var(--bldClr);
 	--bldClr: black;
-	--highlightClr: hsl(0, 0%, 0%); 
+	--highlightClr: hsl(0, 0%, 0%);
 	--strikethrough-Clr: hsl(0, 0%, 70%);
 	--strikethroughStrike-Clr: hsl(0, 0%, 70%);
 	/* highlight yellow*/
@@ -27,13 +26,15 @@ EDITOR TEXT COLORS - ROOT
 	/*Internal Link*/
 	--linkUnderlineClr: var(--active-item);
 	--internalLinkUnderlineClr: hsl(0, 0%, 0%, .15);
-/*GRAY TEXT*/
+	/*text color - gray*/
 	--text-gray-editor: hsl(51, 3%, 60%);
+	--text-done-editor: hsl(51, 3%, 64%);
+	--text-done-editor-line: hsl(51, 3%, 64%, .8);
 }
 
 
 [data-theme="dark"] {
-	--text-color-Highlight:hsla(0, 0%, 88%, 1.0);
+	--text-color-Highlight: hsla(0, 0%, 88%, 1.0);
 	--headingClr: hsl(0, 0%, 95%);
 	--bldClr: hsl(0, 0%, 90%);
 	--highlightClr: hsl(0, 0%, 97%);
@@ -44,11 +45,13 @@ EDITOR TEXT COLORS - ROOT
 	--highlightBrdClr-Yellow: var();
 	--highlightBgClr-Yellow: hsl(47, 100%, 50%, 0.29);
 	--highlightBgClr-Yellow: hsla(47, 100%, 47%, .325);
-	
-	/*GRAY TEXT*/
+
+	/*text color - gray*/
 	--text-gray-editor: hsl(51, 3%, 60%);
-	
-	
+	--text-done-editor: hsla(0, 0%, 49%, 1);
+	--text-done-editor-line: hsla(0, 0%, 49%, 0.5);
+
+
 
 	/*Underline*/
 	--underlineClr: hsl(0, 0%, 100%, .64);
@@ -65,12 +68,13 @@ STRIKETHROUGH
 	text-decoration-thickness: 2px !important;
 	text-decoration-color: var(--strikethroughStrike-Clr);
 	color: var(--strikethrough-Clr) !important;
-	--internalLinkClr:var(--strikethrough-Clr);
+	--internalLinkClr: var(--strikethrough-Clr);
 }
 
 :root {
 	--inlineMentionBrdW: 1.5px;
 }
+
 /***********
 INLINE MENTION
 ************/
@@ -79,6 +83,7 @@ INLINE MENTION
 	border-bottom-width: var(--underlineH);
 	border-color: var(--internalLinkUnderlineClr);
 }
+
 .ProseMirror h1 [data-underline],
 .ProseMirror h2 [data-underline],
 .ProseMirror h1 a,
@@ -106,10 +111,12 @@ INLINE LINK
 .ProseMirror a[href*="heptabase.com"] {
 	border-bottom-width: 10px !important;
 }
+
 .ProseMirror a[href*="heptabase.com"],
 .ProseMirror .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"] {
 	color: var(--internalLinkClr);
 }
+
 .ProseMirror a[href*="heptabase.com"],
 .ProseMirror a[href*="heptabase.com"] [data-color],
 .ProseMirror .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"] {
@@ -126,7 +133,7 @@ INLINE LINK
 /***********
 INLINE LINK - INSIDE COLORED TEXT
 ************/
-.ProseMirror [data-color] .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"]{
+.ProseMirror [data-color] .text-active.rounded-sm[class*="hover"][class*="bg-light-grey"] {
 	color: inherit !important;
 }
 
@@ -137,15 +144,16 @@ LINKS
 ************/
 .ProseMirror a {
 	background-image: linear-gradient(0deg,
-	var(--linkUnderlineClr) 0%,
-	var(--linkUnderlineClr) var(--underlineH),
-	var(--linkUnderlineClr) var(--underlineH),
-	transparent 0%) !important;
+			var(--linkUnderlineClr) 0%,
+			var(--linkUnderlineClr) var(--underlineH),
+			var(--linkUnderlineClr) var(--underlineH),
+			transparent 0%) !important;
 }
 
 .ProseMirror a[data-hepta-link] {
 	--linkUnderlineClr: var(--internalLinkUnderlineClr);
 }
+
 .ProseMirror a,
 .ProseMirror a *:not(a code) {
 	border: unset !important
@@ -155,14 +163,16 @@ LINKS
 .ProseMirror a [data-color="yellow"][data-type="background"],
 .ProseMirror a [data-underline="true"] {
 	background-image: linear-gradient(to top,
-	var(--linkUnderlineClr) 0%,
-	var(--linkUnderlineClr) var(--underlineH),
-	transparent var(--underlineH),
-	transparent 100%) !important;
+			var(--linkUnderlineClr) 0%,
+			var(--linkUnderlineClr) var(--underlineH),
+			transparent var(--underlineH),
+			transparent 100%) !important;
 }
+
 .ProseMirror a code {
 	color: var(--active-item) !important;
 }
+
 /***********
 UNDERLINE
 ************/
@@ -170,17 +180,20 @@ UNDERLINE
 	/*underline*/
 	--underlineH: 1.5px;
 }
+
 [data-node-type="table"] {
 	--underlineH: 1px;
 }
+
 [data-underline="true"] {
 	background-image: linear-gradient(0deg,
-		var(--underlineClr) 0%,
-		var(--underlineClr) var(--underlineH),
-		var(--underlineClr) var(--underlineH),
-		transparent 0%) !important;
+			var(--underlineClr) 0%,
+			var(--underlineClr) var(--underlineH),
+			var(--underlineClr) var(--underlineH),
+			transparent 0%) !important;
 	border: unset !important;
 }
+
 [data-underline="true"],
 [data-underline="true"] * {
 	border: unset !important
@@ -196,16 +209,15 @@ UNDERLINE
 	outline-offset: -1px;
 	border-radius: 5px;
 }
+
 /***********
 ! WHITEBOARD IMAGE BORDER
 ************/
 
 [data-object-type="imageCardInstance"] > div.rounded {
-	box-shadow: 0 0 0 1px hsla(0,0%,50%,0.2);
+	box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.2);
 }
 
 [data-object-type="imageCardInstance"]:hover:not(:focus, :focus-within) > div.rounded {
-	box-shadow: 0 0 0 2px hsla(0,0%,50%,0.4);
+	box-shadow: 0 0 0 2px hsla(0, 0%, 50%, 0.4);
 }
-
-
