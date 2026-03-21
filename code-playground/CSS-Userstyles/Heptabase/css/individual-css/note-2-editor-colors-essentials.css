@@ -27,7 +27,7 @@ EDITOR TEXT COLORS - ROOT
 	--linkUnderlineClr: var(--active-item);
 	--internalLinkUnderlineClr: hsl(0, 0%, 0%, .15);
 	/*text color - gray*/
-	--text-gray-editor: hsl(51, 3%, 60%);
+	--text-gray-editor: hsl(201, 4%, 55%);
 	--text-done-editor: hsl(51, 3%, 64%);
 	--text-done-editor-line: hsl(51, 3%, 64%, .8);
 }
