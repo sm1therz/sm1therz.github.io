@@ -32,7 +32,7 @@
   --inlineCodeClr: inherit;
   --embedHighlightBgClr: hsla(0, 0%, 100%, .0125);
   /*text color - gray*/
-  /*--text-gray-editor: hsla(0, 0%, 53%, 1) !important;*/
+  --text-gray-editor: hsl(51, 3%, 60%);
   --text-done-editor: hsla(0, 0%, 49%, 1);
   --text-done-editor-line: hsla(0, 0%, 49%, 0.5);
 
