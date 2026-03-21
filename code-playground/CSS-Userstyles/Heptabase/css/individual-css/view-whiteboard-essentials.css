@@ -8,4 +8,13 @@
 [data-object-type="imageCardInstance"]:hover:not(:focus, :focus-within) > div.rounded {
 	box-shadow: 0 0 0 3px hsla(0, 0%, 50%, 0.4) !important;
 }
+
+/***********
+! IMAGE BORDER
+************/
+
+.ProseMirror [data-node-type="image"] [class*="group"][class*="1695059155761"] {
+	outline: 1px solid hsla(0, 0%, 50%, .25);
+	outline-offset: -1px;
+	border-radius: 5px;
 }
