@@ -252,7 +252,7 @@ BOLD AND HEADINGS AS WHITE
 
 
 html:not([data-theme="dark"]) .cm-editor .tok-meta {
-  color: hsl(44, 100%, 2%);
+  color: hsl(215, 100%, 42%);
   opacity: 1 !important;
   font-weight: 800;
 }
@@ -270,15 +270,19 @@ html:not([data-theme="dark"]) .cm-editor .tok-heading.tok-meta {
 
   color: hsl(205, 100%, 42%) !important;
   opacity: 1 !important;
-  font-weight: 600
+  font-weight: 700
 }
 
 html:not([data-theme="dark"]) .cm-editor .tok-heading,
 html:not([data-theme="dark"]) .cm-editor .tok-heading.tok-link {
   font-weight: bold;
-  color: hsl(205, 100%, 0%) !important
+  color: hsl(205, 100%, 0%) !important;
 }
-html:not([data-theme="dark"]) .cm-editor .tok-heading
+html:not([data-theme="dark"]) .cm-editor .tok-heading{
+  -webkit-font-smoothing:subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke:0.3px; 
+}
 /*bold*/
 html:not([data-theme="dark"]) .cm-editor .tok-strong.tok-meta {
   color: hsl(187, 0%, 0%) !important;
@@ -287,8 +291,11 @@ html:not([data-theme="dark"]) .cm-editor .tok-strong.tok-meta {
 }
 
 html:not([data-theme="dark"]) .cm-editor .tok-strong {
-  font-weight: bold;
-  color: hsl(187, 0%, 0%)
+  font-weight: 700;
+  color: hsl(187, 0%, 10%);
+  -webkit-font-smoothing:subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke:.2px;
 }
 
 /*italic*/
@@ -358,7 +365,10 @@ html:not([data-theme="dark"]) .cm-editor .tok-url {
   opacity: 1 !important;
 }
 
-
+.tok-labelName{
+  font-weight: 700;
+  
+}
 /*****************
 ******************
 ******************
