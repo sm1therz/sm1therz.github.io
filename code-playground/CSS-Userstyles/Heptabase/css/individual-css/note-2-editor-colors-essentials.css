@@ -30,6 +30,7 @@ EDITOR TEXT COLORS - ROOT
 	--text-gray-editor: hsl(201, 4%, 55%);
 	--text-done-editor: hsl(51, 3%, 64%);
 	--text-done-editor-line: hsl(51, 3%, 64%, .8);
+	--internalLinkClr: hsl(220, 90%, 35%);
 }
 
 
