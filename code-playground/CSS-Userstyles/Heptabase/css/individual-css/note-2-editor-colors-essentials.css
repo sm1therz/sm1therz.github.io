@@ -27,6 +27,8 @@ EDITOR TEXT COLORS - ROOT
 	/*Internal Link*/
 	--linkUnderlineClr: var(--active-item);
 	--internalLinkUnderlineClr: hsl(0, 0%, 0%, .15);
+/*GRAY TEXT*/
+	--text-gray-editor: hsl(51, 3%, 60%);
 }
 
 
@@ -42,6 +44,9 @@ EDITOR TEXT COLORS - ROOT
 	--highlightBrdClr-Yellow: var();
 	--highlightBgClr-Yellow: hsl(47, 100%, 50%, 0.29);
 	--highlightBgClr-Yellow: hsla(47, 100%, 47%, .325);
+	
+	/*GRAY TEXT*/
+	--text-gray-editor: hsl(51, 3%, 60%);
 	
 	
 
