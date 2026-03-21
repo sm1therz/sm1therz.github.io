@@ -1,5 +1,9 @@
 {
-  "com.gingerbeardman.Bookmark.bookmarks" : "[\"code-playground\/Menu-Page-Navigation\/scripts\/scripts-to-inject-scripts\/inject-NavMenuV5-externalCss.js\",\"code-playground\/CSS-Userstyles\/Heptabase\/Userscripts\/essentials\/Inject-Hepta-Essentials--All-In-One.js\",\"code-playground\/CSS-Userstyles\/Heptabase\/css\/individual-css\/note-3-editor-tables-essentials.css\",\"code-playground\/CSS-Userstyles\/Heptabase\/css\/individual-css\/note-3-editor-embeds.css\"]",
+  "com.gingerbeardman.Bookmark.bookmarks" : "[\"code-playground\/Menu-Page-Navigation\/scripts\/scripts-to-inject-scripts\/inject-NavMenuV5-externalCss.js\",\"code-playground\/CSS-Userstyles\/Heptabase\/css\/individual-css\/note-3-editor-tables-essentials.css\",\"code-playground\/CSS-Userstyles\/Heptabase\/css\/individual-css\/note-3-editor-embeds.css\",\"code-playground\/CSS-Userstyles\/Heptabase\/Userscripts\/mac-app-essential-injections\/inject-Heptabase-Essentials-All-in-One.js\"]",
+  "com.gingerbeardman.FreshFiles.flatLayout" : false,
+  "com.gingerbeardman.FreshFiles.showAll" : true,
+  "com.gingerbeardman.FreshFiles.sortByName" : false,
+  "com.gingerbeardman.FreshFiles.timeWindow" : "14d",
   "htmlvalidator.enabled" : false,
   "workspace.color" : 2,
   "workspace.name" : "Github - Root"
