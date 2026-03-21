@@ -1,3 +1,11 @@
-[data-object-type*="extElement"] [data-node-type="embed"] > [class*="group"][class*="1689355048795"] {
-	background: white;
+/***********
+! WHITEBOARD IMAGE BORDER
+************/
+[data-object-type="imageCardInstance"] > div.rounded {
+	box-shadow: 0 0 0 2.5px hsla(0, 0%, 50%, 0.26) !important;
+}
+
+[data-object-type="imageCardInstance"]:hover:not(:focus, :focus-within) > div.rounded {
+	box-shadow: 0 0 0 3px hsla(0, 0%, 50%, 0.4) !important;
+}
 }

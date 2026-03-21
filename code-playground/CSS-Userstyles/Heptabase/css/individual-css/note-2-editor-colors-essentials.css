@@ -210,15 +210,3 @@ UNDERLINE
 	outline-offset: -1px;
 	border-radius: 5px;
 }
-
-/***********
-! WHITEBOARD IMAGE BORDER
-************/
-
-[data-object-type="imageCardInstance"] > div.rounded {
-	box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.2);
-}
-
-[data-object-type="imageCardInstance"]:hover:not(:focus, :focus-within) > div.rounded {
-	box-shadow: 0 0 0 2px hsla(0, 0%, 50%, 0.4);
-}
