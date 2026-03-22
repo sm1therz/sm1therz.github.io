@@ -288,10 +288,26 @@
     }
   }, 500);
 })();
-//! CHAT
+//! CHAT NEW
 (function() {
-  const LINK_ID = 'chat-essentials-style';
-  const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-chat-essentials.css';
+  // Easily editable: add/remove URL patterns here
+  const URL_PATTERNS = [
+    '/card/',
+    '/chat',
+    'isOpeningRightSidebar',
+    'isOpeningGlobalSidebar'
+  ];
+
+  // Easily editable: add/remove stylesheets here
+  const STYLESHEETS = [{
+      id: 'chat-essentials-style',
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-chat-essentials.css'
+    },
+    {
+      id: 'chat-editor-tables',
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials.css'
+    }
+  ];
 
   function createStylesheetLink(id, href) {
     const link = document.createElement('link');
@@ -302,41 +318,40 @@
     document.head.appendChild(link);
   }
 
-  function addStyle() {
-    if (!document.getElementById(LINK_ID)) {
-      createStylesheetLink(LINK_ID, HREF);
-    }
+  function addStyles() {
+    STYLESHEETS.forEach(style => {
+      if (!document.getElementById(style.id)) {
+        createStylesheetLink(style.id, style.href);
+      }
+    });
   }
 
-  function removeStyle() {
-    const el = document.getElementById(LINK_ID);
-    if (el && el.parentNode) {
-      el.parentNode.removeChild(el);
-    }
+  function removeStyles() {
+    STYLESHEETS.forEach(style => {
+      const el = document.getElementById(style.id);
+      if (el && el.parentNode) {
+        el.parentNode.removeChild(el);
+      }
+    });
   }
 
   function shouldApplyStyles() {
     const href = window.location.href || '';
-    return (
-      href.includes('/card/') ||
-      href.includes('/chat') ||
-      href.includes('isOpeningRightSidebar') ||
-      href.includes('isOpeningGlobalSidebar')
-    );
+    return URL_PATTERNS.some(pattern => href.includes(pattern));
   }
 
   function updateStyleForLocation() {
     if (shouldApplyStyles()) {
-      addStyle();
+      addStyles();
     } else {
-      removeStyle();
+      removeStyles();
     }
   }
 
   // Run once for the current URL
   updateStyleForLocation();
 
-  // Watch for URL changes in this SPA
+  // Watch for URL changes in this SPA (same pattern as previous scripts)
   let lastHref = window.location.href;
   setInterval(() => {
     const currentHref = window.location.href;
@@ -346,6 +361,7 @@
     }
   }, 500);
 })();
+
 //! WHITEBOARD
 (function() {
   const LINK_ID = 'whiteboard-essentials-style';
