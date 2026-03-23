@@ -417,3 +417,30 @@
   background: hsl(300, 100%, 75%, 0.075) !important;
   z-index: -10
 }
+
+/*******
+! Chat > REASONING SUMMARY / CHAIN OF THOUGHT
+********/
+
+.group\/1741629705525 > .relative > *:is(.mb-2.space-y-2){
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--chatWidth);
+  max-width: 100% !important;
+  padding-left:calc(var(--chatHeaderPadLR) + var(--chatHeaderGap) + var(--chatHeaderIcnW)); 
+  flex-direction: column;
+  gap: 5px;
+  margin: 0 auto;
+  margin-bottom: var(--chatPadTopBtm);
+}
+.group\/1741629705525 > .relative > *:is(.mb-2.space-y-2) > div{
+  background: hsla(0, 0%, 50%, 0.08);
+  border-color: hsla(0, 0%, 50%, .2);
+  margin: 0px;
+  min-width: calc(100% - 40px);
+  max-width: 100% !important;
+  border-radius: 8px !important;
+}
+
