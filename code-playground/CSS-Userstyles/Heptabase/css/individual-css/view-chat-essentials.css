@@ -262,6 +262,11 @@
 /*******
 ! HOVER MENU
 ********/
+:root {
+  --hovmenuBg:#3d4046;
+  --hovmenuBrdClr:rgba(255, 255, 255, .08);
+  --hovmenuIcnClr:hsl(220, 0%, 80%);
+}
 .group\/1741629705525 .absolute[class*="right"][class*="top"] {
   height: 0px;
   top: unset !important;
@@ -273,14 +278,18 @@
   flex: 1;
   z-index: 929292929292 !important;
   margin: unset !important;
-
 }
 
-
+.group\/1741629705525 .absolute[class*="right"][class*="top"] [class*="group"]{
+  background: var(--hovmenuBg);
+  border-color: var(--hovmenuBrdClr);
+}
 
 .group\/1741629705525 .absolute[class*="right"][class*="top"] [class*="group"] svg {
   width: 1rem !important;
   height: 1rem !important;
+    fill: var(--hovmenuIcnClr);
+  --u-reply-color:var(--hovmenuIcnClr)
 }
 
 .group\/1741629705525 .absolute[class*="right"][class*="top"] [class*="group"] [class*="clickable"] {
@@ -291,18 +300,32 @@
 /*******
 ! Chat > MESSAGE > BOTTOM HOVER HEADER
 ********/
-.group\/1741629705525 .h-8 ~ [class*="ProseMirror-hepta-style"] ~ [class*="empty:hidden"] + .ml-8 {
+:root {
+  --btmhovheaderOpacity:0;
+  --btmhovheaderBgClr:hsl(216, 0%, 100%,1);
+}
+
+[data-theme="dark"]{
+  --btmhovheaderBgClr:hsla(214, 8%, 15%, 1.0);
+}
+[class*="group"][class*="1741629705525"] .h-8 ~ [class*="ProseMirror-hepta-style"] ~ [class*="empty:hidden"] + .ml-8 {
   width: fit-content;
   position: sticky;
   bottom: 0px;
-  backdrop-filter: blur(40px);
-  background: hsl(216, 6%, 15%, 0.6);
+  backdrop-filter: blur(40px) !important;
+  z-index: 939393;
+  background: var(--btmhovheaderBgClr);
   z-index: 20;
   border-radius: 3px;
   overflow: hidden;
   justify-content: flex-end;
   align-self: flex-end;
   margin-left: auto;
+  opacity: var(--btmhovheaderOpacity);
+
+}
+[class*="group"][class*="1741629705525"]:hover {
+  --btmhovheaderOpacity:1;
 }
 
 /*hide new card button*/
