@@ -1,0 +1,46 @@
+/*****************
+******************
+******************
+WHITEBOARD INSTANCE > ESSENTIALS
+******************
+******************
+******************/
+
+
+
+
+/*TITLE > ICON*/
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child > svg{
+	margin-top: 12px;
+	display: none;
+
+}
+
+
+/*TITLE > TEXT
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child > div[class*="min-w"] [class*="rounded"]{
+	width: calc(100% + var(--whiteboardInstanceTitlePadLR) * 1);
+}*/
+/**/
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child > div[class*="min-w"] .truncate{
+	white-space: pre-wrap;
+	
+}
+
+
+/*TITLE > 3 DOT*/
+[data-object-type="whiteboardInstance"] > div > div.flex:first-child > [class*="group"] {
+	margin-right: -21px !important;
+	margin-top: calc(var(--whiteboardInstanceTitlePadTopBtm) - 4px);
+	display: flex;
+	opacity: 0;
+}
+
+[data-object-type="whiteboardInstance"]:hover > div > div.flex:first-child > [class*="group"] {
+	opacity: 1
+}
+
+/*TOTAL CARDS*/
+[data-object-type="whiteboardInstance"] > div > .mt-2 {
+	padding-left: var(--whiteboardInstanceTitlePadLR)
+}
