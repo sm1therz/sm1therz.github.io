@@ -420,7 +420,7 @@
 //! WHITEBOARD > INSTANCE TITLES
 (function() {
   const LINK_ID = 'whiteboard-instance-titles';
-  const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-essentials.css';
+  const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Whiteboard-Instance-Titles-Essentials.css';
 
   function createStylesheetLink(id, href) {
     const link = document.createElement('link');
