@@ -1,9 +1,3 @@
-/*root*/
-
-:root {
-		--inboxBrdTstW:0px;
-}
-
 /***********
 ************
 ! INBOX - V2
@@ -89,8 +83,8 @@ MIDDLE  BAR > OUTER
 /*
 .isolate .bg-background-secondary > .scrollbar-gutter-stable::-webkit-scrollbar{
 	width: 0px !important;
-}*/
-
+}
+*/
 /***********
 ! INBOX ITEMS - WRAPPER > INNER
 ************/
@@ -174,7 +168,6 @@ MIDDLE  BAR > OUTER
 
 
 
-
 /**
 ! INBOX ITEM - CONTENT WRAP - REMINDER/CHAT MESSAGE
 ***/
@@ -199,7 +192,6 @@ MIDDLE  BAR > OUTER
 	display: flex;
 	flex: 0;
 }
-
 
 /***********
 ! INBOX ITEM - CONTENT WRAP > RIGHT (Metadata)
@@ -283,7 +275,6 @@ MIDDLE  BAR > OUTER
 }
 
 
-
 /***********
 ************
 ************
@@ -319,7 +310,6 @@ margin-right: 0px !important;
 .isolate > .bg-background-secondary.relative > .app-region-drag + div.flex[style*="max-width"] + .scrollbar-gutter-stable [data-action-item-id].bg-light-grey .transition-opacity.opacity-100{
 	
 }
-
 /*****
 SIDE PANEL
 ******/
@@ -331,7 +321,6 @@ SIDE PANEL
 	backdrop-filter: blur(20px)saturate(5) brightness(0.5);
 	border-left: 1px solid hsla(0, 0%, 100%, .1);
 }
-
 
 
 /*****
@@ -381,7 +370,6 @@ SIDE PANEL
 	top: unset;
 	bottom: 0;
 }
-
 /*****
 ! TODOS
 ******/
@@ -404,7 +392,7 @@ SIDE PANEL
 	height: 1px;
 	background: hsla(214, 5%, 25%, 1.0);
 	right: 7px;
-	left: 37px;
+	left: 0px;
 	position: absolute;
 	z-index: 0 !important;
 	top: -1px;
@@ -420,132 +408,7 @@ SIDE PANEL
 
 
 [data-todo-item-id]:first-of-type:after {
-	top: unset;
-	bottom: 0;
-}
-
-[data-todo-item-id] > div.flex {
-	display: flex;
-	justify-content: flex-start;
-	min-height: 10px;
-}
-[data-todo-item-id] .flex.min-w-0.flex-1 {
-	height: 100% !important;
-	width: 60%;
-	flex: 1;
-}
-[data-todo-item-id] .flex.shrink-0.items-center.gap-x-2{
-	width: 35%;
-}
-
-
-[data-todo-item-id] .flex.min-w-0.flex-1 > div:first-child span {
-border-color: hsla(0, 0%, 50%, .8);
-	border-radius: 5px
-}
-
-/*text*/
-
-[data-todo-item-id] [data-node-type="paragraph"]{
-	white-space: normal;
-	font-size: .95rem;
-	line-height: 1.6;
-	white-space: pre-wrap
-}
-[data-todo-item-id] .flex.min-w-0.flex-1 > [class*="truncatedInlinePreviewer"] {
-		min-height: 100% !important;
-	align-self: anchor-center;
-}
-[data-todo-item-id] [class*="truncatedInlinePreviewer"],
-[data-todo-item-id] [class*="truncatedInlinePreviewer"] *{
-	overflow: visible;
-	white-space: pre-wrap;
-}
-
-/*metadata*/
-[data-todo-item-id] .w-40 {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	
-}
-[data-todo-item-id] .w-40 > div:first-child {
-	flex: 1;
-}
-[data-todo-item-id] .w-40 > .flex{
-	align-items: flex-start;
-	display: flex;
-}
-[data-todo-item-id] .w-40 > .flex svg{
-	position: relative;
-	top: 2px
-}
-[data-todo-item-id] .w-40 .truncate {
-	white-space: pre-wrap;
-		overflow: hidden;
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-	white-space: pre-line;
-	font-size: 0.82rem;
-}
-
-
-/*menu*/
-[data-todo-item-id] [class*="148px"] {
-	max-width: 50px !important;
-
-}
-
-[class*="sidebar"] + .overflow-hidden.relative.flex.size-full > div:first-child .absolute[style*="right: "] {
-	margin-right: 50px;
-}
-@media (max-width:700px) {
-	[data-todo-item-id] [class*="148px"] {
-		max-width:50px;
-	}
-}
-
-/*****
-! TODOS
-******/
-#root .h-screen > .relative.flex > .duration-100 > .app-region-drag + .py-2 + .overflow-y-auto.px-6{
-		width: calc(var(--cardlibToolbarMaxW) - 3rem);
-	max-width: calc(100% - 3rem);
-	margin: 0 auto;
-}
-[data-todo-item-id] {
-	padding-top: var(--inboxItemPadTopBtm);
-	padding-bottom: var(--inboxItemPadTopBtm);
-	--inboxItemPadTopBtm:5px;
-	display: flex;
-	align-items: center;
-}
-
-[data-todo-item-id]:before, [data-todo-item-id]:after {
-	content: "";
-	display: block;
-	height: 1px;
-	background: hsla(214, 5%, 25%, 1.0);
-	right: 7px;
-	left: 37px;
-	position: absolute;
-	z-index: 0 !important;
-	top: -1px;
-	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-	transition-duration: .15s;
-	opacity: var(--inboxItemBrdAlpha);
-}
-[data-todo-item-id]:first-of-type:before {
-	left: 0;
-	top: 0;
-}
-
-
-
-[data-todo-item-id]:first-of-type:after {
-	top: unset;
+	top: 0px;
 	bottom: 0;
 }
 
