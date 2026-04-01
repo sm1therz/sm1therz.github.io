@@ -148,7 +148,6 @@ span.notes-widget__result * {
 .modal__component-container .notes-widget .wysiwyg-editor__input {
     outline-offset: -1px
 }
-
 /***********
 ************
 ! GOOGLE SEARCH
@@ -352,7 +351,6 @@ BROWSER OTHER / FLOATING BROWSERS
     margin-top: 0px !important;
   }
 }************/
-
 /***********
 ************
 ! NAV
@@ -454,7 +452,6 @@ BROWSER OTHER / FLOATING BROWSERS
     }
     .widget-page .header__right {}
 }
-
 /***********
 ************
 ! COLUMNS
@@ -817,7 +814,6 @@ MAX WIDTH 500px
         width: calc(100%);
     }
 }
-
 /***********
 ************
 ! MAIN APP
@@ -2164,7 +2160,6 @@ ul.bookmark-widget__list > li:first-child .bookmark-item_mode_list.bookmark-item
 #appID [class*="bookmark-widget"][class*="detail"][class*="small"] .bookmark-folder__content ul > li:last-child{
     margin-bottom: 1px 
 }
-
 /***********
 ************
 ! NOTES
@@ -3027,7 +3022,6 @@ BIGGER TABLES - ON WHITE WIDGETS
 #appID .widget__box h4 strong {
   font-weight: 700 !important;
 }
-
 /***********
 ************
 ! NOTES MODAL
@@ -3083,7 +3077,6 @@ height: 100% !important;
 .modal.notes-edit-modal .modal__component-container .notes-widget .wysiwyg-editor__input > *:last-child {
   padding-bottom: 10px;
 }
-
 /***********
 ************
 ! CONTEXT MENUS
@@ -3095,7 +3088,6 @@ height: 100% !important;
 .actions-list__item+.actions-list__item_separated, .actions-list_wrapped .actions-list__item+.actions-list__item_separated{
     margin-top: 10px 
 }
-
 /*********
 **********
 **********
@@ -3233,7 +3225,6 @@ a.notes-widget-wrapper__tab-creator.notes-widget-wrapper__tab-creator_small{
     display: none;
 }
 
-
 /*********
 **********
 **********
@@ -3288,7 +3279,6 @@ ul.notes-widget-wrapper__tabs-list li[class*="active"]{
     box-shadow: unset !important;
     border: unset !important;
 }
-
 
 /***********
 ************
@@ -3508,37 +3498,6 @@ HIDDEN TODOS
     margin: 0px !important;
     
 }
-
-
-
-
-
-/***********
-************
-! NOT MOBILE! - EXTENSION BACKGROUND FIX
-************
-************/
-:root {
-    --startMeBg:rgb(18, 18, 18);
-} 
-html,
-body,
-body #appId ,
-body #appId .app__background,
-body #appId .app__background span.app__color-layer,
-body #appId .app__main-layout,
-body #appId .app__main-layout .app__body,
-body #appId .app__main-layout .app__body .widget-page,
-body #appId .app__main-layout .app__body .widget-page main.widget-page__main,
-body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container,
-body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container .widget-page__section,
-body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container .widget-page__section section.page-section__column,
-html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__sidebar, .app__sidebar *,.modal,.modal *,.modal__overlay, .search, .search *, .app__body_admin, .app__body_admin *, .sidebar.confirm, .sidebar.confirm *){
-    background: var(--startMeBg) !important;
-    background-image: linear-gradient(var(--startMeBg),var(--startMeBg)) !important;
-}
-
-
 
 /***********
 ************
