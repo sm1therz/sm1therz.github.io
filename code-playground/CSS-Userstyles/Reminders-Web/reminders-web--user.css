@@ -1,9 +1,246 @@
-* {
-	border: 10px solid red !important;
+/**root*/
+:root {
+	--testReminderBrdW:.25px;
 }
+
+[id*="reminder-item"],
+/*container*/
+.reminder-item .content-title,
+/*checkbox*/
+.reminder-item .mark-completed-container,
+/*title*/
+.reminder-item .title,
+.reminder-item .title [role="group"],
+/*notes*/
+.reminder-item .notes,
+.reminder-item .notes [role="group"],
+.reminder-item .notes [role="group"] .tt-input-field,
+/*metadata*/
+.reminder-item .notes ~ .metadata{
+box-shadow: inset 0 0 0 var(--testReminderBrdW) red;
+}
+/*MAIN*/
+
+
+.reminder-list-items{
+		position: relative;
+}
+.reminder-item {
+	 position: relative;
+}
+
+
+
+:root {
+	--reminderPadTopBtm:10px;
+}
+.reminder-item .content{
+	padding-top: var(--reminderPadTopBtm) !important;
+	padding-bottom: var(--reminderPadTopBtm) !important;
+}
+
+
+
+/*REMINDER TITLE*/
+.rm-list .reminder-item .content-title {
+	max-height: 40rem !important;
+}
+.reminder-item .content-title .title .tt-input-field {
+	-webkit-line-clamp: 8 !important;
+}
+.reminder-item .content-title [data-token] { 
+
+	-webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+
+.reminder-item .title {
+	max-width: calc(100% - var(--infoBtnW) - var(--infoBtnPosR) * 1.5 ) !important;
+	display: flex;
+	align-items: center;
+}
+.reminder-item .title [role="group"]{
+	flex: 1;
+}
+
+/*REMINDER NOTES*/
 .rm-list .reminder-item .notes {
-	max-height: 20rem !important;
+	margin-left: calc(var(--checkboxMargR) + var(--checkboxW)) !important;
 }
-.rm-list .reminder-item .notes .tt-input-field {
-	-webkit-line-clamp: 20 !important;
+
+/*REMINDER METADATA*/
+.rm-list .reminder-item .metadata {
+	margin-left: calc(var(--checkboxMargR) + var(--checkboxW)) !important;
+}
+
+/*REMINDER CHECKBOX*/
+:root {
+	--checkboxMargR:8px;
+	--checkboxW:1.275rem;
+}
+.reminder-item .mark-completed-container{
+	margin-right: var(--checkboxMargR) !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*checkbox width*/
+
+.reminder-item .mark-completed-container,
+.reminder-item .mark-completed svg{
+	width: var(--checkboxW) !important;
+	height: var(--checkboxW) !important;
+}
+/*REMINDER INFO BUTTON*/
+:root {
+	--infoBtnPosTop:15px;
+	--infoBtnPosR:15px;
+	--infoBtnW:30px;
+	--infoBtnTransition:.12s ease-in-out;
+}
+
+.reminder-item .info-container {
+	position: absolute;
+	top: calc(var(--infoBtnPosTop) - 3px) !important;
+	right: var(--infoBtnPosR) !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: block !important;
+	box-shadow: inset 0 0 0 var(--testReminderBrdW) blue;
+	cursor: pointer;
+}
+.reminder-item .info-container button {
+	opacity: 0 !important;
+	transition: var(--infoBtnTransition);
+	transform: scale(.7);
+	box-shadow: inset 0 0 0 var(--testReminderBrdW) green;
+}
+.reminder-item:hover .info-container button{
+		opacity: 1 !important;
+		transform: scale(.9);
+
+}
+/*REMINDER BORDER*/
+
+.reminder-item[aria-level="1"] + [aria-level="2"]::before{
+	border-color: var(--theme-color-separator);
+}
+
+/**/
+.reminder-item::before{
+	margin-left: calc(var(--checkboxMargR) + var(--checkboxW)) !important;
+	width: calc(100% - var(--checkboxMargR) * 5) !important;
+}
+.reminder-item[aria-level="1"] + [aria-level="2"]::before{
+	margin-left: calc(var(--checkboxW) * -.25) !important;
+	width: calc(100% - var(--checkboxMargR) * 1) !important;
+}
+.reminder-item[aria-level="2"] + .reminder-item[aria-level="2"]::before{
+	margin-left: calc(var(--checkboxMargR) + var(--checkboxW)) !important;
+}
+
+
+/*NAV / HEADER*/
+
+* {
+	--theme-color-backgroundLayer1:hsl(0, 0%, 11%);
+}
+.cloudos-toolbar.app {
+	border-bottom-color: hsla(0, 0%, 100%, 0.05) !important;
+}
+
+.icloud-logo + svg {
+	margin-left: 82px;
+}
+
+/*COMPACT*/
+.rm-list-header.compact .compact {
+	height: 2rem;
+}
+.compact .list-back-button{
+	margin-top: 3px !important;
+}
+
+.rm-list-header .main-section .title-section,
+.rm-list-header .main-section .title-section * {
+	height: unset !important;
+}
+.rm-list-header .main-section .title-section .title .inline-editable .inline-editable-label {
+	font-size: 27px;
+	margin-bottom: 3px;
+}
+/*FONT SIZE*/
+:root {
+	--titleFontSize:15.05px;
+	--titleLineHeight:calc(var(--titleFontSize) + 5px);
+	--noteFontSize:calc(var(--titleFontSize) - 1.75px);
+	--noteLineHeight:calc(var(--noteFontSize) + 4.5px);;
+}
+
+/*TITLE*/
+
+:root {
+	
+}
+.reminder-item .content-title {
+	font-size: var(--titleFontSize);
+	line-height: var(--titleLineHeight)
+}
+
+/*NOTES*/
+.reminder-item .notes > div{
+	padding-top: 3px;
+}
+.reminder-item .notes {
+	font-size: var(--noteFontSize);
+	line-height: var(--noteLineHeight);
+}
+
+/**METADATA*/
+.reminder-item .notes ~ .metadata,
+.reminder-item .notes ~ .metadata .attachment.url a{
+	font-size: var(--noteFontSize) !important;
+	line-height: var(--noteLineHeight) !important;
+}
+
+/*CURRENT*/
+
+:root{
+		--currentBgClr:rgba(118,118,128,0.3);
+		--currentBgClr:#242426;
+}
+
+.reminder-item[aria-current="true"]:not(:focus,:focus-within,:focus-visible){
+		background: var(--currentBgClr) !important;
+}
+.reminder-item[aria-current="true"]:not(:focus,:focus-within,:focus-visible) .title {
+		color: white;
+}
+.reminder-item[aria-current="true"]:not(:focus,:focus-within,:focus-visible) :is(.content) {
+		z-index: 2;
+}
+
+/*POP-UPS.*/
+ui-pane {
+		z-index: 3
+}
+
+ui-pane .notes {
+		max-height: 40rem;
+}
+
+/*MOBILE > PADDING*/
+
+@media (max-width:700px) {
+	:root {
+		--infoBtnPosR:8px;
+	}
+	.reminder-item {
+		margin-left: 2px !important;
+		margin-right: 2px !important;
+	}
+	.rm-list-header {
+		padding-left: 14px !important;
+	}
 }
