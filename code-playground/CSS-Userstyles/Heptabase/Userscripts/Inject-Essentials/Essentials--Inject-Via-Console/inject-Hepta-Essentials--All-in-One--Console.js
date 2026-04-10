@@ -10,7 +10,7 @@
     '/whiteboard',
     '/inbox'
   ];
-  
+
 
 
   // Easily editable: add/remove stylesheets here
@@ -362,10 +362,31 @@
   }, 500);
 })();
 
-//! WHITEBOARD
+//! WHITEBOARD - COMBINED
 (function() {
-  const LINK_ID = 'whiteboard-essentials-style';
-  const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-essentials.css';
+  // Easily editable: add/remove URL patterns here
+  const URL_PATTERNS = [
+    '/whiteboard'
+  ];
+
+  // Easily editable: add/remove stylesheets here
+  const STYLESHEETS = [{
+      id: 'whiteboard-essentials-style',
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-essentials.css'
+    },
+    {
+      id: 'whiteboard-instance-titles',
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Whiteboard-Instance-Titles-Essentials.css'
+    },
+    {
+      id: 'whiteboard-sections-3-1-essentials',
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-1-Essentials.css'
+    },
+    {
+      id: 'whiteboard-sections-3-1-essentials-full-titles',
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-2-Essentials-Full-Titles.css'
+    }
+  ];
 
   function createStylesheetLink(id, href) {
     const link = document.createElement('link');
@@ -376,93 +397,40 @@
     document.head.appendChild(link);
   }
 
-  function addStyle() {
-    if (!document.getElementById(LINK_ID)) {
-      createStylesheetLink(LINK_ID, HREF);
-    }
+  function addStyles() {
+    STYLESHEETS.forEach(style => {
+      if (!document.getElementById(style.id)) {
+        createStylesheetLink(style.id, style.href);
+      }
+    });
   }
 
-  function removeStyle() {
-    const el = document.getElementById(LINK_ID);
-    if (el && el.parentNode) {
-      el.parentNode.removeChild(el);
-    }
+  function removeStyles() {
+    STYLESHEETS.forEach(style => {
+      const el = document.getElementById(style.id);
+      if (el && el.parentNode) {
+        el.parentNode.removeChild(el);
+      }
+    });
   }
 
   function shouldApplyStyles() {
     const href = window.location.href || '';
-    return (
-      href.includes('/whiteboard/')
-    );
+    return URL_PATTERNS.some(pattern => href.includes(pattern));
   }
 
   function updateStyleForLocation() {
     if (shouldApplyStyles()) {
-      addStyle();
+      addStyles();
     } else {
-      removeStyle();
+      removeStyles();
     }
   }
 
   // Run once for the current URL
   updateStyleForLocation();
 
-  // Watch for URL changes in this SPA
-  let lastHref = window.location.href;
-  setInterval(() => {
-    const currentHref = window.location.href;
-    if (currentHref !== lastHref) {
-      lastHref = currentHref;
-      updateStyleForLocation();
-    }
-  }, 500);
-})();
-//! WHITEBOARD > INSTANCE TITLES
-(function() {
-  const LINK_ID = 'whiteboard-instance-titles';
-  const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Whiteboard-Instance-Titles-Essentials.css';
-
-  function createStylesheetLink(id, href) {
-    const link = document.createElement('link');
-    link.id = id;
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = href;
-    document.head.appendChild(link);
-  }
-
-  function addStyle() {
-    if (!document.getElementById(LINK_ID)) {
-      createStylesheetLink(LINK_ID, HREF);
-    }
-  }
-
-  function removeStyle() {
-    const el = document.getElementById(LINK_ID);
-    if (el && el.parentNode) {
-      el.parentNode.removeChild(el);
-    }
-  }
-
-  function shouldApplyStyles() {
-    const href = window.location.href || '';
-    return (
-      href.includes('/whiteboard/')
-    );
-  }
-
-  function updateStyleForLocation() {
-    if (shouldApplyStyles()) {
-      addStyle();
-    } else {
-      removeStyle();
-    }
-  }
-
-  // Run once for the current URL
-  updateStyleForLocation();
-
-  // Watch for URL changes in this SPA
+  // Watch for URL changes in this SPA (same pattern as previous scripts)
   let lastHref = window.location.href;
   setInterval(() => {
     const currentHref = window.location.href;
