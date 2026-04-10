@@ -1,0 +1,7 @@
+[data-is-section-title="true"]{
+max-width:unset !important;
+}
+[data-is-section-title="true"] > input {
+
+    text-overflow: unset;
+}

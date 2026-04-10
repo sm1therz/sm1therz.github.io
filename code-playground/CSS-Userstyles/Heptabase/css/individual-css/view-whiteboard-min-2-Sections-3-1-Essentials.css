@@ -1,0 +1,7 @@
+[data-object-type="section"] > div > .relative[style*="--border-white-sect"]{
+		background: transparent !important;
+		box-shadow: 0 0 0 2px hsla(0,0%,50%,0.25)!important;
+}
+#root [data-object-type="section"]>div>div[style*="--bg-white"]+[data-is-section-title] {
+background: hsla(0,0%,50%,.1) !important;
+}
