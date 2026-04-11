@@ -12,5 +12,5 @@ EDITOR > TABLES > ESSENTIALS
 }
 /*ACTIVE CELL BORDER*/
 .ProseMirror [data-node-type="table"] table + div > .absolute.border-active {
-	opacity: 0;
+	opacity: .4;
 }
