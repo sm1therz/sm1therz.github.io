@@ -215,9 +215,11 @@ UNDERLINE
 ! TABLE BACKGROUND COLORS
 ************/
 
-
+[data-node-type="table"] [data-node-type="table_cell"] {
+	--bg-gray-editor:rgba(0, 0, 0, 0.035);
+}
 [data-theme="dark"] [data-node-type="table"] [data-node-type="table_cell"] {
-	--bg-gray-editor:hsla(0, 0%, 100%, .06);
+	--bg-gray-editor:hsla(0, 0%, 100%, .025);
 	--bg-blue-editor: hsla(200, 100%, 50%, 0.15);
 	--bg-brown-editor: hsl(19, 30%, 29%);
 	--bg-orange-editor: hsla(25, 100%, 50%, .2);

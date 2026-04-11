@@ -1,3 +1,4 @@
+//! SOURCE: Cherry Studio
 //! CONTEXT MENU for BTT
 (function() {
   // Easily editable: add/remove URL patterns here

@@ -1,0 +1,45 @@
+/*****************
+EDITOR > TABLES > BORDER RADIUS
+******************/
+:root {
+	--tableBrdRad: 5px;
+}
+.ProseMirror table {
+	border-radius: var(--tableBrdRad) !important;
+	box-shadow: inset 0 0 0 1px var(--light-middle-grey);
+}
+
+/*left border*/
+.ProseMirror table tbody tr > td:first-child {
+	border-left-color: transparent;
+}
+/*right border*/
+.ProseMirror table tbody > tr > td:last-child {
+	border-right-color: transparent
+}
+/*top border*/
+.ProseMirror table tbody tr:first-child > td {
+	border-top-color: transparent;
+}
+/*bottom border*/
+.ProseMirror table tbody tr:last-child > td {
+	border-bottom-color: transparent
+}
+
+/*top left*/
+.ProseMirror table tbody tr:first-of-type > td:first-child {
+	border-top-left-radius: calc(var(--tableBrdRad) - 1px)
+}
+
+/*top right*/
+.ProseMirror table tbody tr:first-of-type > td:last-child {
+	border-top-right-radius: calc(var(--tableBrdRad) - 1px)
+}
+/*bottom left*/
+.ProseMirror table tbody tr:last-of-type > td:first-child {
+	border-bottom-left-radius: calc(var(--tableBrdRad) - 1px)
+}
+/*bottom right*/
+.ProseMirror table tbody tr:last-of-type > td:last-child {
+	border-bottom-right-radius: calc(var(--tableBrdRad) - 1px)
+}
