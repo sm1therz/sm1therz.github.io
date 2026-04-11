@@ -11,36 +11,36 @@ EDITOR > TABLES > BORDER RADIUS
 }
 
 /*left border*/
-.ProseMirror table tbody tr > td:first-child {
+.ProseMirror table tbody tr > *:is(td,th):first-child {
 	border-left-color: transparent;
 }
 /*right border*/
-.ProseMirror table tbody > tr > td:last-child {
+.ProseMirror table tbody > tr > *:is(td,th):last-child {
 	border-right-color: transparent
 }
 /*top border*/
-.ProseMirror table tbody tr:first-child > td {
+.ProseMirror table tbody tr:first-child > *:is(td,th) {
 	border-top-color: transparent;
 }
 /*bottom border*/
-.ProseMirror table tbody tr:last-child > td {
+.ProseMirror table tbody tr:last-child > *:is(td,th) {
 	border-bottom-color: transparent
 }
 
 /*top left*/
-.ProseMirror table tbody tr:first-of-type > td:first-child {
+.ProseMirror table tbody tr:first-of-type > *:is(td,th):first-child {
 	border-top-left-radius: calc(var(--tableBrdRad) - 1px)
 }
 
 /*top right*/
-.ProseMirror table tbody tr:first-of-type > td:last-child {
+.ProseMirror table tbody tr:first-of-type > *:is(td,th):last-child {
 	border-top-right-radius: calc(var(--tableBrdRad) - 1px)
 }
 /*bottom left*/
-.ProseMirror table tbody tr:last-of-type > td:first-child {
+.ProseMirror table tbody tr:last-of-type > *:is(td,th):first-child {
 	border-bottom-left-radius: calc(var(--tableBrdRad) - 1px)
 }
 /*bottom right*/
-.ProseMirror table tbody tr:last-of-type > td:last-child {
+.ProseMirror table tbody tr:last-of-type > *:is(td,th):last-child {
 	border-bottom-right-radius: calc(var(--tableBrdRad) - 1px)
 }
