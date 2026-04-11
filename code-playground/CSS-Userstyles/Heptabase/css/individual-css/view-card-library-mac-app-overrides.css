@@ -19,6 +19,13 @@ MAC APP OVERRIDES
   width: 100% !important;
 }
 
+/**PODCAST*/
+
+#root .grid.select-none > div > div > .relative.size-full{
+    min-height:240px !important;
+}
+
+
 
 
 
