@@ -19,7 +19,9 @@
   --chatHeaderPadTopBtm: 5px;
   --chatHeaderPadLR: 20px;
   --chatHeaderBtn-ZIndex: 22;
-  --chatHeaderMargBtm: 10px
+  --chatHeaderMargBtm: 10px;
+  --chatWidth:750px;
+  --chatPadTopBtm:10px;
 }
 
 /*overrides*/
@@ -433,7 +435,7 @@
   flex-direction: column;
   gap: 5px;
   margin: 0 auto;
-  margin-bottom: var(--chatPadTopBtm);
+  margin-bottom: calc(var(--chatPadTopBtm) * 1);
 }
 .group\/1741629705525 > .relative > *:is(.mb-2.space-y-2) > div{
   background: hsla(0, 0%, 50%, 0.08);
