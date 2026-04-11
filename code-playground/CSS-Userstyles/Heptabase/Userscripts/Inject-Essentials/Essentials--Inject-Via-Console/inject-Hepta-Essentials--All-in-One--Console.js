@@ -1,4 +1,4 @@
-//! SOURCE: Cherry Studio - Branch • USERSCRIPT > Inject/Remove CSS Via Console + on specific Urls
+//! SOURCE: Cherry Studio - Branch • USERSCRIPT > Inject/Remove CSS Via Console + on specific Urls + Regex
 //! CONTEXT MENU for BTT
 (function() {
   // Easily editable: add/remove URL patterns here
@@ -82,7 +82,8 @@
     '/card-library',
     '/chat',
     '/journal',
-    '/inbox'
+    '/inbox',
+    '/whiteboard/.*[?&]card='
   ];
 
   // Easily editable: add/remove stylesheets here
@@ -140,7 +141,15 @@
 
   function shouldApplyStyles() {
     const href = window.location.href || '';
-    return URL_PATTERNS.some(pattern => href.includes(pattern));
+    return URL_PATTERNS.some(pattern => {
+      // Handle regex patterns (strings containing special regex characters)
+      if (pattern.includes('.*') || pattern.includes('[?&]')) {
+        const regex = new RegExp(pattern);
+        return regex.test(href);
+      }
+      // Handle simple string patterns
+      return href.includes(pattern);
+    });
   }
 
   function updateStyleForLocation() {
