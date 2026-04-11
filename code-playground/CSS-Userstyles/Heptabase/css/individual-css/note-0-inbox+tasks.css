@@ -342,14 +342,20 @@ margin-right: 0px !important;
 	top:0px;
 	position: relative;
 }
+:root {
+	--inboxBrdClr:hsla(214, 5%, 80%, 1.0)
+}
 
+[data-theme="dark"]{
+	--inboxBrdClr:hsla(214, 5%, 25%, 1.0)
+}
 /*borders*/
 [data-action-item-id] > [class*="gap"]:before,
 [data-action-item-id] > [class*="gap"]:after {
 	content: "";
 	display: block;
 	height: 1px;
-	background: hsla(214, 5%, 25%, 1.0);
+	background: var(--inboxBrdClr);
 	right: 7px;
 	left: 37px;
 	position: absolute;
