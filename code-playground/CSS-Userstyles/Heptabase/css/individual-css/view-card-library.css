@@ -574,6 +574,7 @@ CARD LIBRARY - PDFS IMAGES AND VIDEO
 }
 .grid.select-none > div > [style*="aspect-ratio"] {
   aspect-ratio: unset !important;
+  overflow: hidden;
 }
 .grid.select-none > div > div.relative.size-full > .absolute:first-child {
   position: relative;
