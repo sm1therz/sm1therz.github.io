@@ -113,9 +113,22 @@ MIDDLE  BAR > OUTER
 	
 }
 
-/*HOVERING - RIGHT SIDEBAR > NOT OPEN*/
-.bg-background-secondary [data-action-item-id].bg-light-grey {
-	position: unset !important;
+
+/*HOVERING MENU CONTAINER*/
+.bg-background-secondary [data-action-item-id].bg-light-grey > div:last-of-type {
+
+
+}
+/**HOVERING MENU - RIGHT SIDEBAR > NOT OPEN*/
+.bg-background-secondary [data-action-item-id].bg-light-grey > div > .absolute.inset-y-0{
+	margin-right: 10px;
+	transform-origin: right center;
+	transform: scale(1.25);
+}
+.bg-background-secondary [data-action-item-id].bg-light-grey > div > .absolute.inset-y-0:not([style*="right: 8px;"]) {
+right: 30px !important;
+}
+.bg-background-secondary [data-action-item-id].bg-light-grey > .absolute.inset-y-0{
 }
 
 .bg-background-secondary > .app-region-drag + div:not(flex[style*="max-width"]) + .scrollbar-gutter-stable [data-action-item-id].bg-light-grey {
@@ -311,19 +324,6 @@ margin-right: 0px !important;
 	
 }
 /*****
-SIDE PANEL
-******/
-[data-is-inbox-app-panel] {
-	background: hsla(0, 0%, 23%, 50%);
-	box-shadow: 0 0 0px 0.5px black,
-	0 4px 8px rgb(0, 0, 0, 25%),
-	0 28px 50px rgb(0, 0, 0, 28%);
-	backdrop-filter: blur(20px)saturate(5) brightness(0.5);
-	border-left: 1px solid hsla(0, 0%, 100%, .1);
-}
-
-
-/*****
 ! INBOX - INNER STUFF
 ******/
 
@@ -390,7 +390,7 @@ SIDE PANEL
 	content: "";
 	display: block;
 	height: 1px;
-	background: hsla(214, 5%, 25%, 1.0);
+	background: hsla(214, 5%, 50%, 0.125);
 	right: 7px;
 	left: 0px;
 	position: absolute;
