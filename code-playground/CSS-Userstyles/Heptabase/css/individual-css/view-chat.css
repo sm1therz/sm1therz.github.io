@@ -105,6 +105,10 @@ div[style*="contain:"] > [style*="contain:"] > .mb-1{
   
 }
 
+.group\/1741629705525 > .relative > *:is(.mb-2.space-y-2)  .ml-8{
+  margin-left: 0px !important;
+}
+
 
 
 /*******
