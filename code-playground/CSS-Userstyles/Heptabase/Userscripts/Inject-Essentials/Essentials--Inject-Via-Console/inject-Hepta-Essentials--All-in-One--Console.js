@@ -104,6 +104,10 @@
     {
       id: 'note-code-blocks',
       href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-7-codeblock-essentials.css'
+    },
+    {
+      id: 'note-lists-square-to-numbered',
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-2-editor-lists-square-to-numbered.css'
     }
   ];
 
