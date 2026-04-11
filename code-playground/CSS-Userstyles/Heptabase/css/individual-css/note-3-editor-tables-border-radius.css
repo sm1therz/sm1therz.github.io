@@ -7,6 +7,7 @@ EDITOR > TABLES > BORDER RADIUS
 .ProseMirror table {
 	border-radius: var(--tableBrdRad) !important;
 	box-shadow: inset 0 0 0 1px var(--light-middle-grey);
+	background: red !important;
 }
 
 /*left border*/

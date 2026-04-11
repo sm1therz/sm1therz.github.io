@@ -1,4 +1,4 @@
-//! SOURCE: Cherry Studio
+//! SOURCE: Cherry Studio - Branch • USERSCRIPT > Inject/Remove CSS Via Console + on specific Urls
 //! CONTEXT MENU for BTT
 (function() {
   // Easily editable: add/remove URL patterns here
@@ -99,8 +99,12 @@
       href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-6-highlights-essentials.css'
     },
     {
-      id: 'editor-tables',
+      id: 'editor-tables-essentials',
       href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials.css'
+    },
+    {
+      id: 'editor-tables-border-radius',
+      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-border-radius.css'
     },
     {
       id: 'note-code-blocks',
