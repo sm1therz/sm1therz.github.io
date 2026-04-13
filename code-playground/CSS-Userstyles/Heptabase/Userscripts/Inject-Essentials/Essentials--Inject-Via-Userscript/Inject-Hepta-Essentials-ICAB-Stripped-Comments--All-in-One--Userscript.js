@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  
+  // ---------- Global registry and helpers ----------
   const styleGroups = [];
 
   function registerStyleGroup(shouldApply, addStyles, removeStyles) {
@@ -50,9 +50,9 @@
     window.addEventListener('popstate', updateAllGroups);
   }
 
-  
+  // ---------- Section registrations ----------
 
-  
+  //! CONTEXT MENU for BTT (from Console Version)
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
@@ -67,7 +67,7 @@
     }
   );
 
-  
+  //! COLORS, NOTES, EMBEDS, CODE BLOCKS, TABLES, HIGHLIGHTS (from Console Version - with regex support)
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
@@ -100,7 +100,7 @@
     }
   );
 
-  
+  //! TASK / INBOX (from Console Version)
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
@@ -115,7 +115,7 @@
     }
   );
 
-  
+  //! CARD LIBRARY (from Console Version - with timeout logic)
   let cardLibrarySecondLinkTimeoutId = null;
   registerStyleGroup(
     () => {
@@ -143,7 +143,7 @@
     }
   );
 
-  
+  //! CHAT NEW (from Console Version)
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
@@ -161,7 +161,7 @@
     }
   );
 
-  
+  //! WHITEBOARD - COMBINED (from Console Version - NEW MODULE)
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
@@ -181,6 +181,6 @@
     }
   );
 
-  
+  // ---------- Start the single SPA watcher ----------
   startGlobalSpaWatcher();
 })();
