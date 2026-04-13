@@ -1,20 +1,44 @@
+// ==UserScript==
+// @name         Heptabase CSS Loader (Enhanced Console Version)
+// @namespace    sm1therz-heptabase
+// @version      1.1.0
+// @description  Injects modular CSS files by URL pattern with regex support (SPA-safe). Based on Console Version, Current Functionality.
+// @match        *://*.heptabase.com/*
+// @match        *://heptabase.com/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
 (function () {
   'use strict';
 
-  // ---------- Updated helper using the confirmed working method ----------
+  // ---------- Shared helpers (from Userscript Version) ----------
+  function appendLinkWhenHeadReady(link) {
+    if (document.head) {
+      document.head.appendChild(link);
+      return;
+    }
+
+    const onReady = () => {
+      if (document.head && !document.getElementById(link.id)) {
+        document.head.appendChild(link);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', onReady, { once: true });
+    } else {
+      requestAnimationFrame(onReady);
+    }
+  }
+
   function createStylesheetLink(id, href) {
-    // Check if already exists to avoid duplicates
-    if (document.getElementById(id)) return;
-    
-    // Use the same method as the confirmed working bookmarklet
     const link = document.createElement('link');
     link.id = id;
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = href;
-    
-    // Direct append to head or documentElement - the same pattern as the bookmarklet
-    (document.head || document.documentElement).appendChild(link);
+    appendLinkWhenHeadReady(link);
   }
 
   function startSpaWatcher(updateFn, interval = 500) {
@@ -64,7 +88,9 @@
 
     function addStyles() {
       STYLESHEETS.forEach(style => {
-        createStylesheetLink(style.id, style.href);
+        if (!document.getElementById(style.id)) {
+          createStylesheetLink(style.id, style.href);
+        }
       });
     }
 
@@ -131,7 +157,9 @@
 
     function addStyles() {
       STYLESHEETS.forEach(style => {
-        createStylesheetLink(style.id, style.href);
+        if (!document.getElementById(style.id)) {
+          createStylesheetLink(style.id, style.href);
+        }
       });
     }
 
@@ -171,7 +199,9 @@
     const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-0-inbox+tasks.css';
 
     function addStyle() {
-      createStylesheetLink(LINK_ID, HREF);
+      if (!document.getElementById(LINK_ID)) {
+        createStylesheetLink(LINK_ID, HREF);
+      }
     }
 
     function removeStyle() {
@@ -205,11 +235,15 @@
     let secondLinkTimeoutId = null;
 
     function addStyles() {
-      createStylesheetLink(LINK_ID_1, HREF_1);
+      if (!document.getElementById(LINK_ID_1)) {
+        createStylesheetLink(LINK_ID_1, HREF_1);
+      }
 
       if (!document.getElementById(LINK_ID_2) && secondLinkTimeoutId === null) {
         secondLinkTimeoutId = setTimeout(() => {
-          createStylesheetLink(LINK_ID_2, HREF_2);
+          if (!document.getElementById(LINK_ID_2)) {
+            createStylesheetLink(LINK_ID_2, HREF_2);
+          }
           secondLinkTimeoutId = null;
         }, 0); // 0ms delay (same as console version)
       }
@@ -260,7 +294,9 @@
 
     function addStyles() {
       STYLESHEETS.forEach(style => {
-        createStylesheetLink(style.id, style.href);
+        if (!document.getElementById(style.id)) {
+          createStylesheetLink(style.id, style.href);
+        }
       });
     }
 
@@ -313,7 +349,9 @@
 
     function addStyles() {
       STYLESHEETS.forEach(style => {
-        createStylesheetLink(style.id, style.href);
+        if (!document.getElementById(style.id)) {
+          createStylesheetLink(style.id, style.href);
+        }
       });
     }
 
