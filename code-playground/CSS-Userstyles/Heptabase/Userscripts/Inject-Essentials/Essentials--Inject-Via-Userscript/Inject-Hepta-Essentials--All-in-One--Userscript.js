@@ -1,342 +1,186 @@
 (function () {
   'use strict';
 
-  // ---------- Updated helper using the confirmed working method ----------
+  // ---------- Global registry and helpers ----------
+  const styleGroups = [];
+
+  function registerStyleGroup(shouldApply, addStyles, removeStyles) {
+    styleGroups.push({ shouldApply, addStyles, removeStyles });
+  }
+
   function createStylesheetLink(id, href) {
-    // Check if already exists to avoid duplicates
     if (document.getElementById(id)) return;
-    
-    // Use the same method as the confirmed working bookmarklet
     const link = document.createElement('link');
     link.id = id;
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = href;
-    
-    // Direct append to head or documentElement - the same pattern as the bookmarklet
     (document.head || document.documentElement).appendChild(link);
   }
 
-  function startSpaWatcher(updateFn, interval = 500) {
-    // initial run
-    updateFn();
+  function startGlobalSpaWatcher() {
+    function updateAllGroups() {
+      styleGroups.forEach(group => {
+        if (group.shouldApply()) group.addStyles();
+        else group.removeStyles();
+      });
+    }
 
-    // polling watcher
+    updateAllGroups();
+
     let lastHref = window.location.href;
     setInterval(() => {
       const currentHref = window.location.href;
       if (currentHref !== lastHref) {
         lastHref = currentHref;
-        updateFn();
+        updateAllGroups();
       }
-    }, interval);
+    }, 500);
 
-    // SPA hooks
     const wrapHistory = (method) => {
       const original = history[method];
       history[method] = function () {
         const result = original.apply(this, arguments);
-        updateFn();
+        updateAllGroups();
         return result;
       };
     };
     wrapHistory('pushState');
     wrapHistory('replaceState');
-    window.addEventListener('popstate', updateFn);
+    window.addEventListener('popstate', updateAllGroups);
   }
 
+  // ---------- Section registrations ----------
+
   //! CONTEXT MENU for BTT (from Console Version)
-  (function() {
-    const URL_PATTERNS = [
-      'card',
-      '/card/',
-      '/card-library',
-      '/chat',
-      '/journal',
-      '/whiteboard',
-      '/inbox'
-    ];
-
-    const STYLESHEETS = [{
-      id: 'context-menu-for-btt',
-      href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-popup-0-context-menu-for-BTT.css'
-    }];
-
-    function addStyles() {
-      STYLESHEETS.forEach(style => {
-        createStylesheetLink(style.id, style.href);
-      });
-    }
-
-    function removeStyles() {
-      STYLESHEETS.forEach(style => {
-        const el = document.getElementById(style.id);
-        if (el && el.parentNode) {
-          el.parentNode.removeChild(el);
-        }
-      });
-    }
-
-    function shouldApplyStyles() {
+  registerStyleGroup(
+    () => {
       const href = window.location.href || '';
-      return URL_PATTERNS.some(pattern => href.includes(pattern));
+      return ['card', '/card/', '/card-library', '/chat', '/journal', '/whiteboard', '/inbox'].some(pattern => href.includes(pattern));
+    },
+    () => {
+      createStylesheetLink('context-menu-for-btt', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-popup-0-context-menu-for-BTT.css');
+    },
+    () => {
+      const el = document.getElementById('context-menu-for-btt');
+      if (el && el.parentNode) el.parentNode.removeChild(el);
     }
-
-    function updateStyleForLocation() {
-      if (shouldApplyStyles()) addStyles();
-      else removeStyles();
-    }
-
-    startSpaWatcher(updateStyleForLocation);
-  })();
+  );
 
   //! COLORS, NOTES, EMBEDS, CODE BLOCKS, TABLES, HIGHLIGHTS (from Console Version - with regex support)
-  (function() {
-    const URL_PATTERNS = [
-      'card',
-      '/card/',
-      '/card-library',
-      '/chat',
-      '/journal',
-      '/inbox',
-      '/whiteboard/.*[?&]card='
-    ];
-
-    const STYLESHEETS = [
-      {
-        id: 'editor-colors',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-2-editor-colors-essentials.css'
-      },
-      {
-        id: 'editor-embeds',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-embeds.css'
-      },
-      {
-        id: 'editor-highlights',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-6-highlights-essentials.css'
-      },
-      {
-        id: 'editor-tables-essentials',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials.css'
-      },
-      {
-        id: 'editor-tables-border-radius',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-border-radius.css'
-      },
-      {
-        id: 'note-code-blocks',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-7-codeblock-essentials.css'
-      }
-    ];
-
-    function addStyles() {
-      STYLESHEETS.forEach(style => {
-        createStylesheetLink(style.id, style.href);
-      });
-    }
-
-    function removeStyles() {
-      STYLESHEETS.forEach(style => {
-        const el = document.getElementById(style.id);
-        if (el && el.parentNode) {
-          el.parentNode.removeChild(el);
-        }
-      });
-    }
-
-    function shouldApplyStyles() {
+  registerStyleGroup(
+    () => {
       const href = window.location.href || '';
-      return URL_PATTERNS.some(pattern => {
-        // Handle regex patterns (strings containing special regex characters)
+      const patterns = ['card', '/card/', '/card-library', '/chat', '/journal', '/inbox', '/whiteboard/.*[?&]card='];
+      return patterns.some(pattern => {
         if (pattern.includes('.*') || pattern.includes('[?&]')) {
-          const regex = new RegExp(pattern);
-          return regex.test(href);
+          try {
+            const regex = new RegExp(pattern);
+            return regex.test(href);
+          } catch (e) {
+            return href.includes(pattern);
+          }
         }
-        // Handle simple string patterns
         return href.includes(pattern);
       });
+    },
+    () => {
+      createStylesheetLink('editor-colors', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-2-editor-colors-essentials.css');
+      createStylesheetLink('editor-embeds', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-embeds.css');
+      createStylesheetLink('editor-highlights', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-6-highlights-essentials.css');
+      createStylesheetLink('editor-tables-essentials', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials.css');
+      createStylesheetLink('editor-tables-border-radius', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-border-radius.css');
+      createStylesheetLink('note-code-blocks', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-7-codeblock-essentials.css');
+    },
+    () => {
+      ['editor-colors', 'editor-embeds', 'editor-highlights', 'editor-tables-essentials', 'editor-tables-border-radius', 'note-code-blocks'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
     }
-
-    function updateStyleForLocation() {
-      if (shouldApplyStyles()) addStyles();
-      else removeStyles();
-    }
-
-    startSpaWatcher(updateStyleForLocation);
-  })();
+  );
 
   //! TASK / INBOX (from Console Version)
-  (function() {
-    const LINK_ID = 'inbox-style';
-    const HREF = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-0-inbox+tasks.css';
-
-    function addStyle() {
-      createStylesheetLink(LINK_ID, HREF);
-    }
-
-    function removeStyle() {
-      const el = document.getElementById(LINK_ID);
-      if (el && el.parentNode) {
-        el.parentNode.removeChild(el);
-      }
-    }
-
-    function shouldApplyStyles() {
+  registerStyleGroup(
+    () => {
       const href = window.location.href || '';
       return href.includes('/inbox');
+    },
+    () => {
+      createStylesheetLink('inbox-style', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-0-inbox+tasks.css');
+    },
+    () => {
+      const el = document.getElementById('inbox-style');
+      if (el && el.parentNode) el.parentNode.removeChild(el);
     }
-
-    function updateStyleForLocation() {
-      if (shouldApplyStyles()) addStyle();
-      else removeStyle();
-    }
-
-    startSpaWatcher(updateStyleForLocation);
-  })();
+  );
 
   //! CARD LIBRARY (from Console Version - with timeout logic)
-  (function() {
-    const LINK_ID_1 = 'card-library-style-1';
-    const LINK_ID_2 = 'card-library-style-2';
-
-    const HREF_1 = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-card-library.css';
-    const HREF_2 = 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-card-library-mac-app-overrides.css';
-
-    let secondLinkTimeoutId = null;
-
-    function addStyles() {
-      createStylesheetLink(LINK_ID_1, HREF_1);
-
-      if (!document.getElementById(LINK_ID_2) && secondLinkTimeoutId === null) {
-        secondLinkTimeoutId = setTimeout(() => {
-          createStylesheetLink(LINK_ID_2, HREF_2);
-          secondLinkTimeoutId = null;
-        }, 0); // 0ms delay (same as console version)
-      }
-    }
-
-    function removeStyles() {
-      [LINK_ID_1, LINK_ID_2].forEach(id => {
-        const el = document.getElementById(id);
-        if (el && el.parentNode) {
-          el.parentNode.removeChild(el);
-        }
-      });
-
-      if (secondLinkTimeoutId !== null) {
-        clearTimeout(secondLinkTimeoutId);
-        secondLinkTimeoutId = null;
-      }
-    }
-
-    function updateStyleForLocation() {
+  let cardLibrarySecondLinkTimeoutId = null;
+  registerStyleGroup(
+    () => {
       const href = window.location.href || '';
-      if (href.includes('/card-library')) addStyles();
-      else removeStyles();
+      return href.includes('/card-library');
+    },
+    () => {
+      createStylesheetLink('card-library-style-1', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-card-library.css');
+      if (!document.getElementById('card-library-style-2') && cardLibrarySecondLinkTimeoutId === null) {
+        cardLibrarySecondLinkTimeoutId = setTimeout(() => {
+          createStylesheetLink('card-library-style-2', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-card-library-mac-app-overrides.css');
+          cardLibrarySecondLinkTimeoutId = null;
+        }, 0);
+      }
+    },
+    () => {
+      ['card-library-style-1', 'card-library-style-2'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
+      if (cardLibrarySecondLinkTimeoutId !== null) {
+        clearTimeout(cardLibrarySecondLinkTimeoutId);
+        cardLibrarySecondLinkTimeoutId = null;
+      }
     }
-
-    startSpaWatcher(updateStyleForLocation);
-  })();
+  );
 
   //! CHAT NEW (from Console Version)
-  (function() {
-    const URL_PATTERNS = [
-      '/card/',
-      '/chat',
-      'isOpeningRightSidebar',
-      'isOpeningGlobalSidebar'
-    ];
-
-    const STYLESHEETS = [
-      {
-        id: 'chat-essentials-style',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-chat-essentials.css'
-      },
-      {
-        id: 'chat-editor-tables',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials.css'
-      }
-    ];
-
-    function addStyles() {
-      STYLESHEETS.forEach(style => {
-        createStylesheetLink(style.id, style.href);
-      });
-    }
-
-    function removeStyles() {
-      STYLESHEETS.forEach(style => {
-        const el = document.getElementById(style.id);
-        if (el && el.parentNode) {
-          el.parentNode.removeChild(el);
-        }
-      });
-    }
-
-    function shouldApplyStyles() {
+  registerStyleGroup(
+    () => {
       const href = window.location.href || '';
-      return URL_PATTERNS.some(pattern => href.includes(pattern));
+      return ['/card/', '/chat', 'isOpeningRightSidebar', 'isOpeningGlobalSidebar'].some(pattern => href.includes(pattern));
+    },
+    () => {
+      createStylesheetLink('chat-essentials-style', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-chat-essentials.css');
+      createStylesheetLink('chat-editor-tables', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials.css');
+    },
+    () => {
+      ['chat-essentials-style', 'chat-editor-tables'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
     }
-
-    function updateStyleForLocation() {
-      if (shouldApplyStyles()) addStyles();
-      else removeStyles();
-    }
-
-    startSpaWatcher(updateStyleForLocation);
-  })();
+  );
 
   //! WHITEBOARD - COMBINED (from Console Version - NEW MODULE)
-  (function() {
-    const URL_PATTERNS = [
-      '/whiteboard'
-    ];
-
-    const STYLESHEETS = [
-      {
-        id: 'whiteboard-essentials-style',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-essentials.css'
-      },
-      {
-        id: 'whiteboard-instance-titles',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Whiteboard-Instance-Titles-Essentials.css'
-      },
-      {
-        id: 'whiteboard-sections-3-1-essentials',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-1-Essentials.css'
-      },
-      {
-        id: 'whiteboard-sections-3-1-essentials-full-titles',
-        href: 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-2-Essentials-Full-Titles.css'
-      }
-    ];
-
-    function addStyles() {
-      STYLESHEETS.forEach(style => {
-        createStylesheetLink(style.id, style.href);
-      });
-    }
-
-    function removeStyles() {
-      STYLESHEETS.forEach(style => {
-        const el = document.getElementById(style.id);
-        if (el && el.parentNode) {
-          el.parentNode.removeChild(el);
-        }
-      });
-    }
-
-    function shouldApplyStyles() {
+  registerStyleGroup(
+    () => {
       const href = window.location.href || '';
-      return URL_PATTERNS.some(pattern => href.includes(pattern));
+      return href.includes('/whiteboard');
+    },
+    () => {
+      createStylesheetLink('whiteboard-essentials-style', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-essentials.css');
+      createStylesheetLink('whiteboard-instance-titles', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Whiteboard-Instance-Titles-Essentials.css');
+      createStylesheetLink('whiteboard-sections-3-1-essentials', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-1-Essentials.css');
+      createStylesheetLink('whiteboard-sections-3-1-essentials-full-titles', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-2-Essentials-Full-Titles.css');
+    },
+    () => {
+      ['whiteboard-essentials-style', 'whiteboard-instance-titles', 'whiteboard-sections-3-1-essentials', 'whiteboard-sections-3-1-essentials-full-titles'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
     }
+  );
 
-    function updateStyleForLocation() {
-      if (shouldApplyStyles()) addStyles();
-      else removeStyles();
-    }
-
-    startSpaWatcher(updateStyleForLocation);
-  })();
-
+  // ---------- Start the single SPA watcher ----------
+  startGlobalSpaWatcher();
 })();
