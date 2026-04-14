@@ -338,6 +338,25 @@
 
 
 /********
+! TEXT AREA > BORDERS
+*********/
+:root {
+  --textareaWrapBrdClr:rgba(0, 0, 0, .08)
+
+}
+[data-theme="dark"] {
+  --textareaWrapBrdClr:hsla(0, 0%, 100%, 0.08)
+
+}
+
+.h-12 + .relative + [class*="px-"][class*="pb-"] {
+    box-shadow: 0px -1px 0 0 var(--textareaWrapBrdClr);
+}
+/*context container*/
+.h-12 + .relative + [class*="px-"][class*="pb-"] > .max-h-50vh{
+    box-shadow: 0px 1px 0 0 var(--textareaWrapBrdClr);
+}
+/********
 ! TEXT AREA > MAX HEIGHT
 *********/
 .px-3.pb-3.pt-1 .max-h-50vh,
