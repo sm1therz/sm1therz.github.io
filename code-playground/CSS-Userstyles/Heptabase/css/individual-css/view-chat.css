@@ -719,6 +719,25 @@ padding-top:5px;
   --chatTextAreaPadTopBtm:calc(var(--chatTextAreaPadLR) * .75);
 }
 /********
+! TEXT AREA > BORDERS
+*********/
+:root {
+  --textareaWrapBrdClr:rgba(0, 0, 0, .08)
+
+}
+[data-theme="dark"] {
+  --textareaWrapBrdClr:hsla(0, 0%, 100%, 0.08)
+
+}
+
+.h-12 + .relative + [class*="px-"][class*="pb-"] {
+    box-shadow: 0px -1px 0 0 var(--textareaWrapBrdClr);
+}
+/*context container*/
+.h-12 + .relative + [class*="px-"][class*="pb-"] .max-h-50vh > [class*="scrollbar-"]{
+    box-shadow: 0px 1px 0 0 var(--textareaWrapBrdClr);
+}
+/********
 ! TEXT AREA > MAX HEIGHT
 *********/
 .px-3.pb-3.pt-1 .max-h-50vh,
@@ -732,7 +751,7 @@ padding-top:5px;
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex  div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4  .max-h-50vh  [data-editor-type="editor"] > .ProseMirror{
-  max-height: 35vh !important;
+  max-height: 25vh !important;
   transition: .25s;
     transition-delay: 1s;
 
@@ -750,7 +769,7 @@ padding-top:5px;
 
 /*MIN HEIGHT > WHEN HOVERING OVER MESSAGES IN CHAT*/
 .h-12 + .relative:is(:hover,:focus,:focus-within) + .px-3 .max-h-50vh  [data-editor-type="editor"] > .ProseMirror {
-  max-height: 35vh !important;
+  max-height: 25vh !important;
   transition-delay: 0s;
 }
 
