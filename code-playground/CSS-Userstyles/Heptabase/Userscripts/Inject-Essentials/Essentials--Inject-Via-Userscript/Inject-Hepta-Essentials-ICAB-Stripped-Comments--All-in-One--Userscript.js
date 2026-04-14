@@ -56,7 +56,8 @@
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
-      return ['card', '/card/', '/card-library', '/chat', '/journal', '/whiteboard', '/inbox'].some(pattern => href.includes(pattern));
+      return ['card', '/card/', 
+      '/card-library', '/chat', '/journal', '/whiteboard', '/inbox'].some(pattern => href.includes(pattern));
     },
     () => {
       createStylesheetLink('context-menu-for-btt', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-popup-0-context-menu-for-BTT.css');
@@ -90,10 +91,11 @@
       createStylesheetLink('editor-highlights', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-6-highlights-essentials.css');
       createStylesheetLink('editor-tables-essentials', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-essentials.css');
       createStylesheetLink('editor-tables-border-radius', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-border-radius.css');
+      createStylesheetLink('editor-tables-backgrounds', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-background.css');
       createStylesheetLink('note-code-blocks', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-7-codeblock-essentials.css');
     },
     () => {
-      ['editor-colors', 'editor-embeds', 'editor-highlights', 'editor-tables-essentials', 'editor-tables-border-radius', 'note-code-blocks'].forEach(id => {
+      ['editor-colors', 'editor-embeds', 'editor-highlights', 'editor-tables-essentials', 'editor-tables-backgrounds', 'editor-tables-border-radius', 'note-code-blocks'].forEach(id => {
         const el = document.getElementById(id);
         if (el && el.parentNode) el.parentNode.removeChild(el);
       });
@@ -172,9 +174,10 @@
       createStylesheetLink('whiteboard-instance-titles', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Whiteboard-Instance-Titles-Essentials.css');
       createStylesheetLink('whiteboard-sections-3-1-essentials', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-1-Essentials.css');
       createStylesheetLink('whiteboard-sections-3-1-essentials-full-titles', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-2-Essentials-Full-Titles.css');
+      createStylesheetLink('whiteboard-tables-background', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-2-Essentials-Full-Titles.css');
     },
     () => {
-      ['whiteboard-essentials-style', 'whiteboard-instance-titles', 'whiteboard-sections-3-1-essentials', 'whiteboard-sections-3-1-essentials-full-titles'].forEach(id => {
+      ['whiteboard-essentials-style', 'whiteboard-instance-titles', 'whiteboard-sections-3-1-essentials', 'whiteboard-sections-3-1-essentials-full-titles', 'whiteboard-tables-background'].forEach(id => {
         const el = document.getElementById(id);
         if (el && el.parentNode) el.parentNode.removeChild(el);
       });
