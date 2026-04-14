@@ -377,7 +377,7 @@
 
 }
 
-.px-3.pb-3.pt-1 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
+.h-12 + .relative + [class*="px-"][class*="pb-"] .max-h-50vh:is(:focus-within) [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
 .bg-background-secondary[style*="width:"] > .app-region-drag + .flex > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
 [class*="max-h-"] + .bg-background-secondary.max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within),
@@ -385,6 +385,10 @@
 .bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror:is(:focus-within) {
   max-height: calc(79.5vh - 3rem - var(--chatHeaderH) - var(--chatHeaderH-Type2)) !important;
   transition-delay: 0s;
+}
+.h-12 + .relative + [class*="px-"][class*="pb-"] .max-h-50vh [data-editor-type="editor"] > .ProseMirror.ProseMirror-focused {
+  background: green !important;
+  outline: 3px silid red !important
 }
 
 /*MIN HEIGHT > WHEN HOVERING OVER MESSAGES IN CHAT*/
