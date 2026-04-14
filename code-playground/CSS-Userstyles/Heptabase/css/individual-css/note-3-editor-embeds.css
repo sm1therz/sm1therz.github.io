@@ -21,6 +21,10 @@
 /*COLORS*/
 
 :root {
+	--embedTstBrdW:0px;
+}
+
+:root {
 	--embedBg: hsla(0, 0%, 98%, 1.0);
 	--embedBg-Hover: hsla(0, 0%, 94%, 1.0);
 	--embedBg-Selected: hsla(210, 55%, 89%, 1.0);
@@ -33,6 +37,9 @@
 	--embedBgGradEnd:hsla(180, 0%, 100%, 0);
 	/**/
 	--embedHovMenuBg:rgb(254, 255, 255);
+	--embedHovMenuBg-Hover:hsl(180, 0%, 90%);
+	/**/
+	--embedHoverMenuBoxShad:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
 	/**/
 	--embedCodeBlockBrdClr:hsla(0,0%,0%,.05);
 	--embedCodeBlockBgClr:hsla(0,0%,0%,.03);
@@ -55,7 +62,8 @@
 	--embedBgGradStart:hsl(216,6.49%,14.8%);
 	--embedBgGradEnd:hsl(216,6.49%,0%);
 	/**/
-	--embedHovMenuBg:rgba(61, 64, 67, 9);
+	--embedHovMenuBg:hsl(210, 5%, 25%);
+	--embedHovMenuBg-Hover:hsl(210, 5%, 30%);
 	/**/
 	--embedCodeBlockBrdClr:var(--light-grey);
 	--embedCodeBlockBgClr:var(--ultra-light-grey);
@@ -65,7 +73,12 @@
 	
 /**EMBEDS**/
 [class*="ProseMirror-hepta-style"] > .ProseMirror,
-[class*="ProseMirror-hepta-style"] > .ProseMirror > * {
+[class*="ProseMirror-hepta-style"] > .ProseMirror > *,
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div > div,
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div,
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute,
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"],
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]){
 	box-shadow: inset 0 0 0 var(--embedTstBrdW) red;
 }
 
@@ -183,10 +196,11 @@ MENU > NORMAL
 *****/
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute {
 position: sticky;
-height: var(--embedHoverMenuH);
+height: 0px;
 display: flex;
 flex-direction: column;
-top: 0px;
+	justify-content: center;
+top: 1px;
 margin-left: auto;
 width: fit-content;
 overflow: visible;
@@ -194,13 +208,39 @@ visibility: visible !important;
 opacity: 0 !important;
 max-width: 100%;
 max-width: calc(100% - 80px);
+	background: transparent !important;
+}
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div {
+	overflow: hidden !important;
+	min-height: calc(var(--embedHoverMenuH) * 1.25) !important;
+	height: calc(var(--embedHoverMenuH) * 1.25) !important;
+	display: flex;
+	align-items: flex-end !important;
+	position: sticky;
+	top: 10px;
+	background: transparent !important;
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 0px #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+}
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div > div {
+	max-height: calc(var(--embedHoverMenuH) * 1.3) !important;
+	min-height: calc(var(--embedHoverMenuH) * 1.3) !important;
+	background: var(--embedHovMenuBg);
+	transition: .1s
+}
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] > .absolute > div:hover > div{
+	--embedHovMenuBg:var(--embedHovMenuBg-Hover);
 }
 
 /****
 MENU > HOVER
 *****/
-[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]):hover > [class*="group"] > .absolute {
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"]:hover > .absolute {
 opacity: 1 !important;
+}
+
+[class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]):hover > [class*="group"] > .absolute > div {
+	top: 10
 }
 
 /****
@@ -251,7 +291,7 @@ position: relative;
 
 
 [class*="ProseMirror-hepta-style"] > .ProseMirror [data-node-type="embed"]:not([class*="self-"],[data-node-type="embed"] [data-node-type="embed"]) > [class*="group"] {
-margin-top: calc(var(--embedHoverMenuH) * -1)
+margin-top: calc(var(--embedHoverMenuH) * 0)
 }
 
 /***************
