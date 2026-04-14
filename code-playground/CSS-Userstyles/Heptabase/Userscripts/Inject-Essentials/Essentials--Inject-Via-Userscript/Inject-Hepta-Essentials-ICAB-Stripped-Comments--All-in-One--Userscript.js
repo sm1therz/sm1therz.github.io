@@ -162,7 +162,7 @@
       });
     }
   );
-
+ 
   //! WHITEBOARD - COMBINED (from Console Version - NEW MODULE)
   registerStyleGroup(
     () => {
@@ -174,7 +174,7 @@
       createStylesheetLink('whiteboard-instance-titles', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Whiteboard-Instance-Titles-Essentials.css');
       createStylesheetLink('whiteboard-sections-3-1-essentials', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-1-Essentials.css');
       createStylesheetLink('whiteboard-sections-3-1-essentials-full-titles', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-2-Essentials-Full-Titles.css');
-      createStylesheetLink('whiteboard-tables-background', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-whiteboard-min-2-Sections-3-2-Essentials-Full-Titles.css');
+      createStylesheetLink('whiteboard-tables-background', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-3-editor-tables-background.css');
     },
     () => {
       ['whiteboard-essentials-style', 'whiteboard-instance-titles', 'whiteboard-sections-3-1-essentials', 'whiteboard-sections-3-1-essentials-full-titles', 'whiteboard-tables-background'].forEach(id => {
