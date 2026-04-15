@@ -372,7 +372,7 @@
 .bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror {
   max-height: 18vh !important;
   transition: .25s;
-  transition-delay: 1s;
+  transition-delay: 1s; 
 
 
 }
