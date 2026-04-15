@@ -370,7 +370,7 @@
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex + div > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .app-region-drag + .hepta-pseudo-overlay > .flex div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror,
 .bg-background-secondary > .bg-background-primary [class*="bg-"] > .app-region-drag + .flex > div.px-4 .max-h-50vh [data-editor-type="editor"] > .ProseMirror {
-  max-height: 25vh !important;
+  max-height: 18vh !important;
   transition: .25s;
   transition-delay: 1s;
 
@@ -389,7 +389,7 @@
 
 /*MIN HEIGHT > WHEN HOVERING OVER MESSAGES IN CHAT*/
 .h-12 + .relative:is(:hover, :focus, :focus-within) + .px-3 .max-h-50vh [data-editor-type="editor"] > .ProseMirror {
-  max-height: 25vh !important;
+  max-height: 18vh !important;
   transition-delay: .25s;
 }
 
