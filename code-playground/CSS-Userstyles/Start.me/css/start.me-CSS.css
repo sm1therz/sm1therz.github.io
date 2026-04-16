@@ -3506,6 +3506,7 @@ HIDDEN TODOS
 ************/
 .widget-page__ads,
 .internal-banner_signup,
-.internal-banner{
+.internal-banner,
+.freestar-leaderboard{
   display: none !important;
 }
