@@ -148,6 +148,20 @@ span.notes-widget__result * {
 .modal__component-container .notes-widget .wysiwyg-editor__input {
     outline-offset: -1px
 }
+
+:root {
+  --start-tstBrdW:0px;
+}
+/*testing*/
+.page-section__widget,
+.page-section__widget > article,
+.page-section__widget > article > .widget__container,
+.page-section__widget > article > .widget__container > *,
+/**/
+.bookmark-item{
+  outline: var(--start-tstBrdW) solid red !important;
+  outline-offset: calc(var(--start-tstBrdW) * -1)
+}
 /***********
 ************
 ! GOOGLE SEARCH
@@ -1105,7 +1119,9 @@ BOOKMARK GROUPS
 #appID [class*="theme_dark"] a.bookmark-folder__button {
   filter: invert(1);
 }
-
+:root {
+  --wdgtWrapPadTopBtm:6px
+}
 /***********
 HEADER - TRANSPARENT BACKGROUND 
 ************/
@@ -1114,6 +1130,7 @@ HEADER - TRANSPARENT BACKGROUND
   outline-offset: -1px;
   box-shadow: unset !important;
   overflow: hidden;
+  padding:0px;
 }
 #appID .widget__container{
     border: 1px solid var(--widgetBrdClr);
@@ -1299,6 +1316,11 @@ WIDGET HEADER
   justify-content: space-between !important;
   height: var(--widgetHeaderHeight) !important;
   cursor: pointer;
+  
+  padding-left: var(--containerMargLeftRight);
+  padding-right: var(--containerMargLeftRight);
+}
+html .widget__box{
   padding-left: var(--containerMargLeftRight);
   padding-right: var(--containerMargLeftRight);
 }
@@ -1402,7 +1424,7 @@ widget container and body
 }
 #appID .bookmark-widget .widget__container {}
 
-#appID .bookmark-widget .widget__body > .bookmark-widget__body[class*="detail"]{
+#appID .bookmark-widget .bookmark-widget__body{
   padding-bottom: calc(var(--containerPadBtm) - 2px) !important;
 
 }
@@ -1686,6 +1708,7 @@ BOOKMARK SECTION TYPE - ICONS
 
 .bookmark-widget:not(.bookmark-widget_edited) .bookmark-widget__body_mode_icon > .bookmark-widget__list {
   padding-top: calc(var(--bookmarksIconsGap) * 0.2) !important;
+  padding-bottom: calc(var(--wdgtWrapPadTopBtm) * 2)
 }
 
 /*none*/
@@ -2358,7 +2381,9 @@ html .notes-widget-wrapper__tabs-list {
     margin-top: 2px;
 }
 
-
+.widget-tabs + *{
+  margin-top: 5px;
+}
 
 
 #appID .widget__description {
@@ -2368,8 +2393,8 @@ html .notes-widget-wrapper__tabs-list {
     position: relative;
     top: -3px;
     margin: 0px !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 .widget__description_empty {
     display: none !important;
@@ -2490,6 +2515,7 @@ html .notes-widget-wrapper .widget__description {}
     line-height: 17px !important;
     font-size: 10.5px !important;
     text-transform: uppercase !important;
+  border: unset;
 }
 .custom-tab__name {
     padding-bottom: 0px !important;
@@ -2632,6 +2658,12 @@ html .notes-widget-wrapper .widget__description ul li:before {
 }
 html .notes-widget-wrapper .widget__description ol li:before {
     display: none;
+}
+
+.notes-styles table,
+.notes-styles p{
+  margin-top: var(--noteParagraphMargTopBtm);
+  margin-bottom: var(--noteParagraphMargTopBtm);
 }
 
 #appID .notes-widget-wrapper .widget__description .markdown-description,
@@ -3498,6 +3530,7 @@ HIDDEN TODOS
     margin: 0px !important;
     
 }
+
 
 /***********
 ************
