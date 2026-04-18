@@ -23,7 +23,7 @@
     /*bookmarks*/
     --bookmarksIconsGap: 10px;
     --bookmarkLinkBrdRad: 17px;
-    --bookmarkThumbnailWidth: 90px;
+    --bookmarkThumbnailWidth: 90px; 
     --bookmarkThumbnailMargTopBtm: 4px;
     /*description*/
     --bookmarkDescriptionListMargTopBtm: var(--noteParagraphMargTopBtm);
