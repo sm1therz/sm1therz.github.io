@@ -89,9 +89,11 @@ BOX SHADOW TESTING - BOARDS
 .project > .name > .content,
 .project > .name > .content .innerContentContainer,
 .project > .notes,
-.project > .notes > .content{
+.project > .notes > .content,
+.tableColumn,
+.tableItem > .children{
 
-    box-shadow: 0 0 0 var(--testBrdW) red !important;
+    box-shadow: inset 0 0 0 var(--testBrdW) red !important;
 }
 /*
 #app .project.comment.thread .children {
@@ -103,7 +105,6 @@ BOX SHADOW TESTING - BOARDS
   outline-offset: .5px;
   border-radius: 0px !important;
 }*/
-
 /****
 ! OVERRIDES
 ****/
@@ -111,7 +112,7 @@ BOX SHADOW TESTING - BOARDS
 .project,
 .project > .name,
 .project > .notes,
-.project > .children:not(.board>.children) {
+.project > .children:not(.board>.children, .tableItem > .children) {
     margin: 0px;
     padding: 0;
     min-height: unset;
@@ -299,7 +300,6 @@ BOX SHADOW TESTING - BOARDS
         font-size: var(--root-font-size);
   line-height: var(--root-line-height);
 }
-
 /*******************************
 ********************************
 ! NORMAL STATE
@@ -379,8 +379,8 @@ BOX SHADOW TESTING - BOARDS
 
     /*MISC*/
     --Height--Header: 48px;
-    /*colors*/
-    --wf-border-default:#5c6062;
+  /*colors*/
+  --wf-border-default:#5c6062;
 }
 
 
@@ -2824,7 +2824,6 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
     opacity: 1;
 }
-
 /*******************************
 ********************************
 ! NORMAL STATE - NUMBERS
@@ -3097,7 +3096,6 @@ transform: rotate(-45deg)scale(var(--numberBulletUnderScaleOpen)) !important;
 #app *:is(.board) .project.collapsed:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix:after {
 transform: rotate(45deg)scale(var(--numberBulletUnderScaleOpen)) !important;
 }
-
 /***********
 ! NORMAL STATE OVERRIDES 
 ************/
@@ -3446,14 +3444,34 @@ html #app .project > .notes > .content .contentLink{
 
     transform: rotate(90deg)scale(var(--btnIcn-Scale)) !important;
 }
+
+
 /*NEW CIRLCE BORDER*/
 .circleBorder.absolute,
 .absolute.rounded-full.box-border.border-current{
   display: none !important;
 }
 
+.is-desktop .children .notes:not(.notes--main){
+  margin-left: unset !important;
+  padding-left: unset !important;
+}
 
 
+#app > .pageContainer > div[style*="max-width: 700px"] {
+  padding-left: var(--pagePadLeft) !important;
+  padding-right: var(--pagePadLeft) !important;
+}
+
+#app > .pageContainer .root:not(.board) > *:is(.name, .notes){
+  padding-left: calc(var(--pagePadLeft) * 1) !important;
+  margin: unset !important;
+}
+
+#app > .pageContainer .page[style*="overflow-y: auto"] {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 /***********
 ! TAGS + HIGHLIGHTS
 ************/
@@ -3706,7 +3724,6 @@ HIGHLIGHT - GREYED OUT
     right: auto;
     color: var(--NODE--TXT-CLR--main)
 }
-
 /**********************
 ***********************
 ***********************
@@ -3838,7 +3855,6 @@ HIGHLIGHT - GREYED OUT
 }
 
 
-
 /***********
 ! COMPLETED TASKS - ORDER
 
@@ -3878,7 +3894,6 @@ HIGHLIGHT - GREYED OUT
 
 }
 */
-
 /*******************************
 ********************************
 ! BOARDS
@@ -5352,8 +5367,22 @@ BOARD > NOT ROOT > PREFIX FIX
   --btn-MargTop:3px !important;
 }
 
+
 html #app .project.board > .children > .boardColumn > .self-stretch{
   display: none !important;
+}
+ 
+#app .project.board .boardColumn,
+#app .project.board .boardColumn > div,
+#app .project.board .boardColumn > div > div {
+  margin-right: unset !important;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+}
+
+#app .project.board .boardColumn .boardCard > div{
+  width: unset !important;
+  margin-left: unset !important;
 }
 
 /*******************************
@@ -5547,10 +5576,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 
 
 /****/
-.board.root > .children,
-.board.root .boardColumn > .children,
-.board.root .boardCard > .children,
-.board.root .boardCard > .children .project:not(.boardCard > .children > .project:first-of-type) {}
+
 .board.root .boardColumn > .children {
   border-top: 1px solid hsla(0,0%,100%,.1) !important;
 }
@@ -6222,9 +6248,53 @@ CARD > IS COMMENT
 #app .page .project.root.board > .children > .boardColumn > .children {
   padding-bottom: 200px !important;
 }
+/*******
+********
+BOARDS - ROOT > PADDING FIX
+********
+********/
+#app .project.board.root {
+}
+#app .project.board.root,
+.project.board.root .boardCard > .name, 
+.project.board.root .boardCard > .notes, 
+.project.board.root .boardCard .project > .name, 
+.project.board.root .boardCard .project > .notes{
 
+  --content-PadTopBtm:8px !important;
+}
+/*ALL ITEMS - NAME */
+#app .project.board.root .project:not(.boardColumn, .quote-block, .code-block) > .name {
+  padding-top: calc(var(--content-PadTopBtm) * 1) !important;
+}
+/*ALL ITEMS - CONTENT - NOT NOTED */
+#app .project.board.root .project:not(.noted, .boardColumn, .quote-block, .code-block) > .name {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+}
+#app .project.board.root .project:not( .boardColumn, .quote-block, .code-block) > *:is(.name, .notes) > .content {
+  padding-bottom: 0px !important;
+}
+/*ALL ITEMS - CONTENT - HAS NOTE */
+#app .project.board.root .project.noted > .notes {
+  padding-top: calc(var(--content-PadTopBtm) * .1) !important;
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+  
+}
 
-
+/*ALL ITEMS - NAME WITH IMAGE -  NOT NOTED */
+#app .project.board.root > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image  {
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 1)!important;
+}
+/*ALL ITEMS - NAME WITH IMAGE -  HAS */
+#app .project.board.root > .children > .boardColumn > .children *:is(.noted) > .name--with-image{
+    padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 0.5)!important;
+}
+/*ALL ITEMS - NAME WITH IMAGE -  CONTENT - HAS NOTE */
+#app .project.board.root > .children > .boardColumn > .children *:is(.noted, .project,.boardCard):not(.boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * .5) !important;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT - SHARED (WRAP)
@@ -6291,7 +6361,6 @@ CARD > IS COMMENT
 .board.root.shared > .children > ._1en9fmv {
   display: none !important;
 }
-
 /*******************************
 ********************************
 ! BOARDS - BULLET / EXPAND / MENU CHANGE
@@ -6523,7 +6592,48 @@ EXPAND > BOARDCOLUMN BLOCKS
 #app .board > .children > .project.boardColumn > .name > .expand {
   opacity: 1 !important;
 }
+/*******************************
+********************************
+! TABLES
+********************************
+********************************/
+:root {
+  --wfTablePadLR:.5rem;
+}
 
+#app .project.tableItem{
+}
+#app .project.tableItem > .children{
+  display: flex !important;
+  flex-direction: row;
+  margin-top: calc(var(--prjct-MargTopBtm) * 1) !important;
+
+}
+
+#app .project.tableItem > .children .name > .content,
+#app .project.tableItem > .children .notes > .content{
+  margin-left: 0px !important;
+}
+
+#app .project.tableItem .tableColumn > .children {
+  padding-left: 0px !important;
+}
+
+#app .project.tableItem > .children .project {
+  border-radius: 0px !important;
+}
+#app .project.tableItem > .children .name,
+#app .project.tableItem > .children .notes{
+  padding-left: var(--wfTablePadLR) !important;
+  border-radius: 0px !important;
+}
+
+/*BULLETS*/
+#app .project.tableItem > .children .project .expand {
+  left: unset !important;
+  right: 0;
+  opacity: 0;
+}
 /*******************************
 ********************************
 ! DASHBOARD
@@ -7740,7 +7850,6 @@ html #app .dashboard .project [projectid*="virtual"] > .name > .content > .inner
 .dashboard-button-top {
   display: none;
 }
-
 /*******************************
 ********************************
 ! DASHBOARD - BORDERS
@@ -8053,7 +8162,6 @@ EXPAND COLLAPSE BORDER ANIMATION
   --COMMENT-CONTAINER--BG:hsla(196, 28%, 30%, 1) !important;
   --COMMENT--BG--even:hsla(196, 28%, 22%, 1) !important;
 }
-
 /*******************************
 ********************************
 ! DAILY NOTE / JOURNAL / CALENDAR
@@ -8170,7 +8278,6 @@ display:block;
     box-shadow: inset 0 0 0 1px var(--calBrdClr);
     border: 0px solid var(--calBrdClr);
 }
-
 /*******************************
 ********************************
 ! PRESENTATION
@@ -8213,7 +8320,6 @@ display:block;
     transform: scale(1.3);
     cursor: pointer;
 }
-
 /*******************************
 ********************************
 ! COMMENTS - NEW - FLOATING
@@ -9142,7 +9248,6 @@ PADDING RIGHT
   
   padding-right: 10px !important;
 }
-
 /*******************************
 ********************************
 ! COMMENTS - OVERRIDES
@@ -9368,7 +9473,6 @@ PADDING RIGHT
 #app .pageContainer .page .project.board:not(.root) > .children > .boardColumn > .children > .project.boardCard  .children > .project.divider + .project:not(.comment){
   border-top-color: transparent !important;
 }
-
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
@@ -9385,7 +9489,6 @@ SCROLLBAR / SCROLL BARS
     width: 0px !important;
     height: 0px !important;
 }
-
 /*******************************
 ********************************
 ! POPUP - IMAGE MODAL
@@ -9490,7 +9593,6 @@ margin-left:calc(var(--children-Indent) * 1) !important;
     min-width: 60vw !important;
     display: block;
 }
-
 /*******************************
 ********************************
 ! POPUP - 'MOVE TO' MENU
@@ -9584,7 +9686,6 @@ margin-left:calc(var(--children-Indent) * 1) !important;
     right: 0 !important;
   }
 }
-
 /*******************************
 ********************************
 ! POPUP - WFX - RECENTS MENU
@@ -9652,7 +9753,6 @@ select option:checked{
   display: inline-flex;
   position: absolute;
 }
-
 
 
 
@@ -9763,7 +9863,6 @@ html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:
 html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:last-of-type > button {
     width: auto;
 }
-
 /*******************************
 ********************************
 ! POPUP - QUICK SEARCH
@@ -9813,7 +9912,8 @@ html #app .dialog-box [data-section-title="Account"] > div:nth-of-type(6) > div:
 
 /*SEARCH RESULT ITEM - ACTIVE*/
 #app div > .dialog-box.p-0 > div > div:last-child > .switcher-option[class*="--wf-background-accent"],
-#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option.bg-tint{
+#app div > .dialog-box.p-0 > div > div:last-child > .switcher-option.bg-tint,
+#app .switcher-option.bg-secondary{
     background: linear-gradient(
         to right, 
         var(--switcherItemBg) 0%, 
@@ -10078,6 +10178,20 @@ html #app .dialog-box ._157gzxf > div > div {
     backdrop-filter: blur(1px) !important;
 }
 
+.dialog-box.relative > .p-m.flex.flex-col.gap-m.text-s > .flex.flex-col.w-full {
+  position: sticky !important;
+  top: 0 !important;
+  
+  overflow: hidden;
+  z-index: 9494949494949494941;
+}
+.dialog-box.relative > .p-m.flex.flex-col.gap-m.text-s > .flex.flex-col.w-full  input {
+  background: #1D2124 !important;
+    min-height: 69px !important;
+}
+.dialog-box.relative > .p-m.flex.flex-col.gap-m.text-s > .flex.flex-col.w-full ~ svg {
+  z-index: 999999999999999 !important;
+}
 /*******************************
 ********************************
 ! POPUP - EXPORT
@@ -10089,7 +10203,6 @@ html #app .dialog-box ._157gzxf > div > div {
   max-height: 57vh;
   font-size: 14px;
 }
-
 /*******************************
 ********************************
 ! POPUP - MIRRORS
@@ -10318,7 +10431,6 @@ LAST ITEM
 #app .dialog-box .breadcrumbs > a:last-child:before {
   position: relative;
 }
-
 /*******************************
 ********************************
 ! POPUP WIDTH - ALL (NOT QUICK SWITCHER)
@@ -10332,7 +10444,6 @@ LAST ITEM
     z-index: 94949494944949494 !important;
         
 }
-
 /*******************************
 ********************************
 ! SEARCH - NAV - BAR
@@ -10733,7 +10844,6 @@ DROPDOWN WRAPPER
 
 
 
-
 /*******************************
 ********************************
 ! SEARCH - NAV - RESULTS
@@ -10758,7 +10868,6 @@ DROPDOWN WRAPPER
     overflow: visible !important;
     opacity: 1;
 }
-
 /*******************************
 ********************************
 ! EXPAND COLLAPSE
@@ -10816,8 +10925,9 @@ DROPDOWN WRAPPER
     top:calc(var(--children-Indent) * 1.55) !important
   }
 
-
-
+.project.tableItem > .children .name:after{
+  opacity: 0;
+}
 /*******************************
 ********************************
 ! SHARED PAGES
@@ -10951,7 +11061,6 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
   }
   
 }
-
 /*******************************
 ********************************
 ! FLAT SEARCH
@@ -11068,7 +11177,6 @@ box-shadow:
   --matchBrdW:4px;
   --matchBrdRad:5px;
 }
-
 /*******************************
 ********************************
 ! AI
@@ -11081,7 +11189,6 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   white-space: normal !important; 
   font-size: 13px;
 }
-
 /*******************************
 ********************************
 ! MOBILE - NEW
@@ -11399,7 +11506,6 @@ BOARD COLUMNS
     margin-left: -100px;
   }
 }
-
 /*******************************
 ********************************
 ! ICONS
@@ -11407,7 +11513,7 @@ BOARD COLUMNS
 ********************************/
 :root {
     --ICON--COMMENT-CONTAINER:url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.1875 25.376C13.1875 23.8232 11.9277 22.5634 10.3749 22.5634H4.74967C4.23402 22.5634 3.81213 22.1415 3.81213 21.6259V4.75016C3.81213 4.23451 4.23402 3.81262 4.74967 3.81262H27.2506C27.7663 3.81262 28.1882 4.23451 28.1882 4.75016V21.6259C28.1882 22.1415 27.7663 22.5634 27.2506 22.5634H19.1233C18.5139 22.5634 17.9221 22.7626 17.4358 23.1259L13.1875 26.3136V25.376ZM13.1758 29.8411L13.1875 29.8294L19.1233 25.376H27.2506C29.3191 25.376 31.0008 23.6943 31.0008 21.6259V4.75016C31.0008 2.68171 29.3191 1 27.2506 1H4.74967C2.68122 1 0.999512 2.68171 0.999512 4.75016V21.6259C0.999512 23.6943 2.68122 25.376 4.74967 25.376H7.56229H10.3749V28.1887V28.423V28.4406V28.8156V30.0637C10.3749 30.4212 10.5741 30.7435 10.8906 30.9017C11.207 31.0599 11.5879 31.0247 11.875 30.8138L12.877 30.0637L13.1758 29.8411ZM9.90614 9.43786C9.12681 9.43786 8.49983 10.0648 8.49983 10.8442C8.49983 11.6235 9.12681 12.2505 9.90614 12.2505H22.0942C22.8735 12.2505 23.5005 11.6235 23.5005 10.8442C23.5005 10.0648 22.8735 9.43786 22.0942 9.43786H9.90614ZM9.90614 15.0631C9.12681 15.0631 8.49983 15.6901 8.49983 16.4694C8.49983 17.2487 9.12681 17.8757 9.90614 17.8757H16.4689C17.2483 17.8757 17.8752 17.2487 17.8752 16.4694C17.8752 15.6901 17.2483 15.0631 16.4689 15.0631H9.90614Z" fill="%23808080" fill-opacity="1"/></svg>');
-    --ICON--ARROW: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M56.1193 27.226C62.0728 30.6989 62.0728 39.3011 56.1193 42.774L22.981 62.1047C16.9811 65.6046 9.44616 61.2768 9.44616 54.3307L9.44617 15.6693C9.44617 8.72321 16.9811 4.39537 22.981 7.89532L56.1193 27.226Z" fill="%232C3235"/><path fill-rule="evenodd" clip-rule="evenodd" d="M56.1193 42.774C62.0728 39.3011 62.0728 30.6989 56.1193 27.226L22.981 7.89531C16.9811 4.39536 9.44617 8.7232 9.44617 15.6693L9.44617 54.3306C9.44617 61.2768 16.9811 65.6046 22.981 62.1047L56.1193 42.774ZM50.5676 37.5913C52.5521 36.4337 52.5521 33.5663 50.5676 32.4086L21.3945 15.391C19.3946 14.2244 16.8829 15.667 16.8829 17.9824L16.8829 52.0176C16.8829 54.333 19.3946 55.7756 21.3946 54.6089L50.5676 37.5913Z" fill="%23828687"/></svg>');
+    --ICON--ARROW: url('data:image/svg+xml;utf8,<svg  viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M56.1193 27.226C62.0728 30.6989 62.0728 39.3011 56.1193 42.774L22.981 62.1047C16.9811 65.6046 9.44616 61.2768 9.44616 54.3307L9.44617 15.6693C9.44617 8.72321 16.9811 4.39537 22.981 7.89532L56.1193 27.226Z" fill="%232C3235"/><path fill-rule="evenodd" clip-rule="evenodd" d="M56.1193 42.774C62.0728 39.3011 62.0728 30.6989 56.1193 27.226L22.981 7.89531C16.9811 4.39536 9.44617 8.7232 9.44617 15.6693L9.44617 54.3306C9.44617 61.2768 16.9811 65.6046 2.981 62.1047L56.1193 42.774ZM50.5676 37.5913C52.5521 36.4337 52.5521 33.5663 50.5676 32.4086L21.3945 15.391C19.3946 14.2244 16.8829 15.667 16.8829 17.9824L16.8829 52.0176C16.8829 54.333 19.3946 55.7756 21.3946 54.6089L50.5676 37.5913Z" fill="%23828687"/></svg>');
     --ICON--ARROW-LIGHT: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5151 12.3648C28.299 13.9888 28.299 18.0112 25.5151 19.6352L10.6472 28.3081C7.84163 29.9447 4.31825 27.921 4.31825 24.6729L4.31825 7.32707C4.31825 4.07903 7.84163 2.0553 10.6472 3.6919L25.5151 12.3648Z" fill="%23ffffff"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.515 19.6351C28.2989 18.0112 28.2989 13.9887 25.515 12.3648L10.6471 3.69186C7.8415 2.05527 4.31812 4.07899 4.31812 7.32704V24.6729C4.31812 27.9209 7.8415 29.9447 10.6471 28.3081L25.515 19.6351ZM23.07 17.2117C23.998 16.6704 23.998 15.3296 23.07 14.7882L9.82744 7.06341C8.89225 6.51788 7.71779 7.19245 7.71779 8.27514L7.71779 23.7248C7.71779 24.8075 8.89224 25.482 9.82744 24.9365L23.07 17.2117Z" fill="%23A0A7AB"/></svg>');
     --ICON--ARROW-DARK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5151 12.3648C28.299 13.9888 28.299 18.0112 25.5151 19.6352L10.6472 28.3081C7.84163 29.9447 4.31825 27.921 4.31825 24.6729L4.31825 7.32707C4.31825 4.07903 7.84163 2.0553 10.6472 3.6919L25.5151 12.3648Z" fill="%232C3235"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.515 19.6351C28.2989 18.0112 28.2989 13.9887 25.515 12.3648L10.6471 3.69186C7.8415 2.05527 4.31812 4.07899 4.31812 7.32704V24.6729C4.31812 27.9209 7.8415 29.9447 10.6471 28.3081L25.515 19.6351ZM23.07 17.2117C23.998 16.6704 23.998 15.3296 23.07 14.7882L9.82744 7.06341C8.89225 6.51788 7.71779 7.19245 7.71779 8.27514L7.71779 23.7248C7.71779 24.8075 8.89224 25.482 9.82744 24.9365L23.07 17.2117Z" fill="%23828687"/></svg>');
   --ICON--ARROW-BLACK: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5151 12.3648C28.299 13.9888 28.299 18.0112 25.5151 19.6352L10.6472 28.3081C7.84163 29.9447 4.31825 27.921 4.31825 24.6729L4.31825 7.32707C4.31825 4.07903 7.84163 2.0553 10.6472 3.6919L25.5151 12.3648Z" fill="%23121212"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.515 19.6351C28.2989 18.0112 28.2989 13.9887 25.515 12.3648L10.6471 3.69186C7.8415 2.05527 4.31812 4.07899 4.31812 7.32704V24.6729C4.31812 27.9209 7.8415 29.9447 10.6471 28.3081L25.515 19.6351ZM23.07 17.2117C23.998 16.6704 23.998 15.3296 23.07 14.7882L9.82744 7.06341C8.89225 6.51788 7.71779 7.19245 7.71779 8.27514L7.71779 23.7248C7.71779 24.8075 8.89224 25.482 9.82744 24.9365L23.07 17.2117Z" fill="%23dbdbdb"/></svg>');
@@ -11461,7 +11567,6 @@ BOARD COLUMNS
 
 
 }
-
 
 /****
 ! ICONS - WAVY UNDERLINE
@@ -11530,7 +11635,65 @@ BOARD COLUMNS
 
 
 
+/****
+! ICONS - WAVY UNDERLINE - DASHED
+******/
 
+/**************
+***************
+***************
+LIGHT - WAVY MIRROR UNDERLINE
+
+:root {
+
+    --ICON--UNDERLINE-WAVY--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
+
+    --ICON--UNDERLINE-WAVY--UNDERLINE--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="1" stroke-width="10"/></svg>');
+
+    --ICON--UNDERLINE-WAVY--LINK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
+
+    --ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
+}
+
+***************
+***************
+**************/
+
+/**************
+***************
+***************
+DARK - WAVY MIRROR UNDERLINE
+
+
+:root {
+
+    --ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="9" width="25" height="10" rx="5" fill="white" fill-opacity="0.1"/><rect x="25" y="9" width="25" height="10" rx="5" fill="%232A3237" fill-opacity=".01"/></svg>');
+
+    --ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="40" height="22" viewBox="0 0 40 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="11" width="20" height="8" rx="3.18804" fill="white" fill-opacity="1"/></svg>');
+
+    --ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%233c88af" stroke-opacity="1" stroke-width="10"/></svg>');
+
+    --ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
+
+}
+***************
+***************
+**************/
+
+
+/********
+
+:root {
+    --ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT);
+    --ICON--COMMENT:var(--ICON--COMMENT-LIGHT);
+
+}
+._theme-dark {
+    --ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
+    --ICON--COMMENT:var(--ICON--COMMENT-DARK);
+}
+
+********/
 /****
 ! ICONS - WAVY UNDERLINE - SOLID
 ******/
@@ -11664,7 +11827,6 @@ html #app .board .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content 
   background-image: unset !important;
   text-decoration: underline !important;
 }
-
 /***********
 ************
 ! FLOAT BROWSER / FLUID BROWSER > OVERRIDES
