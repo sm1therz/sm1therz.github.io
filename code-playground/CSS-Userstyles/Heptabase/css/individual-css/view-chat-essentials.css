@@ -393,6 +393,52 @@
   transition-delay: .25s;
 }
 
+/********
+! Chat > HEADER COLORS > USER / ASSISTANT COLORS
+*********/
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] {
+  display: flex !important;
+}
+
+[class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 {}
+
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 > div,
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > svg {
+  opacity: 0;
+}
+
+[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] + [class*="group-hover"] {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  z-index: 5;
+}
+
+[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center > div > .shrink-0:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: -50vw;
+  bottom: 0px;
+  background: hsl(190, 100%, 50%, 0.15) !important;
+  z-index: -2;
+}
+
+/*ASSISTANT*/
+[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center + p:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: -50vw;
+  bottom: 0px;
+  background: hsl(300, 100%, 75%, 0.075) !important;
+  z-index: -10
+}
+
 /*******
 ! Chat > REASONING SUMMARY / CHAIN OF THOUGHT
 ********/
@@ -408,7 +454,7 @@
   flex-direction: column;
   gap: 5px;
   margin: 0 auto;
-  margin-bottom: calc(var(--chatPadTopBtm));
+  margin-bottom: calc(var(--chatPadTopBtm) * 1);
 }
 .group\/1741629705525 > .relative > *:is(.mb-2.space-y-2) > div{
   background: hsla(0, 0%, 50%, 0.08);
@@ -418,62 +464,7 @@
   max-width: 100% !important;
   border-radius: 8px !important;
 }
-
 .group\/1741629705525 > .relative > *:is(.mb-2.space-y-2)  .ml-8{
   margin-left: 0px !important;
-}
-
-
-
-/********
-! Chat > HEADER COLORS > USER / ASSISTANT COLORS
-*********/
-:root {
-  --headerbgAssistant: hsl(300, 100%, 60%, 0.075);
-  --headerbgUser: hsl(190, 100%, 50%, 0.2);
-}
-
-[data-theme="dark"] {
-  --headerbgAssistant: hsl(300, 100%, 75%, 0.075);
-  --headerbgUser: hsl(200, 100%, 50%, 0.2);
-}
-[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] {
-  display: flex !important;
-}
-[class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 {}
-[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 > div,
-[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > svg {
-  opacity: 0;
-}
-[class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] + [class*="group-hover"] {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  z-index: 5;
-}
-[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center > div > .shrink-0:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  right: -50vw;
-  bottom: 0px;
-  background: var(--headerbgUser) !important;
-
-  z-index: -2;
-}
-
-/*ASSISTANT*/
-[class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center + p:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  right: -50vw;
-  bottom: 0px;
-  background: var(--headerbgAssistant) !important;
-  z-index: -10
 }
 
