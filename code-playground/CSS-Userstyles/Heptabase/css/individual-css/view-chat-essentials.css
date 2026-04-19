@@ -396,24 +396,29 @@
 /********
 ! Chat > HEADER COLORS > USER / ASSISTANT COLORS
 *********/
+:root {
+  --headerbgAssistant: hsl(300, 100%, 60%, 0.075);
+  --headerbgUser: hsl(190, 100%, 50%, 0.2);
+}
+
+[data-theme="dark"] {
+  --headerbgAssistant: hsl(300, 100%, 75%, 0.075);
+  --headerbgUser: hsl(200, 100%, 50%, 0.2);
+}
 [class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] {
   display: flex !important;
 }
-
 [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 {}
-
 [class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > .shrink-0 > div,
 [class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] > svg {
   opacity: 0;
 }
-
 [class*="1741629705525"]:hover [class*="mr"][class*="1.5"] > [class*="group-hover"][class*="hidden"] + [class*="group-hover"] {
   position: absolute;
   width: 14px;
   height: 14px;
   z-index: 5;
 }
-
 [class*="mr"][class*="1.5"].flex.size-5.shrink-0.items-center.justify-center > div > .shrink-0:after {
   content: "";
   display: block;
@@ -422,7 +427,8 @@
   left: 0;
   right: -50vw;
   bottom: 0px;
-  background: hsl(190, 100%, 50%, 0.15) !important;
+  background: var(--headerbgUser) !important;
+
   z-index: -2;
 }
 
@@ -435,10 +441,9 @@
   left: 0;
   right: -50vw;
   bottom: 0px;
-  background: hsl(300, 100%, 75%, 0.075) !important;
+  background: var(--headerbgAssistant) !important;
   z-index: -10
 }
-
 /*******
 ! Chat > REASONING SUMMARY / CHAIN OF THOUGHT
 ********/
