@@ -184,6 +184,21 @@
     }
   );
 
+  //! AI TUTOR VIEW
+  registerStyleGroup(
+    () => {
+      const href = window.location.href || '';
+      return href.startsWith('https://app.heptabase.com') && href.includes('/goal/');
+    },
+    () => {
+      createStylesheetLink('ai-tutor-style', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-ai-tutor.css');
+    },
+    () => {
+      const el = document.getElementById('ai-tutor-style');
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    }
+  );
+
   // ---------- Start the single SPA watcher ----------
   startGlobalSpaWatcher();
 })();
