@@ -188,7 +188,7 @@
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
-      return href.startsWith('https://app.heptabase.com') && href.includes('/goal/');
+      return href.includes('/goal/');
     },
     () => {
       createStylesheetLink('ai-tutor-style', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-ai-tutor.css');
