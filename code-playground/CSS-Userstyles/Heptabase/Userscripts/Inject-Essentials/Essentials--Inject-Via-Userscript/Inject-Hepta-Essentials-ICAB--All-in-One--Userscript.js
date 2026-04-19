@@ -57,7 +57,7 @@
     () => {
       const href = window.location.href || '';
       return ['card', '/card/', 
-      '/card-library', '/chat', '/journal', '/whiteboard', '/inbox'].some(pattern => href.includes(pattern));
+      '/card-library', '/chat', '/highlight', '/tag/', '/tags', '/journal', '/inbox', '/whiteboard'].some(pattern => href.includes(pattern));
     },
     () => {
       createStylesheetLink('context-menu-for-btt', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/note-popup-0-context-menu-for-BTT.css');
@@ -72,7 +72,7 @@
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
-      const patterns = ['card', '/card/', '/card-library', '/chat', '/journal', '/inbox', '/whiteboard/.*[?&]card='];
+      const patterns = ['card', '/card/', '/card-library', '/chat', '/highlight', '/tag/', '/tags', '/journal', '/inbox', '/whiteboard/.*[?&]card='];
       return patterns.some(pattern => {
         if (pattern.includes('.*') || pattern.includes('[?&]')) {
           try {
@@ -149,7 +149,7 @@
   registerStyleGroup(
     () => {
       const href = window.location.href || '';
-      return ['/card/', '/chat', 'isOpeningRightSidebar', 'isOpeningGlobalSidebar'].some(pattern => href.includes(pattern));
+      return ['/card/', '/goal', '/chat', 'isOpeningRightSidebar', 'isOpeningGlobalSidebar'].some(pattern => href.includes(pattern));
     },
     () => {
       createStylesheetLink('chat-essentials-style', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-chat-essentials.css');
