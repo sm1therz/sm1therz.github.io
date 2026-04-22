@@ -8,3 +8,7 @@
 [class*="text-middle-hard-grey"] .ProseMirror [data-node-type="heading"]{
     color: var(--headingClr);
 }
+
+.z-dropdown-menu > .scrollbar-gutter-stable[class*="max-h"][class*="209px"]{
+    max-height: 100vh !important;
+}
