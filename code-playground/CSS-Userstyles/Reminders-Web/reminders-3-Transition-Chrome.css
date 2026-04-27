@@ -1,0 +1,39 @@
+/************
+NOTES TRANSITION > V1 > CHROME
+**************/
+:root {
+
+	--notesMaxHeight:0px;
+	--notesPadTopBtm:3px;
+}
+
+/*testing*/
+.reminder-item .notes,
+.reminder-item .notes .label,
+.reminder-item .notes .tt-input-field{
+	box-shadow: inset 0 0 0 var(--testReminderBrdW) red !important;
+}
+/*notes placeholder*/
+.reminder-item .notes .label{
+	padding-top: 4px;
+	opacity: .5;
+}
+
+/*notes*/
+.reminder-item[data-has-notes="false"] .notes{
+	height: unset !important;
+	max-height: var(--notesMaxHeight) !important;
+	transition: 0.095s;
+	transition-delay: 0s !important;
+	opacity: 0;
+}
+
+
+.reminder-item[data-has-notes="false"] .notes:focus-within {
+	--notesMaxHeight:500px;
+	opacity: 1;
+}
+.reminder-item[data-has-notes="false"] .notes:focus-within,
+.reminder-item[data-has-notes="true"] .notes {
+	margin-top: var(--notesPadTopBtm) !important;
+}

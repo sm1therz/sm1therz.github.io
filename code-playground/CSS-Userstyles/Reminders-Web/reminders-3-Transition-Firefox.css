@@ -1,0 +1,54 @@
+/************
+NOTES TRANSITION > V2 > Firefox
+**************/
+:root {
+
+	--notesMaxHeight:0px;
+
+}
+
+
+/*notes placeholder*/
+.reminder-item .notes .label{
+	opacity: 0.0 !important;
+
+}
+.reminder-item .notes .label:focus-within {
+	opacity: .2
+}
+:root {
+	--noteMaxH:0px;
+}
+.reminder-item[data-has-notes="false"] .notes{
+	max-height: var(--noteMaxH) !important;
+	transition: .2s;
+	transition-delay: 0s !important;
+	min-height:var(--noteMaxH) !important;
+	min-width: 60px !important;
+	z-index: 939393;
+	overflow-x: unset;
+	overflow-y: unset;
+}
+.reminder-item[data-has-notes="false"] .notes:focus-within{
+
+}
+.reminder-item[data-has-notes="false"] .notes > [role="group"]{
+
+}
+
+.reminder-item[data-has-notes="false"] .notes[data-edit="true"] .label{
+	opacity: .5 !important;
+}
+/*notes > Acti
+ve*/
+.reminder-item[data-has-notes="false"][data-expanded="true"] .label:focus-within ~ .tt-input-field{
+
+
+
+}
+
+
+.reminder-item[data-has-notes="false"] .notes {
+	--notesMaxHeight:500px;
+	opacity: 1;
+}
