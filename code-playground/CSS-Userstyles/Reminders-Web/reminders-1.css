@@ -1,6 +1,6 @@
 /**root*/
 :root {
-	--testReminderBrdW:.25px;
+	--testReminderBrdW:0px;
 }
 
 [id*="reminder-item"],
@@ -16,32 +16,56 @@
 .reminder-item .notes [role="group"],
 .reminder-item .notes [role="group"] .tt-input-field,
 /*metadata*/
-.reminder-item .notes ~ .metadata{
+.reminder-item .notes ~ .metadata,
+.rm-list-header,
+.rm-list-header > div,
+.rm-list-header > div > *,
+.cloudos-toolbar.app,
+.cloudos-toolbar.app > *{
 box-shadow: inset 0 0 0 var(--testReminderBrdW) red;
 }
 /*MAIN*/
-
+:root {
+	--reminderPadTopBtm:10px;
+	--reminderPadLR:10px;
+	--reminderMargLR:10px;
+}
 
 .reminder-list-items{
 		position: relative;
 }
 .reminder-item {
 	 position: relative;
+	padding-right: var(--reminderPadLR) !important;
+}
+.reminder-item[dir="ltr"], [dir="ltr"] .reminder-item{
+	margin-left: var(--reminderMargLR) !important;
+	margin-right: var(--reminderMargLR) !important;
 }
 
-
-
-:root {
-	--reminderPadTopBtm:10px;
+/*Indentation - level 1*/
+.rm-list-body .reminder-item{
+	padding-left: var(--reminderPadLR);
 }
+/*padding - level 2*/
+
+.rm-list-body .reminder-item[aria-level="2"]{
+	padding-left: calc(var(--reminderPadLR) + var(--checkboxW) + var(--checkboxMargR)); 
+}
+/*inner wrapper*/
 .reminder-item .content{
 	padding-top: var(--reminderPadTopBtm) !important;
 	padding-bottom: var(--reminderPadTopBtm) !important;
+	padding-right: 0px !important;
 }
 
 
 
 /*REMINDER TITLE*/
+
+:root {
+	--titleItemGap:6px;
+}
 .rm-list .reminder-item .content-title {
 	max-height: 40rem !important;
 }
@@ -55,12 +79,30 @@ box-shadow: inset 0 0 0 var(--testReminderBrdW) red;
 
 
 .reminder-item .title {
-	max-width: calc(100% - var(--infoBtnW) - var(--infoBtnPosR) * 1.5 ) !important;
+	max-width: 100% !important;
 	display: flex;
 	align-items: center;
 }
 .reminder-item .title [role="group"]{
 	flex: 1;
+}
+
+
+/*PRIORITY - move priority to end*/
+.content-title > .mark-completed-container + [role="gridcell"]{
+	order: 4
+}
+
+.content-title > .mark-completed-container + [role="gridcell"] .priority:not(:empty) {
+	padding: 0px !important;
+	margin: 0px;
+	margin-left: var(--titleItemGap);
+}
+/*FLAG - move priority to end*/
+
+.content-title > .flag-container:not(:empty){
+	order: 3;
+	margin-left: var(--titleItemGap) !important;
 }
 
 /*REMINDER NOTES*/
@@ -92,10 +134,16 @@ box-shadow: inset 0 0 0 var(--testReminderBrdW) red;
 	width: var(--checkboxW) !important;
 	height: var(--checkboxW) !important;
 }
+
+/*MEDIUM PRIORITY*/
+
+.reminder-item[aria-label*="Medium Priority"] .mark-completed svg{
+	fill: hsl(206, 100%, 50%);
+}
 /*REMINDER INFO BUTTON*/
 :root {
 	--infoBtnPosTop:15px;
-	--infoBtnPosR:15px;
+	--infoBtnPosR:11px;
 	--infoBtnW:30px;
 	--infoBtnTransition:.12s ease-in-out;
 }
@@ -113,12 +161,12 @@ box-shadow: inset 0 0 0 var(--testReminderBrdW) red;
 .reminder-item .info-container button {
 	opacity: 0 !important;
 	transition: var(--infoBtnTransition);
-	transform: scale(.7);
+	transform: scale(.5);
 	box-shadow: inset 0 0 0 var(--testReminderBrdW) green;
 }
 .reminder-item:hover .info-container button{
 		opacity: 1 !important;
-		transform: scale(.9);
+		transform: scale(.8);
 
 }
 /*REMINDER BORDER*/
@@ -154,7 +202,22 @@ box-shadow: inset 0 0 0 var(--testReminderBrdW) red;
 	margin-left: 82px;
 }
 
-/*COMPACT*/
+/*Header - middle*/
+.rm-list-header[dir="ltr"], 
+[dir="ltr"] .rm-list-header {
+		padding-left: var(--reminderMargLR) !important;
+	padding-right:var(--reminderMargLR) !important;
+}
+.rm-list-header[dir="ltr"] > div, 
+.rm-list-header > div > ui-button.list-back-button,
+[dir="ltr"] .rm-list-header > div{
+	padding-left: var(--reminderPadLR) !important;
+	padding-right:var(--reminderPadLR) !important;
+}
+.rm-list-header > div > ui-button.list-back-button{
+	padding-right:var(--reminderPadLR) !important;
+}
+
 .rm-list-header.compact .compact {
 	height: 2rem;
 }
@@ -170,12 +233,15 @@ box-shadow: inset 0 0 0 var(--testReminderBrdW) red;
 	font-size: 27px;
 	margin-bottom: 3px;
 }
+
+
 /*FONT SIZE*/
 :root {
-	--titleFontSize:15.05px;
+	--titleFontSize:14.5px;
 	--titleLineHeight:calc(var(--titleFontSize) + 5px);
 	--noteFontSize:calc(var(--titleFontSize) - 1.75px);
 	--noteLineHeight:calc(var(--noteFontSize) + 4.5px);;
+	--noteMargTop:3px;
 }
 
 /*TITLE*/
@@ -190,7 +256,7 @@ box-shadow: inset 0 0 0 var(--testReminderBrdW) red;
 
 /*NOTES*/
 .reminder-item .notes > div{
-	padding-top: 3px;
+	padding-top: var(--noteMargTop);
 }
 .reminder-item .notes {
 	font-size: var(--noteFontSize);
@@ -235,6 +301,8 @@ ui-pane .notes {
 @media (max-width:700px) {
 	:root {
 		--infoBtnPosR:8px;
+		--reminderMargLR:3px !important;
+		--noteMargTop:1px;
 	}
 	.reminder-item {
 		margin-left: 2px !important;

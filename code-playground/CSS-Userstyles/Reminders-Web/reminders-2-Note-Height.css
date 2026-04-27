@@ -1,0 +1,11 @@
+/*REMINDER NOTE > HEIGHT*/
+
+.rm-list .reminder-item .notes {
+		max-height: 80rem;
+
+}
+.rm-list .reminder-item .notes .tt-input-field {
+		-webkit-line-clamp: 61;
+		text-overflow: ellipsis;
+		overflow: hidden;
+}
