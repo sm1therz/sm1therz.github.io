@@ -180,6 +180,22 @@
       });
     }
   );
+  registerStyleGroup(
+    () => {
+      const href = window.location.href || '';
+      return href.includes('/tags?');
+      return href.includes('/tag/');
+    },
+    () => {
+      createStylesheetLink('tags-view-style', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-tags.css');
+    },
+    () => {
+      ['tags-view-style'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
+    }
+  );
 
   
   startGlobalSpaWatcher();
