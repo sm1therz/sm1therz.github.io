@@ -1,3 +1,17 @@
+/*root*/
+:root {
+	--tagdropdownBgClr: hsla(210, 5%, 105%, 0.6);
+	--tagdropdownBrdClr: hsla(0, 0%, 0%, 0.1);
+	--tagdropdownBackdropFilter:blur(100px);
+	--tagdropdownItemBgClr1: hsla(0, 0%, 50%, .1);
+}
+
+[data-theme="dark"] {
+	--tagdropdownBgClr: hsla(210, 5%, 15%, 0.6);
+	--tagdropdownBrdClr: hsla(0, 0%, 50%, 0.3);
+	--tagdropdownBackdropFilter:blur(100px)brightness(.8) ;
+	--tagdropdownItemBgClr1: hsla(0, 0%, 50%, .1);
+}
 /*****************
 ******************
 ******************
@@ -41,11 +55,6 @@ VIEW - TABLE - DATABASE
 ******************
 ******************
 ******************/
-/*TABLE - Background*/
-[id*="database-table-cell"],
-[id*="database-table-cell"] + div {
-		background: var(--background-primary);
-}
 
 [data-hepta-dnd-is-selected="true"] [id*="database-table-cell"] {
 		background: hsla(210, 77%, 51%, 0.1) !important;
@@ -351,9 +360,9 @@ PROPERTIES > NEW PROPERTIE DROPDOWN
 ******************/
 div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl:not(div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.w-62, div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl.max-h-70vh, div.flex.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl) {
 		min-width: 440px !important;
-		background: hsla(210, 5%, 15%, 0.6);
-		backdrop-filter: blur(100px)brightness(.8);
-	outline: .5px solid hsla(0,0%,50%,0.3);
+		background: var(--tagdropdownBgClr);
+		backdrop-filter: var(--tagdropdownBackdropFilter);
+	outline: .5px solid var(--tagdropdownBrdClr);
 	border-radius: 6px;
 }
 
@@ -385,7 +394,7 @@ div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-
 		padding-bottom: 4px;
 }
 .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary.bg-light-grey {
-		background: hsla(0, 0%, 50%, .1);
+		background: var(--tagdropdownItemBgClr1);
 }
 .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex:first-child {
 		font-weight: 500;
@@ -393,28 +402,24 @@ div > div.h-screen.w-screen + .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-
 }
 
 .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex:first-child + div[class*="gap"] {
-		gap: 2px;
+		gap: 3px;
 		margin-top: 2px;
 }
 .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex > .relative {
-		background: hsla(0, 0%, 50%, .075);
+		background: var(--tagdropdownItemBgClr1);
 		padding-top: 0px;
-		padding-bottom: 0px;
+		padding-bottom: 1px;
 		padding-left: 3px;
-		padding-right: 3px;
+		padding-right: 6px;
 		line-height: 1.4;
+	box-shadow: 0 0 0 .5px hsla(0, 0%, 50%, .1) !important;
+
 }
 .fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex > .relative:hover {
 		background: hsla(0, 0%, 50%, .2)
 }
-
-/*****************
-******************
-WHITEBOARD - CONTEXT MENU
-******************
-******************/
-#root ~ div .fixed.z-dropdown-menu[class*="80vh"][style*="width: 248"] {
-		width: 248px !important;
+.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-50vh > div > .text-primary > .flex > .relative > svg {
+	opacity: .7;
 }
 
 /*****************
@@ -460,29 +465,6 @@ WHITEBOARD - CONTEXT MENU - TIDY
 #root ~ .fixed.z-dropdown-menu.backdrop-blur-2xl > div > div.box-border:before {
 		left: unset;
 		right: -120px;
-}
-
-/*****************
-******************
-TAGS DROPDOWN > MULTI SELECT
-******************
-******************/
-.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh {
-		max-height: 78vh;
-}
-.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1 {}
-
-
-/*option container*/
-.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1 > div:first-child {
-		width: 100%;
-		display: none;
-}
-.fixed.z-dropdown-menu.rounded.bg-menu-texture-bg-medium.text-label.shadow-main.backdrop-blur-2xl > .max-h-70vh > .overflow-y-auto.py-1 > div.h-8 {
-		padding-top: 3px;
-		padding-bottom: 3px;
-		height: unset;
-		margin: 0px;
 }
 
 

@@ -198,6 +198,21 @@
       if (el && el.parentNode) el.parentNode.removeChild(el);
     }
   );
+  //! TAGS
+  registerStyleGroup(
+    () => {
+      const href = window.location.href || '';
+      return href.includes('/tags?');
+      return href.includes('/tag/');
+    },
+    () => {
+      createStylesheetLink('tags-view-stype', 'https://sm1therz.github.io/code-playground/CSS-Userstyles/Heptabase/css/individual-css/view-tags.css');
+    },
+    () => {
+      const el = document.getElementById('ai-tutor-style');
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    }
+  );
 
   // ---------- Start the single SPA watcher ----------
   startGlobalSpaWatcher();
