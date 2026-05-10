@@ -23,7 +23,7 @@
     /*bookmarks*/
     --bookmarksIconsGap: 10px;
     --bookmarkLinkBrdRad: 17px;
-    --bookmarkThumbnailWidth: 90px; 
+    --bookmarkThumbnailWidth: 90px;
     --bookmarkThumbnailMargTopBtm: 4px;
     /*description*/
     --bookmarkDescriptionListMargTopBtm: var(--noteParagraphMargTopBtm);
@@ -479,13 +479,13 @@ SINGLE COLUMN PAGE
 /***********
 SINGLE COLUMN > COLUMN CONTAINER
 /***********/
-.page-section.columns-1 {
+[style*="--column-count: 1"] {
     display: flex !important;
 }
 /***********
 SINGLE COLUMN > COLUMN SIZE
 /***********/
-.page-section.columns-1 > .page-section__column:first-of-type {
+[style*="--column-count: 1"] > .page-section__column:first-of-type {
     width: var(--OneColumn-firstColumnWidth) !important;
 }
 
@@ -527,15 +527,15 @@ html .page-section {
     min-width: unset !important;
     margin: 0 auto;
 }
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:first-of-type,
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:first-of-type {}
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:first-of-type,
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:first-of-type {}
 
 .widget-page__container {}
 /***********
 2 COLUMNS > CONVERSION > SINGLE COLUMN + FLOATING COLUMN
 ************/
-.page-section.columns-2[style*="--total-column-size: 2"],
-.page-section.columns-2[style*="--total-column-size: 3"] {
+[style*="--column-count: 2"][style*="--total-column-size: 2"],
+[style*="--column-count: 2"][style*="--total-column-size: 3"] {
     display: grid !important;
     grid-template-columns: 1fr 1fr minmax(auto, var(--OneColumn-firstColumnWidth)) 1fr 1fr !important;
     /* Defines three columns */
@@ -554,8 +554,8 @@ html .page-section {
 /***********
 2 COLUMNS > CONVERSION > FIRST COLUMN
 ************/
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:first-child,
-.page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:first-child {
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:first-child,
+[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:first-child {
     grid-column-start: 3;
     grid-column-end: 4;
     max-width: 100% !important;
@@ -565,8 +565,8 @@ html .page-section {
 /***********
 2 COLUMNS > CONVERSION > FLOATING COLUMN
 ************/
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child,
-.page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child {
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child,
+[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child {
     grid-column-start: 4;
     grid-column-end: 6;
     position: relative;
@@ -576,31 +576,31 @@ html .page-section {
 /***********
 MARGIN TOP FIRST ONE
 ************/
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child > div,
-.page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child > div {
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child > div,
+[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child > div {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     flex: 0;
 }
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget:first-of-type,
-.page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget:first-of-type {
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget:first-of-type,
+[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget:first-of-type {
     padding-top: var(--floatingcolumnMargTop) !important;
 }
 
 /***********
 WIDGET WIDTH
 ************/
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget,
-.page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget {
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget,
+[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget {
     width: var(--quicklinkWidth) !important;
     max-width: 100%;
 }
 /***********
 WIDGET WIDTH
 ************/
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget article,
-.page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget article {
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget article,
+[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget article {
     max-width: 100% !important;
     max-width: 97% !important;
 }
@@ -613,20 +613,20 @@ WIDGET WIDTH
 /***********
 2 COLUMNS > CONVERSION > FLOATING COLUMN > WIDGET W
 ************/
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__plus-container div,
-.page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__plus-container div {
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__plus-container div,
+[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__plus-container div {
     margin-top: 40px;
 }
-.page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget:first-of-type,
-.page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget:first-of-type {
+[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget:first-of-type,
+[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget:first-of-type {
     padding-top: var(--floatingcolumnMargTop)
 }
 
 /***********
 3 COLUMNS
 ************/
-.page-section.columns-3[style*="--total-column-size: 3"],
-.page-section.columns-3[style*="--total-column-size: 4"] {
+[style*="--column-count: 3"][style*="--total-column-size: 3"],
+[style*="--column-count: 3"][style*="--total-column-size: 4"] {
     --columnContainerMaxWidth: 1100px !important;
     width: var(--columnContainerMaxWidth);
     max-width: 100% !important;
@@ -651,8 +651,8 @@ WIDGET WIDTH
 EXTERNAL DISPLAY  - 2 COLUMN PAGE
 ************/
 @media (max-width: 2200px) {
-    .page-section.columns-2[style*="--total-column-size: 2"],
-    .page-section.columns-2[style*="--total-column-size: 3"] {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"],
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] {
         --quicklinkWidth: 500px;
     }
 }
@@ -661,8 +661,8 @@ EXTERNAL DISPLAY  - 2 COLUMN PAGE
 INTERNAL MBP DISPLAY - 2 COLUMN PAGE
 ************/
 @media (max-width: 1800px) {
-    .page-section.columns-2[style*="--total-column-size: 2"],
-    .page-section.columns-2[style*="--total-column-size: 3"] {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"],
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] {
         --quicklinkWidth: 366px;
     }
 }
@@ -675,12 +675,12 @@ IPAD MINI - 2 COLUMN PAGE
         --quicklinkWidth: 356px;
     }
 
-    .page-section.columns-2[style*="--total-column-size: 2"],
-    .page-section.columns-2[style*="--total-column-size: 3"] {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"],
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] {
         grid-template-columns: 1fr fr minmax(auto, var(--OneColumn-firstColumnWidth)) 1fr 1fr !important;
     }
-    .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:first-child,
-    .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:first-child {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:first-child,
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:first-child {
         grid-column-start: 1;
         grid-column-end: 3;
         max-width: 100% !important;
@@ -688,8 +688,8 @@ IPAD MINI - 2 COLUMN PAGE
         padding-left: 30px!important;
         padding-right: 30px!important;
     }
-    .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child,
-    .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child,
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child {
         grid-column-start: 3;
         grid-column-end: 6;
         position: relative;
@@ -729,8 +729,8 @@ GOES FROM FIXED POSITION TO RELATIVE
     .browser-other {
         --searchContainerHeight: 40px;
     }
-    .page-section.columns-2[style*="--total-column-size: 2"],
-    .page-section.columns-2[style*="--total-column-size: 3"] {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"],
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] {
         display: flex !important;
         flex-direction: column;
         position: relative !important;
@@ -745,8 +745,8 @@ GOES FROM FIXED POSITION TO RELATIVE
     :root {
         --floatingcolumnMargTop: 0px;
     }
-    .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child > div,
-    .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child > div {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child > div,
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child > div {
         align-items: center;
     }
 }
@@ -769,15 +769,15 @@ MAX WIDTH 1000px - MULTICOLUMN PAGE
     section.page-section__column {
         width: calc(50% - 5px);
     }
-    .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child,
-    .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child,
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child {
         position: relative;
         --floatingcolumnMargTop: 0px;
         width: 100% !important;
         border-top: 1px dashed hsla(0, 0%, 100%, .1) !important;
     }
-    .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:first-child,
-    .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:first-child {
+    [style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:first-child,
+    [style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:first-child {
         width: 100% !important;
     }
     /*
@@ -1140,8 +1140,8 @@ HEADER - TRANSPARENT BACKGROUND
 }
 
 /*OPAQUE*/
-#appID .page-section.columns-2[style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget article .widget__container[style*=", 0);"],
-#appID .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget article .widget__container[style*=", 0);"] {
+#appID .page-section[style*="--column-count: 2"][style*="--total-column-size: 2"] > .page-section__column:last-child .page-section__widget article .widget__container[style*=", 0);"],
+#appID .page-section[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child .page-section__widget article .widget__container[style*=", 0);"] {
     box-shadow: inset 0 0 0 1px hsl(0, 0%, 100%, 0) !important;
     background: transparent !important;
 
@@ -1184,7 +1184,7 @@ WIDGET SPACING > 2 COLUMN > RIGHT COLUMN
 :root {
   --widgetRightColMargTopBtm:calc(var(--widgetMargTopBtm) * 1);
 }
-#appID .page-section.columns-2[style*="--total-column-size: 3"] > .page-section__column:last-child > div .page-section__widget{
+#appID .page-section[style*="--column-count: 2"][style*="--total-column-size: 3"] > .page-section__column:last-child > div .page-section__widget{
   margin-bottom: var(--widgetRightColMargTopBtm) !important;
   margin-top: var(--widgetRightColMargTopBtmH) !important; 
 }
@@ -3532,6 +3532,32 @@ HIDDEN TODOS
 }
 
 
+
+
+/***********
+************
+! NOT MOBILE! - EXTENSION BACKGROUND FIX
+************
+************/
+:root {
+    --startMeBg:rgb(18, 18, 18);
+} 
+html,
+body,
+body #appId ,
+body #appId .app__background,
+body #appId .app__background span.app__color-layer,
+body #appId .app__main-layout,
+body #appId .app__main-layout .app__body,
+body #appId .app__main-layout .app__body .widget-page,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container .widget-page__section,
+body #appId .app__main-layout .app__body .widget-page main.widget-page__main .widget-page__container .widget-page__section section.page-section__column,
+html *:not(section *, .unified-menu, .unified-menu *, header, header *, .app__sidebar, .app__sidebar *,.modal,.modal *,.modal__overlay, .search, .search *, .app__body_admin, .app__body_admin *, .sidebar.confirm, .sidebar.confirm *){
+    background: var(--startMeBg) !important;
+    background-image: linear-gradient(var(--startMeBg),var(--startMeBg)) !important;
+}
 /***********
 ************
 ! REMOVE ADS
