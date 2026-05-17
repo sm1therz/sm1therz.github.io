@@ -3,42 +3,41 @@ ROOT
 **********/
 :root {
 	--btn-MargTop: 0px;
+	--numberMargTop: 0px !important;
 }
-
 /*********
 PROJECT
 **********/
-
 /*********
 PROJECT > NAME
 **********/
-
 .is-desktop .project > .name {
 	margin-left: 0px !important;
 	padding-left: 0px !important;
 }
-
 /**HEADING BULLETS*/
-
 .project.header1 > .name {
 	--btn-MargTop: 16px;
 }
-
 .project.header2 > .name {
 	--btn-MargTop: 12px;
 }
-
 .project.header3 > .name {
 	--btn-MargTop: 8px;
 }
 
 /*CODE BLOCKS*/
-#app .project:is(.code-block, .quote-block) > .name > .expand,
-#app .project:is(.code-block, .quote-block) > .name > .bullet,
-#app .project:is(.code-block, .quote-block) > .name > .menu {
-	--btn-MargTop: 3px;
+.is-desktop #app .page .project.code-block > .name > .expand,
+.is-desktop #app .page .project.code-block > .name > .bullet,
+.is-desktop #app .page .project.code-block > .name > .menu {
+	--btn-MargTop: 3px !important;
 }
-
+/*QUOTE BLOCKS*/
+.is-desktop #app .page .project.quote-block > .name > .expand,
+.is-desktop #app .page .project.quote-block > .name > .bullet,
+.is-desktop #app .page .project.quote-block > .name > .menu {
+	--btn-MargTop: 0px !important;
+}
 /*********
 PROJECT > NAME > CONTENT
 **********/
@@ -46,19 +45,15 @@ PROJECT > NAME > CONTENT
 	padding-right: 0px !important;
 	padding-top: 0px !important;
 }
-
 .project.board .project > .name > .content {
 	padding-right: 0px !important;
 }
-
 /*********
 BOARDS
 **********/
-
 #app .project.board .project.boardCard:not([class*="comment"]) {
 	background: transparent;
 }
-
 /*********
 ???????
 **********/
