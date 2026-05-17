@@ -1,3 +1,13 @@
+
+(function() {
+	let style = `<style>
+
+/*********
+ROOT
+**********/
+:root {
+		--btn-MargTop: 0px;
+}
 /*********
 PROJECT
 **********/
@@ -11,11 +21,7 @@ PROJECT > NAME
 	padding-left: 0px !important;
 }
 
-/***BULLETS*/
-
-:root {
-	--btn-MargTop: -1px;
-}
+/**HEADING BULLETS*/
 
 .project.header1 > .name {
 	--btn-MargTop: 16px;
@@ -46,7 +52,7 @@ BOARDS
 **********/
 
 #app .project.board .project.boardCard:not([class*="comment"]) {
-	background: transparent;
+		background:transparent;
 }
 
 /*********
@@ -59,8 +65,16 @@ BOARDS
 	display: inline;
 	margin-left: var(--children-Indent);
 	padding-top: var(--content-PadTopBtm) !important;
-	padding-bottom: var(--content-PadTopBtm);
+	padding-bottom: var(--content-PadTopBtm) !important;
 	padding-left: var(--content-PadLeftRight);
 	padding-right: var(--content-PadLeftRight);
 	flex: 1;
 }
+
+
+
+
+</style>`;
+
+	document.head.insertAdjacentHTML("beforeend", style);
+})();
