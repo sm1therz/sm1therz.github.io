@@ -55,7 +55,7 @@ body,
 .tableColumn,
 .tableItem > .children{
 
-    box-shadow: inset 0 0 0 var(--testBrdW) red !important;
+    box-shadow: inset 0 0 0 var(--testBrdW) hsla(0, 100%, 50%, .5) !important;
 }
 /*
 #app .project.comment.thread .children {
@@ -323,7 +323,7 @@ body,
     --btnIcn-ExpandB4Low-W: 14px;
     --btnIcn-ExpandB4Low-H: 14px;
     --btnIcn-ExpandB4Low-HovTransition: 250ms cubic-bezier(.47, 2.2, .29, .6);
-    --btn-MargTop: 0px;
+    --btn-MargTop: -1px;
     --btn-MargTopBullet: 1px;
     --btn-MargTopCmnt: 18px;
     --btn-MargTopCmntContain: 5px;
@@ -2682,14 +2682,13 @@ LEVEL 3 > Button Adjustments
 /*Button - Checkbox*/
 /*Button - Top margins*/
 .project.header1 > .name {
-    --btn-MargTop: 18px;
+  --btn-MargTop: 16px;
 }
 .project.header2 > .name {
-    --btn-MargTop: 11px;
+  --btn-MargTop: 13px;
 }
-
 .project.header3 > .name {
-    --btn-MargTop: 9px;
+  --btn-MargTop: 11px;
 }
 
 /*Buttons - Paragraph*/
@@ -3206,7 +3205,7 @@ PUT COMPLETED TASKS AT THE BOTTOM
 #app .project.code-block > .name > .expand,
 #app .project.code-block > .name > .bullet,
 #app .project.code-block > .name > .menu{
-  --btn-MargTop:12px
+  --btn-MargTop:5px
 }
 
 #app .project.quote-block > .name:after,
@@ -3433,6 +3432,12 @@ html #app .project > .notes > .content .contentLink{
 #app > .pageContainer .page[style*="overflow-y: auto"] {
   padding-left: 0px !important;
   padding-right: 0px !important;
+}
+
+
+
+.project .project:not(.quote-block,.code-block) > .name > .content {
+    padding-top:0px !important;
 }
 /***********
 ! TAGS + HIGHLIGHTS
@@ -5347,6 +5352,26 @@ html #app .project.board > .children > .boardColumn > .self-stretch{
   margin-left: unset !important;
 }
 
+
+
+#app .project.board .project.code-block > .name > .absolute{
+  top: 7px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 7px;
+}
+#app .project.board .project.code-block > .name > .absolute button {
+  width: var(--btn-Width);
+  height: var(--btn-Height);
+  margin: unset ;
+}
+
+#app .project.board .project.code-block > .name > .menu{
+right: calc(var(--btn-Width) * 1) !important;
+  z-index: 94
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -6554,6 +6579,18 @@ EXPAND > BOARDCOLUMN BLOCKS
 #app .board > .children > .project.boardColumn > .name > .expand {
   opacity: 1 !important;
 }
+
+#app .project.board .project.code-block > .name > .expand,
+#app .project.board .project.code-block > .name > .bullet,
+#app .project.board .project.code-block > .name > .menu{
+  --btn-MargTop:10px !important
+}
+
+#app .project.board .project.code-block > .name > .bullet {
+  opacity: 0;
+}
+
+
 /*******************************
 ********************************
 ! TABLES
@@ -11597,198 +11634,6 @@ BOARD COLUMNS
 
 
 
-/****
-! ICONS - WAVY UNDERLINE - DASHED
-******/
-
-/**************
-***************
-***************
-LIGHT - WAVY MIRROR UNDERLINE
-
-:root {
-
-    --ICON--UNDERLINE-WAVY--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
-
-    --ICON--UNDERLINE-WAVY--UNDERLINE--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="1" stroke-width="10"/></svg>');
-
-    --ICON--UNDERLINE-WAVY--LINK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
-
-    --ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
-}
-
-***************
-***************
-**************/
-
-/**************
-***************
-***************
-DARK - WAVY MIRROR UNDERLINE
-
-
-:root {
-
-    --ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="9" width="25" height="10" rx="5" fill="white" fill-opacity="0.1"/><rect x="25" y="9" width="25" height="10" rx="5" fill="%232A3237" fill-opacity=".01"/></svg>');
-
-    --ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="40" height="22" viewBox="0 0 40 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="11" width="20" height="8" rx="3.18804" fill="white" fill-opacity="1"/></svg>');
-
-    --ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%232A3135"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%233c88af" stroke-opacity="1" stroke-width="10"/></svg>');
-
-    --ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
-
-}
-***************
-***************
-**************/
-
-
-/********
-
-:root {
-    --ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT);
-    --ICON--COMMENT:var(--ICON--COMMENT-LIGHT);
-
-}
-._theme-dark {
-    --ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
-    --ICON--COMMENT:var(--ICON--COMMENT-DARK);
-}
-
-********/
-/****
-! ICONS - WAVY UNDERLINE - SOLID
-******/
-/**************
-***************
-***************
-LIGHT - WAVY MIRROR UNDERLINE
-***************
-***************
-**************/
-:root {
-
-  --ICON--UNDERLINE-WAVY--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
-
-  --ICON--UNDERLINE-WAVY--UNDERLINE--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="1" stroke-width="10"/></svg>');
-
-  --ICON--UNDERLINE-WAVY--LINK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
-
-  --ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
-}
-
-
-
-/**************
-***************
-***************
-DARK - WAVY MIRROR UNDERLINE
-***************
-***************
-**************/
-:root {
-
-  --ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="white" fill-opacity="0.07"/><rect x="25" y="12" width="25" height="8" fill="white" fill-opacity="0.07"/></svg>');
-
-  --ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="white" fill-opacity="1"/><rect x="25" y="12" width="25" height="8" fill="white" fill-opacity="1"/></svg>');
-  
-  --ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="%239fa1a2" fill-opacity="1"/><rect x="25" y="12" width="25" height="8" fill="%239fa1a2" fill-opacity="1"/></svg>');
-
-  --ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="13" width="25" height="7" fill="%233c88af" fill-opacity="1"/><rect x="25" y="13" width="25" height="7" fill="%233c88af" fill-opacity="1"/></svg>');
-    --ICON--UNDERLINE-WAVY--DONE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="white" fill-opacity="0.04"/><rect x="25" y="12" width="25" height="8" fill="white" fill-opacity="0.04"/></svg>');
-  --ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
-}
-
-
-/************
-WAVY TEXT - BOARDS
-*************/
-
-/********
-********/
-:root {
-  --ICON--UNDERLINE-WAVY-CODEBLOCK: var(--ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT);
-  --ICON--COMMENT: var(--ICON--COMMENT-LIGHT);
-  --ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--LIGHT);
-}
-._theme-dark {
-  --ICON--UNDERLINE-WAVY-CODEBLOCK: var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
-  --ICON--COMMENT: var(--ICON--COMMENT-DARK);
-  --ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK);
-  --ICON--UNDERLINE-WAVY--LINK:var(--ICON--UNDERLINE-WAVY--LINK--DARK);
-  --ICON--UNDERLINE-WAVY--DONE:var(--ICON--UNDERLINE-WAVY--DONE--DARK);
-  
-}
-
-
-/*HIGHLIGHT FIX*/
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer,
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer,
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u,
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u,
-
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"],
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"],
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u .colored[class*="bc"],
-html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] u,
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
-  --wavy--padding-bottom: .5px;
-}
-
-
-
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
-html #app .page .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"].contentLink{
-  background-image: var(--ICON--UNDERLINE-WAVY--LINK) !important;
-  background-size: var(--wavy--BG-size) !important;
- 
-}
-html #app .page .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"].contentLink{
-  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
-}
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a * {
-  
-}
-
-
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] {
-  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
- 
-}
-
-
-
-html #app .pageContainer .page .project:is(.board) .project.comment .project[projectid*="virtual"] > .name > .content > .innerContentContainer u,
-html #app .pageContainer .page *:is(.board) .project.comment .project[projectid*="virtual"] > .name > .content > .innerContentContainer u {
-  text-decoration: underline !important;
-}
-
-/*******
-LINK FIX > MIRRORS  > ALL
-********/
-html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink,
-#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink{
-  background-image: var(--ICON--UNDERLINE-WAVY--LINK) !important;
-  background-repeat: repeat-x !important;
-}
-html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink[href*="workflowy.com"],
-#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink[href*="workflowy.com"]{
-  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
-}
-
-/*******
-LINK FIX > MIRRORS > BOARD (ADD UNDERLINE)
-********/
-
-html #app .board .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink,
-#app .board .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink {
-  background-image: unset !important;
-  text-decoration: underline !important;
-}
 /***********
 ************
 ! FLOAT BROWSER / FLUID BROWSER > OVERRIDES

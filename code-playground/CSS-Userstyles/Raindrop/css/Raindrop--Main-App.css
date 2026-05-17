@@ -5,8 +5,7 @@ ROOT
 *********
 *********
 *********/
-:root {
-}
+:root {}
 [data-theme="night"] {
 	/*text-colors*/
 	/*whites*/
@@ -54,6 +53,7 @@ ROOT
 	--editBoxBG: hsl(0, 0%, 7%);
 	--editBoxBgFocus: hsl(0, 0%, 10%);
 	--aboutBgClr: var(--color--blk--20-percent);
+	--articleHoverBg:
 
 	/*SEARCH*/
 	--search--bg-clr: hsl(218, 5%, 18%);
@@ -72,7 +72,7 @@ ROOT
 	--editBoxBrdClrFocus: hsl(0, 0%, 50%, .4);
 	/*masonry cards*/
 	--gridbookmarkBgClr: hsla(228, 3%, 17%, 1);
-	--gridbookmarkBgClr-Hover: hsla(228, 3%, 20%, 1);
+	--gridbookmarkBgClr-Hover: hsla(228, 3%, 22%, 1);
 	--gridbookmarkBrdClr: hsl(0, 0%, 0%, 1);
 	/*masonry cards - right clicked*/
 	--gridbookmarkBgClr-RightClick: hsla(211, 100%, 50%, 1);
@@ -96,9 +96,10 @@ ROOT
 	--highlightBrdClr: hsl(0, 0%, 100%, .05);
 	--highlightBgClr: hsl(0, 0%, 100%, .05);
 	/*NOTES*/
-	--note-text-color:hsl(0, 0%, 100%, .575);
-	--note-text-color-alpha:hsl(0, 0%, 100%, 0.575);
-
+	--note-text-color: hsl(0, 0%, 100%, .575);
+	--note-text-color-alpha: hsl(0, 0%, 100%, 0.575);
+	/*HIGHLIGHT COLOR*/
+	--highlight-text-color: hsla(0, 0%, 100%, .95);
 }
 
 [data-theme="day"] {
@@ -159,7 +160,8 @@ ROOT
 	--editBoxBrdClr: hsl(0, 0%, 75%);
 	/*highlights*/
 	--highlightBrdClr: hsl(0, 0%, 0%, .05);
-
+	/*HIGHLIGHT COLOR*/
+	--highlight-text-color: hsla(0, 0%, 0%, 1);
 }
 
 /*TESTING**/
@@ -173,7 +175,7 @@ article [class*="about"] [class*="description"] [class*="highlight"] [class*="te
 article [class*="about"] [class*="description"] [class*="tags"],
 article [class*="about"] [class*="info"] {
 	outline: var(--tstbrdw) solid red !important;
-	box-shadow: inset  0 0 0 var(--tstbrdw) pink !important;
+	box-shadow: inset 0 0 0 var(--tstbrdw) pink !important;
 }
 #react [class*="about"] [class*="note"] p,
 #react [class*="about"] [class*="note"] ul li,
@@ -187,8 +189,6 @@ article [class*="about"] [class*="info"] {
 article [class*="about"] [class*="description"] [class*="highlight"] [class*="text"] {
 	border: var(--tstbrdw) solid green
 }
-
-
 /********
 *********
 *********
@@ -227,6 +227,9 @@ BACKGROUNDS
 	background: var(--bg--main-background);
 }
 
+.svReader{
+	
+}
 
 /********
 *********
@@ -304,6 +307,7 @@ MASONRY / WATERFALL
 /*GRID*/
 #react .masonry-Z6Qr main{
 		grid-auto-rows: unset !important;
+	grid-gap:.3rem;
 }
 @media (max-width:700px){
 .masonry-Z6Qr main {
@@ -654,7 +658,7 @@ HIDE SHOW OPTIONS
 }
 /*SHOW ALL LINES OF HIGHLIGHT*/
 .highlights-EOy7 [class*="highlight-"] {
-	-webkit-line-clamp: unset;
+	-webkit-line-clamp: 7;
 }
 
 /*HIGHLIGHTS CONAINER*/
@@ -744,6 +748,17 @@ HIDE SHOW OPTIONS
 		filter: saturate(2);
 }
 
+#react article .about-X3Q4 [class*="description"] [class*="highlight-"] {
+		--note-text-color: var(--highlight-text-color);
+	color: var(--note-text-color);
+}
+
+#react article .about-X3Q4 [class*="description"] [class*="highlight-"] > span[class*="icon"][class*="note-"]{
+	display: inline-flex;
+	margin-top: 0px !important;
+	margin-bottom: unset !important;
+	margin-right: 4px !important;
+}
 /********
 *********
 *********
@@ -779,10 +794,12 @@ HIGHLIGHTS IN LIST & HEADLINE VIEW
 		border-bottom-right-radius: var(--highlightBrdRad);
 		border-bottom-width: 1px;
 }
+
+
 /********
 *********
 *********
-HIGHLIGHT WRAPPER
+HIGHLIGHTS > IN RIGHT SIDEBAR > HIGHLIGHT WRAPPER
 *********
 *********
 *********/
@@ -861,7 +878,7 @@ HIGHLIGHT WRAPPER
 /********
 *********
 *********
-HIGHLIGHT
+HIGHLIGHTS > IN RIGHT SIDEBAR > HIGHLIGHT
 *********
 *********
 *********/
@@ -877,7 +894,7 @@ HIGHLIGHT
 /********
 *********
 *********
-ANNOTATIONS
+HIGHLIGHTS > IN RIGHT SIDEBAR > ANNOTATIONS
 *********
 *********
 *********/
@@ -1153,7 +1170,7 @@ ACTIONS MENU - Buttons
 /********
 *********
 *********
-COLORS RIGHT CLICK
+COLORS > RIGHT CLICK
 *********
 *********
 *********/
@@ -1191,12 +1208,26 @@ article .actions-wrq5 a[data-button="current_tab"][href*="gif"]~a[data-button="p
 	transition: 1s;
 }
 
-
-/*HOVER BACKGROUND*/
-article:hover [class*="permalink"]{
-		background: hsla(200, 0%, 65%, .00) !important;
-				backdrop-filter: unset;
+/********
+*********
+*********
+COLORS > SELECT MODE
+*********
+*********
+*********/
+/**********
+OVERRIDE HOVER BACKGROUND
+***********/
+article [class*="permalink"]{
+	background: hsla(200, 0%, 65%, .00) !important;
+	backdrop-filter: unset;
 }
+/*
+article:hover [class*="permalink"]{
+	background: hsla(200, 0%, 65%, .00) !important;
+	backdrop-filter: unset;
+}
+/**/
 #react article:hover{
 		--gridbookmarkBgClr:var(--gridbookmarkBgClr-Hover);
 }
@@ -1974,6 +2005,38 @@ body aside.svReader .header-Tqac>a[href*="my/"]:hover{
 }*/
 /************
 *************
+! MAIN APP > READER > PREVIEW FORMATTING
+*************
+*************/
+
+
+/*CODEBLOCKS*/
+
+html[data-theme="night"] body pre {
+	white-space: pre-wrap;
+}
+
+html[data-theme="night"] body pre{
+	background: #00000024 !important;
+	display: block;
+	max-height: unset;
+	font-size: calc(1em - 3.5px);
+	box-shadow: 0 0 0 1px #ffffff24;
+}
+
+/*BLOCKQUOTES*/
+html[data-theme="night"] body blockquote{
+	position: relative;
+	padding-left: 20px !important;
+	margin-left: unset;
+	color: var(--text);
+}
+html[data-theme="night"] body blockquote::before{
+	left: 0;
+}
+
+/************
+*************
 FOLDERS 
 *************
 *************/
@@ -2002,6 +2065,61 @@ FOLDERS
 }
 .title-Ntls a:not(:hover) {
 	border-bottom-width: 0px !important;
+}
+/********
+*********
+*********
+HIGHLIGHTS MOD > COMBINE INTO 1
+*********
+*********
+*********/
+#react article .about-X3Q4 [class*="description"] > [class*="highlights-"] {
+		gap: 0px !important;
+}
+
+#react article .about-X3Q4 [class*="description"] > [class*="highlights-"] > [class*="highlight-"]:not([class*="highlight-"]:last-child) {
+		border-bottom-width: 0px !important;
+}
+
+#react article .about-X3Q4 [class*="description"] > [class*="highlights-"] > [class*="highlight-"] {
+		border-radius: 0px;
+}
+
+#react article .about-X3Q4 [class*="description"] > [class*="highlights-"] > [class*="highlight-"]:first-child {
+		border-top-left-radius: var(--highlightBrdRad);
+		border-top-right-radius: var(--highlightBrdRad);
+}
+
+#react article .about-X3Q4 [class*="description"] > [class*="highlights-"] > [class*="highlight-"]:last-child {
+		border-bottom-left-radius: var(--highlightBrdRad);
+		border-bottom-right-radius: var(--highlightBrdRad);
+}
+
+:root {
+		--highlightCombinedBrdClr: hsla(0, 0%, 0%, 1);
+}
+
+[data-theme="day"] {
+		--highlightCombinedBrdClr: hsla(0, 0%, 0%, .1);
+}
+
+/** NOT LIST VIEW */
+#react div [class*="description"] [class*="highlights"] > [class*="highlight-"] {
+		padding-left: 16px;
+		border-color: var(--highlightCombinedBrdClr) !important;
+}
+
+/** IS - LIST VIEW */
+#react div:is([class*="simple-"], [class*="list-"]) [class*="description"] [class*="highlights"] {
+		--highlightPadTopBtm: 4px !important;
+		border-color: var(--highlightCombinedBrdClr) !important;
+		--highlightCombinedBrdClr: hsla(60, 0%, 50%, 0.25);
+}
+
+@media (max-width: 700px) {
+		#react div:is([class*="simple-"], [class*="list-"]) [class*="description"] [class*="highlights"] {
+				--highlightPadTopBtm: 3px !important;
+		}
 }
 /************
 *************
@@ -2032,11 +2150,6 @@ LIST and HEADLINE ITEMS
 *:is(.list-rt1n, [class*="simple-"]) article:focus-within {
 	background: var(--gridbookmarkBgClr-RightClick) !important;
 }
-
-article .about-X3Q4 .description-G1ZJ {
-	color: var(--note-text-color) !important;
-}
-
 
 
 
@@ -2184,9 +2297,7 @@ div:is([class*="simple-"],[class*="list-"]) .about-X3Q4 [class*="note-"] {
 :is(.list-rt1n, [class*="simple-"]) article:hover{
 	background: hsla(0, 0%, 100%, .035) !important
 }
-:root {
-	--gridbookmarkBgClr-Hover: hsla(228, 3%, 20%, 0);
-}
+
 
 /*RED*/
 [data-theme="night"] [class*="highlight-"][style*="--highlight-color: red"] {
@@ -2316,7 +2427,7 @@ article [class*="tags"] a{
 
 	#react *:is(.list-rt1n, [class*="simple-"]) article .about-X3Q4 .description-G1ZJ,
 	#react *:is(.list-rt1n, [class*="simple-"]) article .about-X3Q4 .description-G1ZJ * {
-		line-height: var(--noteLineHeight);
+		line-height: calc(var(--noteLineHeight) * 1.15) !important;
 		--noteMargTopBtm: 3px;
 		outline: var(--tstBrdW) solid hsla(0, 100%, 50%, .5);
 		outline-offset: calc(var(--tstBrdW) * -1)
