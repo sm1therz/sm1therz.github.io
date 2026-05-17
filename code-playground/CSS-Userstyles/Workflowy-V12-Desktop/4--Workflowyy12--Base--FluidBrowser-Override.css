@@ -6,22 +6,25 @@ PROJECT
 PROJECT > NAME
 **********/
 
-.is-desktop .project > .name{
-		margin-left:0px !important;
-		padding-left:0px !important;
+.is-desktop .project > .name {
+	margin-left: 0px !important;
+	padding-left: 0px !important;
 }
 
 /***BULLETS*/
 
 :root {
---btn-MargTop: -1px;
+	--btn-MargTop: -1px;
 }
+
 .project.header1 > .name {
 	--btn-MargTop: 16px;
 }
+
 .project.header2 > .name {
 	--btn-MargTop: 13px;
 }
+
 .project.header3 > .name {
 	--btn-MargTop: 11px;
 }
@@ -30,14 +33,22 @@ PROJECT > NAME
 PROJECT > NAME > CONTENT
 **********/
 .project .project > .name > .content {
-		padding-right:0px !important;
-		padding-top:0px !important;
+	padding-right: 0px !important;
+	padding-top: 0px !important;
 }
 
 .project.board .project > .name > .content {
-		padding-right:0px !important;
+	padding-right: 0px !important;
 }
 
-.project:not(.board) .project > .name > :is(.expand,a[data-handbook="expand.toggle"]) {
-		
+/*********
+BOARDS
+**********/
+
+#app .project.board .project.boardCard:not([class*="comment"]) {
+		background:transparent;
 }
+
+/*********
+???????
+**********/
