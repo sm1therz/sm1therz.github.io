@@ -323,7 +323,7 @@ body,
     --btnIcn-ExpandB4Low-W: 14px;
     --btnIcn-ExpandB4Low-H: 14px;
     --btnIcn-ExpandB4Low-HovTransition: 250ms cubic-bezier(.47, 2.2, .29, .6);
-    --btn-MargTop: -1px;
+    --btn-MargTop: -2px;
     --btn-MargTopBullet: 1px;
     --btn-MargTopCmnt: 18px;
     --btn-MargTopCmntContain: 5px;
@@ -2685,10 +2685,10 @@ LEVEL 3 > Button Adjustments
   --btn-MargTop: 16px;
 }
 .project.header2 > .name {
-  --btn-MargTop: 13px;
+  --btn-MargTop: 9.5px;
 }
 .project.header3 > .name {
-  --btn-MargTop: 11px;
+  --btn-MargTop: 7px;
 }
 
 /*Buttons - Paragraph*/
@@ -2824,9 +2824,8 @@ PREFIX > INLINE FLEX
 /***************
 PREFIX - EXPAND
 ****************/
-.project:not(.checkmark) > .name > .prefix,
-.project:not(.checkmark) > .name > .prefix ~ .expand,
-#app *:is(.board) .project:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix{
+#app .project:not(.checkmark) > .name > .prefix,
+#app .project:not(.checkmark) > .name > .prefix ~ .expand{
   /*margin top*/
   --btn-MargTop: -1px;
   /*border-radius*/
@@ -2839,6 +2838,17 @@ PREFIX - EXPAND
   --btnIcn-ExpandB4Low-H: 16px;
   /*position*/
   --numberBulletPosL:unset;
+  margin-top: var(--numberMargTop);
+}
+#app .project:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix{
+--numberMargTop:-1px;
+}
+:root {
+  --numberMargTop:-2px;
+}
+
+.project.board {
+    --numberMargTop:0px;
 }
 
 
@@ -5250,7 +5260,7 @@ BOARD > NOT ROOT > FIX
 ********
 ********/
 .board:not(.root) {
-  --boarditemPadFix: 5px;
+  --boarditemPadFix: 2px;
 }
 /*BOARD COLUMN - NAME*/
 #app .project.board:not(.root) .project:is(.boardColumn) > .name {
@@ -5275,6 +5285,7 @@ BOARD > NOT ROOT > FIX
 /*ALL ITEMS - NAME */
 .project.board:not(.root) .project:not(.boardColumn, [class*="header"], .quote-block, .code-block) > .name {
   padding-top: calc(var(--content-PadTopBtm) * 1.7) !important;
+  margin-top:  var(--boarditemPadFix) !important;
 }
 /*ALL ITEMS - CONTENT - NOT NOTED */
 #app .project.board:not(.root) > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name > .content {
@@ -6588,6 +6599,11 @@ EXPAND > BOARDCOLUMN BLOCKS
 
 #app .project.board .project.code-block > .name > .bullet {
   opacity: 0;
+}
+
+#app .board > .children .boardColumn .project.boardCard {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 
@@ -11270,7 +11286,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     --btnIcn-ExpandB4Low-H: 13px;
     --btnIcn-ExpandB4Low-W: 13px;
     /*bullet marg*/
-    --btn-MargTop: -1px;
+    --btn-MargTop: -2px;
     /*checkbox*/
     --btnIcn-ChkBx-W: 11px;
     --btnIcn-ChkBx-H: 11PX;
@@ -11429,14 +11445,14 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     width: calc(var(--children-Indent) * 1) !important;
   }
   .project.header1 > .name {
-    --btn-MargTop: 11px;
+    --btn-MargTop: 9px;
   }
   .project.header2 > .name {
-    --btn-MargTop: 8px;
+    --btn-MargTop: 6.5px;
   }
 
   .project.header3 > .name {
-    --btn-MargTop: 9px;
+    --btn-MargTop: 7px;
   }
   .project > .name:after {
     left: calc(var(--children-Indent) / 3 - 0.75px);
@@ -11451,18 +11467,20 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   #app .project:is(.header3) > .name:after {
     top: calc(var(--children-Indent) * 2) !important
   }
-}
-#app .project > .name > .prefix {
-  --btn-MargTop: -1px !important;
-}
-@media (max-width: 650px) {
+  #app .project > .name > .prefix {
+    --btn-MargTop: -2px !important;
+  }
   #app .project > .name:after {
     left: calc(var(--children-Indent) / 2 - 0.75px) !important;
   }
-  #app .project > .name > .prefix {
-    --btn-MargTop: -.5px !important;
-  }
+  /*NUMBERS*/
+  :root {
+  --numberMargTop:-1.5px;
 }
+
+}
+
+@media (max-width: 650px) {}
 
 /**********
 FLOATING COMMENTS
@@ -11485,15 +11503,14 @@ BOARD COLUMNS
   }
   :root {
     --boardRootColumnWidth: 340px;
-    --boardColumnWidth:340px;
+    --boardColumnWidth: 340px;
   }
 }
 @media (max-width: 380px) {
-  #app .board.root > .children {
-  }
+  #app .board.root > .children {}
   :root {
     --boardRootColumnWidth: calc(100vw - 10px);
-    --boardColumnWidth:calc(100vw - 39px);
+    --boardColumnWidth: calc(100vw - 39px);
   }
 }
 
