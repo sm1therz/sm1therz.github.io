@@ -46,9 +46,21 @@ BOARDS
 **********/
 
 #app .project.board .project.boardCard:not([class*="comment"]) {
-		background:transparent;
+	background: transparent;
 }
 
 /*********
 ???????
 **********/
+#app .name > .content,
+#app .notes > .content,
+#app .commentAttribution > span,
+#app .name > [class*="PlaceholderWrapper"] {
+	display: inline;
+	margin-left: var(--children-Indent);
+	padding-top: var(--content-PadTopBtm) !important;
+	padding-bottom: var(--content-PadTopBtm);
+	padding-left: var(--content-PadLeftRight);
+	padding-right: var(--content-PadLeftRight);
+	flex: 1;
+}
