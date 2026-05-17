@@ -1,0 +1,111 @@
+/*root*/
+
+:root {
+	--heading-color:black;
+	--bold-color:black;
+}
+[data-mode="dark"]{
+	--heading-color:white;
+	--bold-color:white;
+}
+
+/***/
+
+:root {
+	--cld-tstBrdW:.5px;
+}
+form[class*="pb"]{
+	max-width: 100% !important
+}
+/*********
+! LEFT SIDEBAR
+**********/
+ul.flex > li[style*="opacity"] a[href]{
+	height: unset !important;
+	white-space: normal !important;
+
+	
+}
+
+ul.flex > li[style*="opacity"] a[href] .truncate {
+	white-space: normal !important;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+} 
+/*********
+! HOVER MENUS
+
+*:is([data-user-message-bubble] + .flex,.contents + .flex){
+	border: solid red var(--cld-tstBrdW) !important;
+	position: sticky;
+	bottom: anchor-size(--chat-input height);
+	anchor-name: --chat-input;
+}
+**********/
+/*********
+! EDITOR - CODEBLOCKS
+**********/
+[data-test-render-count] [aria-label*="code"] > div[class*="overflow"] > pre > code{
+	white-space: pre-wrap !important;;
+}
+/*********
+! EDITOR - HEADINGS
+**********/
+
+
+.standard-markdown *:is(h1,h2,h3,h4,h5,h6){
+	color: var(--heading-color) !important;
+}
+
+/*Heading 1*/
+.standard-markdown h1{
+	font-size: 1.45rem !important;
+	line-height: 1.25 !important;
+}
+/*Heading 2*/
+.standard-markdown h2{
+	font-size: calc(1em + 4px) !important;
+	line-height: 1.4 !important;
+}
+/*Heading 3*/
+.standard-markdown h3{
+	font-size: calc(1em + 3px) !important;
+}
+/*Heading 4*/
+.standard-markdown h4{
+	font-size: calc(1em + 1px) !important;
+}
+/*********
+! EDITOR - BOLD
+**********/
+
+
+
+[data-theme="claude"] b, 
+[data-theme="claude"] strong, 
+[data-theme="claude"] .font-bold, 
+[data-theme="claude"] .font-bolder{
+	color: var(--bold-color) !important;
+	font-weight: 600 !important;
+}
+/*********
+! TEXT AREA 
+**********/
+
+.tiptap.ProseMirror .code-block > pre{
+	box-shadow: inset 0 0 0 1px hsla(0,0%,50%, 0.4)
+}
+/*********
+! TEXT AREA - DISCLAIMER
+**********/
+
+[data-autoscroll-container] .sticky.bottom-0 > [data-disclaimer="true"] {
+	overflow: hidden;
+
+	padding: 4px;
+}
+[data-autoscroll-container] .sticky.bottom-0 > [data-disclaimer="true"] a{
+	display: none;
+}

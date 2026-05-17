@@ -1,13 +1,10 @@
-
-(function() {
-	let style = `<style>
-
 /*********
 ROOT
 **********/
 :root {
-		--btn-MargTop: 0px;
+	--btn-MargTop: 0px;
 }
+
 /*********
 PROJECT
 **********/
@@ -28,11 +25,18 @@ PROJECT > NAME
 }
 
 .project.header2 > .name {
-	--btn-MargTop: 13px;
+	--btn-MargTop: 12px;
 }
 
 .project.header3 > .name {
-	--btn-MargTop: 11px;
+	--btn-MargTop: 8px;
+}
+
+/*CODE BLOCKS*/
+#app .project:is(.code-block, .quote-block) > .name > .expand,
+#app .project:is(.code-block, .quote-block) > .name > .bullet,
+#app .project:is(.code-block, .quote-block) > .name > .menu {
+	--btn-MargTop: 3px;
 }
 
 /*********
@@ -52,7 +56,7 @@ BOARDS
 **********/
 
 #app .project.board .project.boardCard:not([class*="comment"]) {
-		background:transparent;
+	background: transparent;
 }
 
 /*********
@@ -70,11 +74,3 @@ BOARDS
 	padding-right: var(--content-PadLeftRight);
 	flex: 1;
 }
-
-
-
-
-</style>`;
-
-	document.head.insertAdjacentHTML("beforeend", style);
-})();
