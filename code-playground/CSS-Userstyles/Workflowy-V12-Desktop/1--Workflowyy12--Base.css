@@ -3454,7 +3454,7 @@ html #app .project > .notes > .content .contentLink{
 }
 
 #app > .pageContainer .root:not(.board) > *:is(.name, .notes){
-  padding-left: calc(var(--pagePadLeft) * 1) !important;
+  padding-left: calc(var(--pagePadLeft) * 0) !important;
   margin: unset !important;
 }
 
@@ -8211,11 +8211,6 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 
-/***************
-****************
-! CALENDAR / DAILY > LAYOUT
-****************
-****************/
 :root {
     --calWrapPadTopBtm:20px;
     --calBrdClr:rgba(128, 128, 128, 0.2)
@@ -8259,6 +8254,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 .monolith-pill{
     text-decoration-thickness: 0px
 }
+
 .name > .content .monolith-pill .content-wrapper{
     
     border-radius: 100px;
@@ -8266,51 +8262,35 @@ EXPAND COLLAPSE BORDER ANIMATION
     padding-right: 7px !important;
     box-shadow: inset 0 0 0 .5px hsla(0,0%,50%,.3);
   font-size: .85em;
-  line-height: 1.6
+  line-height: 1.45
 }
 
-.root > .name > .content .monolith-pill .content-wrapper {
-    text-decoration-thickness: 3px !important;
-    text-underline-offset: 4px;
+#app .font-custom.project.selected.root > .name > .content > .innerContentContainer > .explosive.monolith-pill,
+#app .font-custom.project.selected.root > .name.name--main + .flex.items-center.pb-l{
+  
 }
 
-#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children{
-    padding-left: 0px;
-    gap: 7px;
-}
-/*
-#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project:after {
-    content:"";
-    position: absolute;
-    top: -4px;
-    left: -100vw;
-    right: -100vw;
-    height: 1px;
-    background: var(--calBrdClr);
-display:block;
-}
-*/
-/**
-#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project > .name > .bullet,
-#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project > .name > .expand,
+/*TIMELINE - PILL*/
+#app .font-custom.project.selected.root > .name.name--main .monolith-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project > .name > .menu,
-#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project > .name > .prefix{
-   --btn-MargTop:9px !important;
 }
-
-
-#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project >.name > .content {
-    font-size: var(--name-fontSize);
-    line-height: var(--name-lineHeight);
-    --name-fontSize:1.3rem !important;
-    --name-lineHeight:28px;
-    padding-top: 10px;
-    
-}**/
-#app .project.selected:not(.board) > .name ~ .inline-flex ~ .children > .project{
-    box-shadow: inset 0 0 0 1px var(--calBrdClr);
-    border: 0px solid var(--calBrdClr);
+:root {
+  --cal-pill-pad-top-btm:3px;
+}
+#app .font-custom.project.selected.root > .name.name--main .monolith-pill,
+#app .font-custom.project.selected.root > .name.name--main .monolith-pill > span{
+    line-height: 1.2
+}
+#app .font-custom.project.selected.root > .name.name--main .monolith-pill > span{
+  padding-bottom: var(--cal-pill-pad-top-btm);
+  padding-top: var(--cal-pill-pad-top-btm);
+}
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l{
+  padding-top: 10px  !important;
+  
 }
 /*******************************
 ********************************
