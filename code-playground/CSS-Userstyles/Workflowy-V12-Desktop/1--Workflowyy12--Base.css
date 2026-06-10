@@ -1016,9 +1016,28 @@ Bullet, Expand, Prefix, & Menu
     height: var(--btn-Height);
     transition: var(--btn-transition);
     cursor: pointer;
-    border-radius: var(--btn-BrdRad)
+    border-radius: var(--btn-BrdRad);
+  
 }
 
+.project > .name > .bullet{
+  width: var(--btn-Width) !important;
+  height: var(--btn-Width) !important;
+  left: calc(var(--children-Indent) * -1) !important;
+  transition:  var(--btn-transition);
+}
+
+#app .project:is(.paragraph,[class*="header"]) > .name > .bullet {
+  left: calc(var(--children-Indent) * 0) !important;
+}
+#app .project:is(.paragraph,[class*="header"]).open > .name > .bullet,
+#app .project:is(.paragraph,[class*="header"]).collapsed > .name > .bullet {
+    left: calc(var(--children-Indent) * -1) !important;
+  opacity: 1 !important;
+}
+.project:not(.paragraph):not(.open,.collapsed) > .name > .bullet{
+    
+}
 
 
 /*Button containers - center new icons*/
