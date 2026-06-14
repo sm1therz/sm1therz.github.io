@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Workflowy Export 5 > Toggle Panel + Links + Hashtags + > + Colors
 // @namespace    https://workflowy.com/
-// @version      2.3
-// @description  Persistent toggle panel (localStorage-backed) to switch selective hashtag removal on/off. Always-on: link removal, note blockquote cleaning, == removal, and list-indentation normalization to tabs. Works with current Workflowy export DOM.
+// @version      2.4
+// @description  Persistent toggle panel (localStorage-backed) with a collapsible Hashtags section: selective hashtag removal, capitalize, dashes-to-spaces. Always-on: link removal, note blockquote cleaning, == removal, and list-indentation normalization to tabs. Works with current Workflowy export DOM.
 // @match        https://workflowy.com/*
 // @grant        none
 // ==/UserScript==
@@ -11,17 +11,30 @@
   'use strict';
 
   // ----------------------------------------------------------------------
-  // Toggle state (localStorage-backed). Add a new switch by adding one
-  // entry to TOGGLE_DEFS; the panel and persistence pick it up automatically.
+  // Toggle state (localStorage-backed). Add a switch by adding an entry to
+  // a section's `toggles`; add a section by adding an entry to SECTIONS.
+  // The panel, persistence, and defaults all pick these up automatically.
   // ----------------------------------------------------------------------
   const STORAGE_KEY = 'wfExportToggles';
-  const TOGGLE_DEFS = [
-	{ id: 'stripHashtags', label: 'Selective hashtag removal', def: true },
+  const SECTIONS = [
+	{
+	  id: 'hashtags',
+	  label: 'Hashtags',
+	  collapsed: false, // default expanded
+	  toggles: [
+		{ id: 'stripHashtags',      label: 'Selective hashtag removal', def: true },
+		{ id: 'capitalizeHashtags', label: 'Capitalize',                def: false },
+		{ id: 'dashesToSpaces',     label: 'Dashes to Spaces',          def: false },
+	  ],
+	},
   ];
 
   function defaults() {
 	const o = { _collapsed: false };
-	TOGGLE_DEFS.forEach(t => { o[t.id] = t.def; });
+	SECTIONS.forEach(sec => {
+	  o['_sec_' + sec.id] = !!sec.collapsed;
+	  sec.toggles.forEach(t => { o[t.id] = t.def; });
+	});
 	return o;
   }
   function loadState() {
@@ -42,9 +55,13 @@
 #wf-export-toggle-panel{position:fixed;bottom:16px;right:16px;z-index:2147483647;width:212px;background:#1e1e1e;color:#eee;font:12px/1.4 -apple-system,system-ui,Segoe UI,sans-serif;border:1px solid #3a3a3a;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.45);user-select:none}
 #wf-export-toggle-panel .wf-h{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;cursor:pointer;font-weight:600;border-bottom:1px solid #3a3a3a}
 #wf-export-toggle-panel .wf-h .wf-caret{opacity:.7;font-size:10px}
-#wf-export-toggle-panel .wf-b{padding:8px 10px;display:flex;flex-direction:column;gap:8px}
+#wf-export-toggle-panel .wf-b{padding:8px 10px;display:flex;flex-direction:column;gap:10px}
 #wf-export-toggle-panel.wf-collapsed .wf-b{display:none}
 #wf-export-toggle-panel.wf-collapsed .wf-h{border-bottom:none}
+#wf-export-toggle-panel .wf-section-h{display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:600}
+#wf-export-toggle-panel .wf-sec-caret{opacity:.7;font-size:9px;width:9px;display:inline-block;text-align:center}
+#wf-export-toggle-panel .wf-section-b{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+#wf-export-toggle-panel .wf-section.wf-sec-collapsed .wf-section-b{display:none}
 #wf-export-toggle-panel .wf-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
 #wf-export-toggle-panel .wf-switch{position:relative;width:34px;height:18px;flex:0 0 auto}
 #wf-export-toggle-panel .wf-switch input{opacity:0;width:0;height:0;margin:0}
@@ -62,6 +79,67 @@
 	panel.classList.toggle('wf-collapsed', !!state._collapsed);
 	const caret = panel.querySelector('.wf-caret');
 	if (caret) caret.textContent = state._collapsed ? '\u25B2' : '\u25BC';
+  }
+
+  function buildToggleRow(def) {
+	const row = document.createElement('label');
+	row.className = 'wf-row';
+
+	const text = document.createElement('span');
+	text.textContent = def.label;
+
+	const sw = document.createElement('span');
+	sw.className = 'wf-switch';
+	const input = document.createElement('input');
+	input.type = 'checkbox';
+	input.checked = !!state[def.id];
+	input.addEventListener('change', () => {
+	  state[def.id] = input.checked;
+	  saveState(state);
+	});
+	const slider = document.createElement('span');
+	slider.className = 'wf-slider';
+	sw.appendChild(input);
+	sw.appendChild(slider);
+
+	row.appendChild(text);
+	row.appendChild(sw);
+	return row;
+  }
+
+  function buildSection(sec) {
+	const section = document.createElement('div');
+	section.className = 'wf-section';
+
+	const head = document.createElement('div');
+	head.className = 'wf-section-h';
+	const caret = document.createElement('span');
+	caret.className = 'wf-sec-caret';
+	const label = document.createElement('span');
+	label.textContent = sec.label;
+	head.appendChild(caret);
+	head.appendChild(label);
+
+	const sbody = document.createElement('div');
+	sbody.className = 'wf-section-b';
+	sec.toggles.forEach(def => sbody.appendChild(buildToggleRow(def)));
+
+	const secKey = '_sec_' + sec.id;
+	function applySec() {
+	  const collapsed = !!state[secKey];
+	  section.classList.toggle('wf-sec-collapsed', collapsed);
+	  caret.textContent = collapsed ? '\u25B8' : '\u25BE'; // > when collapsed, v when open
+	}
+	head.addEventListener('click', () => {
+	  state[secKey] = !state[secKey];
+	  saveState(state);
+	  applySec();
+	});
+
+	section.appendChild(head);
+	section.appendChild(sbody);
+	applySec();
+	return section;
   }
 
   function ensurePanel(host) {
@@ -84,31 +162,7 @@
 
 	const body = document.createElement('div');
 	body.className = 'wf-b';
-	TOGGLE_DEFS.forEach(def => {
-	  const row = document.createElement('label');
-	  row.className = 'wf-row';
-
-	  const text = document.createElement('span');
-	  text.textContent = def.label;
-
-	  const sw = document.createElement('span');
-	  sw.className = 'wf-switch';
-	  const input = document.createElement('input');
-	  input.type = 'checkbox';
-	  input.checked = !!state[def.id];
-	  input.addEventListener('change', () => {
-		state[def.id] = input.checked;
-		saveState(state);
-	  });
-	  const slider = document.createElement('span');
-	  slider.className = 'wf-slider';
-	  sw.appendChild(input);
-	  sw.appendChild(slider);
-
-	  row.appendChild(text);
-	  row.appendChild(sw);
-	  body.appendChild(row);
-	});
+	SECTIONS.forEach(sec => body.appendChild(buildSection(sec)));
 	panel.appendChild(body);
 
 	host.appendChild(panel);
@@ -185,7 +239,27 @@
 		line = line.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '$1');
 	  }
 
-	  // Rule 2 (TOGGLE: stripHashtags): Remove '#' unless followed by a number
+	  // ----- Hashtags section -----
+	  // A "tag" = '#' + hashtag text. Hashtag text = chars after '#' up to a
+	  // space; matched here as [A-Za-z0-9_-]+. Order is intentional:
+	  // Capitalize -> Dashes to Spaces -> Selective removal, so each step
+	  // sees an intact tag the previous step produced.
+
+	  // Capitalize (TOGGLE): uppercase the first letter of each dash segment.
+	  //   #tag-number-1 -> #Tag-Number-1
+	  if (state.capitalizeHashtags) {
+		line = line.replace(/#([A-Za-z0-9_-]+)/g, (m, t) =>
+		  '#' + t.replace(/(^|-)([a-zA-Z])/g, (mm, sep, ch) => sep + ch.toUpperCase()));
+	  }
+
+	  // Dashes to Spaces (TOGGLE): replace dashes inside the tag with spaces.
+	  //   #Tag-Number-1 -> #Tag Number 1
+	  if (state.dashesToSpaces) {
+		line = line.replace(/#([A-Za-z0-9_-]+)/g, (m, t) => '#' + t.replace(/-/g, ' '));
+	  }
+
+	  // Selective hashtag removal (TOGGLE): drop '#' unless followed by a number.
+	  //   #tag -> tag ; #2 -> #2
 	  if (state.stripHashtags) {
 		line = line.replace(/#(?!\d)([A-Za-z0-9_-]+)/g, '$1');
 	  }
@@ -201,7 +275,7 @@
   }
 
   // ----------------------------------------------------------------------
-  // Observer: ensure the toggle panel exists, and wire the export dialog.
+  // Observer: show panel with the export dialog, and wire the copy handler.
   // ----------------------------------------------------------------------
   const observer = new MutationObserver(() => {
 	const dialog = document.querySelector('.flex.items-start.justify-center.dialog-backdrop')
