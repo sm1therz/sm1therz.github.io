@@ -3601,13 +3601,13 @@ VERSION TAGS
 ***************/
 
 /*TAG > HASHTAG*/
-.contentTag:is([data-val*="versions"], [data-val*="type"]) {
+#app .contentTag:is([data-val*="versions"], [data-val*="type"]) {
   color: var(--negTagTxtClr-Hash) !important;
   font-weight: var(--tagFontWeightNeg-auto)
 }
 
 /*TAG > TEXT*/
-.contentTag:is([data-val*="versions"], [data-val*="type"]) .contentTagText {
+#app .contentTag:is([data-val*="versions"], [data-val*="type"]) .contentTagText {
   color: var(--negTagTxtClr) !important;
 }
 
