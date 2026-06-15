@@ -3472,16 +3472,19 @@ html #app .project > .notes > .content .contentLink{
 ! TAGS + HIGHLIGHTS
 ************/
 :root {
-  --tagBrdRad: 3px;
-  --tagFontWeight-auto: 500;
-  --tagFontWeightNeg-auto: calc(var(--tagFontWeight-auto) + 50);
+  /*tags - normal*/
+  --tagFontWeight: 400;
   --tagFontWeight-Bold: 600;
+  /*tags - negative*/
+  --tagNegFontWeight: calc(var(--tagFontWeight) + 100);
+  /*misc*/
+  --tagBrdRad: 3px;
   --tagPadLR: 2px;
 }
 
 ._theme-dark {
-  --tagTxtClr-Hash:hsl(195, 2%, 63%,0.5);
-  --tagTxtClr:hsl(195, 2%, 63%,1);
+  --tagTxtClr-Hash: hsl(195, 2%, 63%, 0.5);
+  --tagTxtClr: hsl(195, 2%, 63%, 1);
   /**/
   --negTagTxtClr: hsl(201, 13%, 16%);
   --negTagTxtClr-Hash: hsl(201, 13%, 17%, 0.6)
@@ -3494,18 +3497,14 @@ html #app .project > .notes > .content .contentLink{
 /**************
 ***************
 ***************
-ALL TAGS
+! TAGS > ALL
 ***************
 ***************
 ***************/
-
-
-
-
-
 .contentTag[data-val] b,
 b .contentTag[data-val] {
-  --tagFontWeight-auto: var(--tagFontWeight-Bold);
+  --tagFontWeight: var(--tagFontWeight-Bold);
+  --tagNegFontWeight:var(--tagFontWeight-Bold);
 }
 s .contentTag {
   color: var(--strikeThroughColor) !important;
@@ -3520,6 +3519,7 @@ s .contentTag {
   margin-left: calc(var(--tagPadLR) * -1) !important;
   margin-right: calc(var(--tagPadLR) * -1) !important;
   color: var(--tagTxtClr-Hash) !important;
+  font-weight: var(--tagFontWeight)
 }
 .contentTag .contentTagText {
   color: var(--tagTxtClr) !important;
@@ -3544,48 +3544,35 @@ s .contentTag {
 /**************
 ***************
 ***************
-VERSION TAGS
+! TAGS > VERSIONS
 ***************
 ***************
 ***************/
-.contentTag[data-val*="v1"] .contentTagText,
-.contentTag[data-val*="v2"] .contentTagText,
-.contentTag[data-val*="v3"] .contentTagText,
-.contentTag[data-val*="v4"] .contentTagText,
-.contentTag[data-val*="v5"] .contentTagText,
-.contentTag[data-val*="v6"] .contentTagText,
-.contentTag[data-val*="v7"] .contentTagText,
-.contentTag[data-val*="v8"] .contentTagText,
-.contentTag[data-val*="v9"] .contentTagText,
-.contentTag[data-val*="v10"] .contentTagText {
-  color: var(--negTagTxtClr) !important;
-}
-
-.contentTag[data-val*="v1"],
-.contentTag[data-val*="v2"],
-.contentTag[data-val*="v3"],
-.contentTag[data-val*="v4"],
-.contentTag[data-val*="v5"],
-.contentTag[data-val*="v6"],
-.contentTag[data-val*="v7"],
-.contentTag[data-val*="v8"],
-.contentTag[data-val*="v9"],
-.contentTag[data-val*="v10"] {
+#app .contentTag:is( [data-val*="v1"],
+[data-val*="v2"],
+[data-val*="v3"],
+[data-val*="v4"],
+[data-val*="v5"],
+[data-val*="v6"],
+[data-val*="v7"],
+[data-val*="v8"],
+[data-val*="v9"],
+[data-val*="v10"]) {
   color: var(--negTagTxtClr-Hash) !important;
-  font-weight: var(--tagFontWeight-auto);
+  font-weight: var(--tagNegFontWeight);
 }
 
 
-.contentTag[data-val*="v1"] .contentTagText,
-.contentTag[data-val*="v2"] .contentTagText,
-.contentTag[data-val*="v3"] .contentTagText,
-.contentTag[data-val*="v4"] .contentTagText,
-.contentTag[data-val*="v5"] .contentTagText,
-.contentTag[data-val*="v6"] .contentTagText,
-.contentTag[data-val*="v7"] .contentTagText,
-.contentTag[data-val*="v8"] .contentTagText,
-.contentTag[data-val*="v9"] .contentTagText,
-.contentTag[data-val*="v10"] .contentTagText {
+#app .contentTag:is( [data-val*="v1"],
+[data-val*="v2"],
+[data-val*="v3"],
+[data-val*="v4"],
+[data-val*="v5"],
+[data-val*="v6"],
+[data-val*="v7"],
+[data-val*="v8"],
+[data-val*="v9"],
+[data-val*="v10"]) .contentTagText {
   color: var(--negTagTxtClr) !important;
 }
 
@@ -3599,16 +3586,15 @@ VERSION TAGS
 ***************
 ***************
 ***************/
-
 /*TAG > HASHTAG*/
 #app .contentTag:is([data-val*="versions"], [data-val*="type"]) {
-  color: var(--negTagTxtClr-Hash) !important;
-  font-weight: var(--tagFontWeightNeg-auto)
+  -webkit-text-fill-color: var(--negTagTxtClr-Hash);
+  font-weight: var(--tagNegFontWeight);
 }
 
 /*TAG > TEXT*/
 #app .contentTag:is([data-val*="versions"], [data-val*="type"]) .contentTagText {
-  color: var(--negTagTxtClr) !important;
+  -webkit-text-fill-color: var(--negTagTxtClr);
 }
 
 /***********
@@ -3634,16 +3620,16 @@ VERSION TAGS > IN BOARD ROOT
 COLORS
 ***************/
 ._theme-dark .contentTag {
-  --wf-background-red: hsl(0, 34%, 38%, 1) !important;
-  --wf-background-orange: hsl(24, 45%, 45%) !important;
-  --wf-background-yellow: hsl(42, 36%, 52%) !important;
-  --wf-background-green: hsl(161, 37%, 47%, 0.8) !important;
-  --wf-background-teal: hsl(190, 41%, 46%, .85) !important;
-  --wf-background-sky: hsl(209, 38%, 50%) !important;
-  --wf-background-blue: hsl(221, 39%, 53%) !important;
-  --wf-background-purple: hsl(263, 33%, 50%) !important;
-  --wf-background-pink: hsl(299, 33%, 42%) !important;
-  --wf-background-gray: hsl(194, 5%, 49%, .75) !important;
+  --wf-background-red: hsl(0, 34%, 38%, 1);
+  --wf-background-orange: hsl(24, 45%, 45%);
+  --wf-background-yellow: hsl(42, 36%, 52%);
+  --wf-background-green: hsl(161, 37%, 47%, 0.8);
+  --wf-background-teal: hsl(190, 41%, 46%, .85);
+  --wf-background-sky: hsl(209, 38%, 50%);
+  --wf-background-blue: hsl(221, 39%, 53%);
+  --wf-background-purple: hsl(263, 33%, 50%);
+  --wf-background-pink: hsl(299, 33%, 42%);
+  --wf-background-gray: hsl(194, 5%, 49%, .75);
 }
 ._theme-dark s .contentTag,
 ._theme-dark .done .contentTag {
@@ -3678,6 +3664,57 @@ COLORS
   --wf-tag-text: var(--BG-primary);
 }
 
+
+/**************
+COLORS > HIGHLIGHTS
+***************/
+._theme-dark [class*="bc-"][class*="bc-"] {
+  --wf-background-red: hsl(0, 44%, 38%, 1);
+  --wf-background-red: hsl(0, 40%, 35%);
+  --wf-background-yellow: hsl(42, 45%, 50%);
+  --wf-background-yellow: hsl(40, 33%, 41%);
+  --wf-background-green: hsl(161, 42%, 33%, 1) !important;
+  color: var(--wf-text-primary);
+  --wf-text-primary: hsla(0, 0%, 100%);
+  --LnkWFBgClrHov:hsla(0, 0%, 100%,0.2);;
+    /*tags*/
+  --tagTxtClr:hsl(195, 2%, 100%, 1);
+  --tagTxtClr-Hash:hsl(195, 2%, 100%, 0.5);
+}
+
+/*TAGS > IN RED HIGHLIGHTS*/
+._theme-dark .colored[class*="bc-red"],
+._theme-dark .colored[class*="bc-red"] .contentTag{
+  /*tags - negative*/
+  --negTagTxtClr: hsl(202, 13%, 0%,0.65);
+  --negTagTxtClr-Hash: hsl(201, 13%, 0%, 0.45);
+  --wf-background-gray:hsl(0, 30%, 55%,.7);
+}
+
+/*TAGS > IN RED HIGHLIGHTS*/
+._theme-dark .colored[class*="bc-orange"],
+._theme-dark .colored[class*="bc-orange"] .contentTag{
+  /*tags - negative*/
+  --negTagTxtClr: hsl(24, 13%, 0%,0.49);
+  --negTagTxtClr-Hash: hsl(24, 13%, 0%, 0.35);
+  --wf-background-gray:hsl(24, 40%, 55%,0.5);
+}
+/*TAGS > IN RED HIGHLIGHTS*/
+._theme-dark .colored[class*="bc-yellow"],
+._theme-dark .colored[class*="bc-yellow"] .contentTag{
+  /*tags - negative*/
+  --negTagTxtClr: hsl(40, 93%, 12%,0.8);
+  --negTagTxtClr-Hash: hsl(40, 93%, 12%,0.5);
+  --wf-background-gray:hsl(40, 60%, 65%,0.5);
+}
+/*TAGS > IN RED HIGHLIGHTS*/
+._theme-dark .colored[class*="bc-green"],
+._theme-dark .colored[class*="bc-green"] .contentTag{
+  /*tags - negative*/
+  --negTagTxtClr: hsl(161, 93%, 12%,0.8);
+  --negTagTxtClr-Hash: hsl(161, 93%, 12%,0.5);
+  --wf-background-gray:hsl(161, 40%, 42%,2.5);
+}
 
 
 
