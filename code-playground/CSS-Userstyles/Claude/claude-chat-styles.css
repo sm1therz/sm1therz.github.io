@@ -14,6 +14,9 @@
 :root {
   --cld-tstBrdW:.5px;
 }
+/*********
+! ??
+**********/
 form[class*="pb"]{
   max-width: 100% !important
 }
@@ -34,6 +37,16 @@ ul.flex > li[style*="opacity"] a[href] .truncate {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 } 
+/*********
+! HOVER MENUS
+
+*:is([data-user-message-bubble] + .flex,.contents + .flex){
+  border: solid red var(--cld-tstBrdW) !important;
+  position: sticky;
+  bottom: anchor-size(--chat-input height);
+  anchor-name: --chat-input;
+}
+**********/
 /*********
 ! EDITOR - CHAIN OF THOUGHT
 **********/
@@ -92,27 +105,44 @@ ul.flex > li[style*="opacity"] a[href] .truncate {
   font-weight: 600 !important;
 }
 /*********
-! TEXT AREA - BOTTOM
+! EDITOR - CODE BLOCKS
 **********/
-
 .tiptap.ProseMirror .code-block > pre{
   box-shadow: inset 0 0 0 1px hsla(0,0%,50%, 0.4)
 }
+
+/*********
+! TEXT AREA - CHAT - MIDDLE OF CHAT
+**********/
+
+
+div[class*="content-visibility:"] textarea.cds-input{
+  min-height: 80vh;
+
+}
+textarea.cds-input:not(:focus-within){
+  box-shadow: inset 0 0 0 1px hsla(0,0%,100%,.2) !important;
+}
+/*********
+! TEXT AREA - CHAT - BOTTOM
+**********/
+
 
 #chat-input-file-upload-bottom ~ .relative .max-h-96{
   max-height: 60vh;
 }
 /*********
-! TEXT AREA - MIDDLE OF CHAT
+! TEXT AREA - CHAT - NEW CHAT
 **********/
 
 
-div[class*="content-visibility:"] textarea.cds-input{
-  min-height: 40vh;
-  
+body:not(.chat-ui-core) fieldset .relative .max-h-96{
+  max-height: 1200px !important;
 }
+
+
 /*********
-! TEXT AREA - DISCLAIMER
+! TEXT AREA - CHAT - BOTTOM, DISCLAIMER
 **********/
 
 [data-autoscroll-container] .sticky.bottom-0 > [data-disclaimer="true"] {
@@ -122,4 +152,33 @@ div[class*="content-visibility:"] textarea.cds-input{
 }
 [data-autoscroll-container] .sticky.bottom-0 > [data-disclaimer="true"] a{
   display: none;
+}
+
+/*********
+! TEXT AREA - PROJECT INSTRUCTIONS
+**********/
+div[id][data-cds="Dialog"] {
+  max-height: calc(100vh - 30px);
+}
+
+
+
+div[id][data-cds="Dialog"] [class*="max-h-"] {
+  max-height: 2000px !important;
+}
+
+div[id][data-cds="Dialog"] *:is(textarea[aria-label="Set project instructions"]){
+  min-height: calc(100vh - 210px) !important;
+  flex: 0;
+  margin-bottom: 0px;
+}
+
+
+/*FOOTER*/
+
+div[id][data-cds="Dialog"] textarea + div[class*="justify-end"]{
+  position: sticky;
+  bottom: 0;
+  padding-top: 0px !important;
+  margin-top: 10px;
 }
