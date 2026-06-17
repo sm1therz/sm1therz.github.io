@@ -3462,14 +3462,20 @@ PROJECT.HEADERS > NAME
 
 
 /*NOTED > NAME*/
-#app .project:not(.board) *:is([class*="header"]).noted > .name:not(.board .project > .name) {
+#app .project *:is([class*="header"]).noted > .name:not(.board .project > .name) {
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
 }
 /*NOTED > NOTES*/
-#app .project:not(.board) *:is([class*="header"]).noted > .notes:not(.board .project > .name) {
+#app .project *:is([class*="header"]).noted > .notes:not(.board .project > .name) {
   margin-bottom: var(--wf-space-m) !important;  
 }
+
+/*
+#app .project *:is([class*="header"]):not(.open,.collapsed) + :is([class*="header"]) > .name:not(.board .project > .name),
+#app .project *:is([class*="header"]) > .children > *:is([class*="header"]):first-child > .name:not(.board .project > .name){
+  margin-top: calc(var(--wf-space-m) * 0)
+}*/
 
 #app .children > .project[class*="header"]:first-child:not(.root, .board .project) {
     margin-top: calc(var(--prjct-MargTopBtm) * 1)!important;
@@ -3682,7 +3688,7 @@ COLORS > HIGHLIGHTS
   --wf-background-green: hsl(161, 42%, 33%, 1) !important;
   color: var(--wf-text-primary);
   --wf-text-primary: hsla(0, 0%, 100%);
-  --LnkWFBgClrHov:hsla(0, 0%, 100%,0.2);;
+  --LnkWFBgClrHov:hsla(0, 0%, 100%,0.2);
     /*tags*/
   --tagTxtClr:hsl(195, 2%, 100%, 1);
   --tagTxtClr-Hash:hsl(195, 2%, 100%, 0.5);
@@ -5489,6 +5495,29 @@ html #app .project.board > .children > .boardColumn > .self-stretch{
 right: calc(var(--btn-Width) * 1) !important;
   z-index: 94
 }
+
+:root {
+  --boardCardPadLeftRight:0px;
+}
+
+.boardColumn > .children {
+  padding-left: calc(var(--children-Indent) + var(--boardCardPadLeftRight)) !important;
+}
+
+#app .project.board > .children > .boardColumn > .name > .bullet,
+#app .project.board > .children > .boardColumn > .children .project > .name > .bullet {
+  height: var(--btn-Height) !important
+}
+
+#app .project.board > .children > .boardColumn > .name > .bullet,
+#app .project.board > .children  .boardCard > .name > .bullet {
+  left:unset !important;
+}
+
+#app .project.board > .children > .boardColumn:not(.paragraph):is(.open,.collapsed) > .name > .bullet,
+#app .project.board > .children  .boardCard:not(.paragraph):is(.open,.collapsed) > .name > .bullet {
+  opacity: 1!important;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -5570,7 +5599,7 @@ BOARD ROOT DESIGN ADJUST
 }
 #app .project.board .boardColumn > .name > .expand,
 #app .project.board .boardColumn > .children > .boardCard > .name > .expand{
-  left: 7px !important;
+  left: 0px !important;
 }
 
 /*****
@@ -6351,53 +6380,6 @@ CARD > IS COMMENT
 
 #app .page .project.root.board > .children > .boardColumn > .children {
   padding-bottom: 200px !important;
-}
-/*******
-********
-BOARDS - ROOT > PADDING FIX
-********
-********/
-#app .project.board.root {
-}
-#app .project.board.root,
-.project.board.root .boardCard > .name, 
-.project.board.root .boardCard > .notes, 
-.project.board.root .boardCard .project > .name, 
-.project.board.root .boardCard .project > .notes{
-
-  --content-PadTopBtm:8px !important;
-}
-/*ALL ITEMS - NAME */
-#app .project.board.root .project:not(.boardColumn, .quote-block, .code-block) > .name {
-  padding-top: calc(var(--content-PadTopBtm) * 1) !important;
-}
-/*ALL ITEMS - CONTENT - NOT NOTED */
-#app .project.board.root .project:not(.noted, .boardColumn, .quote-block, .code-block) > .name {
-  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
-}
-#app .project.board.root .project:not( .boardColumn, .quote-block, .code-block) > *:is(.name, .notes) > .content {
-  padding-bottom: 0px !important;
-}
-/*ALL ITEMS - CONTENT - HAS NOTE */
-#app .project.board.root .project.noted > .notes {
-  padding-top: calc(var(--content-PadTopBtm) * .1) !important;
-  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
-  
-}
-
-/*ALL ITEMS - NAME WITH IMAGE -  NOT NOTED */
-#app .project.board.root > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image  {
-  padding-bottom: 0px !important;
-  margin-bottom: calc(var(--content-PadTopBtm) * 1)!important;
-}
-/*ALL ITEMS - NAME WITH IMAGE -  HAS */
-#app .project.board.root > .children > .boardColumn > .children *:is(.noted) > .name--with-image{
-    padding-bottom: 0px !important;
-  margin-bottom: calc(var(--content-PadTopBtm) * 0.5)!important;
-}
-/*ALL ITEMS - NAME WITH IMAGE -  CONTENT - HAS NOTE */
-#app .project.board.root > .children > .boardColumn > .children *:is(.noted, .project,.boardCard):not(.boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image > .content {
-  padding-bottom: calc(var(--content-PadTopBtm) * .5) !important;
 }
 /*******************************
 ********************************
