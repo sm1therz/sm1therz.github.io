@@ -37,36 +37,6 @@ body,
 [data-popper-reference-hidden][data-popper-escaped] {
     z-index: 2;
 }
-
-:root {
-  --testBrdW:0px;
-}
-.project,
-.project > .name,
-.project > .name > .nameButtons,
-.project > .name > .bullet,
-.project > .name > .prefix,
-.project > .name > .menu,
-.project > .name > .expand,
-.project > .name > .content,
-.project > .name > .content .innerContentContainer,
-.project > .notes,
-.project > .notes > .content,
-.tableColumn,
-.tableItem > .children{
-
-    box-shadow: inset 0 0 0 var(--testBrdW) hsla(0, 100%, 50%, .5) !important;
-}
-/*
-#app .project.comment.thread .children {
-  border: 3px solid #ff00e1;
-  border-radius: 0px !important;
-}
-#app .project.comment.thread > .children .project {
-  border: 2px solid #00f7ff;
-  outline-offset: .5px;
-  border-radius: 0px !important;
-}*/
 /****
 ! OVERRIDES
 ****/
@@ -473,9 +443,7 @@ LEVEL 1 > PROJECT
     position: relative;
     border-radius: var(--prjct-BrdRad);
 }
-.children > .project[class*="header2"]:first-child {
-    margin-top: calc(var(--wf-space-xl) + var(--prjct-MargTopBtm))!important
-}
+
 /*
 .project.root > .children .header1,
 .project.root > .children .header2 {
@@ -987,9 +955,6 @@ NOTES > CONTENT only*/
 #app  {
     margin-bottom: var(--wf-space-s) !important;
 }
-#app .project[class*="header"]:not(.root,.noted, .boardColumn) > .name{
-   padding-bottom: calc(var(--wf-space-s) * 2) !important;
-}
 
 
 
@@ -1033,7 +998,6 @@ Bullet, Expand, Prefix, & Menu
 #app .project:is(.paragraph,[class*="header"]).open > .name > .bullet,
 #app .project:is(.paragraph,[class*="header"]).collapsed > .name > .bullet {
     left: calc(var(--children-Indent) * -1) !important;
-  opacity: 1 !important;
 }
 .project:not(.paragraph):not(.open,.collapsed) > .name > .bullet{
     
@@ -1611,7 +1575,7 @@ s .project.done > .name a.contentLink{
 }
 s{
     text-decoration:line-through;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 2px !important;
     text-decoration-style: solid;
     text-decoration-color: var(--strikeThroughLineColor);
 }
@@ -3467,6 +3431,48 @@ html #app .project > .notes > .content .contentLink{
 
 .project .project:not(.quote-block,.code-block) > .name > .content {
     padding-top:0px !important;
+}
+
+
+#app .project[class*="header"]:not(.root,.noted, .boardColumn) > .name{
+}
+
+
+.is-desktop .project.paragraph:not(.open,.collaped):hover > .name > .expand:not(.project.board .project.paragraph > .name > .expand) {
+  opacity: 1 !important
+}
+.is-desktop .project.paragraph:not(.open,.collaped) > .name:not(.name--root) > .expand:not(.project.board .project.paragraph > .name > .expand) {
+opacity: 0 !important
+}
+
+
+/******
+PROJECT.HEADERS
+*******/
+
+/******
+PROJECT.HEADERS > NAME
+*******/
+
+.is-desktop .project *:is([class*="header"]):not(.root,.noted) > .name:not(.board .project > .name) {
+  margin-top: var(--wf-space-m);
+  margin-bottom: calc(var(--wf-space-m) * 1.25);  
+  padding-bottom: 0px !important;
+}
+
+
+/*NOTED > NAME*/
+#app .project:not(.board) *:is([class*="header"]).noted > .name:not(.board .project > .name) {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+/*NOTED > NOTES*/
+#app .project:not(.board) *:is([class*="header"]).noted > .notes:not(.board .project > .name) {
+  margin-bottom: var(--wf-space-m) !important;  
+}
+
+#app .children > .project[class*="header"]:first-child:not(.root, .board .project) {
+    margin-top: calc(var(--prjct-MargTopBtm) * 1)!important;
 }
 /***********
 ! TAGS + HIGHLIGHTS
