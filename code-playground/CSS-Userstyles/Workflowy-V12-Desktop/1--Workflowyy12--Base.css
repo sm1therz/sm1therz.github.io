@@ -3480,6 +3480,7 @@ PROJECT.HEADERS > NAME
 #app .children > .project[class*="header"]:first-child:not(.root, .board .project) {
     margin-top: calc(var(--prjct-MargTopBtm) * 1)!important;
 }
+
 /***********
 ! TAGS + HIGHLIGHTS
 ************/
@@ -3497,7 +3498,10 @@ PROJECT.HEADERS > NAME
 ._theme-dark {
   --tagTxtClr-Hash: hsl(195, 2%, 63%, 0.5);
   --tagTxtClr: hsl(195, 2%, 63%, 1);
-  /**/
+  /*colored*/
+  --coloredtagTxtClr:purple;
+  --coloredtagTxtClr-Hash:green;
+  /*negative*/
   --negTagTxtClr: hsl(201, 13%, 16%);
   --negTagTxtClr-Hash: hsl(201, 13%, 17%, 0.6)
 }
@@ -3599,19 +3603,39 @@ s .contentTag {
 ***************
 ***************/
 /*TAG > HASHTAG*/
-#app .contentTag:is([data-val*="versions"], [data-val*="type"]) {
+#app .contentTag:is(
+  [data-val*="versions"], 
+  [data-val*="type"],
+[data-val*="correction"]) {
   -webkit-text-fill-color: var(--negTagTxtClr-Hash);
   font-weight: var(--tagNegFontWeight);
 }
 
 /*TAG > TEXT*/
-#app .contentTag:is([data-val*="versions"], [data-val*="type"]) .contentTagText {
+#app .contentTag:is(
+  [data-val*="versions"], 
+  [data-val*="type"],
+  [data-val*="correction"]) .contentTagText {
   -webkit-text-fill-color: var(--negTagTxtClr);
 }
 
-/***********
-! TAGS > INVERTED > HASHTAG
-************/
+
+/**************
+***************
+***************
+! TAGS > COLORED > UNSPECIFIED
+***************
+***************
+***************/
+
+#app .contentTag{
+  --tagTxtClr-Hash:;
+  --wf-text-primary:var(--coloredtagTxtClr-Hash) !important;
+}
+#app .contentTag .contentTagText {
+  --wf-text-primary:var(--coloredtagTxtClr) !important;
+}
+
 /**************
 VERSION TAGS > IN BOARD ROOT
 ***************/
@@ -3641,7 +3665,9 @@ COLORS
   --wf-background-blue: hsl(221, 39%, 53%);
   --wf-background-purple: hsl(263, 33%, 50%);
   --wf-background-pink: hsl(299, 33%, 42%);
-  --wf-background-gray: hsl(194, 5%, 49%, .75);
+  --wf-background-gray: hsl(194, 3%, 49%, .75);
+  --wf-background-gray: hsl(200, 3%, 49%,.7);
+
 }
 ._theme-dark s .contentTag,
 ._theme-dark .done .contentTag {
@@ -3813,6 +3839,7 @@ HIGHLIGHT - GREYED OUT
   right: auto;
   color: var(--NODE--TXT-CLR--main)
 }
+
 /**********************
 ***********************
 ***********************
