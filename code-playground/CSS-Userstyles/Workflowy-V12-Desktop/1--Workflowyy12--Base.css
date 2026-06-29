@@ -3606,7 +3606,9 @@ s .contentTag {
 #app .contentTag:is(
   [data-val*="versions"], 
   [data-val*="type"],
-[data-val*="correction"]) {
+  [data-val*="correction"],
+  [data-val="input"],
+  [data-val="output"]) {
   -webkit-text-fill-color: var(--negTagTxtClr-Hash);
   font-weight: var(--tagNegFontWeight);
 }
@@ -3615,7 +3617,9 @@ s .contentTag {
 #app .contentTag:is(
   [data-val*="versions"], 
   [data-val*="type"],
-  [data-val*="correction"]) .contentTagText {
+  [data-val*="correction"],
+  [data-val="input"],
+  [data-val="output"]) .contentTagText {
   -webkit-text-fill-color: var(--negTagTxtClr);
 }
 
