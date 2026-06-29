@@ -3607,8 +3607,8 @@ s .contentTag {
   [data-val*="versions"], 
   [data-val*="type"],
   [data-val*="correction"],
-  [data-val="input"],
-  [data-val="output"]) {
+  [data-val*="#input"],
+  [data-val*="#output"]) {
   -webkit-text-fill-color: var(--negTagTxtClr-Hash);
   font-weight: var(--tagNegFontWeight);
 }
@@ -3618,8 +3618,8 @@ s .contentTag {
   [data-val*="versions"], 
   [data-val*="type"],
   [data-val*="correction"],
-  [data-val="input"],
-  [data-val="output"]) .contentTagText {
+  [data-val*="#input"],
+  [data-val*="#output"]) .contentTagText {
   -webkit-text-fill-color: var(--negTagTxtClr);
 }
 
