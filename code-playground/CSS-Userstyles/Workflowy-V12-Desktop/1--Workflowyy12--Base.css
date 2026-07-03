@@ -10876,9 +10876,50 @@ box-shadow:
 
 /****************
 *****************
+*****************
 MATCH > NODE
 *****************
+*****************
 *****************/
+
+:root {
+  --matchNode-All-BgClr:hsl(200, 100%, 30%);
+  --matchNode-All-BgClr:hsl(202, 60%, 25%);
+
+
+}
+
+
+/****************
+MATCH > NODE ALL
+*****************/
+.project.metaMatches > .name > .content,
+.project.metaMatches > .name > .name--meta-match-target{
+  background: var(--matchNode-All-BgClr);
+}
+.project.metaMatches > .name > .content > .innerContentContainer{
+  background: transparent;
+}
+
+/****************
+MATCH > NODE.BLOCK QUOTES
+*****************/
+.project.metaMatches.quote-block > .name > .content{
+  background: var(--matchNode-All-BgClr);
+}
+.project.metaMatches.quote-block > .name > .content > .innerContentContainer{
+  background: transparent;
+}
+/****************
+MATCH > NODE.CODEBLOCKS
+*****************/
+
+.project.metaMatches.code-block > .name > .content{
+  background: var(--matchNode-All-BgClr);
+}
+.project.metaMatches.code-block > .name > .content > .innerContentContainer{
+  background: transparent;
+}
 
 /****************
 *****************
