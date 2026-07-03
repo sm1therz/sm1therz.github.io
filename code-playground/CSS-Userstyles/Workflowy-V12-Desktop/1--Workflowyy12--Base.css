@@ -2242,68 +2242,7 @@ TAGS
 .innerContentContainer .contentTag:hover {
     background: var(--LnkWFBgClrHov);
 }
-/***************
-LINKS
-****************/
-:root {
-    --link-BrdRad: 3px;
-    --linkArrow-Size: 5px;
-    --linkArrow-BrdClr: var(--Link-TxtClr);
-    --linkIcnAfter-Width: 10px;
-    --linkIcnAfter-Height: 10px;
-}
-.contentLink,
-u .contentLink,
-.contentLink u,
-.colored a.contentLink,
-a.contentLink .colored {
-    color: var(--LnkTxtClr) !important;
-    position: relative;
-}
-#app a.contentLink,
-#app u a.contentLink,
-#app a.contentLink u {
-    text-decoration: underline;
-}
-#app .colored a.contentLink,
-#app a.contentLink .colored {
-    color: var(--LnkTxtClr)
-}
 
-
-/*
-
-html #app .project > .name > .content a.contentLink {
-    border-radius: var(--link-BrdRad);
-    transition: .1s;
-    padding-left: 3px;
-    padding-right: 3px;
-    text-underline-offset: var(--underlineOffset);
-    text-decoration-thickness: var(--underlineThickness);
-    text-decloration-color: var(--LnkTxtClr) !important;
-    text-decoration: none;
-    box-shadow: inset 0 0 0 1px var(--LnkBrdClr)!important;
-    background: var(--LnkBgClr);
-    --link-BrdRad: 4px;
-}*/
-html #app .project > .name > .content a.contentLink {
-    border-radius: var(--link-BrdRad);
-    transition: .1s;
-    padding-left: 0px;
-    padding-right: 0px;
-    text-underline-offset: var(--underlineOffset);
-    text-decoration-thickness: var(--underlineThickness);
-    text-decloration-color: var(--LnkTxtClr) !important;
-    --link-BrdRad: 4px;
-    text-shadow:none !important;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-html #app .project > .name > .content a.contentLink:hover {
-    background: var(--LnkBgClrHov);
-    background-image: var(--LinkIcn);
-    background-repeat: no-repeat;
-}
 
 html #app .project.root > .name {
     --link-BrdRad: 7px;
@@ -2312,50 +2251,7 @@ html #app .project.root > .name > .content {
     max-width: 100% !important;
     font-weight: 600 !important;
 }
-:root {
-    --lnkicnW: 15px;
-    --lnkicnH: 15px;
-}
 
-/*
-#app a.contentLink:after{
-    content:"....";
-    color:transparent;
-    display: inline;
-    background-image: var(--ICON--LINK--EXTERNAL);
-    background-repeat: no-repeat;
-    background-size:var(--lnkicnW) var(--lnkicnH);
-    background-position:1px 72%;
-    opacity:.8;
-    transition: .2s;
-}
-#app .contentLink:hover:after{
-    opacity: 1;
-}
-*/
-html #app .project .content a.contentLink[href*="workflowy"],
-html #app .project .content a.contentLink[href*="workflowy"]:after {
-    --LnkTxtClr: var(--LnkWFTxtClr);
-    --LnkBrdClr: transparent;
-    --LnkBgClr: transparent;
-    --LnkBgClrHov: var(--LnkWFBgClrHov);
-    --ICON--LINK--EXTERNAL: var(--ICON--LINK--INTERNAL2) !important;
-    --lnkicnW: 14px;
-    --lnkicnH: 14px;
-    text-decoration: underline !important;
-    opacity: 1;
-    padding-left: 0px;
-    padding-right: 0px;
-  text-underline-offset: 2px;
-}
-
-html #app .project > .notes > .content a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content u a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content a.contentLink[href*="workflowy"] u,
-html #app .project > .notes > .content .colored a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored {
-    color:var(--LnkWFTxtClr) !important;
-}
 
 html #app .project > .notes > .content {
     color: var(--NODE-NOTES--TXT-CLR-ALL);
@@ -3842,6 +3738,85 @@ HIGHLIGHT - GREYED OUT
   left: -14px;
   right: auto;
   color: var(--NODE--TXT-CLR--main)
+}
+
+
+/***************
+LINKS
+****************/
+:root {
+    --link-BrdRad: 3px;
+    --linkArrow-Size: 5px;
+    --linkArrow-BrdClr: var(--Link-TxtClr);
+    --linkIcnAfter-Width: 10px;
+    --linkIcnAfter-Height: 10px;
+      --lnkicnW: 15px;
+    --lnkicnH: 15px;
+}
+.contentLink,
+u .contentLink,
+.contentLink u,
+.colored a.contentLink,
+a.contentLink .colored {
+    color: var(--LnkTxtClr) !important;
+    position: relative;
+}
+#app a.contentLink,
+#app u a.contentLink,
+#app a.contentLink u {
+    text-decoration: underline;
+}
+#app .colored a.contentLink,
+#app a.contentLink .colored {
+    color: var(--LnkTxtClr)
+}
+
+
+
+html #app .project > .name > .content a.contentLink {
+    border-radius: var(--link-BrdRad);
+    transition: .1s;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-underline-offset: var(--underlineOffset);
+    text-decoration-thickness: var(--underlineThickness);
+    text-decloration-color: var(--LnkTxtClr) !important;
+    --link-BrdRad: 4px;
+    text-shadow:none !important;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+html #app .project > .name > .content a.contentLink:hover {
+    background: var(--LnkBgClrHov);
+    background-image: var(--LinkIcn);
+    background-repeat: no-repeat;
+}
+
+
+
+
+html #app .project .content a.contentLink[href*="workflowy"],
+html #app .project .content a.contentLink[href*="workflowy"]:after {
+    --LnkTxtClr: var(--LnkWFTxtClr);
+    --LnkBrdClr: transparent;
+    --LnkBgClr: transparent;
+    --LnkBgClrHov: var(--LnkWFBgClrHov);
+    --ICON--LINK--EXTERNAL: var(--ICON--LINK--INTERNAL2) !important;
+    --lnkicnW: 14px;
+    --lnkicnH: 14px;
+    text-decoration: underline !important;
+    opacity: 1;
+    padding-left: 0px;
+    padding-right: 0px;
+  text-underline-offset: 2px;
+}
+
+html #app .project > .notes > .content a.contentLink[href*="workflowy"],
+html #app .project > .notes > .content u a.contentLink[href*="workflowy"],
+html #app .project > .notes > .content a.contentLink[href*="workflowy"] u,
+html #app .project > .notes > .content .colored a.contentLink[href*="workflowy"],
+html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored {
+    color:var(--LnkWFTxtClr) !important;
 }
 
 /**********************
@@ -10776,9 +10751,11 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
   }
   
 }
+
+
 /*******************************
 ********************************
-! FLAT SEARCH
+! FLAT SEARCH / SEARCH RESULTS
 ********************************
 ********************************/
 :root {
@@ -10892,6 +10869,30 @@ box-shadow:
   --matchBrdW:4px;
   --matchBrdRad:5px;
 }
+
+
+/****************
+*****************
+MATCH > NODE
+*****************
+*****************/
+
+/****************
+*****************
+MATCH > NODE > KEYWORD
+*****************
+*****************/
+
+/****************
+*****************
+SEARCH BOX
+*****************
+*****************/
+
+.searchBox[style*="width: "]{
+  width: 250px !important;
+}
+
 /*******************************
 ********************************
 ! AI
