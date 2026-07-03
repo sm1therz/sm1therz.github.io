@@ -6390,6 +6390,28 @@ CARD > IS COMMENT
 #app .page .project.root.board > .children > .boardColumn > .children {
   padding-bottom: 200px !important;
 }
+/*******
+********
+BOARDS - NOT ROOT > PADDING FIX
+********
+********/
+
+#app .project.board:not(.root) .boardColumn > .children{
+  margin: unset !important;
+  padding: unset !important;
+}
+#app .project.board:not(.root) .bulletHalo{
+  display: none;
+}
+
+#app .project.board:not(.root) * {
+
+}
+#app .project.board:not(.root) .project.paragraph
+#app .project.board:not(.root) .project.paragraph > .name,
+#app .project.board:not(.root) .project.paragraph > .name > .content{
+  min-height: unset !important;
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT - SHARED (WRAP)
