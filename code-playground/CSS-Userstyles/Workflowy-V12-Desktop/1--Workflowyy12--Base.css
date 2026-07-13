@@ -3399,7 +3399,7 @@ PROJECT.HEADERS > NAME
   --coloredtagTxtClr-Hash:green;
   /*negative*/
   --negTagTxtClr: hsl(201, 13%, 16%);
-  --negTagTxtClr-Hash: hsl(201, 13%, 17%, 0.6)
+  --negTagTxtClr-Hash: hsl(201, 13%, 17%, 0.8)
 }
 .root.project > .name {
   --tagBrdRad: 7px;
@@ -3498,13 +3498,16 @@ s .contentTag {
 ***************
 ***************
 ***************/
+
 /*TAG > HASHTAG*/
 #app .contentTag:is(
   [data-val*="versions"], 
   [data-val*="type"],
   [data-val*="correction"],
   [data-val*="#input"],
-  [data-val*="#output"]) {
+  [data-val*="#output"],
+  [data-val*="#verification"],
+  [data-val*="#loop"]) {
   -webkit-text-fill-color: var(--negTagTxtClr-Hash);
   font-weight: var(--tagNegFontWeight);
 }
@@ -3515,10 +3518,11 @@ s .contentTag {
   [data-val*="type"],
   [data-val*="correction"],
   [data-val*="#input"],
-  [data-val*="#output"]) .contentTagText {
+  [data-val*="#output"],
+  [data-val*="#verification"],
+  [data-val*="#loop"]) .contentTagText {
   -webkit-text-fill-color: var(--negTagTxtClr);
 }
-
 
 /**************
 ***************
