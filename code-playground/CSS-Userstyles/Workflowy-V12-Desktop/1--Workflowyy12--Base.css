@@ -2203,11 +2203,11 @@ HORIZONTAL RULES / DIVIDERS
   --btnIcn-ExpandB4Up-H:6px
 }
 
-.project.task.divider > .name > .content {
+.project.divider > .name > .content {
   z-index: 1;
   flex: 1;
 }
-.project.task.divider > .name > .content > .innerContentContainer{
+.project.divider > .name > .content > .innerContentContainer{
   background: var(--BG-primary);
 }
 /*******
@@ -3383,6 +3383,23 @@ PROJECT.HEADERS > NAME
 
 #app .children > .project[class*="header"]:first-child:not(.root, .board .project) {
     margin-top: calc(var(--prjct-MargTopBtm) * 1)!important;
+}
+
+
+.template-button.button + .content {
+margin-left: 0px !important;
+}
+
+
+.project.collapsed > .name >  .template-button.button ~ .expand:after{
+  background: hsl(200, 3%, 48%);
+}
+.project.collapsed > .name > .bullet:not(.diamond) ~ .template-button.button ~ .expand:after{
+    transform: scale(1.4) !important;
+}
+
+.project.collapsed:not(.checkmark) > .name > .bullet.diamond ~ .template-button.button ~ .expand:after{
+  --mirrorBulletUnderScale:1.1;
 }
 
 /***********
