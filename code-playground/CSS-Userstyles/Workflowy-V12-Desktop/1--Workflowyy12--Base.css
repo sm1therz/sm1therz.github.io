@@ -11278,6 +11278,9 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   :root {
   --numberMargTop:-1.5px;
 }
+  .project.collapsed > .name >  .template-button.button > span {
+  margin-left: -6px !important;
+}
 
 }
 
