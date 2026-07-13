@@ -3507,7 +3507,8 @@ s .contentTag {
   [data-val*="#input"],
   [data-val*="#output"],
   [data-val*="#verification"],
-  [data-val*="#loop"]) {
+  [data-val*="#loop"],
+  [data-val="#prompt"]) {
   -webkit-text-fill-color: var(--negTagTxtClr-Hash);
   font-weight: var(--tagNegFontWeight);
 }
@@ -3520,7 +3521,8 @@ s .contentTag {
   [data-val*="#input"],
   [data-val*="#output"],
   [data-val*="#verification"],
-  [data-val*="#loop"]) .contentTagText {
+  [data-val*="#loop"],
+  [data-val="#prompt"]) .contentTagText {
   -webkit-text-fill-color: var(--negTagTxtClr);
 }
 
@@ -3746,7 +3748,7 @@ HIGHLIGHT - GREYED OUT
 
 
 /***************
-LINKS
+! LINKS
 ****************/
 :root {
     --link-BrdRad: 3px;
