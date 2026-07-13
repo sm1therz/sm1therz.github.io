@@ -2154,7 +2154,7 @@ HORIZONTAL RULES / DIVIDERS
 .project.divider > .name > [class*="selection-handle"] hr{
   margin: unset;
   border-radius: 1px;
-  height: 1.5px;
+  height: 1px;
   border:unset !important;
   background: hsla(0,0%,50%);
   margin-top: 2px !important;
@@ -2201,6 +2201,14 @@ HORIZONTAL RULES / DIVIDERS
 }
 .project.divider > .name > .bullet:not(.diamond) ~ .expand:after {
   --btnIcn-ExpandB4Up-H:6px
+}
+
+.project.task.divider > .name > .content {
+  z-index: 1;
+  flex: 1;
+}
+.project.task.divider > .name > .content > .innerContentContainer{
+  background: var(--BG-primary);
 }
 /*******
 EXPAND MIRROR BULLET V2
