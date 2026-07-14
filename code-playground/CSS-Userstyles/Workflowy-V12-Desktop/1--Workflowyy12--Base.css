@@ -3533,7 +3533,8 @@ s .contentTag {
   [data-val*="#output"],
   [data-val*="#verification"],
   [data-val*="#loop"],
-  [data-val="#prompt"]) {
+  [data-val="#prompt"],
+  [data-val="#plan-mode"]) {
   -webkit-text-fill-color: var(--negTagTxtClr-Hash);
   font-weight: var(--tagNegFontWeight);
 }
@@ -3547,7 +3548,8 @@ s .contentTag {
   [data-val*="#output"],
   [data-val*="#verification"],
   [data-val*="#loop"],
-  [data-val="#prompt"]) .contentTagText {
+  [data-val="#prompt"],
+  [data-val="#plan-mode"]) .contentTagText {
   -webkit-text-fill-color: var(--negTagTxtClr);
 }
 
