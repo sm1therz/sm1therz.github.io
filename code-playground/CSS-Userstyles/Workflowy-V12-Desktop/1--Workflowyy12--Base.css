@@ -3485,7 +3485,8 @@ s .contentTag {
 ***************
 ***************
 ***************/
-#app .contentTag:is( [data-val*="v1"],
+#app .contentTag:is( [data-val*="v0"],
+[data-val*="v1"],
 [data-val*="v2"],
 [data-val*="v3"],
 [data-val*="v4"],
@@ -3500,7 +3501,8 @@ s .contentTag {
 }
 
 
-#app .contentTag:is( [data-val*="v1"],
+#app .contentTag:is( [data-val*="v0"],
+[data-val*="v1"],
 [data-val*="v2"],
 [data-val*="v3"],
 [data-val*="v4"],
