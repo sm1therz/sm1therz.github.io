@@ -5430,11 +5430,7 @@ BOARD > NOT ROOT > FIX
   padding-top: calc(var(--content-PadTopBtm) * 2) !important;
   margin-top: 0px !important;
 }
-/*BOARD COLUMN - NAME - NOT NOTED*/
-#app .project.board:not(.root) .boardColumn:not(.noted) > .name {
-  padding-bottom: calc(var(--content-PadTopBtm) * .25) !important;
-  
-}
+
 /*BOARD COLUMN - NAME - CONTENT - NOT NOTED*/
 .project.board:not(.root) .project:is(.boardColumn):not(.noted) > .name > .content {
   padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
@@ -6767,49 +6763,25 @@ EXPAND > BOARDCOLUMN BLOCKS
   padding-bottom: 0px !important;
 }
 
-
-/*******************************
-********************************
-! TABLES
-********************************
-********************************/
+/***********
+************
+COLUMN .EXPAND LEFT MARG
+************
+************/
 :root {
-  --wfTablePadLR:.5rem;
+  --boardColMarg-L:calc(var(--children-Indent) * .25);
 }
 
-#app .project.tableItem{
+#app .project.board.root > .children > .project.boardColumn > *:is(.name,.notes) {
+  margin-left: var(--boardColMarg-L) !important;
+  margin-right: var(--boardColMarg-L) !important;
+  max-width: calc(100% - var(--boardColMarg-L) * 2) !important;
 }
-#app .project.tableItem > .children{
-  display: flex !important;
-  flex-direction: row;
-  margin-top: calc(var(--prjct-MargTopBtm) * 1) !important;
-
-}
-
-#app .project.tableItem > .children .name > .content,
-#app .project.tableItem > .children .notes > .content{
-  margin-left: 0px !important;
+#app .project.board.root > .children > .project.boardColumn > .children {
+  padding-left: var(--boardColMarg-L) !important;
+   padding-right: var(--boardColMarg-L) !important;
 }
 
-#app .project.tableItem .tableColumn > .children {
-  padding-left: 0px !important;
-}
-
-#app .project.tableItem > .children .project {
-  border-radius: 0px !important;
-}
-#app .project.tableItem > .children .name,
-#app .project.tableItem > .children .notes{
-  padding-left: var(--wfTablePadLR) !important;
-  border-radius: 0px !important;
-}
-
-/*BULLETS*/
-#app .project.tableItem > .children .project .expand {
-  left: unset !important;
-  right: 0;
-  opacity: 0;
-}
 /*******************************
 ********************************
 ! DASHBOARD
