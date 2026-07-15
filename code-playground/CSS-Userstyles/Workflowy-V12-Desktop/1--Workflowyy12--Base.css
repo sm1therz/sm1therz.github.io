@@ -1180,6 +1180,7 @@ Expand ONLY*/
 Bullets
 AND
 Menu*/
+
 #app .project > .name > .bullet,
 #app .project > .name > .menu {
     z-index: 2;
@@ -1188,12 +1189,18 @@ Menu*/
     top: var(--btn-MargTop);
 }
 #app .project > .name:hover > .bullet,
-#app .project > .name:hover > .menu {
+#app .project > .name:hover > .menu,
+/*image nodes*/
+#app .project[class*="with-image"]:hover > .name > .bullet,
+#app .project[class*="with-image"]:hover > .name > .menu {
     opacity: .5;
     animation: menu-animation-out .25s ease-in-out;
 }
 #app .project > .name:hover > .bullet:hover,
-#app .project > .name:hover > .menu:hover {
+#app .project > .name:hover > .menu:hover,
+/*image nodes*/
+#app .project[class*="with-image"]:hover > .name > .bullet:hover,
+#app .project[class*="with-image"]:hover > .name > .menu:hover {
     opacity: 1;
     background: var(--BG-BUTTON--HOVER);
     box-shadow: inset 0 0 0 .5px var(--btnBgHover-BrdClr);
