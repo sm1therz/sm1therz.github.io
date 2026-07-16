@@ -6516,126 +6516,119 @@ BOARDS - NOT ROOT > PADDING FIX
 .board.root.shared > .children > ._1en9fmv {
   display: none !important;
 }
+
 /*******************************
 ********************************
 ! BOARDS - BULLET / EXPAND / MENU CHANGE
 ********************************
 ********************************/
-
-
 /*EXPAND - LEFT */
 /*BULLET UPPER*/
-#app .board > .children .boardCard > .children .project > .name > .expand{
-    left: 0 !important;
+#app .board > .children .boardCard > .children .project > .name > .expand {
+  left: 0 !important;
 }
 #app .board > .children .boardCard > .children .project > .name > .expand,
-#app .board > .children .boardCard > .children .project > .name > .expand > div{
-    background: transparent !important;
+#app .board > .children .boardCard > .children .project > .name > .expand > div {
+  background: transparent !important;
 }
 
 #app .board > .children .boardCard > .children .project > .name > .expand:before {
-    display:block !important;
-    background: var(--BG-Bullet-open) !important;
+  display: block !important;
+  background: var(--BG-Bullet-open) !important;
   width: var(--btnIcn-ExpandB4Up-W)!important;
   height: var(--btnIcn-ExpandB4Up-H);
   border-radius: var(--btnIcn-ExpandB4Up-BrdRad);
   z-index: 2;
 }
 #app .board > .children .boardCard > .children .project > .name > .expand:before {
-    transform: scale(.8) rotate(0deg);
+  transform: scale(.8) rotate(0deg);
 }
 #app .board > .children .boardCard > .children .project > .name > .expand:before,
-#app .board > .children .boardCard.comment > .children .project.comment > .name > .expand:before{
-      transform: scale(.625) rotate(0deg);
+#app .board > .children .boardCard.comment > .children .project.comment > .name > .expand:before {
+  transform: scale(.625) rotate(0deg);
 }
 /*paragraph*/
-#app .board > .children .boardCard > .children .project.paragraph:not(.open,.collapsed) > .name > .expand:before{
-    opacity: 0;
+#app .board > .children .boardCard > .children .project.paragraph:not(.open, .collapsed) > .name > .expand:before {
+  opacity: 0;
 }
 
 /*BULLET UNDER*/
-
 #app .board > .children .boardCard > .children .project > .name > .expand:after {
-    display:block !important;
+  display: block !important;
 }
 #app .board > .children .boardCard > .children .project.collapsed > .name > .expand:after {
-    transform: scale(0.9) rotate(0deg);
+  transform: scale(0.9) rotate(0deg);
 }
 #app .board > .children .boardCard > .children .project > .name > .expand:after {
-    transform: scale(0) rotate(0deg);
+  transform: scale(0) rotate(0deg);
 }
 
 /*hide chevron*/
-#app .board > .children .boardCard > .children .project > .name > .expand > div:before{
-    opacity: 0;
-    direction: none !important;
+#app .board > .children .boardCard > .children .project > .name > .expand > div:before {
+  opacity: 0;
+  direction: none !important;
 }
 
 /*ZOOM - RIGHT */
-#app .board > .children .boardCard > .children .project > .name > .bullet{
-    display: flex !important;
-    right: calc(var(--children-Indent) * 1);
-    left: unset;
-    transform: scale(1) rotate(0deg) !important;
-    box-shadow: unset !important;
-    outline: unset !important;
+#app .board > .children .boardCard > .children .project > .name > .bullet {
+  display: flex !important;
+  right: calc(var(--children-Indent) * 1);
+  left: unset;
+  transform: scale(1) rotate(0deg) !important;
+  box-shadow: unset !important;
+  outline: unset !important;
 }
-#app .board > .children .boardCard > .children .project > .name > .bullet:not(:hover){
+#app .board > .children .boardCard > .children .project > .name > .bullet:not(:hover) {
   background: transparent;
 }
 #app .board > .children .boardCard > .children .project > .name > .bullet:before {
-    content:var(--ICON--MAGNIFYING-GLASS-ZOOM) !important;
-    width: 24px;
-    height: 24px;
-    background: transparent !important;
-    opacity: 0;
-    transform: scale(.9) rotate(0deg) !important;
-    box-shadow: unset !important;
-    outline: unset !important;
-    
+  content: var(--ICON--MAGNIFYING-GLASS-ZOOM) !important;
+  width: 24px;
+  height: 24px;
+  background: transparent !important;
+  opacity: 0;
+  transform: scale(.9) rotate(0deg) !important;
+  box-shadow: unset !important;
+  outline: unset !important;
 }
-#app .board > .children .boardCard > .children .project > .name:hover > .bullet:before{
-    opacity: .5
+#app .board > .children .boardCard > .children .project > .name:hover > .bullet:before {
+  opacity: .5
 }
-#app .board > .children .boardCard > .children .project > .name:hover > .bullet:hover:before{
-    opacity: 1
+#app .board > .children .boardCard > .children .project > .name:hover > .bullet:hover:before {
+  opacity: 1
 }
-#app .board > .children .boardCard > .children .project > .name > .bullet:after{
-    display: none;
+#app .board > .children .boardCard > .children .project > .name > .bullet:after {
+  display: none;
 }
 /*CHECKBOX*/
-#app .board > .children .boardCard > .children .project > .name > .prefix label.item-checkbox{
-    z-index: 10
+#app .board > .children .boardCard > .children .project > .name > .prefix label.item-checkbox {
+  z-index: 10
 }
 
 /*MIRRORS (not TASKS) - bullet top - open*/
 #app .board > .children .boardCard > .children .project:not(.checkmark) > .name > .bullet.diamond ~ .expand:before {
-    transform: rotate(-45deg)scale(var(--btnIcn-Scale));
-    --btnIcn-Scale:.65;
+  transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+  --btnIcn-Scale: .65;
 }
 #app .board > .children .boardCard.comment > .children .project.comment:not(.checkmark) > .name > .bullet.diamond ~ .expand:before,
-#app .board > .children .boardCard.comment > .children .project:not(.checkmark) > .name > .bullet.diamond ~ .expand:before{
-    --btnIcn-Scale:.6;
-
+#app .board > .children .boardCard.comment > .children .project:not(.checkmark) > .name > .bullet.diamond ~ .expand:before {
+  --btnIcn-Scale: .6;
 }
-#app .board.root > .children .boardCard.comment > .children > .project > .children .project.comment:not(.checkmark) > .name > .expand{
-    --btn-MargTop:5.5px !important;
-
+#app .board.root > .children .boardCard.comment > .children > .project > .children .project.comment:not(.checkmark) > .name > .expand {
+  --btn-MargTop: 5.5px !important;
 }
 
 /*MIRRORS (not TASKS) - bullet top - closed*/
-#app .board > .children .boardCard > .children .project.collapsed:not(.checkmark) > .name > .bullet.diamond ~ .expand:before {
-
-}
+#app .board > .children .boardCard > .children .project.collapsed:not(.checkmark) > .name > .bullet.diamond ~ .expand:before {}
 
 /*MIRRORS (not TASKS) - bullet bottom - open*/
 #app .board > .children .boardCard > .children .project:not(.checkmark) > .name > .bullet.diamond ~ .expand:after {
-    transform: rotate(-360deg)scale(0);
+  transform: rotate(-360deg)scale(0);
 }
 /*MIRRORS (not TASKS) - bullet bottom - closed*/
 #app .board > .children .boardCard > .children .project.collapsed:not(.checkmark) > .name > .bullet.diamond ~ .expand:after {
-    transform: rotate(-45deg)scale(var(--btnIcn-Scale));
-    --btnIcn-Scale:.85
+  transform: rotate(-45deg)scale(var(--btnIcn-Scale));
+  --btnIcn-Scale: .85
 }
 
 
@@ -6643,22 +6636,18 @@ BOARDS - NOT ROOT > PADDING FIX
 #app .board > .children .boardCard > .children .project.quote-block.collapsed > .name > .expand,
 #app .board > .children .boardCard > .children .project.code-block.open > .name > .expand,
 #app .board > .children .boardCard > .children .project.code-block.collapsed > .name > .expand {
-    opacity: 1;
+  opacity: 1;
 }
 
 
 
 /*comment*/
-#app .board:not(.root) > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand{
-    --btn-MargTop:6.5px !important;
-
-
+#app .board:not(.root) > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand {
+  --btn-MargTop: 6.5px !important;
 }
 
-#app .board.root > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand{
-    --btn-MargTop:7px !important;
-
-
+#app .board.root > .children .boardCard > .children .project.comment:not(.checkmark) > .name > .expand {
+  --btn-MargTop: 7px !important;
 }
 
 
@@ -6667,61 +6656,54 @@ BOARDS - NOT ROOT > PADDING FIX
 BULLETS > QUOTE BLOCKS
 ************
 ************/
-
 /***********
 BULLETS > QUOTE BLOCKS > FLOATING COMMENTS
 ************/
 #app .floating-comments-container > .vertical-scrollable-container > .project.root .project.comment .project.quote-block > .name > .expand,
-#app .floating-comments-container > .vertical-scrollable-container > .project.root .project.comment .project.quote-block > .name > .bullet{
-    top: var(--btn-MargTop)!important;
-    --btn-MargTop:8px !important;
-    margin-top: 0px !important;
+#app .floating-comments-container > .vertical-scrollable-container > .project.root .project.comment .project.quote-block > .name > .bullet {
+  top: var(--btn-MargTop)!important;
+  --btn-MargTop: 8px !important;
+  margin-top: 0px !important;
 }
 /***********
 BULLETS > QUOTE BLOCKS > BOARDS
 ************/
-
 /*BOARD:NOT(ROOT) > QUOTES*/
-
 #app .board > .children .project.quote-block > .name > .expand,
 #app .board > .children .project.quote-block > .name > .bullet,
-#app .board > .children .project.quote-block > .name > .menu{
-    top: var(--btn-MargTop)!important;
-    --btn-MargTop:6px !important;
-    margin-top: 0px !important;
+#app .board > .children .project.quote-block > .name > .menu {
+  top: var(--btn-MargTop)!important;
+  --btn-MargTop: 6px !important;
+  margin-top: 0px !important;
 }
 /*BOARD:NOT(ROOT) > COMMENTS > QUOTES*/
 #app .board > .children .project.comment .project.quote-block > .name > .expand,
 #app .board > .children .project.comment .project.quote-block > .name > .bullet,
-#app .board > .children .project.comment .project.quote-block > .name > .menu{
-      --btn-MargTop:8.5px !important;
-
+#app .board > .children .project.comment .project.quote-block > .name > .menu {
+  --btn-MargTop: 8.5px !important;
 }
 
 /*BOARD ROOT > BOARD COLUMN > QUOTE*/
 #app .board.root > .children .boardCard.project.quote-block > .name > .expand,
-#app .board.root > .children .boardCard.project.quote-block  > .name > .bullet,
-#app .board.root > .children .boardCard.project.quote-block  > .name > .menu{
-    --btn-MargTop:8px !important;
+#app .board.root > .children .boardCard.project.quote-block > .name > .bullet,
+#app .board.root > .children .boardCard.project.quote-block > .name > .menu {
+  --btn-MargTop: 8px !important;
 }
 /*BOARD.ROOT > QUOTES*/
-#app .board.root > .children .project:is(.quote-block,.code-block) > .name > .expand,
-#app .board.root > .children .project:is(.quote-block,.code-block) > .name > .bullet,
-#app .board.root > .children .project:is(.quote-block,.code-block) > .name > .menu{
-    --btn-MargTop:15px !important;
-
+#app .board.root > .children .project:is(.quote-block, .code-block) > .name > .expand,
+#app .board.root > .children .project:is(.quote-block, .code-block) > .name > .bullet,
+#app .board.root > .children .project:is(.quote-block, .code-block) > .name > .menu {
+  --btn-MargTop: 15px !important;
 }
 /*BOARD.ROOT > COMMENTS > QUOTES*/
-#app .board.root > .children .project.comment .project:is(.quote-block,.code-block) > .name > .expand,
-#app .board.root > .children .project.comment .project:is(.quote-block,.code-block) > .name > .bullet,
-#app .board.root > .children .project.comment .project:is(.quote-block,.code-block) > .name > .menu{
-      --btn-MargTop:17px !important;
-
+#app .board.root > .children .project.comment .project:is(.quote-block, .code-block) > .name > .expand,
+#app .board.root > .children .project.comment .project:is(.quote-block, .code-block) > .name > .bullet,
+#app .board.root > .children .project.comment .project:is(.quote-block, .code-block) > .name > .menu {
+  --btn-MargTop: 17px !important;
 }
 
 
 /*BOARD ROOT > QUOTES + QUOTE*/
-
 #app .board.root .project.quote-block:not(.open) + .project.quote-block:not(.boardCard) > .name {
   padding-top: 0px !important;
   margin-top: calc(var(--content-PadTopBtm) * -1 - 1px);
@@ -6743,15 +6725,14 @@ BULLETS > QUOTE BLOCKS > BOARDS
 EXPAND > BOARDCOLUMN BLOCKS
 ************
 ************/
-
 #app .board > .children > .project.boardColumn > .name > .expand {
   opacity: 1 !important;
 }
 
 #app .project.board .project.code-block > .name > .expand,
 #app .project.board .project.code-block > .name > .bullet,
-#app .project.board .project.code-block > .name > .menu{
-  --btn-MargTop:10px !important
+#app .project.board .project.code-block > .name > .menu {
+  --btn-MargTop: 10px !important
 }
 
 #app .project.board .project.code-block > .name > .bullet {
@@ -6763,23 +6744,56 @@ EXPAND > BOARDCOLUMN BLOCKS
   padding-bottom: 0px !important;
 }
 
+
+
 /***********
 ************
-COLUMN .EXPAND LEFT MARG
+.BOARD.ROOT > COLUMN .EXPAND LEFT MARG
 ************
 ************/
 :root {
-  --boardColMarg-L:calc(var(--children-Indent) * .25);
+  --boardColMarg-L: calc(var(--children-Indent) * .25);
 }
 
-#app .project.board.root > .children > .project.boardColumn > *:is(.name,.notes) {
+#app .project.board.root > .children > .project.boardColumn > *:is(.name, .notes) {
   margin-left: var(--boardColMarg-L) !important;
   margin-right: var(--boardColMarg-L) !important;
   max-width: calc(100% - var(--boardColMarg-L) * 2) !important;
 }
 #app .project.board.root > .children > .project.boardColumn > .children {
   padding-left: var(--boardColMarg-L) !important;
-   padding-right: var(--boardColMarg-L) !important;
+  padding-right: var(--boardColMarg-L) !important;
+}
+
+/***********
+************
+.BOARD:NOT(ROOT) > COLUMN .EXPAND LEFT MARG
+************
+************/
+:root {
+  --boardnotrootColMargL: calc(var(--children-Indent) * .25);
+}
+
+/*left side*/
+
+#app .project.board:not(.root) > .children  .project:is(.boardColumn,.boardCard) > .name > .expand {
+  left: var(--boardnotrootColMargL) !important;
+}
+#app .project.board:not(.root) > .children  .project:is(.boardColumn,.boardCard) > *:is(.name,.notes) > .content {
+  margin-left: calc(var(--children-Indent) + var(--boardnotrootColMargL)) !important;
+}
+#app .project.board:not(.root) > .children  .project.boardCard > .children {
+  padding-left: calc(var(--children-Indent) * 1 + var(--boardnotrootColMargL)) !important
+}
+
+
+/*Right side*/
+#app .project.board:not(.root) > .children > .project.boardColumn > .name > .menu {
+  right: calc(var(--children-Indent) * 1 + var(--boardnotrootColMargL)) !important;
+}
+#app .project.board:not(.root) > .children > .project.boardColumn > .name > *:is(.bullet, .prefix) {
+  right: calc(var(--children-Indent) * 0 + var(--boardnotrootColMargL)) !important;
+  z-index: 939393;
 }
 
 /*******************************
@@ -9666,16 +9680,18 @@ IMAGE NODE > NAME.EMPTY > ADD TEXT > SMOOTH TRANSITION
 :root {
   --imgnodeContentFakeHeight:10px;
 }
+
 .project[class*="with-image"] > .name.empty {
-  z-index: 99
+  z-index: 99;
 }
+
 .project[class*="with-image"] > .name > .content {
-  transition: var(--imgnodeNameTransition);
+  transition: .1s !important;
+  transition-delay: 0s !important;
 }
 
 
-.project[class*="with-image"] > .name > .content:empty {
-  line-height: 0 !important;
+.project[class*="with-image"]:not(.table-cell) > .name > .content:empty {
   min-width: 100%;
   margin-top: calc(var(--imgnodeContentFakeHeight) * -1);
   top: 10px;
@@ -9713,11 +9729,288 @@ IMAGE NODE > IMAGE CONTAINER > WIDTH
 *************
 *************/
 
+
+
 .project[class*="with-image"] > .name + .file-preview {
   margin-left: calc(var(--children-Indent) + var(--content-PadLeftRight) - var(--imgnodeBrdW));
+  max-width: calc(100% - var(--children-Indent) + var(--content-PadLeftRight) - var(--imgnodeBrdW) * 4);
 }
 
 
+/************
+*************
+IMAGE NODE > IN TABLES
+*************
+*************/
+
+.table-cell.project[class*="with-image"] > .name + .file-preview {
+  margin: 0px !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  margin: unset !important;
+  padding: unset !important;
+  top: unset !important;
+}
+
+
+
+
+/*******************************
+********************************
+! IMAGE NODE > IN BOARDS
+********************************
+********************************/
+
+
+.project.board .project[class*="with-image"] {
+  --imgnodeBrdRad: 10px;
+  --imgnodeNameTransition: .15s;
+  --imgnodeBrdW:1px;
+  --imgnodeBoxShadW:.5px;
+  --imgnodeOutlineBrdW:2px;
+}
+
+:root {
+  --boardrootColMarg-L:;
+}
+
+
+/***********
+MAIN SPACING
+************/
+
+/****
+.PROJECT
+*****/
+
+#app .project.board .project[class*="with-image"]{
+  
+}
+
+/****
+.PROJECT >> .NAME / .FILE-PREVIEW
+*****/
+
+#app .project.board .project[class*="with-image"] > *:is(.name,.file-preview){
+  
+}
+
+/****
+.PROJECT >> .NAME / .FILE-PREVIEW >>> .CONTENT
+*****/
+
+#app .project.board .project[class*="with-image"] > *:is(.name,.file-preview) > .content{
+  
+}
+
+
+
+/****
+OVERRIDE > IMAGES.NOTED
+*****/
+
+/*boardColumns*/
+
+#app .project.board .project.boardColumn[class*="with-image"] > .name{
+  padding-bottom: 0px !important;
+}
+#app .project.board .project.boardColumn[class*="with-image"] > .name:not(.empty)> .content{
+  padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
+}
+/*boardCards + inside boardCards*/
+
+
+#app .project.board > .children .project.boardColumn .project[class*="with-image"] > .name{
+  padding-bottom: 0px !important;
+}
+#app .project.board.root > .children .project.boardColumn .project[class*="with-image"] > .name > .content {
+  margin-bottom:calc(var(--content-PadTopBtm) * 1) !important;
+}
+#app .project.board:not(.root) > .children .project.boardColumn .project[class*="with-image"] > .name > .content {
+  margin-bottom:calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important
+}
+
+.board:not(.root) {
+    --boarditemPadFix: 2px;
+}
+
+/****
+OVERRIDE.ROOT > IMAGES.NOTED > .NOTES
+*****/
+#app .project.board.root .project[class*="with-image"].noted > .name.empty ~ .notes > .content {
+  margin-left: var(--boardrootColMarg-L) !important;
+}
+/****
+OVERRIDE:not(ROOT) > IMAGES.NOTED > .NOTES
+*****/
+#app .project.board:not(.root) .project[class*="with-image"].noted > .name.empty ~ .notes > .content {
+  margin-left: var(--boardnotrootColMargL) !important;
+}
+
+
+/***********
+BOARDCOLUMN
+************/
+#app .project.board .project.boardColumn[class*="with-image"] > .name:not(.empty) ~ .file-preview  {
+  --imgnodeBrdW:0px;
+  --imgnodeBoxShadW:0px;
+  --imgnodeBrdRad:0px !important;
+}
+  
+/***********
+BOARD CARD
+************/
+
+
+
+
+
+#app .project.board .children .boardColumn  .children .project[class*="with-image"].boardCard > .name.empty .content{
+  margin-bottom: 0px !important;
+  max-height: 0px !important;
+  
+}
+
+/***********
+INSIDE BOARD CARD
+************/
+
+
+
+
+#app .project.board .project[class*="with-image"] > .name.empty{
+    padding-top: calc(var(--children-Indent) * .5) !important;
+}
+
+#app .project.board .project[class*="with-image"] > .name.empty{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+
+#app .project.board .boardCard .project[class*="with-image"]:not(.noted) > .file-preview {
+      padding-bottom: calc(var(--children-Indent) * .5) !important;
+
+}
+#app .project.board .project[class*="with-image"] > .name.empty .content{
+  margin-bottom: 0px !important;
+  max-height: 1px !important;
+  padding: unset !important;
+}
+#app .project.board .project[class*="with-image"] > .file-preview {
+  margin: unset;
+  max-width: 100% !important;
+}
+
+#app .project.board .project[class*="with-image"] > .name.empty ~ .file-preview {
+    --imgnodeBrdRad: 6px;
+
+}
+
+/*******************************
+********************************
+! IMAGES > POPUP - IMAGE MODAL
+********************************
+********************************/
+.overlay {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.overlay > div:first-of-type {
+    position: absolute;
+    z-index: 20202;
+    top: 20px;
+    right: 20px;
+    height: unset;
+    padding: unset;
+}
+/*BUTTON*/
+.overlay > div:first-of-type > div > div > div > div {
+    width: 60px;
+    height: 60px;
+    background: rgba(125, 125, 125, .5);
+    backdrop-filter: blur(10px)contrast(2);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 10px;
+    opacity: .7 !important;
+}
+.overlay > div:first-of-type > div > div > div > div:hover {
+    opacity: 1 !important;
+    transition: .2s;
+}
+.overlay > div:first-of-type > div > div > div > div svg {
+    width: 30px;
+    height: 30px;
+}
+.overlay > div:first-of-type > div > div > div > div svg path {
+    fill: white;
+}
+/********
+IMAGE MODAL > IMAGE CONTAINER
+*********/
+.overlay > div[data-id="measured"] > div[style*="width"] {
+    width: auto !important;
+    height: auto !important;
+}
+/*FOR ALL*/
+.overlay > div[data-id="measured"] > div[style*="width"],
+.overlay > div[data-id="measured"] > div[style*="width"] > div.image--graybox,
+.overlay > div[data-id="measured"] div.image--graybox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.overlay div[data-id="measured"]{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.overlay div[data-id="measured"] > div{
+    width: unset !important;
+    height: unset !important;
+}
+
+
+.overlay > div[data-id="measured"] > div[style*="width"] > div.image--graybox,
+.overlay div[data-id="measured"] div.image--graybox{
+    box-shadow: 0 0 0 1px rgba(125, 125, 125, .3);
+    border-radius: 10px;
+    overflow: auto;
+    max-height: 92vh;
+    display: block;
+}
+
+/*FOR NORMAL IMAGES*/
+.overlay > div[data-id="measured"] > div[style*="width"] img {
+    width: auto;
+    height: unset;
+    margin: 0 auto;
+    max-width: 100vw;
+}
+/****************
+IMAGES FIX
+*****************/
+
+.project > .name--with-image > .content{
+display:block;
+max-width:100%;
+}
+.project > .name--with-image > .file-preview{
+margin-left:calc(var(--children-Indent) * 1) !important;
+
+}
+/*FOR SVGS*/
+.overlay > div[data-id="measured"] > div[style*="width"] img[alt*=".svg"] {
+    max-width: 95vw !important;
+    min-width: 60vw !important;
+    display: block;
+}
 /*******************************
 ********************************
 ! POPUP - 'MOVE TO' MENU
