@@ -1,4 +1,3 @@
-
 /****
 ! ROOT
 ****/
@@ -52,9 +51,6 @@ body,
     width: 100%;
     max-width: 100%;
 }
-
-
-
 
 
 
@@ -280,8 +276,8 @@ body,
     --btnIcn-Width: 26px;
     --btnIcn-Height: 26px;
     --btnIcn-ChkBx-BrdRad: 3.5px;
-    --btnIcn-ChkBx-W: 13px;
-    --btnIcn-ChkBx-H: 13px;
+    --btnIcn-ChkBx-W: 12px;
+    --btnIcn-ChkBx-H: 12px;
     --btnIcn-ChkBx-Transition: 350ms cubic-bezier(.4, 3.9, .31, .4);
     --btnIcn-ChkBx-BoxShad: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR);
     --btnIcn-ChkMrk-W: 14px;
@@ -876,7 +872,7 @@ NAME-WITH-IMAGE
 }
 .name--with-image.name--focused > .file-preview .image-viewer {
     box-shadow: 0 0 0 0px var(--BG-primary),
-    0 0 0 3px var(--IMAGE--SELECTED--BOX-SHADOW-CLR);
+    0 0 0 3px var(--imgnodeOutlineBrdClr);
 }
 
 .name--with-image > .file-preview .image-viewer .resizer{
@@ -1083,7 +1079,7 @@ Prefix ONLY*/
 }
 /*checkmark - done*/
 .project.done > .name > .prefix > .inline-flex > .item-checkbox:before {
-    --btnIcn-Scale: 1.0;
+    --btnIcn-Scale: 0.9;
     transition: var(--btnIcn-ExpandB4Low-HovTransition);
 }
 
@@ -1092,8 +1088,8 @@ Prefix ONLY*/
     opacity: 0;
 }
 .project.checkmark.collapsed > .name > .prefix:after {
-    --btnIcn-ExpandB4Low-W: 21px;
-    --btnIcn-ExpandB4Low-H: 21px;
+    --btnIcn-ExpandB4Low-W: 20px;
+    --btnIcn-ExpandB4Low-H: 20px;
     --btnIcn-ExpandB4Low-BrdRad: 7px;
 }
 
@@ -2155,7 +2151,7 @@ HORIZONTAL RULES / DIVIDERS
   justify-content: center;
   width: unset !important;
 }
-.board .project.divider:not(.boardColumn) > .name > [class*="selection-handle"]{
+.board .projectr:not(.boardColumn) > .name > [class*="selection-handle"]{
   right: calc(var(--children-Indent) * 1);
 }
 .project.divider > .name > [class*="selection-handle"] hr{
@@ -2216,35 +2212,8 @@ HORIZONTAL RULES / DIVIDERS
 }
 .project.divider > .name > .content > .innerContentContainer{
   background: var(--BG-primary);
+  outline: 4px solid var(--BG-primary);
 }
-/*******
-EXPAND MIRROR BULLET V2
-
-#app .page .project.quote-block > .name > .expand {
-height: 100% !important;
-  top: 0 !important;
-  bottom:0 !important;
-  
-}
-#app .page .project.quote-block > .name > .expand:before,
-#app .page .project.quote-block.collapsed > .name > .expand:before {
-  height: calc(100% - 2px) !important;
-  transform: unset !important;
-  width: var(--quoteBrdLeftW)
-}
-
-#app .page .project.quote-block.hasMirrors > .name > .expand:before{
-  outline:unset !important;
-  box-shadow: 
-    -1.4px 0px 0 0 var(--BG-Bullet-open),
-    1.4px 0px 0 0 var(--BG-Bullet-open);
-}
-#app .page .project.quote-block.collapsed > .name > .expand:after {
-  opacity: 0 !important;
-  display: none !important;
-}
-********/
-
 
 /***************
 TAGS
@@ -2679,6 +2648,9 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
     opacity: 1;
 }
+
+
+
 /*******************************
 ********************************
 ! NORMAL STATE - NUMBERS
@@ -3392,6 +3364,10 @@ PROJECT.HEADERS > NAME
     margin-top: calc(var(--prjct-MargTopBtm) * 1)!important;
 }
 
+#app .project.paragraph:is(.open,.collapsed) > .name:not(.name--root) > .expand{
+    opacity:1!important
+    
+}
 
 .template-button.button + .content {
 margin-left: 0px !important;
@@ -3408,7 +3384,6 @@ margin-left: 0px !important;
 .project.collapsed:not(.checkmark) > .name > .bullet.diamond ~ .template-button.button ~ .expand:after{
   --mirrorBulletUnderScale:1.1;
 }
-
 /***********
 ! TAGS + HIGHLIGHTS
 ************/
@@ -3781,8 +3756,6 @@ HIGHLIGHT - GREYED OUT
   right: auto;
   color: var(--NODE--TXT-CLR--main)
 }
-
-
 /***************
 ! LINKS
 ****************/
@@ -3863,7 +3836,6 @@ html #app .project > .notes > .content .colored a.contentLink[href*="workflowy"]
 html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored {
     color:var(--LnkWFTxtClr) !important;
 }
-
 /**********************
 ***********************
 ***********************
@@ -3887,7 +3859,7 @@ html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored
 }
 #app .project.done .innerContentContainer {
   --ICON--UNDERLINE-WAVY:var(--ICON--UNDERLINE-WAVY--DONE);
-  --negTagClr:var(--BG-primary) !important;
+  --negTagTxtClr:var(--BG-primary) !important;
 }
 
 
@@ -3993,8 +3965,6 @@ html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored
 .children > .project.done ~ div:not(.project).mt-m .addChildButton{
   display: none;
 }
-
-
 /***********
 ! COMPLETED TASKS - ORDER
 
@@ -4609,7 +4579,7 @@ BULLET
 PREFIX*/
 #app .board .project > .name > .bullet,
 #app .board .project.checkmark > .name > .prefix {
-  opacity: 1;
+  opacity: 1 !important;
   animation: none;
 }
 .project > .name > .prefix:after {
@@ -5556,7 +5526,6 @@ right: calc(var(--btn-Width) * 1) !important;
   height: var(--btn-Height) !important
 }
 
-#app .project.board > .children > .boardColumn > .name > .bullet,
 #app .project.board > .children  .boardCard > .name > .bullet {
   left:unset !important;
 }
@@ -5564,6 +5533,12 @@ right: calc(var(--btn-Width) * 1) !important;
 #app .project.board > .children > .boardColumn:not(.paragraph):is(.open,.collapsed) > .name > .bullet,
 #app .project.board > .children  .boardCard:not(.paragraph):is(.open,.collapsed) > .name > .bullet {
   opacity: 1!important;
+}
+#app .project.board > .children > .boardColumn > *:is(.name,.notes){
+  margin-left: 0px !important;
+}
+#app .project.board > .children > .boardColumn > *:is(.name,.notes) > .content{
+  min-height: unset !important;
 }
 /*******************************
 ********************************
@@ -5690,13 +5665,6 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 
   padding-left: calc(var(--boardRoot-ColumnGap) * 2);
   padding-right: calc(var(--boardRoot-ColumnGap) * 2);
-}
-
-#app .project.board.root > .children > .boardColumn:first-child > *:is(.name,.notes,.children) {
-    padding-left: var(--boardrootFirstColPadL) !important;
-}
-#app .project.board.root > .children > .boardColumn:first-child > .name > .expand{
-    left: calc(var(--boardrootFirstColPadL) * 1) !important
 }
 
 #app .project.board.root .boardColumn > .children > .boardCard {
@@ -6428,6 +6396,235 @@ CARD > IS COMMENT
 #app .page .project.root.board > .children > .boardColumn > .children {
   padding-bottom: 200px !important;
 }
+
+
+.page[data-full-width-children="true"]{
+    margin: unset !important;
+  height: unset !important;
+    padding:unset !important;
+
+}
+
+html #app .project.root.board > .name{
+  height: unset;
+  position: fixed;
+  z-index: 949494;
+  top: var(--wf-header-height) !important;
+}
+
+html #app .project.root.board > .notes{
+  height: unset;
+  position: fixed;
+  z-index: 949494;
+  top: calc(var(--wf-header-height) * 2.1) !important;
+  padding-bottom: 0px !important;
+  margin: unset;
+}
+#app .page .project.root.board > .notes > .content{
+  margin-bottom: 0px;
+  padding-top: 0px
+}
+
+html #app .project.root.board > .name > .content{
+
+}
+
+html #app .project.root.board{
+  position: fixed;
+  top: 120px !important;
+  right: 0;
+  left: 0;
+  bottom: 0vh !important;
+  height: unset !important;
+  border: 0px solid red !important;
+}
+html #app .project.root.board > .children {
+  height: 100%;
+  padding-top: 0px !important;
+}
+
+html #app .project.root.board > .children > .boardColumn:first-child {
+  padding-left: 1rem;
+}
+/*******
+********
+BOARDS - ROOT > PADDING FIX
+********
+********/
+#app .project.board.root {
+}
+#app .project.board.root,
+.project.board.root .boardCard > .name, 
+.project.board.root .boardCard > .notes, 
+.project.board.root .boardCard .project > .name, 
+.project.board.root .boardCard .project > .notes{
+
+  --content-PadTopBtm:8px !important;
+}
+/*ALL ITEMS - NAME */
+#app .project.board.root .project:not(.boardColumn, .quote-block, .code-block) > .name {
+  padding-top: calc(var(--content-PadTopBtm) * 1) !important;
+}
+/*ALL ITEMS - CONTENT - NOT NOTED */
+#app .project.board.root .project:not(.noted, .boardColumn, .quote-block, .code-block) > .name {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+}
+#app .project.board.root .project:not( .boardColumn, .quote-block, .code-block) > *:is(.name, .notes) > .content {
+  padding-bottom: 0px !important;
+}
+/*ALL ITEMS - CONTENT - HAS NOTE */
+#app .project.board.root .project.noted > .notes {
+  padding-top: calc(var(--content-PadTopBtm) * .1) !important;
+  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
+  
+}
+
+/*ALL ITEMS - NAME WITH IMAGE -  NOT NOTED */
+#app .project.board.root > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image  {
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 1)!important;
+}
+/*ALL ITEMS - NAME WITH IMAGE -  HAS */
+#app .project.board.root > .children > .boardColumn > .children *:is(.noted) > .name--with-image{
+    padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) * 0.5)!important;
+}
+/*ALL ITEMS - NAME WITH IMAGE -  CONTENT - HAS NOTE */
+#app .project.board.root > .children > .boardColumn > .children *:is(.noted, .project,.boardCard):not(.boardColumn, [class*="header"],.quote-block,.code-block) > .name--with-image > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * .5) !important;
+}
+
+
+/******
+*******
+BOARDS
+*******
+*******/
+.project.board .project > .name > .content {
+  padding-right: 0px !important;
+}
+#app .project.board .project.boardCard:not([class*="comment"]) {
+  background: transparent;
+}
+
+
+/******
+*******
+BOARDS - ROOT
+*******
+*******/
+
+/******
+BOARDS - ROOT > BOARD COLUMNS
+*******/
+#app .project.board.root > .children > .boardColumn:not(:last-child) {
+border-right: 1px solid hsla(0,0%,100%,.1) !important;
+}
+
+#app .project.board.root > .children > .boardColumn > .children {
+    padding-right: calc(var(--children-Indent) + var(--boardCardPadLeftRight)) !important;
+    padding-left: calc(var(--children-Indent) + var(--boardCardPadLeftRight)) !important;
+    
+}
+#app .page .project.root.board > .children > .boardColumn > .children {
+margin-top: unset !important;
+padding-bottom: 0px !important;
+}
+/******
+BOARDS - ROOT > BOARD CARDS
+*******/
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard{
+    padding-left:0px !important;
+    margin-left:0px !important
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard > .children,
+#app .project.board.root > .children > .boardColumn > .children > .boardCard > .children .project > .children{
+    margin-left: 0px !important;
+    padding-left: calc(var(--children-Indent) * 1) !important;
+}
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard:not(.comment) {
+border-top: 0px solid hsla(0,0%,100%,.1) !important;
+border-bottom: 1px solid hsla(0,0%,100%,.1) !important;
+border-radius: 0px !important;
+transition: .2s !important;
+margin-top: 0px !important;
+}
+#app .project.board.root > .children > .boardColumn > .children > .boardCard[class*="Selection"]:before{
+    border-radius:10px !important;
+}
+/******
+BOARDS - ROOT > BOARD CARDS > .CHILDREN
+*******/
+#app .board.root .boardCard > .children {
+    border-right:0px !important;
+}
+
+/******
+BOARDS - ROOT > BOARD CARDS > PROJECT
+*******/
+
+#app .project.board.root > .children > .boardColumn > .children > .boardCard > .children .project {
+padding-left: 0px !important;
+}
+
+
+/******
+BOARDS - ROOT > BOARD CARDS > PROJECT > NAME
+*******/
+#app .board.root .project > .name {
+padding-top: calc(var(--content-PadTopBtm) + 1px);
+}
+#app .board.root .project:not(.noted) > .name {
+padding-bottom: calc(var(--content-PadTopBtm) + 1px);
+}
+#app .board.root .project.noted > .notes{
+padding-bottom: calc(var(--content-PadTopBtm) + 1px);
+}
+
+/******
+BOARDS - ROOT > BULLETS
+*******/
+#app .board.root .boardCard .project > .name > .bullet, 
+#app .board.root .project > .name > .prefix, 
+#app .board.root .project > .name > .expand, 
+#app .board.root .project > .name > .menu {
+--btn-MargTop: 7px !important;
+}
+/*board Column Is Comment*/
+#app .board.root .project.thread.comment > .children .name > .menu, 
+#app .board.root .project.thread.comment > .children .name > .expand, 
+#app .board.root .project.thread.comment > .children .name > .bullet, 
+#app .board.root .project.thread.comment > .children .name > .nameButtons{
+    --btn-MargTop: 11px !important;
+}
+
+#app .board.root .boardCard .bulletHalo{
+    opacity:0;
+}
+/******
+BOARDS - ROOT > BULLETS > NUMBERED
+*******/
+#app *:is(.board.root) .project:not(.checkmark) > .name > .prefix {
+--btn-MargTop: 7px !important;
+}
+/******
+BOARDS - ROOT > BULLETS > HEADINGS
+*******/
+#app .board.root .boardCard .project[class*="header"] > .name > .bullet, 
+#app .board.root .boardCard .project[class*="header"] > .name > .expand, 
+#app .board.root .boardCard .project[class*="header"] > .name > .menu {
+--btn-MargTop: 12px !important;
+}
+
+
+
+#app .board.root .boardCard > .children > .project:not(.noted) > .name:before, 
+#app .board.root .boardCard > .children > .project.noted > .notes:before, 
+#app .board.root .boardCard > .children > .project:not(.project:last-of-type, .comment) > .children:before {
+    opacity:0 !important;
+}
 /*******
 ********
 BOARDS - NOT ROOT > PADDING FIX
@@ -6516,7 +6713,6 @@ BOARDS - NOT ROOT > PADDING FIX
 .board.root.shared > .children > ._1en9fmv {
   display: none !important;
 }
-
 /*******************************
 ********************************
 ! BOARDS - BULLET / EXPAND / MENU CHANGE
@@ -6795,7 +6991,6 @@ EXPAND > BOARDCOLUMN BLOCKS
   right: calc(var(--children-Indent) * 0 + var(--boardnotrootColMargL)) !important;
   z-index: 939393;
 }
-
 /*******************************
 ********************************
 ! DASHBOARD
@@ -9615,6 +9810,10 @@ PADDING RIGHT
 #app .pageContainer .page .project.board:not(.root) > .children > .boardColumn > .children > .project.boardCard  .children > .project.divider + .project:not(.comment){
   border-top-color: transparent !important;
 }
+
+.floating-comments .comment.thread .bullet {
+  left: calc(var(--children-Indent) * -1) !important;
+}
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
@@ -9631,7 +9830,6 @@ SCROLLBAR / SCROLL BARS
     width: 0px !important;
     height: 0px !important;
 }
-
 /*******************************
 ********************************
 ! IMAGE NODES
@@ -9826,7 +10024,7 @@ OVERRIDE > IMAGES.NOTED
 #app .project.board.root > .children .project.boardColumn .project[class*="with-image"] > .name > .content {
   margin-bottom:calc(var(--content-PadTopBtm) * 1) !important;
 }
-#app .project.board:not(.root) > .children .project.boardColumn .project[class*="with-image"] > .name > .content {
+#app .project.board > .children .project.boardColumn .project[class*="with-image"] > .name > .content {
   margin-bottom:calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important
 }
 
@@ -10104,78 +10302,6 @@ margin-left:calc(var(--children-Indent) * 1) !important;
     right: 0 !important;
   }
 }
-/*******************************
-********************************
-! POPUP - WFX - RECENTS MENU
-********************************
-********************************/
-
-:root{
-  --recentItemBulletWidth:7px;
-  --recentTitlePadTopBtm:5px;
-}
-#app > .dialog-backdrop > .dialog-box{
-  
-}
-
-#app > .dialog-backdrop > .dialog-box > h1.title{
-  position: sticky;
-  top: calc(var(--quick-switcher--padding) * -1) !important;
-  margin-top: calc(var(--quick-switcher--padding) * -1);
-  margin-left: calc(var(--quick-switcher--padding) * -1);
-  width: calc(100% + var(--quick-switcher--padding) * 2);
-  min-height: calc(var(--quick-switcher--padding) * 1.5) !important;
-  z-index: 1;
-  overflow: unset;
-
-  padding-left: var(--quick-switcher--padding);
-  background: var(--BG-primary);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-right: 0px;
-  border-bottom: 1px solid hsla(0,0%,50%,.2)
-}
-#app > .dialog-backdrop > .dialog-box > h1.title + div > div #selectBox{
-  font-size: 1.0rem;
-  width: 100%;
-  margin: 0px;
-  max-height: calc(70vh);
-}
-#app > .dialog-backdrop > .dialog-box > h1.title + div > div #selectBox option {
-  padding-top: calc(var(--recentItemBulletWidth) * 0.5);
-  padding-bottom: calc(var(--recentItemBulletWidth) * 0.5);
-  padding-left: calc(var(--recentItemBulletWidth) * 2.5) !important;
-  position: relative;
-  border-radius: 4px;
-  line-height: .1 !important;
-}
-#app > .dialog-backdrop > .dialog-box > h1.title + div > div #selectBox option:empty{
-  display: none;
-}
-select option:checked{
-  background: linear-gradient(var(--wf-background-accent),var(--wf-background-accent)) !important;
-  -webkit-text-fill-color: var(--switcher--item--svg-stroke-breadcrumb) !important;
-  
-}
-#app > .dialog-backdrop > .dialog-box > h1.title + div > div #selectBox option:before {
-  content:"";
-  width: var(--recentItemBulletWidth);
-  height: var(--recentItemBulletWidth);
-  left: calc(var(--recentItemBulletWidth) * .5);
-  top: calc(50% - var(--recentItemBulletWidth) * .5);
-  font-size: 0px;
-  background: var(--BG-Bullet-open);
-  border-radius: 10px;
-  opacity: .8;
-  display: inline-flex;
-  position: absolute;
-}
-
-
-
-
-
 /*******************************
 ********************************
 ! POPUP - MENU - SETTINGS
@@ -10862,7 +10988,6 @@ LAST ITEM
     z-index: 94949494944949494 !important;
         
 }
-
 /*******************************
 ********************************
 ! SEARCH - NAV - RESULTS
@@ -11080,8 +11205,6 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
   }
   
 }
-
-
 /*******************************
 ********************************
 ! FLAT SEARCH / SEARCH RESULTS
@@ -11265,7 +11388,6 @@ SEARCH BOX
 .searchBox[style*="width: "]{
   width: 275px !important;
 }
-
 /*******************************
 ********************************
 ! AI
@@ -11549,15 +11671,12 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
   /*NUMBERS*/
   :root {
-  --numberMargTop:-1.5px;
-}
+    --numberMargTop: -1.5px;
+  }
   .project.collapsed > .name >  .template-button.button > span {
-  margin-left: -6px !important;
+    margin-left: -6px !important;
+  }
 }
-
-}
-
-@media (max-width: 650px) {}
 
 /**********
 FLOATING COMMENTS
@@ -11660,7 +11779,6 @@ BOARD COLUMNS
 
 
 }
-
 /****
 ! ICONS - WAVY UNDERLINE
 ******/
@@ -11709,31 +11827,145 @@ BOARD COLUMNS
     --ICON--UNDERLINE-WAVY-CODEBLOCK:var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
     --ICON--COMMENT:var(--ICON--COMMENT-DARK);
 }
+/****
+! ICONS - WAVY UNDERLINE - SOLID
+******/
+/**************
+***************
+***************
+LIGHT - WAVY MIRROR UNDERLINE
+***************
+***************
+**************/
+:root {
+
+  --ICON--UNDERLINE-WAVY--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
+
+  --ICON--UNDERLINE-WAVY--UNDERLINE--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="1" stroke-width="10"/></svg>');
+
+  --ICON--UNDERLINE-WAVY--LINK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" fill="%23FBFBFB"/><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="%23499bdf" stroke-opacity="1" stroke-width="10"/></svg>');
+
+  --ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="black" stroke-opacity="0.13" stroke-width="10"/></svg>');
+}
 
 
 
+/**************
+***************
+***************
+DARK - WAVY MIRROR UNDERLINE
+***************
+***************
+**************/
+:root {
+
+  --ICON--UNDERLINE-WAVY--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="white" fill-opacity="0.07"/><rect x="25" y="12" width="25" height="8" fill="white" fill-opacity="0.07"/></svg>');
+
+  --ICON--UNDERLINE-WAVY--UNDERLINE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="white" fill-opacity="1"/><rect x="25" y="12" width="25" height="8" fill="white" fill-opacity="1"/></svg>');
+  
+  --ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="%239fa1a2" fill-opacity="1"/><rect x="25" y="12" width="25" height="8" fill="%239fa1a2" fill-opacity="1"/></svg>');
+
+  --ICON--UNDERLINE-WAVY--LINK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="13" width="25" height="7" fill="%233c88af" fill-opacity="1"/><rect x="25" y="13" width="25" height="7" fill="%233c88af" fill-opacity="1"/></svg>');
+    --ICON--UNDERLINE-WAVY--DONE--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12" width="25" height="8" fill="white" fill-opacity="0.04"/><rect x="25" y="12" width="25" height="8" fill="white" fill-opacity="0.04"/></svg>');
+  --ICON--UNDERLINE-WAVY-CODEBLOCK--DARK: url('data:image/svg+xml;utf8,<svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 22H50V18.9359C36 18.9359 35.5 9.93591 25 9.93591C14.5 9.93591 14 18.9359 0 18.9359V22Z" /><path d="M0 14C12 14 13 5 25 5C37 5 38 14 50 14" stroke="white" stroke-opacity="0.23" stroke-width="10"/></svg>');
+}
+
+
+/************
+WAVY TEXT - BOARDS
+*************/
+
+/********
+********/
+:root {
+  --ICON--UNDERLINE-WAVY-CODEBLOCK: var(--ICON--UNDERLINE-WAVY-CODEBLOCK--LIGHT);
+  --ICON--COMMENT: var(--ICON--COMMENT-LIGHT);
+  --ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--LIGHT);
+}
+._theme-dark {
+  --ICON--UNDERLINE-WAVY-CODEBLOCK: var(--ICON--UNDERLINE-WAVY-CODEBLOCK--DARK);
+  --ICON--COMMENT: var(--ICON--COMMENT-DARK);
+  --ICON--UNDERLINE-WAVY--LINK-INTERNAL:var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL--DARK);
+  --ICON--UNDERLINE-WAVY--LINK:var(--ICON--UNDERLINE-WAVY--LINK--DARK);
+  --ICON--UNDERLINE-WAVY--DONE:var(--ICON--UNDERLINE-WAVY--DONE--DARK);
+  
+}
+
+
+/*HIGHLIGHT FIX*/
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer,
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer,
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u,
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u,
+
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer a,
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"],
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"],
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer u .colored[class*="bc"],
+html #app .project .name > .bullet.diamond ~ .content > .innerContentContainer .colored[class*="bc"] u,
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer u .colored[class*="bc"],
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer .colored[class*="bc"] u {
+  --wavy--padding-bottom: .5px;
+}
 
 
 
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
+html #app .page .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"].contentLink{
+  background-image: var(--ICON--UNDERLINE-WAVY--LINK) !important;
+  background-size: var(--wavy--BG-size) !important;
+ 
+}
+html #app .page .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"].contentLink{
+  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
+}
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a,
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a * {
+  
+}
+
+
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] {
+  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
+ 
+}
 
 
 
+html #app .pageContainer .page .project:is(.board) .project.comment .project[projectid*="virtual"] > .name > .content > .innerContentContainer u,
+html #app .pageContainer .page *:is(.board) .project.comment .project[projectid*="virtual"] > .name > .content > .innerContentContainer u {
+  text-decoration: underline !important;
+}
 
+/*******
+LINK FIX > MIRRORS  > ALL
+********/
+html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink,
+#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink{
+  background-image: var(--ICON--UNDERLINE-WAVY--LINK) !important;
+  background-repeat: repeat-x !important;
+}
+html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink[href*="workflowy.com"],
+#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink[href*="workflowy.com"]{
+  background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
+}
 
+/*******
+LINK FIX > MIRRORS > BOARD (ADD UNDERLINE)
+********/
 
-
-
-
-
-
-
-
+html #app .board .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink,
+#app .board .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink {
+  background-image: unset !important;
+  text-decoration: underline !important;
+}
 /***********
 ************
 ! FLOAT BROWSER / FLUID BROWSER > OVERRIDES
 ************
 ************/
-@media (max-width: 650px){
+
   .project:not(.board) .project > .notes > .content {
     font-size: 13.5px;
     line-height: 18.5px;
@@ -11755,4 +11987,3 @@ BOARD COLUMNS
   top: 3px !important;
 }
   
-}
