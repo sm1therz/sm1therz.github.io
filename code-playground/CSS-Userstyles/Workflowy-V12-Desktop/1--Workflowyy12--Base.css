@@ -2671,7 +2671,7 @@ OVERRIDES
 .project:not(.checkmark) > .name > .prefix ~ .expand:before {
   opacity: 0;
 }
-/***************
+/*************** 
 PREFIX
 ****************/
 /*Make number visible*/
