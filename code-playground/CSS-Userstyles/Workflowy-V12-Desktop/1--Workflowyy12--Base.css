@@ -4075,16 +4075,16 @@ LEVEL 1 > Project
   --btn-BrdRad: 4px;
 }
 .boardColumn {
-  max-width: 320px;
+  /*max-width: 320px;*/
   border: 0px !important;
   border-left: 1px solid var(--brd-ClmBrdClr) !important;
   background: var(--BG-primary);
   margin-top: 0px !important;
 }
 .boardColumn:not(.root.board .boardColumn) {
-  flex: 0 0 var(--boardColumnWidth) !important;
-  max-width: var(--boardColumnWidth);
+  min-width: var(--boardColumnWidth);
 }
+
 
 
 
@@ -5540,6 +5540,16 @@ right: calc(var(--btn-Width) * 1) !important;
 #app .project.board > .children > .boardColumn > *:is(.name,.notes) > .content{
   min-height: unset !important;
 }
+
+:root {
+  --boardDragW:6px;
+}
+.boardColumn > .resizeTarget{
+  
+  opacity: .25;
+  width:var(--boardDragW);
+  right:calc(var(--boardDragW) * -.5)
+}
 /*******************************
 ********************************
 ! BOARDS - ROOT
@@ -5733,8 +5743,8 @@ BOARD COLUMNS - MIRRORED CHECKBOX
   --boardRootColumnWidth: 430px;
 }
 #app .board.root .boardColumn {
-  max-width: var(--boardRootColumnWidth) !important;
-  flex: 0 0 var(--boardRootColumnWidth);
+  min-width: var(--boardRootColumnWidth) !important;
+  /*flex: 0 0 var(--boardRootColumnWidth);*/
   overflow-x: visible !important;
 }
 #app .board.root .boardColumn {
@@ -6412,17 +6422,26 @@ html #app .project.root.board > .name{
   top: var(--wf-header-height) !important;
 }
 
+:root {
+  --boardRootNotesTopP:calc(var(--wf-header-height) * 2.1)
+}
 html #app .project.root.board > .notes{
   height: unset;
   position: fixed;
   z-index: 949494;
-  top: calc(var(--wf-header-height) * 2.1) !important;
+  top: var(--boardRootNotesTopP) !important;
   padding-bottom: 0px !important;
   margin: unset;
 }
 #app .page .project.root.board > .notes > .content{
   margin-bottom: 0px;
   padding-top: 0px
+}
+html #app .project.root.board > .name > .content{
+line-height: 1 !important;
+  white-space: nowrap;
+  text-overflow: ellipses;
+  overflow-x: scroll;
 }
 
 html #app .project.root.board > .name > .content{
@@ -11491,6 +11510,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     --rootNotesPadTop: 5px;
     --rootnotes-fontSize: 14.5px;
     --rootnotes-lineHeight: 20px;
+    --boardRootNotesTopP:calc(var(--wf-header-height) * 1.9);
   }
   .project > .name > .prefix {
     --btn-MargTop: 1px !important;
