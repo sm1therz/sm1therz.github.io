@@ -3419,6 +3419,24 @@ margin-left: 0px !important;
   --side-pane-menu-gutter:14px !important;
 }
 
+/*ROOT - HOME*/
+
+#app div[data-pane-id] .project.root.mainTreeRoot > .name{
+  opacity: 0;
+}
+
+/*ROOT*/
+
+#app div[data-pane-id] .project.root > .name{
+  margin-top: 14px !important;
+}
+
+/*CHILDREN*/
+
+#app div[data-pane-id] .project.root > .children{
+  padding-top: var(--root-padtop) !important;
+}
+
 /***************
 ! LINKS
 ****************/
