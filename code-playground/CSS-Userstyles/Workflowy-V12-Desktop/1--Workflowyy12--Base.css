@@ -8,7 +8,7 @@
 
 html,
 body,
-#app,  
+#app, 
 #app .page,
 .pageContainer{ 
     background: var(--BG-primary) !important;
@@ -322,6 +322,10 @@ LEVEL 0 > ROOT
     --root-line-height: 1.23;
     --root-inlineCode-font-size: calc(var(--root-font-size) - .45rem);
     --root-inlineCode-line-height: calc(var(--root-line-height) + .05);
+}
+
+.is-desktop .pageContainer {
+  overflow-x:hidden !important;
 }
 #app .project.root > .name > .content .innerContentContainera{
     user-select: none;
@@ -2671,7 +2675,7 @@ OVERRIDES
 .project:not(.checkmark) > .name > .prefix ~ .expand:before {
   opacity: 0;
 }
-/*************** 
+/***************
 PREFIX
 ****************/
 /*Make number visible*/
@@ -3296,12 +3300,13 @@ html #app .project > .notes > .content .contentLink{
 
 
 #app > .pageContainer > div[style*="max-width: 700px"] {
-  padding-left: var(--pagePadLeft) !important;
-  padding-right: var(--pagePadLeft) !important;
+  --pagePadLeft:10px;
+  padding-left: calc(var(--pagePadLeft) * .5) !important;
+  padding-right: calc(var(--pagePadLeft) * 1) !important;
 }
 
 #app > .pageContainer .root:not(.board) > *:is(.name, .notes){
-  padding-left: calc(var(--pagePadLeft) * 0) !important;
+  padding-left: 10px !important;
   margin: unset !important;
 }
 
@@ -3350,7 +3355,7 @@ PROJECT.HEADERS > NAME
   padding-bottom: 0px !important;
 }
 /*NOTED > NOTES*/
-#app .project *:is([class*="header"]).noted > .notes:not(.board .project > .name) {
+#app .project *:is([class*="header"]):not(.board [class*="header"]).noted > .notes:not(.board .project > .name) {
   margin-bottom: var(--wf-space-m) !important;  
 }
 
@@ -3383,6 +3388,25 @@ margin-left: 0px !important;
 
 .project.collapsed:not(.checkmark) > .name > .bullet.diamond ~ .template-button.button ~ .expand:after{
   --mirrorBulletUnderScale:1.1;
+}
+
+
+#app .project:not([class*="with-image"]) > .name > .content, 
+#app .draggableNameClone>.content {
+  min-height: unset !important;
+}
+
+
+
+/***********
+! PANES
+************/
+
+#app div[data-pane-id] > .page {
+    max-width: var(--pageMaxWidth);
+    padding-left: 0px;
+    padding-right: 0px;
+  padding-top: 0px !important;
 }
 /***********
 ! TAGS + HIGHLIGHTS
@@ -3518,7 +3542,12 @@ s .contentTag {
   [data-val*="#verification"],
   [data-val*="#loop"],
   [data-val="#prompt"],
-  [data-val="#plan-mode"]) {
+  [data-val="#plan-mode"],
+  [data-val="#compound"],
+  [data-val="#every-to"],
+  [data-val*="#eval"],
+  [data-val="#explore"],
+  [data-val="#auto-mode"]) {
   -webkit-text-fill-color: var(--negTagTxtClr-Hash);
   font-weight: var(--tagNegFontWeight);
 }
@@ -3533,7 +3562,12 @@ s .contentTag {
   [data-val*="#verification"],
   [data-val*="#loop"],
   [data-val="#prompt"],
-  [data-val="#plan-mode"]) .contentTagText {
+  [data-val="#plan-mode"],
+  [data-val="#compound"],
+  [data-val="#every-to"],
+  [data-val*="#eval"],
+  [data-val="#explore"],
+  [data-val="#auto-mode"]) .contentTagText {
   -webkit-text-fill-color: var(--negTagTxtClr);
 }
 
@@ -4084,7 +4118,6 @@ LEVEL 1 > Project
 .boardColumn:not(.root.board .boardColumn) {
   min-width: var(--boardColumnWidth);
 }
-
 
 
 
@@ -4887,12 +4920,7 @@ BOARDS FLOW FIX
   margin-top: 0px !important;
 }
 
-#app .board:not(.root) .project[class*="header"] > .name {
-  margin-top: calc(var(--content-PadTopBtm) * 1) !important;
-}
-#app .board:not(.root) .boardColumn:not([class*="header"]) .project[class*="header"]:not(.noted) > .name > .content {
-  padding-bottom: calc(var(--content-PadTopBtm) * 1) !important;
-}
+
 
 /*BUTTONS*/
 .project.board .project > .name > .expand,
@@ -5545,7 +5573,6 @@ right: calc(var(--btn-Width) * 1) !important;
   --boardDragW:6px;
 }
 .boardColumn > .resizeTarget{
-  
   opacity: .25;
   width:var(--boardDragW);
   right:calc(var(--boardDragW) * -.5)
@@ -5744,7 +5771,7 @@ BOARD COLUMNS - MIRRORED CHECKBOX
 }
 #app .board.root .boardColumn {
   min-width: var(--boardRootColumnWidth) !important;
-  /*flex: 0 0 var(--boardRootColumnWidth);*/
+
   overflow-x: visible !important;
 }
 #app .board.root .boardColumn {
@@ -6421,7 +6448,6 @@ html #app .project.root.board > .name{
   z-index: 949494;
   top: var(--wf-header-height) !important;
 }
-
 :root {
   --boardRootNotesTopP:calc(var(--wf-header-height) * 2.1)
 }
@@ -6437,15 +6463,12 @@ html #app .project.root.board > .notes{
   margin-bottom: 0px;
   padding-top: 0px
 }
+
 html #app .project.root.board > .name > .content{
 line-height: 1 !important;
   white-space: nowrap;
   text-overflow: ellipses;
   overflow-x: scroll;
-}
-
-html #app .project.root.board > .name > .content{
-
 }
 
 html #app .project.root.board{
@@ -6661,10 +6684,199 @@ BOARDS - NOT ROOT > PADDING FIX
 #app .project.board:not(.root) * {
 
 }
-#app .project.board:not(.root) .project.paragraph
-#app .project.board:not(.root) .project.paragraph > .name,
-#app .project.board:not(.root) .project.paragraph > .name > .content{
-  min-height: unset !important;
+
+
+
+/*******
+********
+BOARD > NOT ROOT > FIX
+********
+********/
+#app .board:not(.root) {
+  
+  --boarditemPadFix: 3px;
+  /**/
+  --boardNamePadTop:calc(var(--content-PadTopBtm) * 1.75);
+  /**/
+  --boardNotesPadTop:0px;
+}
+/*BOARD COLUMN - NAME*/
+#app .project.board:not(.root) .project:is(.boardColumn) > .name {
+  padding-top: calc(var(--content-PadTopBtm) + var(--boarditemPadFix) ) !important;
+  margin-top:  unset !important;
+}
+
+/*BOARD COLUMN - NAME - CONTENT - NOT NOTED*/
+
+
+/*BOARD COLUMN - NOTES - HAS NOTE*/
+#app .project.board:not(.root) .boardColumn.noted > .notes {
+  padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
+}
+
+/*ALL ITEMS - NAME */
+#app .project.board:not(.root) .project:not([class*="with-image"]) > .name {
+  padding-top: calc(var(--content-PadTopBtm) + var(--boarditemPadFix) ) !important;
+  margin-top:  unset !important;
+}
+
+/*ALL ITEMS - NAME - CONTENT - NOT NOTED*/
+#app .project.board:not(.root) .project:not(.noted,[class*="with-image"]) > .name > .content{
+  margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix) ) !important;
+  padding-bottom: 0px !important;
+}
+/*ALL ITEMS - NOTES - HAS NOTE */
+#app .project.board:not(.root) .project.noted > .notes{
+  padding-top: unset !important;
+  padding-left: unset !important;
+  margin-bottom: 0px !important;
+  padding-bottom: unset !important;
+  margin-bottom: unset !important;
+}
+/*ALL ITEMS - NOTES - HAS NOTE - CONTENT*/
+#app .project.board:not(.root) .project.noted > .notes > .content{
+  padding-top: var(--boardNotesPadTop) !important;
+  padding-left: var(--content-PadLeftRight) !important; 
+  padding-bottom: unset !important;
+  margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
+}
+/*ALL ITEMS - CONTENT - NOT NOTED */
+#app .project.board:not(.root) > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1.7);
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
+}
+
+
+
+/************
+*************
+QUOTE BLOCKS
+*************
+*************/
+
+#app .project.board:not(.root) .project.quote-block {
+  --boarditemPadFix:0px;
+}
+#app .project.board:not(.root) .project.quote-block > .name{
+  padding-top: unset !important;
+  padding-bottom: unset !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+#app .project.board:not(.root) .project.quote-block:not(.noted) > .name > .content{
+  margin-top: unset !important;
+  margin-bottom: 0px !important;
+  padding-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
+  padding-top: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
+}
+/************
+*************
+MULTIPLIERS
+*************
+*************/
+
+#app .project.board:not(.root) .project[class*="header"] > .name{
+  --boarditemPadFix:6px
+}
+/*******
+********
+BOARDS - ROOT > PADDING FIX - V2
+********
+********/
+
+#app .project.board.root .boardColumn > .children{
+  margin: unset !important;
+  padding: unset !important;
+}
+#app .project.board:not(.root) .bulletHalo{
+  display: none;
+}
+
+#app .project.board:not(.root) * {
+
+}
+
+
+
+/*******
+********
+BOARD.ROOT > FIX
+********
+********/
+#app .board.root {
+  
+  --boarditemPadFix: 2px;
+  /**/
+  --boardNamePadTop:calc(var(--content-PadTopBtm) * 1.75);
+  /**/
+  --boardNotesPadTop:0px;
+}
+/*BOARD COLUMN - NAME*/
+#app .project.board.root .project:is(.boardColumn) > .name {
+  padding-top: calc(var(--content-PadTopBtm) + var(--boarditemPadFix) ) !important;
+  margin-top:  unset !important;
+}
+
+/*BOARD COLUMN - NAME - CONTENT - NOT NOTED*/
+
+
+/*BOARD COLUMN - NOTES - HAS NOTE*/
+#app .project.board.root .boardColumn.noted > .notes {
+  padding-bottom: calc(var(--content-PadTopBtm) * 2) !important;
+}
+
+/*ALL ITEMS - NAME */
+#app .project.board.root > .children .project:not([class*="with-image"]) > .name {
+  padding-top: calc(var(--content-PadTopBtm) + var(--boarditemPadFix) ) !important;
+  margin-top:  unset !important;
+  padding-bottom: unset !important;
+  margin-bottom: unset !important;
+}
+
+/*ALL ITEMS - NAME - CONTENT - NOT NOTED*/
+#app .project.board.root .project:not(.noted,[class*="with-image"]) > .name > .content{
+  margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix) ) !important;
+  padding-bottom: 0px !important;
+}
+/*ALL ITEMS - NOTES - HAS NOTE */
+#app .project.board.root .project.noted > .notes{
+  padding-top: unset !important;
+  padding-left: unset !important;
+  margin-bottom: 0px !important;
+  padding-bottom: unset !important;
+  margin-bottom: unset !important;
+}
+/*ALL ITEMS - NOTES - HAS NOTE - CONTENT*/
+#app .project.board.root .project.noted > .notes > .content{
+  padding-top: var(--boardNotesPadTop) !important;
+  padding-left: var(--content-PadLeftRight) !important; 
+  padding-bottom: unset !important;
+  margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
+}
+/*ALL ITEMS - CONTENT - NOT NOTED */
+#app .project.board.root > .children > .boardColumn > .children *:is(.project,.boardCard):not(.noted, .boardColumn, [class*="header"],.quote-block,.code-block) > .name > .content {
+  padding-bottom: calc(var(--content-PadTopBtm) * 1.7);
+  padding-bottom: 0px !important;
+  margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix)) !important;
+}
+
+
+/************
+*************
+QUOTE BLOCKS
+*************
+*************/
+
+
+/************
+*************
+MULTIPLIERS
+*************
+*************/
+
+#app .project.board.root .project[class*="header"] > .name{
+  --boarditemPadFix:1px
 }
 /*******************************
 ********************************
@@ -7010,6 +7222,7 @@ EXPAND > BOARDCOLUMN BLOCKS
   right: calc(var(--children-Indent) * 0 + var(--boardnotrootColMargL)) !important;
   z-index: 939393;
 }
+
 /*******************************
 ********************************
 ! DASHBOARD
@@ -11404,9 +11617,6 @@ SEARCH BOX
 *****************
 *****************/
 
-.searchBox[style*="width: "]{
-  width: 275px !important;
-}
 /*******************************
 ********************************
 ! AI
