@@ -3396,7 +3396,9 @@ margin-left: 0px !important;
   min-height: unset !important;
 }
 
-
+.project > .name > .bullet .bulletHalo{
+  opacity: 0;
+}
 
 /***********
 ! PANES
@@ -10931,6 +10933,48 @@ LAST ITEM
 .project.tableItem > .children .name:after{
   opacity: 0;
 }
+
+/*******************************
+********************************
+! PSEUDO - NODE HOVER BACKGROUND
+********************************
+********************************/
+.project:before {
+  animation: pseudoHover0ff 1.15s ease-in-out;
+}
+.project.highlighted:before {
+  animation: pseudoHoverOn .15s ease-in-out;
+  background: hsl(200, 3%, 37%, .25) !important;
+}
+
+.project.floating-conversations:before {
+  border: none;
+  outline: 2px solid var(--wf-background-tertiary);
+  outline-offset: 4px;
+  transition: .2s;
+  background: hsl(200, 3%, 37%, 0) !important;
+}
+
+@keyframes pseudoHoverOn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pseudoHoverOff {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 /*******************************
 ********************************
 ! SHARED PAGES
