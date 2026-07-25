@@ -3403,21 +3403,18 @@ margin-left: 0px !important;
 ************/
 
 #app div[data-pane-id] > .page {
-    max-width: var(--pageMaxWidth);
+  max-width: 100%;
     padding-left: 0px;
     padding-right: 0px;
   padding-top: 0px !important;
 }
-
-/***********
-! PANES
-************/
-
-#app div[data-pane-id] > .page {
+/*#app div[data-pane-id] > .page {
     max-width: var(--pageMaxWidth);
-    padding-left: 0px;
-    padding-right: 0px;
-  padding-top: 0px !important;
+}*/
+
+/***/
+#app div[data-pane-id] [data-full-width-page-container]{
+  --side-pane-menu-gutter:14px !important;
 }
 
 /***************
