@@ -1,0 +1,251 @@
+/****
+! TAGS
+*****/
+
+.name .contentTag {
+    --tagTxtClr-Hash:hsla(0,0%,93%,.5)  !important;
+    
+}
+
+
+/***********
+! TAGS + HIGHLIGHTS
+************/
+:root {
+  /*tags - normal*/
+  --tagFontWeight: 400;
+  --tagFontWeight-Bold: 600;
+  /*tags - negative*/
+  --tagNegFontWeight: calc(var(--tagFontWeight) + 100);
+  /*misc*/
+  --tagBrdRad: 3px;
+  --tagPadLR: 1px;
+}
+
+._theme-dark #app .contentTag{
+  --tagTxtClr: hsl(195, 2%, 63%, 1);
+  --tagTxtClr-Hash: hsl(195, 2%, 63%, 0.5);
+  /*colored*/
+  --coloredtagTxtClr:hsl(0, 0%, 100%);
+  --coloredtagTxtClr-Hash:hsl(0, 0%, 100%,.5);
+  /*negative*/
+  --negTagTxtClr: hsl(201, 13%, 16%);
+  --negTagTxtClr-Hash: hsl(201, 13%, 17%, 0.8)
+}
+.root.project > .name {
+  --tagBrdRad: 7px;
+}
+
+
+/**************
+***************
+***************
+! TAGS > ALL
+***************
+***************
+***************/
+.contentTag[data-val] b,
+b .contentTag[data-val] {
+  --tagFontWeight: var(--tagFontWeight-Bold);
+  --tagNegFontWeight:var(--tagFontWeight-Bold);
+}
+s .contentTag {
+  color: var(--strikeThroughColor) !important;
+  --negTagTxtClr: var(--BG-primary);
+  --wf-text-tertiary:var(--strikeThroughColor);
+  --wf-text-primary:var(--strikeThroughColor);
+}
+
+#app .contentTag {
+  border-radius: var(--tagBrdRad) !important;
+  -webkit-font-smoothing: subpixel-antialiased;
+  padding-left: var(--tagPadLR)!important;
+  padding-right: var(--tagPadLR) !important;
+  margin-left: calc(var(--tagPadLR) * -1) !important;
+  margin-right: calc(var(--tagPadLR) * -1) !important;
+  font-weight: var(--tagFontWeight);
+  --wf-text-tertiary:var(--tagTxtClr);
+  --wf-text-primary:var(--coloredtagTxtClr);
+}
+#app .contentTag .contentTagText {
+
+  
+  
+}
+.contentTag + .contentTag {
+  margin-left: 0px !important;
+}
+.contentTag [class*="bc-"],
+.contentTag {
+  text-shadow: none !important;
+}
+
+
+.contentTag:hover,
+.done .contentTag:hover {
+  filter: contrast(1.2) brightness(1.3) !important;
+}
+
+
+
+
+/**************
+***************
+***************
+! TAGS > VERSIONS
+***************
+***************
+***************/
+#app .contentTag:is( [data-val*="v0"],
+[data-val*="v1"],
+[data-val*="v2"],
+[data-val*="v3"],
+[data-val*="v4"],
+[data-val*="v5"],
+[data-val*="v6"],
+[data-val*="v7"],
+[data-val*="v8"],
+[data-val*="v9"],
+[data-val*="v10"]) {
+  color: var(--negTagTxtClr-Hash) !important;
+  font-weight: var(--tagNegFontWeight);
+}
+
+
+#app .contentTag:is( [data-val*="v0"],
+[data-val*="v1"],
+[data-val*="v2"],
+[data-val*="v3"],
+[data-val*="v4"],
+[data-val*="v5"],
+[data-val*="v6"],
+[data-val*="v7"],
+[data-val*="v8"],
+[data-val*="v9"],
+[data-val*="v10"]) .contentTagText {
+  color: var(--negTagTxtClr) !important;
+}
+
+
+
+
+/**************
+***************
+***************
+! TAGS > INVERTED
+***************
+***************
+***************/
+
+/*TAG > HASHTAG*/
+#app .contentTag:is(
+  [data-val*="versions"], 
+  [data-val*="type"],
+  [data-val*="correction"],
+  [data-val*="#input"],
+  [data-val*="#output"],
+  [data-val*="#verification"],
+  [data-val*="#loop"],
+  [data-val="#prompt"],
+  [data-val="#plan-mode"],
+  [data-val="#compound"],
+  [data-val="#every-to"],
+  [data-val*="#eval"],
+  [data-val="#explore"],
+  [data-val="#auto-mode"],
+  [data-val*="@"],
+  [data-val="#plain-english"],
+  [data-val="#vibe-coding"]) {
+  -webkit-text-fill-color: var(--negTagTxtClr-Hash);
+  font-weight: var(--tagNegFontWeight);
+}
+
+/*TAG > TEXT*/
+#app .contentTag:is(
+  [data-val*="versions"], 
+  [data-val*="type"],
+  [data-val*="correction"],
+  [data-val*="#input"],
+  [data-val*="#output"],
+  [data-val*="#verification"],
+  [data-val*="#loop"],
+  [data-val="#prompt"],
+  [data-val="#plan-mode"],
+  [data-val="#compound"],
+  [data-val="#every-to"],
+  [data-val*="#eval"],
+  [data-val="#explore"],
+  [data-val="#auto-mode"],
+  [data-val*="@"],
+  [data-val="#plain-english"],
+  [data-val="#vibe-coding"]) .contentTagText {
+  -webkit-text-fill-color: var(--negTagTxtClr);
+}
+
+/**************
+***************
+***************
+! TAGS > COLORED > UNSPECIFIED
+***************
+***************
+***************/
+
+
+.content .contentTag {
+  -webkit-text-fill-color: color-mix(in srgb, currentColor 50%, transparent);
+}
+
+.content .contentTag .contentTagText {
+  -webkit-text-fill-color: currentColor;
+}
+/**************
+VERSION TAGS > IN BOARD ROOT
+***************/
+.board.root .contentTag[data-val*="v1"],
+.board.root .contentTag[data-val*="v2"],
+.board.root .contentTag[data-val*="v3"],
+.board.root .contentTag[data-val*="v4"],
+.board.root .contentTag[data-val*="v5"],
+.board.root .contentTag[data-val*="v6"],
+.board.root .contentTag[data-val*="v7"],
+.board.root .contentTag[data-val*="v8"],
+.board.root .contentTag[data-val*="v9"],
+.board.root .contentTag[data-val*="v10"] {
+  --wf-tag-text: var(--BOARD-ROOT--CARD--BG) !important;
+}
+
+/**************
+COLORS
+***************/
+._theme-dark .contentTag {
+  --wf-background-red: hsl(0, 34%, 38%, 1);
+  --wf-background-orange: hsl(24, 45%, 45%);
+  --wf-background-yellow: hsl(42, 36%, 52%);
+  --wf-background-green: hsl(161, 37%, 47%, 0.8);
+  --wf-background-teal: hsl(190, 41%, 46%, .85);
+  --wf-background-sky: hsl(209, 38%, 50%);
+  --wf-background-blue: hsl(221, 39%, 53%);
+  --wf-background-purple: hsl(263, 33%, 50%);
+  --wf-background-pink: hsl(299, 33%, 42%);
+  --wf-background-gray: hsl(194, 3%, 49%, .75);
+  --wf-background-gray: hsl(200, 3%, 49%,.7);
+
+}
+._theme-dark s .contentTag,
+._theme-dark .done .contentTag {
+  --wf-background-red: var(--strikeThroughTagBgColor) !important;
+  --wf-background-orange: var(--strikeThroughTagBgColor) !important;
+  --wf-background-yellow: var(--strikeThroughTagBgColor) !important;
+  --wf-background-green: var(--strikeThroughTagBgColor) !important;
+  --wf-background-teal: var(--strikeThroughTagBgColor) !important;
+  --wf-background-sky: var(--strikeThroughTagBgColor) !important;
+  --wf-background-blue: var(--strikeThroughTagBgColor) !important;
+  --wf-background-purple: var(--strikeThroughTagBgColor) !important;
+  --wf-background-pink: var(--strikeThroughTagBgColor) !important;
+  --wf-background-gray: var(--strikeThroughTagBgColor) !important;
+}
+
+
+._theme-dark .contentTag {
+  --wf-tag-text: var(--BG-primary);
+}
