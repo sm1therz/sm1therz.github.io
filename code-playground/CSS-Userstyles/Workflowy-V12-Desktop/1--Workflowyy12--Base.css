@@ -2142,6 +2142,10 @@ HORIZONTAL RULES / DIVIDERS
 ****************/
 .project.divider > .name{
   position: relative;
+  --btn-MargTop:-1px;
+}
+.project.divider:not(.collapsed) > .name{
+    --BG-Bullet-open:var(--wf-border-primary);
 }
 .project.divider > .name > [class*="selection-handle"]{
   position: absolute;
@@ -2219,6 +2223,9 @@ HORIZONTAL RULES / DIVIDERS
   outline: 4px solid var(--BG-primary);
 }
 
+.project.divider > .name:not(:hover) > *:is(.bullet,.menu){
+  opacity: 0 !important;
+}
 /***************
 TAGS
 ****************/
@@ -3396,8 +3403,43 @@ margin-left: 0px !important;
   min-height: unset !important;
 }
 
+
 .project > .name > .bullet .bulletHalo{
   opacity: 0;
+}
+
+/********
+DIVIDER
+*********/
+#app .project:is(.divider):not(.collapsed,.open) > .name > .bullet{
+  left: calc(var(--children-Indent) * 0) !important;
+}
+#app .project:is(.divider):not(.collapsed,.open) > .name > .menu{
+  left: calc(var(--children-Indent) * -1) !important;
+}
+/********
+QUOTE BLOCKS
+*********/
+#app .project:is(.quote-block):not(.collapsed,.open) > .name > .expand:before {
+  opacity: 0;
+}
+#app .project:is(.quote-block):not(.collapsed,.open) > .name > .bullet{
+  left: calc(var(--children-Indent) * -1) !important;
+}
+#app .project:is(.quote-block):not(.collapsed,.open) > .name > .menu{
+  left: calc(var(--children-Indent) * -2) !important;
+}
+/********
+CODE BLOCKS
+*********/
+#app .project:is(.code-block):not(.collapsed) > .name > .expand:before {
+  opacity: 0;
+}
+#app .project:is(.code-block):not(.collapsed) > .name > .bullet{
+  left: calc(var(--children-Indent) * 0) !important;
+}
+#app .project:is(.code-block):not(.collapsed) > .name > .menu{
+  left: calc(var(--children-Indent) * -1) !important;
 }
 
 /***********
