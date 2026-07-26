@@ -3420,7 +3420,7 @@ DIVIDER
 /********
 QUOTE BLOCKS
 *********/
-#app .project:is(.quote-block):not(.collapsed,.open) > .name > .expand:before {
+#app .project:is(.quote-block):not(.collapsed,.open) > .name > .bullet:not(.diamond) .expand:before {
   opacity: 0;
 }
 #app .project:is(.quote-block):not(.collapsed,.open) > .name > .bullet{
