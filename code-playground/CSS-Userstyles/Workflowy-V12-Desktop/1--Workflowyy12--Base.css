@@ -3446,10 +3446,10 @@ CODE BLOCKS
 ! PANES
 ************/
 
-#app div[data-pane-id] > .page {
-  max-width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
+[data-pane-workspace] .page {
+  max-width: 100% !important;
+    padding-left: 0px !important;
+    padding-right !important: 0px;
   padding-top: 0px !important;
 }
 /*#app div[data-pane-id] > .page {
