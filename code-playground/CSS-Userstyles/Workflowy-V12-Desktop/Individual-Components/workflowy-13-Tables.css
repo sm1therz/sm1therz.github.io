@@ -1,0 +1,133 @@
+/*******************************
+********************************
+! TABLES
+********************************
+********************************/
+:root {
+  --wfTablePadLR:.5rem;
+  --tableCellGap:3px;
+  --tableCellPadLR:6px;
+  --tableCellPadTopBtm:4px;
+  --tableCellBtnW:17px;
+  --tableCellBrdW:0px;
+}
+
+/*cell colors*/
+:root {
+  --tableHeaderBgClr:hsl(198, 9%, 25%);
+  --tableCellBgClr:hsl(198, 9%, 26%,.5);
+}
+
+#app .project.tableItem{
+  height: unset !important;
+  max-height: unset !important;
+  border-collapse: separate;
+  border-spacing: var(--tableCellGap);
+    --prjct-BrdRad:4px;
+
+}
+#app .project.tableItem > .vertical-scrollable-container{
+  max-height: unset;
+  box-sizing: border-box;
+}
+#app .project.tableItem > .vertical-scrollable-container > .children{
+  padding-left: calc(var(--children-Indent) * 0.7);
+  max-height: unset !important;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  padding-right: 0px;
+
+}
+
+#app .project.tableItem > .vertical-scrollable-container > .children > .table-row.project:not(.first-child){
+  margin-bottom: var(--tableCellGap) !important;
+} 
+
+.table-row.project > .table-cell{
+    box-shadow: unset !important;
+  border: unset !important;
+  box-shadow: inset 0 0 0 0px red !important;
+  border-collapse: collapse !important;
+  border: var(--tableCellBrdW) solid hsla(0,0%,50%,.001) !important;
+  background: var(--tableCellBgClr);
+  padding-left: var(--tableCellPadLR);
+  padding-right: var(--tableCellPadLR);
+  padding-top: var(--tableCellPadTopBtm);
+  padding-bottom: var(--tableCellPadTopBtm);
+}
+.table-row.project > .table-cell{
+  min-width: 140px !important;
+  max-width: fit-content;
+  width: auto;
+}
+#app .table-row.project > .table-cell > .name {
+  width: fit-content !important;
+}
+.table-row.project > .table-cell.absolute{
+  min-width: unset;
+  width: 40px !important;
+  max-width: 50px !important;
+}
+.table-cell.bg-secondary{
+  background: var(--tableHeaderBgClr) !important;
+}
+
+.table-cell > .name > .content,
+.table-cell > .notes > .content{
+  margin-left: 0px;
+  margin: 0px !important;
+}
+.table-cell > .name > .expand,
+.table-cell > .name > .bullet,
+.table-cell > .name > .menu, 
+.table-cell > .name > .prefix {
+  width: var(--tableCellBtnW) !important;
+  --btnIcn-Width:var(--tableCellBtnW);
+  top: 0px !important;
+  height: 26px !important;
+}
+.table-cell > .name > .bullet [class*="bg-"],
+.table-cell > .name > .menu [class*="bg-tertiary"] {
+  opacity: 0 !important;
+}
+
+.table-cell > .name > .menu{
+  left: unset !important;
+  right: calc(var(--tableCellBtnW) * 1) !important;
+    backdrop-filter: blur(1px)
+
+}
+
+.table-cell > .name > .bullet {
+  left: unset !important;
+  right: 0 !important;
+  backdrop-filter: blur(1px)
+}
+
+.table-cell > .name > .expand {
+  display: none;
+}
+
+:root{
+  --tableResizeDragW:6px;
+}
+
+
+/*********
+DRAG HANDLE
+**********/
+
+
+
+.project:is(.table-cell,.tableCell) > .resizeTarget{
+  width: var(--tableResizeDragW);
+  right: calc(var(--tableResizeDragW) * -.5 - var(--tableCellGap) * .5);
+  z-index: 949494949;
+}
+
+.project.tableItem .absolute.table-cell.align-middle.px-s.cursor-pointer.text-secondary{
+  width: 20px !important;
+  max-width: 20px !important;
+  min-width: 30px !important;
+}
