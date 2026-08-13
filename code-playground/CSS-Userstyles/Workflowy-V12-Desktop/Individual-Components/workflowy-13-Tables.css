@@ -6,11 +6,12 @@
 :root {
   --tableCellGap:3px;
   --tableCellPadLR:6px;
-  --tableCellPadTopBtm:4px;
+  --tableCellPadTopBtm:6px;
   --tableCellBtnW:17px;
   --tableCellBrdW:0px;
   --tableResizeDragW:6px;
   --tableAddColW:30px;
+  --tableBleed:300px;
 }
 
 /*cell colors*/
@@ -26,12 +27,32 @@
   border-spacing: var(--tableCellGap);
   --prjct-BrdRad:4px;
 }
+
+#app .project.tableItem > .name::after{
+  opacity: 0 !important;
+}
+
+/*********
+SCROLL BOX
+stretches past both screen edges; the left pull and the padding cancel,
+so the table always starts one indent in from the item — aligned with its text
+**********/
+
 #app .project.tableItem > .vertical-scrollable-container{
-  max-height: unset;
   box-sizing: border-box;
-  left: 0 !important;
-  padding-left: 0 !important;
-  max-width: 100% !important;      /* ← add this */
+  max-height: unset;
+  width: calc(100vw + var(--tableBleed)) !important;
+  max-width: none !important;
+  left: calc(50% - 50vw - var(--tableBleed)) !important;
+  padding-left: calc(50vw - 50% + var(--tableBleed) + var(--children-Indent)) !important;
+  padding-right: 100px;
+}
+
+#app .project.tableItem > .vertical-scrollable-container > .children{
+  padding-left: 0;
+  padding-right: 0px;
+  width: max-content;
+  max-height: unset !important;
 }
 
 #app .project.tableItem > .vertical-scrollable-container > .children > .table-row.project:not(.first-child){
@@ -50,16 +71,20 @@ never put min-width or max-width here — WorkFlowy owns the column width
   border: var(--tableCellBrdW) solid hsla(0,0%,50%,.001) !important;
   box-shadow: none !important;
 }
+
 .table-cell.bg-secondary{
   background: var(--tableHeaderBgClr) !important;
 }
-#app .table-row.project > .table-cell > .name {
+
+#app .table-row.project > .table-cell > .name{
   width: 100% !important;
 }
+
 #app .table .project.table-cell > .name > .content:empty{
   flex: 1;
   min-width: 0 !important;
 }
+
 .table-cell > .name > .content,
 .table-cell > .notes > .content{
   margin: 0px !important;
@@ -72,27 +97,31 @@ CELL BUTTONS
 .table-cell > .name > .expand,
 .table-cell > .name > .bullet,
 .table-cell > .name > .menu,
-.table-cell > .name > .prefix {
+.table-cell > .name > .prefix{
   width: var(--tableCellBtnW) !important;
   --btnIcn-Width:var(--tableCellBtnW);
   top: 0px !important;
   height: 26px !important;
 }
+
 .table-cell > .name > .bullet [class*="bg-"],
-.table-cell > .name > .menu [class*="bg-tertiary"] {
+.table-cell > .name > .menu [class*="bg-tertiary"]{
   opacity: 0 !important;
 }
+
 .table-cell > .name > .menu{
   left: unset !important;
   right: calc(var(--tableCellBtnW) * 1) !important;
   backdrop-filter: blur(1px);
 }
-.table-cell > .name > .bullet {
+
+.table-cell > .name > .bullet{
   left: unset !important;
   right: 0 !important;
   backdrop-filter: blur(1px);
 }
-.table-cell > .name > .expand {
+
+.table-cell > .name > .expand{
   display: none;
 }
 
@@ -114,37 +143,4 @@ ADD-COLUMN BUTTON
   width: var(--tableAddColW) !important;
   min-width: var(--tableAddColW) !important;
   max-width: var(--tableAddColW) !important;
-}
-
-
-/********
-*********/
-
-/**
-#app .project.tableItem > .vertical-scrollable-container > .children{
-  padding-left: calc(var(--children-Indent) * 0.7);
-  padding-right: 0px;
-  max-height: unset !important;
-  width: max-content;
-  max-width: 100%;
-  overflow-x: hidden !important;
-}**/
-
-#app .project.tableItem > .vertical-scrollable-container{
-  max-height: unset;
-  box-sizing: border-box;
-  left: 0 !important;              /* add */
-  padding-left: 0 !important;      /* add */
-}
-
-#app .project.tableItem > .vertical-scrollable-container > .children{
-  padding-left: var(--children-Indent);   /* was: calc(var(--children-Indent) * 0.7) */
-  padding-right: 0px;
-  max-height: unset !important;
-  width: max-content;
-  overflow-x: hidden !important;
-}
-
-.font-custom.project.open.tableItem > .vertical-scrollable-container {
-    padding-right: 100px;
 }

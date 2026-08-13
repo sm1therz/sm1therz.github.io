@@ -14,7 +14,7 @@
 :root {
   /*tags - normal*/
   --tagFontWeight: 400;
-  --tagFontWeight-Bold: 600;
+  --tagFontWeight-Bold: 00;
   /*tags - negative*/
   --tagNegFontWeight: calc(var(--tagFontWeight) + 100);
   /*misc*/
@@ -63,7 +63,7 @@ s .contentTag {
   padding-right: var(--tagPadLR) !important;
   margin-left: calc(var(--tagPadLR) * -1) !important;
   margin-right: calc(var(--tagPadLR) * -1) !important;
-  font-weight: var(--tagFontWeight);
+  /*font-weight: var(--tagFontWeight);*/
   --wf-text-tertiary:var(--tagTxtClr);
   --wf-text-primary:var(--coloredtagTxtClr);
 }
@@ -109,6 +109,7 @@ s .contentTag {
 [data-val*="v10"]) {
   color: var(--negTagTxtClr-Hash) !important;
   font-weight: var(--tagNegFontWeight);
+
 }
 
 
@@ -155,7 +156,8 @@ s .contentTag {
   [data-val="#auto-mode"],
   [data-val*="@"],
   [data-val="#plain-english"],
-  [data-val="#vibe-coding"]) {
+  [data-val="#vibe-coding"],
+  [data-val="#ai-coding"]) {
   -webkit-text-fill-color: var(--negTagTxtClr-Hash);
   font-weight: var(--tagNegFontWeight);
 }
@@ -178,8 +180,10 @@ s .contentTag {
   [data-val="#auto-mode"],
   [data-val*="@"],
   [data-val="#plain-english"],
-  [data-val="#vibe-coding"]) .contentTagText {
+  [data-val="#vibe-coding"],
+  [data-val="#ai-coding"]) .contentTagText {
   -webkit-text-fill-color: var(--negTagTxtClr);
+    text-decoration: unset !important;
 }
 
 /**************
@@ -197,6 +201,10 @@ s .contentTag {
 
 .content .contentTag .contentTagText {
   -webkit-text-fill-color: currentColor;
+}
+
+.project > */*:not(.notes)*/ > .content .contentTag .contentTagText {
+  text-decoration: underline !important
 }
 /**************
 VERSION TAGS > IN BOARD ROOT
