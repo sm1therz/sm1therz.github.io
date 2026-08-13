@@ -125,6 +125,7 @@ s .contentTag {
 [data-val*="v9"],
 [data-val*="v10"]) .contentTagText {
   color: var(--negTagTxtClr) !important;
+      text-decoration: unset !important;
 }
 
 
@@ -195,16 +196,10 @@ s .contentTag {
 ***************/
 
 
-.content .contentTag {
-  -webkit-text-fill-color: color-mix(in srgb, currentColor 50%, transparent);
-}
-
-.content .contentTag .contentTagText {
-  -webkit-text-fill-color: currentColor;
-}
 
 .project > */*:not(.notes)*/ > .content .contentTag .contentTagText {
-  text-decoration: underline !important
+  text-decoration: underline !important;
+  
 }
 /**************
 VERSION TAGS > IN BOARD ROOT
@@ -220,6 +215,7 @@ VERSION TAGS > IN BOARD ROOT
 .board.root .contentTag[data-val*="v9"],
 .board.root .contentTag[data-val*="v10"] {
   --wf-tag-text: var(--BOARD-ROOT--CARD--BG) !important;
+  
 }
 
 /**************
