@@ -279,7 +279,7 @@ body,
     --btnIcn-ChkBx-W: 12px;
     --btnIcn-ChkBx-H: 12px;
     --btnIcn-ChkBx-Transition: 350ms cubic-bezier(.4, 3.9, .31, .4);
-    --btnIcn-ChkBx-BoxShad: 0 0 0 1.5px var(--CHECKBOX--BOX-CLR);
+    --btnIcn-ChkBx-BoxShad: 0 0 0 1.5px var(--BG-Bullet-open);
     --btnIcn-ChkMrk-W: 14px;
     --btnIcn-ChkMrk-H: 14px;
     --btnIcn-ExpandB4Up-BrdRad: 10px;
