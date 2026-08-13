@@ -718,8 +718,6 @@ REFERENCES*/
 }
 #app .project.root > .children .project.references > .name > .content,
 .project.references > .name > .content {
-    font-size: .95em !important;
-    color: var(--LnkWFTxtClr);
 }
 .project.references > .name > .expand {
     opacity: .5;
@@ -9735,6 +9733,179 @@ PADDING RIGHT
 .floating-comments .comment.thread .bullet {
   left: calc(var(--children-Indent) * -1) !important;
 }
+
+/*******************************
+********************************
+! REFERENCES
+********************************
+********************************/
+
+.root > .children > .project.references:before,
+.root > .children > .project.references:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-radius: .5px;
+    background: var(--SIDEBAR--BORDER-RIGHT)
+}
+
+
+/*******************************
+********************************
+ORIGINAL
+********************************
+********************************/
+#app .references > .children .addSiblingButton {
+  display: none;
+}
+#app .references > .children > .project:not(.board .references > .children > .project){
+  margin-bottom: 10px !important;
+    margin-top:0px; 
+}
+#app .references > .children > .project:last-of-type{
+  margin-bottom: 0px !important;
+}
+.references .project .breadcrumbs {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 0px !important;
+    padding-bottom: 4px;
+  row-gap: 4px !important;
+  padding-top: 8px
+}
+
+.references .project.comment .breadcrumbs {
+    padding-left: calc(var(--children-Indent) * .5) !important;
+}
+.references .project .breadcrumbs a {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px !important;
+    display: inline;
+    float: left;
+    font-size: .74rem;
+    opacity: .9;
+    line-height: .95 !important;
+    margin-top: 4px !important;
+    transition: .2s;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    max-width: 150px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 1px;
+  transform-origin: left center !important;
+  margin: 0px !important;
+}
+.references .project:not(.comment) .breadcrumbs a:last-of-type {
+/*    margin-left: 10px !important;
+      white-space: normal;
+    width: 100%;
+   font-size: .83rem;*/
+    max-width: 77% !important;
+
+}
+.references .project .breadcrumbs a:hover {
+    transform: scale(1.075) !important;
+    color: var(--NODE--TXT-CLR--CONTRAST);
+  transition: .20s !important;
+
+
+}
+
+.references .project:not(.comment) .breadcrumbs a:hover:not(:last-of-type){
+  max-width:50% !important;
+}
+.references .project:not(.comment) .breadcrumbs a:hover:is(:last-of-type){
+  max-width:88% !important;
+}
+/*
+
+*/
+#app .references .project svg {
+  position: relative;
+  top: 1px;
+  opacity: .6
+}
+
+
+.breadcrumb-overflow-menu div,
+.breadcrumb-overflow-menu div a {
+  white-space: normal !important;
+}
+/*REFERENCES - Border-top - ALL*/
+.root > .children > .project.references:before,
+.root > .children > .project.references:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: -100vw;
+    right: -100vw;
+    width: unset;
+    height: 1px;
+    border-radius: .5px;
+    background: hsl(205, 9%, 50%, .25);
+}
+.pageContainer {
+    overflow-x: hidden;
+}
+/*REFERENCES - Border-top - Direct CHildren of ZOomed Parent*/
+.root > .children > .project.references:before,
+.root > .children > .project.references:after {
+    top: -12px;
+}
+
+
+.root.dashboard > .children .project.references:before {
+    display: none;
+}
+
+.project.root > .children > .project.references {
+    margin-top: 22px;
+}
+#app .project.root > .children .project.references > .name > .content,
+.project.references > .name > .content {
+    color: var(--LnkWFTxtClr);
+}
+.project.references > .name > .expand {
+    opacity: .5;
+}
+.root > .children > .project.references > .name,
+.root > .children > .project.references > .notes,
+.root > .children > .project.references > .name > .bullet,
+.root > .children > .project.references > .name > .content,
+.root > .children > .project.references > .name > .expand,
+.root > .children > .project.references > .name > .prefix,
+.root > .children > .project.references > .children {
+    z-index: 1
+}
+.root > .children > .project.references:after {
+    bottom: -30px;
+    z-index: 0;
+    opacity: .11;
+}
+
+
+/*******************************
+********************************
+BREADCRUMB HOVER FIX
+********************************
+********************************/
+/*******************************
+********************************
+OVERRIDES
+********************************
+********************************/
+
+.project.references > .children > .project.header2 > .name{
+  
+}
+
+
 /*******************************
 ********************************
 SCROLLBAR / SCROLL BARS
