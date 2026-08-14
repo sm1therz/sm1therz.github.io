@@ -8513,7 +8513,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 /*TIMELINE - PILL*/
-#app .font-custom.project.selected.root > .name.name--main .monolith-pill{
+#app .font-custom.project.selected.root > .name.name--main * .monolith-pill{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -8533,6 +8533,35 @@ EXPAND COLLAPSE BORDER ANIMATION
 #app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l{
   padding-top: 10px  !important;
   
+}
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not(.project).mt-m{
+  order: 0 !important;
+  margin-top: 4px !important;
+  margin-bottom: 12px;
+  padding-left: 4px
+}
+
+/**BACKLINKS*/
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project > .text-xs{
+  margin-left: calc(var(--children-Indent) * 1 + 4px) !important;
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project > .name{
+  position: relative;
+
+}
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project.header2 > .name{
+  --btn-MargTop:3px !important;
+}
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project.header3 > .name{
+  --btn-MargTop:-1px !important;
 }
 /*******************************
 ********************************
