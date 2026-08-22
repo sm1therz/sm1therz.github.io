@@ -22,15 +22,6 @@ body,
     z-index: 222221;
 }
 
-.root > .children > .project.references:before,
-.root > .children > .project.references:after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    border-radius: .5px;
-    background: var(--SIDEBAR--BORDER-RIGHT)
-}
 
 
 [data-popper-reference-hidden][data-popper-escaped] {
@@ -612,130 +603,7 @@ CHILDREN*/
 .project > .children:not(.board>.children) {
     padding-left: var(--children-Indent)
 }
-/****
-REFERENCES*/
-#app .references > .children .addSiblingButton {
-  display: none;
-}
-#app .references > .children > .project:not(.board .references > .children > .project){
-  margin-bottom: 10px !important;
-    margin-top:0px; 
-}
-#app .references > .children > .project:last-of-type{
-  margin-bottom: 0px !important;
-}
-.references .project .breadcrumbs {
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: 0px !important;
-    padding-bottom: 4px;
-  row-gap: 4px !important;
-  padding-top: 8px
-}
 
-.references .project.comment .breadcrumbs {
-    padding-left: calc(var(--children-Indent) * .5) !important;
-}
-.references .project .breadcrumbs a {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-right: 0px !important;
-    display: inline;
-    float: left;
-    font-size: .74rem;
-    opacity: .9;
-    line-height: .95 !important;
-    margin-top: 4px !important;
-    transition: .2s;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    max-width: 150px !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-bottom: 1px;
-  transform-origin: left !important;
-  margin: 0px !important;
-}
-.references .project:not(.comment) .breadcrumbs a:last-of-type {
-/*    margin-left: 10px !important;
-      white-space: normal;
-    width: 100%;
-   font-size: .83rem;*/
-    max-width: 77% !important;
-
-}
-.references .project .breadcrumbs a:hover {
-    transform: scale(1.1) !important;
-    color: var(--NODE--TXT-CLR--CONTRAST);
-
-}
-/*
-
-*/
-#app .references .project svg {
-  position: relative;
-  top: 1px;
-  opacity: .6
-}
-
-
-.breadcrumb-overflow-menu div,
-.breadcrumb-overflow-menu div a {
-  white-space: normal !important;
-}
-/*REFERENCES - Border-top - ALL*/
-.root > .children > .project.references:before,
-.root > .children > .project.references:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: -100vw;
-    right: -100vw;
-    width: unset;
-    height: 1px;
-    border-radius: .5px;
-    background: hsl(205, 9%, 50%, .25);
-}
-.pageContainer {
-    overflow-x: hidden;
-}
-/*REFERENCES - Border-top - Direct CHildren of ZOomed Parent*/
-.root > .children > .project.references:before,
-.root > .children > .project.references:after {
-    top: -12px;
-}
-
-
-.root.dashboard > .children .project.references:before {
-    display: none;
-}
-
-.project.root > .children > .project.references {
-    margin-top: 22px;
-}
-#app .project.root > .children .project.references > .name > .content,
-.project.references > .name > .content {
-}
-.project.references > .name > .expand {
-    opacity: .5;
-}
-.root > .children > .project.references > .name,
-.root > .children > .project.references > .notes,
-.root > .children > .project.references > .name > .bullet,
-.root > .children > .project.references > .name > .content,
-.root > .children > .project.references > .name > .expand,
-.root > .children > .project.references > .name > .prefix,
-.root > .children > .project.references > .children {
-    z-index: 1
-}
-.root > .children > .project.references:after {
-    bottom: -30px;
-    z-index: 0;
-    opacity: .11;
-}
 
 /***************
 ****************
@@ -1274,42 +1142,7 @@ Menu ONLY*/
 
 
 
-/****
-Bullet Icon
-AND
-Menu Icon*/
-.project > .name > .bullet:hover,
-.project > .name > .menu:hover {
-    opacity: 1;
-}
 
-@keyframes menu-animation-out {
-    0% {
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: .5;
-    }
-}
-
-@keyframes menu-animation-in {
-    0% {
-        opacity: .5;
-    }
-
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
 
 
 /****
@@ -2141,6 +1974,7 @@ HORIZONTAL RULES / DIVIDERS
 .project.divider > .name{
   position: relative;
   --btn-MargTop:-1px;
+
 }
 .project.divider:not(.collapsed) > .name{
     --BG-Bullet-open:var(--wf-border-primary);
@@ -2660,6 +2494,7 @@ LEVEL 3 > Button Adjustments
 
 
 
+
 /*******************************
 ********************************
 ! NORMAL STATE - NUMBERS
@@ -2942,6 +2777,8 @@ transform: rotate(-45deg)scale(var(--numberBulletUnderScaleOpen)) !important;
 #app *:is(.board) .project.collapsed:not(.checkmark):is(.boardColumn,.boardCard) > .name > .bullet.diamond ~ .prefix:after {
 transform: rotate(45deg)scale(var(--numberBulletUnderScaleOpen)) !important;
 }
+
+
 /***********
 ! NORMAL STATE OVERRIDES 
 ************/
@@ -3402,9 +3239,11 @@ margin-left: 0px !important;
 }
 
 
+
 .project > .name > .bullet .bulletHalo{
   opacity: 0;
 }
+
 
 /********
 DIVIDER
@@ -3418,7 +3257,7 @@ DIVIDER
 /********
 QUOTE BLOCKS
 *********/
-#app .project:is(.quote-block):not(.collapsed,.open) > .name > .bullet:not(.diamond) .expand:before {
+#app .project:is(.quote-block):not(.collapsed,.open) > .name > .bullet:not(.diamond) ~ .expand:before {
   opacity: 0;
 }
 #app .project:is(.quote-block):not(.collapsed,.open) > .name > .bullet{
@@ -3430,7 +3269,7 @@ QUOTE BLOCKS
 /********
 CODE BLOCKS
 *********/
-#app .project:is(.code-block):not(.collapsed) > .name > .expand:before {
+#app .project:is(.code-block):not(.collapsed) > .name > .bullet:not(.diamond) ~ expand:before {
   opacity: 0;
 }
 #app .project:is(.code-block):not(.collapsed) > .name > .bullet{
@@ -3440,43 +3279,236 @@ CODE BLOCKS
   left: calc(var(--children-Indent) * -1) !important;
 }
 
+
 /***********
-! PANES
+! SIDE PANE
 ************/
+:root {
+  --panelSplitPadLR:30px;
+}
 
 [data-pane-workspace] .page {
   max-width: 100% !important;
-    padding-left: 0px !important;
-    padding-right !important: 0px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
   padding-top: 0px !important;
 }
 /*#app div[data-pane-id] > .page {
     max-width: var(--pageMaxWidth);
 }*/
-
 /***/
-#app div[data-pane-id] [data-full-width-page-container]{
-  --side-pane-menu-gutter:14px !important;
+#app div[data-pane-id] [data-full-width-page-container] {
+  --side-pane-menu-gutter: 14px !important;
 }
 
 /*ROOT - HOME*/
-
-#app div[data-pane-id] .project.root.mainTreeRoot > .name{
+#app div[data-pane-id] .project.root.mainTreeRoot > .name {
   opacity: 0;
 }
 
 /*ROOT*/
-
-#app div[data-pane-id] .project.root > .name{
+#app div[data-pane-id] .project.root > .name {
   margin-top: 14px !important;
 }
 
 /*CHILDREN*/
-
-#app div[data-pane-id] .project.root > .children{
+#app div[data-pane-id] .project.root > .children {
   padding-top: var(--root-padtop) !important;
 }
 
+
+/*****
+FIRST PANE ONLY
+******/
+
+[data-pane-workspace] > [data-pane-id]:first-child [data-full-width-boundary]{
+  padding-left: var(--panelSplitPadLR);
+  padding-right: var(--panelSplitPadLR);
+}
+[data-pane-workspace] > [data-pane-id]:first-child [data-full-width-boundary] .project.root > *:is(.name,.notes) > .content{
+
+}
+
+/*****
+AFTER FIRST PANE 
+******/
+[data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary]{
+  padding-left: 0px !important;
+}
+[data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary]{
+padding-right: 0px !important;
+}
+
+#app [data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] .project.root > *:is(.name, .notes){
+  padding-left: var(--panelSplitPadLR) !important;
+  padding-right: var(--panelSplitPadLR) !important
+} 
+#app [data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] .project.root > .children {
+  padding-left: calc(var(--panelSplitPadLR) + var(--children-Indent)) !important;
+  padding-right: calc(var(--panelSplitPadLR) * .5) !important;
+} 
+
+@media (max-width: 650px){
+  :root {
+    --panelSplitPadLR:20px;
+  }
+}
+/**************
+! HIGHLIGHTS
+***************/
+
+._theme-dark s [class*="bc-"] {
+  --wf-background-red: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-orange: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-yellow: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-green: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-teal: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-sky: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-blue: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-purple: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-pink: var(--strikeThroughTagHighlightBgColor) !important;
+  --wf-background-gray: var(--strikeThroughTagHighlightBgColor) !important;
+  --hilightTxTShadW: .25px;
+  --wf-tag-text: var(--strikeThroughColor);
+}
+
+
+/**************
+COLORS > HIGHLIGHTS
+***************/
+._theme-dark [class*="bc-"][class*="bc-"] {
+  --wf-background-red: hsl(0, 44%, 38%, 1);
+  --wf-background-red: hsl(0, 40%, 35%);
+  --wf-background-yellow: hsl(42, 45%, 50%);
+  --wf-background-yellow: hsl(40, 33%, 41%);
+  --wf-background-green: hsl(161, 42%, 33%, 1) !important;
+  color: var(--wf-text-primary);
+  --wf-text-primary: hsla(0, 0%, 100%);
+  --LnkWFBgClrHov:hsla(0, 0%, 100%,0.2);
+    /*tags*/
+  --tagTxtClr:hsl(195, 2%, 100%, 1);
+  --tagTxtClr-Hash:hsl(195, 2%, 100%, 0.5);
+}
+
+/*TAGS > IN RED HIGHLIGHTS*/
+._theme-dark .colored[class*="bc-red"],
+._theme-dark .colored[class*="bc-red"] .contentTag{
+  /*tags - negative*/
+  --negTagTxtClr: hsl(202, 13%, 0%,0.65);
+  --negTagTxtClr-Hash: hsl(201, 13%, 0%, 0.45);
+  --wf-background-gray:hsl(0, 30%, 55%,.7);
+}
+
+/*TAGS > IN RED HIGHLIGHTS*/
+._theme-dark .colored[class*="bc-orange"],
+._theme-dark .colored[class*="bc-orange"] .contentTag{
+  /*tags - negative*/
+  --negTagTxtClr: hsl(24, 13%, 0%,0.49);
+  --negTagTxtClr-Hash: hsl(24, 13%, 0%, 0.35);
+  --wf-background-gray:hsl(24, 40%, 55%,0.5);
+}
+/*TAGS > IN RED HIGHLIGHTS*/
+._theme-dark .colored[class*="bc-yellow"],
+._theme-dark .colored[class*="bc-yellow"] .contentTag{
+  /*tags - negative*/
+  --negTagTxtClr: hsl(40, 93%, 12%,0.8);
+  --negTagTxtClr-Hash: hsl(40, 93%, 12%,0.5);
+  --wf-background-gray:hsl(40, 60%, 65%,0.5);
+}
+/*TAGS > IN RED HIGHLIGHTS*/
+._theme-dark .colored[class*="bc-green"],
+._theme-dark .colored[class*="bc-green"] .contentTag{
+  /*tags - negative*/
+  --negTagTxtClr: hsl(161, 93%, 12%,0.8);
+  --negTagTxtClr-Hash: hsl(161, 93%, 12%,0.5);
+  --wf-background-gray:hsl(161, 40%, 42%,2.5);
+}
+
+
+
+/***************
+highlights
+****************/
+:root {
+  --HiLtAlt: var(--BG-primary)
+}
+/**
+ HIGHLIGHT REBUILD
+
+#app .colored[class*="bc-"] {
+
+    background:linear-gradient(
+        var(--HiLtAlt) 0%,
+        var(--HiLtAlt) 20%,
+        var(--HiBgClr) 20%,
+        var(--HiBgClr))
+}
+*/
+.bc-red.bc-red {
+
+  --HiBgClr: var(--HIGHLIGHT--RED)
+}
+.bc-orange.bc-orange {
+  --HiBgClr: var(--HIGHLIGHT--ORANGE)
+}
+.bc-yellow.bc-yellow {
+  --HiBgClr: var(--HIGHLIGHT--YELLOW)
+}
+.bc-green.bc-green {
+  --HiBgClr: var(--HIGHLIGHT--GREEN)
+}
+.bc-sky.bc-sky {
+  --HiBgClr: var(--HIGHLIGHT--SKY)
+}
+.bc-blue.bc-blue {
+  --HiBgClr: var(--HIGHLIGHT--BLUE)
+}
+.bc-purple.bc-purple {
+  --HiBgClr: var(--HIGHLIGHT--PURP)
+}
+
+
+/***************
+HIGHLIGHT - GREYED OUT
+****************/
+:root {
+  --hilightTxTShadW: .5px
+}
+[class*="bc-"][class*="bc-"],
+#app .page .project > .name > .content [class*="bc-"] a {
+  /*text-shadow: 
+        0 var(--hilightTxTShadW) black,
+        0 calc(var(--hilightTxTShadW) * -1) black,
+        var(--hilightTxTShadW) 0 black,
+        calc(var(--hilightTxTShadW) * -1) 0 black !important;*/
+  -webkit-text-stroke: 0px !important;
+}
+
+#app .page .project > .name > .content [class*="bc-"] a {
+  filter: brightness(1.15);
+}
+
+.board.root .bc-gray.bc-gray {
+  --HIGHLIGHT--Grey--GREYED-OUT: var(--BOARD-ROOT--CARD--BG);
+}
+.bc-gray.bc-gray::selection {
+  background: var(--selectionBg2) !important;
+  color: var(--NODE--TXT-CLR--CONTRAST)!important
+}
+
+/*GREYED OUT - POPUP*/
+.picker-background [title="Gray"]:before {
+  content: "GREYED OUT";
+  width: 50px;
+  display: block;
+  position: absolute;
+  font-size: 8px;
+  text-align: center;
+  top: -12px;
+  left: -14px;
+  right: auto;
+  color: var(--NODE--TXT-CLR--main)
+}
 /***************
 ! LINKS
 ****************/
@@ -6408,7 +6440,7 @@ BOARD > NOT ROOT > FIX
 }
 
 /*ALL ITEMS - NAME - CONTENT - NOT NOTED*/
-#app .project.board:not(.root) .project:not(.noted,[class*="with-image"]) > .name > .content{
+#app .project.board:not(.root) .project:not(.noted,[class*="with-image"],.code-block) > .name > .content{
   margin-bottom: calc(var(--content-PadTopBtm) + var(--boarditemPadFix) ) !important;
   padding-bottom: 0px !important;
 }
@@ -6915,6 +6947,7 @@ EXPAND > BOARDCOLUMN BLOCKS
 ! DASHBOARD
 ********************************
 ********************************/
+
 .pageContainer .page.dashboard-page {
     max-width: 100%;
     box-sizing: border-box;
@@ -8513,7 +8546,7 @@ EXPAND COLLAPSE BORDER ANIMATION
 }
 
 /*TIMELINE - PILL*/
-#app .font-custom.project.selected.root > .name.name--main .monolith-pill{
+#app .font-custom.project.selected.root > .name.name--main * .monolith-pill{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -8534,6 +8567,60 @@ EXPAND COLLAPSE BORDER ANIMATION
   padding-top: 10px  !important;
   
 }
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not(.project).mt-m{
+  order: 0 !important;
+  margin-top: 4px !important;
+  margin-bottom: 12px;
+  padding-left: 4px
+}
+
+/***********
+************
+BACKLINKS
+*************
+************/
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project > .text-xs{
+  margin-left: calc(var(--children-Indent) * 1 + 4px) !important;
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project > .name{
+  position: relative;
+
+}
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project.header2 > .name{
+  --btn-MargTop:3px !important;
+}
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project.header3 > .name{
+  --btn-MargTop:-1px !important;
+}
+
+
+/***********
+************
+STICKY HEADERS
+*************
+************/
+app .font-custom.project.selected.root, 
+app .font-custom.project.selected.root > .children {
+  overflow: hidden; 
+  display: contents;
+}
+  
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project:not([class*="text-tertiary"])> .name {
+  position:sticky;
+  top:0;
+}
+  
+  
+  
 /*******************************
 ********************************
 ! PRESENTATION
@@ -9733,7 +9820,6 @@ PADDING RIGHT
 .floating-comments .comment.thread .bullet {
   left: calc(var(--children-Indent) * -1) !important;
 }
-
 /*******************************
 ********************************
 ! REFERENCES
@@ -9905,10 +9991,9 @@ OVERRIDES
   
 }
 
-
 /*******************************
 ********************************
-SCROLLBAR / SCROLL BARS
+! SCROLLBAR / SCROLL BARS
 ********************************
 ********************************/
 ::-webkit-scrollbar,
@@ -11164,7 +11249,6 @@ LAST ITEM
 .project.tableItem > .children .name:after{
   opacity: 0;
 }
-
 /*******************************
 ********************************
 ! PSEUDO - NODE HOVER BACKGROUND
@@ -11205,7 +11289,6 @@ LAST ITEM
     opacity: 0;
   }
 }
-
 /*******************************
 ********************************
 ! SHARED PAGES
@@ -12092,30 +12175,3 @@ html #app .board .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content 
   background-image: unset !important;
   text-decoration: underline !important;
 }
-/***********
-************
-! FLOAT BROWSER / FLUID BROWSER > OVERRIDES
-************
-************/
-
-  .project:not(.board) .project > .notes > .content {
-    font-size: 13.5px;
-    line-height: 18.5px;
-  }
-#app .project.code-block > .name > .content{
-  line-height:unset !Important;
-}
-#app .project.code-block > .name > .content > .innerContentContainer {
-  font-size: 14.5px !important;
-  line-height: calc(25px - 2px) !important;
-  }
-  #app .project:not([class*="header"], .root) > .name > .content code{
-    font-size: 14.25px !important;
-}
-  #app .project:is(.root) > .name > .content code{
-    font-size: 24px !important;
-}
-#app .board.root .project > .name > .expand {
-  top: 3px !important;
-}
-  
