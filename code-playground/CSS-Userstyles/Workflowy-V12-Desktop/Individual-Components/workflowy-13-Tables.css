@@ -1,3 +1,13 @@
+/*ROOT*/
+/*******************************
+********************************
+! OVERRIDES
+********************************
+********************************/
+
+#app .project.tableItem > .name:after{
+  opacity: 0 !important;
+}
 /*******************************
 ********************************
 ! TABLES
@@ -143,4 +153,56 @@ ADD-COLUMN BUTTON
   width: var(--tableAddColW) !important;
   min-width: var(--tableAddColW) !important;
   max-width: var(--tableAddColW) !important;
+}
+
+
+.project.tableItem > .vertical-scrollable-container {
+  z-index: 1;
+}
+
+.project.tableItem > .vertical-scrollable-container > .children.table {
+  background: var(--BG-primary);
+}
+/*******************************
+********************************
+! TABLES - IN SIDE PANES
+********************************
+********************************/
+
+/***********
+! TABLES — SIDE PANE
+The main table rules are built on 100vw/50vw — the whole window.
+A pane is only part of the window, so inside one the scroll box ends up
+wider than the pane: nothing overflows it, so it cannot scroll, and it
+spills over its neighbour. These rules swap the viewport maths for
+pane-safe values. They only exist while a pane is open.
+***********/
+
+:root{
+  --tablePaneBleedL:56px;
+  --tablePaneBleedR:32px;
+  --tablePaneRootIndent:10px;
+}
+
+#app [data-pane-workspace] [data-pane-id]{
+  container-type: inline-size;
+  overflow-x: clip;
+}
+
+#app [data-pane-workspace] .project.tableItem > .vertical-scrollable-container{
+  left: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  margin-left: calc(-1 * var(--tablePaneBleedL)) !important;
+  margin-right: calc(-1 * var(--tablePaneBleedR)) !important;
+  padding-left: calc(var(--tablePaneBleedL) + var(--tablePaneRootIndent)) !important;
+}
+
+#app [data-pane-workspace] .children > .project.tableItem > .vertical-scrollable-container{
+  left: calc(50% - 50cqw - var(--tableBleed)) !important;
+  width: calc(100cqw + var(--tableBleed)) !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: calc(50cqw - 50% + var(--tableBleed) + var(--children-Indent)) !important;
 }
