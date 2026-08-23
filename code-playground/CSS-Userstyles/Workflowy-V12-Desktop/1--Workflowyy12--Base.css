@@ -8575,16 +8575,40 @@ EXPAND COLLAPSE BORDER ANIMATION
   padding-left: 4px
 }
 
-<<<<<<< HEAD
+/***********
+************
+FOUND DATES
+*************
+************/
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not([projectid]) + .project > .name{
+  padding-top: 12px !important;
+}
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not([projectid]) + .project:before{
+  content:"";
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  height: 1px;
+  background: var(--EXPAND-BORDER--BG);
+  position: absolute;
+}
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not([projectid]) + .project > .name:after {
+  display: none !important;
+}
+
+#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not([projectid]) + .project > .name {
+  --btn-MargTop:8px
+}
+
 /***********
 ************
 BACKLINKS
 *************
 ************/
 
-=======
-/**BACKLINKS*/
->>>>>>> main
 #app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project > .text-xs{
   margin-left: calc(var(--children-Indent) * 1 + 4px) !important;
   margin-bottom: 4px;
@@ -8605,29 +8629,9 @@ BACKLINKS
 #app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project[class*="text-tertiary"] > .children > .project.header3 > .name{
   --btn-MargTop:-1px !important;
 }
-<<<<<<< HEAD
 
 
-/***********
-************
-STICKY HEADERS
-*************
-************/
-app .font-custom.project.selected.root, 
-app .font-custom.project.selected.root > .children {
-  overflow: hidden; 
-  display: contents;
-}
-  
-#app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > .project:not([class*="text-tertiary"])> .name {
-  position:sticky;
-  top:0;
-}
-  
-  
-  
-=======
->>>>>>> main
+
 /*******************************
 ********************************
 ! PRESENTATION
