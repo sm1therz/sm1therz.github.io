@@ -1,0 +1,50 @@
+/***********
+************
+FLOAT BROWSER / FLUID BROWSER > OVERRIDES
+************
+************/
+
+
+/***
+EXPAND / COLLAPSE
+***/
+
+.project.tableItem > .name:after {
+		display:none !important;
+}
+
+/****
+TABLES
+*****/
+.table-cell > .name > .expand {
+		display: none !important;
+}
+/****
+ROOT
+*****/
+
+#app .project.root > .name,
+#app .project.root > .notes,
+#app .project.root > .name > .content,
+#app .project.root > .notes > .content  {
+padding-left:0px !important;
+}
+
+#app .project.root > .name > .content,
+#app .project.root > .notes > .content  {
+margin-left:0px !important;
+}
+
+/****
+ROOT > CHECKMARK
+*****/
+#app .project.root.checkmark > .name,
+#app .project.root.checkmark > .notes {
+}
+@media (max-width:650px) {
+#app .page .project.root.checkmark > .name,
+#app .page .project.root.checkmark > .notes {
+padding-left:34px !important;
+}
+
+}
