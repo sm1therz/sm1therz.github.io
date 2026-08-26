@@ -1463,6 +1463,7 @@ HIGHLIGHT - CODE
 }
 #app .project:not([class*="header"]) > .name > .content code{
     font-size: calc(var(--name-fontSize) - 5.0px) !important;
+    font-size:calc(1em - 1.5px) !important;
 }
 #app .project.root > .name > .content code{
     font-size: calc(var(--root-font-size) - 6px) !important;
