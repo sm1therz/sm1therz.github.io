@@ -6,14 +6,14 @@
 		--notesMaxH:21px;
 }
 
-#app .page .project.root > .children .project > .notes > .content:not(.active,:empty) {
+#app .pageContainer .project.root > .children .project > .notes > .content:not(.active,:empty) {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
 		max-height: var(--notesMaxH);
 }
 
-#app .page .project.root > .children .project > .notes > .content.active:not(:empty) {
+#app .pageContainer .project.root > .children .project > .notes > .content.active:not(:empty) {
 	-webkit-line-clamp: 100;
 		--notesMaxH:1000px;
 }
@@ -25,8 +25,8 @@
 	--notesMaxH: 22px;
 }
 
-/*NOTES > MAKE THEM 1 LINE*/
-#app .page .project.root>.children .project > .notes:not(.matches) > .content:not(:empty,.active) {
+/*NOTES > INNACTIVE > MAKE THEM 1 LINE*/
+#app .pageContainer .project.root>.children .project > .notes:not(.matches) > .content:not(:empty,.active) {
 	display: -webkit-box !important;
 	-webkit-box-orient: vertical !important;
 	-webkit-line-clamp: 1 !important;
@@ -35,13 +35,13 @@
 }
 
 
-/*NOTES > SHOW ALL LINES WHEN ACTIVE*/
+/*NOTES > ACTIVE > SHOW ALL LINES WHEN ACTIVE*/
 
-/*ACTIVE*/
-#app .page .project.root > .children .project > .notes > .content.active,
-#app .page .project > .children .project > .notes > .content.active {
+#app .pageContainer .project.root > .children .project > .notes > .content.active,
+#app .pageContainer .project > .children .project > .notes > .content.active {
 	-webkit-line-clamp: 100 !important;
 	--notesMaxH: 1000px !important;
+	max-height: unset;
 	display:block !important;
 	overflow:unset !important;
 	-webkit-box-orient: unset !important;
@@ -58,8 +58,4 @@
 
 #app .board.root{
 		--notesMaxH:21px;
-}
-
-#app .board .boardColumn .notes > .content:not(:empty){
-	margin-bottom: 4px !important;
 }
