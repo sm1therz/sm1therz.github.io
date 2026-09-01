@@ -435,6 +435,8 @@ LEVEL 1 > PROJECT
     border-radius: var(--prjct-BrdRad);
 }
 
+
+
 /*
 .project.root > .children .header1,
 .project.root > .children .header2 {
@@ -3201,6 +3203,27 @@ PROJECT.HEADERS > NAME
 /*NOTED > NOTES*/
 #app .project *:is([class*="header"]):not(.board [class*="header"]).noted > .notes:not(.board .project > .name) {
   margin-bottom: var(--wf-space-m) !important;  
+}
+
+
+.project:not(.board) .project[class*="header"]{
+  /*--wf-space-m:4px;*/
+  --wf-space-m:calc(var(--prjct-MargTopBtm) * .8);
+}
+
+.project.header1 > .name {
+  --btn-MargTop: 16px;
+  --btn-MargTop: calc(var(--wf-space-m) + 9px);
+}
+.project.header2 > .name {
+  --btn-MargTop: 9.5px;
+  --btn-MargTop: calc(var(--wf-space-m) + 2px);
+  
+}
+.project.header3 > .name {
+  --btn-MargTop: 7px;
+  --btn-MargTop: calc(var(--wf-space-m) - 1.5px);
+  
 }
 
 /*
@@ -11897,13 +11920,17 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
   .project.header1 > .name {
     --btn-MargTop: 9px;
+    --btn-MargTop: calc(var(--wf-space-m) + 3px);
   }
   .project.header2 > .name {
     --btn-MargTop: 6.5px;
+    --btn-MargTop: calc(var(--wf-space-m) - 1px);
+    
   }
-
+  
   .project.header3 > .name {
     --btn-MargTop: 7px;
+    --btn-MargTop: calc(var(--wf-space-m) - 1px);
   }
   .project > .name:after {
     left: calc(var(--children-Indent) / 3 - 0.75px);
