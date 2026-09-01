@@ -3213,7 +3213,7 @@ PROJECT.HEADERS > NAME
 
 .project.header1 > .name {
   --btn-MargTop: 16px;
-  --btn-MargTop: calc(var(--wf-space-m) + 9px);
+  --btn-MargTop: calc(var(--wf-space-m) + 5px);
 }
 .project.header2 > .name {
   --btn-MargTop: 9.5px;
@@ -11920,7 +11920,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   }
   .project.header1 > .name {
     --btn-MargTop: 9px;
-    --btn-MargTop: calc(var(--wf-space-m) + 3px);
+    --btn-MargTop: calc(var(--wf-space-m) + 1px);
   }
   .project.header2 > .name {
     --btn-MargTop: 6.5px;
