@@ -6688,6 +6688,7 @@ MULTIPLIERS
 .board.root.shared > .children > ._1en9fmv {
   display: none !important;
 }
+
 /*******************************
 ********************************
 ! BOARDS - BULLET / EXPAND / MENU CHANGE
@@ -6958,13 +6959,16 @@ EXPAND > BOARDCOLUMN BLOCKS
 }
 
 
-/*Right side*/
-#app .project.board:not(.root) > .children > .project.boardColumn > .name > .menu {
-  right: calc(var(--children-Indent) * 1 + var(--boardnotrootColMargL)) !important;
-}
-#app .project.board:not(.root) > .children > .project.boardColumn > .name > *:is(.bullet, .prefix) {
-  right: calc(var(--children-Indent) * 0 + var(--boardnotrootColMargL)) !important;
-  z-index: 939393;
+
+
+/***********
+************
+.BOARD-ALL > HIDE STUFF
+************
+************/
+
+#app .project.board > .children .project > .name > .bullet > .absolute[class*="hover"] {
+  opacity: 0 !important;
 }
 
 /*******************************
