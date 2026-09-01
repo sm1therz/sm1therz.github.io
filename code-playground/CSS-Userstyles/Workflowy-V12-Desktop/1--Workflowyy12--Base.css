@@ -11916,7 +11916,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   #app .dashboard .dashboard-card > .name > .menu {
     left: unset !important;
     right: calc(var(--children-Indent) * 1) !important;
-    width: calc(var(--children-Indent) * 1) !important;
+    width: calc(var(--children-Indent) * 1) !important; 
   }
   .project.header1 > .name {
     --btn-MargTop: 9px;
