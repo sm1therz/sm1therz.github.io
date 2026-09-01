@@ -9596,13 +9596,9 @@ html #app .floating-comments-container > .vertical-scrollable-container > .dashb
 }
 
 
-/**
-PADDING RIGHT
-**/
-
-#app .floating-comments-container .vertical-scrollable-container .project.root > .children > .project > *:is(.name,.notes,.children){
+#app .floating-comments-container .vertical-scrollable-container .project.root > .children  .project > *:is(.name,.notes){
   
-  padding-right: 10px !important;
+  padding-right: 6px !important;
 }
 /*******************************
 ********************************
