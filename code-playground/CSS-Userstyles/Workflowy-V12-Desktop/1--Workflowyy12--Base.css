@@ -231,7 +231,7 @@ body,
     --name-lineHeight: 26px;
     --notes-fontSize: .905rem;
     --notes-lineHeight: 19px;
-    --header1-fontSize: 2.0rem;
+    --header1-fontSize: 1.7rem;
     --header1-lineHeight: 1.3;
     --header2-fontSize: 1.4rem;
     --header2-lineHeight: 1.35;
@@ -434,7 +434,8 @@ LEVEL 1 > PROJECT
     position: relative;
     border-radius: var(--prjct-BrdRad);
 }
-
+.project:not(.board) .project[class*="header"]{
+}
 
 
 /*
@@ -855,7 +856,7 @@ Bullet, Expand, Prefix, & Menu
 
 .project > .name > .bullet{
   width: var(--btn-Width) !important;
-  height: var(--btn-Width) !important;
+  height: var(--btn-Height) !important;
   left: calc(var(--children-Indent) * -1) !important;
   transition:  var(--btn-transition);
 }
@@ -1465,7 +1466,7 @@ HIGHLIGHT - CODE
 }
 #app .project:not([class*="header"]) > .name > .content code{
     font-size: calc(var(--name-fontSize) - 5.0px) !important;
-    font-size:calc(1em - 1.5px) !important;
+  font-size:calc(1em - 1.5px) !important;
 }
 #app .project.root > .name > .content code{
     font-size: calc(var(--root-font-size) - 6px) !important;
@@ -1721,7 +1722,8 @@ CODE BLOCKS
 #app .project.code-block > .name > .content > .innerContentContainer {
 
     font-size: calc(var(--name-fontSize) - 5.0px) !important;
-    font-size: calc(var(--name-fontSize) - 5.0px) !important;
+    font-size:calc(1em - .75px) !important;
+
     line-height: calc(var(--name-lineHeight) - 2px) !important;
     color:white !important;
 }
@@ -2391,15 +2393,7 @@ LEVEL 3 > Button Adjustments
 ****************/
 /*Button - Checkbox*/
 /*Button - Top margins*/
-.project.header1 > .name {
-  --btn-MargTop: 16px;
-}
-.project.header2 > .name {
-  --btn-MargTop: 9.5px;
-}
-.project.header3 > .name {
-  --btn-MargTop: 7px;
-}
+
 
 /*Buttons - Paragraph*/
 #app .project.paragraph > .name > .expand,
@@ -2495,6 +2489,7 @@ LEVEL 3 > Button Adjustments
 #app .board .project[class*="header"].hasMirrors > .name > .bullet{
     opacity: 1;
 }
+
 
 
 
@@ -3305,11 +3300,43 @@ CODE BLOCKS
 }
 
 
+/***
+divider
+****/
+
+:root{
+  --hrDividerH:1px;
+}
+
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:after {
+  opacity: .95;
+  /*
+  height: calc(var(--hrDividerH) * 8);
+    width: calc(var(--hrDividerH) * 8)
+
+*/
+}
+.project.divider > .name > .bullet:not(.diamond) ~ .expand:before{
+
+  background: var(--wf-border-primary);
+  filter: brightness(1.5)
+
+}
+
+
+.project.divider > .name > [class*="selection-handle"] hr {
+  background: var(--wf-border-primary);
+  border-radius: 1px;
+  height: calc(var(--hrDividerH) * 1.5);
+  min-width: calc(100% + var(--children-Indent) * .5)
+}
+
+
 /***********
 ! SIDE PANE
 ************/
 :root {
-  --panelSplitPadLR:30px;
+  --panelSplitPadLR: 30px;
 }
 
 [data-pane-workspace] .page {
@@ -3345,38 +3372,91 @@ CODE BLOCKS
 /*****
 FIRST PANE ONLY
 ******/
-
-[data-pane-workspace] > [data-pane-id]:first-child [data-full-width-boundary]{
+[data-pane-workspace] > [data-pane-id]:first-child [data-full-width-boundary] {
   padding-left: var(--panelSplitPadLR);
   padding-right: var(--panelSplitPadLR);
 }
-[data-pane-workspace] > [data-pane-id]:first-child [data-full-width-boundary] .project.root > *:is(.name,.notes) > .content{
-
-}
+[data-pane-workspace] > [data-pane-id]:first-child [data-full-width-boundary] .project.root > *:is(.name, .notes) > .content {}
 
 /*****
 AFTER FIRST PANE 
 ******/
-[data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary]{
+[data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] {
   padding-left: 0px !important;
 }
-[data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary]{
-padding-right: 0px !important;
+[data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] {
+  padding-right: 0px !important;
 }
 
-#app [data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] .project.root > *:is(.name, .notes){
+#app [data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] .project.root > *:is(.name, .notes) {
   padding-left: var(--panelSplitPadLR) !important;
   padding-right: var(--panelSplitPadLR) !important
-} 
+}
 #app [data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] .project.root > .children {
   padding-left: calc(var(--panelSplitPadLR) + var(--children-Indent)) !important;
   padding-right: calc(var(--panelSplitPadLR) * .5) !important;
-} 
+}
 
-@media (max-width: 650px){
+/*****
+PANE ACTIVE
+******/
+[data-pane-active] {}
+[data-pane-active="true"] {}
+/*****
+MEDIA QUERIES 
+******/
+@media (max-width: 850px) {
   :root {
-    --panelSplitPadLR:20px;
+    --panelSplitPadLR: 10px;
   }
+}
+
+/********
+Overrides - boards
+*********/
+html #app [data-pane-id] .project.root.board,
+html #app [data-pane-id] .project.root.board > *:is(.name, .notes) {
+  position: relative !important;
+  top: unset !important;
+  left: unset !important;
+  right: unset !important;
+}
+
+html #app [data-pane-id] .project.root.board > *:is(.name, .notes),
+html #app [data-pane-id] .project.root.board > *:is(.name, .notes) > .content,
+html #app [data-pane-id] .project.root.board > *:is(.name, .notes) > .content > span {
+  max-width: 100%!important;
+  position: relative !important;
+  top: unset !important;
+  left: unset !important;
+  right: unset !important;
+  margin-left: unset !important;
+  margin-right: unset !important;
+}
+
+html #app [data-pane-id] .project.root.board > *:is(.name, .notes) {
+  max-width: 100%!important;
+}
+html .is-desktop #app [data-pane-id] .project.root.boaHrd,
+html #app [data-pane-id] .project.root.board > *:is(.name, .notes) .content {
+  overflow-x: hidden !important;
+  white-space: normal !important;
+}
+
+html #app [data-pane-id] .project.root.board > *:is( .notes) .content {
+  overflow-x: hidden !important;
+  white-space: normal !important;
+  font-size: calc(var(--notes-fontSize) + 3px) !important;
+  line-height: var(--rootnotes-lineHeight) !important;
+}
+
+#app [data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] .project.root.board > .children {
+  padding-left: calc(var(--panelSplitPadLR) + var(--children-Indent) * .05) !important
+}
+
+#app [data-pane-workspace] > [data-pane-id]:first-child ~ [data-pane-id] [data-full-width-boundary] .project.root.board > .children > .project {
+  --boardRootColumnWidth:300px;
+  padding-left: 0px;
 }
 /**************
 ! HIGHLIGHTS
@@ -8601,7 +8681,8 @@ EXPAND COLLAPSE BORDER ANIMATION
   order: 0 !important;
   margin-top: 4px !important;
   margin-bottom: 12px;
-  padding-left: 4px
+  padding-left: 4px;
+  opacity: 0;
 }
 
 /***********
@@ -8610,17 +8691,18 @@ FOUND DATES
 *************
 ************/
 #app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not([projectid]) + .project > .name{
-  padding-top: 12px !important;
+  padding-top: 26px !important;
 }
 #app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not([projectid]) + .project:before{
   content:"";
   display: block;
-  left: 0;
-  right: 0;
+  left: -50vw;
+  right: -50vw;
   top: 0;
   position: absolute;
   height: 1px;
   background: var(--EXPAND-BORDER--BG);
+  background: var(--wf-border-primary);
   position: absolute;
 }
 
@@ -8629,7 +8711,7 @@ FOUND DATES
 }
 
 #app .font-custom.project.selected.root > .name.name--main ~ .flex.items-center.pb-l ~ .children > div:not([projectid]) + .project > .name {
-  --btn-MargTop:8px
+  --btn-MargTop:22px
 }
 
 /***********
@@ -11489,9 +11571,93 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
   }
   
 }
+
 /*******************************
 ********************************
-! FLAT SEARCH / SEARCH RESULTS
+! FLAT SEARCH > NAV
+********************************
+********************************/
+
+:root {
+  --flatSearchInputW:calc(210px + 25vw);
+  --flatSearchBtnWrapMax-W:120px;
+  --flatSearchBtnWrapPadLR:4px;
+  --flatSearchBtnWrapPadTopBtm:4px;
+  --flatSearchBtnW:16px;
+  --flatSearchBtnWrapTransition:.15s ease-in-out
+}
+/**** 
+SEARCH ACTIVE - UNFOCUSED
+*****/
+.wf-header .searchBox[style*="width: 210"] {
+  width: var(--flatSearchInputW) !important;
+}
+
+/****
+SEARCH ACTIVE - FOCUSED
+*****/
+.wf-header .searchBox[style*="width: 320"] {
+  width: var(--flatSearchInputW) !important;
+  --flatSearchInputW: calc(320px + 25vw);
+}
+
+
+/****
+SEARCH ACTIVE > UNFOCUSED > SHORTCUT BUTTON WRAPPER
+*****/
+.wf-header .searchBox[style*="width: "] > div.flex > input ~ .absolute,
+.wf-header .searchBox[style*="width: "] > div.flex > input ~ .absolute > *:is(div,svg){
+  
+}
+.wf-header .searchBox > div.flex > input ~ svg + .absolute{
+  max-width: var(--flatSearchBtnWrapMax-W);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: var(--flatSearchBtnWrapTransition);
+  overflow: hidden;
+  transition-delay: .5s;
+  border-radius: 40px;
+  backdrop-filter: blur(20px);
+  padding-right: var(--flatSearchBtnWrapPadLR) !important;
+  padding-left: var(--flatSearchBtnWrapPadLR) !important;
+  gap: 2px;
+  height: calc(100% - var(--flatSearchBtnWrapPadTopBtm) * 2) !important;
+  top: var(--flatSearchBtnWrapPadTopBtm);
+  right: calc(var(--flatSearchBtnWrapPadLR))
+  
+}
+.wf-header .searchBox[style*="width: "] > div.flex > input ~ svg + .absolute{
+;
+  
+}
+/****
+SEARCH ACTIVE > UNFOCUSED > SHORTCUT BUTTON WRAPPER > CLOSE BUTTON
+*****/
+
+.wf-header .searchBox > div.flex > input ~ .absolute > svg {
+  flex: 1;
+  align-self: center;
+  height: var(--flatSearchBtnW);
+  min-width: var(--flatSearchBtnW);
+
+  
+}
+
+/****
+SEARCH ACTIVE > FOCUSED > SHORTCUT BUTTON WRAPPER
+*****/
+
+.wf-header .searchBox[style*="width: 320px"] > div.flex > input ~ .absolute{
+  --flatSearchBtnWrapMax-W:calc(var(--flatSearchBtnW) + var(--flatSearchBtnWrapPadLR) * 2);
+    transition-delay: 0s;
+}
+
+
+
+/*******************************
+********************************
+! FLAT SEARCH > SEARCH RESULTS
 ********************************
 ********************************/
 :root {
@@ -11520,6 +11686,32 @@ body.is-desktop .nameButtons > .comment-hover-btn-group > .name-hover-btn{
 #app .page.active.searching .project.board:not(.board.root) > .children{
     max-height: unset !important;
 }
+
+/*******************************
+********************************
+! FLAT SEARCH > NAV - RESULTS (OLD) NO IDEA
+********************************
+********************************/
+
+.page.active.searching{
+    
+}
+/*turn inner content container temporarily into display block**/
+.project.metaMatches > .name > ._165k6ha > .innerContentContainer{
+    display: block;
+}
+/*results - breadcrumbs*/
+.page.active.searching .project.half-open{
+    
+}
+
+/*results - open notes with matches*/
+.page.active.searching .project.noted.matches > .notes.matches.fullMatch > .content {
+    -webkit-line-clamp:unset !important;
+    overflow: visible !important;
+    opacity: 1;
+}
+
 
 /*MATCH COLORS*/
 
@@ -11681,18 +11873,19 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   white-space: normal !important; 
   font-size: 13px;
 }
+
 /*******************************
 ********************************
 ! MOBILE - NEW
 ********************************
 ********************************/
 :root {
-  --mobileDocPadLeft: 24px;
+  --mobileDocPadLeft: 24px; 
   --mobileRootPadLeft: 20px;
 }
 
 @media (max-width: 750px) {
-  .project.root.checkmark > .name {
+  .project.root.checkmark > .name { 
     position: relative;
   }
   .project.root.checkmark > .name,
@@ -11755,6 +11948,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     --header1-lineHeight: 1.225;
     --header2-fontSize: 1.3rem;
     --header2-lineHeight: 1.225;
+    --header3-fontSize: 1.185rem;
 
     --btn-Width: var(--children-Indent);
     --children-Indent: 20px;
@@ -11773,6 +11967,10 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
     --rootnotes-fontSize: 14.5px;
     --rootnotes-lineHeight: 20px;
     --boardRootNotesTopP:calc(var(--wf-header-height) * 1.9);
+  }
+  .project:not(.boardd) .project > .name > .bullet:before {
+    align-self: center;
+    transform: scale(.75)
   }
   .project > .name > .prefix {
     --btn-MargTop: 1px !important;
@@ -11847,7 +12045,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   .root > .children > .project > .name > .prefix:not(.dashboard .prefix, .board .prefix),
   .root > .children > .project > .name > .expand:not(.dashboard .expand, .board .expand),
   .root > .children > .project > .name > .menu:not(.dashboard .menu, .board .menu) {
-    border-radius: 2px;
+    border-radius: 4px;
     width: 20px !important;
   }
 
@@ -11920,7 +12118,7 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   #app .dashboard .dashboard-card > .name > .menu {
     left: unset !important;
     right: calc(var(--children-Indent) * 1) !important;
-    width: calc(var(--children-Indent) * 1) !important; 
+    width: calc(var(--children-Indent) * 1) !important;
   }
   .project.header1 > .name {
     --btn-MargTop: 9px;
@@ -11929,9 +12127,8 @@ div#ai-reply-input + .justify-between.flex [class*="max-w-"] .truncate{
   .project.header2 > .name {
     --btn-MargTop: 6.5px;
     --btn-MargTop: calc(var(--wf-space-m) - 1px);
-    
   }
-  
+
   .project.header3 > .name {
     --btn-MargTop: 7px;
     --btn-MargTop: calc(var(--wf-space-m) - 1px);
