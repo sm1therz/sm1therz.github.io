@@ -3618,14 +3618,15 @@ HIGHLIGHT - GREYED OUT
 ! LINKS
 ****************/
 :root {
-    --link-BrdRad: 3px;
-    --linkArrow-Size: 5px;
-    --linkArrow-BrdClr: var(--Link-TxtClr);
-    --linkIcnAfter-Width: 10px;
-    --linkIcnAfter-Height: 10px;
-      --lnkicnW: 15px;
-    --lnkicnH: 15px;
+  --link-BrdRad: 3px;
+  --linkArrow-Size: 5px;
+  --linkArrow-BrdClr: var(--Link-TxtClr);
+  --linkIcnAfter-Width: 10px;
+  --linkIcnAfter-Height: 10px;
+  --lnkicnW: 15px;
+  --lnkicnH: 15px;
 }
+/***/
 .contentLink,
 u .contentLink,
 .contentLink u,
@@ -3634,65 +3635,70 @@ a.contentLink .colored {
     color: var(--LnkTxtClr) !important;
     position: relative;
 }
-.fullMatch .contentLink, .project.metaMatches .contentLink {
+
+html body.is-desktop #app .project.root .project > * > .content .contentLink:not([href*="workflowy.com"]) {
+}
+
+.fullMatch .contentLink,
+.project.metaMatches .contentLink {
   color: var(--wf-text-sky) !important;
 }
 #app a.contentLink,
 #app u a.contentLink,
 #app a.contentLink u {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 #app .colored a.contentLink,
 #app a.contentLink .colored {
-    color: var(--LnkTxtClr)
+  color: var(--LnkTxtClr)
 }
 
 
 
 html #app .project > .name > .content a.contentLink {
-    border-radius: var(--link-BrdRad);
-    transition: .1s;
-    padding-left: 0px;
-    padding-right: 0px;
-    text-underline-offset: var(--underlineOffset);
-    text-decoration-thickness: var(--underlineThickness);
-    text-decloration-color: var(--LnkTxtClr) !important;
-    --link-BrdRad: 4px;
-    text-shadow:none !important;
+  border-radius: var(--link-BrdRad);
+  transition: .1s;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-underline-offset: var(--underlineOffset);
+  text-decoration-thickness: var(--underlineThickness);
+  text-decloration-color: var(--LnkTxtClr) !important;
+  --link-BrdRad: 4px;
+  text-shadow: none !important;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
 html #app .project > .name > .content a.contentLink:hover {
-    background: var(--LnkBgClrHov);
-    background-image: var(--LinkIcn);
-    background-repeat: no-repeat;
+  background: var(--LnkBgClrHov);
+  background-image: var(--LinkIcn);
+  background-repeat: no-repeat;
 }
 
 
 
 
-html #app .project .content a.contentLink[href*="workflowy"],
-html #app .project .content a.contentLink[href*="workflowy"]:after {
-    --LnkTxtClr: var(--LnkWFTxtClr);
-    --LnkBrdClr: transparent;
-    --LnkBgClr: transparent;
-    --LnkBgClrHov: var(--LnkWFBgClrHov);
-    --ICON--LINK--EXTERNAL: var(--ICON--LINK--INTERNAL2) !important;
-    --lnkicnW: 14px;
-    --lnkicnH: 14px;
-    text-decoration: underline !important;
-    opacity: 1;
-    padding-left: 0px;
-    padding-right: 0px;
+html #app .project .content a.contentLink[href*="workflowy.com"],
+html #app .project .content a.contentLink[href*="workflowy.com"]:after {
+  --LnkTxtClr: var(--LnkWFTxtClr);
+  --LnkBrdClr: transparent;
+  --LnkBgClr: transparent;
+  --LnkBgClrHov: var(--LnkWFBgClrHov);
+  --ICON--LINK--EXTERNAL: var(--ICON--LINK--INTERNAL2) !important;
+  --lnkicnW: 14px;
+  --lnkicnH: 14px;
+  text-decoration: underline !important;
+  opacity: 1;
+  padding-left: 0px;
+  padding-right: 0px;
   text-underline-offset: 2px;
 }
 
-html #app .project > .notes > .content a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content u a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content a.contentLink[href*="workflowy"] u,
-html #app .project > .notes > .content .colored a.contentLink[href*="workflowy"],
-html #app .project > .notes > .content a.contentLink[href*="workflowy"] .colored {
-    color:var(--LnkWFTxtClr) !important;
+html #app .project > .notes > .content a.contentLink[href*="workflowy.com"],
+html #app .project > .notes > .content u a.contentLink[href*="workflowy.com"],
+html #app .project > .notes > .content a.contentLink[href*="workflowy.com"] u,
+html #app .project > .notes > .content .colored a.contentLink[href*="workflowy.com"],
+html #app .project > .notes > .content a.contentLink[href*="workflowy.com"] .colored {
+  color: var(--LnkWFTxtClr) !important;
 }
 /**********************
 ***********************
@@ -12313,6 +12319,10 @@ BOARD COLUMNS
 /****
 ! ICONS - WAVY UNDERLINE - SOLID
 ******/
+
+/****
+! ICONS - WAVY UNDERLINE - SOLID
+******/
 /**************
 ***************
 ***************
@@ -12409,7 +12419,7 @@ html #app .project [projectid*="virtual"] > .name > .content > .innerContentCont
 }
 
 
-html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy"] {
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a[href*="workflowy.com"] {
   background-image: var(--ICON--UNDERLINE-WAVY--LINK-INTERNAL) !important;
  
 }
@@ -12425,7 +12435,8 @@ html #app .pageContainer .page *:is(.board) .project.comment .project[projectid*
 LINK FIX > MIRRORS  > ALL
 ********/
 html #app .project:not(.hasMirrors) > .name > .bullet.diamond ~ .content > .innerContentContainer a.contentLink,
-#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink{
+#app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a.contentLink,
+html #app .project [projectid*="virtual"] > .name > .content > .innerContentContainer a:not([href*="workflowy.com"]){
   background-image: var(--ICON--UNDERLINE-WAVY--LINK) !important;
   background-repeat: repeat-x !important;
 }
