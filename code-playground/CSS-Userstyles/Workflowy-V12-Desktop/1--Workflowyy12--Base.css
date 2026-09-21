@@ -33,7 +33,7 @@ body,
 
 .project,
 .project > .name,
-.project > .notes,
+.project > .notes, 
 .project > .children:not(.board>.children, .tableItem > .children) {
     margin: 0px;
     padding: 0;
